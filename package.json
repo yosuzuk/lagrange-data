@@ -1,6 +1,8 @@
 {
-  "name": "research-chances",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "name": "lagrange-data",
+  "description": "Ship data, tech file chances, etc.",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
