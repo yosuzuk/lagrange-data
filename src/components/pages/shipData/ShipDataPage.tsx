@@ -16,6 +16,8 @@ export const ShipDataPage = () => {
         name: true,
         row: true,
         type: true,
+        cost: true,
+        operationLimit: true,
     }));
     const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
 

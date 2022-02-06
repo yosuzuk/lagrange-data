@@ -9,7 +9,6 @@ export const shipNameColumn: ITableColumn<ShipDefinition> = {
     renderHeader: () => '艦名',
     renderCell: (data: ShipDefinition) => data.name,
     sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
-    initialSortDirection: 'asc',
 };
 
 export const shipTypeColumn: ITableColumn<ShipDefinition> = {
@@ -20,6 +19,7 @@ export const shipTypeColumn: ITableColumn<ShipDefinition> = {
         (a, b) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
         (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
+    initialSortDirection: 'asc',
 };
 
 export const shipRowColumn: ITableColumn<ShipDefinition> = {

@@ -95,6 +95,9 @@ export const MyListView = (props: IProps) => {
                     </AccordionDetails>
                 </Accordion>
             </div>
+            <Typography variant="caption" align="right" paragraph={true}>
+                {'※設定データはブラウザのローカルストレージに保存されています。'}
+            </Typography>
         </Stack>
     );
 }

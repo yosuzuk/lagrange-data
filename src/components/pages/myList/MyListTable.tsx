@@ -1,5 +1,5 @@
 import { useEffect, memo } from 'react';
-import { Table, ITableData, useTable, ITableColumn } from '../../table';
+import { Table, ITableData, useTable } from '../../table';
 import { ShipDefinition } from '../../../types/ShipDefinition';
 import { shipNameColumn, shipTypeColumn, shipRowColumn } from '../../columns/colums';
 

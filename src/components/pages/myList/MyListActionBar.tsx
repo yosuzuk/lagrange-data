@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import EditIcon from '@mui/icons-material/Edit';
+import SettingsIcon from '@mui/icons-material/Settings';
 import ShareIcon from '@mui/icons-material/Share';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
@@ -32,10 +32,10 @@ export const MyListActionBar = (props: Props) => {
                     <Button
                         key="edit"
                         variant="outlined"
-                        startIcon={<EditIcon />}
+                        startIcon={<SettingsIcon />}
                         onClick={onEdit}
                     >
-                        {'編集'}
+                        {'マイリスト設定'}
                     </Button>
                 </>
             )}

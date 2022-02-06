@@ -61,9 +61,7 @@ export const MyListPage = () => {
                     ships={shipsForShare}
                     open={true}
                     onClose={handleCloseShare}
-                >
-                    
-                </ShipsSharingDialog>
+                />
             )}
         </>
     );

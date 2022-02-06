@@ -33,23 +33,7 @@ function App() {
                     <Route
                         path="/"
                         element={(
-                            <Navigate replace={true} to="/myList" />
-                        )}
-                    />
-                    <Route
-                        path="myList"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <MyListPage />
-                            </Suspense>
-                        )}
-                    />
-                    <Route
-                        path="myList/edit"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <MyListEditPage />
-                            </Suspense>
+                            <Navigate replace={true} to="/techFiles" />
                         )}
                     />
                     <Route
@@ -65,6 +49,22 @@ function App() {
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <ShipDataPage />
+                            </Suspense>
+                        )}
+                    />
+                    <Route
+                        path="myList"
+                        element={(
+                            <Suspense fallback={<LoadingIndicator />}>
+                                <MyListPage />
+                            </Suspense>
+                        )}
+                    />
+                    <Route
+                        path="myList/edit"
+                        element={(
+                            <Suspense fallback={<LoadingIndicator />}>
+                                <MyListEditPage />
                             </Suspense>
                         )}
                     />
