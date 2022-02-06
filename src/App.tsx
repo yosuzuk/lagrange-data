@@ -26,7 +26,7 @@ const theme = createTheme({
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/lagrange-data">
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Routes>
