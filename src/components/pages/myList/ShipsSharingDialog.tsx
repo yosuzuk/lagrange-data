@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { useState, ChangeEventHandler } from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -17,16 +17,15 @@ export interface IProps {
     ships: IShipListState;
     open: boolean;
     onClose: () => void;
-    children: ReactNode;
 }
 
 export const ShipsSharingDialog = (props: IProps) => {
-    const { ships, onClose, open, children } = props;
+    const { ships, onClose, open } = props;
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const [copied, setCopied] = useState<boolean>(false);
 
-    const textForSharing = useMemo(() => formatShipListForSharing(ships.possessed), [ships]);
+    const [textForSharing, setTextForSharing] = useState<string>(() => formatShipListForSharing(ships.possessed));
 
     const handleCopy = () => {
         if (textForSharing) {
@@ -35,6 +34,10 @@ export const ShipsSharingDialog = (props: IProps) => {
             });
         }
     };
+
+    const handleChance: ChangeEventHandler<HTMLTextAreaElement> = event => {
+        setTextForSharing(event.target.value);
+    }
 
     const handleClose = () => {
         onClose();
@@ -56,6 +59,7 @@ export const ShipsSharingDialog = (props: IProps) => {
                         variant="filled"
                         id="outlined-multiline-static"
                         multiline={true}
+                        onChange={handleChance}
                         rows={10}
                         defaultValue={textForSharing}
                         fullWidth={true}

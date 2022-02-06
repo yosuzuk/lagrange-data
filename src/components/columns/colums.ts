@@ -8,7 +8,7 @@ export const shipNameColumn: ITableColumn<ShipDefinition> = {
     id: 'name',
     renderHeader: () => '艦名',
     renderCell: (data: ShipDefinition) => data.name,
-    sortFn: (a, b) => a.name.localeCompare(b.name),
+    sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     initialSortDirection: 'asc',
 };
 
@@ -18,7 +18,7 @@ export const shipTypeColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => translateShipType(data.type, data.subType),
     sortFn: [
         (a, b) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
 
@@ -28,7 +28,7 @@ export const shipRowColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => translateShipRow(data.row),
     sortFn: [
         (a, b) => shipRowToSortValue(a.row) - shipRowToSortValue(b.row),
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
 
@@ -38,7 +38,7 @@ export const shipCostColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => data.cost,
     sortFn: [
         (a, b) => a.cost - b.cost,
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
 
@@ -48,7 +48,7 @@ export const shipOperationLimitColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => data.operationLimit,
     sortFn: [
         (a, b) => a.operationLimit - b.operationLimit,
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
 
@@ -58,7 +58,7 @@ export const shipSourceColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => translateShipSource(data.source),
     sortFn: [
         (a, b) => shipSourceToSortValue(a.source) - shipSourceToSortValue(b.source),
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
 
@@ -68,6 +68,6 @@ export const shipWeightColumn: ITableColumn<ShipDefinition> = {
     renderCell: (data: ShipDefinition) => data.weight,
     sortFn: [
         (a, b) => a.weight - b.weight,
-        (a, b) => a.name.localeCompare(b.name),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
