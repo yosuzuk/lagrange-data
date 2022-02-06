@@ -23,3 +23,5 @@ export const TableExample = () => {
         <Table table={table} />
     );
 };
+
+export default TableExample;

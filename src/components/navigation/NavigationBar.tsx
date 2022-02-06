@@ -1,37 +1,30 @@
-import { IPage } from './types/IPage';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Container } from '../container/Container';
 
 interface IProps {
-    pages: IPage[];
-    currentPageId: string;
-    setPage: (id: string) => void;
+    currentRoute: string;
 }
 
 export const NavigationBar = (props: IProps) => {
-    const { pages, currentPageId, setPage } = props;
-
-    const handleChange = (event: React.SyntheticEvent, pageId: string) => {
-        setPage(pageId);
-    };
+    const { currentRoute } = props;
 
     return (
         <>
             <AppBar position="sticky">
                 <Container>
                     <Tabs
-                        value={currentPageId}
-                        onChange={handleChange}
+                        value={currentRoute}
                         indicatorColor="secondary"
                         textColor="inherit"
                         variant="scrollable"
                         scrollButtons="auto"
                     >
-                        {pages.filter(page => page.hidden !== true).map((page: IPage) => (
-                            <Tab key={page.id} label={page.name} value={page.id} />
-                        ))}
+                        <Tab label={'マイリスト'} value="/myList" to="/myList" component={Link} />
+                        <Tab label={'技術ファイル'} value="/techFiles" to="/techFiles" component={Link} />
+                        <Tab label={'艦船一覧'} value="/shipData" to="/shipData" component={Link} />
                     </Tabs>
                 </Container>
             </AppBar>

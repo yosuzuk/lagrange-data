@@ -7,12 +7,14 @@ import { TechFileSelection } from './TechFileSelection';
 import { TechFileDetails } from './TechFileDetails';
 import { techFiles } from '../../../data/techFiles';
 import { Container } from '../../container/Container';
+import { NavigationBar } from '../../navigation/NavigationBar';
 
 export const BoxChancePage = () => {
     const [techFile, setTechFile] = useState<ITechFile>(techFiles[0]);
 
     return (
         <>
+            <NavigationBar currentRoute="/techFiles" />
             <Container>
                 <Box p={1}>
                     <Stack spacing={1}>
@@ -32,3 +34,5 @@ export const BoxChancePage = () => {
         </>
     );
 };
+
+export default BoxChancePage;

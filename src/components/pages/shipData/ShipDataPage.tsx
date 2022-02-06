@@ -8,6 +8,7 @@ import { shipDefinitions } from '../../../data/shipDefinitions';
 import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { Container } from '../../container/Container';
+import { NavigationBar } from '../../navigation/NavigationBar';
 
 export const ShipDataPage = () => {
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
@@ -20,6 +21,7 @@ export const ShipDataPage = () => {
 
     return (
         <>
+            <NavigationBar currentRoute="/shipData" />
             <ShipDataActionBar
                 shipFilter={shipFilter}
                 columnConfig={columnConfig}
@@ -34,3 +36,5 @@ export const ShipDataPage = () => {
         </>
     );
 };
+
+export default ShipDataPage;
