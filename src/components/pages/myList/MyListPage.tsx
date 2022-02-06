@@ -1,18 +1,16 @@
 import { useMemo, useState } from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import { MyListActionBar } from './MyListActionBar';
 import { MyListEdit } from './MyListEdit';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState, extractPossesssedShips, extractUnwishedShips, extractWishedShips } from '../../filter/filterUtils';
 import { ShipSettingState, UserSettings } from '../../../userSettings/types/UserSettings';
-import { restoreUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { getCurrentUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { MyListView } from './MyListView';
 import { ShipsSharingDialog } from './ShipsSharingDialog';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { IShipListState } from './types/IShipListState';
-
-const getCurrentUserSettings = (): UserSettings => restoreUserSettings() ?? createInitialUserSettings();
+import { Container } from '../../container/Container';
 
 export const MyListPage = () => {
     const [userSettings, setUserSettings] = useState<UserSettings>(getCurrentUserSettings);
@@ -72,7 +70,7 @@ export const MyListPage = () => {
                 onFilter={setShipFilter}
                 onShare={handleClickShare}
             />
-            <Container maxWidth="md" disableGutters={true}>
+            <Container>
                 <Box p={1}>
                     {editMode ? (
                         <MyListEdit

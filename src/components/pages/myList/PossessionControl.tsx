@@ -24,7 +24,7 @@ export const PossessionControl = (props: Props) => {
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body2">{'設計図を'}</Typography>
+            <Typography variant="body1">{'設計図を'}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"

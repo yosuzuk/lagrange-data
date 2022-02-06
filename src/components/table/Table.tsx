@@ -6,6 +6,7 @@ import {
     TableHead,
     TableRow,
     TableSortLabel,
+    Typography,
     Paper,
 } from '@mui/material';
 import { DEFAULT_SORT_DIRECTION } from './utils/sorting';
@@ -34,10 +35,20 @@ export const Table = (props: IProps) => {
                                         direction={headerCell.sortDirection ?? DEFAULT_SORT_DIRECTION}
                                         onClick={headerCell.toggleSort}
                                     >
-                                        {headerCell.content}
+                                        {typeof headerCell.content === 'string' ? (
+                                            <Typography variant="body1">{headerCell.content}</Typography>
+                                        ) : (
+                                            <>{headerCell.content}</>
+                                        )}
                                     </TableSortLabel>
                                 ) : (
-                                    <>{headerCell.content}</>
+                                    <>
+                                        {typeof headerCell.content === 'string' ? (
+                                            <Typography variant="body1">{headerCell.content}</Typography>
+                                        ) : (
+                                            <>{headerCell.content}</>
+                                        )}
+                                    </>
                                 )}
                             </TableCell>
                         ))}
@@ -48,7 +59,11 @@ export const Table = (props: IProps) => {
                         <TableRow key={row.id}>
                             {row.cells.map(cell => (
                                 <TableCell component="th" scope="row" key={cell.id}>
-                                    {cell.content}
+                                    {typeof cell.content === 'string' ? (
+                                        <Typography variant="body1">{cell.content}</Typography>
+                                    ) : (
+                                        <>{cell.content}</>
+                                    )}
                                 </TableCell>
                             ))}
                         </TableRow>

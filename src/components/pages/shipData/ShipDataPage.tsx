@@ -7,10 +7,15 @@ import { ShipDataActionBar } from './ShipDataActionBar';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
+import { Container } from '../../container/Container';
 
 export const ShipDataPage = () => {
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
-    const [columnConfig, setColumnConfig] = useState<IColumnConfig>(createInitialColumnConfig);
+    const [columnConfig, setColumnConfig] = useState<IColumnConfig>(() => createInitialColumnConfig({
+        name: true,
+        row: true,
+        type: true,
+    }));
     const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
 
     return (
@@ -21,9 +26,11 @@ export const ShipDataPage = () => {
                 onFilterChange={setShipFilter}
                 onColumnConfigChange={setColumnConfig}
             />
-            <Box p={1}>
-                <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
-            </Box>
+            <Container disabled={Object.values(columnConfig).filter(set => set).length > 3}>
+                <Box p={1}>
+                    <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
+                </Box>
+            </Container>
         </>
     );
 };

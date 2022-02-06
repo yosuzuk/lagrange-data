@@ -30,7 +30,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
-        subModel: [ShipId.AC721_B, ShipId.AC721_C],
+        subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
     },
     {
         id: ShipId.AC721_B,
@@ -41,7 +41,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.AC721_A,
+        baseModelId: ShipId.AC721_A,
     },
     // TODO type C
     {
@@ -54,7 +54,7 @@ export const shipDefinitions: ShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         carryCorvette: 2,
-        baseModel: ShipId.AC721_A,
+        baseModelId: ShipId.AC721_A,
     },
     {
         id: ShipId.ALDABRA_A,
@@ -65,7 +65,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.ALDABRA_B],
+        subModelIds: [ShipId.ALDABRA_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -79,7 +79,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.ALDABRA_A,
+        baseModelId: ShipId.ALDABRA_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -127,7 +127,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CALLISTO_B, ShipId.CALLISTO_C],
+        subModelIds: [ShipId.CALLISTO_B, ShipId.CALLISTO_C],
     },
     {
         id: ShipId.CALLISTO_B,
@@ -138,7 +138,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CALLISTO_A,
+        baseModelId: ShipId.CALLISTO_A,
     },
     {
         id: ShipId.CALLISTO_C,
@@ -149,7 +149,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CALLISTO_A,
+        baseModelId: ShipId.CALLISTO_A,
     },
     {
         id: ShipId.CARILION_A,
@@ -160,7 +160,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CARILION_B, ShipId.CARILION_C],
+        subModelIds: [ShipId.CARILION_B, ShipId.CARILION_C],
     },
     {
         id: ShipId.CARILION_B,
@@ -171,7 +171,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CARILION_A,
+        baseModelId: ShipId.CARILION_A,
     },
     {
         id: ShipId.CARILION_C,
@@ -182,7 +182,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CARILION_A,
+        baseModelId: ShipId.CARILION_A,
     },
     {
         id: ShipId.CAS066_A,
@@ -193,7 +193,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
-        subModel: [ShipId.CAS066_B, ShipId.CAS066_C],
+        subModelIds: [ShipId.CAS066_B, ShipId.CAS066_C],
     },
     {
         id: ShipId.CAS066_B,
@@ -204,7 +204,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CAS066_A,
+        baseModelId: ShipId.CAS066_A,
     },
     {
         id: ShipId.CAS066_C,
@@ -215,7 +215,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CAS066_A,
+        baseModelId: ShipId.CAS066_A,
         carryCorvette: 2,
     },
     {
@@ -237,7 +237,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CERES_B, ShipId.CERES_C],
+        subModelIds: [ShipId.CERES_B, ShipId.CERES_C],
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
@@ -250,7 +250,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CERES_A,
+        baseModelId: ShipId.CERES_A,
     },
     {
         id: ShipId.CERES_C,
@@ -261,7 +261,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CERES_A,
+        baseModelId: ShipId.CERES_A,
     },
     {
         id: ShipId.CHIMERA_A,
@@ -272,7 +272,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CHIMERA_B, ShipId.CHIMERA_C],
+        subModelIds: [ShipId.CHIMERA_B, ShipId.CHIMERA_C],
     },
     {
         id: ShipId.CHIMERA_B,
@@ -283,7 +283,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CHIMERA_A,
+        baseModelId: ShipId.CHIMERA_A,
     },
     {
         id: ShipId.CHIMERA_C,
@@ -294,7 +294,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CHIMERA_A,
+        baseModelId: ShipId.CHIMERA_A,
     },
     {
         id: ShipId.CONAMARA_CHAOS_A,
@@ -305,7 +305,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CONAMARA_CHAOS_B],
+        subModelIds: [ShipId.CONAMARA_CHAOS_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -319,7 +319,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CONAMARA_CHAOS_A,
+        baseModelId: ShipId.CONAMARA_CHAOS_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -435,7 +435,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.CV_M011_B],
+        subModelIds: [ShipId.CV_M011_B],
     },
     {
         id: ShipId.CV_M011_B,
@@ -446,7 +446,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.CV_M011_A,
+        baseModelId: ShipId.CV_M011_A,
     },
     {
         id: ShipId.CV_T800,
@@ -538,7 +538,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.ERIS_I_B, ShipId.ERIS_I_C],
+        subModelIds: [ShipId.ERIS_I_B, ShipId.ERIS_I_C],
     },
     {
         id: ShipId.ERIS_I_B,
@@ -549,7 +549,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.ERIS_I_A,
+        baseModelId: ShipId.ERIS_I_A,
     },
     {
         id: ShipId.ERIS_I_C,
@@ -560,7 +560,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.ERIS_I_A,
+        baseModelId: ShipId.ERIS_I_A,
     },
     {
         id: ShipId.ETERNAL_STORM,
@@ -655,7 +655,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
-        subModel: [ShipId.FG300_B, ShipId.FG300_C],
+        subModelIds: [ShipId.FG300_B, ShipId.FG300_C],
     },
     {
         id: ShipId.FG300_B,
@@ -666,7 +666,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
-        baseModel: ShipId.FG300_A,
+        baseModelId: ShipId.FG300_A,
     },
     {
         id: ShipId.FG300_C,
@@ -677,7 +677,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
-        baseModel: ShipId.FG300_A,
+        baseModelId: ShipId.FG300_A,
     },
     {
         id: ShipId.GUARDIAN_A,
@@ -688,7 +688,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.GUARDIAN_B, ShipId.GUARDIAN_C],
+        subModelIds: [ShipId.GUARDIAN_B, ShipId.GUARDIAN_C],
     },
     {
         id: ShipId.GUARDIAN_B,
@@ -699,7 +699,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.GUARDIAN_A,
+        baseModelId: ShipId.GUARDIAN_A,
         carryCorvette: 2,
     },
     {
@@ -711,7 +711,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.GUARDIAN_A,
+        baseModelId: ShipId.GUARDIAN_A,
     },
     {
         id: ShipId.IO_A,
@@ -722,7 +722,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.IO_B, ShipId.IO_C],
+        subModelIds: [ShipId.IO_B, ShipId.IO_C],
     },
     {
         id: ShipId.IO_B,
@@ -733,7 +733,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.IO_A,
+        baseModelId: ShipId.IO_A,
     },
     {
         id: ShipId.IO_C,
@@ -744,7 +744,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.IO_A,
+        baseModelId: ShipId.IO_A,
     },
     {
         id: ShipId.JAEGER_A,
@@ -755,7 +755,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.JAEGER_B],
+        subModelIds: [ShipId.JAEGER_B],
         carryCorvette: 4,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -770,7 +770,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.JAEGER_A,
+        baseModelId: ShipId.JAEGER_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -795,7 +795,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
-        subModel: [ShipId.KCCPV2_0_B, ShipId.KCCPV2_0_C, ShipId.KCCPV2_0_D],
+        subModelIds: [ShipId.KCCPV2_0_B, ShipId.KCCPV2_0_C, ShipId.KCCPV2_0_D],
     },
     {
         id: ShipId.KCCPV2_0_B,
@@ -806,7 +806,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.KCCPV2_0_A,
+        baseModelId: ShipId.KCCPV2_0_A,
     },
     {
         id: ShipId.KCCPV2_0_C,
@@ -817,7 +817,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.KCCPV2_0_A,
+        baseModelId: ShipId.KCCPV2_0_A,
     },
     {
         id: ShipId.KCCPV2_0_D,
@@ -828,7 +828,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
-        baseModel: ShipId.KCCPV2_0_A,
+        baseModelId: ShipId.KCCPV2_0_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.LARGE_FIGHTER,
     },
@@ -841,7 +841,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
+        subModelIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
     },
     {
         id: ShipId.LIGHT_CONE_B,
@@ -852,7 +852,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.LIGHT_CONE_A,
+        baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
         id: ShipId.LIGHT_CONE_C,
@@ -863,7 +863,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.LIGHT_CONE_A,
+        baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
         id: ShipId.MARE_NUBIUM_A,
@@ -874,7 +874,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.MARE_NUBIUM_B],
+        subModelIds: [ShipId.MARE_NUBIUM_B],
     },
     {
         id: ShipId.MARE_NUBIUM_B,
@@ -885,7 +885,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.MARE_NUBIUM_A,
+        baseModelId: ShipId.MARE_NUBIUM_A,
     },
     {
         id: ShipId.MARE_SERENITATIS_A,
@@ -896,7 +896,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.MARE_SERENITATIS_B, ShipId.MARE_SERENITATIS_C],
+        subModelIds: [ShipId.MARE_SERENITATIS_B, ShipId.MARE_SERENITATIS_C],
     },
     {
         id: ShipId.MARE_SERENITATIS_B,
@@ -907,7 +907,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.MARE_SERENITATIS_A,
+        baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
         id: ShipId.MARE_SERENITATIS_C,
@@ -918,7 +918,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.MARE_SERENITATIS_A,
+        baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
         id: ShipId.MARE_TRANQUILLITATIS_A,
@@ -929,7 +929,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.MARE_TRANQUILLITATIS_B, ShipId.MARE_TRANQUILLITATIS_C],
+        subModelIds: [ShipId.MARE_TRANQUILLITATIS_B, ShipId.MARE_TRANQUILLITATIS_C],
     },
     {
         id: ShipId.MARE_TRANQUILLITATIS_B,
@@ -940,7 +940,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.MARE_TRANQUILLITATIS_A,
+        baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
         id: ShipId.MARE_TRANQUILLITATIS_C,
@@ -951,7 +951,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.MARE_TRANQUILLITATIS_A,
+        baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
         id: ShipId.MARSHALL_CRUX,
@@ -1018,7 +1018,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.NEBULA_CHASER_B],
+        subModelIds: [ShipId.NEBULA_CHASER_B],
     },
     {
         id: ShipId.NEBULA_CHASER_B,
@@ -1029,7 +1029,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.NEBULA_CHASER_A,
+        baseModelId: ShipId.NEBULA_CHASER_A,
     },
     {
         id: ShipId.NOMA_M470_A,
@@ -1040,7 +1040,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.NOMA_M470_B, ShipId.NOMA_M470_C],
+        subModelIds: [ShipId.NOMA_M470_B, ShipId.NOMA_M470_C],
     },
     {
         id: ShipId.NOMA_M470_B,
@@ -1051,7 +1051,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.NOMA_M470_A,
+        baseModelId: ShipId.NOMA_M470_A,
     },
     {
         id: ShipId.NOMA_M470_C,
@@ -1062,7 +1062,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.NOMA_M470_A,
+        baseModelId: ShipId.NOMA_M470_A,
     },
     {
         id: ShipId.PREDATOR_A,
@@ -1073,7 +1073,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.PREDATOR_B, ShipId.PREDATOR_C],
+        subModelIds: [ShipId.PREDATOR_B, ShipId.PREDATOR_C],
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
@@ -1086,7 +1086,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.PREDATOR_A,
+        baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
@@ -1099,7 +1099,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.PREDATOR_A,
+        baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
@@ -1112,7 +1112,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.QUAOAR_B],
+        subModelIds: [ShipId.QUAOAR_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -1126,7 +1126,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.QUAOAR_A,
+        baseModelId: ShipId.QUAOAR_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -1150,7 +1150,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.RELIAT_B, ShipId.RELIAT_C],
+        subModelIds: [ShipId.RELIAT_B, ShipId.RELIAT_C],
     },
     {
         id: ShipId.RELIAT_B,
@@ -1161,7 +1161,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.RELIAT_A,
+        baseModelId: ShipId.RELIAT_A,
     },
     {
         id: ShipId.RELIAT_C,
@@ -1172,7 +1172,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.RELIAT_A,
+        baseModelId: ShipId.RELIAT_A,
     },
     {
         id: ShipId.RUBY_A,
@@ -1183,7 +1183,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.RUBY_B, ShipId.RUBY_C],
+        subModelIds: [ShipId.RUBY_B, ShipId.RUBY_C],
     },
     {
         id: ShipId.RUBY_B,
@@ -1194,7 +1194,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.RUBY_A,
+        baseModelId: ShipId.RUBY_A,
     },
     {
         id: ShipId.RUBY_C,
@@ -1205,7 +1205,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.RUBY_A,
+        baseModelId: ShipId.RUBY_A,
     },
     {
         id: ShipId.SANDRAKE,
@@ -1524,7 +1524,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.TAURUS_B, ShipId.TAURUS_C],
+        subModelIds: [ShipId.TAURUS_B, ShipId.TAURUS_C],
     },
     {
         id: ShipId.TAURUS_B,
@@ -1535,7 +1535,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.TAURUS_A,
+        baseModelId: ShipId.TAURUS_A,
     },
     {
         id: ShipId.TAURUS_C,
@@ -1546,7 +1546,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.TAURUS_A,
+        baseModelId: ShipId.TAURUS_A,
     },
     {
         id: ShipId.TUNDRA_A,
@@ -1557,7 +1557,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.TUNDRA_B],
+        subModelIds: [ShipId.TUNDRA_B],
     },
     {
         id: ShipId.TUNDRA_B,
@@ -1568,7 +1568,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.TUNDRA_A,
+        baseModelId: ShipId.TUNDRA_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
@@ -1613,7 +1613,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
+        subModelIds: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
     },
     {
         id: ShipId.WINGED_HUSSAR_B,
@@ -1624,7 +1624,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.WINGED_HUSSAR_A,
+        baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
         id: ShipId.WINGED_HUSSAR_C,
@@ -1635,7 +1635,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.WINGED_HUSSAR_A,
+        baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
         id: ShipId.XENO_STINGER_A,
@@ -1646,7 +1646,7 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        subModel: [ShipId.XENO_STINGER_B],
+        subModelIds: [ShipId.XENO_STINGER_B],
     },
     {
         id: ShipId.XENO_STINGER_B,
@@ -1657,6 +1657,6 @@ export const shipDefinitions: ShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        baseModel: ShipId.XENO_STINGER_A,
+        baseModelId: ShipId.XENO_STINGER_A,
     },
 ];

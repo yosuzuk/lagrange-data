@@ -13,8 +13,8 @@ export interface ShipDefinition {
     row: ShipRow;
     operationLimit: number;
     source: ShipSource;
-    subModel?: string[];
-    baseModel?: string;
+    subModelIds?: string[];
+    baseModelId?: string;
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;

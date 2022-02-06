@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { IPage, useNavigation, NavigationBar } from './components/navigation';
-import { BoxChancePage } from './components/pages/boxChance/BoxChancePage';
+import { BoxChancePage } from './components/pages/techFiles/TechFilesPage';
 import { ShipDataPage } from './components/pages/shipData/ShipDataPage';
 import { MyListPage } from './components/pages/myList/MyListPage';
 import { TableExample } from './components/examples/TableExample';

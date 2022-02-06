@@ -45,7 +45,7 @@ export const MyListView = (props: IProps) => {
                         id="possessed-ships"
                         expandIcon={<ExpandMoreIcon />}
                     >
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             {'所持している艦船/設計図'}
                         </Typography>
                     </AccordionSummary>
@@ -63,7 +63,7 @@ export const MyListView = (props: IProps) => {
                         id="wished-ships"
                         expandIcon={<ExpandMoreIcon />}
                     >
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             {'ガチャで欲しい艦船'}
                         </Typography>
                     </AccordionSummary>
@@ -81,7 +81,7 @@ export const MyListView = (props: IProps) => {
                         id="unwished-ships"
                         expandIcon={<ExpandMoreIcon />}
                     >
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             {'出て欲しくない艦船'}
                         </Typography>
                     </AccordionSummary>

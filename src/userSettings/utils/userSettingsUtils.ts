@@ -6,6 +6,10 @@ import { WishState } from '../types/WishState';
 
 const STORAGE_KEY = 'settings';
 
+export function getCurrentUserSettings(): UserSettings {
+    return restoreUserSettings() ?? createInitialUserSettings();
+}
+
 export function saveUserSettings(userSettings: UserSettings) {
     const serializedUserSettings = JSON.stringify(minifyUserSettings(userSettings));
     window.localStorage.setItem(STORAGE_KEY, serializedUserSettings);
@@ -110,4 +114,8 @@ export function applyPossessionStateToShipSettings(
                 : state[shipId]?.wish ?? WishState.UNDEFINED,
         }
     };
+}
+
+export function isPossessingShip(shipId: string, userSettings: UserSettings): boolean {
+    return userSettings.ships[shipId]?.possession === PossessionState.POSSESSED ?? false;
 }

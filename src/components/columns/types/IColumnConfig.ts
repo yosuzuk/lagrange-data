@@ -1,4 +1,5 @@
 export interface IColumnConfig {
+    name: boolean;
     type: boolean;
     row: boolean;
     cost: boolean;

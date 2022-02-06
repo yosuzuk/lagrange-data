@@ -1,13 +1,15 @@
 import { IColumnConfig, IColumnConfigOption } from './types/IColumnConfig';
 
-export function createInitialColumnConfig(): IColumnConfig {
+export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): IColumnConfig {
     return {
-        type: true,
-        row: true,
+        name: true,
+        type: false,
+        row: false,
         cost: false,
         operationLimit: false,
         source: false,
         weight: false,
+        ...flags,
     };
 }
 

@@ -111,8 +111,8 @@ export function extractUnwishedShips(
         }
 
         // we want a ship if there are sub models left, that are obtainable through tech files
-        if (!!shipDefinition.subModel && shipDefinition.subModel.length > 0) {
-            return !shipDefinition.subModel.some(subModelId => {
+        if (!!shipDefinition.subModelIds && shipDefinition.subModelIds.length > 0) {
+            return !shipDefinition.subModelIds.some(subModelId => {
                 if (!shipSetting[subModelId] && isShipObtainableThroughTechFile(subModelId)) {
                     return true; // assume that we want it
                 }
