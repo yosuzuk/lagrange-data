@@ -74,13 +74,13 @@ export const ShipTypeFilterButton = (props: IProps) => {
                 role={undefined}
                 transition={true}
                 disablePortal={true}
+                style={{ zIndex: 1 }}
             >
                 {({ TransitionProps, placement }) => (
                     <Grow
                         {...TransitionProps}
                         style={{
-                        transformOrigin:
-                            placement === 'bottom' ? 'center top' : 'center bottom',
+                            transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
                         }}
                     >
                         <Paper

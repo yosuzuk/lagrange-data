@@ -9,6 +9,7 @@ import { ShipSettingState, UserSettings } from '../../../userSettings/types/User
 import { getCurrentUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
+import { ResetConfirmationDialog } from './ResetConfirmationDialog';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ export const MyListEditPage = () => {
     const [userSettings, setUserSettings] = useState<UserSettings>(getCurrentUserSettings);
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
     const [shipSetting, setShipSetting] = useState<ShipSettingState>(userSettings.ships);
+    const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
     const handleClickCancel = () => {
         setShipSetting(userSettings.ships);
@@ -32,10 +34,17 @@ export const MyListEditPage = () => {
         navigate('/myList');
     };
 
+    const handleCancelReset = () => {
+        setConfirmingReset(false);
+    };
+
     const handleClickReset = () => {
-        if (window.confirm('設定を初期化しますか？')) {
-            setShipSetting(createInitialUserSettings().ships);
-        }
+        setConfirmingReset(true);
+    };
+
+    const handleConfirmReset = () => {
+        setConfirmingReset(false);
+        setShipSetting(createInitialUserSettings().ships);
     };
 
     return (
@@ -57,6 +66,12 @@ export const MyListEditPage = () => {
                     />
                 </Box>
             </Container>
+            {confirmingReset && (
+                <ResetConfirmationDialog
+                    onCancel={handleCancelReset}
+                    onConfirm={handleConfirmReset}
+                />
+            )}
         </>
     );
 };
