@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import {
-    BrowserRouter,
+    HashRouter as Router,
     Routes,
     Route,
     Navigate,
@@ -33,18 +33,12 @@ theme.typography.body2 = {
 
 function App() {
     return (
-        <BrowserRouter basename="lagrange-data">
+        <Router>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Routes>
                     <Route
-                        path="/"
-                        element={(
-                            <Navigate replace={true} to="/techFiles" />
-                        )}
-                    />
-                    <Route
-                        path="/techFiles"
+                        path="techFiles"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <BoxChancePage />
@@ -52,7 +46,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/shipData"
+                        path="shipData"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <ShipDataPage />
@@ -60,7 +54,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/myList"
+                        path="myList"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <MyListPage />
@@ -68,7 +62,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/myList/edit"
+                        path="myList/edit"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <MyListEditPage />
@@ -76,11 +70,17 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/debug"
+                        path="debug"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <TableExample />
                             </Suspense>
+                        )}
+                    />
+                    <Route
+                        path="/"
+                        element={(
+                            <Navigate replace={true} to="techFiles" />
                         )}
                     />
                     <Route
@@ -91,7 +91,7 @@ function App() {
                     />
                 </Routes>
             </ThemeProvider>
-        </BrowserRouter>
+        </Router>
     );
 }
 
