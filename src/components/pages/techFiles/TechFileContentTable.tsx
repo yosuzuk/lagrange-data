@@ -28,6 +28,7 @@ const baseChanceColumn: ITableColumn<IShipChance> = {
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
+            disableFocusListener={true}
             title={data.baseChanceTooltip.map((text, index) => (
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
@@ -50,6 +51,7 @@ const blueprintChanceColumn: ITableColumn<IShipChance> = {
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
+            disableFocusListener={true}
             title={data.blueprintChanceTooltip.map((text, index) => (
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
@@ -71,6 +73,7 @@ const moduleChanceColumn: ITableColumn<IShipChance> = {
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
+            disableFocusListener={true}
             title={data.moduleChanceTooltip.map((text, index) => (
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
