@@ -31,6 +31,13 @@ theme.typography.body2 = {
     },
 };
 
+theme.typography.caption = {
+    ...theme.typography.caption,
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '0.6rem',
+    },
+};
+
 function App() {
     return (
         <Router>
