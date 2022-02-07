@@ -21,7 +21,7 @@ export const Table = (props: IProps) => {
     const { table, size = 'medium' } = props;
     return (
         <TableContainer component={Paper}>
-            <MuiTable sx={{ minWidth: 650 }} size={size}>
+            <MuiTable size={size}>
                 <TableHead>
                     <TableRow>
                         {table.header.map((headerCell: ITableHeaderCell) => (
@@ -36,7 +36,7 @@ export const Table = (props: IProps) => {
                                         onClick={headerCell.toggleSort}
                                     >
                                         {typeof headerCell.content === 'string' ? (
-                                            <Typography variant="body1">{headerCell.content}</Typography>
+                                            <Typography variant="body2">{headerCell.content}</Typography>
                                         ) : (
                                             <>{headerCell.content}</>
                                         )}
@@ -44,7 +44,7 @@ export const Table = (props: IProps) => {
                                 ) : (
                                     <>
                                         {typeof headerCell.content === 'string' ? (
-                                            <Typography variant="body1">{headerCell.content}</Typography>
+                                            <Typography variant="body2">{headerCell.content}</Typography>
                                         ) : (
                                             <>{headerCell.content}</>
                                         )}
@@ -60,7 +60,7 @@ export const Table = (props: IProps) => {
                             {row.cells.map(cell => (
                                 <TableCell component="th" scope="row" key={cell.id}>
                                     {typeof cell.content === 'string' ? (
-                                        <Typography variant="body1">{cell.content}</Typography>
+                                        <Typography variant="body2">{cell.content}</Typography>
                                     ) : (
                                         <>{cell.content}</>
                                     )}

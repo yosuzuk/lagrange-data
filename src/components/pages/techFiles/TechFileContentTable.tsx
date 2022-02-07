@@ -32,7 +32,7 @@ const baseChanceColumn: ITableColumn<IShipChance> = {
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
         >
-            <Typography variant="body1" component="span">
+            <Typography variant="body2" component="span">
                 {formatChance(data.baseChance)}
             </Typography>
         </Tooltip>
@@ -54,7 +54,7 @@ const blueprintChanceColumn: ITableColumn<IShipChance> = {
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
         >
-            <Typography variant="body1" component="span">
+            <Typography variant="body2" component="span">
                 {formatChance(data.blueprintChance)}
             </Typography>
         </Tooltip>
@@ -75,7 +75,7 @@ const moduleChanceColumn: ITableColumn<IShipChance> = {
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
             ))}
         >
-            <Typography variant="body1" component="span">
+            <Typography variant="body2" component="span">
                 {formatChance(data.moduleChance)}
             </Typography>
         </Tooltip>

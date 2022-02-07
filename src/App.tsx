@@ -24,9 +24,16 @@ const theme = createTheme({
     },
 });
 
+theme.typography.body2 = {
+    ...theme.typography.body2,
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '0.6rem',
+    },
+};
+
 function App() {
     return (
-        <BrowserRouter basename="/lagrange-data">
+        <BrowserRouter basename="lagrange-data">
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Routes>
@@ -37,7 +44,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="techFiles"
+                        path="/techFiles"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <BoxChancePage />
@@ -45,7 +52,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="shipData"
+                        path="/shipData"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <ShipDataPage />
@@ -53,7 +60,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="myList"
+                        path="/myList"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <MyListPage />
@@ -61,7 +68,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="myList/edit"
+                        path="/myList/edit"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <MyListEditPage />
@@ -69,7 +76,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="debug"
+                        path="/debug"
                         element={(
                             <Suspense fallback={<LoadingIndicator />}>
                                 <TableExample />

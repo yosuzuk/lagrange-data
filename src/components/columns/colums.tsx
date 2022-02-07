@@ -1,3 +1,4 @@
+import Typography from '@mui/material/Typography';
 import { ShipDefinition } from '../../types/ShipDefinition';
 import { translateShipRow, shipRowToSortValue } from '../../utils/shipRowUtils';
 import { translateShipSource, shipSourceToSortValue } from '../../utils/shipSourceUtils';

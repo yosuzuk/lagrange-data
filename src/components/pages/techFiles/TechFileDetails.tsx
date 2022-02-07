@@ -28,27 +28,27 @@ export const shipTypes: ShipType[] = [
 const classes = {
     shipTypeCell: css`
         display: block;
-        min-width: 90px;
+        min-width: 3rem;
     `,
     shipTypeChanceCell: css`
         display: block;
-        min-width: 120px;
+        min-width: 5rem;
     `,
     blueprintChanceCell: css`
         display: block;
-        min-width: 130px;
+        min-width: 5rem;
     `,
     moduleChanceCell: css`
         display: block;
-        min-width: 190px;
+        min-width: 7.5rem;
     `,
     baseTechPointChanceCell: css`
         display: block;
-        min-width: 120px;
+        min-width: 5rem;
     `,
     finalTechPointChanceCell: css`
         display: block;
-        min-width: 150px;
+        min-width: 5rem;
     `,
 };
 
@@ -98,17 +98,17 @@ export const TechFileDetails = (props: IProps) => {
                             expandIcon={<ExpandMoreIcon />}
                         >
                             <Stack spacing={3} direction="row" flexWrap="wrap">
-                                <Typography variant="body1" noWrap={true} className={classes.shipTypeCell}>
+                                <Typography variant="body2" noWrap={true} className={classes.shipTypeCell}>
                                     {translateShipType(data.shipType as ShipType)}
                                 </Typography>
-                                <Typography variant="body1" noWrap={true} className={classes.shipTypeChanceCell}>
+                                <Typography variant="body2" noWrap={true} className={classes.shipTypeChanceCell}>
                                     {`艦種確率：${formatChance(data.originalChance)}`}
                                 </Typography>
-                                <Typography variant="body1" noWrap={true} className={classes.blueprintChanceCell}>
+                                <Typography variant="body2" noWrap={true} className={classes.blueprintChanceCell}>
                                     {`設計図：${formatChance(data.blueprintChance)}`}
                                 </Typography>
                                 {data.hasModules && (
-                                    <Typography variant="body1" noWrap={true} className={classes.moduleChanceCell}>
+                                    <Typography variant="body2" noWrap={true} className={classes.moduleChanceCell}>
                                         {`追加モジュール：${formatChance(data.moduleChance)}`}
                                     </Typography>
                                 )}
@@ -136,13 +136,13 @@ export const TechFileDetails = (props: IProps) => {
                             expandIcon={<ExpandMoreIcon />}
                         >
                             <Stack spacing={3} direction="row" flexWrap="wrap">
-                                <Typography variant="body1" className={classes.shipTypeCell}>
+                                <Typography variant="body2" className={classes.shipTypeCell}>
                                     {'技術Ｐｔ'}
                                 </Typography>
-                                <Typography variant="body1" className={classes.baseTechPointChanceCell}>
+                                <Typography variant="body2" className={classes.baseTechPointChanceCell}>
                                     {`初期確率：${formatChance(techFileChances.baseTechPointChance)}`}
                                 </Typography>
-                                <Typography variant="body1" className={classes.finalTechPointChanceCell}>
+                                <Typography variant="body2" className={classes.finalTechPointChanceCell}>
                                     {`最終確率：${formatChance(techFileChances.finalTechPointChance)}`}
                                 </Typography>
                             </Stack>
