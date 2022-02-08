@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import Box from '@mui/material/Box';
 import { PieChart, Pie, Cell, PieLabel, Tooltip, ResponsiveContainer } from 'recharts';
 import { ITechFileChances } from './types/IBlueprintChance';
 import { formatChance } from './utils/techFileUtils';
@@ -78,50 +79,41 @@ export const TechFileChart = (props: IProps) => {
     }, [techFileChances]);
 
     return (
-        <ResponsiveContainer>
-            <PieChart width={400} height={400}>
-                <Pie
-                    data={innerData}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={60}
-                >
-                    {innerData.map((entry, index) => (
-                        <Cell key={`inner-cell-${index}`} fill={entry.color as string} />
-                    ))}
-                </Pie>
-                <Pie
-                    data={outerData}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={70}
-                    outerRadius={90}
-                    label={renderLabelValue as PieLabel<Record<string, unknown>>}
-                    labelLine={false}
-                >
-                    {outerData.map((entry, index) => (
-                        <Cell key={`outer-cell-${index}`} fill={entry.color as string} />
-                    ))}
-                </Pie>
-                <Tooltip formatter={formatChance} />
-            </PieChart>
-        </ResponsiveContainer>
+        <Box height={240}>
+            <ResponsiveContainer>
+                <PieChart>
+                    <Pie
+                        data={innerData}
+                        dataKey="value"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={50}
+                    >
+                        {innerData.map((entry, index) => (
+                            <Cell key={`inner-cell-${index}`} fill={entry.color as string} />
+                        ))}
+                    </Pie>
+                    <Pie
+                        data={outerData}
+                        dataKey="value"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={80}
+                        label={renderLabelValue as PieLabel<Record<string, unknown>>}
+                        labelLine={false}
+                    >
+                        {outerData.map((entry, index) => (
+                            <Cell key={`outer-cell-${index}`} fill={entry.color as string} />
+                        ))}
+                    </Pie>
+                    <Tooltip formatter={formatChance} separator={'：'} />
+                </PieChart>
+            </ResponsiveContainer>
+        </Box>
     );
 };
 
 function renderLabelValue(entry: Record<string, unknown>) {
     return `${entry.name}`.length > 0 ? entry.name : null;
 }
-
-/*
-const CustomizedLabel = (props: any) => {
-    const { x, y, fill, name } = props;
-    return (
-        <text x={x} y={y} fontSize='0.6rem' fill={fill} textAnchor="middle">
-            {name}
-        </text>
-    );
-};
-*/

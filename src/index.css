@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.recharts-pie-label-text > tspan {
+  font-size: 0.6rem;
+}
+@media only screen and (min-width: 600px) {
+  .recharts-pie-label-text > tspan {
+    font-size: 1rem;
+  }
+}

@@ -32,18 +32,30 @@ const classes = {
     shipTypeCell: css`
         display: block;
         min-width: 3rem;
+        @media (min-width: 600px) {
+            min-width: 4.5rem;
+        }
     `,
     shipTypeChanceCell: css`
         display: block;
         min-width: 5rem;
+        @media (min-width: 600px) {
+            min-width: 6.5rem;
+        }
     `,
     blueprintChanceCell: css`
         display: block;
         min-width: 5rem;
+        @media (min-width: 600px) {
+            min-width: 7rem;
+        }
     `,
     moduleChanceCell: css`
         display: block;
         min-width: 7.5rem;
+        @media (min-width: 600px) {
+            min-width: 11rem;
+        }
     `,
     baseTechPointChanceCell: css`
         display: block;
@@ -91,9 +103,7 @@ export const TechFileDetails = (props: IProps) => {
     return (
         <Stack spacing={1}>
             <Paper>
-                <Box height="300px">
-                    <TechFileChart techFileChances={techFileChances} />
-                </Box>
+                <TechFileChart techFileChances={techFileChances} />
             </Paper>
             {techFileChances.shipTypeChances.filter(data => showZeroChance || hasPositiveChance(data)).map(data => (
                 <div key={data.shipType}>
@@ -105,7 +115,7 @@ export const TechFileDetails = (props: IProps) => {
                             id={`${data.shipType}-accordion-summary`}
                             expandIcon={<ExpandMoreIcon />}
                         >
-                            <Stack spacing={3} direction="row" flexWrap="wrap">
+                            <Stack spacing={3} direction="row" flexWrap="wrap" rowGap={1}>
                                 <Typography variant="body2" noWrap={true} className={classes.shipTypeCell}>
                                     {translateShipType(data.shipType as ShipType)}
                                 </Typography>
@@ -143,7 +153,7 @@ export const TechFileDetails = (props: IProps) => {
                             id={`tech-point-accordion-summary`}
                             expandIcon={<ExpandMoreIcon />}
                         >
-                            <Stack spacing={3} direction="row" flexWrap="wrap">
+                            <Stack spacing={3} direction="row" flexWrap="wrap" rowGap={1}>
                                 <Typography variant="body2" className={classes.shipTypeCell}>
                                     {'技術Ｐｔ'}
                                 </Typography>
