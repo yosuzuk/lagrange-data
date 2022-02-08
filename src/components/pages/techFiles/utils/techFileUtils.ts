@@ -2,7 +2,7 @@ import { ITechFile } from '../../../../types/ITechFile';
 import { ShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipType } from '../../../../types/ShipType';
 import { UserSettings } from '../../../../userSettings/types/UserSettings';
-import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
+import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
@@ -13,7 +13,23 @@ export function getTechFileChances(techFile: ITechFile, userSettings: UserSettin
     const blueprintChance = shipTypeChances
         .flatMap(shipTypeChance => shipTypeChance.shipChances)
         .map(blueprintChance => blueprintChance.blueprintChance)
-        .reduce((sum, userChance) => sum + userChance, 0);
+        .reduce((sum, chance) => sum + chance, 0);
+
+    const wishedBlueprintChance = shipTypeChances
+        .flatMap(shipTypeChance => shipTypeChance.shipChances)
+        .filter(shipChance => isWantedShip(shipChance.id, userSettings))
+        .map(shipChance => shipChance.blueprintChance)
+        .reduce((sum, chance) => sum + chance, 0);
+
+    const unwishedBlueprintChance = shipTypeChances
+        .flatMap(shipTypeChance => shipTypeChance.shipChances)
+        .filter(shipChance => isUnwantedShip(shipChance.id, userSettings))
+        .map(shipChance => shipChance.blueprintChance)
+        .reduce((sum, chance) => sum + chance, 0);
+
+    const moduleChance = shipTypeChances
+        .map(shipTypeChance => shipTypeChance.moduleChance)
+        .reduce((sum, chance) => sum + chance, 0);
 
     const subSystemChance = 0; // TODO implement
 
@@ -22,6 +38,9 @@ export function getTechFileChances(techFile: ITechFile, userSettings: UserSettin
     return {
         shipTypeChances,
         blueprintChance,
+        moduleChance,
+        wishedBlueprintChance,
+        unwishedBlueprintChance,
         baseTechPointChance: techFile.chanceForTechPoint,
         finalTechPointChance: userTechPointChance,
     };

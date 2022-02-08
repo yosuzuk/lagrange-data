@@ -119,3 +119,11 @@ export function applyPossessionStateToShipSettings(
 export function isPossessingShip(shipId: string, userSettings: UserSettings): boolean {
     return userSettings.ships[shipId]?.possession === PossessionState.POSSESSED ?? false;
 }
+
+export function isWantedShip(shipId: string, userSettings: UserSettings): boolean {
+    return userSettings.ships[shipId]?.wish === WishState.WANTED ?? false;
+}
+
+export function isUnwantedShip(shipId: string, userSettings: UserSettings): boolean {
+    return userSettings.ships[shipId]?.wish === WishState.NOT_WANTED ?? false;
+}

@@ -3,6 +3,9 @@ import { ShipType } from '../../../../types/ShipType';
 export interface ITechFileChances {
     shipTypeChances: IShipTypeChance[];
     blueprintChance: number;
+    wishedBlueprintChance: number;
+    unwishedBlueprintChance: number;
+    moduleChance: number;
     baseTechPointChance: number;
     finalTechPointChance: number;
 }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/css';
 import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -14,6 +16,7 @@ import { ITechFileChances, IShipChance } from './types/IBlueprintChance';
 import { TechFileContentTable } from './TechFileContentTable';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { UserSettings } from '../../../userSettings/types/UserSettings';
+import { TechFileChart } from './TechFileChart';
 
 export const shipTypes: ShipType[] = [
     ShipType.FRIGATE,
@@ -87,6 +90,11 @@ export const TechFileDetails = (props: IProps) => {
 
     return (
         <Stack spacing={1}>
+            <Paper>
+                <Box height="300px">
+                    <TechFileChart techFileChances={techFileChances} />
+                </Box>
+            </Paper>
             {techFileChances.shipTypeChances.filter(data => showZeroChance || hasPositiveChance(data)).map(data => (
                 <div key={data.shipType}>
                     <Accordion
