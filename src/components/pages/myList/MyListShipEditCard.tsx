@@ -7,10 +7,11 @@ import { PossessionControl } from './PossessionControl';
 import { WishControl } from './WishControl';
 import { WishState } from '../../../userSettings/types/WishState';
 import { PossessionState } from '../../../userSettings/types/PossessionState';
+import { ShipDefinition } from '../../../types/ShipDefinition';
+import { ShipSource } from '../../../types/ShipSource';
 
 interface IProps {
-    shipId: string;
-    shipName: string;
+    ship: ShipDefinition;
     possession: PossessionState;
     wish: WishState;
     onPossessionChange: (shipId: string, possession: PossessionState) => void;
@@ -18,22 +19,22 @@ interface IProps {
 }
 
 export const MyListShipEditCard = (props: IProps) => {
-    const { shipId, shipName, possession, wish, onPossessionChange, onWishChange, ...rest } = props;
+    const { ship, possession, wish, onPossessionChange, onWishChange, ...rest } = props;
     return (
         <Paper elevation={2} {...rest}>
             <Box p={1}>
                 <Stack spacing={3}>
                     <Typography variant="h6">
-                        {shipName}
+                        {ship.name}
                     </Typography>
                     <PossessionControl
-                        shipId={shipId}
+                        shipId={ship.id}
                         possession={possession}
                         onChange={onPossessionChange}
                     />
-                    {possession === PossessionState.NOT_POSSESSED && (
+                    {possession === PossessionState.NOT_POSSESSED && ship.source === ShipSource.TECH_FILE && (
                         <WishControl
-                            shipId={shipId}
+                            shipId={ship.id}
                             wish={wish}
                             onChange={onWishChange}
                         />

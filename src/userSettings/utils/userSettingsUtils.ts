@@ -22,7 +22,8 @@ export function restoreUserSettings(): UserSettings | null {
     }
 
     const userSettings = parseUserSettings(serializedUserSettings);
-    return !!userSettings ? unminifyUserSettings(userSettings) : null;
+
+    return !!userSettings ? migrateUserSettings(unminifyUserSettings(userSettings)) : null;
 }
 
 function minifyUserSettings(userSettings: UserSettings): MinifiedUserSettings {
@@ -33,6 +34,15 @@ function minifyUserSettings(userSettings: UserSettings): MinifiedUserSettings {
             return [shipId, possession, wish];
         }),
     };
+}
+
+function migrateUserSettings(userSettings: UserSettings): UserSettings {
+    const ac721TypeC = userSettings.ships['AC721_C'];
+    if (ac721TypeC) {
+        userSettings.ships[ShipId.AC721_TE_A] = ac721TypeC;
+        delete userSettings.ships['AC721_C'];
+    }
+    return userSettings;
 }
 
 function unminifyUserSettings(userSettings: MinifiedUserSettings): UserSettings {
@@ -75,7 +85,7 @@ export function createInitialUserSettings(): UserSettings {
                 possession: PossessionState.POSSESSED,
                 wish: WishState.UNDEFINED,
             },
-            [ShipId.AC721_C]: {
+            [ShipId.AC721_D]: {
                 possession: PossessionState.POSSESSED,
                 wish: WishState.UNDEFINED,
             },

@@ -17,6 +17,10 @@ export const shipSources: Record<ShipSource, IShipSourceData> = {
         name: '都市で購入',
         sortValue: 4,
     },
+    [ShipSource.UNKNOWN]: {
+        name: '不明',
+        sortValue: 5,
+    },
 };
 
 export const translateShipSource = (source: ShipSource): string => {

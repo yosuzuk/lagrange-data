@@ -40,8 +40,7 @@ export const MyListEdit = (props: IProps) => {
                     {filteredShipDefinitions.map(shipDefinition => (
                         <MemoizedMyListShipEditCard
                             key={shipDefinition.id}
-                            shipId={shipDefinition.id}
-                            shipName={shipDefinition.name}
+                            ship={shipDefinition}
                             possession={shipSetting[shipDefinition.id]?.possession ?? PossessionState.UNDEFINED}
                             wish={shipSetting[shipDefinition.id]?.wish ?? WishState.UNDEFINED}
                             onPossessionChange={handlePossessionChange}

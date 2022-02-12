@@ -24,7 +24,7 @@ export const PossessionControl = (props: Props) => {
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body1">{'設計図を'}</Typography>
+            <Typography variant="body1">{getLabelText(sourceType)}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"
@@ -33,12 +33,37 @@ export const PossessionControl = (props: Props) => {
                 onChange={handleChange}
             >
                 <ToggleButton value={`${PossessionState.POSSESSED}`}>
-                    {sourceType === ShipSource.CITY_TRADE ? '買っている' : '持っている'}
+                    {getToggleText(sourceType, true)}
                 </ToggleButton>
                 <ToggleButton value={`${PossessionState.NOT_POSSESSED}`}>
-                    {sourceType === ShipSource.CITY_TRADE ? '買っていない' : '持っていない'}
+                    {getToggleText(sourceType, false)}
                 </ToggleButton>
             </ToggleButtonGroup>
         </Stack>
     );
 };
+
+function getLabelText(sourceType: ShipSource) {
+    switch (sourceType) {
+        case ShipSource.CITY_TRADE: {
+            return '都市で';
+        }
+        case ShipSource.DOCK_EFFECT: {
+            return '臨時設計図を';
+        }
+        default: {
+            return '設計図を';
+        }
+    }
+}
+
+function getToggleText(sourceType: ShipSource, positive: boolean) {
+    switch (sourceType) {
+        case ShipSource.CITY_TRADE: {
+            return positive ? '買っている' : '買っていない';
+        }
+        default: {
+            return positive ? '持っている' : '持っていない';
+        }
+    }
+}

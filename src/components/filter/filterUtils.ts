@@ -8,7 +8,8 @@ import { ShipDefinition } from '../../types/ShipDefinition';
 import { ShipSettingState } from '../../userSettings/types/UserSettings';
 import { PossessionState } from '../../userSettings/types/PossessionState';
 import { WishState } from '../../userSettings/types/WishState';
-import { isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
+import { ShipSource } from '../../types/ShipSource';
 
 export function createShipRowFilterOptions(): IFilterOption[] {
     return [
@@ -101,25 +102,33 @@ export function extractUnwishedShips(
     shipSetting: ShipSettingState,
     shipFilter: ShipFilterState,
 ): ShipDefinition[] {
-    const unwishedByUser = shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.NOT_WANTED);
+    const shipsFromTechFile = shipDefinitions.filter(shipDefinition => shipDefinition.source === ShipSource.TECH_FILE || shipDefinition.source === ShipSource.STARTER_SHIP);
 
-    const possessedShips = shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
+    const unwishedByUser = shipsFromTechFile.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.NOT_WANTED);
+
+    const possessedShips = shipsFromTechFile.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
     const unbenefitialShips = possessedShips.filter(shipDefinition => {
-        // ships with additional system modules are always wanted
+        // we exclude ships if additional system modules are obtainable
         if (!!shipDefinition.modules && shipDefinition.modules.length > 0) {
             return false;
         }
 
-        // we want a ship if there are sub models left, that are obtainable through tech files
-        if (!!shipDefinition.subModelIds && shipDefinition.subModelIds.length > 0) {
-            return !shipDefinition.subModelIds.some(subModelId => {
-                if (!shipSetting[subModelId] && isShipObtainableThroughTechFile(subModelId)) {
-                    return true; // assume that we want it
-                }
+        // we exclude ships if non-unwished sub models are obtainable
+        if (!!shipDefinition.subModelIds || !!shipDefinition.baseModelId) {
+            const allRelatedSubModelIds = shipDefinition.subModelIds ?? getShipDefinitionById(shipDefinition.baseModelId!)?.subModelIds ?? [];
+            if (!isPosessionDefinedForAll(allRelatedSubModelIds, shipSetting)) {
+                return false; // we don't know if sub models are obtainable
+            }
 
-                return shipSetting[subModelId].possession !== PossessionState.POSSESSED &&
-                        shipSetting[subModelId].wish !== WishState.NOT_WANTED;
+            const allObtainableSubModelIds = allRelatedSubModelIds.filter(subModelId => {
+                return isShipObtainableThroughTechFile(subModelId) && !!shipSetting[subModelId] && shipSetting[subModelId].possession !== PossessionState.POSSESSED;
             });
+
+            const allObtainableNonUnwishedSubModelIds = allObtainableSubModelIds.filter(subModelId => {
+                return shipSetting[subModelId].wish !== WishState.NOT_WANTED;
+            });
+
+            return allObtainableNonUnwishedSubModelIds.length > 0 ? false : true;
         }
 
         return true;
@@ -129,4 +138,8 @@ export function extractUnwishedShips(
         ...unwishedByUser,
         ...unbenefitialShips,
     ], shipFilter);
+}
+
+function isPosessionDefinedForAll(shipIds: string[], shipSetting: ShipSettingState): boolean {
+    return　shipIds.length > 0 && shipIds.every(shipId => !!(shipSetting[shipId]?.possession));
 }

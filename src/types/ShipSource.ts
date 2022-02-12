@@ -3,6 +3,7 @@ export enum ShipSource {
     TECH_FILE,
     CITY_TRADE,
     DOCK_EFFECT,
+    UNKNOWN,
 }
 
 export interface IShipSourceData {
