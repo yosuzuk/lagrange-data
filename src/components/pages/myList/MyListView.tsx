@@ -7,27 +7,27 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MemoizedMyListTable } from './MyListTable';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipListState } from './types/IShipListState';
 
 interface IAccordionState {
     possessed: boolean;
     wished: boolean;
-    unwished: boolean;
+    unwishedByUser: boolean;
+    unwishedByData: boolean;
 }
 
 interface IProps {
-    possessedShips: ShipDefinition[];
-    wishedShips: ShipDefinition[];
-    unwishedShips: ShipDefinition[];
+    shipListState: IShipListState;
 }
 
 export const MyListView = (props: IProps) => {
-    const { possessedShips, wishedShips, unwishedShips } = props;
+    const { shipListState } = props;
 
     const [expandedAccordion, setExpandedAccordion] = useState<IAccordionState>({
         possessed: true,
         wished: false,
-        unwished: false,
+        unwishedByUser: false,
+        unwishedByData: false,
     });
 
     const handleAccordionChange = (key: keyof IAccordionState) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -50,7 +50,7 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={possessedShips} />
+                        <MemoizedMyListTable shipDefinitions={shipListState.possessed} />
                     </AccordionDetails>
                 </Accordion>
             </div>
@@ -68,17 +68,17 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={wishedShips} />
+                        <MemoizedMyListTable shipDefinitions={shipListState.wished} />
                     </AccordionDetails>
                 </Accordion>
             </div>
             <div>
                 <Accordion
-                    expanded={expandedAccordion.unwished}
-                    onChange={handleAccordionChange('unwished')}
+                    expanded={expandedAccordion.unwishedByUser}
+                    onChange={handleAccordionChange('unwishedByUser')}
                 >
                     <AccordionSummary
-                        id="unwished-ships"
+                        id="unwished-by-user-ships"
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="body1">
@@ -86,10 +86,28 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={unwishedShips} />
+                        <MemoizedMyListTable shipDefinitions={shipListState.unwishedByUser} />
+                    </AccordionDetails>
+                </Accordion>
+            </div>
+            <div>
+                <Accordion
+                    expanded={expandedAccordion.unwishedByData}
+                    onChange={handleAccordionChange('unwishedByData')}
+                >
+                    <AccordionSummary
+                        id="unwished-by-data-ships"
+                        expandIcon={<ExpandMoreIcon />}
+                    >
+                        <Typography variant="body1">
+                            {'被って欲しくない艦船'}
+                        </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <MemoizedMyListTable shipDefinitions={shipListState.unwishedByData} />
                         <Box pt={1}>
                             <Typography variant="caption" align="right" paragraph={true}>
-                                {'※個別に「出て欲しくない」と設定した艦船以外にサブモデルや追加モジュールが残っていない艦船も表示されています'}
+                                {'※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます'}
                             </Typography>
                         </Box>
                     </AccordionDetails>

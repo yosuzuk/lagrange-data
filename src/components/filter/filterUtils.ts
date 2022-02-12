@@ -84,32 +84,43 @@ function isShipTypeFiltered(filter: ShipFilterState): boolean {
 export function extractPossesssedShips(
     shipDefinitions: ShipDefinition[],
     shipSetting: ShipSettingState,
-    shipFilter: ShipFilterState,
 ): ShipDefinition[] {
-    return applyShipFilter(shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED), shipFilter);
+    return shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
 }
 
 export function extractWishedShips(
     shipDefinitions: ShipDefinition[],
     shipSetting: ShipSettingState,
-    shipFilter: ShipFilterState,
 ): ShipDefinition[] {
-    return applyShipFilter(shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.WANTED), shipFilter);
+    return shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.WANTED);
 }
 
-export function extractUnwishedShips(
+export function extractUnwishedShipsByUser(
     shipDefinitions: ShipDefinition[],
     shipSetting: ShipSettingState,
-    shipFilter: ShipFilterState,
+): ShipDefinition[] {
+    return shipDefinitions.filter(shipDefinition => {
+        return isShipObtainableThroughTechFile(shipDefinition.id)
+            && shipSetting[shipDefinition.id]?.wish === WishState.NOT_WANTED;
+    });
+}
+
+export function extractUnwishedShipsByData(
+    shipDefinitions: ShipDefinition[],
+    shipSetting: ShipSettingState,
 ): ShipDefinition[] {
     const shipsFromTechFile = shipDefinitions.filter(shipDefinition => shipDefinition.source === ShipSource.TECH_FILE || shipDefinition.source === ShipSource.STARTER_SHIP);
-
-    const unwishedByUser = shipsFromTechFile.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.NOT_WANTED);
-
     const possessedShips = shipsFromTechFile.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
-    const unbenefitialShips = possessedShips.filter(shipDefinition => {
+
+    // unbeneficial ships
+    return possessedShips.filter(shipDefinition => {
         // we exclude ships if additional system modules are obtainable
         if (!!shipDefinition.modules && shipDefinition.modules.length > 0) {
+            return false;
+        }
+
+        // we exclude sub models
+        if (!!shipDefinition.baseModelId) {
             return false;
         }
 
@@ -133,11 +144,6 @@ export function extractUnwishedShips(
 
         return true;
     });
-
-    return applyShipFilter([
-        ...unwishedByUser,
-        ...unbenefitialShips,
-    ], shipFilter);
 }
 
 function isPosessionDefinedForAll(shipIds: string[], shipSetting: ShipSettingState): boolean {

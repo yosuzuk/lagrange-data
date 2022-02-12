@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { MyListActionBar } from './MyListActionBar';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
-import { createInitialShipFilterState, extractPossesssedShips, extractUnwishedShips, extractWishedShips } from '../../filter/filterUtils';
+import { applyShipFilter, createInitialShipFilterState, extractPossesssedShips, extractUnwishedShipsByUser, extractUnwishedShipsByData, extractWishedShips } from '../../filter/filterUtils';
 import { UserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { MyListView } from './MyListView';
@@ -20,18 +20,22 @@ export const MyListPage = () => {
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
     const [shipsForShare, setShipsForShare] = useState<IShipListState | null>(null);
 
-    const shipList = useMemo<IShipListState>(() => ({
-        possessed: extractPossesssedShips(shipDefinitions, userSettings.ships, shipFilter),
-        wished: extractWishedShips(shipDefinitions, userSettings.ships, shipFilter),
-        unwished: extractUnwishedShips(shipDefinitions, userSettings.ships, shipFilter),
-    }), [userSettings, shipFilter]);
+    const shipListState = useMemo<IShipListState>(() => {
+        const filteredShipDefinitions = applyShipFilter(shipDefinitions, shipFilter);
+        return {
+            possessed: extractPossesssedShips(filteredShipDefinitions, userSettings.ships),
+            wished: extractWishedShips(filteredShipDefinitions, userSettings.ships),
+            unwishedByUser: extractUnwishedShipsByUser(filteredShipDefinitions, userSettings.ships),
+            unwishedByData: extractUnwishedShipsByData(filteredShipDefinitions, userSettings.ships),
+        };
+    }, [userSettings, shipFilter]);
 
     const handleClickEdit = () => {
         navigate('/myList/edit');
     };
 
     const handleClickShare = () => {
-        setShipsForShare(shipList);
+        setShipsForShare(shipListState);
     };
 
     const handleCloseShare = () => {
@@ -50,9 +54,7 @@ export const MyListPage = () => {
             <Container>
                 <Box p={1}>
                     <MyListView
-                        possessedShips={shipList.possessed}
-                        wishedShips={shipList.wished}
-                        unwishedShips={shipList.unwished}
+                        shipListState={shipListState}
                     />
                 </Box>
             </Container>
