@@ -64,7 +64,7 @@ export const MyListView = (props: IProps) => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="body1">
-                            {'ガチャで欲しい艦船'}
+                            {'欲しい設計図'}
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -82,7 +82,7 @@ export const MyListView = (props: IProps) => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="body1">
-                            {'出て欲しくない艦船'}
+                            {'欲しくない設計図'}
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>

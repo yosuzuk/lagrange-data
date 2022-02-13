@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { MyListEditActionBar } from './MyListEditActionBar';
 import { MyListEdit } from './MyListEdit';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
@@ -59,6 +61,17 @@ export const MyListEditPage = () => {
             />
             <Container>
                 <Box p={1}>
+                    <Stack pt={1} pb={2} spacing={2}>
+                        <Typography variant="body2">
+                            {'ここでは艦船/設計図の所有状態を設定できます。'}
+                        </Typography>
+                        <Typography variant="body2">
+                            {'全て細かく設定する必要はありません。'}
+                        </Typography>
+                        <Typography variant="body2">
+                            {'設定データはブラウザのローカルストレージに保存されます。'}
+                        </Typography>
+                    </Stack>
                     <MyListEdit
                         shipSetting={shipSetting}
                         shipFilter={shipFilter}

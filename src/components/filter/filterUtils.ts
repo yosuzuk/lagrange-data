@@ -73,6 +73,22 @@ export function applyShipFilter(shipDefinitions: ShipDefinition[], filter: ShipF
     return result;
 }
 
+export function separateShipsBySource(shipDefinitions: ShipDefinition[]): Record<ShipSource, ShipDefinition[]> {
+    const result: Record<ShipSource, ShipDefinition[]> = {
+        [ShipSource.STARTER_SHIP]: [],
+        [ShipSource.TECH_FILE]: [],
+        [ShipSource.CITY_TRADE]: [],
+        [ShipSource.DOCK_EFFECT]: [],
+        [ShipSource.UNKNOWN]: [],
+    };
+
+    shipDefinitions.forEach(shipDefinition => {
+        result[shipDefinition.source].push(shipDefinition);
+    });
+
+    return result;
+}
+
 function isRowFiltered(filter: ShipFilterState): boolean {
     return [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK].some(row => filter[row] === true);
 }

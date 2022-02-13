@@ -1,15 +1,15 @@
 import { useCallback, Dispatch, SetStateAction, useMemo } from 'react';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { ShipSettingState } from '../../../userSettings/types/UserSettings';
 import { WishState } from '../../../userSettings/types/WishState';
-import { MemoizedMyListShipEditCard } from './MyListShipEditCard';
 import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
-import { applyShipFilter } from '../../filter/filterUtils';
+import { applyShipFilter, separateShipsBySource } from '../../filter/filterUtils';
 import { applyPossessionStateToShipSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { ShipSource } from '../../../types/ShipSource';
+import { ShipDefinition } from '../../../types/ShipDefinition';
+import { MyListEditAccordion } from './MyListEditAccordion';
 
 interface IProps {
     shipSetting: ShipSettingState;
@@ -20,7 +20,10 @@ interface IProps {
 export const MyListEdit = (props: IProps) => {
     const { shipSetting, shipFilter, onShipSettingChange } = props;
 
-    const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
+    const shipsBySource = useMemo<Record<ShipSource, ShipDefinition[]>>(() => {
+        const filteredShips = applyShipFilter(shipDefinitions, shipFilter);
+        return separateShipsBySource(filteredShips);
+    }, [shipFilter]);
 
     const handlePossessionChange = useCallback((shipId: string, possession: PossessionState) => {
         onShipSettingChange(state => applyPossessionStateToShipSettings(state, shipId, possession))
@@ -34,21 +37,52 @@ export const MyListEdit = (props: IProps) => {
     }, [onShipSettingChange]);
 
     return (
-        <Paper>
-            <Box p={1}>
-                <Stack spacing={3}>
-                    {filteredShipDefinitions.map(shipDefinition => (
-                        <MemoizedMyListShipEditCard
-                            key={shipDefinition.id}
-                            ship={shipDefinition}
-                            possession={shipSetting[shipDefinition.id]?.possession ?? PossessionState.UNDEFINED}
-                            wish={shipSetting[shipDefinition.id]?.wish ?? WishState.UNDEFINED}
-                            onPossessionChange={handlePossessionChange}
-                            onWishChange={handleWishChange}
-                        />
-                    ))}
-                </Stack>
-            </Box>
-        </Paper>            
+        <Stack spacing={1}>
+            <div>
+                <MyListEditAccordion
+                    id="tech-file-ships"
+                    title={'技術ファイルから手に入る艦船/設計図'}
+                    initiallyOpened={false}
+                    preRenderDetails={true}
+                    shipDefinitions={shipsBySource[ShipSource.TECH_FILE]}
+                    shipSetting={shipSetting}
+                    handlePossessionChange={handlePossessionChange}
+                    handleWishChange={handleWishChange}
+                />
+            </div>
+            <div>
+                <MyListEditAccordion
+                    id="city-trade-ships"
+                    title={'都市で買える艦船'}
+                    initiallyOpened={false}
+                    shipDefinitions={shipsBySource[ShipSource.CITY_TRADE]}
+                    shipSetting={shipSetting}
+                    handlePossessionChange={handlePossessionChange}
+                    handleWishChange={handleWishChange}
+                />
+            </div>
+            <div>
+                <MyListEditAccordion
+                    id="dock-effect-ships"
+                    title={'結合効果で手に入る艦船/臨時設計図'}
+                    initiallyOpened={false}
+                    shipDefinitions={shipsBySource[ShipSource.DOCK_EFFECT]}
+                    shipSetting={shipSetting}
+                    handlePossessionChange={handlePossessionChange}
+                    handleWishChange={handleWishChange}
+                />
+            </div>
+            <div>
+                <MyListEditAccordion
+                    id="starter-ships"
+                    title={'初期配布で手に入る艦船/設計図'}
+                    initiallyOpened={false}
+                    shipDefinitions={shipsBySource[ShipSource.STARTER_SHIP]}
+                    shipSetting={shipSetting}
+                    handlePossessionChange={handlePossessionChange}
+                    handleWishChange={handleWishChange}
+                />
+            </div>
+        </Stack>
     );
 };
