@@ -105,6 +105,10 @@ export function createInitialUserSettings(): UserSettings {
                 possession: PossessionState.POSSESSED,
                 wish: WishState.UNDEFINED,
             },
+            [ShipId.ST59]: {
+                possession: PossessionState.POSSESSED,
+                wish: WishState.UNDEFINED,
+            },
         },
     };
 }
