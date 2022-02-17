@@ -15,7 +15,7 @@ import { formatChance, getTechFileChances, hasPositiveChance } from './utils/tec
 import { ITechFileChances, IShipChance } from './types/IBlueprintChance';
 import { TechFileContentTable } from './TechFileContentTable';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
-import { UserSettings } from '../../../userSettings/types/UserSettings';
+import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { TechFileChart } from './TechFileChart';
 
 export const shipTypes: ShipType[] = [
@@ -31,9 +31,9 @@ export const shipTypes: ShipType[] = [
 const classes = {
     shipTypeCell: css`
         display: block;
-        min-width: 3rem;
+        min-width: 4rem;
         @media (min-width: 600px) {
-            min-width: 4.5rem;
+            min-width: 6rem;
         }
     `,
     shipTypeChanceCell: css`
@@ -78,7 +78,7 @@ export const TechFileDetails = (props: IProps) => {
     const [techPointExpanded, setTechPointExpanded] = useState<boolean>(false);
     const [techFileChances, setTechFileChances] = useState<ITechFileChances | null>(null);
     const [showZeroChance, setShowZeroChance] = useState<boolean>(false);
-    const [userSettings, setUserSettings] = useState<UserSettings>(getCurrentUserSettings);
+    const [userSettings, setUserSettings] = useState<IUserSettings>(getCurrentUserSettings);
 
     useEffect(() => {
         setExpandedAccordion(createInitialAccordionState());
@@ -143,7 +143,32 @@ export const TechFileDetails = (props: IProps) => {
                     </Accordion>
                 </div>
             ))}
-            {(showZeroChance || techFile.chanceForTechPoint > 0) && (
+            {(showZeroChance || (techFileChances.finalTechPointChance - techFileChances.baseTechPointChance) > 0) && (
+                <div>
+                    <Accordion
+                        expanded={techPointExpanded}
+                        onChange={handleExpandTechPoint}
+                    >
+                        <AccordionSummary
+                            id={`tech-point-accordion-summary`}
+                            expandIcon={<ExpandMoreIcon />}
+                        >
+                            <Stack spacing={3} direction="row" flexWrap="wrap" rowGap={1}>
+                                <Typography variant="body2" className={classes.shipTypeCell}>
+                                    {'技術/研究Ｐｔ'}
+                                </Typography>
+                                <Typography variant="body2" className={classes.baseTechPointChanceCell}>
+                                    {`確率：${formatChance(techFileChances.finalTechPointChance - techFileChances.baseTechPointChance)}`}
+                                </Typography>
+                            </Stack>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {'-'}
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
+            )}
+            {(showZeroChance || techFileChances.baseTechPointChance > 0) && (
                 <div>
                     <Accordion
                         expanded={techPointExpanded}
@@ -158,10 +183,7 @@ export const TechFileDetails = (props: IProps) => {
                                     {'技術Ｐｔ'}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`初期確率：${formatChance(techFileChances.baseTechPointChance)}`}
-                                </Typography>
-                                <Typography variant="body2" className={classes.finalTechPointChanceCell}>
-                                    {`最終確率：${formatChance(techFileChances.finalTechPointChance)}`}
+                                    {`確率：${formatChance(techFileChances.baseTechPointChance)}`}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>

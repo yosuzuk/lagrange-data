@@ -197,13 +197,13 @@ export const techFiles: ITechFile[] = [
         name: '企業選別技術ファイル',
         desciption: '星間キャラバン来訪時にドーンポイント４５０で買える限定箱',
         chanceByShipType: {
-            [ShipType.FRIGATE]: 0.3,
-            [ShipType.DESTROYER]: 0.25,
-            [ShipType.CRUISER]: 0.12,
-            [ShipType.BATTLE_CRUISER]: 0.05,
-            [ShipType.CARRIER]: 0.03,
-            [ShipType.FIGHTER]: 0.1,
-            [ShipType.CORVETTE]: 0.15,
+            [ShipType.FRIGATE]: 0.03,
+            [ShipType.DESTROYER]: 0.025,
+            [ShipType.CRUISER]: 0.012,
+            [ShipType.BATTLE_CRUISER]: 0.005,
+            [ShipType.CARRIER]: 0.003,
+            [ShipType.FIGHTER]: 0.01,
+            [ShipType.CORVETTE]: 0.015,
         },
         chanceForTechPoint: 0.9,
         ships: [
@@ -253,7 +253,7 @@ export const techFiles: ITechFile[] = [
             [ShipType.FIGHTER]: 0.1,
             [ShipType.CORVETTE]: 0.15,
         },
-        chanceForTechPoint: 0.9, // TODO
+        chanceForTechPoint: 0,
         ships: [
             ShipId.NOMA_M470_A,
             ShipId.XENO_STINGER_A,
