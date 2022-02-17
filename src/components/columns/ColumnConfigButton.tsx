@@ -62,6 +62,7 @@ export const ColumnConfigButton = (props: IProps) => {
                 role={undefined}
                 transition={true}
                 disablePortal={true}
+                style={{ zIndex: 1 }}
             >
                 {({ TransitionProps, placement }) => (
                     <Grow
