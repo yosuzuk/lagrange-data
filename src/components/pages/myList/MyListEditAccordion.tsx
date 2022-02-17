@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SettingsIcon from '@mui/icons-material/Settings';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSettingState } from '../../../userSettings/types/UserSettings';
 import { MemoizedMyListShipEditCard } from './MyListShipEditCard';
 import { PossessionState } from '../../../userSettings/types/PossessionState';
@@ -15,7 +15,7 @@ import { WishState } from '../../../userSettings/types/WishState';
 interface IProps {
     id: string;
     title: string;
-    shipDefinitions: ShipDefinition[];
+    shipDefinitions: IShipDefinition[];
     shipSetting: ShipSettingState;
     initiallyOpened: boolean;
     handlePossessionChange: (shipId: string, possession: PossessionState) => void;

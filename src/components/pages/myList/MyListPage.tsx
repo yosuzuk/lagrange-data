@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { MyListActionBar } from './MyListActionBar';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { applyShipFilter, createInitialShipFilterState, extractPossesssedShips, extractUnwishedShipsByUser, extractUnwishedShipsByData, extractWishedShips } from '../../filter/filterUtils';
-import { UserSettings } from '../../../userSettings/types/UserSettings';
+import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { MyListView } from './MyListView';
 import { ShipsSharingDialog } from './ShipsSharingDialog';
@@ -18,7 +18,7 @@ import { NavigationBar } from '../../navigation/NavigationBar';
 export const MyListPage = () => {
     const navigate = useNavigate();
 
-    const userSettings = useMemo<UserSettings>(() => getCurrentUserSettings(), []);
+    const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
     const [shipsForShare, setShipsForShare] = useState<IShipListState | null>(null);
 

@@ -1,16 +1,16 @@
-import { ShipDefinition } from '../../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
 
-export function formatShipListForSharing(shipDefinitions: ShipDefinition[]): string {
-    const frontRowShips: ShipDefinition[] = [];
-    const middleRowShips: ShipDefinition[] = [];
-    const backRowShips: ShipDefinition[] = [];
-    const corvettes: ShipDefinition[] = [];
-    const fighters: ShipDefinition[] = [];
+export function formatShipListForSharing(shipDefinitions: IShipDefinition[]): string {
+    const frontRowShips: IShipDefinition[] = [];
+    const middleRowShips: IShipDefinition[] = [];
+    const backRowShips: IShipDefinition[] = [];
+    const corvettes: IShipDefinition[] = [];
+    const fighters: IShipDefinition[] = [];
 
     shipDefinitions.forEach(ship => {
         switch (ship.row) {
@@ -42,8 +42,8 @@ export function formatShipListForSharing(shipDefinitions: ShipDefinition[]): str
     });
 
     const sortFn = normalizeSortFn([
-        (a: ShipDefinition, b: ShipDefinition) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
-        (a: ShipDefinition, b: ShipDefinition) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a: IShipDefinition, b: IShipDefinition) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
+        (a: IShipDefinition, b: IShipDefinition) => a.name.localeCompare(b.name, 'ja-JP'),
     ]);
 
     return [

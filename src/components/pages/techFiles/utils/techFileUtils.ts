@@ -1,13 +1,13 @@
 import { ITechFile } from '../../../../types/ITechFile';
-import { ShipDefinition } from '../../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipType } from '../../../../types/ShipType';
-import { UserSettings } from '../../../../userSettings/types/UserSettings';
+import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
 
-export function getTechFileChances(techFile: ITechFile, userSettings: UserSettings): ITechFileChances {
+export function getTechFileChances(techFile: ITechFile, userSettings: IUserSettings): ITechFileChances {
     const shipTypeChances = Object.keys(shipTypes).map(shipType => getShipTypeChance(techFile, shipType as ShipType, userSettings));
 
     const blueprintChance = shipTypeChances
@@ -49,9 +49,9 @@ export function getTechFileChances(techFile: ITechFile, userSettings: UserSettin
 function getShipTypeChance(
     techFile: ITechFile,
     shipType: ShipType,
-    userSettings: UserSettings
+    userSettings: IUserSettings
 ): IShipTypeChance {
-    const containedBaseModels: ShipDefinition[] = techFile.ships
+    const containedBaseModels: IShipDefinition[] = techFile.ships
         .map(getShipDefinitionById)
         .filter(ship => ship.type === shipType && !ship.baseModelId);
 
@@ -59,7 +59,7 @@ function getShipTypeChance(
         .map(ship => ship.weight)
         .reduce((sum, weight) => sum + weight, 0);
 
-    const containedShips: ShipDefinition[] = containedBaseModels.flatMap(baseModel => [
+    const containedShips: IShipDefinition[] = containedBaseModels.flatMap(baseModel => [
         baseModel,
         ...baseModel.subModelIds?.map(getShipDefinitionById) ?? [],
     ]);
@@ -89,10 +89,10 @@ function getShipTypeChance(
 }
 
 function getShipChances(
-    ship: ShipDefinition,
+    ship: IShipDefinition,
     shipTypeChance: number,
     baseModelsTotalWeight: number,
-    userSettings: UserSettings
+    userSettings: IUserSettings
 ): IShipChance {
     return !ship.baseModelId
         ? getBaseModelShipChance(ship, shipTypeChance, baseModelsTotalWeight, userSettings)
@@ -100,10 +100,10 @@ function getShipChances(
 }
 
 function getBaseModelShipChance(
-    ship: ShipDefinition,
+    ship: IShipDefinition,
     shipTypeChance: number,
     baseModelsTotalWeight: number,
-    userSettings: UserSettings
+    userSettings: IUserSettings
 ): IShipChance {
     const baseChance = shipTypeChance * (ship.weight / baseModelsTotalWeight);
     const baseChanceTooltip = [
@@ -125,10 +125,10 @@ function getBaseModelShipChance(
 }
 
 function getModuleChance(
-    ship: ShipDefinition,
+    ship: IShipDefinition,
     baseChance: number,
     possessed: boolean,
-    userSettings: UserSettings,
+    userSettings: IUserSettings,
 ) {
     if (!possessed || !ship.modules || ship.modules.length === 0) {
         return {
@@ -150,10 +150,10 @@ function getModuleChance(
 }
 
 function getSubModelShipChance(
-    ship: ShipDefinition,
+    ship: IShipDefinition,
     shipTypeChance: number,
     baseModelsTotalWeight: number,
-    userSettings: UserSettings
+    userSettings: IUserSettings
 ): IShipChance {
     if (!ship.baseModelId) {
         throw new Error('Missing baseModelId');

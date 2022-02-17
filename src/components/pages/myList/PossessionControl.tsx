@@ -7,13 +7,13 @@ import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
 import { ShipSource } from '../../../types/ShipSource';
 
-interface Props {
+interface IProps {
     shipId: string;
     possession: PossessionState;
     onChange: (shipId: string, possession: PossessionState) => void;
 }
 
-export const PossessionControl = (props: Props) => {
+export const PossessionControl = (props: IProps) => {
     const { shipId, possession, onChange } = props;
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {

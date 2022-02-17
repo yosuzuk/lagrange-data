@@ -4,7 +4,7 @@ import { ShipType } from '../../types/ShipType';
 import { shipTypes } from '../../utils/shipTypeUtils';
 import { translateShipRow } from '../../utils/shipRowUtils';
 import { ShipFilterState, FilterKey } from './types/ShipFilterState';
-import { ShipDefinition } from '../../types/ShipDefinition';
+import { IShipDefinition } from '../../types/ShipDefinition';
 import { ShipSettingState } from '../../userSettings/types/UserSettings';
 import { PossessionState } from '../../userSettings/types/PossessionState';
 import { WishState } from '../../userSettings/types/WishState';
@@ -62,7 +62,7 @@ export function resetFilterState(filter: ShipFilterState): ShipFilterState {
     return newFilterState;
 }
 
-export function applyShipFilter(shipDefinitions: ShipDefinition[], filter: ShipFilterState): ShipDefinition[] {
+export function applyShipFilter(shipDefinitions: IShipDefinition[], filter: ShipFilterState): IShipDefinition[] {
     let result = shipDefinitions;
     if (isRowFiltered(filter)) {
         result = result.filter(shipDefinition => filter[shipDefinition.row] === true);
@@ -73,8 +73,8 @@ export function applyShipFilter(shipDefinitions: ShipDefinition[], filter: ShipF
     return result;
 }
 
-export function separateShipsBySource(shipDefinitions: ShipDefinition[]): Record<ShipSource, ShipDefinition[]> {
-    const result: Record<ShipSource, ShipDefinition[]> = {
+export function separateShipsBySource(shipDefinitions: IShipDefinition[]): Record<ShipSource, IShipDefinition[]> {
+    const result: Record<ShipSource, IShipDefinition[]> = {
         [ShipSource.STARTER_SHIP]: [],
         [ShipSource.TECH_FILE]: [],
         [ShipSource.CITY_TRADE]: [],
@@ -98,23 +98,23 @@ function isShipTypeFiltered(filter: ShipFilterState): boolean {
 }
 
 export function extractPossesssedShips(
-    shipDefinitions: ShipDefinition[],
+    shipDefinitions: IShipDefinition[],
     shipSetting: ShipSettingState,
-): ShipDefinition[] {
+): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
 }
 
 export function extractWishedShips(
-    shipDefinitions: ShipDefinition[],
+    shipDefinitions: IShipDefinition[],
     shipSetting: ShipSettingState,
-): ShipDefinition[] {
+): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.WANTED);
 }
 
 export function extractUnwishedShipsByUser(
-    shipDefinitions: ShipDefinition[],
+    shipDefinitions: IShipDefinition[],
     shipSetting: ShipSettingState,
-): ShipDefinition[] {
+): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => {
         return isShipObtainableThroughTechFile(shipDefinition.id)
             && shipSetting[shipDefinition.id]?.wish === WishState.NOT_WANTED;
@@ -122,9 +122,9 @@ export function extractUnwishedShipsByUser(
 }
 
 export function extractUnwishedShipsByData(
-    shipDefinitions: ShipDefinition[],
+    shipDefinitions: IShipDefinition[],
     shipSetting: ShipSettingState,
-): ShipDefinition[] {
+): IShipDefinition[] {
     const shipsFromTechFile = shipDefinitions.filter(shipDefinition => shipDefinition.source === ShipSource.TECH_FILE || shipDefinition.source === ShipSource.STARTER_SHIP);
     const possessedShips = shipsFromTechFile.filter(shipDefinition => shipSetting[shipDefinition.id]?.possession === PossessionState.POSSESSED);
 

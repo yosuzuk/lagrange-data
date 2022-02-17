@@ -7,7 +7,7 @@ import { MyListEditActionBar } from './MyListEditActionBar';
 import { MyListEdit } from './MyListEdit';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState } from '../../filter/filterUtils';
-import { ShipSettingState, UserSettings } from '../../../userSettings/types/UserSettings';
+import { ShipSettingState, IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
@@ -16,7 +16,7 @@ import { ResetConfirmationDialog } from './ResetConfirmationDialog';
 export const MyListEditPage = () => {
     const navigate = useNavigate();
 
-    const [userSettings, setUserSettings] = useState<UserSettings>(getCurrentUserSettings);
+    const [userSettings, setUserSettings] = useState<IUserSettings>(getCurrentUserSettings);
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
     const [shipSetting, setShipSetting] = useState<ShipSettingState>(userSettings.ships);
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);

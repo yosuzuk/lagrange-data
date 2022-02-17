@@ -5,14 +5,14 @@ import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 
-interface Props {
+interface IProps {
     shipFilter: ShipFilterState;
     onEdit: () => void;
     onShare: () => void;
     onFilter: (filter: ShipFilterState) => void;
 }
 
-export const MyListActionBar = (props: Props) => {
+export const MyListActionBar = (props: IProps) => {
     const {
         shipFilter,
         onEdit,

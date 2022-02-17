@@ -8,7 +8,7 @@ import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { applyShipFilter, separateShipsBySource } from '../../filter/filterUtils';
 import { applyPossessionStateToShipSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { ShipSource } from '../../../types/ShipSource';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 import { MyListEditAccordion } from './MyListEditAccordion';
 
 interface IProps {
@@ -20,7 +20,7 @@ interface IProps {
 export const MyListEdit = (props: IProps) => {
     const { shipSetting, shipFilter, onShipSettingChange } = props;
 
-    const shipsBySource = useMemo<Record<ShipSource, ShipDefinition[]>>(() => {
+    const shipsBySource = useMemo<Record<ShipSource, IShipDefinition[]>>(() => {
         const filteredShips = applyShipFilter(shipDefinitions, shipFilter);
         return separateShipsBySource(filteredShips);
     }, [shipFilter]);

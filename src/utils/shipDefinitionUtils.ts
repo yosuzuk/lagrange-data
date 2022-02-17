@@ -1,14 +1,14 @@
 import { shipDefinitions } from '../data/shipDefinitions';
-import { ShipDefinition } from '../types/ShipDefinition';
+import { IShipDefinition } from '../types/ShipDefinition';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
 
-const shipDefinitionsById: Record<string, ShipDefinition> = shipDefinitions.reduce((result, next) => ({
+const shipDefinitionsById: Record<string, IShipDefinition> = shipDefinitions.reduce((result, next) => ({
     ...result,
     [next.id]: next,
 }), {});
 
-export function getShipDefinitionById(shipId: string): ShipDefinition {
+export function getShipDefinitionById(shipId: string): IShipDefinition {
     if (!shipDefinitionsById[shipId]) {
         throw new Error(`Invalid ship id "${shipId}"`);
     }

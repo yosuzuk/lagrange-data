@@ -6,7 +6,7 @@ import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 
-interface Props {
+interface IProps {
     shipFilter: ShipFilterState;
     onCancel: () => void;
     onSave: () => void;
@@ -14,7 +14,7 @@ interface Props {
     onFilter: (filter: ShipFilterState) => void;
 }
 
-export const MyListEditActionBar = (props: Props) => {
+export const MyListEditActionBar = (props: IProps) => {
     const {
         shipFilter,
         onCancel,

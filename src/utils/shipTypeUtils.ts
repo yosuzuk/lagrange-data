@@ -1,6 +1,6 @@
-import { ShipType, ShipTypeData, ShipSubType } from '../types/ShipType';
+import { ShipType, IShipTypeData, ShipSubType } from '../types/ShipType';
 
-export const shipTypes: Record<ShipType, ShipTypeData> = {
+export const shipTypes: Record<ShipType, IShipTypeData> = {
     [ShipType.FRIGATE]: {
         name: 'フリゲート',
         sortValue: 5,

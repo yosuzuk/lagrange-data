@@ -1,25 +1,25 @@
 import { useEffect, memo } from 'react';
 import { Table, ITableData, useTable } from '../../table';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 import { shipNameColumn, shipTypeColumn, shipRowColumn } from '../../columns/colums';
 
 interface IProps {
-    shipDefinitions: ShipDefinition[];
+    shipDefinitions: IShipDefinition[];
 }
 
 export const MyListTable = (props: IProps) => {
     const { shipDefinitions } = props;
-    const { table, setTableData } = useTable<ShipDefinition>();
+    const { table, setTableData } = useTable<IShipDefinition>();
 
     useEffect(() => {
-        const tableData: ITableData<ShipDefinition> = {
+        const tableData: ITableData<IShipDefinition> = {
             columns: [
                 shipNameColumn,
                 shipTypeColumn,
                 shipRowColumn,
             ],
             data: shipDefinitions,
-            rowIdFn: (data: ShipDefinition) => data.id,
+            rowIdFn: (data: IShipDefinition) => data.id,
         };
         setTableData(tableData);
     }, [setTableData, shipDefinitions]);

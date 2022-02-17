@@ -1,8 +1,8 @@
-import { ShipDefinition } from '../../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../../types/ShipDefinition';
 
 export interface IShipListState {
-    possessed: ShipDefinition[];
-    wished: ShipDefinition[];
-    unwishedByUser: ShipDefinition[];
-    unwishedByData: ShipDefinition[];
+    possessed: IShipDefinition[];
+    wished: IShipDefinition[];
+    unwishedByUser: IShipDefinition[];
+    unwishedByData: IShipDefinition[];
 }

@@ -14,7 +14,7 @@ export enum ShipSubType {
     LARGE_FIGHTER = 'largeFighter',
 }
 
-export interface ShipTypeData {
+export interface IShipTypeData {
     name: string;
     subTypeName?: Record<ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER, string>;
     sortValue: number;

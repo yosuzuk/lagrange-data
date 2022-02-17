@@ -6,13 +6,13 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ClearIcon from '@mui/icons-material/Clear';
 import { WishState } from '../../../userSettings/types/WishState';
 
-interface Props {
+interface IProps {
     shipId: string;
     wish: WishState;
     onChange: (shipId: string, wish: WishState) => void;
 }
 
-export const WishControl = (props: Props) => {
+export const WishControl = (props: IProps) => {
     const { shipId, wish, onChange } = props;
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {

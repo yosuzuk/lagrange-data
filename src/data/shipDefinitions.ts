@@ -1,4 +1,4 @@
-import { ShipDefinition } from '../types/ShipDefinition';
+import { IShipDefinition } from '../types/ShipDefinition';
 import { ShipRow } from '../types/ShipRow';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
@@ -20,7 +20,7 @@ import { ShipId } from './shipIds';
     },
 */
 
-export const shipDefinitions: ShipDefinition[] = [
+export const shipDefinitions: IShipDefinition[] = [
     {
         id: ShipId.A101_THE_RATIONAL_TE,
         name: 'A101ザラショナル-TE',

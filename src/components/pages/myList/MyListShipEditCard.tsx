@@ -7,11 +7,11 @@ import { PossessionControl } from './PossessionControl';
 import { WishControl } from './WishControl';
 import { WishState } from '../../../userSettings/types/WishState';
 import { PossessionState } from '../../../userSettings/types/PossessionState';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 
 interface IProps {
-    ship: ShipDefinition;
+    ship: IShipDefinition;
     possession: PossessionState;
     wish: WishState;
     onPossessionChange: (shipId: string, possession: PossessionState) => void;

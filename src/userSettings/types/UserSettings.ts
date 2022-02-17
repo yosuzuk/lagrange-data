@@ -1,19 +1,19 @@
 import { PossessionState } from './PossessionState';
 import { WishState } from './WishState';
 
-export interface UserSettings {
+export interface IUserSettings {
     formatVersion: number;
-    ships: Record<string, ShipUserSettings>;
+    ships: Record<string, IShipUserSettings>;
 }
 
-export interface ShipUserSettings {
+export interface IShipUserSettings {
     possession: PossessionState;
     wish: WishState;
 }
 
-export type ShipSettingState = Record<string, ShipUserSettings>;
+export type ShipSettingState = Record<string, IShipUserSettings>;
 
-export interface MinifiedUserSettings {
+export interface IMinifiedUserSettings {
     formatVersion: number;
     ships: Array<[
         string, // ShipId

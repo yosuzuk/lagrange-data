@@ -13,12 +13,12 @@ const classes = {
     `,
 };
 
-interface Props {
+interface IProps {
     left?: ReactNode;
     right?: ReactNode;
 }
 
-export const ActionBar = (props: Props) => {
+export const ActionBar = (props: IProps) => {
     const { left, right } = props;
 
     return (

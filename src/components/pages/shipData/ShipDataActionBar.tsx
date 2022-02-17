@@ -4,14 +4,14 @@ import { ColumnConfigButton } from '../../columns/ColumnConfigButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 
-interface Props {
+interface IProps {
     shipFilter: ShipFilterState;
     columnConfig: IColumnConfig;
     onFilterChange: (filter: ShipFilterState) => void;
     onColumnConfigChange: (columnConfig: IColumnConfig) => void;
 }
 
-export const ShipDataActionBar = (props: Props) => {
+export const ShipDataActionBar = (props: IProps) => {
     const {
         shipFilter,
         columnConfig,

@@ -1,19 +1,19 @@
 import { useEffect, useMemo } from 'react';
 import { Table, ITableData, useTable, ITableColumn } from '../../table';
-import { ShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { shipNameColumn, shipTypeColumn, shipRowColumn, shipCostColumn, shipOperationLimitColumn, shipSourceColumn, shipWeightColumn } from '../../columns/colums';
 
 interface IProps {
-    shipDefinitions: ShipDefinition[];
+    shipDefinitions: IShipDefinition[];
     columnConfig: IColumnConfig;
 }
 
 export const ShipDataTable = (props: IProps) => {
     const { shipDefinitions, columnConfig } = props;
-    const { table, setTableData } = useTable<ShipDefinition>();
+    const { table, setTableData } = useTable<IShipDefinition>();
 
-    const columns: ITableColumn<ShipDefinition>[] = useMemo(() => [
+    const columns: ITableColumn<IShipDefinition>[] = useMemo(() => [
         shipNameColumn,
         ...columnConfig.type ? [shipTypeColumn] : [],
         ...columnConfig.row ? [shipRowColumn] : [],
@@ -24,10 +24,10 @@ export const ShipDataTable = (props: IProps) => {
     ], [columnConfig]);
 
     useEffect(() => {
-        const tableData: ITableData<ShipDefinition> = {
+        const tableData: ITableData<IShipDefinition> = {
             columns,
             data: shipDefinitions,
-            rowIdFn: (data: ShipDefinition) => data.id,
+            rowIdFn: (data: IShipDefinition) => data.id,
         };
         setTableData(tableData);
     }, [setTableData, columns, shipDefinitions]);

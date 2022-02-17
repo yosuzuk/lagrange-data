@@ -3,7 +3,7 @@ import { ShipSource } from './ShipSource';
 import { ShipTag } from './ShipTag';
 import { ShipSubType, ShipType } from './ShipType';
 
-export interface ShipDefinition {
+export interface IShipDefinition {
     id: string;
     name: string;
     type: ShipType;
@@ -18,11 +18,11 @@ export interface ShipDefinition {
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
-    modules?: SystemModule[];
+    modules?: ISystemModule[];
     tags?: ShipTag[];
 }
 
-export interface SystemModule {
+export interface ISystemModule {
     id: string;
     name: string;
     category: 'M' | 'A' | 'B' | 'C' | 'D';
