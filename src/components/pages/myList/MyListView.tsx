@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Accordion from '@mui/material/Accordion';
@@ -6,8 +6,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { MemoizedMyListTable } from './MyListTable';
 import { IShipListState } from './types/IShipListState';
+import { IColumnConfig } from '../../columns/types/IColumnConfig';
+import { ShipDataTable } from '../shipData/ShipDataTable';
+
+const MemoizedShipDataTable = memo(ShipDataTable);
 
 interface IAccordionState {
     possessed: boolean;
@@ -18,10 +21,11 @@ interface IAccordionState {
 
 interface IProps {
     shipListState: IShipListState;
+    columnConfig: IColumnConfig;
 }
 
 export const MyListView = (props: IProps) => {
-    const { shipListState } = props;
+    const { shipListState, columnConfig } = props;
 
     const [expandedAccordion, setExpandedAccordion] = useState<IAccordionState>({
         possessed: true,
@@ -50,7 +54,7 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={shipListState.possessed} />
+                        <MemoizedShipDataTable shipDefinitions={shipListState.possessed} columnConfig={columnConfig} />
                     </AccordionDetails>
                 </Accordion>
             </div>
@@ -68,7 +72,7 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={shipListState.wished} />
+                        <MemoizedShipDataTable shipDefinitions={shipListState.wished} columnConfig={columnConfig} />
                     </AccordionDetails>
                 </Accordion>
             </div>
@@ -86,7 +90,7 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={shipListState.unwishedByUser} />
+                        <MemoizedShipDataTable shipDefinitions={shipListState.unwishedByUser} columnConfig={columnConfig} />
                     </AccordionDetails>
                 </Accordion>
             </div>
@@ -104,7 +108,7 @@ export const MyListView = (props: IProps) => {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <MemoizedMyListTable shipDefinitions={shipListState.unwishedByData} />
+                        <MemoizedShipDataTable shipDefinitions={shipListState.unwishedByData} columnConfig={columnConfig} />
                         <Box pt={1}>
                             <Typography variant="caption" align="right" paragraph={true}>
                                 {'※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます'}

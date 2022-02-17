@@ -14,6 +14,8 @@ import { shipDefinitions } from '../../../data/shipDefinitions';
 import { IShipListState } from './types/IShipListState';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
+import { IColumnConfig } from '../../columns/types/IColumnConfig';
+import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 
 export const MyListPage = () => {
     const navigate = useNavigate();
@@ -21,6 +23,14 @@ export const MyListPage = () => {
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
     const [shipsForShare, setShipsForShare] = useState<IShipListState | null>(null);
+
+    const [columnConfig, setColumnConfig] = useState<IColumnConfig>(() => createInitialColumnConfig({
+        name: true,
+        row: true,
+        type: true,
+        cost: false,
+        operationLimit: false,
+    }));
 
     const shipListState = useMemo<IShipListState>(() => {
         const filteredShipDefinitions = applyShipFilter(shipDefinitions, shipFilter);
@@ -49,11 +59,13 @@ export const MyListPage = () => {
             <NavigationBar currentRoute="/myList" />
             <MyListActionBar
                 shipFilter={shipFilter}
+                columnConfig={columnConfig}
                 onEdit={handleClickEdit}
                 onFilter={setShipFilter}
                 onShare={handleClickShare}
+                onColumnConfigChange={setColumnConfig}
             />
-            <Container>
+            <Container disabled={Object.values(columnConfig).filter(set => set).length > 3}>
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
@@ -68,6 +80,7 @@ export const MyListPage = () => {
                     </Stack>
                     <MyListView
                         shipListState={shipListState}
+                        columnConfig={columnConfig}
                     />
                 </Box>
             </Container>
