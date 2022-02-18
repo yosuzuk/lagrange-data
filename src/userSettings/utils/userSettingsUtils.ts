@@ -33,6 +33,10 @@ function minifyUserSettings(userSettings: IUserSettings): IMinifiedUserSettings 
             const { possession, wish } = userSettings.ships[shipId];
             return [shipId, possession, wish];
         }),
+        modules: Object.keys(userSettings.modules).map(shipAndModuleId => {
+            const { possession, wish } = userSettings.modules[shipAndModuleId];
+            return [shipAndModuleId, possession, wish];
+        }),
     };
 }
 
@@ -52,6 +56,10 @@ function unminifyUserSettings(userSettings: IMinifiedUserSettings): IUserSetting
             ...acc,
             [shipId]: { possession, wish },
         }), {}),
+        modules: userSettings.modules?.reduce((acc, [shipAndModuleId, possession, wish]) => ({
+            ...acc,
+            [shipAndModuleId]: { possession, wish },
+        }), {}) ?? {},
     };
 }
 
@@ -110,6 +118,7 @@ export function createInitialUserSettings(): IUserSettings {
                 wish: WishState.UNDEFINED,
             },
         },
+        modules: {},
     };
 }
 

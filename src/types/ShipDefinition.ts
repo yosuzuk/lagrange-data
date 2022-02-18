@@ -18,6 +18,7 @@ export interface IShipDefinition {
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
+    staticModules?: boolean;
     modules?: ISystemModule[];
     tags?: ShipTag[];
 }

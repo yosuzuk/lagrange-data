@@ -609,6 +609,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.DOCK_EFFECT,
+        staticModules: true,
         modules: [
             {
                 id: 'M1',
@@ -1171,6 +1172,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        staticModules: true,
         modules: [
             {
                 id: 'M1',
@@ -1197,6 +1199,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        staticModules: true,
         modules: [
             {
                 id: 'M1',
@@ -1222,6 +1225,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        staticModules: true,
         modules: [
             {
                 id: 'M1',
