@@ -19,10 +19,11 @@ import { getMaxPopperHeight } from '../../utils/domUtils';
 interface IProps {
     columnConfig: IColumnConfig;
     onChange: (columnConfig: IColumnConfig) => void;
+    fullWidth?: boolean;
 }
 
 export const ColumnConfigButton = (props: IProps) => {
-    const { onChange } = props;
+    const { onChange, fullWidth } = props;
     const [columnConfig, setColumnConfig] = useState<IColumnConfig>(props.columnConfig);
     const [opened, setOpened] = useState<boolean>(false);
     const [columnConfigOptions] = useState<IColumnConfigOption[]>(() => createColumnConfigOptions());
@@ -47,6 +48,7 @@ export const ColumnConfigButton = (props: IProps) => {
             <ButtonGroup
                 key="columnConfig"
                 variant="outlined"
+                fullWidth={fullWidth}
                 ref={anchorRef}
             >
                 <Button

@@ -28,35 +28,39 @@ export const MyListActionBar = (props: IProps) => {
 
     return (
         <ActionBar
-            left={(
+            left={(fullWidth: boolean) => (
                 <>
                     <ColumnConfigButton
                         key="columnConfig"
                         columnConfig={columnConfig}
                         onChange={onColumnConfigChange}
+                        fullWidth={fullWidth}
                     />
                     <ShipTypeFilterButton
                         key="filter"
                         filter={shipFilter}
                         onChange={onFilter}
+                        fullWidth={fullWidth}
                     />
                     <Button
                         key="edit"
                         variant="outlined"
                         startIcon={<SettingsIcon />}
                         onClick={onEdit}
+                        fullWidth={fullWidth}
                     >
                         {'マイリスト設定'}
                     </Button>
                 </>
             )}
-            right={(
+            right={(fullWidth: boolean) => (
                 <>
                     <Button
                         key="share"
                         variant="outlined"
                         startIcon={<ShareIcon />}
                         onClick={onShare}
+                        fullWidth={fullWidth}
                     >
                         {'共有'}
                     </Button>

@@ -20,10 +20,11 @@ import { getMaxPopperHeight } from '../../utils/domUtils';
 interface IProps {
     filter: ShipFilterState;
     onChange: (filter: ShipFilterState) => void;
+    fullWidth?: boolean;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange } = props;
+    const { onChange, fullWidth } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
     const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions());
@@ -54,16 +55,18 @@ export const ShipTypeFilterButton = (props: IProps) => {
             <ButtonGroup
                 key="filter"
                 variant="outlined"
+                fullWidth={fullWidth}
                 ref={anchorRef}
             >
                 <Button
                     startIcon={<FilterAltIcon />}
                     onClick={() => setOpened(true)}
+                    sx={{ flexShrink: 1 }}
                 >
                     {'フィルター'}
                 </Button>
                 {filterUsed && (
-                    <Button size="small" onClick={handleClickFilterOff}>
+                    <Button size="small" onClick={handleClickFilterOff} sx={{ flexShrink: 3 }}>
                         <FilterAltOffIcon />
                     </Button>
                 )}

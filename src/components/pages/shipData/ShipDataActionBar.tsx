@@ -21,17 +21,19 @@ export const ShipDataActionBar = (props: IProps) => {
 
     return (
         <ActionBar
-            left={(
+            left={(fullWidth: boolean) => (
                 <>
                     <ColumnConfigButton
                         key="columnConfig"
                         columnConfig={columnConfig}
                         onChange={onColumnConfigChange}
+                        fullWidth={fullWidth}
                     />
                     <ShipTypeFilterButton
                         key="filter"
                         filter={shipFilter}
                         onChange={onFilterChange}
+                        fullWidth={fullWidth}
                     />
                 </>
             )}
