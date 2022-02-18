@@ -103,7 +103,7 @@ export const TechFileDetails = (props: IProps) => {
     return (
         <Stack spacing={1}>
             <Paper>
-                <TechFileChart techFileChances={techFileChances} />
+                <TechFileChart techFile={techFile} techFileChances={techFileChances} />
             </Paper>
             {techFileChances.shipTypeChances.filter(data => showZeroChance || hasPositiveChance(data)).map(data => (
                 <div key={data.shipType}>
@@ -143,7 +143,7 @@ export const TechFileDetails = (props: IProps) => {
                     </Accordion>
                 </div>
             ))}
-            {(showZeroChance || (techFileChances.finalTechPointChance - techFileChances.baseTechPointChance) > 0) && (
+            {(showZeroChance || (techFileChances.techOrResearchPointChance) > 0) && (
                 <div>
                     <Accordion
                         expanded={techPointExpanded}
@@ -158,7 +158,7 @@ export const TechFileDetails = (props: IProps) => {
                                     {'技術/研究Ｐｔ'}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`確率：${formatChance(techFileChances.finalTechPointChance - techFileChances.baseTechPointChance)}`}
+                                    {`確率：${formatChance(techFileChances.techOrResearchPointChance)}`}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>

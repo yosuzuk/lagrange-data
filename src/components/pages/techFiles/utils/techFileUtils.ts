@@ -33,7 +33,7 @@ export function getTechFileChances(techFile: ITechFile, userSettings: IUserSetti
 
     const subSystemChance = 0; // TODO implement
 
-    const userTechPointChance = 1 - blueprintChance - subSystemChance;
+    const techOrResearchPointChance = 1 - techFile.chanceForTechPoint - blueprintChance - subSystemChance;
 
     return {
         shipTypeChances,
@@ -42,7 +42,7 @@ export function getTechFileChances(techFile: ITechFile, userSettings: IUserSetti
         wishedBlueprintChance,
         unwishedBlueprintChance,
         baseTechPointChance: techFile.chanceForTechPoint,
-        finalTechPointChance: userTechPointChance,
+        techOrResearchPointChance,
     };
 }
 

@@ -7,7 +7,7 @@ export interface ITechFileChances {
     unwishedBlueprintChance: number;
     moduleChance: number;
     baseTechPointChance: number;
-    finalTechPointChance: number;
+    techOrResearchPointChance: number;
 }
 
 export interface IShipTypeChance {

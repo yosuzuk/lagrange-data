@@ -3,20 +3,23 @@ import Box from '@mui/material/Box';
 import { PieChart, Pie, Cell, PieLabel, Tooltip, ResponsiveContainer } from 'recharts';
 import { ITechFileChances } from './types/IBlueprintChance';
 import { formatChance } from './utils/techFileUtils';
+import { ITechFile } from '../../../types/ITechFile';
 
 const MODULE_COLOR = '#8042FF';
 const TECHFILE_COLOR = '#FFBB28';
 const WANTED_TECHFILE_COLOR = '#00C49F';
 const UNWANTED_TECHFILE_COLOR = '#FF0000';
-const TECHPOINT_COLOR = '#FF8042';
+const TECHPOINT_COLOR = '#FF8282';
+const TECH_OR_RESEARCH_POINT_COLOR = '#FF8042';
 const SHOW_LABEL_THRESHOLD = 0.01;
 
 interface IProps {
+    techFile: ITechFile;
     techFileChances: ITechFileChances;
 }
 
 export const TechFileChart = (props: IProps) => {
-    const { techFileChances } = props;
+    const { techFile, techFileChances } = props;
 
     const innerData = useMemo<Array<Record<string, unknown>>>(() => {
         return [
@@ -31,18 +34,23 @@ export const TechFileChart = (props: IProps) => {
                 color: TECHFILE_COLOR,
             },
             {
-                name: '技術ポイント',
-                value: techFileChances.finalTechPointChance,
+                name: '技術/研究Pt',
+                value: techFileChances.techOrResearchPointChance,
+                color: TECH_OR_RESEARCH_POINT_COLOR,
+            },
+            {
+                name: '技術Pt',
+                value: techFile.chanceForTechPoint,
                 color: TECHPOINT_COLOR,
             },
         ];
-    }, [techFileChances]);
+    }, [techFileChances, techFile]);
 
     const outerData = useMemo<Array<Record<string, unknown>>>(() => {
         const {
             moduleChance,
             blueprintChance,
-            finalTechPointChance,
+            techOrResearchPointChance,
             wishedBlueprintChance,
             unwishedBlueprintChance,
         } = techFileChances;
@@ -71,12 +79,17 @@ export const TechFileChart = (props: IProps) => {
                 color: UNWANTED_TECHFILE_COLOR,
             },
             {
-                name: finalTechPointChance > SHOW_LABEL_THRESHOLD ? '技術ポイント' : '',
-                value: finalTechPointChance,
+                name: techOrResearchPointChance > SHOW_LABEL_THRESHOLD ? '技術/研究Pt' : '',
+                value: techOrResearchPointChance,
+                color: TECH_OR_RESEARCH_POINT_COLOR,
+            },
+            {
+                name: techFile.chanceForTechPoint > SHOW_LABEL_THRESHOLD ? '技術Pt' : '',
+                value: techFile.chanceForTechPoint,
                 color: TECHPOINT_COLOR,
             },
         ];
-    }, [techFileChances]);
+    }, [techFile, techFileChances]);
 
     return (
         <Box height={240}>
