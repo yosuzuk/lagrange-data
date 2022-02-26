@@ -4,6 +4,7 @@ import {
     Routes,
     Route,
     Navigate,
+    Outlet,
 } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,6 +15,7 @@ const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
 const BoxChancePage = lazy(() => import('./components/pages/techFiles/TechFilesPage'));
 const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage'));
+const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 const theme = createTheme({
@@ -55,11 +57,26 @@ function App() {
                     <Route
                         path="shipData"
                         element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <ShipDataPage />
-                            </Suspense>
+                            <Outlet />
                         )}
-                    />
+                    >
+                        <Route
+                            index={true}
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <ShipDataPage />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path=":shipId"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <ShipDetailPage />
+                                </Suspense>
+                            )}
+                        />
+                    </Route>
                     <Route
                         path="myList"
                         element={(

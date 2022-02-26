@@ -134,3 +134,9 @@ export const ShipId = {
     XT_20_B: 'XT_20_B',
     XT_20_C: 'XT_20_C',
 } as const;
+
+const allShipIds = Object.values(ShipId);
+
+export function isValidShipId(shipId: unknown): boolean {
+    return allShipIds.includes(shipId as typeof ShipId[keyof typeof ShipId]);
+}

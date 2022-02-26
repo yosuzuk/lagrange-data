@@ -42,6 +42,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
+        relatedShipIds: [ShipId.AC721_TE_A],
     },
     {
         id: ShipId.AC721_B,
@@ -53,6 +54,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         baseModelId: ShipId.AC721_A,
+        relatedShipIds: [ShipId.AC721_TE_A],
     },
     {
         id: ShipId.AC721_D,
@@ -65,6 +67,7 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.STARTER_SHIP,
         carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
+        relatedShipIds: [ShipId.AC721_TE_A],
     },
     {
         id: ShipId.AC721_TE_A,
@@ -74,7 +77,8 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.MIDDLE,
         operationLimit: 15,
-        source: ShipSource.DOCK_EFFECT
+        source: ShipSource.DOCK_EFFECT,
+        relatedShipIds: [ShipId.AC721_A, ShipId.AC721_B, ShipId.AC721_D],
     },
     {
         id: ShipId.ALDABRA_A,
@@ -385,55 +389,57 @@ export const shipDefinitions: IShipDefinition[] = [
         modules: [
             {
                 id: 'M1',
-                name: '???', // TODO find name
+                name: 'ガンマストーム攻撃イオン砲システム',
                 category: 'M',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'M2',
-                name: '???', // TODO find name
+                name: 'ガンマストーム投射攻撃システム',
                 category: 'M',
                 categoryNumber: 2,
             },
             {
                 id: 'A1',
-                name: '???', // TODO find name
+                name: 'ガンマストーム投射武器システム',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
-                name: '???', // TODO find name
+                name: 'ガンマストーム投射武器システム',
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'B1',
-                name: '???', // TODO find name
+                name: '通常砲システム',
                 category: 'B',
                 categoryNumber: 1,
             },
             {
                 id: 'B2',
-                name: '???', // TODO find name
+                name: '対空パルス砲システム',
                 category: 'B',
                 categoryNumber: 2,
             },
             {
                 id: 'B3',
-                name: '???', // TODO find name
+                name: '対空ミサイルシステム',
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
-                name: '???', // TODO find name
+                name: 'エネルギー圧縮装置',
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
-                name: '???', // TODO find name
+                name: '戦闘機搭載ハンガー',
                 category: 'C',
                 categoryNumber: 2,
                 carryFighter: 2,
@@ -441,25 +447,25 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C3',
-                name: '???', // TODO find name
+                name: '戦術UAVシステム',
                 category: 'C',
                 categoryNumber: 3,
             },
             {
                 id: 'D1',
-                name: '???', // TODO find name
+                name: '近接対空システム',
                 category: 'D',
                 categoryNumber: 1,
             },
             {
                 id: 'D2',
-                name: '???', // TODO find name
+                name: 'ターゲット保護システム',
                 category: 'D',
                 categoryNumber: 2,
             },
             {
                 id: 'D3',
-                name: '???', // TODO find name
+                name: 'ダメージ補償システム',
                 category: 'D',
                 categoryNumber: 3,
             },
@@ -541,6 +547,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
+        relatedShipIds: [ShipId.CV3000_TE],
         modules: [
             {
                 id: 'M1',
@@ -550,6 +557,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 carryCorvette: 3,
                 carryFighter: 5,
                 carryFighterType: ShipSubType.LARGE_FIGHTER,
+                defaultModule: true,
             },
             {
                 id: 'M2',
@@ -572,6 +580,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '「ドラグーン」砲撃システム',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
@@ -610,6 +619,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.DOCK_EFFECT,
         staticModules: true,
+        relatedShipIds: [ShipId.CV3000],
         modules: [
             {
                 id: 'M1',
@@ -676,10 +686,11 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '「ビゲン」イオン生成システム',
                 category: 'M',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'M2',
-                name: '試験型プラズマ投射器',
+                name: 'プラズマ投射システム',
                 category: 'M',
                 categoryNumber: 2,
             },
@@ -688,6 +699,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '「エターナルポラリス」MARKⅡ投射システム',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
@@ -727,19 +739,19 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C3',
-                name: 'エネルギー補償システム',
+                name: 'エネルギー補償装甲システム',
                 category: 'C',
                 categoryNumber: 3,
             },
             {
                 id: 'D1',
-                name: '???', // TODO find name
+                name: 'イオン砲塔システム',
                 category: 'D',
                 categoryNumber: 1,
             },
             {
                 id: 'D2',
-                name: '???', // TODO find name
+                name: 'パルス砲塔システム',
                 category: 'D',
                 categoryNumber: 2,
             },
@@ -831,6 +843,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.HELIOS_TE_A],
     },
     {
         id: ShipId.HELIOS_TE_A,
@@ -841,6 +854,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.DOCK_EFFECT,
+        relatedShipIds: [ShipId.HELIOS_A],
     },
     {
         id: ShipId.INDEFATIGABLE,
@@ -1101,12 +1115,18 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
+        relatedShipIds: [
+            ShipId.MARSHALL_CRUX_TE_A1,
+            ShipId.MARSHALL_CRUX_TE_A1_B1,
+            ShipId.MARSHALL_CRUX_TE_A2
+        ],
         modules: [
             {
                 id: 'M1',
                 name: '「ホワイトフラッシュ」総合武器庫',
                 category: 'M',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'M2',
@@ -1121,6 +1141,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 1,
                 carryFighter: 6,
                 carryFighterType: ShipSubType.LARGE_FIGHTER,
+                defaultModule: true,
             },
             {
                 id: 'A2',
@@ -1172,6 +1193,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
             {
@@ -1199,6 +1221,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
             {
@@ -1225,6 +1248,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
             {
@@ -1296,6 +1320,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.NOMA_330_TE_A],
     },
     {
         id: ShipId.NOMA_330_TE_A,
@@ -1306,6 +1331,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        relatedShipIds: [ShipId.NOMA_330_A],
     },
     {
         id: ShipId.NOMA_M470_A,
@@ -1317,6 +1343,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         subModelIds: [ShipId.NOMA_M470_B, ShipId.NOMA_M470_C],
+        relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
     {
         id: ShipId.NOMA_M470_B,
@@ -1328,6 +1355,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         baseModelId: ShipId.NOMA_M470_A,
+        relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
     {
         id: ShipId.NOMA_M470_C,
@@ -1339,6 +1367,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         baseModelId: ShipId.NOMA_M470_A,
+        relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
     {
         id: ShipId.NOMA_M470_TE_A,
@@ -1349,6 +1378,11 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        relatedShipIds: [
+            ShipId.NOMA_M470_A,
+            ShipId.NOMA_M470_B,
+            ShipId.NOMA_M470_C,
+        ],
     },
     {
         id: ShipId.PREDATOR_A,
@@ -1436,6 +1470,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.RAGER_B],
     },
     {
         id: ShipId.RAGER_B,
@@ -1446,6 +1481,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.RAGER_A],
     },
     {
         id: ShipId.RELIAT_A,
@@ -1561,6 +1597,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 category: 'M',
                 categoryNumber: 1,
                 carryCorvette: 6,
+                defaultModule: true,
             },
             {
                 id: 'M2',
@@ -1575,6 +1612,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '総合武器庫',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
@@ -1593,6 +1631,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '艦船保守システム',
                 category: 'B',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'B2',
@@ -1635,13 +1674,14 @@ export const shipDefinitions: IShipDefinition[] = [
         modules: [
             {
                 id: 'M1',
-                name: '艦首攻城電磁加速砲',
+                name: '艦首攻城電磁加速砲システム',
                 category: 'M',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'M2',
-                name: 'イオン砲システム',
+                name: 'イオン砲塔システム',
                 category: 'M',
                 categoryNumber: 2,
             },
@@ -1650,6 +1690,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: 'フォートレス砲撃システム',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
@@ -1665,7 +1706,7 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'B1',
-                name: '「トロッコ」投射群',
+                name: '「トロッコ」投射装置群',
                 category: 'B',
                 categoryNumber: 1,
             },
@@ -1684,7 +1725,7 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C1',
-                name: '領域的対ミサイル要撃砲',
+                name: '分散型軽兵器制御システム',
                 category: 'C',
                 categoryNumber: 1,
             },
@@ -1696,7 +1737,7 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C3',
-                name: '対空砲',
+                name: 'アンチミサイルシステム',
                 category: 'C',
                 categoryNumber: 3,
             },
@@ -1725,9 +1766,10 @@ export const shipDefinitions: IShipDefinition[] = [
         modules: [
             {
                 id: 'M1',
-                name: '攻城電磁加速砲',
+                name: '攻城電磁加速砲システム',
                 category: 'M',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'M2',
@@ -1746,16 +1788,17 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '大型砲プラットフォーム',
                 category: 'A',
                 categoryNumber: 1,
+                defaultModule: true,
             },
             {
                 id: 'A2',
-                name: '電磁加速砲群',
+                name: '電磁加速砲塔群',
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'A3',
-                name: 'パルス砲群',
+                name: 'パルス砲塔群',
                 category: 'A',
                 categoryNumber: 3,
             },
@@ -1787,13 +1830,13 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C2',
-                name: 'アーマーシステム',
+                name: '電磁装甲システム',
                 category: 'C',
                 categoryNumber: 2,
             },
             {
                 id: 'C3',
-                name: '防衛重装甲システム',
+                name: '重装甲システム',
                 category: 'C',
                 categoryNumber: 3,
             },
@@ -1808,6 +1851,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.STAR_SWEEPER_TE_A],
     },
     {
         id: ShipId.STAR_SWEEPER_TE_A,
@@ -1818,6 +1862,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.DOCK_EFFECT,
+        relatedShipIds: [ShipId.STAR_SWEEPER_A],
     },
     {
         id: ShipId.STINGRAY,
@@ -2004,6 +2049,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.XT_8_B],
     },
     {
         id: ShipId.XT_8_B,
@@ -2014,6 +2060,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        relatedShipIds: [ShipId.XT_8_A],
     },
     {
         id: ShipId.XT_10_A,
@@ -2035,6 +2082,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.CITY_TRADE,
         carryCorvette: 4,
+        relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
     },
     {
         id: ShipId.XT_20_B,
@@ -2047,6 +2095,7 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         carryFighter: 4,
         carryFighterType: ShipSubType.LARGE_FIGHTER,
+        relatedShipIds: [ShipId.XT_20_A, ShipId.XT_20_C],
     },
     {
         id: ShipId.XT_20_C,
@@ -2056,6 +2105,7 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.BACK,
         operationLimit: 6,
-        source: ShipSource.UNKNOWN // TODO check
+        source: ShipSource.UNKNOWN, // TODO check
+        relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
     },
 ];

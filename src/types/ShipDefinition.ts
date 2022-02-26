@@ -14,6 +14,7 @@ export interface IShipDefinition {
     operationLimit: number;
     source: ShipSource;
     subModelIds?: string[];
+    relatedShipIds?: string[];
     baseModelId?: string;
     carryFighter?: number;
     carryCorvette?: number;
@@ -31,4 +32,5 @@ export interface ISystemModule {
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
+    defaultModule?: boolean;
 }
