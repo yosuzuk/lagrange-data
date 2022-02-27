@@ -45,12 +45,12 @@ const baseChanceColumn: ITableColumn<IShipChance> = {
         <Tooltip
             arrow={true}
             disableFocusListener={true}
-            title={data.baseChanceTooltip.map((text, index) => (
+            title={data.baseChance > 0 ? data.baseChanceTooltip.map((text, index) => (
                 <Typography key={index} variant="body1" paragraph={true}>{text}</Typography>
-            ))}
+            )) : ''}
         >
             <Typography variant="body2" component="span">
-                {formatChance(data.baseChance)}
+                {data.baseChance > 0 ? formatChance(data.baseChance) : '-'}
             </Typography>
         </Tooltip>
     ),
