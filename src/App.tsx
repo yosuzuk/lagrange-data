@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { LoadingIndicator } from './components/loading/LoadingIndicator';
+import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -45,75 +46,77 @@ function App() {
         <Router>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Routes>
-                    <Route
-                        path="techFiles"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <BoxChancePage />
-                            </Suspense>
-                        )}
-                    />
-                    <Route
-                        path="shipData"
-                        element={(
-                            <Outlet />
-                        )}
-                    >
+                <ShipDetailProvider>
+                    <Routes>
                         <Route
-                            index={true}
+                            path="techFiles"
                             element={(
                                 <Suspense fallback={<LoadingIndicator />}>
-                                    <ShipDataPage />
+                                    <BoxChancePage />
                                 </Suspense>
                             )}
                         />
                         <Route
-                            path=":shipId"
+                            path="shipData"
+                            element={(
+                                <Outlet />
+                            )}
+                        >
+                            <Route
+                                index={true}
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <ShipDataPage />
+                                    </Suspense>
+                                )}
+                            />
+                            <Route
+                                path=":shipId"
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <ShipDetailPage />
+                                    </Suspense>
+                                )}
+                            />
+                        </Route>
+                        <Route
+                            path="myList"
                             element={(
                                 <Suspense fallback={<LoadingIndicator />}>
-                                    <ShipDetailPage />
+                                    <MyListPage />
                                 </Suspense>
                             )}
                         />
-                    </Route>
-                    <Route
-                        path="myList"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <MyListPage />
-                            </Suspense>
-                        )}
-                    />
-                    <Route
-                        path="myList/edit"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <MyListEditPage />
-                            </Suspense>
-                        )}
-                    />
-                    <Route
-                        path="debug"
-                        element={(
-                            <Suspense fallback={<LoadingIndicator />}>
-                                <TableExample />
-                            </Suspense>
-                        )}
-                    />
-                    <Route
-                        path="/"
-                        element={(
-                            <Navigate replace={true} to="techFiles" />
-                        )}
-                    />
-                    <Route
-                        path="*"
-                        element={(
-                            <Typography variant="body1">{'Page not found'}</Typography>
-                        )}
-                    />
-                </Routes>
+                        <Route
+                            path="myList/edit"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <MyListEditPage />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path="debug"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <TableExample />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path="/"
+                            element={(
+                                <Navigate replace={true} to="techFiles" />
+                            )}
+                        />
+                        <Route
+                            path="*"
+                            element={(
+                                <Typography variant="body1">{'Page not found'}</Typography>
+                            )}
+                        />
+                    </Routes>
+                </ShipDetailProvider>
             </ThemeProvider>
         </Router>
     );

@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Container } from '../../container/Container';
-import { ShipDetail } from './ShipDetail';
+import { ShipDetail } from '../../shipDetail/ShipDetail';
 import { isValidShipId } from '../../../data/shipIds';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ShipDetailActionBar } from './ShipDetailActionBar';

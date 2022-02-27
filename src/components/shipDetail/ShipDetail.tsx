@@ -1,16 +1,16 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import { isValidShipId } from '../../../data/shipIds';
-import { ShipType } from '../../../types/ShipType';
-import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
-import { translateShipRow } from '../../../utils/shipRowUtils';
-import { translateShipType } from '../../../utils/shipTypeUtils';
-import { LabeledList } from '../../list/LabeledList';
-import { obtainableFromResearchAgreement, translateShipSource } from '../../../utils/shipSourceUtils';
-import { ShipTag } from '../../../types/ShipTag';
-import { ShipSource } from '../../../types/ShipSource';
-import { ScriptedLink } from '../../link/ScriptedLink';
+import { isValidShipId } from '../../data/shipIds';
+import { ShipType } from '../../types/ShipType';
+import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
+import { translateShipRow } from '../../utils/shipRowUtils';
+import { translateShipType } from '../../utils/shipTypeUtils';
+import { LabeledList } from '../list/LabeledList';
+import { obtainableFromResearchAgreement, translateShipSource } from '../../utils/shipSourceUtils';
+import { ShipTag } from '../../types/ShipTag';
+import { ShipSource } from '../../types/ShipSource';
+import { ScriptedLink } from '../link/ScriptedLink';
 
 interface IProps {
     shipId: string;

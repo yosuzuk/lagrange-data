@@ -4,13 +4,29 @@ import Typography from '@mui/material/Typography';
 import { Table, ITableData, useTable, ITableColumn } from '../../table';
 import { IShipChance } from './types/IBlueprintChance';
 import { formatChance } from './utils/techFileUtils';
+import { ScriptedLink } from '../../link/ScriptedLink';
+import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 
-const shipNameColumn: ITableColumn<IShipChance> = {
+interface IShipNameColumnOptions {
+    onClick: (shipId: string) => void;
+}
+
+const createShipNameColumn = (options: IShipNameColumnOptions): ITableColumn<IShipChance> => ({
     id: 'name',
     renderHeader: () => '艦名',
-    renderCell: (data: IShipChance) => data.name,
+    renderCell: (data: IShipChance) => (
+        <Typography variant="body2">
+            <ScriptedLink
+                onClick={() => {
+                    options.onClick(data.id);
+                }}
+            >
+                {data.name}
+            </ScriptedLink>
+        </Typography>
+    ),
     sortFn: (a, b) => a.name.localeCompare(b.name),
-};
+});
 
 const shipWeightColumn: ITableColumn<IShipChance> = {
     id: 'weight',
@@ -98,10 +114,14 @@ export const TechFileContentTable = (props: IProps) => {
     const { blueprintChances, hasModules } = props;
     const { table, setTableData } = useTable<IShipChance>();
 
+    const { openShipDetailDialog } = useShipDetail();
+
     useEffect(() => {
         const tableData: ITableData<IShipChance> = {
             columns: [
-                shipNameColumn,
+                createShipNameColumn({
+                    onClick: openShipDetailDialog,
+                }),
                 baseChanceColumn,
                 blueprintChanceColumn,
                 ...(hasModules ? [moduleChanceColumn] : []),
@@ -111,7 +131,7 @@ export const TechFileContentTable = (props: IProps) => {
             rowIdFn: (data: IShipChance) => data.id,
         };
         setTableData(tableData);
-    }, [setTableData, blueprintChances, hasModules]);
+    }, [setTableData, blueprintChances, hasModules, openShipDetailDialog]);
 
     return (
         <Table table={table} size="small" />

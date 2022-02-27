@@ -1,3 +1,5 @@
+import Typography from '@mui/material/Typography';
+import { ScriptedLink } from '../link/ScriptedLink';
 import { IShipDefinition } from '../../types/ShipDefinition';
 import { translateShipRow, shipRowToSortValue } from '../../utils/shipRowUtils';
 import { translateShipSource, shipSourceToSortValue } from '../../utils/shipSourceUtils';
@@ -10,6 +12,27 @@ export const shipNameColumn: ITableColumn<IShipDefinition> = {
     renderCell: (data: IShipDefinition) => data.name,
     sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
 };
+
+interface IShipNameColumnOptions {
+    onClick: (shipId: string) => void;
+}
+
+export const createShipNameLinkColumn = (options: IShipNameColumnOptions): ITableColumn<IShipDefinition> => ({
+    id: 'nameLink',
+    renderHeader: () => '艦名',
+    renderCell: (data: IShipDefinition) => (
+        <Typography variant="body2">
+            <ScriptedLink
+                onClick={() => {
+                    options.onClick(data.id);
+                }}
+            >
+                {data.name}
+            </ScriptedLink>
+        </Typography>
+    ),
+    sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+});
 
 export const shipTypeColumn: ITableColumn<IShipDefinition> = {
     id: 'type',
