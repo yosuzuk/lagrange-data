@@ -10,14 +10,16 @@ import { LabeledList } from '../../list/LabeledList';
 import { obtainableFromResearchAgreement, translateShipSource } from '../../../utils/shipSourceUtils';
 import { ShipTag } from '../../../types/ShipTag';
 import { ShipSource } from '../../../types/ShipSource';
+import { ScriptedLink } from '../../link/ScriptedLink';
 
 interface IProps {
     shipId: string;
+    onClickShip: (shipId: string) => void;
     hideName?: boolean;
 }
 
 export const ShipDetail = (props: IProps) => {
-    const { shipId, hideName = false } = props;
+    const { shipId, hideName = false, onClickShip } = props;
     if (!isValidShipId(shipId)) {
         throw new Error('Invalid ship ID');
     }
@@ -76,7 +78,7 @@ export const ShipDetail = (props: IProps) => {
                                         </Typography>
                                     )}
                                     {carryFightersModule && shipDefinition.modules?.filter(module => !!module.carryFighter).map(module => (
-                                        <Typography variant="body2" gutterBottom={true}>
+                                        <Typography key={module.id} variant="body2" gutterBottom={true}>
                                             {`${translateShipType(ShipType.FIGHTER, module.carryFighterType)} ×${module.carryFighter}（${module.category}${module.categoryNumber}）`}
                                         </Typography>
                                     ))}
@@ -86,7 +88,7 @@ export const ShipDetail = (props: IProps) => {
                                         </Typography>
                                     )}
                                     {carryCorvettesModule && shipDefinition.modules?.filter(module => !!module.carryCorvette).map(module => (
-                                        <Typography variant="body2" gutterBottom={true}>
+                                        <Typography key={module.id} variant="body2" gutterBottom={true}>
                                             {`${translateShipType(ShipType.CORVETTE)} ×${module.carryCorvette}（${module.category}${module.categoryNumber}）`}
                                         </Typography>
                                     ))}
@@ -142,6 +144,7 @@ export const ShipDetail = (props: IProps) => {
                             key: 'baseModel',
                             label: 'ベースモデル',
                             value: getShipDefinitionById(shipDefinition.baseModelId).name,
+                            onClick: () => onClickShip(shipDefinition.baseModelId!),
                         },
                     ] : []),
                     ...((shipDefinition.subModelIds && shipDefinition.subModelIds.length > 0) ? [
@@ -152,11 +155,13 @@ export const ShipDetail = (props: IProps) => {
                                 <>
                                     {shipDefinition.subModelIds.map(getShipDefinitionById).map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
-                                            {definition.name}
+                                            <ScriptedLink onClick={() => onClickShip(definition.id)}>
+                                                {definition.name}
+                                            </ScriptedLink>
                                         </Typography>
                                     ))}
                                 </>
-                            )
+                            ),
                         },
                     ] : []),
                     ...(related ? [
@@ -167,12 +172,16 @@ export const ShipDetail = (props: IProps) => {
                                 <>
                                     {relatedSubModels.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
-                                            {definition.name}
+                                            <ScriptedLink onClick={() => onClickShip(definition.id)}>
+                                                {definition.name}
+                                            </ScriptedLink>
                                         </Typography>
                                     ))}
                                     {relatedShips.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
-                                            {definition.name}
+                                            <ScriptedLink onClick={() => onClickShip(definition.id)}>
+                                                {definition.name}
+                                            </ScriptedLink>
                                         </Typography>
                                     ))}
                                 </>

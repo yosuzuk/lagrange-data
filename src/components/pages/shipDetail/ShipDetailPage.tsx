@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { useCallback, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -10,6 +11,11 @@ import { ShipDetailActionBar } from './ShipDetailActionBar';
 
 export const ShipDetailPage = () => {
     const { shipId } = useParams();
+    const navigate = useNavigate();
+
+    const handleClickShip = useCallback((shipId: string) => {
+        navigate(`/shipData/${shipId}`);
+    }, [navigate]);
 
     return (
         <>
@@ -19,7 +25,7 @@ export const ShipDetailPage = () => {
                 <Box p={1}>
                     <Paper>
                         {shipId && isValidShipId(shipId) ? (
-                            <ShipDetail shipId={shipId} />
+                            <ShipDetail shipId={shipId} onClickShip={handleClickShip} />
                         ) : (
                             <Typography variant="body1">{'Invalid ID'}</Typography>
                         )}

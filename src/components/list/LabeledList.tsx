@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import Box, { BoxProps } from '@mui/material/Box';
-import FormLabel from '@mui/material/FormLabel';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 import { ILabeledListRow } from './types/ILabeledListRow';
+import { ScriptedLink } from '../link/ScriptedLink';
 
 interface IProps extends BoxProps {
     rows: ILabeledListRow[];
@@ -22,7 +23,21 @@ export const LabeledList = (props: IProps) => {
             {rows.map(row => (
                 <Fragment key={row.key}>
                     <Typography variant="body2">{row.label}</Typography>
-                    <Typography variant="body2">{row.value}</Typography>
+                    {typeof row.value === 'string' || typeof row.value === 'number' ? (
+                        <>
+                            {row.onClick ? (
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => row.onClick?.()}>
+                                        {row.value}
+                                    </ScriptedLink>
+                                </Typography>
+                            ) : (
+                                <Typography variant="body2">{row.value}</Typography>
+                            )}
+                        </>
+                    ) : (
+                        <div onClick={row.onClick}>{row.value}</div>
+                    )}
                 </Fragment>
             ))}
         </Box>
