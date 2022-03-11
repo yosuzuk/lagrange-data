@@ -1,7 +1,9 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { ShipSubType } from '../../../../types/ShipType';
+
+export type ReinforcementType = 'self' | 'ally';
 
 export interface IFleetSetup {
+    key: string;
     name: string;
     ships: IShipSelection[];
 }
@@ -14,10 +16,28 @@ export interface IShipSelection {
     carryCorvette: number;
     carriedShips: ICarriedShipSelection[];
     count: number;
+    reinforcement: ReinforcementType | null;
 }
 
 export interface ICarriedShipSelection {
     shipDefinition: IShipDefinition;
-    carrierShipId: string;
+    count: number;
+    reinforcement: ReinforcementType | null;
+}
+
+export interface IMinifiedFleetSetup {
+    name: string;
+    ships: IMinifiedShipSelection[];
+}
+
+export interface IMinifiedShipSelection {
+    shipId: string;
+    carriedShips: IMinifiedCarriedShipSelection[];
+    count: number;
+    reinforcement: ReinforcementType | null;
+}
+
+export interface IMinifiedCarriedShipSelection {
+    shipId: string;
     count: number;
 }

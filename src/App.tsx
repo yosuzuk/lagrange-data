@@ -17,6 +17,7 @@ const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPa
 const BoxChancePage = lazy(() => import('./components/pages/techFiles/TechFilesPage'));
 const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage'));
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
+const FleetEditorPage = lazy(() => import('./components/pages/fleetEditor/FleetEditorPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 const theme = createTheme({
@@ -92,6 +93,14 @@ function App() {
                             element={(
                                 <Suspense fallback={<LoadingIndicator />}>
                                     <MyListEditPage />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path="fleetEditor"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <FleetEditorPage />
                                 </Suspense>
                             )}
                         />

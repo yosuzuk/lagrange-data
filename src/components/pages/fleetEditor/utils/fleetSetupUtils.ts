@@ -2,70 +2,118 @@ import { ShipSubType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
-import { ICarriedShipSelection, IFleetSetup, IShipSelection } from '../types/IFleetSetup';
+import { ICarriedShipSelection, IFleetSetup, IMinifiedFleetSetup, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
-export function applyShipCount(shipId: string, count: number, fleetSetup: IFleetSetup, userSettings: IUserSettings): IFleetSetup {
-    if (!fleetSetup.ships.find(shipSelection => shipSelection.shipDefinition.id === shipId)) {   
-        return {
-            ...fleetSetup,
-            ships: [...fleetSetup.ships, createShipSelection(shipId, count, userSettings)],
-        };
+export function getCurrentFleetSetups(userSettings: IUserSettings): IFleetSetup[] {
+    return [
+        restoreFleetSetup('fleet1', userSettings) ?? createFleetSetup(1),
+        restoreFleetSetup('fleet2', userSettings) ?? createFleetSetup(2),
+        restoreFleetSetup('fleet3', userSettings) ?? createFleetSetup(3),
+        restoreFleetSetup('fleet4', userSettings) ?? createFleetSetup(4),
+        restoreFleetSetup('fleet5', userSettings) ?? createFleetSetup(5),
+    ];
+}
+
+export function saveFleetSetup(fleetSetup: IFleetSetup) {
+    const serializedFleetSetup = JSON.stringify(minifyFleetSetup(fleetSetup));
+    window.localStorage.setItem(fleetSetup.key, serializedFleetSetup);
+}
+
+function restoreFleetSetup(storageKey: string, userSettings: IUserSettings): IFleetSetup | null {
+    const serializedFleetSetup = window.localStorage.getItem(storageKey);
+    if (!serializedFleetSetup) {
+        return null;
     }
 
-    return {
-        ...fleetSetup,
-        ships: fleetSetup.ships.flatMap((shipSelection) => {
-            if (shipSelection.shipDefinition.id !== shipId) {
-                return [shipSelection];
-            }
+    const minifiedFleetSetup = parseFleetSetup(serializedFleetSetup);
+    return minifiedFleetSetup ? unminifyFleetSetup(minifiedFleetSetup, storageKey, userSettings) : null;
+}
 
-            return count <= 0 ? [] : [{
-                ...shipSelection,
-                count: Math.min(count, shipSelection.shipDefinition.operationLimit),
-            }];
-        }),
+function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey: string, userSettings: IUserSettings): IFleetSetup {
+    return {
+        key: storageKey,
+        name: minifiedFleetSetup.name,
+        ships: minifiedFleetSetup.ships.map(minifiedShipSelection => ({
+            ...createShipSelection({
+                shipId: minifiedShipSelection.shipId,
+                count: minifiedShipSelection.count,
+                reinforcement: minifiedShipSelection.reinforcement,
+                userSettings,
+            }),
+            carriedShips: minifiedShipSelection.carriedShips.map(carriedShip => createCarriedShipSelection({
+                shipId: carriedShip.shipId,
+                count: carriedShip.count,
+                reinforcement: minifiedShipSelection.reinforcement,
+            })),
+        })),
     };
 }
 
-export function applyCarriedShipCount(shipId: string, carrierShipId: string, count: number, fleetSetup: IFleetSetup): IFleetSetup {
+function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
     return {
-        ...fleetSetup,
-        ships: fleetSetup.ships.map(shipSelection => {
-            if (shipSelection.shipDefinition.id !== carrierShipId) {
-                return shipSelection;
-            }
+        name: fleetSetup.name,
+        ships: fleetSetup.ships.map(shipSelection => ({
+            shipId: shipSelection.shipDefinition.id,
+            carriedShips: shipSelection.carriedShips.map(carriedShipSelection => ({
+                shipId: carriedShipSelection.shipDefinition.id,
+                count: carriedShipSelection.count,
+            })),
+            count: shipSelection.count,
+            reinforcement: shipSelection.reinforcement,
+        })),
+    }
+}
 
-            if (!shipSelection.carriedShips.find(carriedShipSelection => carriedShipSelection.carrierShipId === shipId)) {
-                return {
-                    ...shipSelection,
-                    carriedShips: [...shipSelection.carriedShips, createCarriedShipSelection(shipId, carrierShipId, count)],
-                };
-            }
+function parseFleetSetup(serializedFleetSetup: string): IMinifiedFleetSetup | null {
+    try {
+        return JSON.parse(serializedFleetSetup) as IMinifiedFleetSetup;
+    } catch (e) {
+        alert('ERROR - Failed to restore fleet setup');
+        console.error(e);
+        return null;
+    }
+}
 
-            return {
-                ...shipSelection,
-                carriedShips: shipSelection.carriedShips.flatMap(carriedShipSelection => {
-                    if (carriedShipSelection.shipDefinition.id !== shipId) {
-                        return [carriedShipSelection];
-                    }
-
-                    return count <= 0 ? [] : [{
-                        ...carriedShipSelection,
-                        count: Math.min(count, carriedShipSelection.shipDefinition.operationLimit),
-                    }];
-                }),
-            };
-        })
+export function createFleetSetup(fleetNumber: number): IFleetSetup {
+    return {
+        key: `fleet${fleetNumber}`,
+        name: `${fleetNumber}号艦隊`,
+        ships: [],
     };
 }
 
-function createShipSelection(shipId: string, count: number, userSettings: IUserSettings): IShipSelection {
+interface ICreateShipSelectionArgs {
+    shipId: string;
+    count: number;
+    reinforcement: ReinforcementType | null;
+    userSettings: IUserSettings;
+}
+
+function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
+    const { shipId, count, reinforcement, userSettings } = args;
     const shipDefinition = getShipDefinitionById(shipId);
 
     let carryUpToLargeFighter = 0;
     let carryUpToMediumFighter = 0;
     let carryUpToSmallFighter = 0;
     let carryCorvette = shipDefinition.carryCorvette ?? 0;
+
+    if (shipDefinition.carryFighter) {
+        switch (shipDefinition.carryFighterType) {
+            case ShipSubType.LARGE_FIGHTER: {
+                carryUpToLargeFighter += shipDefinition.carryFighter;
+                break;
+            }
+            case ShipSubType.MEDIUM_FIGHTER: {
+                carryUpToMediumFighter += shipDefinition.carryFighter;
+                break;
+            }
+            case ShipSubType.SMALL_FIGHTER: {
+                carryUpToSmallFighter += shipDefinition.carryFighter;
+                break;
+            }
+        }
+    }
 
     shipDefinition.modules?.forEach((module) => {
         if (shipDefinition.staticModules || userSettings.modules[`${shipDefinition.id}.${module.id}`]?.possession === PossessionState.POSSESSED) {
@@ -94,15 +142,135 @@ function createShipSelection(shipId: string, count: number, userSettings: IUserS
         carryUpToSmallFighter,
         carryCorvette,
         carriedShips: [],
-        count: Math.max(0, Math.min(shipDefinition.operationLimit, count)),
+        count: Math.max(0, count),
+        reinforcement,
     };
 }
 
-function createCarriedShipSelection(shipId: string, carrierShipId: string, count: number): ICarriedShipSelection {
+interface ICreateCarriedShipSelectionArgs {
+    shipId: string;
+    count: number;
+    reinforcement: ReinforcementType | null;
+}
+
+function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
+    const { shipId, count, reinforcement } = args;
     const shipDefinition = getShipDefinitionById(shipId);
     return {
         shipDefinition,
-        carrierShipId,
-        count: Math.max(0, Math.min(shipDefinition.operationLimit, count)),
+        count: Math.max(0, count),
+        reinforcement,
     };
+}
+
+export interface IApplyShipCountArgs {
+    shipId: string;
+    count: number;
+    reinforcement: ReinforcementType | null;
+    fleetSetup: IFleetSetup;
+    userSettings: IUserSettings;
+}
+
+export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
+    const { shipId, count, reinforcement, fleetSetup, userSettings } = args;
+
+    if (!fleetSetup.ships.find(shipSelection => shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === reinforcement)) {   
+        return {
+            ...fleetSetup,
+            ships: [...fleetSetup.ships, createShipSelection({ shipId, count, reinforcement, userSettings })],
+        };
+    }
+
+    return {
+        ...fleetSetup,
+        ships: fleetSetup.ships.flatMap((shipSelection) => {
+            if (shipSelection.shipDefinition.id !== shipId || shipSelection.reinforcement !== reinforcement) {
+                return [shipSelection];
+            }
+
+            return count <= 0 ? [] : [{
+                ...shipSelection,
+                count: Math.max(0, count),
+            }];
+        }),
+    };
+}
+
+export interface IApplyCarriedShipCountArgs {
+    shipId: string;
+    carrierShipId: string;
+    count: number;
+    reinforcement: ReinforcementType | null;
+    fleetSetup: IFleetSetup;
+}
+
+export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetSetup {
+    const { shipId, carrierShipId, count, reinforcement, fleetSetup } = args;
+
+    return {
+        ...fleetSetup,
+        ships: fleetSetup.ships.map(shipSelection => {
+            if (shipSelection.shipDefinition.id !== carrierShipId || shipSelection.reinforcement !== reinforcement) {
+                return shipSelection;
+            }
+
+            if (!shipSelection.carriedShips.find(carriedShipSelection => carriedShipSelection.shipDefinition.id === shipId)) {
+                return {
+                    ...shipSelection,
+                    carriedShips: [...shipSelection.carriedShips, createCarriedShipSelection({ shipId, count, reinforcement })],
+                };
+            }
+
+            return {
+                ...shipSelection,
+                carriedShips: shipSelection.carriedShips.flatMap(carriedShipSelection => {
+                    if (carriedShipSelection.shipDefinition.id !== shipId) {
+                        return [carriedShipSelection];
+                    }
+
+                    if (carriedShipSelection.reinforcement !== reinforcement) {
+                        throw new Error('Detected invalid reinforcement');
+                    }
+
+                    return count <= 0 ? [] : [{
+                        ...carriedShipSelection,
+                        count: Math.max(0, count),
+                        reinforcement,
+                    }];
+                }),
+            };
+        })
+    };
+}
+
+interface IFleetShipCount {
+    initialShipCount: number;
+    selfReinforcementCount: number;
+    allyReinforcementCount: number;
+}
+
+export function getFleetShipCount(fleetSetup: IFleetSetup): IFleetShipCount {
+    const initialShipCount = fleetSetup.ships
+        .filter(shipSelection => shipSelection.reinforcement === null)
+        .map(shipSelection => shipSelection.count)
+        .reduce((sum, count) => sum + count, 0);
+    const selfReinforcementCount = fleetSetup.ships
+        .filter(shipSelection => shipSelection.reinforcement === 'self')
+        .map(shipSelection => shipSelection.count)
+        .reduce((sum, count) => sum + count, 0);
+    const allyReinforcementCount = fleetSetup.ships
+        .filter(shipSelection => shipSelection.reinforcement === 'ally')
+        .map(shipSelection => shipSelection.count)
+        .reduce((sum, count) => sum + count, 0);
+    return { initialShipCount, selfReinforcementCount, allyReinforcementCount };
+}
+
+export function renderFleetShipCount(fleetSetup: IFleetSetup): string {
+    const {
+        initialShipCount,
+        selfReinforcementCount,
+        allyReinforcementCount,
+    } = getFleetShipCount(fleetSetup);
+
+    return `△${initialShipCount + selfReinforcementCount}${allyReinforcementCount > 0 ? `+${allyReinforcementCount}` : ''}`;
 }

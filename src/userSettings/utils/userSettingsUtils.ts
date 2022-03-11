@@ -15,10 +15,10 @@ export function saveUserSettings(userSettings: IUserSettings) {
     window.localStorage.setItem(STORAGE_KEY, serializedUserSettings);
 }
 
-export function restoreUserSettings(): IUserSettings | null {
+function restoreUserSettings(): IUserSettings | null {
     const serializedUserSettings = window.localStorage.getItem(STORAGE_KEY);
     if (!serializedUserSettings) {
-        return createInitialUserSettings();
+        return null;
     }
 
     const userSettings = parseUserSettings(serializedUserSettings);
