@@ -8,6 +8,7 @@ interface IProps {
     onCancel: () => void;
     onSave: () => void;
     onReset: () => void;
+    saveDisabled: boolean;
 }
 
 export const FleetSetupEditActionBar = (props: IProps) => {
@@ -15,6 +16,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         onCancel,
         onSave,
         onReset,
+        saveDisabled,
     } = props;
 
     return (
@@ -26,6 +28,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         variant="contained"
                         startIcon={<SaveIcon />}
                         onClick={onSave}
+                        disabled={saveDisabled}
                         fullWidth={fullWidth}
                     >
                         {'保存'}

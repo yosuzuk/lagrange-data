@@ -7,6 +7,7 @@ export interface IFleetSetup {
     name: string;
     ships: IShipSelection[];
     maxReinforcement: number;
+    maxCost: number;
 }
 
 export interface IShipSelection {
@@ -30,6 +31,7 @@ export interface IMinifiedFleetSetup {
     name: string;
     ships: IMinifiedShipSelection[];
     maxReinforcement: number;
+    maxCost: number;
 }
 
 export interface IMinifiedShipSelection {

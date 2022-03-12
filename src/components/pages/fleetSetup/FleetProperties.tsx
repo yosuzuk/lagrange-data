@@ -34,7 +34,7 @@ export const FleetProperties = (props: IProps) => {
             onChange={() => setExpanded(!expanded)}
         >
             <AccordionSummary
-                expandIcon={shipCount > 0 ? (expanded ? <ExpandMoreIcon /> : <InfoIcon color="primary" />) : null}
+                expandIcon={expanded ? <ExpandMoreIcon /> : <InfoIcon color="primary" />}
             >
                 <Typography variant="body1">
                     {fleetSetup.name}
@@ -47,7 +47,21 @@ export const FleetProperties = (props: IProps) => {
                             {
                                 key: 'reinforcementCount',
                                 label: '増援',
-                                value: reinforcementCount,
+                                value: (
+                                    <Typography
+                                        variant="body2"
+                                        sx={reinforcementCount > fleetSetup.maxReinforcement ? {
+                                            color: 'red',
+                                        } : {}}
+                                    >
+                                        {`${reinforcementCount} / ${fleetSetup.maxReinforcement}`}
+                                    </Typography>
+                                ),
+                            },
+                            {
+                                key: 'maxCost',
+                                label: '艦隊司令pt上限',
+                                value: fleetSetup.maxCost,
                             },
                             {
                                 key: 'shipCount',

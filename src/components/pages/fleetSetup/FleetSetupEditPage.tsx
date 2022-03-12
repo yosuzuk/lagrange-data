@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Container } from '../../container/Container';
@@ -7,42 +7,31 @@ import { FleetPropertiesEdit } from './FleetPropertiesEdit';
 import { FleetSetupEditActionBar } from './FleetSetupEditActionBar';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useFleetEditor } from './hooks/useFleetEditor';
-import { FleetNameDialog } from './FleetNameDialog';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
     const { fleetKey } = useParams();
 
-    const [renaming, setRenaming] = useState<boolean>(false);
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
     const {
         fleetSetup,
-        setFleetName,
+        errors,
+        setFleetSetup,
         setShipCount,
         setCarriedShipCount,
         save,
         reset,
     } = useFleetEditor(fleetKey);
 
-    const handleStartRenaming = useCallback(() => {
-        setRenaming(true);
-    }, []);
-
-    const handleConfirmRenaming = (newName: string) => {
-        setRenaming(false);
-        setFleetName(newName);
-    };
-
-    const cancelRenaming = () => {
-        setRenaming(false);
-    };
-
     const handleClickCancel = () => {
         navigate('/fleetSetup');
     };
 
     const handleClickSave = () => {
+        if (Object.keys(errors).length > 0) {
+            return;
+        }
         save();
         navigate('/fleetSetup');
     };
@@ -67,10 +56,15 @@ export const FleetSetupEditPage = () => {
                 onSave={handleClickSave}
                 onCancel={handleClickCancel}
                 onReset={handleClickReset}
+                saveDisabled={Object.keys(errors).length > 0}
             />
             <Container>
                 <Box p={1}>
-                    <FleetPropertiesEdit fleetSetup={fleetSetup} onStartRenaming={handleStartRenaming} />
+                    <FleetPropertiesEdit
+                        fleetSetup={fleetSetup}
+                        onChange={setFleetSetup}
+                        errors={errors}
+                    />
                 </Box>
             </Container>
             {confirmingReset && (
@@ -81,13 +75,6 @@ export const FleetSetupEditPage = () => {
                     confirmText={'初期化'}
                     onCancel={handleCancelReset}
                     onConfirm={handleConfirmReset}
-                />
-            )}
-            {renaming && (
-                <FleetNameDialog
-                    fleetName={fleetSetup.name}
-                    onCancel={cancelRenaming}
-                    onConfirm={handleConfirmRenaming}
                 />
             )}
         </>

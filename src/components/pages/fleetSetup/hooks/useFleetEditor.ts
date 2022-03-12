@@ -7,7 +7,8 @@ import { applyCarriedShipCount, applyShipCount, createFleetSetup, getCurrentFlee
 
 interface IHookResult {
     fleetSetup: IFleetSetup;
-    setFleetName: (fleetName: string) => void;
+    errors: Record<string, string>;
+    setFleetSetup: (fleetSetup: IFleetSetup) => void;
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     save: () => void;
@@ -19,13 +20,6 @@ export const useFleetEditor = (initialFleetKey?: string): IHookResult => {
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
-
-    const setFleetName = useCallback((fleetName: string) => {
-        setFleetSetup(fleetSetup => ({
-            ...fleetSetup,
-            name: fleetName,
-        }));
-    }, []);
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setFleetSetup(fleetSetup => applyShipCount({ shipId, count, reinforcement, fleetSetup, userSettings }));
@@ -45,9 +39,28 @@ export const useFleetEditor = (initialFleetKey?: string): IHookResult => {
         setFleetSetup(createFleetSetup(fleetNumber));
     }, [fleetSetup]);
 
+    const errors = useMemo(() => {
+        const errorMap: Record<string, string> = {};
+        if (fleetSetup.name.length === 0) {
+            errorMap['name'] = '必須項目';
+        }
+        if (!Number.isFinite(fleetSetup.maxReinforcement) || fleetSetup.maxReinforcement < 0) {
+            errorMap['maxReinforcement'] = '無効な値';
+        }
+        if (!Number.isFinite(fleetSetup.maxCost) || fleetSetup.maxCost < 300 || fleetSetup.maxCost > 450) {
+            errorMap['maxCost'] = '無効な値';
+        }
+        if (fleetSetup.maxCost > 400 && fleetSetup.maxReinforcement > 5) {
+            errorMap['maxReinforcement'] = errorMap['maxReinforcement'] ?? '基地結合効果は１つまでです';
+            errorMap['maxCost'] = errorMap['maxCost'] ?? '基地結合効果は１つまでです';
+        }
+        return errorMap;
+    }, [fleetSetup]);
+
     return {
         fleetSetup,
-        setFleetName,
+        errors,
+        setFleetSetup,
         setShipCount,
         setCarriedShipCount,
         save,

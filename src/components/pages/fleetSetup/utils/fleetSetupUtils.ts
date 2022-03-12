@@ -49,6 +49,7 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
             })),
         })),
         maxReinforcement: minifiedFleetSetup.maxReinforcement,
+        maxCost: minifiedFleetSetup.maxCost,
     };
 }
 
@@ -65,6 +66,7 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
             reinforcement: shipSelection.reinforcement,
         })),
         maxReinforcement: fleetSetup.maxReinforcement,
+        maxCost: fleetSetup.maxCost,
     }
 }
 
@@ -84,6 +86,7 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
         name: `${fleetNumber}号艦隊`,
         ships: [],
         maxReinforcement: 5,
+        maxCost: 400,
     };
 }
 
