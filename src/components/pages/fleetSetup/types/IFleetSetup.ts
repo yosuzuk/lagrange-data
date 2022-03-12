@@ -6,6 +6,7 @@ export interface IFleetSetup {
     key: string;
     name: string;
     ships: IShipSelection[];
+    maxReinforcement: number;
 }
 
 export interface IShipSelection {
@@ -28,6 +29,7 @@ export interface ICarriedShipSelection {
 export interface IMinifiedFleetSetup {
     name: string;
     ships: IMinifiedShipSelection[];
+    maxReinforcement: number;
 }
 
 export interface IMinifiedShipSelection {

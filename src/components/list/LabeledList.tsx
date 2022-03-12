@@ -22,7 +22,7 @@ export const LabeledList = (props: IProps) => {
         >
             {rows.map(row => (
                 <Fragment key={row.key}>
-                    <Typography variant="body2">{row.label}</Typography>
+                    <Typography variant="body2" color="text.secondary">{row.label}</Typography>
                     {typeof row.value === 'string' || typeof row.value === 'number' ? (
                         <>
                             {row.onClick ? (

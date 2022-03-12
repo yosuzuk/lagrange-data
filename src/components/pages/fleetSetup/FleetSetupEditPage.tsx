@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Container } from '../../container/Container';
@@ -25,9 +25,9 @@ export const FleetSetupEditPage = () => {
         reset,
     } = useFleetEditor(fleetKey);
 
-    const handleStartRenaming = () => {
+    const handleStartRenaming = useCallback(() => {
         setRenaming(true);
-    };
+    }, []);
 
     const handleConfirmRenaming = (newName: string) => {
         setRenaming(false);

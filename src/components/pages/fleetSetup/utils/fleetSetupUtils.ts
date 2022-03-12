@@ -1,7 +1,9 @@
-import { ShipSubType } from '../../../../types/ShipType';
+import { ShipRow } from '../../../../types/ShipRow';
+import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
+import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { ICarriedShipSelection, IFleetSetup, IMinifiedFleetSetup, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
 export function getCurrentFleetSetups(userSettings: IUserSettings): IFleetSetup[] {
@@ -46,6 +48,7 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
                 reinforcement: minifiedShipSelection.reinforcement,
             })),
         })),
+        maxReinforcement: minifiedFleetSetup.maxReinforcement,
     };
 }
 
@@ -61,6 +64,7 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
             count: shipSelection.count,
             reinforcement: shipSelection.reinforcement,
         })),
+        maxReinforcement: fleetSetup.maxReinforcement,
     }
 }
 
@@ -79,6 +83,7 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
         key: `fleet${fleetNumber}`,
         name: `${fleetNumber}号艦隊`,
         ships: [],
+        maxReinforcement: 5,
     };
 }
 
@@ -244,33 +249,39 @@ export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetS
 }
 
 interface IFleetShipCount {
-    initialShipCount: number;
-    selfReinforcementCount: number;
-    allyReinforcementCount: number;
+    shipCount: number;
+    shipCountByType: Record<ShipType, number>;
+    shipCountByRow: Record<ShipRow, number>;
+    reinforcementCount: number;
 }
 
 export function getFleetShipCount(fleetSetup: IFleetSetup): IFleetShipCount {
-    const initialShipCount = fleetSetup.ships
-        .filter(shipSelection => shipSelection.reinforcement === null)
-        .map(shipSelection => shipSelection.count)
-        .reduce((sum, count) => sum + count, 0);
-    const selfReinforcementCount = fleetSetup.ships
-        .filter(shipSelection => shipSelection.reinforcement === 'self')
-        .map(shipSelection => shipSelection.count)
-        .reduce((sum, count) => sum + count, 0);
-    const allyReinforcementCount = fleetSetup.ships
-        .filter(shipSelection => shipSelection.reinforcement === 'ally')
-        .map(shipSelection => shipSelection.count)
-        .reduce((sum, count) => sum + count, 0);
-    return { initialShipCount, selfReinforcementCount, allyReinforcementCount };
-}
+    const shipCount = fleetSetup.ships.length;
 
-export function renderFleetShipCount(fleetSetup: IFleetSetup): string {
-    const {
-        initialShipCount,
-        selfReinforcementCount,
-        allyReinforcementCount,
-    } = getFleetShipCount(fleetSetup);
+    const shipCountByType = Object.keys(shipTypes).reduce((acc, shipType) => ({
+        ...acc,
+        [shipType]: 0,
+    }), {} as Record<ShipType, number>);
 
-    return `△${initialShipCount + selfReinforcementCount}${allyReinforcementCount > 0 ? `+${allyReinforcementCount}` : ''}`;
+    const shipCountByRow: Record<ShipRow, number> = {
+        [ShipRow.FRONT]: 0,
+        [ShipRow.MIDDLE]: 0,
+        [ShipRow.BACK]: 0,
+        [ShipRow.NONE]: 0,
+    };
+
+    let reinforcementCount = 0;
+    fleetSetup.ships.forEach(ship => {
+        shipCountByType[ship.shipDefinition.type] += ship.count;
+        shipCountByRow[ship.shipDefinition.row] += ship.count;
+        if (ship.carriedShips.length > 0) {
+            ship.carriedShips.forEach(carriedShip => {
+                shipCountByType[carriedShip.shipDefinition.type] += carriedShip.count;
+            });
+        }
+        if (ship.reinforcement !== null) {
+            reinforcementCount += ship.count;
+        }
+    });
+    return { shipCount, shipCountByType, shipCountByRow, reinforcementCount };
 }

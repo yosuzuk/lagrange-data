@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import { IFleetSetup } from './types/IFleetSetup';
+import { LabeledList } from '../../list/LabeledList';
+import { getFleetShipCount } from './utils/fleetSetupUtils';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -17,18 +19,33 @@ export const FleetPropertiesEdit = (props: IProps) => {
     return (
         <Paper>
             <Box p={1}>
-                <Stack spacing={1} direction="row" alignItems="center">
-                    <div>
-                        <Typography variant="body1">
-                            {fleetSetup.name}
-                        </Typography>
-                    </div>
-                    <div>
-                        <IconButton onClick={onStartRenaming}>
-                            <EditIcon fontSize="small" />
-                        </IconButton>
-                    </div>
-                </Stack>
+                <LabeledList
+                    rows={[
+                        {
+                            key: 'name',
+                            label: '艦隊名',
+                            value: (
+                                <Stack spacing={1} direction="row" alignItems="center">
+                                    <div>
+                                        <Typography variant="body2">
+                                            {fleetSetup.name}
+                                        </Typography>
+                                    </div>
+                                    <div>
+                                        <IconButton onClick={onStartRenaming}>
+                                            <EditIcon fontSize="small" />
+                                        </IconButton>
+                                    </div>
+                                </Stack>
+                            ),
+                        },
+                        {
+                            key: 'reinforcementCount',
+                            label: '増援引き受け艦数',
+                            value: 5
+                        }
+                    ]}
+                />
             </Box>
         </Paper>
     );
