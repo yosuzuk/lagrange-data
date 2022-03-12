@@ -4,25 +4,17 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import { IShipListState } from './types/IShipListState';
 import { formatShipListForSharing } from './utils/myListUtils';
+import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 
 export interface IProps {
     ships: IShipListState;
-    open: boolean;
     onClose: () => void;
 }
 
 export const ShipsSharingDialog = (props: IProps) => {
-    const { ships, onClose, open } = props;
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const { ships, onClose } = props;
     const [copied, setCopied] = useState<boolean>(false);
 
     const [textForSharing, setTextForSharing] = useState<string>(() => formatShipListForSharing(ships.possessed));
@@ -45,15 +37,9 @@ export const ShipsSharingDialog = (props: IProps) => {
     };
 
     return (
-        <Dialog
-            fullScreen={fullScreen}
-            fullWidth={true}
-            maxWidth="xs"
-            onClose={handleClose}
-            open={open}
-        >
-            <DialogTitle>{'共有'}</DialogTitle>
-            <DialogContent>
+        <ResponsiveDialog
+            title={'共有'}
+            content={(
                 <Stack spacing={1}>
                     <TextField
                         variant="filled"
@@ -75,13 +61,14 @@ export const ShipsSharingDialog = (props: IProps) => {
                         </Button>
                     )}
                 </Stack>
-            </DialogContent>
-            <DialogActions>
+            )}
+            actions={(
                 <Button variant="outlined" onClick={handleClose}>
                     {'閉じる'}
                 </Button>
-            </DialogActions>
-        </Dialog>
+            )}
+            onClose={handleClose}
+        />
     );
 };
 

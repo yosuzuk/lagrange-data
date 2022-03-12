@@ -87,7 +87,6 @@ export const MyListPage = () => {
             {shipsForShare && (
                 <ShipsSharingDialog
                     ships={shipsForShare}
-                    open={true}
                     onClose={handleCloseShare}
                 />
             )}

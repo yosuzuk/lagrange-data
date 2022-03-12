@@ -11,7 +11,7 @@ import { ShipSettingState, IUserSettings } from '../../../userSettings/types/Use
 import { getCurrentUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
-import { ResetConfirmationDialog } from './ResetConfirmationDialog';
+import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
@@ -80,7 +80,11 @@ export const MyListEditPage = () => {
                 </Box>
             </Container>
             {confirmingReset && (
-                <ResetConfirmationDialog
+                <ConfirmationDialog
+                    title={'初期化'}
+                    question={'マイリスト設定を初期状態に戻しますか？'}
+                    cancelText={'キャンセル'}
+                    confirmText={'初期化'}
                     onCancel={handleCancelReset}
                     onConfirm={handleConfirmReset}
                 />
