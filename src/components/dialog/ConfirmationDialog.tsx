@@ -27,7 +27,7 @@ export const ConfirmationDialog = (props: IProps) => {
                     <Button variant="outlined" onClick={onCancel}>
                         {cancelText}
                     </Button>
-                    <Button variant="outlined" onClick={onConfirm}>
+                    <Button variant="contained" onClick={onConfirm}>
                         {confirmText}
                     </Button>
                 </>

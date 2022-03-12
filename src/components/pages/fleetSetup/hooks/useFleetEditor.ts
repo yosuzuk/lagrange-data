@@ -5,26 +5,16 @@ import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { applyCarriedShipCount, applyShipCount, getCurrentFleetSetups } from '../utils/fleetSetupUtils';
 
 interface IHookResult {
-    fleetSetups: IFleetSetup[];
     fleetSetup: IFleetSetup;
-    switchFleet: (fleetKey: string) => void;
     setFleetName: (fleetName: string) => void;
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
-export const useFleetEditor = (): IHookResult => {
+export const useFleetEditor = (initialFleetKey?: string): IHookResult => {
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
-    const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(fleetSetups[0]);
-
-    const switchFleet = useCallback((fleetKey: string) => {
-        const fleetSetup = fleetSetups.find(fleetSetup => fleetSetup.key === fleetKey);
-        if (!fleetSetup) {
-            throw new Error(`Invalid fleet key "${fleetKey}"`);
-        }
-        setFleetSetup(fleetSetup);
-    }, [fleetSetups]);
+    const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
 
     const setFleetName = useCallback((fleetName: string) => {
         setFleetSetup(fleetSetup => ({
@@ -42,9 +32,7 @@ export const useFleetEditor = (): IHookResult => {
     }, []);
 
     return {
-        fleetSetups,
         fleetSetup,
-        switchFleet,
         setFleetName,
         setShipCount,
         setCarriedShipCount,

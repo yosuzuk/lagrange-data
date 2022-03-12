@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
@@ -9,6 +9,7 @@ import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
+    const { fleetKey } = useParams();
 
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
@@ -44,7 +45,7 @@ export const FleetSetupEditPage = () => {
             />
             <Container>
                 <Box p={1}>
-                    <FleetEditor />
+                    <FleetEditor fleetKey={fleetKey} />
                 </Box>
             </Container>
             {confirmingReset && (

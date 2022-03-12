@@ -2,29 +2,33 @@ import { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import { useFleetEditor } from './hooks/useFleetEditor';
-import { FleetSelection } from './FleetSelection';
 import { FleetNameDialog } from './FleetNameDialog';
 
-export const FleetEditor = () => {
+interface IProps {
+    fleetKey?: string;
+}
+
+export const FleetEditor = (props: IProps) => {
+    const { fleetKey } = props;
     const [renaming, setRenaming] = useState<boolean>(false);
 
     const {
-        fleetSetups,
         fleetSetup,
-        switchFleet,
         setFleetName,
         setShipCount,
         setCarriedShipCount,
-    } = useFleetEditor();
+    } = useFleetEditor(fleetKey);
 
     const handleStartRenaming = () => {
         setRenaming(true);
     };
 
     const handleConfirmRenaming = (newName: string) => {
+        setRenaming(false);
         setFleetName(newName);
     };
 
@@ -37,13 +41,15 @@ export const FleetEditor = () => {
             <Stack spacing={2}>
                 <Paper>
                     <Box p={1}>
-                        <Stack spacing={2} direction="row">
+                        <Stack spacing={1} direction="row" alignItems="center">
                             <div>
-                                <FleetSelection fleetSetups={fleetSetups} fleetSetup={fleetSetup} onChange={switchFleet} />
+                                <Typography variant="body1">
+                                    {fleetSetup.name}
+                                </Typography>
                             </div>
                             <div>
                                 <IconButton onClick={handleStartRenaming}>
-                                    <EditIcon />
+                                    <EditIcon fontSize="small" />
                                 </IconButton>
                             </div>
                         </Stack>

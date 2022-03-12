@@ -108,11 +108,26 @@ function App() {
                         <Route
                             path="fleetSetup/edit"
                             element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <FleetSetupEditPage />
-                                </Suspense>
+                                <Outlet />
                             )}
-                        />
+                        >
+                            <Route
+                                index={true}
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <FleetSetupEditPage />
+                                    </Suspense>
+                                )}
+                            />
+                            <Route
+                                path=":fleetKey"
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <FleetSetupEditPage />
+                                    </Suspense>
+                                )}
+                            />
+                        </Route>
                         <Route
                             path="debug"
                             element={(
