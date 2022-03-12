@@ -17,7 +17,8 @@ const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPa
 const BoxChancePage = lazy(() => import('./components/pages/techFiles/TechFilesPage'));
 const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage'));
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
-const FleetEditorPage = lazy(() => import('./components/pages/fleetEditor/FleetEditorPage'));
+const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupPage'));
+const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 const theme = createTheme({
@@ -97,10 +98,18 @@ function App() {
                             )}
                         />
                         <Route
-                            path="fleetEditor"
+                            path="fleetSetup"
                             element={(
                                 <Suspense fallback={<LoadingIndicator />}>
-                                    <FleetEditorPage />
+                                    <FleetSetupPage />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path="fleetSetup/edit"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <FleetSetupEditPage />
                                 </Suspense>
                             )}
                         />
