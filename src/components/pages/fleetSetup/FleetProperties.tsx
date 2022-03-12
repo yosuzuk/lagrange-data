@@ -4,10 +4,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import InfoIcon from '@mui/icons-material/Info';
+import ErrorIcon from '@mui/icons-material/Error';
 import Typography from '@mui/material/Typography';
 import { IFleetSetup } from './types/IFleetSetup';
 import { LabeledList } from '../../list/LabeledList';
-import { getFleetShipCount } from './utils/fleetSetupUtils';
+import { getFleetShipCount } from './utils/shipCounter';
 import { translateShipType } from '../../../utils/shipTypeUtils';
 import { ShipType } from '../../../types/ShipType';
 import { translateShipRow } from '../../../utils/shipRowUtils';
@@ -22,11 +23,17 @@ export const FleetProperties = (props: IProps) => {
     const [expanded, setExpanded] = useState<boolean>(false);
 
     const {
+        totalCost,
         shipCount,
         shipCountByType,
         shipCountByRow,
         reinforcementCount,
-    } = useMemo(() => getFleetShipCount(fleetSetup), [fleetSetup]);
+    } = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
+
+    const exceedingCost = totalCost > fleetSetup.maxCost;
+    const exceedingReinforcement = reinforcementCount > fleetSetup.maxReinforcement;
+    const hasIssue = exceedingCost || exceedingReinforcement;
+    const expandIcon = hasIssue ? <ErrorIcon color="error" /> : <InfoIcon color="primary" />;
 
     return (
         <Accordion
@@ -34,7 +41,7 @@ export const FleetProperties = (props: IProps) => {
             onChange={() => setExpanded(!expanded)}
         >
             <AccordionSummary
-                expandIcon={expanded ? <ExpandMoreIcon /> : <InfoIcon color="primary" />}
+                expandIcon={expanded ? <ExpandMoreIcon /> : expandIcon}
             >
                 <Typography variant="body1">
                     {fleetSetup.name}
@@ -48,20 +55,19 @@ export const FleetProperties = (props: IProps) => {
                                 key: 'reinforcementCount',
                                 label: '増援',
                                 value: (
-                                    <Typography
-                                        variant="body2"
-                                        sx={reinforcementCount > fleetSetup.maxReinforcement ? {
-                                            color: 'red',
-                                        } : {}}
-                                    >
+                                    <Typography variant="body2" sx={exceedingCost ? { color: 'red' } : {}}>
                                         {`${reinforcementCount} / ${fleetSetup.maxReinforcement}`}
                                     </Typography>
                                 ),
                             },
                             {
-                                key: 'maxCost',
-                                label: '艦隊司令pt上限',
-                                value: fleetSetup.maxCost,
+                                key: 'cost',
+                                label: '艦隊司令pt',
+                                value: (
+                                    <Typography variant="body2" sx={exceedingReinforcement ? { color: 'red' } : {}}>
+                                        {`${totalCost} / ${fleetSetup.maxCost}`}
+                                    </Typography>
+                                ),
                             },
                             {
                                 key: 'shipCount',

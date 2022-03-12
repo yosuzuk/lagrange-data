@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import { IFleetSetup } from './types/IFleetSetup';
@@ -74,6 +75,13 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     error={!!errors['maxCost']}
                                     helperText={errors['maxCost']}
                                     fullWidth={verticalAlignment}
+                                    SelectProps={{
+                                        renderValue: () => (
+                                            <Typography variant="body1" whiteSpace="normal">
+                                                {fleetSetup.maxCost}
+                                            </Typography>
+                                        )
+                                    }}
                                 >
                                     <MenuItem value={'450'}>
                                         {'４５０（戦地指令センターに結合）'}
@@ -115,6 +123,13 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     error={!!errors['maxReinforcement']}
                                     helperText={errors['maxReinforcement']}
                                     fullWidth={verticalAlignment}
+                                    SelectProps={{
+                                        renderValue: () => (
+                                            <Typography variant="body1" whiteSpace="normal">
+                                                {fleetSetup.maxReinforcement}
+                                            </Typography>
+                                        )
+                                    }}
                                 >
                                     <MenuItem value={'5'}>
                                         {'５隻（結合効果無し）'}

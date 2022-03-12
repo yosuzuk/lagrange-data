@@ -1,9 +1,7 @@
-import { ShipRow } from '../../../../types/ShipRow';
-import { ShipSubType, ShipType } from '../../../../types/ShipType';
+import { ShipSubType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
-import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { ICarriedShipSelection, IFleetSetup, IMinifiedFleetSetup, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
 export function getCurrentFleetSetups(userSettings: IUserSettings): IFleetSetup[] {
@@ -249,42 +247,4 @@ export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetS
             };
         })
     };
-}
-
-interface IFleetShipCount {
-    shipCount: number;
-    shipCountByType: Record<ShipType, number>;
-    shipCountByRow: Record<ShipRow, number>;
-    reinforcementCount: number;
-}
-
-export function getFleetShipCount(fleetSetup: IFleetSetup): IFleetShipCount {
-    const shipCount = fleetSetup.ships.length;
-
-    const shipCountByType = Object.keys(shipTypes).reduce((acc, shipType) => ({
-        ...acc,
-        [shipType]: 0,
-    }), {} as Record<ShipType, number>);
-
-    const shipCountByRow: Record<ShipRow, number> = {
-        [ShipRow.FRONT]: 0,
-        [ShipRow.MIDDLE]: 0,
-        [ShipRow.BACK]: 0,
-        [ShipRow.NONE]: 0,
-    };
-
-    let reinforcementCount = 0;
-    fleetSetup.ships.forEach(ship => {
-        shipCountByType[ship.shipDefinition.type] += ship.count;
-        shipCountByRow[ship.shipDefinition.row] += ship.count;
-        if (ship.carriedShips.length > 0) {
-            ship.carriedShips.forEach(carriedShip => {
-                shipCountByType[carriedShip.shipDefinition.type] += carriedShip.count;
-            });
-        }
-        if (ship.reinforcement !== null) {
-            reinforcementCount += ship.count;
-        }
-    });
-    return { shipCount, shipCountByType, shipCountByRow, reinforcementCount };
 }

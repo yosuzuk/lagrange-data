@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Container } from '../../container/Container';
@@ -7,6 +7,8 @@ import { FleetPropertiesEdit } from './FleetPropertiesEdit';
 import { FleetSetupEditActionBar } from './FleetSetupEditActionBar';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useFleetEditor } from './hooks/useFleetEditor';
+import { getFleetShipCount } from './utils/shipCounter';
+import { FleetSetupBottomBar } from './FleetSetupBottomBar';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -23,6 +25,8 @@ export const FleetSetupEditPage = () => {
         save,
         reset,
     } = useFleetEditor(fleetKey);
+
+    const fleetShipCount = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
 
     const handleClickCancel = () => {
         navigate('/fleetSetup');
@@ -67,6 +71,7 @@ export const FleetSetupEditPage = () => {
                     />
                 </Box>
             </Container>
+            <FleetSetupBottomBar fleetSetup={fleetSetup} fleetShipCount={fleetShipCount} />
             {confirmingReset && (
                 <ConfirmationDialog
                     title={'初期化'}
