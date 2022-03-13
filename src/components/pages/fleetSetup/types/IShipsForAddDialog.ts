@@ -2,8 +2,9 @@ import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ReinforcementType } from './IFleetSetup';
 
 export interface IShipsForAddDialog {
-    ships: Record<string, IShipForAddDialog>;
+    ships: IShipForAddDialog[];
     reinforcement: ReinforcementType | null;
+    remainingCount: number | null;
 }
 
 export interface IShipForAddDialog {

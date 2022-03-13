@@ -7,7 +7,7 @@ import { IFleetShipCount } from '../types/IFleetShipCount';
 export function getFleetShipCount(ships: IShipSelection[]): IFleetShipCount {
     let totalCost = 0;
 
-    const shipCount = ships.length;    
+    const shipCount = ships.map(s => s.count).reduce((sum, count) => sum + count, 0);
 
     const shipCountByType = Object.keys(shipTypes).reduce((acc, shipType) => ({
         ...acc,
@@ -21,7 +21,6 @@ export function getFleetShipCount(ships: IShipSelection[]): IFleetShipCount {
         [ShipRow.NONE]: 0,
     };
 
-    let reinforcementCount = 0;
     ships.forEach(ship => {
         if (ship.reinforcement === null) {
             totalCost += (ship.count * ship.shipDefinition.cost);
@@ -34,9 +33,6 @@ export function getFleetShipCount(ships: IShipSelection[]): IFleetShipCount {
                 shipCountByType[carriedShip.shipDefinition.type] += carriedShip.count;
             });
         }
-        if (ship.reinforcement !== null) {
-            reinforcementCount += ship.count;
-        }
     });
-    return { shipCount, shipCountByType, shipCountByRow, reinforcementCount, totalCost };
+    return { shipCount, shipCountByType, shipCountByRow, totalCost };
 }

@@ -31,12 +31,12 @@ export const ShipCountList = (props: IProps) => {
                     onChangeCount={onChangeCount}
                 />
             ))}
-            {shipsForAddDialog?.ships && Object.keys(shipsForAddDialog.ships).map(shipId => shipsForAddDialog.ships[shipId]).map(newShip => (
+            {shipsForAddDialog?.ships && shipsForAddDialog.ships.map(newShip => (
                 <MemoizedShipCountListItem
                     key={`${newShip.shipDefinition.id}_${shipsForAddDialog.reinforcement ?? 'initial'}`}
                     shipDefinition={newShip.shipDefinition}
                     count={newShip.count}
-                    maxCount={newShip.maxCount}
+                    maxCount={shipsForAddDialog.remainingCount !== null ? Math.min(newShip.maxCount, shipsForAddDialog.remainingCount + newShip.count) : newShip.maxCount}
                     reinforcement={shipsForAddDialog.reinforcement}
                     showCost={showCost}
                     showReinforcement={showReinforcement}

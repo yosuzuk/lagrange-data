@@ -27,11 +27,10 @@ export const FleetProperties = (props: IProps) => {
         shipCount,
         shipCountByType,
         shipCountByRow,
-        reinforcementCount,
     } = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
 
     const exceedingCost = totalCost > fleetSetup.maxCost;
-    const exceedingReinforcement = reinforcementCount > fleetSetup.maxReinforcement;
+    const exceedingReinforcement = fleetSetup.totalReinforcementCount > fleetSetup.maxReinforcement;
     const hasIssue = exceedingCost || exceedingReinforcement;
     const expandIcon = hasIssue ? <ErrorIcon color="error" /> : <InfoIcon color="primary" />;
 
@@ -55,8 +54,8 @@ export const FleetProperties = (props: IProps) => {
                                 key: 'reinforcementCount',
                                 label: '増援',
                                 value: (
-                                    <Typography variant="body2" sx={exceedingCost ? { color: 'red' } : {}}>
-                                        {`${reinforcementCount} / ${fleetSetup.maxReinforcement}`}
+                                    <Typography variant="body2" sx={exceedingReinforcement ? { color: 'red' } : {}}>
+                                        {`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}
                                     </Typography>
                                 ),
                             },
@@ -64,7 +63,7 @@ export const FleetProperties = (props: IProps) => {
                                 key: 'cost',
                                 label: '艦隊司令pt',
                                 value: (
-                                    <Typography variant="body2" sx={exceedingReinforcement ? { color: 'red' } : {}}>
+                                    <Typography variant="body2" sx={exceedingCost ? { color: 'red' } : {}}>
                                         {`${totalCost} / ${fleetSetup.maxCost}`}
                                     </Typography>
                                 ),

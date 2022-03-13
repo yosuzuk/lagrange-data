@@ -6,6 +6,7 @@ export interface IFleetSetup {
     key: string;
     name: string;
     ships: IShipSelection[];
+    totalReinforcementCount: number;
     maxReinforcement: number;
     maxCost: number;
 }

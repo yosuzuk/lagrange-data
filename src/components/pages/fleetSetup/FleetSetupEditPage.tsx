@@ -51,7 +51,7 @@ export const FleetSetupEditPage = () => {
     } = useShipsForAddDialog({
         userSettings,
         fleetSetup,
-        reinforcementType: null,
+        reinforcement: null,
         shipDefinitions: shipDefinitionsForAddDialog.myListShips,
         setFleetSetup,
     });
@@ -65,7 +65,7 @@ export const FleetSetupEditPage = () => {
     } = useShipsForAddDialog({
         userSettings,
         fleetSetup,
-        reinforcementType: 'self',
+        reinforcement: 'self',
         shipDefinitions: shipDefinitionsForAddDialog.myListShips,
         setFleetSetup,
     });
@@ -79,7 +79,7 @@ export const FleetSetupEditPage = () => {
     } = useShipsForAddDialog({
         userSettings,
         fleetSetup,
-        reinforcementType: 'ally',
+        reinforcement: 'ally',
         shipDefinitions: shipDefinitionsForAddDialog.allyReinforcementShips,
         setFleetSetup,
     });
@@ -122,7 +122,7 @@ export const FleetSetupEditPage = () => {
                 onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
                 onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
                 addShipsDisabled={fleetShipCount.totalCost >= fleetSetup.maxCost}
-                addReinforcementDisabled={fleetShipCount.reinforcementCount >= fleetSetup.maxReinforcement}
+                addReinforcementDisabled={fleetSetup.totalReinforcementCount >= fleetSetup.maxReinforcement}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container>

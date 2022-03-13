@@ -15,7 +15,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
     const { fleetSetup, fleetShipCount } = props;
 
     const exceedingCost = fleetShipCount.totalCost > fleetSetup.maxCost;
-    const exceedingReinforcement = fleetShipCount.reinforcementCount > fleetSetup.maxReinforcement;
+    const exceedingReinforcement = fleetSetup.totalReinforcementCount > fleetSetup.maxReinforcement;
 
     return (
         <Box sx={{ height: '100px' }}>
@@ -32,7 +32,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                                         variant="body1"
                                         sx={{ color: exceedingCost ? 'red' : undefined }}
                                     >
-                                        {`${fleetShipCount.totalCost} / ${fleetSetup.maxCost}`}
+                                        <strong>{`${fleetShipCount.totalCost} / ${fleetSetup.maxCost}`}</strong>
                                     </Typography>
                                 </div>
                             </Box>
@@ -45,7 +45,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                                         variant="body1"
                                         sx={{ color: exceedingReinforcement ? 'red' : undefined }}
                                     >
-                                        {`${fleetShipCount.reinforcementCount} / ${fleetSetup.maxReinforcement}`}
+                                        <strong>{`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}</strong>
                                     </Typography>
                                 </div>
                             </Box>

@@ -52,6 +52,16 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         <ActionBar
             left={(fullWidth: boolean) => (
                 <>
+                    <Button
+                        key="save"
+                        variant="contained"
+                        startIcon={<SaveIcon />}
+                        onClick={onSave}
+                        disabled={saveDisabled}
+                        fullWidth={fullWidth}
+                    >
+                        {'保存'}
+                    </Button>
                     <ButtonMenu
                         icon={<AddIcon />}
                         text={'艦船を追加'}
@@ -79,16 +89,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                             },
                         ]}
                     />
-                    <Button
-                        key="save"
-                        variant="contained"
-                        startIcon={<SaveIcon />}
-                        onClick={onSave}
-                        disabled={saveDisabled}
-                        fullWidth={fullWidth}
-                    >
-                        {'保存'}
-                    </Button>
                 </>
             )}
             right={(fullWidth: boolean) => (
