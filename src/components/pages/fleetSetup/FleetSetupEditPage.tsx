@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, memo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -16,6 +16,9 @@ import { getCurrentUserSettings } from '../../../userSettings/utils/userSettings
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
 import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
+import { ShipCountList } from './ShipCountList';
+
+const MemoizedShipCountList = memo(ShipCountList);
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -129,6 +132,12 @@ export const FleetSetupEditPage = () => {
                             fleetSetup={fleetSetup}
                             onChange={setFleetSetup}
                             errors={errors}
+                        />
+                        <MemoizedShipCountList
+                            fleetSetup={fleetSetup}
+                            onChangeCount={setShipCount}
+                            showCost={true}
+                            showReinforcement={true}
                         />
                         <button onClick={openAddNewInitialShips}>{'add initial ships'}</button>
                         <button onClick={openAddNewSelfReinforcement}>{'add self reinforcement ships'}</button>

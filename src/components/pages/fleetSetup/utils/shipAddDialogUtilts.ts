@@ -2,7 +2,7 @@ import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IShipsForAddDialog, IShipForAddDialog } from '../types/IShipsForAddDialog';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { createShipSelection } from './fleetSetupUtils';
+import { applyShipCount } from './fleetSetupUtils';
 import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { ShipType } from '../../../../types/ShipType';
 
@@ -11,9 +11,10 @@ export function createShipsForAddDialog(
     reinforcement: ReinforcementType | null,
     fleetSetup: IFleetSetup,
 ): IShipsForAddDialog {
+    const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
     return {
         ships: shipDefinitions.reduce((acc: Record<string, IShipForAddDialog>, shipDefinition: IShipDefinition) => {
-            const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, fleetSetup);
+            const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, totalReinforcementCount, fleetSetup);
             return shipForAddDialog ? {
                 ...acc,
                 [shipDefinition.id]: shipForAddDialog,
@@ -26,6 +27,7 @@ export function createShipsForAddDialog(
 function createShipForAddDialog(
     shipDefinition: IShipDefinition,
     reinforcement: ReinforcementType | null,
+    totalReinforcementCount: number,
     fleetSetup: IFleetSetup,
 ): IShipForAddDialog | null {
     const sameShipSelections = fleetSetup.ships.filter(s => s.shipDefinition.id === shipDefinition.id);
@@ -37,8 +39,10 @@ function createShipForAddDialog(
 
     switch (reinforcement) {
         case 'ally': {
-            const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
-            const maxCount = fleetSetup.maxReinforcement - totalReinforcementCount;
+            const maxCount = Math.min(
+                shipDefinition.operationLimit,
+                fleetSetup.maxReinforcement - totalReinforcementCount,
+            );
             return count < maxCount ? {
                 shipDefinition,
                 count,
@@ -47,7 +51,6 @@ function createShipForAddDialog(
         }
         case 'self': {
             const sameShipInitialCount = sameShipSelections.find(s => s.reinforcement === null)?.count ?? 0;
-            const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
             const maxCount = Math.min(
                 shipDefinition.operationLimit - sameShipInitialCount,
                 fleetSetup.maxReinforcement - totalReinforcementCount
@@ -87,28 +90,21 @@ export function applyCountToShipInAddDialog(shipId: string, count: number, ships
 }
 
 export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDialog, fleetSetup: IFleetSetup, userSettings: IUserSettings): IFleetSetup {
-    return {
-        ...fleetSetup,
-        ships: [
-            ...fleetSetup.ships,
-            ...Object.keys(shipsForAddDialog.ships)
-                .flatMap(shipId => {
-                    const shipForAddDialog = shipsForAddDialog.ships[shipId];
-                    if (shipForAddDialog.count === 0) {
-                        return [];
-                    }
-                    return [
-                        createShipSelection({
-                            shipDefinition: shipForAddDialog.shipDefinition,
-                            count: shipForAddDialog.count,
-                            maxCount: shipForAddDialog.maxCount,
-                            reinforcement: shipsForAddDialog.reinforcement,
-                            userSettings,
-                        }),
-                    ];
-                }),
-        ],
-    };
+    let newFleetSetup: IFleetSetup = fleetSetup;
+    Object.keys(shipsForAddDialog.ships)
+        .map(shipId => shipsForAddDialog.ships[shipId])
+        .filter(ship => ship.count > 0)
+        .forEach(shipToAdd => {
+            newFleetSetup = applyShipCount({
+                shipId: shipToAdd.shipDefinition.id,
+                count: shipToAdd.count,
+                reinforcement: shipsForAddDialog.reinforcement,
+                fleetSetup: newFleetSetup,
+                userSettings,
+            });
+        });
+
+    return newFleetSetup;
 }
 
 interface IShipDefinitionsForAddDialog {

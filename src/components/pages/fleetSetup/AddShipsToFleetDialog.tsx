@@ -15,7 +15,7 @@ export interface IProps {
     reinforcement: ReinforcementType | null;
     onCancel: () => void;
     onApply: () => void;
-    onChangeCount: (shipId: string, count: number) => void;
+    onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToFleetDialog = (props: IProps) => {

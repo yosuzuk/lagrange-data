@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { ShipCountListItem } from './ShipCountListItem';
 import Stack from '@mui/material/Stack';
-import { IFleetSetup } from './types/IFleetSetup';
+import { IFleetSetup, ReinforcementType } from './types/IFleetSetup';
 import { IShipsForAddDialog } from './types/IShipsForAddDialog';
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
     shipsForAddDialog?: IShipsForAddDialog;
     showCost: boolean;
     showReinforcement: boolean;
-    onChangeCount: (shipId: string, count: number) => void;
+    onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 const MemoizedShipCountListItem = memo(ShipCountListItem);
