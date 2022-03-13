@@ -7,33 +7,36 @@ import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import GrainIcon from '@mui/icons-material/Grain';
 import { getMaxPopperHeight } from '../../utils/domUtils';
 
 export interface IButtonMenuOption {
     key: string;
+    icon?: ReactNode;
     text: string;
     value: string;
+    disabled?: boolean;
 }
 
 interface IProps {
     options: IButtonMenuOption[];
     icon?: ReactNode;
     text: string;
-    value: string;
-    onChange: (value: string) => void;
+    value?: string;
+    onClick: (value: string) => void;
     fullWidth?: boolean;
+    disabled?: boolean;
 }
 
 export const ButtonMenu = (props: IProps) => {
-    const { options, icon, text, value, onChange, fullWidth } = props;
+    const { options, icon, text, value, onClick, fullWidth, disabled } = props;
     const [opened, setOpened] = useState<boolean>(false);
     const anchorRef = useRef<HTMLDivElement>(null);
 
-    const handleChange = (value: string) => {
+    const handleClickOption = (value: string) => {
         setOpened(false);
-        onChange(value);
+        onClick(value);
     };
 
     return (
@@ -42,10 +45,12 @@ export const ButtonMenu = (props: IProps) => {
                 variant="outlined"
                 fullWidth={fullWidth}
                 ref={anchorRef}
+                disabled={disabled}
             >
                 <Button
                     startIcon={icon}
                     onClick={() => setOpened(true)}
+                    disabled={disabled}
                 >
                     {text}
                 </Button>
@@ -78,8 +83,14 @@ export const ButtonMenu = (props: IProps) => {
                                         <MenuItem
                                             key={option.key}
                                             selected={option.value === value}
-                                            onClick={() => handleChange(option.value)}
+                                            onClick={() => handleClickOption(option.value)}
+                                            disabled={option.disabled}
                                         >
+                                            {option.icon && (
+                                                <ListItemIcon>
+                                                    {option.icon}
+                                                </ListItemIcon>
+                                            )}
                                             <ListItemText>
                                                 {option.text}
                                             </ListItemText>

@@ -26,7 +26,7 @@ export const FleetSelectionButton = (props: IProps) => {
                 text={'艦隊選択'}
                 value={fleetSetup.key}
                 options={options}
-                onChange={onChange}
+                onClick={onChange}
                 fullWidth={fullWidth}
             />
         </>

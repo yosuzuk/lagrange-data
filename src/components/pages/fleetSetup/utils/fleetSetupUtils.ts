@@ -95,7 +95,7 @@ interface ICreateShipSelectionArgs {
     userSettings: IUserSettings;
 }
 
-function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
+export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
     const { shipId, count, reinforcement, userSettings } = args;
     const shipDefinition = getShipDefinitionById(shipId);
 

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetPropertiesEdit } from './FleetPropertiesEdit';
@@ -9,10 +10,19 @@ import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useFleetEditor } from './hooks/useFleetEditor';
 import { getFleetShipCount } from './utils/shipCounter';
 import { FleetSetupBottomBar } from './FleetSetupBottomBar';
+import { useShipsForAddDialog } from './hooks/useShipsForAddDialog';
+import { IUserSettings } from '../../../userSettings/types/UserSettings';
+import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { shipDefinitions } from '../../../data/shipDefinitions';
+import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
+import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
     const { fleetKey } = useParams();
+
+    const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
+    const shipDefinitionsForAddDialog = useMemo(() => extractShipDefinitionsForAddDialog(shipDefinitions, userSettings), [userSettings]);
 
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
@@ -24,7 +34,52 @@ export const FleetSetupEditPage = () => {
         setCarriedShipCount,
         save,
         reset,
-    } = useFleetEditor(fleetKey);
+    } = useFleetEditor({
+        initialFleetKey: fleetKey,
+        userSettings,
+    });
+
+    const {
+        shipsForAddDialog: shipsForInitialShipsAddDialog,
+        open: openAddNewInitialShips,
+        cancel: cancelAddNewInitialShips,
+        apply: applyNewInitialShips,
+        setShipCount: setShipCountForInitialShips,
+    } = useShipsForAddDialog({
+        userSettings,
+        fleetSetup,
+        reinforcementType: null,
+        shipDefinitions: shipDefinitionsForAddDialog.myListShips,
+        setFleetSetup,
+    });
+
+    const {
+        shipsForAddDialog: shipsForSelfReinforcementAddDialog,
+        open: openAddNewSelfReinforcement,
+        cancel: cancelAddNewSelfReinforcement,
+        apply: applyNewSelfReinforcement,
+        setShipCount: setShipCountForSelfReinforcement,
+    } = useShipsForAddDialog({
+        userSettings,
+        fleetSetup,
+        reinforcementType: 'self',
+        shipDefinitions: shipDefinitionsForAddDialog.myListShips,
+        setFleetSetup,
+    });
+
+    const {
+        shipsForAddDialog: shipsForAllyReinforcementAddDialog,
+        open: openAddNewAllyReinforcement,
+        cancel: cancelAddNewAllyReinforcement,
+        apply: applyNewAllyReinforcement,
+        setShipCount: setShipCountForAllyReinforcement,
+    } = useShipsForAddDialog({
+        userSettings,
+        fleetSetup,
+        reinforcementType: 'ally',
+        shipDefinitions: shipDefinitionsForAddDialog.allyReinforcementShips,
+        setFleetSetup,
+    });
 
     const fleetShipCount = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
 
@@ -60,18 +115,58 @@ export const FleetSetupEditPage = () => {
                 onSave={handleClickSave}
                 onCancel={handleClickCancel}
                 onReset={handleClickReset}
+                onOpenAddShips={openAddNewInitialShips}
+                onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
+                onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
+                addShipsDisabled={fleetShipCount.totalCost >= fleetSetup.maxCost}
+                addReinforcementDisabled={fleetShipCount.reinforcementCount >= fleetSetup.maxReinforcement}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container>
                 <Box p={1}>
-                    <FleetPropertiesEdit
-                        fleetSetup={fleetSetup}
-                        onChange={setFleetSetup}
-                        errors={errors}
-                    />
+                    <Stack spacing={2}>
+                        <FleetPropertiesEdit
+                            fleetSetup={fleetSetup}
+                            onChange={setFleetSetup}
+                            errors={errors}
+                        />
+                        <button onClick={openAddNewInitialShips}>{'add initial ships'}</button>
+                        <button onClick={openAddNewSelfReinforcement}>{'add self reinforcement ships'}</button>
+                        <button onClick={openAddNewAllyReinforcement}>{'add ally reinforcement ships'}</button>
+                    </Stack>
                 </Box>
             </Container>
             <FleetSetupBottomBar fleetSetup={fleetSetup} fleetShipCount={fleetShipCount} />
+            {shipsForInitialShipsAddDialog && (
+                <AddShipsToFleetDialog
+                    title={'艦船を追加'}
+                    description={'艦船を通常配備で追加します。所持している艦船はマイリストで設定してください。'}
+                    ships={shipsForInitialShipsAddDialog}
+                    onCancel={cancelAddNewInitialShips}
+                    onApply={applyNewInitialShips}
+                    onChangeCount={setShipCountForInitialShips}
+                />
+            )}
+            {shipsForSelfReinforcementAddDialog && (
+                <AddShipsToFleetDialog
+                    title={'増援を追加'}
+                    description={'自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。'}
+                    ships={shipsForSelfReinforcementAddDialog}
+                    onCancel={cancelAddNewSelfReinforcement}
+                    onApply={applyNewSelfReinforcement}
+                    onChangeCount={setShipCountForSelfReinforcement}
+                />
+            )}
+            {shipsForAllyReinforcementAddDialog && (
+                <AddShipsToFleetDialog
+                    title={'増援を追加'}
+                    description={'ユニオンメンバーから送られる増援を追加します。'}
+                    ships={shipsForAllyReinforcementAddDialog}
+                    onCancel={cancelAddNewAllyReinforcement}
+                    onApply={applyNewAllyReinforcement}
+                    onChangeCount={setShipCountForAllyReinforcement}
+                />
+            )}
             {confirmingReset && (
                 <ConfirmationDialog
                     title={'初期化'}

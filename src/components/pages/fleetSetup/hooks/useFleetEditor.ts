@@ -1,9 +1,13 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { getCurrentUserSettings } from '../../../../userSettings/utils/userSettingsUtils';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { applyCarriedShipCount, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
+
+interface IHookArguments {
+    initialFleetKey?: string;
+    userSettings: IUserSettings;
+}
 
 interface IHookResult {
     fleetSetup: IFleetSetup;
@@ -15,9 +19,9 @@ interface IHookResult {
     reset: () => void;
 }
 
-export const useFleetEditor = (initialFleetKey?: string): IHookResult => {
+export const useFleetEditor = (args: IHookArguments): IHookResult => {
+    const { initialFleetKey, userSettings } = args;
     const navigate = useNavigate();
-    const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
 
