@@ -18,6 +18,7 @@ export interface IShipSelection {
     carryCorvette: number;
     carriedShips: ICarriedShipSelection[];
     count: number;
+    maxCount: number;
     reinforcement: ReinforcementType | null;
 }
 
@@ -38,6 +39,7 @@ export interface IMinifiedShipSelection {
     shipId: string;
     carriedShips: IMinifiedCarriedShipSelection[];
     count: number;
+    maxCount: number;
     reinforcement: ReinforcementType | null;
 }
 

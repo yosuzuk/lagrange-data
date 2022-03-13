@@ -99,8 +99,9 @@ export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDial
                     }
                     return [
                         createShipSelection({
-                            shipId: shipForAddDialog.shipDefinition.id,
+                            shipDefinition: shipForAddDialog.shipDefinition,
                             count: shipForAddDialog.count,
+                            maxCount: shipForAddDialog.maxCount,
                             reinforcement: shipsForAddDialog.reinforcement,
                             userSettings,
                         }),
@@ -117,7 +118,10 @@ interface IShipDefinitionsForAddDialog {
     allyReinforcementCarriedShips: IShipDefinition[];
 }
 
-export function extractShipDefinitionsForAddDialog(shipDefinitions: IShipDefinition[], userSettings: IUserSettings) {
+export function extractShipDefinitionsForAddDialog(
+    shipDefinitions: IShipDefinition[],
+    userSettings: IUserSettings,
+): IShipDefinitionsForAddDialog {
     const myListShips: IShipDefinition[] = [];
     const myListCarriedShips: IShipDefinition[] = [];
     const allyReinforcementShips: IShipDefinition[] = [];

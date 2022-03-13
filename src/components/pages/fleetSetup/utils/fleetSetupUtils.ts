@@ -1,3 +1,4 @@
+import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipSubType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
@@ -35,8 +36,9 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
         name: minifiedFleetSetup.name,
         ships: minifiedFleetSetup.ships.map(minifiedShipSelection => ({
             ...createShipSelection({
-                shipId: minifiedShipSelection.shipId,
+                shipDefinition: getShipDefinitionById(minifiedShipSelection.shipId),
                 count: minifiedShipSelection.count,
+                maxCount: minifiedShipSelection.maxCount,
                 reinforcement: minifiedShipSelection.reinforcement,
                 userSettings,
             }),
@@ -61,6 +63,7 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
                 count: carriedShipSelection.count,
             })),
             count: shipSelection.count,
+            maxCount: shipSelection.maxCount,
             reinforcement: shipSelection.reinforcement,
         })),
         maxReinforcement: fleetSetup.maxReinforcement,
@@ -89,15 +92,15 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
 }
 
 interface ICreateShipSelectionArgs {
-    shipId: string;
+    shipDefinition: IShipDefinition;
     count: number;
+    maxCount: number;
     reinforcement: ReinforcementType | null;
     userSettings: IUserSettings;
 }
 
 export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
-    const { shipId, count, reinforcement, userSettings } = args;
-    const shipDefinition = getShipDefinitionById(shipId);
+    const { shipDefinition, count, maxCount, reinforcement, userSettings } = args;
 
     let carryUpToLargeFighter = 0;
     let carryUpToMediumFighter = 0;
@@ -149,6 +152,7 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         carryCorvette,
         carriedShips: [],
         count: Math.max(0, count),
+        maxCount,
         reinforcement,
     };
 }
@@ -180,10 +184,28 @@ export interface IApplyShipCountArgs {
 export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
     const { shipId, count, reinforcement, fleetSetup, userSettings } = args;
 
+    const shipDefinition = getShipDefinitionById(shipId);
+
+    const usedCount = getUsedShipCount(shipId, reinforcement, fleetSetup.ships);
+
+    const reinforcementCount = fleetSetup.ships
+        .filter(s => s.reinforcement !== null)
+        .map(s => s.count)
+        .reduce((sum, count) => sum + count, 0);
+
+    const operationLimit = reinforcement === null ? shipDefinition.operationLimit : fleetSetup.maxReinforcement - reinforcementCount;
+    const maxCount = operationLimit - usedCount;
+
     if (!fleetSetup.ships.find(shipSelection => shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === reinforcement)) {   
         return {
             ...fleetSetup,
-            ships: [...fleetSetup.ships, createShipSelection({ shipId, count, reinforcement, userSettings })],
+            ships: [...fleetSetup.ships, createShipSelection({
+                shipDefinition,
+                count,
+                maxCount,
+                reinforcement,
+                userSettings,
+            })],
         };
     }
 
@@ -197,9 +219,28 @@ export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
             return count <= 0 ? [] : [{
                 ...shipSelection,
                 count: Math.max(0, count),
+                maxCount,
             }];
         }),
     };
+}
+
+function getUsedShipCount(
+    shipId: string,
+    reinforcement: ReinforcementType | null,
+    ships: IShipSelection[],
+): number {
+    switch(reinforcement) {
+        case 'self': {
+            return ships.find(shipSelection => shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === null)?.count ?? 0;
+        }
+        case 'ally': {
+            return 0;
+        }
+        default: {
+            return ships.find(shipSelection => shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === 'self')?.count ?? 0;
+        }
+    }
 }
 
 export interface IApplyCarriedShipCountArgs {

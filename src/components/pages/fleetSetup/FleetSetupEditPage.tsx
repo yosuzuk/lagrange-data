@@ -142,6 +142,7 @@ export const FleetSetupEditPage = () => {
                     title={'艦船を追加'}
                     description={'艦船を通常配備で追加します。所持している艦船はマイリストで設定してください。'}
                     ships={shipsForInitialShipsAddDialog}
+                    reinforcement={null}
                     onCancel={cancelAddNewInitialShips}
                     onApply={applyNewInitialShips}
                     onChangeCount={setShipCountForInitialShips}
@@ -152,6 +153,7 @@ export const FleetSetupEditPage = () => {
                     title={'増援を追加'}
                     description={'自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。'}
                     ships={shipsForSelfReinforcementAddDialog}
+                    reinforcement={'self'}
                     onCancel={cancelAddNewSelfReinforcement}
                     onApply={applyNewSelfReinforcement}
                     onChangeCount={setShipCountForSelfReinforcement}
@@ -162,6 +164,7 @@ export const FleetSetupEditPage = () => {
                     title={'増援を追加'}
                     description={'ユニオンメンバーから送られる増援を追加します。'}
                     ships={shipsForAllyReinforcementAddDialog}
+                    reinforcement={'ally'}
                     onCancel={cancelAddNewAllyReinforcement}
                     onApply={applyNewAllyReinforcement}
                     onChangeCount={setShipCountForAllyReinforcement}
