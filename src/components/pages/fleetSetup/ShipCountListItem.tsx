@@ -8,19 +8,29 @@ import Typography from '@mui/material/Typography';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { ReinforcementType } from './types/IFleetSetup';
+import { IShipDefinition } from '../../../types/ShipDefinition';
 
 interface IProps {
-    name: string;
-    cost: number;
+    shipDefinition: IShipDefinition;
     count: number;
     maxCount: number;
     reinforcement: ReinforcementType | null;
     showCost: boolean;
     showReinforcement: boolean;
+    onChangeCount: (shipId: string, count: number) => void;
 }
 
 export const ShipCountListItem = (props: IProps) => {
-    const { name, cost, count, maxCount, reinforcement, showCost, showReinforcement } = props;
+    const {
+        shipDefinition,
+        count,
+        maxCount,
+        reinforcement,
+        showCost,
+        showReinforcement,
+        onChangeCount,
+    } = props;
+
     return (
         <Paper variant="outlined">
             <Box p={1}>
@@ -28,11 +38,11 @@ export const ShipCountListItem = (props: IProps) => {
                     <Box pb={1}>
                         <Stack spacing={1}>
                             <Typography variant="body1">
-                                {name}
+                                {shipDefinition.name}
                             </Typography>
                             {showCost && (
                                 <Typography variant="body2" color="text.secondary">
-                                    {`指令Ｐｔ：${cost}　合計：${cost * count}`}
+                                    {`指令Ｐｔ：${shipDefinition.cost}　合計：${shipDefinition.cost * count}`}
                                 </Typography>
                             )}
                             {showReinforcement && reinforcement === 'self' && (
@@ -50,19 +60,31 @@ export const ShipCountListItem = (props: IProps) => {
                     <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
                         <Paper variant="outlined" sx={{ display: 'inline-block' }}>
                             <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                <Button>
+                                <Button
+                                    onClick={() => onChangeCount(shipDefinition.id, 0)}
+                                    disabled={count <= 0}
+                                >
                                     {'外す'}
                                 </Button>
-                                <IconButton>
+                                <IconButton
+                                    onClick={() => onChangeCount(shipDefinition.id, count - 1)}
+                                    disabled={count <= 0}
+                                >
                                     <IndeterminateCheckBoxIcon color="primary" />
                                 </IconButton>
-                                <Typography variant="body1">
+                                <Typography variant="body1" sx={{ minWidth: '55px' }} textAlign="center">
                                     <strong>{`${count} / ${maxCount}`}</strong>
                                 </Typography>
-                                <IconButton>
+                                <IconButton
+                                    onClick={() => onChangeCount(shipDefinition.id, count + 1)}
+                                    disabled={count >= maxCount}
+                                >
                                     <AddBoxIcon color="primary" />
                                 </IconButton>
-                                <Button>
+                                <Button
+                                    onClick={() => onChangeCount(shipDefinition.id, maxCount)}
+                                    disabled={count >= maxCount}
+                                >
                                     {'最大'}
                                 </Button>
                             </Stack>

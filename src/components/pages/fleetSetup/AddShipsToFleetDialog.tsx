@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Skeleton from '@mui/material/Skeleton';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ShipCountList } from './ShipCountList';
 import { ReinforcementType } from './types/IFleetSetup';
@@ -18,6 +20,16 @@ export interface IProps {
 
 export const AddShipsToFleetDialog = (props: IProps) => {
     const { title, description, ships, reinforcement, onCancel, onApply, onChangeCount } = props;
+    const [drawList, setDrawList] = useState<boolean>(false);
+
+    useEffect(() => {
+        const t = setTimeout(() => {
+            setDrawList(true);
+        }, 0);
+        return () => {
+            clearTimeout(t);
+        };
+    }, []);
 
     return (
         <ResponsiveDialog
@@ -25,11 +37,22 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             content={(
                 <Stack spacing={2}>
                     <Typography variant="body2">{description}</Typography>
-                    <ShipCountList
-                        shipsForAddDialog={ships}
-                        showCost={!reinforcement}
-                        showReinforcement={false}
-                    />
+                    {drawList ? (
+                        <ShipCountList
+                            shipsForAddDialog={ships}
+                            showCost={!reinforcement}
+                            showReinforcement={false}
+                            onChangeCount={onChangeCount}
+                        />
+                    ) : (
+                        <Stack spacing={1}>
+                            <Skeleton variant="rectangular" height={90} />
+                            <Skeleton variant="rectangular" animation="wave" height={90} />
+                            <Skeleton variant="rectangular" height={90} />
+                            <Skeleton variant="rectangular" animation="wave" height={90} />
+                            <Skeleton variant="rectangular" height={90} />
+                        </Stack>
+                    )}
                 </Stack>
             )}
             actions={(
