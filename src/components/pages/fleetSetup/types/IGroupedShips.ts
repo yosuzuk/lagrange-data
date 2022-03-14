@@ -9,4 +9,5 @@ export interface IShipGroup {
     id: string;
     name: string;
     ships: IShipSelection[];
+    count: number;
 }

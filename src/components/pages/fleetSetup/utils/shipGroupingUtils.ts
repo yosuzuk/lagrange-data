@@ -42,6 +42,7 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                     id: 'all',
                     name: '編成',
                     ships: [...fleetSetup.ships].sort(sortByTypeAndName),
+                    count: fleetSetup.ships.map(s => s.count).reduce((sum, count) => sum + count, 0),
                 }],
             };
         }
@@ -52,6 +53,7 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                     id: 'all',
                     name: '編成',
                     ships: [...fleetSetup.ships].sort(sortByName),
+                    count: fleetSetup.ships.map(s => s.count).reduce((sum, count) => sum + count, 0),
                 }],
             };
         }
@@ -62,13 +64,16 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
 }
 
 function createShipGroupsByRow(shipSelections: IShipSelection[]): IShipGroup[] {
-    return [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK].map(shipRow => ({
-        id: shipRow,
-        name: translateShipRow(shipRow),
-        ships: [
-            ...shipSelections.filter(ship => ship.shipDefinition.row === shipRow),
-        ].sort(sortByTypeAndName),
-    }));
+    return [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK].map(shipRow => {
+        const ships = shipSelections.filter(ship => ship.shipDefinition.row === shipRow).sort(sortByTypeAndName);
+        const count = ships.map(s => s.count).reduce((sum, count) => sum + count, 0);
+        return {
+            id: shipRow,
+            name: translateShipRow(shipRow),
+            ships,
+            count,
+        };
+    });
 }
 
 function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] {
@@ -78,11 +83,14 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
         ShipType.CRUISER,
         ShipType.DESTROYER,
         ShipType.FRIGATE,
-    ].map(shipType => ({
-        id: shipType,
-        name: translateShipType(shipType),
-        ships: [
-            ...shipSelections.filter(ship => ship.shipDefinition.type === shipType),
-        ].sort(sortByName),
-    }));
+    ].map(shipType => {
+        const ships = shipSelections.filter(ship => ship.shipDefinition.type === shipType).sort(sortByName);
+        const count = ships.map(s => s.count).reduce((sum, count) => sum + count, 0);
+        return {
+            id: shipType,
+            name: translateShipType(shipType),
+            ships,
+            count,
+        };
+    });
 }

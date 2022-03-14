@@ -1,9 +1,9 @@
 import { useMemo, useState, memo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetPropertiesEdit } from './FleetPropertiesEdit';
@@ -20,7 +20,6 @@ import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
 import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
 import { ShipCountList } from './ShipCountList';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
-import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { AddShipsButton } from './AddShipsButton';
 
 const MemoizedShipCountList = memo(ShipCountList);
@@ -146,24 +145,21 @@ export const FleetSetupEditPage = () => {
                             onChange={setFleetSetup}
                             errors={errors}
                         />
-                        <ExpandStack
-                            key={groupedShips.groupedBy}
-                            expandables={groupedShips.groups.map(group => ({
-                                id: group.id,
-                                initiallyOpened: true,
-                                summary: (
-                                    <Stack
-                                        spacing={1}
-                                        direction="row"
-                                        alignItems="center"
-                                        sx={{ width: '100%' }}
-                                    >
-                                        <Box sx={{ flexGrow: 1 }}>
-                                            <Typography variant="body1">
-                                                {group.name}
-                                            </Typography>
-                                        </Box>
-                                        <Box pr={2}>
+                        {groupedShips.groups.map(group => (
+                            <Paper key={group.id}>
+                                <Box p={1}>
+                                    <Stack spacing={1}>
+                                        <Stack
+                                            spacing={1}
+                                            direction="row"
+                                            alignItems="center"
+                                            sx={{ width: '100%' }}
+                                        >
+                                            <Box sx={{ flexGrow: 1 }}>
+                                                <Typography variant="body1">
+                                                    {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                </Typography>
+                                            </Box>
                                             <AddShipsButton
                                                 filter={group.id}
                                                 onOpenAddShips={openAddNewInitialShips}
@@ -172,19 +168,17 @@ export const FleetSetupEditPage = () => {
                                                 addShipsDisabled={addShipsDisabled}
                                                 addReinforcementDisabled={addReinforcementDisabled}
                                             />
-                                        </Box>
+                                        </Stack>
+                                        <MemoizedShipCountList
+                                            shipSelections={group.ships}
+                                            onChangeCount={setShipCount}
+                                            showCost={true}
+                                            showReinforcement={true}
+                                        />
                                     </Stack>
-                                ),
-                                details: (
-                                    <MemoizedShipCountList
-                                        shipSelections={group.ships}
-                                        onChangeCount={setShipCount}
-                                        showCost={true}
-                                        showReinforcement={true}
-                                    />
-                                ),
-                            }))}
-                        />
+                                </Box>
+                            </Paper>
+                        ))}
                     </Stack>
                 </Box>
             </Container>

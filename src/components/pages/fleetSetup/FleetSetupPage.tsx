@@ -61,7 +61,7 @@ export const FleetSetupPage = () => {
                                     initiallyOpened: true,
                                     summary: (
                                         <Typography variant="body1">
-                                            {group.name}
+                                            {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
                                         </Typography>
                                     ),
                                     details: (
