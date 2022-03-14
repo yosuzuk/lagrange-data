@@ -11,6 +11,7 @@ interface IExpandable {
     expandIcon?: ReactNode;
     summary: ReactNode;
     details: ReactNode;
+    skip?: boolean;
 }
 
 interface IProps {
@@ -37,7 +38,7 @@ export const ExpandStack = (props: IProps) => {
 
     return (
         <Stack spacing={1}>
-            {expandables.map(expandable => (
+            {expandables.filter(e => e.skip !== true).map(expandable => (
                 <div key={expandable.id}>
                     <Accordion
                         expanded={openState[expandable.id]}

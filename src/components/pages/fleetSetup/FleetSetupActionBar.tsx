@@ -4,11 +4,14 @@ import ShareIcon from '@mui/icons-material/Share';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { FleetSelectionButton } from './FleetSelectionButton';
 import { IFleetSetup } from './types/IFleetSetup';
+import { ShipGroupingButton } from './ShipGroupingButton';
 
 interface IProps {
     fleetSetups: IFleetSetup[];
     fleetSetup: IFleetSetup;
+    grouping: string;
     onChangeFleet: (fleetKey: string) => void;
+    onChangeGrouping: (grouping: string) => void;
     onEdit: () => void;
     onShare: () => void;
 }
@@ -17,7 +20,9 @@ export const FleetSetupActionBar = (props: IProps) => {
     const {
         fleetSetups,
         fleetSetup,
+        grouping,
         onChangeFleet,
+        onChangeGrouping,
         onEdit,
         onShare,
     } = props;
@@ -30,6 +35,11 @@ export const FleetSetupActionBar = (props: IProps) => {
                         fleetSetups={fleetSetups}
                         fleetSetup={fleetSetup}
                         onChange={onChangeFleet}
+                        fullWidth={fullWidth}
+                    />
+                    <ShipGroupingButton
+                        value={grouping}
+                        onChange={onChangeGrouping}
                         fullWidth={fullWidth}
                     />
                     <Button
