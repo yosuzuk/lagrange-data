@@ -26,19 +26,6 @@ export const FleetSetupBottomBar = (props: IProps) => {
                             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
-                                        {'艦隊司令pt'}
-                                    </Typography>
-                                    <Typography
-                                        variant="body1"
-                                        sx={{ color: exceedingCost ? 'red' : undefined }}
-                                    >
-                                        <strong>{`${fleetShipCount.totalCost} / ${fleetSetup.maxCost}`}</strong>
-                                    </Typography>
-                                </div>
-                            </Box>
-                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-                                <div>
-                                    <Typography variant="body2" color="text.secondary">
                                         {'引き受け増援艦船数'}
                                     </Typography>
                                     <Typography
@@ -46,6 +33,19 @@ export const FleetSetupBottomBar = (props: IProps) => {
                                         sx={{ color: exceedingReinforcement ? 'red' : undefined }}
                                     >
                                         <strong>{`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}</strong>
+                                    </Typography>
+                                </div>
+                            </Box>
+                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+                                <div>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {'艦隊司令pt'}
+                                    </Typography>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{ color: exceedingCost ? 'red' : undefined }}
+                                    >
+                                        <strong>{`${fleetShipCount.totalCost} / ${fleetSetup.maxCost}`}</strong>
                                     </Typography>
                                 </div>
                             </Box>
