@@ -149,7 +149,7 @@ export const FleetSetupEditPage = () => {
             {shipsForInitialShipsAddDialog && (
                 <AddShipsToFleetDialog
                     title={'艦船を追加'}
-                    description={'艦船を通常配備で追加します。所持している艦船はマイリストで設定してください。'}
+                    description={'艦船を通常配備します。所持している艦船はマイリストで設定してください。'}
                     ships={shipsForInitialShipsAddDialog}
                     reinforcement={null}
                     onCancel={cancelAddNewInitialShips}

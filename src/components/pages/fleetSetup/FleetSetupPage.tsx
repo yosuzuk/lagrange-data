@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetSetupActionBar } from './FleetSetupActionBar';
@@ -42,6 +43,9 @@ export const FleetSetupPage = () => {
                 <Box p={1}>
                     <Stack spacing={2}>
                         <FleetProperties fleetSetup={fleetSetup} />
+                        <Typography variant="caption" align="right" paragraph={true}>
+                            {'※設定データはブラウザのローカルストレージに保存されています。'}
+                        </Typography>
                     </Stack>
                 </Box>
             </Container>
