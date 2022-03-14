@@ -16,19 +16,26 @@ import { ShipFilterState, FilterKey } from './types/ShipFilterState';
 import { IFilterOption } from './types/IFilterOption';
 import { createShipFilterOptions, resetFilterState } from './filterUtils';
 import { getMaxPopperHeight } from '../../utils/domUtils';
+import { ShipType } from '../../types/ShipType';
+import { ShipRow } from '../../types/ShipRow';
 
 interface IProps {
     filter: ShipFilterState;
     onChange: (filter: ShipFilterState) => void;
     fullWidth?: boolean;
     popperProps?: Partial<PopperProps>;
+    shipTypes?: ShipType[];
+    shipRows?: ShipRow[];
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange, fullWidth, popperProps } = props;
+    const { onChange, fullWidth, popperProps, shipRows, shipTypes } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
-    const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions());
+    const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions({
+        shipRows,
+        shipTypes,
+    }));
     const anchorRef = useRef<HTMLDivElement>(null);
 
     const handleClickFilter = (filterKey: FilterKey) => {

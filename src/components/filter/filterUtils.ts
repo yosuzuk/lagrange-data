@@ -11,34 +11,29 @@ import { WishState } from '../../userSettings/types/WishState';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { ShipSource } from '../../types/ShipSource';
 
-export function createShipRowFilterOptions(): IFilterOption[] {
-    return [
-        {
-            filterKey: ShipRow.FRONT,
-            name: translateShipRow(ShipRow.FRONT),
-        },
-        {
-            filterKey: ShipRow.MIDDLE,
-            name: translateShipRow(ShipRow.MIDDLE),
-        },
-        {
-            filterKey: ShipRow.BACK,
-            name: translateShipRow(ShipRow.BACK),
-        },
-    ];
+export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
+    return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
+        filterKey: shipRow,
+        name: translateShipRow(shipRow),
+    }));
 }
 
-export function createShipTypeFilterOptions(): IFilterOption[] {
-    return Object.keys(shipTypes).map(type => ({
+export function createShipTypeFilterOptions(specifiedShipTypes: ShipType[] | null): IFilterOption[] {
+    return (specifiedShipTypes ?? Object.keys(shipTypes)).map(type => ({
         filterKey: type as ShipType,
         name: shipTypes[type as ShipType].name,
     }));
 }
 
-export function createShipFilterOptions(): IFilterOption[] {
+interface ICreateShipFilterOptionsArgs {
+    shipRows?: ShipRow[],
+    shipTypes?: ShipType[],
+}
+
+export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {}): IFilterOption[] {
     return [
-        ...createShipRowFilterOptions(),
-        ...createShipTypeFilterOptions(),
+        ...createShipRowFilterOptions(args.shipRows ?? null),
+        ...createShipTypeFilterOptions(args.shipTypes ?? null),
     ];
 }
 

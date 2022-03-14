@@ -11,6 +11,7 @@ import { filterShipForAddDialog } from './utils/shipAddDialogUtilts';
 import { createInitialShipFilterState } from '../../filter/filterUtils';
 import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
+import { ShipType } from '../../../types/ShipType';
 
 export interface IProps {
     title: string;
@@ -57,8 +58,15 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     <div>
                         <ShipTypeFilterButton
                             filter={filterState}
+                            shipTypes={[
+                                ShipType.CARRIER,
+                                ShipType.BATTLE_CRUISER,
+                                ShipType.CRUISER,
+                                ShipType.DESTROYER,
+                                ShipType.FRIGATE,
+                            ]}
                             onChange={setFilterState}
-                            fullWidth={false /* TODO set */}
+                            fullWidth={false}
                             popperProps={{
                                 disablePortal: false,
                                 placement: 'bottom-start',
