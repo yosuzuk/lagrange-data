@@ -19,7 +19,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
 
     return (
         <Box sx={{ height: '100px' }}>
-            <Paper square={true} sx={{ position: 'fixed', right: 0, bottom: 0, zIndex: 1, width: '100%' }}>
+            <Paper square={true} sx={{ position: 'fixed', right: 0, bottom: 0, zIndex: 1, width: '100%', borderTop: '1px solid rgba(0, 0, 0, 0.2)' }}>
                 <Container maxWidth="md" disableGutters={true}>
                     <Box p={1}>
                         <Stack spacing={1} flexWrap="wrap" direction="row">

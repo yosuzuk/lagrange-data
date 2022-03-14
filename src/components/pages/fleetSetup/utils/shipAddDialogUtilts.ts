@@ -5,23 +5,24 @@ import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { applyShipCount } from './fleetSetupUtils';
 import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { ShipType } from '../../../../types/ShipType';
-import { filterShipDefinitionsByGroupId } from './shipGroupingUtils';
+import { ShipRow } from '../../../../types/ShipRow';
+import { FilterKey, ShipFilterState } from '../../../filter/types/ShipFilterState';
 
 export function createShipsForAddDialog(
     shipDefinitions: IShipDefinition[],
     reinforcement: ReinforcementType | null,
     fleetSetup: IFleetSetup,
-    groupId: string | null,
+    filter: string | null,
 ): IShipsForAddDialog {
     const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
-    const filteredShipDefinitions = filterShipDefinitionsByGroupId(groupId, shipDefinitions);
     return {
-        ships: filteredShipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
+        ships: shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
             const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, totalReinforcementCount, fleetSetup);
             return shipForAddDialog ? [shipForAddDialog] : [];
         }),
         reinforcement,
         remainingCount: reinforcement !== null ? fleetSetup.maxReinforcement - fleetSetup.totalReinforcementCount : null,
+        filter,
     };
 }
 
@@ -170,4 +171,34 @@ export function extractShipDefinitionsForAddDialog(
         allyReinforcementShips,
         allyReinforcementCarriedShips,
     };
+}
+
+export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAddDialog: IShipsForAddDialog): IShipsForAddDialog {
+    let result: IShipsForAddDialog = shipsForAddDialog;
+    Object.keys(filterState).filter(filterKey => filterState[filterKey as FilterKey]).forEach(filterKey => {
+        switch (filterKey) {
+            case ShipRow.FRONT:
+            case ShipRow.MIDDLE:
+            case ShipRow.BACK: {
+                result = {
+                    ...result,
+                    ships: result.ships.filter(s => s.shipDefinition.row === filterKey),
+                };
+                break;
+            }
+            case ShipType.CARRIER:
+            case ShipType.BATTLE_CRUISER:
+            case ShipType.CRUISER:
+            case ShipType.DESTROYER:
+            case ShipType.FRIGATE: {
+                result = {
+                    ...result,
+                    ships: result.ships.filter(s => s.shipDefinition.type === filterKey),
+                };
+                break;
+            }
+        }
+    });
+
+    return result;
 }

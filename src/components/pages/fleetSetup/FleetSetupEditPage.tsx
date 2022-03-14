@@ -165,7 +165,7 @@ export const FleetSetupEditPage = () => {
                                         </Box>
                                         <Box pr={2}>
                                             <AddShipsButton
-                                                groupId={group.id}
+                                                filter={group.id}
                                                 onOpenAddShips={openAddNewInitialShips}
                                                 onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
                                                 onOpenAddAllyReinforcement={openAddNewAllyReinforcement}

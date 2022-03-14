@@ -5,6 +5,7 @@ export interface IShipsForAddDialog {
     ships: IShipForAddDialog[];
     reinforcement: ReinforcementType | null;
     remainingCount: number | null;
+    filter: string | null;
 }
 
 export interface IShipForAddDialog {

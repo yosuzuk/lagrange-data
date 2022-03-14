@@ -7,7 +7,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
+import Popper, { PopperProps } from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -21,10 +21,11 @@ interface IProps {
     filter: ShipFilterState;
     onChange: (filter: ShipFilterState) => void;
     fullWidth?: boolean;
+    popperProps?: Partial<PopperProps>;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange, fullWidth } = props;
+    const { onChange, fullWidth, popperProps } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
     const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions());
@@ -78,6 +79,7 @@ export const ShipTypeFilterButton = (props: IProps) => {
                 transition={true}
                 disablePortal={true}
                 style={{ zIndex: 1 }}
+                {...popperProps}
             >
                 {({ TransitionProps, placement }) => (
                     <Grow

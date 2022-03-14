@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,10 @@ import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ShipCountList } from './ShipCountList';
 import { ReinforcementType } from './types/IFleetSetup';
 import { IShipsForAddDialog } from './types/IShipsForAddDialog';
+import { filterShipForAddDialog } from './utils/shipAddDialogUtilts';
+import { createInitialShipFilterState } from '../../filter/filterUtils';
+import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
+import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 
 export interface IProps {
     title: string;
@@ -21,6 +25,19 @@ export interface IProps {
 export const AddShipsToFleetDialog = (props: IProps) => {
     const { title, description, ships, reinforcement, onCancel, onApply, onChangeCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
+
+    const [filterState, setFilterState] = useState<ShipFilterState>(() => {
+        const defaultFilterState = createInitialShipFilterState();
+        if (ships.filter && typeof defaultFilterState[ships.filter as FilterKey] === 'boolean') {
+            return {
+                ...defaultFilterState,
+                [ships.filter]: true,
+            };
+        }
+        return defaultFilterState;
+    });
+
+    const filteredShips = useMemo(() => filterShipForAddDialog(filterState, ships), [filterState, ships]);
 
     useEffect(() => {
         const t = setTimeout(() => {
@@ -37,9 +54,23 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             content={(
                 <Stack spacing={2}>
                     <Typography variant="body2">{description}</Typography>
+                    <div>
+                        <ShipTypeFilterButton
+                            filter={filterState}
+                            onChange={setFilterState}
+                            fullWidth={false /* TODO set */}
+                            popperProps={{
+                                disablePortal: false,
+                                placement: 'bottom-start',
+                                style: {
+                                    zIndex: 1300, // on top of dialog
+                                },
+                            }}
+                        />
+                    </div>
                     {drawList ? (
                         <ShipCountList
-                            shipsForAddDialog={ships}
+                            shipsForAddDialog={filteredShips}
                             showCost={!reinforcement}
                             showReinforcement={false}
                             onChangeCount={onChangeCount}
