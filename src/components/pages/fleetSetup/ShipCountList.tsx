@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import { ShipCountListItem } from './ShipCountListItem';
 import Stack from '@mui/material/Stack';
-import { IFleetSetup, ReinforcementType } from './types/IFleetSetup';
+import { IFleetSetup, IShipSelection, ReinforcementType } from './types/IFleetSetup';
 import { IShipsForAddDialog } from './types/IShipsForAddDialog';
 
 interface IProps {
-    fleetSetup?: IFleetSetup;
+    shipSelections?: IShipSelection[];
     shipsForAddDialog?: IShipsForAddDialog;
     showCost: boolean;
     showReinforcement: boolean;
@@ -15,11 +15,11 @@ interface IProps {
 const MemoizedShipCountListItem = memo(ShipCountListItem);
 
 export const ShipCountList = (props: IProps) => {
-    const { fleetSetup, showCost, showReinforcement, shipsForAddDialog, onChangeCount } = props;
+    const { shipSelections, showCost, showReinforcement, shipsForAddDialog, onChangeCount } = props;
 
     return (
         <Stack spacing={1}>
-            {fleetSetup?.ships.map(shipSelection => (
+            {shipSelections?.map(shipSelection => (
                 <MemoizedShipCountListItem
                     key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}
                     shipDefinition={shipSelection.shipDefinition}

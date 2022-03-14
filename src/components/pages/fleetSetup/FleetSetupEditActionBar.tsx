@@ -1,12 +1,14 @@
 import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
-import AddIcon from '@mui/icons-material/Add';
 import CancelIcon from '@mui/icons-material/Cancel';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { ActionBar } from '../../actionBar/ActionBar';
-import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
+import { ShipGroupingButton } from './ShipGroupingButton';
+import { AddShipsButton } from './AddShipsButton';
 
 interface IProps {
+    grouping: string;
+    onChangeGrouping: (grouping: string) => void;
     onCancel: () => void;
     onSave: () => void;
     onReset: () => void;
@@ -20,6 +22,8 @@ interface IProps {
 
 export const FleetSetupEditActionBar = (props: IProps) => {
     const {
+        grouping,
+        onChangeGrouping,
         onCancel,
         onSave,
         onReset,
@@ -31,63 +35,24 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         saveDisabled,
     } = props;
 
-    const handleClickAddOption = (value: string) => {
-        switch (value) {
-            case 'addInitialShip': {
-                onOpenAddShips();
-                break;
-            }
-            case 'addSelfReinforcement': {
-                onOpenAddSelfReinforcement();
-                break;
-            }
-            case 'addAllyReinforcement': {
-                onOpenAddAllyReinforcement();
-                break;
-            }
-        }
-    };
+    
 
     return (
         <ActionBar
             left={(fullWidth: boolean) => (
                 <>
-                    <Button
-                        key="save"
-                        variant="contained"
-                        startIcon={<SaveIcon />}
-                        onClick={onSave}
-                        disabled={saveDisabled}
+                    <ShipGroupingButton
+                        value={grouping}
+                        onChange={onChangeGrouping}
                         fullWidth={fullWidth}
-                    >
-                        {'保存'}
-                    </Button>
-                    <ButtonMenu
-                        icon={<AddIcon />}
-                        text={'艦船を追加'}
-                        onClick={handleClickAddOption}
+                    />
+                    <AddShipsButton
+                        onOpenAddShips={onOpenAddShips}
+                        onOpenAddSelfReinforcement={onOpenAddSelfReinforcement}
+                        onOpenAddAllyReinforcement={onOpenAddAllyReinforcement}
+                        addShipsDisabled={addShipsDisabled}
+                        addReinforcementDisabled={addReinforcementDisabled}
                         fullWidth={fullWidth}
-                        disabled={addShipsDisabled && addReinforcementDisabled}
-                        options={[
-                            {
-                                key: 'addInitialShip',
-                                text: '通常配備',
-                                value: 'addInitialShip',
-                                disabled: addShipsDisabled,
-                            },
-                            {
-                                key: 'addSelfReinforcement',
-                                text: '増援',
-                                value: 'addSelfReinforcement',
-                                disabled: addReinforcementDisabled,
-                            },
-                            {
-                                key: 'addAllyReinforcement',
-                                text: 'ユニオン増援',
-                                value: 'addAllyReinforcement',
-                                disabled: addReinforcementDisabled,
-                            },
-                        ]}
                     />
                 </>
             )}
@@ -110,6 +75,16 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         fullWidth={fullWidth}
                     >
                         {'キャンセル'}
+                    </Button>
+                    <Button
+                        key="save"
+                        variant="contained"
+                        startIcon={<SaveIcon />}
+                        onClick={onSave}
+                        disabled={saveDisabled}
+                        fullWidth={fullWidth}
+                    >
+                        {'保存'}
                     </Button>
                 </>
             )}

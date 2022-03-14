@@ -49,7 +49,10 @@ export const ButtonMenu = (props: IProps) => {
             >
                 <Button
                     startIcon={icon}
-                    onClick={() => setOpened(true)}
+                    onClick={e => {
+                        e.stopPropagation();
+                        setOpened(true);
+                    }}
                     disabled={disabled}
                 >
                     {text}
@@ -61,7 +64,7 @@ export const ButtonMenu = (props: IProps) => {
                 role={undefined}
                 transition={true}
                 disablePortal={true}
-                style={{ zIndex: 1 }}
+                style={{ zIndex: 2 }}
             >
                 {({ TransitionProps, placement }) => (
                     <Grow
@@ -83,7 +86,10 @@ export const ButtonMenu = (props: IProps) => {
                                         <MenuItem
                                             key={option.key}
                                             selected={option.value === value}
-                                            onClick={() => handleClickOption(option.value)}
+                                            onClick={e => {
+                                                e.stopPropagation();
+                                                handleClickOption(option.value);
+                                            }}
                                             disabled={option.disabled}
                                         >
                                             {option.icon && (

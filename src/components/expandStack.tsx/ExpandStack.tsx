@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionActions from '@mui/material/AccordionActions';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 interface IExpandable {
@@ -11,6 +12,7 @@ interface IExpandable {
     expandIcon?: ReactNode;
     summary: ReactNode;
     details: ReactNode;
+    actions?: ReactNode;
     skip?: boolean;
 }
 
@@ -55,6 +57,11 @@ export const ExpandStack = (props: IProps) => {
                                 <>{expandable.details}</>
                             )}
                         </AccordionDetails>
+                        {expandable.actions && (
+                            <AccordionActions>
+                                {expandable.actions}
+                            </AccordionActions>
+                        )}
                     </Accordion>
                 </div>
             ))}

@@ -1,3 +1,4 @@
+import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
@@ -84,4 +85,24 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
             ...shipSelections.filter(ship => ship.shipDefinition.type === shipType),
         ].sort(sortByName),
     }));
+}
+
+export function filterShipDefinitionsByGroupId(groupId: string | null, shipDefinitions: IShipDefinition[]): IShipDefinition[] {
+    switch (groupId) {
+        case ShipRow.FRONT:
+        case ShipRow.MIDDLE:
+        case ShipRow.BACK: {
+            return shipDefinitions.filter(s => s.row === groupId);
+        }
+        case ShipType.CARRIER:
+        case ShipType.BATTLE_CRUISER:
+        case ShipType.CRUISER:
+        case ShipType.DESTROYER:
+        case ShipType.FRIGATE: {
+            return shipDefinitions.filter(s => s.type === groupId);
+        }
+        default: {
+            return shipDefinitions;
+        }
+    }
 }

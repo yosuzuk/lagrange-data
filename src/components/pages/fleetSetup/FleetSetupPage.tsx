@@ -23,7 +23,6 @@ export const FleetSetupPage = () => {
     } = useFleetSelection();
 
     const [grouping, setGrouping] = useState<string>(GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME);
-
     const groupedShips = useMemo(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
 
     const handleClickEdit = () => {

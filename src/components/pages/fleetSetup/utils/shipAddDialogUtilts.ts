@@ -5,15 +5,18 @@ import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { applyShipCount } from './fleetSetupUtils';
 import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { ShipType } from '../../../../types/ShipType';
+import { filterShipDefinitionsByGroupId } from './shipGroupingUtils';
 
 export function createShipsForAddDialog(
     shipDefinitions: IShipDefinition[],
     reinforcement: ReinforcementType | null,
     fleetSetup: IFleetSetup,
+    groupId: string | null,
 ): IShipsForAddDialog {
     const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
+    const filteredShipDefinitions = filterShipDefinitionsByGroupId(groupId, shipDefinitions);
     return {
-        ships: shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
+        ships: filteredShipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
             const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, totalReinforcementCount, fleetSetup);
             return shipForAddDialog ? [shipForAddDialog] : [];
         }),

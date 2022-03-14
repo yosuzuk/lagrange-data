@@ -2,6 +2,8 @@ import { useMemo, useState, memo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetPropertiesEdit } from './FleetPropertiesEdit';
@@ -17,6 +19,9 @@ import { shipDefinitions } from '../../../data/shipDefinitions';
 import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
 import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
 import { ShipCountList } from './ShipCountList';
+import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
+import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
+import { AddShipsButton } from './AddShipsButton';
 
 const MemoizedShipCountList = memo(ShipCountList);
 
@@ -86,6 +91,9 @@ export const FleetSetupEditPage = () => {
 
     const fleetShipCount = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
 
+    const [grouping, setGrouping] = useState<string>(GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME);
+    const groupedShips = useMemo(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
+
     const handleClickCancel = () => {
         navigate('/fleetSetup');
     };
@@ -111,18 +119,23 @@ export const FleetSetupEditPage = () => {
         reset();
     };
 
+    const addShipsDisabled = fleetShipCount.totalCost >= fleetSetup.maxCost;
+    const addReinforcementDisabled = fleetSetup.totalReinforcementCount >= fleetSetup.maxReinforcement;
+
     return (
         <>
             <NavigationBar currentRoute="/fleetSetup" />
             <FleetSetupEditActionBar
+                grouping={grouping}
+                onChangeGrouping={setGrouping}
                 onSave={handleClickSave}
                 onCancel={handleClickCancel}
                 onReset={handleClickReset}
                 onOpenAddShips={openAddNewInitialShips}
                 onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
                 onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
-                addShipsDisabled={fleetShipCount.totalCost >= fleetSetup.maxCost}
-                addReinforcementDisabled={fleetSetup.totalReinforcementCount >= fleetSetup.maxReinforcement}
+                addShipsDisabled={addShipsDisabled}
+                addReinforcementDisabled={addReinforcementDisabled}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container>
@@ -133,15 +146,45 @@ export const FleetSetupEditPage = () => {
                             onChange={setFleetSetup}
                             errors={errors}
                         />
-                        <MemoizedShipCountList
-                            fleetSetup={fleetSetup}
-                            onChangeCount={setShipCount}
-                            showCost={true}
-                            showReinforcement={true}
+                        <ExpandStack
+                            key={groupedShips.groupedBy}
+                            expandables={groupedShips.groups.map(group => ({
+                                id: group.id,
+                                initiallyOpened: true,
+                                summary: (
+                                    <Stack
+                                        spacing={1}
+                                        direction="row"
+                                        alignItems="center"
+                                        sx={{ width: '100%' }}
+                                    >
+                                        <Box sx={{ flexGrow: 1 }}>
+                                            <Typography variant="body1">
+                                                {group.name}
+                                            </Typography>
+                                        </Box>
+                                        <Box pr={2}>
+                                            <AddShipsButton
+                                                groupId={group.id}
+                                                onOpenAddShips={openAddNewInitialShips}
+                                                onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
+                                                onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
+                                                addShipsDisabled={addShipsDisabled}
+                                                addReinforcementDisabled={addReinforcementDisabled}
+                                            />
+                                        </Box>
+                                    </Stack>
+                                ),
+                                details: (
+                                    <MemoizedShipCountList
+                                        shipSelections={group.ships}
+                                        onChangeCount={setShipCount}
+                                        showCost={true}
+                                        showReinforcement={true}
+                                    />
+                                ),
+                            }))}
                         />
-                        <button onClick={openAddNewInitialShips}>{'add initial ships'}</button>
-                        <button onClick={openAddNewSelfReinforcement}>{'add self reinforcement ships'}</button>
-                        <button onClick={openAddNewAllyReinforcement}>{'add ally reinforcement ships'}</button>
                     </Stack>
                 </Box>
             </Container>

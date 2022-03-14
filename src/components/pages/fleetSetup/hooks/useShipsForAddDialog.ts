@@ -15,7 +15,7 @@ interface IHookArguments {
 
 interface IHookResult {
     shipsForAddDialog: IShipsForAddDialog | null;
-    open: () => void;
+    open: (groupId?: string) => void;
     cancel: () => void;
     apply: () => void;
     setShipCount: (shipId: string, count: number) => void;
@@ -25,8 +25,8 @@ export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
     const { userSettings, fleetSetup, reinforcement, shipDefinitions, setFleetSetup } = args;
     const [shipsForAddDialog, setShipsForAddDialog] = useState<IShipsForAddDialog | null>(null);
 
-    const open = useCallback(() => {
-        setShipsForAddDialog(createShipsForAddDialog(shipDefinitions, reinforcement, fleetSetup));
+    const open = useCallback((groupId?: string) => {
+        setShipsForAddDialog(createShipsForAddDialog(shipDefinitions, reinforcement, fleetSetup, groupId ?? null));
     }, [reinforcement, shipDefinitions, fleetSetup]);
 
     const cancel = useCallback(() => {

@@ -31,15 +31,15 @@ export const FleetSetupActionBar = (props: IProps) => {
         <ActionBar
             left={(fullWidth: boolean) => (
                 <>
+                    <ShipGroupingButton
+                        value={grouping}
+                        onChange={onChangeGrouping}
+                        fullWidth={fullWidth}
+                    />
                     <FleetSelectionButton
                         fleetSetups={fleetSetups}
                         fleetSetup={fleetSetup}
                         onChange={onChangeFleet}
-                        fullWidth={fullWidth}
-                    />
-                    <ShipGroupingButton
-                        value={grouping}
-                        onChange={onChangeGrouping}
                         fullWidth={fullWidth}
                     />
                     <Button
