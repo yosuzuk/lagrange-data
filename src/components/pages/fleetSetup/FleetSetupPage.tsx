@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -15,6 +17,9 @@ import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
+
+    const theme = useTheme();
+    const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
     const {
         fleetSetups,
@@ -37,6 +42,8 @@ export const FleetSetupPage = () => {
         // TODO implement
     // };
 
+    const groupDirection = largeScreen && groupedShips.groupedBy === GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME ? 'row' : 'column';
+
     return (
         <>
             <NavigationBar currentRoute="/fleetSetup" />
@@ -49,9 +56,9 @@ export const FleetSetupPage = () => {
                 onEdit={handleClickEdit}
                 onShare={handleClickShare}
             />
-            <Container>
+            <Container disabled={groupDirection === 'row'}>
                 <Box p={1}>
-                    <Stack spacing={2}>
+                    <Stack spacing={1}>
                         <FleetProperties fleetSetup={fleetSetup} />
                         {fleetSetup.ships.length > 0 ? (
                             <ExpandStack
@@ -69,6 +76,9 @@ export const FleetSetupPage = () => {
                                     ),
                                     skip: group.ships.length === 0,
                                 }))}
+                                stackProps={{
+                                    direction: groupDirection,
+                                }}
                             />
                         ) : (
                             <Paper>

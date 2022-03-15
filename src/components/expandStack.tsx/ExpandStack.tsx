@@ -1,5 +1,6 @@
 import { useState, ReactNode } from 'react';
-import Stack from '@mui/material/Stack';
+import Stack, { StackProps } from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -19,10 +20,11 @@ interface IExpandable {
 interface IProps {
     expandables: IExpandable[];
     unmount?: boolean;
+    stackProps?: Partial<StackProps>;
 }
 
 export const ExpandStack = (props: IProps) => {
-    const { expandables, unmount = true } = props;
+    const { expandables, unmount = true, stackProps } = props;
 
     const [openState, setOpenState] = useState<Record<string, boolean>>(() => {
         return expandables.reduce((acc: Record<string, boolean>, expandable: IExpandable) => ({
@@ -39,9 +41,9 @@ export const ExpandStack = (props: IProps) => {
     };
 
     return (
-        <Stack spacing={1}>
+        <Stack spacing={1} {...stackProps}>
             {expandables.filter(e => e.skip !== true).map(expandable => (
-                <div key={expandable.id}>
+                <Box key={expandable.id} sx={{ flexGrow: 1 }}>
                     <Accordion
                         expanded={openState[expandable.id]}
                         onChange={() => handleToggleExpandable(expandable.id)}
@@ -63,7 +65,7 @@ export const ExpandStack = (props: IProps) => {
                             </AccordionActions>
                         )}
                     </Accordion>
-                </div>
+                </Box>
             ))}
         </Stack>
     );

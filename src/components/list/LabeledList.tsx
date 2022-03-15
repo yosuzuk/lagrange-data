@@ -11,10 +11,11 @@ interface IProps extends BoxProps {
     rows: ILabeledListRow[];
     offsetValue?: boolean;
     rowGap?: number;
+    columnCount?: number;
 }
 
 export const LabeledList = (props: IProps) => {
-    const { rows, sx, offsetValue = true, rowGap = 3 } = props;
+    const { rows, sx, offsetValue = true, rowGap = 3, columnCount = 1 } = props;
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -37,7 +38,7 @@ export const LabeledList = (props: IProps) => {
         <Box
             sx={{
                 display: 'inline-grid',
-                gridTemplateColumns: 'auto auto',
+                gridTemplateColumns: 'auto auto '.repeat(columnCount).trim(),
                 gap: rowGap,
                 ...sx,
             }}

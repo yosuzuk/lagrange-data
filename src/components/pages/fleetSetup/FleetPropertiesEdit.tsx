@@ -11,10 +11,11 @@ interface IProps {
     fleetSetup: IFleetSetup;
     onChange: (fleetSetup: IFleetSetup) => void;
     errors: Record<string, string>;
+    columnCount: number;
 }
 
 export const FleetPropertiesEdit = (props: IProps) => {
-    const { fleetSetup, onChange, errors } = props;
+    const { fleetSetup, onChange, errors, columnCount } = props;
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
         onChange({
@@ -46,6 +47,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                     }}
                     offsetValue={false}
                     rowGap={1}
+                    columnCount={columnCount}
                     rows={[
                         {
                             key: 'name',
@@ -64,7 +66,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                         },
                         {
                             key: 'maxCost',
-                            label: '艦隊司令pt上限',
+                            label: '艦隊司令Pt上限',
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"

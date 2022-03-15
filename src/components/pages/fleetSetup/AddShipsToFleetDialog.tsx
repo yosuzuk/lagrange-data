@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
+import Alert from '@mui/material/Alert';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ShipCountList } from './ShipCountList';
 import { ReinforcementType } from './types/IFleetSetup';
@@ -76,6 +77,11 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             }}
                         />
                     </div>
+                    {filteredShips.ships.length === 0 && (
+                        <Alert severity="info">
+                            {'該当する艦船がありません。'}
+                        </Alert>
+                    )}
                     {drawList ? (
                         <ShipCountList
                             shipsForAddDialog={filteredShips}
