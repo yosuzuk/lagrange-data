@@ -72,7 +72,13 @@ export const NavigationBar = (props: IProps) => {
                             scrollButtons="auto"
                         >
                             {Object.keys(menuItems).map(route => (
-                                <Tab label={menuItems[route]} value={route} to={route} component={Link} />
+                                <Tab
+                                    key={route}
+                                    label={menuItems[route]}
+                                    value={route}
+                                    to={route}
+                                    component={Link}
+                                />
                             ))}
                         </Tabs>
                     </Container>
