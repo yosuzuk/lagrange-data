@@ -38,6 +38,13 @@ export const FleetPropertiesEdit = (props: IProps) => {
         });
     };
 
+    const handleChangeMyListOnly = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange({
+            ...fleetSetup,
+            myListOnly: event.target.value === 'myListOnly',
+        });
+    };
+
     return (
         <Paper>
             <Box p={1}>
@@ -66,7 +73,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                         },
                         {
                             key: 'reinforcementCount',
-                            label: '引き受け増援艦船数',
+                            label: '最大増援数',
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -99,7 +106,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                         },
                         {
                             key: 'maxCost',
-                            label: '艦隊司令Pt上限',
+                            label: '最大司令Pt',
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -141,6 +148,36 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     </MenuItem>
                                     <MenuItem value={'300'}>
                                         {'３００（結合効果無し）'}
+                                    </MenuItem>
+                                </TextField>
+                            ),
+                        },
+                        {
+                            key: 'myListOnly',
+                            label: '追加できる艦船',
+                            value: (verticalAlignment: boolean) => (
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    select={true}
+                                    value={fleetSetup.myListOnly ? 'myListOnly' : 'all'}
+                                    onChange={handleChangeMyListOnly}
+                                    error={!!errors['myListOnly']}
+                                    helperText={errors['myListOnly']}
+                                    fullWidth={verticalAlignment}
+                                    SelectProps={{
+                                        renderValue: () => (
+                                            <Typography variant="body1" whiteSpace="normal">
+                                                {fleetSetup.myListOnly ? '所持している艦船' : '全ての艦船'}
+                                            </Typography>
+                                        )
+                                    }}
+                                >
+                                    <MenuItem value={'all'}>
+                                        {'全ての艦船'}
+                                    </MenuItem>
+                                    <MenuItem value={'myListOnly'}>
+                                        {'所持している艦船'}
                                     </MenuItem>
                                 </TextField>
                             ),

@@ -139,6 +139,7 @@ interface IShipDefinitionsForAddDialog {
 export function extractShipDefinitionsForAddDialog(
     shipDefinitions: IShipDefinition[],
     userSettings: IUserSettings,
+    myListOnly: boolean,
 ): IShipDefinitionsForAddDialog {
     const myListShips: IShipDefinition[] = [];
     const myListCarriedShips: IShipDefinition[] = [];
@@ -149,14 +150,14 @@ export function extractShipDefinitionsForAddDialog(
         switch (shipDefinition.type) {
             case ShipType.FIGHTER:
             case ShipType.CORVETTE: {
-                if (isPossessingShip(shipDefinition.id, userSettings)) {
+                if (!myListOnly || isPossessingShip(shipDefinition.id, userSettings)) {
                     myListCarriedShips.push(shipDefinition);
                 }
                 allyReinforcementCarriedShips.push(shipDefinition);
                 break;
             }
             default: {
-                if (isPossessingShip(shipDefinition.id, userSettings)) {
+                if (!myListOnly || isPossessingShip(shipDefinition.id, userSettings)) {
                     myListShips.push(shipDefinition);
                 }
                 allyReinforcementShips.push(shipDefinition);

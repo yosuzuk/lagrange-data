@@ -13,7 +13,11 @@ export const ShipCountList = (props: IProps) => {
     return (
         <Stack spacing={1}>
             {shipSelections?.map(shipSelection => (
-                <Stack spacing={1} direction="row">
+                <Stack
+                    key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}
+                    spacing={1}
+                    direction="row"
+                >
                     <Stack spacing={1} direction="row" flexWrap="wrap" sx={{ flexGrow: 1 }}>
                         <Box sx={{ width: '25px' }}>
                             <Typography variant="body2" textAlign="end">

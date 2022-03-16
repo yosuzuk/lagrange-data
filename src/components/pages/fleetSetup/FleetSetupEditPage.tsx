@@ -34,7 +34,6 @@ export const FleetSetupEditPage = () => {
     const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
-    const shipDefinitionsForAddDialog = useMemo(() => extractShipDefinitionsForAddDialog(shipDefinitions, userSettings), [userSettings]);
 
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
@@ -50,6 +49,10 @@ export const FleetSetupEditPage = () => {
         initialFleetKey: fleetKey,
         userSettings,
     });
+
+    const shipDefinitionsForAddDialog = useMemo(() => {
+        return extractShipDefinitionsForAddDialog(shipDefinitions, userSettings, fleetSetup.myListOnly);
+    }, [userSettings, fleetSetup.myListOnly]);
 
     const {
         shipsForAddDialog: shipsForInitialShipsAddDialog,
@@ -127,7 +130,7 @@ export const FleetSetupEditPage = () => {
     const addReinforcementDisabled = fleetSetup.totalReinforcementCount >= fleetSetup.maxReinforcement;
 
     const groupDirection = largeScreen && groupedShips.groupedBy === GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME ? 'row' : 'column';
-    const propertiesColumnCount = groupDirection === 'row' ? 3 : 1;
+    const propertiesColumnCount = groupDirection === 'row' ? 4 : 2;
 
     return (
         <>

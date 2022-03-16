@@ -9,6 +9,7 @@ export interface IFleetSetup {
     totalReinforcementCount: number;
     maxReinforcement: number;
     maxCost: number;
+    myListOnly: boolean;
 }
 
 export interface IShipSelection {
@@ -34,6 +35,7 @@ export interface IMinifiedFleetSetup {
     ships: IMinifiedShipSelection[];
     maxReinforcement: number;
     maxCost: number;
+    myListOnly: boolean;
 }
 
 export interface IMinifiedShipSelection {

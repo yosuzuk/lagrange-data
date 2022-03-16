@@ -58,6 +58,7 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
         totalReinforcementCount,
         maxReinforcement: minifiedFleetSetup.maxReinforcement,
         maxCost: minifiedFleetSetup.maxCost,
+        myListOnly: minifiedFleetSetup.myListOnly === true,
     };
 }
 
@@ -76,6 +77,7 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
         })),
         maxReinforcement: fleetSetup.maxReinforcement,
         maxCost: fleetSetup.maxCost,
+        myListOnly: fleetSetup.myListOnly,
     }
 }
 
@@ -97,6 +99,7 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
         totalReinforcementCount: 0,
         maxReinforcement: 5,
         maxCost: 400,
+        myListOnly: true,
     };
 }
 
