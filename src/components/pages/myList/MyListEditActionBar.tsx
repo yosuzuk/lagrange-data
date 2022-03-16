@@ -26,23 +26,12 @@ export const MyListEditActionBar = (props: IProps) => {
     return (
         <ActionBar
             left={(fullWidth: boolean) => (
-                <>
-                    <ShipTypeFilterButton
-                        key="filter"
-                        filter={shipFilter}
-                        onChange={onFilter}
-                        fullWidth={fullWidth}
-                    />
-                    <Button
-                        key="save"
-                        variant="contained"
-                        startIcon={<SaveIcon />}
-                        onClick={onSave}
-                        fullWidth={fullWidth}
-                    >
-                        {'保存'}
-                    </Button>
-                </>
+                <ShipTypeFilterButton
+                    key="filter"
+                    filter={shipFilter}
+                    onChange={onFilter}
+                    fullWidth={fullWidth}
+                />
             )}
             right={(fullWidth: boolean) => (
                 <>
@@ -63,6 +52,15 @@ export const MyListEditActionBar = (props: IProps) => {
                         fullWidth={fullWidth}
                     >
                         {'キャンセル'}
+                    </Button>
+                    <Button
+                        key="save"
+                        variant="contained"
+                        startIcon={<SaveIcon />}
+                        onClick={onSave}
+                        fullWidth={fullWidth}
+                    >
+                        {'保存'}
                     </Button>
                 </>
             )}
