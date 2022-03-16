@@ -16,12 +16,17 @@ import { FleetProperties } from './FleetProperties';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { ShipCountList } from './ShipCountList';
+import { IFleetSetup } from './types/IFleetSetup';
+import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
+import { IGroupedShips } from './types/IGroupedShips';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
 
     const theme = useTheme();
     const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+
+    const [openShareDialog, setOpenShareDialog] = useState<boolean>(false);
 
     const {
         fleetSetups,
@@ -30,19 +35,19 @@ export const FleetSetupPage = () => {
     } = useFleetSelection();
 
     const [grouping, setGrouping] = useState<string>(GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME);
-    const groupedShips = useMemo(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
+    const groupedShips = useMemo<IGroupedShips>(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
 
     const handleClickEdit = () => {
         navigate('/fleetSetup/edit/' + fleetSetup.key);
     };
 
     const handleClickShare = () => {
-        // TODO implement
+        setOpenShareDialog(true);
     };
 
-    // const handleCloseShare = () => {
-        // TODO implement
-    // };
+    const handleCloseShare = () => {
+        setOpenShareDialog(false);
+    };
 
     const groupDirection = largeScreen && groupedShips.groupedBy === GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME ? 'row' : 'column';
 
@@ -119,6 +124,13 @@ export const FleetSetupPage = () => {
                     </Stack>
                 </Box>
             </Container>
+            {openShareDialog && (
+                <FleetSetupSharingDialog
+                    fleetSetup={fleetSetup}
+                    groupedShips={groupedShips}
+                    onClose={handleCloseShare}
+                />
+            )}
         </>
     );
 }

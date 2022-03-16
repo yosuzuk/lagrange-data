@@ -56,7 +56,7 @@ export const FleetProperties = (props: IProps) => {
                                 {`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="span">
-                                {'、司令pt：'}
+                                {'、司令Pt：'}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="span" sx={exceedingCost ? { color: 'red' } : {}}>
                                 {`${totalCost} / ${fleetSetup.maxCost}`}
@@ -80,7 +80,7 @@ export const FleetProperties = (props: IProps) => {
                             },
                             {
                                 key: 'cost',
-                                label: '艦隊司令pt',
+                                label: '艦隊司令Pt',
                                 value: (
                                     <Typography variant="body2" sx={exceedingCost ? { color: 'red' } : {}}>
                                         {`${totalCost} / ${fleetSetup.maxCost}`}

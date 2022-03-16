@@ -94,3 +94,37 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
         };
     });
 }
+
+export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShips: IGroupedShips): string {
+    const totalCost = fleetSetup.ships
+        .filter(ship => ship.reinforcement === null)
+        .map(ship => ship.count * ship.shipDefinition.cost)
+        .reduce((sum, cost) => sum + cost, 0);
+
+    return [
+        fleetSetup.name,
+        groupedShips.groups.filter(shipGroup => shipGroup.ships.length > 0).map(shipGroup => {
+            return [
+                ...(groupedShips.groups.length > 1 ? [`【${shipGroup.name}】`] : []),
+                ...shipGroup.ships.map(ship => {
+                    const cost = ship.count * ship.shipDefinition.cost;
+                    switch (ship.reinforcement) {
+                        case 'self': {
+                            return `${ship.count}×　${ship.shipDefinition.name}（増援）`;
+                        }
+                        case 'ally': {
+                            return `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援）`;
+                        }
+                        default: {
+                            return `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`;
+                        }
+                    }
+                }),
+            ].join('\n');
+        }).join('\n\n'),
+        [
+            `増援：${fleetSetup.totalReinforcementCount}/${fleetSetup.maxReinforcement}`,
+            `指令Pt：${totalCost}/${fleetSetup.maxCost}`,
+        ].join('\n'),
+    ].join('\n\n');
+}

@@ -4,21 +4,23 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
-import { IShipListState } from './types/IShipListState';
-import { formatShipListForSharing } from './utils/myListUtils';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { copyToClipboard } from '../../../utils/clipboardUtils';
+import { IGroupedShips } from './types/IGroupedShips';
+import { formatGroupedShipsForSharing } from './utils/shipGroupingUtils';
+import { IFleetSetup } from './types/IFleetSetup';
 
 export interface IProps {
-    ships: IShipListState;
+    fleetSetup: IFleetSetup;
+    groupedShips: IGroupedShips;
     onClose: () => void;
 }
 
-export const ShipsSharingDialog = (props: IProps) => {
-    const { ships, onClose } = props;
+export const FleetSetupSharingDialog = (props: IProps) => {
+    const { fleetSetup, groupedShips, onClose } = props;
     const [copied, setCopied] = useState<boolean>(false);
 
-    const [textForSharing, setTextForSharing] = useState<string>(() => formatShipListForSharing(ships.possessed));
+    const [textForSharing, setTextForSharing] = useState<string>(() => formatGroupedShipsForSharing(fleetSetup, groupedShips));
 
     const handleCopy = () => {
         if (textForSharing) {
