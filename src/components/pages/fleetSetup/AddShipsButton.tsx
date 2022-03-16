@@ -1,4 +1,5 @@
 import AddIcon from '@mui/icons-material/Add';
+import { ButtonProps } from '@mui/material/Button';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
 
 interface IProps {
@@ -7,8 +8,8 @@ interface IProps {
     onOpenAddAllyReinforcement: (filter?: string) => void;
     addShipsDisabled: boolean;
     addReinforcementDisabled: boolean;
-    fullWidth?: boolean;
     filter?: string;
+    buttonProps?: ButtonProps;
 }
 
 export const AddShipsButton = (props: IProps) => {
@@ -18,8 +19,8 @@ export const AddShipsButton = (props: IProps) => {
         onOpenAddAllyReinforcement,
         addShipsDisabled,
         addReinforcementDisabled,
-        fullWidth,
         filter,
+        buttonProps,
     } = props;
 
     const handleClickAddOption = (value: string) => {
@@ -44,8 +45,10 @@ export const AddShipsButton = (props: IProps) => {
             icon={<AddIcon />}
             text={'艦船を追加'}
             onClick={handleClickAddOption}
-            fullWidth={fullWidth}
-            disabled={addShipsDisabled && addReinforcementDisabled}
+            buttonProps={{
+                ...buttonProps,
+                disabled: addShipsDisabled && addReinforcementDisabled
+            }}
             options={[
                 {
                     key: 'addInitialShip',

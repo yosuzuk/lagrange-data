@@ -25,22 +25,22 @@ export const MyListEditActionBar = (props: IProps) => {
 
     return (
         <ActionBar
-            left={(fullWidth: boolean) => (
+            left={buttonProps => (
                 <ShipTypeFilterButton
                     key="filter"
                     filter={shipFilter}
                     onChange={onFilter}
-                    fullWidth={fullWidth}
+                    buttonProps={buttonProps}
                 />
             )}
-            right={(fullWidth: boolean) => (
+            right={buttonProps => (
                 <>
                     <Button
                         key="reset"
                         variant="outlined"
                         startIcon={<DeleteForeverIcon />}
                         onClick={onReset}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'初期化'}
                     </Button>
@@ -49,7 +49,7 @@ export const MyListEditActionBar = (props: IProps) => {
                         variant="outlined"
                         startIcon={<CancelIcon />}
                         onClick={onCancel}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'キャンセル'}
                     </Button>
@@ -58,7 +58,7 @@ export const MyListEditActionBar = (props: IProps) => {
                         variant="contained"
                         startIcon={<SaveIcon />}
                         onClick={onSave}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'保存'}
                     </Button>

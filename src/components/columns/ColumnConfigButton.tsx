@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ViewColumnIcon from '@mui/icons-material/ViewColumn';
 import Grow from '@mui/material/Grow';
@@ -19,11 +19,11 @@ import { getMaxPopperHeight } from '../../utils/domUtils';
 interface IProps {
     columnConfig: IColumnConfig;
     onChange: (columnConfig: IColumnConfig) => void;
-    fullWidth?: boolean;
+    buttonProps?: ButtonProps;
 }
 
 export const ColumnConfigButton = (props: IProps) => {
-    const { onChange, fullWidth } = props;
+    const { onChange, buttonProps } = props;
     const [columnConfig, setColumnConfig] = useState<IColumnConfig>(props.columnConfig);
     const [opened, setOpened] = useState<boolean>(false);
     const [columnConfigOptions] = useState<IColumnConfigOption[]>(() => createColumnConfigOptions());
@@ -48,7 +48,8 @@ export const ColumnConfigButton = (props: IProps) => {
             <ButtonGroup
                 key="columnConfig"
                 variant="outlined"
-                fullWidth={fullWidth}
+                fullWidth={buttonProps?.fullWidth}
+                size={buttonProps?.size}
                 ref={anchorRef}
             >
                 <Button

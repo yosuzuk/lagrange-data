@@ -1,6 +1,6 @@
 import { useState, useRef, ReactNode } from 'react';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
@@ -25,12 +25,11 @@ interface IProps {
     text: string;
     value?: string;
     onClick: (value: string) => void;
-    fullWidth?: boolean;
-    disabled?: boolean;
+    buttonProps?: ButtonProps;
 }
 
 export const ButtonMenu = (props: IProps) => {
-    const { options, icon, text, value, onClick, fullWidth, disabled } = props;
+    const { options, icon, text, value, onClick, buttonProps } = props;
     const [opened, setOpened] = useState<boolean>(false);
     const anchorRef = useRef<HTMLDivElement>(null);
 
@@ -43,9 +42,10 @@ export const ButtonMenu = (props: IProps) => {
         <>
             <ButtonGroup
                 variant="outlined"
-                fullWidth={fullWidth}
+                fullWidth={buttonProps?.fullWidth}
                 ref={anchorRef}
-                disabled={disabled}
+                disabled={buttonProps?.disabled}
+                size={buttonProps?.size}
             >
                 <Button
                     startIcon={icon}
@@ -53,7 +53,7 @@ export const ButtonMenu = (props: IProps) => {
                         e.stopPropagation();
                         setOpened(true);
                     }}
-                    disabled={disabled}
+                    disabled={buttonProps?.disabled}
                 >
                     {text}
                 </Button>

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
@@ -22,14 +22,14 @@ import { ShipRow } from '../../types/ShipRow';
 interface IProps {
     filter: ShipFilterState;
     onChange: (filter: ShipFilterState) => void;
-    fullWidth?: boolean;
     popperProps?: Partial<PopperProps>;
     shipTypes?: ShipType[];
     shipRows?: ShipRow[];
+    buttonProps? : ButtonProps;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange, fullWidth, popperProps, shipRows, shipTypes } = props;
+    const { onChange, popperProps, shipRows, shipTypes, buttonProps } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
     const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions({
@@ -63,8 +63,9 @@ export const ShipTypeFilterButton = (props: IProps) => {
             <ButtonGroup
                 key="filter"
                 variant="outlined"
-                fullWidth={fullWidth}
                 ref={anchorRef}
+                fullWidth={buttonProps?.fullWidth}
+                size={buttonProps?.size}
             >
                 <Button
                     startIcon={<FilterAltIcon />}

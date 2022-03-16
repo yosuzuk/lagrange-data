@@ -67,7 +67,6 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                                 ShipType.FRIGATE,
                             ]}
                             onChange={setFilterState}
-                            fullWidth={false}
                             popperProps={{
                                 disablePortal: false,
                                 placement: 'bottom-start',

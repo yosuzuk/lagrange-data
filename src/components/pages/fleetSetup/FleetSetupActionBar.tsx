@@ -29,38 +29,38 @@ export const FleetSetupActionBar = (props: IProps) => {
 
     return (
         <ActionBar
-            left={(fullWidth: boolean) => (
+            left={buttonProps => (
                 <>
                     <ShipGroupingButton
                         value={grouping}
                         onChange={onChangeGrouping}
-                        fullWidth={fullWidth}
+                        buttonProps={buttonProps}
                     />
                     <FleetSelectionButton
                         fleetSetups={fleetSetups}
                         fleetSetup={fleetSetup}
                         onChange={onChangeFleet}
-                        fullWidth={fullWidth}
+                        buttonProps={buttonProps}
                     />
                     <Button
                         key="edit"
                         variant="outlined"
                         startIcon={<SettingsIcon />}
                         onClick={onEdit}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'編集'}
                     </Button>
                 </>
             )}
-            right={(fullWidth: boolean) => (
+            right={buttonProps => (
                 <>
                     <Button
                         key="share"
                         variant="outlined"
                         startIcon={<ShareIcon />}
                         onClick={onShare}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'共有'}
                     </Button>

@@ -1,19 +1,28 @@
 import { ReactNode } from 'react';
 import Box from '@mui/material/Box';
+import { ButtonProps } from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 
 interface IProps {
-    left?: (fullWidth: boolean) => ReactNode;
-    right?: (fullWidth: boolean) => ReactNode;
+    left?: (ButtonProps: Partial<ButtonProps>) => ReactNode;
+    right?: (buttonProps: Partial<ButtonProps>) => ReactNode;
 }
 
 export const ActionBar = (props: IProps) => {
     const { left, right } = props;
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
+    const buttonProps: Partial<ButtonProps> = matches ? {
+        fullWidth: false,
+        size: 'medium',
+    } : {
+        fullWidth: true,
+        size: 'small',
+    };
 
     return (
         <Paper square={true} sx={{ position: 'sticky', top: '48px', zIndex: 1 }}>
@@ -33,9 +42,9 @@ export const ActionBar = (props: IProps) => {
                         rowGap: theme.spacing(1),
                     }}
                 >
-                    {left?.(!matches)}
+                    {left?.(buttonProps)}
                     {matches && <Box flexGrow={1} />}
-                    {right?.(!matches)}
+                    {right?.(buttonProps)}
                 </Box>
             </Container>
         </Paper>

@@ -1,15 +1,16 @@
 import SortIcon from '@mui/icons-material/Sort';
+import { ButtonProps } from '@mui/material/Button';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
 import { GroupAndSortOption } from './utils/shipGroupingUtils';
 
 interface IProps {
     value: string;
     onChange: (value: string) => void;
-    fullWidth?: boolean;
+    buttonProps?: ButtonProps;
 }
 
 export const ShipGroupingButton = (props: IProps) => {
-    const { value, onChange, fullWidth } = props;
+    const { value, onChange, buttonProps } = props;
 
     return (
         <>
@@ -40,7 +41,7 @@ export const ShipGroupingButton = (props: IProps) => {
                     },
                 ]}
                 onClick={onChange}
-                fullWidth={fullWidth}
+                buttonProps={buttonProps}
             />
         </>
     );

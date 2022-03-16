@@ -39,12 +39,12 @@ export const FleetSetupEditActionBar = (props: IProps) => {
 
     return (
         <ActionBar
-            left={(fullWidth: boolean) => (
+            left={buttonProps => (
                 <>
                     <ShipGroupingButton
                         value={grouping}
                         onChange={onChangeGrouping}
-                        fullWidth={fullWidth}
+                        buttonProps={buttonProps}
                     />
                     <AddShipsButton
                         onOpenAddShips={onOpenAddShips}
@@ -52,18 +52,18 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         onOpenAddAllyReinforcement={onOpenAddAllyReinforcement}
                         addShipsDisabled={addShipsDisabled}
                         addReinforcementDisabled={addReinforcementDisabled}
-                        fullWidth={fullWidth}
+                        buttonProps={buttonProps}
                     />
                 </>
             )}
-            right={(fullWidth: boolean) => (
+            right={buttonProps => (
                 <>
                     <Button
                         key="reset"
                         variant="outlined"
                         startIcon={<DeleteForeverIcon />}
                         onClick={onReset}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'初期化'}
                     </Button>
@@ -72,7 +72,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         variant="outlined"
                         startIcon={<CancelIcon />}
                         onClick={onCancel}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'キャンセル'}
                     </Button>
@@ -82,7 +82,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         startIcon={<SaveIcon />}
                         onClick={onSave}
                         disabled={saveDisabled}
-                        fullWidth={fullWidth}
+                        {...buttonProps}
                     >
                         {'保存'}
                     </Button>
