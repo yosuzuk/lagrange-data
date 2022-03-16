@@ -65,6 +65,39 @@ export const FleetPropertiesEdit = (props: IProps) => {
                             ),
                         },
                         {
+                            key: 'reinforcementCount',
+                            label: '引き受け増援艦船数',
+                            value: (verticalAlignment: boolean) => (
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    select={true}
+                                    value={fleetSetup.maxReinforcement}
+                                    onChange={handleChangeMaxReinforcement}
+                                    error={!!errors['maxReinforcement']}
+                                    helperText={errors['maxReinforcement']}
+                                    fullWidth={verticalAlignment}
+                                    SelectProps={{
+                                        renderValue: () => (
+                                            <Typography variant="body1" whiteSpace="normal">
+                                                {fleetSetup.maxReinforcement}
+                                            </Typography>
+                                        )
+                                    }}
+                                >
+                                    <MenuItem value={'5'}>
+                                        {'５隻（結合効果無し）'}
+                                    </MenuItem>
+                                    <MenuItem value={'6'}>
+                                        {'６隻（小型補給基地に結合）'}
+                                    </MenuItem>
+                                    <MenuItem value={'9'}>
+                                        {'９隻（中継補給施設に結合）'}
+                                    </MenuItem>
+                                </TextField>
+                            ),
+                        },
+                        {
                             key: 'maxCost',
                             label: '艦隊司令Pt上限',
                             value: (verticalAlignment: boolean) => (
@@ -108,39 +141,6 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     </MenuItem>
                                     <MenuItem value={'300'}>
                                         {'３００（結合効果無し）'}
-                                    </MenuItem>
-                                </TextField>
-                            ),
-                        },
-                        {
-                            key: 'reinforcementCount',
-                            label: '引き受け増援艦船数',
-                            value: (verticalAlignment: boolean) => (
-                                <TextField
-                                    variant="outlined"
-                                    size="small"
-                                    select={true}
-                                    value={fleetSetup.maxReinforcement}
-                                    onChange={handleChangeMaxReinforcement}
-                                    error={!!errors['maxReinforcement']}
-                                    helperText={errors['maxReinforcement']}
-                                    fullWidth={verticalAlignment}
-                                    SelectProps={{
-                                        renderValue: () => (
-                                            <Typography variant="body1" whiteSpace="normal">
-                                                {fleetSetup.maxReinforcement}
-                                            </Typography>
-                                        )
-                                    }}
-                                >
-                                    <MenuItem value={'5'}>
-                                        {'５隻（結合効果無し）'}
-                                    </MenuItem>
-                                    <MenuItem value={'6'}>
-                                        {'６隻（小型補給基地に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'9'}>
-                                        {'９隻（中継補給施設に結合）'}
                                     </MenuItem>
                                 </TextField>
                             ),

@@ -20,11 +20,11 @@ import { getCurrentUserSettings } from '../../../userSettings/utils/userSettings
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
 import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
-import { ShipCountList } from './ShipCountList';
+import { ShipCountEditList } from './ShipCountEditList';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { AddShipsButton } from './AddShipsButton';
 
-const MemoizedShipCountList = memo(ShipCountList);
+const MemoizedShipCountEditList = memo(ShipCountEditList);
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -156,7 +156,10 @@ export const FleetSetupEditPage = () => {
                         />
                         <Stack spacing={1} direction={groupDirection}>
                             {groupedShips.groups.map(group => (
-                                <Paper key={group.id} sx={{ width: groupDirection === 'row' ? '33%' : undefined }}>
+                                <Paper
+                                    key={group.id}
+                                    sx={{ width: groupDirection === 'row' ? `${100 / groupedShips.groups.length}%` : undefined }}
+                                >
                                     <Box p={1}>
                                         <Stack spacing={1}>
                                             <Stack
@@ -180,7 +183,7 @@ export const FleetSetupEditPage = () => {
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (
-                                                <MemoizedShipCountList
+                                                <MemoizedShipCountEditList
                                                     shipSelections={group.ships}
                                                     onChangeCount={setShipCount}
                                                     showCost={true}

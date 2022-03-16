@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Alert from '@mui/material/Alert';
+import Divider from '@mui/material/Divider';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetSetupActionBar } from './FleetSetupActionBar';
@@ -14,6 +15,7 @@ import { useFleetSelection } from './hooks/useFleetSelection';
 import { FleetProperties } from './FleetProperties';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
+import { ShipCountList } from './ShipCountList';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -61,25 +63,42 @@ export const FleetSetupPage = () => {
                     <Stack spacing={1}>
                         <FleetProperties fleetSetup={fleetSetup} />
                         {fleetSetup.ships.length > 0 ? (
-                            <ExpandStack
-                                key={groupedShips.groupedBy}
-                                expandables={groupedShips.groups.map(group => ({
-                                    id: group.id,
-                                    initiallyOpened: true,
-                                    summary: (
-                                        <Typography variant="body1">
-                                            {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
-                                        </Typography>
-                                    ),
-                                    details: (
-                                        <div>{group.ships.length}</div>
-                                    ),
-                                    skip: group.ships.length === 0,
-                                }))}
-                                stackProps={{
-                                    direction: groupDirection,
-                                }}
-                            />
+                            <>
+                                {groupDirection === 'row' ? (
+                                    <Stack spacing={1} direction="row" sx={{ width: '100%' }}>
+                                        {groupedShips.groups.map(group => (
+                                            <Paper key={groupedShips.groupedBy} sx={{ width: `${100 / groupedShips.groups.length}%` }}>
+                                                <Box p={1}>
+                                                    <Stack spacing={1}>
+                                                        <Typography variant="body1">
+                                                            {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                        </Typography>
+                                                        <Divider />
+                                                        <ShipCountList shipSelections={group.ships} />
+                                                    </Stack>
+                                                </Box>
+                                            </Paper>
+                                        ))}
+                                    </Stack>
+                                ) : (
+                                    <ExpandStack
+                                        key={groupedShips.groupedBy}
+                                        expandables={groupedShips.groups.map(group => ({
+                                            id: group.id,
+                                            initiallyOpened: true,
+                                            summary: (
+                                                <Typography variant="body1">
+                                                    {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                </Typography>
+                                            ),
+                                            details: (
+                                                <ShipCountList shipSelections={group.ships} />
+                                            ),
+                                            skip: group.ships.length === 0,
+                                        }))}
+                                    />
+                                )}
+                            </>
                         ) : (
                             <Paper>
                                 <Box p={2}>

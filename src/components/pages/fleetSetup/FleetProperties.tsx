@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import Stack from '@mui/material/Stack';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -42,9 +43,27 @@ export const FleetProperties = (props: IProps) => {
             <AccordionSummary
                 expandIcon={expanded ? <ExpandMoreIcon /> : expandIcon}
             >
-                <Typography variant="body1">
-                    {fleetSetup.name}
-                </Typography>
+                <Stack spacing={1}>
+                    <Typography variant="body1">
+                        {fleetSetup.name}
+                    </Typography>
+                    {!expanded && (
+                        <div>
+                            <Typography variant="body2" color="text.secondary" component="span">
+                                {'増援：'}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" component="span" sx={exceedingReinforcement ? { color: 'red' } : {}}>
+                                {`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" component="span">
+                                {'、司令pt：'}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" component="span" sx={exceedingCost ? { color: 'red' } : {}}>
+                                {`${totalCost} / ${fleetSetup.maxCost}`}
+                            </Typography>
+                        </div>
+                    )}
+                </Stack>
             </AccordionSummary>
             <AccordionDetails>
                 {expanded && (

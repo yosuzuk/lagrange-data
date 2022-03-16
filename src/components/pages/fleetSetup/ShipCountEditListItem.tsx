@@ -21,7 +21,7 @@ interface IProps {
     onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
-export const ShipCountListItem = (props: IProps) => {
+export const ShipCountEditListItem = (props: IProps) => {
     const {
         shipDefinition,
         count,

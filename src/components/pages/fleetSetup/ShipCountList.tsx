@@ -1,47 +1,45 @@
-import { memo } from 'react';
-import { ShipCountListItem } from './ShipCountListItem';
 import Stack from '@mui/material/Stack';
-import { IFleetSetup, IShipSelection, ReinforcementType } from './types/IFleetSetup';
-import { IShipsForAddDialog } from './types/IShipsForAddDialog';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import { IShipSelection } from './types/IFleetSetup';
 
 interface IProps {
     shipSelections?: IShipSelection[];
-    shipsForAddDialog?: IShipsForAddDialog;
-    showCost: boolean;
-    showReinforcement: boolean;
-    onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
-const MemoizedShipCountListItem = memo(ShipCountListItem);
-
 export const ShipCountList = (props: IProps) => {
-    const { shipSelections, showCost, showReinforcement, shipsForAddDialog, onChangeCount } = props;
+    const { shipSelections } = props;
 
     return (
         <Stack spacing={1}>
             {shipSelections?.map(shipSelection => (
-                <MemoizedShipCountListItem
-                    key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}
-                    shipDefinition={shipSelection.shipDefinition}
-                    count={shipSelection.count}
-                    maxCount={shipSelection.maxCount}
-                    reinforcement={shipSelection.reinforcement}
-                    showCost={showCost}
-                    showReinforcement={showReinforcement}
-                    onChangeCount={onChangeCount}
-                />
-            ))}
-            {shipsForAddDialog?.ships && shipsForAddDialog.ships.map(newShip => (
-                <MemoizedShipCountListItem
-                    key={`${newShip.shipDefinition.id}_${shipsForAddDialog.reinforcement ?? 'initial'}`}
-                    shipDefinition={newShip.shipDefinition}
-                    count={newShip.count}
-                    maxCount={shipsForAddDialog.remainingCount !== null ? Math.min(newShip.maxCount, shipsForAddDialog.remainingCount + newShip.count) : newShip.maxCount}
-                    reinforcement={shipsForAddDialog.reinforcement}
-                    showCost={showCost}
-                    showReinforcement={showReinforcement}
-                    onChangeCount={onChangeCount}
-                />
+                <Stack spacing={1} direction="row">
+                    <Stack spacing={1} direction="row" flexWrap="wrap" sx={{ flexGrow: 1 }}>
+                        <Box sx={{ width: '25px' }}>
+                            <Typography variant="body2" textAlign="end">
+                                {`${shipSelection.count}×`}
+                            </Typography>
+                        </Box>
+                        <Typography variant="body2">
+                            {shipSelection.shipDefinition.name}
+                        </Typography>
+                        {shipSelection.reinforcement === 'self' && (
+                            <Typography variant="body2">
+                                {'（増援）'}
+                            </Typography>
+                        )}
+                        {shipSelection.reinforcement === 'ally' && (
+                            <Typography variant="body2">
+                                {'（ユニオン増援）'}
+                            </Typography>
+                        )}
+                    </Stack>
+                    <Box sx={{ width: '50px' }}>
+                        <Typography variant="body2" textAlign="end">
+                            {`${shipSelection.shipDefinition.cost * shipSelection.count} Pt`}
+                        </Typography>
+                    </Box>
+                </Stack>
             ))}
         </Stack>
     );
