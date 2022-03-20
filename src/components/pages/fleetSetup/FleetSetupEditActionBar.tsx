@@ -5,6 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { ShipGroupingButton } from './ShipGroupingButton';
 import { AddShipsButton } from './AddShipsButton';
+import { ReinforcementType } from './types/IFleetSetup';
 
 interface IProps {
     grouping: string;
@@ -12,11 +13,7 @@ interface IProps {
     onCancel: () => void;
     onSave: () => void;
     onReset: () => void;
-    onOpenAddShips: () => void;
-    onOpenAddSelfReinforcement: () => void;
-    onOpenAddAllyReinforcement: () => void;
-    addShipsDisabled: boolean;
-    addReinforcementDisabled: boolean;
+    onOpenAddShips: (reinforcement: ReinforcementType | null, filter?: string) => void;
     saveDisabled: boolean;
 }
 
@@ -28,10 +25,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         onSave,
         onReset,
         onOpenAddShips,
-        onOpenAddSelfReinforcement,
-        onOpenAddAllyReinforcement,
-        addShipsDisabled,
-        addReinforcementDisabled,
         saveDisabled,
     } = props;
 
@@ -48,10 +41,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                     />
                     <AddShipsButton
                         onOpenAddShips={onOpenAddShips}
-                        onOpenAddSelfReinforcement={onOpenAddSelfReinforcement}
-                        onOpenAddAllyReinforcement={onOpenAddAllyReinforcement}
-                        addShipsDisabled={addShipsDisabled}
-                        addReinforcementDisabled={addReinforcementDisabled}
                         buttonProps={buttonProps}
                     />
                 </>

@@ -1,3 +1,4 @@
+import Alert from '@mui/material/Alert';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -18,6 +19,7 @@ interface IProps {
     reinforcement: ReinforcementType | null;
     showCost: boolean;
     showReinforcement: boolean;
+    shipWarning?: string;
     onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
@@ -29,6 +31,7 @@ export const ShipCountEditListItem = (props: IProps) => {
         reinforcement,
         showCost,
         showReinforcement,
+        shipWarning,
         onChangeCount,
     } = props;
 
@@ -55,8 +58,11 @@ export const ShipCountEditListItem = (props: IProps) => {
                     {`ユニオン増援`}
                 </Typography>
             )}
+            {shipWarning && (
+                <Alert severity="error">{shipWarning}</Alert>
+            )}
         </>
-    )
+    );
 
     const clearButton = (
         <Button

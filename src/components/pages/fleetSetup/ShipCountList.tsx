@@ -28,20 +28,22 @@ export const ShipCountList = (props: IProps) => {
                             {shipSelection.shipDefinition.name}
                         </Typography>
                         {shipSelection.reinforcement === 'self' && (
-                            <Typography variant="body2">
+                            <Typography variant="body2" noWrap={true}>
                                 {'（増援）'}
                             </Typography>
                         )}
                         {shipSelection.reinforcement === 'ally' && (
-                            <Typography variant="body2">
+                            <Typography variant="body2" noWrap={true}>
                                 {'（ユニオン増援）'}
                             </Typography>
                         )}
                     </Stack>
                     <Box sx={{ width: '50px' }}>
-                        <Typography variant="body2" textAlign="end">
-                            {`${shipSelection.shipDefinition.cost * shipSelection.count} Pt`}
-                        </Typography>
+                        {shipSelection.reinforcement === null && (
+                            <Typography variant="body2" textAlign="end">
+                                {`${shipSelection.shipDefinition.cost * shipSelection.count} Pt`}
+                            </Typography>
+                        )}
                     </Box>
                 </Stack>
             ))}

@@ -1,15 +1,8 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { ReinforcementType } from './IFleetSetup';
+import { IFleetSetup, ReinforcementType } from './IFleetSetup';
 
 export interface IShipsForAddDialog {
-    ships: IShipForAddDialog[];
+    fleetSetup: IFleetSetup;
     reinforcement: ReinforcementType | null;
-    remainingCount: number | null;
     filter: string | null;
-}
-
-export interface IShipForAddDialog {
-    shipDefinition: IShipDefinition;
-    count: number;
-    maxCount: number;
 }

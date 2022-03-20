@@ -6,6 +6,7 @@ export interface IFleetSetup {
     key: string;
     name: string;
     ships: IShipSelection[];
+    totalCost: number;
     totalReinforcementCount: number;
     maxReinforcement: number;
     maxCost: number;
@@ -22,6 +23,7 @@ export interface IShipSelection {
     count: number;
     maxCount: number;
     reinforcement: ReinforcementType | null;
+    temporary?: boolean;
 }
 
 export interface ICarriedShipSelection {
@@ -42,7 +44,6 @@ export interface IMinifiedShipSelection {
     shipId: string;
     carriedShips: IMinifiedCarriedShipSelection[];
     count: number;
-    maxCount: number;
     reinforcement: ReinforcementType | null;
 }
 

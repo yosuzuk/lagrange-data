@@ -35,9 +35,9 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
         ...createShipSelection({
             shipDefinition: getShipDefinitionById(minifiedShipSelection.shipId),
             count: minifiedShipSelection.count,
-            maxCount: minifiedShipSelection.maxCount,
             reinforcement: minifiedShipSelection.reinforcement,
             userSettings,
+            maxReinforcement: minifiedFleetSetup.maxReinforcement,
         }),
         carriedShips: minifiedShipSelection.carriedShips.map(carriedShip => createCarriedShipSelection({
             shipId: carriedShip.shipId,
@@ -46,16 +46,12 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
         })),
     }));
 
-    const totalReinforcementCount = ships
-            .filter(s => s.reinforcement !== null)
-            .map(s => s.count)
-            .reduce((sum, count) => sum + count, 0);
-
     return {
         key: storageKey,
         name: minifiedFleetSetup.name,
         ships,
-        totalReinforcementCount,
+        totalCost: getTotalCost(ships),
+        totalReinforcementCount: getTotalReinforcementCount(ships),
         maxReinforcement: minifiedFleetSetup.maxReinforcement,
         maxCost: minifiedFleetSetup.maxCost,
         myListOnly: minifiedFleetSetup.myListOnly === true,
@@ -72,7 +68,6 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
                 count: carriedShipSelection.count,
             })),
             count: shipSelection.count,
-            maxCount: shipSelection.maxCount,
             reinforcement: shipSelection.reinforcement,
         })),
         maxReinforcement: fleetSetup.maxReinforcement,
@@ -96,6 +91,7 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
         key: `fleet${fleetNumber}`,
         name: `${fleetNumber}号艦隊`,
         ships: [],
+        totalCost: 0,
         totalReinforcementCount: 0,
         maxReinforcement: 5,
         maxCost: 400,
@@ -106,13 +102,14 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
 interface ICreateShipSelectionArgs {
     shipDefinition: IShipDefinition;
     count: number;
-    maxCount: number;
     reinforcement: ReinforcementType | null;
     userSettings: IUserSettings;
+    maxReinforcement: number;
+    temporary?: boolean;
 }
 
 export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
-    const { shipDefinition, count, maxCount, reinforcement, userSettings } = args;
+    const { shipDefinition, count, reinforcement, userSettings, maxReinforcement, temporary } = args;
 
     let carryUpToLargeFighter = 0;
     let carryUpToMediumFighter = 0;
@@ -156,6 +153,10 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         }
     });
 
+    const maxCount = reinforcement === null
+        ? shipDefinition.operationLimit
+        : Math.min(shipDefinition.operationLimit, maxReinforcement);
+
     return {
         shipDefinition,
         carryUpToLargeFighter,
@@ -164,8 +165,9 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         carryCorvette,
         carriedShips: [],
         count: Math.max(0, count),
-        maxCount,
         reinforcement,
+        maxCount,
+        temporary,
     };
 }
 
@@ -191,95 +193,36 @@ export interface IApplyShipCountArgs {
     reinforcement: ReinforcementType | null;
     fleetSetup: IFleetSetup;
     userSettings: IUserSettings;
+    keepZero?: true;
 }
 
 export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
-    const { shipId, count, reinforcement, fleetSetup, userSettings } = args;
+    const { shipId, count, reinforcement, fleetSetup, userSettings, keepZero } = args;
     const shipDefinition = getShipDefinitionById(shipId);
-
-    const totalReinforcementCount = fleetSetup.ships
-            .filter(s => s.reinforcement !== null && !(s.shipDefinition.id === shipId && s.reinforcement === reinforcement))
-            .map(s => s.count)
-            .reduce((sum, count) => sum + count, 0) + (reinforcement ? count : 0);
 
     let isNewSelection = true;
 
-    const otherCountOfSameKind = reinforcement === 'ally' ? 0 : fleetSetup.ships.find(s => s.shipDefinition.id === shipId && s.reinforcement !== reinforcement)?.count ?? 0;
-
     const newFleetSetup: IFleetSetup = {
         ...fleetSetup,
-        totalReinforcementCount,
         ships: fleetSetup.ships.flatMap((shipSelection) => {
-
-            // update primary target
-            if (shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === reinforcement) {
-                isNewSelection = false;
-                return count <= 0 ? [] : [{
-                    ...shipSelection,
-                    count,
-                    maxCount: getMaxCount(
-                        count,
-                        otherCountOfSameKind,
-                        reinforcement,
-                        fleetSetup.maxReinforcement,
-                        totalReinforcementCount,
-                        shipDefinition.operationLimit
-                    ),
-                }];
+            if (shipSelection.shipDefinition.id !== shipId || shipSelection.reinforcement !== reinforcement) {
+                return shipSelection;
             }
 
-            // if initial ship, update maxCount for self reinforcment of same kind
-            if (reinforcement === null && shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === 'self') {
-                return [{
-                    ...shipSelection,
-                    maxCount: getMaxCount(
-                        shipSelection.count,
-                        count,
-                        shipSelection.reinforcement,
-                        fleetSetup.maxReinforcement,
-                        totalReinforcementCount,
-                        shipSelection.shipDefinition.operationLimit
-                    ),
-                }];
-            }
-
-            // if self reinforcement, update maxCount for initial ship of same kind
-            if (reinforcement === 'self' && shipSelection.shipDefinition.id === shipId && shipSelection.reinforcement === null) {
-                return [{
-                    ...shipSelection,
-                    maxCount: getMaxCount(
-                        shipSelection.count,
-                        count,
-                        shipSelection.reinforcement,
-                        fleetSetup.maxReinforcement,
-                        totalReinforcementCount,
-                        shipSelection.shipDefinition.operationLimit
-                    ),
-                }];
-            }
-
-            // adapt maxCount for any other reinforcement
-            if (shipSelection.reinforcement !== null) {
-                const relatedInitialShipCount = shipSelection.reinforcement === 'ally' ? 0 : fleetSetup.ships.find(s => s.shipDefinition.id === shipSelection.shipDefinition.id && s.reinforcement === null)?.count ?? 0;
-                return [{
-                    ...shipSelection,
-                    maxCount: getMaxCount(
-                        shipSelection.count,
-                        relatedInitialShipCount,
-                        shipSelection.reinforcement,
-                        fleetSetup.maxReinforcement,
-                        totalReinforcementCount,
-                        shipSelection.shipDefinition.operationLimit
-                    ),
-                }];
-            }
-
-            return [shipSelection];
+            isNewSelection = false;
+            return (!keepZero && count <= 0) ? [] : [{
+                ...shipSelection,
+                count,
+            }];
         }),
     };
 
     if (!isNewSelection) {
-        return newFleetSetup;
+        return {
+            ...newFleetSetup,
+            totalCost: getTotalCost(newFleetSetup.ships),
+            totalReinforcementCount: getTotalReinforcementCount(newFleetSetup.ships),
+        };
     }
 
     return {
@@ -289,46 +232,14 @@ export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
             createShipSelection({
                 shipDefinition,
                 count,
-                maxCount: getMaxCount(
-                    count,
-                    otherCountOfSameKind,
-                    reinforcement,
-                    fleetSetup.maxReinforcement,
-                    totalReinforcementCount,
-                    shipDefinition.operationLimit
-                ),
                 reinforcement,
                 userSettings,
+                maxReinforcement: fleetSetup.maxReinforcement,
             }),
         ],
+        totalCost: getTotalCost(newFleetSetup.ships),
+        totalReinforcementCount: getTotalReinforcementCount(newFleetSetup.ships),
     };
-}
-
-function getMaxCount(
-    count: number,
-    otherCountOfSameKind: number,
-    reinforcement: ReinforcementType | null,
-    maxReinforcement: number,
-    totalReinforcementCount: number,
-    operationLimit: number,
-): number {
-    switch (reinforcement) {
-        case 'ally': {
-            return Math.min(
-                operationLimit,
-                maxReinforcement - (totalReinforcementCount - count),
-            );
-        }
-        case 'self': {
-            return Math.min(
-                operationLimit - otherCountOfSameKind,
-                maxReinforcement - (totalReinforcementCount - count),
-            );
-        }
-        default: {
-            return operationLimit - otherCountOfSameKind;
-        }
-    }
 }
 
 export interface IApplyCarriedShipCountArgs {
@@ -376,4 +287,17 @@ export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetS
             };
         })
     };
+}
+
+function getTotalCost(ships: IShipSelection[]): number {
+    return ships.filter(ship => ship.reinforcement === null)
+        .map(ship => ship.count * ship.shipDefinition.cost)
+        .reduce((sum, cost) => sum + cost, 0);
+}
+
+function getTotalReinforcementCount(ships: IShipSelection[]): number {
+    return ships
+        .filter(ship => ship.reinforcement !== null)
+        .map(ship => ship.count)
+        .reduce((sum, count) => sum + count, 0);
 }

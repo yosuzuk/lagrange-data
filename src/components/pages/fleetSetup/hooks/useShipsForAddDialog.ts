@@ -1,33 +1,31 @@
 import { useCallback, useState } from 'react';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
-import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { addSelectedShipsToFleetSetup, applyCountToReinforcementShipInAddDialog, applyCountToShipInAddDialog, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
+import { addSelectedShipsToFleetSetup, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
+import { applyShipCount } from '../utils/fleetSetupUtils';
 
 interface IHookArguments {
     userSettings: IUserSettings;
     fleetSetup: IFleetSetup;
-    reinforcement: ReinforcementType | null;
-    shipDefinitions: IShipDefinition[];
     setFleetSetup: (fleetSetup: IFleetSetup) => void;
 }
 
 interface IHookResult {
     shipsForAddDialog: IShipsForAddDialog | null;
-    open: (filter?: string) => void;
+    open: (reinforcement: ReinforcementType | null, filter?: string) => void;
     cancel: () => void;
     apply: () => void;
-    setShipCount: (shipId: string, count: number) => void;
+    setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
-    const { userSettings, fleetSetup, reinforcement, shipDefinitions, setFleetSetup } = args;
+    const { userSettings, fleetSetup, setFleetSetup } = args;
     const [shipsForAddDialog, setShipsForAddDialog] = useState<IShipsForAddDialog | null>(null);
 
-    const open = useCallback((filter?: string) => {
-        setShipsForAddDialog(createShipsForAddDialog(shipDefinitions, reinforcement, fleetSetup, filter ?? null));
-    }, [reinforcement, shipDefinitions, fleetSetup]);
+    const open = useCallback((reinforcement: ReinforcementType | null, filter?: string) => {
+        setShipsForAddDialog(createShipsForAddDialog(reinforcement, fleetSetup, userSettings, filter ?? null));
+    }, [fleetSetup, userSettings]);
 
     const cancel = useCallback(() => {
         setShipsForAddDialog(null);
@@ -35,22 +33,24 @@ export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
 
     const apply = useCallback(() => {
         if (shipsForAddDialog) {
-            setFleetSetup(addSelectedShipsToFleetSetup(shipsForAddDialog, fleetSetup, userSettings));
+            setFleetSetup(addSelectedShipsToFleetSetup(shipsForAddDialog));
             setShipsForAddDialog(null);
         }
-    }, [shipsForAddDialog, setFleetSetup, fleetSetup, userSettings]);
+    }, [shipsForAddDialog, setFleetSetup]);
 
-    const setShipCount = useCallback((shipId: string, count: number) => {
-        setShipsForAddDialog((shipsForAddDialog: IShipsForAddDialog | null) => {
-            if (!shipsForAddDialog) {
-                return null;
-            }
-            if (reinforcement === null) {
-                return applyCountToShipInAddDialog(shipId, count, shipsForAddDialog);
-            }
-            return applyCountToReinforcementShipInAddDialog(shipId, count, shipsForAddDialog, fleetSetup);
-        });
-    }, [userSettings, reinforcement, fleetSetup]);
+    const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
+        setShipsForAddDialog((shipsForAddDialog: IShipsForAddDialog | null) =>　!shipsForAddDialog ? null : ({
+            ...shipsForAddDialog,
+            fleetSetup: applyShipCount({
+                shipId,
+                count,
+                reinforcement,
+                fleetSetup: shipsForAddDialog.fleetSetup,
+                userSettings,
+                keepZero: true,
+            }),
+        }));
+    }, [userSettings]);
 
     return {
         shipsForAddDialog,
