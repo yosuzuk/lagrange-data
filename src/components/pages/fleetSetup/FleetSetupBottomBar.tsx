@@ -26,7 +26,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
-                                        {'引き受け増援艦船数'}
+                                        {'増援'}
                                     </Typography>
                                     <Typography
                                         variant="body1"
@@ -39,7 +39,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
-                                        {'艦隊司令pt'}
+                                        {'司令pt'}
                                     </Typography>
                                     <Typography
                                         variant="body1"

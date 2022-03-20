@@ -50,7 +50,48 @@ export const AddShipsToFleetDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={getTitle(ships.reinforcement)}
+            title={(
+                <Stack spacing={1} direction="row" justifyContent="space-between" alignItems="center">
+                    <Typography variant="h6">
+                        {getTitle(ships.reinforcement)}
+                    </Typography>
+                    {ships.reinforcement === null ? (
+                        <div>
+                            <Typography variant="body1" component="span">
+                                {'指令Pt：'}
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                component="span"
+                                sx={{
+                                    color: ships.fleetSetup.totalCost > ships.fleetSetup.maxCost ? 'red' : undefined,
+                                }}
+                            >
+                                <strong>
+                                    {`${ships.fleetSetup.totalCost} / ${ships.fleetSetup.maxCost}`}
+                                </strong>
+                            </Typography>
+                        </div>
+                    ) : (
+                        <div>
+                            <Typography variant="body1" component="span">
+                                {'増援：'}
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                component="span"
+                                sx={{
+                                    color: ships.fleetSetup.totalReinforcementCount > ships.fleetSetup.maxReinforcement ? 'red' : undefined,
+                                }}
+                            >
+                                <strong>
+                                    {`${ships.fleetSetup.totalReinforcementCount} / ${ships.fleetSetup.maxReinforcement}`}
+                                </strong>
+                            </Typography>
+                        </div>
+                    )}
+                </Stack>
+            )}
             content={(
                 <Stack spacing={2}>
                     <Typography variant="body2">{getDescription(ships.reinforcement)}</Typography>

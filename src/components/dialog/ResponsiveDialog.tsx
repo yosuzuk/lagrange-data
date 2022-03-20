@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Divider from '@mui/material/Divider';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -28,13 +29,17 @@ export const ResponsiveDialog = (props: IProps) => {
             open={true}
         >
             <DialogTitle>{title}</DialogTitle>
+            <Divider />
             <DialogContent>
                 {content}
             </DialogContent>
             {actions && (
-                <DialogActions>
-                    {actions}
-                </DialogActions>
+                <>
+                    <Divider />
+                    <DialogActions>
+                        {actions}
+                    </DialogActions>
+                </>
             )}
         </Dialog>
     );
