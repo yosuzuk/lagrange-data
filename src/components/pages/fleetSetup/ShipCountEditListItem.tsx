@@ -1,4 +1,3 @@
-import Alert from '@mui/material/Alert';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -58,10 +57,13 @@ export const ShipCountEditListItem = (props: IProps) => {
                     {`ユニオン増援`}
                 </Typography>
             )}
-            {shipWarning && (
-                <Alert severity="error">{shipWarning}</Alert>
-            )}
         </>
+    );
+
+    const warningText = shipWarning && (
+        <Typography variant="caption" color="red" textAlign="end">
+            {shipWarning}
+        </Typography>
     );
 
     const clearButton = (
@@ -123,26 +125,30 @@ export const ShipCountEditListItem = (props: IProps) => {
                                 {maxOuntButton}
                             </Stack>
                         </Paper>
+                        {warningText}
                     </Stack>
                 )}
                 {!verticalAlignment && (
-                    <Stack spacing={1} direction="row" flexWrap="wrap" alignItems="center">
-                        <Box pb={1}>
-                            <Stack spacing={1}>
-                                {shipContext}
-                            </Stack>
-                        </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
-                            <Paper variant="outlined" sx={{ display: 'inline-block' }}>
-                                <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                    {clearButton}
-                                    {decreaseButton}
-                                    {countIndicator}
-                                    {increaseButton}
-                                    {maxOuntButton}
+                    <Stack spacing={1}>
+                        <Stack spacing={1} direction="row" flexWrap="wrap" alignItems="center">
+                            <Box pb={1}>
+                                <Stack spacing={1}>
+                                    {shipContext}
                                 </Stack>
-                            </Paper>
-                        </Box>
+                            </Box>
+                            <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
+                                <Paper variant="outlined" sx={{ display: 'inline-block' }}>
+                                    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                        {clearButton}
+                                        {decreaseButton}
+                                        {countIndicator}
+                                        {increaseButton}
+                                        {maxOuntButton}
+                                    </Stack>
+                                </Paper>
+                            </Box>
+                        </Stack>
+                        {warningText}
                     </Stack>
                 )}
             </Box>

@@ -49,6 +49,7 @@ export const FleetSetupEditPage = () => {
 
     const {
         shipsForAddDialog,
+        shipWarnings: shipWarningsForAddDialog,
         open: openAddDialog,
         cancel: cancelAddDialog,
         apply: applyAddDialog,
@@ -158,6 +159,7 @@ export const FleetSetupEditPage = () => {
             {shipsForAddDialog && (
                 <AddShipsToFleetDialog
                     ships={shipsForAddDialog}
+                    shipWarnings={shipWarningsForAddDialog}
                     onCancel={cancelAddDialog}
                     onApply={applyAddDialog}
                     onChangeCount={setShipCountForAddDialog}

@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
 import { addSelectedShipsToFleetSetup, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { applyShipCount } from '../utils/fleetSetupUtils';
+import { validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
     userSettings: IUserSettings;
@@ -13,6 +14,7 @@ interface IHookArguments {
 
 interface IHookResult {
     shipsForAddDialog: IShipsForAddDialog | null;
+    shipWarnings: Record<string, string>;
     open: (reinforcement: ReinforcementType | null, filter?: string) => void;
     cancel: () => void;
     apply: () => void;
@@ -52,8 +54,16 @@ export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
         }));
     }, [userSettings]);
 
+    const shipWarnings = useMemo(() => {
+        if (!shipsForAddDialog) {
+            return {};
+        }
+        return validateFleetSetupForShipWarnings(shipsForAddDialog.fleetSetup);
+    }, [shipsForAddDialog]);
+
     return {
         shipsForAddDialog,
+        shipWarnings,
         open,
         cancel,
         apply,

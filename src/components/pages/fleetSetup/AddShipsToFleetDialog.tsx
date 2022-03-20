@@ -16,13 +16,14 @@ import { ShipType } from '../../../types/ShipType';
 
 export interface IProps {
     ships: IShipsForAddDialog;
+    shipWarnings: Record<string, string>;
     onCancel: () => void;
     onApply: () => void;
     onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToFleetDialog = (props: IProps) => {
-    const { ships, onCancel, onApply, onChangeCount } = props;
+    const { ships, shipWarnings, onCancel, onApply, onChangeCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
 
     const [filterState, setFilterState] = useState<ShipFilterState>(() => {
@@ -83,7 +84,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             shipSelections={filteredShips.fleetSetup.ships}
                             showCost={!filteredShips.reinforcement}
                             showReinforcement={false}
-                            shipWarnings={{} /* TODO */}
+                            shipWarnings={shipWarnings}
                             onChangeCount={onChangeCount}
                         />
                     ) : (
