@@ -86,6 +86,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             shipsForAddDialog={filteredShips}
                             showCost={!reinforcement}
                             showReinforcement={false}
+                            shipWarnings={{}}
                             onChangeCount={onChangeCount}
                         />
                     ) : (

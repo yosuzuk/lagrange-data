@@ -1,4 +1,4 @@
-import { useMemo, useState, memo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -24,8 +24,6 @@ import { ShipCountEditList } from './ShipCountEditList';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { AddShipsButton } from './AddShipsButton';
 
-const MemoizedShipCountEditList = memo(ShipCountEditList);
-
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
     const { fleetKey } = useParams();
@@ -40,6 +38,7 @@ export const FleetSetupEditPage = () => {
     const {
         fleetSetup,
         errors,
+        shipWarnings,
         setFleetSetup,
         setShipCount,
         setCarriedShipCount,
@@ -179,11 +178,12 @@ export const FleetSetupEditPage = () => {
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (
-                                                <MemoizedShipCountEditList
+                                                <ShipCountEditList
                                                     shipSelections={group.ships}
                                                     onChangeCount={setShipCount}
                                                     showCost={true}
                                                     showReinforcement={true}
+                                                    shipWarnings={shipWarnings}
                                                 />
                                             )}
                                         </Stack>

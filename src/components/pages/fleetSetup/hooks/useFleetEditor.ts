@@ -1,8 +1,9 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { applyCarriedShipCount, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
+import { validateFleetSetupForPropertyErrors, validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
     initialFleetKey?: string;
@@ -12,6 +13,7 @@ interface IHookArguments {
 interface IHookResult {
     fleetSetup: IFleetSetup;
     errors: Record<string, string>;
+    shipWarnings: Record<string, string>;
     setFleetSetup: (fleetSetup: IFleetSetup) => void;
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
@@ -24,6 +26,7 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
     const navigate = useNavigate();
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
+    const shipWarningsRef = useRef<Record<string, string>>({});
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setFleetSetup(fleetSetup => applyShipCount({ shipId, count, reinforcement, fleetSetup, userSettings }));
@@ -43,27 +46,14 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
         setFleetSetup(createFleetSetup(fleetNumber));
     }, [fleetSetup]);
 
-    const errors = useMemo(() => {
-        const errorMap: Record<string, string> = {};
-        if (fleetSetup.name.length === 0) {
-            errorMap['name'] = '必須項目';
-        }
-        if (!Number.isFinite(fleetSetup.maxReinforcement) || fleetSetup.maxReinforcement < 0) {
-            errorMap['maxReinforcement'] = '無効な値';
-        }
-        if (!Number.isFinite(fleetSetup.maxCost) || fleetSetup.maxCost < 300 || fleetSetup.maxCost > 450) {
-            errorMap['maxCost'] = '無効な値';
-        }
-        if (fleetSetup.maxCost > 400 && fleetSetup.maxReinforcement > 5) {
-            errorMap['maxReinforcement'] = errorMap['maxReinforcement'] ?? '基地結合効果は１つまでです';
-            errorMap['maxCost'] = errorMap['maxCost'] ?? '基地結合効果は１つまでです';
-        }
-        return errorMap;
-    }, [fleetSetup]);
+    const errors = useMemo(() => validateFleetSetupForPropertyErrors(fleetSetup), [fleetSetup]);
+
+    const shipWarnings = useMemo(() => validateFleetSetupForShipWarnings(fleetSetup), [fleetSetup]);
 
     return {
         fleetSetup,
         errors,
+        shipWarnings,
         setFleetSetup,
         setShipCount,
         setCarriedShipCount,
