@@ -1,127 +1,96 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { IShipsForAddDialog, IShipForAddDialog } from '../types/IShipsForAddDialog';
+import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { applyShipCount } from './fleetSetupUtils';
+import { createShipSelection } from './fleetSetupUtils';
 import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { ShipType } from '../../../../types/ShipType';
 import { ShipRow } from '../../../../types/ShipRow';
 import { FilterKey, ShipFilterState } from '../../../filter/types/ShipFilterState';
+import { shipDefinitions as allShipDefinitions } from '../../../../data/shipDefinitions';
 
 export function createShipsForAddDialog(
-    shipDefinitions: IShipDefinition[],
     reinforcement: ReinforcementType | null,
     fleetSetup: IFleetSetup,
+    userSettings: IUserSettings,
     filter: string | null,
 ): IShipsForAddDialog {
+    const includedShipMap: Record<string, boolean> = {};
+    fleetSetup.ships.forEach(ship => {
+        includedShipMap[`${ship.shipDefinition.id}_${ship.reinforcement}`] = true;
+    });
+
+    const shipDefinitions = pickShipsForAddDialog(
+        allShipDefinitions,
+        reinforcement,
+        fleetSetup.myListOnly,
+        userSettings,
+    );
+
     return {
-        ships: shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
-            const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, fleetSetup);
-            return shipForAddDialog ? [shipForAddDialog] : [];
-        }),
+        fleetSetup: {
+            ...fleetSetup,
+            ships: [
+                ...fleetSetup.ships,
+                ...shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
+                    if (includedShipMap[`${shipDefinition.id}_${reinforcement}`]) {
+                        return [];
+                    }
+
+                    return [
+                        createShipSelection({
+                            shipDefinition,
+                            count: 0,
+                            reinforcement,
+                            userSettings,
+                            maxReinforcement: fleetSetup.maxReinforcement,
+                            temporary: true,
+                        }),
+                    ];
+                }),
+            ],
+        },
         reinforcement,
         filter,
     };
 }
 
-function createShipForAddDialog(
-    shipDefinition: IShipDefinition,
+function pickShipsForAddDialog(
+    shipDefinitions: IShipDefinition[],
     reinforcement: ReinforcementType | null,
-    fleetSetup: IFleetSetup,
-): IShipForAddDialog | null {
-    const sameShipSelections = fleetSetup.ships.filter(s => s.shipDefinition.id === shipDefinition.id);
-    const count = sameShipSelections.find(s => s.reinforcement === reinforcement)?.count ?? 0;
-
-    if (count > 0) {
-        return null; // ship has already been selected
-    }
-
-    const maxCount = reinforcement === null ? shipDefinition.operationLimit : Math.min(
-        shipDefinition.operationLimit,
-        fleetSetup.maxReinforcement,
-    );
-
-    return count < maxCount ? {
-        shipDefinition,
-        count,
-        maxCount,
-    } : null;
+    myListOnly: boolean,
+    userSettings: IUserSettings,
+): IShipDefinition[] {
+    const ships = shipDefinitions.filter(s => s.type !== ShipType.CORVETTE && s.type !== ShipType.FIGHTER);
+    return (reinforcement === 'ally' || !myListOnly)
+        ? ships
+        : shipDefinitions.filter(s => isPossessingShip(s.id, userSettings));
 }
 
-export function applyCountToShipInAddDialog(shipId: string, count: number, shipsForAddDialog: IShipsForAddDialog): IShipsForAddDialog {
+export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDialog): IFleetSetup {
     return {
-        ...shipsForAddDialog,
-        ships: shipsForAddDialog.ships.map(ship => ship.shipDefinition.id !== shipId ? ship : {
-            ...ship,
-            count,
+        ...shipsForAddDialog.fleetSetup,
+        ships: shipsForAddDialog.fleetSetup.ships.flatMap(ship => {
+            if (!ship.temporary) {
+                return [ship];
+            }
+            if (ship.count === 0) {
+                return [];
+            }
+            return [{ ...ship, temporary: false }];
         }),
     };
 }
 
-export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDialog, fleetSetup: IFleetSetup, userSettings: IUserSettings): IFleetSetup {
-    let newFleetSetup: IFleetSetup = fleetSetup;
-    shipsForAddDialog.ships
-        .filter(ship => ship.count > 0)
-        .forEach(shipToAdd => {
-            newFleetSetup = applyShipCount({
-                shipId: shipToAdd.shipDefinition.id,
-                count: shipToAdd.count,
-                reinforcement: shipsForAddDialog.reinforcement,
-                fleetSetup: newFleetSetup,
-                userSettings,
-            });
-        });
-
-    return newFleetSetup;
-}
-
-interface IShipDefinitionsForAddDialog {
-    myListShips: IShipDefinition[];
-    myListCarriedShips: IShipDefinition[];
-    allyReinforcementShips: IShipDefinition[];
-    allyReinforcementCarriedShips: IShipDefinition[];
-}
-
-export function extractShipDefinitionsForAddDialog(
-    shipDefinitions: IShipDefinition[],
-    userSettings: IUserSettings,
-    myListOnly: boolean,
-): IShipDefinitionsForAddDialog {
-    const myListShips: IShipDefinition[] = [];
-    const myListCarriedShips: IShipDefinition[] = [];
-    const allyReinforcementShips: IShipDefinition[] = [];
-    const allyReinforcementCarriedShips: IShipDefinition[] = [];
-
-    shipDefinitions.forEach(shipDefinition => {
-        switch (shipDefinition.type) {
-            case ShipType.FIGHTER:
-            case ShipType.CORVETTE: {
-                if (!myListOnly || isPossessingShip(shipDefinition.id, userSettings)) {
-                    myListCarriedShips.push(shipDefinition);
-                }
-                allyReinforcementCarriedShips.push(shipDefinition);
-                break;
-            }
-            default: {
-                if (!myListOnly || isPossessingShip(shipDefinition.id, userSettings)) {
-                    myListShips.push(shipDefinition);
-                }
-                allyReinforcementShips.push(shipDefinition);
-                break;
-            }
-        }        
-    });
-
-    return {
-        myListShips,
-        myListCarriedShips,
-        allyReinforcementShips,
-        allyReinforcementCarriedShips,
-    };
-}
-
 export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAddDialog: IShipsForAddDialog): IShipsForAddDialog {
-    let result: IShipsForAddDialog = shipsForAddDialog;
+    let result: IShipsForAddDialog = {
+        ...shipsForAddDialog,
+        fleetSetup: {
+            ...shipsForAddDialog.fleetSetup,
+            ships: shipsForAddDialog.fleetSetup.ships.filter(s => s.temporary === true),
+        },
+    };
+
     Object.keys(filterState).filter(filterKey => filterState[filterKey as FilterKey]).forEach(filterKey => {
         switch (filterKey) {
             case ShipRow.FRONT:
@@ -129,7 +98,10 @@ export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAdd
             case ShipRow.BACK: {
                 result = {
                     ...result,
-                    ships: result.ships.filter(s => s.shipDefinition.row === filterKey),
+                    fleetSetup: {
+                        ...result.fleetSetup,
+                        ships: result.fleetSetup.ships.filter(s => s.shipDefinition.row === filterKey),
+                    },
                 };
                 break;
             }
@@ -140,7 +112,10 @@ export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAdd
             case ShipType.FRIGATE: {
                 result = {
                     ...result,
-                    ships: result.ships.filter(s => s.shipDefinition.type === filterKey),
+                    fleetSetup: {
+                        ...result.fleetSetup,
+                        ships: result.fleetSetup.ships.filter(s => s.shipDefinition.type === filterKey),
+                    },
                 };
                 break;
             }

@@ -15,17 +15,14 @@ import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ShipType } from '../../../types/ShipType';
 
 export interface IProps {
-    title: string;
-    description: string;
     ships: IShipsForAddDialog;
-    reinforcement: ReinforcementType | null;
     onCancel: () => void;
     onApply: () => void;
     onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToFleetDialog = (props: IProps) => {
-    const { title, description, ships, reinforcement, onCancel, onApply, onChangeCount } = props;
+    const { ships, onCancel, onApply, onChangeCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
 
     const [filterState, setFilterState] = useState<ShipFilterState>(() => {
@@ -52,10 +49,10 @@ export const AddShipsToFleetDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={title}
+            title={getTitle(ships.reinforcement)}
             content={(
                 <Stack spacing={2}>
-                    <Typography variant="body2">{description}</Typography>
+                    <Typography variant="body2">{getDescription(ships.reinforcement)}</Typography>
                     <div>
                         <ShipTypeFilterButton
                             filter={filterState}
@@ -76,17 +73,17 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             }}
                         />
                     </div>
-                    {filteredShips.ships.length === 0 && (
+                    {filteredShips.fleetSetup.ships.length === 0 && (
                         <Alert severity="info">
                             {'該当する艦船がありません。'}
                         </Alert>
                     )}
                     {drawList ? (
                         <ShipCountEditList
-                            shipsForAddDialog={filteredShips}
-                            showCost={!reinforcement}
+                            shipSelections={filteredShips.fleetSetup.ships}
+                            showCost={!filteredShips.reinforcement}
                             showReinforcement={false}
-                            shipWarnings={{}}
+                            shipWarnings={{} /* TODO */}
                             onChangeCount={onChangeCount}
                         />
                     ) : (
@@ -114,3 +111,29 @@ export const AddShipsToFleetDialog = (props: IProps) => {
         />
     );
 };
+
+function getTitle(reinforcement: ReinforcementType | null): string {
+    switch (reinforcement) {
+        case 'ally':
+        case 'self': {
+            return '増援を追加';
+        }
+        default: {
+            return '艦船を追加';
+        }
+    }
+}
+
+function getDescription(reinforcement: ReinforcementType | null): string {
+    switch (reinforcement) {
+        case 'ally': {
+            return 'ユニオンメンバーから送られる増援を追加します。';
+        }
+        case 'self': {
+            return '自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。';
+        }
+        default: {
+            return '艦船を通常配備します。所持している艦船はマイリストで設定してください。';
+        }
+    }
+}

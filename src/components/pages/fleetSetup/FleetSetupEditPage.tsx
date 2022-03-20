@@ -17,9 +17,7 @@ import { FleetSetupBottomBar } from './FleetSetupBottomBar';
 import { useShipsForAddDialog } from './hooks/useShipsForAddDialog';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
-import { shipDefinitions } from '../../../data/shipDefinitions';
 import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
-import { extractShipDefinitionsForAddDialog } from './utils/shipAddDialogUtilts';
 import { ShipCountEditList } from './ShipCountEditList';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { AddShipsButton } from './AddShipsButton';
@@ -49,49 +47,15 @@ export const FleetSetupEditPage = () => {
         userSettings,
     });
 
-    const shipDefinitionsForAddDialog = useMemo(() => {
-        return extractShipDefinitionsForAddDialog(shipDefinitions, userSettings, fleetSetup.myListOnly);
-    }, [userSettings, fleetSetup.myListOnly]);
-
     const {
-        shipsForAddDialog: shipsForInitialShipsAddDialog,
-        open: openAddNewInitialShips,
-        cancel: cancelAddNewInitialShips,
-        apply: applyNewInitialShips,
-        setShipCount: setShipCountForInitialShips,
+        shipsForAddDialog,
+        open: openAddDialog,
+        cancel: cancelAddDialog,
+        apply: applyAddDialog,
+        setShipCount: setShipCountForAddDialog,
     } = useShipsForAddDialog({
         userSettings,
         fleetSetup,
-        reinforcement: null,
-        shipDefinitions: shipDefinitionsForAddDialog.myListShips,
-        setFleetSetup,
-    });
-
-    const {
-        shipsForAddDialog: shipsForSelfReinforcementAddDialog,
-        open: openAddNewSelfReinforcement,
-        cancel: cancelAddNewSelfReinforcement,
-        apply: applyNewSelfReinforcement,
-        setShipCount: setShipCountForSelfReinforcement,
-    } = useShipsForAddDialog({
-        userSettings,
-        fleetSetup,
-        reinforcement: 'self',
-        shipDefinitions: shipDefinitionsForAddDialog.myListShips,
-        setFleetSetup,
-    });
-
-    const {
-        shipsForAddDialog: shipsForAllyReinforcementAddDialog,
-        open: openAddNewAllyReinforcement,
-        cancel: cancelAddNewAllyReinforcement,
-        apply: applyNewAllyReinforcement,
-        setShipCount: setShipCountForAllyReinforcement,
-    } = useShipsForAddDialog({
-        userSettings,
-        fleetSetup,
-        reinforcement: 'ally',
-        shipDefinitions: shipDefinitionsForAddDialog.allyReinforcementShips,
         setFleetSetup,
     });
 
@@ -137,9 +101,7 @@ export const FleetSetupEditPage = () => {
                 onSave={handleClickSave}
                 onCancel={handleClickCancel}
                 onReset={handleClickReset}
-                onOpenAddShips={openAddNewInitialShips}
-                onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
-                onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
+                onOpenAddShips={openAddDialog}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container disabled={groupDirection === 'row'}>
@@ -172,9 +134,7 @@ export const FleetSetupEditPage = () => {
                                                 </Box>
                                                 <AddShipsButton
                                                     filter={group.id}
-                                                    onOpenAddShips={openAddNewInitialShips}
-                                                    onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
-                                                    onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
+                                                    onOpenAddShips={openAddDialog}
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (
@@ -195,37 +155,12 @@ export const FleetSetupEditPage = () => {
                 </Box>
             </Container>
             <FleetSetupBottomBar fleetSetup={fleetSetup} fleetShipCount={fleetShipCount} />
-            {shipsForInitialShipsAddDialog && (
+            {shipsForAddDialog && (
                 <AddShipsToFleetDialog
-                    title={'艦船を追加'}
-                    description={'艦船を通常配備します。所持している艦船はマイリストで設定してください。'}
-                    ships={shipsForInitialShipsAddDialog}
-                    reinforcement={null}
-                    onCancel={cancelAddNewInitialShips}
-                    onApply={applyNewInitialShips}
-                    onChangeCount={setShipCountForInitialShips}
-                />
-            )}
-            {shipsForSelfReinforcementAddDialog && (
-                <AddShipsToFleetDialog
-                    title={'増援を追加'}
-                    description={'自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。'}
-                    ships={shipsForSelfReinforcementAddDialog}
-                    reinforcement={'self'}
-                    onCancel={cancelAddNewSelfReinforcement}
-                    onApply={applyNewSelfReinforcement}
-                    onChangeCount={setShipCountForSelfReinforcement}
-                />
-            )}
-            {shipsForAllyReinforcementAddDialog && (
-                <AddShipsToFleetDialog
-                    title={'増援を追加'}
-                    description={'ユニオンメンバーから送られる増援を追加します。'}
-                    ships={shipsForAllyReinforcementAddDialog}
-                    reinforcement={'ally'}
-                    onCancel={cancelAddNewAllyReinforcement}
-                    onApply={applyNewAllyReinforcement}
-                    onChangeCount={setShipCountForAllyReinforcement}
+                    ships={shipsForAddDialog}
+                    onCancel={cancelAddDialog}
+                    onApply={applyAddDialog}
+                    onChangeCount={setShipCountForAddDialog}
                 />
             )}
             {confirmingReset && (

@@ -23,6 +23,7 @@ export interface IShipSelection {
     count: number;
     maxCount: number;
     reinforcement: ReinforcementType | null;
+    temporary?: boolean;
 }
 
 export interface ICarriedShipSelection {

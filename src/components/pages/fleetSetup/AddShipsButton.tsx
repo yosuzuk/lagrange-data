@@ -1,11 +1,10 @@
 import AddIcon from '@mui/icons-material/Add';
 import { ButtonProps } from '@mui/material/Button';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
+import { ReinforcementType } from './types/IFleetSetup';
 
 interface IProps {
-    onOpenAddShips: (filter?: string) => void;
-    onOpenAddSelfReinforcement: (filter?: string) => void;
-    onOpenAddAllyReinforcement: (filter?: string) => void;
+    onOpenAddShips: (reinforcement: ReinforcementType | null, filter?: string) => void;
     filter?: string;
     buttonProps?: ButtonProps;
 }
@@ -13,8 +12,6 @@ interface IProps {
 export const AddShipsButton = (props: IProps) => {
     const {
         onOpenAddShips,
-        onOpenAddSelfReinforcement,
-        onOpenAddAllyReinforcement,
         filter,
         buttonProps,
     } = props;
@@ -22,15 +19,15 @@ export const AddShipsButton = (props: IProps) => {
     const handleClickAddOption = (value: string) => {
         switch (value) {
             case 'addInitialShip': {
-                onOpenAddShips(filter);
+                onOpenAddShips(null, filter);
                 break;
             }
             case 'addSelfReinforcement': {
-                onOpenAddSelfReinforcement(filter);
+                onOpenAddShips('self', filter);
                 break;
             }
             case 'addAllyReinforcement': {
-                onOpenAddAllyReinforcement(filter);
+                onOpenAddShips('ally', filter);
                 break;
             }
         }

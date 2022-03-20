@@ -26,7 +26,6 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
     const navigate = useNavigate();
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
-    const shipWarningsRef = useRef<Record<string, string>>({});
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setFleetSetup(fleetSetup => applyShipCount({ shipId, count, reinforcement, fleetSetup, userSettings }));

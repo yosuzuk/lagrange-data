@@ -105,10 +105,11 @@ interface ICreateShipSelectionArgs {
     reinforcement: ReinforcementType | null;
     userSettings: IUserSettings;
     maxReinforcement: number;
+    temporary?: boolean;
 }
 
 export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
-    const { shipDefinition, count, reinforcement, userSettings, maxReinforcement } = args;
+    const { shipDefinition, count, reinforcement, userSettings, maxReinforcement, temporary } = args;
 
     let carryUpToLargeFighter = 0;
     let carryUpToMediumFighter = 0;
@@ -166,6 +167,7 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         count: Math.max(0, count),
         reinforcement,
         maxCount,
+        temporary,
     };
 }
 
@@ -191,10 +193,11 @@ export interface IApplyShipCountArgs {
     reinforcement: ReinforcementType | null;
     fleetSetup: IFleetSetup;
     userSettings: IUserSettings;
+    keepZero?: true;
 }
 
 export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
-    const { shipId, count, reinforcement, fleetSetup, userSettings } = args;
+    const { shipId, count, reinforcement, fleetSetup, userSettings, keepZero } = args;
     const shipDefinition = getShipDefinitionById(shipId);
 
     let isNewSelection = true;
@@ -207,7 +210,7 @@ export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
             }
 
             isNewSelection = false;
-            return count <= 0 ? [] : [{
+            return (!keepZero && count <= 0) ? [] : [{
                 ...shipSelection,
                 count,
             }];
