@@ -13,11 +13,25 @@ export enum GroupAndSortOption {
     SORT_BY_NAME = 'sortByName',
 };
 
-const sortByName = (a: IShipSelection, b: IShipSelection) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP');
+const sortNumberPerReinforcementType = {
+    initial: 0,
+    self: 1,
+    ally: 2,
+} as const;
+
+const sortByReinforcementType = (a: IShipSelection, b: IShipSelection) => {
+    return sortNumberPerReinforcementType[a.reinforcement ?? 'initial'] - sortNumberPerReinforcementType[b.reinforcement ?? 'initial'];
+};
+
+const sortByName = normalizeSortFn<IShipSelection>([
+    (a: IShipSelection, b: IShipSelection) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP'),
+    sortByReinforcementType,
+]);
 
 const sortByTypeAndName = normalizeSortFn<IShipSelection>([
     (a, b) => shipTypeToSortValue(a.shipDefinition.type, a.shipDefinition.subType) - shipTypeToSortValue(b.shipDefinition.type, b.shipDefinition.subType),
     sortByName,
+    sortByReinforcementType,
 ]);
 
 export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IGroupedShips {
