@@ -36,7 +36,7 @@ export const ShipCountEditList = (props: IProps) => {
                     key={`${newShip.shipDefinition.id}_${shipsForAddDialog.reinforcement ?? 'initial'}`}
                     shipDefinition={newShip.shipDefinition}
                     count={newShip.count}
-                    maxCount={shipsForAddDialog.remainingCount !== null ? Math.min(newShip.maxCount, shipsForAddDialog.remainingCount + newShip.count) : newShip.maxCount}
+                    maxCount={newShip.maxCount}
                     reinforcement={shipsForAddDialog.reinforcement}
                     showCost={showCost}
                     showReinforcement={showReinforcement}

@@ -14,14 +14,12 @@ export function createShipsForAddDialog(
     fleetSetup: IFleetSetup,
     filter: string | null,
 ): IShipsForAddDialog {
-    const totalReinforcementCount = fleetSetup.ships.find(s => s.reinforcement !== null)?.count ?? 0;
     return {
         ships: shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
-            const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, totalReinforcementCount, fleetSetup);
+            const shipForAddDialog = createShipForAddDialog(shipDefinition, reinforcement, fleetSetup);
             return shipForAddDialog ? [shipForAddDialog] : [];
         }),
         reinforcement,
-        remainingCount: reinforcement !== null ? fleetSetup.maxReinforcement - fleetSetup.totalReinforcementCount : null,
         filter,
     };
 }
@@ -29,7 +27,6 @@ export function createShipsForAddDialog(
 function createShipForAddDialog(
     shipDefinition: IShipDefinition,
     reinforcement: ReinforcementType | null,
-    totalReinforcementCount: number,
     fleetSetup: IFleetSetup,
 ): IShipForAddDialog | null {
     const sameShipSelections = fleetSetup.ships.filter(s => s.shipDefinition.id === shipDefinition.id);
@@ -39,40 +36,16 @@ function createShipForAddDialog(
         return null; // ship has already been selected
     }
 
-    switch (reinforcement) {
-        case 'ally': {
-            const maxCount = Math.min(
-                shipDefinition.operationLimit,
-                fleetSetup.maxReinforcement - totalReinforcementCount,
-            );
-            return count < maxCount ? {
-                shipDefinition,
-                count,
-                maxCount,
-            } : null;
-        }
-        case 'self': {
-            const sameShipInitialCount = sameShipSelections.find(s => s.reinforcement === null)?.count ?? 0;
-            const maxCount = Math.min(
-                shipDefinition.operationLimit - sameShipInitialCount,
-                fleetSetup.maxReinforcement - totalReinforcementCount
-            );
-            return count < maxCount ? {
-                shipDefinition,
-                count,
-                maxCount,
-            } : null;
-        }
-        default: {
-            const sameShipReinforcementCount = sameShipSelections.find(s => s.reinforcement === 'self')?.count ?? 0;
-            const maxCount = shipDefinition.operationLimit - sameShipReinforcementCount;
-            return count < maxCount ? {
-                shipDefinition,
-                count,
-                maxCount,
-            } : null;
-        }
-    }
+    const maxCount = reinforcement === null ? shipDefinition.operationLimit : Math.min(
+        shipDefinition.operationLimit,
+        fleetSetup.maxReinforcement,
+    );
+
+    return count < maxCount ? {
+        shipDefinition,
+        count,
+        maxCount,
+    } : null;
 }
 
 export function applyCountToShipInAddDialog(shipId: string, count: number, shipsForAddDialog: IShipsForAddDialog): IShipsForAddDialog {
@@ -81,33 +54,6 @@ export function applyCountToShipInAddDialog(shipId: string, count: number, ships
         ships: shipsForAddDialog.ships.map(ship => ship.shipDefinition.id !== shipId ? ship : {
             ...ship,
             count,
-        }),
-    };
-}
-
-export function applyCountToReinforcementShipInAddDialog(shipId: string, count: number, shipsForAddDialog: IShipsForAddDialog, fleetSetup: IFleetSetup): IShipsForAddDialog {
-    const totalSelectionCount = shipsForAddDialog.ships
-        .filter(s => s.shipDefinition.id !== shipId)
-        .map(s => s.count)
-        .reduce((sum, count) => sum + count, 0) + count;
-
-    const remainingCount = fleetSetup.maxReinforcement - fleetSetup.totalReinforcementCount - totalSelectionCount;
-
-    return {
-        ...shipsForAddDialog,
-        remainingCount,
-        ships: shipsForAddDialog.ships.map(ship => {
-            if (ship.shipDefinition.id === shipId) {
-                return {
-                    ...ship,
-                    count,
-                };
-            }
-
-            return {
-                ...ship,
-                // TODO adapt maxCount
-            };
         }),
     };
 }

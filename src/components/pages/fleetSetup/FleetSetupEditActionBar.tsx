@@ -15,8 +15,6 @@ interface IProps {
     onOpenAddShips: () => void;
     onOpenAddSelfReinforcement: () => void;
     onOpenAddAllyReinforcement: () => void;
-    addShipsDisabled: boolean;
-    addReinforcementDisabled: boolean;
     saveDisabled: boolean;
 }
 
@@ -30,8 +28,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         onOpenAddShips,
         onOpenAddSelfReinforcement,
         onOpenAddAllyReinforcement,
-        addShipsDisabled,
-        addReinforcementDisabled,
         saveDisabled,
     } = props;
 
@@ -50,8 +46,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         onOpenAddShips={onOpenAddShips}
                         onOpenAddSelfReinforcement={onOpenAddSelfReinforcement}
                         onOpenAddAllyReinforcement={onOpenAddAllyReinforcement}
-                        addShipsDisabled={addShipsDisabled}
-                        addReinforcementDisabled={addReinforcementDisabled}
                         buttonProps={buttonProps}
                     />
                 </>

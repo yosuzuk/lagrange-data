@@ -4,7 +4,6 @@ import { ReinforcementType } from './IFleetSetup';
 export interface IShipsForAddDialog {
     ships: IShipForAddDialog[];
     reinforcement: ReinforcementType | null;
-    remainingCount: number | null;
     filter: string | null;
 }
 

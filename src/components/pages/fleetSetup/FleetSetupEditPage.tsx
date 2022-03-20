@@ -126,9 +126,6 @@ export const FleetSetupEditPage = () => {
         reset();
     };
 
-    const addShipsDisabled = fleetShipCount.totalCost >= fleetSetup.maxCost;
-    const addReinforcementDisabled = fleetSetup.totalReinforcementCount >= fleetSetup.maxReinforcement;
-
     const groupDirection = largeScreen && groupedShips.groupedBy === GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME ? 'row' : 'column';
     const propertiesColumnCount = groupDirection === 'row' ? 4 : 2;
 
@@ -144,8 +141,6 @@ export const FleetSetupEditPage = () => {
                 onOpenAddShips={openAddNewInitialShips}
                 onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
                 onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
-                addShipsDisabled={addShipsDisabled}
-                addReinforcementDisabled={addReinforcementDisabled}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container disabled={groupDirection === 'row'}>
@@ -181,8 +176,6 @@ export const FleetSetupEditPage = () => {
                                                     onOpenAddShips={openAddNewInitialShips}
                                                     onOpenAddSelfReinforcement={openAddNewSelfReinforcement}
                                                     onOpenAddAllyReinforcement={openAddNewAllyReinforcement}
-                                                    addShipsDisabled={addShipsDisabled}
-                                                    addReinforcementDisabled={addReinforcementDisabled}
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (

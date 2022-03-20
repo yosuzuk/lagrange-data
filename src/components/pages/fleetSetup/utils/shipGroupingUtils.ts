@@ -1,4 +1,3 @@
-import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
@@ -96,11 +95,6 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
 }
 
 export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShips: IGroupedShips): string {
-    const totalCost = fleetSetup.ships
-        .filter(ship => ship.reinforcement === null)
-        .map(ship => ship.count * ship.shipDefinition.cost)
-        .reduce((sum, cost) => sum + cost, 0);
-
     return [
         fleetSetup.name,
         groupedShips.groups.filter(shipGroup => shipGroup.ships.length > 0).map(shipGroup => {
@@ -124,7 +118,7 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
         }).join('\n\n'),
         [
             `増援：${fleetSetup.totalReinforcementCount}/${fleetSetup.maxReinforcement}`,
-            `指令Pt：${totalCost}/${fleetSetup.maxCost}`,
+            `指令Pt：${fleetSetup.totalCost}/${fleetSetup.maxCost}`,
         ].join('\n'),
     ].join('\n\n');
 }

@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { addSelectedShipsToFleetSetup, applyCountToReinforcementShipInAddDialog, applyCountToShipInAddDialog, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
+import { addSelectedShipsToFleetSetup, applyCountToShipInAddDialog, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 
 interface IHookArguments {
@@ -45,12 +45,9 @@ export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
             if (!shipsForAddDialog) {
                 return null;
             }
-            if (reinforcement === null) {
-                return applyCountToShipInAddDialog(shipId, count, shipsForAddDialog);
-            }
-            return applyCountToReinforcementShipInAddDialog(shipId, count, shipsForAddDialog, fleetSetup);
+            return applyCountToShipInAddDialog(shipId, count, shipsForAddDialog);
         });
-    }, [userSettings, reinforcement, fleetSetup]);
+    }, [userSettings, reinforcement]);
 
     return {
         shipsForAddDialog,

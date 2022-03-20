@@ -6,8 +6,6 @@ interface IProps {
     onOpenAddShips: (filter?: string) => void;
     onOpenAddSelfReinforcement: (filter?: string) => void;
     onOpenAddAllyReinforcement: (filter?: string) => void;
-    addShipsDisabled: boolean;
-    addReinforcementDisabled: boolean;
     filter?: string;
     buttonProps?: ButtonProps;
 }
@@ -17,8 +15,6 @@ export const AddShipsButton = (props: IProps) => {
         onOpenAddShips,
         onOpenAddSelfReinforcement,
         onOpenAddAllyReinforcement,
-        addShipsDisabled,
-        addReinforcementDisabled,
         filter,
         buttonProps,
     } = props;
@@ -45,28 +41,22 @@ export const AddShipsButton = (props: IProps) => {
             icon={<AddIcon />}
             text={'艦船を追加'}
             onClick={handleClickAddOption}
-            buttonProps={{
-                ...buttonProps,
-                disabled: addShipsDisabled && addReinforcementDisabled
-            }}
+            buttonProps={buttonProps}
             options={[
                 {
                     key: 'addInitialShip',
                     text: '通常配備',
                     value: 'addInitialShip',
-                    disabled: addShipsDisabled,
                 },
                 {
                     key: 'addSelfReinforcement',
                     text: '増援',
                     value: 'addSelfReinforcement',
-                    disabled: addReinforcementDisabled,
                 },
                 {
                     key: 'addAllyReinforcement',
                     text: 'ユニオン増援',
                     value: 'addAllyReinforcement',
-                    disabled: addReinforcementDisabled,
                 },
             ]}
         />
