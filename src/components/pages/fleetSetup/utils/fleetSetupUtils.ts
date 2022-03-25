@@ -1,5 +1,5 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { ShipSubType } from '../../../../types/ShipType';
+import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
@@ -175,15 +175,17 @@ interface ICreateCarriedShipSelectionArgs {
     shipId: string;
     count: number;
     reinforcement: ReinforcementType | null;
+    temporary?: boolean;
 }
 
 function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
-    const { shipId, count, reinforcement } = args;
+    const { shipId, count, reinforcement, temporary } = args;
     const shipDefinition = getShipDefinitionById(shipId);
     return {
         shipDefinition,
         count: Math.max(0, count),
         reinforcement,
+        temporary,
     };
 }
 
@@ -248,10 +250,11 @@ export interface IApplyCarriedShipCountArgs {
     count: number;
     reinforcement: ReinforcementType | null;
     fleetSetup: IFleetSetup;
+    keepZero?: true;
 }
 
 export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetSetup {
-    const { shipId, carrierShipId, count, reinforcement, fleetSetup } = args;
+    const { shipId, carrierShipId, count, reinforcement, fleetSetup, keepZero } = args;
 
     return {
         ...fleetSetup,
@@ -278,7 +281,7 @@ export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetS
                         throw new Error('Detected invalid reinforcement');
                     }
 
-                    return count <= 0 ? [] : [{
+                    return (!keepZero && count <= 0) ? [] : [{
                         ...carriedShipSelection,
                         count: Math.max(0, count),
                         reinforcement,
@@ -300,4 +303,11 @@ function getTotalReinforcementCount(ships: IShipSelection[]): number {
         .filter(ship => ship.reinforcement !== null)
         .map(ship => ship.count)
         .reduce((sum, count) => sum + count, 0);
+}
+
+export function canCarryShips(shipSelection: IShipSelection): boolean {
+    return shipSelection.carryCorvette > 0
+        || shipSelection.carryUpToLargeFighter > 0
+        || shipSelection.carryUpToMediumFighter > 0
+        || shipSelection.carryUpToSmallFighter > 0;
 }

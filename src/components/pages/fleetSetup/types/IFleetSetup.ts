@@ -30,6 +30,7 @@ export interface ICarriedShipSelection {
     shipDefinition: IShipDefinition;
     count: number;
     reinforcement: ReinforcementType | null;
+    temporary?: boolean;
 }
 
 export interface IMinifiedFleetSetup {
