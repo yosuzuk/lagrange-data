@@ -66,7 +66,7 @@ export const FleetSetupEditPage = () => {
     const groupedShips = useMemo(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
 
     const handleClickCancel = () => {
-        navigate('/fleetSetup');
+        navigate(`/fleetSetup/${fleetSetup.key}`);
     };
 
     const handleClickSave = () => {
@@ -74,7 +74,7 @@ export const FleetSetupEditPage = () => {
             return;
         }
         save();
-        navigate('/fleetSetup');
+        navigate(`/fleetSetup/${fleetSetup.key}`);
     };
 
     const handleCancelReset = () => {

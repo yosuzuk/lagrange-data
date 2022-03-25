@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -16,12 +16,12 @@ import { FleetProperties } from './FleetProperties';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { ShipCountList } from './ShipCountList';
-import { IFleetSetup } from './types/IFleetSetup';
 import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
 import { IGroupedShips } from './types/IGroupedShips';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
+    const { fleetKey } = useParams();
 
     const theme = useTheme();
     const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
@@ -32,7 +32,9 @@ export const FleetSetupPage = () => {
         fleetSetups,
         fleetSetup,
         switchFleet,
-    } = useFleetSelection();
+    } = useFleetSelection({
+        initialFleetKey: fleetKey ?? null,
+    });
 
     const [grouping, setGrouping] = useState<string>(GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME);
     const groupedShips = useMemo<IGroupedShips>(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
