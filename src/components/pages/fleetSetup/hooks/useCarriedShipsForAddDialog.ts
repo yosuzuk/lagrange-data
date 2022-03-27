@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IDialogDataForCarriedShips } from '../types/IDialogDataForShips';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { createDialogDataForCarriedShips } from '../utils/carriedShipAddDialogUtils';
+import { addSelectedCarriedShipsToFleetSetup, createDialogDataForCarriedShips } from '../utils/carriedShipAddDialogUtils';
 
 interface IHookArguments {
     userSettings: IUserSettings;
@@ -33,10 +33,10 @@ export const useCarriedShipsForAddDialog = (args: IHookArguments): IHookResult =
 
     const apply = useCallback(() => {
         if (dialogData) {
-            // setFleetSetup(addSelectedCarriedShipsToFleetSetup(carriedShipsForAddDialog)); // TODO implement
+            setFleetSetup(addSelectedCarriedShipsToFleetSetup(dialogData, fleetSetup));
             setDialogData(null);
         }
-    }, [dialogData, setFleetSetup]);
+    }, [dialogData, fleetSetup, setFleetSetup]);
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setDialogData(dialogData => !dialogData ? null : ({

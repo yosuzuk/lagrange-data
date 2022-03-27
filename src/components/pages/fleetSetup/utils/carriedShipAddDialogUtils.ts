@@ -5,7 +5,7 @@ import { shipDefinitions as allShipDefinitions } from '../../../../data/shipDefi
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { isPossessingShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { ShipSubType, ShipType } from '../../../../types/ShipType';
-import { createShipSelection } from './fleetSetupUtils';
+import { createCarriedShipSelection, createShipSelection } from './fleetSetupUtils';
 import { FilterKey, ShipFilterState } from '../../../filter/types/ShipFilterState';
 
 export function createDialogDataForCarriedShips(
@@ -34,6 +34,7 @@ export function createDialogDataForCarriedShips(
 
     return {
         carrierShipId,
+        reinforcement,
         shipSelections: shipDefinitions.flatMap((shipDefinition: IShipDefinition) => {
             if (includedShipMap[`${shipDefinition.id}_${reinforcement}`]) {
                 return [];
@@ -90,7 +91,32 @@ function pickCarriedShipsForAddDialog(
     });
     return (reinforcement === 'ally' || !myListOnly)
         ? ships
-        : shipDefinitions.filter(s => isPossessingShip(s.id, userSettings));
+        : ships.filter(s => isPossessingShip(s.id, userSettings));
+}
+
+export function addSelectedCarriedShipsToFleetSetup(dialogData: IDialogDataForCarriedShips, fleetSetup: IFleetSetup): IFleetSetup {
+    return {
+        ...fleetSetup,
+        ships: fleetSetup.ships.map(shipSelection => {
+            if (shipSelection.shipDefinition.id !== dialogData.carrierShipId || shipSelection.reinforcement !== dialogData.reinforcement) {
+                return shipSelection;
+            }
+
+            return {
+                ...shipSelection,
+                carriedShips: [
+                    ...shipSelection.carriedShips,
+                    ...dialogData.shipSelections
+                        .filter(dialogShipSelection => dialogShipSelection.count > 0)
+                        .map(dialogShipSelection => createCarriedShipSelection({
+                            shipId: dialogShipSelection.shipDefinition.id,
+                            count: dialogShipSelection.count,
+                            reinforcement: dialogData.reinforcement,
+                        })),
+                ],
+            };
+        }),
+    };
 }
 
 export function filterCarriedShipForAddDialog(filterState: ShipFilterState, shipsForAddDialog: IDialogDataForCarriedShips): IDialogDataForCarriedShips {

@@ -180,7 +180,7 @@ function createModuleSelection(
             return;
         }
 
-        if (module.defaultModule || !myListOnly || reinforcement === 'ally' || userSettings.modules[module.id].possession === PossessionState.POSSESSED) {
+        if (module.defaultModule || !myListOnly || reinforcement === 'ally' || userSettings.modules[module.id]?.possession === PossessionState.POSSESSED) {
             result.groups[module.category][module.id] = {
                 module,
                 usage: restoredUsedModules.includes(module.id) ? 'used' : 'not_used',
@@ -262,7 +262,7 @@ interface ICreateCarriedShipSelectionArgs {
     temporary?: boolean;
 }
 
-function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
+export function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
     const { shipId, count, reinforcement, temporary } = args;
     const shipDefinition = getShipDefinitionById(shipId);
     return {

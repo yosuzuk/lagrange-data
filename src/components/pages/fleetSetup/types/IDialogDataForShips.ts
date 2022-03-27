@@ -8,6 +8,7 @@ export interface IDialogDataForShips {
 
 export interface IDialogDataForCarriedShips {
     carrierShipId: string;
+    reinforcement: ReinforcementType | null;
     shipSelections: IShipSelection[];
     filter: string | null;
 }
