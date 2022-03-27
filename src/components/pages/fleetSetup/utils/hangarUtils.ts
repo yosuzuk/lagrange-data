@@ -86,6 +86,8 @@ function moveOverflowToNextHangar(source: IHangarInstance, targets: IHangarInsta
         return;
     }
 
+    source.count -= overflow;
+
     targets.forEach(target => {
         if (overflow <= 0 || target.maxCount === 0) {
             return;
