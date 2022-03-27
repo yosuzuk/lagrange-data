@@ -49,11 +49,14 @@ export const FleetSetupEditPage = () => {
 
     const {
         shipsForAddDialog,
+        carrierShipId: carrierShipIdForAddDialog,
         shipWarnings: shipWarningsForAddDialog,
-        open: openAddDialog,
+        openForShips: openAddDialogForShips,
+        openForCarriedShips: openAddDialogForCarriedShips,
         cancel: cancelAddDialog,
         apply: applyAddDialog,
         setShipCount: setShipCountForAddDialog,
+        setCarriedShipCount: setCarriedShipCountForAddDialog,
     } = useShipsForAddDialog({
         userSettings,
         fleetSetup,
@@ -102,7 +105,7 @@ export const FleetSetupEditPage = () => {
                 onSave={handleClickSave}
                 onCancel={handleClickCancel}
                 onReset={handleClickReset}
-                onOpenAddShips={openAddDialog}
+                onOpenAddShips={openAddDialogForShips}
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <Container disabled={groupDirection === 'row'}>
@@ -135,16 +138,20 @@ export const FleetSetupEditPage = () => {
                                                 </Box>
                                                 <AddShipsButton
                                                     filter={group.id}
-                                                    onOpenAddShips={openAddDialog}
+                                                    onOpenAddShips={openAddDialogForShips}
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (
                                                 <ShipCountEditList
                                                     shipSelections={group.ships}
-                                                    onChangeCount={setShipCount}
+                                                    onChangeShipCount={setShipCount}
+                                                    onChangeCarriedShipCount={setCarriedShipCount}
+                                                    onOpenAddCarriedShips={openAddDialogForCarriedShips}
                                                     showCost={true}
                                                     showReinforcement={true}
+                                                    showHangar={true}
                                                     shipWarnings={shipWarnings}
+                                                    carrierShipId={null}
                                                 />
                                             )}
                                         </Stack>
@@ -159,10 +166,12 @@ export const FleetSetupEditPage = () => {
             {shipsForAddDialog && (
                 <AddShipsToFleetDialog
                     ships={shipsForAddDialog}
+                    carrierShipId={carrierShipIdForAddDialog}
                     shipWarnings={shipWarningsForAddDialog}
                     onCancel={cancelAddDialog}
                     onApply={applyAddDialog}
-                    onChangeCount={setShipCountForAddDialog}
+                    onChangeShipCount={setShipCountForAddDialog}
+                    onChangeCarriedShipCount={setCarriedShipCountForAddDialog}
                 />
             )}
             {confirmingReset && (

@@ -18,8 +18,10 @@ interface IProps {
     reinforcement: ReinforcementType | null;
     showCost: boolean;
     showReinforcement: boolean;
+    carrierShipId: string | null;
     shipWarning?: string;
-    onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeShipCount?: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const ShipCountEditListItem = (props: IProps) => {
@@ -30,8 +32,10 @@ export const ShipCountEditListItem = (props: IProps) => {
         reinforcement,
         showCost,
         showReinforcement,
+        carrierShipId,
         shipWarning,
-        onChangeCount,
+        onChangeShipCount,
+        onChangeCarriedShipCount,
     } = props;
 
     const theme = useTheme();
@@ -68,7 +72,13 @@ export const ShipCountEditListItem = (props: IProps) => {
 
     const clearButton = (
         <Button
-            onClick={() => onChangeCount(shipDefinition.id, 0, reinforcement)}
+            onClick={() => {
+                if (carrierShipId) {
+                    onChangeCarriedShipCount?.(shipDefinition.id, carrierShipId, 0, reinforcement);
+                } else {
+                    onChangeShipCount?.(shipDefinition.id, 0, reinforcement);
+                }
+            }}
             disabled={count <= 0}
         >
             {'外す'}
@@ -77,7 +87,13 @@ export const ShipCountEditListItem = (props: IProps) => {
 
     const decreaseButton = (
         <IconButton
-            onClick={() => onChangeCount(shipDefinition.id, count - 1, reinforcement)}
+            onClick={() => {
+                if (carrierShipId) {
+                    onChangeCarriedShipCount?.(shipDefinition.id, carrierShipId, count - 1, reinforcement);
+                } else {
+                    onChangeShipCount?.(shipDefinition.id, count - 1, reinforcement);
+                }
+            }}
             disabled={count <= 0}
         >
             <IndeterminateCheckBoxIcon color={count <= 0 ? 'disabled' : 'primary'} />
@@ -92,7 +108,13 @@ export const ShipCountEditListItem = (props: IProps) => {
 
     const increaseButton = (
         <IconButton
-            onClick={() => onChangeCount(shipDefinition.id, count + 1, reinforcement)}
+            onClick={() => {
+                if (carrierShipId) {
+                    onChangeCarriedShipCount?.(shipDefinition.id, carrierShipId, count + 1, reinforcement);
+                } else {
+                    onChangeShipCount?.(shipDefinition.id, count + 1, reinforcement);
+                }
+            }}
             disabled={count >= maxCount}
         >
             <AddBoxIcon color={count >= maxCount ? 'disabled' : 'primary'} />
@@ -101,7 +123,13 @@ export const ShipCountEditListItem = (props: IProps) => {
 
     const maxOuntButton = (
         <Button
-            onClick={() => onChangeCount(shipDefinition.id, maxCount, reinforcement)}
+            onClick={() => {
+                if (carrierShipId) {
+                    onChangeCarriedShipCount?.(shipDefinition.id, carrierShipId, maxCount, reinforcement);
+                } else {
+                    onChangeShipCount?.(shipDefinition.id, maxCount, reinforcement);
+                }
+            }}
             disabled={count >= maxCount}
         >
             {'最大'}

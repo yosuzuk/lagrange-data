@@ -16,14 +16,16 @@ import { ShipType } from '../../../types/ShipType';
 
 export interface IProps {
     ships: IShipsForAddDialog;
+    carrierShipId: string | null;
     shipWarnings: Record<string, string>;
     onCancel: () => void;
     onApply: () => void;
-    onChangeCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToFleetDialog = (props: IProps) => {
-    const { ships, shipWarnings, onCancel, onApply, onChangeCount } = props;
+    const { ships, carrierShipId, shipWarnings, onCancel, onApply, onChangeShipCount, onChangeCarriedShipCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
 
     const [filterState, setFilterState] = useState<ShipFilterState>(() => {
@@ -125,8 +127,11 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             shipSelections={filteredShips.fleetSetup.ships}
                             showCost={!filteredShips.reinforcement}
                             showReinforcement={false}
+                            showHangar={false}
                             shipWarnings={shipWarnings}
-                            onChangeCount={onChangeCount}
+                            carrierShipId={carrierShipId}
+                            onChangeShipCount={onChangeShipCount}
+                            onChangeCarriedShipCount={onChangeCarriedShipCount}
                         />
                     ) : (
                         <Stack spacing={1}>
