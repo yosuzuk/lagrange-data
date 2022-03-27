@@ -5,7 +5,6 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { IShipSelection, ReinforcementType } from './types/IFleetSetup';
 import { getShipWarningKey } from './utils/fleetSetupValidation';
-import { canCarryShips } from './utils/fleetSetupUtils';
 import { HangarData } from './HangarData';
 
 interface IProps {
@@ -35,8 +34,6 @@ export const ShipCountEditList = (props: IProps) => {
         onOpenAddCarriedShips,
     } = props;
 
-    console.log(shipSelections);
-
     return (
         <Stack spacing={1}>
             {shipSelections?.map(shipSelection => (
@@ -53,7 +50,7 @@ export const ShipCountEditList = (props: IProps) => {
                         onChangeCarriedShipCount={onChangeCarriedShipCount}
                         shipWarning={shipWarnings[getShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                     />
-                    {showHangar && canCarryShips(shipSelection) && (
+                    {showHangar && shipSelection.carrierCapabilities.canCarry && (
                         <Paper variant="outlined">
                             <Box p={1}>
                                 <Stack spacing={1}>

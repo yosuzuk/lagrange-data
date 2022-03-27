@@ -40,11 +40,13 @@ export function createShipsForAddDialog(
                     return [
                         createShipSelection({
                             shipDefinition,
+                            usedModules: null,
                             count: 0,
                             reinforcement,
                             userSettings,
                             maxReinforcement: fleetSetup.maxReinforcement,
                             temporary: true,
+                            myListOnly: fleetSetup.myListOnly,
                         }),
                     ];
                 }),

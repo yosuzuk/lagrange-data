@@ -25,7 +25,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
                 .filter(s => s.shipDefinition.type === ShipType.CORVETTE)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryCorvette * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryCorvette * shipSelection.count,
         },
         upToLargeFighter: {
             key: 'upToLargeFighter',
@@ -34,7 +34,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
                 .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.LARGE_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToLargeFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToLargeFighter * shipSelection.count,
         },
         upToMediumFighter: {
             key: 'upToMediumFighter',
@@ -43,7 +43,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.MEDIUM_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToMediumFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToMediumFighter * shipSelection.count,
         },
         upToSmallFighter: {
             key: 'upToSmallFighter',
@@ -52,7 +52,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.SMALL_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToSmallFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToSmallFighter * shipSelection.count,
         },
         removedHangar: {
             key: 'removedHangar',
