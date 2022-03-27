@@ -56,7 +56,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         removedHangar: {
             key: 'removedHangar',
-            name: '艦載機',
+            name: '未対応',
             count: 0,
             maxCount: 0,
         },

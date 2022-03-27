@@ -55,7 +55,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             title={(
                 <Stack spacing={1} direction="row" justifyContent="space-between" alignItems="center">
                     <Typography variant="h6">
-                        {getTitle(ships.reinforcement)}
+                        {getTitle(ships.reinforcement, !!carrierShipId)}
                     </Typography>
                     {ships.reinforcement === null ? (
                         <div>
@@ -96,11 +96,14 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             )}
             content={(
                 <Stack spacing={2}>
-                    <Typography variant="body2">{getDescription(ships.reinforcement)}</Typography>
+                    <Typography variant="body2">{getDescription(ships.reinforcement, !!carrierShipId)}</Typography>
                     <div>
                         <ShipTypeFilterButton
                             filter={filterState}
-                            shipTypes={[
+                            shipTypes={carrierShipId ? [
+                                ShipType.CORVETTE,
+                                ShipType.FIGHTER,
+                            ] : [
                                 ShipType.CARRIER,
                                 ShipType.BATTLE_CRUISER,
                                 ShipType.CRUISER,
@@ -119,7 +122,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     </div>
                     {filteredShips.fleetSetup.ships.length === 0 && (
                         <Alert severity="info">
-                            {'該当する艦船がありません。'}
+                            {carrierShipId ? '該当する艦載機がありません。' : '該当する艦船がありません。'}
                         </Alert>
                     )}
                     {drawList ? (
@@ -159,7 +162,10 @@ export const AddShipsToFleetDialog = (props: IProps) => {
     );
 };
 
-function getTitle(reinforcement: ReinforcementType | null): string {
+function getTitle(reinforcement: ReinforcementType | null, carriedShips: boolean): string {
+    if (carriedShips) {
+        return '艦載機を追加';
+    }
     switch (reinforcement) {
         case 'ally':
         case 'self': {
@@ -171,7 +177,11 @@ function getTitle(reinforcement: ReinforcementType | null): string {
     }
 }
 
-function getDescription(reinforcement: ReinforcementType | null): string {
+function getDescription(reinforcement: ReinforcementType | null, carriedShips: boolean): string {
+    if (carriedShips) {
+        return '艦載機を配備します。所持している艦載機はマイリストで設定してください。';
+    }
+
     switch (reinforcement) {
         case 'ally': {
             return 'ユニオンメンバーから送られる増援を追加します。';
