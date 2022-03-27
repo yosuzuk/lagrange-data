@@ -139,6 +139,7 @@ export const FleetSetupEditPage = () => {
                                                 <AddShipsButton
                                                     filter={group.id}
                                                     onOpenAddShips={openAddDialogForShips}
+                                                    buttonProps={{ size: 'small' }}
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (

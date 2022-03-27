@@ -22,6 +22,15 @@ const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/Flee
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 const theme = createTheme({
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    minWidth: '320px',
+                },
+            },
+        },
+    },
     palette: {
         background: {
             default: '#e5e5e5',
