@@ -29,7 +29,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         upToLargeFighter: {
             key: 'upToLargeFighter',
-            name: '大型戦闘機',
+            name: '小～大型戦闘機',
             count: shipSelection.carriedShips
                 .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.LARGE_FIGHTER)
                 .map(s => s.count)
@@ -38,7 +38,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         upToMediumFighter: {
             key: 'upToMediumFighter',
-            name: '中量級戦闘機',
+            name: '小～中量級戦闘機',
             count: shipSelection.carriedShips
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.MEDIUM_FIGHTER)
                 .map(s => s.count)
