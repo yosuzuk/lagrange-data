@@ -7,7 +7,7 @@ import Alert from '@mui/material/Alert';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ShipCountEditList } from './ShipCountEditList';
 import { ReinforcementType } from './types/IFleetSetup';
-import { IShipsForAddDialog } from './types/IShipsForAddDialog';
+import { IDialogDataForShips } from './types/IDialogDataForShips';
 import { filterShipForAddDialog } from './utils/shipAddDialogUtilts';
 import { createInitialShipFilterState } from '../../filter/filterUtils';
 import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
@@ -15,31 +15,29 @@ import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ShipType } from '../../../types/ShipType';
 
 export interface IProps {
-    ships: IShipsForAddDialog;
-    carrierShipId: string | null;
+    dialogData: IDialogDataForShips;
     shipWarnings: Record<string, string>;
     onCancel: () => void;
     onApply: () => void;
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
-    onChangeCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToFleetDialog = (props: IProps) => {
-    const { ships, carrierShipId, shipWarnings, onCancel, onApply, onChangeShipCount, onChangeCarriedShipCount } = props;
+    const { dialogData, shipWarnings, onCancel, onApply, onChangeShipCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
 
     const [filterState, setFilterState] = useState<ShipFilterState>(() => {
         const defaultFilterState = createInitialShipFilterState();
-        if (ships.filter && typeof defaultFilterState[ships.filter as FilterKey] === 'boolean') {
+        if (dialogData.filter && typeof defaultFilterState[dialogData.filter as FilterKey] === 'boolean') {
             return {
                 ...defaultFilterState,
-                [ships.filter]: true,
+                [dialogData.filter]: true,
             };
         }
         return defaultFilterState;
     });
 
-    const filteredShips = useMemo(() => filterShipForAddDialog(filterState, ships), [filterState, ships]);
+    const filteredShips = useMemo(() => filterShipForAddDialog(filterState, dialogData), [filterState, dialogData]);
 
     useEffect(() => {
         const t = setTimeout(() => {
@@ -55,9 +53,9 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             title={(
                 <Stack spacing={1} direction="row" justifyContent="space-between" alignItems="center">
                     <Typography variant="h6">
-                        {getTitle(ships.reinforcement, !!carrierShipId)}
+                        {getTitle(dialogData.reinforcement)}
                     </Typography>
-                    {ships.reinforcement === null ? (
+                    {dialogData.reinforcement === null ? (
                         <div>
                             <Typography variant="body1" component="span">
                                 {'指令Pt：'}
@@ -66,11 +64,11 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                                 variant="body1"
                                 component="span"
                                 sx={{
-                                    color: ships.fleetSetup.totalCost > ships.fleetSetup.maxCost ? 'red' : undefined,
+                                    color: dialogData.fleetSetup.totalCost > dialogData.fleetSetup.maxCost ? 'red' : undefined,
                                 }}
                             >
                                 <strong>
-                                    {`${ships.fleetSetup.totalCost} / ${ships.fleetSetup.maxCost}`}
+                                    {`${dialogData.fleetSetup.totalCost} / ${dialogData.fleetSetup.maxCost}`}
                                 </strong>
                             </Typography>
                         </div>
@@ -83,11 +81,11 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                                 variant="body1"
                                 component="span"
                                 sx={{
-                                    color: ships.fleetSetup.totalReinforcementCount > ships.fleetSetup.maxReinforcement ? 'red' : undefined,
+                                    color: dialogData.fleetSetup.totalReinforcementCount > dialogData.fleetSetup.maxReinforcement ? 'red' : undefined,
                                 }}
                             >
                                 <strong>
-                                    {`${ships.fleetSetup.totalReinforcementCount} / ${ships.fleetSetup.maxReinforcement}`}
+                                    {`${dialogData.fleetSetup.totalReinforcementCount} / ${dialogData.fleetSetup.maxReinforcement}`}
                                 </strong>
                             </Typography>
                         </div>
@@ -96,14 +94,11 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             )}
             content={(
                 <Stack spacing={2}>
-                    <Typography variant="body2">{getDescription(ships.reinforcement, !!carrierShipId)}</Typography>
+                    <Typography variant="body2">{getDescription(dialogData.reinforcement)}</Typography>
                     <div>
                         <ShipTypeFilterButton
                             filter={filterState}
-                            shipTypes={carrierShipId ? [
-                                ShipType.CORVETTE,
-                                ShipType.FIGHTER,
-                            ] : [
+                            shipTypes={[
                                 ShipType.CARRIER,
                                 ShipType.BATTLE_CRUISER,
                                 ShipType.CRUISER,
@@ -122,7 +117,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     </div>
                     {filteredShips.fleetSetup.ships.length === 0 && (
                         <Alert severity="info">
-                            {carrierShipId ? '該当する艦載機がありません。' : '該当する艦船がありません。'}
+                            {'該当する艦船がありません。'}
                         </Alert>
                     )}
                     {drawList ? (
@@ -132,9 +127,8 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             showReinforcement={false}
                             showHangar={false}
                             shipWarnings={shipWarnings}
-                            carrierShipId={carrierShipId}
+                            carrierShipId={null}
                             onChangeShipCount={onChangeShipCount}
-                            onChangeCarriedShipCount={onChangeCarriedShipCount}
                         />
                     ) : (
                         <Stack spacing={1}>
@@ -162,10 +156,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
     );
 };
 
-function getTitle(reinforcement: ReinforcementType | null, carriedShips: boolean): string {
-    if (carriedShips) {
-        return '艦載機を追加';
-    }
+function getTitle(reinforcement: ReinforcementType | null): string {
     switch (reinforcement) {
         case 'ally':
         case 'self': {
@@ -177,11 +168,7 @@ function getTitle(reinforcement: ReinforcementType | null, carriedShips: boolean
     }
 }
 
-function getDescription(reinforcement: ReinforcementType | null, carriedShips: boolean): string {
-    if (carriedShips) {
-        return '艦載機を配備します。所持している艦載機はマイリストで設定してください。';
-    }
-
+function getDescription(reinforcement: ReinforcementType | null): string {
     switch (reinforcement) {
         case 'ally': {
             return 'ユニオンメンバーから送られる増援を追加します。';

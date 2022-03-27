@@ -16,7 +16,7 @@ interface IProps {
     shipWarnings: Record<string, string>;
     carrierShipId: string | null;
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
-    onChangeCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onOpenAddCarriedShips?: (carrierShipId: string, reinforcement: ReinforcementType | null) => void;
 }
 

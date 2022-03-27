@@ -1,5 +1,5 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
+import { IDialogDataForShips } from '../types/IDialogDataForShips';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { createShipSelection } from './fleetSetupUtils';
@@ -9,12 +9,12 @@ import { ShipRow } from '../../../../types/ShipRow';
 import { FilterKey, ShipFilterState } from '../../../filter/types/ShipFilterState';
 import { shipDefinitions as allShipDefinitions } from '../../../../data/shipDefinitions';
 
-export function createShipsForAddDialog(
+export function createDialogDataForShips(
     reinforcement: ReinforcementType | null,
     fleetSetup: IFleetSetup,
     userSettings: IUserSettings,
     filter: string | null,
-): IShipsForAddDialog {
+): IDialogDataForShips {
     const includedShipMap: Record<string, boolean> = {};
     fleetSetup.ships.forEach(ship => {
         includedShipMap[`${ship.shipDefinition.id}_${ship.reinforcement}`] = true;
@@ -69,7 +69,7 @@ function pickShipsForAddDialog(
         : shipDefinitions.filter(s => isPossessingShip(s.id, userSettings));
 }
 
-export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDialog): IFleetSetup {
+export function addSelectedShipsToFleetSetup(shipsForAddDialog: IDialogDataForShips): IFleetSetup {
     return {
         ...shipsForAddDialog.fleetSetup,
         ships: shipsForAddDialog.fleetSetup.ships.flatMap(ship => {
@@ -84,8 +84,8 @@ export function addSelectedShipsToFleetSetup(shipsForAddDialog: IShipsForAddDial
     };
 }
 
-export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAddDialog: IShipsForAddDialog): IShipsForAddDialog {
-    let result: IShipsForAddDialog = {
+export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAddDialog: IDialogDataForShips): IDialogDataForShips {
+    let result: IDialogDataForShips = {
         ...shipsForAddDialog,
         fleetSetup: {
             ...shipsForAddDialog.fleetSetup,
