@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
-import { IShipsForAddDialog } from '../types/IShipsForAddDialog';
-import { addSelectedShipsToFleetSetup, createShipsForAddDialog } from '../utils/shipAddDialogUtilts';
+import { IDialogDataForShips } from '../types/IDialogDataForShips';
+import { addSelectedShipsToFleetSetup, createDialogDataForShips } from '../utils/shipAddDialogUtilts';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { applyShipCount, applyCarriedShipCount } from '../utils/fleetSetupUtils';
+import { applyShipCount } from '../utils/fleetSetupUtils';
 import { validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
@@ -13,87 +13,60 @@ interface IHookArguments {
 }
 
 interface IHookResult {
-    shipsForAddDialog: IShipsForAddDialog | null;
-    carrierShipId: string | null;
+    dialogData: IDialogDataForShips | null;
     shipWarnings: Record<string, string>;
-    openForShips: (reinforcement: ReinforcementType | null, filter?: string) => void;
-    openForCarriedShips: (carrierShipId: string, reinforcement: ReinforcementType | null, filter?: string) => void;
+    open: (reinforcement: ReinforcementType | null, filter?: string) => void;
     cancel: () => void;
     apply: () => void;
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
-    setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
     const { userSettings, fleetSetup, setFleetSetup } = args;
-    const [shipsForAddDialog, setShipsForAddDialog] = useState<IShipsForAddDialog | null>(null);
-    const [carrierShipId, setCarrierShipIdForAddDialog] = useState<string | null>(null);
+    const [dialogData, setDialogData] = useState<IDialogDataForShips | null>(null);
 
-    const openForShips = useCallback((reinforcement: ReinforcementType | null, filter?: string) => {
-        setShipsForAddDialog(createShipsForAddDialog(reinforcement, fleetSetup, userSettings, filter ?? null));
+    const open = useCallback((reinforcement: ReinforcementType | null, filter?: string) => {
+        setDialogData(createDialogDataForShips(reinforcement, fleetSetup, userSettings, filter ?? null));
     }, [fleetSetup, userSettings]);
 
-    const openForCarriedShips = useCallback((carrierShipId: string, reinforcement: ReinforcementType | null) => {
-        setCarrierShipIdForAddDialog(carrierShipId);
-        // setShipsForAddDialog(); // TODO implement
-    }, []);
-
     const cancel = useCallback(() => {
-        setShipsForAddDialog(null);
-        setCarrierShipIdForAddDialog(null);
+        setDialogData(null);
     }, []);
 
     const apply = useCallback(() => {
-        if (shipsForAddDialog) {
-            setFleetSetup(addSelectedShipsToFleetSetup(shipsForAddDialog));
-            setShipsForAddDialog(null);
+        if (dialogData) {
+            setFleetSetup(addSelectedShipsToFleetSetup(dialogData));
+            setDialogData(null);
         }
-    }, [shipsForAddDialog, setFleetSetup]);
+    }, [dialogData, setFleetSetup]);
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
-        setShipsForAddDialog((shipsForAddDialog: IShipsForAddDialog | null) =>　!shipsForAddDialog ? null : ({
-            ...shipsForAddDialog,
+        setDialogData((dialogData: IDialogDataForShips | null) =>　!dialogData ? null : ({
+            ...dialogData,
             fleetSetup: applyShipCount({
                 shipId,
                 count,
                 reinforcement,
-                fleetSetup: shipsForAddDialog.fleetSetup,
+                fleetSetup: dialogData.fleetSetup,
                 userSettings,
                 keepZero: true,
             }),
         }));
     }, [userSettings]);
 
-    const setCarriedShipCount = useCallback((shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => {
-        setShipsForAddDialog((shipsForAddDialog: IShipsForAddDialog | null) =>　!shipsForAddDialog ? null : ({
-            ...shipsForAddDialog,
-            fleetSetup: applyCarriedShipCount({
-                shipId,
-                carrierShipId,
-                count,
-                reinforcement,
-                fleetSetup: shipsForAddDialog.fleetSetup,
-                keepZero: true,
-            }),
-        }));
-    }, [userSettings]);
-
     const shipWarnings = useMemo(() => {
-        if (!shipsForAddDialog) {
+        if (!dialogData) {
             return {};
         }
-        return validateFleetSetupForShipWarnings(shipsForAddDialog.fleetSetup);
-    }, [shipsForAddDialog]);
+        return validateFleetSetupForShipWarnings(dialogData.fleetSetup);
+    }, [dialogData]);
 
     return {
-        shipsForAddDialog,
-        carrierShipId,
+        dialogData,
         shipWarnings,
-        openForShips,
-        openForCarriedShips,
+        open,
         cancel,
         apply,
         setShipCount,
-        setCarriedShipCount,
     };
 };

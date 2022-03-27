@@ -1,9 +1,9 @@
-import { IShipDefinition } from '../../../../types/ShipDefinition';
-import { ShipSubType, ShipType } from '../../../../types/ShipType';
+import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
+import { ShipSubType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
-import { ICarriedShipSelection, IFleetSetup, IMinifiedFleetSetup, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
+import { ICarriedShipSelection, ICarrierCapabilities, IFleetSetup, IMinifiedFleetSetup, IModuleSelection, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
 export function getCurrentFleetSetups(userSettings: IUserSettings): IFleetSetup[] {
     return [
@@ -31,13 +31,17 @@ function restoreFleetSetup(storageKey: string, userSettings: IUserSettings): IFl
 }
 
 function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey: string, userSettings: IUserSettings): IFleetSetup {
+    const myListOnly = minifiedFleetSetup.myListOnly === true;
+
     const ships = minifiedFleetSetup.ships.map(minifiedShipSelection => ({
         ...createShipSelection({
             shipDefinition: getShipDefinitionById(minifiedShipSelection.shipId),
+            usedModules: minifiedShipSelection.usedModules ?? null,
             count: minifiedShipSelection.count,
             reinforcement: minifiedShipSelection.reinforcement,
             userSettings,
             maxReinforcement: minifiedFleetSetup.maxReinforcement,
+            myListOnly,
         }),
         carriedShips: minifiedShipSelection.carriedShips.map(carriedShip => createCarriedShipSelection({
             shipId: carriedShip.shipId,
@@ -54,7 +58,7 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
         totalReinforcementCount: getTotalReinforcementCount(ships),
         maxReinforcement: minifiedFleetSetup.maxReinforcement,
         maxCost: minifiedFleetSetup.maxCost,
-        myListOnly: minifiedFleetSetup.myListOnly === true,
+        myListOnly,
     };
 }
 
@@ -63,6 +67,7 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
         name: fleetSetup.name,
         ships: fleetSetup.ships.map(shipSelection => ({
             shipId: shipSelection.shipDefinition.id,
+            usedModules: shipSelection.moduleSelection ? extractUsedModules(shipSelection.moduleSelection) : undefined,
             carriedShips: shipSelection.carriedShips.map(carriedShipSelection => ({
                 shipId: carriedShipSelection.shipDefinition.id,
                 count: carriedShipSelection.count,
@@ -74,6 +79,18 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
         maxCost: fleetSetup.maxCost,
         myListOnly: fleetSetup.myListOnly,
     }
+}
+
+function extractUsedModules(moduleSelection: IModuleSelection): string[] {
+    const usedModules: string[] = [];
+    Object.keys(moduleSelection.groups).forEach(groupId => {
+        Object.keys(moduleSelection.groups[groupId]).forEach(moduleId => {
+            if (moduleSelection.groups[groupId][moduleId].usage === 'used') {
+                usedModules.push(moduleSelection.groups[groupId][moduleId].module.id);
+            }
+        });
+    });
+    return usedModules;
 }
 
 function parseFleetSetup(serializedFleetSetup: string): IMinifiedFleetSetup | null {
@@ -101,15 +118,86 @@ export function createFleetSetup(fleetNumber: number): IFleetSetup {
 
 interface ICreateShipSelectionArgs {
     shipDefinition: IShipDefinition;
+    usedModules: string[] | null;
     count: number;
     reinforcement: ReinforcementType | null;
     userSettings: IUserSettings;
     maxReinforcement: number;
+    myListOnly: boolean;
     temporary?: boolean;
 }
 
 export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
-    const { shipDefinition, count, reinforcement, userSettings, maxReinforcement, temporary } = args;
+    const { shipDefinition, usedModules, count, reinforcement, userSettings, maxReinforcement, myListOnly, temporary } = args;
+
+    const moduleSelection = createModuleSelection(shipDefinition, usedModules, userSettings, reinforcement, myListOnly);
+    const carrierCapabilities = createCarrierCapabilities(shipDefinition, moduleSelection);
+
+    const maxCount = reinforcement === null
+        ? shipDefinition.operationLimit
+        : Math.min(shipDefinition.operationLimit, maxReinforcement);
+
+    return {
+        shipDefinition,
+        carrierCapabilities,
+        carriedShips: [],
+        count: Math.max(0, count),
+        reinforcement,
+        maxCount,
+        moduleSelection,
+        temporary,
+    };
+}
+
+function createModuleSelection(
+    shipDefinition: IShipDefinition,
+    usedModules: string[] | null,
+    userSettings: IUserSettings,
+    reinforcement: ReinforcementType | null,
+    myListOnly: boolean,
+): IModuleSelection | null {
+    if (!shipDefinition.modules || shipDefinition.modules.length === 0) {
+        return null;
+    }
+
+    const restoredUsedModules = usedModules ?? shipDefinition.modules.filter(module => module.defaultModule).map(module => module.id);
+
+    const result: IModuleSelection = {
+        static: shipDefinition.staticModules === true,
+        groups: {},
+    };
+
+    shipDefinition.modules.forEach((module: ISystemModule) => {
+        if (!result.groups[module.category]) {
+            result.groups[module.category] = {};
+        }
+
+        if (result.static) {
+            result.groups[module.category][module.id] = {
+                module,
+                usage: 'used',
+            };
+            return;
+        }
+
+        if (module.defaultModule || !myListOnly || reinforcement === 'ally' || userSettings.modules[module.id]?.possession === PossessionState.POSSESSED) {
+            result.groups[module.category][module.id] = {
+                module,
+                usage: restoredUsedModules.includes(module.id) ? 'used' : 'not_used',
+            };
+            return;
+        }
+
+        result.groups[module.category][module.id] = {
+            module,
+            usage: 'not_possessed',
+        };
+    });
+
+    return result;
+}
+
+function createCarrierCapabilities(shipDefinition: IShipDefinition, moduleSelection: IModuleSelection | null): ICarrierCapabilities {
 
     let carryUpToLargeFighter = 0;
     let carryUpToMediumFighter = 0;
@@ -133,41 +221,37 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         }
     }
 
-    shipDefinition.modules?.forEach((module) => {
-        if (shipDefinition.staticModules || userSettings.modules[`${shipDefinition.id}.${module.id}`]?.possession === PossessionState.POSSESSED) {
-            switch (module.carryFighterType) {
-                case ShipSubType.LARGE_FIGHTER: {
-                    carryUpToLargeFighter += module.carryFighter ?? 0;
-                    break;
+    if (moduleSelection) {
+        Object.keys(moduleSelection.groups).forEach((groupId: string) => {
+            Object.keys(moduleSelection.groups[groupId] ?? {}).forEach((moduleId: string) => {
+                const moduleUsage = moduleSelection.groups[groupId][moduleId];
+                if (moduleUsage.usage === 'used') {
+                    switch (moduleUsage.module.carryFighterType) {
+                        case ShipSubType.LARGE_FIGHTER: {
+                            carryUpToLargeFighter += moduleUsage.module.carryFighter ?? 0;
+                            break;
+                        }
+                        case ShipSubType.MEDIUM_FIGHTER: {
+                            carryUpToMediumFighter += moduleUsage.module.carryFighter ?? 0;
+                            break;
+                        }
+                        case ShipSubType.SMALL_FIGHTER: {
+                            carryUpToSmallFighter += moduleUsage.module.carryFighter ?? 0;
+                            break;
+                        }
+                    }
+                    carryCorvette += moduleUsage.module.carryCorvette ?? 0;
                 }
-                case ShipSubType.MEDIUM_FIGHTER: {
-                    carryUpToMediumFighter += module.carryFighter ?? 0;
-                    break;
-                }
-                case ShipSubType.SMALL_FIGHTER: {
-                    carryUpToSmallFighter += module.carryFighter ?? 0;
-                    break;
-                }
-            }
-            carryCorvette += module.carryCorvette ?? 0;
-        }
-    });
-
-    const maxCount = reinforcement === null
-        ? shipDefinition.operationLimit
-        : Math.min(shipDefinition.operationLimit, maxReinforcement);
+            });
+        });
+    }
 
     return {
-        shipDefinition,
+        canCarry: carryUpToLargeFighter + carryUpToMediumFighter + carryUpToSmallFighter + carryCorvette > 0,
         carryUpToLargeFighter,
         carryUpToMediumFighter,
         carryUpToSmallFighter,
         carryCorvette,
-        carriedShips: [],
-        count: Math.max(0, count),
-        reinforcement,
-        maxCount,
-        temporary,
     };
 }
 
@@ -178,7 +262,7 @@ interface ICreateCarriedShipSelectionArgs {
     temporary?: boolean;
 }
 
-function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
+export function createCarriedShipSelection(args: ICreateCarriedShipSelectionArgs): ICarriedShipSelection {
     const { shipId, count, reinforcement, temporary } = args;
     const shipDefinition = getShipDefinitionById(shipId);
     return {
@@ -233,10 +317,12 @@ export function applyShipCount(args: IApplyShipCountArgs): IFleetSetup {
             ...newFleetSetup.ships,
             createShipSelection({
                 shipDefinition,
+                usedModules: null,
                 count,
                 reinforcement,
                 userSettings,
                 maxReinforcement: fleetSetup.maxReinforcement,
+                myListOnly: fleetSetup.myListOnly,
             }),
         ],
         totalCost: getTotalCost(newFleetSetup.ships),
@@ -303,11 +389,4 @@ function getTotalReinforcementCount(ships: IShipSelection[]): number {
         .filter(ship => ship.reinforcement !== null)
         .map(ship => ship.count)
         .reduce((sum, count) => sum + count, 0);
-}
-
-export function canCarryShips(shipSelection: IShipSelection): boolean {
-    return shipSelection.carryCorvette > 0
-        || shipSelection.carryUpToLargeFighter > 0
-        || shipSelection.carryUpToMediumFighter > 0
-        || shipSelection.carryUpToSmallFighter > 0;
 }

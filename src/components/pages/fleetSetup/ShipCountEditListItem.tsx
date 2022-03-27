@@ -137,49 +137,47 @@ export const ShipCountEditListItem = (props: IProps) => {
     );
 
     return (
-        <Paper variant="outlined">
-            <Box p={1}>
-                {verticalAlignment && (
-                    <Stack spacing={1}>
-                        {shipContext}
-                        <Paper variant="outlined" sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                {decreaseButton}
-                                {countIndicator}
-                                {increaseButton}
-                            </Stack>
-                            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                {clearButton}
-                                {maxOuntButton}
-                            </Stack>
-                        </Paper>
-                        {warningText}
-                    </Stack>
-                )}
-                {!verticalAlignment && (
-                    <Stack spacing={1}>
-                        <Stack spacing={1} direction="row" flexWrap="wrap" alignItems="center">
-                            <Box pb={1}>
-                                <Stack spacing={1}>
-                                    {shipContext}
-                                </Stack>
-                            </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
-                                <Paper variant="outlined" sx={{ display: 'inline-block' }}>
-                                    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                        {clearButton}
-                                        {decreaseButton}
-                                        {countIndicator}
-                                        {increaseButton}
-                                        {maxOuntButton}
-                                    </Stack>
-                                </Paper>
-                            </Box>
+        <>
+            {verticalAlignment && (
+                <Stack spacing={1}>
+                    {shipContext}
+                    <Paper variant="outlined" sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                            {decreaseButton}
+                            {countIndicator}
+                            {increaseButton}
                         </Stack>
-                        {warningText}
+                        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                            {clearButton}
+                            {maxOuntButton}
+                        </Stack>
+                    </Paper>
+                    {warningText}
+                </Stack>
+            )}
+            {!verticalAlignment && (
+                <Stack spacing={1}>
+                    <Stack spacing={1} direction="row" flexWrap="wrap" alignItems="center">
+                        <Box pb={1}>
+                            <Stack spacing={1}>
+                                {shipContext}
+                            </Stack>
+                        </Box>
+                        <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
+                            <Paper variant="outlined" sx={{ display: 'inline-block' }}>
+                                <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                    {clearButton}
+                                    {decreaseButton}
+                                    {countIndicator}
+                                    {increaseButton}
+                                    {maxOuntButton}
+                                </Stack>
+                            </Paper>
+                        </Box>
                     </Stack>
-                )}
-            </Box>
-        </Paper>
+                    {warningText}
+                </Stack>
+            )}
+        </>
     );
 };

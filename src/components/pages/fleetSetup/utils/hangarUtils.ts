@@ -25,25 +25,25 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
                 .filter(s => s.shipDefinition.type === ShipType.CORVETTE)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryCorvette * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryCorvette * shipSelection.count,
         },
         upToLargeFighter: {
             key: 'upToLargeFighter',
-            name: '大型戦闘機',
+            name: '小～大型戦闘機',
             count: shipSelection.carriedShips
                 .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.LARGE_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToLargeFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToLargeFighter * shipSelection.count,
         },
         upToMediumFighter: {
             key: 'upToMediumFighter',
-            name: '中量級戦闘機',
+            name: '小～中量級戦闘機',
             count: shipSelection.carriedShips
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.MEDIUM_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToMediumFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToMediumFighter * shipSelection.count,
         },
         upToSmallFighter: {
             key: 'upToSmallFighter',
@@ -52,11 +52,11 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.SMALL_FIGHTER)
                 .map(s => s.count)
                 .reduce((sum, count) => sum + count, 0),
-            maxCount: shipSelection.carryUpToSmallFighter * shipSelection.count,
+            maxCount: shipSelection.carrierCapabilities.carryUpToSmallFighter * shipSelection.count,
         },
         removedHangar: {
             key: 'removedHangar',
-            name: '艦載機',
+            name: '未対応',
             count: 0,
             maxCount: 0,
         },
@@ -85,6 +85,8 @@ function moveOverflowToNextHangar(source: IHangarInstance, targets: IHangarInsta
     if (overflow <= 0) {
         return;
     }
+
+    source.count -= overflow;
 
     targets.forEach(target => {
         if (overflow <= 0 || target.maxCount === 0) {

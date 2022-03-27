@@ -127,7 +127,7 @@ export const TechFileDetails = (props: IProps) => {
                                 </Typography>
                                 {data.hasModules && (
                                     <Typography variant="body2" noWrap={true} className={classes.moduleChanceCell}>
-                                        {`追加モジュール：${formatChance(data.moduleChance)}`}
+                                        {`追加システム：${formatChance(data.moduleChance)}`}
                                     </Typography>
                                 )}
                             </Stack>

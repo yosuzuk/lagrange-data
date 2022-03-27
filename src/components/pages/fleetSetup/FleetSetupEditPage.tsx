@@ -21,6 +21,8 @@ import { AddShipsToFleetDialog } from './AddShipsToFleetDialog';
 import { ShipCountEditList } from './ShipCountEditList';
 import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { AddShipsButton } from './AddShipsButton';
+import { useCarriedShipsForAddDialog } from './hooks/useCarriedShipsForAddDialog';
+import { AddShipsToCarrierDialog } from './AddShipsToCarrierDialog';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -48,16 +50,26 @@ export const FleetSetupEditPage = () => {
     });
 
     const {
-        shipsForAddDialog,
-        carrierShipId: carrierShipIdForAddDialog,
-        shipWarnings: shipWarningsForAddDialog,
-        openForShips: openAddDialogForShips,
-        openForCarriedShips: openAddDialogForCarriedShips,
-        cancel: cancelAddDialog,
-        apply: applyAddDialog,
-        setShipCount: setShipCountForAddDialog,
-        setCarriedShipCount: setCarriedShipCountForAddDialog,
+        dialogData: dialogDataForShips,
+        shipWarnings: warningsForShips,
+        open: openAddDialogForShips,
+        cancel: cancelAddDialogForShips,
+        apply: applyAddDialogForShips,
+        setShipCount: setShipCountForShipsInAddDialog,
     } = useShipsForAddDialog({
+        userSettings,
+        fleetSetup,
+        setFleetSetup,
+    });
+
+    const {
+        dialogData: dialogDataForCarriedShips,
+        shipWarnings: warningsForCarriedShips,
+        open: openAddDialogForCarriedShips,
+        cancel: cancelAddDialogForCarriedShips,
+        apply: applyAddDialogForCarriedShips,
+        setShipCount: setShipCountForCarriedShipsInAddDialog,
+    } = useCarriedShipsForAddDialog({
         userSettings,
         fleetSetup,
         setFleetSetup,
@@ -139,6 +151,7 @@ export const FleetSetupEditPage = () => {
                                                 <AddShipsButton
                                                     filter={group.id}
                                                     onOpenAddShips={openAddDialogForShips}
+                                                    buttonProps={{ size: 'small' }}
                                                 />
                                             </Stack>
                                             {group.ships.length > 0 && (
@@ -163,15 +176,22 @@ export const FleetSetupEditPage = () => {
                 </Box>
             </Container>
             <FleetSetupBottomBar fleetSetup={fleetSetup} fleetShipCount={fleetShipCount} />
-            {shipsForAddDialog && (
+            {dialogDataForShips && (
                 <AddShipsToFleetDialog
-                    ships={shipsForAddDialog}
-                    carrierShipId={carrierShipIdForAddDialog}
-                    shipWarnings={shipWarningsForAddDialog}
-                    onCancel={cancelAddDialog}
-                    onApply={applyAddDialog}
-                    onChangeShipCount={setShipCountForAddDialog}
-                    onChangeCarriedShipCount={setCarriedShipCountForAddDialog}
+                    dialogData={dialogDataForShips}
+                    shipWarnings={warningsForShips}
+                    onCancel={cancelAddDialogForShips}
+                    onApply={applyAddDialogForShips}
+                    onChangeShipCount={setShipCountForShipsInAddDialog}
+                />
+            )}
+            {dialogDataForCarriedShips && (
+                <AddShipsToCarrierDialog
+                    dialogData={dialogDataForCarriedShips}
+                    shipWarnings={warningsForCarriedShips}
+                    onCancel={cancelAddDialogForCarriedShips}
+                    onApply={applyAddDialogForCarriedShips}
+                    onChangeShipCount={setShipCountForCarriedShipsInAddDialog}
                 />
             )}
             {confirmingReset && (

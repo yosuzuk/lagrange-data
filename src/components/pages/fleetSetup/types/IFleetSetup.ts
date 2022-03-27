@@ -1,4 +1,4 @@
-import { IShipDefinition } from '../../../../types/ShipDefinition';
+import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
 
 export type ReinforcementType = 'self' | 'ally';
 
@@ -15,15 +15,21 @@ export interface IFleetSetup {
 
 export interface IShipSelection {
     shipDefinition: IShipDefinition;
-    carryUpToLargeFighter: number;
-    carryUpToMediumFighter: number;
-    carryUpToSmallFighter: number;
-    carryCorvette: number;
+    carrierCapabilities: ICarrierCapabilities;
     carriedShips: ICarriedShipSelection[];
+    moduleSelection: IModuleSelection | null;
     count: number;
     maxCount: number;
     reinforcement: ReinforcementType | null;
     temporary?: boolean;
+}
+
+export interface ICarrierCapabilities {
+    canCarry: boolean;
+    carryUpToLargeFighter: number;
+    carryUpToMediumFighter: number;
+    carryUpToSmallFighter: number;
+    carryCorvette: number;
 }
 
 export interface ICarriedShipSelection {
@@ -43,6 +49,7 @@ export interface IMinifiedFleetSetup {
 
 export interface IMinifiedShipSelection {
     shipId: string;
+    usedModules?: string[];
     carriedShips: IMinifiedCarriedShipSelection[];
     count: number;
     reinforcement: ReinforcementType | null;
@@ -51,4 +58,14 @@ export interface IMinifiedShipSelection {
 export interface IMinifiedCarriedShipSelection {
     shipId: string;
     count: number;
+}
+
+export interface IModuleSelection {
+    static: boolean;
+    groups: Record<string, Record<string, IModuleUsage>>; // group id, module id
+}
+
+export interface IModuleUsage {
+    module: ISystemModule;
+    usage: 'used' | 'not_used' | 'not_possessed';
 }

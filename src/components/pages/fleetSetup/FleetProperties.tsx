@@ -93,11 +93,14 @@ export const FleetProperties = (props: IProps) => {
                                 value: shipCount > 0 ? (
                                     <>
                                         <Typography variant="body2">{`合計　${shipCount}`}</Typography>
-                                        {Object.keys(shipCountByType).filter(shipType => shipCountByType[shipType as ShipType] > 0).map(shipType => (
-                                            <Typography key={shipType} variant="body2">
-                                                {`${translateShipType(shipType as ShipType)}　${shipCountByType[shipType as ShipType]}`}
-                                            </Typography>
-                                        ))}
+                                        {Object.keys(shipCountByType)
+                                            .filter(shipType => shipCountByType[shipType as ShipType] > 0 && shipType !== ShipType.CORVETTE && shipType !== ShipType.FIGHTER)
+                                            .map(shipType => (
+                                                <Typography key={shipType} variant="body2">
+                                                    {`${translateShipType(shipType as ShipType)}　${shipCountByType[shipType as ShipType]}`}
+                                                </Typography>
+                                            ))
+                                        }
                                     </>
                                 ) : (
                                     <Typography variant="body2">{'-'}</Typography>
@@ -108,8 +111,12 @@ export const FleetProperties = (props: IProps) => {
                                 label: '艦載機',
                                 value: (shipCountByType[ShipType.FIGHTER] + shipCountByType[ShipType.CORVETTE]) > 0 ? (
                                     <>
-                                        <Typography variant="body2">{`${translateShipType(ShipType.FIGHTER)}　${shipCountByType[ShipType.FIGHTER]}`}</Typography>
-                                        <Typography variant="body2">{`${translateShipType(ShipType.CORVETTE)}　${shipCountByType[ShipType.CORVETTE]}`}</Typography>
+                                        {shipCountByType[ShipType.FIGHTER] > 0 && (
+                                            <Typography variant="body2">{`${translateShipType(ShipType.FIGHTER)}　${shipCountByType[ShipType.FIGHTER]}`}</Typography>
+                                        )}
+                                        {shipCountByType[ShipType.CORVETTE] > 0 && (
+                                            <Typography variant="body2">{`${translateShipType(ShipType.CORVETTE)}　${shipCountByType[ShipType.CORVETTE]}`}</Typography>
+                                        )}
                                     </>
                                 ) : (
                                     <Typography variant="body2">{'-'}</Typography>

@@ -24,7 +24,7 @@ export const TechFileChart = (props: IProps) => {
     const innerData = useMemo<Array<Record<string, unknown>>>(() => {
         return [
             {
-                name: '追加モジュール',
+                name: '追加システム',
                 value: techFileChances.moduleChance,
                 color: MODULE_COLOR,
             },
@@ -59,7 +59,7 @@ export const TechFileChart = (props: IProps) => {
 
         return [
             {
-                name: moduleChance > SHOW_LABEL_THRESHOLD ? '追加モジュール' : '',
+                name: moduleChance > SHOW_LABEL_THRESHOLD ? '追加システム' : '',
                 value: moduleChance,
                 color: MODULE_COLOR,
             },
