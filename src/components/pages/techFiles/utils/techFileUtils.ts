@@ -142,8 +142,8 @@ function getModuleChance(
     return {
         moduleChance: baseChance * (unpossesedModuleCount / ship.modules.length),
         moduleChanceTooltip: [
-            '追加モジュールには重みが無いと仮定した場合：',
-            '⇒ベースモデルの艦種確率×(取得していないモジュール数/モジュール数の合計)',
+            '追加システムには重みが無いと仮定した場合：',
+            '⇒ベースモデルの艦種確率×(取得していないシステム数/システム数の合計)',
             `⇒${formatFactor(baseChance)} * (${unpossesedModuleCount} / ${ship.modules.length})`,
         ],
     };

@@ -99,7 +99,7 @@ export const ShipDetail = (props: IProps) => {
                     ...((!shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
                         {
                             key: 'modules',
-                            label: '初期モジュール',
+                            label: '初期システム',
                             value: (
                                 <>
                                     {shipDefinition.modules.filter(module => module.defaultModule).map(module => (
@@ -112,7 +112,7 @@ export const ShipDetail = (props: IProps) => {
                         },
                         {
                             key: 'extraModules',
-                            label: '追加モジュール',
+                            label: '追加システム',
                             value: (
                                 <>
                                     {shipDefinition.modules.filter(module => !module.defaultModule).map(module => (
@@ -127,7 +127,7 @@ export const ShipDetail = (props: IProps) => {
                     ...((shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
                         {
                             key: 'staticModules',
-                            label: '固定モジュール',
+                            label: '固定システム',
                             value: (
                                 <>
                                     {shipDefinition.modules.map(module => (

@@ -85,7 +85,7 @@ const blueprintChanceColumn: ITableColumn<IShipChance> = {
 
 const moduleChanceColumn: ITableColumn<IShipChance> = {
     id: 'moduleChance',
-    renderHeader: () => '追加モジュール',
+    renderHeader: () => '追加システム',
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
