@@ -100,6 +100,10 @@ function moveOverflowToNextHangar(source: IHangarInstance, targets: IHangarInsta
         overflow -= moving;
         target.count += moving;
     });
+
+    if (overflow > 0) {
+        source.count += overflow;
+    }
 }
 
 export function shouldVisualizeHangar(hangar: IHangarInstance): boolean {
