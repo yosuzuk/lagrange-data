@@ -3,7 +3,7 @@ import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
-import { ICarriedShipSelection, ICarrierCapabilities, IFleetSetup, IMinifiedFleetSetup, IModuleSelection, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
+import { ICarriedShipSelection, ICarrierCapabilities, IFleetSetup, IMinifiedFleetSetup, IModuleSelection, IModuleUsage, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
 export function getCurrentFleetSetups(userSettings: IUserSettings): IFleetSetup[] {
     return [
@@ -374,7 +374,63 @@ export function applyCarriedShipCount(args: IApplyCarriedShipCountArgs): IFleetS
                     }];
                 }),
             };
-        })
+        }),
+    };
+}
+
+interface IApplyModulesArgs {
+    shipId: string;
+    reinforcement: ReinforcementType | null;
+    moduleSelection: IModuleSelection;
+    fleetSetup: IFleetSetup;
+}
+
+export function applyModules(args: IApplyModulesArgs): IFleetSetup {
+    const { shipId, reinforcement, moduleSelection, fleetSetup } = args;
+
+    return {
+        ...fleetSetup,
+        ships: fleetSetup.ships.map(shipSelection => {
+            if (shipSelection.shipDefinition.id !== shipId) {
+                return shipSelection;
+            }
+
+            // module for ally reinforcment only affects ally reinforcement ships
+            if (reinforcement === 'ally') {
+                return shipSelection.reinforcement === 'ally' ? {
+                    ...shipSelection,
+                    moduleSelection,
+                } : shipSelection;
+            }
+
+            // initial ships or self reinforcement share module settings
+            return shipSelection.reinforcement !== 'ally' ? {
+                ...shipSelection,
+                moduleSelection,
+            } : shipSelection;
+        }),
+    };
+}
+
+export function applyUsageForModule(groupId: string, moduleId: string, moduleSelection: IModuleSelection): IModuleSelection {
+    return {
+        ...moduleSelection,
+        groups: {
+            ...moduleSelection.groups,
+            [groupId]: Object.keys(moduleSelection.groups[groupId]).reduce((acc: Record<string, IModuleUsage>, iteratedModuleId: string) => {
+                const moduleUsage = moduleSelection.groups[groupId][iteratedModuleId];
+                return {
+                    ...acc,
+                    [iteratedModuleId]: (iteratedModuleId === moduleId ? {
+                        ...moduleUsage,
+                        usage: 'used',
+                    } : {
+                        ...moduleUsage,
+                        usage: moduleUsage.usage === 'not_possessed' ? 'not_possessed' : 'not_used',
+                    }) as IModuleUsage,
+                };
+            }, moduleSelection.groups[groupId]),
+        },
     };
 }
 

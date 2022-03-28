@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
-import { applyCarriedShipCount, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
+import { IFleetSetup, IModuleSelection, ReinforcementType } from '../types/IFleetSetup';
+import { applyCarriedShipCount, applyModules, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
 import { validateFleetSetupForPropertyErrors, validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
@@ -17,6 +17,7 @@ interface IHookResult {
     setFleetSetup: (fleetSetup: IFleetSetup) => void;
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    setModule: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
     save: () => void;
     reset: () => void;
 }
@@ -33,6 +34,10 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
 
     const setCarriedShipCount = useCallback((shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setFleetSetup(fleetSetup => applyCarriedShipCount({ shipId, carrierShipId, count, reinforcement, fleetSetup }));
+    }, []);
+
+    const setModule = useCallback((shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => {
+        setFleetSetup(fleetSetup => applyModules({ shipId, reinforcement, moduleSelection, fleetSetup }));
     }, []);
 
     const save = useCallback(() => {
@@ -56,6 +61,7 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
         setFleetSetup,
         setShipCount,
         setCarriedShipCount,
+        setModule,
         save,
         reset,
     };

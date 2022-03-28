@@ -3,9 +3,9 @@ import { ShipCountEditListItem } from './ShipCountEditListItem';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import { IShipSelection, ReinforcementType } from './types/IFleetSetup';
+import { IModuleSelection, IShipSelection, ReinforcementType } from './types/IFleetSetup';
 import { HangarData } from './HangarData';
-import { ModuleSelection } from './ModuleSelection';
+import { ModuleData } from './ModuleData';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -17,6 +17,7 @@ interface IProps {
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onOpenAddCarriedShips?: (carrierShipId: string, reinforcement: ReinforcementType | null) => void;
+    onChangeModule?: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
 }
 
 const MemoizedShipCountEditListItem = memo(ShipCountEditListItem);
@@ -32,6 +33,7 @@ export const ShipCountEditList = (props: IProps) => {
         onChangeShipCount,
         onChangeCarriedShipCount,
         onOpenAddCarriedShips,
+        onChangeModule,
     } = props;
 
     return (
@@ -52,10 +54,12 @@ export const ShipCountEditList = (props: IProps) => {
                             onChangeCarriedShipCount={onChangeCarriedShipCount}
                             shipWarning={shipWarnings[shipSelection.shipDefinition.id]}
                         />
-                        {shipSelection.moduleSelection && (
-                            <ModuleSelection
+                        {shipSelection.moduleSelection && onChangeModule && (
+                            <ModuleData
+                                shipId={shipSelection.shipDefinition.id}
+                                reinforcement={shipSelection.reinforcement}
                                 moduleSelection={shipSelection.moduleSelection}
-                                staticModules={shipSelection.shipDefinition.staticModules === true}
+                                onChange={onChangeModule}
                             />
                         )}
                         {showHangar && shipSelection.carrierCapabilities.canCarry && (
