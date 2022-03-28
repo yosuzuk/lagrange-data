@@ -140,17 +140,26 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
         groupedShips.groups.filter(shipGroup => shipGroup.ships.length > 0).map(shipGroup => {
             return [
                 ...(groupedShips.groups.length > 1 ? [`【${shipGroup.name}】`] : []),
-                ...shipGroup.ships.map(ship => {
+                ...shipGroup.ships.flatMap(ship => {
                     const cost = ship.count * ship.shipDefinition.cost;
                     switch (ship.reinforcement) {
                         case 'self': {
-                            return `${ship.count}×　${ship.shipDefinition.name}（増援）`;
+                            return [
+                                `${ship.count}×　${ship.shipDefinition.name}（増援）`,
+                                ...formatCarriedShipsForSharing(ship.carriedShips),
+                            ];
                         }
                         case 'ally': {
-                            return `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援）`;
+                            return [
+                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援）`,
+                                ...formatCarriedShipsForSharing(ship.carriedShips),
+                            ];
                         }
                         default: {
-                            return `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`;
+                            return [
+                                `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`,
+                                ...formatCarriedShipsForSharing(ship.carriedShips),
+                            ];
                         }
                     }
                 }),
@@ -161,4 +170,10 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
             `指令Pt：${fleetSetup.totalCost}/${fleetSetup.maxCost}`,
         ].join('\n'),
     ].join('\n\n');
+}
+
+function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): string[] {
+    return carriedShips.map(ship => {
+        return `　　${ship.count}×　${ship.shipDefinition.name}`;
+    });
 }
