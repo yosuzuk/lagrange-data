@@ -3,7 +3,7 @@ import { ShipType } from '../../../../types/ShipType';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
-import { IFleetSetup, IShipSelection } from '../types/IFleetSetup';
+import { IFleetSetup, IShipSelection, ICarriedShipSelection } from '../types/IFleetSetup';
 import { IGroupedShips, IShipGroup } from '../types/IGroupedShips';
 
 export enum GroupAndSortOption {
@@ -19,16 +19,18 @@ const sortNumberPerReinforcementType = {
     ally: 2,
 } as const;
 
-const sortByReinforcementType = (a: IShipSelection, b: IShipSelection) => {
+type SortableByShipDefinition = IShipSelection | ICarriedShipSelection;
+
+const sortByReinforcementType = (a: SortableByShipDefinition, b: SortableByShipDefinition) => {
     return sortNumberPerReinforcementType[a.reinforcement ?? 'initial'] - sortNumberPerReinforcementType[b.reinforcement ?? 'initial'];
 };
 
-const sortByName = normalizeSortFn<IShipSelection>([
-    (a: IShipSelection, b: IShipSelection) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP'),
+const sortByName = normalizeSortFn<SortableByShipDefinition>([
+    (a: SortableByShipDefinition, b: SortableByShipDefinition) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP'),
     sortByReinforcementType,
 ]);
 
-const sortByTypeAndName = normalizeSortFn<IShipSelection>([
+const sortByTypeAndName = normalizeSortFn<SortableByShipDefinition>([
     (a, b) => shipTypeToSortValue(a.shipDefinition.type, a.shipDefinition.subType) - shipTypeToSortValue(b.shipDefinition.type, b.shipDefinition.subType),
     sortByName,
     sortByReinforcementType,
@@ -54,7 +56,12 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                 groups: [{
                     id: 'all',
                     name: '編成',
-                    ships: [...fleetSetup.ships].sort(sortByTypeAndName),
+                    ships: fleetSetup.ships
+                        .map(ship => ({
+                            ...ship,
+                            carriedShips: [...ship.carriedShips].sort(sortByTypeAndName),
+                        }))
+                        .sort(sortByTypeAndName),
                     count: fleetSetup.ships.map(s => s.count).reduce((sum, count) => sum + count, 0),
                 }],
             };
@@ -65,7 +72,12 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                 groups: [{
                     id: 'all',
                     name: '編成',
-                    ships: [...fleetSetup.ships].sort(sortByName),
+                    ships: fleetSetup.ships
+                        .map(ship => ({
+                            ...ship,
+                            carriedShips: [...ship.carriedShips].sort(sortByName),
+                        }))
+                        .sort(sortByName),
                     count: fleetSetup.ships.map(s => s.count).reduce((sum, count) => sum + count, 0),
                 }],
             };
@@ -78,7 +90,14 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
 
 function createShipGroupsByRow(shipSelections: IShipSelection[]): IShipGroup[] {
     return [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK].map(shipRow => {
-        const ships = shipSelections.filter(ship => ship.shipDefinition.row === shipRow).sort(sortByTypeAndName);
+        const ships = shipSelections
+            .filter(ship => ship.shipDefinition.row === shipRow)
+            .map(ship => ({
+                ...ship,
+                carriedShips: [...ship.carriedShips].sort(sortByTypeAndName),
+            }))
+            .sort(sortByTypeAndName);
+
         const count = ships.map(s => s.count).reduce((sum, count) => sum + count, 0);
         return {
             id: shipRow,
@@ -97,7 +116,14 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
         ShipType.DESTROYER,
         ShipType.FRIGATE,
     ].map(shipType => {
-        const ships = shipSelections.filter(ship => ship.shipDefinition.type === shipType).sort(sortByName);
+        const ships = shipSelections
+            .filter(ship => ship.shipDefinition.type === shipType)
+            .map(ship => ({
+                ...ship,
+                carriedShips: [...ship.carriedShips].sort(sortByName),
+            }))
+            .sort(sortByName);
+
         const count = ships.map(s => s.count).reduce((sum, count) => sum + count, 0);
         return {
             id: shipType,
