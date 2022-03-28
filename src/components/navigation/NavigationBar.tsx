@@ -20,7 +20,7 @@ const menuItems: Record<string, string> = {
     '/techFiles': '技術ファイル',
     '/shipData': '艦船一覧',
     '/myList': 'マイリスト',
-    // '/fleetSetup': '艦隊編成',
+    '/fleetSetup': '艦隊編成',
 };
 
 interface IProps {
