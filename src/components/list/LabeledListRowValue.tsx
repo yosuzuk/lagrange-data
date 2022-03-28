@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { RoomPreferences } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import { ScriptedLink } from '../link/ScriptedLink';
 import { ILabeledListRow } from './types/ILabeledListRow';
@@ -14,7 +13,7 @@ export const LabeledListRowValue = (props: IProps) => {
 
     const value: ReactNode = typeof row.value === 'function' ? row.value(verticalAlignment) : row.value;
 
-    if (!value) {
+    if (value === null || typeof value === 'undefined') {
         return (
             <div />
         );

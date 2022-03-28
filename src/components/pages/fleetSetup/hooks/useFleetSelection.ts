@@ -16,7 +16,6 @@ interface IHookResult {
 
 export const useFleetSelection = (args: IHookArguments): IHookResult => {
     const { initialFleetKey } = args;
-    console.log(initialFleetKey);
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);

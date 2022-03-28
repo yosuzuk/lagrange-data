@@ -2,6 +2,8 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { IShipSelection } from './types/IFleetSetup';
+import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
+import { ScriptedLink } from '../../link/ScriptedLink';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -9,6 +11,8 @@ interface IProps {
 
 export const ShipCountList = (props: IProps) => {
     const { shipSelections } = props;
+
+    const { openShipDetailDialog } = useShipDetail();
 
     return (
         <Stack spacing={1}>
@@ -26,7 +30,9 @@ export const ShipCountList = (props: IProps) => {
                                 </Typography>
                             </Box>
                             <Typography variant="body2">
-                                {shipSelection.shipDefinition.name}
+                                <ScriptedLink onClick={() => { openShipDetailDialog(shipSelection.shipDefinition.id); }}>
+                                    {shipSelection.shipDefinition.name}
+                                </ScriptedLink>
                             </Typography>
                             {shipSelection.reinforcement === 'self' && (
                                 <Typography variant="body2" noWrap={true}>
@@ -63,7 +69,9 @@ export const ShipCountList = (props: IProps) => {
                                 </Typography>
                             </Box>
                             <Typography variant="body2">
-                                {carriedShip.shipDefinition.name}
+                                <ScriptedLink onClick={() => { openShipDetailDialog(carriedShip.shipDefinition.id); }}>
+                                    {carriedShip.shipDefinition.name}
+                                </ScriptedLink>
                             </Typography>
                         </Stack>
                     ))}

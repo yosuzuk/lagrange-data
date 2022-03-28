@@ -11,6 +11,7 @@ import { obtainableFromResearchAgreement, translateShipSource } from '../../util
 import { ShipTag } from '../../types/ShipTag';
 import { ShipSource } from '../../types/ShipSource';
 import { ScriptedLink } from '../link/ScriptedLink';
+import { ShipRow } from '../../types/ShipRow';
 
 interface IProps {
     shipId: string;
@@ -51,16 +52,16 @@ export const ShipDetail = (props: IProps) => {
                         label: '艦種',
                         value: translateShipType(shipDefinition.type, shipDefinition.subType),
                     },
-                    {
+                    ...(shipDefinition.row !== ShipRow.NONE ? [{
                         key: 'row',
                         label: '配置',
                         value: translateShipRow(shipDefinition.row),
-                    },
-                    {
+                    }] : []),
+                    ...(shipDefinition.cost > 0 ? [{
                         key: 'cost',
                         label: 'コスト',
                         value: shipDefinition.cost,
-                    },
+                    }] : []),
                     {
                         key: 'operationLimit',
                         label: '稼働上限',

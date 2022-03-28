@@ -10,6 +10,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { ReinforcementType } from './types/IFleetSetup';
 import { IShipDefinition } from '../../../types/ShipDefinition';
+import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
+import { ScriptedLink } from '../../link/ScriptedLink';
 
 interface IProps {
     shipDefinition: IShipDefinition;
@@ -41,10 +43,14 @@ export const ShipCountEditListItem = (props: IProps) => {
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('sm'));
 
+    const { openShipDetailDialog } = useShipDetail();
+
     const shipContext = (
         <>
             <Typography variant="body1">
-                {shipDefinition.name}
+                <ScriptedLink onClick={() => { openShipDetailDialog(shipDefinition.id); }}>
+                    {shipDefinition.name}
+                </ScriptedLink>
             </Typography>
             {showCost && reinforcement === null && (
                 <Typography variant="body2" color="text.secondary">
