@@ -19,15 +19,21 @@ export function validateFleetSetupForPropertyErrors(fleetSetup: IFleetSetup): Re
     return errorMap;
 }
 
-interface ICountAndLimit {
+interface ICountAndLimitForShip {
     count: number;
     reinforcementCount: number;
     operationLimit: number;
 }
 
+interface ICountAndLimitForCarriedShip {
+    count: number;
+    operationLimit: number;
+}
+
 export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Record<string, string> {
     const errorMap: Record<string, string> = {};
-    const shipCountMap: Record<string, ICountAndLimit> = {};
+    const shipCountMap: Record<string, ICountAndLimitForShip> = {};
+    const carriedShipCountMap: Record<string, ICountAndLimitForCarriedShip> = {};
 
     fleetSetup.ships.filter(ship => ship.reinforcement !== 'ally').forEach(ship => {
         const key = ship.shipDefinition.id;
@@ -38,14 +44,25 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
                 reinforcementCount: ship.reinforcement !== null ? ship.count : entry.reinforcementCount,
                 operationLimit: ship.shipDefinition.operationLimit,
             };
-            return;
+        } else {
+            shipCountMap[key] = {
+                count: ship.reinforcement === null ? ship.count : 0,
+                reinforcementCount: ship.reinforcement !== null ? ship.count : 0,
+                operationLimit: ship.shipDefinition.operationLimit,
+            };
         }
 
-        shipCountMap[key] = {
-            count: ship.reinforcement === null ? ship.count : 0,
-            reinforcementCount: ship.reinforcement !== null ? ship.count : 0,
-            operationLimit: ship.shipDefinition.operationLimit,
-        };
+        ship.carriedShips.forEach(carriedShip => {
+            const carriedShipKey = carriedShip.shipDefinition.id;
+            if (!carriedShipCountMap[carriedShipKey]) {
+                carriedShipCountMap[carriedShipKey] = {
+                    count: carriedShip.count,
+                    operationLimit: carriedShip.shipDefinition.operationLimit,
+                };
+            } else {
+                carriedShipCountMap[carriedShipKey].count += carriedShip.count;
+            }
+        });
     });
 
     Object.keys(shipCountMap).forEach(shipId => {
@@ -53,6 +70,14 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
         if ((entry.count + entry.reinforcementCount) > entry.operationLimit) {
             errorMap[getShipWarningKey(shipId, null)] = '増援と合わせて稼働上限を超えています。';
             errorMap[getShipWarningKey(shipId, 'self')] = '通常配備と合わせて稼働上限を超えています。';
+        }
+    });
+
+    Object.keys(carriedShipCountMap).forEach(carriedShipId => {
+        const entry = carriedShipCountMap[carriedShipId];
+        if (entry.count > entry.operationLimit) {
+            errorMap[getShipWarningKey(carriedShipId, null)] = '他に配備した数と合わせて稼働上限を超えています。';
+            errorMap[getShipWarningKey(carriedShipId, 'self')] = '他に配備した数と合わせて稼働上限を超えています。';
         }
     });
 

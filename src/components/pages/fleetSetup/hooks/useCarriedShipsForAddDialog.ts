@@ -3,6 +3,7 @@ import { IFleetSetup, ReinforcementType } from '../types/IFleetSetup';
 import { IDialogDataForCarriedShips } from '../types/IDialogDataForShips';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { addSelectedCarriedShipsToFleetSetup, createDialogDataForCarriedShips } from '../utils/carriedShipAddDialogUtils';
+import { validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
     userSettings: IUserSettings;
@@ -57,9 +58,8 @@ export const useCarriedShipsForAddDialog = (args: IHookArguments): IHookResult =
         if (!dialogData) {
             return {};
         }
-        // TODO check operationLimit overflow across carriers
-        // return validateFleetSetupForShipWarnings(carriedShipsForAddDialog, fleetSetup);
-        return {};
+        const appliedFleetSetup = addSelectedCarriedShipsToFleetSetup(dialogData, fleetSetup);
+        return validateFleetSetupForShipWarnings(appliedFleetSetup);
     }, [dialogData, fleetSetup]);
 
     return {
