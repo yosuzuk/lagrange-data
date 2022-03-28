@@ -34,7 +34,7 @@ export const HangarData = (props: IProps) => {
                 direction="row"
                 alignItems="center" justifyContent="space-between"
             >
-                <Typography variant="body2" color="text.secondary">{'ハンガー'}</Typography>
+                <Typography variant="body2" color="text.secondary">{'ハンガー：'}</Typography>
                 <Stack spacing={1} direction="row" alignItems="center">
                     <Stack spacing={1} direction="row" alignItems="center">
                     {Object.keys(hangar)

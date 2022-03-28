@@ -54,7 +54,10 @@ export const ShipCountEditList = (props: IProps) => {
                             shipWarning={shipWarnings[getShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                         />
                         {shipSelection.moduleSelection && (
-                            <ModuleSelection moduleSelection={shipSelection.moduleSelection} />
+                            <ModuleSelection
+                                moduleSelection={shipSelection.moduleSelection}
+                                staticModules={shipSelection.shipDefinition.staticModules === true}
+                            />
                         )}
                         {showHangar && shipSelection.carrierCapabilities.canCarry && (
                             <Stack spacing={1}>

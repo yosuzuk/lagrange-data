@@ -10,10 +10,11 @@ import { IModuleSelection, IModuleUsage } from './types/IFleetSetup';
 
 interface IProps {
     moduleSelection: IModuleSelection;
+    staticModules: boolean;
 }
 
 export const ModuleSelection = (props: IProps) => {
-    const { moduleSelection } = props;
+    const { moduleSelection, staticModules } = props;
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('xs'));
 
@@ -58,17 +59,19 @@ export const ModuleSelection = (props: IProps) => {
                     {usedModules}
                 </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignContent: 'end' }}>
-                <Button
-                    variant="outlined"
-                    size="small"
-                    startIcon={<TuneIcon />}
-                    sx={{ whiteSpace: 'nowrap' }}
-                    onClick={() => {}}
-                >
-                    {'システムを換装'}
-                </Button>
-            </Box>
+            {!staticModules && (
+                <Box sx={{ display: 'flex', alignContent: 'end' }}>
+                    <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<TuneIcon />}
+                        sx={{ whiteSpace: 'nowrap' }}
+                        onClick={() => {}}
+                    >
+                        {'システムを換装'}
+                    </Button>
+                </Box>
+            )}
         </Stack>
     );
 };
