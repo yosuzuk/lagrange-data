@@ -1,5 +1,5 @@
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
-import { ShipSubType } from '../../../../types/ShipType';
+import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { PossessionState } from '../../../../userSettings/types/PossessionState';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
@@ -133,7 +133,7 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
     const moduleSelection = createModuleSelection(shipDefinition, usedModules, userSettings, reinforcement, myListOnly);
     const carrierCapabilities = createCarrierCapabilities(shipDefinition, moduleSelection);
 
-    const maxCount = reinforcement === null
+    const maxCount = (reinforcement === null || shipDefinition.type === ShipType.FIGHTER || shipDefinition.type === ShipType.CORVETTE)
         ? shipDefinition.operationLimit
         : Math.min(shipDefinition.operationLimit, maxReinforcement);
 
