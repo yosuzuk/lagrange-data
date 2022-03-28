@@ -68,22 +68,16 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
     Object.keys(shipCountMap).forEach(shipId => {
         const entry = shipCountMap[shipId];
         if ((entry.count + entry.reinforcementCount) > entry.operationLimit) {
-            errorMap[getShipWarningKey(shipId, null)] = '増援と合わせて稼働上限を超えています。';
-            errorMap[getShipWarningKey(shipId, 'self')] = '通常配備と合わせて稼働上限を超えています。';
+            errorMap[shipId] = '配備した合計数が稼働上限を超えています。';
         }
     });
 
     Object.keys(carriedShipCountMap).forEach(carriedShipId => {
         const entry = carriedShipCountMap[carriedShipId];
         if (entry.count > entry.operationLimit) {
-            errorMap[getShipWarningKey(carriedShipId, null)] = '他に配備した数と合わせて稼働上限を超えています。';
-            errorMap[getShipWarningKey(carriedShipId, 'self')] = '他に配備した数と合わせて稼働上限を超えています。';
+            errorMap[carriedShipId] = '配備した合計数が稼働上限を超えています。';
         }
     });
 
     return errorMap;
-}
-
-export function getShipWarningKey(shipId: string, reinforcement: ReinforcementType | null): string {
-    return `${shipId}_${reinforcement ?? 'initial'}`;
 }

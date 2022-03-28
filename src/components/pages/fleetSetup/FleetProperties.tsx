@@ -14,6 +14,8 @@ import { translateShipType } from '../../../utils/shipTypeUtils';
 import { ShipType } from '../../../types/ShipType';
 import { translateShipRow } from '../../../utils/shipRowUtils';
 import { ShipRow } from '../../../types/ShipRow';
+import { validateFleetSetupForShipWarnings } from './utils/fleetSetupValidation';
+import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -32,7 +34,27 @@ export const FleetProperties = (props: IProps) => {
 
     const exceedingCost = totalCost > fleetSetup.maxCost;
     const exceedingReinforcement = fleetSetup.totalReinforcementCount > fleetSetup.maxReinforcement;
-    const hasIssue = exceedingCost || exceedingReinforcement;
+
+    const warnings = useMemo<string[]>(() => {
+        const errorMap = validateFleetSetupForShipWarnings(fleetSetup);
+        return Object.keys(errorMap).map(key => {
+            const [shipId, reinforcement] = key.split('#');
+            const shipDefinition = getShipDefinitionById(shipId);
+            switch (reinforcement) {
+                case 'self': {
+                    return `${shipDefinition.name}（増援）：${errorMap[key]}`;
+                }
+                case 'ally': {
+                    return `${shipDefinition.name}（ユニオン増援）：${errorMap[key]}`;
+                }
+                default: {
+                    return `${shipDefinition.name}：${errorMap[key]}`;
+                }
+            }
+        });
+    }, [fleetSetup]);
+
+    const hasIssue = exceedingCost || exceedingReinforcement || warnings.length > 0;
     const expandIcon = hasIssue ? <ErrorIcon color="error" /> : <InfoIcon color="primary" />;
 
     return (
@@ -137,6 +159,15 @@ export const FleetProperties = (props: IProps) => {
                                     <Typography variant="body2">{'-'}</Typography>
                                 ),
                             },
+                            ...(warnings.length > 0 ? [{
+                                key: 'warnings',
+                                label: '警告',
+                                value: warnings.map((warning: string, index: number) => (
+                                    <Typography key={`warning_${index}`} variant="body2" sx={{ color: 'red' }}>
+                                        {warning}
+                                    </Typography>
+                                )),
+                            }] : []),
                         ]}
                     />
                 )}

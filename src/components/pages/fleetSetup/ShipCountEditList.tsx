@@ -1,10 +1,9 @@
-import { memo, Fragment } from 'react';
+import { memo } from 'react';
 import { ShipCountEditListItem } from './ShipCountEditListItem';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { IShipSelection, ReinforcementType } from './types/IFleetSetup';
-import { getShipWarningKey } from './utils/fleetSetupValidation';
 import { HangarData } from './HangarData';
 import { ModuleSelection } from './ModuleSelection';
 
@@ -51,7 +50,7 @@ export const ShipCountEditList = (props: IProps) => {
                             carrierShipId={carrierShipId}
                             onChangeShipCount={onChangeShipCount}
                             onChangeCarriedShipCount={onChangeCarriedShipCount}
-                            shipWarning={shipWarnings[getShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
+                            shipWarning={shipWarnings[shipSelection.shipDefinition.id]}
                         />
                         {shipSelection.moduleSelection && (
                             <ModuleSelection
@@ -73,7 +72,7 @@ export const ShipCountEditList = (props: IProps) => {
                                         showCost={false}
                                         showReinforcement={showReinforcement}
                                         onChangeCarriedShipCount={onChangeCarriedShipCount}
-                                        shipWarning={shipWarnings[getShipWarningKey(carriedShipSelection.shipDefinition.id, carriedShipSelection.reinforcement)]}
+                                        shipWarning={shipWarnings[carriedShipSelection.shipDefinition.id]}
                                     />
                                 ))}
                             </Stack>
