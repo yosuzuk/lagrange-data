@@ -130,7 +130,8 @@ interface ICreateShipSelectionArgs {
 export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelection {
     const { shipDefinition, usedModules, count, reinforcement, userSettings, maxReinforcement, myListOnly, temporary } = args;
 
-    const moduleSelection = createModuleSelection(shipDefinition, usedModules, userSettings, reinforcement, myListOnly);
+    // TODO uncomment myListOnly once modules can be configured for possession
+    const moduleSelection = createModuleSelection(shipDefinition, usedModules, userSettings, reinforcement, /* myListOnly */ false);
     const carrierCapabilities = createCarrierCapabilities(shipDefinition, moduleSelection);
 
     const maxCount = (reinforcement === null || shipDefinition.type === ShipType.FIGHTER || shipDefinition.type === ShipType.CORVETTE)
@@ -400,6 +401,7 @@ export function applyModules(args: IApplyModulesArgs): IFleetSetup {
                 return shipSelection.reinforcement === 'ally' ? {
                     ...shipSelection,
                     moduleSelection,
+                    carrierCapabilities: createCarrierCapabilities(shipSelection.shipDefinition, moduleSelection),
                 } : shipSelection;
             }
 
@@ -407,6 +409,7 @@ export function applyModules(args: IApplyModulesArgs): IFleetSetup {
             return shipSelection.reinforcement !== 'ally' ? {
                 ...shipSelection,
                 moduleSelection,
+                carrierCapabilities: createCarrierCapabilities(shipSelection.shipDefinition, moduleSelection),
             } : shipSelection;
         }),
     };

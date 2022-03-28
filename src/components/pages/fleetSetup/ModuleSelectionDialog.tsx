@@ -56,9 +56,9 @@ export const ModuleSelectionDialog = (props: IProps) => {
                         const currentValue = getCurrentValue(groupId);
                         const valueForEmptyOption = `${groupId}#none`;
                         return (
-                            <Paper variant="outlined">
+                            <Paper variant="outlined" key={groupId}>
                                 <Box pl={1} pr={1}>
-                                    <FormControl key={groupId}>
+                                    <FormControl>
                                         <RadioGroup
                                             defaultValue="female"
                                             name={`group-${groupId}`}

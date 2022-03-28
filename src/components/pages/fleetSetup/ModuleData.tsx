@@ -2,6 +2,7 @@ import { ReactNode, Fragment, useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -49,9 +50,15 @@ export const ModuleData = (props: IProps) => {
                     }
                     usedModules.push(
                         <Fragment key={moduleUsage.module.id}>
-                            <Typography variant="body2" component="span">
-                                {`${moduleUsage.module.category}${moduleUsage.module.categoryNumber}`}
-                            </Typography>
+                            <Tooltip
+                                arrow={true}
+                                disableFocusListener={true}
+                                title={moduleUsage.module.name}
+                            >
+                                <Typography variant="body2" component="span">
+                                    {`${moduleUsage.module.category}${moduleUsage.module.categoryNumber}`}
+                                </Typography>
+                            </Tooltip>
                         </Fragment>
                     );
                 }

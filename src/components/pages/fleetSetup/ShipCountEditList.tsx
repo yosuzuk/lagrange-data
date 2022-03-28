@@ -74,7 +74,7 @@ export const ShipCountEditList = (props: IProps) => {
                                         reinforcement={carriedShipSelection.reinforcement}
                                         carrierShipId={shipSelection.shipDefinition.id}
                                         showCost={false}
-                                        showReinforcement={showReinforcement}
+                                        showReinforcement={false}
                                         onChangeCarriedShipCount={onChangeCarriedShipCount}
                                         shipWarning={shipWarnings[carriedShipSelection.shipDefinition.id]}
                                     />
