@@ -1,0 +1,6 @@
+export enum Manufacturer {
+    NOMA = 'NOMA',
+    JUPITER_INDUSTRIES = 'JUPITER_INDUSTRIES',
+    ANTONIOS = 'ANTONIOS',
+    DAWN_ACCORD = 'DAWN_ACCORD',
+}

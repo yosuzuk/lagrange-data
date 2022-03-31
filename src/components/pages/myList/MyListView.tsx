@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { memo } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -23,17 +23,6 @@ interface IProps {
 
 export const MyListView = (props: IProps) => {
     const { shipListState, columnConfig } = props;
-
-    const [expandedAccordion, setExpandedAccordion] = useState<IAccordionState>({
-        possessed: true,
-        wished: false,
-        unwishedByUser: false,
-        unwishedByData: false,
-    });
-
-    const handleAccordionChange = (key: keyof IAccordionState) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-        setExpandedAccordion(state => ({ ...state, [key]: isExpanded }));
-    };
 
     return (
         <Stack spacing={1}>

@@ -5,6 +5,7 @@ export interface IColumnConfig {
     cost: boolean;
     operationLimit: boolean;
     source: boolean;
+    manufacturer: boolean;
     weight: boolean;
 }
 

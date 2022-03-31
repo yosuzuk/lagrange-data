@@ -5,6 +5,7 @@ import { translateShipRow, shipRowToSortValue } from '../../utils/shipRowUtils';
 import { translateShipSource, shipSourceToSortValue } from '../../utils/shipSourceUtils';
 import { translateShipType, shipTypeToSortValue } from '../../utils/shipTypeUtils';
 import { ITableColumn } from '../table';
+import { manufacturerToSortValue, translateManufacturer } from '../../utils/manufacturerUtils';
 
 export const shipNameColumn: ITableColumn<IShipDefinition> = {
     id: 'name',
@@ -81,6 +82,16 @@ export const shipSourceColumn: ITableColumn<IShipDefinition> = {
     renderCell: (data: IShipDefinition) => translateShipSource(data.source),
     sortFn: [
         (a, b) => shipSourceToSortValue(a.source) - shipSourceToSortValue(b.source),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    ],
+};
+
+export const manufacturerColumn: ITableColumn<IShipDefinition> = {
+    id: 'manufacturer',
+    renderHeader: () => '製造元',
+    renderCell: (data: IShipDefinition) => translateManufacturer(data.manufacturer),
+    sortFn: [
+        (a, b) => manufacturerToSortValue(a.manufacturer) - manufacturerToSortValue(b.manufacturer),
         (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };

@@ -1,3 +1,4 @@
+import { Manufacturer } from './Manufacturer';
 import { ShipRow } from './ShipRow';
 import { ShipSource } from './ShipSource';
 import { ShipTag } from './ShipTag';
@@ -13,6 +14,7 @@ export interface IShipDefinition {
     row: ShipRow;
     operationLimit: number;
     source: ShipSource;
+    manufacturer: Manufacturer;
     subModelIds?: string[];
     relatedShipIds?: string[];
     baseModelId?: string;

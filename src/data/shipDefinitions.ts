@@ -1,3 +1,4 @@
+import { Manufacturer } from '../types/Manufacturer';
 import { IShipDefinition } from '../types/ShipDefinition';
 import { ShipRow } from '../types/ShipRow';
 import { ShipSource } from '../types/ShipSource';
@@ -31,6 +32,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.AC721_A,
@@ -41,6 +43,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
         relatedShipIds: [ShipId.AC721_TE_A],
     },
@@ -53,6 +56,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A],
     },
@@ -65,6 +69,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A],
@@ -78,6 +83,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.AC721_A, ShipId.AC721_B, ShipId.AC721_D],
     },
     {
@@ -89,6 +95,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.ALDABRA_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -103,6 +110,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.ALDABRA_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -116,7 +124,8 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.BACK,
         operationLimit: 10,
-        source: ShipSource.CITY_TRADE
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.B192_NEWLAND,
@@ -128,6 +137,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
     },
     {
         id: ShipId.BALANCER_ANDERSON,
@@ -139,6 +149,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
     },
     {
         id: ShipId.BOREAS_A,
@@ -148,7 +159,8 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.MIDDLE,
         operationLimit: 10,
-        source: ShipSource.CITY_TRADE
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.BOREAS_B,
@@ -158,7 +170,8 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.MIDDLE,
         operationLimit: 10,
-        source: ShipSource.CITY_TRADE
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.BULLFROG,
@@ -170,6 +183,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
     },
     {
         id: ShipId.CALLISTO_A,
@@ -180,6 +194,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.CALLISTO_B, ShipId.CALLISTO_C],
     },
     {
@@ -191,6 +206,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.CALLISTO_A,
     },
     {
@@ -202,6 +218,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.CALLISTO_A,
     },
     {
@@ -213,6 +230,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.CARILION_B, ShipId.CARILION_C],
     },
     {
@@ -224,6 +242,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.CARILION_A,
     },
     {
@@ -235,6 +254,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.CARILION_A,
     },
     {
@@ -246,6 +266,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         subModelIds: [ShipId.CAS066_B, ShipId.CAS066_C],
     },
     {
@@ -257,6 +278,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.CAS066_A,
     },
     {
@@ -268,6 +290,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.CAS066_A,
         carryCorvette: 2,
     },
@@ -280,6 +303,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
     },
     {
         id: ShipId.CERES_A,
@@ -290,6 +314,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.CERES_B, ShipId.CERES_C],
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -303,6 +328,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.CERES_A,
     },
     {
@@ -314,6 +340,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.CERES_A,
     },
     {
@@ -325,6 +352,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.CHIMERA_B, ShipId.CHIMERA_C],
     },
     {
@@ -336,6 +364,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.CHIMERA_A,
     },
     {
@@ -347,6 +376,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.CHIMERA_A,
     },
     {
@@ -358,6 +388,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.CONAMARA_CHAOS_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -372,6 +403,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.CONAMARA_CHAOS_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -386,6 +418,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         modules: [
             {
                 id: 'M1',
@@ -479,7 +512,8 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.BACK,
         operationLimit: 8,
-        source: ShipSource.CITY_TRADE
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.CRASHER_B,
@@ -490,6 +524,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         carryFighter: 3,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER
     },
@@ -502,6 +537,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.CV_M011_A,
@@ -512,6 +548,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         subModelIds: [ShipId.CV_M011_B],
     },
     {
@@ -523,6 +560,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.CV_M011_A,
     },
     {
@@ -534,6 +572,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -547,6 +586,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.CV3000_TE],
         modules: [
             {
@@ -618,6 +658,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
         relatedShipIds: [ShipId.CV3000],
         modules: [
@@ -647,6 +688,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.ERIS_I_B, ShipId.ERIS_I_C],
     },
     {
@@ -658,6 +700,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.ERIS_I_A,
     },
     {
@@ -669,6 +712,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.ERIS_I_A,
     },
     {
@@ -680,6 +724,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         modules: [
             {
                 id: 'M1',
@@ -766,6 +811,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         subModelIds: [ShipId.FG300_B, ShipId.FG300_C],
     },
     {
@@ -777,6 +823,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.FG300_A,
     },
     {
@@ -788,6 +835,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.FG300_A,
     },
     {
@@ -799,6 +847,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.GUARDIAN_A,
@@ -809,6 +858,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.GUARDIAN_B, ShipId.GUARDIAN_C],
     },
     {
@@ -820,6 +870,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.GUARDIAN_A,
         carryCorvette: 2,
     },
@@ -832,6 +883,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.GUARDIAN_A,
     },
     {
@@ -843,6 +895,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.HELIOS_TE_A],
     },
     {
@@ -854,6 +907,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.HELIOS_A],
     },
     {
@@ -865,6 +919,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 4,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.IO_A,
@@ -875,6 +930,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.IO_B, ShipId.IO_C],
     },
     {
@@ -886,6 +942,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.IO_A,
     },
     {
@@ -897,6 +954,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.IO_A,
     },
     {
@@ -908,6 +966,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.JAEGER_B],
         carryCorvette: 4,
         tags: [
@@ -923,6 +982,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.JAEGER_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -938,6 +998,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
     },
     {
         id: ShipId.KCCPV2_0_A,
@@ -948,6 +1009,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         subModelIds: [ShipId.KCCPV2_0_B, ShipId.KCCPV2_0_C, ShipId.KCCPV2_0_D],
     },
     {
@@ -959,6 +1021,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.KCCPV2_0_A,
     },
     {
@@ -970,6 +1033,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.KCCPV2_0_A,
     },
     {
@@ -981,6 +1045,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         baseModelId: ShipId.KCCPV2_0_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.LARGE_FIGHTER,
@@ -994,6 +1059,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
     },
     {
@@ -1005,6 +1071,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
@@ -1016,6 +1083,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
@@ -1027,6 +1095,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.MARE_NUBIUM_B],
     },
     {
@@ -1038,6 +1107,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.MARE_NUBIUM_A,
     },
     {
@@ -1049,6 +1119,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.MARE_SERENITATIS_B, ShipId.MARE_SERENITATIS_C],
     },
     {
@@ -1060,6 +1131,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
@@ -1071,6 +1143,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
@@ -1082,6 +1155,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.MARE_TRANQUILLITATIS_B, ShipId.MARE_TRANQUILLITATIS_C],
     },
     {
@@ -1093,6 +1167,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
@@ -1104,6 +1179,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
@@ -1115,6 +1191,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         relatedShipIds: [
             ShipId.MARSHALL_CRUX_TE_A1,
             ShipId.MARSHALL_CRUX_TE_A1_B1,
@@ -1193,6 +1270,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.ANTONIOS,
         relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
@@ -1221,6 +1299,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.ANTONIOS,
         relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
@@ -1248,6 +1327,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.ANTONIOS,
         relatedShipIds: [ShipId.MARSHALL_CRUX],
         staticModules: true,
         modules: [
@@ -1285,6 +1365,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -1298,6 +1379,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.NEBULA_CHASER_B],
     },
     {
@@ -1309,6 +1391,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.NEBULA_CHASER_A,
     },
     {
@@ -1320,6 +1403,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA,
         relatedShipIds: [ShipId.NOMA_330_TE_A],
     },
     {
@@ -1331,6 +1415,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.NOMA,
         relatedShipIds: [ShipId.NOMA_330_A],
     },
     {
@@ -1342,6 +1427,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.NOMA_M470_B, ShipId.NOMA_M470_C],
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1354,6 +1440,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.NOMA_M470_A,
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1366,6 +1453,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.NOMA_M470_A,
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1378,6 +1466,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.NOMA,
         relatedShipIds: [
             ShipId.NOMA_M470_A,
             ShipId.NOMA_M470_B,
@@ -1393,6 +1482,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.PREDATOR_B, ShipId.PREDATOR_C],
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1406,6 +1496,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1419,6 +1510,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1432,6 +1524,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         subModelIds: [ShipId.QUAOAR_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -1446,6 +1539,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
         baseModelId: ShipId.QUAOAR_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -1460,6 +1554,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
     },
     {
         id: ShipId.RAGER_A,
@@ -1470,6 +1565,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.RAGER_B],
     },
     {
@@ -1481,6 +1577,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.RAGER_A],
     },
     {
@@ -1492,6 +1589,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.RELIAT_B, ShipId.RELIAT_C],
     },
     {
@@ -1503,6 +1601,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.RELIAT_A,
     },
     {
@@ -1514,6 +1613,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.RELIAT_A,
     },
     {
@@ -1525,6 +1625,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.RUBY_B, ShipId.RUBY_C],
     },
     {
@@ -1536,6 +1637,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.RUBY_A,
     },
     {
@@ -1547,6 +1649,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.RUBY_A,
     },
     {
@@ -1559,6 +1662,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
     },
     {
         id: ShipId.SC002,
@@ -1570,6 +1674,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.SILENT_ASSASSIN,
@@ -1580,6 +1685,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
     },
     {
         id: ShipId.SOLAR_WHALE,
@@ -1590,6 +1696,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         modules: [
             {
                 id: 'M1',
@@ -1671,6 +1778,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         modules: [
             {
                 id: 'M1',
@@ -1753,6 +1861,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
     },
     {
         id: ShipId.ST59,
@@ -1763,6 +1872,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 6,
         source: ShipSource.STARTER_SHIP,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         modules: [
             {
                 id: 'M1',
@@ -1851,6 +1961,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.STAR_SWEEPER_TE_A],
     },
     {
@@ -1862,6 +1973,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.STAR_SWEEPER_A],
     },
     {
@@ -1874,6 +1986,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
     },
     {
         id: ShipId.STRIX_A100,
@@ -1885,6 +1998,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
     },
     {
         id: ShipId.TAURUS_A,
@@ -1895,6 +2009,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.TAURUS_B, ShipId.TAURUS_C],
     },
     {
@@ -1906,6 +2021,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.TAURUS_A,
     },
     {
@@ -1917,6 +2033,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.TAURUS_A,
     },
     {
@@ -1928,6 +2045,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.TUNDRA_B],
     },
     {
@@ -1939,6 +2057,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.TUNDRA_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1953,6 +2072,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
     },
     {
         id: ShipId.VITAS_B010,
@@ -1964,6 +2084,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
     },
     {
         id: ShipId.VOID_ELFIN,
@@ -1974,6 +2095,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
     },
     {
         id: ShipId.WILD_FIRE_TE,
@@ -1984,6 +2106,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
+        manufacturer: Manufacturer.DAWN_ACCORD, // TODO check
     },
     {
         id: ShipId.WINGED_HUSSAR_A,
@@ -1994,6 +2117,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         subModelIds: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
     },
     {
@@ -2005,6 +2129,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
@@ -2016,6 +2141,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.ANTONIOS,
         baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
@@ -2027,6 +2153,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         subModelIds: [ShipId.XENO_STINGER_B],
     },
     {
@@ -2038,6 +2165,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.NOMA,
         baseModelId: ShipId.XENO_STINGER_A,
     },
     {
@@ -2049,6 +2177,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.XT_8_B],
     },
     {
@@ -2060,6 +2189,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.XT_8_A],
     },
     {
@@ -2071,6 +2201,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.MIDDLE,
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
     {
         id: ShipId.XT_20_A,
@@ -2081,6 +2212,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 6,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         carryCorvette: 4,
         relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
     },
@@ -2093,6 +2225,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 6,
         source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
         carryFighter: 4,
         carryFighterType: ShipSubType.LARGE_FIGHTER,
         relatedShipIds: [ShipId.XT_20_A, ShipId.XT_20_C],
@@ -2106,6 +2239,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.BACK,
         operationLimit: 6,
         source: ShipSource.UNKNOWN, // TODO check
+        manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
     },
 ];

@@ -10,6 +10,8 @@ import { PossessionState } from '../../userSettings/types/PossessionState';
 import { WishState } from '../../userSettings/types/WishState';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { ShipSource } from '../../types/ShipSource';
+import { Manufacturer } from '../../types/Manufacturer';
+import { translateManufacturer } from '../../utils/manufacturerUtils';
 
 export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
     return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
@@ -25,15 +27,24 @@ export function createShipTypeFilterOptions(specifiedShipTypes: ShipType[] | nul
     }));
 }
 
+export function createManufacturerFilterOptions(specificManufacturer: Manufacturer[] | null): IFilterOption[] {
+    return (specificManufacturer ?? [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA, Manufacturer.ANTONIOS, Manufacturer.DAWN_ACCORD]).map(manufacturer => ({
+        filterKey: manufacturer as Manufacturer,
+        name: translateManufacturer(manufacturer),
+    }));
+}
+
 interface ICreateShipFilterOptionsArgs {
     shipRows?: ShipRow[],
     shipTypes?: ShipType[],
+    manufacturer?: Manufacturer[],
 }
 
 export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {}): IFilterOption[] {
     return [
         ...createShipRowFilterOptions(args.shipRows ?? null),
         ...createShipTypeFilterOptions(args.shipTypes ?? null),
+        ...createManufacturerFilterOptions(args.manufacturer ?? null),
     ];
 }
 
@@ -46,6 +57,10 @@ export function createInitialShipFilterState(): ShipFilterState {
             ...acc,
             [type as ShipType]: false,
         }), {}),
+        [Manufacturer.JUPITER_INDUSTRIES]: false,
+        [Manufacturer.NOMA]: false,
+        [Manufacturer.ANTONIOS]: false,
+        [Manufacturer.DAWN_ACCORD]: false,
     } as ShipFilterState;
 }
 
@@ -64,6 +79,9 @@ export function applyShipFilter(shipDefinitions: IShipDefinition[], filter: Ship
     }
     if (isShipTypeFiltered(filter)) {
         result = result.filter(shipDefinition => filter[shipDefinition.type] === true);
+    }
+    if (isManufacturerFiltered(filter)) {
+        result = result.filter(shipDefinition => filter[shipDefinition.manufacturer] === true);
     }
     return result;
 }
@@ -90,6 +108,10 @@ function isRowFiltered(filter: ShipFilterState): boolean {
 
 function isShipTypeFiltered(filter: ShipFilterState): boolean {
     return Object.keys(shipTypes).some(type => filter[type as ShipType] === true);
+}
+
+function isManufacturerFiltered(filter: ShipFilterState): boolean {
+    return [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA, Manufacturer.ANTONIOS, Manufacturer.DAWN_ACCORD].some(row => filter[row] === true);
 }
 
 export function extractPossesssedShips(

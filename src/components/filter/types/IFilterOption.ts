@@ -1,7 +1,8 @@
+import { Manufacturer } from '../../../types/Manufacturer';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipType } from '../../../types/ShipType';
 
 export interface IFilterOption {
-    filterKey: ShipType | ShipRow;
+    filterKey: ShipType | ShipRow | Manufacturer;
     name: string;
 }

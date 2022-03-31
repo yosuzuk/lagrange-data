@@ -8,6 +8,7 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         cost: false,
         operationLimit: false,
         source: false,
+        manufacturer: false,
         weight: false,
         ...flags,
     };
@@ -34,6 +35,10 @@ export function createColumnConfigOptions(): IColumnConfigOption[] {
         {
             columnKey: 'source',
             name: '入手方法',
+        },
+        {
+            columnKey: 'manufacturer',
+            name: '製造元',
         },
         {
             columnKey: 'weight',
