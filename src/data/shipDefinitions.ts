@@ -1,4 +1,6 @@
 import { Manufacturer } from '../types/Manufacturer';
+import { ResearchStrategyType } from '../types/ResearchStrategyType';
+import { ResearchTacticType } from '../types/ResearchTacticType';
 import { IShipDefinition } from '../types/ShipDefinition';
 import { ShipRow } from '../types/ShipRow';
 import { ShipSource } from '../types/ShipSource';
@@ -18,6 +20,7 @@ import { ShipId } from './shipIds';
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
     },
 */
 
@@ -44,6 +47,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
         relatedShipIds: [ShipId.AC721_TE_A],
     },
@@ -57,6 +63,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A],
     },
@@ -70,6 +79,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A],
@@ -96,6 +108,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.ALDABRA_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -111,6 +126,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.ALDABRA_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -138,6 +156,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.BALANCER_ANDERSON,
@@ -150,6 +171,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.BOREAS_A,
@@ -184,6 +208,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.CALLISTO_A,
@@ -195,6 +222,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.CALLISTO_B, ShipId.CALLISTO_C],
     },
     {
@@ -207,6 +237,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.CALLISTO_A,
     },
     {
@@ -219,6 +252,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.CALLISTO_A,
     },
     {
@@ -231,6 +267,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.CARILION_B, ShipId.CARILION_C],
     },
     {
@@ -243,6 +282,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CARILION_A,
     },
     {
@@ -255,6 +297,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CARILION_A,
     },
     {
@@ -267,6 +312,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.CAS066_B, ShipId.CAS066_C],
     },
     {
@@ -279,6 +327,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CAS066_A,
     },
     {
@@ -291,6 +342,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [],
+        researchTacticTypes: [],
         baseModelId: ShipId.CAS066_A,
         carryCorvette: 2,
     },
@@ -304,6 +358,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.CERES_A,
@@ -315,6 +372,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         subModelIds: [ShipId.CERES_B, ShipId.CERES_C],
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -329,6 +389,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.CERES_A,
     },
     {
@@ -341,6 +404,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.CERES_A,
     },
     {
@@ -353,6 +419,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.CHIMERA_B, ShipId.CHIMERA_C],
     },
     {
@@ -365,6 +434,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CHIMERA_A,
     },
     {
@@ -377,6 +449,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CHIMERA_A,
     },
     {
@@ -389,6 +464,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.CONAMARA_CHAOS_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -404,6 +482,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CONAMARA_CHAOS_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -419,6 +500,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [
             {
                 id: 'M1',
@@ -538,6 +622,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.CV_M011_A,
@@ -549,6 +636,14 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.STRATEGY_AND_SUPPORT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.CV_M011_B],
     },
     {
@@ -561,6 +656,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CV_M011_A,
     },
     {
@@ -573,6 +671,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.STRATEGY_AND_SUPPORT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE
+        ],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -587,6 +692,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         relatedShipIds: [ShipId.CV3000_TE],
         modules: [
             {
@@ -689,6 +797,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.ERIS_I_B, ShipId.ERIS_I_C],
     },
     {
@@ -701,6 +812,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.ERIS_I_A,
     },
     {
@@ -713,6 +827,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.ERIS_I_A,
     },
     {
@@ -725,6 +842,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [
             {
                 id: 'M1',
@@ -812,6 +932,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.FG300_B, ShipId.FG300_C],
     },
     {
@@ -824,6 +947,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.FG300_A,
     },
     {
@@ -836,6 +962,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.FG300_A,
     },
     {
@@ -859,6 +988,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.GUARDIAN_B, ShipId.GUARDIAN_C],
     },
     {
@@ -871,6 +1003,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.GUARDIAN_A,
         carryCorvette: 2,
     },
@@ -884,6 +1019,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.GUARDIAN_A,
     },
     {
@@ -931,6 +1069,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.IO_B, ShipId.IO_C],
     },
     {
@@ -943,6 +1084,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.IO_A,
     },
     {
@@ -955,6 +1099,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.IO_A,
     },
     {
@@ -967,6 +1114,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         subModelIds: [ShipId.JAEGER_B],
         carryCorvette: 4,
         tags: [
@@ -983,6 +1133,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.JAEGER_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -999,6 +1152,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.KCCPV2_0_A,
@@ -1010,6 +1166,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.KCCPV2_0_B, ShipId.KCCPV2_0_C, ShipId.KCCPV2_0_D],
     },
     {
@@ -1022,6 +1181,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.KCCPV2_0_A,
     },
     {
@@ -1034,6 +1196,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.KCCPV2_0_A,
     },
     {
@@ -1046,6 +1211,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 12,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [],
+        researchTacticTypes: [],
         baseModelId: ShipId.KCCPV2_0_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.LARGE_FIGHTER,
@@ -1060,6 +1228,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
     },
     {
@@ -1072,6 +1243,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
@@ -1084,6 +1258,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
     },
     {
@@ -1096,6 +1273,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [],
         subModelIds: [ShipId.MARE_NUBIUM_B],
     },
     {
@@ -1108,6 +1288,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [],
+        researchTacticTypes: [],
         baseModelId: ShipId.MARE_NUBIUM_A,
     },
     {
@@ -1120,6 +1303,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.MARE_SERENITATIS_B, ShipId.MARE_SERENITATIS_C],
     },
     {
@@ -1132,6 +1318,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
@@ -1144,6 +1333,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_SERENITATIS_A,
     },
     {
@@ -1156,6 +1348,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.MARE_TRANQUILLITATIS_B, ShipId.MARE_TRANQUILLITATIS_C],
     },
     {
@@ -1168,6 +1363,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
@@ -1180,6 +1378,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
     },
     {
@@ -1192,6 +1393,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         relatedShipIds: [
             ShipId.MARSHALL_CRUX_TE_A1,
             ShipId.MARSHALL_CRUX_TE_A1_B1,
@@ -1366,6 +1570,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -1380,6 +1587,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.NEBULA_CHASER_B],
     },
     {
@@ -1392,6 +1602,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.NEBULA_CHASER_A,
     },
     {
@@ -1428,6 +1641,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [],
         subModelIds: [ShipId.NOMA_M470_B, ShipId.NOMA_M470_C],
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1441,6 +1657,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.NOMA_M470_A,
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1454,6 +1673,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.NOMA_M470_A,
         relatedShipIds: [ShipId.NOMA_M470_TE_A],
     },
@@ -1483,6 +1705,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         subModelIds: [ShipId.PREDATOR_B, ShipId.PREDATOR_C],
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1497,6 +1722,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1511,6 +1739,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.PREDATOR_A,
         carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -1525,6 +1756,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.QUAOAR_B],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -1540,6 +1774,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.QUAOAR_A,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -1555,6 +1792,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.STRATEGY_AND_SUPPORT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.RAGER_A,
@@ -1590,6 +1834,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.RELIAT_B, ShipId.RELIAT_C],
     },
     {
@@ -1602,6 +1849,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.RELIAT_A,
     },
     {
@@ -1614,6 +1864,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.RELIAT_A,
     },
     {
@@ -1626,6 +1879,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.RUBY_B, ShipId.RUBY_C],
     },
     {
@@ -1638,6 +1894,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.RUBY_A,
     },
     {
@@ -1650,6 +1909,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.RUBY_A,
     },
     {
@@ -1663,6 +1925,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.SC002,
@@ -1675,6 +1940,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.STRATEGY_AND_SUPPORT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.SILENT_ASSASSIN,
@@ -1686,6 +1958,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.SOLAR_WHALE,
@@ -1697,6 +1972,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 5,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         modules: [
             {
                 id: 'M1',
@@ -1779,6 +2057,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [
             {
                 id: 'M1',
@@ -1862,6 +2143,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.ST59,
@@ -1873,6 +2157,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.STARTER_SHIP,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        researchManufacturer: Manufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [
             {
                 id: 'M1',
@@ -1987,6 +2274,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.STRIX_A100,
@@ -1999,6 +2293,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.TAURUS_A,
@@ -2010,6 +2307,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.TAURUS_B, ShipId.TAURUS_C],
     },
     {
@@ -2022,6 +2322,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
     },
     {
@@ -2034,6 +2337,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
     },
     {
@@ -2046,6 +2352,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         subModelIds: [ShipId.TUNDRA_B],
     },
     {
@@ -2058,6 +2367,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.TUNDRA_A,
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -2073,6 +2385,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.VITAS_B010,
@@ -2085,6 +2400,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.VOID_ELFIN,
@@ -2096,6 +2418,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.WILD_FIRE_TE,
@@ -2118,6 +2447,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
     },
     {
@@ -2130,6 +2462,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
@@ -2142,6 +2477,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchManufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.WINGED_HUSSAR_A,
     },
     {
@@ -2154,6 +2492,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [],
         subModelIds: [ShipId.XENO_STINGER_B],
     },
     {
@@ -2166,6 +2507,9 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.XENO_STINGER_A,
     },
     {

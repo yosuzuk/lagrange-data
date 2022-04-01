@@ -1,0 +1,4 @@
+export enum ResearchTacticType {
+    PROJECTILE_WEAPONS = 'PROJECTILE_WEAPONS',
+    DIRECT_FIRE_WEAPONS = 'DIRECT_FIRE_WEAPONS',
+}
