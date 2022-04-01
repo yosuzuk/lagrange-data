@@ -2106,7 +2106,7 @@ export const shipDefinitions: IShipDefinition[] = [
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
-        manufacturer: Manufacturer.DAWN_ACCORD, // TODO check
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
     },
     {
         id: ShipId.WINGED_HUSSAR_A,
