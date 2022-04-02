@@ -30,6 +30,9 @@ export const MyListEditActionBar = (props: IProps) => {
                     key="filter"
                     filter={shipFilter}
                     onChange={onFilter}
+                    researchManufacturer={false}
+                    researchStrategyTypes={false}
+                    researchTacticTypes={false}
                     buttonProps={buttonProps}
                 />
             )}

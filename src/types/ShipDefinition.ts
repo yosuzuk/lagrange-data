@@ -1,4 +1,5 @@
 import { Manufacturer } from './Manufacturer';
+import { ResearchManufacturer } from './ResearchManufacturer';
 import { ResearchStrategyType } from './ResearchStrategyType';
 import { ResearchTacticType } from './ResearchTacticType';
 import { ShipRow } from './ShipRow';
@@ -17,7 +18,7 @@ export interface IShipDefinition {
     operationLimit: number;
     source: ShipSource;
     manufacturer: Manufacturer;
-    researchManufacturer?: Manufacturer;
+    researchManufacturer?: ResearchManufacturer;
     researchStrategyTypes?: ResearchStrategyType[];
     researchTacticTypes?: ResearchTacticType[];
     subModelIds?: string[];

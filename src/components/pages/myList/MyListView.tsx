@@ -9,13 +9,6 @@ import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 
 const MemoizedShipDataTable = memo(ShipDataTable);
 
-interface IAccordionState {
-    possessed: boolean;
-    wished: boolean;
-    unwishedByUser: boolean;
-    unwishedByData: boolean;
-}
-
 interface IProps {
     shipListState: IShipListState;
     columnConfig: IColumnConfig;

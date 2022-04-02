@@ -9,6 +9,9 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         operationLimit: false,
         source: false,
         manufacturer: false,
+        researchManufacturer: false,
+        researchStrategyType: false,
+        researchTacticType: false,
         weight: false,
         ...flags,
     };
@@ -38,7 +41,19 @@ export function createColumnConfigOptions(): IColumnConfigOption[] {
         },
         {
             columnKey: 'manufacturer',
-            name: '製造元',
+            name: '企業',
+        },
+        {
+            columnKey: 'researchManufacturer',
+            name: '委託企業（研究協定）',
+        },
+        {
+            columnKey: 'researchStrategyType',
+            name: '戦略能力（研究協定）',
+        },
+        {
+            columnKey: 'researchTacticType',
+            name: '戦術性能（研究協定）',
         },
         {
             columnKey: 'weight',

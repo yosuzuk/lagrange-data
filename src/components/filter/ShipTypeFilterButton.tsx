@@ -18,6 +18,9 @@ import { createShipFilterOptions, resetFilterState } from './filterUtils';
 import { getMaxPopperHeight } from '../../utils/domUtils';
 import { ShipType } from '../../types/ShipType';
 import { ShipRow } from '../../types/ShipRow';
+import { ResearchManufacturer } from '../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../types/ResearchTacticType';
 
 interface IProps {
     filter: ShipFilterState;
@@ -25,16 +28,22 @@ interface IProps {
     popperProps?: Partial<PopperProps>;
     shipTypes?: ShipType[];
     shipRows?: ShipRow[];
+    researchManufacturer?: ResearchManufacturer[] | false;
+    researchStrategyTypes?: ResearchStrategyType[] | false;
+    researchTacticTypes?: ResearchTacticType[] | false;
     buttonProps? : ButtonProps;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange, popperProps, shipRows, shipTypes, buttonProps } = props;
+    const { onChange, popperProps, shipRows, shipTypes, researchManufacturer, researchStrategyTypes, researchTacticTypes, buttonProps } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
     const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions({
         shipRows,
         shipTypes,
+        researchManufacturer,
+        researchStrategyTypes,
+        researchTacticTypes,
     }));
     const anchorRef = useRef<HTMLDivElement>(null);
 

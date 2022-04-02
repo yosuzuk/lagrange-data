@@ -1,6 +1,6 @@
 import { Manufacturer } from '../types/Manufacturer';
 
-// 委託企業
+// 企業
 
 export function translateManufacturer(manufacturer: Manufacturer): string {
     switch (manufacturer) {

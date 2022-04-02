@@ -12,6 +12,12 @@ import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../ut
 import { ShipSource } from '../../types/ShipSource';
 import { Manufacturer } from '../../types/Manufacturer';
 import { translateManufacturer } from '../../utils/manufacturerUtils';
+import { ResearchManufacturer } from '../../types/ResearchManufacturer';
+import { translateResearchManufacturer } from '../../utils/researchManufacturerUtils';
+import { translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
+import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
+import { ResearchStrategyType } from '../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../types/ResearchTacticType';
 
 export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
     return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
@@ -34,10 +40,34 @@ export function createManufacturerFilterOptions(specificManufacturer: Manufactur
     }));
 }
 
+export function createResearchManufacturerFilterOptions(specificResearchManufacturer: ResearchManufacturer[] | null): IFilterOption[] {
+    return (specificResearchManufacturer ?? [ResearchManufacturer.JUPITER_INDUSTRIES, ResearchManufacturer.NOMA_SHIPPING_GROUP, ResearchManufacturer.ANTONIOS_CONSORTIUM, ResearchManufacturer.DAWN_ACCORD]).map(manufacturer => ({
+        filterKey: manufacturer as ResearchManufacturer,
+        name: `委託企業：${translateResearchManufacturer(manufacturer)}`,
+    }));
+}
+
+export function createResearchStrategyTypeFilterOptions(specificResearchStrategyTypes: ResearchStrategyType[] | null): IFilterOption[] {
+    return (specificResearchStrategyTypes ?? [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE]).map(type => ({
+        filterKey: type as ResearchStrategyType,
+        name: `戦略能力：${translateResearchStrategyType(type)}`,
+    }));
+}
+
+export function createResearchTacticTypeFilterOptions(specificResearchTacticTypes: ResearchTacticType[] | null): IFilterOption[] {
+    return (specificResearchTacticTypes ?? [ResearchTacticType.PROJECTILE_WEAPONS, ResearchTacticType.DIRECT_FIRE_WEAPONS]).map(type => ({
+        filterKey: type as ResearchTacticType,
+        name: `戦術性能：${translateResearchTacticType(type)}`,
+    }));
+}
+
 interface ICreateShipFilterOptionsArgs {
     shipRows?: ShipRow[],
     shipTypes?: ShipType[],
     manufacturer?: Manufacturer[],
+    researchManufacturer?: ResearchManufacturer[] | false,
+    researchStrategyTypes?: ResearchStrategyType[] | false,
+    researchTacticTypes?: ResearchTacticType[] | false,
 }
 
 export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {}): IFilterOption[] {
@@ -45,6 +75,9 @@ export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {})
         ...createShipRowFilterOptions(args.shipRows ?? null),
         ...createShipTypeFilterOptions(args.shipTypes ?? null),
         ...createManufacturerFilterOptions(args.manufacturer ?? null),
+        ...(args.researchManufacturer === false ? [] : createResearchManufacturerFilterOptions(args.researchManufacturer ?? null)),
+        ...(args.researchStrategyTypes === false ? [] : createResearchStrategyTypeFilterOptions(args.researchStrategyTypes ?? null)),
+        ...(args.researchTacticTypes === false ? [] : createResearchTacticTypeFilterOptions(args.researchTacticTypes ?? null)),
     ];
 }
 
@@ -61,6 +94,16 @@ export function createInitialShipFilterState(): ShipFilterState {
         [Manufacturer.NOMA_SHIPPING_GROUP]: false,
         [Manufacturer.ANTONIOS_CONSORTIUM]: false,
         [Manufacturer.DAWN_ACCORD]: false,
+        [ResearchManufacturer.JUPITER_INDUSTRIES]: false,
+        [ResearchManufacturer.NOMA_SHIPPING_GROUP]: false,
+        [ResearchManufacturer.ANTONIOS_CONSORTIUM]: false,
+        [ResearchManufacturer.DAWN_ACCORD]: false,
+        [ResearchStrategyType.OUTSTANDING_FIREPOWER]: false,
+        [ResearchStrategyType.SUSTAINED_COMBAT]: false,
+        [ResearchStrategyType.STRATEGY_AND_SUPPORT]: false,
+        [ResearchStrategyType.FIGHTER_AND_CORVETTE]: false,
+        [ResearchTacticType.PROJECTILE_WEAPONS]: false,
+        [ResearchTacticType.DIRECT_FIRE_WEAPONS]: false,
     } as ShipFilterState;
 }
 
@@ -82,6 +125,15 @@ export function applyShipFilter(shipDefinitions: IShipDefinition[], filter: Ship
     }
     if (isManufacturerFiltered(filter)) {
         result = result.filter(shipDefinition => filter[shipDefinition.manufacturer] === true);
+    }
+    if (isResearchManufacturerFiltered(filter)) {
+        result = result.filter(shipDefinition => shipDefinition.researchManufacturer && filter[shipDefinition.researchManufacturer] === true);
+    }
+    if (isResearchStrategyTypeFiltered(filter)) {
+        result = result.filter(shipDefinition => (shipDefinition.researchStrategyTypes ?? []).some(type => filter[type] === true));
+    }
+    if (isResearchTacticTypeFiltered(filter)) {
+        result = result.filter(shipDefinition => (shipDefinition.researchTacticTypes ?? []).some(type => filter[type] === true));
     }
     return result;
 }
@@ -111,7 +163,34 @@ function isShipTypeFiltered(filter: ShipFilterState): boolean {
 }
 
 function isManufacturerFiltered(filter: ShipFilterState): boolean {
-    return [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA_SHIPPING_GROUP, Manufacturer.ANTONIOS_CONSORTIUM, Manufacturer.DAWN_ACCORD].some(row => filter[row] === true);
+    return [
+        Manufacturer.JUPITER_INDUSTRIES,
+        Manufacturer.NOMA_SHIPPING_GROUP,
+        Manufacturer.ANTONIOS_CONSORTIUM,
+        Manufacturer.DAWN_ACCORD,
+    ].some(manufacturer => filter[manufacturer] === true);
+}
+
+function isResearchManufacturerFiltered(filter: ShipFilterState): boolean {
+    return [
+        ResearchManufacturer.JUPITER_INDUSTRIES,
+        ResearchManufacturer.NOMA_SHIPPING_GROUP,
+        ResearchManufacturer.ANTONIOS_CONSORTIUM,
+        ResearchManufacturer.DAWN_ACCORD,
+    ].some(manufacturer => filter[manufacturer] === true);
+}
+
+function isResearchStrategyTypeFiltered(filter: ShipFilterState): boolean {
+    return [
+        ResearchStrategyType.OUTSTANDING_FIREPOWER,
+        ResearchStrategyType.SUSTAINED_COMBAT,
+        ResearchStrategyType.STRATEGY_AND_SUPPORT,
+        ResearchStrategyType.FIGHTER_AND_CORVETTE,
+    ].some(type => filter[type] === true);
+}
+
+function isResearchTacticTypeFiltered(filter: ShipFilterState): boolean {
+    return [ResearchTacticType.PROJECTILE_WEAPONS, ResearchTacticType.DIRECT_FIRE_WEAPONS].some(type => filter[type] === true);
 }
 
 export function extractPossesssedShips(

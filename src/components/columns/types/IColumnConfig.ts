@@ -6,6 +6,9 @@ export interface IColumnConfig {
     operationLimit: boolean;
     source: boolean;
     manufacturer: boolean;
+    researchManufacturer: boolean;
+    researchStrategyType: boolean;
+    researchTacticType: boolean;
     weight: boolean;
 }
 

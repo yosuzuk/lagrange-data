@@ -2,7 +2,19 @@ import { useEffect, useMemo } from 'react';
 import { Table, ITableData, useTable, ITableColumn } from '../../table';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
-import { createShipNameLinkColumn, shipTypeColumn, shipRowColumn, shipCostColumn, shipOperationLimitColumn, shipSourceColumn, manufacturerColumn, shipWeightColumn } from '../../columns/colums';
+import {
+    createShipNameLinkColumn,
+    shipTypeColumn,
+    shipRowColumn,
+    shipCostColumn,
+    shipOperationLimitColumn,
+    shipSourceColumn,
+    manufacturerColumn,
+    researchManufacturerColumn,
+    researchStrategyTypeColumn,
+    researchTacticTypeColumn,
+    shipWeightColumn,
+} from '../../columns/colums';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 
 interface IProps {
@@ -26,6 +38,9 @@ export const ShipDataTable = (props: IProps) => {
         ...columnConfig.operationLimit ? [shipOperationLimitColumn] : [],
         ...columnConfig.source ? [shipSourceColumn] : [],
         ...columnConfig.manufacturer ? [manufacturerColumn] : [],
+        ...columnConfig.researchManufacturer ? [researchManufacturerColumn] : [],
+        ...columnConfig.researchStrategyType ? [researchStrategyTypeColumn] : [],
+        ...columnConfig.researchTacticType ? [researchTacticTypeColumn] : [],
         ...columnConfig.weight ? [shipWeightColumn] : [],
     ], [columnConfig, openShipDetailDialog]);
 

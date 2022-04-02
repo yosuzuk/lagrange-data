@@ -6,6 +6,9 @@ import { translateShipSource, shipSourceToSortValue } from '../../utils/shipSour
 import { translateShipType, shipTypeToSortValue } from '../../utils/shipTypeUtils';
 import { ITableColumn } from '../table';
 import { manufacturerToSortValue, translateManufacturer } from '../../utils/manufacturerUtils';
+import { researchStrategyTypeToSortValue, translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
+import { researchTacticTypeToSortValue, translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
+import { translateResearchManufacturer, researchManufacturerToSortValue } from '../../utils/researchManufacturerUtils';
 
 export const shipNameColumn: ITableColumn<IShipDefinition> = {
     id: 'name',
@@ -88,10 +91,60 @@ export const shipSourceColumn: ITableColumn<IShipDefinition> = {
 
 export const manufacturerColumn: ITableColumn<IShipDefinition> = {
     id: 'manufacturer',
-    renderHeader: () => '製造元',
+    renderHeader: () => '企業',
     renderCell: (data: IShipDefinition) => translateManufacturer(data.manufacturer),
     sortFn: [
         (a, b) => manufacturerToSortValue(a.manufacturer) - manufacturerToSortValue(b.manufacturer),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    ],
+};
+
+export const researchManufacturerColumn: ITableColumn<IShipDefinition> = {
+    id: 'researchManufacturer',
+    renderHeader: () => '委託企業',
+    renderCell: (data: IShipDefinition) => data.researchManufacturer ? translateResearchManufacturer(data.researchManufacturer) : null,
+    sortFn: [
+        (a, b) => (a.researchManufacturer ? researchManufacturerToSortValue(a.researchManufacturer) : 0) - (b.researchManufacturer ? researchManufacturerToSortValue(b.researchManufacturer) : 0),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    ],
+};
+
+export const researchStrategyTypeColumn: ITableColumn<IShipDefinition> = {
+    id: 'researchStrategyType',
+    renderHeader: () => '戦略能力',
+    renderCell: (data: IShipDefinition) => (
+        <>
+            {(data.researchStrategyTypes ?? []).map(researchStrategyType => (
+                <Typography variant="body2" key={researchStrategyType}>
+                    {translateResearchStrategyType(researchStrategyType)}
+                </Typography>
+            ))}
+        </>
+    ),
+    sortFn: [
+        (a, b) => (a.researchStrategyTypes?.[0] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[0]) : 0) - (b.researchStrategyTypes?.[0] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[0]) : 0),
+        (a, b) => (a.researchStrategyTypes?.[1] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[1]) : 0) - (b.researchStrategyTypes?.[1] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[1]) : 0),
+        (a, b) => (a.researchStrategyTypes?.[2] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[2]) : 0) - (b.researchStrategyTypes?.[2] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[2]) : 0),
+        (a, b) => (a.researchStrategyTypes?.[3] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[3]) : 0) - (b.researchStrategyTypes?.[3] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[3]) : 0),
+        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    ],
+};
+
+export const researchTacticTypeColumn: ITableColumn<IShipDefinition> = {
+    id: 'researchTacticType',
+    renderHeader: () => '戦術性能',
+    renderCell: (data: IShipDefinition) => (
+        <>
+            {(data.researchTacticTypes ?? []).map(researchTacticType => (
+                <Typography variant="body2" key={researchTacticType}>
+                    {translateResearchTacticType(researchTacticType)}
+                </Typography>
+            ))}
+        </>
+    ),
+    sortFn: [
+        (a, b) => (a.researchTacticTypes?.[0] ? researchTacticTypeToSortValue(a.researchTacticTypes[0]) : 0) - (b.researchTacticTypes?.[0] ? researchTacticTypeToSortValue(b.researchTacticTypes[0]) : 0),
+        (a, b) => (a.researchTacticTypes?.[1] ? researchTacticTypeToSortValue(a.researchTacticTypes[1]) : 0) - (b.researchTacticTypes?.[1] ? researchTacticTypeToSortValue(b.researchTacticTypes[1]) : 0),
         (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
