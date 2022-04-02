@@ -34,6 +34,7 @@ export const MyListActionBar = (props: IProps) => {
                         key="columnConfig"
                         columnConfig={columnConfig}
                         onChange={onColumnConfigChange}
+                        disableResearchAgreementOptions={true}
                         buttonProps={buttonProps}
                     />
                     <ShipTypeFilterButton

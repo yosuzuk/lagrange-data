@@ -20,13 +20,16 @@ interface IProps {
     columnConfig: IColumnConfig;
     onChange: (columnConfig: IColumnConfig) => void;
     buttonProps?: ButtonProps;
+    disableResearchAgreementOptions?: boolean;
 }
 
 export const ColumnConfigButton = (props: IProps) => {
-    const { onChange, buttonProps } = props;
+    const { onChange, buttonProps, disableResearchAgreementOptions } = props;
     const [columnConfig, setColumnConfig] = useState<IColumnConfig>(props.columnConfig);
     const [opened, setOpened] = useState<boolean>(false);
-    const [columnConfigOptions] = useState<IColumnConfigOption[]>(() => createColumnConfigOptions());
+    const [columnConfigOptions] = useState<IColumnConfigOption[]>(() => createColumnConfigOptions({
+        disableResearchAgreementOptions,
+    }));
     const anchorRef = useRef<HTMLDivElement>(null);
 
     const handleClickOption = (columnKey: keyof IColumnConfig) => {

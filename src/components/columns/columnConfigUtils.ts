@@ -17,7 +17,12 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
     };
 }
 
-export function createColumnConfigOptions(): IColumnConfigOption[] {
+interface ICreateColumnConfigOptionArguments {
+    disableResearchAgreementOptions?: boolean;
+}
+
+export function createColumnConfigOptions(args: ICreateColumnConfigOptionArguments): IColumnConfigOption[] {
+    const { disableResearchAgreementOptions } = args;
     return [
         {
             columnKey: 'type',
@@ -43,18 +48,20 @@ export function createColumnConfigOptions(): IColumnConfigOption[] {
             columnKey: 'manufacturer',
             name: '企業',
         },
-        {
-            columnKey: 'researchManufacturer',
-            name: '委託企業（研究協定）',
-        },
-        {
-            columnKey: 'researchStrategyType',
-            name: '戦略能力（研究協定）',
-        },
-        {
-            columnKey: 'researchTacticType',
-            name: '戦術性能（研究協定）',
-        },
+        ...(disableResearchAgreementOptions !== true ? [
+            {
+                columnKey: 'researchManufacturer',
+                name: '委託企業（研究協定）',
+            },
+            {
+                columnKey: 'researchStrategyType',
+                name: '戦略能力（研究協定）',
+            },
+            {
+                columnKey: 'researchTacticType',
+                name: '戦術性能（研究協定）',
+            },
+        ] as IColumnConfigOption[] : []),
         {
             columnKey: 'weight',
             name: '確率の重み',
