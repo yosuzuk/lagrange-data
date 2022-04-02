@@ -7,11 +7,15 @@ import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../utils/shipRowUtils';
 import { translateShipType } from '../../utils/shipTypeUtils';
 import { LabeledList } from '../list/LabeledList';
-import { obtainableFromResearchAgreement, translateShipSource } from '../../utils/shipSourceUtils';
+import { translateShipSource } from '../../utils/shipSourceUtils';
 import { ShipTag } from '../../types/ShipTag';
 import { ShipSource } from '../../types/ShipSource';
 import { ScriptedLink } from '../link/ScriptedLink';
 import { ShipRow } from '../../types/ShipRow';
+import { translateManufacturer } from '../../utils/manufacturerUtils';
+import { translateResearchManufacturer } from '../../utils/researchManufacturerUtils';
+import { translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
+import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 
 interface IProps {
     shipId: string;
@@ -34,6 +38,8 @@ export const ShipDetail = (props: IProps) => {
     const relatedSubModels = shipDefinition.baseModelId ? getShipDefinitionById(shipDefinition.baseModelId).subModelIds?.filter(id => id !== shipDefinition.id).map(getShipDefinitionById) ?? [] : [];
     const relatedShips = (shipDefinition.relatedShipIds ?? []).map(getShipDefinitionById);
     const related = relatedSubModels.length > 0 || relatedShips.length > 0;
+
+    const obtainableThoughResearchAgreement = !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
 
     return (
         <Box p={1}>
@@ -203,13 +209,35 @@ export const ShipDetail = (props: IProps) => {
                                         {`${translateShipSource(shipDefinition.source)}${shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT) ? '（フェーズ２以降）' : ''}`}
                                     </Typography>
                                 )}
-                                {obtainableFromResearchAgreement(shipDefinition.source) && (
-                                    <Typography variant="body2" gutterBottom={true}>
-                                        {'研究協定'}
-                                    </Typography>
+                                {obtainableThoughResearchAgreement && (
+                                    <>
+                                        <Typography variant="body2" gutterBottom={true}>
+                                            {'研究協定'}
+                                        </Typography>
+                                        {shipDefinition.researchManufacturer && (
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`・${translateResearchManufacturer(shipDefinition.researchManufacturer)}`}
+                                            </Typography>
+                                        )}
+                                        {shipDefinition.researchStrategyTypes && shipDefinition.researchStrategyTypes.length > 0 && (
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`・${shipDefinition.researchStrategyTypes.map(type => translateResearchStrategyType(type)).join(' / ')}`}
+                                            </Typography>
+                                        )}
+                                        {shipDefinition.researchTacticTypes && shipDefinition.researchTacticTypes.length > 0 && (
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`・${shipDefinition.researchTacticTypes.map(type => translateResearchTacticType(type)).join(' / ')}`}
+                                            </Typography>
+                                        )}
+                                    </>
                                 )}
                             </>
                         ),
+                    },
+                    {
+                        key: 'manufacturer',
+                        label: '企業',
+                        value: translateManufacturer(shipDefinition.manufacturer),
                     },
                 ]}
             />

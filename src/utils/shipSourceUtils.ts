@@ -36,13 +36,3 @@ export const shipSourceToSortValue = (source: ShipSource): number => {
     }
     return shipSources[source].sortValue;
 }
-
-export const obtainableFromResearchAgreement = (source: ShipSource): boolean => {
-    switch (source) {
-        case ShipSource.STARTER_SHIP:
-        case ShipSource.TECH_FILE:
-            return true;
-        default:
-            return false;
-    }
-}
