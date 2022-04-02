@@ -1,5 +1,7 @@
 import { Manufacturer } from '../types/Manufacturer';
 
+// 委託企業
+
 export function translateManufacturer(manufacturer: Manufacturer): string {
     switch (manufacturer) {
         case Manufacturer.JUPITER_INDUSTRIES:
@@ -7,9 +9,9 @@ export function translateManufacturer(manufacturer: Manufacturer): string {
         case Manufacturer.NOMA_SHIPPING_GROUP:
             return 'ノマシッピング';
         case Manufacturer.ANTONIOS_CONSORTIUM:
-            return 'アントニオス';
+            return 'アントニオス財団';
         case Manufacturer.DAWN_ACCORD:
-            return 'ドーン基準';
+            return 'ドーン協定条約機構';
     }
 }
 

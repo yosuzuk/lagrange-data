@@ -1,5 +1,7 @@
 import { ResearchStrategyType } from '../types/ResearchStrategyType';
 
+// 戦略能力
+
 export function translateResearchStrategyType(type: ResearchStrategyType): string {
     switch (type) {
         case ResearchStrategyType.OUTSTANDING_FIREPOWER:
