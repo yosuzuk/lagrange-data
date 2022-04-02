@@ -52,6 +52,9 @@ export const ShipDetail = (props: IProps) => {
                 </Box>
             )}
             <LabeledList
+                rowGap={2}
+                separator={true}
+                sx={{ width: '100%' }}
                 rows={[
                     {
                         key: 'type',
@@ -65,7 +68,7 @@ export const ShipDetail = (props: IProps) => {
                     }] : []),
                     ...(shipDefinition.cost > 0 ? [{
                         key: 'cost',
-                        label: 'コスト',
+                        label: '指令Ｐｔ',
                         value: shipDefinition.cost,
                     }] : []),
                     {

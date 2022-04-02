@@ -3,6 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Box, { BoxProps } from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import { ILabeledListRow } from './types/ILabeledListRow';
 import { LabeledListRowValue } from './LabeledListRowValue';
@@ -12,18 +13,22 @@ interface IProps extends BoxProps {
     offsetValue?: boolean;
     rowGap?: number;
     columnCount?: number;
+    separator?: boolean;
 }
 
 export const LabeledList = (props: IProps) => {
-    const { rows, sx, offsetValue = true, rowGap = 3, columnCount = 1 } = props;
+    const { rows, sx, offsetValue = true, rowGap = 3, columnCount = 1, separator } = props;
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('sm'));
 
     if (verticalAlignment) {
         return (
             <Stack spacing={rowGap}>
-                {rows.map(row => (
+                {rows.map((row, index) => (
                     <Stack spacing={1} key={row.key}>
+                        {separator && index > 0 && (
+                            <Divider />
+                        )}
                         <Typography variant="body2" color="text.secondary">{row.label}</Typography>
                         <Box pl={offsetValue ? 1 : 0}>
                             <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
@@ -43,8 +48,11 @@ export const LabeledList = (props: IProps) => {
                 ...sx,
             }}
         >
-            {rows.map(row => (
+            {rows.map((row, index) => (
                 <Fragment key={row.key}>
+                    {separator && index > 0 && index % columnCount === 0 && (
+                        <Divider sx={{ gridColumn: `span ${columnCount * 2}` }} />
+                    )}
                     <Typography variant="body2" color="text.secondary">{row.label}</Typography>
                     <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                 </Fragment>
