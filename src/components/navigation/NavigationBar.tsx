@@ -18,9 +18,10 @@ import { Container } from '../container/Container';
 
 const menuItems: Record<string, string> = {
     '/techFiles': '技術ファイル',
+    '/researchAgreement': '研究協定',
     '/shipData': '艦船一覧',
-    '/myList': 'マイリスト',
     '/fleetSetup': '艦隊編成',
+    '/myList': 'マイリスト',
 };
 
 interface IProps {

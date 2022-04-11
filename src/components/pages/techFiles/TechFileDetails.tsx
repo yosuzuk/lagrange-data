@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { css } from '@emotion/css';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -78,7 +77,7 @@ export const TechFileDetails = (props: IProps) => {
     const [techPointExpanded, setTechPointExpanded] = useState<boolean>(false);
     const [techFileChances, setTechFileChances] = useState<ITechFileChances | null>(null);
     const [showZeroChance, setShowZeroChance] = useState<boolean>(false);
-    const [userSettings, setUserSettings] = useState<IUserSettings>(getCurrentUserSettings);
+    const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
 
     useEffect(() => {
         setExpandedAccordion(createInitialAccordionState());

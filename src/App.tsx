@@ -15,6 +15,7 @@ import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
 const BoxChancePage = lazy(() => import('./components/pages/techFiles/TechFilesPage'));
+const ResearchAgreementPage = lazy(() => import('./components/pages/researchAgreement/ResearchAgreementPage'));
 const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage'));
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
 const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupPage'));
@@ -64,6 +65,14 @@ function App() {
                             element={(
                                 <Suspense fallback={<LoadingIndicator />}>
                                     <BoxChancePage />
+                                </Suspense>
+                            )}
+                        />
+                        <Route
+                            path="researchAgreement"
+                            element={(
+                                <Suspense fallback={<LoadingIndicator />}>
+                                    <ResearchAgreementPage />
                                 </Suspense>
                             )}
                         />
