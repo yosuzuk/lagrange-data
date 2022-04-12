@@ -121,3 +121,7 @@ export function createResearchConfiguration(
         techPointChance,
     };
 }
+
+export function serializeResearchFilterState(filterState: IResearchFilterState): string {
+    return `${filterState.manufacturerFilter ?? 'null'}.${filterState.strategyTypeFilter ?? 'null'}.${filterState.tacticTypeFilter ?? 'null'}`;
+}
