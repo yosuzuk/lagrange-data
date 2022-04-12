@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -17,9 +18,8 @@ export const ShipCountList = (props: IProps) => {
     return (
         <Stack spacing={1}>
             {shipSelections?.map(shipSelection => (
-                <>
+                <Fragment key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}>
                     <Stack
-                        key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}
                         spacing={1}
                         direction="row"
                     >
@@ -75,7 +75,7 @@ export const ShipCountList = (props: IProps) => {
                             </Typography>
                         </Stack>
                     ))}
-                </>
+                </Fragment>
             ))}
         </Stack>
     );
