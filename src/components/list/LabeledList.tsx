@@ -29,7 +29,11 @@ export const LabeledList = (props: IProps) => {
                         {separator && index > 0 && (
                             <Divider />
                         )}
-                        <Typography variant="body2" color="text.secondary">{row.label}</Typography>
+                        {(typeof row.label === 'string' || typeof row.label === 'number') ? (
+                            <Typography variant="body2" color="text.secondary">{row.label}</Typography>
+                        ) : (
+                            <div>{row.label}</div>
+                        )}
                         <Box pl={offsetValue ? 1 : 0}>
                             <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                         </Box>
@@ -53,7 +57,11 @@ export const LabeledList = (props: IProps) => {
                     {separator && index > 0 && index % columnCount === 0 && (
                         <Divider sx={{ gridColumn: `span ${columnCount * 2}` }} />
                     )}
-                    <Typography variant="body2" color="text.secondary">{row.label}</Typography>
+                    {(typeof row.label === 'string' || typeof row.label === 'number') ? (
+                        <Typography variant="body2" color="text.secondary">{row.label}</Typography>
+                    ) : (
+                        <div>{row.label}</div>
+                    )}
                     <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                 </Fragment>
             ))}

@@ -1,4 +1,4 @@
-import { useMemo, memo } from 'react';
+import { useMemo, useState, memo } from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -8,10 +8,14 @@ import { createResearchConfiguration, getAllFilterCombinations, getShipDefinitio
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { ResearchAgreementTable } from './ResearchAgreementTable';
+import { ResearchAgreementTreeView } from './ResearchAgreementTreeView';
+import { ViewMode, ViewModeSelection } from './ViewModeSelection';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 
 export const ResearchAgreementPage = () => {
+    const [viewMode, setViewMode] = useState<ViewMode>('tree');
+
     const shipDefinitions = useMemo(() => getShipDefinitionsForResearchAgreement(), []);
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const allFilterOptions = useMemo(() => getAllFilterCombinations(), []);
@@ -25,6 +29,7 @@ export const ResearchAgreementPage = () => {
             <Container>
                 <Box p={1}>
                     <Stack spacing={1}>
+                        <ViewModeSelection mode={viewMode} onChange={setViewMode} />
                         <Paper>
                             <Box p={1}>
                                 <pre>
@@ -32,7 +37,12 @@ export const ResearchAgreementPage = () => {
                                 </pre>
                             </Box>
                         </Paper>
-                        <MemoizedResearchAgreementTable configurations={allResearchConfigurations} />
+                        {viewMode === 'tree' && (
+                            <ResearchAgreementTreeView configurations={allResearchConfigurations} />
+                        )}
+                        {viewMode === 'table' && (
+                            <MemoizedResearchAgreementTable configurations={allResearchConfigurations} />
+                        )}
                     </Stack>
                 </Box>
             </Container>
