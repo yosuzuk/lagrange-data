@@ -4,6 +4,7 @@ import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 
 export interface IResearchConfiguration {
+    id: string;
     filterState: IResearchFilterState;
     shipChances: IShipResearchChance[];
     totalShipChance: number;

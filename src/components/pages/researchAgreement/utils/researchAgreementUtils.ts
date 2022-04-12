@@ -47,6 +47,8 @@ export function getAllFilterCombinations(): IResearchFilterState[] {
     });
 }
 
+let idCounter = 0;
+
 export function createResearchConfiguration(
     filterState: IResearchFilterState,
     shipDefinitions: IShipDefinition[],
@@ -112,6 +114,7 @@ export function createResearchConfiguration(
     });
 
     return {
+        id: `${idCounter++}`,
         filterState,
         shipChances,
         totalShipChance,
