@@ -4,9 +4,10 @@ import Box from '@mui/material/Box';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
-import { IResearchConfiguration, IShipResearchChance } from './types/IResearchConfiguration';
+import { IResearchConfiguration } from './types/IResearchConfiguration';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { LabeledList } from '../../list/LabeledList';
+import { ShipName } from './ShipName';
 
 interface IProps {
     configurations: IResearchConfiguration[];
@@ -15,7 +16,7 @@ interface IProps {
 export const ResearchAgreementTreeView = (props: IProps) => {
     const { configurations } = props;
 
-    const filtered = true;
+    const filtered = true; // TODO set
 
     return (
         <ExpandStack
@@ -42,27 +43,45 @@ export const ResearchAgreementTreeView = (props: IProps) => {
                 ),
                 details: (
                     <LabeledList
-                        rows={configuration.shipChances.map(shipChance => ({
-                            key: `${configuration.id}.${shipChance.shipDefinition.id}`,
-                            label: (
-                                <>
-                                    <Typography variant="body2" component="span">
-                                        {shipChance.shipDefinition.name}
-                                    </Typography>
-                                    {shipChance.possessed && shipChance.shipDefinition.modules && shipChance.shipDefinition.modules.length > 0 && (
-                                        <Typography variant="body2" component="span">
-                                            {'（追加モジュール）'}
-                                        </Typography>
-                                    )}
-                                    {shipChance.wished && (
-                                        <Typography variant="body2" component="span" sx={{ color: 'yellow' }}>
-                                            {' ★'}
-                                        </Typography>
-                                    )}
-                                </>
-                            ),
-                            value: formatChance(shipChance.chance)
-                        }))}
+                        rows={[
+                            {
+                                key: `${configuration.id}.wishedShipChance`,
+                                label: '欲しい設計図',
+                                value: formatChance(configuration.wishedShipChance),
+                            },
+                            ...(configuration.techPointChance > 0 ? [{
+                                key: `${configuration.id}.techPointChance`,
+                                label: '技術Pt',
+                                value: formatChance(configuration.techPointChance),
+                            }] : []),
+                            ...configuration.shipChances.map(shipChance => {
+                                const canGetModule = shipChance.possessed && shipChance.shipDefinition.modules && shipChance.shipDefinition.modules.length > 0;
+                                return {
+                                    key: `${configuration.id}.${shipChance.shipDefinition.id}`,
+                                    label: (
+                                        <>
+                                            <ShipName shipDefinition={shipChance.shipDefinition} />
+                                            {canGetModule && (
+                                                <Typography variant="body2" component="span">
+                                                    {'（追加モジュール）'}
+                                                </Typography>
+                                            )}
+                                            {!canGetModule && shipChance.possessed && (
+                                                <Typography variant="body2" component="span">
+                                                    {'（技術Pt）'}
+                                                </Typography>
+                                            )}
+                                            {shipChance.wished && (
+                                                <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
+                                                    {'★'}
+                                                </Typography>
+                                            )}
+                                        </>
+                                    ),
+                                    value: formatChance(shipChance.chance),
+                                };
+                            }),
+                        ]}
                         rowGap={1}
                     />
                 ),

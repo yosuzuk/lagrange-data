@@ -60,7 +60,7 @@ export const LabeledList = (props: IProps) => {
                     {(typeof row.label === 'string' || typeof row.label === 'number') ? (
                         <Typography variant="body2" color="text.secondary">{row.label}</Typography>
                     ) : (
-                        <div>{row.label}</div>
+                        <Box display="flex">{row.label}</Box>
                     )}
                     <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                 </Fragment>

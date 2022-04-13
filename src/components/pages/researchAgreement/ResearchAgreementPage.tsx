@@ -12,6 +12,7 @@ import { ResearchAgreementTreeView } from './ResearchAgreementTreeView';
 import { ViewMode, ViewModeSelection } from './ViewModeSelection';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
+const MemoizedResearchAgreementTreeView = memo(ResearchAgreementTreeView);
 
 export const ResearchAgreementPage = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('tree');
@@ -38,7 +39,7 @@ export const ResearchAgreementPage = () => {
                             </Box>
                         </Paper>
                         {viewMode === 'tree' && (
-                            <ResearchAgreementTreeView configurations={allResearchConfigurations} />
+                            <MemoizedResearchAgreementTreeView configurations={allResearchConfigurations} />
                         )}
                         {viewMode === 'table' && (
                             <MemoizedResearchAgreementTable configurations={allResearchConfigurations} />
