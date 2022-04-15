@@ -4,18 +4,20 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
-import { createResearchConfiguration, getAllFilterCombinations, getShipDefinitionsForResearchAgreement } from './utils/researchAgreementUtils';
+import { createResearchConfiguration, getAllFilterCombinations, getFilteredResearchConfigurations, getShipDefinitionsForResearchAgreement } from './utils/researchAgreementUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { ResearchAgreementTable } from './ResearchAgreementTable';
-import { ResearchAgreementTreeView } from './ResearchAgreementTreeView';
+import { ResearchAgreementShipsView } from './ResearchAgreementShipsView';
 import { ViewMode, ViewModeSelection } from './ViewModeSelection';
+import { IResearchFilterState } from './types/IResearchConfiguration';
+import { ResearchFilter } from './ResearchFilter';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
-const MemoizedResearchAgreementTreeView = memo(ResearchAgreementTreeView);
+const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
 
 export const ResearchAgreementPage = () => {
-    const [viewMode, setViewMode] = useState<ViewMode>('tree');
+    const [viewMode, setViewMode] = useState<ViewMode>('ships');
 
     const shipDefinitions = useMemo(() => getShipDefinitionsForResearchAgreement(), []);
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
@@ -24,25 +26,37 @@ export const ResearchAgreementPage = () => {
         return createResearchConfiguration(filterState, shipDefinitions, userSettings);
     }), [allFilterOptions, shipDefinitions]);
 
+    const [filterState, setFilterState] = useState<IResearchFilterState>({
+        manufacturerFilter: null,
+        strategyTypeFilter: null,
+        tacticTypeFilter: null,
+    });
+
+    const filteredResearchConfigurations = useMemo(() => getFilteredResearchConfigurations(allResearchConfigurations, filterState), [allResearchConfigurations, filterState]);
+
+    const filtered = !!filterState.manufacturerFilter || !!filterState.strategyTypeFilter || !!filterState.tacticTypeFilter;
+
     return (
         <>
             <NavigationBar currentRoute="/researchAgreement" />
             <Container>
                 <Box p={1}>
                     <Stack spacing={1}>
-                        <ViewModeSelection mode={viewMode} onChange={setViewMode} />
                         <Paper>
                             <Box p={1}>
-                                <pre>
-                                {/*JSON.stringify(allResearchConfigurations, null, 2)*/}
-                                </pre>
+                                <ViewModeSelection mode={viewMode} onChange={setViewMode} />
                             </Box>
                         </Paper>
-                        {viewMode === 'tree' && (
-                            <MemoizedResearchAgreementTreeView configurations={allResearchConfigurations} />
+                        <Paper>
+                            <Box p={2}>
+                                <ResearchFilter filterState={filterState} onChange={setFilterState} />
+                            </Box>
+                        </Paper>
+                        {viewMode === 'ships' && (
+                            <MemoizedResearchAgreementShipsView configurations={filteredResearchConfigurations} filtered={filtered} />
                         )}
                         {viewMode === 'table' && (
-                            <MemoizedResearchAgreementTable configurations={allResearchConfigurations} />
+                            <MemoizedResearchAgreementTable configurations={filteredResearchConfigurations} />
                         )}
                     </Stack>
                 </Box>

@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
@@ -11,16 +10,15 @@ import { ShipName } from './ShipName';
 
 interface IProps {
     configurations: IResearchConfiguration[];
+    filtered: boolean;
 }
 
-export const ResearchAgreementTreeView = (props: IProps) => {
-    const { configurations } = props;
-
-    const filtered = true; // TODO set
+export const ResearchAgreementShipsView = (props: IProps) => {
+    const { configurations, filtered } = props;
 
     return (
         <ExpandStack
-            expandables={configurations.filter(configuration => !!configuration.filterState.manufacturerFilter || !!configuration.filterState.strategyTypeFilter || !!configuration.filterState.tacticTypeFilter).map(configuration => ({
+            expandables={configurations.map(configuration => ({
                 id: configuration.id,
                 initiallyOpened: filtered,
                 summary: (
@@ -39,6 +37,17 @@ export const ResearchAgreementTreeView = (props: IProps) => {
                                 '無し',
                             ] : []),
                         ].map(t => `「${t}」`).join('+')}
+                        {configuration.wishedShipChance > 0 && (
+                            <Tooltip
+                                arrow={true}
+                                disableFocusListener={true}
+                                title={`欲しい艦船が当たる確率：${formatChance(configuration.wishedShipChance)}`}
+                            >
+                                <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
+                                    {'★'}
+                                </Typography>
+                            </Tooltip>
+                        )}
                     </Typography>
                 ),
                 details: (
@@ -48,11 +57,27 @@ export const ResearchAgreementTreeView = (props: IProps) => {
                                 key: `${configuration.id}.wishedShipChance`,
                                 label: '欲しい設計図',
                                 value: formatChance(configuration.wishedShipChance),
+                                separatorAfter: true,
                             },
                             ...(configuration.techPointChance > 0 ? [{
                                 key: `${configuration.id}.techPointChance`,
-                                label: '技術Pt',
-                                value: formatChance(configuration.techPointChance),
+                                label: (
+                                    <Typography
+                                        variant="body2"
+                                        sx={configuration.techPointChance > 0 ? { color: 'red' } : undefined}
+                                    >
+                                        {'技術Pt ×５'}
+                                    </Typography>
+                                ),
+                                value: (
+                                    <Typography
+                                        variant="body2"
+                                        sx={configuration.techPointChance > 0 ? { color: 'red' } : undefined}
+                                    >
+                                        {formatChance(configuration.techPointChance)}
+                                    </Typography>
+                                ),
+                                separatorAfter: true,
                             }] : []),
                             ...configuration.shipChances.map(shipChance => {
                                 const canGetModule = shipChance.possessed && shipChance.shipDefinition.modules && shipChance.shipDefinition.modules.length > 0;
@@ -72,13 +97,37 @@ export const ResearchAgreementTreeView = (props: IProps) => {
                                                 </Typography>
                                             )}
                                             {shipChance.wished && (
-                                                <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
-                                                    {'★'}
-                                                </Typography>
+                                                <Tooltip
+                                                    arrow={true}
+                                                    disableFocusListener={true}
+                                                    title={'欲しい艦船'}
+                                                >
+                                                    <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
+                                                        {'★'}
+                                                    </Typography>
+                                                </Tooltip>
                                             )}
                                         </>
                                     ),
-                                    value: formatChance(shipChance.chance),
+                                    value: (
+                                        <Tooltip
+                                            arrow={true}
+                                            disableFocusListener={true}
+                                            title={(
+                                                <>
+                                                    <Typography variant="body2" gutterBottom={true}>{'確率の重み / 合計'}</Typography>
+                                                    <Typography variant="body2">{shipChance.formula}</Typography>
+                                                </>
+                                            )}
+                                        >
+                                            <Typography
+                                                variant="body2"
+                                                sx={(!canGetModule && shipChance.possessed) ? { color: 'red' } : undefined}
+                                            >
+                                                {formatChance(shipChance.chance)}
+                                            </Typography>
+                                        </Tooltip>
+                                    ),
                                 };
                             }),
                         ]}

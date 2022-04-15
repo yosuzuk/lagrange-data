@@ -3,7 +3,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import TableRowsIcon from '@mui/icons-material/TableRows';
 
-export type ViewMode = 'tree' | 'table';
+export type ViewMode = 'ships' | 'table';
 
 interface IProps {
     mode: ViewMode;
@@ -28,7 +28,7 @@ export const ViewModeSelection = (props: IProps) => {
             size="small"
             aria-label="view mode"
         >
-        <ToggleButton value="tree" aria-label="tree">
+        <ToggleButton value="ships" aria-label="ships">
             <AccountTreeIcon />
         </ToggleButton>
         <ToggleButton value="table" aria-label="table">

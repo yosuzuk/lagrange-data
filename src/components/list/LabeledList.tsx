@@ -26,7 +26,7 @@ export const LabeledList = (props: IProps) => {
             <Stack spacing={rowGap}>
                 {rows.map((row, index) => (
                     <Stack spacing={1} key={row.key}>
-                        {separator && index > 0 && (
+                        {((separator && index > 0) || row.separatorBefore === true) && (
                             <Divider />
                         )}
                         {(typeof row.label === 'string' || typeof row.label === 'number') ? (
@@ -37,6 +37,9 @@ export const LabeledList = (props: IProps) => {
                         <Box pl={offsetValue ? 1 : 0}>
                             <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                         </Box>
+                        {(!separator && row.separatorAfter === true) && (
+                            <Divider />
+                        )}
                     </Stack>
                 ))}
             </Stack>
@@ -54,7 +57,7 @@ export const LabeledList = (props: IProps) => {
         >
             {rows.map((row, index) => (
                 <Fragment key={row.key}>
-                    {separator && index > 0 && index % columnCount === 0 && (
+                    {((separator && index > 0) || row.separatorBefore === true) && index % columnCount === 0 && (
                         <Divider sx={{ gridColumn: `span ${columnCount * 2}` }} />
                     )}
                     {(typeof row.label === 'string' || typeof row.label === 'number') ? (
@@ -63,6 +66,9 @@ export const LabeledList = (props: IProps) => {
                         <Box display="flex">{row.label}</Box>
                     )}
                     <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
+                    {(!separator && row.separatorAfter === true) && index % columnCount === 0 && (
+                        <Divider sx={{ gridColumn: `span ${columnCount * 2}` }} />
+                    )}
                 </Fragment>
             ))}
         </Box>

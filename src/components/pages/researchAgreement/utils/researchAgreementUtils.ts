@@ -128,3 +128,36 @@ export function createResearchConfiguration(
 export function serializeResearchFilterState(filterState: IResearchFilterState): string {
     return `${filterState.manufacturerFilter ?? 'null'}.${filterState.strategyTypeFilter ?? 'null'}.${filterState.tacticTypeFilter ?? 'null'}`;
 }
+
+export function getFilteredResearchConfigurations(configurations: IResearchConfiguration[], filterState: IResearchFilterState): IResearchConfiguration[] {
+    const exactMatch: IResearchConfiguration[] = [];
+
+    const compatibleMatch = configurations.filter(configuration => {
+        if (filterState.manufacturerFilter !== null && configuration.filterState.manufacturerFilter !== filterState.manufacturerFilter) {
+            return false;
+        }
+
+        if (filterState.strategyTypeFilter !== null && configuration.filterState.strategyTypeFilter !== filterState.strategyTypeFilter) {
+            return false;
+        }
+
+        if (filterState.tacticTypeFilter !== null && configuration.filterState.tacticTypeFilter !== filterState.tacticTypeFilter) {
+            return false;
+        }
+
+        // ignore no-filter
+        if (!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter) {
+            return false;
+        }
+
+        // exact match (move to top)
+        if (configuration.filterState.manufacturerFilter === filterState.manufacturerFilter && configuration.filterState.strategyTypeFilter === filterState.strategyTypeFilter && configuration.filterState.tacticTypeFilter === filterState.tacticTypeFilter) {
+            exactMatch.push(configuration);
+            return false;
+        }
+
+        return configuration;
+    });
+
+    return [...exactMatch, ...compatibleMatch];
+}

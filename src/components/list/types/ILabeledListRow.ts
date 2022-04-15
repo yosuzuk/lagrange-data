@@ -5,4 +5,6 @@ export interface ILabeledListRow {
     value: ReactNode | ((verticalAlignment: boolean) => ReactNode);
     label: ReactNode;
     onClick?: () => void;
+    separatorBefore?: boolean;
+    separatorAfter?: boolean;
 }

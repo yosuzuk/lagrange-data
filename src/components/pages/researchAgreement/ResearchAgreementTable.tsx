@@ -1,3 +1,5 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useEffect } from 'react';
@@ -15,6 +17,10 @@ interface IProps {
 export const ResearchAgreementTable = (props: IProps) => {
     const { configurations } = props;
     const { table, setTableData } = useTable<IResearchConfiguration>();
+
+    const theme = useTheme();
+    const downSm = useMediaQuery(theme.breakpoints.down('sm'));
+    const chanceCellMinWidth = downSm ? '38px' : '50px';
 
     useEffect(() => {
         const tableData: ITableData<IResearchConfiguration> = {
@@ -43,7 +49,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'totalShipChance',
                     renderHeader: () => '設計図',
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: '45px' }}>
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalShipChance)}</Typography>
                         </Box>
                     ),
@@ -59,7 +65,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'totalModuleChance',
                     renderHeader: () => 'モジュール',
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: '45px' }}>
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalModuleChance)}</Typography>
                         </Box>
                     ),
@@ -76,7 +82,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'techPointChance',
                     renderHeader: () => '技術Pt',
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: '45px' }}>
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.techPointChance)}</Typography>
                         </Box>
                     ),
@@ -91,7 +97,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'wishedShipChance',
                     renderHeader: () => '欲しい艦船',
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: '45px' }}>
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.wishedShipChance)}</Typography>
                         </Box>
                     ),
@@ -106,7 +112,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'unwishedShipChance',
                     renderHeader: () => '欲しくない艦船',
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: '45px' }}>
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.unwishedShipChance)}</Typography>
                         </Box>
                     ),
@@ -122,7 +128,7 @@ export const ResearchAgreementTable = (props: IProps) => {
             rowIdFn: (configuration: IResearchConfiguration) => serializeResearchFilterState(configuration.filterState),
         };
         setTableData(tableData);
-    }, [setTableData, configurations]);
+    }, [setTableData, configurations, chanceCellMinWidth]);
 
     return (
         <Table table={table} size="small" />
@@ -130,5 +136,5 @@ export const ResearchAgreementTable = (props: IProps) => {
 };
 
 function formatChance(chance: number): string {
-    return `${Number((chance * 100).toFixed(3))} %`;
+    return `${Number((chance * 100).toFixed(2))} %`;
 }
