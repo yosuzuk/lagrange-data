@@ -1,11 +1,13 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import ListSubheader from '@mui/material/ListSubheader';
 import FormControl from '@mui/material/FormControl';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { IResearchFilterState } from './types/IResearchConfiguration';
+import { IResearchFilterState, IShipFilterOptions } from './types/IResearchConfiguration';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
@@ -15,92 +17,166 @@ import { translateResearchTacticType } from '../../../utils/researchTacticTypeUt
 
 interface IProps {
     filterState: IResearchFilterState;
+    shipFilterOptions: IShipFilterOptions;
     onChange: (filterState: IResearchFilterState) => void;
 }
 
 export const ResearchFilter = (props: IProps) => {
-    const { filterState, onChange } = props;
+    const { filterState, shipFilterOptions, onChange } = props;
 
-    const theme = useTheme();
-    const downSm = useMediaQuery(theme.breakpoints.down('sm'));
-    const downMd = useMediaQuery(theme.breakpoints.down('md'));
+    const handleChangeShipId = (event: SelectChangeEvent) => {
+        onChange({
+            ...filterState,
+            shipId: event.target.value === '' ? null : event.target.value,
+            manufacturerFilter: null,
+            strategyTypeFilter: null,
+            tacticTypeFilter: null,
+        });
+    };
 
     const handleChangeManufacturer = (event: SelectChangeEvent) => {
         onChange({
             ...filterState,
-            manufacturerFilter: event.target.value === 'none' ? null : event.target.value as ResearchManufacturer,
+            shipId: null,
+            manufacturerFilter: event.target.value === '' ? null : event.target.value as ResearchManufacturer,
         });
     };
 
     const handleChangeStrategyType = (event: SelectChangeEvent) => {
         onChange({
             ...filterState,
-            strategyTypeFilter: event.target.value === 'none' ? null : event.target.value as ResearchStrategyType,
+            shipId: null,
+            strategyTypeFilter: event.target.value === '' ? null : event.target.value as ResearchStrategyType,
         });
     };
 
     const handleChangeTacticsType = (event: SelectChangeEvent) => {
         onChange({
             ...filterState,
-            tacticTypeFilter: event.target.value === 'none' ? null : event.target.value as ResearchTacticType,
+            shipId: null,
+            tacticTypeFilter: event.target.value === '' ? null : event.target.value as ResearchTacticType,
         });
     };
 
-    const formControlProps = {
-        fullWidth: downSm,
-        sx: downSm ? undefined : { minWidth: '250px' },
+    const handleClickReset = () => {
+        onChange({
+            ...filterState,
+            shipId: null,
+            manufacturerFilter: null,
+            strategyTypeFilter: null,
+            tacticTypeFilter: null,
+        });
     };
 
     return (
-        <Stack spacing={2} direction={downMd ? 'column' : 'row'}>
-            <div>
-                <FormControl {...formControlProps}>
+        <Grid container={true} spacing={2}>
+            <Grid item={true} xs={12} sm={8} md={4}>
+                <FormControl fullWidth={true} size="small">
                     <InputLabel id="manufacturer-select-label">{'委託企業'}</InputLabel>
                     <Select
                         labelId="manufacturer-select-label"
-                        value={filterState.manufacturerFilter ?? 'none'}
+                        value={filterState.manufacturerFilter ?? ''}
                         label="委託企業"
                         onChange={handleChangeManufacturer}
                     >
-                        <MenuItem value="none">{'未定義'}</MenuItem>
+                        <MenuItem value="">{'無し'}</MenuItem>
+                        <Divider />
                         {Object.values(ResearchManufacturer).map(manufacturer => (
                             <MenuItem key={manufacturer} value={manufacturer}>{translateResearchManufacturer(manufacturer)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
-            </div>
-            <div>
-                <FormControl {...formControlProps}>
+            </Grid>
+            <Grid item={true} xs={12} sm={8} md={4}>
+                <FormControl fullWidth={true} size="small">
                     <InputLabel id="strategy-select-label">{'戦略能力'}</InputLabel>
                     <Select
                         labelId="strategy-select-label"
-                        value={filterState.strategyTypeFilter ?? 'none'}
+                        value={filterState.strategyTypeFilter ?? ''}
                         label="戦略能力"
                         onChange={handleChangeStrategyType}
                     >
-                        <MenuItem value="none">{'未定義'}</MenuItem>
+                        <MenuItem value="">{'無し'}</MenuItem>
+                        <Divider />
                         {Object.values(ResearchStrategyType).map(strategyType => (
                             <MenuItem key={strategyType} value={strategyType}>{translateResearchStrategyType(strategyType)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
-            </div>
-            <div>
-                <FormControl {...formControlProps}>
+            </Grid>
+            <Grid item={true} xs={12} sm={8} md={4}>
+                <FormControl fullWidth={true} size="small">
                     <InputLabel id="tactics-select-label">{'戦術性能'}</InputLabel>
                     <Select
                         labelId="tactics-select-label"
-                        value={filterState.tacticTypeFilter ?? 'none'}
+                        value={filterState.tacticTypeFilter ?? ''}
                         label="戦術性能"
                         onChange={handleChangeTacticsType}
                     >
-                        <MenuItem value="none">{'未定義'}</MenuItem>
+                        <MenuItem value="">{'無し'}</MenuItem>
+                        <Divider />
                         {Object.values(ResearchTacticType).map(tacticsType => (
                             <MenuItem key={tacticsType} value={tacticsType}>{translateResearchTacticType(tacticsType)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
-            </div>
-        </Stack>
+            </Grid>
+            <Grid item={true} xs={12} sm={8}>
+                <FormControl fullWidth={true} size="small">
+                    <InputLabel id="ship-select-label">
+                        {'艦船'}
+                    </InputLabel>
+                    <Select
+                        labelId="ship-select-label"
+                        value={filterState.shipId ?? ''}
+                        label="艦船"
+                        onChange={handleChangeShipId}
+                    >
+                        <MenuItem value="">{'無し'}</MenuItem>
+                        {shipFilterOptions.wantedShips.length > 0 && (
+                            <Divider />
+                        )}
+                        {shipFilterOptions.wantedShips.length > 0 && (
+                            <ListSubheader disableSticky={true}>
+                                {'欲しい艦船：'}
+                            </ListSubheader>
+                        )}
+                        {shipFilterOptions.wantedShips.map(ship => (
+                            <MenuItem key={ship.id} value={ship.id}>
+                                {ship.name}
+                                <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
+                                    {'★'}
+                                </Typography>
+                            </MenuItem>
+                        ))}
+                        {shipFilterOptions.remainingShips.length > 0 && (
+                            <Divider />
+                        )}
+                        {shipFilterOptions.remainingShips.length > 0 && (
+                            <ListSubheader disableSticky={true}>
+                                {'取得可能な艦船：'}
+                            </ListSubheader>
+                        )}
+                        {shipFilterOptions.remainingShips.map(ship => (
+                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                        ))}
+                        {shipFilterOptions.possessedShips.length > 0 && (
+                            <Divider />
+                        )}
+                        {shipFilterOptions.possessedShips.length > 0 && (
+                            <ListSubheader disableSticky={true}>
+                                {'取得済みの艦船：'}
+                            </ListSubheader>
+                        )}
+                        {shipFilterOptions.possessedShips.map(ship => (
+                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </Grid>
+            <Grid item={true} xs={12} sm={4} sx={{ display: 'flex', justifyContent: 'end' }}>
+                <Button variant="outlined" onClick={handleClickReset}>{'リセット'}</Button>
+            </Grid>
+        </Grid>
     );
 }

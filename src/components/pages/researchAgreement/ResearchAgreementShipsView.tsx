@@ -1,26 +1,29 @@
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
-import { IResearchConfiguration } from './types/IResearchConfiguration';
+import { IResearchConfiguration, IResearchFilterState } from './types/IResearchConfiguration';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { LabeledList } from '../../list/LabeledList';
 import { ShipName } from './ShipName';
 
 interface IProps {
     configurations: IResearchConfiguration[];
-    filtered: boolean;
+    filterState: IResearchFilterState;
 }
 
 export const ResearchAgreementShipsView = (props: IProps) => {
-    const { configurations, filtered } = props;
+    const { configurations, filterState } = props;
+
+    const phaseFilterUsed = !!filterState.manufacturerFilter || !!filterState.strategyTypeFilter || !!filterState.tacticTypeFilter;
 
     return (
         <ExpandStack
             expandables={configurations.map(configuration => ({
                 id: configuration.id,
-                initiallyOpened: filtered,
+                initiallyOpened: phaseFilterUsed,
                 summary: (
                     <Typography variant="body2">
                         {[
@@ -37,7 +40,7 @@ export const ResearchAgreementShipsView = (props: IProps) => {
                                 '無し',
                             ] : []),
                         ].map(t => `「${t}」`).join('+')}
-                        {configuration.wishedShipChance > 0 && (
+                        {filterState.shipId === null && configuration.wishedShipChance > 0 && (
                             <Tooltip
                                 arrow={true}
                                 disableFocusListener={true}
@@ -47,6 +50,14 @@ export const ResearchAgreementShipsView = (props: IProps) => {
                                     {'★'}
                                 </Typography>
                             </Tooltip>
+                        )}
+                        {filterState.shipId !== null && (
+                            <Typography
+                                variant="body2"
+                                component="span"
+                            >
+                                {`　⇒　${formatChance(configuration.shipChances.find(shipChance => shipChance.shipDefinition.id === filterState.shipId)?.chance ?? 0)}`}
+                            </Typography>
                         )}
                     </Typography>
                 ),
@@ -122,7 +133,9 @@ export const ResearchAgreementShipsView = (props: IProps) => {
                                         >
                                             <Typography
                                                 variant="body2"
-                                                sx={(!canGetModule && shipChance.possessed) ? { color: 'red' } : undefined}
+                                                sx={{
+                                                    color: (!canGetModule && shipChance.possessed) ? 'red' : undefined,
+                                                }}
                                             >
                                                 {formatChance(shipChance.chance)}
                                             </Typography>

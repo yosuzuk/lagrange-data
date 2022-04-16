@@ -15,6 +15,7 @@ export interface IResearchConfiguration {
 }
 
 export interface IResearchFilterState {
+    shipId: string | null;
     manufacturerFilter: ResearchManufacturer | null;
     strategyTypeFilter: ResearchStrategyType | null;
     tacticTypeFilter: ResearchTacticType | null;
@@ -27,4 +28,10 @@ export interface IShipResearchChance {
     possessed: boolean;
     wished: boolean;
     unwished: boolean;
+}
+
+export interface IShipFilterOptions {
+    wantedShips: IShipDefinition[];
+    possessedShips: IShipDefinition[];
+    remainingShips: IShipDefinition[];
 }

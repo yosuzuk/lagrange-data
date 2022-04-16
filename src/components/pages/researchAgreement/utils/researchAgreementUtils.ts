@@ -5,10 +5,34 @@ import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
-import { IResearchConfiguration, IResearchFilterState, IShipResearchChance } from '../types/IResearchConfiguration';
+import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions } from '../types/IResearchConfiguration';
 
-export function getShipDefinitionsForResearchAgreement() {
+export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes);
+}
+
+export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSettings: IUserSettings): IShipFilterOptions {
+    const wantedShips: IShipDefinition[] = [];
+    const possessedShips: IShipDefinition[] = [];
+    const remainingShips: IShipDefinition[] = [];
+
+    shipDefinitions.forEach(ship => {
+        if (isPossessingShip(ship.id, userSettings)) {
+            possessedShips.push(ship);
+            return;
+        }
+        if (isWantedShip(ship.id, userSettings)) {
+            wantedShips.push(ship);
+            return;
+        }
+        remainingShips.push(ship);
+    });
+
+    return {
+        wantedShips: wantedShips.sort((a, b) => a.name.localeCompare(b.name)),
+        possessedShips: possessedShips.sort((a, b) => a.name.localeCompare(b.name)),
+        remainingShips: remainingShips.sort((a, b) => a.name.localeCompare(b.name)),
+    };
 }
 
 export function getAllFilterCombinations(): IResearchFilterState[] {
@@ -38,6 +62,7 @@ export function getAllFilterCombinations(): IResearchFilterState[] {
         return strategyFilterOptions.flatMap(strategyTypeFilter => {
             return tacticFilterOptions.map(tacticTypeFilter => {
                 return {
+                    shipId: null,
                     manufacturerFilter,
                     strategyTypeFilter,
                     tacticTypeFilter,
@@ -130,6 +155,24 @@ export function serializeResearchFilterState(filterState: IResearchFilterState):
 }
 
 export function getFilteredResearchConfigurations(configurations: IResearchConfiguration[], filterState: IResearchFilterState): IResearchConfiguration[] {
+    if (filterState.shipId !== null) {
+        return configurations
+            .filter(configuration => {
+                // ignore no-filter
+                if (!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter) {
+                    return false;
+                }
+
+                // config contains ship
+                return configuration.shipChances.find(shipChance => shipChance.shipDefinition.id === filterState.shipId);
+            })
+            .sort((a, b) => {
+                const aChance = a.shipChances.find(shipChance => shipChance.shipDefinition.id === filterState.shipId)?.chance ?? 0;
+                const bChance = b.shipChances.find(shipChance => shipChance.shipDefinition.id === filterState.shipId)?.chance ?? 0;
+                return bChance - aChance;
+            });
+    }
+
     const exactMatch: IResearchConfiguration[] = [];
 
     const compatibleMatch = configurations.filter(configuration => {

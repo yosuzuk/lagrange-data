@@ -2,9 +2,10 @@ import { useMemo, useState, memo } from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
-import { createResearchConfiguration, getAllFilterCombinations, getFilteredResearchConfigurations, getShipDefinitionsForResearchAgreement } from './utils/researchAgreementUtils';
+import { createResearchConfiguration, getAllFilterCombinations, getFilteredResearchConfigurations, getShipDefinitionsForResearchAgreement, getShipFilterOptions } from './utils/researchAgreementUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { ResearchAgreementTable } from './ResearchAgreementTable';
@@ -26,7 +27,10 @@ export const ResearchAgreementPage = () => {
         return createResearchConfiguration(filterState, shipDefinitions, userSettings);
     }), [allFilterOptions, shipDefinitions]);
 
+    const shipFilterOptions = useMemo(() => getShipFilterOptions(shipDefinitions, userSettings), [shipDefinitions, userSettings]);
+
     const [filterState, setFilterState] = useState<IResearchFilterState>({
+        shipId: null,
         manufacturerFilter: null,
         strategyTypeFilter: null,
         tacticTypeFilter: null,
@@ -34,26 +38,40 @@ export const ResearchAgreementPage = () => {
 
     const filteredResearchConfigurations = useMemo(() => getFilteredResearchConfigurations(allResearchConfigurations, filterState), [allResearchConfigurations, filterState]);
 
-    const filtered = !!filterState.manufacturerFilter || !!filterState.strategyTypeFilter || !!filterState.tacticTypeFilter;
-
     return (
         <>
             <NavigationBar currentRoute="/researchAgreement" />
             <Container>
                 <Box p={1}>
                     <Stack spacing={1}>
-                        <Paper>
-                            <Box p={1}>
-                                <ViewModeSelection mode={viewMode} onChange={setViewMode} />
-                            </Box>
-                        </Paper>
+                        <Stack pt={1} pb={1} spacing={2}>
+                            <Typography variant="body2">
+                                {'ここでは「研究協定」に関する各種確率を表示しています。'}
+                            </Typography>
+                            <Typography variant="body2">
+                                {'研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。'}
+                            </Typography>
+                            <Typography variant="body2">
+                                {'取得済みの設計図はマイリストで設定してください。'}
+                            </Typography>
+                        </Stack>
                         <Paper>
                             <Box p={2}>
-                                <ResearchFilter filterState={filterState} onChange={setFilterState} />
+                                <Stack spacing={2}>
+                                    <Typography variant="body2">
+                                        {'研究方針'}
+                                    </Typography>
+                                    <div>
+                                        <ResearchFilter filterState={filterState} onChange={setFilterState} shipFilterOptions={shipFilterOptions} />
+                                    </div>
+                                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                                        <ViewModeSelection mode={viewMode} onChange={setViewMode} />
+                                    </Box>
+                                </Stack>
                             </Box>
                         </Paper>
                         {viewMode === 'ships' && (
-                            <MemoizedResearchAgreementShipsView configurations={filteredResearchConfigurations} filtered={filtered} />
+                            <MemoizedResearchAgreementShipsView configurations={filteredResearchConfigurations} filterState={filterState} />
                         )}
                         {viewMode === 'table' && (
                             <MemoizedResearchAgreementTable configurations={filteredResearchConfigurations} />

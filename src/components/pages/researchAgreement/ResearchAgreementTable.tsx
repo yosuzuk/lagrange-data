@@ -59,7 +59,6 @@ export const ResearchAgreementTable = (props: IProps) => {
                         (a, b) => a.wishedShipChance - b.wishedShipChance,
                         (a, b) => b.unwishedShipChance - a.unwishedShipChance,
                     ],
-                    initialSortDirection: 'desc',
                 },
                 {
                     id: 'totalModuleChance',
@@ -76,7 +75,6 @@ export const ResearchAgreementTable = (props: IProps) => {
                         (a, b) => a.wishedShipChance - b.wishedShipChance,
                         (a, b) => b.unwishedShipChance - a.unwishedShipChance,
                     ],
-                    initialSortDirection: 'desc',
                 },
                 {
                     id: 'techPointChance',
