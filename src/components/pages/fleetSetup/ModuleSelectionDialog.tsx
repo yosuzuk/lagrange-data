@@ -75,7 +75,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                             )}
                                             {Object.keys(newModuleSelection.groups[groupId]).map((moduleId: string) => {
                                                 const moduleUsage: IModuleUsage = newModuleSelection.groups[groupId][moduleId];
-                                                const disabled = reinforcement !== 'ally' && moduleUsage.usage === 'not_possessed';
+                                                const disabled = reinforcement !== 'ally' && reinforcement !== 'ally2' && reinforcement !== 'ally3' && moduleUsage.usage === 'not_possessed';
                                                 const value = `${groupId}#${moduleId}`;
                                                 return (
                                                     <FormControlLabel

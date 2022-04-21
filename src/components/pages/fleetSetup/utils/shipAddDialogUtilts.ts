@@ -64,7 +64,7 @@ function pickShipsForAddDialog(
     userSettings: IUserSettings,
 ): IShipDefinition[] {
     const ships = shipDefinitions.filter(s => s.type !== ShipType.CORVETTE && s.type !== ShipType.FIGHTER);
-    return (reinforcement === 'ally' || !myListOnly)
+    return (reinforcement?.includes('ally') || !myListOnly)
         ? ships
         : ships.filter(s => isPossessingShip(s.id, userSettings));
 }

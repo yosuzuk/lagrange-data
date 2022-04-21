@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import { IModuleSelection, IShipSelection, ReinforcementType } from './types/IFleetSetup';
 import { HangarData } from './HangarData';
 import { ModuleData } from './ModuleData';
+import { createShipWarningKey } from './utils/fleetSetupValidation';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -52,7 +53,7 @@ export const ShipCountEditList = (props: IProps) => {
                             carrierShipId={carrierShipId}
                             onChangeShipCount={onChangeShipCount}
                             onChangeCarriedShipCount={onChangeCarriedShipCount}
-                            shipWarning={shipWarnings[shipSelection.shipDefinition.id]}
+                            shipWarning={shipWarnings[createShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                         />
                         {shipSelection.moduleSelection && onChangeModule && (
                             <ModuleData
@@ -76,7 +77,7 @@ export const ShipCountEditList = (props: IProps) => {
                                         showCost={false}
                                         showReinforcement={false}
                                         onChangeCarriedShipCount={onChangeCarriedShipCount}
-                                        shipWarning={shipWarnings[carriedShipSelection.shipDefinition.id]}
+                                        shipWarning={shipWarnings[createShipWarningKey(carriedShipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                                     />
                                 ))}
                             </Stack>

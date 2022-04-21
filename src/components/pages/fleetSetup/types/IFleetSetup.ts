@@ -1,6 +1,6 @@
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
 
-export type ReinforcementType = 'self' | 'ally';
+export type ReinforcementType = 'self' | 'ally' | 'ally2' | 'ally3';
 
 export interface IFleetSetup {
     key: string;

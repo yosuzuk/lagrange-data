@@ -30,6 +30,14 @@ export const AddShipsButton = (props: IProps) => {
                 onOpenAddShips('ally', filter);
                 break;
             }
+            case 'addAlly2Reinforcement': {
+                onOpenAddShips('ally2', filter);
+                break;
+            }
+            case 'addAlly3Reinforcement': {
+                onOpenAddShips('ally3', filter);
+                break;
+            }
         }
     };
 
@@ -52,8 +60,18 @@ export const AddShipsButton = (props: IProps) => {
                 },
                 {
                     key: 'addAllyReinforcement',
-                    text: 'ユニオン増援',
+                    text: 'ユニオン増援Ａ',
                     value: 'addAllyReinforcement',
+                },
+                {
+                    key: 'addAlly2Reinforcement',
+                    text: 'ユニオン増援Ｂ',
+                    value: 'addAlly2Reinforcement',
+                },
+                {
+                    key: 'addAlly3Reinforcement',
+                    text: 'ユニオン増援Ｃ',
+                    value: 'addAlly3Reinforcement',
                 },
             ]}
         />

@@ -41,7 +41,17 @@ export const ShipCountList = (props: IProps) => {
                             )}
                             {shipSelection.reinforcement === 'ally' && (
                                 <Typography variant="body2" noWrap={true}>
-                                    {'（ユニオン増援）'}
+                                    {'（ユニオン増援Ａ）'}
+                                </Typography>
+                            )}
+                            {shipSelection.reinforcement === 'ally2' && (
+                                <Typography variant="body2" noWrap={true}>
+                                    {'（ユニオン増援Ｂ）'}
+                                </Typography>
+                            )}
+                            {shipSelection.reinforcement === 'ally3' && (
+                                <Typography variant="body2" noWrap={true}>
+                                    {'（ユニオン増援Ｃ）'}
                                 </Typography>
                             )}
                         </Stack>

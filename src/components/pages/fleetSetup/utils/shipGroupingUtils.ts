@@ -17,6 +17,8 @@ const sortNumberPerReinforcementType = {
     initial: 0,
     self: 1,
     ally: 2,
+    ally2: 3,
+    ally3: 4,
 } as const;
 
 type SortableByShipDefinition = IShipSelection | ICarriedShipSelection;
@@ -151,7 +153,19 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
                         }
                         case 'ally': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援）`,
+                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ａ）`,
+                                ...formatCarriedShipsForSharing(ship.carriedShips),
+                            ];
+                        }
+                        case 'ally2': {
+                            return [
+                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｂ）`,
+                                ...formatCarriedShipsForSharing(ship.carriedShips),
+                            ];
+                        }
+                        case 'ally3': {
+                            return [
+                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｃ）`,
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }

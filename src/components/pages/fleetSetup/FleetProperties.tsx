@@ -38,14 +38,20 @@ export const FleetProperties = (props: IProps) => {
     const warnings = useMemo<string[]>(() => {
         const errorMap = validateFleetSetupForShipWarnings(fleetSetup);
         return Object.keys(errorMap).map(key => {
-            const [shipId, reinforcement] = key.split('#');
+            const [shipId, owner] = key.split('#');
             const shipDefinition = getShipDefinitionById(shipId);
-            switch (reinforcement) {
+            switch (owner) {
                 case 'self': {
-                    return `${shipDefinition.name}（増援）：${errorMap[key]}`;
+                    return `${shipDefinition.name}：${errorMap[key]}`;
                 }
                 case 'ally': {
-                    return `${shipDefinition.name}（ユニオン増援）：${errorMap[key]}`;
+                    return `${shipDefinition.name}（ユニオン増援Ａ）：${errorMap[key]}`;
+                }
+                case 'ally2': {
+                    return `${shipDefinition.name}（ユニオン増援Ｂ）：${errorMap[key]}`;
+                }
+                case 'ally3': {
+                    return `${shipDefinition.name}（ユニオン増援Ｃ）：${errorMap[key]}`;
                 }
                 default: {
                     return `${shipDefinition.name}：${errorMap[key]}`;

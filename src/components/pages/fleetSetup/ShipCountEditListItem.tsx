@@ -64,7 +64,17 @@ export const ShipCountEditListItem = (props: IProps) => {
             )}
             {showReinforcement && reinforcement === 'ally' && (
                 <Typography variant="body2" color="text.secondary">
-                    {`ユニオン増援`}
+                    {`ユニオン増援Ａ`}
+                </Typography>
+            )}
+            {showReinforcement && reinforcement === 'ally2' && (
+                <Typography variant="body2" color="text.secondary">
+                    {`ユニオン増援Ｂ`}
+                </Typography>
+            )}
+            {showReinforcement && reinforcement === 'ally3' && (
+                <Typography variant="body2" color="text.secondary">
+                    {`ユニオン増援Ｃ`}
                 </Typography>
             )}
         </>

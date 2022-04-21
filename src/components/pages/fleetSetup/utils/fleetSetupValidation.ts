@@ -35,8 +35,8 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
     const shipCountMap: Record<string, ICountAndLimitForShip> = {};
     const carriedShipCountMap: Record<string, ICountAndLimitForCarriedShip> = {};
 
-    fleetSetup.ships.filter(ship => ship.reinforcement !== 'ally').forEach(ship => {
-        const key = ship.shipDefinition.id;
+    fleetSetup.ships.forEach(ship => {
+        const key = createShipWarningKey(ship.shipDefinition.id, ship.reinforcement);
         if (!!shipCountMap[key]) {
             const entry = shipCountMap[key];
             shipCountMap[key] = {
@@ -53,7 +53,7 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
         }
 
         ship.carriedShips.forEach(carriedShip => {
-            const carriedShipKey = carriedShip.shipDefinition.id;
+            const carriedShipKey = createShipWarningKey(carriedShip.shipDefinition.id, ship.reinforcement);
             if (!carriedShipCountMap[carriedShipKey]) {
                 carriedShipCountMap[carriedShipKey] = {
                     count: carriedShip.count,
@@ -65,19 +65,24 @@ export function validateFleetSetupForShipWarnings(fleetSetup: IFleetSetup): Reco
         });
     });
 
-    Object.keys(shipCountMap).forEach(shipId => {
-        const entry = shipCountMap[shipId];
+    Object.keys(shipCountMap).forEach(key => {
+        const entry = shipCountMap[key];
         if ((entry.count + entry.reinforcementCount) > entry.operationLimit) {
-            errorMap[shipId] = '配備した合計数が稼働上限を超えています。';
+            errorMap[key] = '配備した合計数が稼働上限を超えています。';
         }
     });
 
-    Object.keys(carriedShipCountMap).forEach(carriedShipId => {
-        const entry = carriedShipCountMap[carriedShipId];
+    Object.keys(carriedShipCountMap).forEach(key => {
+        const entry = carriedShipCountMap[key];
         if (entry.count > entry.operationLimit) {
-            errorMap[carriedShipId] = '配備した合計数が稼働上限を超えています。';
+            errorMap[key] = '配備した合計数が稼働上限を超えています。';
         }
     });
 
     return errorMap;
+}
+
+export function createShipWarningKey(shipId: string, reinforcementType: ReinforcementType | null): string {
+    const owner = reinforcementType?.includes('ally') ? reinforcementType : 'self';
+    return `${shipId}#${owner}`;
 }

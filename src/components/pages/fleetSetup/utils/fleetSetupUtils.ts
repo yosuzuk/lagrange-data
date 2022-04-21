@@ -181,7 +181,7 @@ function createModuleSelection(
             return;
         }
 
-        if (module.defaultModule || !myListOnly || reinforcement === 'ally' || userSettings.modules[module.id]?.possession === PossessionState.POSSESSED) {
+        if (module.defaultModule || !myListOnly || reinforcement?.includes('ally') || userSettings.modules[module.id]?.possession === PossessionState.POSSESSED) {
             result.groups[module.category][module.id] = {
                 module,
                 usage: restoredUsedModules.includes(module.id) ? 'used' : 'not_used',
@@ -397,8 +397,8 @@ export function applyModules(args: IApplyModulesArgs): IFleetSetup {
             }
 
             // module for ally reinforcment only affects ally reinforcement ships
-            if (reinforcement === 'ally') {
-                return shipSelection.reinforcement === 'ally' ? {
+            if (reinforcement?.includes('ally')) {
+                return shipSelection.reinforcement === reinforcement ? {
                     ...shipSelection,
                     moduleSelection,
                     carrierCapabilities: createCarrierCapabilities(shipSelection.shipDefinition, moduleSelection),
@@ -406,7 +406,7 @@ export function applyModules(args: IApplyModulesArgs): IFleetSetup {
             }
 
             // initial ships or self reinforcement share module settings
-            return shipSelection.reinforcement !== 'ally' ? {
+            return (shipSelection.reinforcement && !shipSelection.reinforcement.includes('ally')) ? {
                 ...shipSelection,
                 moduleSelection,
                 carrierCapabilities: createCarrierCapabilities(shipSelection.shipDefinition, moduleSelection),

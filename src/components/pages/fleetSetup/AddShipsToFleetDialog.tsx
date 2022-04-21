@@ -159,6 +159,8 @@ export const AddShipsToFleetDialog = (props: IProps) => {
 function getTitle(reinforcement: ReinforcementType | null): string {
     switch (reinforcement) {
         case 'ally':
+        case 'ally2':
+        case 'ally3':
         case 'self': {
             return '増援を追加';
         }
@@ -171,7 +173,13 @@ function getTitle(reinforcement: ReinforcementType | null): string {
 function getDescription(reinforcement: ReinforcementType | null): string {
     switch (reinforcement) {
         case 'ally': {
-            return 'ユニオンメンバーから送られる増援を追加します。';
+            return 'ユニオンメンバーＡから送られる増援を追加します。';
+        }
+        case 'ally2': {
+            return 'ユニオンメンバーＢから送られる増援を追加します。';
+        }
+        case 'ally3': {
+            return 'ユニオンメンバーＣから送られる増援を追加します。';
         }
         case 'self': {
             return '自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。';

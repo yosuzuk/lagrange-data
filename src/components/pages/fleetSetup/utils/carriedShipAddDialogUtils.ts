@@ -89,7 +89,7 @@ function pickCarriedShipsForAddDialog(
 
         return false;
     });
-    return (reinforcement === 'ally' || !myListOnly)
+    return (reinforcement?.includes('ally') || !myListOnly)
         ? ships
         : ships.filter(s => isPossessingShip(s.id, userSettings));
 }
