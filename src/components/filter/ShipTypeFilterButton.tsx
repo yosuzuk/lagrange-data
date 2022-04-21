@@ -7,6 +7,9 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 import Popper, { PopperProps } from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
@@ -105,36 +108,46 @@ export const ShipTypeFilterButton = (props: IProps) => {
                             transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
                         }}
                     >
-                        <Paper
-                            style={{
-                                maxHeight: getMaxPopperHeight(anchorRef.current),
-                                overflowY: 'auto',
-                            }}
-                        >
+                        <div>
                             <ClickAwayListener onClickAway={() => setOpened(false)}>
-                                <MenuList id="split-button-menu">
-                                    {shipFilterOptions.map((option: IFilterOption) => (
-                                        <MenuItem
-                                            key={option.filterKey}
-                                            selected={filter[option.filterKey]}
-                                            onClick={() => handleClickFilter(option.filterKey)}
-                                        >
-                                            <ListItemIcon>
-                                            <Checkbox
-                                                edge="start"
-                                                checked={filter[option.filterKey]}
-                                                tabIndex={-1}
-                                                disableRipple={true}
-                                            />
-                                            </ListItemIcon>
-                                            <ListItemText>
-                                                {option.name}
-                                            </ListItemText>
-                                        </MenuItem>
-                                    ))}
-                                </MenuList>
+                                <Paper>
+                                    <Box sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px`}}>
+                                        <MenuList id="split-button-menu">
+                                            {shipFilterOptions.map((option: IFilterOption) => (
+                                                <MenuItem
+                                                    key={option.filterKey}
+                                                    selected={filter[option.filterKey]}
+                                                    onClick={() => handleClickFilter(option.filterKey)}
+                                                >
+                                                    <ListItemIcon>
+                                                    <Checkbox
+                                                        edge="start"
+                                                        checked={filter[option.filterKey]}
+                                                        tabIndex={-1}
+                                                        disableRipple={true}
+                                                    />
+                                                    </ListItemIcon>
+                                                    <ListItemText>
+                                                        {option.name}
+                                                    </ListItemText>
+                                                </MenuItem>
+                                            ))}
+                                        </MenuList>
+                                    </Box>
+                                    <Divider />
+                                    <Box p={1} display="flex" justifyContent="end">
+                                        <Stack spacing={1} direction="row">
+                                            <Button variant="outlined" onClick={handleClickFilterOff} disabled={!filterUsed}>
+                                                {'全て外す'}
+                                            </Button>
+                                            <Button variant="outlined" onClick={() => setOpened(false)}>
+                                                {'閉じる'}
+                                            </Button>
+                                        </Stack>
+                                    </Box>
+                                </Paper>
                             </ClickAwayListener>
-                        </Paper>
+                        </div>
                     </Grow>
                 )}
             </Popper>

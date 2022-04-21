@@ -5,6 +5,8 @@ import Button, { ButtonProps } from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ViewColumnIcon from '@mui/icons-material/ViewColumn';
 import Grow from '@mui/material/Grow';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
@@ -78,36 +80,41 @@ export const ColumnConfigButton = (props: IProps) => {
                             placement === 'bottom' ? 'center top' : 'center bottom',
                         }}
                     >
-                        <Paper
-                            style={{
-                                maxHeight: getMaxPopperHeight(anchorRef.current),
-                                overflowY: 'auto',
-                            }}
-                        >
+                        <div>
                             <ClickAwayListener onClickAway={() => setOpened(false)}>
-                                <MenuList id="split-button-menu">
-                                    {columnConfigOptions.map((option: IColumnConfigOption) => (
-                                        <MenuItem
-                                            key={option.columnKey}
-                                            selected={columnConfig[option.columnKey]}
-                                            onClick={() => handleClickOption(option.columnKey)}
-                                        >
-                                            <ListItemIcon>
-                                            <Checkbox
-                                                edge="start"
-                                                checked={columnConfig[option.columnKey]}
-                                                tabIndex={-1}
-                                                disableRipple={true}
-                                            />
-                                            </ListItemIcon>
-                                            <ListItemText>
-                                                {option.name}
-                                            </ListItemText>
-                                        </MenuItem>
-                                    ))}
-                                </MenuList>
+                                <Paper>
+                                    <Box sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px`}}>
+                                        <MenuList id="split-button-menu">
+                                            {columnConfigOptions.map((option: IColumnConfigOption) => (
+                                                <MenuItem
+                                                    key={option.columnKey}
+                                                    selected={columnConfig[option.columnKey]}
+                                                    onClick={() => handleClickOption(option.columnKey)}
+                                                >
+                                                    <ListItemIcon>
+                                                    <Checkbox
+                                                        edge="start"
+                                                        checked={columnConfig[option.columnKey]}
+                                                        tabIndex={-1}
+                                                        disableRipple={true}
+                                                    />
+                                                    </ListItemIcon>
+                                                    <ListItemText>
+                                                        {option.name}
+                                                    </ListItemText>
+                                                </MenuItem>
+                                            ))}
+                                        </MenuList>
+                                    </Box>
+                                    <Divider />
+                                    <Box p={1} display="flex" justifyContent="end">
+                                        <Button variant="outlined" onClick={() => setOpened(false)}>
+                                            {'閉じる'}
+                                        </Button>
+                                    </Box>
+                                </Paper>
                             </ClickAwayListener>
-                        </Paper>
+                        </div>
                     </Grow>
                 )}
             </Popper>
