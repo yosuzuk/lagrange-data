@@ -74,7 +74,7 @@ export const FleetSetupPage = () => {
                                 {groupDirection === 'row' ? (
                                     <Stack spacing={1} direction="row" sx={{ width: '100%' }}>
                                         {groupedShips.groups.map(group => (
-                                            <Paper key={groupedShips.groupedBy} sx={{ width: `${100 / groupedShips.groups.length}%` }}>
+                                            <Paper key={group.id} sx={{ width: `${100 / groupedShips.groups.length}%` }}>
                                                 <Box p={1}>
                                                     <Stack spacing={1}>
                                                         <Typography variant="body1">
