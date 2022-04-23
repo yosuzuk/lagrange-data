@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { createResearchConfiguration, getAllFilterCombinations, getFilteredResearchConfigurations, getShipDefinitionsForResearchAgreement, getShipFilterOptions } from './utils/researchAgreementUtils';
@@ -11,8 +12,11 @@ import { getCurrentUserSettings } from '../../../userSettings/utils/userSettings
 import { ResearchAgreementTable } from './ResearchAgreementTable';
 import { ResearchAgreementShipsView } from './ResearchAgreementShipsView';
 import { ViewMode, ViewModeSelection } from './ViewModeSelection';
-import { IResearchFilterState } from './types/IResearchConfiguration';
+import { IResearchConfiguration, IResearchFilterState } from './types/IResearchConfiguration';
 import { ResearchFilter } from './ResearchFilter';
+import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
+import { ConfigurationDetail } from './ConfigurationDetail';
+import { ConfigurationSummary } from './ConfigurationSummary';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
@@ -37,6 +41,8 @@ export const ResearchAgreementPage = () => {
     });
 
     const filteredResearchConfigurations = useMemo(() => getFilteredResearchConfigurations(allResearchConfigurations, filterState), [allResearchConfigurations, filterState]);
+
+    const [configurationForDialog, setConfigurationForDialog] = useState<IResearchConfiguration | null>(null);
 
     return (
         <>
@@ -71,14 +77,43 @@ export const ResearchAgreementPage = () => {
                             </Box>
                         </Paper>
                         {viewMode === 'ships' && (
-                            <MemoizedResearchAgreementShipsView configurations={filteredResearchConfigurations} filterState={filterState} />
-                        )}
-                        {viewMode === 'table' && (
-                            <MemoizedResearchAgreementTable configurations={filteredResearchConfigurations} />
+                            <MemoizedResearchAgreementShipsView
+                                configurations={filteredResearchConfigurations}
+                                filterState={filterState}
+                            />
                         )}
                     </Stack>
                 </Box>
             </Container>
+            {viewMode === 'table' && (
+                <Box p={1}>    
+                    <MemoizedResearchAgreementTable
+                        configurations={filteredResearchConfigurations}
+                        filterState={filterState}
+                        onClickConfiguration={setConfigurationForDialog}
+                    />
+                </Box>
+            )}
+            {configurationForDialog && (
+                <ResponsiveDialog
+                    maxWidth="sm"
+                    title={(
+                        <ConfigurationSummary
+                            configuration={configurationForDialog}
+                            filterState={filterState}
+                        />
+                    )}
+                    content={(
+                        <ConfigurationDetail configuration={configurationForDialog} />
+                    )}
+                    actions={(
+                        <Button variant="outlined" onClick={() => setConfigurationForDialog(null)}>
+                            {'閉じる'}
+                        </Button>
+                    )}
+                    onClose={() => setConfigurationForDialog(null)}
+                />
+            )}
         </>
     );
 };

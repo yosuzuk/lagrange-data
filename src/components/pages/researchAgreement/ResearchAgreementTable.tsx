@@ -6,21 +6,26 @@ import { useEffect } from 'react';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
-import { ITableData, Table, useTable } from '../../table';
-import { IResearchConfiguration } from './types/IResearchConfiguration';
+import { ITableColumn, ITableData, Table, useTable } from '../../table';
+import { IResearchConfiguration, IResearchFilterState } from './types/IResearchConfiguration';
 import { serializeResearchFilterState } from './utils/researchAgreementUtils';
+import { ScriptedLink } from '../../link/ScriptedLink';
 
 interface IProps {
     configurations: IResearchConfiguration[];
+    filterState: IResearchFilterState;
+    onClickConfiguration: (confiugration: IResearchConfiguration | null) => void;
 }
 
 export const ResearchAgreementTable = (props: IProps) => {
-    const { configurations } = props;
+    const { configurations, filterState, onClickConfiguration } = props;
     const { table, setTableData } = useTable<IResearchConfiguration>();
 
     const theme = useTheme();
     const downSm = useMediaQuery(theme.breakpoints.down('sm'));
     const chanceCellMinWidth = downSm ? '38px' : '50px';
+
+    const filterStateShipId = filterState.shipId;
 
     useEffect(() => {
         const tableData: ITableData<IResearchConfiguration> = {
@@ -31,20 +36,52 @@ export const ResearchAgreementTable = (props: IProps) => {
                     renderCell: (configuration => (
                         <Box sx={{ minWidth: '120px' }}>
                             {configuration.filterState.manufacturerFilter && (
-                                <Typography variant="body2">{translateResearchManufacturer(configuration.filterState.manufacturerFilter)}</Typography>
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
+                                        {translateResearchManufacturer(configuration.filterState.manufacturerFilter)}
+                                    </ScriptedLink>
+                                </Typography>
                             )}
                             {configuration.filterState.strategyTypeFilter && (
-                                <Typography variant="body2">{translateResearchStrategyType(configuration.filterState.strategyTypeFilter)}</Typography>
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
+                                        {translateResearchStrategyType(configuration.filterState.strategyTypeFilter)}
+                                    </ScriptedLink>
+                                </Typography>
                             )}
                             {configuration.filterState.tacticTypeFilter && (
-                                <Typography variant="body2">{translateResearchTacticType(configuration.filterState.tacticTypeFilter)}</Typography>
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
+                                        {translateResearchTacticType(configuration.filterState.tacticTypeFilter)}
+                                    </ScriptedLink>
+                                </Typography>
                             )}
                             {!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter && (
-                                <Typography variant="body2">{'無し'}</Typography>
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
+                                        {'無し'}
+                                    </ScriptedLink>
+                                </Typography>
                             )}
                         </Box>
                     )),
                 },
+                ...(filterStateShipId ? [{
+                    id: 'selectedShipChance',
+                    renderHeader: () => '選択した艦船',
+                    renderCell: configuration => (
+                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                            <Typography variant="body2">{formatChance(getSelectedShipChange(configuration, filterStateShipId))}</Typography>
+                        </Box>
+                    ),
+                    sortFn: [
+                        (a, b) => getSelectedShipChange(a, filterStateShipId) - getSelectedShipChange(b, filterStateShipId),
+                        (a, b) => a.totalShipChance - b.totalShipChance,
+                        (a, b) => b.techPointChance - a.techPointChance,
+                        (a, b) => a.wishedShipChance - b.wishedShipChance,
+                        (a, b) => b.unwishedShipChance - a.unwishedShipChance,
+                    ],
+                } as ITableColumn<IResearchConfiguration>] : []),
                 {
                     id: 'totalShipChance',
                     renderHeader: () => '設計図',
@@ -126,7 +163,7 @@ export const ResearchAgreementTable = (props: IProps) => {
             rowIdFn: (configuration: IResearchConfiguration) => serializeResearchFilterState(configuration.filterState),
         };
         setTableData(tableData);
-    }, [setTableData, configurations, chanceCellMinWidth]);
+    }, [setTableData, configurations, filterStateShipId, onClickConfiguration, chanceCellMinWidth]);
 
     return (
         <Table table={table} size="small" />
@@ -135,4 +172,8 @@ export const ResearchAgreementTable = (props: IProps) => {
 
 function formatChance(chance: number): string {
     return `${Number((chance * 100).toFixed(2))} %`;
+}
+
+function getSelectedShipChange(configuration: IResearchConfiguration, shipId: string): number {
+    return configuration.shipChances.find(shipChance => shipChance.shipDefinition.id === shipId)?.chance ?? 0;
 }
