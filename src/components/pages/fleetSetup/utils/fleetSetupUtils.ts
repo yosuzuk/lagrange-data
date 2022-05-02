@@ -406,7 +406,7 @@ export function applyModules(args: IApplyModulesArgs): IFleetSetup {
             }
 
             // initial ships or self reinforcement share module settings
-            return (shipSelection.reinforcement && !shipSelection.reinforcement.includes('ally')) ? {
+            return (!shipSelection.reinforcement || !shipSelection.reinforcement.includes('ally')) ? {
                 ...shipSelection,
                 moduleSelection,
                 carrierCapabilities: createCarrierCapabilities(shipSelection.shipDefinition, moduleSelection),
