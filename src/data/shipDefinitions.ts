@@ -145,6 +145,8 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        carryFighter: 1,
+        carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     },
     {
         id: ShipId.B192_NEWLAND,
@@ -2411,7 +2413,7 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.VOID_ELFIN,
-        name: 'ボルドエルフィン',
+        name: 'ボイドエルフィン',
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,
