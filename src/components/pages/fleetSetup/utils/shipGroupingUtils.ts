@@ -144,34 +144,40 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
                 ...(groupedShips.groups.length > 1 ? [`【${shipGroup.name}】`] : []),
                 ...shipGroup.ships.flatMap(ship => {
                     const cost = ship.count * ship.shipDefinition.cost;
+                    const changedModulesLine = formatChangedSystemModules(ship);
                     switch (ship.reinforcement) {
                         case 'self': {
                             return [
                                 `${ship.count}×　${ship.shipDefinition.name}（増援）`,
+                                ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally': {
                             return [
                                 `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ａ）`,
+                                ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally2': {
                             return [
                                 `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｂ）`,
+                                ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally3': {
                             return [
                                 `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｃ）`,
+                                ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         default: {
                             return [
                                 `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`,
+                                ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
@@ -190,4 +196,26 @@ function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): st
     return carriedShips.map(ship => {
         return `　　${ship.count}×　${ship.shipDefinition.name}`;
     });
+}
+
+function formatChangedSystemModules(shipSelection: IShipSelection): string | null {
+    if (shipSelection.moduleSelection === null || shipSelection.moduleSelection.static) {
+        return null;
+    }
+    const changedModuleNames = ['M', 'A', 'B', 'C'].flatMap(groupId => {
+        const moduleIds = Object.keys(shipSelection.moduleSelection?.groups[groupId] ?? {});
+        const usedModuleId = moduleIds.find(moduleId => shipSelection.moduleSelection?.groups[groupId][moduleId].usage === 'used');
+        if (!usedModuleId) {
+            return [];
+        }
+        const usedModule = shipSelection.moduleSelection?.groups[groupId][usedModuleId];
+        if (!usedModule || usedModule.module.defaultModule) {
+            return [];
+        }
+        return usedModule ? [`${usedModule.module.name}（${usedModule.module.id}）`] : [];
+    });
+    if (changedModuleNames.length === 0) {
+        return null;
+    }
+    return changedModuleNames.map(line => `　　${line}`).join('\n');
 }
