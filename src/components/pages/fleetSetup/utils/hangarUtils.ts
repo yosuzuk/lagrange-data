@@ -62,19 +62,17 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
     };
 
-    moveOverflowToNextHangar(result.upToSmallFighter, [result.upToMediumFighter, result.upToLargeFighter]);
+    // move up the tree based on available space
     moveOverflowToNextHangar(result.upToMediumFighter, [result.upToLargeFighter]);
+    moveOverflowToNextHangar(result.upToSmallFighter, [result.upToMediumFighter, result.upToLargeFighter]);
 
-    if (result.upToSmallFighter.maxCount === 0) {
-        moveOverflowToNextHangar(result.upToSmallFighter, [result.removedHangar]);
-    }
+    // force move remaining overflow up the tree
+    forceMoveOverflowToHanger(result.upToSmallFighter, result.upToMediumFighter);
+    forceMoveOverflowToHanger(result.upToMediumFighter, result.upToLargeFighter);
 
-    if (result.upToMediumFighter.maxCount === 0) {
-        moveOverflowToNextHangar(result.upToMediumFighter, [result.removedHangar]);
-    }
-
+    // last overflow comes from removed system module
     if (result.upToLargeFighter.maxCount === 0) {
-        moveOverflowToNextHangar(result.upToLargeFighter, [result.removedHangar]);
+        forceMoveOverflowToHanger(result.upToLargeFighter, result.removedHangar);
     }
 
     return result;
@@ -103,6 +101,14 @@ function moveOverflowToNextHangar(source: IHangarInstance, targets: IHangarInsta
 
     if (overflow > 0) {
         source.count += overflow;
+    }
+}
+
+function forceMoveOverflowToHanger(source: IHangarInstance, target: IHangarInstance) {
+    const overflow = source.count - source.maxCount;
+    if (overflow > 0) {
+        source.count -= overflow;
+        target.count += overflow;
     }
 }
 
