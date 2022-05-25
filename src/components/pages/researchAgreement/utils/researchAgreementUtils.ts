@@ -4,7 +4,7 @@ import { ResearchStrategyType } from '../../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
+import { hasWantedModule, isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions } from '../types/IResearchConfiguration';
 
 export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
@@ -21,7 +21,7 @@ export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSet
             possessedShips.push(ship);
             return;
         }
-        if (isWantedShip(ship.id, userSettings)) {
+        if (isWantedShip(ship.id, userSettings) || hasWantedModule(ship.id, userSettings)) {
             wantedShips.push(ship);
             return;
         }
