@@ -4,27 +4,24 @@ import Typography from '@mui/material/Typography';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { PossessionState } from '../../../userSettings/types/PossessionState';
-import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
-import { ShipSource } from '../../../types/ShipSource';
 
 interface IProps {
-    shipId: string;
+    label: string;
     possession: PossessionState;
-    onChange: (shipId: string, possession: PossessionState) => void;
+    options: [string, string];
+    onChange: (possession: PossessionState) => void;
 }
 
 export const PossessionControl = (props: IProps) => {
-    const { shipId, possession, onChange } = props;
+    const { label, options, possession, onChange } = props;
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {
-        onChange(shipId, value === null ? PossessionState.UNDEFINED : Number(value));
+        onChange(value === null ? PossessionState.UNDEFINED : Number(value));
     };
-
-    const sourceType: ShipSource = getShipDefinitionById(shipId).source;
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body1">{getLabelText(sourceType)}</Typography>
+            <Typography variant="body1">{label}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"
@@ -33,37 +30,12 @@ export const PossessionControl = (props: IProps) => {
                 onChange={handleChange}
             >
                 <ToggleButton value={`${PossessionState.POSSESSED}`}>
-                    {getToggleText(sourceType, true)}
+                    {options[0]}
                 </ToggleButton>
                 <ToggleButton value={`${PossessionState.NOT_POSSESSED}`}>
-                    {getToggleText(sourceType, false)}
+                    {options[1]}
                 </ToggleButton>
             </ToggleButtonGroup>
         </Stack>
     );
 };
-
-function getLabelText(sourceType: ShipSource) {
-    switch (sourceType) {
-        case ShipSource.CITY_TRADE: {
-            return '都市で';
-        }
-        case ShipSource.DOCK_EFFECT: {
-            return '臨時設計図を';
-        }
-        default: {
-            return '設計図を';
-        }
-    }
-}
-
-function getToggleText(sourceType: ShipSource, positive: boolean) {
-    switch (sourceType) {
-        case ShipSource.CITY_TRADE: {
-            return positive ? '買っている' : '買っていない';
-        }
-        default: {
-            return positive ? '持っている' : '持っていない';
-        }
-    }
-}

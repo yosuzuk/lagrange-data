@@ -7,17 +7,16 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { WishState } from '../../../userSettings/types/WishState';
 
 interface IProps {
-    shipId: string;
     wish: WishState;
-    onChange: (shipId: string, wish: WishState) => void;
+    onChange: (wish: WishState) => void;
 }
 
 export const WishControl = (props: IProps) => {
-    const { shipId, wish, onChange } = props;
+    const { wish, onChange } = props;
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {
         const clear = value === null || value === 'clear';
-        onChange(shipId, clear ? WishState.UNDEFINED : Number(value));
+        onChange(clear ? WishState.UNDEFINED : Number(value));
     };
 
     return (

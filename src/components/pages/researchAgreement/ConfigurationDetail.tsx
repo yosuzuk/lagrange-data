@@ -3,6 +3,8 @@ import Typography from '@mui/material/Typography';
 import { IResearchConfiguration } from './types/IResearchConfiguration';
 import { LabeledList } from '../../list/LabeledList';
 import { ShipName } from './ShipName';
+import { hasAcquirableModules, hasWantedModule } from '../../../userSettings/utils/userSettingsUtils';
+import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 
 interface IProps {
     configuration: IResearchConfiguration;
@@ -10,6 +12,8 @@ interface IProps {
 
 export const ConfigurationDetail = (props: IProps) => {
     const { configuration } = props;
+    const { userSettings } = useUserSettings();
+
     return (
         <LabeledList
             rows={[
@@ -40,7 +44,8 @@ export const ConfigurationDetail = (props: IProps) => {
                     separatorAfter: true,
                 }] : []),
                 ...configuration.shipChances.map(shipChance => {
-                    const canGetModule = shipChance.possessed && shipChance.shipDefinition.modules && shipChance.shipDefinition.modules.length > 0;
+                    const canGetModule = shipChance.possessed && hasAcquirableModules(shipChance.shipDefinition.id, userSettings);
+                    const wished = shipChance.wished || hasWantedModule(shipChance.shipDefinition.id, userSettings);
                     return {
                         key: `${configuration.id}.${shipChance.shipDefinition.id}`,
                         label: (
@@ -56,7 +61,7 @@ export const ConfigurationDetail = (props: IProps) => {
                                         {'（技術Pt）'}
                                     </Typography>
                                 )}
-                                {shipChance.wished && (
+                                {wished && (
                                     <Tooltip
                                         arrow={true}
                                         disableFocusListener={true}

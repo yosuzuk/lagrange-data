@@ -11,6 +11,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { LoadingIndicator } from './components/loading/LoadingIndicator';
 import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
+import { UserSettingsProvider } from './userSettings/context/UserSettingsContext';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -58,131 +59,133 @@ function App() {
         <Router>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <ShipDetailProvider>
-                    <Routes>
-                        <Route
-                            path="techFiles"
-                            element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <BoxChancePage />
-                                </Suspense>
-                            )}
-                        />
-                        <Route
-                            path="researchAgreement"
-                            element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <ResearchAgreementPage />
-                                </Suspense>
-                            )}
-                        />
-                        <Route
-                            path="shipData"
-                            element={(
-                                <Outlet />
-                            )}
-                        >
+                <UserSettingsProvider>
+                    <ShipDetailProvider>
+                        <Routes>
                             <Route
-                                index={true}
+                                path="techFiles"
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
-                                        <ShipDataPage />
+                                        <BoxChancePage />
                                     </Suspense>
                                 )}
                             />
                             <Route
-                                path=":shipId"
+                                path="researchAgreement"
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
-                                        <ShipDetailPage />
-                                    </Suspense>
-                                )}
-                            />
-                        </Route>
-                        <Route
-                            path="myList"
-                            element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <MyListPage />
-                                </Suspense>
-                            )}
-                        />
-                        <Route
-                            path="myList/edit"
-                            element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <MyListEditPage />
-                                </Suspense>
-                            )}
-                        />
-                        <Route
-                            path="fleetSetup"
-                            element={(
-                                <Outlet />
-                            )}
-                        >
-                            <Route
-                                index={true}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <FleetSetupPage />
+                                        <ResearchAgreementPage />
                                     </Suspense>
                                 )}
                             />
                             <Route
-                                path=":fleetKey"
+                                path="shipData"
                                 element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <FleetSetupPage />
-                                    </Suspense>
+                                    <Outlet />
                                 )}
-                            />
-                        </Route>
-                        <Route
-                            path="fleetSetup/edit"
-                            element={(
-                                <Outlet />
-                            )}
-                        >
+                            >
+                                <Route
+                                    index={true}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <ShipDataPage />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path=":shipId"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <ShipDetailPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            </Route>
                             <Route
-                                index={true}
+                                path="myList"
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
-                                        <FleetSetupEditPage />
+                                        <MyListPage />
                                     </Suspense>
                                 )}
                             />
                             <Route
-                                path=":fleetKey"
+                                path="myList/edit"
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
-                                        <FleetSetupEditPage />
+                                        <MyListEditPage />
                                     </Suspense>
                                 )}
                             />
-                        </Route>
-                        <Route
-                            path="debug"
-                            element={(
-                                <Suspense fallback={<LoadingIndicator />}>
-                                    <TableExample />
-                                </Suspense>
-                            )}
-                        />
-                        <Route
-                            path="/"
-                            element={(
-                                <Navigate replace={true} to="techFiles" />
-                            )}
-                        />
-                        <Route
-                            path="*"
-                            element={(
-                                <Typography variant="body1">{'Page not found'}</Typography>
-                            )}
-                        />
-                    </Routes>
-                </ShipDetailProvider>
+                            <Route
+                                path="fleetSetup"
+                                element={(
+                                    <Outlet />
+                                )}
+                            >
+                                <Route
+                                    index={true}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <FleetSetupPage />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path=":fleetKey"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <FleetSetupPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            </Route>
+                            <Route
+                                path="fleetSetup/edit"
+                                element={(
+                                    <Outlet />
+                                )}
+                            >
+                                <Route
+                                    index={true}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <FleetSetupEditPage />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path=":fleetKey"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <FleetSetupEditPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            </Route>
+                            <Route
+                                path="debug"
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <TableExample />
+                                    </Suspense>
+                                )}
+                            />
+                            <Route
+                                path="/"
+                                element={(
+                                    <Navigate replace={true} to="techFiles" />
+                                )}
+                            />
+                            <Route
+                                path="*"
+                                element={(
+                                    <Typography variant="body1">{'Page not found'}</Typography>
+                                )}
+                            />
+                        </Routes>
+                    </ShipDetailProvider>
+                </UserSettingsProvider>
             </ThemeProvider>
         </Router>
     );
