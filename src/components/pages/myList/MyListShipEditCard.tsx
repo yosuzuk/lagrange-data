@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -10,6 +10,7 @@ import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { getModulePossession, getModuleWishState, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
 
 interface IProps {
     ship: IShipDefinition;
@@ -18,10 +19,10 @@ interface IProps {
 export const MyListShipEditCard = (props: IProps) => {
     const { ship, ...rest } = props;
 
-    const { userSettings, setShipPossession, setShipWish } = useUserSettings();
+    const { userSettings, setShipPossession, setShipWish, setModulePossession, setModuleWish } = useUserSettings();
 
-    const shipPossession = userSettings.ships[ship.id]?.possession ?? PossessionState.UNDEFINED;
-    const shipWish = userSettings.ships[ship.id]?.wish ?? WishState.UNDEFINED;
+    const shipPossession = getShipPossession(ship.id, userSettings);
+    const shipWish = getShipWishState(ship.id, userSettings);
 
     const enableShipWishControl = useMemo(() => {
         if (shipWish !== WishState.UNDEFINED) {
@@ -50,6 +51,31 @@ export const MyListShipEditCard = (props: IProps) => {
                             onChange={wish => setShipWish(ship.id, wish)}
                         />
                     )}
+                    {ship.source === ShipSource.TECH_FILE
+                        && shipPossession === PossessionState.POSSESSED
+                        && ship.modules
+                        && ship.modules.filter(module => !module.defaultModule).map(module => {
+                        const modulePossession = getModulePossession(module.id, ship.id, userSettings);
+                        return (
+                            <Fragment key={module.id}>
+                                <Typography variant="h6">
+                                    {`${module.category}${module.categoryNumber} ${module.name}`}
+                                </Typography>
+                                <PossessionControl
+                                    label={'システムを'}
+                                    options={['持っている', '持っていない']}
+                                    possession={modulePossession}
+                                    onChange={possession => setModulePossession(module.id, ship.id, possession)}
+                                />
+                                {modulePossession !== PossessionState.POSSESSED && (
+                                    <WishControl
+                                        wish={getModuleWishState(module.id, ship.id, userSettings)}
+                                        onChange={wish => setModuleWish(module.id, ship.id, wish)}
+                                    />
+                                )}
+                            </Fragment>
+                        );
+                    })}
                 </Stack>
             </Box>
         </Paper>

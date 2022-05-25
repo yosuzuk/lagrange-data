@@ -21,7 +21,7 @@ export const PossessionControl = (props: IProps) => {
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body1">{label}</Typography>
+            <Typography variant="body2">{label}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"

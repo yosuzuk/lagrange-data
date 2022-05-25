@@ -158,12 +158,24 @@ export function applyPossessionStateToModuleSettings(
     };
 }
 
+export function getShipPossession(shipId: string, userSettings: IUserSettings): PossessionState {
+    return userSettings.ships[shipId]?.possession ?? PossessionState.UNDEFINED;
+}
+
 export function isPossessingShip(shipId: string, userSettings: IUserSettings): boolean {
     return userSettings.ships[shipId]?.possession === PossessionState.POSSESSED ?? false;
 }
 
+export function getModulePossession(moduleId: string, shipId: string, userSettings: IUserSettings): PossessionState {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.possession ?? PossessionState.UNDEFINED;
+}
+
 export function isPossessingModule(moduleId: string, shipId: string, userSettings: IUserSettings): boolean {
     return userSettings.modules[`${shipId}.${moduleId}`]?.possession === PossessionState.POSSESSED ?? false;
+}
+
+export function getShipWishState(shipId: string, userSettings: IUserSettings): WishState {
+    return userSettings.ships[shipId]?.wish ?? WishState.UNDEFINED;
 }
 
 export function isWantedShip(shipId: string, userSettings: IUserSettings): boolean {
@@ -172,6 +184,10 @@ export function isWantedShip(shipId: string, userSettings: IUserSettings): boole
 
 export function isUnwantedShip(shipId: string, userSettings: IUserSettings): boolean {
     return userSettings.ships[shipId]?.wish === WishState.NOT_WANTED ?? false;
+}
+
+export function getModuleWishState(moduleId: string, shipId: string, userSettings: IUserSettings): WishState {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.wish ?? WishState.UNDEFINED;
 }
 
 export function isWantedModule(moduleId: string, shipId: string, userSettings: IUserSettings): boolean {

@@ -21,7 +21,7 @@ export const WishControl = (props: IProps) => {
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body1">{'ガチャで'}</Typography>
+            <Typography variant="body2">{'ガチャで'}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"
