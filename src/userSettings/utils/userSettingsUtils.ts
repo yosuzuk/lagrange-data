@@ -206,8 +206,14 @@ export function hasAcquirableModules(shipId: string, userSettings: IUserSettings
     });
 }
 
-export function getAquiredModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+export function getAcquiredModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
     return getPossessedModules(ship, userSettings, false);
+}
+
+export function getAcquirableModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return ship.modules?.filter(module => {
+        return module.defaultModule !== true && !isPossessingModule(module.id, ship.id, userSettings);
+    }) ?? [];
 }
 
 export function getPossessedModules(ship: IShipDefinition, userSettings: IUserSettings, indludeDefault: boolean = true): ISystemModule[] {

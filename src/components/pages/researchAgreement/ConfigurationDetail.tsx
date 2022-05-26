@@ -19,7 +19,7 @@ export const ConfigurationDetail = (props: IProps) => {
             rows={[
                 {
                     key: `${configuration.id}.wishedShipChance`,
-                    label: '欲しい設計図',
+                    label: '欲しい艦船',
                     value: formatChance(configuration.wishedShipChance),
                     separatorAfter: true,
                 },
@@ -53,7 +53,7 @@ export const ConfigurationDetail = (props: IProps) => {
                                 <ShipName shipDefinition={shipChance.shipDefinition} />
                                 {canGetModule && (
                                     <Typography variant="body2" component="span">
-                                        {'（追加モジュール）'}
+                                        {'（追加システム）'}
                                     </Typography>
                                 )}
                                 {!canGetModule && shipChance.possessed && (

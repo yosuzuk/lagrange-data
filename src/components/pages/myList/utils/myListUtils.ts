@@ -2,7 +2,7 @@ import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { getAquiredModules } from '../../../../userSettings/utils/userSettingsUtils';
+import { getAcquiredModules } from '../../../../userSettings/utils/userSettingsUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -74,7 +74,7 @@ export function formatShipListForSharing(shipDefinitions: IShipDefinition[], use
 }
 
 function formatShipRow(ship: IShipDefinition, userSettings: IUserSettings): string {
-    const aquiredModules = getAquiredModules(ship, userSettings);
+    const aquiredModules = getAcquiredModules(ship, userSettings);
     if (aquiredModules.length === 0) {
         return `　${ship.name}`;
     }
