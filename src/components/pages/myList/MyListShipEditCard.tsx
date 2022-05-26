@@ -51,7 +51,7 @@ export const MyListShipEditCard = (props: IProps) => {
                             onChange={wish => setShipWish(ship.id, wish)}
                         />
                     )}
-                    {ship.source === ShipSource.TECH_FILE
+                    {(ship.source === ShipSource.TECH_FILE || ship.source === ShipSource.STARTER_SHIP)
                         && shipPossession === PossessionState.POSSESSED
                         && ship.modules
                         && ship.modules.filter(module => !module.defaultModule).map(module => {
