@@ -1,4 +1,5 @@
 import { ShipId } from '../../data/shipIds';
+import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { PossessionState } from '../types/PossessionState';
 import { IUserSettings, IMinifiedUserSettings, ShipSettingState, ModuleSettingState } from '../types/UserSettings';
@@ -203,6 +204,18 @@ export function hasAcquirableModules(shipId: string, userSettings: IUserSettings
     return !!definition.modules.find(module => {
         return module.defaultModule !== true && !isPossessingModule(module.id, shipId, userSettings);
     });
+}
+
+export function getAquiredModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return getPossessedModules(ship, userSettings, false);
+}
+
+export function getPossessedModules(ship: IShipDefinition, userSettings: IUserSettings, indludeDefault: boolean = true): ISystemModule[] {
+    return ship.modules?.filter(module => (indludeDefault && module.defaultModule) || isPossessingModule(module.id, ship.id, userSettings)) ?? [];
+}
+
+export function getWantedModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return ship.modules?.filter(module => isWantedModule(module.id, ship.id, userSettings)) ?? [];
 }
 
 export function hasWantedModule(shipId: string, userSettings: IUserSettings): boolean {

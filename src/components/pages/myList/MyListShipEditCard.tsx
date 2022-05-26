@@ -67,7 +67,7 @@ export const MyListShipEditCard = (props: IProps) => {
                                     possession={modulePossession}
                                     onChange={possession => setModulePossession(module.id, ship.id, possession)}
                                 />
-                                {modulePossession !== PossessionState.POSSESSED && (
+                                {modulePossession === PossessionState.NOT_POSSESSED && (
                                     <WishControl
                                         wish={getModuleWishState(module.id, ship.id, userSettings)}
                                         onChange={wish => setModuleWish(module.id, ship.id, wish)}

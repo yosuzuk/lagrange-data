@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import Typography from '@mui/material/Typography';
 import { ScriptedLink } from '../link/ScriptedLink';
 import { IShipDefinition } from '../../types/ShipDefinition';
@@ -19,22 +20,27 @@ export const shipNameColumn: ITableColumn<IShipDefinition> = {
 
 interface IShipNameColumnOptions {
     onClick: (shipId: string) => void;
+    decorateName?: (name: ReactNode, data: IShipDefinition) => ReactNode;
 }
 
 export const createShipNameLinkColumn = (options: IShipNameColumnOptions): ITableColumn<IShipDefinition> => ({
     id: 'nameLink',
     renderHeader: () => '艦名',
-    renderCell: (data: IShipDefinition) => (
-        <Typography variant="body2">
-            <ScriptedLink
-                onClick={() => {
-                    options.onClick(data.id);
-                }}
-            >
-                {data.name}
-            </ScriptedLink>
-        </Typography>
-    ),
+    renderCell: (data: IShipDefinition) => {
+        const render = options.decorateName ?? ((name: ReactNode, data: IShipDefinition) => name);
+        return render(
+            <Typography variant="body2">
+                <ScriptedLink
+                    onClick={() => {
+                        options.onClick(data.id);
+                    }}
+                >
+                    {data.name}
+                </ScriptedLink>
+            </Typography>,
+            data,
+        );
+    },
     sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
 });
 

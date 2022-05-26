@@ -8,6 +8,7 @@ import { IShipListState } from './types/IShipListState';
 import { formatShipListForSharing } from './utils/myListUtils';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { copyToClipboard } from '../../../utils/clipboardUtils';
+import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 
 export interface IProps {
     ships: IShipListState;
@@ -17,8 +18,9 @@ export interface IProps {
 export const ShipsSharingDialog = (props: IProps) => {
     const { ships, onClose } = props;
     const [copied, setCopied] = useState<boolean>(false);
+    const { userSettings } = useUserSettings();
 
-    const [textForSharing, setTextForSharing] = useState<string>(() => formatShipListForSharing(ships.possessed));
+    const [textForSharing, setTextForSharing] = useState<string>(() => formatShipListForSharing(ships.possessed, userSettings));
 
     const handleCopy = () => {
         if (textForSharing) {

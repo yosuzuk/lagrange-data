@@ -5,7 +5,7 @@ import { shipTypes } from '../../utils/shipTypeUtils';
 import { translateShipRow } from '../../utils/shipRowUtils';
 import { ShipFilterState, FilterKey } from './types/ShipFilterState';
 import { IShipDefinition } from '../../types/ShipDefinition';
-import { ShipSettingState } from '../../userSettings/types/UserSettings';
+import { IUserSettings, ShipSettingState } from '../../userSettings/types/UserSettings';
 import { PossessionState } from '../../userSettings/types/PossessionState';
 import { WishState } from '../../userSettings/types/WishState';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
@@ -18,6 +18,7 @@ import { translateResearchStrategyType } from '../../utils/researchStrategyTypeU
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ResearchStrategyType } from '../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../types/ResearchTacticType';
+import { getWantedModules } from '../../userSettings/utils/userSettingsUtils';
 
 export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
     return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
@@ -202,9 +203,15 @@ export function extractPossesssedShips(
 
 export function extractWishedShips(
     shipDefinitions: IShipDefinition[],
-    shipSetting: ShipSettingState,
+    userSettings: IUserSettings,
 ): IShipDefinition[] {
-    return shipDefinitions.filter(shipDefinition => shipSetting[shipDefinition.id]?.wish === WishState.WANTED);
+    return shipDefinitions.filter(shipDefinition => {
+        if (getWantedModules(shipDefinition, userSettings).length > 0) {
+            return true;
+        }
+
+        return userSettings.ships[shipDefinition.id]?.wish === WishState.WANTED;
+    });
 }
 
 export function extractUnwishedShipsByUser(
