@@ -37,7 +37,7 @@ export const MyListPage = () => {
             possessed: extractPossesssedShips(filteredShipDefinitions, userSettings.ships),
             wished: extractWishedShips(filteredShipDefinitions, userSettings),
             unwishedByUser: extractUnwishedShipsByUser(filteredShipDefinitions, userSettings.ships),
-            unwishedByData: extractUnwishedShipsByData(filteredShipDefinitions, userSettings.ships),
+            unwishedByData: extractUnwishedShipsByData(filteredShipDefinitions, userSettings),
         };
     }, [userSettings, shipFilter]);
 
