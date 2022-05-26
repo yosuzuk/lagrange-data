@@ -122,6 +122,7 @@ export function createResearchConfiguration(
             modules: acquirableModules.map(module => ({
                 module,
                 chance: shipChance / acquirableModules.length,
+                formula: `${shipChance} / ${acquirableModules.length}`,
                 wished: isWantedModule(module.id, shipDefinition.id, userSettings),
             })),
         };

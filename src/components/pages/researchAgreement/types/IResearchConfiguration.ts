@@ -34,6 +34,7 @@ export interface IShipResearchChance {
 export interface IModuleResearchChance {
     module: ISystemModule;
     chance: number;
+    formula: string;
     wished: boolean;
 }
 
