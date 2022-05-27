@@ -133,10 +133,10 @@ export const ResearchFilter = (props: IProps) => {
                         onChange={handleChangeShipId}
                     >
                         <MenuItem value="">{'無し'}</MenuItem>
-                        {shipFilterOptions.wantedShips.length > 0 && (
+                        {(shipFilterOptions.wantedShips.length + shipFilterOptions.shipsWithWantedModule.length) > 0 && (
                             <Divider />
                         )}
-                        {shipFilterOptions.wantedShips.length > 0 && (
+                        {(shipFilterOptions.wantedShips.length + shipFilterOptions.shipsWithWantedModule.length) > 0 && (
                             <ListSubheader disableSticky={true}>
                                 {'欲しい艦船：'}
                             </ListSubheader>
@@ -144,6 +144,14 @@ export const ResearchFilter = (props: IProps) => {
                         {shipFilterOptions.wantedShips.map(ship => (
                             <MenuItem key={ship.id} value={ship.id}>
                                 {ship.name}
+                                <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
+                                    {'★'}
+                                </Typography>
+                            </MenuItem>
+                        ))}
+                        {shipFilterOptions.shipsWithWantedModule.map(({ shipDefinition, modules }) => (
+                            <MenuItem key={shipDefinition.id} value={shipDefinition.id}>
+                                {`${shipDefinition.name}（追加システム）`}
                                 <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                     {'★'}
                                 </Typography>

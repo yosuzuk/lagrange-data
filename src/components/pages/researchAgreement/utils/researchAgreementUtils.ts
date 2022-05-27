@@ -4,8 +4,8 @@ import { ResearchStrategyType } from '../../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
-import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions } from '../types/IResearchConfiguration';
+import { getAcquirableModules, getWantedModules, isPossessingShip, isUnwantedShip, isWantedModule, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
+import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions, IShipFilterEntryForModule } from '../types/IResearchConfiguration';
 
 export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes);
@@ -13,10 +13,19 @@ export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
 
 export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSettings: IUserSettings): IShipFilterOptions {
     const wantedShips: IShipDefinition[] = [];
+    const shipsWithWantedModule: IShipFilterEntryForModule[] = [];
     const possessedShips: IShipDefinition[] = [];
     const remainingShips: IShipDefinition[] = [];
 
     shipDefinitions.forEach(ship => {
+        const wantedModules = getWantedModules(ship, userSettings);
+        if (wantedModules.length > 0) {
+            shipsWithWantedModule.push({
+                shipDefinition: ship,
+                modules: wantedModules,
+            });
+            return;
+        }
         if (isPossessingShip(ship.id, userSettings)) {
             possessedShips.push(ship);
             return;
@@ -30,6 +39,7 @@ export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSet
 
     return {
         wantedShips: wantedShips.sort((a, b) => a.name.localeCompare(b.name)),
+        shipsWithWantedModule: shipsWithWantedModule.sort((a, b) => a.shipDefinition.name.localeCompare(b.shipDefinition.name)),
         possessedShips: possessedShips.sort((a, b) => a.name.localeCompare(b.name)),
         remainingShips: remainingShips.sort((a, b) => a.name.localeCompare(b.name)),
     };
@@ -99,13 +109,22 @@ export function createResearchConfiguration(
 
     const shipChances: IShipResearchChance[] = filteredShipDefinitions.map(shipDefinition => {
         const possessed = isPossessingShip(shipDefinition.id, userSettings);
+        const shipChance = shipDefinition.weight / totalWeight;
+        const acquirableModules = getAcquirableModules(shipDefinition, userSettings);
+
         return {
             shipDefinition,
-            chance: shipDefinition.weight / totalWeight,
+            chance: shipChance,
             formula: `${shipDefinition.weight} / ${totalWeight}`,
             possessed,
             wished: isWantedShip(shipDefinition.id, userSettings),
             unwished: isUnwantedShip(shipDefinition.id, userSettings),
+            modules: acquirableModules.map(module => ({
+                module,
+                chance: shipChance / acquirableModules.length,
+                formula: `${shipChance} / ${acquirableModules.length}`,
+                wished: isWantedModule(module.id, shipDefinition.id, userSettings),
+            })),
         };
     });
 
@@ -116,7 +135,19 @@ export function createResearchConfiguration(
     let techPointChance: number = 0;
 
     shipChances.forEach(shipChance => {
-        if (!shipChance.possessed) {
+        if (shipChance.possessed) {
+            if (shipChance.modules.length > 0) {
+                totalModuleChance += shipChance.chance;
+
+                if (!!shipChance.modules.find(moduleChance => moduleChance.wished)) {
+                    wishedShipChance += shipChance.chance; // implicitely wanted for module
+                }
+                return;
+            }
+
+            techPointChance += shipChance.chance;
+            return; // no modules or all modules acquired
+        } else {
             totalShipChance += shipChance.chance;
 
             if (shipChance.wished) {
@@ -129,13 +160,6 @@ export function createResearchConfiguration(
 
             return;
         }
-
-        if (shipChance.shipDefinition.modules && shipChance.shipDefinition.modules.length > 0) {
-            totalModuleChance += shipChance.chance;
-            return;
-        }
-
-        techPointChance += shipChance.chance;
     });
 
     return {

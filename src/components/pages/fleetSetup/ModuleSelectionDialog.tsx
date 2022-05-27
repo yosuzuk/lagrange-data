@@ -5,22 +5,27 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import Typography from '@mui/material/Typography';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { IModuleSelection, ReinforcementType, IModuleUsage } from './types/IFleetSetup';
 import { applyUsageForModule } from './utils/fleetSetupUtils';
+import { isPossessingModule } from '../../../userSettings/utils/userSettingsUtils';
+import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 
 export interface IProps {
     shipId: string;
     reinforcement: ReinforcementType | null;
     moduleSelection: IModuleSelection;
+    myListOnly: boolean;
     onChange: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
     onClose: () => void;
 }
 
 export const ModuleSelectionDialog = (props: IProps) => {
-    const { shipId, reinforcement, moduleSelection, onChange, onClose } = props;
+    const { shipId, reinforcement, moduleSelection, myListOnly, onChange, onClose } = props;
+    const { userSettings } = useUserSettings();
 
     const [newModuleSelection, setNewModuleSelection] = useState<IModuleSelection>(moduleSelection);
 
@@ -75,7 +80,14 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                             )}
                                             {Object.keys(newModuleSelection.groups[groupId]).map((moduleId: string) => {
                                                 const moduleUsage: IModuleUsage = newModuleSelection.groups[groupId][moduleId];
-                                                const disabled = reinforcement !== 'ally' && reinforcement !== 'ally2' && reinforcement !== 'ally3' && moduleUsage.usage === 'not_possessed';
+
+                                                const disabled = reinforcement !== 'ally'
+                                                    && reinforcement !== 'ally2'
+                                                    && reinforcement !== 'ally3'
+                                                    && myListOnly
+                                                    && !moduleUsage.module.defaultModule
+                                                    && !isPossessingModule(moduleId, shipId, userSettings);
+
                                                 const value = `${groupId}#${moduleId}`;
                                                 return (
                                                     <FormControlLabel
@@ -93,6 +105,11 @@ export const ModuleSelectionDialog = (props: IProps) => {
                             </Paper>
                         );
                     })}
+                    {myListOnly && (
+                        <Typography variant="caption" paragraph={true}>
+                            {'※所持している追加システムは「マイリスト」で設定できます。「追加できる艦船」を「全ての艦船」に設定している場合とユニオン増援では全ての追加システムが選べます。'}
+                        </Typography>
+                    )}
                 </Stack>
             )}
             actions={(

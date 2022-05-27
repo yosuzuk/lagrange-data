@@ -1,7 +1,8 @@
 import { ShipId } from '../../data/shipIds';
-import { isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
+import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
+import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { PossessionState } from '../types/PossessionState';
-import { IUserSettings, IMinifiedUserSettings, ShipSettingState } from '../types/UserSettings';
+import { IUserSettings, IMinifiedUserSettings, ShipSettingState, ModuleSettingState } from '../types/UserSettings';
 import { WishState } from '../types/WishState';
 
 const STORAGE_KEY = 'settings';
@@ -123,24 +124,59 @@ export function createInitialUserSettings(): IUserSettings {
 }
 
 export function applyPossessionStateToShipSettings(
-    state: ShipSettingState,
     shipId: string,
     possession: PossessionState,
+    userSettings: IUserSettings,
 ): ShipSettingState {
+
+    const resetWishState = isShipObtainableThroughTechFile(shipId) && possession === PossessionState.POSSESSED;
+
     return {
-        ...state,
+        ...userSettings.ships,
         [shipId]: {
-            ...state[shipId],
+            ...userSettings.ships[shipId],
             possession,
-            wish: (isShipObtainableThroughTechFile(shipId) && possession === PossessionState.POSSESSED)
-                ? WishState.UNDEFINED
-                : state[shipId]?.wish ?? WishState.UNDEFINED,
-        }
+            wish: resetWishState ? WishState.UNDEFINED : userSettings.ships[shipId]?.wish ?? WishState.UNDEFINED,
+        },
     };
+}
+
+export function applyPossessionStateToModuleSettings(
+    moduleId: string,
+    shipId: string,
+    possession: PossessionState,
+    userSettings: IUserSettings,
+): ModuleSettingState {
+    const key = `${shipId}.${moduleId}`;
+
+    return {
+        ...userSettings.modules,
+        [key]: {
+            ...userSettings.modules[key],
+            possession,
+            wish: possession === PossessionState.POSSESSED ? WishState.UNDEFINED : userSettings.modules[key]?.wish ?? WishState.UNDEFINED,
+        },
+    };
+}
+
+export function getShipPossession(shipId: string, userSettings: IUserSettings): PossessionState {
+    return userSettings.ships[shipId]?.possession ?? PossessionState.UNDEFINED;
 }
 
 export function isPossessingShip(shipId: string, userSettings: IUserSettings): boolean {
     return userSettings.ships[shipId]?.possession === PossessionState.POSSESSED ?? false;
+}
+
+export function getModulePossession(moduleId: string, shipId: string, userSettings: IUserSettings): PossessionState {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.possession ?? PossessionState.UNDEFINED;
+}
+
+export function isPossessingModule(moduleId: string, shipId: string, userSettings: IUserSettings): boolean {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.possession === PossessionState.POSSESSED ?? false;
+}
+
+export function getShipWishState(shipId: string, userSettings: IUserSettings): WishState {
+    return userSettings.ships[shipId]?.wish ?? WishState.UNDEFINED;
 }
 
 export function isWantedShip(shipId: string, userSettings: IUserSettings): boolean {
@@ -149,4 +185,52 @@ export function isWantedShip(shipId: string, userSettings: IUserSettings): boole
 
 export function isUnwantedShip(shipId: string, userSettings: IUserSettings): boolean {
     return userSettings.ships[shipId]?.wish === WishState.NOT_WANTED ?? false;
+}
+
+export function getModuleWishState(moduleId: string, shipId: string, userSettings: IUserSettings): WishState {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.wish ?? WishState.UNDEFINED;
+}
+
+export function isWantedModule(moduleId: string, shipId: string, userSettings: IUserSettings): boolean {
+    return userSettings.modules[`${shipId}.${moduleId}`]?.wish === WishState.WANTED ?? false;
+}
+
+export function hasAcquirableModules(shipId: string, userSettings: IUserSettings): boolean {
+    const definition = getShipDefinitionById(shipId);
+    if (!definition.modules || definition.modules.length === 0) {
+        return false;
+    }
+
+    return !!definition.modules.find(module => {
+        return module.defaultModule !== true && !isPossessingModule(module.id, shipId, userSettings);
+    });
+}
+
+export function getAcquiredModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return getPossessedModules(ship, userSettings, false);
+}
+
+export function getAcquirableModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return ship.modules?.filter(module => {
+        return module.defaultModule !== true && !isPossessingModule(module.id, ship.id, userSettings);
+    }) ?? [];
+}
+
+export function getPossessedModules(ship: IShipDefinition, userSettings: IUserSettings, indludeDefault: boolean = true): ISystemModule[] {
+    return ship.modules?.filter(module => (indludeDefault && module.defaultModule) || isPossessingModule(module.id, ship.id, userSettings)) ?? [];
+}
+
+export function getWantedModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
+    return ship.modules?.filter(module => isWantedModule(module.id, ship.id, userSettings)) ?? [];
+}
+
+export function hasWantedModule(shipId: string, userSettings: IUserSettings): boolean {
+    const definition = getShipDefinitionById(shipId);
+    if (!definition.modules || definition.modules.length === 0) {
+        return false;
+    }
+
+    return !!definition.modules.find(module => {
+        return module.defaultModule !== true && isWantedModule(module.id, shipId, userSettings);
+    });
 }

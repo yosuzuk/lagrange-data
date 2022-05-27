@@ -46,10 +46,8 @@ export function createDialogDataForCarriedShips(
                     usedModules: null,
                     count: 0,
                     reinforcement,
-                    userSettings,
                     maxReinforcement: fleetSetup.maxReinforcement,
                     temporary: true,
-                    myListOnly: fleetSetup.myListOnly,
                 }),
             ];
         }),

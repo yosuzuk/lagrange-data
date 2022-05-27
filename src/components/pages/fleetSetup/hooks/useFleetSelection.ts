@@ -1,6 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { getCurrentUserSettings } from '../../../../userSettings/utils/userSettingsUtils';
 import { IFleetSetup } from '../types/IFleetSetup';
 import { getCurrentFleetSetups } from '../utils/fleetSetupUtils';
 
@@ -16,8 +14,7 @@ interface IHookResult {
 
 export const useFleetSelection = (args: IHookArguments): IHookResult => {
     const { initialFleetKey } = args;
-    const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
-    const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
+    const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(), []);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
 
     const switchFleet = useCallback((fleetKey: string) => {

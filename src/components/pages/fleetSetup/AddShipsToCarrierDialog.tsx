@@ -17,13 +17,14 @@ import { filterCarriedShipForAddDialog } from './utils/carriedShipAddDialogUtils
 export interface IProps {
     dialogData: IDialogDataForCarriedShips;
     shipWarnings: Record<string, string>;
+    myListOnly: boolean;
     onCancel: () => void;
     onApply: () => void;
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
 }
 
 export const AddShipsToCarrierDialog = (props: IProps) => {
-    const { dialogData, shipWarnings, onCancel, onApply, onChangeShipCount } = props;
+    const { dialogData, shipWarnings, myListOnly, onCancel, onApply, onChangeShipCount } = props;
     const [drawList, setDrawList] = useState<boolean>(false);
 
     const [filterState, setFilterState] = useState<ShipFilterState>(() => {
@@ -90,6 +91,7 @@ export const AddShipsToCarrierDialog = (props: IProps) => {
                             showHangar={false}
                             shipWarnings={shipWarnings}
                             carrierShipId={null}
+                            myListOnly={myListOnly}
                             onChangeShipCount={onChangeShipCount}
                         />
                     ) : (

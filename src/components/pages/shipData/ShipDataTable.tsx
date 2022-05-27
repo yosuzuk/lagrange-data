@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import { Table, ITableData, useTable, ITableColumn } from '../../table';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
@@ -20,17 +20,19 @@ import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 interface IProps {
     shipDefinitions: IShipDefinition[];
     columnConfig: IColumnConfig;
+    decorateName?: (name: ReactNode, data: IShipDefinition) => ReactNode;
 }
 
 export const ShipDataTable = (props: IProps) => {
-    const { shipDefinitions, columnConfig } = props;
+    const { shipDefinitions, columnConfig, decorateName } = props;
     const { table, setTableData } = useTable<IShipDefinition>();
 
     const { openShipDetailDialog } = useShipDetail();
 
     const columns: ITableColumn<IShipDefinition>[] = useMemo(() => [
         createShipNameLinkColumn({
-            onClick: openShipDetailDialog
+            onClick: openShipDetailDialog,
+            decorateName,
         }),
         ...columnConfig.type ? [shipTypeColumn] : [],
         ...columnConfig.row ? [shipRowColumn] : [],
@@ -42,7 +44,7 @@ export const ShipDataTable = (props: IProps) => {
         ...columnConfig.researchStrategyType ? [researchStrategyTypeColumn] : [],
         ...columnConfig.researchTacticType ? [researchTacticTypeColumn] : [],
         ...columnConfig.weight ? [shipWeightColumn] : [],
-    ], [columnConfig, openShipDetailDialog]);
+    ], [columnConfig, decorateName, openShipDetailDialog]);
 
     useEffect(() => {
         const tableData: ITableData<IShipDefinition> = {

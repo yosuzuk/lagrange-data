@@ -14,11 +14,12 @@ interface IProps {
     shipId: string;
     reinforcement: ReinforcementType | null;
     moduleSelection: IModuleSelection;
+    myListOnly: boolean;
     onChange: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
 }
 
 export const ModuleData = (props: IProps) => {
-    const { shipId, reinforcement, moduleSelection, onChange } = props;
+    const { shipId, reinforcement, moduleSelection, myListOnly, onChange } = props;
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('xs'));
 
@@ -99,6 +100,7 @@ export const ModuleData = (props: IProps) => {
                     shipId={shipId}
                     reinforcement={reinforcement}
                     moduleSelection={moduleSelection}
+                    myListOnly={myListOnly}
                     onChange={onChange}
                     onClose={handleCloseDialog}
                 />

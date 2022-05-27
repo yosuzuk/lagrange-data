@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -7,32 +7,31 @@ import { MyListEditActionBar } from './MyListEditActionBar';
 import { MyListEdit } from './MyListEdit';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState } from '../../filter/filterUtils';
-import { ShipSettingState, IUserSettings } from '../../../userSettings/types/UserSettings';
-import { getCurrentUserSettings, saveUserSettings, createInitialUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
+import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
 
-    const [userSettings, setUserSettings] = useState<IUserSettings>(getCurrentUserSettings);
+    const { saveUserSettings, restoreUserSettings, resetUserSettings } = useUserSettings();
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
-    const [shipSetting, setShipSetting] = useState<ShipSettingState>(userSettings.ships);
     const [confirmingReset, setConfirmingReset] = useState<boolean>(false);
 
+    useEffect(() => {
+        return () => {
+            restoreUserSettings();
+        };
+    }, [restoreUserSettings]);
+
     const handleClickCancel = () => {
-        setShipSetting(userSettings.ships);
+        restoreUserSettings();
         navigate('/myList');
     };
 
     const handleClickSave = () => {
-        const newUserSettings = {
-            ...getCurrentUserSettings(),
-            ships: shipSetting,
-        };
-        saveUserSettings(newUserSettings);
-        setUserSettings(newUserSettings);
+        saveUserSettings();
         navigate('/myList');
     };
 
@@ -46,7 +45,7 @@ export const MyListEditPage = () => {
 
     const handleConfirmReset = () => {
         setConfirmingReset(false);
-        setShipSetting(createInitialUserSettings().ships);
+        resetUserSettings();
     };
 
     return (
@@ -72,11 +71,7 @@ export const MyListEditPage = () => {
                             {'設定データはブラウザのローカルストレージに保存されます。'}
                         </Typography>
                     </Stack>
-                    <MyListEdit
-                        shipSetting={shipSetting}
-                        shipFilter={shipFilter}
-                        onShipSettingChange={setShipSetting}
-                    />
+                    <MyListEdit shipFilter={shipFilter} />
                 </Box>
             </Container>
             {confirmingReset && (

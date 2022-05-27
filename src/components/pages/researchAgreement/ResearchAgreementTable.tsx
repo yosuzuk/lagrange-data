@@ -84,7 +84,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 } as ITableColumn<IResearchConfiguration>] : []),
                 {
                     id: 'totalShipChance',
-                    renderHeader: () => '設計図',
+                    renderHeader: () => '新規艦船',
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalShipChance)}</Typography>
@@ -99,7 +99,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 {
                     id: 'totalModuleChance',
-                    renderHeader: () => 'モジュール',
+                    renderHeader: () => '追加システム',
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalModuleChance)}</Typography>

@@ -47,7 +47,6 @@ export const FleetSetupEditPage = () => {
         reset,
     } = useFleetEditor({
         initialFleetKey: fleetKey,
-        userSettings,
     });
 
     const {
@@ -167,6 +166,7 @@ export const FleetSetupEditPage = () => {
                                                     showHangar={true}
                                                     shipWarnings={shipWarnings}
                                                     carrierShipId={null}
+                                                    myListOnly={fleetSetup.myListOnly}
                                                 />
                                             )}
                                         </Stack>
@@ -182,6 +182,7 @@ export const FleetSetupEditPage = () => {
                 <AddShipsToFleetDialog
                     dialogData={dialogDataForShips}
                     shipWarnings={warningsForShips}
+                    myListOnly={fleetSetup.myListOnly}
                     onCancel={cancelAddDialogForShips}
                     onApply={applyAddDialogForShips}
                     onChangeShipCount={setShipCountForShipsInAddDialog}
@@ -191,6 +192,7 @@ export const FleetSetupEditPage = () => {
                 <AddShipsToCarrierDialog
                     dialogData={dialogDataForCarriedShips}
                     shipWarnings={warningsForCarriedShips}
+                    myListOnly={fleetSetup.myListOnly}
                     onCancel={cancelAddDialogForCarriedShips}
                     onApply={applyAddDialogForCarriedShips}
                     onChangeShipCount={setShipCountForCarriedShipsInAddDialog}

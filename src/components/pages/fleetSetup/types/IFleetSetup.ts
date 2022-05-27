@@ -67,5 +67,5 @@ export interface IModuleSelection {
 
 export interface IModuleUsage {
     module: ISystemModule;
-    usage: 'used' | 'not_used' | 'not_possessed';
+    usage: 'used' | 'not_used';
 }

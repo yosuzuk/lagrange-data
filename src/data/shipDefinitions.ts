@@ -1122,9 +1122,6 @@ export const shipDefinitions: IShipDefinition[] = [
         researchTacticTypes: [],
         subModelIds: [ShipId.JAEGER_B],
         carryCorvette: 4,
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
-        ],
     },
     {
         id: ShipId.JAEGER_B,
@@ -1140,9 +1137,6 @@ export const shipDefinitions: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.JAEGER_A,
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
-        ],
     },
     {
         id: ShipId.JANBIYA_AER410,
@@ -1414,7 +1408,7 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'M2',
-                name: '???', // TODO find name
+                name: '「ホワイトフラッシュ」総合武器庫',
                 category: 'M',
                 categoryNumber: 2,
             },
@@ -1444,19 +1438,19 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'B2',
-                name: '???', // TODO find name
+                name: 'ミサイル防衛システム',
                 category: 'B',
                 categoryNumber: 2,
             },
             {
                 id: 'B3',
-                name: '???', // TODO find name
+                name: '偵察UAVシステム',
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
-                name: '???', // TODO find name
+                name: '追加エネルギーシステム',
                 category: 'C',
                 categoryNumber: 1,
             },

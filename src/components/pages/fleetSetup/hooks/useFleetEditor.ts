@@ -1,13 +1,11 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { IFleetSetup, IModuleSelection, ReinforcementType } from '../types/IFleetSetup';
 import { applyCarriedShipCount, applyModules, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
 import { validateFleetSetupForPropertyErrors, validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
 
 interface IHookArguments {
     initialFleetKey?: string;
-    userSettings: IUserSettings;
 }
 
 interface IHookResult {
@@ -23,14 +21,14 @@ interface IHookResult {
 }
 
 export const useFleetEditor = (args: IHookArguments): IHookResult => {
-    const { initialFleetKey, userSettings } = args;
+    const { initialFleetKey } = args;
     const navigate = useNavigate();
-    const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(userSettings), [userSettings]);
+    const fleetSetups = useMemo<IFleetSetup[]>(() => getCurrentFleetSetups(), []);
     const [fleetSetup, setFleetSetup] = useState<IFleetSetup>(initialFleetKey ? fleetSetups.find(f => f.key === initialFleetKey) ?? fleetSetups[0] : fleetSetups[0]);
 
     const setShipCount = useCallback((shipId: string, count: number, reinforcement: ReinforcementType | null) => {
-        setFleetSetup(fleetSetup => applyShipCount({ shipId, count, reinforcement, fleetSetup, userSettings }));
-    }, [userSettings]);
+        setFleetSetup(fleetSetup => applyShipCount({ shipId, count, reinforcement, fleetSetup }));
+    }, []);
 
     const setCarriedShipCount = useCallback((shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => {
         setFleetSetup(fleetSetup => applyCarriedShipCount({ shipId, carrierShipId, count, reinforcement, fleetSetup }));
