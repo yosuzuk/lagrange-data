@@ -2,7 +2,7 @@ import { ITechFile } from '../../../../types/ITechFile';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
-import { isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
+import { getAcquirableModules, isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
@@ -137,14 +137,15 @@ function getModuleChance(
         };
     }
 
-    const unpossesedModuleCount = ship.modules.length; // TODO implement
+    const moduleChance = getAcquirableModules(ship, userSettings).length > 0 ? baseChance : 0;
 
     return {
-        moduleChance: baseChance * (unpossesedModuleCount / ship.modules.length),
-        moduleChanceTooltip: [
-            '追加システムには重みが無いと仮定した場合：',
-            '⇒ベースモデルの艦種確率×(取得していないシステム数/システム数の合計)',
-            `⇒${formatFactor(baseChance)} * (${unpossesedModuleCount} / ${ship.modules.length})`,
+        moduleChance,
+        moduleChanceTooltip: moduleChance > 0 ? [
+            '取得可能な追加システムが残っている場合：',
+            '⇒ベースモデルの艦種確率',
+        ] : [
+            '追加システムは全て取得済み',
         ],
     };
 }
