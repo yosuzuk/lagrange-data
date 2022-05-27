@@ -30,7 +30,7 @@ export const ConfigurationDetail = (props: IProps) => {
                             variant="body2"
                             sx={configuration.techPointChance > 0 ? { color: 'red' } : undefined}
                         >
-                            {'技術Pt ×５'}
+                            {'技術Pt'}
                         </Typography>
                     ),
                     value: (
