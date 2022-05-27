@@ -48,7 +48,6 @@ export const useShipsForAddDialog = (args: IHookArguments): IHookResult => {
                 count,
                 reinforcement,
                 fleetSetup: dialogData.fleetSetup,
-                userSettings,
                 keepZero: true,
             }),
         }));

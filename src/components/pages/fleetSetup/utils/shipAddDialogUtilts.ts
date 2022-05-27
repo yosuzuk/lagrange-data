@@ -43,10 +43,8 @@ export function createDialogDataForShips(
                             usedModules: null,
                             count: 0,
                             reinforcement,
-                            userSettings,
                             maxReinforcement: fleetSetup.maxReinforcement,
                             temporary: true,
-                            myListOnly: fleetSetup.myListOnly,
                         }),
                     ];
                 }),

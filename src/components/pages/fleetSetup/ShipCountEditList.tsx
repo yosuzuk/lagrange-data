@@ -15,6 +15,7 @@ interface IProps {
     showHangar: boolean;
     shipWarnings: Record<string, string>;
     carrierShipId: string | null;
+    myListOnly: boolean;
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onOpenAddCarriedShips?: (carrierShipId: string, reinforcement: ReinforcementType | null) => void;
@@ -31,6 +32,7 @@ export const ShipCountEditList = (props: IProps) => {
         showHangar,
         shipWarnings,
         carrierShipId,
+        myListOnly,
         onChangeShipCount,
         onChangeCarriedShipCount,
         onOpenAddCarriedShips,
@@ -60,6 +62,7 @@ export const ShipCountEditList = (props: IProps) => {
                                 shipId={shipSelection.shipDefinition.id}
                                 reinforcement={shipSelection.reinforcement}
                                 moduleSelection={shipSelection.moduleSelection}
+                                myListOnly={myListOnly}
                                 onChange={onChangeModule}
                             />
                         )}

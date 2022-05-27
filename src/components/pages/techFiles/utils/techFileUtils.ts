@@ -31,9 +31,7 @@ export function getTechFileChances(techFile: ITechFile, userSettings: IUserSetti
         .map(shipTypeChance => shipTypeChance.moduleChance)
         .reduce((sum, chance) => sum + chance, 0);
 
-    const subSystemChance = 0; // TODO implement
-
-    const techOrResearchPointChance = 1 - techFile.chanceForTechPoint - blueprintChance - subSystemChance;
+    const techOrResearchPointChance = 1 - techFile.chanceForTechPoint - blueprintChance;
 
     return {
         shipTypeChances,
