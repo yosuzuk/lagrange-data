@@ -195,7 +195,7 @@ export const techFiles: ITechFile[] = [
     {
         id: 'enterpriseSelectionFileV2',
         name: '企業選別技術ファイル',
-        desciption: '星間キャラバン来訪時にドーンポイント４５０で買える限定箱',
+        desciption: 'プロキシマコイン４５０（星間キャラバンとノード復帰協定初期）',
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.03,
             [ShipType.DESTROYER]: 0.025,
