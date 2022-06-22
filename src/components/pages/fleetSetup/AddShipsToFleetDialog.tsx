@@ -101,6 +101,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                             filter={filterState}
                             shipTypes={[
                                 ShipType.CARRIER,
+                                ShipType.AUXILIARY,
                                 ShipType.BATTLE_CRUISER,
                                 ShipType.CRUISER,
                                 ShipType.DESTROYER,

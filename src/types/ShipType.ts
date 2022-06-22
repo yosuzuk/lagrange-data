@@ -3,6 +3,7 @@ export enum ShipType {
     DESTROYER = 'destroyer',
     CRUISER = 'cruiser',
     BATTLE_CRUISER = 'battleCruiser',
+    AUXILIARY = 'auxiliary',
     CARRIER = 'carrier',
     CORVETTE = 'corvette',
     FIGHTER = 'fighter',

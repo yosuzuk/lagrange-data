@@ -113,6 +113,7 @@ function createShipGroupsByRow(shipSelections: IShipSelection[]): IShipGroup[] {
 function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] {
     return [
         ShipType.CARRIER,
+        ShipType.AUXILIARY,
         ShipType.BATTLE_CRUISER,
         ShipType.CRUISER,
         ShipType.DESTROYER,

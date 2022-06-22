@@ -3,18 +3,22 @@ import { ShipType, IShipTypeData, ShipSubType } from '../types/ShipType';
 export const shipTypes: Record<ShipType, IShipTypeData> = {
     [ShipType.FRIGATE]: {
         name: 'フリゲート',
-        sortValue: 5,
+        sortValue: 6,
     },
     [ShipType.DESTROYER]: {
         name: '駆逐艦',
-        sortValue: 4,
+        sortValue: 5,
     },
     [ShipType.CRUISER]: {
         name: '巡洋艦',
-        sortValue: 3,
+        sortValue: 4,
     },
     [ShipType.BATTLE_CRUISER]: {
         name: '巡洋戦艦',
+        sortValue: 3,
+    },
+    [ShipType.AUXILIARY]: {
+        name: '支援艦',
         sortValue: 2,
     },
     [ShipType.CARRIER]: {
@@ -23,7 +27,7 @@ export const shipTypes: Record<ShipType, IShipTypeData> = {
     },
     [ShipType.CORVETTE]: {
         name: '護送艦',
-        sortValue: 6,
+        sortValue: 7,
     },
     [ShipType.FIGHTER]: {
         name: '戦闘機',
@@ -32,7 +36,7 @@ export const shipTypes: Record<ShipType, IShipTypeData> = {
             [ShipSubType.MEDIUM_FIGHTER]: '中量級戦闘機',
             [ShipSubType.LARGE_FIGHTER]: '大型戦闘機',
         },
-        sortValue: 7,
+        sortValue: 8,
         subTypeSortValue: {
             [ShipSubType.SMALL_FIGHTER]: 9,
             [ShipSubType.MEDIUM_FIGHTER]: 8,

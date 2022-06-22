@@ -106,6 +106,7 @@ export function filterShipForAddDialog(filterState: ShipFilterState, shipsForAdd
                 break;
             }
             case ShipType.CARRIER:
+            case ShipType.AUXILIARY:
             case ShipType.BATTLE_CRUISER:
             case ShipType.CRUISER:
             case ShipType.DESTROYER:

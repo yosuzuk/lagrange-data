@@ -22,6 +22,7 @@ export const shipTypes: ShipType[] = [
     ShipType.DESTROYER,
     ShipType.CRUISER,
     ShipType.BATTLE_CRUISER,
+    ShipType.AUXILIARY,
     ShipType.CARRIER,
     ShipType.FIGHTER,
     ShipType.CORVETTE,
