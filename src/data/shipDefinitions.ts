@@ -943,14 +943,14 @@ export const shipDefinitions: IShipDefinition[] = [
         name: 'FSV830',
         type: ShipType.AUXILIARY,
         cost: 40,
-        weight: 2, // TODO confirm
+        weight: 5,
         row: ShipRow.BACK,
         operationLimit: 2,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD, // TODO confirm
-        // researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT], // TODO confirm
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS], // TODO confirm
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         relatedShipIds: [ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
@@ -2201,14 +2201,14 @@ export const shipDefinitions: IShipDefinition[] = [
         name: 'S-レヴィ9',
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 10, // TODO confirm
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
-        // researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES, // TODO confirm
-        // researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE], // TODO confirm
-        // researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS], // TODO confirm
+        researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
     },
     {
         id: ShipId.S_LEVI9_TE,

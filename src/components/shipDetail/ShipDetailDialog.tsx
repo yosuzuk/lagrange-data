@@ -27,7 +27,8 @@ export const ShipDetailDialog = (props: IProps) => {
     const shipDefinition = getShipDefinitionById(localShipId);
 
     const handleCopyLink = () => {
-        const deeplink = `${window.location.href}/${shipId}`;
+        const url = new URL(window.location.href);
+        const deeplink = `${url.origin}${url.pathname}#/shipData/${shipId}`;
         copyToClipboard(deeplink).then(() => {
             setCopied(true);
         });
