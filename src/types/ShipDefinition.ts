@@ -35,7 +35,7 @@ export interface IShipDefinition {
 export interface ISystemModule {
     id: string;
     name: string;
-    category: 'M' | 'A' | 'B' | 'C' | 'D';
+    category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';
     categoryNumber: number;
     carryFighter?: number;
     carryCorvette?: number;

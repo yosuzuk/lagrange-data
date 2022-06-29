@@ -939,8 +939,8 @@ export const shipDefinitions: IShipDefinition[] = [
         ],
     },
     {
-        id: ShipId.FCV830,
-        name: 'FCV830',
+        id: ShipId.FSV830,
+        name: 'FSV830',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 2, // TODO confirm
@@ -951,7 +951,7 @@ export const shipDefinitions: IShipDefinition[] = [
         // researchManufacturer: ResearchManufacturer.DAWN_ACCORD, // TODO confirm
         // researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT], // TODO confirm
         // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS], // TODO confirm
-        relatedShipIds: [ShipId.FCV830_TE_PREVIEW1, ShipId.FCV830_TE_PREVIEW2, ShipId.FCV830_TE_PREVIEW3, ShipId.FCV830_TE_PREVIEW4, ShipId.FCV830_TE_PREVIEW5],
+        relatedShipIds: [ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
                 id: 'M1',
@@ -959,19 +959,6 @@ export const shipDefinitions: IShipDefinition[] = [
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
-            },
-            {
-                id: 'A1',
-                name: '早期警告コマンドシステム',
-                category: 'A',
-                categoryNumber: 1,
-                defaultModule: true,
-            },
-            {
-                id: 'A2',
-                name: 'コラボレーティブコマンドシステム',
-                category: 'A',
-                categoryNumber: 2,
             },
             {
                 id: 'B1',
@@ -994,24 +981,43 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C1',
-                name: '護送艦ドック',
+                name: 'キャリア航空機システム',
                 category: 'C',
                 categoryNumber: 1,
-                carryCorvette: 3,
+                carryFighter: 2,
+                carryFighterType: ShipSubType.MEDIUM_FIGHTER,
             },
             {
                 id: 'C2',
-                name: 'エリア防空システム',
+                name: '補修UAVシステム', // TODO verify name
                 category: 'C',
                 categoryNumber: 2,
             },
             {
-                id: 'C3',
-                name: '戦闘機システム',
-                category: 'C',
-                categoryNumber: 3,
-                carryFighter: 2,
-                carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+                id: 'D1',
+                name: '早期警告コマンドシステム',
+                category: 'D',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'D2',
+                name: '協調コマンドシステム',
+                category: 'D',
+                categoryNumber: 2,
+            },
+            {
+                id: 'E1',
+                name: 'エリア防空システム',
+                category: 'E',
+                categoryNumber: 1,
+            },
+            {
+                id: 'E2',
+                name: 'エスコートドック',
+                category: 'E',
+                categoryNumber: 2,
+                carryCorvette: 3,
             },
         ],
         tags: [
@@ -1019,8 +1025,8 @@ export const shipDefinitions: IShipDefinition[] = [
         ],
     },
     {
-        id: ShipId.FCV830_TE_PREVIEW1,
-        name: 'FCV830-TE（フリゲート生産）',
+        id: ShipId.FSV830_TE_PREVIEW1,
+        name: 'FSV830-TE（フリゲート生産）',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -1029,18 +1035,12 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
-        relatedShipIds: [ShipId.FCV830, ShipId.FCV830_TE_PREVIEW2, ShipId.FCV830_TE_PREVIEW3, ShipId.FCV830_TE_PREVIEW4, ShipId.FCV830_TE_PREVIEW5],
+        relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
                 category: 'M',
-                categoryNumber: 1,
-            },
-            {
-                id: 'A1',
-                name: '早期警告コマンドシステム',
-                category: 'A',
                 categoryNumber: 1,
             },
             {
@@ -1049,14 +1049,17 @@ export const shipDefinitions: IShipDefinition[] = [
                 category: 'B',
                 categoryNumber: 1,
             },
-        ],
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
+            {
+                id: 'D1',
+                name: '早期警告コマンドシステム',
+                category: 'D',
+                categoryNumber: 1,
+            },
         ],
     },
     {
-        id: ShipId.FCV830_TE_PREVIEW2,
-        name: 'FCV830-TE（護送艦生産）',
+        id: ShipId.FSV830_TE_PREVIEW2,
+        name: 'FSV830-TE（護送艦生産）',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -1064,19 +1067,13 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: false,
-        relatedShipIds: [ShipId.FCV830, ShipId.FCV830_TE_PREVIEW1, ShipId.FCV830_TE_PREVIEW3, ShipId.FCV830_TE_PREVIEW4, ShipId.FCV830_TE_PREVIEW5],
+        staticModules: true,
+        relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
                 category: 'M',
-                categoryNumber: 1,
-            },
-            {
-                id: 'A1',
-                name: '早期警告コマンドシステム',
-                category: 'A',
                 categoryNumber: 1,
             },
             {
@@ -1085,14 +1082,17 @@ export const shipDefinitions: IShipDefinition[] = [
                 category: 'B',
                 categoryNumber: 2,
             },
-        ],
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
+            {
+                id: 'D1',
+                name: '早期警告コマンドシステム',
+                category: 'D',
+                categoryNumber: 1,
+            },
         ],
     },
     {
-        id: ShipId.FCV830_TE_PREVIEW3,
-        name: 'FCV830-TE（フリゲート生産+護送艦ドック）',
+        id: ShipId.FSV830_TE_PREVIEW3,
+        name: 'FSV830-TE（フリゲート生産+護送艦ドック）',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -1101,18 +1101,12 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
-        relatedShipIds: [ShipId.FCV830, ShipId.FCV830_TE_PREVIEW1, ShipId.FCV830_TE_PREVIEW2, ShipId.FCV830_TE_PREVIEW4, ShipId.FCV830_TE_PREVIEW5],
+        relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
                 category: 'M',
-                categoryNumber: 1,
-            },
-            {
-                id: 'A1',
-                name: '早期警告コマンドシステム',
-                category: 'A',
                 categoryNumber: 1,
             },
             {
@@ -1122,20 +1116,23 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 1,
             },
             {
-                id: 'C1',
-                name: '護送艦ドック',
-                category: 'C',
+                id: 'D1',
+                name: '早期警告コマンドシステム',
+                category: 'D',
                 categoryNumber: 1,
+            },
+            {
+                id: 'E2',
+                name: 'エスコートドック',
+                category: 'E',
+                categoryNumber: 2,
                 carryCorvette: 3,
             },
         ],
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
-        ],
     },
     {
-        id: ShipId.FCV830_TE_PREVIEW4,
-        name: 'FCV830-TE（フリゲート生産+エリア防空）',
+        id: ShipId.FSV830_TE_PREVIEW4,
+        name: 'FSV830-TE（フリゲート生産+エリア防空）',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -1144,7 +1141,7 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
-        relatedShipIds: [ShipId.FCV830, ShipId.FCV830_TE_PREVIEW1, ShipId.FCV830_TE_PREVIEW2, ShipId.FCV830_TE_PREVIEW3, ShipId.FCV830_TE_PREVIEW5],
+        relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW5],
         modules: [
             {
                 id: 'M1',
@@ -1153,9 +1150,9 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 1,
             },
             {
-                id: 'A2',
-                name: 'コラボレーティブコマンドシステム',
-                category: 'A',
+                id: 'D2',
+                name: '協調コマンドシステム',
+                category: 'D',
                 categoryNumber: 2,
             },
             {
@@ -1165,19 +1162,16 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 1,
             },
             {
-                id: 'C2',
+                id: 'E1',
                 name: 'エリア防空システム',
-                category: 'C',
-                categoryNumber: 2,
+                category: 'E',
+                categoryNumber: 1,
             },
-        ],
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
         ],
     },
     {
-        id: ShipId.FCV830_TE_PREVIEW5,
-        name: 'FCV830-TE（戦闘機生産+戦闘機ドック）',
+        id: ShipId.FSV830_TE_PREVIEW5,
+        name: 'FSV830-TE（戦闘機生産+戦闘機ドック）',
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -1186,7 +1180,7 @@ export const shipDefinitions: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
-        relatedShipIds: [ShipId.FCV830, ShipId.FCV830_TE_PREVIEW1, ShipId.FCV830_TE_PREVIEW2, ShipId.FCV830_TE_PREVIEW3, ShipId.FCV830_TE_PREVIEW4],
+        relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4],
         modules: [
             {
                 id: 'M1',
@@ -1195,9 +1189,9 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 1,
             },
             {
-                id: 'A1',
+                id: 'D1',
                 name: '早期警告コマンドシステム',
-                category: 'A',
+                category: 'D',
                 categoryNumber: 1,
             },
             {
@@ -1207,16 +1201,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 3,
             },
             {
-                id: 'C3',
-                name: '戦闘機システム',
+                id: 'C1',
+                name: 'キャリア航空機システム',
                 category: 'C',
-                categoryNumber: 3,
+                categoryNumber: 1,
                 carryFighter: 2,
                 carryFighterType: ShipSubType.MEDIUM_FIGHTER,
             },
-        ],
-        tags: [
-            ShipTag.PHASE_TWO_BLUEPRINT,
         ],
     },
     {
@@ -1750,7 +1741,7 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'C2',
-                name: '???', // TODO find name
+                name: '精密誘導システム', // TODO find module name (current name is system name)
                 category: 'C',
                 categoryNumber: 2,
             },

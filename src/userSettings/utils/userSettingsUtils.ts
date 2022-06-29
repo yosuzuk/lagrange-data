@@ -2,8 +2,9 @@ import { ShipId } from '../../data/shipIds';
 import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { PossessionState } from '../types/PossessionState';
-import { IUserSettings, IMinifiedUserSettings, ShipSettingState, ModuleSettingState } from '../types/UserSettings';
+import { IUserSettings, IMinifiedUserSettings, ShipSettingState, IShipUserSettings, ModuleSettingState } from '../types/UserSettings';
 import { WishState } from '../types/WishState';
+import { migrateShipId } from './migration';
 
 const STORAGE_KEY = 'settings';
 
@@ -42,12 +43,37 @@ function minifyUserSettings(userSettings: IUserSettings): IMinifiedUserSettings 
 }
 
 function migrateUserSettings(userSettings: IUserSettings): IUserSettings {
-    const ac721TypeC = userSettings.ships['AC721_C'];
-    if (ac721TypeC) {
-        userSettings.ships[ShipId.AC721_TE_A] = ac721TypeC;
-        delete userSettings.ships['AC721_C'];
-    }
-    return userSettings;
+    // migrate ships
+    const ships: ShipSettingState = Object.keys(userSettings.ships).reduce((result, shipId) => {
+        const shipUserSettings: IShipUserSettings = userSettings.ships[shipId];
+        return {
+            ...result,
+            [migrateShipId(shipId)]: shipUserSettings,
+        };
+    }, {} as ShipSettingState);
+
+    // migrate modules
+    const modules: ModuleSettingState = Object.keys(userSettings.modules).reduce((result, key) => {
+        const [_shipId, moduleId] = key.split('.');
+        const shipId = migrateShipId(_shipId);
+        const shipDefinition = getShipDefinitionById(shipId);
+        const moduleDefinition = shipDefinition?.modules?.find(m => m.id === moduleId);
+        if (!shipDefinition || !moduleDefinition) {
+            return result;
+        }
+
+        return {
+            ...result,
+            [`${shipId}.${moduleId}`]: userSettings.modules[key],
+        };
+    }, {} as ModuleSettingState);
+
+    const result: IUserSettings = {
+        ...userSettings,
+        ships,
+        modules,
+    };
+    return result;
 }
 
 function unminifyUserSettings(userSettings: IMinifiedUserSettings): IUserSettings {

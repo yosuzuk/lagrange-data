@@ -1,7 +1,8 @@
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
 import { ShipSubType, ShipType } from '../../../../types/ShipType';
+import { migrateShipId } from '../../../../userSettings/utils/migration';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
-import { ICarriedShipSelection, ICarrierCapabilities, IFleetSetup, IMinifiedFleetSetup, IModuleSelection, IModuleUsage, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
+import { ICarriedShipSelection, ICarrierCapabilities, IFleetSetup, IMinifiedCarriedShipSelection, IMinifiedFleetSetup, IMinifiedShipSelection, IModuleSelection, IModuleUsage, IShipSelection, ReinforcementType } from '../types/IFleetSetup';
 
 export function getCurrentFleetSetups(): IFleetSetup[] {
     return [
@@ -25,7 +26,7 @@ function restoreFleetSetup(storageKey: string): IFleetSetup | null {
     }
 
     const minifiedFleetSetup = parseFleetSetup(serializedFleetSetup);
-    return minifiedFleetSetup ? unminifyFleetSetup(minifiedFleetSetup, storageKey) : null;
+    return minifiedFleetSetup ? unminifyFleetSetup(migrateMinifiedFleetSetup(minifiedFleetSetup), storageKey) : null;
 }
 
 function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey: string): IFleetSetup {
@@ -75,6 +76,52 @@ function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
         maxCost: fleetSetup.maxCost,
         myListOnly: fleetSetup.myListOnly,
     }
+}
+
+function migrateMinifiedFleetSetup(fleetSetup: IMinifiedFleetSetup): IMinifiedFleetSetup {
+    const ships: IMinifiedShipSelection[] = fleetSetup.ships.reduce((result, shipSelection) => {
+        const shipId = migrateShipId(shipSelection.shipId);
+        const shipDefinition = getShipDefinitionById(shipId);
+        if (!shipDefinition) {
+            return result;
+        }
+
+        let usedModules: string[] | undefined = undefined;
+        if (shipSelection.usedModules && shipDefinition.modules) {
+            usedModules = shipSelection.usedModules
+                .filter(moduleId => !!shipDefinition.modules?.find(m => m.id === moduleId));
+        }
+
+        const carriedShips: IMinifiedCarriedShipSelection[] = shipSelection.carriedShips.flatMap(carriedShipSelection => {
+            const shipId = migrateShipId(carriedShipSelection.shipId);
+            const shipDefinition = getShipDefinitionById(shipId);
+            if (!shipDefinition) {
+                return [];
+            }
+
+            return [{
+                ...carriedShipSelection,
+                shipId,
+            }];
+        });
+
+        return [
+            ...result,
+            {
+                ...shipSelection,
+                shipId,
+                usedModules,
+                carriedShips,
+            }
+        ];
+    }, [] as IMinifiedShipSelection[]);
+
+    const result: IMinifiedFleetSetup = {
+        ...fleetSetup,
+        ships,
+    };
+
+    return result;
 }
 
 function extractUsedModules(moduleSelection: IModuleSelection): string[] {
