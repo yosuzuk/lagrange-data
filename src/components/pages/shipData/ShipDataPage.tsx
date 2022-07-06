@@ -9,6 +9,7 @@ import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const ShipDataPage = () => {
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
@@ -21,6 +22,8 @@ export const ShipDataPage = () => {
     }));
     const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
 
+    const disableContainer = Object.values(columnConfig).filter(set => set).length > 3;
+
     return (
         <>
             <NavigationBar currentRoute="/shipData" />
@@ -30,11 +33,12 @@ export const ShipDataPage = () => {
                 onFilterChange={setShipFilter}
                 onColumnConfigChange={setColumnConfig}
             />
-            <Container disabled={Object.values(columnConfig).filter(set => set).length > 3}>
+            <Container disabled={disableContainer}>
                 <Box p={1}>
                     <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
                 </Box>
             </Container>
+            <PageFooter disableContainer={disableContainer} />
         </>
     );
 };

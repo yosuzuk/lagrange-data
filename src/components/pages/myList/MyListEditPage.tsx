@@ -11,6 +11,7 @@ import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
@@ -84,6 +85,7 @@ export const MyListEditPage = () => {
                     onConfirm={handleConfirmReset}
                 />
             )}
+            <PageFooter />
         </>
     );
 };

@@ -15,6 +15,7 @@ import { NavigationBar } from '../../navigation/NavigationBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const MyListPage = () => {
     const navigate = useNavigate();
@@ -53,6 +54,8 @@ export const MyListPage = () => {
         setShipsForShare(null);
     };
 
+    const disableContainer = Object.values(columnConfig).filter(set => typeof set === 'boolean' && set).length > 3;
+
     return (
         <>
             <NavigationBar currentRoute="/myList" />
@@ -64,7 +67,7 @@ export const MyListPage = () => {
                 onShare={handleClickShare}
                 onColumnConfigChange={setColumnConfig}
             />
-            <Container disabled={Object.values(columnConfig).filter(set => typeof set === 'boolean' && set).length > 3}>
+            <Container disabled={disableContainer}>
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
@@ -89,6 +92,7 @@ export const MyListPage = () => {
                     onClose={handleCloseShare}
                 />
             )}
+            <PageFooter disableContainer={disableContainer} />
         </>
     );
 };

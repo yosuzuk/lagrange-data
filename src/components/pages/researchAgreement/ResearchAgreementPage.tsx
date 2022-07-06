@@ -17,6 +17,7 @@ import { ResearchFilter } from './ResearchFilter';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ConfigurationDetail } from './ConfigurationDetail';
 import { ConfigurationSummary } from './ConfigurationSummary';
+import { PageFooter } from '../../footer/PageFooter';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
@@ -114,6 +115,7 @@ export const ResearchAgreementPage = () => {
                     onClose={() => setConfigurationForDialog(null)}
                 />
             )}
+            <PageFooter disableContainer={viewMode === 'table'} />
         </>
     );
 };

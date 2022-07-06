@@ -8,6 +8,7 @@ import { ShipDetail } from '../../shipDetail/ShipDetail';
 import { isValidShipId } from '../../../data/shipIds';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ShipDetailActionBar } from './ShipDetailActionBar';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const ShipDetailPage = () => {
     const { shipId } = useParams();
@@ -32,6 +33,7 @@ export const ShipDetailPage = () => {
                     </Paper>
                 </Box>
             </Container>
+            <PageFooter />
         </>
     );
 };

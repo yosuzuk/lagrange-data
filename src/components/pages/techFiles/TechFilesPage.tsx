@@ -9,6 +9,7 @@ import { TechFileDetails } from './TechFileDetails';
 import { techFiles } from '../../../data/techFiles';
 import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const BoxChancePage = () => {
     const [techFile, setTechFile] = useState<ITechFile>(techFiles[0]);
@@ -46,6 +47,7 @@ export const BoxChancePage = () => {
                     </Stack>
                 </Box>
             </Container>
+            <PageFooter />
         </>
     );
 };

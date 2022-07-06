@@ -18,6 +18,7 @@ import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { ShipCountList } from './ShipCountList';
 import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
 import { IGroupedShips } from './types/IGroupedShips';
+import { PageFooter } from '../../footer/PageFooter';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -133,6 +134,7 @@ export const FleetSetupPage = () => {
                     onClose={handleCloseShare}
                 />
             )}
+            <PageFooter disableContainer={groupDirection === 'row'} />
         </>
     );
 }
