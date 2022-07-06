@@ -1,1 +1,0 @@
-import{v as a,w as r,x as t}from"./vendor.612e55a5.js";var e={},o=r.exports;Object.defineProperty(e,"__esModule",{value:!0});var u=e.default=void 0,d=o(a),v=t,l=(0,d.default)((0,v.jsx)("path",{d:"M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"}),"ExpandMore");u=e.default=l;export{u as d};

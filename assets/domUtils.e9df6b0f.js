@@ -1,1 +1,0 @@
-function g(t){var e,i;return t===null?void 0:((i=(e=window.innerHeight)!=null?e:document.documentElement.clientHeight)!=null?i:document.body.clientHeight)-t.getBoundingClientRect().top-t.offsetHeight-20}export{g};
