@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Alert from '@mui/material/Alert';
 import Divider from '@mui/material/Divider';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetSetupActionBar } from './FleetSetupActionBar';
 import { useFleetSelection } from './hooks/useFleetSelection';
@@ -18,7 +17,8 @@ import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { ShipCountList } from './ShipCountList';
 import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
 import { IGroupedShips } from './types/IGroupedShips';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -66,7 +66,7 @@ export const FleetSetupPage = () => {
                 onEdit={handleClickEdit}
                 onShare={handleClickShare}
             />
-            <Container disabled={groupDirection === 'row'}>
+            <PageContent disableContainer={groupDirection === 'row'}>
                 <Box p={1}>
                     <Stack spacing={1}>
                         <FleetProperties fleetSetup={fleetSetup} />
@@ -126,7 +126,7 @@ export const FleetSetupPage = () => {
                         </Typography>
                     </Stack>
                 </Box>
-            </Container>
+            </PageContent>
             {openShareDialog && (
                 <FleetSetupSharingDialog
                     fleetSetup={fleetSetup}

@@ -10,12 +10,12 @@ import { MyListView } from './MyListView';
 import { ShipsSharingDialog } from './ShipsSharingDialog';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { IShipListState } from './types/IShipListState';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const MyListPage = () => {
     const navigate = useNavigate();
@@ -67,7 +67,7 @@ export const MyListPage = () => {
                 onShare={handleClickShare}
                 onColumnConfigChange={setColumnConfig}
             />
-            <Container disabled={disableContainer}>
+            <PageContent disableContainer={disableContainer}>
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
@@ -85,7 +85,7 @@ export const MyListPage = () => {
                         columnConfig={columnConfig}
                     />
                 </Box>
-            </Container>
+            </PageContent>
             {shipsForShare && (
                 <ShipsSharingDialog
                     ships={shipsForShare}

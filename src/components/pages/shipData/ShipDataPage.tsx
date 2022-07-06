@@ -7,9 +7,9 @@ import { ShipDataActionBar } from './ShipDataActionBar';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const ShipDataPage = () => {
     const [shipFilter, setShipFilter] = useState<ShipFilterState>(createInitialShipFilterState);
@@ -33,11 +33,11 @@ export const ShipDataPage = () => {
                 onFilterChange={setShipFilter}
                 onColumnConfigChange={setColumnConfig}
             />
-            <Container disabled={disableContainer}>
+            <PageContent disableContainer={disableContainer}>
                 <Box p={1}>
                     <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
                 </Box>
-            </Container>
+            </PageContent>
             <PageFooter disableContainer={disableContainer} />
         </>
     );

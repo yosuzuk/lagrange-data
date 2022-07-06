@@ -7,9 +7,9 @@ import { ITechFile } from '../../../types/ITechFile';
 import { TechFileSelection } from './TechFileSelection';
 import { TechFileDetails } from './TechFileDetails';
 import { techFiles } from '../../../data/techFiles';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const BoxChancePage = () => {
     const [techFile, setTechFile] = useState<ITechFile>(techFiles[0]);
@@ -17,7 +17,7 @@ export const BoxChancePage = () => {
     return (
         <>
             <NavigationBar currentRoute="/techFiles" />
-            <Container>
+            <PageContent>
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
@@ -46,7 +46,7 @@ export const BoxChancePage = () => {
                         </Typography>
                     </Stack>
                 </Box>
-            </Container>
+            </PageContent>
             <PageFooter />
         </>
     );

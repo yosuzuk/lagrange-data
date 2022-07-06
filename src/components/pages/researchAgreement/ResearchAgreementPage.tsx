@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { createResearchConfiguration, getAllFilterCombinations, getFilteredResearchConfigurations, getShipDefinitionsForResearchAgreement, getShipFilterOptions } from './utils/researchAgreementUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
@@ -17,7 +16,8 @@ import { ResearchFilter } from './ResearchFilter';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { ConfigurationDetail } from './ConfigurationDetail';
 import { ConfigurationSummary } from './ConfigurationSummary';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
@@ -48,7 +48,7 @@ export const ResearchAgreementPage = () => {
     return (
         <>
             <NavigationBar currentRoute="/researchAgreement" />
-            <Container>
+            <PageContent>
                 <Box p={1}>
                     <Stack spacing={1}>
                         <Stack pt={1} pb={1} spacing={2}>
@@ -85,7 +85,7 @@ export const ResearchAgreementPage = () => {
                         )}
                     </Stack>
                 </Box>
-            </Container>
+            </PageContent>
             {viewMode === 'table' && (
                 <Box p={1}>    
                     <MemoizedResearchAgreementTable

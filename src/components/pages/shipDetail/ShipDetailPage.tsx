@@ -3,12 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Container } from '../../container/Container';
 import { ShipDetail } from '../../shipDetail/ShipDetail';
 import { isValidShipId } from '../../../data/shipIds';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ShipDetailActionBar } from './ShipDetailActionBar';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const ShipDetailPage = () => {
     const { shipId } = useParams();
@@ -22,7 +22,7 @@ export const ShipDetailPage = () => {
         <>
             <NavigationBar currentRoute="/shipData" />
             <ShipDetailActionBar />
-            <Container>
+            <PageContent>
                 <Box p={1}>
                     <Paper>
                         {shipId && isValidShipId(shipId) ? (
@@ -32,7 +32,7 @@ export const ShipDetailPage = () => {
                         )}
                     </Paper>
                 </Box>
-            </Container>
+            </PageContent>
             <PageFooter />
         </>
     );

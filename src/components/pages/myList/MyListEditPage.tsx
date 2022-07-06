@@ -7,11 +7,11 @@ import { MyListEditActionBar } from './MyListEditActionBar';
 import { MyListEdit } from './MyListEdit';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState } from '../../filter/filterUtils';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
-import { PageFooter } from '../../footer/PageFooter';
+import { PageContent } from '../../pageStructure/PageContent';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
@@ -59,7 +59,7 @@ export const MyListEditPage = () => {
                 onSave={handleClickSave}
                 onFilter={setShipFilter}
             />
-            <Container>
+            <PageContent>
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
@@ -74,7 +74,7 @@ export const MyListEditPage = () => {
                     </Stack>
                     <MyListEdit shipFilter={shipFilter} />
                 </Box>
-            </Container>
+            </PageContent>
             {confirmingReset && (
                 <ConfirmationDialog
                     title={'初期化'}

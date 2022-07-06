@@ -6,7 +6,6 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { Container } from '../../container/Container';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { FleetPropertiesEdit } from './FleetPropertiesEdit';
 import { FleetSetupEditActionBar } from './FleetSetupEditActionBar';
@@ -23,6 +22,7 @@ import { GroupAndSortOption, groupShipsBy } from './utils/shipGroupingUtils';
 import { AddShipsButton } from './AddShipsButton';
 import { useCarriedShipsForAddDialog } from './hooks/useCarriedShipsForAddDialog';
 import { AddShipsToCarrierDialog } from './AddShipsToCarrierDialog';
+import { PageContent } from '../../pageStructure/PageContent';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -120,7 +120,7 @@ export const FleetSetupEditPage = () => {
                 onOpenAddShips={openAddDialogForShips}
                 saveDisabled={Object.keys(errors).length > 0}
             />
-            <Container disabled={groupDirection === 'row'}>
+            <PageContent disableContainer={groupDirection === 'row'}>
                 <Box p={1}>
                     <Stack spacing={1}>
                         <FleetPropertiesEdit
@@ -176,7 +176,7 @@ export const FleetSetupEditPage = () => {
                         </Stack>
                     </Stack>
                 </Box>
-            </Container>
+            </PageContent>
             <FleetSetupBottomBar fleetSetup={fleetSetup} fleetShipCount={fleetShipCount} />
             {dialogDataForShips && (
                 <AddShipsToFleetDialog
