@@ -961,6 +961,12 @@ export const shipDefinitions: IShipDefinition[] = [
                 defaultModule: true,
             },
             {
+                id: 'A2',
+                name: '戦略資源備蓄システム',
+                category: 'A',
+                categoryNumber: 2,
+            },
+            {
                 id: 'B1',
                 name: 'フリゲート艦生産システム',
                 category: 'B',
@@ -2296,7 +2302,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '大型艦載機システム',
                 category: 'M',
                 categoryNumber: 2,
-                carryFighter: 5,
+                carryFighter: 8,
                 carryFighterType: ShipSubType.LARGE_FIGHTER,
             },
             {
@@ -2337,7 +2343,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '艦載機プラットフォーム',
                 category: 'C',
                 categoryNumber: 1,
-                carryFighter: 3,
+                carryFighter: 5,
                 carryFighterType: ShipSubType.LARGE_FIGHTER,
             },
             {
