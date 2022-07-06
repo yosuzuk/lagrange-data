@@ -26,7 +26,7 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                                     {`インラグデータ`}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    {`Version ${APP_VERSION}`}
+                                    {`Version ${__APP_VERSION__}`}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
                                     {'Changelog'}
