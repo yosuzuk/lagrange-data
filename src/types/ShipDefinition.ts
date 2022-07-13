@@ -35,10 +35,17 @@ export interface IShipDefinition {
 export interface ISystemModule {
     id: string;
     name: string;
+    description?: string;
+    skills?: IModuleSkills[];
     category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';
     categoryNumber: number;
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
     defaultModule?: boolean;
+}
+
+interface IModuleSkills {
+    slots: number;
+    skills: string[];
 }

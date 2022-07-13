@@ -961,8 +961,27 @@ export const shipDefinitions: IShipDefinition[] = [
                 defaultModule: true,
             },
             {
+                id: 'A1',
+                name: '作業補修システム',
+                description: 'スキルで補修速度アップ＆プレハブ消費ダウン',
+                skills: [
+                    {
+                        slots: 3,
+                        skills: [
+                            '支援補修速度が2.5％アップする（最大10％）',
+                            '支援補修速度が2.5％アップする（最大10％）',
+                            'グイック補修プレハブモジュールの消費が2.5％ダウン（最大10％）',
+                            'グイック補修プレハブモジュールの消費が2.5％ダウン（最大10％）',
+                        ],
+                    },
+                ],
+                category: 'A',
+                categoryNumber: 1,
+            },
+            {
                 id: 'A2',
                 name: '戦略資源備蓄システム',
+                description: '貯蔵力60000',
                 category: 'A',
                 categoryNumber: 2,
             },
