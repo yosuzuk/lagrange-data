@@ -121,7 +121,7 @@ export const FleetSetupEditPage = () => {
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <PageContent disableContainer={groupDirection === 'row'}>
-                <Box p={1}>
+                <Box p={1} sx={{ marginBottom: '60px' }}>
                     <Stack spacing={1}>
                         <FleetPropertiesEdit
                             fleetSetup={fleetSetup}
