@@ -622,9 +622,15 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '通常砲システム',
                 description: '対艦＆対空武装',
                 parts: [{
-                    text: '投射、実弾、対艦：8571、攻城：1371',
+                    text: [
+                        '対艦：',
+                        '・投射、実弾、対艦：8571、攻城：1371'
+                    ],
                 }, {
-                    text: '投射、実弾、対艦：3000、対空：720、攻城：90',
+                    text: [
+                        '対空：',
+                        '・投射、実弾、対艦：3000、対空：720、攻城：90',
+                    ],
                 }],
                 category: 'B',
                 categoryNumber: 1,
@@ -632,11 +638,17 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B2',
                 name: '対空パルス砲システム',
-                description: '対空武装',
+                description: '対空武装、ミサイル迎撃',
                 parts: [{
-                    text: '直射、エネルギー、対艦：3150、対空：5744',
+                    text: [
+                        '対空：',
+                        '・直射、エネルギー、対艦：3150、対空：5744'
+                    ],
                 }, {
-                    text: '直射、エネルギー、対空：1788',
+                    text: [
+                        '対空、ミサイル迎撃：',
+                        '・直射、エネルギー、対空：1788',
+                    ],
                 }],
                 category: 'B',
                 categoryNumber: 2,
@@ -644,11 +656,17 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B3',
                 name: '対空ミサイルシステム',
-                description: '対空武装',
+                description: '対空武装、ミサイル迎撃',
                 parts: [{
-                    text: '投射、実弾、対艦：2100、対空：7190',
+                    text: [
+                        '対空：',
+                        '・投射、実弾、対艦：2100、対空：7190',
+                    ],
                 }, {
-                    text: '投射、実弾、対艦：1500、対空：3120',
+                    text: [
+                        '対空、ミサイル迎撃：',
+                        '・投射、実弾、対艦：1500、対空：3120',
+                    ],
                 }],
                 category: 'B',
                 categoryNumber: 3,
@@ -2585,6 +2603,55 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '艦首攻城電磁加速砲システム',
+                description: '対艦武装',
+                parts: [
+                    {
+                        text: '直射、実弾、対艦：13000、攻城：11310',
+                        slots: 7,
+                        skills: [
+                            {
+                                effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
+                                properties: '戦略、技術Pt12',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'システムＨＰアップ',
+                                properties: '最大34.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'クリティカルダメージアップ＆確率アップ',
+                                properties: '最大50％、技術Pt8',
+                            },
+                            {
+                                effect: '攻城ダメージアップ',
+                                properties: '最大30％、技術Pt8',
+                            },
+                            {
+                                effect: 'システムＨＰアップ',
+                                properties: '最大34.8％、技術Pt8',
+                            },
+                        ],
+                    }
+                ],
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -2592,12 +2659,60 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M2',
                 name: 'イオン砲塔システム',
+                description: '対艦武装',
+                parts: [{
+                    text: '直射、エネルギー、対艦：10285、攻城：1748',
+                }],
                 category: 'M',
                 categoryNumber: 2,
             },
             {
                 id: 'A1',
                 name: 'フォートレス砲撃システム',
+                description: '対艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対大型：',
+                            '・直射、実弾、対艦：9500、攻城：2755',
+                            '対小型：',
+                            '・直射、実弾、対艦：4000、対空：280、攻城：320',
+                            '対空：',
+                            '・直射、実弾、対艦：1200、対空：1440',
+                        ],
+                        slots: 5,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt10',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt10',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt10',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大10％、Pt10',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、Pt10',
+                            },
+                            {
+                                effect: '戦闘機/護送艦に対する命中率アップ',
+                                properties: '最大15％、Pt10',
+                            },
+                            {
+                                effect: '出力時間ダウン',
+                                properties: '最大10％、Pt10',
+                            },
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -2605,24 +2720,82 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A2',
                 name: 'フォートレス砲撃システム',
+                description: '対艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対艦：',
+                            '・直射、実弾、対艦：16000、攻城：2880',
+                            '対空：',
+                            '・直射、実弾、対艦：1200、対空：1440',
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'A3',
                 name: 'フォートレス砲撃システム',
+                description: '対艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対艦：',
+                            '・直射、実弾、対艦：18000、対空：540、攻城：1800',
+                            '対空：',
+                            '・直射、実弾、対艦：1200、対空：1440',
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 3,
             },
             {
                 id: 'B1',
                 name: '「トロッコ」投射装置群',
+                description: '対空武装、ミサイル迎撃',
+                parts: [
+                    {
+                        text: [
+                            '直射、実弾、対艦：6480、対空：1315、攻城：259',
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 1,
             },
             {
                 id: 'B2',
                 name: '護送艦ドック',
+                description: '護送艦を3隻搭載可能',
+                parts: [
+                    {
+                        slots: 4,
+                        skills: [
+                            {
+                                effect: 'ロックオン速度アップ',
+                                properties: '最大70％、技術Pt6',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大20％、技術Pt6',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大20％、技術Pt6',
+                            },
+                            {
+                                effect: '命中率アップ',
+                                properties: '最大20％、技術Pt6',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt6',
+                            },
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 2,
                 carryCorvette: 3,
@@ -2630,24 +2803,42 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B3',
                 name: '統合ダメージコントロールシステム',
+                description: '補修ＵＡＶ×2',
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
                 name: '分散型軽兵器制御システム',
+                description: '対空武装',
+                parts: [
+                    {
+                        text: [
+                            '直射、実弾、対空：1512',
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
                 name: '追加装甲システム',
+                description: '抵抗値アップ150',
                 category: 'C',
                 categoryNumber: 2,
             },
             {
                 id: 'C3',
                 name: 'アンチミサイルシステム',
+                description: '対空武装、ミサイル迎撃',
+                parts: [
+                    {
+                        text: [
+                            '直射、実弾、対空：2159',
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 3,
             },
