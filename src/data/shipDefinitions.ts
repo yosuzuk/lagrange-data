@@ -523,6 +523,10 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: 'ガンマストーム攻撃イオン砲システム',
+                description: '対艦武装',
+                parts: [{
+                    text: '直射、エネルギー、対艦：9000、攻城：1890',
+                }],
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -530,12 +534,20 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M2',
                 name: 'ガンマストーム投射攻撃システム',
+                description: '対艦武装',
+                parts: [{
+                    text: '投射、エネルギー、対艦：9600、攻城：1344',
+                }],
                 category: 'M',
                 categoryNumber: 2,
             },
             {
                 id: 'A1',
                 name: 'ガンマストーム投射武器システム',
+                description: '対艦武装',
+                parts: [{
+                    text: '投射、実弾、対艦：24000、攻城：1920',
+                }],
                 category: 'A',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -543,36 +555,60 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A2',
                 name: 'ガンマストーム投射武器システム',
+                description: '対艦武装',
+                parts: [{
+                    text: '投射、エネルギー、対艦：18162、攻城：1816',
+                }],
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'B1',
                 name: '通常砲システム',
+                description: '対艦＆対空武装',
+                parts: [{
+                    text: '投射、実弾、対艦：8571、攻城：1371',
+                }, {
+                    text: '投射、実弾、対艦：3000、対空：720、攻城：90',
+                }],
                 category: 'B',
                 categoryNumber: 1,
             },
             {
                 id: 'B2',
                 name: '対空パルス砲システム',
+                description: '対空武装',
+                parts: [{
+                    text: '直射、エネルギー、対艦：3150、対空：5744',
+                }, {
+                    text: '直射、エネルギー、対空：1788',
+                }],
                 category: 'B',
                 categoryNumber: 2,
             },
             {
                 id: 'B3',
                 name: '対空ミサイルシステム',
+                description: '対空武装',
+                parts: [{
+                    text: '投射、実弾、対艦：2100、対空：7190',
+                }, {
+                    text: '投射、実弾、対艦：1500、対空：3120',
+                }],
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
                 name: 'エネルギー圧縮装置',
+                description: 'イオン砲ダメージアップ15％',
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
                 name: '戦闘機搭載ハンガー',
+                description: '小～中型戦闘機を２機搭載可能',
                 category: 'C',
                 categoryNumber: 2,
                 carryFighter: 2,
@@ -581,24 +617,31 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'C3',
                 name: '戦術UAVシステム',
+                description: 'スポッターＵＡＶ×3',
                 category: 'C',
                 categoryNumber: 3,
             },
             {
                 id: 'D1',
                 name: '近接対空システム',
+                description: '対空武装',
+                parts: [{
+                    text: '投射、実弾、対空：5275',
+                }],
                 category: 'D',
                 categoryNumber: 1,
             },
             {
                 id: 'D2',
                 name: 'ターゲット保護システム',
+                description: 'メインシステムへのクリティカルダメージ軽減60％',
                 category: 'D',
                 categoryNumber: 2,
             },
             {
                 id: 'D3',
                 name: 'ダメージ補償システム',
+                description: '自己補修ＵＡＶ',
                 category: 'D',
                 categoryNumber: 3,
             },
@@ -956,7 +999,10 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
-                description: '武装、対艦：3000、対空：360、攻城：90',
+                description: '対空武装',
+                parts: [{
+                    text: '直射、実弾、対艦：3000、対空：360、攻城：90',
+                }],
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -1070,7 +1116,10 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'E1',
                 name: 'エリア防空システム',
-                description: '武装、対空：3920（同列範囲）',
+                description: '対空武装（同列）',
+                parts: [{
+                    text: '直射、実弾、対空：3920',
+                }],
                 category: 'E',
                 categoryNumber: 1,
             },
@@ -1239,7 +1288,10 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'E1',
                 name: 'エリア防空システム',
-                description: '武装、対空：3920（同列範囲）',
+                description: '対空武装（同列）',
+                parts: [{
+                    text: '直射、実弾、対空：3920',
+                }],
                 category: 'E',
                 categoryNumber: 1,
             },
