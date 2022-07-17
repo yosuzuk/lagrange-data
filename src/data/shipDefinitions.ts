@@ -526,6 +526,35 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対艦武装',
                 parts: [{
                     text: '直射、エネルギー、対艦：9000、攻城：1890',
+                    slots: 6,
+                    skills: [{
+                        effect: 'イオン砲ダメージアップ',
+                        properties: '最大10％、技術Pt5',
+                    }, {
+                        effect: 'イオン砲ダメージアップ',
+                        properties: '最大10％、技術Pt5',
+                    }, {
+                        effect: '冷却時間ダウン',
+                        properties: '最大15％、技術Pt5',
+                    }, {
+                        effect: '出力時間ダウン',
+                        properties: '最大10％、技術Pt5',
+                    }, {
+                        effect: '冷却時間ダウン',
+                        properties: '最大15％、技術Pt5',
+                    }, {
+                        effect: 'イオン砲命中率アップ',
+                        properties: '最大10％、技術Pt5',
+                    }, {
+                        effect: '巡洋艦以上に対する命中率アップ',
+                        properties: '最大15％、技術Pt5',
+                    }, {
+                        effect: 'システムＨＰアップ',
+                        properties: '最大35％、技術Pt5',
+                    }, {
+                        effect: '被クリティカルダメージダウン',
+                        properties: '最大30％、技術Pt5',
+                    }],
                 }],
                 category: 'M',
                 categoryNumber: 1,
@@ -547,6 +576,32 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対艦武装',
                 parts: [{
                     text: '投射、実弾、対艦：24000、攻城：1920',
+                    slots: 6,
+                    skills: [{
+                        effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
+                        properties: '戦略、技術Pt25',
+                    }, {
+                        effect: 'ダメージアップ',
+                        properties: '最大10％、技術Pt12',
+                    }, {
+                        effect: 'ダメージアップ',
+                        properties: '最大10％、技術Pt12',
+                    }, {
+                        effect: 'ダメージアップ',
+                        properties: '最大10％、技術Pt12',
+                    }, {
+                        effect: 'クリティカルダメージアップ＆確率アップ',
+                        properties: '最大50％、技術Pt12',
+                    }, {
+                        effect: '冷却時間ダウン',
+                        properties: '最大15％、技術Pt12',
+                    }, {
+                        effect: '巡洋艦以上に対する命中率アップ',
+                        properties: '最大15％、技術Pt12',
+                    }, {
+                        effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                        properties: '最大15％、技術Pt12',
+                    }],
                 }],
                 category: 'A',
                 categoryNumber: 1,
@@ -999,9 +1054,36 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
-                description: '対空武装',
+                description: '対空武装＆修理ドック',
                 parts: [{
-                    text: '直射、実弾、対艦：3000、対空：360、攻城：90',
+                    text: [
+                        '直射、実弾、対艦：3000、対空：360、攻城：90',
+                        'カスタムモジュール備蓄量40',
+                        '補修キュー1',
+                    ],
+                    slots: 5,
+                    skills: [{
+                        effect: '補修速度アップ',
+                        properties: '最大10％、技術Pt8',
+                    }, {
+                        effect: '補修速度アップ',
+                        properties: '最大10％、技術Pt8',
+                    }, {
+                        effect: 'クイック補修プレハブモジュール消費ダウン',
+                        properties: '最大10％、技術Pt8',
+                    }, {
+                        effect: '補給速度アップ',
+                        properties: '最大34％、技術Pt8',
+                    }, {
+                        effect: '補給速度アップ',
+                        properties: '最大34％、技術Pt8',
+                    }, {
+                        effect: 'カスタムモジュール容量アップ',
+                        properties: '最大15、技術Pt8',
+                    }, {
+                        effect: 'ダメージアップ',
+                        properties: '最大10％、技術Pt5',
+                    }],
                 }],
                 category: 'M',
                 categoryNumber: 1,
