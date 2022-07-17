@@ -16,6 +16,7 @@ import { translateManufacturer } from '../../utils/manufacturerUtils';
 import { translateResearchManufacturer } from '../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
+import { ModuleDetail } from './ModuleDetail';
 
 interface IProps {
     shipId: string;
@@ -111,26 +112,14 @@ export const ShipDetail = (props: IProps) => {
                             key: 'modules',
                             label: '初期システム',
                             value: (
-                                <>
-                                    {shipDefinition.modules.filter(module => module.defaultModule).map(module => (
-                                        <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {`${module.category}${module.categoryNumber} ${module.name}`}
-                                        </Typography>
-                                    ))}
-                                </>
+                                <ModuleDetail modules={shipDefinition.modules.filter(module => module.defaultModule)}/>
                             )
                         },
                         {
                             key: 'extraModules',
                             label: '追加システム',
                             value: (
-                                <>
-                                    {shipDefinition.modules.filter(module => !module.defaultModule).map(module => (
-                                        <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {`${module.category}${module.categoryNumber} ${module.name}`}
-                                        </Typography>
-                                    ))}
-                                </>
+                                <ModuleDetail modules={shipDefinition.modules.filter(module => !module.defaultModule)}/>
                             )
                         },
                     ] : []),
@@ -139,13 +128,7 @@ export const ShipDetail = (props: IProps) => {
                             key: 'staticModules',
                             label: '固定システム',
                             value: (
-                                <>
-                                    {shipDefinition.modules.map(module => (
-                                        <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {`${module.category}${module.categoryNumber} ${module.name}`}
-                                        </Typography>
-                                    ))}
-                                </>
+                                <ModuleDetail modules={shipDefinition.modules} />
                             )
                         },
                     ] : []),

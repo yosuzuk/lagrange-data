@@ -956,6 +956,7 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '総合支援プラットフォーム',
+                description: '武装、対艦：3000、対空：360、攻城：90',
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -964,14 +965,26 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'A1',
                 name: '作業補修システム',
                 description: 'スキルで補修速度アップ＆プレハブ消費ダウン',
-                skills: [
+                parts: [
                     {
                         slots: 3,
                         skills: [
-                            '支援補修速度が2.5％アップする（最大10％）',
-                            '支援補修速度が2.5％アップする（最大10％）',
-                            'グイック補修プレハブモジュールの消費が2.5％ダウン（最大10％）',
-                            'グイック補修プレハブモジュールの消費が2.5％ダウン（最大10％）',
+                            {
+                                effect: '支援補修速度アップ',
+                                properties: '最大10％',
+                            },
+                            {
+                                effect: '支援補修速度アップ',
+                                properties: '最大10％',
+                            },
+                            {
+                                effect: 'グイック補修プレハブモジュール消費ダウン',
+                                properties: '最大10％',
+                            },
+                            {
+                                effect: 'グイック補修プレハブモジュール消費ダウン',
+                                properties: '最大10％',
+                            },
                         ],
                     },
                 ],
@@ -988,6 +1001,7 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B1',
                 name: 'フリゲート艦生産システム',
+                description: '自己保有能力でフリゲートが生産可能',
                 category: 'B',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -995,18 +1009,21 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B2',
                 name: 'エスコート生産システム',
+                description: '自己保有能力で護送艦が生産可能',
                 category: 'B',
                 categoryNumber: 2,
             },
             {
                 id: 'B3',
                 name: '戦闘機生産システム',
+                description: '自己保有能力で戦闘機が生産可能',
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
                 name: 'キャリア航空機システム',
+                description: '小～中型戦闘機を２機搭載可能',
                 category: 'C',
                 categoryNumber: 1,
                 carryFighter: 2,
@@ -1015,12 +1032,31 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'C2',
                 name: '補修UAVシステム', // TODO verify name
+                description: '補修ＵＡＶ×２',
                 category: 'C',
                 categoryNumber: 2,
             },
             {
                 id: 'D1',
-                name: '早期警告コマンドシステム',
+                name: '指令システムの警告',
+                description: '味方艦船の被命中率ダウン（回避アップ）',
+                parts: [{
+                    text: [
+                        '後列の魚雷攻撃被命中率ダウン：8%',
+                        '後列のミサイル攻撃被命中率ダウン：8%',
+                    ],
+                    slots: 2,
+                    skills: [{
+                        effect: '後列の投射武器の被命中率ダウン',
+                        properties: '最大8％、技術Pt：4+4',
+                    }, {
+                        effect: '中列の投射武器の被命中率ダウン',
+                        properties: '最大8％、技術Pt：4+4',
+                    }, {
+                        effect: '後列の低速武器の被命中率ダウン',
+                        properties: '最大8％、技術Pt：4+4',
+                    }],
+                }],
                 category: 'D',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -1034,12 +1070,14 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'E1',
                 name: 'エリア防空システム',
+                description: '武装、対空：3920（同列範囲）',
                 category: 'E',
                 categoryNumber: 1,
             },
             {
                 id: 'E2',
                 name: 'エスコートドック',
+                description: '護送艦を３機搭載可能',
                 category: 'E',
                 categoryNumber: 2,
                 carryCorvette: 3,

@@ -36,7 +36,7 @@ export interface ISystemModule {
     id: string;
     name: string;
     description?: string;
-    skills?: IModuleSkills[];
+    parts?: IModulePart[];
     category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';
     categoryNumber: number;
     carryFighter?: number;
@@ -45,7 +45,13 @@ export interface ISystemModule {
     defaultModule?: boolean;
 }
 
-interface IModuleSkills {
+interface IModulePart {
+    text?: string | string[];
     slots: number;
-    skills: string[];
+    skills: ISkill[];
+}
+
+interface ISkill {
+    effect: string;
+    properties?: string | string[];
 }
