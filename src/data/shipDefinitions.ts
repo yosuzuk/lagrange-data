@@ -1275,6 +1275,40 @@ export const shipDefinitions: IShipDefinition[] = [
                             '・投射、エネルギー、対艦：15692、対空：3640、攻城：2824',
                         ],
                         skillSlots: 6,
+                        skills: [
+                            {
+                                effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
+                                properties: '戦略、技術Pt15',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: '巡洋艦以上に対する命中率アップ',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: '持続時間ダウン',
+                                properties: '最大10％、技術Pt10',
+                            },
+                        ],
                     },
                 ],
                 category: 'M',
@@ -1330,48 +1364,295 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A2',
                 name: '「エターナルポラリス」MARKⅡ投射システム',
+                description: '対大型艦＆攻城武装',
+                parts: [
+                    {
+                        text: [
+                            '対大型：',
+                            '・投射、実弾、対艦：12000、攻城：10440',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: 'クリティカルダメージアップ＆確率アップ',
+                                properties: '最大50％、技術Pt10',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: '攻城ダメージアップ',
+                                properties: '最大30％、技術Pt10',
+                            },
+                            {
+                                effect: '攻城ダメージアップ',
+                                properties: '最大30％、技術Pt10',
+                            },
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'A3',
                 name: '「エターナルポラリス」MARKⅡ投射システム',
+                description: '対艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対艦：', // TODO priority
+                            '・投射、実弾、対艦：9600、攻城：1440',
+                            '対空：',
+                            '・投射、実弾、対艦：2327、対空：3946',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt10',
+                            },
+                            {
+                                effect: '戦闘機/護送艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: '戦闘機/護送艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt10',
+                            },
+                            {
+                                effect: 'システムのメイン武装が同列に接近する艦載機を攻撃。命中率40％アップ。効果は25秒続く。冷却30秒。',
+                                properties: '戦略、技術Pt15',
+                            },
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 3,
             },
             {
                 id: 'B1',
                 name: '一般砲撃プラットフォーム',
+                description: '対艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対艦：', // TODO priority
+                            '・投射、実弾、対艦；4200、攻城：840',
+                            '対空：',
+                            '・投射、実弾、対艦：1050、対空；840、攻城；63',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、Pt5',
+                            },
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 1,
             },
             {
                 id: 'B2',
                 name: '一般近接防御システム',
+                description: '対空武装',
+                parts: [
+                    {
+                        text: [
+                            '対空：',
+                            '・直射、実弾、対艦：1200、対空：2160、攻城：60',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、Pt5',
+                            },
+                        ],
+                    }
+                ],
                 category: 'B',
                 categoryNumber: 2,
             },
             {
                 id: 'C1',
                 name: 'NT UAV対空システム',
+                description: '対空UAV×3',
+                parts: [
+                    {
+                        text: [
+                            '対空：6480',
+                        ],
+                        skillSlots: 3,
+                        skills: [
+                            {
+                                effect: 'UAVのロックオン速度アップ',
+                                properties: '最大70％、技術Pt5',
+                            },
+                            {
+                                effect: 'UAVの冷却時間ダウン',
+                                properties: '最大20％、技術Pt5',
+                            },
+                            {
+                                effect: 'UAVの命中率アップ',
+                                properties: '最大20％、技術Pt5',
+                            },
+                            {
+                                effect: 'UAVのダメージアップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
                 name: '「サンダーストーム」UAVシールドシステム',
+                description: 'シールドUAV×1',
+                parts: [
+                    {
+                        text: [
+                            '対象の敵艦船のエネルギー武器の命中率ダウン',
+                        ],
+                        skillSlots: 2,
+                        skills: [
+                            {
+                                effect: 'UAVの冷却時間ダウン',
+                                properties: '最大20％、技術Pt5',
+                            },
+                            {
+                                effect: 'UAVの冷却時間ダウン',
+                                properties: '最大20％、技術Pt5',
+                            },
+                            {
+                                effect: 'UAVのロックオン速度アップ',
+                                properties: '最大70％、技術Pt5',
+                            },
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 2,
             },
             {
                 id: 'C3',
                 name: 'エネルギー補償装甲システム',
+                description: 'エネルギー＆投射ダメージを軽減',
+                parts: [
+                    {
+                        text: [
+                            'エネルギー武器によるダメージを15％軽減',
+                            '投射武器によるダメージを15％軽減',
+                            '被クリティカルダメージを30％軽減',
+                        ],
+                        skillSlots: 2,
+                        skills: [
+                            {
+                                effect: 'シールド値アップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                            {
+                                effect: '被クリティカルダメージダウン',
+                                properties: '最大30％、技術Pt5',
+                            },
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 3,
             },
             {
                 id: 'D1',
                 name: 'イオン砲塔システム',
+                description: '対艦武装',
+                parts: [
+                    {
+                        text: [
+                            '対大型：',
+                            '・直射、エネルギー、対艦：6857、攻城：1028',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、Pt5',
+                            },
+                            {
+                                effect: '巡洋艦以上に対する命中率アップ',
+                                properties: '最大15％、Pt5',
+                            },
+                        ],
+                    },
+                ],
                 category: 'D',
                 categoryNumber: 1,
             },
@@ -1385,12 +1666,32 @@ export const shipDefinitions: IShipDefinition[] = [
                             'AP-1308型　連射近接防御パルス砲',
                             '直射、エネルギー、対空：2160',
                         ],
-                        skillSlots: 6,
+                        skillSlots: 4,
                         skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt5',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt5',
+                            },
+                            {
+                                effect: '戦闘機/護送艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt5',
+                            },
                             {
                                 effect: 'ミサイル/魚雷要撃率アップ',
                                 properties: '最大25％、技術Pt5',
-                            }
+                            },
                         ],
                     },
                 ],
