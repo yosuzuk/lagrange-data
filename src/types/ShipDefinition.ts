@@ -47,7 +47,7 @@ export interface ISystemModule {
 
 interface IModulePart {
     text?: string | string[];
-    slots?: number;
+    skillSlots?: number;
     skills?: ISkill[];
 }
 

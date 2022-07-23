@@ -44,23 +44,28 @@ export const ModuleDetail = (props: IProps) => {
                         {module.parts && (
                             <Stack spacing={1}>
                                 {module.parts.map((modulePart, index) =>
-                                    <div key={`part${index}`}>
+                                    <Stack key={`part${index}`} spacing={1}>
                                         {modulePart.text && (
-                                            <Box pb={1}>
+                                            <Stack spacing={1}>
                                                 {toArray(modulePart.text).map((line, index) => (
-                                                    <Typography variant="body2" gutterBottom={true} key={`line_${index}`}>
+                                                    <Typography variant="body2" key={`line_${index}`}>
                                                         {line}
                                                     </Typography>
                                                 )) ?? null}
-                                            </Box>
+                                            </Stack>
                                         )}
-                                        {Number.isFinite(modulePart.slots) && (
+                                        {Number.isFinite(modulePart.skillSlots) && (
                                             <Typography variant="body2" gutterBottom={true}>
-                                                {`スキル枠：${modulePart.slots}`}
+                                                {`スキル枠：${modulePart.skillSlots}`}
+                                            </Typography>
+                                        )}
+                                        {modulePart.skills && (
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`スキル：`}
                                             </Typography>
                                         )}
                                         {modulePart.skills?.map((skill, index) => (
-                                            <Box pb={1} key={`skill_${index}`}>
+                                            <Box key={`skill_${index}`}>    
                                                 <Typography variant="body2">
                                                     {`・${skill.effect}`}
                                                 </Typography>
@@ -71,7 +76,7 @@ export const ModuleDetail = (props: IProps) => {
                                                 ))}
                                             </Box>
                                         )) ?? null}
-                                    </div>
+                                    </Stack>
                                 ) ?? null}
                             </Stack>
                         )}

@@ -530,7 +530,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '対大型：',
                         '・直射、エネルギー、対艦：9000、攻城：1890',
                     ],
-                    slots: 6,
+                    skillSlots: 6,
                     skills: [{
                         effect: 'イオン砲ダメージアップ',
                         properties: '最大10％、技術Pt5',
@@ -574,7 +574,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '対大型：',
                         '・投射、エネルギー、対艦：9600、攻城：1344'
                     ],
-                    slots: 6,
+                    skillSlots: 6,
                 }],
                 category: 'M',
                 categoryNumber: 2,
@@ -589,7 +589,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '対大型：',
                         '・投射、実弾、対艦：24000、攻城：1920',
                     ],
-                    slots: 6,
+                    skillSlots: 6,
                     skills: [{
                         effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
                         properties: '戦略、技術Pt25',
@@ -859,7 +859,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             'CBC-2100型　護送艦ドック',
                             '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
                         ],
-                        slots: 5,
+                        skillSlots: 5,
                         skills: [
                             {
                                 effect: '艦載機の命中率アップ',
@@ -911,7 +911,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '戦略UAV：',
                             '・対艦：3750、攻城：520',
                         ],
-                        slots: 5,
+                        skillSlots: 5,
                     },
                 ],
                 category: 'M',
@@ -949,7 +949,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空：',
                             '・直射、実弾、対艦：3300、対空：712、攻城：99',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -993,7 +993,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空、ミサイル迎撃：',
                             '・投射、実弾、対艦：3375、対空：2362',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -1050,7 +1050,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             'CBC-2100型　護送艦ドック',
                             '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
                         ],
-                        slots: 3,
+                        skillSlots: 3,
                         skills: [
                             {
                                 effect: '艦載機のロックオン速度アップ',
@@ -1218,7 +1218,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・直射、エネルギー、対艦：16000、攻城：3360',
                         ],
-                        slots: 6,
+                        skillSlots: 6,
                         skills: [
                             {
                                 effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
@@ -1274,7 +1274,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・投射、エネルギー、対艦：15692、対空：3640、攻城：2824',
                         ],
-                        slots: 6,
+                        skillSlots: 6,
                     },
                 ],
                 category: 'M',
@@ -1294,7 +1294,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対小型：',
                             '・投射、実弾、対艦：3300、対空：1663、攻城：99',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -1385,7 +1385,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             'AP-1308型　連射近接防御パルス砲',
                             '直射、エネルギー、対空：2160',
                         ],
-                        slots: 6,
+                        skillSlots: 6,
                         skills: [
                             {
                                 effect: 'ミサイル/魚雷要撃率アップ',
@@ -1424,7 +1424,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         'カスタムモジュール備蓄量40',
                         '補修キュー1',
                     ],
-                    slots: 5,
+                    skillSlots: 5,
                     skills: [{
                         effect: '補修速度アップ',
                         properties: '最大10％、技術Pt8',
@@ -1462,7 +1462,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             'クイック補修装置',
                             '補修ロボットを搭載して、艦船の補修を加速できる。',
                         ],
-                        slots: 3,
+                        skillSlots: 3,
                         skills: [
                             {
                                 effect: '支援補修速度アップ',
@@ -1508,7 +1508,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲートの生産を可能にするが生産効率は低め。',
                         '支援艦の自己保有容量：60',
                     ],
-                    slots: 3,
+                    skillSlots: 3,
                 }],
                 category: 'B',
                 categoryNumber: 1,
@@ -1522,7 +1522,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     text: [
                         '完全な小型艦載機生産設備を備え、基地を離れて支援艦単独での護送艦の生産を可能にするが生産効率は低め',
                     ],
-                    slots: 3,
+                    skillSlots: 3,
                 }],
                 category: 'B',
                 categoryNumber: 2,
@@ -1535,7 +1535,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     text: [
                         '完全な小型艦載機生産設備を備え、基地を離れて支援艦単独での戦闘機の生産を可能にするが生産効率は低め',
                     ],
-                    slots: 3,
+                    skillSlots: 3,
                 }],
                 category: 'B',
                 categoryNumber: 3,
@@ -1549,7 +1549,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '攻撃機と戦闘機を格納可能な中型機内格納庫。',
                         '2隊までの戦闘機編隊を停泊・整備する空間を提供し、戦闘機の指令・探査システムを備える。',
                     ],
-                    slots: 4,
+                    skillSlots: 4,
                 }],
                 category: 'C',
                 categoryNumber: 1,
@@ -1572,7 +1572,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '後列の魚雷攻撃被命中率ダウン：8%',
                         '後列のミサイル攻撃被命中率ダウン：8%',
                     ],
-                    slots: 2,
+                    skillSlots: 2,
                     skills: [{
                         effect: '後列の投射武器の被命中率ダウン',
                         properties: '最大8％、技術Pt：8',
@@ -1597,7 +1597,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '後列のミサイル武器命中率アップ：12%',
                         '後列の魚雷武器命中率アップ：12%',
                     ],
-                    slots: 2,
+                    skillSlots: 2,
                     skills: [
                         {
                             effect: '中列のミサイル/魚雷命中率アップ',
@@ -1617,7 +1617,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '視覚信号カモフラージュ',
                         '自身が攻撃目標になった時に、航空空母と見なされるようにする',
                     ],
-                    slots: 2,
+                    skillSlots: 2,
                     skills: [{
                         effect: '自身が攻撃目標になった時に、駆逐艦と見なされるようにする',
                     }],
@@ -1631,7 +1631,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対空武装（同列）',
                 parts: [{
                     text: '直射、実弾、対空：3920',
-                    slots: 4,
+                    skillSlots: 4,
                 }],
                 category: 'E',
                 categoryNumber: 1,
@@ -1645,7 +1645,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '３隻の護送艦を格納可能な機内格納庫。',
                         '護送艦の整備・支援システムを備える。',
                     ],
-                    slots: 4,
+                    skillSlots: 4,
                 }],
                 category: 'E',
                 categoryNumber: 2,
@@ -2371,7 +2371,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: 'CBF-320型　中型格納庫',
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ロックオン速度アップ',
@@ -2402,7 +2402,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対小型：',
                             '・投射、実弾、対艦：5600、対空：2856、攻城：392',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -2989,7 +2989,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             'CBC-3200型　護送艦ドック',
                             '６隻の護送艦を格納可能な機内格納庫。護送艦の整備、支援システムを備える。',
                         ],
-                        slots: 5,
+                        skillSlots: 5,
                         skills: [
                             {
                                 effect: '護送艦のダメージアップ',
@@ -3049,7 +3049,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対小型：',
                             '・投射、実弾、対艦：4911、対空：510、攻城：294',
                         ],
-                        slots: 6,
+                        skillSlots: 6,
                         skills: [
                             {
                                 effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
@@ -3195,7 +3195,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・直射、実弾、対艦：13000、攻城：11310'
                         ],
-                        slots: 7,
+                        skillSlots: 7,
                         skills: [
                             {
                                 effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
@@ -3254,7 +3254,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '対大型：',
                         '・直射、エネルギー、対艦：10285、攻城：1748'
                     ],
-                    slots: 6,
+                    skillSlots: 6,
                 }],
                 category: 'M',
                 categoryNumber: 2,
@@ -3276,7 +3276,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空：',
                             '・直射、実弾、対艦：1200、対空：1440',
                         ],
-                        slots: 5,
+                        skillSlots: 5,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -3369,7 +3369,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '護送艦を3隻搭載可能',
                 parts: [
                     {
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ロックオン速度アップ',
@@ -3484,7 +3484,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・直射、実弾、対艦：10500、攻城：3360',
                         ],
-                        slots: 7,
+                        skillSlots: 7,
                         skills: [
                             {
                                 effect: '60秒毎に、システムメイン武器の攻撃・冷却時間が80％ダウンする。効果は15秒続く。冷却時間10秒。',
@@ -3550,7 +3550,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・投射、実弾、対艦：11333、攻城：2266',
                         ],
-                        slots: 6,
+                        skillSlots: 6,
                     },
                 ],
                 category: 'M',
@@ -3570,7 +3570,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空：',
                             '・直射、実弾、対艦：2400、対空：1440、攻城：72',
                         ],
-                        slots: 5,
+                        skillSlots: 5,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -3618,7 +3618,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・直射、実弾、対艦：13162、対空：212、攻城：1923',
                         ],
-                        slots: 7,
+                        skillSlots: 7,
                         skills: [
                             {
                                 effect: '巡洋艦以上に対する命中率アップ',
@@ -3641,7 +3641,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対小型艦：',
                             '・直射、エネルギー、対艦：7500、対空：3360、攻城：1200',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
@@ -3679,7 +3679,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・投射、実弾、対艦：8470、攻城：1185',
                         ],
-                        slots: 4,
+                        skillSlots: 4,
                         skills: [
                             {
                                 effect: 'ダメージアップ',
