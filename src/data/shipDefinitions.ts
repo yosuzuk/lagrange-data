@@ -863,31 +863,31 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: '艦載機の命中率アップ',
-                                properties: '最大20％', // TODO 技術Pt
+                                properties: '最大20％、技術Pt13',
                             },
                             {
                                 effect: '艦載機のダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt13',
                             },
                             {
-                                effect: '艦載機の冷却時間ダウン',
-                                properties: '最大20％', // TODO 技術Pt
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
                             },
                             {
-                                effect: '艦載機の冷却時間ダウン',
-                                properties: '最大20％', // TODO 技術Pt
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
                             },
                             {
                                 effect: '艦載機のダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt13',
                             },
                             {
                                 effect: '艦載機のミサイル回避率アップ',
-                                properties: '最大30％', // TODO 技術Pt
+                                properties: '最大30％、技術Pt13',
                             },
                             {
                                 effect: 'システムHPアップ',
-                                properties: '最大35％', // TODO 技術Pt
+                                properties: '最大35％、技術Pt13',
                             },
                         ],
                     },
@@ -912,6 +912,36 @@ export const shipDefinitions: IShipDefinition[] = [
                             '・対艦：3750、攻城：520',
                         ],
                         skillSlots: 5,
+                        skills: [
+                            {
+                                effect: '艦載機/UAVのダメージアップ',
+                                properties: '最大10％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機/UAVの帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機/UAVの帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機/UAVの命中率アップ',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機/UAVのダメージアップ',
+                                properties: '最大10％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機/UAVのミサイル回避率アップ',
+                                properties: '最大30％、技術Pt13',
+                            },
+                            {
+                                effect: 'システムHPアップ',
+                                properties: '最大35％、技術Pt13',
+                            },
+                        ],
                     },
                 ],
                 category: 'M',
@@ -927,6 +957,37 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'CFB-605型　大型戦闘機格納庫',
+                        ],
+                        skillSlots: 5,
+                        skills: [
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大10％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機の命中率アップ',
+                                properties: '最大20％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大10％、技術Pt13',
+                            },
+                            {
+                                effect: '艦載機のミサイル回避率アップ',
+                                properties: '最大30％、技術Pt13',
+                            },
+                            {
+                                effect: 'システムHPアップ',
+                                properties: '最大35％、技術Pt13',
+                            },
                         ],
                     },
                 ],
@@ -953,27 +1014,27 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '艦載機/護送艦に対する命中率アップ',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                         ],
                     },
@@ -997,27 +1058,27 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％', // TODO 技術Pt
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: '戦闘機/護送艦に対する命中率アップ',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '戦闘機/護送艦に対する命中率アップ',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大15％', // TODO 技術Pt
+                                properties: '最大15％、技術Pt10',
                             },
                         ],
                     },
@@ -1035,6 +1096,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             'MK3-SM-6x4008/C型「スターファイア」ミサイルランチャー群',
                             '投射、実弾、対艦：1400、対空：700、攻城：70',
                         ],
+                        // TODO skillslot
+                        // TODO skills
                     },
                 ],
                 category: 'B',
@@ -1057,11 +1120,11 @@ export const shipDefinitions: IShipDefinition[] = [
                                 properties: '最大70％、技術Pt12',
                             },
                             {
-                                effect: '艦載機の冷却時間ダウン',
+                                effect: '艦載機の帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt12',
                             },
                             {
-                                effect: '艦載機の冷却時間ダウン',
+                                effect: '艦載機の帰還冷却時間ダウン',
                                 properties: '最大10％、技術Pt12',
                             },
                             {
@@ -1087,6 +1150,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             '通信指令UAVの収容と整備を担い、信号誘導システムを装備する。',
                             '情報UAVは支援艦の武器命中率をアップさせる。',
                         ],
+                        // TODO skillslot
+                        // TODO skills
                     },
                 ],
                 category: 'B',
@@ -1541,7 +1606,7 @@ export const shipDefinitions: IShipDefinition[] = [
                                 properties: '最大70％、技術Pt5',
                             },
                             {
-                                effect: 'UAVの冷却時間ダウン',
+                                effect: 'UAVの帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt5',
                             },
                             {
@@ -1570,11 +1635,11 @@ export const shipDefinitions: IShipDefinition[] = [
                         skillSlots: 2,
                         skills: [
                             {
-                                effect: 'UAVの冷却時間ダウン',
+                                effect: 'UAVの帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt5',
                             },
                             {
-                                effect: 'UAVの冷却時間ダウン',
+                                effect: 'UAVの帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt5',
                             },
                             {
@@ -3297,11 +3362,11 @@ export const shipDefinitions: IShipDefinition[] = [
                                 properties: '最大10％、技術Pt10',
                             },
                             {
-                                effect: '護送艦の冷却時間ダウン',
+                                effect: '護送艦の帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt10',
                             },
                             {
-                                effect: '護送艦の冷却時間ダウン',
+                                effect: '護送艦の帰還冷却時間ダウン',
                                 properties: '最大20％、技術Pt10',
                             },
                             {
