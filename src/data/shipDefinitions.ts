@@ -3280,31 +3280,31 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％、Pt10',
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％、Pt10',
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大15％、Pt10',
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大10％、Pt10',
+                                properties: '最大10％、技術Pt10',
                             },
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                                properties: '最大15％、Pt10',
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '戦闘機/護送艦に対する命中率アップ',
-                                properties: '最大15％、Pt10',
+                                properties: '最大15％、技術Pt10',
                             },
                             {
                                 effect: '出力時間ダウン',
-                                properties: '最大10％、Pt10',
+                                properties: '最大10％、技術Pt10',
                             },
                         ],
                     },

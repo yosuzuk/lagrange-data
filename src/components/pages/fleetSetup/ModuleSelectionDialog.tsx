@@ -92,7 +92,14 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                                 return (
                                                     <FormControlLabel
                                                         key={moduleId}
-                                                        label={`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${moduleUsage.module.name}`}
+                                                        label={(
+                                                            <Box pt={1} pb={1}>
+                                                                <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${moduleUsage.module.name}`}</Typography>
+                                                                {moduleUsage.module.description && (
+                                                                    <Typography variant="body2" color="text.secondary">{`${moduleUsage.module.description}`}</Typography>
+                                                                )}
+                                                            </Box>
+                                                        )}
                                                         value={value}
                                                         control={<Radio disabled={disabled} />}
                                                         disabled={disabled}
