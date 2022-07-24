@@ -3435,7 +3435,7 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '護送艦ドック',
-                description: '護送艦を６隻搭載可能',
+                description: '護送艦を6隻搭載可能',
                 parts: [
                     {
                         text: [
@@ -3483,8 +3483,16 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M2',
                 name: '大型艦載機システム',
-                // TODO description
-                // TODO parts
+                description: '小～大型戦闘機を8隻搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'CFB-1200型　大型戦闘機格納庫',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 2,
                 carryFighter: 8,
@@ -3552,24 +3560,84 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A2',
                 name: '投射武器プラットフォーム',
-                // TODO description
-                // TODO parts
+                description: '対小型艦＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            'MK5-BM-16x180「ライトニングフィールド」対艦ミサイル群',
+                            '対小型艦：',
+                            '・投射、実弾、対艦：4430、攻城：354',
+                            'MK3-BM-8x320「ライトニングフィールド」対艦ミサイル群', // TODO verify name (same as A3)
+                            '対空：', // TODO verify priority
+                            '・投射、実弾、対艦：4911、対空：510、攻城：294',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'A3',
                 name: '総合砲プラットフォーム',
-                // TODO description
-                // TODO parts
+                description: '対空武装', // TODO verify priority
+                parts: [
+                    {
+                        text: [
+                            'BG-2180型　対艦砲',
+                            '対空：',
+                            '・直射、実弾、対艦：6240、対空：345、攻城：336',
+                            'MK3-BM-8x320「ライトニングフィールド」対艦ミサイル群', // TODO verify name (same as A2)
+                            '対空：', // TODO verify priority
+                            '・投射、実弾、対艦：4911、対空：510、攻城：294',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 3,
             },
             {
                 id: 'B1',
                 name: '艦船保守システム',
-                // TODO description
-                // TODO parts
+                description: '艦載機を入庫し耐久力を回復',
+                parts: [
+                    {
+                        text: [
+                            'BSY-5000型　大型ドック桟橋',
+                            '大型の補修ロボットを搭載している。戦闘時に自身の艦載機を補修できる。',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大5％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大5％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大5％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大3％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大3％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大3％、技術Pt8',
+                            },
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -3577,8 +3645,16 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B2',
                 name: '護送艦搭載プラットフォーム',
-                // TODO description
-                // TODO parts
+                description: '護送艦を3隻搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'CBC-2000型　護送艦ドック',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 2,
                 carryCorvette: 3,
