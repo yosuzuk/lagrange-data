@@ -527,7 +527,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [{
                     text: [
                         'CI-2x700T型「ヘリウムフラッシュ」2連超重イオン砲塔',
-                        '対大型：',
+                        '対大型艦：',
                         '・直射、エネルギー、対艦：9000、攻城：1890',
                     ],
                     skillSlots: 6,
@@ -571,7 +571,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [{
                     text: [
                         'CT-2x600型「ガンマストーム」エネルギー魚雷発射システム',
-                        '対大型：',
+                        '対大型艦：',
                         '・投射、エネルギー、対艦：9600、攻城：1344'
                     ],
                     skillSlots: 6,
@@ -587,7 +587,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [{
                     text: [
                         'CM-8x608A型「ガンマストーム」通常ミサイル発射システム',
-                        '対大型：',
+                        '対大型艦：',
                         '・投射、実弾、対艦：24000、攻城：1920',
                     ],
                     skillSlots: 6,
@@ -627,7 +627,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対艦武装',
                 parts: [{
                     text: [
-                        '対艦：', // TODO priority
+                        'CM-8x608型「ガンマストーム」パルスエネルギーミサイル発射システム',
+                        '対大型艦：',
                         '・投射、エネルギー、対艦：18162、攻城：1816'
                     ],
                     // TODO skillslot
@@ -642,8 +643,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対艦＆対空武装',
                 parts: [{
                     text: [
+                        '350mm-CG-1350型　対艦2連砲',
                         '対艦：', // TODO priority
                         '・投射、実弾、対艦：8571、攻城：1371',
+                        'CG-1160B型　通常砲',
                         '対空：',
                         '・投射、実弾、対艦：3000、対空：720、攻城：90',
                     ],
@@ -678,8 +681,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対空武装、ミサイル迎撃',
                 parts: [{
                     text: [
+                        'MK2-CM-4x200B型「ストーム」ミサイルランチャーネスト',
                         '対空：',
                         '・投射、実弾、対艦：2100、対空：7190',
+                        'CM-2x1888型　ミサイルランチャー群',
                         '対空、ミサイル迎撃：',
                         '・投射、実弾、対艦：1500、対空：3120',
                     ],
@@ -693,15 +698,33 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C1',
                 name: 'エネルギー圧縮装置',
                 description: 'イオン砲ダメージアップ15％',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            'RIT-650型　エネルギー圧縮装置',
+                            'エネルギーコア増強装置。高エネルギー出力密度を高めるのに効果的で、イオン武器の攻撃ダメージをアップさせる。',
+                        ],
+                        skillSlots: 2,
+                        // TODO skill
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
                 name: '戦闘機搭載ハンガー',
-                description: '小～中型戦闘機を２機搭載可能',
-                // TODO parts
+                description: '小～中型戦闘機を2機搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'XAC-2000型　航空ブリッジ',
+                            'CBF-200型　中型格納庫',
+                        ],
+                        // TODO skillslots
+                        // TODO skill
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 2,
                 carryFighter: 2,
@@ -711,7 +734,16 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C3',
                 name: '戦術UAVシステム',
                 description: 'スポッターＵＡＶ×3',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            'CIT-1型　スポッターUAV格納庫',
+                            '周囲の味方艦船に総合的な武器情報支援を提供し、武器の命中率をアップさせる。',
+                        ],
+                        // TODO skillslots
+                        // TODO skill
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 3,
             },
@@ -735,7 +767,16 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'D2',
                 name: 'ターゲット保護システム',
                 description: 'メインシステムへのクリティカルダメージ軽減60％',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            'ASM-220型　重点強化装甲',
+                            '艦船メイン武器システムの被クリティカルダメージ60％ダウン',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'D',
                 categoryNumber: 2,
             },
@@ -743,7 +784,16 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'D3',
                 name: '損失管理システム',
                 description: '自己補修ＵＡＶ',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            'AST-50型　ダメージ管理システム',
+                            '艦船の損傷状態を把握すると同時に、補修ロボットを送り出して自身の緊急補修を行うことができる。',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'D',
                 categoryNumber: 3,
             },
@@ -919,6 +969,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         text: [
                             'CFB-605型　大型戦闘機格納庫',
                             'CIT-5型　戦場支援UAV格納庫',
+                            '5隊の戦略UAVを搭載可能な総合UAV格納庫。敵艦の武器システムにピンポイント攻撃を行える。',
                             '戦略UAV：',
                             '・対艦：3750、攻城：520',
                         ],
@@ -968,6 +1019,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'CFB-605型　大型戦闘機格納庫',
+                            '3隊の重戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令、探査システムを備える。',
                         ],
                         skillSlots: 5,
                         skills: [
@@ -1015,7 +1067,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'MK4-C/SG-3480A型　3連重砲',
-                            '対小型：',
+                            '対小型艦：',
                             '・直射、実弾、対艦：5200、攻城：520',
                             'C/SG-190B型　通常連射砲',
                             '対空：',
@@ -1105,7 +1157,8 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'MK3-SM-6x4008/C型「スターファイア」ミサイルランチャー群',
-                            '投射、実弾、対艦：1400、対空：700、攻城：70',
+                            '対空：',
+                            '・投射、実弾、対艦：1400、対空：700、攻城：70',
                         ],
                         // TODO skillslot
                         // TODO skills
@@ -1211,7 +1264,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'MK4-C/SG-3480A型　3連重砲',
-                            '対小型：',
+                            '対小型艦：',
                             '・直射、実弾、対艦：5200、攻城：520',
                             'C/SG-190B型　通常連射砲',
                             '対空：',
@@ -1291,7 +1344,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'AI-900A型「ビゲン」イオン砲',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、エネルギー、対艦：16000、攻城：3360',
                         ],
                         skillSlots: 6,
@@ -1347,7 +1400,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'AIM-850T型　プラズマ投射器',
-                            '対大型：',
+                            '対大型艦：',
                             '・投射、エネルギー、対艦：15692、対空：3640、攻城：2824',
                         ],
                         skillSlots: 6,
@@ -1398,10 +1451,10 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'MK3-AT-800A型「スーパーノヴァ・ホワイト」対艦魚雷',
-                            '対大型：',
+                            '対大型艦：',
                             '・投射、実弾、対艦：9600、攻城：1440',
                             'MK2-AM-8x300B型「エターナルボラリスK」',
-                            '対小型：',
+                            '対小型艦：',
                             '・投射、実弾、対艦：3300、対空：1663、攻城：99',
                         ],
                         skillSlots: 4,
@@ -1444,7 +1497,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
-                            '対大型：',
+                            'MK2-AM-16x150B型「スーパーノヴァホワイト」攻城魚雷ランチャー群',
+                            '対大型艦：',
                             '・投射、実弾、対艦：12000、攻城：10440',
                         ],
                         skillSlots: 4,
@@ -1486,8 +1540,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'MK3-AT-800A型「スーパーノヴァホワイト」対艦魚雷',
                             '対艦：', // TODO priority
                             '・投射、実弾、対艦：9600、攻城：1440',
+                            'MK2-AM-16x150B型「エターナルポラリス」対空ミサイル群',
                             '対空：',
                             '・投射、実弾、対艦：2327、対空：3946',
                         ],
@@ -1530,8 +1586,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
-                            '対艦：', // TODO priority
+                            'AG-2580型　2連重砲',
+                            '対大型艦：',
                             '・投射、実弾、対艦；4200、攻城：840',
+                            // TODO name
                             '対空：',
                             '・投射、実弾、対艦：1050、対空；840、攻城；63',
                         ],
@@ -1570,6 +1628,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'AG-1105B型　通常砲',
                             '対空：',
                             '・直射、実弾、対艦：1200、対空：2160、攻城：60',
                         ],
@@ -1608,6 +1667,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'NT-1型　対空UAVラック',
+                            '領域対空UAVを3機搭載する。UAVの収容と整備を行い、信号誘導システムを装備する。',
                             '対空：6480',
                         ],
                         skillSlots: 3,
@@ -1641,6 +1702,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'SNT-1型　シールドUAVラック',
                             '対象の敵艦船のエネルギー武器の命中率ダウン',
                         ],
                         skillSlots: 2,
@@ -1670,6 +1732,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'RIR-220型　実験的エネルギー補助装甲',
+                            'エネルギーシステムのエネルギーを利用し、装甲表面にエネルギー層を形成する。運動エネルギーの衛撃や高エネルギー照射を受けた場合も変形や溶融によりダメージを吸収する。',
                             'エネルギー武器によるダメージを15％軽減',
                             '投射武器によるダメージを15％軽減',
                             '被クリティカルダメージを30％軽減',
@@ -1697,7 +1761,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
-                            '対大型：',
+                            'AI-450A型　試験的イオン砲塔',
+                            '対大型艦：',
                             '・直射、エネルギー、対艦：6857、攻城：1028',
                         ],
                         skillSlots: 4,
@@ -1740,7 +1805,8 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'AP-1308型　連射近接防御パルス砲',
-                            '直射、エネルギー、対空：2160',
+                            '対空：',
+                            '・直射、エネルギー、対空：2160',
                         ],
                         skillSlots: 4,
                         skills: [
@@ -1797,7 +1863,8 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対空武装＆修理ドック',
                 parts: [{
                     text: [
-                        '直射、実弾、対艦：3000、対空：360、攻城：90',
+                        '対空：',
+                        '・直射、実弾、対艦：3000、対空：360、攻城：90',
                         'カスタムモジュール備蓄量40',
                         '補修キュー1',
                     ],
@@ -2007,7 +2074,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: 'エリア防空システム',
                 description: '対空武装（同列）',
                 parts: [{
-                    text: '直射、実弾、対空：3920',
+                    text: [
+                        '対空：',
+                        '・直射、実弾、対空：3920'
+                    ],
                     skillSlots: 4,
                 }],
                 category: 'E',
@@ -2187,7 +2257,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: 'エリア防空システム',
                 description: '対空武装（同列）',
                 parts: [{
-                    text: '直射、実弾、対空：3920',
+                    text: [
+                        // TODO name
+                        '対空：',
+                        '・直射、実弾、対空：3920'
+                    ],
+                    // TODO skillslots
+                    // TODO skill
                 }],
                 category: 'E',
                 categoryNumber: 1,
@@ -2776,7 +2852,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         text: [
                             'MK2-CM-4x250A型「ストーム」',
                             'ミサイルランチャーネスト',
-                            '対小型：',
+                            '対小型艦：',
                             '・投射、実弾、対艦：5600、対空：2856、攻城：392',
                         ],
                         skillSlots: 4,
@@ -3422,10 +3498,10 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BG-2450A型　2連重砲',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、実弾、対艦5120、攻城：665',
                             'MK3-BM-8x320型「ライトニングフィールド」8連対艦ミサイルシステム',
-                            '対小型：',
+                            '対小型艦：',
                             '・投射、実弾、対艦：4911、対空：510、攻城：294',
                         ],
                         skillSlots: 6,
@@ -3551,7 +3627,8 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BM-12x180T型　防御ミサイルシステム',
-                            '投射、実弾、対艦：3272、対空：7854',
+                            '対空：',
+                            '・投射、実弾、対艦：3272、対空：7854',
                             '同じ艦列の味方艦船に対して対空支援を行うことができる',
                         ],
                         // TODO skillslots
@@ -3585,7 +3662,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BR-1950C型「ルビー」',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、実弾、対艦：13000、攻城：11310'
                         ],
                         skillSlots: 7,
@@ -3644,7 +3721,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [{
                     text: [
                         'BI-850型　2連重イオン砲塔',
-                        '対大型：',
+                        '対大型艦：',
                         '・直射、エネルギー、対艦：10285、攻城：1748'
                     ],
                     skillSlots: 6,
@@ -3661,10 +3738,10 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BG-1850型　重砲',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、実弾、対艦：9500、攻城：2755',
                             'BG-2240型　対艦砲',
-                            '対小型：',
+                            '対小型艦：',
                             '・直射、実弾、対艦：4000、対空：280、攻城：320',
                             'BG-340B型　対空砲',
                             '対空：',
@@ -3715,7 +3792,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BG-1950型　重砲',
-                            '対艦：',
+                            '対艦：', // TODO priority
                             '・直射、実弾、対艦：16000、攻城：2880',
                             'BG-3408型　対空砲',
                             '対空：',
@@ -3735,8 +3812,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
-                            '対艦：',
+                            'BG-2350型　対艦砲',
+                            '対小型艦：',
                             '・直射、実弾、対艦：18000、対空：540、攻城：1800',
+                            // TODO name
                             '対空：',
                             '・直射、実弾、対艦：1200、対空：1440',
                         ],
@@ -3754,6 +3833,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
+                            'BM-12x250型　通常ミサイル発射群',
                             '対空：',
                             '・直射、実弾、対艦：6480、対空：1315、攻城：259',
                         ],
@@ -3805,21 +3885,31 @@ export const shipDefinitions: IShipDefinition[] = [
             },
             {
                 id: 'B3',
-                name: '統合ダメージコントロールシステム',
+                name: '統合損失管理システム',
                 description: '補修ＵＡＶ×2',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            'CRT-3型　汎用ロボット補修ポッド',
+                            '標準補修UAVを2機搭載する。補修UAVの収容と整備を行い、信号誘導システムを装備する。補修UAVは損傷した味方艦船を戦闘中に補修できる。',
+                        ],
+                        // TODO skillslots
+                        // TODO skills
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
-                name: '分散型軽兵器制御システム',
+                name: '分散型軽量武器統制システム',
                 description: '対空武装',
                 parts: [
                     {
                         text: [
                             'BG-6258型　対空砲',
-                            '直射、実弾、対空：1512',
+                            '対空：',
+                            '・直射、実弾、対空：1512',
                         ],
                         // TODO skillslots
                         // TODO skills
@@ -3832,7 +3922,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C2',
                 name: '追加装甲システム',
                 description: '抵抗値アップ150',
-                // TODO parts
+                parts: [
+                    {
+                        text: [
+                            '既存の装甲内部に追加するナノ強化層。艦船構造の堅牢性を効果的に高める。',
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 2,
             },
@@ -3844,7 +3940,8 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'BG-625C1型　領域的対ミサイル要撃砲',
-                            '直射、実弾、対空：2159',
+                            '対空：',
+                            '・直射、実弾、対空：2159',
                         ],
                         // TODO skillslots
                         // TODO skills
@@ -3892,7 +3989,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'SR-2600型　重電磁加速砲',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、実弾、対艦：10500、攻城：3360',
                         ],
                         skillSlots: 7,
@@ -3952,7 +4049,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'SG-2400T型　2連速射砲',
-                            '対小型：',
+                            '対小型艦：',
                             '・直射、実弾、対艦：9600、攻城：768',
                         ],
                         skillSlots: 6,
@@ -4007,7 +4104,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'ST-2600型　重魚雷ランチャー',
-                            '対大型：',
+                            '対大型艦：',
                             '・投射、実弾、対艦：11333、攻城：2266',
                         ],
                         skillSlots: 6,
@@ -4058,7 +4155,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'MK4-SG-2580型「サンダーボルト」2連重砲',
-                            '対小型：',
+                            '対小型艦：',
                             '・直射、実弾、対艦：6300、攻城：1134',
                             'SG-1120B型　通常砲',
                             '対空：',
@@ -4109,7 +4206,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'SR-1425型　電磁加速砲塔',
-                            '対大型：',
+                            '対大型艦：',
                             '・直射、実弾、対艦：13162、対空：212、攻城：1923',
                         ],
                         skillSlots: 5,
@@ -4199,7 +4296,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'K-ST-12-255A型　3X4クラスター魚雷発射システム',
-                            '対大型：',
+                            '対大型艦：',
                             '・投射、実弾、対艦：8470、攻城：1185',
                         ],
                         skillSlots: 4,
@@ -4363,9 +4460,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '抵抗値250アップ（最大400）',
                 parts: [
                     {
-                        text: [
-
-                        ],
+                        // TODO text
                         skillSlots: 2,
                         skills: [
                             {
