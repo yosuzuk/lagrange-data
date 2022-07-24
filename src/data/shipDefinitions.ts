@@ -575,6 +575,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '・投射、エネルギー、対艦：9600、攻城：1344'
                     ],
                     skillSlots: 6,
+                    // TODO skills
                 }],
                 category: 'M',
                 categoryNumber: 2,
@@ -625,7 +626,12 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: 'ガンマストーム投射武器システム',
                 description: '対艦武装',
                 parts: [{
-                    text: '投射、エネルギー、対艦：18162、攻城：1816',
+                    text: [
+                        '対艦：', // TODO priority
+                        '・投射、エネルギー、対艦：18162、攻城：1816'
+                    ],
+                    // TODO skillslot
+                    // TODO skills
                 }],
                 category: 'A',
                 categoryNumber: 2,
@@ -636,14 +642,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '対艦＆対空武装',
                 parts: [{
                     text: [
-                        '対艦：',
-                        '・投射、実弾、対艦：8571、攻城：1371'
-                    ],
-                }, {
-                    text: [
+                        '対艦：', // TODO priority
+                        '・投射、実弾、対艦：8571、攻城：1371',
                         '対空：',
                         '・投射、実弾、対艦：3000、対空：720、攻城：90',
                     ],
+                    // TODO skillslot
+                    // TODO skills
                 }],
                 category: 'B',
                 categoryNumber: 1,
@@ -656,14 +661,13 @@ export const shipDefinitions: IShipDefinition[] = [
                     text: [
                         'CP-3x220型　3連対空パルス砲',
                         '対空：',
-                        '・直射、エネルギー、対艦：3150、対空：5744'
-                    ],
-                }, {
-                    text: [
+                        '・直射、エネルギー、対艦：3150、対空：5744',
                         'CP-120型　対ミサイルパルス群',
                         '対空、ミサイル迎撃：',
                         '・直射、エネルギー、対空：1788',
                     ],
+                    // TODO skillslot
+                    // TODO skills
                 }],
                 category: 'B',
                 categoryNumber: 2,
@@ -676,12 +680,11 @@ export const shipDefinitions: IShipDefinition[] = [
                     text: [
                         '対空：',
                         '・投射、実弾、対艦：2100、対空：7190',
-                    ],
-                }, {
-                    text: [
                         '対空、ミサイル迎撃：',
                         '・投射、実弾、対艦：1500、対空：3120',
                     ],
+                    // TODO skillslot
+                    // TODO skills
                 }],
                 category: 'B',
                 categoryNumber: 3,
@@ -690,6 +693,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C1',
                 name: 'エネルギー圧縮装置',
                 description: 'イオン砲ダメージアップ15％',
+                // TODO parts
                 category: 'C',
                 categoryNumber: 1,
             },
@@ -697,6 +701,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C2',
                 name: '戦闘機搭載ハンガー',
                 description: '小～中型戦闘機を２機搭載可能',
+                // TODO parts
                 category: 'C',
                 categoryNumber: 2,
                 carryFighter: 2,
@@ -706,6 +711,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C3',
                 name: '戦術UAVシステム',
                 description: 'スポッターＵＡＶ×3',
+                // TODO parts
                 category: 'C',
                 categoryNumber: 3,
             },
@@ -716,8 +722,11 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [{
                     text: [
                         'CM-2x45B型　近接対空ミサイル',
-                        '投射、実弾、対空：5275',
+                        '対空：',
+                        '・投射、実弾、対空：5275',
                     ],
+                    // TODO skillslot
+                    // TODO skills
                 }],
                 category: 'D',
                 categoryNumber: 1,
@@ -726,6 +735,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'D2',
                 name: 'ターゲット保護システム',
                 description: 'メインシステムへのクリティカルダメージ軽減60％',
+                // TODO parts
                 category: 'D',
                 categoryNumber: 2,
             },
@@ -733,6 +743,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'D3',
                 name: '損失管理システム',
                 description: '自己補修ＵＡＶ',
+                // TODO parts
                 category: 'D',
                 categoryNumber: 3,
             },
@@ -3396,6 +3407,8 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M2',
                 name: '大型艦載機システム',
+                // TODO description
+                // TODO parts
                 category: 'M',
                 categoryNumber: 2,
                 carryFighter: 8,
@@ -3463,18 +3476,24 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A2',
                 name: '投射武器プラットフォーム',
+                // TODO description
+                // TODO parts
                 category: 'A',
                 categoryNumber: 2,
             },
             {
                 id: 'A3',
                 name: '総合砲プラットフォーム',
+                // TODO description
+                // TODO parts
                 category: 'A',
                 categoryNumber: 3,
             },
             {
                 id: 'B1',
                 name: '艦船保守システム',
+                // TODO description
+                // TODO parts
                 category: 'B',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -3482,6 +3501,8 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B2',
                 name: '護送艦搭載プラットフォーム',
+                // TODO description
+                // TODO parts
                 category: 'B',
                 categoryNumber: 2,
                 carryCorvette: 3,
@@ -3495,6 +3516,8 @@ export const shipDefinitions: IShipDefinition[] = [
                         text: [
                             'CFB-600型　艦載機格納庫',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'C',
@@ -3513,6 +3536,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             '標準攻城UAVを4機搭載する。攻城UAVの収容と整備を担い、信号誘導システムを装備する。',
                             '攻城：6048',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'C',
@@ -3529,6 +3554,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             '投射、実弾、対艦：3272、対空：7854',
                             '同じ艦列の味方艦船に対して対空支援を行うことができる',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'C',
@@ -3621,6 +3648,7 @@ export const shipDefinitions: IShipDefinition[] = [
                         '・直射、エネルギー、対艦：10285、攻城：1748'
                     ],
                     skillSlots: 6,
+                    // TODO skills
                 }],
                 category: 'M',
                 categoryNumber: 2,
@@ -3693,6 +3721,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空：',
                             '・直射、実弾、対艦：1200、対空：1440',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'A',
@@ -3710,6 +3740,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対空：',
                             '・直射、実弾、対艦：1200、対空：1440',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'A',
@@ -3722,8 +3754,11 @@ export const shipDefinitions: IShipDefinition[] = [
                 parts: [
                     {
                         text: [
-                            '直射、実弾、対艦：6480、対空：1315、攻城：259',
+                            '対空：',
+                            '・直射、実弾、対艦：6480、対空：1315、攻城：259',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'B',
@@ -3735,6 +3770,10 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '護送艦を3隻搭載可能',
                 parts: [
                     {
+                        text: [
+                            'CBC-2300型　護送艦追加ドック',
+                            '護送艦外付け支援システム。最大3隻の護送艦を艦船外に配備できる。',
+                        ],
                         skillSlots: 4,
                         skills: [
                             {
@@ -3768,6 +3807,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'B3',
                 name: '統合ダメージコントロールシステム',
                 description: '補修ＵＡＶ×2',
+                // TODO parts
                 category: 'B',
                 categoryNumber: 3,
             },
@@ -3781,6 +3821,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             'BG-6258型　対空砲',
                             '直射、実弾、対空：1512',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'C',
@@ -3790,6 +3832,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C2',
                 name: '追加装甲システム',
                 description: '抵抗値アップ150',
+                // TODO parts
                 category: 'C',
                 categoryNumber: 2,
             },
@@ -3803,6 +3846,8 @@ export const shipDefinitions: IShipDefinition[] = [
                             'BG-625C1型　領域的対ミサイル要撃砲',
                             '直射、実弾、対空：2159',
                         ],
+                        // TODO skillslots
+                        // TODO skills
                     },
                 ],
                 category: 'C',
@@ -3902,6 +3947,55 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M2',
                 name: '艦首大型砲システム',
+                description: '',
+                parts: [
+                    {
+                        text: [
+                            'SG-2400T型　2連速射砲',
+                            '対小型：',
+                            '・直射、実弾、対艦：9600、攻城：768',
+                        ],
+                        skillSlots: 6,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'システムHPアップ',
+                                properties: '最大34.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'システムHPアップ',
+                                properties: '最大34.8％、技術Pt8',
+                            },
+                            {
+                                effect: '60秒毎に、システムメイン武器の攻撃・冷却時間が80％ダウンする。効果は15秒続く。冷却時間10秒。',
+                                properties: '戦略、技術Pt15',
+                            },
+                        ],
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 2,
             },
@@ -3917,6 +4011,40 @@ export const shipDefinitions: IShipDefinition[] = [
                             '・投射、実弾、対艦：11333、攻城：2266',
                         ],
                         skillSlots: 6,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'クリティカルダメージアップ＆確率アップ',
+                                properties: '最大50％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: '魚雷の被迎撃率ダウン',
+                                properties: '最大30％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大34.8％、技術Pt8',
+                            },
+                            {
+                                effect: '60秒毎に、システムメイン武器の攻撃・冷却時間が80％ダウンする。効果は15秒続く。冷却時間10秒。',
+                                properties: '戦略、技術Pt15',
+                            },
+                        ],
                     },
                 ],
                 category: 'M',
@@ -3984,11 +4112,35 @@ export const shipDefinitions: IShipDefinition[] = [
                             '対大型：',
                             '・直射、実弾、対艦：13162、対空：212、攻城：1923',
                         ],
-                        skillSlots: 7,
+                        skillSlots: 5,
                         skills: [
                             {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt8',
+                            },
+                            {
+                                effect: 'クリティカルダメージアップ＆確率アップ',
+                                properties: '最大50％、技術Pt8',
+                            },
+                            {
                                 effect: '巡洋艦以上に対する命中率アップ',
-                                properties: '最大15％',
+                                properties: '最大15％、技術Pt8',
                             },
                         ],
                     },
@@ -4011,22 +4163,27 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
                             },
                             {
                                 effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
                             },
                             {
                                 effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt8',
                             },
                             {
                                 effect: '冷却時間ダウン',
+                                properties: '最大15％、技術Pt8',
                             },
                             {
                                 effect: '巡洋艦以上に対する命中率アップ',
-                                properties: '最大15％',
+                                properties: '最大15％、技術Pt8',
                             },
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％、技術Pt8',
                             },
                         ],
                     },
@@ -4049,23 +4206,23 @@ export const shipDefinitions: IShipDefinition[] = [
                         skills: [
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8', // verify 8
+                                properties: '最大10％、技術Pt8',
                             },
                             {
                                 effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8', // verify 8
+                                properties: '最大10％、技術Pt8',
                             },
                             {
                                 effect: '命中率アップ',
-                                properties: '最大10％、技術Pt8', // verify 8
+                                properties: '最大10％、技術Pt8',
                             },
                             {
                                 effect: '巡洋艦以上に対する命中率アップ',
-                                properties: '最大14.8％、技術Pt8', // verify 8
+                                properties: '最大14.8％、技術Pt8',
                             },
                             {
                                 effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8', // verify 8
+                                properties: '最大14.8％、技術Pt8',
                             },
                         ],
                     },
@@ -4076,6 +4233,37 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B2',
                 name: '艦載機システム',
+                description: '小～中型艦載機を2機搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'CBF-305型　中型格納庫',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: '艦載機のロックオン速度アップ',
+                                properties: '最大70％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機の帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機の命中率アップ',
+                                properties: '最大20％、技術Pt8',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 2,
                 carryFighter: 2,
@@ -4084,24 +4272,85 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B3',
                 name: 'エリア射撃統制システム',
+                description: 'スポッターUAV×3',
+                parts: [
+                    {
+                        text: [
+                            'CIT-1型　スポッターUAV格納庫',
+                            '周囲の味方の艦船に総合的な武器情報を提供し、武器の命中率をアップさせる。',
+                        ],
+                        skillSlots: 3,
+                        skills: [
+                            {
+                                effect: 'UAVのロックオン速度アップ',
+                                properties: '最大70％、技術Pt10',
+                            },
+                            {
+                                effect: 'UAVの帰還冷却時間ダウン',
+                                properties: '最大20％、技術Pt10',
+                            },
+                            {
+                                effect: 'UAVの命中率アップ',
+                                properties: '最大20％、技術Pt10',
+                            },
+                            {
+                                effect: 'UAVのミサイル回避率アップ',
+                                properties: '最大30％、技術Pt10',
+                            },
+                        ],
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 3,
             },
             {
                 id: 'C1',
                 name: '付加装甲システム',
+                description: 'HPを15%アップ（最大35％）',
+                parts: [
+                    {
+                        text: [
+                            'ASX-100型　追加装甲',
+                            '既存の装甲内部に追加するナノ強化層。艦船構造の堅牢性を効果的に高める。',
+                            'HP15％アップ',
+                        ],
+                        skillSlots: 2,
+                        skills: [
+                            {
+                                effect: 'HPアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'HPアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 1,
             },
             {
                 id: 'C2',
                 name: '電磁装甲システム',
-                description: 'シールド値35％アップ',
+                description: 'シールド値35％アップ（最大55％）',
                 parts: [
                     {
                         text: [
                             'AEX-120型　電磁装甲',
                             '電磁的強化を施した付加装甲構造。エネルギーダメージを効果的に防護する。',
+                            'シールド値35％アップ',
+                        ],
+                        skillSlots: 2,
+                        skills: [
+                            {
+                                effect: 'シールド値アップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'シールド値アップ',
+                                properties: '最大10％、技術Pt8',
+                            },
                         ],
                     },
                 ],
@@ -4111,6 +4360,25 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'C3',
                 name: '重装甲システム',
+                description: '抵抗値250アップ（最大400）',
+                parts: [
+                    {
+                        text: [
+
+                        ],
+                        skillSlots: 2,
+                        skills: [
+                            {
+                                effect: '抵抗値アップ',
+                                properties: '最大75、技術Pt8',
+                            },
+                            {
+                                effect: '抵抗値アップ',
+                                properties: '最大75、技術Pt8',
+                            },
+                        ],
+                    },
+                ],
                 category: 'C',
                 categoryNumber: 3,
             },
