@@ -4,7 +4,10 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Container } from '../container/Container';
+import { useColorMode } from '../../theme/context/ThemeProvider';
 
 const REPOSITORY_URL = 'https://github.com/yosuzuk/lagrange-data';
 const CHANGELOG_URL = '/blob/main/CHANGELOG.md';
@@ -14,6 +17,8 @@ interface IProps {
 }
 
 export const PageFooter = ({ disableContainer }: IProps) => {
+    const { mode, toggleMode } = useColorMode();
+
     return (
         <Box mt={8}>
             <Divider />
@@ -33,6 +38,9 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                                 </Typography>
                                 <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
                                     <GitHubIcon fontSize="small" />
+                                </IconButton>
+                                <IconButton size="small" onClick={toggleMode}>
+                                    {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
                         </Stack>
                     </Stack>

@@ -6,12 +6,11 @@ import {
     Navigate,
     Outlet,
 } from 'react-router-dom';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { LoadingIndicator } from './components/loading/LoadingIndicator';
 import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 import { UserSettingsProvider } from './userSettings/context/UserSettingsContext';
+import { ThemeProvider } from './theme/context/ThemeProvider';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -23,42 +22,10 @@ const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSet
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
-const theme = createTheme({
-    components: {
-        MuiCssBaseline: {
-            styleOverrides: {
-                body: {
-                    minWidth: '320px',
-                },
-            },
-        },
-    },
-    palette: {
-        background: {
-            default: '#e5e5e5',
-        },
-    },
-});
-
-theme.typography.body2 = {
-    ...theme.typography.body2,
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '0.6rem',
-    },
-};
-
-theme.typography.caption = {
-    ...theme.typography.caption,
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '0.6rem',
-    },
-};
-
 function App() {
     return (
         <Router>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
+            <ThemeProvider>
                 <UserSettingsProvider>
                     <ShipDetailProvider>
                         <Routes>
