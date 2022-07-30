@@ -44,7 +44,7 @@ export const ThemeProvider = ({ children }: IProps) => {
             palette: {
                 mode: colorModeContextValue.mode,
                 background: {
-                    default: colorModeContextValue.mode === 'dark' ? '#36393f' : '#e5e5e5',
+                    default: colorModeContextValue.mode === 'dark' ? '#121212' : '#e5e5e5',
                 },
             },
         });
