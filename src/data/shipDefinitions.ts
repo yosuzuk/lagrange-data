@@ -1939,6 +1939,23 @@ export const shipDefinitions: IShipDefinition[] = [
                         '積載プラットフォーム',
                         '大型露店運送システム。大量の貨物を格納でき、大型汎用艦に用いる。',
                     ],
+                    // TODO skillslots
+                    // skillSlots: 99,
+                    skills: [
+                        {
+                            effect: '貯蔵力アップ',
+                            properties: '最大80％', // TODO 技術Pt
+                        },
+                        {
+                            effect: '補給速度アップ',
+                            properties: '最大34％', // TODO 技術Pt
+                        },
+                        {
+                            effect: 'カスタムモジュール容量アップ',
+                            properties: '最大15', // TODO 技術Pt
+                        },
+                        // TODO 4th skill
+                    ],
                 }],
                 category: 'A',
                 categoryNumber: 2,
