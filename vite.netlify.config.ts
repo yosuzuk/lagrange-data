@@ -5,4 +5,8 @@ import { baseConfig } from './vite.config';
 export default defineConfig({
     ...baseConfig,
     base: '/',
+    define: {
+        ...baseConfig.define,
+        __APP_TARGET__: '"netlify"',
+    },
 });

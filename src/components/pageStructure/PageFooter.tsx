@@ -8,6 +8,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Container } from '../container/Container';
 import { useColorMode } from '../../theme/context/ThemeProvider';
+import { flags } from '../../utils/flags';
 
 const REPOSITORY_URL = 'https://github.com/yosuzuk/lagrange-data';
 const CHANGELOG_URL = '/blob/main/CHANGELOG.md';
@@ -28,17 +29,21 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                         <Typography variant="body2" color="text.secondary">{'© 2022 yosuzuk'}</Typography>
                         <Stack spacing={2} direction="row" alignItems="center" justifyContent="end">
                                 <Typography variant="body2" color="text.secondary">
-                                    {`インラグデータ`}
+                                    {flags.englishBeta ? 'lagrange-data' : `インラグデータ`}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     {`Version ${__APP_VERSION__}`}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
-                                    {'Changelog'}
-                                </Typography>
-                                <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
-                                    <GitHubIcon fontSize="small" />
-                                </IconButton>
+                                {!flags.englishBeta && (
+                                    <>
+                                        <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
+                                            {'Changelog'}
+                                        </Typography>
+                                        <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
+                                            <GitHubIcon fontSize="small" />
+                                        </IconButton>
+                                    </>
+                                )}
                                 <IconButton size="small" onClick={toggleMode}>
                                     {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
