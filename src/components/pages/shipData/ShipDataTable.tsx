@@ -14,6 +14,12 @@ import {
     researchStrategyTypeColumn,
     researchTacticTypeColumn,
     shipWeightColumn,
+    shipDpmShipColumn,
+    shipDpmAntiAirColumn,
+    shipDpmSiegeColumn,
+    hpColumn,
+    speedColumn,
+    warpSpeedColumn,
 } from '../../columns/colums';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 
@@ -38,6 +44,12 @@ export const ShipDataTable = (props: IProps) => {
         ...columnConfig.row ? [shipRowColumn] : [],
         ...columnConfig.cost ? [shipCostColumn] : [],
         ...columnConfig.operationLimit ? [shipOperationLimitColumn] : [],
+        ...columnConfig.dpmShip ? [shipDpmShipColumn] : [],
+        ...columnConfig.dpmAntiAir ? [shipDpmAntiAirColumn] : [],
+        ...columnConfig.dpmSiege ? [shipDpmSiegeColumn] : [],
+        ...columnConfig.hp ? [hpColumn] : [],
+        ...columnConfig.speed ? [speedColumn] : [],
+        ...columnConfig.warpSpeed ? [warpSpeedColumn] : [],
         ...columnConfig.source ? [shipSourceColumn] : [],
         ...columnConfig.manufacturer ? [manufacturerColumn] : [],
         ...columnConfig.researchManufacturer ? [researchManufacturerColumn] : [],

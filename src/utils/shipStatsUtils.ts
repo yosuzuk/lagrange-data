@@ -23,12 +23,15 @@ export function getSystemModuleStats(shipId: string, moduleId: string): IStats |
     return null; // TODO implement when data is available
 }
 
-export function formatDpm(stats: IStats): string {
-    const { dpmShip, dpmAntiAir, dpmSiege } = stats;
+export function formatDpm(dpm: number | undefined): string {
+    return Number.isFinite(dpm) ? formatNumberWithSuffix(dpm as number) : '-';
+}
+
+export function formatDpmAll(stats: IStats): string {
     return [
-        Number.isFinite(dpmShip) ? formatNumberWithSuffix(dpmShip as number) : '-',
-        Number.isFinite(dpmAntiAir) ? formatNumberWithSuffix(dpmAntiAir as number) : '-',
-        Number.isFinite(dpmSiege) ? formatNumberWithSuffix(dpmSiege as number) : '-',
+        formatDpm(stats.dpmShip),
+        formatDpm(stats.dpmAntiAir),
+        formatDpm(stats.dpmSiege),
     ].join(' | ');
 }
 

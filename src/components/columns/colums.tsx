@@ -10,6 +10,8 @@ import { manufacturerToSortValue, translateManufacturer } from '../../utils/manu
 import { researchStrategyTypeToSortValue, translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
 import { researchTacticTypeToSortValue, translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { translateResearchManufacturer, researchManufacturerToSortValue } from '../../utils/researchManufacturerUtils';
+import { formatDpm, getShipStats } from '../../utils/shipStatsUtils';
+import { IStats } from '../../types/IStats';
 
 export const shipNameColumn: ITableColumn<IShipDefinition> = {
     id: 'name',
@@ -164,3 +166,30 @@ export const shipWeightColumn: ITableColumn<IShipDefinition> = {
         (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
     ],
 };
+
+export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn('対艦DPM', 'dpmShip');
+export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn('対空DPM', 'dpmAntiAir');
+export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn('攻城DPM', 'dpmSiege');
+export const hpColumn: ITableColumn<IShipDefinition> = createShipStatColumn('HP', 'hp');
+export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn('巡航速度', 'speed');
+export const warpSpeedColumn: ITableColumn<IShipDefinition> = createShipStatColumn('ワープ速度', 'warpSpeed');
+
+function createShipStatColumn(name: string, statsProperty: keyof IStats): ITableColumn<IShipDefinition> {
+    return {
+        id: statsProperty,
+        renderHeader: () => name,
+        renderCell: (data: IShipDefinition) => formatDpm(getShipStatsPropertyAsNumber(data.id, statsProperty)),
+        sortFn: [
+            (a, b) => (getShipStatsPropertyAsNumber(a.id, statsProperty) ?? 0) - (getShipStatsPropertyAsNumber(b.id, statsProperty) ?? 0),
+            (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        ],
+    }
+}
+
+function getShipStatsPropertyAsNumber(shipId: string, statsProperty: keyof IStats): number | undefined {
+    const value = getShipStats(shipId)?.[statsProperty];
+    if (typeof value === 'boolean') {
+        throw new Error(`${statsProperty} is not a numeric value`);
+    }
+    return value;
+}

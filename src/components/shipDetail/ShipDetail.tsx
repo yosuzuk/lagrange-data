@@ -18,7 +18,7 @@ import { translateResearchStrategyType } from '../../utils/researchStrategyTypeU
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
-import { formatDpm, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
+import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 
 interface IProps {
     shipId: string;
@@ -85,7 +85,7 @@ export const ShipDetail = (props: IProps) => {
                         {
                             key: 'dpm',
                             label: 'DPM',
-                            value: formatDpm(shipStats),
+                            value: formatDpmAll(shipStats),
                         },
                         {
                             key: 'hp',

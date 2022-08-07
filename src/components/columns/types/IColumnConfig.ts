@@ -4,6 +4,12 @@ export interface IColumnConfig {
     row: boolean;
     cost: boolean;
     operationLimit: boolean;
+    dpmShip: boolean;
+    dpmAntiAir: boolean;
+    dpmSiege: boolean;
+    hp: boolean;
+    speed: boolean;
+    warpSpeed: boolean;
     source: boolean;
     manufacturer: boolean;
     researchManufacturer: boolean;

@@ -17,7 +17,7 @@ import { ShipRow } from '../../../types/ShipRow';
 import { validateFleetSetupForShipWarnings } from './utils/fleetSetupValidation';
 import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
 import { getFleetStats } from './utils/fleetStats';
-import { formatDpm, formatHp, formatSpeed } from '../../../utils/shipStatsUtils';
+import { formatDpmAll, formatHp, formatSpeed } from '../../../utils/shipStatsUtils';
 import { flags } from '../../../utils/flags';
 
 interface IProps {
@@ -127,7 +127,7 @@ export const FleetProperties = (props: IProps) => {
                                     value: (
                                         <>
                                             <Typography variant="body2">
-                                                {formatDpm(fleetStats)}
+                                                {formatDpmAll(fleetStats)}
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
