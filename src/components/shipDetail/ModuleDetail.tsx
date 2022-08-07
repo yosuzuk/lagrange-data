@@ -40,8 +40,8 @@ export const ModuleDetail = (props: IProps) => {
                     <AccordionDetails
                         sx={{
                             'backgroundColor': mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(229, 229, 229, 0.5)',
-                        }
-                    }>
+                        }}
+                    >
                         {!module.parts && (
                             <Typography variant="body2">
                                 {'詳細不明'}

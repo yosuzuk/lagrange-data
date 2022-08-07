@@ -2324,7 +2324,7 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'C1',
                 name: 'キャリア航空機システム',
-                description: '小～中型戦闘機を２機搭載可能',
+                description: '小～中型戦闘機を2機搭載可能',
                 category: 'C',
                 categoryNumber: 1,
                 carryFighter: 2,
@@ -2809,6 +2809,50 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '「ホワイトフラッシュ」総合武器庫',
+                description: '対大型＆小型艦武装',
+                parts: [
+                    {
+                        text: [
+                            'CI-600T型　重イオン砲',
+                            '対大型艦：',
+                            '・直射、エネルギー、対艦：10800、攻城：1620',
+                            'CG-2220型　通常2連砲',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：5760、対空：1152、攻城：288',
+                        ],
+                        skillSlots: 5,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％', // TODO 技術Pt
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％', // TODO 技術Pt
+                            },
+                            {
+                                effect: '命中率アップ',
+                                properties: '最大10％', // TODO 技術Pt
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大15％', // TODO 技術Pt
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％', // TODO 技術Pt
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大15％', // TODO 技術Pt
+                            },
+                            {
+                                effect: 'システムHPアップ',
+                                properties: '最大35％', // TODO 技術Pt
+                            },
+                        ],
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
@@ -2822,6 +2866,42 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A1',
                 name: '総合艦載機搭載プラットフォーム',
+                description: '小～大型戦闘機を6機搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'CFB-700型 大型戦闘機格納庫',
+                            '6隊の大型戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令・探査システムを備える。',
+                        ],
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: '戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。',
+                                properties: '戦略、技術Pt20',
+                            },
+                            {
+                                effect: '帰還冷却時間ダウン',
+                                properties: '最大20％', // TODO 技術Pt
+                            },
+                            {
+                                effect: '帰還冷却時間ダウン',
+                                properties: '最大20％', // TODO 技術Pt
+                            },
+                            {
+                                effect: '艦載機の命中率アップ',
+                                properties: '最大20％',
+                            },
+                            {
+                                effect: '艦載機のダメージアップ',
+                                properties: '最大10％',
+                            },
+                            {
+                                effect: '艦載機のミサイル回避率アップ',
+                                properties: '最大30％',
+                            },
+                        ],
+                    },
+                ],
                 category: 'A',
                 categoryNumber: 1,
                 carryFighter: 6,
@@ -2929,6 +3009,19 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '「ホワイトフラッシュ」総合武器庫',
+                description: '対大型＆小型艦武装',
+                parts: [
+                    {
+                        text: [
+                            'CI-600T型　重イオン砲',
+                            '対大型艦：',
+                            '・直射、エネルギー、対艦：10800、攻城：1620',
+                            'CG-2220型　通常2連砲',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：5760、対空：1152、攻城：288',
+                        ],
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 1,
             },
@@ -2958,6 +3051,19 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '「ホワイトフラッシュ」総合武器庫',
+                description: '対大型＆小型艦武装',
+                parts: [
+                    {
+                        text: [
+                            'CI-600T型　重イオン砲',
+                            '対大型艦：',
+                            '・直射、エネルギー、対艦：10800、攻城：1620',
+                            'CG-2220型　通常2連砲',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：5760、対空：1152、攻城：288',
+                        ],
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 1,
             },
@@ -2986,6 +3092,19 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'M1',
                 name: '「ホワイトフラッシュ」総合武器庫',
+                description: '対大型＆小型艦武装',
+                parts: [
+                    {
+                        text: [
+                            'CI-600T型　重イオン砲',
+                            '対大型艦：',
+                            '・直射、エネルギー、対艦：10800、攻城：1620',
+                            'CG-2220型　通常2連砲',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：5760、対空：1152、攻城：288',
+                        ],
+                    },
+                ],
                 category: 'M',
                 categoryNumber: 1,
             },
