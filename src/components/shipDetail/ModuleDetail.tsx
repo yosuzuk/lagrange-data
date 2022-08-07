@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ISystemModule } from '../../types/ShipDefinition';
+import { useColorMode } from '../../theme/context/ThemeProvider';
 
 interface IProps {
     modules: ISystemModule[];
@@ -13,6 +14,7 @@ interface IProps {
 
 export const ModuleDetail = (props: IProps) => {
     const { modules } = props;
+    const { mode } = useColorMode();
     return (
         <>
             {modules.map(module => (
@@ -35,7 +37,11 @@ export const ModuleDetail = (props: IProps) => {
                             )}
                         </div>
                     </AccordionSummary>
-                    <AccordionDetails sx={{ 'backgroundColor': 'rgba(229, 229, 229, 0.5)' }}>
+                    <AccordionDetails
+                        sx={{
+                            'backgroundColor': mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(229, 229, 229, 0.5)',
+                        }
+                    }>
                         {!module.parts && (
                             <Typography variant="body2">
                                 {'詳細不明'}
