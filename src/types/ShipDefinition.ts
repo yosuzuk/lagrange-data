@@ -12,6 +12,7 @@ export interface IShipDefinition {
     name: string;
     type: ShipType;
     subType?: ShipSubType;
+    stats?: IStats;
     cost: number;
     weight: number;
     row: ShipRow;
@@ -36,6 +37,7 @@ export interface ISystemModule {
     id: string;
     name: string;
     description?: string;
+    stats?: IStats;
     parts?: IModulePart[];
     category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';
     categoryNumber: number;
@@ -54,4 +56,13 @@ interface IModulePart {
 interface ISkill {
     effect: string;
     properties?: string | string[];
+}
+
+interface IStats {
+    hp: number,
+    speed : number,
+    warpSpeed: number,
+    dpmShip?: number,
+    dpmAntiAir?: number,
+    dpmSiege?: number,
 }
