@@ -16,6 +16,8 @@ import { translateShipRow } from '../../../utils/shipRowUtils';
 import { ShipRow } from '../../../types/ShipRow';
 import { validateFleetSetupForShipWarnings } from './utils/fleetSetupValidation';
 import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
+import { getFleetStats } from './utils/fleetStats';
+import { flags } from '../../../utils/flags';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -31,6 +33,8 @@ export const FleetProperties = (props: IProps) => {
         shipCountByType,
         shipCountByRow,
     } = useMemo(() => getFleetShipCount(fleetSetup.ships), [fleetSetup.ships]);
+
+    const fleetStats = useMemo(() => getFleetStats(fleetSetup.ships), [fleetSetup.ships]);
 
     const exceedingCost = totalCost > fleetSetup.maxCost;
     const exceedingReinforcement = fleetSetup.totalReinforcementCount > fleetSetup.maxReinforcement;
@@ -115,6 +119,56 @@ export const FleetProperties = (props: IProps) => {
                                     </Typography>
                                 ),
                             },
+                            ...(flags.enableStats ? [
+                                {
+                                    key: 'dpm',
+                                    label: '合計DPM',
+                                    value: (
+                                        <>
+                                            <Typography variant="body2">
+                                                {formatStatProperties([fleetStats.dpmShip, fleetStats.dpmAntiAir, fleetStats.dpmSiege])}
+                                            </Typography>
+                                            {fleetStats.incomplete && (
+                                                <Typography variant="caption" color="text.secondary">
+                                                    {'（データが欠落しているため不正確）'}
+                                                </Typography>
+                                            )}
+                                        </>
+                                    ),
+                                },
+                                {
+                                    key: 'hp',
+                                    label: '合計HP',
+                                    value: (
+                                        <>
+                                            <Typography variant="body2">
+                                                {formatStatProperties([fleetStats.hp])}
+                                            </Typography>
+                                            {fleetStats.incomplete && (
+                                                <Typography variant="caption" color="text.secondary">
+                                                    {'（データが欠落しているため不正確）'}
+                                                </Typography>
+                                            )}
+                                        </>
+                                    ),
+                                },
+                                {
+                                    key: 'speed',
+                                    label: '速度',
+                                    value: (
+                                        <>
+                                            <Typography variant="body2">
+                                                {formatStatProperties([fleetStats.speed, fleetStats.warpSpeed])}
+                                            </Typography>
+                                            {fleetStats.incomplete && (
+                                                <Typography variant="caption" color="text.secondary">
+                                                    {'（データが欠落しているため不正確）'}
+                                                </Typography>
+                                            )}
+                                        </>
+                                    ),
+                                },
+                            ] : []),
                             {
                                 key: 'shipCount',
                                 label: '艦船',
@@ -180,4 +234,10 @@ export const FleetProperties = (props: IProps) => {
             </AccordionDetails>
         </Accordion>
     );
+}
+
+function formatStatProperties(properties: Array<number | undefined>): string {
+    return properties.map(property => {
+        return Number.isFinite(property) && (property as number) > 0 ? `${property}` : '-';
+    }).join(' | ');
 }

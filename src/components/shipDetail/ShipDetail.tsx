@@ -17,6 +17,7 @@ import { translateResearchManufacturer } from '../../utils/researchManufacturerU
 import { translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
+import { flags } from '../../utils/flags';
 
 interface IProps {
     shipId: string;
@@ -77,6 +78,30 @@ export const ShipDetail = (props: IProps) => {
                         label: '稼働上限',
                         value: shipDefinition.operationLimit,
                     },
+                    ...((flags.enableStats && shipDefinition.stats) ? [
+                        {
+                            key: 'dpm',
+                            label: 'DPM',
+                            value: [
+                                shipDefinition.stats.dpmShip ?? '-',
+                                shipDefinition.stats.dpmAntiAir ?? '-',
+                                shipDefinition.stats.dpmSiege ?? '-',
+                            ].join(' | '),
+                        },
+                        {
+                            key: 'hp',
+                            label: 'HP',
+                            value: shipDefinition.stats.hp ?? '-',
+                        },
+                        {
+                            key: 'speed',
+                            label: '速度',
+                            value: [
+                                shipDefinition.stats.speed ?? '-',
+                                shipDefinition.stats.warpSpeed ?? '-',
+                            ].join(' | '),
+                        },
+                    ] : []),
                     ...(carry ? [
                         {
                             key: 'carry',

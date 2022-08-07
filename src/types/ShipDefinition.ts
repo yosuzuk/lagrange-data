@@ -1,3 +1,4 @@
+import { IStats } from './IStats';
 import { Manufacturer } from './Manufacturer';
 import { ResearchManufacturer } from './ResearchManufacturer';
 import { ResearchStrategyType } from './ResearchStrategyType';
@@ -56,13 +57,4 @@ interface IModulePart {
 interface ISkill {
     effect: string;
     properties?: string | string[];
-}
-
-interface IStats {
-    hp: number,
-    speed : number,
-    warpSpeed: number,
-    dpmShip?: number,
-    dpmAntiAir?: number,
-    dpmSiege?: number,
 }
