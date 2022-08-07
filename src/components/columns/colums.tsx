@@ -12,6 +12,7 @@ import { researchTacticTypeToSortValue, translateResearchTacticType } from '../.
 import { translateResearchManufacturer, researchManufacturerToSortValue } from '../../utils/researchManufacturerUtils';
 import { formatDpm, getShipStats } from '../../utils/shipStatsUtils';
 import { IStats } from '../../types/IStats';
+import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
 
 export const shipNameColumn: ITableColumn<IShipDefinition> = {
     id: 'name',
@@ -187,7 +188,7 @@ function createShipStatColumn(name: string, statsProperty: keyof IStats): ITable
 }
 
 function getShipStatsPropertyAsNumber(shipId: string, statsProperty: keyof IStats): number | undefined {
-    const value = getShipStats(shipId)?.[statsProperty];
+    const value = getShipStats(getShipDefinitionById(shipId), null)?.[statsProperty];
     if (typeof value === 'boolean') {
         throw new Error(`${statsProperty} is not a numeric value`);
     }

@@ -44,7 +44,7 @@ export const ShipDetail = (props: IProps) => {
 
     const obtainableThoughResearchAgreement = !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
 
-    const shipStats = getShipStats(shipDefinition.id);
+    const shipStats = getShipStats(shipDefinition, null);
 
     return (
         <Box p={1}>

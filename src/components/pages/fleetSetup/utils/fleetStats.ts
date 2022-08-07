@@ -1,7 +1,6 @@
 import { IStats } from '../../../../types/IStats';
-import { ISystemModule } from '../../../../types/ShipDefinition';
-import { getShipStats, getSystemModuleStats } from '../../../../utils/shipStatsUtils';
-import { IModuleSelection, IShipSelection } from '../types/IFleetSetup';
+import { getShipStats, mergeStats } from '../../../../utils/shipStatsUtils';
+import { ICarriedShipSelection, IShipSelection } from '../types/IFleetSetup';
 
 export function getFleetStats(shipSelection: IShipSelection[]): IStats {
     const stats: IStats = {
@@ -15,45 +14,20 @@ export function getFleetStats(shipSelection: IShipSelection[]): IStats {
     };
 
     return shipSelection.reduce((acc: IStats, ship: IShipSelection) => {
-        const shipStats = getShipStats(ship.shipDefinition.id);
+        const shipStats = getShipStats(ship.shipDefinition, ship.moduleSelection);
         if (!shipStats) {
             return { ...acc, incomplete: true };
         }
 
-        const shipApplied = applyStats(shipStats, ship.count, acc);
-        if (!ship.shipDefinition.modules || ship.moduleSelection === null) {
-            return shipApplied;
-        }
+        const shipApplied = mergeStats(shipStats, ship.count, acc);
 
-        return flattenModuleSelection(ship.moduleSelection).reduce((acc: IStats, module: ISystemModule) => {
-            const moduleStats = getSystemModuleStats(ship.shipDefinition.id, module.id);
-            if (!moduleStats) {
-                return acc;
+        return ship.carriedShips.reduce((acc: IStats, carriedShip: ICarriedShipSelection) => {
+            const carriedShipStats = getShipStats(carriedShip.shipDefinition, null);
+            if (!carriedShipStats) {
+                return { ...acc, incomplete: true };
             }
 
-            return applyStats(moduleStats, ship.count, acc);
+            return mergeStats(carriedShipStats, carriedShip.count, acc);
         }, shipApplied);
     }, stats);
-}
-
-function applyStats(stats: IStats, count: number = 1, targetStats: IStats): IStats {
-    return {
-        ...targetStats,
-        hp: (targetStats.hp ?? 0) + ((stats.hp ?? 0) * count),
-        speed: Math.min(targetStats.speed ?? Infinity, stats.speed ?? Infinity),
-        warpSpeed: Math.min(targetStats.warpSpeed ?? Infinity, stats.warpSpeed ?? Infinity),
-        dpmShip: (targetStats.dpmShip ?? 0) + ((stats.dpmShip ?? 0) * count),
-        dpmAntiAir: (targetStats.dpmAntiAir ?? 0) + ((stats.dpmAntiAir ?? 0) * count),
-        dpmSiege: (targetStats.dpmSiege ?? 0) + ((stats.dpmSiege ?? 0) * count),
-        incomplete: targetStats.incomplete === true ? true : stats.incomplete ?? false,
-    };
-}
-
-function flattenModuleSelection(moduleSelection: IModuleSelection): ISystemModule[] {
-    return Object.keys(moduleSelection.groups).flatMap((groupId: string) => {
-        return Object.keys(moduleSelection.groups[groupId])
-            .map(moduleId => moduleSelection.groups[groupId][moduleId])
-            .filter(moduleUsage => moduleUsage.usage === 'used' || moduleSelection.static)
-            .map(moduleUsage => moduleUsage.module);
-    });
 }
