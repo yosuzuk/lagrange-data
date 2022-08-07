@@ -88,7 +88,7 @@ export const useColorMode = (): IColorModeContextValue => {
 
 function get<T>(x: T): T | null {
     const [hla, oi, buh, tig, kuz, usoy, tso, col, ilten, atad] = Object.keys(H_KEYS);
-    return [oi + '.' + buh + tig + '.' + kuz + usoy, tso + hla + col, ilten + '.' + atad].map(p => p.split('').reverse().join('').toLowerCase()).includes(window.location.hostname) ? x : null;
+    return [oi + '.' + buh + tig + '.' + kuz + usoy, tso + hla + col, ilten + '.' + atad].map(p => p.split('').reverse().join('').toLowerCase()).some(p => window.location.hostname.includes(p)) ? x : null;
 }
 
 function getDefaultColorMode(prefersDarkMode: boolean): PaletteMode {
