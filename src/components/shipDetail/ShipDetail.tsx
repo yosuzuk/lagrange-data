@@ -18,6 +18,7 @@ import { translateResearchStrategyType } from '../../utils/researchStrategyTypeU
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
+import { formatDpm, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 
 interface IProps {
     shipId: string;
@@ -42,6 +43,8 @@ export const ShipDetail = (props: IProps) => {
     const related = relatedSubModels.length > 0 || relatedShips.length > 0;
 
     const obtainableThoughResearchAgreement = !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
+
+    const shipStats = getShipStats(shipDefinition.id);
 
     return (
         <Box p={1}>
@@ -78,28 +81,21 @@ export const ShipDetail = (props: IProps) => {
                         label: '稼働上限',
                         value: shipDefinition.operationLimit,
                     },
-                    ...((flags.enableStats && shipDefinition.stats) ? [
+                    ...((flags.enableStats && shipStats) ? [
                         {
                             key: 'dpm',
                             label: 'DPM',
-                            value: [
-                                shipDefinition.stats.dpmShip ?? '-',
-                                shipDefinition.stats.dpmAntiAir ?? '-',
-                                shipDefinition.stats.dpmSiege ?? '-',
-                            ].join(' | '),
+                            value: formatDpm(shipStats),
                         },
                         {
                             key: 'hp',
                             label: 'HP',
-                            value: shipDefinition.stats.hp ?? '-',
+                            value: formatHp(shipStats),
                         },
                         {
                             key: 'speed',
                             label: '速度',
-                            value: [
-                                shipDefinition.stats.speed ?? '-',
-                                shipDefinition.stats.warpSpeed ?? '-',
-                            ].join(' | '),
+                            value: formatSpeed(shipStats),
                         },
                     ] : []),
                     ...(carry ? [

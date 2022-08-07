@@ -1,4 +1,3 @@
-import { IStats } from './IStats';
 import { Manufacturer } from './Manufacturer';
 import { ResearchManufacturer } from './ResearchManufacturer';
 import { ResearchStrategyType } from './ResearchStrategyType';
@@ -13,7 +12,6 @@ export interface IShipDefinition {
     name: string;
     type: ShipType;
     subType?: ShipSubType;
-    stats?: IStats;
     cost: number;
     weight: number;
     row: ShipRow;
@@ -38,7 +36,6 @@ export interface ISystemModule {
     id: string;
     name: string;
     description?: string;
-    stats?: IStats;
     parts?: IModulePart[];
     category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';
     categoryNumber: number;

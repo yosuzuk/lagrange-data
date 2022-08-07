@@ -1,5 +1,6 @@
 import { IStats } from '../../../../types/IStats';
 import { ISystemModule } from '../../../../types/ShipDefinition';
+import { getShipStats, getSystemModuleStats } from '../../../../utils/shipStatsUtils';
 import { IModuleSelection, IShipSelection } from '../types/IFleetSetup';
 
 export function getFleetStats(shipSelection: IShipSelection[]): IStats {
@@ -14,21 +15,23 @@ export function getFleetStats(shipSelection: IShipSelection[]): IStats {
     };
 
     return shipSelection.reduce((acc: IStats, ship: IShipSelection) => {
-        if (!ship.shipDefinition.stats) {
+        const shipStats = getShipStats(ship.shipDefinition.id);
+        if (!shipStats) {
             return { ...acc, incomplete: true };
         }
 
-        const shipApplied = applyStats(ship.shipDefinition.stats, ship.count, acc);
+        const shipApplied = applyStats(shipStats, ship.count, acc);
         if (!ship.shipDefinition.modules || ship.moduleSelection === null) {
             return shipApplied;
         }
 
         return flattenModuleSelection(ship.moduleSelection).reduce((acc: IStats, module: ISystemModule) => {
-            if (!module.stats) {
+            const moduleStats = getSystemModuleStats(ship.shipDefinition.id, module.id);
+            if (!moduleStats) {
                 return acc;
             }
 
-            return applyStats(module.stats, ship.count, acc);
+            return applyStats(moduleStats, ship.count, acc);
         }, shipApplied);
     }, stats);
 }

@@ -17,6 +17,7 @@ import { ShipRow } from '../../../types/ShipRow';
 import { validateFleetSetupForShipWarnings } from './utils/fleetSetupValidation';
 import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
 import { getFleetStats } from './utils/fleetStats';
+import { formatDpm, formatHp, formatSpeed } from '../../../utils/shipStatsUtils';
 import { flags } from '../../../utils/flags';
 
 interface IProps {
@@ -126,7 +127,7 @@ export const FleetProperties = (props: IProps) => {
                                     value: (
                                         <>
                                             <Typography variant="body2">
-                                                {formatStatProperties([fleetStats.dpmShip, fleetStats.dpmAntiAir, fleetStats.dpmSiege])}
+                                                {formatDpm(fleetStats)}
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
@@ -142,7 +143,7 @@ export const FleetProperties = (props: IProps) => {
                                     value: (
                                         <>
                                             <Typography variant="body2">
-                                                {formatStatProperties([fleetStats.hp])}
+                                                {formatHp(fleetStats)}
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
@@ -158,7 +159,7 @@ export const FleetProperties = (props: IProps) => {
                                     value: (
                                         <>
                                             <Typography variant="body2">
-                                                {formatStatProperties([fleetStats.speed, fleetStats.warpSpeed])}
+                                                {formatSpeed(fleetStats)}
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
@@ -234,10 +235,4 @@ export const FleetProperties = (props: IProps) => {
             </AccordionDetails>
         </Accordion>
     );
-}
-
-function formatStatProperties(properties: Array<number | undefined>): string {
-    return properties.map(property => {
-        return Number.isFinite(property) && (property as number) > 0 ? `${property}` : '-';
-    }).join(' | ');
 }
