@@ -7,4 +7,6 @@ export enum H_KEYS {
     USOY = 'x511c',
     TSO = 'x0023',
     COL = 'x511c',
+    ILTEN = 'x112a',
+    ATAD = 'x334c',
 }

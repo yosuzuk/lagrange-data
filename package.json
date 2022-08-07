@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-netlify": "tsc && vite build --config vite.netlify.config.ts",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy-gh": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/css": "11.7.1",
