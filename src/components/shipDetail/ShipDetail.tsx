@@ -17,6 +17,8 @@ import { translateResearchManufacturer } from '../../utils/researchManufacturerU
 import { translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
+import { flags } from '../../utils/flags';
+import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 
 interface IProps {
     shipId: string;
@@ -41,6 +43,8 @@ export const ShipDetail = (props: IProps) => {
     const related = relatedSubModels.length > 0 || relatedShips.length > 0;
 
     const obtainableThoughResearchAgreement = !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
+
+    const shipStats = getShipStats(shipDefinition, null);
 
     return (
         <Box p={1}>
@@ -77,6 +81,23 @@ export const ShipDetail = (props: IProps) => {
                         label: '稼働上限',
                         value: shipDefinition.operationLimit,
                     },
+                    ...((flags.enableStats && shipStats) ? [
+                        {
+                            key: 'dpm',
+                            label: 'DPM',
+                            value: formatDpmAll(shipStats),
+                        },
+                        {
+                            key: 'hp',
+                            label: 'HP',
+                            value: formatHp(shipStats),
+                        },
+                        {
+                            key: 'speed',
+                            label: '速度',
+                            value: formatSpeed(shipStats),
+                        },
+                    ] : []),
                     ...(carry ? [
                         {
                             key: 'carry',

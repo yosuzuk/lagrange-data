@@ -7,6 +7,12 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         row: false,
         cost: false,
         operationLimit: false,
+        dpmShip: false,
+        dpmAntiAir: false,
+        dpmSiege: false,
+        hp: false,
+        speed: false,
+        warpSpeed: false,
         source: false,
         manufacturer: false,
         researchManufacturer: false,
@@ -39,6 +45,30 @@ export function createColumnConfigOptions(args: ICreateColumnConfigOptionArgumen
         {
             columnKey: 'operationLimit',
             name: '稼働上限',
+        },
+        {
+            columnKey: 'dpmShip',
+            name: '対艦DPM',
+        },
+        {
+            columnKey: 'dpmAntiAir',
+            name: '対空DPM',
+        },
+        {
+            columnKey: 'dpmSiege',
+            name: '攻城DPM',
+        },
+        {
+            columnKey: 'hp',
+            name: 'HP',
+        },
+        {
+            columnKey: 'speed',
+            name: '巡航速度',
+        },
+        {
+            columnKey: 'warpSpeed',
+            name: 'ワープ速度',
         },
         {
             columnKey: 'source',
