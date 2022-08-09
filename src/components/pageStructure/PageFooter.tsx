@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -9,6 +10,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Container } from '../container/Container';
 import { useColorMode } from '../../theme/context/ThemeProvider';
 import { flags } from '../../utils/flags';
+import { LanguagePicker } from '../languagePicker/LanguagePicker';
 
 const REPOSITORY_URL = 'https://github.com/yosuzuk/lagrange-data';
 const CHANGELOG_URL = '/blob/main/CHANGELOG.md';
@@ -29,12 +31,12 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                         <Typography variant="body2" color="text.secondary">{'© 2022 yosuzuk'}</Typography>
                         <Stack spacing={2} direction="row" alignItems="center" justifyContent="end">
                                 <Typography variant="body2" color="text.secondary">
-                                    {flags.englishBeta ? 'lagrange-data' : `インラグデータ`}
+                                    {t('appTitle')}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     {`Version ${__APP_VERSION__}`}
                                 </Typography>
-                                {!flags.englishBeta && (
+                                {flags.enableRepoLink && (
                                     <>
                                         <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
                                             {'Changelog'}
@@ -47,6 +49,7 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                                 <IconButton size="small" onClick={toggleMode}>
                                     {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
+                                <LanguagePicker />
                         </Stack>
                     </Stack>
                 </Box>

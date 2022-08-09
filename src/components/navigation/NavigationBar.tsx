@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { t } from 'i18next';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -17,7 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Container } from '../container/Container';
 
 const menuItems: Record<string, string> = {
-    '/techFiles': '技術ファイル',
+    '/techFiles': t('techFiles.pageTitle'),
     '/researchAgreement': '研究協定',
     '/shipData': '艦船一覧',
     '/fleetSetup': '艦隊編成',

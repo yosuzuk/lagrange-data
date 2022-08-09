@@ -1,0 +1,64 @@
+{
+    "appTitle": "インラグデータ",
+    "button": {
+        "edit": "編集",
+        "save": "保存",
+        "confirm": "ＯＫ",
+        "cancel": "キャンセル",
+        "reset": "リセット",
+        "initialize": "初期化",
+        "filter": "フィルター",
+        "displayItems": "表示項目",
+        "share": "共有",
+        "copyToClipboard": "クリップボードにコピー"
+    },
+    "label": {
+        "ship": "艦船",
+        "techFile": "技術ファイル",
+        "blueprint": "設計図",
+        "wantedBlueprint": "欲しい設計図",
+        "unwantedBlueprint": "欲しくない設計図",
+        "modularSystem": "追加システム",
+        "techOrResearchPoints": "技術/研究Pt",
+        "probability": "確率",
+        "shipTypeProbability": "艦種確率",
+        "probabilityWeight": "重み"
+    },
+    "techFiles": {
+        "pageTitle": "技術ファイル",
+        "pageDescription1": "ここでは技術ファイル内の細かい確率を表示しています。",
+        "pageDescription2": "研究協定では各艦船の確率に「重み」があることが判明しています。確証はありませんが、同じ重みが技術ファイルにも適応されているようです。ここでの計算には研究協定の確率から逆算で判明した重みを使用しています。",
+        "pageDescription3": "設計図、サブモデル、追加システムの確率は艦船の所有状態によって変動します。既に所持している艦船はマイリストで設定してください。",
+        "pageFootnote": "※艦種をタップすると詳細が表示されます。",
+        "oneShipVariantAvailable": "取得していないサブモデルが複数ある場合：",
+        "multipleShipVariantsAvailable": "取得していないサブモデルが複数ある場合：",
+        "sumOfProbabilityWeightWithinShipType": "艦種内の重みの合計",
+        "sumOfProbabilityWeightWithinAvailableShipVariants": "取得していないサブモデルの重みの合計",
+        "baseShipVariantRequired": "ベースモデルが必要",
+        "baseShipVariantShipTypeProbability": "ベースモデルの艦種確率",
+        "accuired": "取得済み"
+    },
+    "researchAgreement": {
+        "pageTitle": "研究協定",
+        "pageDescription1": "ここでは「研究協定」に関する各種確率を表示しています。",
+        "pageDescription2": "研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。",
+        "pageDescription3": "取得済みの設計図はマイリストで設定してください。"
+    },
+    "shipList": {
+        "pageTitle": "艦船一覧"
+    },
+    "fleetBuilder": {
+        "pageTitle": "艦隊編成"
+    },
+    "myList": {
+        "myList": "マイリスト",
+        "pageDescription1": "マイリストでは艦船や追加システムの所有状態や「欲しい設計図」等を設定することが出来ます。",
+        "pageDescription2": "所有状態を設定することで個人に合わせた細かい確率の計算が可能になります（サブモデルの確率や技術ポイントの確率が変動します）。",
+        "pageDescription3": "欲しい設計図を設定するとそれらの合計確率がパイチャートで表示されるようになります。"
+    },
+    "myListConfig": {
+        "pageDescription1": "ここでは艦船/設計図の所有状態を設定できます。",
+        "pageDescription2": "全て細かく設定する必要はありません。",
+        "pageDescription3": "設定データはブラウザのローカルストレージに保存されます。"
+    }
+}

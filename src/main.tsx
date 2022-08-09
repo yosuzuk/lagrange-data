@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { flags } from './utils/flags';
+import { initI18n } from './i18n/i18n';
 
-if (!flags.englishBeta) {
-  document.title = 'インラグデータ';
-}
+(async () => {
+  const t = await initI18n();
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.title = t('appTitle');
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+})();
