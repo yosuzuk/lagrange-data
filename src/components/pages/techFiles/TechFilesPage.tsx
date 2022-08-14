@@ -10,6 +10,7 @@ import { techFiles } from '../../../data/techFiles';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { t } from '../../../i18n';
 
 export const BoxChancePage = () => {
     const [techFile, setTechFile] = useState<ITechFile>(techFiles[0]);
@@ -21,13 +22,13 @@ export const BoxChancePage = () => {
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
-                            {'ここでは技術ファイル内の細かい確率を表示しています。'}
+                            {t('techFiles.pageDescription1')}
                         </Typography>
                         <Typography variant="body2">
-                            {'研究協定では各艦船の確率に「重み」があることが判明しています。確証はありませんが、同じ重みが技術ファイルにも適応されているようです。ここでの計算には研究協定の確率から逆算で判明した重みを使用しています。'}
+                            {t('techFiles.pageDescription2')}
                         </Typography>
                         <Typography variant="body2">
-                            {'設計図、サブモデル、追加システムの確率は艦船の所有状態によって変動します。既に所持している艦船はマイリストで設定してください。'}
+                            {t('techFiles.pageDescription3')}
                         </Typography>
                     </Stack>
                     <Stack spacing={1}>
@@ -42,7 +43,7 @@ export const BoxChancePage = () => {
                         </Paper>
                         <TechFileDetails techFile={techFile} />
                         <Typography variant="caption" align="right" paragraph={true}>
-                            {'※艦種をタップすると詳細が表示されます。'}
+                            {t('techFiles.pageFootnote')}
                         </Typography>
                     </Stack>
                 </Box>

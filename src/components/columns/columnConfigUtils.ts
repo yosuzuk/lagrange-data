@@ -1,3 +1,4 @@
+import { t } from '../../i18n';
 import { IColumnConfig, IColumnConfigOption } from './types/IColumnConfig';
 
 export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): IColumnConfig {
@@ -32,69 +33,69 @@ export function createColumnConfigOptions(args: ICreateColumnConfigOptionArgumen
     return [
         {
             columnKey: 'type',
-            name: '艦種',
+            name: t('label.shipType'),
         },
         {
             columnKey: 'row',
-            name: '配置',
+            name: t('label.rowPlacement'),
         },
         {
             columnKey: 'cost',
-            name: 'コスト',
+            name: t('label.commandPoints'),
         },
         {
             columnKey: 'operationLimit',
-            name: '稼働上限',
+            name: t('label.operationLimit'),
         },
         {
             columnKey: 'dpmShip',
-            name: '対艦DPM',
+            name: t('label.antiShipDpm'),
         },
         {
             columnKey: 'dpmAntiAir',
-            name: '対空DPM',
+            name: t('label.antiAirDpm'),
         },
         {
             columnKey: 'dpmSiege',
-            name: '攻城DPM',
+            name: t('label.siegeDpm'),
         },
         {
             columnKey: 'hp',
-            name: 'HP',
+            name: t('label.hp'),
         },
         {
             columnKey: 'speed',
-            name: '巡航速度',
+            name: t('label.cruiseSpeed'),
         },
         {
             columnKey: 'warpSpeed',
-            name: 'ワープ速度',
+            name: t('label.warpSpeed'),
         },
         {
             columnKey: 'source',
-            name: '入手方法',
+            name: t('label.acquirableThrough'),
         },
         {
             columnKey: 'manufacturer',
-            name: '企業',
+            name: t('label.manufacturer'),
         },
         ...(disableResearchAgreementOptions !== true ? [
             {
                 columnKey: 'researchManufacturer',
-                name: '委託企業（研究協定）',
+                name: t('label.researchManufacturerColumn'),
             },
             {
                 columnKey: 'researchStrategyType',
-                name: '戦略能力（研究協定）',
+                name: t('label.researchStrategyTypeColumn'),
             },
             {
                 columnKey: 'researchTacticType',
-                name: '戦術性能（研究協定）',
+                name: t('label.researchTacticTypeColumn'),
             },
         ] as IColumnConfigOption[] : []),
         {
             columnKey: 'weight',
-            name: '確率の重み',
+            name: t('label.probabilityWeight'),
         },
     ];
 }

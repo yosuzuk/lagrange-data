@@ -1,4 +1,3 @@
-import { t } from 'i18next';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -11,6 +10,7 @@ import { Container } from '../container/Container';
 import { useColorMode } from '../../theme/context/ThemeProvider';
 import { flags } from '../../utils/flags';
 import { LanguagePicker } from '../languagePicker/LanguagePicker';
+import { t } from '../../i18n';
 
 const REPOSITORY_URL = 'https://github.com/yosuzuk/lagrange-data';
 const CHANGELOG_URL = '/blob/main/CHANGELOG.md';

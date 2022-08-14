@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { ResearchManufacturer } from '../types/ResearchManufacturer';
 
 // 委託企業
@@ -5,13 +6,13 @@ import { ResearchManufacturer } from '../types/ResearchManufacturer';
 export function translateResearchManufacturer(manufacturer: ResearchManufacturer): string {
     switch (manufacturer) {
         case ResearchManufacturer.JUPITER_INDUSTRIES:
-            return 'ジュピターインダストリー';
+            return t('manufacturer.jupiterIndustries');
         case ResearchManufacturer.NOMA_SHIPPING_GROUP:
-            return 'ノマシッピング';
+            return t('manufacturer.nomaShippingGroup');
         case ResearchManufacturer.ANTONIOS_CONSORTIUM:
-            return 'アントニオス財団';
+            return t('manufacturer.antoniosConsortium');
         case ResearchManufacturer.DAWN_ACCORD:
-            return 'ドーン協定条約機構';
+            return t('manufacturer.dawnAccord');
     }
 }
 

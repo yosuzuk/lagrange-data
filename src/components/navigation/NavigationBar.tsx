@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { t } from 'i18next';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -16,13 +15,14 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Container } from '../container/Container';
+import { t } from '../../i18n';
 
 const menuItems: Record<string, string> = {
     '/techFiles': t('techFiles.pageTitle'),
-    '/researchAgreement': '研究協定',
-    '/shipData': '艦船一覧',
-    '/fleetSetup': '艦隊編成',
-    '/myList': 'マイリスト',
+    '/researchAgreement': t('researchAgreement.pageTitle'),
+    '/shipData': t('shipData.pageTitle'),
+    '/fleetSetup': t('fleetSetup.pageTitle'),
+    '/myList': t('myList.pageTitle'),
 };
 
 interface IProps {

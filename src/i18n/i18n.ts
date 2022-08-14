@@ -1,5 +1,7 @@
-import i18next, { TFunction, ResourceKey } from 'i18next';
+import i18next, { TFunction } from 'i18next';
 import { flags } from '../utils/flags';
+import en from './resources/en.json';
+import ja from './resources/ja.json';
 
 const STORAGE_KEY = 'language';
 
@@ -9,26 +11,24 @@ export enum Language {
     KEYS = 'cimode',
 }
 
-const fallbackLanguage: Language = flags.englishFallback ? Language.ENGLISH : Language.JAPANESE;
+const availableLanguages: Language[] = Object.values(Language);
+const defaultLanguage: Language = flags.englishByDefault ? Language.ENGLISH : Language.JAPANESE;
+const fallbackLanguage = Language.JAPANESE;
 
-const resourceLoaders: Record<Language, () => Promise<ResourceKey>> = {
-    [Language.ENGLISH]: (): Promise<ResourceKey> => import('./resources/en.json'),
-    [Language.JAPANESE]: (): Promise<ResourceKey> => import('./resources/ja.json'),
-    [Language.KEYS]: () => Promise.resolve({}),
-};
-
-export async function initI18n(): Promise<TFunction> {
+function initI18n() {
     const language = getInitialLanguage();
-    const translation = await resourceLoaders[language]();
 
-    return i18next.init({
+    i18next.init({
         ns: 'key',
         lng: language,
         fallbackLng: fallbackLanguage,
         debug: true,
         resources: {
-            [language]: {
-                key: translation,
+            en: {
+                key: en,
+            },
+            ja: {
+                key: ja,
             },
         },
         appendNamespaceToCIMode: true,
@@ -43,7 +43,7 @@ export async function initI18n(): Promise<TFunction> {
 function getInitialLanguage(): Language {
     // prio 1: explicitly selected language
     const storedLanguage = window.localStorage.getItem(STORAGE_KEY);
-    if (!!storedLanguage && storedLanguage in resourceLoaders) {
+    if (!!storedLanguage && availableLanguages.includes(storedLanguage as Language)) {
         return storedLanguage as Language;
     }
 
@@ -51,11 +51,11 @@ function getInitialLanguage(): Language {
     if (Array.isArray(window.navigator?.languages)) {
         return window.navigator.languages
             .map(language => language.split('-')[0])
-            .find(language => language in resourceLoaders) ?? fallbackLanguage;
+            .find(language => availableLanguages.includes(language as Language)) ?? defaultLanguage;
     }
 
-    // static fallback
-    return fallbackLanguage;
+    // static default
+    return defaultLanguage;
 }
 
 export function reloadWithLanguage(language: Language) {
@@ -67,3 +67,7 @@ export function reloadWithLanguage(language: Language) {
     // This makes it easier to work with text outside of React context.
     window.location.reload();
 }
+
+export const t = i18next.t;
+
+initI18n();

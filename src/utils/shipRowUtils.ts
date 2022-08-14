@@ -1,15 +1,16 @@
 import { ShipRow } from '../types/ShipRow';
+import { t } from '../i18n';
 
 export function translateShipRow(row: ShipRow): string {
     switch (row) {
         case ShipRow.NONE:
             return '-';
         case ShipRow.FRONT:
-            return '前列';
+            return t('rowPlacement.frontRow');
         case ShipRow.MIDDLE:
-            return '中列';
+            return t('rowPlacement.middleRow');
         case ShipRow.BACK:
-            return '後列';
+            return t('rowPlacement.backRow');
     }
 }
 

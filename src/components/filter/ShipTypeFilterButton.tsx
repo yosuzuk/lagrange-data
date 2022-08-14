@@ -24,6 +24,7 @@ import { ShipRow } from '../../types/ShipRow';
 import { ResearchManufacturer } from '../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../types/ResearchTacticType';
+import { t } from '../../i18n';
 
 interface IProps {
     filter: ShipFilterState;
@@ -84,7 +85,7 @@ export const ShipTypeFilterButton = (props: IProps) => {
                     onClick={() => setOpened(true)}
                     sx={{ flexShrink: 1 }}
                 >
-                    {'フィルター'}
+                    {t('button.filter')}
                 </Button>
                 {filterUsed && (
                     <Button size="small" onClick={handleClickFilterOff} sx={{ flexShrink: 3 }}>
@@ -138,10 +139,10 @@ export const ShipTypeFilterButton = (props: IProps) => {
                                     <Box p={1} display="flex" justifyContent="end">
                                         <Stack spacing={1} direction="row">
                                             <Button variant="outlined" onClick={handleClickFilterOff} disabled={!filterUsed}>
-                                                {'全て外す'}
+                                                {t('button.unselectAll')}
                                             </Button>
                                             <Button variant="outlined" onClick={() => setOpened(false)}>
-                                                {'閉じる'}
+                                                {t('button.close')}
                                             </Button>
                                         </Stack>
                                     </Box>

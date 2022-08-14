@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import { ITechFile } from '../../../types/ITechFile';
 import { techFiles, getTechFileById } from '../../../data/techFiles';
+import { t } from '../../../i18n';
 
 interface IProps {
     id: string;
@@ -24,12 +25,12 @@ export const TechFileSelection = (props: IProps) => {
 
     return (
         <FormControl sx={{ m: 1, minWidth: 80 }}>
-            <InputLabel id={`${id}-label`}>{'技術ファイル'}</InputLabel>
+            <InputLabel id={`${id}-label`}>{t('label.techFile')}</InputLabel>
             <Select
                 labelId={`${id}-label`}
                 id={`${id}-select`}
                 value={techFile.id}
-                label={'技術ファイル'}
+                label={t('label.techFile')}
                 onChange={handleChange}
                 autoWidth={true}
                 renderValue={(value: string) => (

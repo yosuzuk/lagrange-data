@@ -1,3 +1,151 @@
 {
-    "appTitle": "lagrange-data"
+    "appTitle": "lagrange-data",
+    "button": {
+        "edit": "Edit",
+        "save": "Save",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "close": "Close",
+        "reset": "Reset",
+        "initialize": "Initialize",
+        "filter": "Filter",
+        "displayItems": "Display",
+        "share": "Share",
+        "copyToClipboard": "Copy to clipboard",
+        "unselectAll": "Unselect all"
+    },
+    "label": {
+        "ship": "Ship",
+        "shipName": "Ship name",
+        "shipType": "Ship type",
+        "rowPlacement": "Row",
+        "commandPoints": "Command points",
+        "operationLimit": "Operation limit",
+        "dpm": "DPM",
+        "antiShipDpm": "Anti ship DPM",
+        "antiAirDpm": "Anti air DPM",
+        "siegeDpm": "Siege DPM",
+        "hp": "HP",
+        "speed": "Speed",
+        "cruiseSpeed": "Cruise speed",
+        "warpSpeed": "Warp speed",
+        "acquirableThrough": "Acquirable through",
+        "manufacturer": "Company",
+        "researchManufacturer": "Company",
+        "researchStrategyType": "Strategy type",
+        "researchTacticType": "Tactic type",
+        "researchManufacturerColumn": "Company (RA)",
+        "researchStrategyTypeColumn": "Strategy type (RA)",
+        "researchTacticTypeColumn": "Tactic type (RA)",
+        "researchManufacturerOption": "Company: {{manufacturer}}",
+        "researchStrategyTypeOption": "Strategy type: {{strategyType}}",
+        "researchTacticTypeOption": "Tactic type: {{tacticType}}",
+        "techFile": "Tech file",
+        "blueprint": "Blueprint",
+        "blueprintColon": "Blueprint: ",
+        "wantedBlueprint": "Wanted blueprint",
+        "unwantedBlueprint": "Unwanted blueprint",
+        "additionalSystemModule": "Additional module",
+        "additionalSystemModuleColon": "Additional module: ",
+        "defaultSystemModule": "Default module",
+        "staticSystemModule": "Static module",
+        "blueprintTotal": "Blueprint total",
+        "techPoints": "Tech points",
+        "techOrResearchPoints": "Tech or research points",
+        "probability": "Probability",
+        "probabilityColon": "Probability: ",
+        "shipTypeProbability": "Ship type probability",
+        "shipTypeProbabilityColon": "Ship type probability: ",
+        "probabilityWeight": "Weight",
+        "baseShipVariant": "Base variant",
+        "subShipVariant": "Sub variant",
+        "relatedShips": "Related ships",
+        "researchAgreement": "Research agreement"
+    },
+    "techFiles": {
+        "pageTitle": "Tech files",
+        "pageDescription1": "This pages shows detailed probabilities for tech file content.",
+        "pageDescription2": "We know from research agreement, that ships have weighted probability within their ship type. This page assumes that those weight values are also used for tech files.",
+        "pageDescription3": "Probabilities change based on what you have already acquired. Acquired blueprints can be configured on the \"My List\" page",
+        "pageFootnote": "* Tap or click boxes to expand details",
+        "multipleShipVariantsAvailable": "Multiple ship variants are still available",
+        "systemModuleAvailable": "Additional module is still available",
+        "systemModuleNotAvailable": "All modules have been acquired",
+        "sumOfProbabilityWeightWithinShipType": "Sum of weights within ship type",
+        "sumOfProbabilityWeightWithinAvailableShipVariants": "Sum of weight for unacquired ship variants",
+        "baseShipVariantRequired": "Requires base variant first",
+        "baseShipVariantShipTypeProbability": "Ship type probability of base variant",
+        "lastShipVariant": "Last unacquired ship variant",
+        "accuired": "Acquired"
+    },
+    "researchAgreement": {
+        "pageTitle": "Research agreement",
+        "pageDescription1": "This page shows detailed probabilities for every filter in research agreement",
+        "_pageDescription2": "研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。",
+        "pageDescription2": "Data can be narrowed by company, strategy type and tactic type. Selecting a ship will list up all filters containg that ship sorted by probability.",
+        "pageDescription3": "Blueprints that you have already acquired can be configured on the \"My list\" page."
+    },
+    "shipData": {
+        "pageTitle": "Ship data"
+    },
+    "shipDetail": {
+        "detailsUnknown": "Details unknown",
+        "numberOfSkillSlots": "Skill slots: {{count}}",
+        "skillsColon": "Skills: "
+    },
+    "fleetSetup": {
+        "pageTitle": "Fleet builder"
+    },
+    "myList": {
+        "pageTitle": "My list",
+        "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",
+        "pageDescription2": "Once configured, other pages can show data adapted to your personal inventory, e.g. probabilities for ship variants become available.",
+        "pageDescription3": "You can also specify which ships and modules you want or not want to acquire. This allows other pages to show aggregated probabilities for your personalized preference."
+    },
+    "myListConfig": {
+        "pageDescription1": "ここでは艦船/設計図の所有状態を設定できます。",
+        "pageDescription2": "全て細かく設定する必要はありません。",
+        "pageDescription3": "設定データはブラウザのローカルストレージに保存されます。"
+    },
+    "manufacturer": {
+        "jupiterIndustries": "ジュピターインダストリー",
+        "nomaShippingGroup": "ノマシッピング",
+        "antoniosConsortium": "アントニオス財団",
+        "dawnAccord": "ドーン協定条約機構"
+    },
+    "strategyType": {
+        "outstandingFirepower": "高火力",
+        "sustainedCombat": "継続作戦",
+        "strategyAndSupport": "戦略と支援",
+        "fighterAndCorvette": "艦載機と護送艦"
+    },
+    "tacticType": {
+        "projectileWeapons": "投射兵器",
+        "directFireWeapons": "直接射撃武器"
+    },
+    "rowPlacement": {
+        "frontRow": "前列",
+        "middleRow": "中列",
+        "backRow": "後列"
+    },
+    "acquirableThrough": {
+        "starterTechFile": "初期配布",
+        "dockingEffect": "結合効果",
+        "cityTrade": "都市で購入",
+        "unknown": "不明"
+    },
+    "shipType": {
+        "frigate": "フリゲート",
+        "destroyer": "駆逐艦",
+        "cruiser": "巡洋艦",
+        "battleCruiser": "巡洋戦艦",
+        "auxiliary": "支援艦",
+        "carrier": "航空母艦",
+        "aircraft": "艦載機",
+        "corvette": "護送艦",
+        "fighter": "戦闘機",
+        "smallFighter": "小型戦闘機",
+        "mediumFighter": "中量級戦闘機",
+        "largeFighter": "大型戦闘機"
+    }
 }

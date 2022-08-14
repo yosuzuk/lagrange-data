@@ -17,6 +17,7 @@ import { IColumnConfigOption } from './types/IColumnConfig';
 import { createColumnConfigOptions } from './columnConfigUtils';
 import { IColumnConfig } from './types/IColumnConfig';
 import { getMaxPopperHeight } from '../../utils/domUtils';
+import { t } from '../../i18n';
 
 interface IProps {
     columnConfig: IColumnConfig;
@@ -61,7 +62,7 @@ export const ColumnConfigButton = (props: IProps) => {
                     startIcon={<ViewColumnIcon />}
                     onClick={() => setOpened(true)}
                 >
-                    {'表示項目'}
+                    {t('button.displayItems')}
                 </Button>
             </ButtonGroup>
             <Popper
@@ -109,7 +110,7 @@ export const ColumnConfigButton = (props: IProps) => {
                                     <Divider />
                                     <Box p={1} display="flex" justifyContent="end">
                                         <Button variant="outlined" onClick={() => setOpened(false)}>
-                                            {'閉じる'}
+                                            {t('button.close')}
                                         </Button>
                                     </Box>
                                 </Paper>

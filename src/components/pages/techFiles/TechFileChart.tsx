@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell, PieLabel, Tooltip, ResponsiveContainer } from 'rec
 import { ITechFileChances } from './types/IBlueprintChance';
 import { formatChance } from './utils/techFileUtils';
 import { ITechFile } from '../../../types/ITechFile';
+import { t } from '../../../i18n';
 
 const MODULE_COLOR = '#8042FF';
 const TECHFILE_COLOR = '#FFBB28';
@@ -24,22 +25,22 @@ export const TechFileChart = (props: IProps) => {
     const innerData = useMemo<Array<Record<string, unknown>>>(() => {
         return [
             {
-                name: '追加システム',
+                name: t('label.additionalSystemModule'),
                 value: techFileChances.moduleChance,
                 color: MODULE_COLOR,
             },
             {
-                name: '設計図合計',
+                name: t('label.blueprintTotal'),
                 value: techFileChances.blueprintChance,
                 color: TECHFILE_COLOR,
             },
             {
-                name: '技術/研究Pt',
+                name: t('label.techOrResearchPoints'),
                 value: techFileChances.techOrResearchPointChance,
                 color: TECH_OR_RESEARCH_POINT_COLOR,
             },
             {
-                name: '技術Pt',
+                name: t('label.techPoints'),
                 value: techFile.chanceForTechPoint,
                 color: TECHPOINT_COLOR,
             },
@@ -59,32 +60,32 @@ export const TechFileChart = (props: IProps) => {
 
         return [
             {
-                name: moduleChance > SHOW_LABEL_THRESHOLD ? '追加システム' : '',
+                name: moduleChance > SHOW_LABEL_THRESHOLD ? t('label.additionalSystemModule') : '',
                 value: moduleChance,
                 color: MODULE_COLOR,
             },
             {
-                name: wishedBlueprintChance > SHOW_LABEL_THRESHOLD ? '欲しい設計図' : '',
+                name: wishedBlueprintChance > SHOW_LABEL_THRESHOLD ? t('label.wantedBlueprint') : '',
                 value: wishedBlueprintChance,
                 color: WANTED_TECHFILE_COLOR,
             },
             {
-                name: remainingBlueprintChance > SHOW_LABEL_THRESHOLD ? '設計図' : '',
+                name: remainingBlueprintChance > SHOW_LABEL_THRESHOLD ? t('label.blueprint') : '',
                 value: remainingBlueprintChance,
                 color: TECHFILE_COLOR,
             },
             {
-                name: unwishedBlueprintChance > SHOW_LABEL_THRESHOLD ? '欲しくない設計図' : '',
+                name: unwishedBlueprintChance > SHOW_LABEL_THRESHOLD ? t('label.unwantedBlueprint') : '',
                 value: unwishedBlueprintChance,
                 color: UNWANTED_TECHFILE_COLOR,
             },
             {
-                name: techOrResearchPointChance > SHOW_LABEL_THRESHOLD ? '技術/研究Pt' : '',
+                name: techOrResearchPointChance > SHOW_LABEL_THRESHOLD ? t('label.techOrResearchPoints') : '',
                 value: techOrResearchPointChance,
                 color: TECH_OR_RESEARCH_POINT_COLOR,
             },
             {
-                name: techFile.chanceForTechPoint > SHOW_LABEL_THRESHOLD ? '技術Pt' : '',
+                name: techFile.chanceForTechPoint > SHOW_LABEL_THRESHOLD ? t('label.techPoints') : '',
                 value: techFile.chanceForTechPoint,
                 color: TECHPOINT_COLOR,
             },

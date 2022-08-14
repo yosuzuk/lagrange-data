@@ -11,6 +11,7 @@ import { useTheme } from '@mui/material/styles';
 import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
 import { ShipDetail } from './ShipDetail';
 import { copyToClipboard } from '../../utils/clipboardUtils';
+import { t } from '../../i18n';
 
 interface IProps {
     shipId: string;
@@ -48,10 +49,10 @@ export const ShipDetailDialog = (props: IProps) => {
             </DialogContent>
             <DialogActions>
                 <Button variant="outlined" onClick={handleCopyLink} startIcon={copied ? <CheckIcon /> : <LinkIcon />}>
-                    {'リンクをコピー'}
+                    {t('button.copyToClipboard')}
                 </Button>
                 <Button variant="outlined" onClick={onClose}>
-                    {'閉じる'}
+                    {t('button.close')}
                 </Button>
             </DialogActions>
         </Dialog>

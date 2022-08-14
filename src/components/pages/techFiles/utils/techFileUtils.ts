@@ -6,6 +6,7 @@ import { getAcquirableModules, isPossessingShip, isUnwantedShip, isWantedShip } 
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
+import { t } from '../../../../i18n';
 
 export function getTechFileChances(techFile: ITechFile, userSettings: IUserSettings): ITechFileChances {
     const shipTypeChances = Object.keys(shipTypes).map(shipType => getShipTypeChance(techFile, shipType as ShipType, userSettings));
@@ -105,7 +106,8 @@ function getBaseModelShipChance(
 ): IShipChance {
     const baseChance = shipTypeChance * (ship.weight / baseModelsTotalWeight);
     const baseChanceTooltip = [
-        '艦種確率×(重み/艦種内の重みの合計)',
+        // 艦種確率×(重み/艦種内の重みの合計)
+        `[${t('label.shipTypeProbability')}]×([${t('label.probabilityWeight')}]/[${t('techFiles.sumOfProbabilityWeightWithinShipType')}])`,
         `${shipTypeChance} * (${ship.weight} / ${baseModelsTotalWeight})`,
     ];
     const possessed = isPossessingShip(ship.id, userSettings);
@@ -117,7 +119,7 @@ function getBaseModelShipChance(
         baseChance,
         baseChanceTooltip: baseChanceTooltip,
         blueprintChance: possessed ? 0 : baseChance,
-        blueprintChanceTooltip: possessed ? ['取得済み'] : baseChanceTooltip,
+        blueprintChanceTooltip: possessed ? [t('techFiles.accuired')] : baseChanceTooltip,
         ...getModuleChance(ship, baseChance, possessed, userSettings),
     };
 }
@@ -131,7 +133,7 @@ function getModuleChance(
     if (!possessed || !ship.modules || ship.modules.length === 0) {
         return {
             moduleChance: 0,
-            moduleChanceTooltip: possessed ? [] : ['ベースモデルが必要'],
+            moduleChanceTooltip: possessed ? [] : [t('techFiles.baseShipVariantRequired')],
         };
     }
 
@@ -140,10 +142,10 @@ function getModuleChance(
     return {
         moduleChance,
         moduleChanceTooltip: moduleChance > 0 ? [
-            '取得可能な追加システムが残っている場合：',
-            '⇒ベースモデルの艦種確率',
+            t('techFiles.systemModuleAvailable'),
+            `⇒ ${t('techFiles.baseShipVariantShipTypeProbability')}`,
         ] : [
-            '追加システムは全て取得済み',
+            t('techFiles.systemModuleNotAvailable'),
         ],
     };
 }
@@ -165,24 +167,25 @@ function getSubModelShipChance(
             name: ship.name,
             weight: ship.weight,
             baseChance: 0,
-            baseChanceTooltip: ['ベースモデルが必要'],
+            baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
             blueprintChance: 0,
-            blueprintChanceTooltip: ['取得済み'],
-            moduleChance: 0, // TODO implement in case sub models get modules
+            blueprintChanceTooltip: [t('techFiles.accuired')],
+            moduleChance: 0, // TODO implement if sub models get modules
             moduleChanceTooltip: [],
         };
     }
 
     const basePossessed = isPossessingShip(ship.baseModelId, userSettings);
     if (!basePossessed) {
+        // need base variant first
         return {
             id: ship.id,
             name: ship.name,
             weight: ship.weight,
             baseChance: 0,
-            baseChanceTooltip: ['ベースモデルが必要'],
+            baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
             blueprintChance: 0,
-            blueprintChanceTooltip: ['ベースモデルが必要'],
+            blueprintChanceTooltip: [t('techFiles.baseShipVariantRequired')],
             moduleChance: 0,
             moduleChanceTooltip: [],
         };
@@ -192,14 +195,15 @@ function getSubModelShipChance(
 
     const subModelIds = getShipDefinitionById(ship.baseModelId).subModelIds ?? [];
     if (subModelIds.length === 1 && subModelIds[0] === ship.id) {
+        // last available ship variant => ship type probability of base variant
         return {
             id: ship.id,
             name: ship.name,
             weight: ship.weight,
             baseChance: 0,
-            baseChanceTooltip: ['ベースモデルが必要'],
+            baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
             blueprintChance: baseModelChances.baseChance,
-            blueprintChanceTooltip: ['最後のサブモデル', '⇒ベースモデルの艦種確率'],
+            blueprintChanceTooltip: [t('techFiles.lastShipVariant'), `⇒ ${t('techFiles.baseShipVariantShipTypeProbability')}`],
             moduleChance: 0,
             moduleChanceTooltip: [],
         };
@@ -214,17 +218,19 @@ function getSubModelShipChance(
         throw new Error('Invalid data');
     }
 
+    // multiple available ship variants
+    // => [ship type probability of base model] * ([weight] / [sum of weight of unaccuired ship variants])
     return {
         id: ship.id,
         name: ship.name,
         weight: ship.weight,
         baseChance: 0,
-        baseChanceTooltip: ['ベースモデルが必要'],
+        baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
         blueprintChance: baseModelChances.baseChance * (ship.weight / unpossessedSubModelsWeightSum),
         blueprintChanceTooltip: [
-            '取得していないサブモデルが複数ある場合：',
-            '⇒ベースモデルの艦種確率×(重み/取得していないサブモデルの重みの合計)',
-            `⇒${formatFactor(baseModelChances.baseChance)} * (${ship.weight} / ${unpossessedSubModelsWeightSum})`,
+            t('techFiles.multipleShipVariantsAvailable'),
+            `⇒ [${t('techFiles.baseShipVariantShipTypeProbability')}]×([${t('label.probabilityWeight')}]/[${t('techFiles.sumOfProbabilityWeightWithinAvailableShipVariants')}])`,
+            `⇒ ${formatFactor(baseModelChances.baseChance)} * (${ship.weight} / ${unpossessedSubModelsWeightSum})`,
         ],
         moduleChance: 0,
         moduleChanceTooltip: [],

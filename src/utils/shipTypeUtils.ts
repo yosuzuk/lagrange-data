@@ -1,40 +1,41 @@
+import { t } from '../i18n';
 import { ShipType, IShipTypeData, ShipSubType } from '../types/ShipType';
 
 export const shipTypes: Record<ShipType, IShipTypeData> = {
     [ShipType.FRIGATE]: {
-        name: 'フリゲート',
+        name: t('shipType.frigate'),
         sortValue: 6,
     },
     [ShipType.DESTROYER]: {
-        name: '駆逐艦',
+        name: t('shipType.destroyer'),
         sortValue: 5,
     },
     [ShipType.CRUISER]: {
-        name: '巡洋艦',
+        name: t('shipType.cruiser'),
         sortValue: 4,
     },
     [ShipType.BATTLE_CRUISER]: {
-        name: '巡洋戦艦',
+        name: t('shipType.battleCruiser'),
         sortValue: 3,
     },
     [ShipType.AUXILIARY]: {
-        name: '支援艦',
+        name: t('shipType.auxiliary'),
         sortValue: 2,
     },
     [ShipType.CARRIER]: {
-        name: '航空母艦',
+        name: t('shipType.carrier'),
         sortValue: 1,
     },
     [ShipType.CORVETTE]: {
-        name: '護送艦',
+        name: t('shipType.corvette'),
         sortValue: 7,
     },
     [ShipType.FIGHTER]: {
-        name: '戦闘機',
+        name: t('shipType.fighter'),
         subTypeName: {
-            [ShipSubType.SMALL_FIGHTER]: '小型戦闘機',
-            [ShipSubType.MEDIUM_FIGHTER]: '中量級戦闘機',
-            [ShipSubType.LARGE_FIGHTER]: '大型戦闘機',
+            [ShipSubType.SMALL_FIGHTER]: t('shipType.smallFighter'),
+            [ShipSubType.MEDIUM_FIGHTER]: t('shipType.mediumFighter'),
+            [ShipSubType.LARGE_FIGHTER]: t('shipType.largeFighter'),
         },
         sortValue: 8,
         subTypeSortValue: {

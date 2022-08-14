@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import DialogContentText from '@mui/material/DialogContentText';
+import { t } from '../../i18n';
 import { ResponsiveDialog } from './ResponsiveDialog';
 
 export interface IProps {
@@ -12,7 +13,7 @@ export interface IProps {
 }
 
 export const ConfirmationDialog = (props: IProps) => {
-    const { title, question, cancelText = 'キャンセル', confirmText = 'ＯＫ', onCancel, onConfirm } = props;
+    const { title, question, cancelText = t('button.cancel'), confirmText = t('button.confirm'), onCancel, onConfirm } = props;
 
     return (
         <ResponsiveDialog

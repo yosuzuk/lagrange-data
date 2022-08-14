@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
+import { t } from '../../i18n';
 
 interface IProps {
     modules: ISystemModule[];
@@ -44,7 +45,7 @@ export const ModuleDetail = (props: IProps) => {
                     >
                         {!module.parts && (
                             <Typography variant="body2">
-                                {'詳細不明'}
+                                {t('shipDetail.detailsUnknown')}
                             </Typography>
                         )}
                         {module.parts && (
@@ -62,12 +63,14 @@ export const ModuleDetail = (props: IProps) => {
                                         )}
                                         {Number.isFinite(modulePart.skillSlots) && (
                                             <Typography variant="body2" gutterBottom={true}>
-                                                {`スキル枠：${modulePart.skillSlots}`}
+                                                {t('shipDetail.numberOfSkillSlots', {
+                                                    count: modulePart.skillSlots,
+                                                })}
                                             </Typography>
                                         )}
                                         {modulePart.skills && (
                                             <Typography variant="body2" gutterBottom={true}>
-                                                {`スキル：`}
+                                                {t('shipDetail.skillsColon')}
                                             </Typography>
                                         )}
                                         {modulePart.skills?.map((skill, index) => (

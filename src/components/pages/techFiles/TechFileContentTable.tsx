@@ -6,6 +6,7 @@ import { IShipChance } from './types/IBlueprintChance';
 import { formatChance } from './utils/techFileUtils';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
+import { t } from '../../../i18n';
 
 interface IShipNameColumnOptions {
     onClick: (shipId: string) => void;
@@ -13,7 +14,7 @@ interface IShipNameColumnOptions {
 
 const createShipNameColumn = (options: IShipNameColumnOptions): ITableColumn<IShipChance> => ({
     id: 'name',
-    renderHeader: () => '艦名',
+    renderHeader: () => t('label.shipName'),
     renderCell: (data: IShipChance) => (
         <Typography variant="body2">
             <ScriptedLink
@@ -30,7 +31,7 @@ const createShipNameColumn = (options: IShipNameColumnOptions): ITableColumn<ISh
 
 const shipWeightColumn: ITableColumn<IShipChance> = {
     id: 'weight',
-    renderHeader: () => '重み',
+    renderHeader: () => t('label.probabilityWeight'),
     renderCell: (data: IShipChance) => data.weight,
     sortFn: [
         (a, b) => a.weight - b.weight,
@@ -40,7 +41,7 @@ const shipWeightColumn: ITableColumn<IShipChance> = {
 
 const baseChanceColumn: ITableColumn<IShipChance> = {
     id: 'baseChance',
-    renderHeader: () => '艦種確率',
+    renderHeader: () => t('label.shipTypeProbability'),
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
@@ -63,7 +64,7 @@ const baseChanceColumn: ITableColumn<IShipChance> = {
 
 const blueprintChanceColumn: ITableColumn<IShipChance> = {
     id: 'blueprintChance',
-    renderHeader: () => '設計図',
+    renderHeader: () => t('label.blueprint'),
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
@@ -85,7 +86,7 @@ const blueprintChanceColumn: ITableColumn<IShipChance> = {
 
 const moduleChanceColumn: ITableColumn<IShipChance> = {
     id: 'moduleChance',
-    renderHeader: () => '追加システム',
+    renderHeader: () => t('label.additionalSystemModule'),
     renderCell: (data: IShipChance) => (
         <Tooltip
             arrow={true}
