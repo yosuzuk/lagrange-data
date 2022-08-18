@@ -5,6 +5,7 @@ import { LabeledList } from '../../list/LabeledList';
 import { ShipName } from './ShipName';
 import { hasWantedModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { isLanguageWithWhitespace, t } from '../../../i18n';
 
 interface IProps {
     configuration: IResearchConfiguration;
@@ -19,7 +20,7 @@ export const ConfigurationDetail = (props: IProps) => {
             rows={[
                 {
                     key: `${configuration.id}.wishedShipChance`,
-                    label: '欲しい艦船',
+                    label: t('label.wantedBlueprint'),
                     value: formatChance(configuration.wishedShipChance),
                     separatorAfter: true,
                 },
@@ -30,7 +31,7 @@ export const ConfigurationDetail = (props: IProps) => {
                             variant="body2"
                             sx={configuration.techPointChance > 0 ? { color: 'red' } : undefined}
                         >
-                            {'技術Pt'}
+                            {t('label.techPoints')}
                         </Typography>
                     ),
                     value: (
@@ -52,21 +53,24 @@ export const ConfigurationDetail = (props: IProps) => {
                             label: (
                                 <>
                                     <ShipName shipDefinition={shipChance.shipDefinition} />
+                                    {isLanguageWithWhitespace() && (
+                                        <span>&nbsp;</span>
+                                    )}
                                     {canGetModule && (
                                         <Typography variant="body2" component="span">
-                                            {'（追加システム）'}
+                                            {t('label.additionalSystemModuleBrackets')}
                                         </Typography>
                                     )}
                                     {!canGetModule && shipChance.possessed && (
                                         <Typography variant="body2" component="span">
-                                            {'（技術Pt）'}
+                                            {t('label.techPointsBrackets')}
                                         </Typography>
                                     )}
                                     {wished && (
                                         <Tooltip
                                             arrow={true}
                                             disableFocusListener={true}
-                                            title={'欲しい艦船'}
+                                            title={`${t('label.wantedBlueprint')}`}
                                         >
                                             <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                                 {'★'}
@@ -81,7 +85,9 @@ export const ConfigurationDetail = (props: IProps) => {
                                     disableFocusListener={true}
                                     title={(
                                         <>
-                                            <Typography variant="body2" gutterBottom={true}>{'確率の重み / 合計'}</Typography>
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`[${t('label.probabilityWeight')}] / [${t('label.total')}]`}
+                                            </Typography>
                                             <Typography variant="body2">{shipChance.formula}</Typography>
                                         </>
                                     )}
@@ -111,7 +117,7 @@ export const ConfigurationDetail = (props: IProps) => {
                                         <Tooltip
                                             arrow={true}
                                             disableFocusListener={true}
-                                            title={'欲しい追加システム'}
+                                            title={`${t('label.wantedAdditionalSystemModule')}`}
                                         >
                                             <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                                 {'★'}
@@ -126,7 +132,9 @@ export const ConfigurationDetail = (props: IProps) => {
                                     disableFocusListener={true}
                                     title={(
                                         <>
-                                            <Typography variant="body2" gutterBottom={true}>{'艦船確率 / 残りシステム数'}</Typography>
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`[${t('label.shipProbability')}] / [${t('label.remainingAdditionalSystemModules')}]`}
+                                            </Typography>
                                             <Typography variant="body2">{moduleChance.formula}</Typography>
                                         </>
                                     )}

@@ -10,6 +10,7 @@ import { ITableColumn, ITableData, Table, useTable } from '../../table';
 import { IResearchConfiguration, IResearchFilterState } from './types/IResearchConfiguration';
 import { serializeResearchFilterState } from './utils/researchAgreementUtils';
 import { ScriptedLink } from '../../link/ScriptedLink';
+import { t } from '../../../i18n';
 
 interface IProps {
     configurations: IResearchConfiguration[];
@@ -32,7 +33,7 @@ export const ResearchAgreementTable = (props: IProps) => {
             columns: [
                 {
                     id: 'filter',
-                    renderHeader: () => 'フィルター',
+                    renderHeader: () => t('label.researchDirection'),
                     renderCell: (configuration => (
                         <Box sx={{ minWidth: '120px' }}>
                             {configuration.filterState.manufacturerFilter && (
@@ -59,7 +60,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                             {!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter && (
                                 <Typography variant="body2">
                                     <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
-                                        {'無し'}
+                                        {t('label.notSelected')}
                                     </ScriptedLink>
                                 </Typography>
                             )}
@@ -68,7 +69,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 ...(filterStateShipId ? [{
                     id: 'selectedShipChance',
-                    renderHeader: () => '選択した艦船',
+                    renderHeader: () => t('label.selectedShip'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(getSelectedShipChange(configuration, filterStateShipId))}</Typography>
@@ -84,7 +85,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 } as ITableColumn<IResearchConfiguration>] : []),
                 {
                     id: 'totalShipChance',
-                    renderHeader: () => '新規艦船',
+                    renderHeader: () => t('label.newShip'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalShipChance)}</Typography>
@@ -99,7 +100,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 {
                     id: 'totalModuleChance',
-                    renderHeader: () => '追加システム',
+                    renderHeader: () => t('label.additionalSystemModule'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalModuleChance)}</Typography>
@@ -115,7 +116,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 {
                     id: 'techPointChance',
-                    renderHeader: () => '技術Pt',
+                    renderHeader: () => t('label.techPoints'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.techPointChance)}</Typography>
@@ -130,7 +131,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 {
                     id: 'wishedShipChance',
-                    renderHeader: () => '欲しい艦船',
+                    renderHeader: () => t('label.wantedBlueprint'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.wishedShipChance)}</Typography>
@@ -145,7 +146,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                 },
                 {
                     id: 'unwishedShipChance',
-                    renderHeader: () => '欲しくない艦船',
+                    renderHeader: () => t('label.unwantedBlueprint'),
                     renderCell: configuration => (
                         <Box sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.unwishedShipChance)}</Typography>

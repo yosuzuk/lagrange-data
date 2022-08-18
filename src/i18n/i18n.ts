@@ -75,4 +75,8 @@ export function getCurrentLanguage(): Language {
     return currentLanguage;
 }
 
+export function isLanguageWithWhitespace(): boolean {
+    return currentLanguage !== 'ja';
+}
+
 initI18n();

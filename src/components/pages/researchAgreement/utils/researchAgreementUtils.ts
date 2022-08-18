@@ -123,7 +123,7 @@ export function createResearchConfiguration(
             modules: acquirableModules.map(module => ({
                 module,
                 chance: shipChance / acquirableModules.length,
-                formula: `${shipChance} / ${acquirableModules.length}`,
+                formula: `${formatChance(shipChance)} / ${acquirableModules.length}`,
                 wished: isWantedModule(module.id, shipDefinition.id, userSettings),
             })),
         };
@@ -228,4 +228,8 @@ export function getFilteredResearchConfigurations(configurations: IResearchConfi
     });
 
     return [...exactMatch, ...compatibleMatch];
+}
+
+function formatChance(chance: number): string {
+    return `${Number((chance * 100).toFixed(3))} %`;
 }
