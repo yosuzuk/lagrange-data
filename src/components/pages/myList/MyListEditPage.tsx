@@ -12,6 +12,7 @@ import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { t } from '../../../i18n';
 
 export const MyListEditPage = () => {
     const navigate = useNavigate();
@@ -63,13 +64,13 @@ export const MyListEditPage = () => {
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
-                            {'ここでは艦船/設計図の所有状態を設定できます。'}
+                            {t('myListConfig.pageDescription1')}
                         </Typography>
                         <Typography variant="body2">
-                            {'全て細かく設定する必要はありません。'}
+                            {t('myListConfig.pageDescription2')}
                         </Typography>
                         <Typography variant="body2">
-                            {'設定データはブラウザのローカルストレージに保存されます。'}
+                            {t('myListConfig.pageDescription3')}
                         </Typography>
                     </Stack>
                     <MyListEdit shipFilter={shipFilter} />

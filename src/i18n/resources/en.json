@@ -37,9 +37,9 @@
         "researchManufacturerColumn": "Company (RA)",
         "researchStrategyTypeColumn": "Strategy type (RA)",
         "researchTacticTypeColumn": "Tactic type (RA)",
-        "researchManufacturerOption": "Company: {{manufacturer}}",
-        "researchStrategyTypeOption": "Strategy type: {{strategyType}}",
-        "researchTacticTypeOption": "Tactic type: {{tacticType}}",
+        "researchManufacturerOption": "{{manufacturer}} (RA)",
+        "researchStrategyTypeOption": "{{strategyType}} (RA)",
+        "researchTacticTypeOption": "{{tacticType}} (RA)",
         "techFile": "Tech file",
         "blueprint": "Blueprint",
         "blueprintColon": "Blueprint: ",
@@ -81,7 +81,6 @@
     "researchAgreement": {
         "pageTitle": "Research agreement",
         "pageDescription1": "This page shows detailed probabilities for every filter in research agreement",
-        "_pageDescription2": "研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。",
         "pageDescription2": "Data can be narrowed by company, strategy type and tactic type. Selecting a ship will list up all filters containg that ship sorted by probability.",
         "pageDescription3": "Blueprints that you have already acquired can be configured on the \"My list\" page."
     },
@@ -103,49 +102,49 @@
         "pageDescription3": "You can also specify which ships and modules you want or not want to acquire. This allows other pages to show aggregated probabilities for your personalized preference."
     },
     "myListConfig": {
-        "pageDescription1": "ここでは艦船/設計図の所有状態を設定できます。",
-        "pageDescription2": "全て細かく設定する必要はありません。",
-        "pageDescription3": "設定データはブラウザのローカルストレージに保存されます。"
+        "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",
+        "pageDescription2": "There is no need to configure everything at once. You can save and continue anytime.",
+        "pageDescription3": "All data is stored in local storage of your browser."
     },
     "manufacturer": {
-        "jupiterIndustries": "ジュピターインダストリー",
-        "nomaShippingGroup": "ノマシッピング",
-        "antoniosConsortium": "アントニオス財団",
-        "dawnAccord": "ドーン協定条約機構"
+        "jupiterIndustries": "Jupiter Industries",
+        "nomaShippingGroup": "Noma Shipping Group",
+        "antoniosConsortium": "Antonios Consortium",
+        "dawnAccord": "Dawn Accord"
     },
     "strategyType": {
-        "outstandingFirepower": "高火力",
-        "sustainedCombat": "継続作戦",
-        "strategyAndSupport": "戦略と支援",
-        "fighterAndCorvette": "艦載機と護送艦"
+        "outstandingFirepower": "Outstanding firepower",
+        "sustainedCombat": "Sustained combat",
+        "strategyAndSupport": "Strategy and support",
+        "fighterAndCorvette": "Fighter and corvette"
     },
     "tacticType": {
-        "projectileWeapons": "投射兵器",
-        "directFireWeapons": "直接射撃武器"
+        "projectileWeapons": "Projectile weapon",
+        "directFireWeapons": "Direct-Fire weapon"
     },
     "rowPlacement": {
-        "frontRow": "前列",
-        "middleRow": "中列",
-        "backRow": "後列"
+        "frontRow": "Front row",
+        "middleRow": "Middle row",
+        "backRow": "Back row"
     },
     "acquirableThrough": {
-        "starterTechFile": "初期配布",
-        "dockingEffect": "結合効果",
-        "cityTrade": "都市で購入",
-        "unknown": "不明"
+        "starterTechFile": "Starter tech file",
+        "dockingEffect": "Docking effect",
+        "cityTrade": "City trade",
+        "unknown": "Unknown"
     },
     "shipType": {
-        "frigate": "フリゲート",
-        "destroyer": "駆逐艦",
-        "cruiser": "巡洋艦",
-        "battleCruiser": "巡洋戦艦",
-        "auxiliary": "支援艦",
-        "carrier": "航空母艦",
-        "aircraft": "艦載機",
-        "corvette": "護送艦",
-        "fighter": "戦闘機",
-        "smallFighter": "小型戦闘機",
-        "mediumFighter": "中量級戦闘機",
-        "largeFighter": "大型戦闘機"
+        "frigate": "Frigate",
+        "destroyer": "Destroyer",
+        "cruiser": "Cruiser",
+        "battleCruiser": "Battle cruiser",
+        "auxiliary": "Auxiliary",
+        "carrier": "Carrier",
+        "aircraft": "Aircraft",
+        "corvette": "Corvette",
+        "fighter": "Fighter",
+        "smallFighter": "Small fighter",
+        "mediumFighter": "Medium fighter",
+        "largeFighter": "Large fighter"
     }
 }

@@ -16,6 +16,7 @@ import { createInitialColumnConfig } from '../../columns/columnConfigUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { t } from '../../../i18n';
 
 export const MyListPage = () => {
     const navigate = useNavigate();
@@ -71,13 +72,13 @@ export const MyListPage = () => {
                 <Box p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
-                            {'マイリストでは艦船や追加システムの所有状態や「欲しい設計図」等を設定することが出来ます。'}
+                            {t('myList.pageDescription1')}
                         </Typography>
                         <Typography variant="body2">
-                            {'所有状態を設定することで個人に合わせた細かい確率の計算が可能になります（サブモデルの確率や技術ポイントの確率が変動します）。'}
+                            {t('myList.pageDescription2')}
                         </Typography>
                         <Typography variant="body2">
-                            {'欲しい設計図を設定するとそれらの合計確率がパイチャートで表示されるようになります。'}
+                            {t('myList.pageDescription3')}
                         </Typography>
                     </Stack>
                     <MyListView
