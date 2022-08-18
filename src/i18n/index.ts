@@ -1,1 +1,1 @@
-export { t as t } from './i18n';
+export { t, getCurrentLanguage } from './i18n';

@@ -14,13 +14,14 @@ export enum Language {
 const availableLanguages: Language[] = Object.values(Language);
 const defaultLanguage: Language = flags.englishByDefault ? Language.ENGLISH : Language.JAPANESE;
 const fallbackLanguage = Language.JAPANESE;
+let currentLanguage: Language = defaultLanguage;
 
 function initI18n() {
-    const language = getInitialLanguage();
+    currentLanguage = getInitialLanguage();
 
     i18next.init({
         ns: 'key',
-        lng: language,
+        lng: currentLanguage,
         fallbackLng: fallbackLanguage,
         debug: true,
         resources: {
@@ -69,5 +70,9 @@ export function reloadWithLanguage(language: Language) {
 }
 
 export const t = i18next.t;
+
+export function getCurrentLanguage(): Language {
+    return currentLanguage;
+}
 
 initI18n();

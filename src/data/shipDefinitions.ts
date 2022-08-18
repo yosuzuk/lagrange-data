@@ -2122,13 +2122,16 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW1,
-        name: 'FSV830-TE（フリゲート生産）',
+        name: 'FSV830-TE',
+        translatedName: {
+            en: 'FSV830-TE - Ultra Type'
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
         row: ShipRow.BACK,
         operationLimit: 2,
-        source: ShipSource.CITY_TRADE,
+        source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
         staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
@@ -2158,7 +2161,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW2,
-        name: 'FSV830-TE（護送艦生産）',
+        name: 'FSV830-TE (B2)',
+        translatedName: {
+            en: 'FSV830-TE - Ultra Type (B2)'
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -2194,7 +2200,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW3,
-        name: 'FSV830-TE（フリゲート生産+護送艦ドック）',
+        name: 'FSV830-TE (E2)',
+        translatedName: {
+            en: 'FSV830-TE - Ultra Type (E2)'
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -2238,7 +2247,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW4,
-        name: 'FSV830-TE（フリゲート生産+エリア防空）',
+        name: 'FSV830-TE (D2+E1)',
+        translatedName: {
+            en: 'FSV830-TE - Ultra Type (D2+E1)'
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -2289,7 +2301,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW5,
-        name: 'FSV830-TE（戦闘機生産+戦闘機ドック）',
+        name: 'FSV830-TE (B3+C1)',
+        translatedName: {
+            en: 'FSV830-TE - Ultra Type (B3+C1)'
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -2437,6 +2452,9 @@ export const shipDefinitions: IShipDefinition[] = [
     {
         id: ShipId.HAYREDDINGS_LOYAL,
         name: 'ハイレッディン　アストロトレーサー',
+        translatedName: {
+            en: 'Hayreddin\'s Loyal - Pulsar Fighter',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,
@@ -3007,7 +3025,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1,
-        name: 'マーシャルクルックス級-TE（Ａ１）',
+        name: 'マーシャルクルックス級-TE',
+        translatedName: {
+            en: 'Marshal Crux (TE) - Ultra Type',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 0,
@@ -3049,7 +3070,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
-        name: 'マーシャルクルックス級-TE（Ａ２）',
+        name: 'マーシャルクルックス級-TE (A2)',
+        translatedName: {
+            en: 'Marshal Crux (TE) - Ultra Type (A2)',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 0,
@@ -3090,7 +3114,10 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1_B1,
-        name: 'マーシャルクルックス級-TE（Ａ１＆Ｂ１）',
+        name: 'マーシャルクルックス級-TE (B1)',
+        translatedName: {
+            en: 'Marshal Crux (TE) - Ultra Type (B1)',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 0,
