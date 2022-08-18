@@ -12,6 +12,8 @@ export function translateManufacturer(manufacturer: Manufacturer): string {
             return 'アントニオス財団';
         case Manufacturer.DAWN_ACCORD:
             return 'ドーン協定条約機構';
+        case Manufacturer.HAYREDDIN_CLAN:
+            return 'ハイレッディン　クラン';
     }
 }
 
@@ -25,5 +27,7 @@ export function manufacturerToSortValue(manufacturer: Manufacturer): number {
             return 3;
         case Manufacturer.DAWN_ACCORD:
             return 4;
+        case Manufacturer.HAYREDDIN_CLAN:
+            return 5;
     }
 }
