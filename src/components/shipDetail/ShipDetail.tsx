@@ -134,14 +134,20 @@ export const ShipDetail = (props: IProps) => {
                             key: 'modules',
                             label: t('label.defaultSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules.filter(module => module.defaultModule)}/>
+                                <ModuleDetail
+                                    shipId={shipDefinition.id}
+                                    modules={shipDefinition.modules.filter(module => module.defaultModule)}
+                                />
                             )
                         },
                         {
                             key: 'extraModules',
                             label: t('label.additionalSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules.filter(module => !module.defaultModule)}/>
+                                <ModuleDetail
+                                    shipId={shipDefinition.id}
+                                    modules={shipDefinition.modules.filter(module => !module.defaultModule)}
+                                />
                             )
                         },
                     ] : []),
@@ -150,7 +156,7 @@ export const ShipDetail = (props: IProps) => {
                             key: 'staticModules',
                             label: t('label.staticSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules} />
+                                <ModuleDetail shipId={shipDefinition.id} modules={shipDefinition.modules} />
                             )
                         },
                     ] : []),

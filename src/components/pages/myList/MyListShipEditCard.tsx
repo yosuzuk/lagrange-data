@@ -11,7 +11,7 @@ import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModulePossession, getModuleWishState, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
-import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { getModuleName, getShipName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     ship: IShipDefinition;
@@ -60,7 +60,7 @@ export const MyListShipEditCard = (props: IProps) => {
                         return (
                             <Fragment key={module.id}>
                                 <Typography variant="h6">
-                                    {`${module.category}${module.categoryNumber} ${module.name}`}
+                                    {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
                                 </Typography>
                                 <PossessionControl
                                     label={'システムを'}

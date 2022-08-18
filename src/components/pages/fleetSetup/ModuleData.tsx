@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import TuneIcon from '@mui/icons-material/Tune';
 import { IModuleSelection, IModuleUsage, ReinforcementType } from './types/IFleetSetup';
 import { ModuleSelectionDialog } from './ModuleSelectionDialog';
+import { getModuleName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     shipId: string;
@@ -54,7 +55,7 @@ export const ModuleData = (props: IProps) => {
                             <Tooltip
                                 arrow={true}
                                 disableFocusListener={true}
-                                title={moduleUsage.module.name}
+                                title={getModuleName(shipId, moduleUsage.module)}
                             >
                                 <Typography variant="body2" component="span">
                                     {`${moduleUsage.module.category}${moduleUsage.module.categoryNumber}`}

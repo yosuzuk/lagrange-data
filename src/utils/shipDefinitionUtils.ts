@@ -1,10 +1,10 @@
 import { shipDefinitions } from '../data/shipDefinitions';
 import { getCurrentLanguage } from '../i18n';
-import { IShipStatsAndLocalization } from '../types/externalData';
-import { IShipDefinition } from '../types/ShipDefinition';
+import { IModuleStatsAndLocalization, IShipStatsAndLocalization } from '../types/externalData';
+import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
-import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
+import { getModuleStatsAndLocalizationByShipIdAndModuleId, getShipStatsAndLocalizationByShipId } from './externalDataUtils';
 
 const shipDefinitionsById: Record<string, IShipDefinition> = shipDefinitions.reduce((result, next) => ({
     ...result,
@@ -44,4 +44,21 @@ export function getShipName(shipDefinition: IShipDefinition): string {
     // lookup externally provided data
     const property = language.toUpperCase() as keyof IShipStatsAndLocalization;
     return getShipStatsAndLocalizationByShipId(shipDefinition.id)?.[property] ?? shipDefinition.name;
+}
+
+export function getModuleName(shipId: string, module: ISystemModule): string {
+    const language = getCurrentLanguage();
+
+    if (language === 'ja') {
+        return module.name;
+    }
+
+    // lookup our own data
+    if (module.translatedName?.[language]) {
+        return module.translatedName[language];
+    }
+
+    // lookup externally provided data
+    const property = language.toUpperCase() as keyof IModuleStatsAndLocalization;
+    return getModuleStatsAndLocalizationByShipIdAndModuleId(shipId, module.id)?.[property] ?? module.name;
 }

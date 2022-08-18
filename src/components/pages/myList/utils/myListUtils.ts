@@ -4,7 +4,7 @@ import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquiredModules } from '../../../../userSettings/utils/userSettingsUtils';
-import { getShipName } from '../../../../utils/shipDefinitionUtils';
+import { getModuleName, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -83,6 +83,6 @@ function formatShipRow(ship: IShipDefinition, userSettings: IUserSettings): stri
     
     return [
         `　${getShipName(ship)}`,
-        aquiredModules.map(module => `　┗ ${module.category}${module.categoryNumber} ${module.name}`).join('\n'),
+        aquiredModules.map(module => `　┗ ${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`).join('\n'),
     ].join('\n');
 }

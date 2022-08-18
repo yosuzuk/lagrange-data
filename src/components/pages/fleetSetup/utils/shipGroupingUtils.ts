@@ -1,7 +1,7 @@
 import { getCurrentLanguage } from '../../../../i18n';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
-import { getShipName } from '../../../../utils/shipDefinitionUtils';
+import { getModuleName, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -215,7 +215,7 @@ function formatChangedSystemModules(shipSelection: IShipSelection): string | nul
         if (!usedModule || usedModule.module.defaultModule) {
             return [];
         }
-        return usedModule ? [`${usedModule.module.name}（${usedModule.module.id}）`] : [];
+        return usedModule ? [`${getModuleName(shipSelection.shipDefinition.id, usedModule.module)}（${usedModule.module.id}）`] : [];
     });
     if (changedModuleNames.length === 0) {
         return null;

@@ -25,5 +25,5 @@ export function getShipStatsAndLocalizationByShipId(shipId: string): IShipStatsA
 }
 
 export function getModuleStatsAndLocalizationByShipIdAndModuleId(shipId: string, moduleId: string): IModuleStatsAndLocalization | null {
-    return moduleStatsAndLocalizationByShipIdAndModuleId[shipId][moduleId] ?? null;
+    return moduleStatsAndLocalizationByShipIdAndModuleId[shipId]?.[moduleId] ?? null;
 }

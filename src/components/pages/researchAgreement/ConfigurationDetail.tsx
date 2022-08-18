@@ -6,6 +6,7 @@ import { ShipName } from './ShipName';
 import { hasWantedModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { isLanguageWithWhitespace, t } from '../../../i18n';
+import { getModuleName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     configuration: IResearchConfiguration;
@@ -110,8 +111,11 @@ export const ConfigurationDetail = (props: IProps) => {
                                     <Typography variant="body2" component="span" color="text.secondary" sx={{ opacity: 0.5 }}>
                                         {`┗`}
                                     </Typography>
+                                    {isLanguageWithWhitespace() && (
+                                        <span>&nbsp;</span>
+                                    )}
                                     <Typography variant="body2" component="span" color="text.secondary">
-                                        {`${moduleChance.module.category}${moduleChance.module.categoryNumber} ${moduleChance.module.name}`}
+                                        {`${moduleChance.module.category}${moduleChance.module.categoryNumber} ${getModuleName(shipChance.shipDefinition.id, moduleChance.module)}`}
                                     </Typography>
                                     {moduleChance.wished && (
                                         <Tooltip
