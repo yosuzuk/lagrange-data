@@ -13,6 +13,8 @@ export function translateManufacturer(manufacturer: Manufacturer): string {
             return t('manufacturer.antoniosConsortium');
         case Manufacturer.DAWN_ACCORD:
             return t('manufacturer.dawnAccord');
+        case Manufacturer.HAYREDDIN_CLAN:
+            return t('manufacturer.hayreddinClan');
     }
 }
 
@@ -26,5 +28,7 @@ export function manufacturerToSortValue(manufacturer: Manufacturer): number {
             return 3;
         case Manufacturer.DAWN_ACCORD:
             return 4;
+        case Manufacturer.HAYREDDIN_CLAN:
+            return 5;
     }
 }

@@ -2435,6 +2435,18 @@ export const shipDefinitions: IShipDefinition[] = [
         baseModelId: ShipId.GUARDIAN_A,
     },
     {
+        id: ShipId.HAYREDDINGS_LOYAL,
+        name: 'ハイレッディン　アストロトレーサー',
+        type: ShipType.FIGHTER,
+        subType: ShipSubType.MEDIUM_FIGHTER,
+        cost: 0,
+        weight: 10, // TODO find out
+        row: ShipRow.NONE,
+        operationLimit: 8,
+        source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.HAYREDDIN_CLAN,
+    },
+    {
         id: ShipId.HELIOS_A,
         name: 'ヘリオス級　Ａ一般型',
         type: ShipType.DESTROYER,

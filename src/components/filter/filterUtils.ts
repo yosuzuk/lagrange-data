@@ -36,7 +36,7 @@ export function createShipTypeFilterOptions(specifiedShipTypes: ShipType[] | nul
 }
 
 export function createManufacturerFilterOptions(specificManufacturer: Manufacturer[] | null): IFilterOption[] {
-    return (specificManufacturer ?? [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA_SHIPPING_GROUP, Manufacturer.ANTONIOS_CONSORTIUM, Manufacturer.DAWN_ACCORD]).map(manufacturer => ({
+    return (specificManufacturer ?? [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA_SHIPPING_GROUP, Manufacturer.ANTONIOS_CONSORTIUM, Manufacturer.DAWN_ACCORD, Manufacturer.HAYREDDIN_CLAN]).map(manufacturer => ({
         filterKey: manufacturer as Manufacturer,
         name: translateManufacturer(manufacturer),
     }));
@@ -102,6 +102,7 @@ export function createInitialShipFilterState(): ShipFilterState {
         [Manufacturer.NOMA_SHIPPING_GROUP]: false,
         [Manufacturer.ANTONIOS_CONSORTIUM]: false,
         [Manufacturer.DAWN_ACCORD]: false,
+        [Manufacturer.HAYREDDIN_CLAN]: false,
         [ResearchManufacturer.JUPITER_INDUSTRIES]: false,
         [ResearchManufacturer.NOMA_SHIPPING_GROUP]: false,
         [ResearchManufacturer.ANTONIOS_CONSORTIUM]: false,
@@ -176,6 +177,7 @@ function isManufacturerFiltered(filter: ShipFilterState): boolean {
         Manufacturer.NOMA_SHIPPING_GROUP,
         Manufacturer.ANTONIOS_CONSORTIUM,
         Manufacturer.DAWN_ACCORD,
+        Manufacturer.HAYREDDIN_CLAN,
     ].some(manufacturer => filter[manufacturer] === true);
 }
 
