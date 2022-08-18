@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { isValidShipId } from '../../data/shipIds';
 import { ShipType } from '../../types/ShipType';
-import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../utils/shipRowUtils';
 import { translateShipType } from '../../utils/shipTypeUtils';
 import { LabeledList } from '../list/LabeledList';
@@ -52,7 +52,7 @@ export const ShipDetail = (props: IProps) => {
             {!hideName && (
                 <Box pb={1}>
                     <Typography variant="h6" gutterBottom={true}>
-                        {shipDefinition.name}
+                        {getShipName(shipDefinition)}
                     </Typography>
                     <Divider />
                 </Box>
@@ -158,7 +158,7 @@ export const ShipDetail = (props: IProps) => {
                         {
                             key: 'baseModel',
                             label: t('label.baseShipVariant'),
-                            value: getShipDefinitionById(shipDefinition.baseModelId).name,
+                            value: getShipName(getShipDefinitionById(shipDefinition.baseModelId)),
                             onClick: () => onClickShip(shipDefinition.baseModelId!),
                         },
                     ] : []),
@@ -171,7 +171,7 @@ export const ShipDetail = (props: IProps) => {
                                     {shipDefinition.subModelIds.map(getShipDefinitionById).map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}
@@ -188,14 +188,14 @@ export const ShipDetail = (props: IProps) => {
                                     {relatedSubModels.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}
                                     {relatedShips.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}

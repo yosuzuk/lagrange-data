@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import LinkIcon from '@mui/icons-material/Link';
 import CheckIcon from '@mui/icons-material/Check';
 import { useTheme } from '@mui/material/styles';
-import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../utils/shipDefinitionUtils';
 import { ShipDetail } from './ShipDetail';
 import { copyToClipboard } from '../../utils/clipboardUtils';
 import { t } from '../../i18n';
@@ -43,7 +43,7 @@ export const ShipDetailDialog = (props: IProps) => {
             onClose={onClose}
             open={true}
         >
-            <DialogTitle>{shipDefinition.name}</DialogTitle>
+            <DialogTitle>{getShipName(shipDefinition)}</DialogTitle>
             <DialogContent>
                 <ShipDetail shipId={localShipId} onClickShip={setLocalShipId} hideName={true} />
             </DialogContent>
