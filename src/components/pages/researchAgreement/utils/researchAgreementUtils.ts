@@ -5,6 +5,7 @@ import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquirableModules, getWantedModules, isPossessingShip, isUnwantedShip, isWantedModule, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
+import { getShipName } from '../../../../utils/shipDefinitionUtils';
 import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions, IShipFilterEntryForModule } from '../types/IResearchConfiguration';
 
 export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
@@ -38,10 +39,10 @@ export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSet
     });
 
     return {
-        wantedShips: wantedShips.sort((a, b) => a.name.localeCompare(b.name)),
-        shipsWithWantedModule: shipsWithWantedModule.sort((a, b) => a.shipDefinition.name.localeCompare(b.shipDefinition.name)),
-        possessedShips: possessedShips.sort((a, b) => a.name.localeCompare(b.name)),
-        remainingShips: remainingShips.sort((a, b) => a.name.localeCompare(b.name)),
+        wantedShips: wantedShips.sort((a, b) => getShipName(a).localeCompare(getShipName(b))),
+        shipsWithWantedModule: shipsWithWantedModule.sort((a, b) => getShipName(a.shipDefinition).localeCompare(getShipName(b.shipDefinition))),
+        possessedShips: possessedShips.sort((a, b) => getShipName(a).localeCompare(getShipName(b))),
+        remainingShips: remainingShips.sort((a, b) => getShipName(a).localeCompare(getShipName(b))),
     };
 }
 

@@ -1,8 +1,10 @@
+import { getCurrentLanguage } from '../../../../i18n';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquiredModules } from '../../../../userSettings/utils/userSettingsUtils';
+import { getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -45,7 +47,7 @@ export function formatShipListForSharing(shipDefinitions: IShipDefinition[], use
 
     const sortFn = normalizeSortFn([
         (a: IShipDefinition, b: IShipDefinition) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
-        (a: IShipDefinition, b: IShipDefinition) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a: IShipDefinition, b: IShipDefinition) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ]);
 
     return [
@@ -76,11 +78,11 @@ export function formatShipListForSharing(shipDefinitions: IShipDefinition[], use
 function formatShipRow(ship: IShipDefinition, userSettings: IUserSettings): string {
     const aquiredModules = getAcquiredModules(ship, userSettings);
     if (aquiredModules.length === 0) {
-        return `　${ship.name}`;
+        return `　${getShipName(ship)}`;
     }
     
     return [
-        `　${ship.name}`,
+        `　${getShipName(ship)}`,
         aquiredModules.map(module => `　┗ ${module.category}${module.categoryNumber} ${module.name}`).join('\n'),
     ].join('\n');
 }

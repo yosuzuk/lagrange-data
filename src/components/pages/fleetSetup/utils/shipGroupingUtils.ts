@@ -1,5 +1,7 @@
+import { getCurrentLanguage } from '../../../../i18n';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
+import { getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -28,7 +30,7 @@ const sortByReinforcementType = (a: SortableByShipDefinition, b: SortableByShipD
 };
 
 const sortByName = normalizeSortFn<SortableByShipDefinition>([
-    (a: SortableByShipDefinition, b: SortableByShipDefinition) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP'),
+    (a: SortableByShipDefinition, b: SortableByShipDefinition) => getShipName(a.shipDefinition).localeCompare(getShipName(b.shipDefinition), getCurrentLanguage()),
     sortByReinforcementType,
 ]);
 
@@ -149,35 +151,35 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
                     switch (ship.reinforcement) {
                         case 'self': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（増援）`,
+                                `${ship.count}×　${getShipName(ship.shipDefinition)}（増援）`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ａ）`,
+                                `${ship.count}×　${getShipName(ship.shipDefinition)}（ユニオン増援Ａ）`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally2': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｂ）`,
+                                `${ship.count}×　${getShipName(ship.shipDefinition)}（ユニオン増援Ｂ）`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally3': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｃ）`,
+                                `${ship.count}×　${getShipName(ship.shipDefinition)}（ユニオン増援Ｃ）`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         default: {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`,
+                                `${ship.count}×　${getShipName(ship.shipDefinition)}（${cost}Pt）`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
@@ -195,7 +197,7 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
 
 function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): string[] {
     return carriedShips.map(ship => {
-        return `　　${ship.count}×　${ship.shipDefinition.name}`;
+        return `　　${ship.count}×　${getShipName(ship.shipDefinition)}`;
     });
 }
 

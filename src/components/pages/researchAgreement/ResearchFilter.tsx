@@ -14,6 +14,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     filterState: IResearchFilterState;
@@ -143,7 +144,7 @@ export const ResearchFilter = (props: IProps) => {
                         )}
                         {shipFilterOptions.wantedShips.map(ship => (
                             <MenuItem key={ship.id} value={ship.id}>
-                                {ship.name}
+                                {getShipName(ship)}
                                 <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                     {'★'}
                                 </Typography>
@@ -151,7 +152,7 @@ export const ResearchFilter = (props: IProps) => {
                         ))}
                         {shipFilterOptions.shipsWithWantedModule.map(({ shipDefinition, modules }) => (
                             <MenuItem key={shipDefinition.id} value={shipDefinition.id}>
-                                {`${shipDefinition.name}（追加システム）`}
+                                {`${getShipName(shipDefinition)}（追加システム）`}
                                 <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                     {'★'}
                                 </Typography>
@@ -166,7 +167,7 @@ export const ResearchFilter = (props: IProps) => {
                             </ListSubheader>
                         )}
                         {shipFilterOptions.remainingShips.map(ship => (
-                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                            <MenuItem key={ship.id} value={ship.id}>{getShipName(ship)}</MenuItem>
                         ))}
                         {shipFilterOptions.possessedShips.length > 0 && (
                             <Divider />
@@ -177,7 +178,7 @@ export const ResearchFilter = (props: IProps) => {
                             </ListSubheader>
                         )}
                         {shipFilterOptions.possessedShips.map(ship => (
-                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                            <MenuItem key={ship.id} value={ship.id}>{getShipName(ship)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>

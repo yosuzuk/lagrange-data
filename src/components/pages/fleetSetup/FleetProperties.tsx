@@ -15,7 +15,7 @@ import { ShipType } from '../../../types/ShipType';
 import { translateShipRow } from '../../../utils/shipRowUtils';
 import { ShipRow } from '../../../types/ShipRow';
 import { validateFleetSetupForShipWarnings } from './utils/fleetSetupValidation';
-import { getShipDefinitionById } from '../../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../../utils/shipDefinitionUtils';
 import { getFleetStats } from './utils/fleetStats';
 import { formatDpmAll, formatHp, formatSpeed } from '../../../utils/shipStatsUtils';
 import { flags } from '../../../utils/flags';
@@ -47,19 +47,19 @@ export const FleetProperties = (props: IProps) => {
             const shipDefinition = getShipDefinitionById(shipId);
             switch (owner) {
                 case 'self': {
-                    return `${shipDefinition.name}：${errorMap[key]}`;
+                    return `${getShipName(shipDefinition)}：${errorMap[key]}`;
                 }
                 case 'ally': {
-                    return `${shipDefinition.name}（ユニオン増援Ａ）：${errorMap[key]}`;
+                    return `${getShipName(shipDefinition)}（ユニオン増援Ａ）：${errorMap[key]}`;
                 }
                 case 'ally2': {
-                    return `${shipDefinition.name}（ユニオン増援Ｂ）：${errorMap[key]}`;
+                    return `${getShipName(shipDefinition)}（ユニオン増援Ｂ）：${errorMap[key]}`;
                 }
                 case 'ally3': {
-                    return `${shipDefinition.name}（ユニオン増援Ｃ）：${errorMap[key]}`;
+                    return `${getShipName(shipDefinition)}（ユニオン増援Ｃ）：${errorMap[key]}`;
                 }
                 default: {
-                    return `${shipDefinition.name}：${errorMap[key]}`;
+                    return `${getShipName(shipDefinition)}：${errorMap[key]}`;
                 }
             }
         });

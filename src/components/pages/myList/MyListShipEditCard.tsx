@@ -11,6 +11,7 @@ import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModulePossession, getModuleWishState, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     ship: IShipDefinition;
@@ -37,7 +38,7 @@ export const MyListShipEditCard = (props: IProps) => {
             <Box p={1}>
                 <Stack spacing={3}>
                     <Typography variant="h6">
-                        {ship.name}
+                        {getShipName(ship)}
                     </Typography>
                     <PossessionControl
                         label={getShipPossessionLabelText(ship)}

@@ -3,7 +3,7 @@ import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquirableModules, isPossessingShip, isUnwantedShip, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
-import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
 import { t } from '../../../../i18n';
@@ -114,7 +114,7 @@ function getBaseModelShipChance(
 
     return {
         id: ship.id,
-        name: ship.name,
+        name: getShipName(ship),
         weight: ship.weight,
         baseChance,
         baseChanceTooltip: baseChanceTooltip,
@@ -164,7 +164,7 @@ function getSubModelShipChance(
     if (possessed) {
         return {
             id: ship.id,
-            name: ship.name,
+            name: getShipName(ship),
             weight: ship.weight,
             baseChance: 0,
             baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
@@ -180,7 +180,7 @@ function getSubModelShipChance(
         // need base variant first
         return {
             id: ship.id,
-            name: ship.name,
+            name: getShipName(ship),
             weight: ship.weight,
             baseChance: 0,
             baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
@@ -198,7 +198,7 @@ function getSubModelShipChance(
         // last available ship variant => ship type probability of base variant
         return {
             id: ship.id,
-            name: ship.name,
+            name: getShipName(ship),
             weight: ship.weight,
             baseChance: 0,
             baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
@@ -222,7 +222,7 @@ function getSubModelShipChance(
     // => [ship type probability of base model] * ([weight] / [sum of weight of unaccuired ship variants])
     return {
         id: ship.id,
-        name: ship.name,
+        name: getShipName(ship),
         weight: ship.weight,
         baseChance: 0,
         baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],

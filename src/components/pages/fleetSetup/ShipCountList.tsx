@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { IShipSelection } from './types/IFleetSetup';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ScriptedLink } from '../../link/ScriptedLink';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -31,7 +32,7 @@ export const ShipCountList = (props: IProps) => {
                             </Box>
                             <Typography variant="body2">
                                 <ScriptedLink onClick={() => { openShipDetailDialog(shipSelection.shipDefinition.id); }}>
-                                    {shipSelection.shipDefinition.name}
+                                    {getShipName(shipSelection.shipDefinition)}
                                 </ScriptedLink>
                             </Typography>
                             {shipSelection.reinforcement === 'self' && (
@@ -80,7 +81,7 @@ export const ShipCountList = (props: IProps) => {
                             </Box>
                             <Typography variant="body2">
                                 <ScriptedLink onClick={() => { openShipDetailDialog(carriedShip.shipDefinition.id); }}>
-                                    {carriedShip.shipDefinition.name}
+                                    {getShipName(carriedShip.shipDefinition)}
                                 </ScriptedLink>
                             </Typography>
                         </Stack>
