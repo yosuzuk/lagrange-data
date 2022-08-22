@@ -3,6 +3,7 @@ import { ButtonProps } from '@mui/material/Button';
 import SpokeIcon from '@mui/icons-material/Spoke';
 import { IFleetSetup } from './types/IFleetSetup';
 import { ButtonMenu, IButtonMenuOption } from '../../buttonMenu/ButtonMenu';
+import { t } from '../../../i18n';
 
 interface IProps {
     fleetSetups: IFleetSetup[];
@@ -24,7 +25,7 @@ export const FleetSelectionButton = (props: IProps) => {
         <>
             <ButtonMenu
                 icon={<SpokeIcon />}
-                text={'艦隊選択'}
+                text={t('fleetSetup.selectFleet')}
                 value={fleetSetup.key}
                 options={options}
                 onClick={onChange}

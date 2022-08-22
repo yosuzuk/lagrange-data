@@ -1,5 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 import { ButtonProps } from '@mui/material/Button';
+import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
 import { ReinforcementType } from './types/IFleetSetup';
 
@@ -44,33 +45,33 @@ export const AddShipsButton = (props: IProps) => {
     return (
         <ButtonMenu
             icon={<AddIcon />}
-            text={'艦船を追加'}
+            text={t('fleetSetup.addShips')}
             onClick={handleClickAddOption}
             buttonProps={buttonProps}
             options={[
                 {
                     key: 'addInitialShip',
-                    text: '通常配備',
+                    text: t('fleetSetup.normalAssignment'),
                     value: 'addInitialShip',
                 },
                 {
                     key: 'addSelfReinforcement',
-                    text: '増援',
+                    text: t('fleetSetup.reinforcement'),
                     value: 'addSelfReinforcement',
                 },
                 {
                     key: 'addAllyReinforcement',
-                    text: 'ユニオン増援Ａ',
+                    text: t('fleetSetup.orgReinforcementA'),
                     value: 'addAllyReinforcement',
                 },
                 {
                     key: 'addAlly2Reinforcement',
-                    text: 'ユニオン増援Ｂ',
+                    text: t('fleetSetup.orgReinforcementB'),
                     value: 'addAlly2Reinforcement',
                 },
                 {
                     key: 'addAlly3Reinforcement',
-                    text: 'ユニオン増援Ｃ',
+                    text: t('fleetSetup.orgReinforcementC'),
                     value: 'addAlly3Reinforcement',
                 },
             ]}

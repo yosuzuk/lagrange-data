@@ -1,5 +1,6 @@
 import SortIcon from '@mui/icons-material/Sort';
 import { ButtonProps } from '@mui/material/Button';
+import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
 import { GroupAndSortOption } from './utils/shipGroupingUtils';
 
@@ -16,27 +17,27 @@ export const ShipGroupingButton = (props: IProps) => {
         <>
             <ButtonMenu
                 icon={<SortIcon />}
-                text={'表示'}
+                text={t('button.displayItems')}
                 value={value}
                 options={[
                     {
                         key: GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME,
-                        text: '配置別、艦種→名前順',
+                        text: t('fleetSetup.groupByRowSortByShipTypeAndName'),
                         value: GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME,
                     },
                     {
                         key: GroupAndSortOption.GROUP_BY_TYPE_SORT_BY_NAME,
-                        text: '艦種別、名前順',
+                        text: t('fleetSetup.groupByShipTypeSortByName'),
                         value: GroupAndSortOption.GROUP_BY_TYPE_SORT_BY_NAME,
                     },
                     {
                         key: GroupAndSortOption.SORT_BY_TYPE_AND_NAME,
-                        text: '艦種→名前順',
+                        text: t('fleetSetup.sortByShipTypeAndName'),
                         value: GroupAndSortOption.SORT_BY_TYPE_AND_NAME,
                     },
                     {
                         key: GroupAndSortOption.SORT_BY_NAME,
-                        text: '名前順',
+                        text: t('fleetSetup.sortByName'),
                         value: GroupAndSortOption.SORT_BY_NAME,
                     },
                 ]}

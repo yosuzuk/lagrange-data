@@ -19,6 +19,7 @@ import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
 import { IGroupedShips } from './types/IGroupedShips';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { t } from '../../../i18n';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -112,17 +113,17 @@ export const FleetSetupPage = () => {
                                 <Box p={2}>
                                     <Stack spacing={1}>
                                         <Typography variant="body1">
-                                            {'編成'}
+                                            {t('fleetSetup.fleetFormation')}
                                         </Typography>
                                         <Alert severity="info">
-                                            {'この艦隊にはまだ艦船が追加されていません。上の「編集」ボタンで編集モードに切り替えると艦船の追加や増援の設定等が行えます。'}
+                                            {t('fleetSetup.fleetEmptyNotice')}
                                         </Alert>
                                     </Stack>
                                 </Box>
                             </Paper>
                         )}
                         <Typography variant="caption" align="right" paragraph={true}>
-                            {'※設定データはブラウザのローカルストレージに保存されています。'}
+                            {t('fleetSetup.pageFootnote')}
                         </Typography>
                     </Stack>
                 </Box>

@@ -5,6 +5,7 @@ import { ActionBar } from '../../actionBar/ActionBar';
 import { FleetSelectionButton } from './FleetSelectionButton';
 import { IFleetSetup } from './types/IFleetSetup';
 import { ShipGroupingButton } from './ShipGroupingButton';
+import { t } from '../../../i18n';
 
 interface IProps {
     fleetSetups: IFleetSetup[];
@@ -49,7 +50,7 @@ export const FleetSetupActionBar = (props: IProps) => {
                         onClick={onEdit}
                         {...buttonProps}
                     >
-                        {'編集'}
+                        {t('button.edit')}
                     </Button>
                 </>
             )}
@@ -62,7 +63,7 @@ export const FleetSetupActionBar = (props: IProps) => {
                         onClick={onShare}
                         {...buttonProps}
                     >
-                        {'共有'}
+                        {t('button.share')}
                     </Button>
                 </>
             )}
