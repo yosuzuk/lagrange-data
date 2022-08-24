@@ -2458,11 +2458,13 @@ export const shipDefinitions: IShipDefinition[] = [
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,
-        weight: 10, // TODO find out
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.HAYREDDIN_CLAN,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
     },
     {
         id: ShipId.HELIOS_A,
