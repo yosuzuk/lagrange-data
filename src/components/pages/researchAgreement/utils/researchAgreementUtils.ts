@@ -3,10 +3,11 @@ import { ResearchManufacturer } from '../../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
+import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquirableModules, getWantedModules, isPossessingShip, isUnwantedShip, isWantedModule, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { getShipName } from '../../../../utils/shipDefinitionUtils';
-import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions, IShipFilterEntryForModule } from '../types/IResearchConfiguration';
+import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions, IShipFilterEntryForModule, IShipTypeResearchChance } from '../types/IResearchConfiguration';
 
 export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
     return shipDefinitions.filter(shipDefinition => !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes);
@@ -163,10 +164,22 @@ export function createResearchConfiguration(
         }
     });
 
+    const shipTypeChances: IShipTypeResearchChance[] = Object.values(ShipType).map(_shipType => {
+        const shipType = _shipType as ShipType;
+        return {
+            shipType,
+            chance: shipChances
+                .filter(shipChance => shipChance.shipDefinition.type === shipType)
+                .map(shipChance => shipChance.chance)
+                .reduce((total: number, next: number) => total + next, 0),
+        };
+    }).filter(shipTypeChance => shipTypeChance.chance > 0);
+
     return {
         id: `${idCounter++}`,
         filterState,
         shipChances,
+        shipTypeChances,
         totalShipChance,
         totalModuleChance,
         wishedShipChance,

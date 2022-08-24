@@ -2,11 +2,13 @@ import { ResearchManufacturer } from '../../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
+import { ShipType } from '../../../../types/ShipType';
 
 export interface IResearchConfiguration {
     id: string;
     filterState: IResearchFilterState;
     shipChances: IShipResearchChance[];
+    shipTypeChances: IShipTypeResearchChance[];
     totalShipChance: number;
     totalModuleChance: number;
     wishedShipChance: number;
@@ -29,6 +31,11 @@ export interface IShipResearchChance {
     wished: boolean;
     unwished: boolean;
     modules: IModuleResearchChance[];
+}
+
+export interface IShipTypeResearchChance {
+    shipType: ShipType;
+    chance: number;
 }
 
 export interface IModuleResearchChance {

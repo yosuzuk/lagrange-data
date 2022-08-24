@@ -1,12 +1,13 @@
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import { IResearchConfiguration } from './types/IResearchConfiguration';
+import { IResearchConfiguration, IShipTypeResearchChance } from './types/IResearchConfiguration';
 import { LabeledList } from '../../list/LabeledList';
 import { ShipName } from './ShipName';
 import { hasWantedModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { isLanguageWithWhitespace, t } from '../../../i18n';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
+import { translateShipType } from '../../../utils/shipTypeUtils';
 
 interface IProps {
     configuration: IResearchConfiguration;
@@ -151,6 +152,12 @@ export const ConfigurationDetail = (props: IProps) => {
                         })) : []),
                     ];
                 }),
+                ...configuration.shipTypeChances.map((shipTypeChance: IShipTypeResearchChance, index: number) => ({
+                    key: `${configuration.id}.${shipTypeChance.shipType}`,
+                    label: translateShipType(shipTypeChance.shipType),
+                    value: formatChance(shipTypeChance.chance),
+                    separatorBefore: index === 0,
+                })),
             ]}
             rowGap={1}
         />
