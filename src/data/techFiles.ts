@@ -62,6 +62,7 @@ export const techFiles: ITechFile[] = [
             ShipId.VITAS_B010,
             ShipId.VITAS_A021,
             ShipId.BALANCER_ANDERSON,
+            ShipId.HAYREDDINGS_LOYAL,
             ShipId.STRIX_A100,
             ShipId.BULLFROG,
             ShipId.SANDRAKE,
