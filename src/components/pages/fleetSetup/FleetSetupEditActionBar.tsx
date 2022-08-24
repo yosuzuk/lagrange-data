@@ -6,6 +6,7 @@ import { ActionBar } from '../../actionBar/ActionBar';
 import { ShipGroupingButton } from './ShipGroupingButton';
 import { AddShipsButton } from './AddShipsButton';
 import { ReinforcementType } from './types/IFleetSetup';
+import { t } from '../../../i18n';
 
 interface IProps {
     grouping: string;
@@ -27,8 +28,6 @@ export const FleetSetupEditActionBar = (props: IProps) => {
         onOpenAddShips,
         saveDisabled,
     } = props;
-
-    
 
     return (
         <ActionBar
@@ -54,7 +53,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         onClick={onReset}
                         {...buttonProps}
                     >
-                        {'初期化'}
+                        {t('button.initialize')}
                     </Button>
                     <Button
                         key="cancel"
@@ -63,7 +62,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         onClick={onCancel}
                         {...buttonProps}
                     >
-                        {'キャンセル'}
+                        {t('button.cancel')}
                     </Button>
                     <Button
                         key="save"
@@ -73,7 +72,7 @@ export const FleetSetupEditActionBar = (props: IProps) => {
                         disabled={saveDisabled}
                         {...buttonProps}
                     >
-                        {'保存'}
+                        {t('button.save')}
                     </Button>
                 </>
             )}

@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getWantedModules } from '../../../userSettings/utils/userSettingsUtils';
+import { getModuleName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     ship: IShipDefinition;
@@ -25,7 +26,7 @@ export const WantedModules = (props: IProps) => {
                     <Typography variant="body2" component="span" color="text.secondary" sx={{ opacity: 0.5 }}>
                         {'┗ '}
                     </Typography>
-                    {`${module.category}${module.categoryNumber} ${module.name}`}
+                    {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
                 </Typography>
             ))}
         </Box>

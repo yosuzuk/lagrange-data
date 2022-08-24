@@ -1,17 +1,18 @@
 import { ResearchStrategyType } from '../types/ResearchStrategyType';
+import { t } from '../i18n';
 
 // 戦略能力
 
 export function translateResearchStrategyType(type: ResearchStrategyType): string {
     switch (type) {
         case ResearchStrategyType.OUTSTANDING_FIREPOWER:
-            return '高火力';
+            return t('strategyType.outstandingFirepower');
         case ResearchStrategyType.SUSTAINED_COMBAT:
-            return '継続作戦';
+            return t('strategyType.sustainedCombat');
         case ResearchStrategyType.STRATEGY_AND_SUPPORT:
-            return '戦略と支援';
+            return t('strategyType.strategyAndSupport');
         case ResearchStrategyType.FIGHTER_AND_CORVETTE:
-            return '艦載機と護送艦';
+            return t('strategyType.fighterAndCorvette');
     }
 }
 

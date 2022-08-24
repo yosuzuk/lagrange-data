@@ -18,6 +18,7 @@ import { ConfigurationDetail } from './ConfigurationDetail';
 import { ConfigurationSummary } from './ConfigurationSummary';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { t } from '../../../i18n';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
@@ -53,20 +54,20 @@ export const ResearchAgreementPage = () => {
                     <Stack spacing={1}>
                         <Stack pt={1} pb={1} spacing={2}>
                             <Typography variant="body2">
-                                {'ここでは「研究協定」に関する各種確率を表示しています。'}
+                                {t('researchAgreement.pageDescription1')}
                             </Typography>
                             <Typography variant="body2">
-                                {'研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。'}
+                                {t('researchAgreement.pageDescription2')}
                             </Typography>
                             <Typography variant="body2">
-                                {'取得済みの設計図はマイリストで設定してください。'}
+                                {t('researchAgreement.pageDescription3')}
                             </Typography>
                         </Stack>
                         <Paper>
                             <Box p={2}>
                                 <Stack spacing={2}>
                                     <Typography variant="body2">
-                                        {'研究方針'}
+                                        {t('label.researchDirection')}
                                     </Typography>
                                     <div>
                                         <ResearchFilter filterState={filterState} onChange={setFilterState} shipFilterOptions={shipFilterOptions} />
@@ -109,7 +110,7 @@ export const ResearchAgreementPage = () => {
                     )}
                     actions={(
                         <Button variant="outlined" onClick={() => setConfigurationForDialog(null)}>
-                            {'閉じる'}
+                            {t('button.close')}
                         </Button>
                     )}
                     onClose={() => setConfigurationForDialog(null)}

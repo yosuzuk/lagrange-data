@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { ResearchTacticType } from '../types/ResearchTacticType';
 
 // 戦術性能
@@ -5,9 +6,9 @@ import { ResearchTacticType } from '../types/ResearchTacticType';
 export function translateResearchTacticType(type: ResearchTacticType): string {
     switch (type) {
         case ResearchTacticType.PROJECTILE_WEAPONS:
-            return '投射兵器';
+            return t('tacticType.projectileWeapons');
         case ResearchTacticType.DIRECT_FIRE_WEAPONS:
-            return '直接射撃武器';
+            return t('tacticType.directFireWeapons');
     }
 }
 

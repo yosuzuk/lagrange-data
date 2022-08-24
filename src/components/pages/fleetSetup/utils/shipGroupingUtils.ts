@@ -1,5 +1,7 @@
+import { getCurrentLanguage, isLanguageWithWhitespace, t } from '../../../../i18n';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
+import { getModuleName, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
 import { normalizeSortFn } from '../../../table';
@@ -28,7 +30,7 @@ const sortByReinforcementType = (a: SortableByShipDefinition, b: SortableByShipD
 };
 
 const sortByName = normalizeSortFn<SortableByShipDefinition>([
-    (a: SortableByShipDefinition, b: SortableByShipDefinition) => a.shipDefinition.name.localeCompare(b.shipDefinition.name, 'ja-JP'),
+    (a: SortableByShipDefinition, b: SortableByShipDefinition) => getShipName(a.shipDefinition).localeCompare(getShipName(b.shipDefinition), getCurrentLanguage()),
     sortByReinforcementType,
 ]);
 
@@ -57,7 +59,7 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                 groupedBy: groupCriteria,
                 groups: [{
                     id: 'all',
-                    name: '編成',
+                    name: t('fleetSetup.fleetFormation'),
                     ships: fleetSetup.ships
                         .map(ship => ({
                             ...ship,
@@ -73,7 +75,7 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
                 groupedBy: groupCriteria,
                 groups: [{
                     id: 'all',
-                    name: '編成',
+                    name: t('fleetSetup.fleetFormation'),
                     ships: fleetSetup.ships
                         .map(ship => ({
                             ...ship,
@@ -138,46 +140,47 @@ function createShipGroupsByType(shipSelections: IShipSelection[]): IShipGroup[] 
 }
 
 export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShips: IGroupedShips): string {
+    const spacing = isLanguageWithWhitespace() ? ' ' : '';
     return [
         fleetSetup.name,
         groupedShips.groups.filter(shipGroup => shipGroup.ships.length > 0).map(shipGroup => {
             return [
-                ...(groupedShips.groups.length > 1 ? [`【${shipGroup.name}】`] : []),
+                ...(groupedShips.groups.length > 1 ? [t('fleetSetup.groupNameForSharing', { name: shipGroup.name })] : []),
                 ...shipGroup.ships.flatMap(ship => {
                     const cost = ship.count * ship.shipDefinition.cost;
                     const changedModulesLine = formatChangedSystemModules(ship);
                     switch (ship.reinforcement) {
                         case 'self': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（増援）`,
+                                `${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}${spacing}${t('fleetSetup.reinforcementBrackets')}`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ａ）`,
+                                `${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}${spacing}${t('fleetSetup.orgReinforcementABrackets')}`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally2': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｂ）`,
+                                `${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}${spacing}${t('fleetSetup.orgReinforcementBBrackets')}`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         case 'ally3': {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（ユニオン増援Ｃ）`,
+                                `${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}${spacing}${t('fleetSetup.orgReinforcementCBrackets')}`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
                         }
                         default: {
                             return [
-                                `${ship.count}×　${ship.shipDefinition.name}（${cost}Pt）`,
+                                `${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}${spacing}${t('fleetSetup.commandPointsValueBrackets', { value: cost })}`,
                                 ...(changedModulesLine ? [changedModulesLine] : []),
                                 ...formatCarriedShipsForSharing(ship.carriedShips),
                             ];
@@ -187,15 +190,15 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
             ].join('\n');
         }).join('\n\n'),
         [
-            `増援：${fleetSetup.totalReinforcementCount}/${fleetSetup.maxReinforcement}`,
-            `指令Pt：${fleetSetup.totalCost}/${fleetSetup.maxCost}`,
+            `${t('fleetSetup.reinforcementColon')}${spacing}${fleetSetup.totalReinforcementCount}/${fleetSetup.maxReinforcement}`,
+            `${t('label.commandPointsColon')}${spacing}${fleetSetup.totalCost}/${fleetSetup.maxCost}`,
         ].join('\n'),
     ].join('\n\n');
 }
 
 function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): string[] {
     return carriedShips.map(ship => {
-        return `　　${ship.count}×　${ship.shipDefinition.name}`;
+        return `　　${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}`;
     });
 }
 
@@ -213,10 +216,14 @@ function formatChangedSystemModules(shipSelection: IShipSelection): string | nul
         if (!usedModule || usedModule.module.defaultModule) {
             return [];
         }
-        return usedModule ? [`${usedModule.module.name}（${usedModule.module.id}）`] : [];
+        return usedModule ? [`${getModuleName(shipSelection.shipDefinition.id, usedModule.module)}（${usedModule.module.id}）`] : [];
     });
     if (changedModuleNames.length === 0) {
         return null;
     }
     return changedModuleNames.map(line => `　　${line}`).join('\n');
+}
+
+function formatCount(count: number): string {
+    return count < 10 ? `${count}`.padStart(3) : `${count}`;
 }

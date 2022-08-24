@@ -13,6 +13,7 @@ import { IModuleSelection, ReinforcementType, IModuleUsage } from './types/IFlee
 import { applyUsageForModule } from './utils/fleetSetupUtils';
 import { isPossessingModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { getModuleName } from '../../../utils/shipDefinitionUtils';
 
 export interface IProps {
     shipId: string;
@@ -94,7 +95,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                                         key={moduleId}
                                                         label={(
                                                             <Box pt={1} pb={1}>
-                                                                <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${moduleUsage.module.name}`}</Typography>
+                                                                <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${getModuleName(shipId, moduleUsage.module)}`}</Typography>
                                                                 {moduleUsage.module.description && (
                                                                     <Typography variant="body2" color="text.secondary">{`${moduleUsage.module.description}`}</Typography>
                                                                 )}

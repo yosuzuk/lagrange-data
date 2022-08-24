@@ -14,6 +14,8 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { isLanguageWithWhitespace, t } from '../../../i18n';
 
 interface IProps {
     filterState: IResearchFilterState;
@@ -72,14 +74,14 @@ export const ResearchFilter = (props: IProps) => {
         <Grid container={true} spacing={2}>
             <Grid item={true} xs={12} sm={8} md={4}>
                 <FormControl fullWidth={true} size="small">
-                    <InputLabel id="manufacturer-select-label">{'委託企業'}</InputLabel>
+                    <InputLabel id="manufacturer-select-label">{t('label.researchManufacturer')}</InputLabel>
                     <Select
                         labelId="manufacturer-select-label"
                         value={filterState.manufacturerFilter ?? ''}
-                        label="委託企業"
+                        label={t('label.researchManufacturer')}
                         onChange={handleChangeManufacturer}
                     >
-                        <MenuItem value="">{'無し'}</MenuItem>
+                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
                         <Divider />
                         {Object.values(ResearchManufacturer).map(manufacturer => (
                             <MenuItem key={manufacturer} value={manufacturer}>{translateResearchManufacturer(manufacturer)}</MenuItem>
@@ -89,14 +91,14 @@ export const ResearchFilter = (props: IProps) => {
             </Grid>
             <Grid item={true} xs={12} sm={8} md={4}>
                 <FormControl fullWidth={true} size="small">
-                    <InputLabel id="strategy-select-label">{'戦略能力'}</InputLabel>
+                    <InputLabel id="strategy-select-label">{t('label.researchStrategyType')}</InputLabel>
                     <Select
                         labelId="strategy-select-label"
                         value={filterState.strategyTypeFilter ?? ''}
-                        label="戦略能力"
+                        label={t('label.researchStrategyType')}
                         onChange={handleChangeStrategyType}
                     >
-                        <MenuItem value="">{'無し'}</MenuItem>
+                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
                         <Divider />
                         {Object.values(ResearchStrategyType).map(strategyType => (
                             <MenuItem key={strategyType} value={strategyType}>{translateResearchStrategyType(strategyType)}</MenuItem>
@@ -106,14 +108,14 @@ export const ResearchFilter = (props: IProps) => {
             </Grid>
             <Grid item={true} xs={12} sm={8} md={4}>
                 <FormControl fullWidth={true} size="small">
-                    <InputLabel id="tactics-select-label">{'戦術性能'}</InputLabel>
+                    <InputLabel id="tactics-select-label">{t('label.researchTacticType')}</InputLabel>
                     <Select
                         labelId="tactics-select-label"
                         value={filterState.tacticTypeFilter ?? ''}
-                        label="戦術性能"
+                        label={t('label.researchTacticType')}
                         onChange={handleChangeTacticsType}
                     >
-                        <MenuItem value="">{'無し'}</MenuItem>
+                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
                         <Divider />
                         {Object.values(ResearchTacticType).map(tacticsType => (
                             <MenuItem key={tacticsType} value={tacticsType}>{translateResearchTacticType(tacticsType)}</MenuItem>
@@ -124,26 +126,26 @@ export const ResearchFilter = (props: IProps) => {
             <Grid item={true} xs={12} sm={8}>
                 <FormControl fullWidth={true} size="small">
                     <InputLabel id="ship-select-label">
-                        {'艦船'}
+                        {t('label.ship')}
                     </InputLabel>
                     <Select
                         labelId="ship-select-label"
                         value={filterState.shipId ?? ''}
-                        label="艦船"
+                        label={t('label.ship')}
                         onChange={handleChangeShipId}
                     >
-                        <MenuItem value="">{'無し'}</MenuItem>
+                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
                         {(shipFilterOptions.wantedShips.length + shipFilterOptions.shipsWithWantedModule.length) > 0 && (
                             <Divider />
                         )}
                         {(shipFilterOptions.wantedShips.length + shipFilterOptions.shipsWithWantedModule.length) > 0 && (
                             <ListSubheader disableSticky={true}>
-                                {'欲しい艦船：'}
+                                {t('label.wantedBlueprintColon')}
                             </ListSubheader>
                         )}
                         {shipFilterOptions.wantedShips.map(ship => (
                             <MenuItem key={ship.id} value={ship.id}>
-                                {ship.name}
+                                {getShipName(ship)}
                                 <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                     {'★'}
                                 </Typography>
@@ -151,7 +153,11 @@ export const ResearchFilter = (props: IProps) => {
                         ))}
                         {shipFilterOptions.shipsWithWantedModule.map(({ shipDefinition, modules }) => (
                             <MenuItem key={shipDefinition.id} value={shipDefinition.id}>
-                                {`${shipDefinition.name}（追加システム）`}
+                                {getShipName(shipDefinition)}
+                                {isLanguageWithWhitespace() && (
+                                    <span>&nbsp;</span>
+                                )}
+                                {t('label.additionalSystemModuleBrackets')}
                                 <Typography variant="body1" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                                     {'★'}
                                 </Typography>
@@ -162,28 +168,28 @@ export const ResearchFilter = (props: IProps) => {
                         )}
                         {shipFilterOptions.remainingShips.length > 0 && (
                             <ListSubheader disableSticky={true}>
-                                {'取得可能な艦船：'}
+                                {t('label.acquirableBlueprintColon')}
                             </ListSubheader>
                         )}
                         {shipFilterOptions.remainingShips.map(ship => (
-                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                            <MenuItem key={ship.id} value={ship.id}>{getShipName(ship)}</MenuItem>
                         ))}
                         {shipFilterOptions.possessedShips.length > 0 && (
                             <Divider />
                         )}
                         {shipFilterOptions.possessedShips.length > 0 && (
                             <ListSubheader disableSticky={true}>
-                                {'取得済みの艦船：'}
+                                {t('label.acquiredBlueprintColon')}
                             </ListSubheader>
                         )}
                         {shipFilterOptions.possessedShips.map(ship => (
-                            <MenuItem key={ship.id} value={ship.id}>{ship.name}</MenuItem>
+                            <MenuItem key={ship.id} value={ship.id}>{getShipName(ship)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>
             </Grid>
             <Grid item={true} xs={12} sm={4} sx={{ display: 'flex', justifyContent: 'end' }}>
-                <Button variant="outlined" onClick={handleClickReset}>{'リセット'}</Button>
+                <Button variant="outlined" onClick={handleClickReset}>{t('button.reset')}</Button>
             </Grid>
         </Grid>
     );

@@ -10,6 +10,7 @@ import { ShipSubType, ShipType } from './ShipType';
 export interface IShipDefinition {
     id: string;
     name: string;
+    translatedName?: Record<string, string>;
     type: ShipType;
     subType?: ShipSubType;
     cost: number;
@@ -35,6 +36,7 @@ export interface IShipDefinition {
 export interface ISystemModule {
     id: string;
     name: string;
+    translatedName?: Record<string, string>;
     description?: string;
     parts?: IModulePart[];
     category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E';

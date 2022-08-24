@@ -1,19 +1,20 @@
 import { Manufacturer } from '../types/Manufacturer';
+import { t } from '../i18n';
 
 // 企業
 
 export function translateManufacturer(manufacturer: Manufacturer): string {
     switch (manufacturer) {
         case Manufacturer.JUPITER_INDUSTRIES:
-            return 'ジュピターインダストリー';
+            return t('manufacturer.jupiterIndustries');
         case Manufacturer.NOMA_SHIPPING_GROUP:
-            return 'ノマシッピング';
+            return t('manufacturer.nomaShippingGroup');
         case Manufacturer.ANTONIOS_CONSORTIUM:
-            return 'アントニオス財団';
+            return t('manufacturer.antoniosConsortium');
         case Manufacturer.DAWN_ACCORD:
-            return 'ドーン協定条約機構';
+            return t('manufacturer.dawnAccord');
         case Manufacturer.HAYREDDIN_CLAN:
-            return 'ハイレッディン　クラン';
+            return t('manufacturer.hayreddinClan');
     }
 }
 

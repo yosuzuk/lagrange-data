@@ -19,6 +19,7 @@ import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils
 import { ResearchStrategyType } from '../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../types/ResearchTacticType';
 import { getAcquirableModules, getWantedModules } from '../../userSettings/utils/userSettingsUtils';
+import { t } from '../../i18n';
 
 export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
     return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
@@ -44,21 +45,27 @@ export function createManufacturerFilterOptions(specificManufacturer: Manufactur
 export function createResearchManufacturerFilterOptions(specificResearchManufacturer: ResearchManufacturer[] | null): IFilterOption[] {
     return (specificResearchManufacturer ?? [ResearchManufacturer.JUPITER_INDUSTRIES, ResearchManufacturer.NOMA_SHIPPING_GROUP, ResearchManufacturer.ANTONIOS_CONSORTIUM, ResearchManufacturer.DAWN_ACCORD]).map(manufacturer => ({
         filterKey: manufacturer as ResearchManufacturer,
-        name: `委託企業：${translateResearchManufacturer(manufacturer)}`,
+        name: t('label.researchManufacturerOption', {
+            manufacturer: translateResearchManufacturer(manufacturer),
+        }),
     }));
 }
 
 export function createResearchStrategyTypeFilterOptions(specificResearchStrategyTypes: ResearchStrategyType[] | null): IFilterOption[] {
     return (specificResearchStrategyTypes ?? [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE]).map(type => ({
         filterKey: type as ResearchStrategyType,
-        name: `戦略能力：${translateResearchStrategyType(type)}`,
+        name: t('label.researchStrategyTypeOption', {
+            strategyType: translateResearchStrategyType(type),
+        }),
     }));
 }
 
 export function createResearchTacticTypeFilterOptions(specificResearchTacticTypes: ResearchTacticType[] | null): IFilterOption[] {
     return (specificResearchTacticTypes ?? [ResearchTacticType.PROJECTILE_WEAPONS, ResearchTacticType.DIRECT_FIRE_WEAPONS]).map(type => ({
         filterKey: type as ResearchTacticType,
-        name: `戦術性能：${translateResearchTacticType(type)}`,
+        name: t('label.researchTacticTypeOption', {
+            tacticType: translateResearchTacticType(type),
+        }),
     }));
 }
 

@@ -1,24 +1,25 @@
+import { t } from '../i18n';
 import { ShipSource, IShipSourceData } from '../types/ShipSource';
 
 export const shipSources: Record<ShipSource, IShipSourceData> = {
     [ShipSource.STARTER_SHIP]: {
-        name: '初期配布',
+        name: t('acquirableThrough.starterTechFile'),
         sortValue: 1,
     },
     [ShipSource.TECH_FILE]: {
-        name: '技術ファイル',
+        name: t('label.techFile'),
         sortValue: 2,
     },
     [ShipSource.DOCK_EFFECT]: {
-        name: '結合効果',
+        name: t('acquirableThrough.dockingEffect'),
         sortValue: 3,
     },
     [ShipSource.CITY_TRADE]: {
-        name: '都市で購入',
+        name: t('acquirableThrough.cityTrade'),
         sortValue: 4,
     },
     [ShipSource.UNKNOWN]: {
-        name: '不明',
+        name: t('acquirableThrough.unknown'),
         sortValue: 5,
     },
 };

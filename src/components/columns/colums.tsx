@@ -12,13 +12,14 @@ import { researchTacticTypeToSortValue, translateResearchTacticType } from '../.
 import { translateResearchManufacturer, researchManufacturerToSortValue } from '../../utils/researchManufacturerUtils';
 import { formatDpm, getShipStats } from '../../utils/shipStatsUtils';
 import { IStats } from '../../types/IStats';
-import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../utils/shipDefinitionUtils';
+import { t, getCurrentLanguage } from '../../i18n';
 
 export const shipNameColumn: ITableColumn<IShipDefinition> = {
     id: 'name',
-    renderHeader: () => '艦名',
-    renderCell: (data: IShipDefinition) => data.name,
-    sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    renderHeader: () => t('label.shipName'),
+    renderCell: (data: IShipDefinition) => getShipName(data),
+    sortFn: (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
 };
 
 interface IShipNameColumnOptions {
@@ -28,7 +29,7 @@ interface IShipNameColumnOptions {
 
 export const createShipNameLinkColumn = (options: IShipNameColumnOptions): ITableColumn<IShipDefinition> => ({
     id: 'nameLink',
-    renderHeader: () => '艦名',
+    renderHeader: () => t('label.shipName'),
     renderCell: (data: IShipDefinition) => {
         const render = options.decorateName ?? ((name: ReactNode, data: IShipDefinition) => name);
         return render(
@@ -38,96 +39,96 @@ export const createShipNameLinkColumn = (options: IShipNameColumnOptions): ITabl
                         options.onClick(data.id);
                     }}
                 >
-                    {data.name}
+                    {getShipName(data)}
                 </ScriptedLink>
             </Typography>,
             data,
         );
     },
-    sortFn: (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+    sortFn: (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
 });
 
 export const shipTypeColumn: ITableColumn<IShipDefinition> = {
     id: 'type',
-    renderHeader: () => '艦種',
+    renderHeader: () => t('label.shipType'),
     renderCell: (data: IShipDefinition) => translateShipType(data.type, data.subType),
     sortFn: [
         (a, b) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
     initialSortDirection: 'asc',
 };
 
 export const shipRowColumn: ITableColumn<IShipDefinition> = {
     id: 'row',
-    renderHeader: () => '配置',
+    renderHeader: () => t('label.rowPlacement'),
     renderCell: (data: IShipDefinition) => translateShipRow(data.row),
     sortFn: [
         (a, b) => shipRowToSortValue(a.row) - shipRowToSortValue(b.row),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const shipCostColumn: ITableColumn<IShipDefinition> = {
     id: 'cost',
-    renderHeader: () => 'コスト',
+    renderHeader: () => t('label.commandPoints'),
     renderCell: (data: IShipDefinition) => data.cost,
     sortFn: [
         (a, b) => a.cost - b.cost,
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const shipOperationLimitColumn: ITableColumn<IShipDefinition> = {
     id: 'operationLimit',
-    renderHeader: () => '稼働上限',
+    renderHeader: () => t('label.operationLimit'),
     renderCell: (data: IShipDefinition) => data.operationLimit,
     sortFn: [
         (a, b) => a.operationLimit - b.operationLimit,
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const shipSourceColumn: ITableColumn<IShipDefinition> = {
     id: 'source',
-    renderHeader: () => '入手方法',
+    renderHeader: () => t('label.acquirableThrough'),
     renderCell: (data: IShipDefinition) => translateShipSource(data.source),
     sortFn: [
         (a, b) => shipSourceToSortValue(a.source) - shipSourceToSortValue(b.source),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const manufacturerColumn: ITableColumn<IShipDefinition> = {
     id: 'manufacturer',
-    renderHeader: () => '企業',
+    renderHeader: () => t('label.manufacturer'),
     renderCell: (data: IShipDefinition) => translateManufacturer(data.manufacturer),
     sortFn: [
         (a, b) => manufacturerToSortValue(a.manufacturer) - manufacturerToSortValue(b.manufacturer),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const researchManufacturerColumn: ITableColumn<IShipDefinition> = {
     id: 'researchManufacturer',
-    renderHeader: () => '委託企業',
-    renderCell: (data: IShipDefinition) => data.researchManufacturer ? translateResearchManufacturer(data.researchManufacturer) : null,
+    renderHeader: () => t('label.researchManufacturerColumn'),
+    renderCell: (data: IShipDefinition) => data.researchManufacturer ? translateResearchManufacturer(data.researchManufacturer) : '-',
     sortFn: [
         (a, b) => (a.researchManufacturer ? researchManufacturerToSortValue(a.researchManufacturer) : 0) - (b.researchManufacturer ? researchManufacturerToSortValue(b.researchManufacturer) : 0),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const researchStrategyTypeColumn: ITableColumn<IShipDefinition> = {
     id: 'researchStrategyType',
-    renderHeader: () => '戦略能力',
+    renderHeader: () => t('label.researchStrategyTypeColumn'),
     renderCell: (data: IShipDefinition) => (
         <>
-            {(data.researchStrategyTypes ?? []).map(researchStrategyType => (
+            {data.researchStrategyTypes?.map(researchStrategyType => (
                 <Typography variant="body2" key={researchStrategyType}>
                     {translateResearchStrategyType(researchStrategyType)}
                 </Typography>
-            ))}
+            )) ?? '-'}
         </>
     ),
     sortFn: [
@@ -135,45 +136,45 @@ export const researchStrategyTypeColumn: ITableColumn<IShipDefinition> = {
         (a, b) => (a.researchStrategyTypes?.[1] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[1]) : 0) - (b.researchStrategyTypes?.[1] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[1]) : 0),
         (a, b) => (a.researchStrategyTypes?.[2] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[2]) : 0) - (b.researchStrategyTypes?.[2] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[2]) : 0),
         (a, b) => (a.researchStrategyTypes?.[3] ? researchStrategyTypeToSortValue(a.researchStrategyTypes[3]) : 0) - (b.researchStrategyTypes?.[3] ? researchStrategyTypeToSortValue(b.researchStrategyTypes[3]) : 0),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const researchTacticTypeColumn: ITableColumn<IShipDefinition> = {
     id: 'researchTacticType',
-    renderHeader: () => '戦術性能',
+    renderHeader: () => t('label.researchTacticTypeColumn'),
     renderCell: (data: IShipDefinition) => (
         <>
-            {(data.researchTacticTypes ?? []).map(researchTacticType => (
+            {data.researchTacticTypes?.map(researchTacticType => (
                 <Typography variant="body2" key={researchTacticType}>
                     {translateResearchTacticType(researchTacticType)}
                 </Typography>
-            ))}
+            )) ?? '-'}
         </>
     ),
     sortFn: [
         (a, b) => (a.researchTacticTypes?.[0] ? researchTacticTypeToSortValue(a.researchTacticTypes[0]) : 0) - (b.researchTacticTypes?.[0] ? researchTacticTypeToSortValue(b.researchTacticTypes[0]) : 0),
         (a, b) => (a.researchTacticTypes?.[1] ? researchTacticTypeToSortValue(a.researchTacticTypes[1]) : 0) - (b.researchTacticTypes?.[1] ? researchTacticTypeToSortValue(b.researchTacticTypes[1]) : 0),
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
 export const shipWeightColumn: ITableColumn<IShipDefinition> = {
     id: 'weight',
-    renderHeader: () => '重み',
+    renderHeader: () => t('label.probabilityWeight'),
     renderCell: (data: IShipDefinition) => data.weight,
     sortFn: [
         (a, b) => a.weight - b.weight,
-        (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
     ],
 };
 
-export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn('対艦DPM', 'dpmShip');
-export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn('対空DPM', 'dpmAntiAir');
-export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn('攻城DPM', 'dpmSiege');
-export const hpColumn: ITableColumn<IShipDefinition> = createShipStatColumn('HP', 'hp');
-export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn('巡航速度', 'speed');
-export const warpSpeedColumn: ITableColumn<IShipDefinition> = createShipStatColumn('ワープ速度', 'warpSpeed');
+export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiShipDpm'), 'dpmShip');
+export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiAirDpm'), 'dpmAntiAir');
+export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.siegeDpm'), 'dpmSiege');
+export const hpColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.hp'), 'hp');
+export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.cruiseSpeed'), 'speed');
+export const warpSpeedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.warpSpeed'), 'warpSpeed');
 
 function createShipStatColumn(name: string, statsProperty: keyof IStats): ITableColumn<IShipDefinition> {
     return {
@@ -182,7 +183,7 @@ function createShipStatColumn(name: string, statsProperty: keyof IStats): ITable
         renderCell: (data: IShipDefinition) => formatDpm(getShipStatsPropertyAsNumber(data.id, statsProperty)),
         sortFn: [
             (a, b) => (getShipStatsPropertyAsNumber(a.id, statsProperty) ?? 0) - (getShipStatsPropertyAsNumber(b.id, statsProperty) ?? 0),
-            (a, b) => a.name.localeCompare(b.name, 'ja-JP'),
+            (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
         ],
     }
 }

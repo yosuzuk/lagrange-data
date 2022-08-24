@@ -16,6 +16,7 @@ import { TechFileContentTable } from './TechFileContentTable';
 import { getCurrentUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { TechFileChart } from './TechFileChart';
+import { t } from '../../../i18n';
 
 export const shipTypes: ShipType[] = [
     ShipType.FRIGATE,
@@ -120,14 +121,14 @@ export const TechFileDetails = (props: IProps) => {
                                     {translateShipType(data.shipType as ShipType)}
                                 </Typography>
                                 <Typography variant="body2" noWrap={true} className={classes.shipTypeChanceCell}>
-                                    {`艦種確率：${formatChance(data.originalChance)}`}
+                                    {`${t('label.shipTypeProbabilityColon')}${formatChance(data.originalChance)}`}
                                 </Typography>
                                 <Typography variant="body2" noWrap={true} className={classes.blueprintChanceCell}>
-                                    {`設計図：${formatChance(data.blueprintChance)}`}
+                                    {`${t('label.blueprintColon')}${formatChance(data.blueprintChance)}`}
                                 </Typography>
                                 {data.hasModules && (
                                     <Typography variant="body2" noWrap={true} className={classes.moduleChanceCell}>
-                                        {`追加システム：${formatChance(data.moduleChance)}`}
+                                        {`${t('label.additionalSystemModuleColon')}${formatChance(data.moduleChance)}`}
                                     </Typography>
                                 )}
                             </Stack>
@@ -155,10 +156,10 @@ export const TechFileDetails = (props: IProps) => {
                         >
                             <Stack spacing={3} direction="row" flexWrap="wrap" rowGap={1}>
                                 <Typography variant="body2" className={classes.shipTypeCell}>
-                                    {'技術/研究Ｐｔ'}
+                                    {t('label.techOrResearchPoints')}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`確率：${formatChance(techFileChances.techOrResearchPointChance)}`}
+                                    {`${t('label.probabilityColon')}${formatChance(techFileChances.techOrResearchPointChance)}`}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>
@@ -180,10 +181,10 @@ export const TechFileDetails = (props: IProps) => {
                         >
                             <Stack spacing={3} direction="row" flexWrap="wrap" rowGap={1}>
                                 <Typography variant="body2" className={classes.shipTypeCell}>
-                                    {'技術Ｐｔ'}
+                                    {t('label.techPoints')}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`確率：${formatChance(techFileChances.baseTechPointChance)}`}
+                                    {`${t('label.probabilityColon')}${formatChance(techFileChances.baseTechPointChance)}`}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>
@@ -202,11 +203,4 @@ function createInitialAccordionState(): Record<ShipType, boolean> {
         ...result,
         [shipType]: false,
     }), {} as Record<ShipType, boolean>);
-}
-
-function createInitialBlueprintChances(): Record<ShipType, IShipChance[]> {
-    return shipTypes.reduce((result, shipType) => ({
-        ...result,
-        [shipType]: [],
-    }), {} as Record<ShipType, IShipChance[]>);
 }

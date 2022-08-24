@@ -7,13 +7,16 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
+import { t } from '../../i18n';
+import { getModuleName } from '../../utils/shipDefinitionUtils';
 
 interface IProps {
+    shipId: string;
     modules: ISystemModule[];
 }
 
 export const ModuleDetail = (props: IProps) => {
-    const { modules } = props;
+    const { shipId, modules } = props;
     const { mode } = useColorMode();
     return (
         <>
@@ -28,7 +31,7 @@ export const ModuleDetail = (props: IProps) => {
                     >
                         <div>
                             <Typography variant="body2">
-                                {`${module.category}${module.categoryNumber} ${module.name}`}
+                                {`${module.category}${module.categoryNumber} ${getModuleName(shipId, module)}`}
                             </Typography>
                             {module.description && (
                                 <Typography variant="caption" color="text.secondary">
@@ -44,7 +47,7 @@ export const ModuleDetail = (props: IProps) => {
                     >
                         {!module.parts && (
                             <Typography variant="body2">
-                                {'詳細不明'}
+                                {t('shipDetail.detailsUnknown')}
                             </Typography>
                         )}
                         {module.parts && (
@@ -62,12 +65,14 @@ export const ModuleDetail = (props: IProps) => {
                                         )}
                                         {Number.isFinite(modulePart.skillSlots) && (
                                             <Typography variant="body2" gutterBottom={true}>
-                                                {`スキル枠：${modulePart.skillSlots}`}
+                                                {t('shipDetail.numberOfSkillSlots', {
+                                                    count: modulePart.skillSlots,
+                                                })}
                                             </Typography>
                                         )}
                                         {modulePart.skills && (
                                             <Typography variant="body2" gutterBottom={true}>
-                                                {`スキル：`}
+                                                {t('shipDetail.skillsColon')}
                                             </Typography>
                                         )}
                                         {modulePart.skills?.map((skill, index) => (

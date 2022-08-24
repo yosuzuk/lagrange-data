@@ -12,6 +12,7 @@ import { ReinforcementType } from './types/IFleetSetup';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ScriptedLink } from '../../link/ScriptedLink';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
 
 interface IProps {
     shipDefinition: IShipDefinition;
@@ -49,7 +50,7 @@ export const ShipCountEditListItem = (props: IProps) => {
         <>
             <Typography variant="body1">
                 <ScriptedLink onClick={() => { openShipDetailDialog(shipDefinition.id); }}>
-                    {shipDefinition.name}
+                    {getShipName(shipDefinition)}
                 </ScriptedLink>
             </Typography>
             {showCost && reinforcement === null && (

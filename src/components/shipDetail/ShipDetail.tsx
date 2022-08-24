@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { isValidShipId } from '../../data/shipIds';
 import { ShipType } from '../../types/ShipType';
-import { getShipDefinitionById } from '../../utils/shipDefinitionUtils';
+import { getShipDefinitionById, getShipName } from '../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../utils/shipRowUtils';
 import { translateShipType } from '../../utils/shipTypeUtils';
 import { LabeledList } from '../list/LabeledList';
@@ -19,6 +19,7 @@ import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
 import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
+import { t } from '../../i18n';
 
 interface IProps {
     shipId: string;
@@ -51,7 +52,7 @@ export const ShipDetail = (props: IProps) => {
             {!hideName && (
                 <Box pb={1}>
                     <Typography variant="h6" gutterBottom={true}>
-                        {shipDefinition.name}
+                        {getShipName(shipDefinition)}
                     </Typography>
                     <Divider />
                 </Box>
@@ -63,45 +64,45 @@ export const ShipDetail = (props: IProps) => {
                 rows={[
                     {
                         key: 'type',
-                        label: '艦種',
+                        label: t('label.shipType'),
                         value: translateShipType(shipDefinition.type, shipDefinition.subType),
                     },
                     ...(shipDefinition.row !== ShipRow.NONE ? [{
                         key: 'row',
-                        label: '配置',
+                        label: t('label.rowPlacement'),
                         value: translateShipRow(shipDefinition.row),
                     }] : []),
                     ...(shipDefinition.cost > 0 ? [{
                         key: 'cost',
-                        label: '指令Ｐｔ',
+                        label: t('label.commandPoints'),
                         value: shipDefinition.cost,
                     }] : []),
                     {
                         key: 'operationLimit',
-                        label: '稼働上限',
+                        label: t('label.operationLimit'),
                         value: shipDefinition.operationLimit,
                     },
                     ...((flags.enableStats && shipStats) ? [
                         {
                             key: 'dpm',
-                            label: 'DPM',
+                            label: t('label.dpm'),
                             value: formatDpmAll(shipStats),
                         },
                         {
                             key: 'hp',
-                            label: 'HP',
+                            label: t('label.hp'),
                             value: formatHp(shipStats),
                         },
                         {
                             key: 'speed',
-                            label: '速度',
+                            label: t('label.speed'),
                             value: formatSpeed(shipStats),
                         },
                     ] : []),
                     ...(carry ? [
                         {
                             key: 'carry',
-                            label: '艦載機',
+                            label: t('shipType.aircraft'),
                             value: (
                                 <>
                                     {!!shipDefinition.carryFighter && (
@@ -131,46 +132,52 @@ export const ShipDetail = (props: IProps) => {
                     ...((!shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
                         {
                             key: 'modules',
-                            label: '初期システム',
+                            label: t('label.defaultSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules.filter(module => module.defaultModule)}/>
+                                <ModuleDetail
+                                    shipId={shipDefinition.id}
+                                    modules={shipDefinition.modules.filter(module => module.defaultModule)}
+                                />
                             )
                         },
                         {
                             key: 'extraModules',
-                            label: '追加システム',
+                            label: t('label.additionalSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules.filter(module => !module.defaultModule)}/>
+                                <ModuleDetail
+                                    shipId={shipDefinition.id}
+                                    modules={shipDefinition.modules.filter(module => !module.defaultModule)}
+                                />
                             )
                         },
                     ] : []),
                     ...((shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
                         {
                             key: 'staticModules',
-                            label: '固定システム',
+                            label: t('label.staticSystemModule'),
                             value: (
-                                <ModuleDetail modules={shipDefinition.modules} />
+                                <ModuleDetail shipId={shipDefinition.id} modules={shipDefinition.modules} />
                             )
                         },
                     ] : []),
                     ...(shipDefinition.baseModelId ? [
                         {
                             key: 'baseModel',
-                            label: 'ベースモデル',
-                            value: getShipDefinitionById(shipDefinition.baseModelId).name,
+                            label: t('label.baseShipVariant'),
+                            value: getShipName(getShipDefinitionById(shipDefinition.baseModelId)),
                             onClick: () => onClickShip(shipDefinition.baseModelId!),
                         },
                     ] : []),
                     ...((shipDefinition.subModelIds && shipDefinition.subModelIds.length > 0) ? [
                         {
                             key: 'subModels',
-                            label: 'サブモデル',
+                            label: t('label.subShipVariant'),
                             value: (
                                 <>
                                     {shipDefinition.subModelIds.map(getShipDefinitionById).map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}
@@ -181,20 +188,20 @@ export const ShipDetail = (props: IProps) => {
                     ...(related ? [
                         {
                             key: 'relatedShips',
-                            label: '関連艦船',
+                            label: t('label.relatedShips'),
                             value: (
                                 <>
                                     {relatedSubModels.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}
                                     {relatedShips.map(definition => (
                                         <Typography key={definition.id} variant="body2" gutterBottom={true}>
                                             <ScriptedLink onClick={() => onClickShip(definition.id)}>
-                                                {definition.name}
+                                                {getShipName(definition)}
                                             </ScriptedLink>
                                         </Typography>
                                     ))}
@@ -204,7 +211,7 @@ export const ShipDetail = (props: IProps) => {
                     ] : []),
                     {
                         key: 'source',
-                        label: '入手方法',
+                        label: t('label.acquirableThrough'),
                         value: (
                             <>
                                 {shipDefinition.source === ShipSource.STARTER_SHIP ? (
@@ -219,7 +226,7 @@ export const ShipDetail = (props: IProps) => {
                                 {obtainableThoughResearchAgreement && (
                                     <>
                                         <Typography variant="body2" gutterBottom={true}>
-                                            {'研究協定'}
+                                            {t('label.researchAgreement')}
                                         </Typography>
                                         {shipDefinition.researchManufacturer && (
                                             <Typography variant="body2" gutterBottom={true}>
@@ -243,7 +250,7 @@ export const ShipDetail = (props: IProps) => {
                     },
                     {
                         key: 'manufacturer',
-                        label: '企業',
+                        label: t('label.manufacturer'),
                         value: translateManufacturer(shipDefinition.manufacturer),
                     },
                 ]}

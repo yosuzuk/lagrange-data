@@ -1,5 +1,6 @@
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import { t } from '../../../i18n';
 import { translateResearchManufacturer } from '../../../utils/researchManufacturerUtils';
 import { translateResearchStrategyType } from '../../../utils/researchStrategyTypeUtils';
 import { translateResearchTacticType } from '../../../utils/researchTacticTypeUtils';
@@ -26,14 +27,14 @@ export const ConfigurationSummary = (props: IProps) => {
                     translateResearchTacticType(configuration.filterState.tacticTypeFilter),
                 ] : []),
                 ...(!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter ? [
-                    '無し',
+                    t('label.notSelected'),
                 ] : []),
             ].map(t => `「${t}」`).join('+')}
             {filterState.shipId === null && configuration.wishedShipChance > 0 && (
                 <Tooltip
                     arrow={true}
                     disableFocusListener={true}
-                    title={`欲しい艦船が当たる確率：${formatChance(configuration.wishedShipChance)}`}
+                    title={`${t('label.probabilityForWantedBlueprintColon')}${formatChance(configuration.wishedShipChance)}`}
                 >
                     <Typography variant="body2" component="span" sx={{ color: '#ffc107', marginLeft: '4px' }}>
                         {'★'}
