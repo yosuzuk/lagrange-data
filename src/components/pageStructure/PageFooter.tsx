@@ -49,7 +49,9 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                                 <IconButton size="small" onClick={toggleMode}>
                                     {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
-                                <LanguagePicker />
+                                {flags.enableLanguageSelection && (
+                                    <LanguagePicker />
+                                )}
                         </Stack>
                     </Stack>
                 </Box>
