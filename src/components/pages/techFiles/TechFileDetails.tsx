@@ -121,14 +121,20 @@ export const TechFileDetails = (props: IProps) => {
                                     {translateShipType(data.shipType as ShipType)}
                                 </Typography>
                                 <Typography variant="body2" noWrap={true} className={classes.shipTypeChanceCell}>
-                                    {`${t('label.shipTypeProbabilityColon')}${formatChance(data.originalChance)}`}
+                                    {t('label.shipTypeProbabilityColonValue', {
+                                        value: formatChance(data.originalChance),
+                                    })}
                                 </Typography>
                                 <Typography variant="body2" noWrap={true} className={classes.blueprintChanceCell}>
-                                    {`${t('label.blueprintColon')}${formatChance(data.blueprintChance)}`}
+                                    {t('label.blueprintColonValue', {
+                                        value: formatChance(data.blueprintChance)
+                                    })}
                                 </Typography>
                                 {data.hasModules && (
                                     <Typography variant="body2" noWrap={true} className={classes.moduleChanceCell}>
-                                        {`${t('label.additionalSystemModuleColon')}${formatChance(data.moduleChance)}`}
+                                        {t('label.additionalSystemModuleColonValue', {
+                                            value: formatChance(data.moduleChance)
+                                        })}
                                     </Typography>
                                 )}
                             </Stack>
@@ -159,7 +165,9 @@ export const TechFileDetails = (props: IProps) => {
                                     {t('label.techOrResearchPoints')}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`${t('label.probabilityColon')}${formatChance(techFileChances.techOrResearchPointChance)}`}
+                                    {t('label.probabilityColonValue', {
+                                        value: formatChance(techFileChances.techOrResearchPointChance)
+                                    })}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>
@@ -184,7 +192,9 @@ export const TechFileDetails = (props: IProps) => {
                                     {t('label.techPoints')}
                                 </Typography>
                                 <Typography variant="body2" className={classes.baseTechPointChanceCell}>
-                                    {`${t('label.probabilityColon')}${formatChance(techFileChances.baseTechPointChance)}`}
+                                    {t('label.probabilityColonValue', {
+                                        value: formatChance(techFileChances.baseTechPointChance)
+                                    })}
                                 </Typography>
                             </Stack>
                         </AccordionSummary>
