@@ -198,7 +198,7 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
 
 function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): string[] {
     return carriedShips.map(ship => {
-        return `　　${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}`;
+        return `　　 ${formatCount(ship.count)}×　${getShipName(ship.shipDefinition)}`;
     });
 }
 
@@ -221,7 +221,7 @@ function formatChangedSystemModules(shipSelection: IShipSelection): string | nul
     if (changedModuleNames.length === 0) {
         return null;
     }
-    return changedModuleNames.map(line => `　　${line}`).join('\n');
+    return changedModuleNames.map(line => `　　 ${line}`).join('\n');
 }
 
 function formatCount(count: number): string {
