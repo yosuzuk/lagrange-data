@@ -6,7 +6,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'blueprintFile',
         name: '艦舶・艦載機設計図ファイル2.0',
+        translatedName: {
+            en: 'Ship & Aircraft BP Files 2.0',
+        },
         desciption: '研究ポイント１５で買える常設確定箱',
+        translatedDescription: {
+            en: '15 research points',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.28,
             [ShipType.DESTROYER]: 0.24,
@@ -81,7 +87,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'blackMarketTechFileV2',
         name: '暗号化技術ファイル2.0',
+        translatedName: {
+            en: 'Black Market Tech Files 2.0',
+        },
         desciption: 'プロキシマコイン３００で買える常設箱',
+        translatedDescription: {
+            en: '300 Proxima coins',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.028,
             [ShipType.DESTROYER]: 0.024,
@@ -157,7 +169,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'genericTechFileV2',
         name: '一般技術ファイル2.0',
+        translatedName: {
+            en: 'Generic Tech Files 2.0',
+        },
         desciption: 'ＵＥコイン１００００で買える常設箱',
+        translatedDescription: {
+            en: '10000 UE coins',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.008,
             [ShipType.DESTROYER]: 0.008,
@@ -185,7 +203,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'unitedTechFile',
         name: 'ユナイテッドテックファイル',
+        translatedName: {
+            en: 'United Tech Files',
+        },
         desciption: '３回限りの個数限定箱',
+        translatedDescription: {
+            en: '799 Proxima coins (max. 3 per account)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.5,
             [ShipType.DESTROYER]: 0.5,
@@ -206,7 +230,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'enterpriseSelectionFileV2',
         name: '企業選別技術ファイル',
+        translatedName: {
+            en: 'Enterprise Selection Files',
+        },
         desciption: 'プロキシマコイン４５０（星間キャラバンとノード復帰協定初期）',
+        translatedDescription: {
+            en: '450 Proxima coins (Interstellar Caravan)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.028,
             [ShipType.DESTROYER]: 0.024,
@@ -256,7 +286,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'enterpriseBlueprintFile',
         name: '企業版設計図ファイル',
+        translatedName: {
+            en: 'Enterprise BP Files',
+        },
         desciption: '開拓状況の評価後にドーンポイント２００で買える限定確定箱',
+        translatedDescription: {
+            en: '200 Dawn points (2 per season)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.3,
             [ShipType.DESTROYER]: 0.25,
@@ -312,7 +348,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'dawnTechFile',
         name: '技術ファイル - ドーン基準',
+        translatedName: {
+            en: 'Standard Military Ship Tech Files',
+        },
         desciption: '開拓状況の評価後にプロキシマコイン４５０で買える限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (5 per season)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.03,
             [ShipType.DESTROYER]: 0.025,
@@ -339,7 +381,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'jupiterIndustryTechFile',
         name: '技術ファイル - ジュピターインダストリー',
+        translatedName: {
+            en: 'Jupiter Ind. Tech Files',
+        },
         desciption: '開拓状況の評価後にプロキシマコイン４５０で買える限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (5 per season)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.031,
             [ShipType.DESTROYER]: 0.026,
@@ -370,7 +418,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'antoniosTechFile',
         name: '技術ファイル - アントニオス',
+        translatedName: {
+            en: 'Antonios Tech Files',
+        },
         desciption: '開拓状況の評価後にプロキシマコイン４５０で買える限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (5 per season)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.031,
             [ShipType.DESTROYER]: 0.026,
@@ -401,7 +455,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'nomaShippingTechFile',
         name: '技術ファイル - ノマシッピング',
+        translatedName: {
+            en: 'NOMA Tech Files',
+        },
         desciption: '開拓状況の評価後にプロキシマコイン４５０で買える限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (5 per season)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.03,
             [ShipType.DESTROYER]: 0.025,
@@ -433,7 +493,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'fighterTechFile',
         name: '艦載機技術ファイル',
+        translatedName: {
+            en: 'Aircraft Tech Files', // TODO verify name
+        },
         desciption: 'プロキシマコイン４５０（初回２２５、期間限定）',
+        translatedDescription: {
+            en: '450 Proxima coins (special package)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0,
             [ShipType.DESTROYER]: 0,
@@ -467,7 +533,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'dawnCelebrationTechFile',
         name: 'ドーン共同祭典技術ファイル',
+        translatedName: {
+            en: 'Dawn Celebration Tech Files',
+        },
         desciption: 'プロキシマコイン４５０（初回２２５、期間限定）',
+        translatedDescription: {
+            en: '450 Proxima coins (special package)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.03,
             [ShipType.DESTROYER]: 0.025,
@@ -513,7 +585,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'jupiterFortuneFighterTechFile',
         name: '「ジュピターフォーチュン」艦載機技術ファイル',
+        translatedName: {
+            en: '"Jupiter Fortune" Aircraft Tech Files',
+        },
         desciption: 'プロキシマコイン４５０で買える「アースデイ」限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (special package)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0,
             [ShipType.DESTROYER]: 0,
@@ -541,7 +619,13 @@ export const techFiles: ITechFile[] = [
     {
         id: 'jupiterFortuneShipTechFile',
         name: '「ジュピターフォーチュン」艦船技術ファイル',
+        translatedName: {
+            en: '"Jupiter Fortune" Ship Tech Files',
+        },
         desciption: 'プロキシマコイン４５０で買える「アースデイ」限定箱',
+        translatedDescription: {
+            en: '450 Proxima coins (special package)',
+        },
         chanceByShipType: {
             [ShipType.FRIGATE]: 0.04,
             [ShipType.DESTROYER]: 0.035,

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { ITechFile } from '../../../types/ITechFile';
 import { techFiles, getTechFileById } from '../../../data/techFiles';
 import { t } from '../../../i18n';
+import { getTechFileDescription, getTechFileName } from './utils/techFileUtils';
 
 interface IProps {
     id: string;
@@ -35,7 +36,7 @@ export const TechFileSelection = (props: IProps) => {
                 autoWidth={true}
                 renderValue={(value: string) => (
                     <Typography variant="body1" whiteSpace="normal">
-                        {getTechFileById(value).name}
+                        {getTechFileName(getTechFileById(value))}
                     </Typography>
                 )}
             >
@@ -44,12 +45,12 @@ export const TechFileSelection = (props: IProps) => {
                         <ListItemText
                             primary={(
                                 <Typography variant="body1" gutterBottom={true} whiteSpace="normal">
-                                    {techFile.name}
+                                    {getTechFileName(techFile)}
                                 </Typography>
                             )}
                             secondary={(
                                 <Typography variant="body1" color="text.secondary" whiteSpace="normal">
-                                    {techFile.desciption}
+                                    {getTechFileDescription(techFile)}
                                 </Typography>
                             )}
                         />

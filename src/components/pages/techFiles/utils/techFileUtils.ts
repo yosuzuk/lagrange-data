@@ -6,7 +6,7 @@ import { getAcquirableModules, isPossessingShip, isUnwantedShip, isWantedShip } 
 import { getShipDefinitionById, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { shipTypes } from '../../../../utils/shipTypeUtils';
 import { IShipChance, IShipTypeChance, ITechFileChances } from '../types/IBlueprintChance';
-import { t } from '../../../../i18n';
+import { getCurrentLanguage, t } from '../../../../i18n';
 
 export function getTechFileChances(techFile: ITechFile, userSettings: IUserSettings): ITechFileChances {
     const shipTypeChances = Object.keys(shipTypes).map(shipType => getShipTypeChance(techFile, shipType as ShipType, userSettings));
@@ -247,4 +247,24 @@ export function formatFactor(chance: number): string {
 
 export function hasPositiveChance(shipTypeBlueprintChance: IShipTypeChance): boolean {
     return shipTypeBlueprintChance.originalChance > 0 || shipTypeBlueprintChance.blueprintChance > 0;
+}
+
+export function getTechFileName(techFile: ITechFile): string {
+    const language = getCurrentLanguage();
+
+    if (techFile.translatedName?.[language]) {
+        return techFile.translatedName[language];
+    }
+
+    return techFile.name;
+}
+
+export function getTechFileDescription(techFile: ITechFile): string {
+    const language = getCurrentLanguage();
+
+    if (techFile.translatedDescription?.[language]) {
+        return techFile.translatedDescription[language];
+    }
+
+    return techFile.desciption;
 }
