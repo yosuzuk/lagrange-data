@@ -130,6 +130,7 @@
         "orgReinforcementC": "Org. reinforcement C",
         "orgReinforcementCBrackets": "(org. reinforcement C)",
         "commandPointsValueBrackets": "({{value}} cp)",
+        "shipCountBrackets": "({{value}} ships)",
         "groupNameForSharing": "{{name}}:"
     },
     "myList": {

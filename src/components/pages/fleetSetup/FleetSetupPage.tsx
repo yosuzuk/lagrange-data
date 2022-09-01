@@ -19,7 +19,7 @@ import { FleetSetupSharingDialog } from './FleetSetupSharingDialog';
 import { IGroupedShips } from './types/IGroupedShips';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
-import { t } from '../../../i18n';
+import { isLanguageWithWhitespace, t } from '../../../i18n';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -97,7 +97,11 @@ export const FleetSetupPage = () => {
                                             initiallyOpened: true,
                                             summary: (
                                                 <Typography variant="body1">
-                                                    {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                    {group.name}
+                                                    {isLanguageWithWhitespace() && (
+                                                        <span>&nbsp;</span>
+                                                    )}
+                                                    {group.count > 0 ? t('fleetSetup.shipCountBrackets', { value: group.count }) : ''}
                                                 </Typography>
                                             ),
                                             details: (

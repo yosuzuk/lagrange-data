@@ -130,6 +130,7 @@
         "orgReinforcementC": "ユニオン増援Ｃ",
         "orgReinforcementCBrackets": "（ユニオン増援Ｃ）",
         "commandPointsValueBrackets": "（{{value}}Ｐｔ）",
+        "shipCountBrackets": "（{{value}}隻）",
         "groupNameForSharing": "【{{name}}】"
     },
     "myList": {

@@ -6,6 +6,7 @@ import { IShipSelection } from './types/IFleetSetup';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { t } from '../../../i18n';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -37,22 +38,22 @@ export const ShipCountList = (props: IProps) => {
                             </Typography>
                             {shipSelection.reinforcement === 'self' && (
                                 <Typography variant="body2" noWrap={true}>
-                                    {'（増援）'}
+                                    {t('fleetSetup.reinforcementBrackets')}
                                 </Typography>
                             )}
                             {shipSelection.reinforcement === 'ally' && (
                                 <Typography variant="body2" noWrap={true}>
-                                    {'（ユニオン増援Ａ）'}
+                                    {t('fleetSetup.orgReinforcementABrackets')}
                                 </Typography>
                             )}
                             {shipSelection.reinforcement === 'ally2' && (
                                 <Typography variant="body2" noWrap={true}>
-                                    {'（ユニオン増援Ｂ）'}
+                                    {t('fleetSetup.orgReinforcementBBrackets')}
                                 </Typography>
                             )}
                             {shipSelection.reinforcement === 'ally3' && (
                                 <Typography variant="body2" noWrap={true}>
-                                    {'（ユニオン増援Ｃ）'}
+                                    {t('fleetSetup.orgReinforcementCBrackets')}
                                 </Typography>
                             )}
                         </Stack>
