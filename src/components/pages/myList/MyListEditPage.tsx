@@ -78,10 +78,10 @@ export const MyListEditPage = () => {
             </PageContent>
             {confirmingReset && (
                 <ConfirmationDialog
-                    title={'初期化'}
-                    question={'マイリスト設定を初期状態に戻しますか？'}
-                    cancelText={'キャンセル'}
-                    confirmText={'初期化'}
+                    title={t('button.initialize')}
+                    question={t('myList.confirmInitialize')}
+                    cancelText={t('button.cancel')}
+                    confirmText={t('button.initialize')}
                     onCancel={handleCancelReset}
                     onConfirm={handleConfirmReset}
                 />

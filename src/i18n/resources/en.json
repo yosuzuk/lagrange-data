@@ -47,9 +47,11 @@
         "blueprint": "Blueprint",
         "blueprintColonValue": "Blueprint: {{value}}",
         "wantedBlueprint": "Wanted blueprint",
+        "wantedBlueprints": "Wanted blueprints",
         "wantedBlueprintColon": "Wanted blueprint:",
         "probabilityForWantedBlueprintColon": "Probability for wanted blueprint:",
         "unwantedBlueprint": "Unwanted blueprint",
+        "unwantedBlueprints": "Unwanted blueprints",
         "acquirableBlueprintColon": "Acquirable blueprint:",
         "acquiredBlueprintColon": "Acquired blueprint:",
         "additionalSystemModule": "Additional module",
@@ -76,7 +78,8 @@
         "relatedShips": "Related ships",
         "researchAgreement": "Research agreement",
         "researchDirection": "Research direction",
-        "notSelected": "Not selected"
+        "notSelected": "Not selected",
+        "acquired": "Acquired"
     },
     "techFiles": {
         "pageTitle": "Tech files",
@@ -91,8 +94,7 @@
         "sumOfProbabilityWeightWithinAvailableShipVariants": "Sum of weight for unacquired ship variants",
         "baseShipVariantRequired": "Requires base variant first",
         "baseShipVariantShipTypeProbability": "Ship type probability of base variant",
-        "lastShipVariant": "Last unacquired ship variant",
-        "accuired": "Acquired"
+        "lastShipVariant": "Last unacquired ship variant"
     },
     "researchAgreement": {
         "pageTitle": "Research agreement",
@@ -137,7 +139,24 @@
         "pageTitle": "My list",
         "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",
         "pageDescription2": "Once configured, other pages can show data adapted to your personal inventory, e.g. probabilities for ship variants become available.",
-        "pageDescription3": "You can also specify which ships and modules you want or not want to acquire. This allows other pages to show aggregated probabilities for your personalized preference."
+        "pageDescription3": "You can also specify which ships and modules you want or not want to acquire. This allows other pages to show aggregated probabilities for your personalized preference.",
+        "pageFootnote": "* All data is stored in local storage of your browser.",
+        "editMyList": "Configure",
+        "blueprintAcquiredOption": "Blueprint",
+        "blueprintAcquiredOptionYes": "Acquired",
+        "blueprintAcquiredOptionNo": "Not acquired",
+        "additionalModuleAcquiredOption": "Module",
+        "dockingEffectBlueprintAcquiredOption": "Temporary blueprint",
+        "shipBoughtOption": "Ship",
+        "shipBoughtOptionYes": "Acquired",
+        "shipBoughtOptionNo": "Not acquired",
+        "wantOption": "Wanted",
+        "wantOptionYes": "Yes",
+        "wantOptionNo": "No",
+        "acquiredShipsAndBlueprints": "Acquired ships/blueprints",
+        "unwantedDuplicates": "Unwanted duplicates",
+        "unwantedDuplicatesFootnote": "* Automatically filled list of blueprints that either turn into tech points or unwanted ship variant",
+        "confirmInitialize": "Initializing will clear your data and reset every list to its initial state."
     },
     "myListConfig": {
         "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",
@@ -185,5 +204,11 @@
         "smallFighter": "Small fighter",
         "mediumFighter": "Medium fighter",
         "largeFighter": "Large fighter"
+    },
+    "shipSource": {
+        "techFile": "Blueprints acquired by tech files",
+        "cityTrade": "Ships acquired by liasing",
+        "dockEffect": "Temporary blueprints acquired by docking effect",
+        "starterShip": "Blueprints acquired by starter tech files"
     }
 }

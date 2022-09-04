@@ -9,6 +9,7 @@ import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { AcquiredModules } from './AcquiredModules';
 import { WantedModules } from './WantedModules';
+import { t } from '../../../i18n';
 
 const MemoizedShipDataTable = memo(ShipDataTable);
 
@@ -29,7 +30,7 @@ export const MyListView = (props: IProps) => {
                         initiallyOpened: true,
                         summary: (
                             <Typography variant="body1">
-                                {'所持している艦船/設計図'}
+                                {t('myList.acquiredShipsAndBlueprints')}
                             </Typography>
                         ),
                         details: (
@@ -50,7 +51,7 @@ export const MyListView = (props: IProps) => {
                         initiallyOpened: false,
                         summary: (
                             <Typography variant="body1">
-                                {'欲しい設計図'}
+                                {t('label.wantedBlueprints')}
                             </Typography>
                         ),
                         details: (
@@ -71,7 +72,7 @@ export const MyListView = (props: IProps) => {
                         initiallyOpened: false,
                         summary: (
                             <Typography variant="body1">
-                                {'欲しくない設計図'}
+                                {t('label.unwantedBlueprints')}
                             </Typography>
                         ),
                         details: (
@@ -83,7 +84,7 @@ export const MyListView = (props: IProps) => {
                         initiallyOpened: false,
                         summary: (
                             <Typography variant="body1">
-                                {'被って欲しくない艦船'}
+                                {t('myList.unwantedDuplicates')}
                             </Typography>
                         ),
                         details: (
@@ -91,7 +92,7 @@ export const MyListView = (props: IProps) => {
                                 <MemoizedShipDataTable shipDefinitions={shipListState.unwishedByData} columnConfig={columnConfig} />
                                 <Box pt={1}>
                                     <Typography variant="caption" align="right" paragraph={true}>
-                                        {'※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます'}
+                                        {t('myList.unwantedDuplicatesFootnote')}
                                     </Typography>
                                 </Box>
                             </>
@@ -100,7 +101,7 @@ export const MyListView = (props: IProps) => {
                 ]}
             />
             <Typography variant="caption" align="right" paragraph={true}>
-                {'※設定データはブラウザのローカルストレージに保存されています。'}
+                {t('myList.pageFootnote')}
             </Typography>
         </Stack>
     );

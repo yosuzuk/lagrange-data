@@ -6,6 +6,7 @@ import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { ColumnConfigButton } from '../../columns/ColumnConfigButton';
+import { t } from '../../../i18n';
 
 interface IProps {
     shipFilter: ShipFilterState;
@@ -53,7 +54,7 @@ export const MyListActionBar = (props: IProps) => {
                         onClick={onEdit}
                         {...buttonProps}
                     >
-                        {'マイリスト設定'}
+                        {t('myList.editMyList')}
                     </Button>
                 </>
             )}
@@ -66,7 +67,7 @@ export const MyListActionBar = (props: IProps) => {
                         onClick={onShare}
                         {...buttonProps}
                     >
-                        {'共有'}
+                        {t('button.share')}
                     </Button>
                 </>
             )}

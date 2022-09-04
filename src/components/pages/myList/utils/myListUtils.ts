@@ -1,4 +1,4 @@
-import { getCurrentLanguage } from '../../../../i18n';
+import { getCurrentLanguage, t } from '../../../../i18n';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { ShipRow } from '../../../../types/ShipRow';
 import { ShipType } from '../../../../types/ShipType';
@@ -51,7 +51,7 @@ export function formatShipListForSharing(shipDefinitions: IShipDefinition[], use
     ]);
 
     return [
-        '所持している艦船/設計図',
+        t('myList.acquiredShipsAndBlueprints'),
         [
             `【${translateShipRow(ShipRow.FRONT)}】`,
             ...frontRowShips.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),

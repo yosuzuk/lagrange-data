@@ -12,6 +12,7 @@ import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModulePossession, getModuleWishState, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
 import { getModuleName, getShipName } from '../../../utils/shipDefinitionUtils';
+import { t } from '../../../i18n';
 
 interface IProps {
     ship: IShipDefinition;
@@ -58,13 +59,13 @@ export const MyListShipEditCard = (props: IProps) => {
                         && ship.modules.filter(module => !module.defaultModule).map(module => {
                         const modulePossession = getModulePossession(module.id, ship.id, userSettings);
                         return (
-                            <Fragment key={module.id}>
+                            <Box key={module.id} pl={2}>
                                 <Typography variant="h6">
                                     {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
                                 </Typography>
                                 <PossessionControl
-                                    label={'システムを'}
-                                    options={['持っている', '持っていない']}
+                                    label={t('myList.additionalModuleAcquiredOption')}
+                                    options={[t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')]}
                                     possession={modulePossession}
                                     onChange={possession => setModulePossession(module.id, ship.id, possession)}
                                 />
@@ -74,7 +75,7 @@ export const MyListShipEditCard = (props: IProps) => {
                                         onChange={wish => setModuleWish(module.id, ship.id, wish)}
                                     />
                                 )}
-                            </Fragment>
+                            </Box>
                         );
                     })}
                 </Stack>
@@ -86,13 +87,13 @@ export const MyListShipEditCard = (props: IProps) => {
 function getShipPossessionLabelText(ship: IShipDefinition) {
     switch (ship.source) {
         case ShipSource.CITY_TRADE: {
-            return '都市で';
+            return t('myList.shipBoughtOption');
         }
         case ShipSource.DOCK_EFFECT: {
-            return '臨時設計図を';
+            return t('myList.dockingEffectBlueprintAcquiredOption');
         }
         default: {
-            return '設計図を';
+            return t('myList.blueprintAcquiredOption');
         }
     }
 }
@@ -100,10 +101,10 @@ function getShipPossessionLabelText(ship: IShipDefinition) {
 function getShipPossessionOptions(ship: IShipDefinition): [string, string] {
     switch (ship.source) {
         case ShipSource.CITY_TRADE: {
-            return ['買っている', '買っていない'];
+            return [t('myList.shipBoughtOptionYes'), t('myList.shipBoughtOptionNo')];
         }
         default: {
-            return ['持っている', '持っていない'];
+            return [t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')];
         }
     }
 }

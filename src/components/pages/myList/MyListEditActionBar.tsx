@@ -5,6 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
+import { t } from '../../../i18n';
 
 interface IProps {
     shipFilter: ShipFilterState;
@@ -45,7 +46,7 @@ export const MyListEditActionBar = (props: IProps) => {
                         onClick={onReset}
                         {...buttonProps}
                     >
-                        {'初期化'}
+                        {t('button.initialize')}
                     </Button>
                     <Button
                         key="cancel"
@@ -54,7 +55,7 @@ export const MyListEditActionBar = (props: IProps) => {
                         onClick={onCancel}
                         {...buttonProps}
                     >
-                        {'キャンセル'}
+                        {t('button.cancel')}
                     </Button>
                     <Button
                         key="save"
@@ -63,7 +64,7 @@ export const MyListEditActionBar = (props: IProps) => {
                         onClick={onSave}
                         {...buttonProps}
                     >
-                        {'保存'}
+                        {t('button.save')}
                     </Button>
                 </>
             )}

@@ -119,7 +119,7 @@ function getBaseModelShipChance(
         baseChance,
         baseChanceTooltip: baseChanceTooltip,
         blueprintChance: possessed ? 0 : baseChance,
-        blueprintChanceTooltip: possessed ? [t('techFiles.accuired')] : baseChanceTooltip,
+        blueprintChanceTooltip: possessed ? [t('label.acquired')] : baseChanceTooltip,
         ...getModuleChance(ship, baseChance, possessed, userSettings),
     };
 }
@@ -169,7 +169,7 @@ function getSubModelShipChance(
             baseChance: 0,
             baseChanceTooltip: [t('techFiles.baseShipVariantRequired')],
             blueprintChance: 0,
-            blueprintChanceTooltip: [t('techFiles.accuired')],
+            blueprintChanceTooltip: [t('label.acquired')],
             moduleChance: 0, // TODO implement if sub models get modules
             moduleChanceTooltip: [],
         };
@@ -219,7 +219,7 @@ function getSubModelShipChance(
     }
 
     // multiple available ship variants
-    // => [ship type probability of base model] * ([weight] / [sum of weight of unaccuired ship variants])
+    // => [ship type probability of base model] * ([weight] / [sum of weight of unacquired ship variants])
     return {
         id: ship.id,
         name: getShipName(ship),

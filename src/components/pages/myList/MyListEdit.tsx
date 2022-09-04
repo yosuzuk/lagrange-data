@@ -6,6 +6,7 @@ import { applyShipFilter, separateShipsBySource } from '../../filter/filterUtils
 import { ShipSource } from '../../../types/ShipSource';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { MyListEditAccordion } from './MyListEditAccordion';
+import { t } from '../../../i18n';
 
 interface IProps {
     shipFilter: ShipFilterState;
@@ -24,7 +25,7 @@ export const MyListEdit = (props: IProps) => {
             <div>
                 <MyListEditAccordion
                     id="tech-file-ships"
-                    title={'技術ファイルから手に入る艦船/設計図'}
+                    title={t('shipSource.techFile')}
                     initiallyOpened={false}
                     preRenderDetails={true}
                     shipDefinitions={shipsBySource[ShipSource.TECH_FILE]}
@@ -33,7 +34,7 @@ export const MyListEdit = (props: IProps) => {
             <div>
                 <MyListEditAccordion
                     id="city-trade-ships"
-                    title={'都市で買える艦船'}
+                    title={t('shipSource.cityTrade')}
                     initiallyOpened={false}
                     shipDefinitions={shipsBySource[ShipSource.CITY_TRADE]}
                 />
@@ -41,7 +42,7 @@ export const MyListEdit = (props: IProps) => {
             <div>
                 <MyListEditAccordion
                     id="dock-effect-ships"
-                    title={'結合効果で手に入る艦船/臨時設計図'}
+                    title={t('shipSource.dockEffect')}
                     initiallyOpened={false}
                     shipDefinitions={shipsBySource[ShipSource.DOCK_EFFECT]}
                 />
@@ -49,7 +50,7 @@ export const MyListEdit = (props: IProps) => {
             <div>
                 <MyListEditAccordion
                     id="starter-ships"
-                    title={'初期配布で手に入る艦船/設計図'}
+                    title={t('shipSource.starterShip')}
                     initiallyOpened={false}
                     shipDefinitions={shipsBySource[ShipSource.STARTER_SHIP]}
                 />

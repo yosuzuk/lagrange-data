@@ -5,6 +5,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ClearIcon from '@mui/icons-material/Clear';
 import { WishState } from '../../../userSettings/types/WishState';
+import { t } from '../../../i18n';
 
 interface IProps {
     wish: WishState;
@@ -21,7 +22,7 @@ export const WishControl = (props: IProps) => {
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
-            <Typography variant="body2">{'ガチャで'}</Typography>
+            <Typography variant="body2">{t('myList.wantOption')}</Typography>
             <ToggleButtonGroup
                 size="small"
                 color="primary"
@@ -29,8 +30,8 @@ export const WishControl = (props: IProps) => {
                 exclusive={true}
                 onChange={handleChange}
             >
-                <ToggleButton value={`${WishState.WANTED}`}>{'出て欲しい'}</ToggleButton>
-                <ToggleButton value={`${WishState.NOT_WANTED}`}>{'出て欲しくない'}</ToggleButton>
+                <ToggleButton value={`${WishState.WANTED}`}>{t('myList.wantOptionYes')}</ToggleButton>
+                <ToggleButton value={`${WishState.NOT_WANTED}`}>{t('myList.wantOptionNo')}</ToggleButton>
                 {wish !== WishState.UNDEFINED && (
                     <ToggleButton value="clear">
                         <ClearIcon />

@@ -9,6 +9,7 @@ import { formatShipListForSharing } from './utils/myListUtils';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { copyToClipboard } from '../../../utils/clipboardUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
+import { t } from '../../../i18n';
 
 export interface IProps {
     ships: IShipListState;
@@ -41,7 +42,7 @@ export const ShipsSharingDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={'共有'}
+            title={t('button.share')}
             content={(
                 <Stack spacing={1}>
                     <TextField
@@ -60,14 +61,14 @@ export const ShipsSharingDialog = (props: IProps) => {
                             onClick={handleCopy}
                             fullWidth={true}
                         >
-                            {'クリップボードにコピー'}
+                            {t('button.copyToClipboard')}
                         </Button>
                     )}
                 </Stack>
             )}
             actions={(
                 <Button variant="outlined" onClick={handleClose}>
-                    {'閉じる'}
+                    {t('button.close')}
                 </Button>
             )}
             onClose={handleClose}

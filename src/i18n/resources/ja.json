@@ -47,9 +47,11 @@
         "blueprint": "設計図",
         "blueprintColonValue": "設計図：{{value}}",
         "wantedBlueprint": "欲しい設計図",
+        "wantedBlueprints": "欲しい設計図",
         "wantedBlueprintColon": "欲しい設計図：",
         "probabilityForWantedBlueprintColon": "欲しい設計図が当たる確率：",
         "unwantedBlueprint": "欲しくない設計図",
+        "unwantedBlueprints": "欲しくない設計図",
         "acquirableBlueprintColon": "取得可能な設計図：",
         "acquiredBlueprintColon": "取得済みの設計図：",
         "additionalSystemModule": "追加システム",
@@ -76,7 +78,8 @@
         "relatedShips": "関連艦船",
         "researchAgreement": "研究協定",
         "researchDirection": "研究方針",
-        "notSelected": "無し"
+        "notSelected": "無し",
+        "acquired": "取得済み"
     },
     "techFiles": {
         "pageTitle": "技術ファイル",
@@ -91,8 +94,7 @@
         "sumOfProbabilityWeightWithinAvailableShipVariants": "取得していないサブモデルの重みの合計",
         "baseShipVariantRequired": "ベースモデルが必要",
         "baseShipVariantShipTypeProbability": "ベースモデルの艦種確率",
-        "lastShipVariant": "最後のサブモデル",
-        "accuired": "取得済み"
+        "lastShipVariant": "最後のサブモデル"        
     },
     "researchAgreement": {
         "pageTitle": "研究協定",
@@ -137,7 +139,24 @@
         "pageTitle": "マイリスト",
         "pageDescription1": "マイリストでは艦船や追加システムの所有状態や「欲しい設計図」等を設定することが出来ます。",
         "pageDescription2": "所有状態を設定することで個人に合わせた細かい確率の計算が可能になります（サブモデルの確率や技術ポイントの確率が変動します）。",
-        "pageDescription3": "欲しい設計図を設定するとそれらの合計確率がパイチャートで表示されるようになります。"
+        "pageDescription3": "欲しい設計図を設定するとそれらの合計確率がパイチャートで表示されるようになります。",
+        "pageFootnote": "※設定データはブラウザのローカルストレージに保存されています。",
+        "editMyList": "マイリスト設定",
+        "blueprintAcquiredOption": "設計図を",
+        "blueprintAcquiredOptionYes": "持っている",
+        "blueprintAcquiredOptionNo": "持っていない",
+        "additionalModuleAcquiredOption": "システムを",
+        "dockingEffectBlueprintAcquiredOption": "臨時設計図を",
+        "shipBoughtOption": "都市で",
+        "shipBoughtOptionYes": "買っている",
+        "shipBoughtOptionNo": "買っていない",
+        "wantOption": "ガチャで",
+        "wantOptionYes": "出て欲しい",
+        "wantOptionNo": "出て欲しくない",
+        "acquiredShipsAndBlueprints": "所持している艦船/設計図",
+        "unwantedDuplicates": "被って欲しくない艦船",
+        "unwantedDuplicatesFootnote": "※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます",
+        "confirmInitialize": "マイリスト設定を初期状態に戻しますか？"
     },
     "myListConfig": {
         "pageDescription1": "ここでは艦船/設計図の所有状態を設定できます。",
@@ -185,5 +204,11 @@
         "smallFighter": "小型戦闘機",
         "mediumFighter": "中量級戦闘機",
         "largeFighter": "大型戦闘機"
+    },
+    "shipSource": {
+        "techFile": "技術ファイルから手に入る艦船/設計図",
+        "cityTrade": "都市で買える艦船",
+        "dockEffect": "結合効果で手に入る艦船/臨時設計図",
+        "starterShip": "初期配布で手に入る艦船/設計図"
     }
 }
