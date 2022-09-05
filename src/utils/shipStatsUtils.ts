@@ -84,8 +84,8 @@ export function subtractDpmStats(stats: IStats, targetStats: IStats): IStats {
     };
 }
 
-export function formatDpm(dpm: number | undefined): string {
-    return Number.isFinite(dpm) ? formatNumberWithSuffix(dpm as number) : '-';
+export function formatDpm(dpm: number | undefined | null, precision?: number): string {
+    return Number.isFinite(dpm) ? formatNumberWithSuffix(dpm as number, precision) : '-';
 }
 
 export function formatDpmAll(stats: IStats): string {

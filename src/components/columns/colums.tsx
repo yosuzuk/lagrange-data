@@ -176,6 +176,11 @@ export const hpColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('l
 export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.cruiseSpeed'), 'speed');
 export const warpSpeedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.warpSpeed'), 'warpSpeed');
 
+export const shipDpmShipPerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.antiShipDpmPerCommandPoint'), 'dpmShip');
+export const shipDpmAntiAirPerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.antiAirDpmPerCommandPoint'), 'dpmAntiAir');
+export const shipDpmSiegePerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.siegeDpmPerCommandPoint'), 'dpmSiege');
+export const hpPerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.hpPerCommandPoint'), 'hp');
+
 function createShipStatColumn(name: string, statsProperty: keyof IStats): ITableColumn<IShipDefinition> {
     return {
         id: statsProperty,
@@ -188,10 +193,34 @@ function createShipStatColumn(name: string, statsProperty: keyof IStats): ITable
     }
 }
 
-function getShipStatsPropertyAsNumber(shipId: string, statsProperty: keyof IStats): number | undefined {
-    const value = getShipStats(getShipDefinitionById(shipId), null)?.[statsProperty];
+function createShipStatPerCommandPointColumn(name: string, statsProperty: keyof IStats): ITableColumn<IShipDefinition> {
+    return {
+        id: `${statsProperty}_per_command_point`,
+        renderHeader: () => name,
+        renderCell: (data: IShipDefinition) => formatDpm(getShipStatsPropertyPerCommandPointAsNumber(data, statsProperty), 0),
+        sortFn: [
+            (a, b) => (getShipStatsPropertyPerCommandPointAsNumber(a, statsProperty) ?? 0) - (getShipStatsPropertyPerCommandPointAsNumber(b, statsProperty) ?? 0),
+            (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+        ],
+    }
+}
+
+function getShipStatsPropertyAsNumber(shipId: string, statsProperty: keyof IStats): number | null {
+    const value = getShipStats(getShipDefinitionById(shipId), null)?.[statsProperty] ?? null;
     if (typeof value === 'boolean') {
         throw new Error(`${statsProperty} is not a numeric value`);
     }
     return value;
+}
+
+function getShipStatsPropertyPerCommandPointAsNumber(shipDefinition: IShipDefinition, statsProperty: keyof IStats): number | null {
+    if (shipDefinition.cost === 0) {
+        return null;
+    }
+
+    const value = getShipStatsPropertyAsNumber(shipDefinition.id, statsProperty);
+    if (typeof value === 'boolean') {
+        throw new Error(`${statsProperty} is not a numeric value`);
+    }
+    return value === null ? null : (value / shipDefinition.cost);
 }

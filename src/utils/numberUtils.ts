@@ -3,5 +3,5 @@ export function formatNumberWithSuffix(value: number, precision: number = 1): st
         return `${Number((value / 1000).toFixed(precision))}K`;
     }
 
-    return `${value}`;
+    return `${Number(value.toFixed(precision))}`;
 }

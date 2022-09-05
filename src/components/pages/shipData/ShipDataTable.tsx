@@ -20,6 +20,10 @@ import {
     hpColumn,
     speedColumn,
     warpSpeedColumn,
+    shipDpmShipPerCommandPointColumn,
+    shipDpmAntiAirPerCommandPointColumn,
+    shipDpmSiegePerCommandPointColumn,
+    hpPerCommandPointColumn,
 } from '../../columns/colums';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 
@@ -50,6 +54,10 @@ export const ShipDataTable = (props: IProps) => {
         ...columnConfig.hp ? [hpColumn] : [],
         ...columnConfig.speed ? [speedColumn] : [],
         ...columnConfig.warpSpeed ? [warpSpeedColumn] : [],
+        ...columnConfig.dpmShipPerCommandPoint ? [shipDpmShipPerCommandPointColumn] : [],
+        ...columnConfig.dpmAntiAirPerCommandPoint ? [shipDpmAntiAirPerCommandPointColumn] : [],
+        ...columnConfig.dpmSiegePerCommandPoint ? [shipDpmSiegePerCommandPointColumn] : [],
+        ...columnConfig.hpPerCommandPoint ? [hpPerCommandPointColumn] : [],
         ...columnConfig.source ? [shipSourceColumn] : [],
         ...columnConfig.manufacturer ? [manufacturerColumn] : [],
         ...columnConfig.researchManufacturer ? [researchManufacturerColumn] : [],
