@@ -16,6 +16,7 @@
     },
     "label": {
         "ship": "Ship",
+        "ships": "Ships",
         "selectedShip": "Selected ship",
         "newShip": "New ship",
         "shipName": "Ship name",
@@ -83,7 +84,13 @@
         "researchAgreement": "Research agreement",
         "researchDirection": "Research direction",
         "notSelected": "Not selected",
-        "acquired": "Acquired"
+        "acquired": "Acquired",
+        "unsupported": "Unsupported",
+        "warning": "Warning"
+    },
+    "validation": {
+        "requiredField": "Required",
+        "invalidValue": "Invalid value"
     },
     "techFiles": {
         "pageTitle": "Tech files",
@@ -125,6 +132,14 @@
         "sortByName": "Sort by name",
         "selectFleet": "Select fleet",
         "addShips": "Add ships",
+        "addShipsDescription": "Adding ships by consuming command points. Acquired ships can be configured on the \"My list\" page.",
+        "addAircraft": "Add aircraft",
+        "addAircraftDescription": "Selected aircraft will be assignment to hangar. Acquired aircrafts can be configured on the \"My list\" page.",
+        "addReinforcement": "Add reinforcement",
+        "addReinforcementDescriptionSelf": "Addiong reinfocement from own base. Acquired ships can be configured on the \"My list\" page.",
+        "addReinforcementDescriptionAllyA": "Adding org. reinforcement from union member A",
+        "addReinforcementDescriptionAllyB": "Adding org. reinforcement from union member B",
+        "addReinforcementDescriptionAllyC": "Adding org. reinforcement from union member C",
         "normalAssignment": "Consume command points",
         "reinforcement": "Self reinforcement",
         "reinforcementColon": "Reinforcement:",
@@ -137,7 +152,21 @@
         "orgReinforcementCBrackets": "(org. reinforcement C)",
         "commandPointsValueBrackets": "({{value}} cp)",
         "shipCountBrackets": "({{value}} ships)",
-        "groupNameForSharing": "{{name}}:"
+        "groupNameForSharing": "{{name}}:",
+        "defaultFleetNameWithNumber": "Fleet {{fleetNumber}}",
+        "maxOneDockingEffect": "Conflicting docking effect",
+        "exceedingTotalOperationLimit": "Exceeding total operation limit",
+        "noMatchingShip": "No matching ship",
+        "noMatchingAircraft": "No matching aircraft",
+        "shipWithValidationError": "{{shipName}}: {{errorText}}",
+        "reinforcementShipWithValidationError": "{{shipName}} ({{reinforcementType}}): {{errorText}}",
+        "commaCommandPointColon": ", command points:",
+        "totalFleetCommandPoints": "Total command points",
+        "totalFleetDpm": "Fleet DPM",
+        "totalFleetHp": "Fleet HP",
+        "totalShipCountValue": "{{value}} ships in total",
+        "countPerKind": "{{value}}× {{kind}}",
+        "inaccurateDueToMissingDataBrackets": "(inaccurate due to missing data)"
     },
     "myList": {
         "pageTitle": "My list",

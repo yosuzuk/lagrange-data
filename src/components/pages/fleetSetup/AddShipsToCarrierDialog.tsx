@@ -13,6 +13,7 @@ import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ShipType } from '../../../types/ShipType';
 import { filterCarriedShipForAddDialog } from './utils/carriedShipAddDialogUtils';
+import { t } from '../../../i18n';
 
 export interface IProps {
     dialogData: IDialogDataForCarriedShips;
@@ -54,10 +55,10 @@ export const AddShipsToCarrierDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={'艦載機を追加'}
+            title={t('fleetSetup.addAircraft')}
             content={(
                 <Stack spacing={2}>
-                    <Typography variant="body2">{'艦載機を配備します。所持している艦載機はマイリストで設定してください。'}</Typography>
+                    <Typography variant="body2">{t('fleetSetup.addAircraftDescription')}</Typography>
                     {(canAddCorvette && canAddFighter) && (
                         <div>
                             <ShipTypeFilterButton
@@ -80,7 +81,7 @@ export const AddShipsToCarrierDialog = (props: IProps) => {
                     )}
                     {filteredShips.shipSelections.length === 0 && (
                         <Alert severity="info">
-                            {'該当する艦載機がありません。'}
+                            {t('fleetSetup.noMatchingAircraft')}
                         </Alert>
                     )}
                     {drawList ? (
@@ -108,10 +109,10 @@ export const AddShipsToCarrierDialog = (props: IProps) => {
             actions={(
                 <>
                     <Button variant="outlined" onClick={onCancel}>
-                        {'キャンセル'}
+                        {t('button.cancel')}
                     </Button>
                     <Button variant="contained" onClick={onApply}>
-                        {'ＯＫ'}
+                        {t('button.confirm')}
                     </Button>
                 </>
             )}

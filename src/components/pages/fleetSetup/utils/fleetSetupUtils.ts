@@ -1,3 +1,4 @@
+import { t } from '../../../../i18n';
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
 import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { migrateShipId } from '../../../../userSettings/utils/migration';
@@ -149,7 +150,7 @@ function parseFleetSetup(serializedFleetSetup: string): IMinifiedFleetSetup | nu
 export function createFleetSetup(fleetNumber: number): IFleetSetup {
     return {
         key: `fleet${fleetNumber}`,
-        name: `${fleetNumber}号艦隊`,
+        name: t('fleetSetup.defaultFleetNameWithNumber', { fleetNumber }),
         ships: [],
         totalCost: 0,
         totalReinforcementCount: 0,

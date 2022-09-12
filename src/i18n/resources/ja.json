@@ -16,6 +16,7 @@
     },
     "label": {
         "ship": "艦船",
+        "ships": "艦船",
         "selectedShip": "選択した艦船",
         "newShip": "新規艦船",
         "shipName": "艦名",
@@ -83,7 +84,13 @@
         "researchAgreement": "研究協定",
         "researchDirection": "研究方針",
         "notSelected": "無し",
-        "acquired": "取得済み"
+        "acquired": "取得済み",
+        "unsupported": "未対応",
+        "warning": "警告"
+    },
+    "validation": {
+        "requiredField": "必須項目",
+        "invalidValue": "無効な値"
     },
     "techFiles": {
         "pageTitle": "技術ファイル",
@@ -125,6 +132,14 @@
         "sortByName": "名前順",
         "selectFleet": "艦隊選択",
         "addShips": "艦船を追加",
+        "addShipsDescription": "艦船を通常配備します。所持している艦船はマイリストで設定してください。",
+        "addAircraft": "艦載機を追加",
+        "addAircraftDescription": "艦載機を配備します。所持している艦載機はマイリストで設定してください。",
+        "addReinforcement": "増援を追加",
+        "addReinforcementDescriptionSelf": "自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。",
+        "addReinforcementDescriptionAllyA": "ユニオンメンバーＡから送られる増援を追加します。",
+        "addReinforcementDescriptionAllyB": "ユニオンメンバーＢから送られる増援を追加します。",
+        "addReinforcementDescriptionAllyC": "ユニオンメンバーＣから送られる増援を追加します。",
         "normalAssignment": "通常配備",
         "reinforcement": "増援",
         "reinforcementColon": "増援：",
@@ -137,7 +152,21 @@
         "orgReinforcementCBrackets": "（ユニオン増援Ｃ）",
         "commandPointsValueBrackets": "（{{value}}Ｐｔ）",
         "shipCountBrackets": "（{{value}}隻）",
-        "groupNameForSharing": "【{{name}}】"
+        "groupNameForSharing": "【{{name}}】",
+        "defaultFleetNameWithNumber": "{{fleetNumber}}号艦隊",
+        "maxOneDockingEffect": "基地結合効果は１つまでです",
+        "exceedingTotalOperationLimit": "配備した合計数が稼働上限を超えています",
+        "noMatchingShip": "該当する艦船がありません。",
+        "noMatchingAircraft": "該当する艦載機がありません。",
+        "shipWithValidationError": "{{shipName}}：{{errorText}}",
+        "reinforcementShipWithValidationError": "{{shipName}}（{{reinforcementType}}）：{{errorText}}",
+        "commaCommandPointColon": "、司令Pt：",
+        "totalFleetCommandPoints": "艦隊司令Pt",
+        "totalFleetDpm": "合計DPM",
+        "totalFleetHp": "合計HP",
+        "totalShipCountValue": "合計{{value}}隻",
+        "countPerKind": "{{value}}×　{{kind}}",
+        "inaccurateDueToMissingDataBrackets": "（データが欠落しているため不正確）"
     },
     "myList": {
         "pageTitle": "マイリスト",
@@ -207,7 +236,9 @@
         "fighter": "戦闘機",
         "smallFighter": "小型戦闘機",
         "mediumFighter": "中量級戦闘機",
-        "largeFighter": "大型戦闘機"
+        "largeFighter": "大型戦闘機",
+        "smallToMediumFighter": "小～中量級戦闘機",
+        "smallToLargeFighter": "小～大型戦闘機"
     },
     "shipSource": {
         "techFile": "技術ファイルから手に入る艦船/設計図",

@@ -13,6 +13,7 @@ import { createInitialShipFilterState } from '../../filter/filterUtils';
 import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ShipType } from '../../../types/ShipType';
+import { t, isLanguageWithWhitespace } from '../../../i18n';
 
 export interface IProps {
     dialogData: IDialogDataForShips;
@@ -59,7 +60,8 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     {dialogData.reinforcement === null ? (
                         <div>
                             <Typography variant="body1" component="span">
-                                {'指令Pt：'}
+                                {t('label.commandPointsColon')}
+                                {isLanguageWithWhitespace() ? ' ' : ''}
                             </Typography>
                             <Typography
                                 variant="body1"
@@ -76,7 +78,8 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     ) : (
                         <div>
                             <Typography variant="body1" component="span">
-                                {'増援：'}
+                                {t('fleetSetup.reinforcementColon')}
+                                {isLanguageWithWhitespace() ? ' ' : ''}
                             </Typography>
                             <Typography
                                 variant="body1"
@@ -119,7 +122,7 @@ export const AddShipsToFleetDialog = (props: IProps) => {
                     </div>
                     {filteredShips.fleetSetup.ships.length === 0 && (
                         <Alert severity="info">
-                            {'該当する艦船がありません。'}
+                            {t('fleetSetup.noMatchingShip')}
                         </Alert>
                     )}
                     {drawList ? (
@@ -147,10 +150,10 @@ export const AddShipsToFleetDialog = (props: IProps) => {
             actions={(
                 <>
                     <Button variant="outlined" onClick={onCancel}>
-                        {'キャンセル'}
+                        {t('button.cancel')}
                     </Button>
                     <Button variant="contained" onClick={onApply}>
-                        {'ＯＫ'}
+                        {t('button.confirm')}
                     </Button>
                 </>
             )}
@@ -165,10 +168,10 @@ function getTitle(reinforcement: ReinforcementType | null): string {
         case 'ally2':
         case 'ally3':
         case 'self': {
-            return '増援を追加';
+            return t('fleetSetup.addReinforcement');
         }
         default: {
-            return '艦船を追加';
+            return t('fleetSetup.addShips');
         }
     }
 }
@@ -176,19 +179,19 @@ function getTitle(reinforcement: ReinforcementType | null): string {
 function getDescription(reinforcement: ReinforcementType | null): string {
     switch (reinforcement) {
         case 'ally': {
-            return 'ユニオンメンバーＡから送られる増援を追加します。';
+            return t('fleetSetup.addReinforcementDescriptionAllyA');
         }
         case 'ally2': {
-            return 'ユニオンメンバーＢから送られる増援を追加します。';
+            return t('fleetSetup.addReinforcementDescriptionAllyB');
         }
         case 'ally3': {
-            return 'ユニオンメンバーＣから送られる増援を追加します。';
+            return t('fleetSetup.addReinforcementDescriptionAllyC');
         }
         case 'self': {
-            return '自身の基地から送る増援を追加します。所持している艦船はマイリストで設定してください。';
+            return t('fleetSetup.addReinforcementDescriptionSelf');
         }
         default: {
-            return '艦船を通常配備します。所持している艦船はマイリストで設定してください。';
+            return t('fleetSetup.addShipsDescription');
         }
     }
 }

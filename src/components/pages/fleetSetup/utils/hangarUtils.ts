@@ -1,3 +1,4 @@
+import { t } from '../../../../i18n';
 import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { IShipSelection } from '../types/IFleetSetup';
 
@@ -20,7 +21,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
     const result: IHangar = {
         corvette: {
             key: 'corvette',
-            name: '護送艦',
+            name: t('shipType.corvette'),
             count: shipSelection.carriedShips
                 .filter(s => s.shipDefinition.type === ShipType.CORVETTE)
                 .map(s => s.count)
@@ -29,7 +30,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         upToLargeFighter: {
             key: 'upToLargeFighter',
-            name: '小～大型戦闘機',
+            name: t('shipType.smallToLargeFighter'),
             count: shipSelection.carriedShips
                 .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.LARGE_FIGHTER)
                 .map(s => s.count)
@@ -38,7 +39,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         upToMediumFighter: {
             key: 'upToMediumFighter',
-            name: '小～中量級戦闘機',
+            name: t('shipType.smallToMediumFighter'),
             count: shipSelection.carriedShips
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.MEDIUM_FIGHTER)
                 .map(s => s.count)
@@ -47,7 +48,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         upToSmallFighter: {
             key: 'upToSmallFighter',
-            name: '小型戦闘機',
+            name: t('shipType.smallFighter'),
             count: shipSelection.carriedShips
             .filter(s => s.shipDefinition.type === ShipType.FIGHTER && s.shipDefinition.subType === ShipSubType.SMALL_FIGHTER)
                 .map(s => s.count)
@@ -56,7 +57,7 @@ export function getHangar(shipSelection: IShipSelection): IHangar {
         },
         removedHangar: {
             key: 'removedHangar',
-            name: '未対応',
+            name: t('label.unsupported'),
             count: 0,
             maxCount: 0,
         },

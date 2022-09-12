@@ -19,6 +19,7 @@ import { getShipDefinitionById, getShipName } from '../../../utils/shipDefinitio
 import { getFleetStats } from './utils/fleetStats';
 import { formatDpmAll, formatHp, formatSpeed } from '../../../utils/shipStatsUtils';
 import { flags } from '../../../utils/flags';
+import { t, isLanguageWithWhitespace } from '../../../i18n';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -45,21 +46,42 @@ export const FleetProperties = (props: IProps) => {
         return Object.keys(errorMap).map(key => {
             const [shipId, owner] = key.split('#');
             const shipDefinition = getShipDefinitionById(shipId);
+            const shipName = getShipName(shipDefinition);
+            const errorText = errorMap[key];
             switch (owner) {
                 case 'self': {
-                    return `${getShipName(shipDefinition)}：${errorMap[key]}`;
+                    return t('fleetSetup.reinforcementShipWithValidationError', {
+                        shipName,
+                        reinforcementType: t('fleetSetup.reinforcement'),
+                        errorText,
+                    });
                 }
                 case 'ally': {
-                    return `${getShipName(shipDefinition)}（ユニオン増援Ａ）：${errorMap[key]}`;
+                    return t('fleetSetup.reinforcementShipWithValidationError', {
+                        shipName,
+                        reinforcementType: t('fleetSetup.orgReinforcementA'),
+                        errorText,
+                    });
                 }
                 case 'ally2': {
-                    return `${getShipName(shipDefinition)}（ユニオン増援Ｂ）：${errorMap[key]}`;
+                    return t('fleetSetup.reinforcementShipWithValidationError', {
+                        shipName,
+                        reinforcementType: t('fleetSetup.orgReinforcementB'),
+                        errorText,
+                    });
                 }
                 case 'ally3': {
-                    return `${getShipName(shipDefinition)}（ユニオン増援Ｃ）：${errorMap[key]}`;
+                    return t('fleetSetup.reinforcementShipWithValidationError', {
+                        shipName,
+                        reinforcementType: t('fleetSetup.orgReinforcementC'),
+                        errorText,
+                    });
                 }
                 default: {
-                    return `${getShipName(shipDefinition)}：${errorMap[key]}`;
+                    return t('fleetSetup.shipWithValidationError', {
+                        shipName,
+                        errorText,
+                    });
                 }
             }
         });
@@ -83,13 +105,15 @@ export const FleetProperties = (props: IProps) => {
                     {!expanded && (
                         <div>
                             <Typography variant="body2" color="text.secondary" component="span">
-                                {'増援：'}
+                                {t('fleetSetup.reinforcementColon')}
+                                {isLanguageWithWhitespace() ? ' ' : ''}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="span" sx={exceedingReinforcement ? { color: 'red' } : {}}>
                                 {`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="span">
-                                {'、司令Pt：'}
+                                {t('fleetSetup.commaCommandPointColon')}
+                                {isLanguageWithWhitespace() ? ' ' : ''}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="span" sx={exceedingCost ? { color: 'red' } : {}}>
                                 {`${totalCost} / ${fleetSetup.maxCost}`}
@@ -104,7 +128,7 @@ export const FleetProperties = (props: IProps) => {
                         rows={[
                             {
                                 key: 'reinforcementCount',
-                                label: '増援',
+                                label: t('fleetSetup.reinforcement'),
                                 value: (
                                     <Typography variant="body2" sx={exceedingReinforcement ? { color: 'red' } : {}}>
                                         {`${fleetSetup.totalReinforcementCount} / ${fleetSetup.maxReinforcement}`}
@@ -113,7 +137,7 @@ export const FleetProperties = (props: IProps) => {
                             },
                             {
                                 key: 'cost',
-                                label: '艦隊司令Pt',
+                                label: t('fleetSetup.totalFleetCommandPoints'),
                                 value: (
                                     <Typography variant="body2" sx={exceedingCost ? { color: 'red' } : {}}>
                                         {`${totalCost} / ${fleetSetup.maxCost}`}
@@ -123,7 +147,7 @@ export const FleetProperties = (props: IProps) => {
                             ...(flags.enableStats ? [
                                 {
                                     key: 'dpm',
-                                    label: '合計DPM',
+                                    label: t('fleetSetup.totalFleetDpm'),
                                     value: (
                                         <>
                                             <Typography variant="body2">
@@ -131,7 +155,7 @@ export const FleetProperties = (props: IProps) => {
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
-                                                    {'（データが欠落しているため不正確）'}
+                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                                 </Typography>
                                             )}
                                         </>
@@ -139,7 +163,7 @@ export const FleetProperties = (props: IProps) => {
                                 },
                                 {
                                     key: 'hp',
-                                    label: '合計HP',
+                                    label: t('fleetSetup.totalFleetHp'),
                                     value: (
                                         <>
                                             <Typography variant="body2">
@@ -147,7 +171,7 @@ export const FleetProperties = (props: IProps) => {
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
-                                                    {'（データが欠落しているため不正確）'}
+                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                                 </Typography>
                                             )}
                                         </>
@@ -155,7 +179,7 @@ export const FleetProperties = (props: IProps) => {
                                 },
                                 {
                                     key: 'speed',
-                                    label: '速度',
+                                    label: t('label.speed'),
                                     value: (
                                         <>
                                             <Typography variant="body2">
@@ -163,7 +187,7 @@ export const FleetProperties = (props: IProps) => {
                                             </Typography>
                                             {fleetStats.incomplete && (
                                                 <Typography variant="caption" color="text.secondary">
-                                                    {'（データが欠落しているため不正確）'}
+                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                                 </Typography>
                                             )}
                                         </>
@@ -172,15 +196,18 @@ export const FleetProperties = (props: IProps) => {
                             ] : []),
                             {
                                 key: 'shipCount',
-                                label: '艦船',
+                                label: t('label.ships'),
                                 value: shipCount > 0 ? (
                                     <>
-                                        <Typography variant="body2">{`合計　${shipCount}`}</Typography>
+                                        <Typography variant="body2">{t('fleetSetup.totalShipCountValue', { value: shipCount })}</Typography>
                                         {Object.keys(shipCountByType)
                                             .filter(shipType => shipCountByType[shipType as ShipType] > 0 && shipType !== ShipType.CORVETTE && shipType !== ShipType.FIGHTER)
                                             .map(shipType => (
                                                 <Typography key={shipType} variant="body2">
-                                                    {`${translateShipType(shipType as ShipType)}　${shipCountByType[shipType as ShipType]}`}
+                                                    {t('fleetSetup.countPerKind', {
+                                                        kind: translateShipType(shipType as ShipType),
+                                                        value: shipCountByType[shipType as ShipType],
+                                                    })}
                                                 </Typography>
                                             ))
                                         }
@@ -191,14 +218,24 @@ export const FleetProperties = (props: IProps) => {
                             },
                             {
                                 key: 'carriedShipCount',
-                                label: '艦載機',
+                                label: t('shipType.aircraft'),
                                 value: (shipCountByType[ShipType.FIGHTER] + shipCountByType[ShipType.CORVETTE]) > 0 ? (
                                     <>
                                         {shipCountByType[ShipType.FIGHTER] > 0 && (
-                                            <Typography variant="body2">{`${translateShipType(ShipType.FIGHTER)}　${shipCountByType[ShipType.FIGHTER]}`}</Typography>
+                                            <Typography variant="body2">
+                                                {t('fleetSetup.countPerKind', {
+                                                    kind: translateShipType(ShipType.FIGHTER),
+                                                    value: shipCountByType[ShipType.FIGHTER],
+                                                })}
+                                            </Typography>
                                         )}
                                         {shipCountByType[ShipType.CORVETTE] > 0 && (
-                                            <Typography variant="body2">{`${translateShipType(ShipType.CORVETTE)}　${shipCountByType[ShipType.CORVETTE]}`}</Typography>
+                                            <Typography variant="body2">
+                                                {t('fleetSetup.countPerKind', {
+                                                    kind: translateShipType(ShipType.CORVETTE),
+                                                    value: shipCountByType[ShipType.CORVETTE],
+                                                })}
+                                            </Typography>
                                         )}
                                     </>
                                 ) : (
@@ -207,12 +244,15 @@ export const FleetProperties = (props: IProps) => {
                             },
                             {
                                 key: 'rowCount',
-                                label: '配置',
+                                label: t('label.rowPlacement'),
                                 value: shipCount > 0 ? (
                                     <>
-                                        {Object.keys(shipCountByRow).filter(shipRow => shipRow !== ShipRow.NONE).map(shipRow => (
+                                        {Object.keys(shipCountByRow).filter(shipRow => shipRow !== ShipRow.NONE && shipCountByRow[shipRow as ShipRow] > 0).map(shipRow => (
                                             <Typography key={shipRow} variant="body2">
-                                                {`${translateShipRow(shipRow as ShipRow)}　${shipCountByRow[shipRow as ShipRow]}`}
+                                                {t('fleetSetup.countPerKind', {
+                                                    kind: translateShipRow(shipRow as ShipRow),
+                                                    value: shipCountByRow[shipRow as ShipRow],
+                                                })}
                                             </Typography>
                                         ))}
                                     </>
@@ -222,7 +262,7 @@ export const FleetProperties = (props: IProps) => {
                             },
                             ...(warnings.length > 0 ? [{
                                 key: 'warnings',
-                                label: '警告',
+                                label: t('label.warning'),
                                 value: warnings.map((warning: string, index: number) => (
                                     <Typography key={`warning_${index}`} variant="body2" sx={{ color: 'red' }}>
                                         {warning}
