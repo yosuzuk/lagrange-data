@@ -15,6 +15,7 @@ import { isPossessingModule } from '../../../userSettings/utils/userSettingsUtil
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
 import { t } from '../../../i18n';
+import { flags } from '../../../utils/flags';
 
 export interface IProps {
     shipId: string;
@@ -97,7 +98,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                                         label={(
                                                             <Box pt={1} pb={1}>
                                                                 <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${getModuleName(shipId, moduleUsage.module)}`}</Typography>
-                                                                {moduleUsage.module.description && (
+                                                                {flags.enableModuleDescription && moduleUsage.module.description && (
                                                                     <Typography variant="body2" color="text.secondary">{`${moduleUsage.module.description}`}</Typography>
                                                                 )}
                                                             </Box>
