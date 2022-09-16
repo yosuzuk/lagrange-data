@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import { IFleetSetup } from './types/IFleetSetup';
 import { IFleetShipCount } from './types/IFleetShipCount';
+import { t } from '../../../i18n';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -26,7 +27,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
-                                        {'増援'}
+                                        {t('fleetSetup.reinforcement')}
                                     </Typography>
                                     <Typography
                                         variant="body1"
@@ -39,7 +40,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
-                                        {'司令pt'}
+                                        {t('fleetSetup.commandPoints')}
                                     </Typography>
                                     <Typography
                                         variant="body1"

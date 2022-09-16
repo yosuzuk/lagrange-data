@@ -52,7 +52,7 @@ export const FleetProperties = (props: IProps) => {
                 case 'self': {
                     return t('fleetSetup.reinforcementShipWithValidationError', {
                         shipName,
-                        reinforcementType: t('fleetSetup.reinforcement'),
+                        reinforcementType: t('fleetSetup.selfReinforcement'),
                         errorText,
                     });
                 }

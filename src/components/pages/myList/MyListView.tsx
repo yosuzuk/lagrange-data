@@ -30,7 +30,7 @@ export const MyListView = (props: IProps) => {
                         initiallyOpened: true,
                         summary: (
                             <Typography variant="body1">
-                                {t('myList.acquiredShipsAndBlueprints')}
+                                {t('label.acquiredShipsAndBlueprints')}
                             </Typography>
                         ),
                         details: (

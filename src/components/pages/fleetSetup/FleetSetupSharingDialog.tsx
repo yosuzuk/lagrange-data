@@ -9,6 +9,7 @@ import { copyToClipboard } from '../../../utils/clipboardUtils';
 import { IGroupedShips } from './types/IGroupedShips';
 import { formatGroupedShipsForSharing } from './utils/shipGroupingUtils';
 import { IFleetSetup } from './types/IFleetSetup';
+import { t } from '../../../i18n';
 
 export interface IProps {
     fleetSetup: IFleetSetup;
@@ -41,7 +42,7 @@ export const FleetSetupSharingDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={'共有'}
+            title={t('button.share')}
             content={(
                 <Stack spacing={1}>
                     <TextField
@@ -60,14 +61,14 @@ export const FleetSetupSharingDialog = (props: IProps) => {
                             onClick={handleCopy}
                             fullWidth={true}
                         >
-                            {'クリップボードにコピー'}
+                            {t('button.copyToClipboard')}
                         </Button>
                     )}
                 </Stack>
             )}
             actions={(
                 <Button variant="outlined" onClick={handleClose}>
-                    {'閉じる'}
+                    {t('button.close')}
                 </Button>
             )}
             onClose={handleClose}

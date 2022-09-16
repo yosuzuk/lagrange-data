@@ -60,21 +60,23 @@ export const MyListShipEditCard = (props: IProps) => {
                         const modulePossession = getModulePossession(module.id, ship.id, userSettings);
                         return (
                             <Box key={module.id} pl={2}>
-                                <Typography variant="h6">
-                                    {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
-                                </Typography>
-                                <PossessionControl
-                                    label={t('myList.additionalModuleAcquiredOption')}
-                                    options={[t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')]}
-                                    possession={modulePossession}
-                                    onChange={possession => setModulePossession(module.id, ship.id, possession)}
-                                />
-                                {modulePossession === PossessionState.NOT_POSSESSED && (
-                                    <WishControl
-                                        wish={getModuleWishState(module.id, ship.id, userSettings)}
-                                        onChange={wish => setModuleWish(module.id, ship.id, wish)}
+                                <Stack spacing={3}>
+                                    <Typography variant="h6">
+                                        {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
+                                    </Typography>
+                                    <PossessionControl
+                                        label={t('myList.additionalModuleAcquiredOption')}
+                                        options={[t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')]}
+                                        possession={modulePossession}
+                                        onChange={possession => setModulePossession(module.id, ship.id, possession)}
                                     />
-                                )}
+                                    {modulePossession === PossessionState.NOT_POSSESSED && (
+                                        <WishControl
+                                            wish={getModuleWishState(module.id, ship.id, userSettings)}
+                                            onChange={wish => setModuleWish(module.id, ship.id, wish)}
+                                        />
+                                    )}
+                                </Stack>
                             </Box>
                         );
                     })}

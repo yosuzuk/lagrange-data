@@ -13,6 +13,7 @@ import { IShipDefinition } from '../../../types/ShipDefinition';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { t, isLanguageWithWhitespace } from '../../../i18n';
 
 interface IProps {
     shipDefinition: IShipDefinition;
@@ -55,27 +56,34 @@ export const ShipCountEditListItem = (props: IProps) => {
             </Typography>
             {showCost && reinforcement === null && (
                 <Typography variant="body2" color="text.secondary">
-                    {`指令Ｐｔ：${shipDefinition.cost}　合計：${shipDefinition.cost * count}`}
+                    {t('label.commandPointsColon')}
+                    {isLanguageWithWhitespace() ? ' ' : ''}
+                    {shipDefinition.cost}
+                    {t('label.comma')}
+                    {isLanguageWithWhitespace() ? ' ' : ''}
+                    {t('label.totalColon')}
+                    {isLanguageWithWhitespace() ? ' ' : ''}
+                    {`${shipDefinition.cost * count}`}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'self' && (
                 <Typography variant="body2" color="text.secondary">
-                    {`増援`}
+                    {t('fleetSetup.selfReinforcement')}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'ally' && (
                 <Typography variant="body2" color="text.secondary">
-                    {`ユニオン増援Ａ`}
+                    {t('fleetSetup.orgReinforcementA')}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'ally2' && (
                 <Typography variant="body2" color="text.secondary">
-                    {`ユニオン増援Ｂ`}
+                    {t('fleetSetup.orgReinforcementB')}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'ally3' && (
                 <Typography variant="body2" color="text.secondary">
-                    {`ユニオン増援Ｃ`}
+                    {t('fleetSetup.orgReinforcementC')}
                 </Typography>
             )}
         </>
@@ -98,7 +106,7 @@ export const ShipCountEditListItem = (props: IProps) => {
             }}
             disabled={count <= 0}
         >
-            {'外す'}
+            {t('fleetSetup.clearAddedShips')}
         </Button>
     );
 
@@ -149,7 +157,7 @@ export const ShipCountEditListItem = (props: IProps) => {
             }}
             disabled={count >= maxCount}
         >
-            {'最大'}
+            {t('fleetSetup.fillUpAddedShips')}
         </Button>
     );
 

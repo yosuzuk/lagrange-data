@@ -10,6 +10,7 @@ import TuneIcon from '@mui/icons-material/Tune';
 import { IModuleSelection, IModuleUsage, ReinforcementType } from './types/IFleetSetup';
 import { ModuleSelectionDialog } from './ModuleSelectionDialog';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
+import { t, isLanguageWithWhitespace } from '../../../i18n';
 
 interface IProps {
     shipId: string;
@@ -45,7 +46,8 @@ export const ModuleData = (props: IProps) => {
                         usedModules.push(
                             <Fragment key={`before_${moduleUsage.module.id}`}>
                                 <Typography variant="body2" component="span">
-                                    {'、'}
+                                    {t('label.comma')}
+                                    {isLanguageWithWhitespace() ? ' ' : ''}
                                 </Typography>
                             </Fragment>
                         );
@@ -78,7 +80,8 @@ export const ModuleData = (props: IProps) => {
             >
                 <Box sx={{ flexGrow: 1 }}>
                     <Typography variant="body2" color="text.secondary">
-                        {'システム：'}
+                        {t('label.systemModulesColon')}
+                        {isLanguageWithWhitespace() ? ' ' : ''}
                         {usedModules}
                     </Typography>
                 </Box>
@@ -91,7 +94,7 @@ export const ModuleData = (props: IProps) => {
                             sx={{ whiteSpace: 'nowrap' }}
                             onClick={handleOpenDialog}
                         >
-                            {'システムを換装'}
+                            {t('fleetSetup.configureModules')}
                         </Button>
                     </Box>
                 )}

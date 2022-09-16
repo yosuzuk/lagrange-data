@@ -14,6 +14,7 @@ import { applyUsageForModule } from './utils/fleetSetupUtils';
 import { isPossessingModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
+import { t } from '../../../i18n';
 
 export interface IProps {
     shipId: string;
@@ -55,7 +56,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
-            title={'システムを換装'}
+            title={t('fleetSetup.configureModules')}
             content={(
                 <Stack spacing={3}>
                     {Object.keys(newModuleSelection.groups).map(groupId => {
@@ -74,7 +75,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                             {needEmptyOption(groupId) && (
                                                 <FormControlLabel
                                                     key={valueForEmptyOption}
-                                                    label={'無し'}
+                                                    label={`${t('label.notSelected')}`}
                                                     value={valueForEmptyOption}
                                                     control={<Radio />}
                                                 />
@@ -115,7 +116,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                     })}
                     {myListOnly && (
                         <Typography variant="caption" paragraph={true}>
-                            {'※所持している追加システムは「マイリスト」で設定できます。「追加できる艦船」を「全ての艦船」に設定している場合とユニオン増援では全ての追加システムが選べます。'}
+                            {t('fleetSetup.configureModulesFootnote')}
                         </Typography>
                     )}
                 </Stack>
@@ -123,10 +124,10 @@ export const ModuleSelectionDialog = (props: IProps) => {
             actions={(
                 <>
                     <Button variant="outlined" onClick={onClose}>
-                        {'キャンセル'}
+                        {t('button.cancel')}
                     </Button>
                     <Button variant="contained" onClick={handleClickApply}>
-                        {'ＯＫ'}
+                        {t('button.confirm')}
                     </Button>
                 </>
             )}

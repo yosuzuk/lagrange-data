@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import { IShipSelection, ReinforcementType } from './types/IFleetSetup';
 import { getHangar, IHangar, shouldVisualizeHangar } from './utils/hangarUtils';
+import { t } from '../../../i18n';
 
 interface IProps {
     shipSelection: IShipSelection;
@@ -34,7 +35,7 @@ export const HangarData = (props: IProps) => {
                 direction="row"
                 alignItems="center" justifyContent="space-between"
             >
-                <Typography variant="body2" color="text.secondary">{'ハンガー：'}</Typography>
+                <Typography variant="body2" color="text.secondary">{t('label.hangarColon')}</Typography>
                 <Stack spacing={1} direction="row" alignItems="center">
                     <Stack spacing={1} direction="row" alignItems="center">
                     {Object.keys(hangar)
@@ -64,7 +65,7 @@ export const HangarData = (props: IProps) => {
                     onOpenAddCarriedShips?.(shipSelection.shipDefinition.id, shipSelection.reinforcement);
                 }}
             >
-                {'艦載機を追加'}
+                {t('fleetSetup.addAircraft')}
             </Button>
         </Stack>
     );

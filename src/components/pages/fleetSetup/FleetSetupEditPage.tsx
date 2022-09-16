@@ -23,6 +23,7 @@ import { AddShipsButton } from './AddShipsButton';
 import { useCarriedShipsForAddDialog } from './hooks/useCarriedShipsForAddDialog';
 import { AddShipsToCarrierDialog } from './AddShipsToCarrierDialog';
 import { PageContent } from '../../pageStructure/PageContent';
+import { isLanguageWithWhitespace, t } from '../../../i18n';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -145,7 +146,11 @@ export const FleetSetupEditPage = () => {
                                             >
                                                 <Box sx={{ flexGrow: 1 }}>
                                                     <Typography variant="body1">
-                                                        {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                        {group.name}
+                                                        {isLanguageWithWhitespace() && (
+                                                            <span>&nbsp;</span>
+                                                        )}
+                                                        {group.count > 0 ? t('fleetSetup.shipCountBrackets', { value: group.count }) : ''}
                                                     </Typography>
                                                 </Box>
                                                 <AddShipsButton
@@ -200,10 +205,10 @@ export const FleetSetupEditPage = () => {
             )}
             {confirmingReset && (
                 <ConfirmationDialog
-                    title={'初期化'}
-                    question={'艦隊を初期状態に戻しますか？'}
-                    cancelText={'キャンセル'}
-                    confirmText={'初期化'}
+                    title={t('button.initialize')}
+                    question={t('fleetSetup.confirmInitializeFleet')}
+                    cancelText={t('button.cancel')}
+                    confirmText={t('button.initialize')}
                     onCancel={handleCancelReset}
                     onConfirm={handleConfirmReset}
                 />

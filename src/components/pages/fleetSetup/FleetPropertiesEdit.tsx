@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import { IFleetSetup } from './types/IFleetSetup';
 import { LabeledList } from '../../list/LabeledList';
+import { t } from '../../../i18n';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -58,7 +59,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                     rows={[
                         {
                             key: 'name',
-                            label: '艦隊名',
+                            label: t('fleetSetup.fleetName'),
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -73,7 +74,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                         },
                         {
                             key: 'reinforcementCount',
-                            label: '最大増援数',
+                            label: t('fleetSetup.maxReinforcementCount'),
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -92,21 +93,17 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                         )
                                     }}
                                 >
-                                    <MenuItem value={'5'}>
-                                        {'５隻（結合効果無し）'}
-                                    </MenuItem>
-                                    <MenuItem value={'6'}>
-                                        {'６隻（小型補給基地に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'9'}>
-                                        {'９隻（中継補給施設に結合）'}
-                                    </MenuItem>
+                                    {[5, 6, 7, 9, 10].map(count => (
+                                        <MenuItem value={`${count}`} key={`reinforcementCount${count}`}>
+                                            {t('fleetSetup.shipCount', { value: count })}
+                                        </MenuItem>    
+                                    ))}
                                 </TextField>
                             ),
                         },
                         {
                             key: 'maxCost',
-                            label: '最大司令Pt',
+                            label: t('fleetSetup.maxCommandPoints'),
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -125,36 +122,17 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                         )
                                     }}
                                 >
-                                    <MenuItem value={'450'}>
-                                        {'４５０（戦地指令センターに結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'430'}>
-                                        {'４３０（協同作戦機構に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'415'}>
-                                        {'４１５（遠距離指令局に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'400'}>
-                                        {'４００（結合効果無し）'}
-                                    </MenuItem>
-                                    <MenuItem value={'350'}>
-                                        {'３５０（戦地指令センターに結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'330'}>
-                                        {'３３０（協同作戦機構に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'315'}>
-                                        {'３１５（遠距離指令局に結合）'}
-                                    </MenuItem>
-                                    <MenuItem value={'300'}>
-                                        {'３００（結合効果無し）'}
-                                    </MenuItem>
+                                    {[450, 430, 415, 400, 350, 330, 315, 300].map(maxCost => (
+                                        <MenuItem value={`${maxCost}`} key={`maxCost${maxCost}`}>
+                                            {maxCost}
+                                        </MenuItem>    
+                                    ))}
                                 </TextField>
                             ),
                         },
                         {
                             key: 'myListOnly',
-                            label: '追加できる艦船',
+                            label: t('fleetSetup.availableShipsForAdding'),
                             value: (verticalAlignment: boolean) => (
                                 <TextField
                                     variant="outlined"
@@ -168,16 +146,16 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     SelectProps={{
                                         renderValue: () => (
                                             <Typography variant="body1" whiteSpace="normal">
-                                                {fleetSetup.myListOnly ? '所持している艦船' : '全ての艦船'}
+                                                {fleetSetup.myListOnly ? t('label.acquiredShips') : t('label.allShips')}
                                             </Typography>
                                         )
                                     }}
                                 >
                                     <MenuItem value={'all'}>
-                                        {'全ての艦船'}
+                                        {t('label.allShips')}
                                     </MenuItem>
                                     <MenuItem value={'myListOnly'}>
-                                        {'所持している艦船'}
+                                        {t('label.acquiredShips')}
                                     </MenuItem>
                                 </TextField>
                             ),

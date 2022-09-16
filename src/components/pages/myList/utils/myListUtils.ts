@@ -51,25 +51,25 @@ export function formatShipListForSharing(shipDefinitions: IShipDefinition[], use
     ]);
 
     return [
-        t('myList.acquiredShipsAndBlueprints'),
+        t('label.acquiredShipsAndBlueprints'),
         [
-            `【${translateShipRow(ShipRow.FRONT)}】`,
+            t('myList.groupNameForSharing', { name: translateShipRow(ShipRow.FRONT) }),
             ...frontRowShips.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),
         ].join('\n'),
         [
-            `【${translateShipRow(ShipRow.MIDDLE)}】`,
+            t('myList.groupNameForSharing', { name: translateShipRow(ShipRow.MIDDLE) }),
             ...middleRowShips.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),
         ].join('\n'),
         [
-            `【${translateShipRow(ShipRow.BACK)}】`,
+            t('myList.groupNameForSharing', { name: translateShipRow(ShipRow.BACK) }),
             ...backRowShips.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),
         ].join('\n'),
         [
-            `【${translateShipType(ShipType.CORVETTE)}】`,
+            t('myList.groupNameForSharing', { name: translateShipType(ShipType.CORVETTE) }),
             ...corvettes.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),
         ].join('\n'),
         [
-            `【${translateShipType(ShipType.FIGHTER)}】`,
+            t('myList.groupNameForSharing', { name: translateShipType(ShipType.FIGHTER) }),
             ...fighters.sort(sortFn).map(ship => formatShipRow(ship, userSettings)),
         ].join('\n'),
     ].join('\n\n');

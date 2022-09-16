@@ -18,6 +18,8 @@
         "ship": "Ship",
         "ships": "Ships",
         "selectedShip": "Selected ship",
+        "acquiredShips": "Acquired ships",
+        "allShips": "All ships",
         "newShip": "New ship",
         "shipName": "Ship name",
         "shipType": "Ship type",
@@ -57,8 +59,10 @@
         "probabilityForWantedBlueprintColon": "Probability for wanted blueprint:",
         "unwantedBlueprint": "Unwanted blueprint",
         "unwantedBlueprints": "Unwanted blueprints",
+        "acquiredShipsAndBlueprints": "Acquired ships/blueprints",
         "acquirableBlueprintColon": "Acquirable blueprint:",
         "acquiredBlueprintColon": "Acquired blueprint:",
+        "systemModulesColon": "Modules:",
         "additionalSystemModule": "Additional module",
         "additionalSystemModuleColonValue": "Additional module: {{value}}",
         "additionalSystemModuleBrackets": "(additional module)",
@@ -78,6 +82,7 @@
         "shipTypeProbabilityColonValue": "Ship type probability: {{value}}",
         "probabilityWeight": "Weight",
         "total": "Total",
+        "totalColon": "Total:",
         "baseShipVariant": "Base variant",
         "subShipVariant": "Sub variant",
         "relatedShips": "Related ships",
@@ -86,7 +91,9 @@
         "notSelected": "Not selected",
         "acquired": "Acquired",
         "unsupported": "Unsupported",
-        "warning": "Warning"
+        "warning": "Warning",
+        "hangarColon": "Hangar:",
+        "comma": ","
     },
     "validation": {
         "requiredField": "Required",
@@ -141,7 +148,8 @@
         "addReinforcementDescriptionAllyB": "Adding org. reinforcement from union member B",
         "addReinforcementDescriptionAllyC": "Adding org. reinforcement from union member C",
         "normalAssignment": "Consume command points",
-        "reinforcement": "Self reinforcement",
+        "reinforcement": "Reinforcement",
+        "selfReinforcement": "Self reinforcement",
         "reinforcementColon": "Reinforcement:",
         "reinforcementBrackets": "(reinforcement)",
         "orgReinforcementA": "Org. reinforcement A",
@@ -151,6 +159,7 @@
         "orgReinforcementC": "Org. reinforcement C",
         "orgReinforcementCBrackets": "(org. reinforcement C)",
         "commandPointsValueBrackets": "({{value}} cp)",
+        "shipCount": "{{value}} ships",
         "shipCountBrackets": "({{value}} ships)",
         "groupNameForSharing": "{{name}}:",
         "defaultFleetNameWithNumber": "Fleet {{fleetNumber}}",
@@ -160,13 +169,23 @@
         "noMatchingAircraft": "No matching aircraft",
         "shipWithValidationError": "{{shipName}}: {{errorText}}",
         "reinforcementShipWithValidationError": "{{shipName}} ({{reinforcementType}}): {{errorText}}",
+        "commandPoints": "Command points",
+        "maxCommandPoints": "Max. command points",
         "commaCommandPointColon": ", command points:",
         "totalFleetCommandPoints": "Total command points",
         "totalFleetDpm": "Fleet DPM",
         "totalFleetHp": "Fleet HP",
         "totalShipCountValue": "{{value}} ships in total",
         "countPerKind": "{{value}}× {{kind}}",
-        "inaccurateDueToMissingDataBrackets": "(inaccurate due to missing data)"
+        "inaccurateDueToMissingDataBrackets": "(inaccurate due to missing data)",
+        "confirmInitializeFleet": "Initializing will clear the current fleet and restore default settings.",
+        "fleetName": "Fleet name",
+        "maxReinforcementCount": "Max. reinforcement",
+        "availableShipsForAdding": "Available ships",
+        "configureModules": "Configure modules",
+        "configureModulesFootnote": "* Acquired modules can be configured on the \"My list\" page. All modules are available without limitation when setting \"Available ships\" to \"All ships\" or when adding ships using org. reinforcement.",
+        "clearAddedShips": "Clear",
+        "fillUpAddedShips": "Max"
     },
     "myList": {
         "pageTitle": "My list",
@@ -186,10 +205,10 @@
         "wantOption": "Wanted",
         "wantOptionYes": "Yes",
         "wantOptionNo": "No",
-        "acquiredShipsAndBlueprints": "Acquired ships/blueprints",
         "unwantedDuplicates": "Unwanted duplicates",
         "unwantedDuplicatesFootnote": "* Automatically filled list of blueprints that either turn into tech points or unwanted ship variant",
-        "confirmInitialize": "Initializing will clear your data and reset every list to its initial state."
+        "confirmInitialize": "Initializing will clear your data and reset every list to its initial state.",
+        "groupNameForSharing": "{{name}}:"
     },
     "myListConfig": {
         "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",
@@ -236,7 +255,9 @@
         "fighter": "Fighter",
         "smallFighter": "Small fighter",
         "mediumFighter": "Medium fighter",
-        "largeFighter": "Large fighter"
+        "largeFighter": "Large fighter",
+        "smallToMediumFighter": "Small to medium fighter",
+        "smallToLargeFighter": "Small to large fighter"
     },
     "shipSource": {
         "techFile": "Blueprints acquired by tech files",

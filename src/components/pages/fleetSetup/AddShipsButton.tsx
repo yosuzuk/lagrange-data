@@ -56,7 +56,7 @@ export const AddShipsButton = (props: IProps) => {
                 },
                 {
                     key: 'addSelfReinforcement',
-                    text: t('fleetSetup.reinforcement'),
+                    text: t('fleetSetup.selfReinforcement'),
                     value: 'addSelfReinforcement',
                 },
                 {

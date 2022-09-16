@@ -80,7 +80,11 @@ export const FleetSetupPage = () => {
                                                 <Box p={1}>
                                                     <Stack spacing={1}>
                                                         <Typography variant="body1">
-                                                            {`${group.name}${group.count > 0 ? `（${group.count}隻）` : ''}`}
+                                                            {group.name}
+                                                            {isLanguageWithWhitespace() && (
+                                                                <span>&nbsp;</span>
+                                                            )}
+                                                            {group.count > 0 ? t('fleetSetup.shipCountBrackets', { value: group.count }) : ''}
                                                         </Typography>
                                                         <Divider />
                                                         <ShipCountList shipSelections={group.ships} />
