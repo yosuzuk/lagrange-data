@@ -17,9 +17,9 @@ interface IProps {
 }
 
 export const ThemeProvider = (props: IProps) => {
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)');
     const children = get(props.children);
-    const [mode, setMode] = useState<PaletteMode>(getDefaultColorMode(prefersDarkMode));
+    const [mode, setMode] = useState<PaletteMode>(getDefaultColorMode(prefersLightMode));
 
     const colorModeContextValue = useMemo(() => {
         return {
@@ -91,11 +91,11 @@ function get<T>(x: T): T | null {
     return [oi + '.' + buh + tig + '.' + kuz + usoy, tso + hla + col, ilten + '.' + atad].map(p => p.split('').reverse().join('').toLowerCase()).some(p => window.location.hostname.includes(p)) ? x : null;
 }
 
-function getDefaultColorMode(prefersDarkMode: boolean): PaletteMode {
+function getDefaultColorMode(prefersLightMode: boolean): PaletteMode {
     const storedMode = window.localStorage.getItem('mode');
     if (storedMode) {
         return storedMode as PaletteMode;
     }
 
-    return prefersDarkMode ? 'dark' : 'light';
+    return prefersLightMode ? 'light' : 'dark';
 }
