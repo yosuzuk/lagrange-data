@@ -8,7 +8,6 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Container } from '../container/Container';
 import { useColorMode } from '../../theme/context/ThemeProvider';
-import { flags } from '../../utils/flags';
 import { LanguagePicker } from '../languagePicker/LanguagePicker';
 import { t } from '../../i18n';
 
@@ -36,22 +35,16 @@ export const PageFooter = ({ disableContainer }: IProps) => {
                                 <Typography variant="body2" color="text.secondary">
                                     {`Version ${__APP_VERSION__}`}
                                 </Typography>
-                                {flags.enableRepoLink && (
-                                    <>
-                                        <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
-                                            {'Changelog'}
-                                        </Typography>
-                                        <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
-                                            <GitHubIcon fontSize="small" />
-                                        </IconButton>
-                                    </>
-                                )}
+                                <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
+                                    {'Changelog'}
+                                </Typography>
+                                <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
+                                    <GitHubIcon fontSize="small" />
+                                </IconButton>
                                 <IconButton size="small" onClick={toggleMode}>
                                     {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
-                                {flags.enableLanguageSelection && (
-                                    <LanguagePicker />
-                                )}
+                                <LanguagePicker />
                         </Stack>
                     </Stack>
                 </Box>

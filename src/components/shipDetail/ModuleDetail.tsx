@@ -7,9 +7,8 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
-import { t } from '../../i18n';
+import { t, getCurrentLanguage, Language } from '../../i18n';
 import { getModuleName } from '../../utils/shipDefinitionUtils';
-import { flags } from '../../utils/flags';
 
 interface IProps {
     shipId: string;
@@ -20,10 +19,13 @@ export const ModuleDetail = (props: IProps) => {
     const { shipId, modules } = props;
     const { mode } = useColorMode();
 
+    const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
+    const detailsAvailable = getCurrentLanguage() === Language.JAPANESE;
+
     return (
         <>
             {modules.map(module => {
-                const expandEnabled = flags.enableModuleDescription && !!module.parts;
+                const expandEnabled = detailsAvailable && !!module.parts;
                 return (
                     <Accordion
                         key={`module_${module.id}`}
@@ -37,7 +39,7 @@ export const ModuleDetail = (props: IProps) => {
                                 <Typography variant="body2">
                                     {`${module.category}${module.categoryNumber} ${getModuleName(shipId, module)}`}
                                 </Typography>
-                                {flags.enableModuleDescription && module.description && (
+                                {descriptionAvailable && module.description && (
                                     <Typography variant="caption" color="text.secondary">
                                         {`${module.description}`}
                                     </Typography>
