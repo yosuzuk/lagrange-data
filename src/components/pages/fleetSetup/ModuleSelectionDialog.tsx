@@ -14,8 +14,7 @@ import { applyUsageForModule } from './utils/fleetSetupUtils';
 import { isPossessingModule } from '../../../userSettings/utils/userSettingsUtils';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
-import { t } from '../../../i18n';
-import { flags } from '../../../utils/flags';
+import { t, getCurrentLanguage, Language } from '../../../i18n';
 
 export interface IProps {
     shipId: string;
@@ -98,7 +97,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                                         label={(
                                                             <Box pt={1} pb={1}>
                                                                 <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${getModuleName(shipId, moduleUsage.module)}`}</Typography>
-                                                                {flags.enableModuleDescription && moduleUsage.module.description && (
+                                                                {getCurrentLanguage() === Language.JAPANESE && moduleUsage.module.description && (
                                                                     <Typography variant="body2" color="text.secondary">{`${moduleUsage.module.description}`}</Typography>
                                                                 )}
                                                             </Box>
