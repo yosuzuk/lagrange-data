@@ -1,1 +1,1 @@
-export { t, getCurrentLanguage, isLanguageWithWhitespace } from './i18n';
+export { t, getCurrentLanguage, isLanguageWithWhitespace, Language } from './i18n';
