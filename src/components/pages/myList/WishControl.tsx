@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useState, useEffect, useTransition } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -14,11 +14,19 @@ interface IProps {
 
 export const WishControl = (props: IProps) => {
     const { wish, onChange } = props;
+    const [localWish, setLocalWish] = useState<WishState>(wish);
+    const [isPending, startTransition] = useTransition();
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {
         const clear = value === null || value === 'clear';
-        onChange(clear ? WishState.UNDEFINED : Number(value));
+        setLocalWish(clear ? WishState.UNDEFINED : Number(value));
     };
+
+    useEffect(() => {
+        startTransition(() => {
+            onChange(localWish);
+        });
+    }, [localWish, onChange]);
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
@@ -26,13 +34,13 @@ export const WishControl = (props: IProps) => {
             <ToggleButtonGroup
                 size="small"
                 color="primary"
-                value={`${wish}`}
+                value={`${localWish}`}
                 exclusive={true}
                 onChange={handleChange}
             >
                 <ToggleButton value={`${WishState.WANTED}`}>{t('myList.wantOptionYes')}</ToggleButton>
                 <ToggleButton value={`${WishState.NOT_WANTED}`}>{t('myList.wantOptionNo')}</ToggleButton>
-                {wish !== WishState.UNDEFINED && (
+                {localWish !== WishState.UNDEFINED && (
                     <ToggleButton value="clear">
                         <ClearIcon />
                     </ToggleButton>

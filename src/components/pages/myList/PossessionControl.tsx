@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useState, useEffect, useTransition } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -14,10 +14,18 @@ interface IProps {
 
 export const PossessionControl = (props: IProps) => {
     const { label, options, possession, onChange } = props;
+    const [localPossession, setLocalPossession] = useState<PossessionState>(possession);
+    const [isPending, startTransition] = useTransition();
 
     const handleChange = (event: MouseEvent<HTMLElement>, value: string | null) => {
-        onChange(value === null ? PossessionState.UNDEFINED : Number(value));
+        setLocalPossession(value === null ? PossessionState.UNDEFINED : Number(value));
     };
+
+    useEffect(() => {
+        startTransition(() => {
+            onChange(localPossession);
+        });
+    }, [localPossession, onChange]);
 
     return (
         <Stack spacing={1} direction="row" alignItems="center">
@@ -25,7 +33,7 @@ export const PossessionControl = (props: IProps) => {
             <ToggleButtonGroup
                 size="small"
                 color="primary"
-                value={`${possession}`}
+                value={`${localPossession}`}
                 exclusive={true}
                 onChange={handleChange}
             >

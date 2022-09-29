@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState, useEffect, useTransition } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -17,13 +17,21 @@ interface IProps {
 
 export const FleetPropertiesEdit = (props: IProps) => {
     const { fleetSetup, onChange, errors, columnCount } = props;
+    const [isPending, startTransition] = useTransition();
+    const [fleetName, setFleetName] = useState<string>(fleetSetup.name);
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
-        onChange({
-            ...fleetSetup,
-            name: event.target.value.trim(),
-        });
+        setFleetName(event.target.value.trim());
     };
+
+    useEffect(() => {
+        startTransition(() => {
+            onChange({
+                ...fleetSetup,
+                name: fleetName,
+            });
+        });
+    }, [fleetName, onChange]);
 
     const handleChangeMaxCost = (event: ChangeEvent<HTMLInputElement>) => {
         onChange({
@@ -64,7 +72,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                 <TextField
                                     variant="outlined"
                                     size="small"
-                                    value={fleetSetup.name}
+                                    value={fleetName}
                                     onChange={handleChangeName}
                                     error={!!errors['name']}
                                     helperText={errors['name']}

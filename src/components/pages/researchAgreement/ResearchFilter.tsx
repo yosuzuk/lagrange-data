@@ -30,47 +30,47 @@ export const ResearchFilter = (props: IProps) => {
     const [isPending, startTransition] = useTransition();
 
     const handleChangeShipId = (event: SelectChangeEvent) => {
-        setLocalFilterState({
-            ...filterState,
+        setLocalFilterState(localFilterState => ({
+            ...localFilterState,
             shipId: event.target.value === '' ? null : event.target.value,
             manufacturerFilter: null,
             strategyTypeFilter: null,
             tacticTypeFilter: null,
-        });
+        }));
     };
 
     const handleChangeManufacturer = (event: SelectChangeEvent) => {
-        setLocalFilterState({
-            ...filterState,
+        setLocalFilterState(localFilterState => ({
+            ...localFilterState,
             shipId: null,
             manufacturerFilter: event.target.value === '' ? null : event.target.value as ResearchManufacturer,
-        });
+        }));
     };
 
     const handleChangeStrategyType = (event: SelectChangeEvent) => {
-        setLocalFilterState({
-            ...filterState,
+        setLocalFilterState(localFilterState => ({
+            ...localFilterState,
             shipId: null,
             strategyTypeFilter: event.target.value === '' ? null : event.target.value as ResearchStrategyType,
-        });
+        }));
     };
 
     const handleChangeTacticsType = (event: SelectChangeEvent) => {
-        setLocalFilterState({
-            ...filterState,
+        setLocalFilterState(localFilterState => ({
+            ...localFilterState,
             shipId: null,
             tacticTypeFilter: event.target.value === '' ? null : event.target.value as ResearchTacticType,
-        });
+        }));
     };
 
     const handleClickReset = () => {
-        setLocalFilterState({
-            ...filterState,
+        setLocalFilterState(localFilterState => ({
+            ...localFilterState,
             shipId: null,
             manufacturerFilter: null,
             strategyTypeFilter: null,
             tacticTypeFilter: null,
-        });
+        }));
     };
 
     useEffect(() => {
@@ -86,7 +86,7 @@ export const ResearchFilter = (props: IProps) => {
                     <InputLabel id="manufacturer-select-label">{t('label.researchManufacturer')}</InputLabel>
                     <Select
                         labelId="manufacturer-select-label"
-                        value={filterState.manufacturerFilter ?? ''}
+                        value={localFilterState.manufacturerFilter ?? ''}
                         label={t('label.researchManufacturer')}
                         onChange={handleChangeManufacturer}
                     >
@@ -103,7 +103,7 @@ export const ResearchFilter = (props: IProps) => {
                     <InputLabel id="strategy-select-label">{t('label.researchStrategyType')}</InputLabel>
                     <Select
                         labelId="strategy-select-label"
-                        value={filterState.strategyTypeFilter ?? ''}
+                        value={localFilterState.strategyTypeFilter ?? ''}
                         label={t('label.researchStrategyType')}
                         onChange={handleChangeStrategyType}
                     >
@@ -120,7 +120,7 @@ export const ResearchFilter = (props: IProps) => {
                     <InputLabel id="tactics-select-label">{t('label.researchTacticType')}</InputLabel>
                     <Select
                         labelId="tactics-select-label"
-                        value={filterState.tacticTypeFilter ?? ''}
+                        value={localFilterState.tacticTypeFilter ?? ''}
                         label={t('label.researchTacticType')}
                         onChange={handleChangeTacticsType}
                     >
@@ -139,7 +139,7 @@ export const ResearchFilter = (props: IProps) => {
                     </InputLabel>
                     <Select
                         labelId="ship-select-label"
-                        value={filterState.shipId ?? ''}
+                        value={localFilterState.shipId ?? ''}
                         label={t('label.ship')}
                         onChange={handleChangeShipId}
                     >
