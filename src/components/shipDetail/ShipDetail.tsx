@@ -19,7 +19,7 @@ import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
 import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
-import { t } from '../../i18n';
+import { isLanguageWithWhitespace, t } from '../../i18n';
 
 interface IProps {
     shipId: string;
@@ -220,7 +220,7 @@ export const ShipDetail = (props: IProps) => {
                                     </Typography>
                                 ) : (
                                     <Typography variant="body2" gutterBottom={true}>
-                                        {`${translateShipSource(shipDefinition.source)}${shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT) ? '（フェーズ２以降）' : ''}`}
+                                        {`${translateShipSource(shipDefinition.source)}${isLanguageWithWhitespace() ? ' ': ''}${shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT) ? t('label.reBrackets') : ''}`}
                                     </Typography>
                                 )}
                                 {obtainableThoughResearchAgreement && (

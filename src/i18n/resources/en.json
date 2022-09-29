@@ -93,6 +93,7 @@
         "unsupported": "Unsupported",
         "warning": "Warning",
         "hangarColon": "Hangar:",
+        "reBrackets": "(RE)",
         "comma": ","
     },
     "validation": {
@@ -261,7 +262,7 @@
     },
     "shipSource": {
         "techFile": "Blueprints acquired by tech files",
-        "cityTrade": "Ships acquired by liasing",
+        "cityTrade": "Ships acquired by liasing / trading",
         "dockEffect": "Temporary blueprints acquired by docking effect",
         "starterShip": "Blueprints acquired by starter tech files"
     }

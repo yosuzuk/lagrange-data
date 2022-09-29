@@ -493,6 +493,17 @@
       "dpmSiege": "619"
     },
     {
+      "ID": "EDIACARAN_TE",
+      "JA": "エディアカ級-TE",
+      "EN": "Ediacaran (TE)",
+      "HP": "220070",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "11874",
+      "dpmAntiAir": "8388",
+      "dpmSiege": "1756"
+    },
+    {
       "ID": "ERIS_I_A",
       "JA": "エリスⅠ級 - 大砲型",
       "EN": "Eris I - Cannon Type",
