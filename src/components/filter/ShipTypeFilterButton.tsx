@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useTransition } from 'react';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Checkbox from '@mui/material/Checkbox';
 import Button, { ButtonProps } from '@mui/material/Button';
@@ -50,6 +50,7 @@ export const ShipTypeFilterButton = (props: IProps) => {
         researchTacticTypes,
     }));
     const anchorRef = useRef<HTMLDivElement>(null);
+    const [isPending, startTransition] = useTransition();
 
     const handleClickFilter = (filterKey: FilterKey) => {
         setFilter(filter => ({
@@ -63,10 +64,9 @@ export const ShipTypeFilterButton = (props: IProps) => {
     };
 
     useEffect(() => {
-        const t = setTimeout(() => {
+        startTransition(() => {
             onChange(filter);
-        }, 0);
-        return () => clearTimeout(t);
+        });
     }, [filter, onChange]);
 
     const filterUsed = Object.values(filter).some(value => value);

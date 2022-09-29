@@ -1,3 +1,4 @@
+import { useEffect, useState, useTransition } from 'react';
 import Divider from '@mui/material/Divider';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -25,9 +26,11 @@ interface IProps {
 
 export const ResearchFilter = (props: IProps) => {
     const { filterState, shipFilterOptions, onChange } = props;
+    const [localFilterState, setLocalFilterState] = useState<IResearchFilterState>(filterState);
+    const [isPending, startTransition] = useTransition();
 
     const handleChangeShipId = (event: SelectChangeEvent) => {
-        onChange({
+        setLocalFilterState({
             ...filterState,
             shipId: event.target.value === '' ? null : event.target.value,
             manufacturerFilter: null,
@@ -37,7 +40,7 @@ export const ResearchFilter = (props: IProps) => {
     };
 
     const handleChangeManufacturer = (event: SelectChangeEvent) => {
-        onChange({
+        setLocalFilterState({
             ...filterState,
             shipId: null,
             manufacturerFilter: event.target.value === '' ? null : event.target.value as ResearchManufacturer,
@@ -45,7 +48,7 @@ export const ResearchFilter = (props: IProps) => {
     };
 
     const handleChangeStrategyType = (event: SelectChangeEvent) => {
-        onChange({
+        setLocalFilterState({
             ...filterState,
             shipId: null,
             strategyTypeFilter: event.target.value === '' ? null : event.target.value as ResearchStrategyType,
@@ -53,7 +56,7 @@ export const ResearchFilter = (props: IProps) => {
     };
 
     const handleChangeTacticsType = (event: SelectChangeEvent) => {
-        onChange({
+        setLocalFilterState({
             ...filterState,
             shipId: null,
             tacticTypeFilter: event.target.value === '' ? null : event.target.value as ResearchTacticType,
@@ -61,7 +64,7 @@ export const ResearchFilter = (props: IProps) => {
     };
 
     const handleClickReset = () => {
-        onChange({
+        setLocalFilterState({
             ...filterState,
             shipId: null,
             manufacturerFilter: null,
@@ -69,6 +72,12 @@ export const ResearchFilter = (props: IProps) => {
             tacticTypeFilter: null,
         });
     };
+
+    useEffect(() => {
+        startTransition(() => {
+            onChange(localFilterState);
+        });
+    }, [localFilterState, onChange]);
 
     return (
         <Grid container={true} spacing={2}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { t } from './i18n/i18n';
@@ -7,10 +7,11 @@ import { t } from './i18n/i18n';
 (async () => {
   document.title = t('appTitle');
 
-  ReactDOM.render(
+  const root = createRoot(document.getElementById('root')!);
+
+  root.render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
   );
 })();

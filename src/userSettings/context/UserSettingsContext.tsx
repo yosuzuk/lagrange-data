@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useState, useContext, createContext } from 'react';
+import { useCallback, ReactNode, useState, useContext, createContext } from 'react';
 import { PossessionState } from '../types/PossessionState';
 import { IUserSettings } from '../types/UserSettings';
 import { WishState } from '../types/WishState';
@@ -18,7 +18,11 @@ interface IUserSettingsContextValue {
 
 const UserSettingsContext = createContext<IUserSettingsContextValue | null>(null);
 
-export const UserSettingsProvider: FC = ({ children }) => {
+interface IProps {
+    children: ReactNode;
+}
+
+export const UserSettingsProvider = ({ children }: IProps) => {
     const [userSettings, _setUserSettings] = useState<IUserSettings>(getCurrentUserSettings);
 
     const setUserSettings = useCallback((newUserSettings: IUserSettings) => {

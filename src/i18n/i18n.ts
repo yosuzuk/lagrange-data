@@ -1,4 +1,4 @@
-import i18next, { TFunction } from 'i18next';
+import i18next, { TOptions } from 'i18next';
 import { flags } from '../utils/flags';
 import en from './resources/en.json';
 import ja from './resources/ja.json';
@@ -69,7 +69,7 @@ export function reloadWithLanguage(language: Language) {
     window.location.reload();
 }
 
-export const t = i18next.t;
+export const t = (key: string, options?: TOptions) => `${i18next.t(key, options)}`;
 
 export function getCurrentLanguage(): Language {
     return currentLanguage;
