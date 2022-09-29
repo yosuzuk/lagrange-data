@@ -121,7 +121,7 @@ export const TechFileChart = (props: IProps) => {
                             <Cell key={`outer-cell-${index}`} fill={entry.color as string} />
                         ))}
                     </Pie>
-                    <Tooltip formatter={formatChance} separator={'：'} />
+                    <Tooltip formatter={n => formatChance(n as number)} separator={'：'} />
                 </PieChart>
             </ResponsiveContainer>
         </Box>
