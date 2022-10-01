@@ -356,7 +356,18 @@
       "HP": "84040",
       "speed": "450",
       "warp": "2250",
-      "dpmShip": "11331",
+      "dpmShip": "14729",
+      "dpmAntiAir": "0",
+      "dpmSiege": "2415"
+    },
+    {
+      "ID": "CHIMERA_TE_C_S",
+      "JA": "キメラ級-TE - 防護型（回収）",
+      "EN": "Chimera (TE) - Defensive Type (salvaged)",
+      "HP": "84040",
+      "speed": "450",
+      "warp": "2250",
+      "dpmShip": "14729",
       "dpmAntiAir": "0",
       "dpmSiege": "2415"
     },
@@ -702,7 +713,18 @@
       "HP": "121350",
       "speed": "250",
       "warp": "1250",
-      "dpmShip": "19996",
+      "dpmShip": "22596",
+      "dpmAntiAir": "1701",
+      "dpmSiege": "1889"
+    },
+    {
+      "ID": "INDEFATIGABLE_TE_S",
+      "JA": "ルドゥタブル級-TE - カスタム型（回収）",
+      "EN": "Indefatigable (TE) - Ultra Type (salvaged)",
+      "HP": "121350",
+      "speed": "250",
+      "warp": "1250",
+      "dpmShip": "22596",
       "dpmAntiAir": "1701",
       "dpmSiege": "1889"
     },
@@ -1319,9 +1341,9 @@
       "dpmSiege": "959"
     },
     {
-      "ID": "SOLAR_WHALE_TE_UAV",
-      "JA": "ソーラーホエール-TE-UAV - カスタム型",
-      "EN": "Solar Whale UAV Carrier (TE) - Ultra Type",
+      "ID": "SOLAR_WHALE_TE_S",
+      "JA": "ソーラーホエール-TE - カスタム型（回収）",
+      "EN": "Solar Whale (TE) - Ultra Type (salvaged)",
       "HP": "292890",
       "speed": "250",
       "warp": "1250",
@@ -1373,8 +1395,8 @@
       "HP": "48670",
       "speed": "450",
       "warp": "2250",
-      "dpmShip": "10800",
-      "dpmAntiAir": "3307",
+      "dpmShip": "11812",
+      "dpmAntiAir": "4299",
       "dpmSiege": "1721"
     },
     {
@@ -1385,8 +1407,20 @@
       "HP": "48670",
       "speed": "450",
       "warp": "2250",
-      "dpmShip": "10800",
-      "dpmAntiAir": "3307",
+      "dpmShip": "11812",
+      "dpmAntiAir": "4299",
+      "dpmSiege": "1721"
+    },
+    {
+      "ID": "STAR_SWEEPER_TE_A_S",
+      "JA": "スタースイーパー級-TE - イオン砲型（回収）",
+      "EN": "Star Sweeper (TE) - Ion Cannon Type (salvaged)",
+      "DE": "Sternfeger (TE) - Ionenkanonen-Typ",
+      "HP": "48670",
+      "speed": "450",
+      "warp": "2250",
+      "dpmShip": "11812",
+      "dpmAntiAir": "4299",
       "dpmSiege": "1721"
     },
     {
