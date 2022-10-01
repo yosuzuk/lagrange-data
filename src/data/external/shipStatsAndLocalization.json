@@ -157,6 +157,17 @@
       "dpmSiege": "102"
     },
     {
+      "ID": "BOREAS_TE_B_S",
+      "JA": "ボレアス級 - ミサイル型（回収）",
+      "EN": "Boreas - Missile Type (salvaged)",
+      "HP": "24920",
+      "speed": "850",
+      "warp": "4250",
+      "dpmShip": "7673",
+      "dpmAntiAir": "760",
+      "dpmSiege": "752"
+    },
+    {
       "ID": "BULLFROG",
       "JA": "ブルフロッグ型 - 攻城型",
       "EN": "Bullfrog - Siege Type",
@@ -706,6 +717,17 @@
       "dpmSiege": "1023"
     },
     {
+      "ID": "HELIOS_TE_A_S",
+      "JA": "ヘリオス級-TE - 一般型（回収）",
+      "EN": "Helios (TE) - Generic Type (salvaged)",
+      "HP": "40560",
+      "speed": "650",
+      "warp": "3250",
+      "dpmShip": "11643",
+      "dpmAntiAir": "167",
+      "dpmSiege": "1023"
+    },
+    {
       "ID": "INDEFATIGABLE",
       "JA": "ルドゥタブル級 - カスタム型",
       "EN": "Indefatigable - Ultra Type",
@@ -1208,6 +1230,17 @@
       "dpmSiege": "762"
     },
     {
+      "ID": "RAGER_TE_B_S",
+      "JA": "レイジャー級-TE - 魚雷型（回収）",
+      "EN": "Rager (TE) - Torpedo Type (salvaged)",
+      "HP": "9650",
+      "speed": "950",
+      "warp": "4750",
+      "dpmShip": "6120",
+      "dpmAntiAir": "300",
+      "dpmSiege": "762"
+    },
+    {
       "ID": "RELIAT_A",
       "JA": "レリアット級 - 対艦型",
       "EN": "Reliat - Anti-Ship Type",
@@ -1517,6 +1550,17 @@
       "dpmShip": "2970",
       "dpmAntiAir": "630",
       "dpmSiege": "322"
+    },
+    {
+      "ID": "TUNDRA_TE_S",
+      "JA": "ツンドラ級-TE - 対空型（回収）",
+      "EN": "Tundra (TE) - Anti-Aircraft Type (salvaged)",
+      "HP": "36640",
+      "speed": "700",
+      "warp": "3500",
+      "dpmShip": "3450",
+      "dpmAntiAir": "7882",
+      "dpmSiege": "419"
     },
     {
       "ID": "VITAS_A021",

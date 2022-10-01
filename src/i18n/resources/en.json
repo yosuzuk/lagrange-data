@@ -245,7 +245,7 @@
         "starterTechFile": "Starter tech file",
         "dockingEffect": "Docking effect",
         "cityTrade": "City trade",
-        "salvage": "Salvage",
+        "salvage": "Debris salvage",
         "unknown": "Unknown"
     },
     "shipType": {
@@ -268,7 +268,7 @@
         "techFile": "Blueprints acquired by tech files",
         "cityTrade": "Ships acquired by liasing / trading",
         "dockEffect": "Temporary blueprints acquired by docking effect",
-        "salvage": "Salvaged ships",
+        "salvage": "Ships salvaged from debris",
         "starterShip": "Blueprints acquired by starter tech files"
     }
 }

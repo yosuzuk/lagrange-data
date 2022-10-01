@@ -245,7 +245,7 @@
         "starterTechFile": "初期配布",
         "dockingEffect": "結合効果",
         "cityTrade": "都市で購入",
-        "salvage": "回収",
+        "salvage": "デブリ回収",
         "unknown": "不明"
     },
     "shipType": {
@@ -268,7 +268,7 @@
         "techFile": "技術ファイルから手に入る艦船/設計図",
         "cityTrade": "都市で買える艦船",
         "dockEffect": "結合効果で手に入る艦船/臨時設計図",
-        "salvage": "回収できる艦船",
+        "salvage": "デブリ回収で取得できる艦船",
         "starterShip": "初期配布で手に入る艦船/設計図"
     }
 }
