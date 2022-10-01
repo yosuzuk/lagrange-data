@@ -20,6 +20,7 @@ import { ResearchStrategyType } from '../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../types/ResearchTacticType';
 import { getAcquirableModules, getWantedModules } from '../../userSettings/utils/userSettingsUtils';
 import { t } from '../../i18n';
+import { shipSources, translateShipSource } from '../../utils/shipSourceUtils';
 
 export function createShipRowFilterOptions(specifiedShipRows: ShipRow[] | null): IFilterOption[] {
     return (specifiedShipRows ?? [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK]).map(shipRow => ({
@@ -39,6 +40,13 @@ export function createManufacturerFilterOptions(specificManufacturer: Manufactur
     return (specificManufacturer ?? [Manufacturer.JUPITER_INDUSTRIES, Manufacturer.NOMA_SHIPPING_GROUP, Manufacturer.ANTONIOS_CONSORTIUM, Manufacturer.DAWN_ACCORD, Manufacturer.HAYREDDIN_CLAN]).map(manufacturer => ({
         filterKey: manufacturer as Manufacturer,
         name: translateManufacturer(manufacturer),
+    }));
+}
+
+export function createShipSourceFilterOptions(specificShipSources: ShipSource[] | null): IFilterOption[] {
+    return (specificShipSources ?? [ShipSource.CITY_TRADE, ShipSource.DOCK_EFFECT, ShipSource.SALVAGE]).map(shipSource => ({
+        filterKey: shipSource as ShipSource,
+        name: translateShipSource(shipSource),
     }));
 }
 
@@ -76,6 +84,7 @@ interface ICreateShipFilterOptionsArgs {
     researchManufacturer?: ResearchManufacturer[] | false,
     researchStrategyTypes?: ResearchStrategyType[] | false,
     researchTacticTypes?: ResearchTacticType[] | false,
+    shipSources?: ShipSource[],
 }
 
 export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {}): IFilterOption[] {
@@ -86,6 +95,7 @@ export function createShipFilterOptions(args: ICreateShipFilterOptionsArgs = {})
         ...(args.researchManufacturer === false ? [] : createResearchManufacturerFilterOptions(args.researchManufacturer ?? null)),
         ...(args.researchStrategyTypes === false ? [] : createResearchStrategyTypeFilterOptions(args.researchStrategyTypes ?? null)),
         ...(args.researchTacticTypes === false ? [] : createResearchTacticTypeFilterOptions(args.researchTacticTypes ?? null)),
+        ...createShipSourceFilterOptions(args.shipSources ?? null),
     ];
 }
 
@@ -113,6 +123,11 @@ export function createInitialShipFilterState(): ShipFilterState {
         [ResearchStrategyType.FIGHTER_AND_CORVETTE]: false,
         [ResearchTacticType.PROJECTILE_WEAPONS]: false,
         [ResearchTacticType.DIRECT_FIRE_WEAPONS]: false,
+        [ShipSource.TECH_FILE]: false,
+        [ShipSource.CITY_TRADE]: false,
+        [ShipSource.DOCK_EFFECT]: false,
+        [ShipSource.SALVAGE]: false,
+        [ShipSource.STARTER_SHIP]: false,
     } as ShipFilterState;
 }
 
@@ -144,6 +159,9 @@ export function applyShipFilter(shipDefinitions: IShipDefinition[], filter: Ship
     if (isResearchTacticTypeFiltered(filter)) {
         result = result.filter(shipDefinition => (shipDefinition.researchTacticTypes ?? []).some(type => filter[type] === true));
     }
+    if (isShipSourceFiltered(filter)) {
+        result = result.filter(shipDefinition => filter[shipDefinition.source] === true);
+    }
     return result;
 }
 
@@ -170,6 +188,10 @@ function isRowFiltered(filter: ShipFilterState): boolean {
 
 function isShipTypeFiltered(filter: ShipFilterState): boolean {
     return Object.keys(shipTypes).some(type => filter[type as ShipType] === true);
+}
+
+function isShipSourceFiltered(filter: ShipFilterState): boolean {
+    return Object.keys(shipSources).some(source => filter[source as unknown as ShipSource] === true);
 }
 
 function isManufacturerFiltered(filter: ShipFilterState): boolean {
