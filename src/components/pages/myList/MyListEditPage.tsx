@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -27,28 +27,28 @@ export const MyListEditPage = () => {
         };
     }, [restoreUserSettings]);
 
-    const handleClickCancel = () => {
+    const handleClickCancel = useCallback(() => {
         restoreUserSettings();
         navigate('/myList');
-    };
+    }, [restoreUserSettings, navigate]);
 
-    const handleClickSave = () => {
+    const handleClickSave = useCallback(() => {
         saveUserSettings();
         navigate('/myList');
-    };
+    }, [saveUserSettings, navigate]);
 
-    const handleCancelReset = () => {
+    const handleCancelReset = useCallback(() => {
         setConfirmingReset(false);
-    };
+    }, []);
 
-    const handleClickReset = () => {
+    const handleClickReset = useCallback(() => {
         setConfirmingReset(true);
-    };
+    }, []);
 
-    const handleConfirmReset = () => {
+    const handleConfirmReset = useCallback(() => {
         setConfirmingReset(false);
         resetUserSettings();
-    };
+    }, [resetUserSettings]);
 
     return (
         <>

@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -10,9 +10,10 @@ import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
-import { getModulePossession, getModuleWishState, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
-import { getModuleName, getShipName } from '../../../utils/shipDefinitionUtils';
+import { getModulePossession, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
 import { t } from '../../../i18n';
+import { MyListModuleEdit } from './MyListModuleEdit';
 
 interface IProps {
     ship: IShipDefinition;
@@ -23,8 +24,8 @@ export const MyListShipEditCard = (props: IProps) => {
 
     const { userSettings, setShipPossession, setShipWish, setModulePossession, setModuleWish } = useUserSettings();
 
-    const shipPossession = getShipPossession(ship.id, userSettings);
-    const shipWish = getShipWishState(ship.id, userSettings);
+    const shipPossession = useMemo(() => getShipPossession(ship.id, userSettings), [ship, userSettings]);
+    const shipWish = useMemo(() => getShipWishState(ship.id, userSettings), [ship, userSettings]);
 
     const enableShipWishControl = useMemo(() => {
         if (shipWish !== WishState.UNDEFINED) {
@@ -33,6 +34,14 @@ export const MyListShipEditCard = (props: IProps) => {
 
         return ship.source === ShipSource.TECH_FILE && shipPossession === PossessionState.NOT_POSSESSED;
     }, [ship, shipPossession, shipWish]);
+
+    const handleChangePossession = useCallback((possession: PossessionState) => {
+        setShipPossession(ship.id, possession);
+    }, [setShipPossession, ship]);
+
+    const handleChangeWish = useCallback((wish: WishState) => {
+        setShipWish(ship.id, wish);
+    }, [setShipWish, ship]);
 
     return (
         <Paper elevation={2} {...rest}>
@@ -45,39 +54,27 @@ export const MyListShipEditCard = (props: IProps) => {
                         label={getShipPossessionLabelText(ship)}
                         options={getShipPossessionOptions(ship)}
                         possession={shipPossession}
-                        onChange={possession => setShipPossession(ship.id, possession)}
+                        onChange={handleChangePossession}
                     />
                     {enableShipWishControl && (
                         <WishControl
                             wish={shipWish}
-                            onChange={wish => setShipWish(ship.id, wish)}
+                            onChange={handleChangeWish}
                         />
                     )}
                     {(ship.source === ShipSource.TECH_FILE || ship.source === ShipSource.STARTER_SHIP)
                         && shipPossession === PossessionState.POSSESSED
                         && ship.modules
                         && ship.modules.filter(module => !module.defaultModule).map(module => {
-                        const modulePossession = getModulePossession(module.id, ship.id, userSettings);
                         return (
-                            <Box key={module.id} pl={2}>
-                                <Stack spacing={3}>
-                                    <Typography variant="h6">
-                                        {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
-                                    </Typography>
-                                    <PossessionControl
-                                        label={t('myList.additionalModuleAcquiredOption')}
-                                        options={[t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')]}
-                                        possession={modulePossession}
-                                        onChange={possession => setModulePossession(module.id, ship.id, possession)}
-                                    />
-                                    {modulePossession === PossessionState.NOT_POSSESSED && (
-                                        <WishControl
-                                            wish={getModuleWishState(module.id, ship.id, userSettings)}
-                                            onChange={wish => setModuleWish(module.id, ship.id, wish)}
-                                        />
-                                    )}
-                                </Stack>
-                            </Box>
+                            <MyListModuleEdit
+                                key={module.id}
+                                ship={ship}
+                                module={module}
+                                userSettings={userSettings}
+                                setModulePossession={setModulePossession}
+                                setModuleWish={setModuleWish}
+                            />
                         );
                     })}
                 </Stack>

@@ -18,7 +18,7 @@ export const MyListEdit = (props: IProps) => {
     const shipsBySource = useMemo<Record<ShipSource, IShipDefinition[]>>(() => {
         const filteredShips = applyShipFilter(shipDefinitions, shipFilter);
         return separateShipsBySource(filteredShips);
-    }, [shipFilter]);    
+    }, [shipFilter]);
 
     return (
         <Stack spacing={1}>

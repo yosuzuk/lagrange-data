@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -20,9 +20,9 @@ export const MyListEditAccordion = (props: IProps) => {
     const { id, title, shipDefinitions, initiallyOpened, preRenderDetails = false } = props;
     const [opened, setOpened] = useState<boolean>(initiallyOpened);
 
-    const handleChangeExpand = (event: React.SyntheticEvent, isExpanded: boolean) => {
+    const handleChangeExpand = useCallback((event: React.SyntheticEvent, isExpanded: boolean) => {
         setOpened(isExpanded);
-    };
+    }, []);
 
     return (
         <Accordion
