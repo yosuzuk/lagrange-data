@@ -10,7 +10,7 @@ import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipSource } from '../../../types/ShipSource';
 import { useUserSettings } from '../../../userSettings/context/UserSettingsContext';
-import { getModulePossession, getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
+import { getShipPossession, getShipWishState } from '../../../userSettings/utils/userSettingsUtils';
 import { getShipName } from '../../../utils/shipDefinitionUtils';
 import { t } from '../../../i18n';
 import { MyListModuleEdit } from './MyListModuleEdit';
