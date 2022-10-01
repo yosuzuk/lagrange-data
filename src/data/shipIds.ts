@@ -42,6 +42,7 @@ export const ShipId = {
     CV3000: 'CV3000',
     CV3000_TE: 'CV3000_TE',
     EDIACARAN_TE: 'EDIACARAN_TE',
+    EDIACARAN_TE_2: 'EDIACARAN_TE_2',
     ERIS_I_A: 'ERIS_I_A',
     ERIS_I_B: 'ERIS_I_B',
     ERIS_I_C: 'ERIS_I_C',

@@ -494,14 +494,25 @@
     },
     {
       "ID": "EDIACARAN_TE",
-      "JA": "エディアカラ級-TE",
-      "EN": "Ediacaran (TE) - Ultra Type",
+      "JA": "エディアカラ級-TE（フリゲート生産）",
+      "EN": "Ediacaran (TE) - Ultra Type 1",
       "HP": "220070",
       "speed": "420",
       "warp": "2100",
       "dpmShip": "11874",
       "dpmAntiAir": "8388",
       "dpmSiege": "1756"
+    },
+    {
+      "ID": "EDIACARAN_TE_2",
+      "JA": "エディアカラ級-TE（駆逐艦生産）",
+      "EN": "Ediacaran (TE) - Ultra Type 2",
+      "HP": "220070",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "14833",
+      "dpmAntiAir": "10425",
+      "dpmSiege": "3150"
     },
     {
       "ID": "ERIS_I_A",
