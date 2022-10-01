@@ -153,6 +153,7 @@ export function separateShipsBySource(shipDefinitions: IShipDefinition[]): Recor
         [ShipSource.TECH_FILE]: [],
         [ShipSource.CITY_TRADE]: [],
         [ShipSource.DOCK_EFFECT]: [],
+        [ShipSource.SALVAGE]: [],
         [ShipSource.UNKNOWN]: [],
     };
 

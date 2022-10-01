@@ -41,6 +41,10 @@ export const ModuleData = (props: IProps) => {
         Object.keys(moduleSelection.groups[groupId])
             .map(moduleId => moduleSelection.groups[groupId][moduleId])
             .forEach((moduleUsage: IModuleUsage) => {
+                if (moduleUsage.module.category === 'UNKNOWN') {
+                    return;
+                }
+
                 if (moduleUsage.usage === 'used') {
                     if (usedModules.length > 0) {
                         usedModules.push(
@@ -68,6 +72,10 @@ export const ModuleData = (props: IProps) => {
                 }
             });
     });
+
+    if (usedModules.length === 0) {
+        return null;
+    }
 
     return (
         <>

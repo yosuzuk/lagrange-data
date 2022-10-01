@@ -36,9 +36,15 @@ export const ModuleDetail = (props: IProps) => {
                             expandIcon={expandEnabled && <ExpandMoreIcon />}
                         >
                             <div>
-                                <Typography variant="body2">
-                                    {`${module.category}${module.categoryNumber} ${getModuleName(shipId, module)}`}
-                                </Typography>
+                                {module.category !== 'UNKNOWN' ? (
+                                    <Typography variant="body2">
+                                        {`${module.category}${module.categoryNumber} ${getModuleName(shipId, module)}`}
+                                    </Typography>
+                                ) : (
+                                    <Typography variant="body2">
+                                        {`${getModuleName(shipId, module)}`}
+                                    </Typography>
+                                )}
                                 {descriptionAvailable && module.description && (
                                     <Typography variant="caption" color="text.secondary">
                                         {`${module.description}`}

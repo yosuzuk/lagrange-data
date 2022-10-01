@@ -3,6 +3,7 @@ export enum ShipSource {
     TECH_FILE,
     CITY_TRADE,
     DOCK_EFFECT,
+    SALVAGE,
     UNKNOWN,
 }
 

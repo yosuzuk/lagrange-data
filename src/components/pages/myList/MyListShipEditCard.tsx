@@ -94,6 +94,9 @@ function getShipPossessionLabelText(ship: IShipDefinition) {
         case ShipSource.DOCK_EFFECT: {
             return t('myList.dockingEffectBlueprintAcquiredOption');
         }
+        case ShipSource.SALVAGE: {
+            return t('myList.salvageAcquiredOption');
+        }
         default: {
             return t('myList.blueprintAcquiredOption');
         }

@@ -107,22 +107,48 @@ export const ShipDetail = (props: IProps) => {
                                 <>
                                     {!!shipDefinition.carryFighter && (
                                         <Typography variant="body2" gutterBottom={true}>
-                                            {`${translateShipType(ShipType.FIGHTER, shipDefinition.carryFighterType)} ×${shipDefinition.carryFighter}`}
+                                            {t('shipDetail.carriedShipCount', {
+                                                shipSubType: translateShipType(ShipType.FIGHTER, shipDefinition.carryFighterType),
+                                                count: shipDefinition.carryFighter,
+                                            })}
                                         </Typography>
                                     )}
                                     {carryFightersModule && shipDefinition.modules?.filter(module => !!module.carryFighter).map(module => (
                                         <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {`${translateShipType(ShipType.FIGHTER, module.carryFighterType)} ×${module.carryFighter}（${module.category}${module.categoryNumber}）`}
+                                            {module.category !== 'UNKNOWN'
+                                                ? t('shipDetail.carriedShipCountOnModule', {
+                                                    shipSubType: translateShipType(ShipType.FIGHTER, module.carryFighterType),
+                                                    count: module.carryFighter,
+                                                    module: `${module.category}${module.categoryNumber}`
+                                                })
+                                                : t('shipDetail.carriedShipCount', {
+                                                    shipSubType: translateShipType(ShipType.FIGHTER, module.carryFighterType),
+                                                    count: module.carryFighter,
+                                                })
+                                            }
                                         </Typography>
                                     ))}
                                     {!!shipDefinition.carryCorvette && (
                                         <Typography variant="body2" gutterBottom={true}>
-                                            {`${translateShipType(ShipType.CORVETTE)} ×${shipDefinition.carryCorvette}`}
+                                            {t('shipDetail.carriedShipCount', {
+                                                shipSubType: translateShipType(ShipType.CORVETTE),
+                                                count: shipDefinition.carryCorvette,
+                                            })}
                                         </Typography>
                                     )}
                                     {carryCorvettesModule && shipDefinition.modules?.filter(module => !!module.carryCorvette).map(module => (
                                         <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {`${translateShipType(ShipType.CORVETTE)} ×${module.carryCorvette}（${module.category}${module.categoryNumber}）`}
+                                            {module.category !== 'UNKNOWN'
+                                                ? t('shipDetail.carriedShipCountOnModule', {
+                                                    shipSubType: translateShipType(ShipType.CORVETTE),
+                                                    count: module.carryCorvette,
+                                                    module: `${module.category}${module.categoryNumber}`
+                                                })
+                                                : t('shipDetail.carriedShipCount', {
+                                                    shipSubType: translateShipType(ShipType.CORVETTE),
+                                                    count: module.carryCorvette,
+                                                })
+                                            }
                                         </Typography>
                                     ))}
                                 </>

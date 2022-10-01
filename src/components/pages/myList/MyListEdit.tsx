@@ -49,6 +49,14 @@ export const MyListEdit = (props: IProps) => {
             </div>
             <div>
                 <MyListEditAccordion
+                    id="salvage-ships"
+                    title={t('shipSource.salvage')}
+                    initiallyOpened={false}
+                    shipDefinitions={shipsBySource[ShipSource.SALVAGE]}
+                />
+            </div>
+            <div>
+                <MyListEditAccordion
                     id="starter-ships"
                     title={t('shipSource.starterShip')}
                     initiallyOpened={false}

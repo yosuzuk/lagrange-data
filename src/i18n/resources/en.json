@@ -127,7 +127,9 @@
     "shipDetail": {
         "detailsUnknown": "Details unknown",
         "numberOfSkillSlots": "Skill slots: {{count}}",
-        "skillsColon": "Skills:"
+        "skillsColon": "Skills:",
+        "carriedShipCount": "{{shipSubType}} ×{{count}}",
+        "carriedShipCountOnModule": "{{shipSubType}} ×{{count}} ({{module}})"
     },
     "fleetSetup": {
         "pageTitle": "Fleet builder",
@@ -200,6 +202,7 @@
         "blueprintAcquiredOptionNo": "Not acquired",
         "additionalModuleAcquiredOption": "Module",
         "dockingEffectBlueprintAcquiredOption": "Temporary blueprint",
+        "salvageAcquiredOption": "Salvaged ship",
         "shipBoughtOption": "Ship",
         "shipBoughtOptionYes": "Acquired",
         "shipBoughtOptionNo": "Not acquired",
@@ -242,6 +245,7 @@
         "starterTechFile": "Starter tech file",
         "dockingEffect": "Docking effect",
         "cityTrade": "City trade",
+        "salvage": "Salvage",
         "unknown": "Unknown"
     },
     "shipType": {
@@ -264,6 +268,7 @@
         "techFile": "Blueprints acquired by tech files",
         "cityTrade": "Ships acquired by liasing / trading",
         "dockEffect": "Temporary blueprints acquired by docking effect",
+        "salvage": "Salvaged ships",
         "starterShip": "Blueprints acquired by starter tech files"
     }
 }

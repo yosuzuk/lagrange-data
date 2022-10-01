@@ -495,7 +495,7 @@
     {
       "ID": "EDIACARAN_TE",
       "JA": "エディアカラ級-TE",
-      "EN": "Ediacaran (TE)",
+      "EN": "Ediacaran (TE) - Ultra Type",
       "HP": "220070",
       "speed": "420",
       "warp": "2100",
@@ -1306,6 +1306,17 @@
       "dpmShip": "10031",
       "dpmAntiAir": "510",
       "dpmSiege": "959"
+    },
+    {
+      "ID": "SOLAR_WHALE_TE_UAV",
+      "JA": "ソーラーホエール-TE-UAV - カスタム型",
+      "EN": "Solar Whale UAV Carrier (TE) - Ultra Type",
+      "HP": "292890",
+      "speed": "250",
+      "warp": "1250",
+      "dpmShip": "10824",
+      "dpmAntiAir": "1500",
+      "dpmSiege": "7694"
     },
     {
       "ID": "SPEAR_OF_URANUS",
@@ -2472,6 +2483,42 @@
       "dpmShip": "0",
       "dpmAntiAir": "0",
       "dpmSiege": "0"
+    },
+    {
+      "ID": "SOLAR_WHALE_TE_UAV",
+      "Module": "X1",
+      "JA": "総合艦載機システム",
+      "EN": "TODO",
+      "dpmShip": "0",
+      "dpmAntiAir": "0",
+      "dpmSiege": "0"
+    },
+    {
+      "ID": "SOLAR_WHALE_TE_UAV",
+      "Module": "X2",
+      "JA": "「スティンガー」総合UAVシステム",
+      "EN": "TODO",
+      "dpmShip": "4200",
+      "dpmAntiAir": "1500",
+      "dpmSiege": "0"
+    },
+    {
+      "ID": "SOLAR_WHALE_TE_UAV",
+      "Module": "X3",
+      "JA": "UAV支援システム",
+      "EN": "Large Aircraft System",
+      "dpmShip": "0",
+      "dpmAntiAir": "0",
+      "dpmSiege": "6888"
+    },
+    {
+      "ID": "SOLAR_WHALE_TE_UAV",
+      "Module": "X4",
+      "JA": "対艦砲撃システム",
+      "EN": "TODO",
+      "dpmShip": "6624",
+      "dpmAntiAir": "0",
+      "dpmSiege": "806"
     },
     {
       "ID": "CV3000",

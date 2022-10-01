@@ -18,6 +18,10 @@ export const shipSources: Record<ShipSource, IShipSourceData> = {
         name: t('acquirableThrough.cityTrade'),
         sortValue: 4,
     },
+    [ShipSource.SALVAGE]: {
+        name: t('acquirableThrough.salvage'),
+        sortValue: 5,
+    },
     [ShipSource.UNKNOWN]: {
         name: t('acquirableThrough.unknown'),
         sortValue: 5,

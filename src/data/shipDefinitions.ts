@@ -3905,6 +3905,108 @@ export const shipDefinitions: IShipDefinition[] = [
         ],
     },
     {
+        id: ShipId.SOLAR_WHALE_TE_UAV,
+        name: 'ソーラーホエール-TE (UAV)',
+        type: ShipType.CARRIER,
+        cost: 45,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 5,
+        source: ShipSource.SALVAGE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'X1',
+                name: '総合艦載機システム',
+                description: '大型戦闘機3機と護送艦を3隻搭載可能',
+                parts: [
+                    {
+                        text: [
+                            'CFB-600型　大型戦闘機格納庫',
+                            '3隊の重戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令・探査システムを備える。',
+                            'CBC-2000型　護送艦ドック',
+                            '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
+                        ],
+                        skillSlots: 5,
+                        skills: [
+                            {
+                                effect: '護送艦のダメージアップ',
+                                properties: '最大10％',
+                            },
+                            {
+                                effect: '護送艦の帰還冷却時間ダウン',
+                                properties: '最大20％',
+                            },
+                        ],
+                    },
+                ],
+                category: 'UNKNOWN',
+                categoryNumber: 1,
+                carryCorvette: 3,
+                carryFighter: 3,
+                carryFighterType: ShipSubType.LARGE_FIGHTER,
+                defaultModule: true,
+            },
+            {
+                id: 'X2',
+                name: '「スティンガー」総合UAVシステム',
+                description: '戦闘UAV×3、防御UAV×2',
+                parts: [
+                    {
+                        text: [
+                            '「スティンガー」　攻撃UAVシステム',
+                            '特殊設定のUAVハンガーシステム。3機の特殊攻撃UAVを積載でき、小型化されたチャージプラズマ砲により、大型目標に近接爆撃攻撃を行うことができる。',
+                            '・エネルギー、対艦：4200',
+                            '「スティンガー」　防御UAVシステム',
+                            '特殊設定のUAVハンガーシステム。2機の特殊防衛UAVを積載でき、戦場の局所防衛を担える。',
+                            '・エネルギー、対空：1500',
+                        ],
+                        skillSlots: 4,
+                    },
+                ],
+                category: 'UNKNOWN',
+                categoryNumber: 2,
+            },
+            {
+                id: 'X3',
+                name: 'UAV支援システム',
+                description: '補修UAV×2、攻城UAV×4',
+                parts: [
+                    {
+                        text: [
+                            'CRT-3型　汎用ロボット補修ポッド',
+                            '標準補修UAVを2機搭載する。補修UAVの収容と整備を行い、信号誘導システムを装備する。補修UAVは損傷した味方艦船を戦闘中に補修できる。',
+                            'CST-6型　攻城UAV搭載室',
+                            '標準攻城UAVを4機搭載する。攻城UAVの収容と整備を行い、信号誘導システムを装備する。',
+                            '・攻城：6888',
+                        ],
+                        skillSlots: 4,
+                    },
+                ],
+                category: 'UNKNOWN',
+                categoryNumber: 3,
+            },
+            {
+                id: 'X4',
+                name: '対艦砲撃システム',
+                description: '対小型武装',
+                parts: [
+                    {
+                        text: [
+                            'BG-2300A　2連対艦砲',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：6624、攻城：806',
+                        ],
+                        skillSlots: 4,
+                    },
+                ],
+                category: 'UNKNOWN',
+                categoryNumber: 4,
+            },
+        ],
+    },
+    {
         id: ShipId.SPEAR_OF_URANUS,
         name: 'スピアーオブウラヌス級',
         type: ShipType.BATTLE_CRUISER,
