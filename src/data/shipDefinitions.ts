@@ -1345,6 +1345,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 defaultModule: true,
             },
         ],
+        relatedShipIds: [ShipId.EDIACARAN_TE_2],
     },
     {
         id: ShipId.EDIACARAN_TE_2,
@@ -1411,6 +1412,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 2,
             },
         ],
+        relatedShipIds: [ShipId.EDIACARAN_TE],
     },
     {
         id: ShipId.ERIS_I_A,
@@ -2635,6 +2637,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 4,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        relatedShipIds: [ShipId.INDEFATIGABLE_TE_S],
     },
     {
         id: ShipId.INDEFATIGABLE_TE_S,
@@ -2646,6 +2649,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 6,
         source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        relatedShipIds: [ShipId.INDEFATIGABLE],
     },
     {
         id: ShipId.IO_A,
@@ -2814,6 +2818,7 @@ export const shipDefinitions: IShipDefinition[] = [
         researchStrategyTypes: [],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
+        relatedShipIds: [ShipId.LIGHT_CONE_TE_A_S],
     },
     {
         id: ShipId.LIGHT_CONE_B,
@@ -2829,6 +2834,7 @@ export const shipDefinitions: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
+        relatedShipIds: [ShipId.LIGHT_CONE_C, ShipId.LIGHT_CONE_TE_A_S],
     },
     {
         id: ShipId.LIGHT_CONE_C,
@@ -2844,6 +2850,19 @@ export const shipDefinitions: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
+        relatedShipIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_TE_A_S],
+    },
+    {
+        id: ShipId.LIGHT_CONE_TE_A_S,
+        name: 'ライトコーン級-TE　Ａ一般型（回収）',
+        type: ShipType.CRUISER,
+        cost: 20,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 8,
+        source: ShipSource.SALVAGE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        relatedShipIds: [ShipId.LIGHT_CONE_A, ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_C],
     },
     {
         id: ShipId.MARE_NUBIUM_A,
@@ -4038,6 +4057,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 3,
             },
         ],
+        relatedShipIds: [ShipId.SOLAR_WHALE_TE_S],
     },
     {
         id: ShipId.SOLAR_WHALE_TE_S,
@@ -4140,6 +4160,7 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 4,
             },
         ],
+        relatedShipIds: [ShipId.SOLAR_WHALE],
     },
     {
         id: ShipId.SPEAR_OF_URANUS,

@@ -713,7 +713,7 @@
       "HP": "121350",
       "speed": "250",
       "warp": "1250",
-      "dpmShip": "22596",
+      "dpmShip": "19996",
       "dpmAntiAir": "1701",
       "dpmSiege": "1889"
     },
@@ -883,6 +883,17 @@
       "dpmShip": "14850",
       "dpmAntiAir": "630",
       "dpmSiege": "1372"
+    },
+    {
+      "ID": "LIGHT_CONE_TE_A_S",
+      "JA": "ライトコーン級-TE - 一般型（回収）",
+      "EN": "Light Cone (TE) - Generic Type (salvaged)",
+      "HP": "61850",
+      "speed": "450",
+      "warp": "2250",
+      "dpmShip": "17562",
+      "dpmAntiAir": "7079",
+      "dpmSiege": "1072"
     },
     {
       "ID": "MARE_NUBIUM_A",
@@ -1395,8 +1406,8 @@
       "HP": "48670",
       "speed": "450",
       "warp": "2250",
-      "dpmShip": "11812",
-      "dpmAntiAir": "4299",
+      "dpmShip": "10800",
+      "dpmAntiAir": "3307",
       "dpmSiege": "1721"
     },
     {
@@ -1407,8 +1418,8 @@
       "HP": "48670",
       "speed": "450",
       "warp": "2250",
-      "dpmShip": "11812",
-      "dpmAntiAir": "4299",
+      "dpmShip": "10800",
+      "dpmAntiAir": "3307",
       "dpmSiege": "1721"
     },
     {
