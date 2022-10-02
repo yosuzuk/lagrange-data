@@ -1134,6 +1134,18 @@
       "dpmSiege": "608"
     },
     {
+      "ID": "NOMA_M470_TE_S",
+      "JA": "ノマM470級-TE - 対艦型（回収）",
+      "EN": "NOMA M470 (TE) - Anti-Ship Type (salvaged)",
+      "DE": "NOMA M470 (TE) - Antischiff-Typ",
+      "HP": "12810",
+      "speed": "800",
+      "warp": "4000",
+      "dpmShip": "3548",
+      "dpmAntiAir": "384",
+      "dpmSiege": "608"
+    },
+    {
       "ID": "PREDATOR_A",
       "JA": "プレデター級 - 一般型",
       "EN": "Predator - Generic Type",
@@ -1526,6 +1538,28 @@
       "dpmShip": "4200",
       "dpmAntiAir": "3864",
       "dpmSiege": "294"
+    },
+    {
+      "ID": "TAURUS_TE_A_S",
+      "JA": "トーラス級-TE - 対艦型（回収）",
+      "EN": "Taurus (TE) - Anti-Ship Type (salvaged)",
+      "HP": "32980",
+      "speed": "650",
+      "warp": "3250",
+      "dpmShip": "6810",
+      "dpmAntiAir": "880",
+      "dpmSiege": "572"
+    },
+    {
+      "ID": "TAURUS_TE_B_S",
+      "JA": "トーラス級-TE - 突撃型（回収）",
+      "EN": "Taurus (TE) - Assault Type (salvaged)",
+      "HP": "42136",
+      "speed": "650",
+      "warp": "3250",
+      "dpmShip": "8107",
+      "dpmAntiAir": "2825",
+      "dpmSiege": "1552"
     },
     {
       "ID": "TUNDRA_A",
