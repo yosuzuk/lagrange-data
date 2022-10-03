@@ -20,6 +20,7 @@ const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
 const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupPage'));
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
+const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 function App() {
@@ -130,6 +131,14 @@ function App() {
                                     )}
                                 />
                             </Route>
+                            <Route
+                                path="dpmCalc"
+                                element={(
+                                    <Suspense fallback={<LoadingIndicator />}>
+                                        <DpmCalcPage />
+                                    </Suspense>
+                                )}
+                            />
                             <Route
                                 path="debug"
                                 element={(
