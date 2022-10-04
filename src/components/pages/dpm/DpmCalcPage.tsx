@@ -6,17 +6,26 @@ import Typography from '@mui/material/Typography';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { FormControl } from './FormControl';
-import { createDpmCalcInputProperties } from './utils/dpmCalcInputUtils';
-import { IDpmCalcInput, IInputProperty } from './types/IDpmCalcInput';
+import { createDpmCalcBaseProperties, createDpmCalcEnhancementProperties } from './utils/dpmCalcInputUtils';
+import { IDpmCalcBaseProperties, IDpmCalcEnhancementProperties, IInputProperty } from './types/IDpmCalcInput';
 import { LabeledList } from '../../list/LabeledList';
 
 export const DpmCalcPage = () => {
-    const initialState = useRef(() => createDpmCalcInputProperties());
-    const [input, setInput] = useState<IDpmCalcInput>(initialState.current);
+    const initialBaseProperties = useRef(() => createDpmCalcBaseProperties());
+    const initialEnhancementProperties = useRef(() => createDpmCalcEnhancementProperties());
+    const [baseProperties, setBaseProperties] = useState<IDpmCalcBaseProperties>(initialBaseProperties.current);
+    const [enhancementProperties, setEnhancementProperties] = useState<IDpmCalcEnhancementProperties>(initialEnhancementProperties.current);
 
-    const handleChange = useCallback((newInputProperty: IInputProperty) => {
-        setInput(input => ({
-            ...input,
+    const handleChangeBaseProperties = useCallback((newInputProperty: IInputProperty) => {
+        setBaseProperties(properties => ({
+            ...properties,
+            [newInputProperty.id]: newInputProperty,
+        }));
+    }, []);
+
+    const handleChangeEnhancementProperties = useCallback((newInputProperty: IInputProperty) => {
+        setEnhancementProperties(properties => ({
+            ...properties,
             [newInputProperty.id]: newInputProperty,
         }));
     }, []);
@@ -39,13 +48,29 @@ export const DpmCalcPage = () => {
                         <Paper>
                             <Box p={1}>
                                 <LabeledList
-                                    rows={(Object.values(input) as IInputProperty[]).map(inputProperty => ({
+                                    rows={(Object.values(baseProperties) as IInputProperty[]).map(inputProperty => ({
                                         key: inputProperty.id,
                                         label: inputProperty.label,
                                         value: (
                                             <FormControl
                                                 inputProperty={inputProperty}
-                                                onChange={handleChange}
+                                                onChange={handleChangeBaseProperties}
+                                            />
+                                        ),
+                                    }))}
+                                />
+                            </Box>
+                        </Paper>
+                        <Paper>
+                            <Box p={1}>
+                                <LabeledList
+                                    rows={(Object.values(enhancementProperties) as IInputProperty[]).map(inputProperty => ({
+                                        key: inputProperty.id,
+                                        label: inputProperty.label,
+                                        value: (
+                                            <FormControl
+                                                inputProperty={inputProperty}
+                                                onChange={handleChangeEnhancementProperties}
                                             />
                                         ),
                                     }))}

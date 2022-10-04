@@ -1,6 +1,6 @@
-import { IDpmCalcInput, IInputProperty, INumericInputProperty, ISelectInputProperty, Unit } from '../types/IDpmCalcInput';
+import { IDpmCalcBaseProperties, IDpmCalcEnhancementProperties, IInputProperty, INumericInputProperty, ISelectInputProperty, Unit } from '../types/IDpmCalcInput';
 
-export function createDpmCalcInputProperties(): IDpmCalcInput {
+export function createDpmCalcBaseProperties(): IDpmCalcBaseProperties {
     return {
         installation: createNumericInputProperty({
             id: 'installation',
@@ -10,7 +10,7 @@ export function createDpmCalcInputProperties(): IDpmCalcInput {
         baseDpm: createNumericInputProperty({
             id: 'baseDpm',
             label: 'DPMの基本値',
-            description: '（入力ミスを検出するために使います）',
+            description: '（入力ミスを検知するために使います）',
             unit: Unit.DPM,
         }),
         damageType: createSelectInputProperty({
@@ -104,6 +104,44 @@ export function createDpmCalcInputProperties(): IDpmCalcInput {
             id: 'lockOnTime',
             label: 'ロックオン時間',
             unit: Unit.SECONDS,
+        }),
+    };
+}
+
+export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementProperties {
+    return {
+        increaseDamagePerHit: createNumericInputProperty({
+            id: 'increaseDamagePerHit',
+            label: 'ダメージアップ',
+            description: '（スキルとモジュールから反映されるダメージアップを合わせて入力してください）',
+            value: 0,
+            unit: Unit.PERCENTAGE,
+            min: 500,
+        }),
+        reduceDuration: createNumericInputProperty({
+            id: 'reduceDuration',
+            label: '持続時間ダウン',
+            description: '（逆にアップする場合はマイナスの数値を入力してください）',
+            value: 0,
+            unit: Unit.PERCENTAGE,
+            min: 500,
+            max: 100,
+        }),
+        reduceCooldown: createNumericInputProperty({
+            id: 'reduceCooldown',
+            label: '冷却時間ダウン',
+            description: '（戦闘機の場合は帰還冷却ダウン）',
+            value: 0,
+            unit: Unit.PERCENTAGE,
+            min: 500,
+            max: 100,
+        }),
+        reduceLockon: createNumericInputProperty({
+            id: 'reduceLockon',
+            label: 'ロックオン時間ダウン',
+            value: 0,
+            unit: Unit.PERCENTAGE,
+            max: 100,
         }),
     };
 }

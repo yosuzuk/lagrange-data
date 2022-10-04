@@ -1,4 +1,4 @@
-export interface IDpmCalcInput extends Record<string, IInputProperty> {
+export interface IDpmCalcBaseProperties extends Record<string, IInputProperty> {
     installation: INumericInputProperty;
     baseDpm: INumericInputProperty;
     damageType: ISelectInputProperty;
@@ -10,6 +10,13 @@ export interface IDpmCalcInput extends Record<string, IInputProperty> {
     rounds: INumericInputProperty;
     shotsPerRound: INumericInputProperty;
     lockOnTime: INumericInputProperty;
+}
+
+export interface IDpmCalcEnhancementProperties extends Record<string, IInputProperty> {
+    increaseDamagePerHit: INumericInputProperty;
+    reduceDuration: INumericInputProperty;
+    reduceCooldown: INumericInputProperty;
+    reduceLockon: INumericInputProperty;
 }
 
 export interface IInputProperty {
