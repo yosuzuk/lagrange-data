@@ -100,23 +100,6 @@ export const ResearchFilter = (props: IProps) => {
             </Grid>
             <Grid item={true} xs={12} sm={8} md={4}>
                 <FormControl fullWidth={true} size="small">
-                    <InputLabel id="strategy-select-label">{t('label.researchStrategyType')}</InputLabel>
-                    <Select
-                        labelId="strategy-select-label"
-                        value={localFilterState.strategyTypeFilter ?? ''}
-                        label={t('label.researchStrategyType')}
-                        onChange={handleChangeStrategyType}
-                    >
-                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
-                        <Divider />
-                        {Object.values(ResearchStrategyType).map(strategyType => (
-                            <MenuItem key={strategyType} value={strategyType}>{translateResearchStrategyType(strategyType)}</MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-            </Grid>
-            <Grid item={true} xs={12} sm={8} md={4}>
-                <FormControl fullWidth={true} size="small">
                     <InputLabel id="tactics-select-label">{t('label.researchTacticType')}</InputLabel>
                     <Select
                         labelId="tactics-select-label"
@@ -128,6 +111,23 @@ export const ResearchFilter = (props: IProps) => {
                         <Divider />
                         {Object.values(ResearchTacticType).map(tacticsType => (
                             <MenuItem key={tacticsType} value={tacticsType}>{translateResearchTacticType(tacticsType)}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </Grid>
+            <Grid item={true} xs={12} sm={8} md={4}>
+                <FormControl fullWidth={true} size="small">
+                    <InputLabel id="strategy-select-label">{t('label.researchStrategyType')}</InputLabel>
+                    <Select
+                        labelId="strategy-select-label"
+                        value={localFilterState.strategyTypeFilter ?? ''}
+                        label={t('label.researchStrategyType')}
+                        onChange={handleChangeStrategyType}
+                    >
+                        <MenuItem value="">{t('label.notSelected')}</MenuItem>
+                        <Divider />
+                        {Object.values(ResearchStrategyType).map(strategyType => (
+                            <MenuItem key={strategyType} value={strategyType}>{translateResearchStrategyType(strategyType)}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>

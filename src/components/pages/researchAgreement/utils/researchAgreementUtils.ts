@@ -71,8 +71,8 @@ export function getAllFilterCombinations(): IResearchFilterState[] {
     ];
 
     return manufacturerOptions.flatMap(manufacturerFilter => {
-        return strategyFilterOptions.flatMap(strategyTypeFilter => {
-            return tacticFilterOptions.map(tacticTypeFilter => {
+        return tacticFilterOptions.flatMap(tacticTypeFilter => {
+            return strategyFilterOptions.map(strategyTypeFilter => {
                 return {
                     shipId: null,
                     manufacturerFilter,

@@ -61,8 +61,8 @@ export const ShipDataTable = (props: IProps) => {
         ...columnConfig.source ? [shipSourceColumn] : [],
         ...columnConfig.manufacturer ? [manufacturerColumn] : [],
         ...columnConfig.researchManufacturer ? [researchManufacturerColumn] : [],
-        ...columnConfig.researchStrategyType ? [researchStrategyTypeColumn] : [],
         ...columnConfig.researchTacticType ? [researchTacticTypeColumn] : [],
+        ...columnConfig.researchStrategyType ? [researchStrategyTypeColumn] : [],
         ...columnConfig.weight ? [shipWeightColumn] : [],
     ], [columnConfig, decorateName, openShipDetailDialog]);
 

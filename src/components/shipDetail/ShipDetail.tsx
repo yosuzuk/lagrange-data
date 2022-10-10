@@ -259,14 +259,14 @@ export const ShipDetail = (props: IProps) => {
                                                 {`・${translateResearchManufacturer(shipDefinition.researchManufacturer)}`}
                                             </Typography>
                                         )}
-                                        {shipDefinition.researchStrategyTypes && shipDefinition.researchStrategyTypes.length > 0 && (
-                                            <Typography variant="body2" gutterBottom={true}>
-                                                {`・${shipDefinition.researchStrategyTypes.map(type => translateResearchStrategyType(type)).join(' / ')}`}
-                                            </Typography>
-                                        )}
                                         {shipDefinition.researchTacticTypes && shipDefinition.researchTacticTypes.length > 0 && (
                                             <Typography variant="body2" gutterBottom={true}>
                                                 {`・${shipDefinition.researchTacticTypes.map(type => translateResearchTacticType(type)).join(' / ')}`}
+                                            </Typography>
+                                        )}
+                                        {shipDefinition.researchStrategyTypes && shipDefinition.researchStrategyTypes.length > 0 && (
+                                            <Typography variant="body2" gutterBottom={true}>
+                                                {`・${shipDefinition.researchStrategyTypes.map(type => translateResearchStrategyType(type)).join(' / ')}`}
                                             </Typography>
                                         )}
                                     </>

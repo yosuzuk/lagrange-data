@@ -20,11 +20,11 @@ export const ConfigurationSummary = (props: IProps) => {
                 ...(configuration.filterState.manufacturerFilter !== null ? [
                     translateResearchManufacturer(configuration.filterState.manufacturerFilter),
                 ] : []),
-                ...(configuration.filterState.strategyTypeFilter !== null ? [
-                    translateResearchStrategyType(configuration.filterState.strategyTypeFilter),
-                ] : []),
                 ...(configuration.filterState.tacticTypeFilter !== null ? [
                     translateResearchTacticType(configuration.filterState.tacticTypeFilter),
+                ] : []),
+                ...(configuration.filterState.strategyTypeFilter !== null ? [
+                    translateResearchStrategyType(configuration.filterState.strategyTypeFilter),
                 ] : []),
                 ...(!configuration.filterState.manufacturerFilter && !configuration.filterState.strategyTypeFilter && !configuration.filterState.tacticTypeFilter ? [
                     t('label.notSelected'),
