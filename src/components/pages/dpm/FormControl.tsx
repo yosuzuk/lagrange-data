@@ -1,22 +1,34 @@
+import { ChangeEvent } from 'react';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { ChangeEvent } from 'react';
 import { IInputProperty, INumericInputProperty, ISelectInputProperty } from './types/IDpmCalcInput';
 import { getAdornmentForUnit, applyPropertyChange } from './utils/dpmCalcInputUtils';
+import { HelpPopper } from './HelpPopper';
+
+const DEFAULT_NUMERIC_INPUT_WIDTH = '8em';
+const DEFAULT_SELECT_WIDTH = '15em';
 
 interface IProps {
     inputProperty: IInputProperty;
     onChange: (inputProperty: IInputProperty) => void;
+    width?: string;
 }
 
 export const FormControl = (props: IProps) => {
-    const { inputProperty, onChange } = props;
+    const { inputProperty, onChange, width } = props;
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         switch (inputProperty.type) {
             case 'numeric': {
+                if (e.target.value === '') {
+                    onChange(applyPropertyChange(null, inputProperty));
+                    return;
+                }
+
                 const value = Number(e.target.value);
                 const numberValue = Number.isFinite(value) ? value as number : null;
                 onChange(applyPropertyChange(numberValue, inputProperty));
@@ -37,44 +49,65 @@ export const FormControl = (props: IProps) => {
             const { value, unit, min, max } = inputProperty as INumericInputProperty;
             return (
                 <>
-                    <TextField
-                        id={inputProperty.id}
-                        size="small"
-                        required={true}
-                        type="number"
-                        value={value ?? undefined}
-                        InputProps={{
-                            endAdornment: unit ? <InputAdornment position="end">{getAdornmentForUnit(unit)}</InputAdornment> : undefined,
-                            inputProps: {
-                                min,
-                                max,
-                            },
-                        }}
-                        onChange={handleChange}
-                    />
-                    {inputProperty.description && (
-                        <Typography variant="body2" color="text.secondary">{inputProperty.description}</Typography>
-                    )}
+                    <Stack direction="row">
+                        <Box sx={{ width: width ?? DEFAULT_NUMERIC_INPUT_WIDTH }}>
+                            <TextField
+                                id={inputProperty.id}
+                                size="small"
+                                required={true}
+                                type="number"
+                                value={value ?? undefined}
+                                InputProps={{
+                                    endAdornment: unit ? <InputAdornment position="end">{getAdornmentForUnit(unit)}</InputAdornment> : undefined,
+                                    inputProps: {
+                                        min,
+                                        max,
+                                    },
+                                }}
+                                onChange={handleChange}
+                                fullWidth={true}
+                            />
+                        </Box>
+                        {inputProperty.description && (
+                            <HelpPopper
+                                title={inputProperty.label}
+                                text={inputProperty.description}
+                            />
+                        )}
+                    </Stack>
                 </>
             );
         }
         case 'select': {
             const { value, options } = inputProperty as ISelectInputProperty;
             return (
-                <TextField
-                    id={inputProperty.id}
-                    size="small"
-                    select={true}
-                    value={value}
-                    helperText={inputProperty.description}
-                    onChange={handleChange}
-                >
-                    {options.map(option => (
-                        <MenuItem key={option.id} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                    ))}
-                </TextField>
+                <>
+                    <Stack direction="row">
+                        <Box sx={{ width: width ?? DEFAULT_SELECT_WIDTH }}>
+                            <TextField
+                                id={inputProperty.id}
+                                size="small"
+                                select={true}
+                                value={value}
+                                helperText={inputProperty.description}
+                                onChange={handleChange}
+                                fullWidth={true}
+                            >
+                                {options.map(option => (
+                                    <MenuItem key={option.id} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        </Box>
+                        {inputProperty.description && (
+                            <HelpPopper
+                                title={inputProperty.label}
+                                text={inputProperty.description}
+                            />
+                        )}
+                    </Stack>
+                </>
             );
         }
         default: {

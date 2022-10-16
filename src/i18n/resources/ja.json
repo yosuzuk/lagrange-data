@@ -219,6 +219,9 @@
         "pageDescription2": "全て細かく設定する必要はありません。",
         "pageDescription3": "設定データはブラウザのローカルストレージに保存されます。"
     },
+    "dpmCalc": {
+        "pageTitle": "DPM計算機"
+    },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
         "nomaShippingGroup": "ノマシッピング",

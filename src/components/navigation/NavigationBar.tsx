@@ -23,6 +23,7 @@ const menuItems: Record<string, string> = {
     '/shipData': t('shipData.pageTitle'),
     '/fleetSetup': t('fleetSetup.pageTitle'),
     '/myList': t('myList.pageTitle'),
+    '/dpmCalc': t('dpmCalc.pageTitle'),
 };
 
 interface IProps {
@@ -33,7 +34,7 @@ export const NavigationBar = (props: IProps) => {
     const { currentRoute } = props;
 
     const theme = useTheme();
-    const burgerMenu = useMediaQuery(theme.breakpoints.down('sm'));
+    const burgerMenu = useMediaQuery(theme.breakpoints.down('md'));
 
     const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
 

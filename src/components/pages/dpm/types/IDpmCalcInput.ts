@@ -1,14 +1,15 @@
 export interface IDpmCalcBaseProperties extends Record<string, IInputProperty> {
     installation: INumericInputProperty;
-    baseDpm: INumericInputProperty;
     damageType: ISelectInputProperty;
     targetPriority: ISelectInputProperty;
     damagePerHit: INumericInputProperty;
     tune: INumericInputProperty;
     duration: INumericInputProperty;
-    cooldown: INumericInputProperty;
     rounds: INumericInputProperty;
     shotsPerRound: INumericInputProperty;
+    cooldown: INumericInputProperty;
+    rounds2: INumericInputProperty;
+    shotsPerRound2: INumericInputProperty;
     lockOnTime: INumericInputProperty;
 }
 
