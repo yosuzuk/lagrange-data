@@ -17,8 +17,8 @@ export interface IColumnConfig {
     source: boolean;
     manufacturer: boolean;
     researchManufacturer: boolean;
-    researchStrategyType: boolean;
     researchTacticType: boolean;
+    researchStrategyType: boolean;
     weight: boolean;
 }
 

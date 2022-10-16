@@ -21,8 +21,8 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         source: false,
         manufacturer: false,
         researchManufacturer: false,
-        researchStrategyType: false,
         researchTacticType: false,
+        researchStrategyType: false,
         weight: false,
         ...flags,
     };
@@ -105,12 +105,12 @@ export function createColumnConfigOptions(args: ICreateColumnConfigOptionArgumen
                 name: t('label.researchManufacturerColumn'),
             },
             {
-                columnKey: 'researchStrategyType',
-                name: t('label.researchStrategyTypeColumn'),
-            },
-            {
                 columnKey: 'researchTacticType',
                 name: t('label.researchTacticTypeColumn'),
+            },
+            {
+                columnKey: 'researchStrategyType',
+                name: t('label.researchStrategyTypeColumn'),
             },
         ] as IColumnConfigOption[] : []),
         {

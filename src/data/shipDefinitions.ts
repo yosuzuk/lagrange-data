@@ -2172,6 +2172,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 id: 'C2',
                 name: 'UAV補修システム',
                 description: '補修ＵＡＶ×２',
+                parts: [{
+                    text: [
+                        'CRT-3型　汎用ロボット補修ポッド',
+                        '標準補修UAVを2機搭載する。補修UAVの収容と整備を担い、信号誘導システムを装備する。補修UAVは補修した味方艦船を戦闘中に補修できる。',
+                    ],
+                    skillSlots: 4,
+                }],
                 category: 'C',
                 categoryNumber: 2,
             },
@@ -2627,7 +2634,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        relatedShipIds: [ShipId.HELIOS_TE_A, ShipId.HELIOS_TE_A_S],
+        relatedShipIds: [ShipId.HELIOS_TE_A, ShipId.HELIOS_TE_A_S, ShipId.HELIOS_TE_B_S],
     },
     {
         id: ShipId.HELIOS_TE_A,
@@ -2639,7 +2646,7 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A_S],
+        relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A_S, ShipId.HELIOS_TE_B_S],
     },
     {
         id: ShipId.HELIOS_TE_A_S,
@@ -2651,7 +2658,19 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 8,
         source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A],
+        relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A, ShipId.HELIOS_TE_B_S],
+    },
+    {
+        id: ShipId.HELIOS_TE_B_S,
+        name: 'ヘリオス級-TE　Ｂ魚雷型（回収）',
+        type: ShipType.DESTROYER,
+        cost: 15,
+        weight: 0,
+        row: ShipRow.FRONT,
+        operationLimit: 8,
+        source: ShipSource.SALVAGE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
+        relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A, ShipId.HELIOS_TE_A_S],
     },
     {
         id: ShipId.INDEFATIGABLE,
@@ -3143,8 +3162,11 @@ export const shipDefinitions: IShipDefinition[] = [
                 name: '追加艦載機システム',
                 parts: [
                     {
-                        text: 'CBF-320型　中型格納庫',
-                        skillSlots: 4,
+                        text: [
+                            'CBF-320型　中型格納庫',
+                            '攻撃機と戦闘機を格納可能な中型機内格納庫。各編隊に独立した停泊、整備空間を提供し、戦闘機の指令・探査システムを備える。'
+                        ],
+                        skillSlots: 3,
                         skills: [
                             {
                                 effect: 'ロックオン速度アップ',
@@ -3199,6 +3221,15 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B3',
                 name: '偵察UAVシステム',
+                parts: [
+                    {
+                        text: [
+                            'CIT-3型　スポッターUAV格納庫',
+                            '3機の情報指令UAVを搭載し、周囲の味方艦船に総合的な武器情報支援を提供し、武器の命中率をアップさせる。',
+                        ],
+                        skillSlots: 2,
+                    },
+                ],
                 category: 'B',
                 categoryNumber: 3,
             },
@@ -3897,8 +3928,9 @@ export const shipDefinitions: IShipDefinition[] = [
                     {
                         text: [
                             'CFB-1200型　大型戦闘機格納庫',
+                            '8隊の重戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊、整備空間を提供し、戦闘機の指令・探査システムを備える。',
                         ],
-                        // TODO skillslots
+                        skillSlots: 5,
                         // TODO skills
                     },
                 ],
@@ -5188,7 +5220,7 @@ export const shipDefinitions: IShipDefinition[] = [
         weight: 5,
         row: ShipRow.FRONT,
         operationLimit: 10,
-        source: ShipSource.TECH_FILE,
+        source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         subModelIds: [ShipId.TAURUS_A, ShipId.TAURUS_B, ShipId.TAURUS_C, ShipId.TAURUS_TE_A_S],
     },

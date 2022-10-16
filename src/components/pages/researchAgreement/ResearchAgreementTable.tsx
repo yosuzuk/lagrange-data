@@ -43,17 +43,17 @@ export const ResearchAgreementTable = (props: IProps) => {
                                     </ScriptedLink>
                                 </Typography>
                             )}
-                            {configuration.filterState.strategyTypeFilter && (
-                                <Typography variant="body2">
-                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
-                                        {translateResearchStrategyType(configuration.filterState.strategyTypeFilter)}
-                                    </ScriptedLink>
-                                </Typography>
-                            )}
                             {configuration.filterState.tacticTypeFilter && (
                                 <Typography variant="body2">
                                     <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
                                         {translateResearchTacticType(configuration.filterState.tacticTypeFilter)}
+                                    </ScriptedLink>
+                                </Typography>
+                            )}
+                            {configuration.filterState.strategyTypeFilter && (
+                                <Typography variant="body2">
+                                    <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
+                                        {translateResearchStrategyType(configuration.filterState.strategyTypeFilter)}
                                     </ScriptedLink>
                                 </Typography>
                             )}
