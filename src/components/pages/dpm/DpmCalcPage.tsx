@@ -1,22 +1,21 @@
-import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import { useState, useCallback } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
-import { FormControl } from './FormControl';
-import { createDpmCalcBaseProperties, createDpmCalcEnhancementProperties, isVisibleBaseProperty } from './utils/dpmCalcInputUtils';
+import { createDpmCalcBaseProperties, createDpmCalcEnhancementProperties } from './utils/dpmCalcInputUtils';
 import { IDpmCalcBaseProperties, IDpmCalcEnhancementProperties, IInputProperty } from './types/IDpmCalcInput';
-import { LabeledList } from '../../list/LabeledList';
 import { BasePropertyForm } from './BasePropertyForm';
 import { EnhancementPropertyForm } from './EnhancementPropertyForm';
+import { PageFooter } from '../../pageStructure/PageFooter';
 
 export const DpmCalcPage = () => {
-    const initialBaseProperties = useRef(() => createDpmCalcBaseProperties());
-    const initialEnhancementProperties = useRef(() => createDpmCalcEnhancementProperties());
-    const [baseProperties, setBaseProperties] = useState<IDpmCalcBaseProperties>(initialBaseProperties.current);
-    const [enhancementProperties, setEnhancementProperties] = useState<IDpmCalcEnhancementProperties>(initialEnhancementProperties.current);
+    const [baseProperties, setBaseProperties] = useState<IDpmCalcBaseProperties>(() => createDpmCalcBaseProperties());
+    const [enhancementSettings, setEnhancementSettings] = useState<IDpmCalcEnhancementProperties[]>(() => [
+        createDpmCalcEnhancementProperties(),
+    ]);
 
     const handleChangeBaseProperties = useCallback((newInputProperty: IInputProperty) => {
         setBaseProperties(properties => ({
@@ -25,11 +24,13 @@ export const DpmCalcPage = () => {
         }));
     }, []);
 
-    const handleChangeEnhancementProperties = useCallback((newInputProperty: IInputProperty) => {
-        setEnhancementProperties(properties => ({
-            ...properties,
-            [newInputProperty.id]: newInputProperty,
-        }));
+    const handleChangeEnhancementProperties = useCallback((newInputProperty: IInputProperty, settingIndex: number) => {
+        setEnhancementSettings(settings => {
+            return settings.map((properties: IDpmCalcEnhancementProperties, index: number) => index !== settingIndex ? properties : ({
+                ...properties,
+                [newInputProperty.id]: newInputProperty,
+            }));
+        });
     }, []);
 
     return (
@@ -52,14 +53,17 @@ export const DpmCalcPage = () => {
                                 <BasePropertyForm properties={baseProperties} onChange={handleChangeBaseProperties} />
                             </Box>
                         </Paper>
-                        <Paper>
-                            <Box p={1}>
-                                <EnhancementPropertyForm properties={enhancementProperties} onChange={handleChangeEnhancementProperties} />
-                            </Box>
-                        </Paper>
+                        {enhancementSettings.map((enhancementProperties: IDpmCalcEnhancementProperties, index: number) => (
+                            <Paper key={`enhancementProperties${index}`}>
+                                <Box p={1}>
+                                    <EnhancementPropertyForm settingIndex={index} properties={enhancementProperties} onChange={handleChangeEnhancementProperties} />
+                                </Box>
+                            </Paper>
+                        ))}
                     </Stack>
                 </Box>
             </PageContent>
+            <PageFooter />
         </>
     );
 };

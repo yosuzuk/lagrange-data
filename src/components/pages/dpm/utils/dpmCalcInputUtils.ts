@@ -109,7 +109,7 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             description: 'スキルとモジュールから反映されるダメージアップを合わせて入力してください',
             value: 0,
             unit: Unit.PERCENTAGE,
-            min: 500,
+            min: -500,
         }),
         reduceDuration: createNumericInputProperty({
             id: 'reduceDuration',
@@ -117,7 +117,7 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             description: '逆にアップする場合はマイナスの数値を入力してください',
             value: 0,
             unit: Unit.PERCENTAGE,
-            min: 500,
+            min: -500,
             max: 100,
         }),
         reduceCooldown: createNumericInputProperty({
@@ -126,7 +126,7 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             description: '戦闘機の場合は帰還冷却ダウン',
             value: 0,
             unit: Unit.PERCENTAGE,
-            min: 500,
+            min: -500,
             max: 100,
         }),
         reduceLockon: createNumericInputProperty({
@@ -134,6 +134,7 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             label: 'ロックオン時間ダウン',
             value: 0,
             unit: Unit.PERCENTAGE,
+            min: -500,
             max: 100,
         }),
     };

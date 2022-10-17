@@ -1,14 +1,21 @@
+import { useCallback } from 'react';
 import { LabeledList } from '../../list/LabeledList';
 import { FormControl } from './FormControl';
 import { IDpmCalcEnhancementProperties, IInputProperty } from './types/IDpmCalcInput';
 
 interface IProps {
+    settingIndex: number;
     properties: IDpmCalcEnhancementProperties;
-    onChange: (newInputProperty: IInputProperty) => void;
+    onChange: (newInputProperty: IInputProperty, settingIndex: number) => void;
 }
 
 export const EnhancementPropertyForm = (props: IProps) => {
-    const { properties, onChange } = props;
+    const { settingIndex, properties, onChange } = props;
+
+    const handleChange = useCallback((newInputProperty: IInputProperty) => {
+        console.log(newInputProperty);
+        onChange(newInputProperty, settingIndex);
+    }, [onChange, settingIndex]);
 
     return (
         <LabeledList
@@ -20,7 +27,7 @@ export const EnhancementPropertyForm = (props: IProps) => {
                         value: (
                             <FormControl
                                 inputProperty={inputProperty}
-                                onChange={onChange}
+                                onChange={handleChange}
                             />
                         ),
                     }))
