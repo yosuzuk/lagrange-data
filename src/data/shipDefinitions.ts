@@ -1214,7 +1214,7 @@ export const shipDefinitions: IShipDefinition[] = [
                             },
                             {
                                 effect: '艦載機の帰還冷却時間ダウン',
-                                properties: '最大20％、技術Pt12',
+                                properties: '最大10％、技術Pt12',
                             },
                             {
                                 effect: '艦載機の帰還冷却時間ダウン',
@@ -2242,7 +2242,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     }],
                 }],
                 category: 'D',
-                categoryNumber: 2,
+                categoryNumber: 3,
             },
             {
                 id: 'E1',
