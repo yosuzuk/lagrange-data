@@ -165,15 +165,23 @@ function createSelectInputProperty(properties: Partial<ISelectInputProperty>): I
 export function applyPropertyChange(value: number | string | null, inputProperty: IInputProperty): IInputProperty {
     switch (inputProperty.type) {
         case 'numeric': {
+            const newValue = Number.isFinite(value) ? value as number : null;
+            if ((inputProperty as INumericInputProperty).value === newValue) {
+                return inputProperty;
+            }
             return {
                 ...inputProperty,
-                value: Number.isFinite(value) ? value as number : null,
+                value: newValue,
             } as INumericInputProperty;
         }
         case 'select': {
+            const newValue = value === null ? null : `${value}`;
+            if ((inputProperty as ISelectInputProperty).value === newValue) {
+                return inputProperty;
+            }
             return {
                 ...inputProperty,
-                value: value === null ? null : `${value}`,
+                value: newValue,
             } as ISelectInputProperty;
         }
         default: {

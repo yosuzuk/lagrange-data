@@ -1,10 +1,9 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState, useEffect, useTransition } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 import { IInputProperty, INumericInputProperty, ISelectInputProperty } from './types/IDpmCalcInput';
 import { getAdornmentForUnit, applyPropertyChange } from './utils/dpmCalcInputUtils';
 import { HelpPopper } from './HelpPopper';
@@ -20,39 +19,49 @@ interface IProps {
 
 export const FormControl = (props: IProps) => {
     const { inputProperty, onChange, width } = props;
+    const [localProperty, setLocalProperty] = useState<IInputProperty>(inputProperty);
+    const [_isPending, startTransition] = useTransition();
+
+    useEffect(() => {
+        startTransition(() => {
+            if (localProperty !== inputProperty) {
+                onChange(localProperty);
+            }
+        });
+    }, [localProperty, inputProperty, onChange]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        switch (inputProperty.type) {
+        switch (localProperty.type) {
             case 'numeric': {
                 if (e.target.value === '') {
-                    onChange(applyPropertyChange(null, inputProperty));
+                    setLocalProperty(applyPropertyChange(null, localProperty));
                     return;
                 }
 
                 const value = Number(e.target.value);
                 const numberValue = Number.isFinite(value) ? value as number : null;
-                onChange(applyPropertyChange(numberValue, inputProperty));
+                setLocalProperty(applyPropertyChange(numberValue, localProperty));
                 break;
             }
             case 'select': {
-                onChange(applyPropertyChange(e.target.value, inputProperty));
+                setLocalProperty(applyPropertyChange(e.target.value, localProperty));
                 break;
             }
             default: {
-                throw new Error(`Unsupported input property type "${inputProperty.type}"`);
+                throw new Error(`Unsupported input property type "${localProperty.type}"`);
             }
         }
     };
 
-    switch (inputProperty.type) {
+    switch (localProperty.type) {
         case 'numeric': {
-            const { value, unit, min, max } = inputProperty as INumericInputProperty;
+            const { value, unit, min, max } = localProperty as INumericInputProperty;
             return (
                 <>
                     <Stack direction="row">
                         <Box sx={{ width: width ?? DEFAULT_NUMERIC_INPUT_WIDTH }}>
                             <TextField
-                                id={inputProperty.id}
+                                id={localProperty.id}
                                 size="small"
                                 required={true}
                                 type="number"
@@ -68,10 +77,10 @@ export const FormControl = (props: IProps) => {
                                 fullWidth={true}
                             />
                         </Box>
-                        {inputProperty.description && (
+                        {localProperty.description && (
                             <HelpPopper
-                                title={inputProperty.label}
-                                text={inputProperty.description}
+                                title={localProperty.label}
+                                text={localProperty.description}
                             />
                         )}
                     </Stack>
@@ -79,17 +88,17 @@ export const FormControl = (props: IProps) => {
             );
         }
         case 'select': {
-            const { value, options } = inputProperty as ISelectInputProperty;
+            const { value, options } = localProperty as ISelectInputProperty;
             return (
                 <>
                     <Stack direction="row">
                         <Box sx={{ width: width ?? DEFAULT_SELECT_WIDTH }}>
                             <TextField
-                                id={inputProperty.id}
+                                id={localProperty.id}
                                 size="small"
                                 select={true}
                                 value={value}
-                                helperText={inputProperty.description}
+                                helperText={localProperty.description}
                                 onChange={handleChange}
                                 fullWidth={true}
                             >
@@ -100,10 +109,10 @@ export const FormControl = (props: IProps) => {
                                 ))}
                             </TextField>
                         </Box>
-                        {inputProperty.description && (
+                        {localProperty.description && (
                             <HelpPopper
-                                title={inputProperty.label}
-                                text={inputProperty.description}
+                                title={localProperty.label}
+                                text={localProperty.description}
                             />
                         )}
                     </Stack>
@@ -111,7 +120,7 @@ export const FormControl = (props: IProps) => {
             );
         }
         default: {
-            throw new Error(`Unsupported input property type "${inputProperty.type}"`);
+            throw new Error(`Unsupported input property type "${localProperty.type}"`);
         }
     }
 };

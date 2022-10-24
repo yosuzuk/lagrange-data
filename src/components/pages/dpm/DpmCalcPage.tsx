@@ -1,21 +1,33 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, SyntheticEvent } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import AddIcon from '@mui/icons-material/Add';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
-import { createDpmCalcBaseProperties, createDpmCalcEnhancementProperties } from './utils/dpmCalcInputUtils';
-import { IDpmCalcBaseProperties, IDpmCalcEnhancementProperties, IInputProperty } from './types/IDpmCalcInput';
+import { createDpmCalcBaseProperties } from './utils/dpmCalcInputUtils';
+import { IDpmCalcBaseProperties, IInputProperty } from './types/IDpmCalcInput';
 import { BasePropertyForm } from './BasePropertyForm';
-import { EnhancementPropertyForm } from './EnhancementPropertyForm';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { useEnhancementTabs } from './hooks/useEnhancementTabs';
+import { EnhancementPropertyTabContent } from './EnhancementPropertyTabContent';
 
 export const DpmCalcPage = () => {
     const [baseProperties, setBaseProperties] = useState<IDpmCalcBaseProperties>(() => createDpmCalcBaseProperties());
-    const [enhancementSettings, setEnhancementSettings] = useState<IDpmCalcEnhancementProperties[]>(() => [
-        createDpmCalcEnhancementProperties(),
-    ]);
+
+    const {
+        enhancementTabIndex,
+        canAddEnhancementTab,
+        enhancementTabs,
+        setEnhancementTabIndex,
+        addEnhancementTab,
+        removeEnhancementTab,
+        renameEnhancementTab,
+        changeEnhancementProperty,
+    } = useEnhancementTabs();
 
     const handleChangeBaseProperties = useCallback((newInputProperty: IInputProperty) => {
         setBaseProperties(properties => ({
@@ -24,14 +36,11 @@ export const DpmCalcPage = () => {
         }));
     }, []);
 
-    const handleChangeEnhancementProperties = useCallback((newInputProperty: IInputProperty, settingIndex: number) => {
-        setEnhancementSettings(settings => {
-            return settings.map((properties: IDpmCalcEnhancementProperties, index: number) => index !== settingIndex ? properties : ({
-                ...properties,
-                [newInputProperty.id]: newInputProperty,
-            }));
-        });
-    }, []);
+    const handleChangeTab = useCallback((_event: SyntheticEvent, newTabIndex: number) => {
+        if (newTabIndex < enhancementTabs.length) {
+            setEnhancementTabIndex(newTabIndex);
+        }
+    }, [enhancementTabs, setEnhancementTabIndex]);
 
     return (
         <>
@@ -53,13 +62,40 @@ export const DpmCalcPage = () => {
                                 <BasePropertyForm properties={baseProperties} onChange={handleChangeBaseProperties} />
                             </Box>
                         </Paper>
-                        {enhancementSettings.map((enhancementProperties: IDpmCalcEnhancementProperties, index: number) => (
-                            <Paper key={`enhancementProperties${index}`}>
-                                <Box p={1}>
-                                    <EnhancementPropertyForm settingIndex={index} properties={enhancementProperties} onChange={handleChangeEnhancementProperties} />
-                                </Box>
-                            </Paper>
-                        ))}
+                        <Paper>
+                            <Tabs
+                                value={enhancementTabIndex}
+                                onChange={handleChangeTab}
+                                variant="scrollable"
+                                scrollButtons="auto"
+                                allowScrollButtonsMobile={true}
+                            >
+                                {enhancementTabs.map((tab, index) => (
+                                    <Tab label={(
+                                        <Typography variant="body2">
+                                            {enhancementTabs.length > 1 ? (tab.name || tab.defaultName(index)) : 'スキル設定'}
+                                        </Typography>
+                                    )} key={tab.id} />
+                                ))}
+                                {canAddEnhancementTab && (
+                                    <Tab label={<AddIcon />} onClick={addEnhancementTab} />
+                                )}
+                            </Tabs>
+                            <Box p={1} pt={2}>
+                                {enhancementTabs.map((tab, index) => [tab, index] as const).filter(([_tab, index]) => index === enhancementTabIndex).map(([tab, index]) => (
+                                    <EnhancementPropertyTabContent
+                                        key={tab.id}
+                                        tab={tab}
+                                        tabIndex={index}
+                                        canDelete={enhancementTabs.length > 1}
+                                        canRename={enhancementTabs.length > 1}
+                                        onChangeProperty={changeEnhancementProperty}
+                                        onDeleteTab={removeEnhancementTab}
+                                        onRename={renameEnhancementTab}
+                                    />
+                                ))}
+                            </Box>
+                        </Paper>
                     </Stack>
                 </Box>
             </PageContent>
