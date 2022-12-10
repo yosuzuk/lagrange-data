@@ -8,15 +8,15 @@ import Tab from '@mui/material/Tab';
 import AddIcon from '@mui/icons-material/Add';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
-import { createDpmCalcBaseProperties } from './utils/dpmCalcInputUtils';
-import { IDpmCalcBaseProperties, IInputProperty } from './types/IDpmCalcInput';
-import { BasePropertyForm } from './BasePropertyForm';
+import { createWeaponBaseProperties } from './utils/dpmCalcInputUtils';
+import { IWeaponBaseProperties, IInputProperty } from './types/IInputProperty';
+import { WeaponBasePropertyForm } from './WeaponBasePropertyForm';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { useEnhancementTabs } from './hooks/useEnhancementTabs';
 import { EnhancementPropertyTabContent } from './EnhancementPropertyTabContent';
 
 export const DpmCalcPage = () => {
-    const [baseProperties, setBaseProperties] = useState<IDpmCalcBaseProperties>(() => createDpmCalcBaseProperties());
+    const [weaponBaseProperties, setWeaponBaseProperties] = useState<IWeaponBaseProperties>(() => createWeaponBaseProperties());
 
     const {
         enhancementTabIndex,
@@ -29,8 +29,8 @@ export const DpmCalcPage = () => {
         changeEnhancementProperty,
     } = useEnhancementTabs();
 
-    const handleChangeBaseProperties = useCallback((newInputProperty: IInputProperty) => {
-        setBaseProperties(properties => ({
+    const handleChangeWeaponBaseProperties = useCallback((newInputProperty: IInputProperty) => {
+        setWeaponBaseProperties(properties => ({
             ...properties,
             [newInputProperty.id]: newInputProperty,
         }));
@@ -57,11 +57,17 @@ export const DpmCalcPage = () => {
                         <Typography variant="body2">
                             GHI
                         </Typography>
+                        <Typography variant="body1">
+                            {'武装'}
+                        </Typography>
                         <Paper>
                             <Box p={1}>
-                                <BasePropertyForm properties={baseProperties} onChange={handleChangeBaseProperties} />
+                                <WeaponBasePropertyForm properties={weaponBaseProperties} onChange={handleChangeWeaponBaseProperties} />
                             </Box>
                         </Paper>
+                        <Typography variant="body1">
+                            {'スキル'}
+                        </Typography>
                         <Paper>
                             <Tabs
                                 value={enhancementTabIndex}
@@ -73,7 +79,7 @@ export const DpmCalcPage = () => {
                                 {enhancementTabs.map((tab, index) => (
                                     <Tab label={(
                                         <Typography variant="body2">
-                                            {enhancementTabs.length > 1 ? (tab.name || tab.defaultName(index)) : 'スキル設定'}
+                                            {tab.name || tab.defaultName(index)}
                                         </Typography>
                                     )} key={tab.id} />
                                 ))}

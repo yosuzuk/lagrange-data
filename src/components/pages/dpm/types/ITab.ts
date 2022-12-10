@@ -1,4 +1,4 @@
-import { IDpmCalcEnhancementProperties } from './IDpmCalcInput';
+import { ITargetProperties, IWeaponEnhancementProperties } from './IInputProperty';
 
 export interface ITab {
     id: string;
@@ -7,5 +7,9 @@ export interface ITab {
 }
 
 export interface IEnhancementTab extends ITab {
-    properties: IDpmCalcEnhancementProperties;
+    properties: IWeaponEnhancementProperties;
+}
+
+export interface ITargetTab extends ITab {
+    properties: ITargetProperties;
 }

@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 import { LabeledList } from '../../list/LabeledList';
 import { FormControl } from './FormControl';
-import { IDpmCalcEnhancementProperties, IInputProperty } from './types/IDpmCalcInput';
+import { IWeaponEnhancementProperties, IInputProperty } from './types/IInputProperty';
 
 interface IProps {
     tabId: string;
-    properties: IDpmCalcEnhancementProperties;
+    properties: IWeaponEnhancementProperties;
     onChange: (tabId: string, newInputProperty: IInputProperty) => void;
 }
 

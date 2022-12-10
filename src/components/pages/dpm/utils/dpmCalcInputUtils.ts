@@ -1,15 +1,15 @@
-import { IDpmCalcBaseProperties, IDpmCalcEnhancementProperties, IInputProperty, INumericInputProperty, ISelectInputProperty, Unit } from '../types/IDpmCalcInput';
+import { IWeaponBaseProperties, IWeaponEnhancementProperties, IInputProperty, INumericInputProperty, ISelectInputProperty, WeaponBasePropertyId, WeaponEnhancementPropertyId, ITargetProperties, TargetPropertyId } from '../types/IInputProperty';
+import { Unit } from '../types/Unit';
+import { alignRecordIds } from './recordUtils';
 
-export function createDpmCalcBaseProperties(): IDpmCalcBaseProperties {
-    return {
-        installation: createNumericInputProperty({
-            id: 'installation',
+export function createWeaponBaseProperties(): IWeaponBaseProperties {
+    return alignRecordIds({
+        [WeaponBasePropertyId.INSTALLATION]: createNumericInputProperty({
             label: '設置数',
             value: 1,
             description: '武器情報画面内、左上に表示されるオレンジの数字（武器名の前）',
         }),
-        damageType: createSelectInputProperty({
-            id: 'damageType',
+        [WeaponBasePropertyId.DAMAGE_TYPE]: createSelectInputProperty({
             label: 'ダメージタイプ',
             value: 'physicalDamage',
             options: [{
@@ -22,97 +22,82 @@ export function createDpmCalcBaseProperties(): IDpmCalcBaseProperties {
                 value: 'energyDamage',
             }],
         }),
-        targetPriority: createSelectInputProperty({
-            id: 'targetPriority',
-            label: '優先目標',
-            value: 'largeShip',
-            options: [{
-                id: 'largeShip',
-                label: '大型艦船',
-                value: 'largeShip',
-            }, {
-                id: 'smallShip',
-                label: '小型艦船',
-                value: 'smallShip',
-            }, {
-                id: 'aircraft',
-                label: '艦載機',
-                value: 'aircraft',
-            }],
-        }),
-        damagePerHit: createNumericInputProperty({
-            id: 'damagePerHit',
+        [WeaponBasePropertyId.DAMAGE_PER_HIT]: createNumericInputProperty({
             label: '単発ダメージ',
             description: 'スキルをリセットしてから読み取ってください。数字が二つ表示される場合は左側の数字を入力してください。例えば「300+90.0」の場合は「300」です。',
             value: null,
         }),
-        tune: createNumericInputProperty({
-            id: 'tune',
+        [WeaponBasePropertyId.TUNE]: createNumericInputProperty({
             label: '武器チューン',
             value: 0,
             unit: Unit.PERCENTAGE,
             max: 30,
         }),
-        duration: createNumericInputProperty({
-            id: 'duration',
+        [WeaponBasePropertyId.DURATION]: createNumericInputProperty({
             label: '持続時間',
             value: 0,
             description: 'モジュールステータスで確認できます。「--」と表示される場合は０秒です。',
             unit: Unit.SECONDS,
         }),
-        rounds: createNumericInputProperty({
-            id: 'rounds',
+        [WeaponBasePropertyId.ROUNDS]: createNumericInputProperty({
             label: '攻撃回数',
-            description: 'モジュールステータスで確認できます。「攻撃回数」の最初の数値です。例えば「1 x 8」の場合は「1」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
+            description: 'モジュールステータスで確認できます。「攻撃回数」の左側の数値です。例えば「1 x 8」の場合は「1」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        shotsPerRound: createNumericInputProperty({
-            id: 'shotsPerRound',
+        [WeaponBasePropertyId.SHOTS_PER_ROUND]: createNumericInputProperty({
             label: '連装数',
-            description: 'モジュールステータスで確認できます。「攻撃回数」の最後の数値です。例えば「1 x 8」の場合は「8」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
+            description: 'モジュールステータスで確認できます。「攻撃回数」の右側の数値です。例えば「1 x 8」の場合は「8」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        cooldown: createNumericInputProperty({
-            id: 'cooldown',
+        [WeaponBasePropertyId.COOLDOWN]: createNumericInputProperty({
             label: '冷却時間',
             description: 'モジュールステータスで確認できます。戦闘機の場合は「帰還冷却」とも呼ばれます。',
             unit: Unit.SECONDS,
         }),
-        rounds2: createNumericInputProperty({
-            id: 'rounds2',
+        [WeaponBasePropertyId.ROUNDS2]: createNumericInputProperty({
             label: 'ダメージ頻度',
             description: 'モジュールステータスで確認できます。この項目はエネルギー武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        shotsPerRound2: createNumericInputProperty({
-            id: 'shotsPerRound2',
+        [WeaponBasePropertyId.SHOTS_PER_ROUND2]: createNumericInputProperty({
             label: '連装数',
             value: 1,
             description: 'エネルギー武器の連装数は武器の名前に隠されています。武器情報画面内、名前のアルファベット２文字と横線の後に「2x」とあれば２連装です。例えば「CI-2x700T型」の場合は「C」が企業、「I」が武器の種類、その後ろの「2x」が連装数です。',
         }),
-        lockOnTime: createNumericInputProperty({
-            id: 'lockOnTime',
+        [WeaponBasePropertyId.LOCK_ON_TIME]: createNumericInputProperty({
             label: 'ロックオン時間',
             unit: Unit.SECONDS,
         }),
-    };
+        [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: createSelectInputProperty({
+            label: 'ロックオン仕様',
+            value: 'default',
+            options: [{
+                id: 'default',
+                label: 'デフォルト',
+                value: 'default',
+            }, {
+                id: 'perRound',
+                label: 'ラウンド毎に適応',
+                value: 'perRound',
+            }],
+            description: '指令システムの詳細画面で確認できます。「住複攻撃」が記載されている艦載機では「ラウンド毎に適応」を選択してください。艦載機でない場合は「デフォルト」を選択してください。',
+        }),
+    });
 }
 
-export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementProperties {
-    return {
-        increaseDamagePerHit: createNumericInputProperty({
-            id: 'increaseDamagePerHit',
+export function createWeaponEnhancementProperties(): IWeaponEnhancementProperties {
+    return alignRecordIds({
+        [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT]: createNumericInputProperty({
             label: 'ダメージアップ',
             description: 'スキルとモジュールから反映されるダメージアップを合わせて入力してください',
             value: 0,
             unit: Unit.PERCENTAGE,
             min: -500,
         }),
-        reduceDuration: createNumericInputProperty({
-            id: 'reduceDuration',
+        [WeaponEnhancementPropertyId.REDUCE_DURATION]: createNumericInputProperty({
             label: '持続時間ダウン',
             description: '逆にアップする場合はマイナスの数値を入力してください',
             value: 0,
@@ -120,8 +105,7 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             min: -500,
             max: 100,
         }),
-        reduceCooldown: createNumericInputProperty({
-            id: 'reduceCooldown',
+        [WeaponEnhancementPropertyId.REDUCE_COOLDOWN]: createNumericInputProperty({
             label: '冷却時間ダウン',
             description: '戦闘機の場合は帰還冷却ダウン',
             value: 0,
@@ -129,15 +113,37 @@ export function createDpmCalcEnhancementProperties(): IDpmCalcEnhancementPropert
             min: -500,
             max: 100,
         }),
-        reduceLockon: createNumericInputProperty({
-            id: 'reduceLockon',
+        [WeaponEnhancementPropertyId.REDUCE_LOCKON]: createNumericInputProperty({
             label: 'ロックオン時間ダウン',
             value: 0,
             unit: Unit.PERCENTAGE,
             min: -500,
             max: 100,
         }),
-    };
+    });
+}
+
+export function createTargetProperties(): ITargetProperties {
+    return alignRecordIds({
+        [TargetPropertyId.HP]: createNumericInputProperty({
+            label: 'HP',
+            min: 1,
+            max: 1000000,
+        }),
+        [TargetPropertyId.ARMOR]: createNumericInputProperty({
+            label: 'ダメージ抵抗',
+            value: 0,
+            min: 0,
+            max: 10000,
+        }),
+        [TargetPropertyId.ENERGY_SHIELD]: createNumericInputProperty({
+            label: 'シールド値',
+            value: 0,
+            unit: Unit.PERCENTAGE,
+            min: 0,
+            max: 100,
+        }),
+    });
 }
 
 function createNumericInputProperty(properties: Partial<INumericInputProperty>): INumericInputProperty {
@@ -201,7 +207,7 @@ export function getAdornmentForUnit(unit: Unit) {
     }
 }
 
-export function isVisibleBaseProperty(property: IInputProperty, allProperties: IDpmCalcBaseProperties): boolean {
+export function isVisibleWeaponBaseProperty(property: IInputProperty, allProperties: IWeaponBaseProperties): boolean {
     switch (property.id) {
         case 'rounds':
         case 'shotsPerRound': {

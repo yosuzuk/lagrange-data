@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { EnhancementPropertyForm } from './EnhancementPropertyForm';
-import { IInputProperty } from './types/IDpmCalcInput';
+import { IInputProperty } from './types/IInputProperty';
 import { IEnhancementTab } from './types/ITab';
 
 const NAME_MAX_LENGTH = 20;

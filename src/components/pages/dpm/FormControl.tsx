@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
-import { IInputProperty, INumericInputProperty, ISelectInputProperty } from './types/IDpmCalcInput';
+import { IInputProperty, INumericInputProperty, ISelectInputProperty } from './types/IInputProperty';
 import { getAdornmentForUnit, applyPropertyChange } from './utils/dpmCalcInputUtils';
 import { HelpPopper } from './HelpPopper';
 
@@ -65,7 +65,7 @@ export const FormControl = (props: IProps) => {
                                 size="small"
                                 required={true}
                                 type="number"
-                                value={value ?? undefined}
+                                value={value ?? ''}
                                 InputProps={{
                                     endAdornment: unit ? <InputAdornment position="end">{getAdornmentForUnit(unit)}</InputAdornment> : undefined,
                                     inputProps: {
@@ -98,7 +98,6 @@ export const FormControl = (props: IProps) => {
                                 size="small"
                                 select={true}
                                 value={value}
-                                helperText={localProperty.description}
                                 onChange={handleChange}
                                 fullWidth={true}
                             >

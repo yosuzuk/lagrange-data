@@ -1,21 +1,24 @@
-import { useState, useCallback } from 'react';
-import { IInputProperty } from '../types/IDpmCalcInput';
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { IInputProperty } from '../types/IInputProperty';
 import { IEnhancementTab } from '../types/ITab';
-import { createDpmCalcEnhancementProperties } from '../utils/dpmCalcInputUtils';
+import { createWeaponEnhancementProperties } from '../utils/dpmCalcInputUtils';
 
 const MAX_TAB_COUNT = 5;
 
 export const useEnhancementTabs = () => {
     const [enhancementTabs, setEnhancementTabs] = useState<IEnhancementTab[]>(createInitialEnhancementTabs);
     const [enhancementTabIndex, setEnhancementTabIndex] = useState<number>(0);
+    const tabIdToSelectRef = useRef<string | null>(null);
 
     const addEnhancementTab = useCallback(() => {
-        setEnhancementTabs(tabs => tabs.length >= MAX_TAB_COUNT ? tabs : [...tabs, createEmptyTab()]);
+        const newTab = createEmptyTab();
+        tabIdToSelectRef.current = newTab.id;
+        setEnhancementTabs(tabs => tabs.length >= MAX_TAB_COUNT ? tabs : [...tabs, newTab]);
     }, []);
 
     const removeEnhancementTab = useCallback((id: string) => {
-        setEnhancementTabs(tabs => tabs.filter(tab => tab.id !== id));
         setEnhancementTabIndex(0);
+        setEnhancementTabs(tabs => tabs.filter(tab => tab.id !== id));
     }, []);
 
     const renameEnhancementTab = useCallback((id: string, name: string) => {
@@ -37,6 +40,18 @@ export const useEnhancementTabs = () => {
             };
         }));
     }, []);
+
+    // switch to newest tab
+    useEffect(() => {
+        if (tabIdToSelectRef.current === null) {
+            return;
+        }
+        const targetIndex = enhancementTabs.findIndex(t => t.id === tabIdToSelectRef.current);
+        if (enhancementTabIndex !== targetIndex) {
+            setEnhancementTabIndex(targetIndex);
+        }
+        tabIdToSelectRef.current = null;
+    }, [enhancementTabs, enhancementTabIndex]);
 
     return {
         enhancementTabIndex,
@@ -62,7 +77,7 @@ function createEmptyTab(): IEnhancementTab {
     return {
         id: `enhancementTab${idNumber}`,
         name: '',
-        defaultName: (index: number) => `スキル設定${index + 1}`, // TODO translate
-        properties: createDpmCalcEnhancementProperties(),
+        defaultName: (index: number) => `設定${index + 1}`, // TODO translate
+        properties: createWeaponEnhancementProperties(),
     };
 }

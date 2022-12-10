@@ -1,22 +1,21 @@
 import { LabeledList } from '../../list/LabeledList';
 import { FormControl } from './FormControl';
-import { IDpmCalcBaseProperties, IInputProperty } from './types/IDpmCalcInput';
-import { isVisibleBaseProperty } from './utils/dpmCalcInputUtils';
-
+import { IWeaponBaseProperties, IInputProperty } from './types/IInputProperty';
+import { isVisibleWeaponBaseProperty } from './utils/dpmCalcInputUtils';
 
 interface IProps {
-    properties: IDpmCalcBaseProperties;
+    properties: IWeaponBaseProperties;
     onChange: (newInputProperty: IInputProperty) => void;
 }
 
-export const BasePropertyForm = (props: IProps) => {
+export const WeaponBasePropertyForm = (props: IProps) => {
     const { properties, onChange } = props;
 
     return (
         <LabeledList
             rows={
                 (Object.values(properties) as IInputProperty[])
-                    .filter(inputProperty => isVisibleBaseProperty(inputProperty, properties))
+                    .filter(inputProperty => isVisibleWeaponBaseProperty(inputProperty, properties))
                     .map(inputProperty => ({
                         key: inputProperty.id,
                         label: inputProperty.label,
