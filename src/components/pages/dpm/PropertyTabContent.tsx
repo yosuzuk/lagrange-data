@@ -5,14 +5,15 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { EnhancementPropertyForm } from './EnhancementPropertyForm';
+import { PropertyTabForm } from './PropertyTabForm';
 import { IInputProperty } from './types/IInputProperty';
-import { IEnhancementTab } from './types/ITab';
+import { IPropertyTab } from './types/ITab';
 
 const NAME_MAX_LENGTH = 20;
 
-interface IProps {
-    tab: IEnhancementTab;
+interface IProps<T> {
+    idPrefix: string;
+    tab: IPropertyTab<T>;
     tabIndex: number;
     canDelete: boolean;
     canRename: boolean;
@@ -21,8 +22,8 @@ interface IProps {
     onRename: (tabId: string, name: string) => void;
 }
 
-export const EnhancementPropertyTabContent = (props: IProps) => {
-    const { tab, tabIndex, canDelete, canRename, onChangeProperty, onDeleteTab, onRename } = props;
+export const PropertyTabContent = <T extends {}>(props: IProps<T>) => {
+    const { idPrefix, tab, tabIndex, canDelete, canRename, onChangeProperty, onDeleteTab, onRename } = props;
     const [name, setName] = useState<string>(tab.name);
     const [_isPending, startTransition] = useTransition();
 
@@ -40,7 +41,7 @@ export const EnhancementPropertyTabContent = (props: IProps) => {
                 {canRename && (
                     <Box sx={{ flexGrow: 1 }}>
                         <TextField
-                            id={`enhancementTabName_${tab.id}`}
+                            id={`${idPrefix}_name_${tab.id}`}
                             size="small"
                             required={true}
                             type="text"
@@ -70,7 +71,7 @@ export const EnhancementPropertyTabContent = (props: IProps) => {
                     </div>
                 )}
             </Stack>
-            <EnhancementPropertyForm
+            <PropertyTabForm
                 tabId={tab.id}
                 properties={tab.properties}
                 onChange={onChangeProperty}

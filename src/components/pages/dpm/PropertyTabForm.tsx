@@ -1,19 +1,18 @@
 import { useCallback } from 'react';
 import { LabeledList } from '../../list/LabeledList';
 import { FormControl } from './FormControl';
-import { IWeaponEnhancementProperties, IInputProperty } from './types/IInputProperty';
+import { IInputProperty } from './types/IInputProperty';
 
-interface IProps {
+interface IProps<T> {
     tabId: string;
-    properties: IWeaponEnhancementProperties;
+    properties: T;
     onChange: (tabId: string, newInputProperty: IInputProperty) => void;
 }
 
-export const EnhancementPropertyForm = (props: IProps) => {
+export const PropertyTabForm = <T extends {}>(props: IProps<T>) => {
     const { tabId, properties, onChange } = props;
 
     const handleChange = useCallback((newInputProperty: IInputProperty) => {
-        console.log(newInputProperty);
         onChange(tabId, newInputProperty);
     }, [onChange, tabId]);
 

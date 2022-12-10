@@ -1,4 +1,4 @@
-import { ITargetProperties, IWeaponEnhancementProperties } from './IInputProperty';
+import { IInputProperty, ITargetProperties, IWeaponEnhancementProperties } from './IInputProperty';
 
 export interface ITab {
     id: string;
@@ -6,10 +6,10 @@ export interface ITab {
     defaultName: (index: number) => string;
 }
 
-export interface IEnhancementTab extends ITab {
-    properties: IWeaponEnhancementProperties;
+export interface IPropertyTab<T> extends ITab {
+    properties: T;
 }
 
-export interface ITargetTab extends ITab {
-    properties: ITargetProperties;
+export interface IEnhancementTab extends ITab {
+    properties: IWeaponEnhancementProperties;
 }
