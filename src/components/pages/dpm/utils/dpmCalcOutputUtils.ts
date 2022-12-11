@@ -82,6 +82,21 @@ export function createOutputProperties(): IOutputProperties {
                 weaponBaseProperties: [WeaponBasePropertyId.DURATION],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_DURATION],
             },
+            update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
+                const { duration } = weaponBaseProperties;
+                const { reduceDuration } = weaponEnhancementProperties;
+                if (duration.value === null || reduceDuration.value === null) {
+                    return resetFilledFormula(self);
+                }
+                return {
+                    ...self,
+                    value: Math.max(duration.value * toDecreasingFactor(reduceDuration.value), 0),
+                    formula: {
+                        formula: `max([${duration.label}] * (100% - [${reduceDuration.label}]), 0)`,
+                        filledFormula: `max(${duration.value} * (${toDecreasingPercentageForFormula(reduceDuration.value)}), 0)`,
+                    },
+                };
+            },
         }),
         [OutputPropertyId.COOLDOWN]: createNumericOutputProperty({
             label: '冷却時間',
@@ -89,6 +104,21 @@ export function createOutputProperties(): IOutputProperties {
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.COOLDOWN],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_COOLDOWN],
+            },
+            update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
+                const { cooldown } = weaponBaseProperties;
+                const { reduceCooldown } = weaponEnhancementProperties;
+                if (cooldown.value === null || reduceCooldown.value === null) {
+                    return resetFilledFormula(self);
+                }
+                return {
+                    ...self,
+                    value: Math.max(cooldown.value * toDecreasingFactor(reduceCooldown.value), 0),
+                    formula: {
+                        formula: `max([${cooldown.label}] * (100% - [${reduceCooldown.label}]), 0)`,
+                        filledFormula: `max(${cooldown.value} * (${toDecreasingPercentageForFormula(reduceCooldown.value)}), 0)`,
+                    },
+                };
             },
         }),
         [OutputPropertyId.LOCK_ON_TIME]: createNumericOutputProperty({
@@ -98,6 +128,21 @@ export function createOutputProperties(): IOutputProperties {
                 weaponBaseProperties: [WeaponBasePropertyId.LOCK_ON_TIME],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_LOCKON],
             },
+            update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
+                const { lockOnTime } = weaponBaseProperties;
+                const { reduceLockon } = weaponEnhancementProperties;
+                if (lockOnTime.value === null || reduceLockon.value === null) {
+                    return resetFilledFormula(self);
+                }
+                return {
+                    ...self,
+                    value: Math.max(lockOnTime.value * toDecreasingFactor(reduceLockon.value), 0),
+                    formula: {
+                        formula: `max([${lockOnTime.label}] * (100% - [${reduceLockon.label}]), 0)`,
+                        filledFormula: `max(${lockOnTime.value} * (${toDecreasingPercentageForFormula(reduceLockon.value)}), 0)`,
+                    },
+                };
+            },
         }),
         [OutputPropertyId.ROUND_TIME]: createNumericOutputProperty({
             label: 'ラウンド時間',
@@ -106,6 +151,35 @@ export function createOutputProperties(): IOutputProperties {
                 weaponBaseProperties: [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR],
                 outputProperties: [OutputPropertyId.DURATION, OutputPropertyId.COOLDOWN, OutputPropertyId.LOCK_ON_TIME],
             },
+            update: ({ weaponBaseProperties, outputProperties }, self) => {
+                const { lockOnBehaviour } = weaponBaseProperties;
+                const { duration, cooldown, lockOnTime } = outputProperties;
+                if (lockOnBehaviour.value === '' || duration.value === null || cooldown.value === null) {
+                    return resetFilledFormula(self);
+                }
+                if (lockOnBehaviour.value === 'perRound') {
+                    if (lockOnTime.value === null) {
+                        return resetFilledFormula(self);
+                    }
+                    return {
+                        ...self,
+                        value: duration.value + cooldown.value + lockOnTime.value,
+                        formula: {
+                            formula: `[${duration.label}] + [${cooldown.label}] + [${lockOnTime.label}]`,
+                            filledFormula: `${formatNumber(duration.value)} 秒 + ${formatNumber(cooldown.value)} 秒 + ${formatNumber(lockOnTime.value)} 秒`,
+                            description: 'ロックオン仕様：「ラウンド毎に適応」',
+                        },
+                    };
+                }
+                return {
+                    ...self,
+                    value: duration.value + cooldown.value,
+                    formula: {
+                        formula: `[${duration.label}] + [${cooldown.label}]`,
+                        filledFormula: `${formatNumber(duration.value)} + ${formatNumber(cooldown.value)}`,
+                    },
+                };
+            },
         }),
         [OutputPropertyId.TIME_TO_DESTROY_TARGET]: createNumericOutputProperty({
             label: '対象の撃破時間',
@@ -113,6 +187,12 @@ export function createOutputProperties(): IOutputProperties {
             dependsOn: {
                 targetProperties: [TargetPropertyId.HP],
                 // TODO add missing properties (dpm?)
+            },
+            update: ({ targetProperties }, self) => {
+                // TODO implement
+                return {
+                    ...self,
+                };
             },
         }),
     });
