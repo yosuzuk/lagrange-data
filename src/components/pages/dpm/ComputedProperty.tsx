@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Divider from '@mui/material/Divider';
@@ -8,11 +9,10 @@ import { getAdornmentForUnit } from './utils/unitUtils';
 
 interface IProps {
     property: IOutputProperty | null;
-    referenceData: IUpdateOutputPropertyArguments;
 }
 
 export const ComputedProperty = (props: IProps) => {
-    const { property, referenceData } = props;
+    const { property } = props;
 
     const value: string = (() => {
         if (!property) {
@@ -33,7 +33,7 @@ export const ComputedProperty = (props: IProps) => {
     })();
 
     const valueNode = (
-        <Typography variant="body2" color="text.secondary">
+        <Typography component="span" variant="body2" color="text.secondary">
             {value}
         </Typography>
     );
@@ -47,13 +47,28 @@ export const ComputedProperty = (props: IProps) => {
                     </Typography>
                     <Divider />
                     <Typography variant="body2">
-                        {`= ${property.formula.formula(referenceData)}`}
+                        {`= ${property.formula.formula}`}
                     </Typography>
                     <Divider />
-                    <Typography variant="body2">
-                        {`= ${property.formula.filledFormula}`}
-                    </Typography>
-                    <Divider />
+                    {Array.isArray(property.formula.filledFormula) ? (
+                        <>
+                            {(property.formula.filledFormula as string[]).map((filledFormula, index) => (
+                                <Fragment key={`filledFormula_${index}`}>
+                                    <Typography variant="body2">
+                                        {`= ${filledFormula}`}
+                                    </Typography>
+                                    <Divider />
+                                </Fragment>
+                            ))}
+                        </>
+                    ) : (
+                        <>
+                            <Typography variant="body2">
+                                {`= ${property.formula.filledFormula}`}
+                            </Typography>
+                            <Divider />
+                        </>
+                    )}
                     <Typography variant="body2">
                         {`= ${value}`}
                     </Typography>

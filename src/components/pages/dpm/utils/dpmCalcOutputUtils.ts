@@ -4,7 +4,7 @@ import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, 
 import { IPropertyTab } from '../types/ITab';
 import { Unit } from '../types/Unit';
 import { alignRecordIds } from './recordUtils';
-import { toDecreasingFactor, toIncreasingFactor } from './unitUtils';
+import { toDecreasingFactor, toDecreasingPercentageForFormula, toIncreasingFactor, toIncreasingPercentageForFormula } from './unitUtils';
 
 export function createOutputProperties(): IOutputProperties {
     return alignRecordIds({
@@ -15,28 +15,22 @@ export function createOutputProperties(): IOutputProperties {
                 weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_PER_HIT, WeaponBasePropertyId.TUNE],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT],
             },
-            formula: {
-                formula: ({ weaponBaseProperties, weaponEnhancementProperties }) => {
-                    const xBase = weaponBaseProperties.damagePerHit.label;
-                    const xEnhancement = weaponEnhancementProperties.increaseDamagePerHit.label;
-                    const xTune = weaponBaseProperties.tune.label;
-                    return `[${xBase}] * [${xEnhancement}] * [${xTune}]`;
-                },
-            },
             update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
-                const xBase = weaponBaseProperties.damagePerHit.value;
-                const xEnhancement = toIncreasingFactor(weaponEnhancementProperties.increaseDamagePerHit.value);
-                const xTune = toIncreasingFactor(weaponBaseProperties.tune.value);
-                if (xBase === null || xEnhancement === null || xTune === null) {
+                const { damagePerHit, tune } = weaponBaseProperties;
+                const { increaseDamagePerHit } = weaponEnhancementProperties;
+                if (damagePerHit.value === null || increaseDamagePerHit.value === null || tune.value === null) {
                     return resetFilledFormula(self);
                 }
                 return {
                     ...self,
-                    value: xBase * xEnhancement * xTune,
-                    formula: self.formula ? {
-                        ...self.formula,
-                        filledFormula: `${formatNumber(xBase)} * ${formatNumber(xEnhancement)} * ${formatNumber(xTune)}`,
-                    } : undefined,
+                    value: damagePerHit.value * toIncreasingFactor(increaseDamagePerHit.value) * toIncreasingFactor(tune.value),
+                    formula: {
+                        formula: `([${damagePerHit.label}] * (100% + [${increaseDamagePerHit.label}])) + ([${damagePerHit.label}] * [${tune.label}] * (100% + [${increaseDamagePerHit.label}]))`,
+                        filledFormula: [
+                            `(${formatNumber(damagePerHit.value)} * (${toIncreasingPercentageForFormula(increaseDamagePerHit.value)})) + (${formatNumber(damagePerHit.value)} * ${tune.value}% * (${toIncreasingPercentageForFormula(increaseDamagePerHit.value)})))`,
+                            `${damagePerHit.value * toIncreasingFactor(increaseDamagePerHit.value)} + ${damagePerHit.value * (tune.value / 100) * toIncreasingFactor(increaseDamagePerHit.value)}`,
+                        ],
+                    },
                 };
             },
         }),
@@ -48,48 +42,35 @@ export function createOutputProperties(): IOutputProperties {
                 targetProperties: [TargetPropertyId.ARMOR, TargetPropertyId.ENERGY_SHIELD],
                 outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_STATUS],
             },
-            formula: {
-                formula: ({ weaponBaseProperties, targetProperties, outputProperties }) => {
-                    const damagePerHitInStatus = outputProperties.damagePerHitInStatus.label;
-                    if (weaponBaseProperties.damageType.value === 'physicalDamage') {
-                        const armor = targetProperties.armor.label;
-                        return `max([${damagePerHitInStatus}] - [${armor}], trunc([${damagePerHitInStatus}] * 10%))`;
-                    } else {
-                        const shield = targetProperties.energyShield.label;
-                        return `[${damagePerHitInStatus}] * (100% - [${shield}])`;
-                    }
-                },
-            },
             update: ({ weaponBaseProperties, targetProperties, outputProperties }, self) => {
-                const damagePerHitInStatus = outputProperties.damagePerHitInStatus.value;
-                if (damagePerHitInStatus === null) {
+                const { damagePerHitInStatus } = outputProperties;
+                const { armor, energyShield } = targetProperties;
+                if (damagePerHitInStatus.value === null) {
                     return resetFilledFormula(self);
                 }
                 if (weaponBaseProperties.damageType.value === 'physicalDamage') {
-                    const armor = targetProperties.armor.value;
-                    if (armor === null) {
+                    if (armor.value === null) {
                         return resetFilledFormula(self);
                     }
                     return {
                         ...self,
-                        value: Math.max(damagePerHitInStatus - armor, Math.floor(damagePerHitInStatus * 0.1)),
-                        formula: self.formula ? {
-                            ...self.formula,
-                            filledFormula: `max(${formatNumber(damagePerHitInStatus)} - ${formatNumber(armor)}, trunc(${formatNumber(damagePerHitInStatus)} * 0.1))`,
-                        } : undefined,
+                        value: Math.max(damagePerHitInStatus.value - armor.value, Math.floor(damagePerHitInStatus.value * 0.1)),
+                        formula: {
+                            formula: `max([${damagePerHitInStatus.label}] - [${armor.label}], trunc([${damagePerHitInStatus.label}] * 10%))`,
+                            filledFormula: `max(${formatNumber(damagePerHitInStatus.value)} - ${formatNumber(armor.value)}, trunc(${formatNumber(damagePerHitInStatus.value)} * 0.1))`,
+                        },
                     };
                 } else {
-                    const shield = toDecreasingFactor(targetProperties.energyShield.value);
-                    if (shield === null) {
+                    if (energyShield.value === null) {
                         return resetFilledFormula(self);
                     }
                     return {
                         ...self,
-                        value: damagePerHitInStatus * shield,
-                        formula: self.formula ? {
-                            ...self.formula,
-                            filledFormula: `${formatNumber(damagePerHitInStatus)} * ${shield}`,
-                        } : undefined,
+                        value: damagePerHitInStatus.value * toDecreasingFactor(energyShield.value),
+                        formula: {
+                            formula: `[${damagePerHitInStatus.label}] * (100% - [${energyShield.label}])`,
+                            filledFormula: `${formatNumber(damagePerHitInStatus.value)} * (${toDecreasingPercentageForFormula(energyShield.value)})`,
+                        },
                     };
                 }
             },

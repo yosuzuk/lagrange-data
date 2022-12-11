@@ -49,12 +49,6 @@ export const ComputedProperties = (props: IProps) => {
                                 value: (
                                     <ComputedProperty
                                         property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
-                                        referenceData={{
-                                            weaponBaseProperties,
-                                            weaponEnhancementProperties: enhancementTabs[0].properties,
-                                            targetProperties: attackTargetTabs[0].properties,
-                                            outputProperties: baseOutputProperties,
-                                        }}
                                     />
                                 ),
                             }))
@@ -103,12 +97,6 @@ export const ComputedProperties = (props: IProps) => {
                                                         <TableCell key={enhancementTab.id}>
                                                             <ComputedProperty
                                                                 property={computedOutputProperties[enhancementTab.id]?.[attackTargetTab.id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
-                                                                referenceData={{
-                                                                    weaponBaseProperties,
-                                                                    weaponEnhancementProperties: enhancementTab.properties,
-                                                                    targetProperties: attackTargetTab.properties,
-                                                                    outputProperties: baseOutputProperties,
-                                                                }}
                                                             />
                                                         </TableCell>
                                                     ))}
@@ -140,12 +128,6 @@ export const ComputedProperties = (props: IProps) => {
                                                     <TableCell key={attackTargetTab.id}>
                                                         <ComputedProperty
                                                             property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTab.id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
-                                                            referenceData={{
-                                                                weaponBaseProperties,
-                                                                weaponEnhancementProperties: enhancementTabs[0].properties,
-                                                                targetProperties: attackTargetTab.properties,
-                                                                outputProperties: baseOutputProperties,
-                                                            }}
                                                         />
                                                     </TableCell>
                                                 ))}
@@ -159,12 +141,6 @@ export const ComputedProperties = (props: IProps) => {
                             <Box pl={2}>
                                 <ComputedProperty
                                     property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
-                                    referenceData={{
-                                        weaponBaseProperties,
-                                        weaponEnhancementProperties: enhancementTabs[0].properties,
-                                        targetProperties: attackTargetTabs[0].properties,
-                                        outputProperties: baseOutputProperties,
-                                    }}
                                 />
                             </Box>
                         )}

@@ -32,8 +32,8 @@ export interface IUpdateOutputPropertyArguments {
 }
 
 export interface IFormula {
-    formula: (args: IUpdateOutputPropertyArguments) => string; // e.g. "X = A + B"
-    filledFormula?: string | null; // e.g. "3 = 1 + 2"
+    formula: string; // e.g. "X = A + B"
+    filledFormula?: string | string[] | null; // e.g. "3 = 1 + 2"
     description?: string;
 }
 
