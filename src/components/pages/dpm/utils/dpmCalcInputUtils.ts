@@ -24,7 +24,7 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
         }),
         [WeaponBasePropertyId.DAMAGE_PER_HIT]: createNumericInputProperty({
             label: '単発ダメージ',
-            description: 'スキルをリセットしてから読み取ってください。数字が二つ表示される場合は左側の数字を入力してください。例えば「300+90.0」の場合は「300」です。',
+            description: 'スキルをリセットしてから読み取ってください。チューン済みで数字が二つ表示される場合は左側の数字を入力してください。例えば「300+90.0」の場合は「300」です。初期状態でもモジュールによるダメージアップ効果が乗っている場合があります。その場合は、先に元の単発ダメージを逆算して入力してください（例：ルビー級の小型イオン砲は初期状態で単発ダメージが「316」と表示されますが、エネルギーシステムの15％が乗っている状態なので、元は「275」です）。',
             value: null,
         }),
         [WeaponBasePropertyId.TUNE]: createNumericInputProperty({
@@ -36,7 +36,7 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
         [WeaponBasePropertyId.DURATION]: createNumericInputProperty({
             label: '持続時間',
             value: 0,
-            description: 'モジュールステータスで確認できます。「--」と表示される場合は０秒です。',
+            description: 'モジュールステータスで確認できます。「--」と表示される場合は０秒です。別名「出力時間」/「攻撃間隔」/「攻撃時間」',
             unit: Unit.SECONDS,
         }),
         [WeaponBasePropertyId.ROUNDS]: createNumericInputProperty({
@@ -64,11 +64,12 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
         }),
         [WeaponBasePropertyId.SHOTS_PER_ROUND2]: createNumericInputProperty({
             label: '連装数',
-            value: 1,
             description: 'エネルギー武器の連装数は武器の名前に隠されています。武器情報画面内、名前のアルファベット２文字と横線の後に「2x」とあれば２連装です。例えば「CI-2x700T型」の場合は「C」が企業、「I」が武器の種類、その後ろの「2x」が連装数です。',
+            value: 1,
         }),
         [WeaponBasePropertyId.LOCK_ON_TIME]: createNumericInputProperty({
             label: 'ロックオン時間',
+            description: '別名「目標選択時間」',
             unit: Unit.SECONDS,
         }),
         [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: createSelectInputProperty({
@@ -92,14 +93,14 @@ export function createWeaponEnhancementProperties(): IWeaponEnhancementPropertie
     return alignRecordIds({
         [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT]: createNumericInputProperty({
             label: 'ダメージアップ',
-            description: 'スキルとモジュールから反映されるダメージアップを合わせて入力してください',
+            description: 'スキルとモジュールから反映されるダメージアップを合わせて入力してください（例：ルビー級の場合はスキルの２０％とエネルギーシステムの１５％で合計３５％です）',
             value: 0,
             unit: Unit.PERCENTAGE,
             min: -500,
         }),
         [WeaponEnhancementPropertyId.REDUCE_DURATION]: createNumericInputProperty({
             label: '持続時間ダウン',
-            description: '逆にアップする場合はマイナスの数値を入力してください',
+            description: '別名「出力時間ダウン」/「攻撃間隔ダウン」/「攻撃時間ダウン」。逆にアップする場合はマイナスの数値を入力してください（例：カリストの「重弾薬」）',
             value: 0,
             unit: Unit.PERCENTAGE,
             min: -500,
@@ -115,10 +116,18 @@ export function createWeaponEnhancementProperties(): IWeaponEnhancementPropertie
         }),
         [WeaponEnhancementPropertyId.REDUCE_LOCKON]: createNumericInputProperty({
             label: 'ロックオン時間ダウン',
+            description: '別名「目標選択時間ダウン」',
             value: 0,
             unit: Unit.PERCENTAGE,
             min: -500,
             max: 100,
+        }),
+        [WeaponEnhancementPropertyId.INCREASE_SHOTS_PER_ROUNT]: createNumericInputProperty({
+            label: '攻撃数アップ',
+            description: '１ラウンドあたりの攻撃数が増加する（例：ルビー級の「持続出力強化」）',
+            value: 0,
+            min: -10,
+            max: 10,
         }),
     });
 }

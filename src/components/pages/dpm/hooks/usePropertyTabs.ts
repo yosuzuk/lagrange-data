@@ -6,23 +6,24 @@ const MAX_TAB_COUNT = 5;
 
 interface IHookArguments<T> {
     idPrefix: string;
+    tabNamePrefix: string;
     propertyFactoryFn: () => T;
 }
 
 export const usePropertyTabs = <T>(args: IHookArguments<T>) => {
-    const { idPrefix, propertyFactoryFn } = args;
+    const { idPrefix, tabNamePrefix, propertyFactoryFn } = args;
 
     const [tabs, setTabs] = useState<IPropertyTab<T>[]>(() => [
-        createEmptyTab<T>(idPrefix, propertyFactoryFn),
+        createEmptyTab<T>(idPrefix, tabNamePrefix, propertyFactoryFn),
     ]);
     const [tabIndex, setTabIndex] = useState<number>(0);
     const tabIdToSelectRef = useRef<string | null>(null);
 
     const addTab = useCallback(() => {
-        const newTab = createEmptyTab(idPrefix, propertyFactoryFn);
+        const newTab = createEmptyTab(idPrefix, tabNamePrefix, propertyFactoryFn);
         tabIdToSelectRef.current = newTab.id;
         setTabs(tabs => tabs.length >= MAX_TAB_COUNT ? tabs : [...tabs, newTab]);
-    }, []);
+    }, [idPrefix, tabNamePrefix, propertyFactoryFn]);
 
     const removeTab = useCallback((id: string) => {
         setTabIndex(0);
@@ -74,12 +75,12 @@ export const usePropertyTabs = <T>(args: IHookArguments<T>) => {
 };
 
 let idCounter = 0;
-function createEmptyTab<T>(idPrefix: string, propertyFactoryFn: (() => T)): IPropertyTab<T> {
+function createEmptyTab<T>(idPrefix: string, tabNamePrefix: string, propertyFactoryFn: (() => T)): IPropertyTab<T> {
     const idNumber = idCounter++;
     return {
         id: `${idPrefix}${idNumber}`,
         name: '',
-        defaultName: (index: number) => `設定${index + 1}`, // TODO translate
+        defaultName: (index: number) => `${tabNamePrefix}${index + 1}`, // TODO translate
         properties: propertyFactoryFn(),
     };
 }

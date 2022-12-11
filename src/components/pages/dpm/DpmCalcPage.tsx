@@ -26,6 +26,7 @@ export const DpmCalcPage = () => {
         changeProperty: changeEnhancementProperty,
     } = usePropertyTabs({
         idPrefix: 'enhancementTab',
+        tabNamePrefix: 'スキル設定',
         propertyFactoryFn: createWeaponEnhancementProperties,
     });
 
@@ -40,6 +41,7 @@ export const DpmCalcPage = () => {
         changeProperty: changeAttackTargetProperty,
     } = usePropertyTabs({
         idPrefix: 'attackTargetTab',
+        tabNamePrefix: '攻撃対象',
         propertyFactoryFn: createTargetProperties,
     });
 
