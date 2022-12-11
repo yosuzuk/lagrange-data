@@ -4,7 +4,7 @@ import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, 
 import { IPropertyTab } from '../types/ITab';
 import { Unit } from '../types/Unit';
 import { alignRecordIds } from './recordUtils';
-import { toIncreasingFactor } from './unitUtils';
+import { toDecreasingFactor, toIncreasingFactor } from './unitUtils';
 
 export function createOutputProperties(): IOutputProperties {
     return alignRecordIds({
@@ -12,39 +12,86 @@ export function createOutputProperties(): IOutputProperties {
             label: '単発ダメージ（ステータス）',
             description: 'スキル設定後の武器情報画面に表示される数値（攻撃対象の抵抗値/シールド値は考慮しない数値）',
             dependsOn: {
-                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_PER_HIT],
+                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_PER_HIT, WeaponBasePropertyId.TUNE],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT],
             },
             formula: {
                 formula: ({ weaponBaseProperties, weaponEnhancementProperties }) => {
                     const xBase = weaponBaseProperties.damagePerHit.label;
                     const xEnhancement = weaponEnhancementProperties.increaseDamagePerHit.label;
-                    return `[${xBase}] * [${xEnhancement}]`;
+                    const xTune = weaponBaseProperties.tune.label;
+                    return `[${xBase}] * [${xEnhancement}] * [${xTune}]`;
                 },
             },
             update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
                 const xBase = weaponBaseProperties.damagePerHit.value;
                 const xEnhancement = toIncreasingFactor(weaponEnhancementProperties.increaseDamagePerHit.value);
-                if (xBase === null || xEnhancement === null) {
+                const xTune = toIncreasingFactor(weaponBaseProperties.tune.value);
+                if (xBase === null || xEnhancement === null || xTune === null) {
                     return resetFilledFormula(self);
                 }
                 return {
                     ...self,
-                    value: xBase * xEnhancement,
+                    value: xBase * xEnhancement * xTune,
                     formula: self.formula ? {
                         ...self.formula,
-                        filledFormula: `${formatNumber(xBase)} * ${formatNumber(xEnhancement)} => ${formatNumber(xBase * xEnhancement)}`,
+                        filledFormula: `${formatNumber(xBase)} * ${formatNumber(xEnhancement)} * ${formatNumber(xTune)}`,
                     } : undefined,
                 };
-            }
+            },
         }),
         [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE]: createNumericOutputProperty({
             label: '単発ダメージ（戦闘時）',
             description: '攻撃対象の抵抗値/シールド値を考慮した数値',
             dependsOn: {
-                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.DAMAGE_PER_HIT],
-                weaponEnhancementProperties: [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT],
+                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_TYPE],
                 targetProperties: [TargetPropertyId.ARMOR, TargetPropertyId.ENERGY_SHIELD],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_STATUS],
+            },
+            formula: {
+                formula: ({ weaponBaseProperties, targetProperties, outputProperties }) => {
+                    const damagePerHitInStatus = outputProperties.damagePerHitInStatus.label;
+                    if (weaponBaseProperties.damageType.value === 'physicalDamage') {
+                        const armor = targetProperties.armor.label;
+                        return `max([${damagePerHitInStatus}] - [${armor}], trunc([${damagePerHitInStatus}] * 10%))`;
+                    } else {
+                        const shield = targetProperties.energyShield.label;
+                        return `[${damagePerHitInStatus}] * (100% - [${shield}])`;
+                    }
+                },
+            },
+            update: ({ weaponBaseProperties, targetProperties, outputProperties }, self) => {
+                const damagePerHitInStatus = outputProperties.damagePerHitInStatus.value;
+                if (damagePerHitInStatus === null) {
+                    return resetFilledFormula(self);
+                }
+                if (weaponBaseProperties.damageType.value === 'physicalDamage') {
+                    const armor = targetProperties.armor.value;
+                    if (armor === null) {
+                        return resetFilledFormula(self);
+                    }
+                    return {
+                        ...self,
+                        value: Math.max(damagePerHitInStatus - armor, Math.floor(damagePerHitInStatus * 0.1)),
+                        formula: self.formula ? {
+                            ...self.formula,
+                            filledFormula: `max(${formatNumber(damagePerHitInStatus)} - ${formatNumber(armor)}, trunc(${formatNumber(damagePerHitInStatus)} * 0.1))`,
+                        } : undefined,
+                    };
+                } else {
+                    const shield = toDecreasingFactor(targetProperties.energyShield.value);
+                    if (shield === null) {
+                        return resetFilledFormula(self);
+                    }
+                    return {
+                        ...self,
+                        value: damagePerHitInStatus * shield,
+                        formula: self.formula ? {
+                            ...self.formula,
+                            filledFormula: `${formatNumber(damagePerHitInStatus)} * ${shield}`,
+                        } : undefined,
+                    };
+                }
             },
         }),
         [OutputPropertyId.DURATION]: createNumericOutputProperty({
@@ -127,7 +174,7 @@ function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputPr
         .reduce((acc, propertyId) => {
             const currentProperty = outputProperties[propertyId];
 
-            if (hasUnmetDepenencies(currentProperty, args)) {
+            if (hasUnmetDepenencies(currentProperty, { ...args, outputProperties: acc })) {
                 return {
                     ...acc,
                     [propertyId]: resetOutputProperty(currentProperty),
@@ -142,7 +189,7 @@ function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputPr
                         weaponBaseProperties,
                         weaponEnhancementProperties,
                         targetProperties,
-                        outputProperties,
+                        outputProperties: acc,
                     }, numericProperty),
                 };
             }

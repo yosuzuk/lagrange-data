@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { IWeaponBaseProperties, IWeaponEnhancementProperties, ITargetProperties } from './types/IInputProperty';
-import { INumericOutputProperty, IOutputProperties, OutputPropertyId } from './types/IOutputProperty';
+import { IOutputProperties, OutputPropertyId } from './types/IOutputProperty';
 import { createOutputProperties, createOutputPropertiesForTabs, dependsOn } from './utils/dpmCalcOutputUtils';
 import { LabeledList } from '../../list/LabeledList';
 import { ComputedProperty } from './ComputedProperty';
@@ -49,6 +49,12 @@ export const ComputedProperties = (props: IProps) => {
                                 value: (
                                     <ComputedProperty
                                         property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
+                                        referenceData={{
+                                            weaponBaseProperties,
+                                            weaponEnhancementProperties: enhancementTabs[0].properties,
+                                            targetProperties: attackTargetTabs[0].properties,
+                                            outputProperties: baseOutputProperties,
+                                        }}
                                     />
                                 ),
                             }))
@@ -97,6 +103,12 @@ export const ComputedProperties = (props: IProps) => {
                                                         <TableCell key={enhancementTab.id}>
                                                             <ComputedProperty
                                                                 property={computedOutputProperties[enhancementTab.id]?.[attackTargetTab.id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
+                                                                referenceData={{
+                                                                    weaponBaseProperties,
+                                                                    weaponEnhancementProperties: enhancementTab.properties,
+                                                                    targetProperties: attackTargetTab.properties,
+                                                                    outputProperties: baseOutputProperties,
+                                                                }}
                                                             />
                                                         </TableCell>
                                                     ))}
@@ -128,6 +140,12 @@ export const ComputedProperties = (props: IProps) => {
                                                     <TableCell key={attackTargetTab.id}>
                                                         <ComputedProperty
                                                             property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTab.id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
+                                                            referenceData={{
+                                                                weaponBaseProperties,
+                                                                weaponEnhancementProperties: enhancementTabs[0].properties,
+                                                                targetProperties: attackTargetTab.properties,
+                                                                outputProperties: baseOutputProperties,
+                                                            }}
                                                         />
                                                     </TableCell>
                                                 ))}
@@ -141,6 +159,12 @@ export const ComputedProperties = (props: IProps) => {
                             <Box pl={2}>
                                 <ComputedProperty
                                     property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
+                                    referenceData={{
+                                        weaponBaseProperties,
+                                        weaponEnhancementProperties: enhancementTabs[0].properties,
+                                        targetProperties: attackTargetTabs[0].properties,
+                                        outputProperties: baseOutputProperties,
+                                    }}
                                 />
                             </Box>
                         )}
