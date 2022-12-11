@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
+import { formatNumber } from '../../../utils/numberUtils';
 import { INumericOutputProperty, IOutputProperty } from './types/IOutputProperty';
-import { getAdornmentForUnit } from './utils/unitAdornmentUtils';
+import { getAdornmentForUnit } from './utils/unitUtils';
 
 interface IProps {
     property: IOutputProperty | null;
@@ -24,9 +25,9 @@ export const ComputedProperty = (props: IProps) => {
                     }
                     const unit = (property as INumericOutputProperty).unit;
                     if (!unit) {
-                        return value;
+                        return formatNumber(value);
                     }
-                    return `${value} ${getAdornmentForUnit(unit)}`;
+                    return `${formatNumber(value)} ${getAdornmentForUnit(unit)}`;
                 }
                 return '?';
             })()}

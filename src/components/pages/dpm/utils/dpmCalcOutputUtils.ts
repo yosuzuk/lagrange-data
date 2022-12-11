@@ -1,8 +1,10 @@
-import { ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
+import { formatNumber } from '../../../../utils/numberUtils';
+import { IInputProperty, INumericInputProperty, ISelectInputProperty, ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
 import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, IUpdateOutputPropertyArguments, OutputPropertyId,  } from '../types/IOutputProperty';
 import { IPropertyTab } from '../types/ITab';
 import { Unit } from '../types/Unit';
 import { alignRecordIds } from './recordUtils';
+import { toIncreasingFactor } from './unitUtils';
 
 export function createOutputProperties(): IOutputProperties {
     return alignRecordIds({
@@ -22,7 +24,7 @@ export function createOutputProperties(): IOutputProperties {
             },
             update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
                 const xBase = weaponBaseProperties.damagePerHit.value;
-                const xEnhancement = weaponEnhancementProperties.increaseDamagePerHit.value;
+                const xEnhancement = toIncreasingFactor(weaponEnhancementProperties.increaseDamagePerHit.value);
                 if (xBase === null || xEnhancement === null) {
                     return resetFilledFormula(self);
                 }
@@ -31,7 +33,7 @@ export function createOutputProperties(): IOutputProperties {
                     value: xBase * xEnhancement,
                     formula: self.formula ? {
                         ...self.formula,
-                        filledFormula: `${round(xBase)} * ${round(xEnhancement)} => ${round(xBase * xEnhancement)}`,
+                        filledFormula: `${formatNumber(xBase)} * ${formatNumber(xEnhancement)} => ${formatNumber(xBase * xEnhancement)}`,
                     } : undefined,
                 };
             }
@@ -120,11 +122,112 @@ export function createOutputPropertiesForTabs(args: IUpdateOutputPropertiesForAl
 function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputProperties {
     const { weaponBaseProperties, weaponEnhancementProperties, targetProperties, outputProperties } = args;
 
-    // TODO implement
+    return Object.values(OutputPropertyId)
+        .map(id => id as OutputPropertyId)
+        .reduce((acc, propertyId) => {
+            const currentProperty = outputProperties[propertyId];
 
-    return {
-        ...outputProperties,
-    };
+            if (hasUnmetDepenencies(currentProperty, args)) {
+                return {
+                    ...acc,
+                    [propertyId]: resetOutputProperty(currentProperty),
+                };
+            }
+
+            if (currentProperty.type === 'numeric') {
+                const numericProperty = currentProperty as INumericOutputProperty;
+                return {
+                    ...acc,
+                    [propertyId]: numericProperty.update({
+                        weaponBaseProperties,
+                        weaponEnhancementProperties,
+                        targetProperties,
+                        outputProperties,
+                    }, numericProperty),
+                };
+            }
+
+            // unsupported type, for now skip
+            return acc;
+        }, { ...outputProperties });
+}
+
+function hasUnmetDepenencies(property: IOutputProperty, allProperties: IUpdateOutputPropertyArguments): boolean {
+    if (!property.dependsOn) {
+        return false;
+    }
+
+    let unmetDependency = false;
+
+    if (property.dependsOn.weaponBaseProperties) {
+        unmetDependency = unmetDependency || !!property.dependsOn.weaponBaseProperties.find(propertyId => {
+            return !isInputPropertySet(allProperties.weaponBaseProperties[propertyId]);
+        });
+    }
+
+    if (property.dependsOn.weaponEnhancementProperties) {
+        unmetDependency = unmetDependency || !!property.dependsOn.weaponEnhancementProperties.find(propertyId => {
+            return !isInputPropertySet(allProperties.weaponEnhancementProperties[propertyId]);
+        });
+    }
+
+    if (property.dependsOn.targetProperties) {
+        unmetDependency = unmetDependency || !!property.dependsOn.targetProperties.find(propertyId => {
+            return !isInputPropertySet(allProperties.targetProperties[propertyId]);
+        });
+    }
+
+    if (property.dependsOn.outputProperties) {
+        unmetDependency = unmetDependency || !!property.dependsOn.outputProperties.find(propertyId => {
+            return !isOutputPropertySet(allProperties.outputProperties[propertyId]);
+        });
+    }
+
+    return unmetDependency;
+}
+
+function isInputPropertySet(property: IInputProperty): boolean {
+    switch (property.type) {
+        case 'numeric': {
+            return (property as INumericInputProperty).value !== null;
+        }
+        case 'select': {
+            return !!(property as ISelectInputProperty).value;
+        }
+        default: {
+            throw new Error(`Cannot determine whether "${property.label}" is set`);
+        }
+    }
+}
+
+function isOutputPropertySet(property: IOutputProperty): boolean {
+    switch (property.type) {
+        case 'numeric': {
+            return (property as INumericOutputProperty).value !== null;
+        }
+        default: {
+            throw new Error(`Cannot determine whether "${property.label}" is set, unsupported property type`);
+        }
+    }
+}
+
+function resetOutputProperty(property: IOutputProperty): IOutputProperty {
+    switch (property.type) {
+        case 'numeric': {
+            const numericProperty = (property as INumericOutputProperty);
+            return {
+                ...numericProperty,
+                value: null,
+                formula: numericProperty.formula ? {
+                    ...numericProperty.formula,
+                    filledFormula: null,
+                } : undefined,
+            } as IOutputProperty;
+        }
+        default: {
+            throw new Error(`Cannot reset "${property.label}", unsupported property type`);
+        }
+    }
 }
 
 function createNumericOutputProperty(properties: Partial<INumericOutputProperty>): INumericOutputProperty {
@@ -136,10 +239,6 @@ function createNumericOutputProperty(properties: Partial<INumericOutputProperty>
         update: (_args: IUpdateOutputPropertyArguments, self: INumericOutputProperty) => self,
         ...properties,
     };
-}
-
-function round(value: number): string {
-    return `${Number(value.toFixed(2))}`;
 }
 
 function resetFilledFormula<T extends IOutputProperty>(outputProperty: T): T {

@@ -46,16 +46,11 @@ export const ComputedProperties = (props: IProps) => {
                             .map(baseOutputProperty => ({
                                 key: baseOutputProperty.id,
                                 label: baseOutputProperty.label,
-                                value: (() => {
-                                    const computedProperty = computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null; 
-                                    if (!computedProperty) {
-                                        return '-';
-                                    }
-                                    if (computedProperty.type === 'numeric') {
-                                        return (computedProperty as INumericOutputProperty).value ?? '-';
-                                    }
-                                    return '?';
-                                })(),
+                                value: (
+                                    <ComputedProperty
+                                        property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
+                                    />
+                                ),
                             }))
                     }
                 />
