@@ -80,7 +80,7 @@ function createEmptyTab<T>(idPrefix: string, idCounterRef: MutableRefObject<numb
     return {
         id: `${idPrefix}${idNumber}`,
         name: '',
-        defaultName: (index: number) => `${tabNamePrefix}${index + 1}`, // TODO translate
+        defaultName: (index: number) => `${tabNamePrefix}${index + 1}`,
         properties: propertyFactoryFn(),
     };
 }

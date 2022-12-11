@@ -7,18 +7,22 @@ export interface IOutputProperty {
     label: string;
     description?: string;
     formula?: IFormula;
-    dependsOnInput?: Array<WeaponBasePropertyId | WeaponEnhancementPropertyId | TargetPropertyId>;
-    dependsOnOutput?: OutputPropertyId[];
+    dependsOn?: {
+        weaponBaseProperties?: WeaponBasePropertyId[];
+        weaponEnhancementProperties?: WeaponEnhancementPropertyId[];
+        targetProperties?: TargetPropertyId[];
+        outputProperties?: OutputPropertyId[];
+    },
 }
 
 export interface INumericOutputProperty extends IOutputProperty {
     type: 'numeric';
     value: number | null;
     unit?: Unit;
-    update: (args: IUpdateArguments, self: INumericOutputProperty) => INumericOutputProperty;
+    update: (args: IUpdateOutputPropertyArguments, self: INumericOutputProperty) => INumericOutputProperty;
 }
 
-export interface IUpdateArguments {
+export interface IUpdateOutputPropertyArguments {
     weaponBaseProperties: IWeaponBaseProperties;
     weaponEnhancementProperties: IWeaponEnhancementProperties;
     targetProperties: ITargetProperties;
@@ -26,7 +30,7 @@ export interface IUpdateArguments {
 }
 
 export interface IFormula {
-    formula: (args: IUpdateArguments) => string; // e.g. "X = A + B"
+    formula: (args: IUpdateOutputPropertyArguments) => string; // e.g. "X = A + B"
     filledFormula?: string | null; // e.g. "3 = 1 + 2"
     description?: string;
 }
