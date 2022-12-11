@@ -9,7 +9,3 @@ export interface ITab {
 export interface IPropertyTab<T> extends ITab {
     properties: T;
 }
-
-export interface IEnhancementTab extends ITab {
-    properties: IWeaponEnhancementProperties;
-}

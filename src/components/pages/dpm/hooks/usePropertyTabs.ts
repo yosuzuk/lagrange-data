@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, MutableRefObject } from 'react';
 import { IInputProperty } from '../types/IInputProperty';
 import { IPropertyTab } from '../types/ITab';
 
@@ -12,15 +12,16 @@ interface IHookArguments<T> {
 
 export const usePropertyTabs = <T>(args: IHookArguments<T>) => {
     const { idPrefix, tabNamePrefix, propertyFactoryFn } = args;
+    const idCounterRef = useRef<number>(0);
 
     const [tabs, setTabs] = useState<IPropertyTab<T>[]>(() => [
-        createEmptyTab<T>(idPrefix, tabNamePrefix, propertyFactoryFn),
+        createEmptyTab<T>(idPrefix, idCounterRef, tabNamePrefix, propertyFactoryFn),
     ]);
     const [tabIndex, setTabIndex] = useState<number>(0);
     const tabIdToSelectRef = useRef<string | null>(null);
 
     const addTab = useCallback(() => {
-        const newTab = createEmptyTab(idPrefix, tabNamePrefix, propertyFactoryFn);
+        const newTab = createEmptyTab(idPrefix, idCounterRef, tabNamePrefix, propertyFactoryFn);
         tabIdToSelectRef.current = newTab.id;
         setTabs(tabs => tabs.length >= MAX_TAB_COUNT ? tabs : [...tabs, newTab]);
     }, [idPrefix, tabNamePrefix, propertyFactoryFn]);
@@ -74,9 +75,8 @@ export const usePropertyTabs = <T>(args: IHookArguments<T>) => {
     };
 };
 
-let idCounter = 0;
-function createEmptyTab<T>(idPrefix: string, tabNamePrefix: string, propertyFactoryFn: (() => T)): IPropertyTab<T> {
-    const idNumber = idCounter++;
+function createEmptyTab<T>(idPrefix: string, idCounterRef: MutableRefObject<number>, tabNamePrefix: string, propertyFactoryFn: (() => T)): IPropertyTab<T> {
+    const idNumber = idCounterRef.current++;
     return {
         id: `${idPrefix}${idNumber}`,
         name: '',
