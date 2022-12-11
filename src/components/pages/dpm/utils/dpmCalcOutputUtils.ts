@@ -1,6 +1,7 @@
 import { ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
 import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, IUpdateOutputPropertyArguments, OutputPropertyId,  } from '../types/IOutputProperty';
 import { IPropertyTab } from '../types/ITab';
+import { Unit } from '../types/Unit';
 import { alignRecordIds } from './recordUtils';
 
 export function createOutputProperties(): IOutputProperties {
@@ -46,6 +47,7 @@ export function createOutputProperties(): IOutputProperties {
         }),
         [OutputPropertyId.DURATION]: createNumericOutputProperty({
             label: '持続時間',
+            unit: Unit.SECONDS,
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.DURATION],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_DURATION],
@@ -53,6 +55,7 @@ export function createOutputProperties(): IOutputProperties {
         }),
         [OutputPropertyId.COOLDOWN]: createNumericOutputProperty({
             label: '冷却時間',
+            unit: Unit.SECONDS,
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.COOLDOWN],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_COOLDOWN],
@@ -60,6 +63,7 @@ export function createOutputProperties(): IOutputProperties {
         }),
         [OutputPropertyId.LOCK_ON_TIME]: createNumericOutputProperty({
             label: 'ロックオン時間',
+            unit: Unit.SECONDS,
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.LOCK_ON_TIME],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.REDUCE_LOCKON],
@@ -67,6 +71,7 @@ export function createOutputProperties(): IOutputProperties {
         }),
         [OutputPropertyId.ROUND_TIME]: createNumericOutputProperty({
             label: 'ラウンド時間',
+            unit: Unit.SECONDS,
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR],
                 outputProperties: [OutputPropertyId.DURATION, OutputPropertyId.COOLDOWN, OutputPropertyId.LOCK_ON_TIME],
@@ -74,6 +79,7 @@ export function createOutputProperties(): IOutputProperties {
         }),
         [OutputPropertyId.TIME_TO_DESTROY_TARGET]: createNumericOutputProperty({
             label: '対象の撃破時間',
+            unit: Unit.SECONDS,
             dependsOn: {
                 targetProperties: [TargetPropertyId.HP],
                 // TODO add missing properties (dpm?)
@@ -113,6 +119,8 @@ export function createOutputPropertiesForTabs(args: IUpdateOutputPropertiesForAl
 
 function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputProperties {
     const { weaponBaseProperties, weaponEnhancementProperties, targetProperties, outputProperties } = args;
+
+    // TODO implement
 
     return {
         ...outputProperties,

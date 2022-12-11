@@ -5,8 +5,9 @@ import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import { IInputProperty, INumericInputProperty, ISelectInputProperty } from './types/IInputProperty';
-import { getAdornmentForUnit, applyPropertyChange } from './utils/dpmCalcInputUtils';
+import { applyPropertyChange } from './utils/dpmCalcInputUtils';
 import { HelpPopper } from './HelpPopper';
+import { getAdornmentForUnit } from './utils/unitAdornmentUtils';
 
 const DEFAULT_NUMERIC_INPUT_WIDTH = '8em';
 const DEFAULT_SELECT_WIDTH = '15em';

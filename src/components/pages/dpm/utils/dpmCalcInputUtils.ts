@@ -205,17 +205,6 @@ export function applyPropertyChange(value: number | string | null, inputProperty
     }
 }
 
-export function getAdornmentForUnit(unit: Unit) {
-    switch (unit) {
-        case Unit.PERCENTAGE:
-            return '%';
-        case Unit.SECONDS:
-            return '秒';
-        case Unit.DPM:
-            return '/分';
-    }
-}
-
 export function isVisibleWeaponBaseProperty(property: IInputProperty, allProperties: IWeaponBaseProperties): boolean {
     switch (property.id) {
         case 'rounds':
