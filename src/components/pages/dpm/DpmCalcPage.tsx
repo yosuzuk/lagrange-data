@@ -18,7 +18,7 @@ import { PageFooter } from '../../pageStructure/PageFooter';
 import { usePropertyTabs } from './hooks/usePropertyTabs';
 import { PropertyTabs } from './PropertyTabs';
 import { INumericOutputProperty, IOutputProperties, OutputPropertyId } from './types/IOutputProperty';
-import { createOutputProperties, createOutputPropertiesForTabs } from './utils/dpmCalcOutputUtils';
+import { createOutputProperties, createOutputPropertiesForTabs, dependsOn } from './utils/dpmCalcOutputUtils';
 import { LabeledList } from '../../list/LabeledList';
 
 export const DpmCalcPage = () => {
@@ -159,9 +159,11 @@ export const DpmCalcPage = () => {
                                         />
                                     )}
                                     {(enhancementTabs.length > 1 || attackTargetTabs.length > 1) && Object.values(baseOutputProperties).map(baseOutputProperty => {
-                                        const showColumnsForEnhancement = (baseOutputProperty.dependsOn?.weaponEnhancementProperties?.length ?? 0) > 0 && enhancementTabs.length > 1;
-                                        const showRowsForTargets = showColumnsForEnhancement && (baseOutputProperty.dependsOn?.targetProperties?.length ?? 0) > 0 && attackTargetTabs.length > 1;
-                                        const showColumnsForTargets = !showColumnsForEnhancement && (baseOutputProperty.dependsOn?.targetProperties?.length ?? 0) > 0 && attackTargetTabs.length > 1;
+                                        const dependsOnWeaponEnhancement = dependsOn(baseOutputProperty, 'weaponEnhancementProperties', baseOutputProperties);
+                                        const dependsOnTarget = dependsOn(baseOutputProperty, 'targetProperties', baseOutputProperties);
+                                        const showColumnsForEnhancement = dependsOnWeaponEnhancement && enhancementTabs.length > 1;
+                                        const showRowsForTargets = showColumnsForEnhancement && dependsOnTarget && attackTargetTabs.length > 1;
+                                        const showColumnsForTargets = !showColumnsForEnhancement && dependsOnTarget && attackTargetTabs.length > 1;
 
                                         return (
                                             <Box key={baseOutputProperty.id} pb={6}>

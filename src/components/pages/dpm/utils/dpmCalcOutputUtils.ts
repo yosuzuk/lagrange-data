@@ -1,5 +1,5 @@
 import { ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
-import { INumericOutputProperty, IOutputProperties, IOutputProperty, IUpdateOutputPropertyArguments, OutputPropertyId,  } from '../types/IOutputProperty';
+import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, IUpdateOutputPropertyArguments, OutputPropertyId,  } from '../types/IOutputProperty';
 import { IPropertyTab } from '../types/ITab';
 import { alignRecordIds } from './recordUtils';
 
@@ -142,4 +142,18 @@ function resetFilledFormula<T extends IOutputProperty>(outputProperty: T): T {
             filledFormula: null,
         } : undefined,
     };
+}
+
+export function dependsOn(outputProperty: IOutputProperty, propertyKind: keyof DependsOn, allOutputProperties: IOutputProperties): boolean {
+    if ((outputProperty.dependsOn?.[propertyKind]?.length ?? 0) > 0) {
+        return true;
+    }
+
+    if ((outputProperty.dependsOn?.outputProperties?.length ?? 0) > 0) {
+        return !!outputProperty.dependsOn?.outputProperties?.find(dependencyId => {
+            return (allOutputProperties[dependencyId].dependsOn?.[propertyKind]?.length ?? 0) > 0;
+        });
+    }
+
+    return false;
 }

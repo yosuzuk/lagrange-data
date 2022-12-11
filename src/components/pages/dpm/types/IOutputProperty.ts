@@ -7,13 +7,15 @@ export interface IOutputProperty {
     label: string;
     description?: string;
     formula?: IFormula;
-    dependsOn?: {
-        weaponBaseProperties?: WeaponBasePropertyId[];
-        weaponEnhancementProperties?: WeaponEnhancementPropertyId[];
-        targetProperties?: TargetPropertyId[];
-        outputProperties?: OutputPropertyId[];
-    },
+    dependsOn?: DependsOn,
 }
+
+export type DependsOn = {
+    weaponBaseProperties?: WeaponBasePropertyId[];
+    weaponEnhancementProperties?: WeaponEnhancementPropertyId[];
+    targetProperties?: TargetPropertyId[];
+    outputProperties?: OutputPropertyId[];
+};
 
 export interface INumericOutputProperty extends IOutputProperty {
     type: 'numeric';
