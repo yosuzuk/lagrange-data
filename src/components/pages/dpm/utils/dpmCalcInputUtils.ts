@@ -127,7 +127,7 @@ export function createWeaponEnhancementProperties(): IWeaponEnhancementPropertie
             min: -500,
             max: 100,
         }),
-        [WeaponEnhancementPropertyId.INCREASE_SHOTS_PER_ATTACK]: createNumericInputProperty({
+        [WeaponEnhancementPropertyId.INCREASE_ATTACKS_PER_ROUND]: createNumericInputProperty({
             label: '攻撃回数アップ',
             description: '１ラウンドあたりの攻撃数が増加する（例：ルビー級の「持続出力強化」）',
             value: 0,

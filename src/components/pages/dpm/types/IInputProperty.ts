@@ -62,7 +62,7 @@ export enum WeaponEnhancementPropertyId {
     REDUCE_DURATION = 'reduceDuration',
     REDUCE_COOLDOWN = 'reduceCooldown',
     REDUCE_LOCKON = 'reduceLockon',
-    INCREASE_SHOTS_PER_ATTACK = 'increaseShotsPerAttack',
+    INCREASE_ATTACKS_PER_ROUND = 'increaseAttacksPerRound',
 }
 
 export interface IWeaponEnhancementProperties extends Record<WeaponEnhancementPropertyId, IInputProperty> {
@@ -70,7 +70,7 @@ export interface IWeaponEnhancementProperties extends Record<WeaponEnhancementPr
     [WeaponEnhancementPropertyId.REDUCE_DURATION]: INumericInputProperty;
     [WeaponEnhancementPropertyId.REDUCE_COOLDOWN]: INumericInputProperty;
     [WeaponEnhancementPropertyId.REDUCE_LOCKON]: INumericInputProperty;
-    [WeaponEnhancementPropertyId.INCREASE_SHOTS_PER_ATTACK]: INumericInputProperty;
+    [WeaponEnhancementPropertyId.INCREASE_ATTACKS_PER_ROUND]: INumericInputProperty;
 }
 
 export enum TargetPropertyId {

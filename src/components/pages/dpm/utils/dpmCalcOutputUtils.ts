@@ -144,6 +144,75 @@ export function createOutputProperties(): IOutputProperties {
                 };
             },
         }),
+        [OutputPropertyId.ATTACKS_PER_ROUND]: createNumericOutputProperty({
+            label: '攻撃回数',
+            dependsOn: {
+                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.ATTACKS_PER_ROUND, WeaponBasePropertyId.ATTACKS_PER_ROUND_ION],
+                weaponEnhancementProperties: [WeaponEnhancementPropertyId.INCREASE_ATTACKS_PER_ROUND],
+            },
+            update: ({ weaponBaseProperties, weaponEnhancementProperties }, self) => {
+                const { damageType, attacksPerRound, attacksPerRoundIon } = weaponBaseProperties;
+                const { increaseAttacksPerRound } = weaponEnhancementProperties;
+                if (damageType.value === '' || increaseAttacksPerRound.value === null) {
+                    return self;
+                }
+                if (weaponBaseProperties.damageType.value === 'energyDamageIon') {
+                    if (attacksPerRoundIon.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: attacksPerRoundIon.value + increaseAttacksPerRound.value,
+                        formula: {
+                            formula: `[${attacksPerRoundIon.label}] + [${increaseAttacksPerRound.label}]`,
+                            filledFormula: `${attacksPerRoundIon.value} + ${increaseAttacksPerRound.value}`,
+                        },
+                    };
+                } else {
+                    if (attacksPerRound.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: attacksPerRound.value + increaseAttacksPerRound.value,
+                        formula: {
+                            formula: `[${attacksPerRound.label}] + [${increaseAttacksPerRound.label}]`,
+                            filledFormula: `${attacksPerRound.value} + ${increaseAttacksPerRound.value}`,
+                        },
+                    };
+                }
+            },
+        }),
+        [OutputPropertyId.SHOTS_PER_ATTACK]: createNumericOutputProperty({
+            label: '連装数',
+            hidden: true,
+            dependsOn: {
+                weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.SHOTS_PER_ATTACK, WeaponBasePropertyId.SHOTS_PER_ATTACK_ION],
+            },
+            update: ({ weaponBaseProperties }, self) => {
+                const { damageType, shotsPerAttack, shotsPerAttackIon } = weaponBaseProperties;
+                if (damageType.value === '') {
+                    return self;
+                }
+                if (weaponBaseProperties.damageType.value === 'energyDamageIon') {
+                    if (shotsPerAttackIon.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: shotsPerAttackIon.value,
+                    };
+                } else {
+                    if (shotsPerAttack.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: shotsPerAttack.value,
+                    };
+                }
+            },
+        }),
         [OutputPropertyId.ROUND_TIME]: createNumericOutputProperty({
             label: 'ラウンド時間',
             unit: Unit.SECONDS,
@@ -184,41 +253,24 @@ export function createOutputProperties(): IOutputProperties {
         [OutputPropertyId.DAMAGE_PER_ROUND]: createNumericOutputProperty({
             label: 'ラウンドダメージ',
             dependsOn: {
-                // TODO use attacksPerRound from outputProperties
-                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION, WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.ATTACKS_PER_ROUND, WeaponBasePropertyId.ATTACKS_PER_ROUND_ION, WeaponBasePropertyId.SHOTS_PER_ATTACK, WeaponBasePropertyId.SHOTS_PER_ATTACK_ION],
-                outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE],
+                // TODO use shotsPerAttacks from outputProperties
+                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE, OutputPropertyId.ATTACKS_PER_ROUND, OutputPropertyId.SHOTS_PER_ATTACK],
             },
             update: ({ weaponBaseProperties, outputProperties }, self) => {
-                const { installation, damageType, attacksPerRound, attacksPerRoundIon, shotsPerAttack, shotsPerAttackIon } = weaponBaseProperties;
-                const { damagePerHitInBattle } = outputProperties;
-                if (installation.value === null || damageType.value === '' || damagePerHitInBattle.value === null) {
+                const { installation } = weaponBaseProperties;
+                const { damagePerHitInBattle, attacksPerRound, shotsPerAttack } = outputProperties;
+                if (installation.value === null || damagePerHitInBattle.value === null || attacksPerRound.value === null || shotsPerAttack.value === null) {
                     return self;
                 }
-                if (weaponBaseProperties.damageType.value === 'energyDamageIon') {
-                    if (attacksPerRoundIon.value === null || shotsPerAttackIon.value === null) {
-                        return self;
-                    }
-                    return {
-                        ...self,
-                        value: damagePerHitInBattle.value * installation.value * attacksPerRoundIon.value * shotsPerAttackIon.value,
-                        formula: {
-                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRoundIon.label}] * [${shotsPerAttackIon.label}]`,
-                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRoundIon.value} * ${shotsPerAttackIon.value}`,
-                        },
-                    };
-                } else {
-                    if (attacksPerRound.value === null || shotsPerAttack.value === null) {
-                        return self;
-                    }
-                    return {
-                        ...self,
-                        value: damagePerHitInBattle.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
-                        formula: {
-                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
-                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
-                        },
-                    };
-                }
+                return {
+                    ...self,
+                    value: damagePerHitInBattle.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
+                    formula: {
+                        formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
+                        filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                    },
+                };
             },
         }),
         [OutputPropertyId.TIME_TO_DESTROY_TARGET]: createNumericOutputProperty({

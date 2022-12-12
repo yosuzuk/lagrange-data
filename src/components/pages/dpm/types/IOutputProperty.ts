@@ -7,7 +7,8 @@ export interface IOutputProperty {
     label: string;
     description?: string;
     formula?: IFormula;
-    dependsOn?: DependsOn,
+    dependsOn?: DependsOn;
+    hidden?: boolean;
 }
 
 export type DependsOn = {
@@ -43,7 +44,8 @@ export enum OutputPropertyId {
     DURATION = 'duration',
     COOLDOWN = 'cooldown',
     LOCK_ON_TIME = 'lockOnTime',
-    // ATTACKS_PER_ROUND = 'attacksPerRound',
+    ATTACKS_PER_ROUND = 'attacksPerRound',
+    SHOTS_PER_ATTACK = 'shotsPerAttack',
     ROUND_TIME = 'roundTime',
     DAMAGE_PER_ROUND = 'damagePerRound',
     TIME_TO_DESTROY_TARGET = 'timeToDestroyTarget',
@@ -55,6 +57,8 @@ export interface IOutputProperties extends Record<OutputPropertyId, IOutputPrope
     [OutputPropertyId.DURATION]: INumericOutputProperty;
     [OutputPropertyId.COOLDOWN]: INumericOutputProperty;
     [OutputPropertyId.LOCK_ON_TIME]: INumericOutputProperty;
+    [OutputPropertyId.ATTACKS_PER_ROUND]: INumericOutputProperty;
+    [OutputPropertyId.SHOTS_PER_ATTACK]: INumericOutputProperty;
     [OutputPropertyId.ROUND_TIME]: INumericOutputProperty;
     [OutputPropertyId.DAMAGE_PER_ROUND]: INumericOutputProperty;
     [OutputPropertyId.TIME_TO_DESTROY_TARGET]: INumericOutputProperty;
