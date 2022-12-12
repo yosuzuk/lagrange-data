@@ -11,6 +11,8 @@ export function getAdornmentForUnit(unit: Unit) {
             return '/分';
         case Unit.ION_ATTACK_COUNT:
             return '次';
+        case Unit.FIGHTER_COUNT:
+            return '機';
     }
 }
 

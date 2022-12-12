@@ -1,5 +1,5 @@
 import { formatNumber } from '../../../../utils/numberUtils';
-import { IInputProperty, INumericInputProperty, ISelectInputProperty, ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
+import { IInputProperty, INumericInputProperty, ISelectInputProperty, IShipProperties, ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, ShipPropertyId, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from '../types/IInputProperty';
 import { DependsOn, INumericOutputProperty, IOutputProperties, IOutputProperty, IUpdateOutputPropertyArguments, OutputPropertyId,  } from '../types/IOutputProperty';
 import { IPropertyTab } from '../types/ITab';
 import { Unit } from '../types/Unit';
@@ -217,16 +217,16 @@ export function createOutputProperties(): IOutputProperties {
             label: 'ラウンド時間',
             unit: Unit.SECONDS,
             dependsOn: {
-                weaponBaseProperties: [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR],
+                shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.FIGHTER_ATTACK_PATTERN, ShipPropertyId.CORVETTE_ATTACK_PATTERN],
                 outputProperties: [OutputPropertyId.DURATION, OutputPropertyId.COOLDOWN, OutputPropertyId.LOCK_ON_TIME],
             },
-            update: ({ weaponBaseProperties, outputProperties }, self) => {
-                const { lockOnBehaviour } = weaponBaseProperties;
+            update: ({ shipProperties, outputProperties }, self) => {
+                const { type, fighterAttackPattern, corvetteAttackPattern } = shipProperties;
                 const { duration, cooldown, lockOnTime } = outputProperties;
-                if (lockOnBehaviour.value === '' || duration.value === null || cooldown.value === null) {
+                if (type.value === '' || fighterAttackPattern.value === '' || corvetteAttackPattern.value === '' || duration.value === null || cooldown.value === null) {
                     return self;
                 }
-                if (lockOnBehaviour.value === 'perRound') {
+                if ((type.value === 'fighter' && fighterAttackPattern.value === 'rtb') || (type.value === 'corvette' && corvetteAttackPattern.value === 'rtb')) {
                     if (lockOnTime.value === null) {
                         return self;
                     }
@@ -236,7 +236,7 @@ export function createOutputProperties(): IOutputProperties {
                         formula: {
                             formula: `[${duration.label}] + [${cooldown.label}] + [${lockOnTime.label}]`,
                             filledFormula: `${formatNumber(duration.value)} 秒 + ${formatNumber(cooldown.value)} 秒 + ${formatNumber(lockOnTime.value)} 秒`,
-                            description: 'ロックオン仕様：「ラウンド毎に適応」',
+                            description: '重複攻撃を行う艦載機ではロックオン時間もラウンド時間に含まれます',
                         },
                     };
                 }
@@ -253,22 +253,36 @@ export function createOutputProperties(): IOutputProperties {
         [OutputPropertyId.DAMAGE_PER_ROUND]: createNumericOutputProperty({
             label: 'ラウンドダメージ',
             dependsOn: {
-                // TODO use shotsPerAttacks from outputProperties
+                shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.SQUAD_SIZE],
                 weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION],
                 outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE, OutputPropertyId.ATTACKS_PER_ROUND, OutputPropertyId.SHOTS_PER_ATTACK],
             },
-            update: ({ weaponBaseProperties, outputProperties }, self) => {
+            update: ({ shipProperties, weaponBaseProperties, outputProperties }, self) => {
+                const { type, squadSize } = shipProperties;
                 const { installation } = weaponBaseProperties;
                 const { damagePerHitInBattle, attacksPerRound, shotsPerAttack } = outputProperties;
-                if (installation.value === null || damagePerHitInBattle.value === null || attacksPerRound.value === null || shotsPerAttack.value === null) {
+                if (type.value === '' || installation.value === null || damagePerHitInBattle.value === null || attacksPerRound.value === null || shotsPerAttack.value === null) {
                     return self;
+                }
+                if (type.value === 'fighter') {
+                    if (squadSize.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: squadSize.value * damagePerHitInBattle.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
+                        formula: {
+                            formula: `[${squadSize.label}] * [${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
+                            filledFormula: `${squadSize.value} * ${formatNumber(damagePerHitInBattle.value)} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                        },
+                    };
                 }
                 return {
                     ...self,
                     value: damagePerHitInBattle.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
                     formula: {
                         formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
-                        filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                        filledFormula: `${formatNumber(damagePerHitInBattle.value)} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
                     },
                 };
             },
@@ -281,9 +295,18 @@ export function createOutputProperties(): IOutputProperties {
                 outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.ROUND_TIME, OutputPropertyId.DAMAGE_PER_ROUND],
             },
             update: ({ targetProperties, outputProperties }, self) => {
-                // TODO
+                const { hp } = targetProperties;
+                const { cooldown, roundTime, damagePerRound } = outputProperties;
+                if (hp.value === null || cooldown.value === null || roundTime.value === null || damagePerRound.value === null) {
+                    return self;
+                }
                 return {
                     ...self,
+                    value: Math.ceil(hp.value / damagePerRound.value) * roundTime.value - cooldown.value,
+                    formula: {
+                        formula: `ceil([${hp.label}] / [${damagePerRound.label}]) * [${roundTime.label}] - [${cooldown.label}]`,
+                        filledFormula: `ceil(${hp.value} / ${formatNumber(damagePerRound.value)}) * ${formatNumber(roundTime.value)} - ${formatNumber(cooldown.value)}`,
+                    },
                 };
             },
         }),
@@ -291,6 +314,7 @@ export function createOutputProperties(): IOutputProperties {
 }
 
 interface IUpdateOutputPropertiesForAllTabsArguments {
+    shipProperties: IShipProperties;
     weaponBaseProperties: IWeaponBaseProperties;
     enhancementTabs: IPropertyTab<IWeaponEnhancementProperties>[];
     attackTargetTabs: IPropertyTab<ITargetProperties>[];
@@ -298,7 +322,7 @@ interface IUpdateOutputPropertiesForAllTabsArguments {
 }
 
 export function createOutputPropertiesForTabs(args: IUpdateOutputPropertiesForAllTabsArguments): Record<string, Record<string, IOutputProperties>> {
-    const { weaponBaseProperties, enhancementTabs, attackTargetTabs, baseOutputProperties } = args;
+    const { shipProperties, weaponBaseProperties, enhancementTabs, attackTargetTabs, baseOutputProperties } = args;
     const result: Record<string, Record<string, IOutputProperties>> = {};
 
     enhancementTabs.forEach(enhancementTab => {
@@ -308,6 +332,7 @@ export function createOutputPropertiesForTabs(args: IUpdateOutputPropertiesForAl
             }
 
             result[enhancementTab.id][targetTab.id] = updateOutputProperties({
+                shipProperties,
                 weaponBaseProperties,
                 weaponEnhancementProperties: enhancementTab.properties,
                 targetProperties: targetTab.properties,
@@ -320,7 +345,7 @@ export function createOutputPropertiesForTabs(args: IUpdateOutputPropertiesForAl
 }
 
 function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputProperties {
-    const { weaponBaseProperties, weaponEnhancementProperties, targetProperties, outputProperties } = args;
+    const { shipProperties, weaponBaseProperties, weaponEnhancementProperties, targetProperties, outputProperties } = args;
 
     return Object.values(OutputPropertyId)
         .map(id => id as OutputPropertyId)
@@ -339,6 +364,7 @@ function updateOutputProperties(args: IUpdateOutputPropertyArguments): IOutputPr
                 return {
                     ...acc,
                     [propertyId]: numericProperty.update({
+                        shipProperties,
                         weaponBaseProperties,
                         weaponEnhancementProperties,
                         targetProperties,

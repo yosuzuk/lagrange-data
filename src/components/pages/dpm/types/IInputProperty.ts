@@ -27,6 +27,20 @@ export interface IOptions {
     value: string;
 }
 
+export enum ShipPropertyId {
+    TYPE = 'type',
+    SQUAD_SIZE = 'squadSize',
+    FIGHTER_ATTACK_PATTERN = 'fighterAttackPattern',
+    CORVETTE_ATTACK_PATTERN = 'corvetteAttackPattern',
+}
+
+export interface IShipProperties extends Record<ShipPropertyId, IInputProperty> {
+    [ShipPropertyId.TYPE]: ISelectInputProperty;
+    [ShipPropertyId.SQUAD_SIZE]: INumericInputProperty;
+    [ShipPropertyId.FIGHTER_ATTACK_PATTERN]: ISelectInputProperty;
+    [ShipPropertyId.CORVETTE_ATTACK_PATTERN]: ISelectInputProperty;
+}
+
 export enum WeaponBasePropertyId {
     INSTALLATION = 'installation',
     DAMAGE_TYPE = 'damageType',
@@ -39,7 +53,6 @@ export enum WeaponBasePropertyId {
     ATTACKS_PER_ROUND_ION = 'attacksPerRoundIon',
     SHOTS_PER_ATTACK_ION = 'shotsPerAttackIon',
     LOCK_ON_TIME = 'lockOnTime',
-    LOCK_ON_BEHAVIOUR = 'lockOnBehaviour',
 }
 
 export interface IWeaponBaseProperties extends Record<WeaponBasePropertyId, IInputProperty> {
@@ -54,7 +67,6 @@ export interface IWeaponBaseProperties extends Record<WeaponBasePropertyId, IInp
     [WeaponBasePropertyId.ATTACKS_PER_ROUND_ION]: INumericInputProperty;
     [WeaponBasePropertyId.SHOTS_PER_ATTACK_ION]: INumericInputProperty;
     [WeaponBasePropertyId.LOCK_ON_TIME]: INumericInputProperty;
-    [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: ISelectInputProperty;
 }
 
 export enum WeaponEnhancementPropertyId {

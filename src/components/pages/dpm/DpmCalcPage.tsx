@@ -5,15 +5,16 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
-import { createWeaponBaseProperties, createWeaponEnhancementProperties, createTargetProperties } from './utils/dpmCalcInputUtils';
-import { IWeaponBaseProperties, IInputProperty } from './types/IInputProperty';
-import { WeaponBasePropertyForm } from './WeaponBasePropertyForm';
+import { createWeaponBaseProperties, createWeaponEnhancementProperties, createTargetProperties, createShipProperties, isVisibleWeaponBaseProperty, isVisibleShipProperty } from './utils/dpmCalcInputUtils';
+import { IWeaponBaseProperties, IInputProperty, IShipProperties } from './types/IInputProperty';
 import { PageFooter } from '../../pageStructure/PageFooter';
+import { PropertiesForm } from './PropertiesForm';
 import { usePropertyTabs } from './hooks/usePropertyTabs';
 import { PropertyTabs } from './PropertyTabs';
 import { ComputedProperties } from './ComputedProperties';
 
 export const DpmCalcPage = () => {
+    const [shipProperties, setShipProperties] = useState<IShipProperties>(() => createShipProperties());
     const [weaponBaseProperties, setWeaponBaseProperties] = useState<IWeaponBaseProperties>(() => createWeaponBaseProperties());
 
     const {
@@ -46,6 +47,13 @@ export const DpmCalcPage = () => {
         propertyFactoryFn: createTargetProperties,
     });
 
+    const handleChangeShipProperties = useCallback((newInputProperty: IInputProperty) => {
+        setShipProperties(properties => ({
+            ...properties,
+            [newInputProperty.id]: newInputProperty,
+        }));
+    }, []);
+
     const handleChangeWeaponBaseProperties = useCallback((newInputProperty: IInputProperty) => {
         setWeaponBaseProperties(properties => ({
             ...properties,
@@ -70,11 +78,29 @@ export const DpmCalcPage = () => {
                         </Typography>
                         <Stack spacing={1}>
                             <Typography variant="body1">
+                                {'艦船'}
+                            </Typography>
+                            <Paper>
+                                <Box p={1}>
+                                    <PropertiesForm
+                                        properties={shipProperties}
+                                        onChange={handleChangeShipProperties}
+                                        isVisibleProperty={isVisibleShipProperty}
+                                    />
+                                </Box>
+                            </Paper>
+                        </Stack>
+                        <Stack spacing={1}>
+                            <Typography variant="body1">
                                 {'武装'}
                             </Typography>
                             <Paper>
                                 <Box p={1}>
-                                    <WeaponBasePropertyForm properties={weaponBaseProperties} onChange={handleChangeWeaponBaseProperties} />
+                                    <PropertiesForm
+                                        properties={weaponBaseProperties}
+                                        onChange={handleChangeWeaponBaseProperties}
+                                        isVisibleProperty={isVisibleWeaponBaseProperty}
+                                    />
                                 </Box>
                             </Paper>
                         </Stack>
@@ -121,6 +147,7 @@ export const DpmCalcPage = () => {
                             <Paper>
                                 <Box p={1}>
                                     <ComputedProperties
+                                        shipProperties={shipProperties}
                                         weaponBaseProperties={weaponBaseProperties}
                                         enhancementTabs={enhancementTabs}
                                         attackTargetTabs={attackTargetTabs}

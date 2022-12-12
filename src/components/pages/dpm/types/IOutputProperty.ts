@@ -1,4 +1,4 @@
-import { ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from './IInputProperty';
+import { IShipProperties, ITargetProperties, IWeaponBaseProperties, IWeaponEnhancementProperties, ShipPropertyId, TargetPropertyId, WeaponBasePropertyId, WeaponEnhancementPropertyId } from './IInputProperty';
 import { Unit } from './Unit';
 
 export interface IOutputProperty {
@@ -12,6 +12,7 @@ export interface IOutputProperty {
 }
 
 export type DependsOn = {
+    shipProperties?: ShipPropertyId[];
     weaponBaseProperties?: WeaponBasePropertyId[];
     weaponEnhancementProperties?: WeaponEnhancementPropertyId[];
     targetProperties?: TargetPropertyId[];
@@ -26,6 +27,7 @@ export interface INumericOutputProperty extends IOutputProperty {
 }
 
 export interface IUpdateOutputPropertyArguments {
+    shipProperties: IShipProperties;
     weaponBaseProperties: IWeaponBaseProperties;
     weaponEnhancementProperties: IWeaponEnhancementProperties;
     targetProperties: ITargetProperties;

@@ -8,7 +8,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { IWeaponBaseProperties, IWeaponEnhancementProperties, ITargetProperties } from './types/IInputProperty';
+import { IWeaponBaseProperties, IWeaponEnhancementProperties, ITargetProperties, IShipProperties } from './types/IInputProperty';
 import { IOutputProperties, OutputPropertyId } from './types/IOutputProperty';
 import { createOutputProperties, createOutputPropertiesForTabs, dependsOn } from './utils/dpmCalcOutputUtils';
 import { LabeledList } from '../../list/LabeledList';
@@ -16,6 +16,7 @@ import { ComputedProperty } from './ComputedProperty';
 import { IPropertyTab } from './types/ITab';
 
 interface IProps {
+    shipProperties: IShipProperties;
     weaponBaseProperties: IWeaponBaseProperties;
     enhancementTabs: IPropertyTab<IWeaponEnhancementProperties>[];
     attackTargetTabs: IPropertyTab<ITargetProperties>[];
@@ -23,6 +24,7 @@ interface IProps {
 
 export const ComputedProperties = (props: IProps) => {
     const {
+        shipProperties,
         weaponBaseProperties,
         enhancementTabs,
         attackTargetTabs,
@@ -31,11 +33,12 @@ export const ComputedProperties = (props: IProps) => {
     const baseOutputProperties = useMemo<Readonly<IOutputProperties>>(() => createOutputProperties(), []);
 
     const computedOutputProperties = useMemo<Record<string, Record<string, IOutputProperties>>>(() => createOutputPropertiesForTabs({
+        shipProperties,
         weaponBaseProperties,
         enhancementTabs,
         attackTargetTabs,
         baseOutputProperties,
-    }), [weaponBaseProperties, enhancementTabs, attackTargetTabs, baseOutputProperties]);
+    }), [shipProperties, weaponBaseProperties, enhancementTabs, attackTargetTabs, baseOutputProperties]);
 
     return (
         <>

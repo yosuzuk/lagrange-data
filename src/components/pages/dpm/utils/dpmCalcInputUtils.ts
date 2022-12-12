@@ -1,6 +1,64 @@
-import { IWeaponBaseProperties, IWeaponEnhancementProperties, IInputProperty, INumericInputProperty, ISelectInputProperty, WeaponBasePropertyId, WeaponEnhancementPropertyId, ITargetProperties, TargetPropertyId } from '../types/IInputProperty';
+import { IWeaponBaseProperties, IWeaponEnhancementProperties, IInputProperty, INumericInputProperty, ISelectInputProperty, WeaponBasePropertyId, WeaponEnhancementPropertyId, ITargetProperties, TargetPropertyId, IShipProperties, ShipPropertyId } from '../types/IInputProperty';
 import { Unit } from '../types/Unit';
 import { alignRecordIds } from './recordUtils';
+
+export function createShipProperties(): IShipProperties {
+    return alignRecordIds({
+        [ShipPropertyId.TYPE]: createSelectInputProperty({
+            label: 'タイプ',
+            value: 'ship',
+            options: [{
+                id: 'ship',
+                label: '艦船',
+                value: 'ship',
+            }, {
+                id: 'corvette',
+                label: '護送艦',
+                value: 'corvette',
+            }, {
+                id: 'fighter',
+                label: '戦闘機',
+                value: 'fighter',
+            }],
+        }),
+        [ShipPropertyId.SQUAD_SIZE]: createNumericInputProperty({
+            label: '編隊サイズ',
+            value: 1,
+            unit: Unit.FIGHTER_COUNT,
+            min: 1,
+            max: 5,
+            description: '詳細画面の右上に表示されます。１編隊毎の戦闘機の数です（例：ミストラルは４機）。',
+        }),
+        [ShipPropertyId.FIGHTER_ATTACK_PATTERN]: createSelectInputProperty({
+            label: '攻撃パターン',
+            value: 'rtb',
+            options: [{
+                id: 'rtb',
+                label: '住複攻撃',
+                value: 'rtb',
+            }, {
+                id: 'noRtb',
+                label: '独立作戦',
+                value: 'noRtb',
+            }],
+            description: '指令システムの詳細画面で確認できます。「住複攻撃」が記載されている艦載機は冷却時に空母へ帰還します。再出撃時には再度ロックオン時間が発生します。',
+        }),
+        [ShipPropertyId.CORVETTE_ATTACK_PATTERN]: createSelectInputProperty({
+            label: '攻撃パターン',
+            value: 'noRtb',
+            options: [{
+                id: 'noRtb',
+                label: '独立作戦',
+                value: 'noRtb',
+            }, {
+                id: 'rtb',
+                label: '住複攻撃',
+                value: 'rtb',
+            }],
+            description: '指令システムの詳細画面で確認できます。「住複攻撃」が記載されている艦載機は冷却時に空母へ帰還します。再出撃時には再度ロックオン時間が発生します。',
+        }),
+    });
+}
 
 export function createWeaponBaseProperties(): IWeaponBaseProperties {
     return alignRecordIds({
@@ -76,20 +134,6 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             label: 'ロックオン時間',
             description: '別名「目標選択時間」',
             unit: Unit.SECONDS,
-        }),
-        [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: createSelectInputProperty({
-            label: 'ロックオン仕様',
-            value: 'default',
-            options: [{
-                id: 'default',
-                label: 'デフォルト',
-                value: 'default',
-            }, {
-                id: 'perRound',
-                label: 'ラウンド毎に適応',
-                value: 'perRound',
-            }],
-            description: '指令システムの詳細画面で確認できます。「住複攻撃」が記載されている艦載機では「ラウンド毎に適応」を選択してください。艦載機でない場合は「デフォルト」を選択してください。',
         }),
     });
 }
@@ -210,14 +254,29 @@ export function applyPropertyChange(value: number | string | null, inputProperty
     }
 }
 
+export function isVisibleShipProperty(property: IInputProperty, allProperties: IShipProperties): boolean {
+    switch (property.id as ShipPropertyId) {
+        case ShipPropertyId.SQUAD_SIZE:
+        case ShipPropertyId.FIGHTER_ATTACK_PATTERN: {
+            return allProperties.type.value === 'fighter';
+        }
+        case ShipPropertyId.CORVETTE_ATTACK_PATTERN: {
+            return allProperties.type.value === 'corvette';
+        }
+        default: {
+            return true;
+        }
+    }
+}
+
 export function isVisibleWeaponBaseProperty(property: IInputProperty, allProperties: IWeaponBaseProperties): boolean {
-    switch (property.id) {
-        case 'attacksPerRound':
-        case 'shotsPerAttack': {
+    switch (property.id as WeaponBasePropertyId) {
+        case WeaponBasePropertyId.ATTACKS_PER_ROUND:
+        case WeaponBasePropertyId.SHOTS_PER_ATTACK: {
             return allProperties.damageType.value === 'physicalDamage' || allProperties.damageType.value === 'energyDamage';
         }
-        case 'attacksPerRoundIon':
-        case 'shotsPerAttackIon': {
+        case WeaponBasePropertyId.ATTACKS_PER_ROUND_ION:
+        case WeaponBasePropertyId.SHOTS_PER_ATTACK_ION: {
             return allProperties.damageType.value === 'energyDamageIon';
         }
         default: {
