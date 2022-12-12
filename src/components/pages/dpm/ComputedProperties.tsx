@@ -43,6 +43,7 @@ export const ComputedProperties = (props: IProps) => {
                 <LabeledList
                     rows={
                         Object.values(baseOutputProperties)
+                            .filter(baseOutputProperty => baseOutputProperty.hidden !== true)
                             .map(baseOutputProperty => ({
                                 key: baseOutputProperty.id,
                                 label: baseOutputProperty.label,
@@ -55,7 +56,7 @@ export const ComputedProperties = (props: IProps) => {
                     }
                 />
             )}
-            {(enhancementTabs.length > 1 || attackTargetTabs.length > 1) && Object.values(baseOutputProperties).map(baseOutputProperty => {
+            {(enhancementTabs.length > 1 || attackTargetTabs.length > 1) && Object.values(baseOutputProperties).filter(baseOutputProperty => baseOutputProperty.hidden !== true).map(baseOutputProperty => {
                 const dependsOnWeaponEnhancement = dependsOn(baseOutputProperty, 'weaponEnhancementProperties', baseOutputProperties);
                 const dependsOnTarget = dependsOn(baseOutputProperty, 'targetProperties', baseOutputProperties);
                 const showColumnsForEnhancement = dependsOnWeaponEnhancement && enhancementTabs.length > 1;
