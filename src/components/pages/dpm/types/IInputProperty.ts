@@ -36,8 +36,8 @@ export enum WeaponBasePropertyId {
     ATTACKS_PER_ROUND = 'attacksPerRound',
     SHOTS_PER_ATTACK = 'shotsPerAttack',
     COOLDOWN = 'cooldown',
-    ATTACKS_PER_ROUND2 = 'attacksPerRound2',
-    SHOTS_PER_ATTACK2 = 'shotsPerAttack2',
+    ATTACKS_PER_ROUND_ION = 'attacksPerRoundIon',
+    SHOTS_PER_ATTACK_ION = 'shotsPerAttackIon',
     LOCK_ON_TIME = 'lockOnTime',
     LOCK_ON_BEHAVIOUR = 'lockOnBehaviour',
 }
@@ -51,8 +51,8 @@ export interface IWeaponBaseProperties extends Record<WeaponBasePropertyId, IInp
     [WeaponBasePropertyId.ATTACKS_PER_ROUND]: INumericInputProperty;
     [WeaponBasePropertyId.SHOTS_PER_ATTACK]: INumericInputProperty;
     [WeaponBasePropertyId.COOLDOWN]: INumericInputProperty;
-    [WeaponBasePropertyId.ATTACKS_PER_ROUND2]: INumericInputProperty;
-    [WeaponBasePropertyId.SHOTS_PER_ATTACK2]: INumericInputProperty;
+    [WeaponBasePropertyId.ATTACKS_PER_ROUND_ION]: INumericInputProperty;
+    [WeaponBasePropertyId.SHOTS_PER_ATTACK_ION]: INumericInputProperty;
     [WeaponBasePropertyId.LOCK_ON_TIME]: INumericInputProperty;
     [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: ISelectInputProperty;
 }
@@ -62,7 +62,7 @@ export enum WeaponEnhancementPropertyId {
     REDUCE_DURATION = 'reduceDuration',
     REDUCE_COOLDOWN = 'reduceCooldown',
     REDUCE_LOCKON = 'reduceLockon',
-    INCREASE_SHOTS_PER_ROUNT = 'increaseShotsPerRound',
+    INCREASE_SHOTS_PER_ATTACK = 'increaseShotsPerAttack',
 }
 
 export interface IWeaponEnhancementProperties extends Record<WeaponEnhancementPropertyId, IInputProperty> {
@@ -70,7 +70,7 @@ export interface IWeaponEnhancementProperties extends Record<WeaponEnhancementPr
     [WeaponEnhancementPropertyId.REDUCE_DURATION]: INumericInputProperty;
     [WeaponEnhancementPropertyId.REDUCE_COOLDOWN]: INumericInputProperty;
     [WeaponEnhancementPropertyId.REDUCE_LOCKON]: INumericInputProperty;
-    [WeaponEnhancementPropertyId.INCREASE_SHOTS_PER_ROUNT]: INumericInputProperty;
+    [WeaponEnhancementPropertyId.INCREASE_SHOTS_PER_ATTACK]: INumericInputProperty;
 }
 
 export enum TargetPropertyId {

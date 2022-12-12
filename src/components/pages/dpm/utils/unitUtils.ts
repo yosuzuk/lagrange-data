@@ -9,6 +9,8 @@ export function getAdornmentForUnit(unit: Unit) {
             return '秒';
         case Unit.DPM:
             return '/分';
+        case Unit.ION_ATTACK_COUNT:
+            return '次';
     }
 }
 

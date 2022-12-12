@@ -48,19 +48,7 @@ export function createOutputProperties(): IOutputProperties {
                 if (damagePerHitInStatus.value === null) {
                     return self;
                 }
-                if (weaponBaseProperties.damageType.value === 'physicalDamage') {
-                    if (armor.value === null) {
-                        return self;
-                    }
-                    return {
-                        ...self,
-                        value: Math.max(damagePerHitInStatus.value - armor.value, Math.floor(damagePerHitInStatus.value * 0.1)),
-                        formula: {
-                            formula: `max([${damagePerHitInStatus.label}] - [${armor.label}], trunc([${damagePerHitInStatus.label}] * 10%))`,
-                            filledFormula: `max(${formatNumber(damagePerHitInStatus.value)} - ${formatNumber(armor.value)}, trunc(${formatNumber(damagePerHitInStatus.value)} * 0.1))`,
-                        },
-                    };
-                } else {
+                if (weaponBaseProperties.damageType.value === 'energyDamage' || weaponBaseProperties.damageType.value === 'energyDamageIon') {
                     if (energyShield.value === null) {
                         return self;
                     }
@@ -70,6 +58,18 @@ export function createOutputProperties(): IOutputProperties {
                         formula: {
                             formula: `[${damagePerHitInStatus.label}] * (100% - [${energyShield.label}])`,
                             filledFormula: `${formatNumber(damagePerHitInStatus.value)} * (${toDecreasingPercentageForFormula(energyShield.value)})`,
+                        },
+                    };
+                } else {
+                    if (armor.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: Math.max(damagePerHitInStatus.value - armor.value, Math.floor(damagePerHitInStatus.value * 0.1)),
+                        formula: {
+                            formula: `max([${damagePerHitInStatus.label}] - [${armor.label}], trunc([${damagePerHitInStatus.label}] * 10%))`,
+                            filledFormula: `max(${formatNumber(damagePerHitInStatus.value)} - ${formatNumber(armor.value)}, trunc(${formatNumber(damagePerHitInStatus.value)} * 0.1))`,
                         },
                     };
                 }
@@ -185,16 +185,28 @@ export function createOutputProperties(): IOutputProperties {
             label: 'ラウンドダメージ',
             dependsOn: {
                 // TODO use attacksPerRound from outputProperties
-                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION, WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.ATTACKS_PER_ROUND, WeaponBasePropertyId.ATTACKS_PER_ROUND2, WeaponBasePropertyId.SHOTS_PER_ATTACK, WeaponBasePropertyId.SHOTS_PER_ATTACK2],
+                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION, WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.ATTACKS_PER_ROUND, WeaponBasePropertyId.ATTACKS_PER_ROUND_ION, WeaponBasePropertyId.SHOTS_PER_ATTACK, WeaponBasePropertyId.SHOTS_PER_ATTACK_ION],
                 outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE],
             },
             update: ({ weaponBaseProperties, outputProperties }, self) => {
-                const { installation, damageType, attacksPerRound, attacksPerRound2, shotsPerAttack, shotsPerAttack2 } = weaponBaseProperties;
+                const { installation, damageType, attacksPerRound, attacksPerRoundIon, shotsPerAttack, shotsPerAttackIon } = weaponBaseProperties;
                 const { damagePerHitInBattle } = outputProperties;
                 if (installation.value === null || damageType.value === '' || damagePerHitInBattle.value === null) {
                     return self;
                 }
-                if (weaponBaseProperties.damageType.value === 'physicalDamage') {
+                if (weaponBaseProperties.damageType.value === 'energyDamageIon') {
+                    if (attacksPerRoundIon.value === null || shotsPerAttackIon.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: damagePerHitInBattle.value * installation.value * attacksPerRoundIon.value * shotsPerAttackIon.value,
+                        formula: {
+                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRoundIon.label}] * [${shotsPerAttackIon.label}]`,
+                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRoundIon.value} * ${shotsPerAttackIon.value}`,
+                        },
+                    };
+                } else {
                     if (attacksPerRound.value === null || shotsPerAttack.value === null) {
                         return self;
                     }
@@ -204,18 +216,6 @@ export function createOutputProperties(): IOutputProperties {
                         formula: {
                             formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
                             filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
-                        },
-                    };
-                } else {
-                    if (attacksPerRound2.value === null || shotsPerAttack2.value === null) {
-                        return self;
-                    }
-                    return {
-                        ...self,
-                        value: damagePerHitInBattle.value * installation.value * attacksPerRound2.value * shotsPerAttack2.value,
-                        formula: {
-                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound2.label}] * [${shotsPerAttack2.label}]`,
-                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound2.value} * ${shotsPerAttack2.value}`,
                         },
                     };
                 }

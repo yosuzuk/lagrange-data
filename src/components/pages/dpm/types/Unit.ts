@@ -2,4 +2,5 @@ export enum Unit {
     PERCENTAGE = 'PERCENTAGE',
     SECONDS = 'SECONDS',
     DPM = 'DPM',
+    ION_ATTACK_COUNT = 'ION_ATTACK_COUNT',
 }
