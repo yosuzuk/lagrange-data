@@ -2,6 +2,8 @@ import { useState, useCallback } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import Typography from '@mui/material/Typography';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
@@ -68,17 +70,15 @@ export const DpmCalcPage = () => {
                 <Box p={1}>
                     <Stack pt={1} spacing={4}>
                         <Typography variant="body2">
-                            ABC
+                            {'こちらのDPM計算機では複数のスキル設定を同時に複数の攻撃目標に対して比較できます。'}
                         </Typography>
-                        <Typography variant="body2">
-                            DEF
-                        </Typography>
-                        <Typography variant="body2">
-                            GHI
-                        </Typography>
+                        <Alert severity="warning">
+                            <AlertTitle>{'現在この計算機では「命中率」と「回避率」を含まない計算をしています。'}</AlertTitle>
+                            {'命中率と回避率を含めた計算を行う場合、ゲーム内では見れない隠しステータスを複数揃える必要があります。武器毎に設定されている「攻撃目標の艦種別の基礎命中率」と「対艦/対空/攻城基礎命中率」が不足しています。入手方法が難しく、武器の構成次第では逆算できない場合もあります。今後これらの隠しステータスを必要としない簡略化した計算式を使う「ノーマルモード」と全ての隠しステータスを入力できる「エキスパートモード」を分けて実装する予定です。'}
+                        </Alert>
                         <Stack spacing={1}>
                             <Typography variant="body1">
-                                {'艦船'}
+                                {'艦船情報'}
                             </Typography>
                             <Paper>
                                 <Box p={1}>
@@ -92,7 +92,7 @@ export const DpmCalcPage = () => {
                         </Stack>
                         <Stack spacing={1}>
                             <Typography variant="body1">
-                                {'武装'}
+                                {'武装情報（初期ステータス）'}
                             </Typography>
                             <Paper>
                                 <Box p={1}>
