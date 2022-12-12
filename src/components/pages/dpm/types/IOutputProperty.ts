@@ -49,8 +49,13 @@ export enum OutputPropertyId {
     ATTACKS_PER_ROUND = 'attacksPerRound',
     SHOTS_PER_ATTACK = 'shotsPerAttack',
     ROUND_TIME = 'roundTime',
-    DAMAGE_PER_ROUND = 'damagePerRound',
+    DAMAGE_PER_ROUND_IN_STATUS = 'damagePerRoundInStatus',
+    DAMAGE_PER_ROUND_IN_BATTLE = 'damagePerRoundInBattle',
     TIME_TO_DESTROY_TARGET = 'timeToDestroyTarget',
+    WEAPON_DPM_IN_STATUS = 'weaponDpmInStatus',
+    WEAPON_DPM_IN_BATTLE = 'weaponDpmInBattle',
+    SQUAD_WEAPON_DPM_IN_STATUS = 'squadDpmInStatus',
+    SQUAD_WEAPON_DPM_IN_BATTLE = 'squadDpmInBattle',
 }
 
 export interface IOutputProperties extends Record<OutputPropertyId, IOutputProperty> {
@@ -62,6 +67,11 @@ export interface IOutputProperties extends Record<OutputPropertyId, IOutputPrope
     [OutputPropertyId.ATTACKS_PER_ROUND]: INumericOutputProperty;
     [OutputPropertyId.SHOTS_PER_ATTACK]: INumericOutputProperty;
     [OutputPropertyId.ROUND_TIME]: INumericOutputProperty;
-    [OutputPropertyId.DAMAGE_PER_ROUND]: INumericOutputProperty;
+    [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS]: INumericOutputProperty;
+    [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE]: INumericOutputProperty;
     [OutputPropertyId.TIME_TO_DESTROY_TARGET]: INumericOutputProperty;
+    [OutputPropertyId.WEAPON_DPM_IN_STATUS]: INumericOutputProperty;
+    [OutputPropertyId.WEAPON_DPM_IN_BATTLE]: INumericOutputProperty;
+    [OutputPropertyId.SQUAD_WEAPON_DPM_IN_STATUS]: INumericOutputProperty;
+    [OutputPropertyId.SQUAD_WEAPON_DPM_IN_BATTLE]: INumericOutputProperty;
 }

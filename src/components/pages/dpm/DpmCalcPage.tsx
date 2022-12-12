@@ -43,7 +43,7 @@ export const DpmCalcPage = () => {
         changeProperty: changeAttackTargetProperty,
     } = usePropertyTabs({
         idPrefix: 'attackTargetTab',
-        tabNamePrefix: '攻撃対象',
+        tabNamePrefix: '攻撃目標',
         propertyFactoryFn: createTargetProperties,
     });
 
@@ -124,7 +124,7 @@ export const DpmCalcPage = () => {
                         </Stack>
                         <Stack spacing={1}>
                             <Typography variant="body1">
-                                {'攻撃対象'}
+                                {'攻撃目標'}
                             </Typography>
                             <Paper>
                                 <PropertyTabs

@@ -9,8 +9,8 @@ import { toDecreasingFactor, toDecreasingPercentageForFormula, toIncreasingFacto
 export function createOutputProperties(): IOutputProperties {
     return alignRecordIds({
         [OutputPropertyId.DAMAGE_PER_HIT_IN_STATUS]: createNumericOutputProperty({
-            label: '単発ダメージ（ステータス）',
-            description: 'スキル設定後の武器情報画面に表示される数値（攻撃対象の抵抗値/シールド値は考慮しない数値）',
+            label: '単発ダメージ',
+            description: 'スキル設定後の武器情報画面に表示される数値（攻撃目標の抵抗値/シールド値は考慮しない数値）',
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_PER_HIT, WeaponBasePropertyId.TUNE],
                 weaponEnhancementProperties: [WeaponEnhancementPropertyId.INCREASE_DAMAGE_PER_HIT],
@@ -35,8 +35,8 @@ export function createOutputProperties(): IOutputProperties {
             },
         }),
         [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE]: createNumericOutputProperty({
-            label: '単発ダメージ（戦闘時）',
-            description: '攻撃対象の抵抗値/シールド値を考慮した数値',
+            label: '単発ダメージ（目標別）',
+            description: '攻撃目標の抵抗値/シールド値を考慮した数値',
             dependsOn: {
                 weaponBaseProperties: [WeaponBasePropertyId.DAMAGE_TYPE],
                 targetProperties: [TargetPropertyId.ARMOR, TargetPropertyId.ENERGY_SHIELD],
@@ -250,8 +250,47 @@ export function createOutputProperties(): IOutputProperties {
                 };
             },
         }),
-        [OutputPropertyId.DAMAGE_PER_ROUND]: createNumericOutputProperty({
+        [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS]: createNumericOutputProperty({
             label: 'ラウンドダメージ',
+            description: '１ラウンドあたりの合計ダメージ（攻撃目標の抵抗値/シールド値は考慮しない数値）',
+            dependsOn: {
+                shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.SQUAD_SIZE],
+                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_STATUS, OutputPropertyId.ATTACKS_PER_ROUND, OutputPropertyId.SHOTS_PER_ATTACK],
+            },
+            update: ({ shipProperties, weaponBaseProperties, outputProperties }, self) => {
+                const { type, squadSize } = shipProperties;
+                const { installation } = weaponBaseProperties;
+                const { damagePerHitInStatus, attacksPerRound, shotsPerAttack } = outputProperties;
+                if (type.value === '' || installation.value === null || damagePerHitInStatus.value === null || attacksPerRound.value === null || shotsPerAttack.value === null) {
+                    return self;
+                }
+                if (type.value === 'fighter') {
+                    if (squadSize.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: squadSize.value * damagePerHitInStatus.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
+                        formula: {
+                            formula: `[${squadSize.label}] * [${damagePerHitInStatus.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
+                            filledFormula: `${squadSize.value} * ${formatNumber(damagePerHitInStatus.value)} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                        },
+                    };
+                }
+                return {
+                    ...self,
+                    value: damagePerHitInStatus.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
+                    formula: {
+                        formula: `[${damagePerHitInStatus.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
+                        filledFormula: `${formatNumber(damagePerHitInStatus.value)} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                    },
+                };
+            },
+        }),
+        [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE]: createNumericOutputProperty({
+            label: 'ラウンドダメージ（目標別）',
+            description: '１ラウンドあたりの合計ダメージ（攻撃目標の抵抗値/シールド値を考慮した数値）',
             dependsOn: {
                 shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.SQUAD_SIZE],
                 weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION],
@@ -288,26 +327,131 @@ export function createOutputProperties(): IOutputProperties {
             },
         }),
         [OutputPropertyId.TIME_TO_DESTROY_TARGET]: createNumericOutputProperty({
-            label: '対象の撃破時間',
+            label: '目標撃破までの時間',
+            description: '攻撃目標を撃破するまでの時間です。目標を撃破した最後のラウンドの持続時間までが含まれます。攻撃目標の抵抗値/シールド値を考慮した計算です。',
             unit: Unit.SECONDS,
             dependsOn: {
                 targetProperties: [TargetPropertyId.HP],
-                outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.ROUND_TIME, OutputPropertyId.DAMAGE_PER_ROUND],
+                outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.ROUND_TIME, OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE],
             },
             update: ({ targetProperties, outputProperties }, self) => {
                 const { hp } = targetProperties;
-                const { cooldown, roundTime, damagePerRound } = outputProperties;
-                if (hp.value === null || cooldown.value === null || roundTime.value === null || damagePerRound.value === null) {
+                const { cooldown, roundTime, damagePerRoundInBattle } = outputProperties;
+                if (hp.value === null || cooldown.value === null || roundTime.value === null || damagePerRoundInBattle.value === null) {
                     return self;
                 }
                 return {
                     ...self,
-                    value: Math.ceil(hp.value / damagePerRound.value) * roundTime.value - cooldown.value,
+                    value: Math.ceil(hp.value / damagePerRoundInBattle.value) * roundTime.value - cooldown.value,
                     formula: {
-                        formula: `ceil([${hp.label}] / [${damagePerRound.label}]) * [${roundTime.label}] - [${cooldown.label}]`,
-                        filledFormula: `ceil(${hp.value} / ${formatNumber(damagePerRound.value)}) * ${formatNumber(roundTime.value)} - ${formatNumber(cooldown.value)}`,
+                        formula: `ceil([${hp.label}] / [${damagePerRoundInBattle.label}]) * [${roundTime.label}] - [${cooldown.label}]`,
+                        filledFormula: `ceil(${hp.value} / ${formatNumber(damagePerRoundInBattle.value)}) * ${formatNumber(roundTime.value)} - ${formatNumber(cooldown.value)}`,
                     },
                 };
+            },
+        }),
+        [OutputPropertyId.WEAPON_DPM_IN_STATUS]: createNumericOutputProperty({
+            label: '武装DPM',
+            description: '武装の詳細画面に表示されている武装DPMです（攻撃目標の抵抗値/シールド値は考慮しない数値です）。ゲーム内に表示される数値と比較して合わない場合は上で入力した各数値を再度確認してください。戦闘機の場合は１機分の数値です。',
+            unit: Unit.DPM,
+            dependsOn: {
+                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS, OutputPropertyId.ROUND_TIME],
+            },
+            update: ({ outputProperties }, self) => {
+                const { damagePerRoundInStatus, roundTime } = outputProperties;
+                if (damagePerRoundInStatus.value === null || roundTime.value === null) {
+                    return self;
+                }
+                return {
+                    ...self,
+                    value: damagePerRoundInStatus.value / roundTime.value * 60,
+                    formula: {
+                        formula: `[${damagePerRoundInStatus.label}] / [${roundTime.label}] * 60`,
+                        filledFormula: `${formatNumber(damagePerRoundInStatus.value)} / ${formatNumber(roundTime.value)} * 60`,
+                    },
+                };
+            },
+        }),
+        [OutputPropertyId.WEAPON_DPM_IN_BATTLE]: createNumericOutputProperty({
+            label: '武装DPM（目標別）',
+            description: '攻撃目標の抵抗値/シールド値を考慮した武装DPMです。戦闘機の場合は１機分の数値です。',
+            unit: Unit.DPM,
+            dependsOn: {
+                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE, OutputPropertyId.ROUND_TIME],
+            },
+            update: ({ outputProperties }, self) => {
+                const { damagePerRoundInBattle, roundTime } = outputProperties;
+                if (damagePerRoundInBattle.value === null || roundTime.value === null) {
+                    return self;
+                }
+                return {
+                    ...self,
+                    value: damagePerRoundInBattle.value / roundTime.value * 60,
+                    formula: {
+                        formula: `[${damagePerRoundInBattle.label}] / [${roundTime.label}] * 60`,
+                        filledFormula: `${formatNumber(damagePerRoundInBattle.value)} / ${formatNumber(roundTime.value)} * 60`,
+                    },
+                };
+            },
+        }),
+        [OutputPropertyId.SQUAD_WEAPON_DPM_IN_STATUS]: createNumericOutputProperty({
+            label: '編隊全体の武装DPM',
+            description: '編隊全体の武装DPMです。攻撃目標の抵抗値/シールド値は考慮しない数値です。',
+            unit: Unit.DPM,
+            dependsOn: {
+                shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.SQUAD_SIZE],
+                outputProperties: [OutputPropertyId.WEAPON_DPM_IN_STATUS],
+            },
+            update: ({ shipProperties, outputProperties }, self) => {
+                const { type, squadSize } = shipProperties;
+                const { weaponDpmInStatus } = outputProperties;
+                if (type.value === '' || squadSize.value === null || weaponDpmInStatus.value === null) {
+                    return self;
+                }
+                if (type.value === 'fighter') {
+                    if (squadSize.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: squadSize.value * weaponDpmInStatus.value,
+                        formula: {
+                            formula: `[${squadSize.label}] * [${weaponDpmInStatus.label}]`,
+                            filledFormula: `${formatNumber(squadSize.value)} * ${formatNumber(weaponDpmInStatus.value)}`,
+                        },
+                    };
+                }
+                return self;
+            },
+        }),
+        [OutputPropertyId.SQUAD_WEAPON_DPM_IN_BATTLE]: createNumericOutputProperty({
+            label: '編隊全体の武装DPM（目標別）',
+            description: '編隊全体の武装DPMです。攻撃目標の抵抗値/シールド値を考慮した数値です。',
+            unit: Unit.DPM,
+            dependsOn: {
+                shipProperties: [ShipPropertyId.TYPE, ShipPropertyId.SQUAD_SIZE],
+                outputProperties: [OutputPropertyId.WEAPON_DPM_IN_BATTLE],
+            },
+            update: ({ shipProperties, outputProperties }, self) => {
+                const { type, squadSize } = shipProperties;
+                const { weaponDpmInBattle } = outputProperties;
+                if (type.value === '' || squadSize.value === null || weaponDpmInBattle.value === null) {
+                    return self;
+                }
+                if (type.value === 'fighter') {
+                    if (squadSize.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: squadSize.value * weaponDpmInBattle.value,
+                        formula: {
+                            formula: `[${squadSize.label}] * [${weaponDpmInBattle.label}]`,
+                            filledFormula: `${formatNumber(squadSize.value)} * ${formatNumber(weaponDpmInBattle.value)}`,
+                        },
+                    };
+                }
+                return self;
             },
         }),
     });
@@ -475,7 +619,7 @@ export function dependsOn(outputProperty: IOutputProperty, propertyKind: keyof D
 
     if ((outputProperty.dependsOn?.outputProperties?.length ?? 0) > 0) {
         return !!outputProperty.dependsOn?.outputProperties?.find(dependencyId => {
-            return (allOutputProperties[dependencyId].dependsOn?.[propertyKind]?.length ?? 0) > 0;
+            return dependsOn(allOutputProperties[dependencyId], propertyKind, allOutputProperties);
         });
     }
 
