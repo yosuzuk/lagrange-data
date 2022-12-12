@@ -39,13 +39,13 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             description: 'モジュールステータスで確認できます。「--」と表示される場合は０秒です。別名「出力時間」/「攻撃間隔」/「攻撃時間」',
             unit: Unit.SECONDS,
         }),
-        [WeaponBasePropertyId.ROUNDS]: createNumericInputProperty({
+        [WeaponBasePropertyId.ATTACKS_PER_ROUND]: createNumericInputProperty({
             label: '攻撃回数',
             description: 'モジュールステータスで確認できます。「攻撃回数」の左側の数値です。例えば「1 x 8」の場合は「1」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        [WeaponBasePropertyId.SHOTS_PER_ROUND]: createNumericInputProperty({
+        [WeaponBasePropertyId.SHOTS_PER_ATTACK]: createNumericInputProperty({
             label: '連装数',
             description: 'モジュールステータスで確認できます。「攻撃回数」の右側の数値です。例えば「1 x 8」の場合は「8」です。この項目は実弾武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
@@ -56,13 +56,13 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             description: 'モジュールステータスで確認できます。戦闘機の場合は「帰還冷却」とも呼ばれます。',
             unit: Unit.SECONDS,
         }),
-        [WeaponBasePropertyId.ROUNDS2]: createNumericInputProperty({
+        [WeaponBasePropertyId.ATTACKS_PER_ROUND2]: createNumericInputProperty({
             label: 'ダメージ頻度',
             description: 'モジュールステータスで確認できます。この項目はエネルギー武器限定です。表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        [WeaponBasePropertyId.SHOTS_PER_ROUND2]: createNumericInputProperty({
+        [WeaponBasePropertyId.SHOTS_PER_ATTACK2]: createNumericInputProperty({
             label: '連装数',
             description: 'エネルギー武器の連装数は武器の名前に隠されています。武器情報画面内、名前のアルファベット２文字と横線の後に「2x」とあれば２連装です。例えば「CI-2x700T型」の場合は「C」が企業、「I」が武器の種類、その後ろの「2x」が連装数です。',
             value: 1,

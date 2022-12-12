@@ -19,7 +19,7 @@ export function createOutputProperties(): IOutputProperties {
                 const { damagePerHit, tune } = weaponBaseProperties;
                 const { increaseDamagePerHit } = weaponEnhancementProperties;
                 if (damagePerHit.value === null || increaseDamagePerHit.value === null || tune.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 return {
                     ...self,
@@ -46,11 +46,11 @@ export function createOutputProperties(): IOutputProperties {
                 const { damagePerHitInStatus } = outputProperties;
                 const { armor, energyShield } = targetProperties;
                 if (damagePerHitInStatus.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 if (weaponBaseProperties.damageType.value === 'physicalDamage') {
                     if (armor.value === null) {
-                        return resetFilledFormula(self);
+                        return self;
                     }
                     return {
                         ...self,
@@ -62,7 +62,7 @@ export function createOutputProperties(): IOutputProperties {
                     };
                 } else {
                     if (energyShield.value === null) {
-                        return resetFilledFormula(self);
+                        return self;
                     }
                     return {
                         ...self,
@@ -86,7 +86,7 @@ export function createOutputProperties(): IOutputProperties {
                 const { duration } = weaponBaseProperties;
                 const { reduceDuration } = weaponEnhancementProperties;
                 if (duration.value === null || reduceDuration.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 return {
                     ...self,
@@ -109,7 +109,7 @@ export function createOutputProperties(): IOutputProperties {
                 const { cooldown } = weaponBaseProperties;
                 const { reduceCooldown } = weaponEnhancementProperties;
                 if (cooldown.value === null || reduceCooldown.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 return {
                     ...self,
@@ -132,7 +132,7 @@ export function createOutputProperties(): IOutputProperties {
                 const { lockOnTime } = weaponBaseProperties;
                 const { reduceLockon } = weaponEnhancementProperties;
                 if (lockOnTime.value === null || reduceLockon.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 return {
                     ...self,
@@ -155,11 +155,11 @@ export function createOutputProperties(): IOutputProperties {
                 const { lockOnBehaviour } = weaponBaseProperties;
                 const { duration, cooldown, lockOnTime } = outputProperties;
                 if (lockOnBehaviour.value === '' || duration.value === null || cooldown.value === null) {
-                    return resetFilledFormula(self);
+                    return self;
                 }
                 if (lockOnBehaviour.value === 'perRound') {
                     if (lockOnTime.value === null) {
-                        return resetFilledFormula(self);
+                        return self;
                     }
                     return {
                         ...self,
@@ -181,15 +181,55 @@ export function createOutputProperties(): IOutputProperties {
                 };
             },
         }),
+        [OutputPropertyId.DAMAGE_PER_ROUND]: createNumericOutputProperty({
+            label: 'ラウンドダメージ',
+            dependsOn: {
+                // TODO use attacksPerRound from outputProperties
+                weaponBaseProperties: [WeaponBasePropertyId.INSTALLATION, WeaponBasePropertyId.DAMAGE_TYPE, WeaponBasePropertyId.ATTACKS_PER_ROUND, WeaponBasePropertyId.ATTACKS_PER_ROUND2, WeaponBasePropertyId.SHOTS_PER_ATTACK, WeaponBasePropertyId.SHOTS_PER_ATTACK2],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_HIT_IN_BATTLE],
+            },
+            update: ({ weaponBaseProperties, outputProperties }, self) => {
+                const { installation, damageType, attacksPerRound, attacksPerRound2, shotsPerAttack, shotsPerAttack2 } = weaponBaseProperties;
+                const { damagePerHitInBattle } = outputProperties;
+                if (installation.value === null || damageType.value === '' || damagePerHitInBattle.value === null) {
+                    return self;
+                }
+                if (weaponBaseProperties.damageType.value === 'physicalDamage') {
+                    if (attacksPerRound.value === null || shotsPerAttack.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: damagePerHitInBattle.value * installation.value * attacksPerRound.value * shotsPerAttack.value,
+                        formula: {
+                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound.label}] * [${shotsPerAttack.label}]`,
+                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound.value} * ${shotsPerAttack.value}`,
+                        },
+                    };
+                } else {
+                    if (attacksPerRound2.value === null || shotsPerAttack2.value === null) {
+                        return self;
+                    }
+                    return {
+                        ...self,
+                        value: damagePerHitInBattle.value * installation.value * attacksPerRound2.value * shotsPerAttack2.value,
+                        formula: {
+                            formula: `[${damagePerHitInBattle.label}] * [${installation.label}] * [${attacksPerRound2.label}] * [${shotsPerAttack2.label}]`,
+                            filledFormula: `${damagePerHitInBattle.value} * ${installation.value} * ${attacksPerRound2.value} * ${shotsPerAttack2.value}`,
+                        },
+                    };
+                }
+            },
+        }),
         [OutputPropertyId.TIME_TO_DESTROY_TARGET]: createNumericOutputProperty({
             label: '対象の撃破時間',
             unit: Unit.SECONDS,
             dependsOn: {
                 targetProperties: [TargetPropertyId.HP],
-                // TODO add missing properties (dpm?)
+                outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.ROUND_TIME, OutputPropertyId.DAMAGE_PER_ROUND],
             },
-            update: ({ targetProperties }, self) => {
-                // TODO implement
+            update: ({ targetProperties, outputProperties }, self) => {
+                // TODO
                 return {
                     ...self,
                 };
@@ -329,6 +369,7 @@ function resetOutputProperty(property: IOutputProperty): IOutputProperty {
                 formula: numericProperty.formula ? {
                     ...numericProperty.formula,
                     filledFormula: null,
+                    description: undefined,
                 } : undefined,
             } as IOutputProperty;
         }
@@ -346,16 +387,6 @@ function createNumericOutputProperty(properties: Partial<INumericOutputProperty>
         value: null,
         update: (_args: IUpdateOutputPropertyArguments, self: INumericOutputProperty) => self,
         ...properties,
-    };
-}
-
-function resetFilledFormula<T extends IOutputProperty>(outputProperty: T): T {
-    return {
-        ...outputProperty,
-        formula: outputProperty.formula ? {
-            ...outputProperty.formula,
-            filledFormula: null,
-        } : undefined,
     };
 }
 

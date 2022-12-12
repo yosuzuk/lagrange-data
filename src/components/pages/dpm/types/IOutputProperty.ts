@@ -43,7 +43,9 @@ export enum OutputPropertyId {
     DURATION = 'duration',
     COOLDOWN = 'cooldown',
     LOCK_ON_TIME = 'lockOnTime',
+    // ATTACKS_PER_ROUND = 'attacksPerRound',
     ROUND_TIME = 'roundTime',
+    DAMAGE_PER_ROUND = 'damagePerRound',
     TIME_TO_DESTROY_TARGET = 'timeToDestroyTarget',
 }
 
@@ -54,5 +56,6 @@ export interface IOutputProperties extends Record<OutputPropertyId, IOutputPrope
     [OutputPropertyId.COOLDOWN]: INumericOutputProperty;
     [OutputPropertyId.LOCK_ON_TIME]: INumericOutputProperty;
     [OutputPropertyId.ROUND_TIME]: INumericOutputProperty;
+    [OutputPropertyId.DAMAGE_PER_ROUND]: INumericOutputProperty;
     [OutputPropertyId.TIME_TO_DESTROY_TARGET]: INumericOutputProperty;
 }

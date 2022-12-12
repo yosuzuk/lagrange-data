@@ -33,11 +33,11 @@ export enum WeaponBasePropertyId {
     DAMAGE_PER_HIT = 'damagePerHit',
     TUNE = 'tune',
     DURATION = 'duration',
-    ROUNDS = 'rounds',
-    SHOTS_PER_ROUND = 'shotsPerRound',
+    ATTACKS_PER_ROUND = 'attacksPerRound',
+    SHOTS_PER_ATTACK = 'shotsPerAttack',
     COOLDOWN = 'cooldown',
-    ROUNDS2 = 'rounds2',
-    SHOTS_PER_ROUND2 = 'shotsPerRound2',
+    ATTACKS_PER_ROUND2 = 'attacksPerRound2',
+    SHOTS_PER_ATTACK2 = 'shotsPerAttack2',
     LOCK_ON_TIME = 'lockOnTime',
     LOCK_ON_BEHAVIOUR = 'lockOnBehaviour',
 }
@@ -48,11 +48,11 @@ export interface IWeaponBaseProperties extends Record<WeaponBasePropertyId, IInp
     [WeaponBasePropertyId.DAMAGE_PER_HIT]: INumericInputProperty;
     [WeaponBasePropertyId.TUNE]: INumericInputProperty;
     [WeaponBasePropertyId.DURATION]: INumericInputProperty;
-    [WeaponBasePropertyId.ROUNDS]: INumericInputProperty;
-    [WeaponBasePropertyId.SHOTS_PER_ROUND]: INumericInputProperty;
+    [WeaponBasePropertyId.ATTACKS_PER_ROUND]: INumericInputProperty;
+    [WeaponBasePropertyId.SHOTS_PER_ATTACK]: INumericInputProperty;
     [WeaponBasePropertyId.COOLDOWN]: INumericInputProperty;
-    [WeaponBasePropertyId.ROUNDS2]: INumericInputProperty;
-    [WeaponBasePropertyId.SHOTS_PER_ROUND2]: INumericInputProperty;
+    [WeaponBasePropertyId.ATTACKS_PER_ROUND2]: INumericInputProperty;
+    [WeaponBasePropertyId.SHOTS_PER_ATTACK2]: INumericInputProperty;
     [WeaponBasePropertyId.LOCK_ON_TIME]: INumericInputProperty;
     [WeaponBasePropertyId.LOCK_ON_BEHAVIOUR]: ISelectInputProperty;
 }
