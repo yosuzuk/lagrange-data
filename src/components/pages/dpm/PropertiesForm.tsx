@@ -13,6 +13,7 @@ export const PropertiesForm = <T extends {}>(props: IProps<T>) => {
 
     return (
         <LabeledList
+            sx={{ alignItems: 'center' }}
             rows={
                 (Object.values(properties) as IInputProperty[])
                     .filter(inputProperty => isVisibleProperty(inputProperty, properties))

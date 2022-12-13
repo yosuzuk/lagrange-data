@@ -8,12 +8,14 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Stack from '@mui/material/Stack';
 import { IWeaponBaseProperties, IWeaponEnhancementProperties, ITargetProperties, IShipProperties } from './types/IInputProperty';
 import { IOutputProperties, OutputPropertyId } from './types/IOutputProperty';
 import { createOutputProperties, createOutputPropertiesForTabs, dependsOn } from './utils/dpmCalcOutputUtils';
 import { LabeledList } from '../../list/LabeledList';
 import { ComputedProperty } from './ComputedProperty';
 import { IPropertyTab } from './types/ITab';
+import { HelpPopper } from './HelpPopper';
 
 interface IProps {
     shipProperties: IShipProperties;
@@ -44,17 +46,29 @@ export const ComputedProperties = (props: IProps) => {
         <>
             {enhancementTabs.length === 1 && attackTargetTabs.length === 1 && (
                 <LabeledList
+                    sx={{ alignItems: 'center' }}
                     rows={
                         Object.values(baseOutputProperties)
                             .filter(baseOutputProperty => baseOutputProperty.hidden !== true)
                             .map(baseOutputProperty => ({
                                 key: baseOutputProperty.id,
                                 label: baseOutputProperty.label,
-                                value: (
-                                    <ComputedProperty
-                                        property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
-                                    />
-                                ),
+                                value: (() => {
+                                    const property = computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId];
+                                    return (
+                                        <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
+                                            <ComputedProperty
+                                                property={property ?? null}
+                                            />
+                                            {property?.description && (
+                                                <HelpPopper
+                                                    title={property.label}
+                                                    text={property.description}
+                                                />
+                                            )}
+                                        </Stack>
+                                    );
+                                })(),
                             }))
                     }
                 />
@@ -68,7 +82,17 @@ export const ComputedProperties = (props: IProps) => {
 
                 return (
                     <Box key={baseOutputProperty.id} pb={6}>
-                        <Typography variant="body1" gutterBottom={true}>{baseOutputProperty.label}</Typography>
+                        <Box pb={2}>
+                            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                <Typography variant="body1">{baseOutputProperty.label}</Typography>
+                                {baseOutputProperty.description && (
+                                    <HelpPopper
+                                        title={baseOutputProperty.label}
+                                        text={baseOutputProperty.description}
+                                    />
+                                )}      
+                            </Stack>
+                        </Box>
                         {showColumnsForEnhancement && (
                             <Box pl={2}>
                                 <TableContainer component={Paper} sx={{ width: 'fit-content' }}>

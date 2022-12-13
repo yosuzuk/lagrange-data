@@ -18,6 +18,7 @@ export const PropertyTabForm = <T extends {}>(props: IProps<T>) => {
 
     return (
         <LabeledList
+            sx={{ alignItems: 'center' }}
             rows={
                 (Object.values(properties) as IInputProperty[])
                     .map(inputProperty => ({
