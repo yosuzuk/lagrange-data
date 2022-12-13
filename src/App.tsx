@@ -11,6 +11,7 @@ import { LoadingIndicator } from './components/loading/LoadingIndicator';
 import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 import { UserSettingsProvider } from './userSettings/context/UserSettingsContext';
 import { ThemeProvider } from './theme/context/ThemeProvider';
+import { flags } from './utils/flags';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -20,6 +21,7 @@ const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
 const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupPage'));
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
+const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 function App() {
@@ -130,6 +132,16 @@ function App() {
                                     )}
                                 />
                             </Route>
+                            {flags.dpmCalc && (
+                                <Route
+                                    path="dpmCalc"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <DpmCalcPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            )}
                             <Route
                                 path="debug"
                                 element={(

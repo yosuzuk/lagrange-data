@@ -50,7 +50,7 @@ export const LabeledList = (props: IProps) => {
         <Box
             sx={{
                 display: 'inline-grid',
-                gridTemplateColumns: 'auto auto '.repeat(columnCount).trim(),
+                gridTemplateColumns: 'max-content auto '.repeat(columnCount).trim(),
                 gap: rowGap,
                 ...sx,
             }}

@@ -219,6 +219,9 @@
         "pageDescription2": "There is no need to configure everything at once. You can save and continue anytime.",
         "pageDescription3": "All data is stored in local storage of your browser."
     },
+    "dpmCalc": {
+        "pageTitle": "DPM Calculator"
+    },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",
         "nomaShippingGroup": "Noma Shipping Group",
