@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -14,16 +14,23 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Stack from '@mui/material/Stack';
+import Chip from '@mui/material/Chip';
 import { Container } from '../container/Container';
 import { t } from '../../i18n';
 
-const menuItems: Record<string, string> = {
+const menuItems: Record<string, ReactNode> = {
     '/techFiles': t('techFiles.pageTitle'),
     '/researchAgreement': t('researchAgreement.pageTitle'),
     '/shipData': t('shipData.pageTitle'),
     '/fleetSetup': t('fleetSetup.pageTitle'),
     '/myList': t('myList.pageTitle'),
-    '/dpmCalc': t('dpmCalc.pageTitle'),
+    '/dpmCalc': (
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+            <span>{t('dpmCalc.pageTitle')}</span>
+            <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
+        </Stack>
+    ),
 };
 
 interface IProps {
