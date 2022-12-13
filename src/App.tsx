@@ -11,6 +11,7 @@ import { LoadingIndicator } from './components/loading/LoadingIndicator';
 import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 import { UserSettingsProvider } from './userSettings/context/UserSettingsContext';
 import { ThemeProvider } from './theme/context/ThemeProvider';
+import { flags } from './utils/flags';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -131,14 +132,16 @@ function App() {
                                     )}
                                 />
                             </Route>
-                            <Route
-                                path="dpmCalc"
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <DpmCalcPage />
-                                    </Suspense>
-                                )}
-                            />
+                            {flags.dpmCalc && (
+                                <Route
+                                    path="dpmCalc"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <DpmCalcPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            )}
                             <Route
                                 path="debug"
                                 element={(
