@@ -17,7 +17,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
 import { Container } from '../container/Container';
-import { t } from '../../i18n';
+import { getCurrentLanguage, t } from '../../i18n';
+import { flags } from '../../utils/flags';
 
 const menuItems: Record<string, ReactNode> = {
     '/techFiles': t('techFiles.pageTitle'),
@@ -25,12 +26,14 @@ const menuItems: Record<string, ReactNode> = {
     '/shipData': t('shipData.pageTitle'),
     '/fleetSetup': t('fleetSetup.pageTitle'),
     '/myList': t('myList.pageTitle'),
-    '/dpmCalc': (
-        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <span>{t('dpmCalc.pageTitle')}</span>
-            <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
-        </Stack>
-    ),
+    ...(flags.dpmCalc && getCurrentLanguage() === 'ja' ? {
+        '/dpmCalc': (
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                <span>{t('dpmCalc.pageTitle')}</span>
+                <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
+            </Stack>
+        ),
+    } : {}),
 };
 
 interface IProps {
