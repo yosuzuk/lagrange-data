@@ -693,6 +693,16 @@
       "dpmSiege": "348"
     },
     {
+      "ID": "HAYREDDINGS_LOYAL",
+      "EN": "Hayreddin's Loyal - Pulsar Fighter",
+      "HP": "5940",
+      "speed": "3000",
+      "warp": "15000",
+      "dpmShip": "4614",
+      "dpmAntiAir": "3099",
+      "dpmSiege": "1521"
+    },
+    {
       "ID": "HELIOS_A",
       "JA": "ヘリオス級 - 一般型",
       "EN": "Helios - Generic Type",

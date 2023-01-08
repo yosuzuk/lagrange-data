@@ -3,6 +3,7 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { ButtonProps } from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import SaveIcon from '@mui/icons-material/Save';
@@ -19,10 +20,11 @@ import { supportsShowOpenFilePicker } from '../../../utils/file';
 
 interface IProps {
     onCopyAsText: () => void;
+    buttonProps?: ButtonProps;
 }
 
 export const ImportExportButtonMenu = (props: IProps) => {
-    const { onCopyAsText } = props;
+    const { onCopyAsText, buttonProps } = props;
     const [importDataToConfirm, setImportDataToConfirm] = useState<IUserSettings | null>(null);
 
     const importPreview = useMemo<string | null>(() => {
@@ -69,6 +71,7 @@ export const ImportExportButtonMenu = (props: IProps) => {
                 icon={<ShareIcon />}
                 text={t('button.share')}
                 value={undefined}
+                buttonProps={buttonProps}
                 onClick={handleClick}
                 options={[
                     {

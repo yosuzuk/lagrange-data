@@ -61,7 +61,7 @@ export const MyListActionBar = (props: IProps) => {
             )}
             right={buttonProps => (
                 <>
-                    <ImportExportButtonMenu onCopyAsText={onCopyAsText} />
+                    <ImportExportButtonMenu onCopyAsText={onCopyAsText} buttonProps={buttonProps} />
                 </>
             )}
         />
