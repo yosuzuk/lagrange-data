@@ -212,7 +212,12 @@
         "unwantedDuplicates": "Unwanted duplicates",
         "unwantedDuplicatesFootnote": "* Automatically filled list of blueprints that either turn into tech points or unwanted ship variant",
         "confirmInitialize": "Initializing will clear your data and reset every list to its initial state.",
-        "groupNameForSharing": "{{name}}:"
+        "groupNameForSharing": "{{name}}:",
+        "copyAsText": "Copy as text",
+        "exportToFile": "Save file",
+        "importFromFile": "Open file",
+        "importConfirmTitle": "Reading data from file",
+        "importConfirmWarning": "Current settings will be overwritten"
     },
     "myListConfig": {
         "pageDescription1": "This page allows you to configure blueprints and modules that you have already acquired.",

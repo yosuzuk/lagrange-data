@@ -65,7 +65,7 @@ export const MyListPage = () => {
                 columnConfig={columnConfig}
                 onEdit={handleClickEdit}
                 onFilter={setShipFilter}
-                onShare={handleClickShare}
+                onCopyAsText={handleClickShare}
                 onColumnConfigChange={setColumnConfig}
             />
             <PageContent disableContainer={disableContainer}>

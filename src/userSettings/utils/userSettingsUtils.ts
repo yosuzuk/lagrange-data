@@ -1,5 +1,6 @@
 import { ShipId } from '../../data/shipIds';
 import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
+import { downloadJson, openJson } from '../../utils/file';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { PossessionState } from '../types/PossessionState';
 import { IUserSettings, IMinifiedUserSettings, ShipSettingState, IShipUserSettings, ModuleSettingState } from '../types/UserSettings';
@@ -15,6 +16,23 @@ export function getCurrentUserSettings(): IUserSettings {
 export function saveUserSettings(userSettings: IUserSettings) {
     const serializedUserSettings = JSON.stringify(minifyUserSettings(userSettings));
     window.localStorage.setItem(STORAGE_KEY, serializedUserSettings);
+}
+
+export async function downloadUserSettings() {
+    const serialiedUserSettings = window.localStorage.getItem(STORAGE_KEY);
+    if (!serialiedUserSettings) {
+        return;
+    }
+    await downloadJson(serialiedUserSettings, 'settings');
+}
+
+export async function openUserSettingsFromFile(): Promise<IUserSettings | null> {
+    const minified = await openJson<IMinifiedUserSettings>();
+    if (minified === null) {
+        return null;
+    }
+
+    return unminifyUserSettings(minified);
 }
 
 function restoreUserSettings(): IUserSettings | null {

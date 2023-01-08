@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import Button from '@mui/material/Button';
 import DialogContentText from '@mui/material/DialogContentText';
 import { t } from '../../i18n';
@@ -5,7 +6,7 @@ import { ResponsiveDialog } from './ResponsiveDialog';
 
 export interface IProps {
     title: string;
-    question: string;
+    question: string | ReactNode;
     cancelText?: string;
     confirmText?: string;
     onCancel: () => void;
@@ -18,11 +19,11 @@ export const ConfirmationDialog = (props: IProps) => {
     return (
         <ResponsiveDialog
             title={title}
-            content={(
+            content={typeof question === 'string' ? (
                 <DialogContentText>
                     {question}
                 </DialogContentText>
-            )}
+            ): question}
             actions={(
                 <>
                     <Button variant="outlined" onClick={onCancel}>

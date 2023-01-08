@@ -212,7 +212,12 @@
         "unwantedDuplicates": "被って欲しくない艦船",
         "unwantedDuplicatesFootnote": "※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます",
         "confirmInitialize": "マイリスト設定を初期状態に戻しますか？",
-        "groupNameForSharing": "【{{name}}】"
+        "groupNameForSharing": "【{{name}}】",
+        "copyAsText": "テキスト表示",
+        "exportToFile": "ファイルに保存",
+        "importFromFile": "ファイルを開く",
+        "importConfirmTitle": "以下の内容を読み込みます",
+        "importConfirmWarning": "現在の設定は上書きされます"
     },
     "myListConfig": {
         "pageDescription1": "ここでは艦船/設計図の所有状態を設定できます。",

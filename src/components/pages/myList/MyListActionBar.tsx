@@ -7,12 +7,13 @@ import { ActionBar } from '../../actionBar/ActionBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { ColumnConfigButton } from '../../columns/ColumnConfigButton';
 import { t } from '../../../i18n';
+import { ImportExportButtonMenu } from './ImportExportButtonMenu';
 
 interface IProps {
     shipFilter: ShipFilterState;
     columnConfig: IColumnConfig;
     onEdit: () => void;
-    onShare: () => void;
+    onCopyAsText: () => void;
     onFilter: (filter: ShipFilterState) => void;
     onColumnConfigChange: (columnConfig: IColumnConfig) => void;
 }
@@ -23,7 +24,7 @@ export const MyListActionBar = (props: IProps) => {
         columnConfig,
         onEdit,
         onFilter,
-        onShare,
+        onCopyAsText,
         onColumnConfigChange,
     } = props;
 
@@ -60,15 +61,7 @@ export const MyListActionBar = (props: IProps) => {
             )}
             right={buttonProps => (
                 <>
-                    <Button
-                        key="share"
-                        variant="outlined"
-                        startIcon={<ShareIcon />}
-                        onClick={onShare}
-                        {...buttonProps}
-                    >
-                        {t('button.share')}
-                    </Button>
+                    <ImportExportButtonMenu onCopyAsText={onCopyAsText} />
                 </>
             )}
         />
