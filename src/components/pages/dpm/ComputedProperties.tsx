@@ -15,7 +15,7 @@ import { createOutputProperties, createOutputPropertiesForTabs, dependsOn } from
 import { LabeledList } from '../../list/LabeledList';
 import { ComputedProperty } from './ComputedProperty';
 import { IPropertyTab } from './types/ITab';
-import { HelpPopper } from './HelpPopper';
+import { HelpPopper } from '../../helpPopper/HelpPopper';
 
 interface IProps {
     shipProperties: IShipProperties;

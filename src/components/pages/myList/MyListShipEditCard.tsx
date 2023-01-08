@@ -1,8 +1,9 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, Fragment } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import { PossessionControl } from './PossessionControl';
 import { WishControl } from './WishControl';
 import { WishState } from '../../../userSettings/types/WishState';
@@ -67,14 +68,16 @@ export const MyListShipEditCard = (props: IProps) => {
                         && ship.modules
                         && ship.modules.filter(module => !module.defaultModule).map(module => {
                         return (
-                            <MyListModuleEdit
-                                key={module.id}
-                                ship={ship}
-                                module={module}
-                                userSettings={userSettings}
-                                setModulePossession={setModulePossession}
-                                setModuleWish={setModuleWish}
-                            />
+                            <Fragment key={module.id}>
+                                <Divider />
+                                <MyListModuleEdit
+                                    ship={ship}
+                                    module={module}
+                                    userSettings={userSettings}
+                                    setModulePossession={setModulePossession}
+                                    setModuleWish={setModuleWish}
+                                />
+                            </Fragment>
                         );
                     })}
                 </Stack>

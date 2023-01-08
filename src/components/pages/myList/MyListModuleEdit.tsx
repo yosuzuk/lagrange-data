@@ -9,7 +9,7 @@ import { PossessionState } from '../../../userSettings/types/PossessionState';
 import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { getModulePossession, getModuleWishState } from '../../../userSettings/utils/userSettingsUtils';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
-import { t } from '../../../i18n';
+import { getCurrentLanguage, Language, t } from '../../../i18n';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 
 interface IProps {
@@ -33,12 +33,21 @@ export const MyListModuleEdit = (props: IProps) => {
 
     const modulePossession = useMemo(() => getModulePossession(module.id, ship.id, userSettings), [module, ship, userSettings]);
 
+    const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
+
     return (
         <Box key={module.id} pl={2}>
             <Stack spacing={3}>
-                <Typography variant="h6">
-                    {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
-                </Typography>
+                <div>
+                    <Typography variant="h6">
+                        {`${module.category}${module.categoryNumber} ${getModuleName(ship.id, module)}`}
+                    </Typography>
+                    {descriptionAvailable && module.description && (
+                        <Typography variant="caption" color="text.secondary">
+                            {module.description}
+                        </Typography>
+                    )}
+                </div>
                 <PossessionControl
                     label={t('myList.additionalModuleAcquiredOption')}
                     options={[t('myList.blueprintAcquiredOptionYes'), t('myList.blueprintAcquiredOptionNo')]}
