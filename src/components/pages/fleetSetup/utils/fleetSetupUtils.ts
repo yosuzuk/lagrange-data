@@ -27,10 +27,11 @@ function restoreFleetSetup(storageKey: string): IFleetSetup | null {
     }
 
     const minifiedFleetSetup = parseFleetSetup(serializedFleetSetup);
-    return minifiedFleetSetup ? unminifyFleetSetup(migrateMinifiedFleetSetup(minifiedFleetSetup), storageKey) : null;
+    return minifiedFleetSetup ? unminifyFleetSetup(minifiedFleetSetup, storageKey) : null;
 }
 
-function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey: string): IFleetSetup {
+export function unminifyFleetSetup(rawMinifiedFleetSetup: IMinifiedFleetSetup, storageKey: string): IFleetSetup {
+    const minifiedFleetSetup = migrateMinifiedFleetSetup(rawMinifiedFleetSetup);
     const myListOnly = minifiedFleetSetup.myListOnly === true;
 
     const ships = minifiedFleetSetup.ships.map(minifiedShipSelection => ({
@@ -60,7 +61,7 @@ function unminifyFleetSetup(minifiedFleetSetup: IMinifiedFleetSetup, storageKey:
     };
 }
 
-function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
+export function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
     return {
         name: fleetSetup.name,
         ships: fleetSetup.ships.map(shipSelection => ({

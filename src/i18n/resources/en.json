@@ -94,7 +94,10 @@
         "warning": "Warning",
         "hangarColon": "Hangar:",
         "reBrackets": "(RE)",
-        "comma": ","
+        "comma": ",",
+        "copyAsText": "Copy as text",
+        "exportToFile": "Save file",
+        "importFromFile": "Open file"
     },
     "validation": {
         "requiredField": "Required",
@@ -188,7 +191,9 @@
         "configureModules": "Configure modules",
         "configureModulesFootnote": "* Acquired modules can be configured on the \"My list\" page. All modules are available without limitation when setting \"Available ships\" to \"All ships\" or when adding ships using org. reinforcement.",
         "clearAddedShips": "Clear",
-        "fillUpAddedShips": "Max"
+        "fillUpAddedShips": "Max",
+        "importConfirmTitle": "Reading fleet from file",
+        "importConfirmWarning": "Fleet \"{{name}}\" will be overwritten"
     },
     "myList": {
         "pageTitle": "My list",
@@ -213,9 +218,6 @@
         "unwantedDuplicatesFootnote": "* Automatically filled list of blueprints that either turn into tech points or unwanted ship variant",
         "confirmInitialize": "Initializing will clear your data and reset every list to its initial state.",
         "groupNameForSharing": "{{name}}:",
-        "copyAsText": "Copy as text",
-        "exportToFile": "Save file",
-        "importFromFile": "Open file",
         "importConfirmTitle": "Reading data from file",
         "importConfirmWarning": "Current settings will be overwritten"
     },

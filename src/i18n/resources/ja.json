@@ -94,7 +94,10 @@
         "warning": "警告",
         "hangarColon": "ハンガー：",
         "reBrackets": "（RE）",
-        "comma": "、"
+        "comma": "、",
+        "copyAsText": "テキスト表示",
+        "exportToFile": "ファイルに保存",
+        "importFromFile": "ファイルを開く"
     },
     "validation": {
         "requiredField": "必須項目",
@@ -188,7 +191,9 @@
         "configureModules": "システムを換装",
         "configureModulesFootnote": "※取得済みの追加システムは「マイリスト」で設定できます。「追加できる艦船」を「全ての艦船」に設定している場合とユニオン増援では全ての追加システムが選べます。",
         "clearAddedShips": "外す",
-        "fillUpAddedShips": "最大"
+        "fillUpAddedShips": "最大",
+        "importConfirmTitle": "以下の艦隊編成を読み込みます",
+        "importConfirmWarning": "「{{name}}」は上書きされます"
     },
     "myList": {
         "pageTitle": "マイリスト",
@@ -213,9 +218,6 @@
         "unwantedDuplicatesFootnote": "※被りで技術ポイントか「出て欲しくない」サブモデルになる艦船が自動的に表示されます",
         "confirmInitialize": "マイリスト設定を初期状態に戻しますか？",
         "groupNameForSharing": "【{{name}}】",
-        "copyAsText": "テキスト表示",
-        "exportToFile": "ファイルに保存",
-        "importFromFile": "ファイルを開く",
         "importConfirmTitle": "以下の内容を読み込みます",
         "importConfirmWarning": "現在の設定は上書きされます"
     },

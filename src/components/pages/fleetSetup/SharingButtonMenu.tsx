@@ -10,30 +10,30 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { downloadUserSettings, openUserSettingsFromFile, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
-import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
-import { formatShipListForSharing } from './utils/myListUtils';
-import { extractPossesssedShips } from '../../filter/filterUtils';
-import { shipDefinitions } from '../../../data/shipDefinitions';
-import { supportsShowOpenFilePicker } from '../../../utils/file';
+import { downloadJson, openJson, supportsShowOpenFilePicker } from '../../../utils/file';
+import { IFleetSetup, IMinifiedFleetSetup } from './types/IFleetSetup';
+import { minifyFleetSetup, saveFleetSetup, unminifyFleetSetup } from './utils/fleetSetupUtils';
+import { formatGroupedShipsForSharing, groupShipsBy } from './utils/shipGroupingUtils';
 
 interface IProps {
+    fleetSetup: IFleetSetup;
+    grouping: string;
     onCopyAsText: () => void;
     buttonProps?: ButtonProps;
 }
 
-export const ImportExportButtonMenu = (props: IProps) => {
-    const { onCopyAsText, buttonProps } = props;
-    const [importDataToConfirm, setImportDataToConfirm] = useState<IUserSettings | null>(null);
+export const SharingButtonMenu = (props: IProps) => {
+    const { fleetSetup, grouping, onCopyAsText, buttonProps } = props;
+    const [importDataToConfirm, setImportDataToConfirm] = useState<IFleetSetup | null>(null);
 
     const importPreview = useMemo<string | null>(() => {
         if (!importDataToConfirm) {
             return null;
         }
-        const ships = extractPossesssedShips(shipDefinitions, importDataToConfirm.ships);
-        return formatShipListForSharing(ships, importDataToConfirm);
-    }, [importDataToConfirm]);
+        const groupedShips = groupShipsBy(grouping, importDataToConfirm);
+        return formatGroupedShipsForSharing(importDataToConfirm, groupedShips);
+    }, [importDataToConfirm, grouping]);
 
     const handleClick = useCallback((value: string) => {
         switch (value) {
@@ -43,27 +43,31 @@ export const ImportExportButtonMenu = (props: IProps) => {
             }
             case 'import': {
                 (async () => {
-                    const userSettings = await openUserSettingsFromFile();
-                    if (userSettings) {
-                        setImportDataToConfirm(userSettings);
+                    const minified = await openJson<IMinifiedFleetSetup>();
+                    if (minified) {
+                        const unminifiedFleetSetup = unminifyFleetSetup(minified, fleetSetup.key);
+                        setImportDataToConfirm(unminifiedFleetSetup);
                     }
                 })();
                 break;
             }
             case 'export': {
-                downloadUserSettings();
+                const minified = minifyFleetSetup(fleetSetup);
+                downloadJson(JSON.stringify(minified), fleetSetup.name);
                 break;
             }
         }
-    }, []);
+    }, [fleetSetup]);
 
     const handleConfirmImport = useCallback(() => {
         if (importDataToConfirm) {
-            saveUserSettings(importDataToConfirm);
+            saveFleetSetup(importDataToConfirm);
             setImportDataToConfirm(null);
+            const url = new URL(window.location.href);
+            window.location.href = `${url.origin}${url.pathname}#/fleetSetup/${fleetSetup.key}`;
             window.location.reload();
         }
-    }, [importDataToConfirm]);
+    }, [importDataToConfirm, fleetSetup]);
 
     return (
         <>
@@ -77,19 +81,19 @@ export const ImportExportButtonMenu = (props: IProps) => {
                     {
                         key: 'copyAsText',
                         icon: <ContentCopyIcon />,
-                        text: t('myList.copyAsText'),
+                        text: t('label.copyAsText'),
                         value: 'copyAsText',
                     },
                     {
                         key: 'export',
                         icon: <SaveIcon />,
-                        text: t('myList.exportToFile'),
+                        text: t('label.exportToFile'),
                         value: 'export',
                     },
                     {
                         key: 'import',
                         icon: <FileOpenIcon />,
-                        text: t('myList.importFromFile'),
+                        text: t('label.importFromFile'),
                         value: 'import',
                         disabled: !supportsShowOpenFilePicker(),
                     },
@@ -97,10 +101,14 @@ export const ImportExportButtonMenu = (props: IProps) => {
             />
             {importDataToConfirm && (
                 <ConfirmationDialog
-                    title={t('myList.importConfirmTitle')}
+                    title={t('fleetSetup.importConfirmTitle')}
                     question={(
                         <Stack>
-                            <Alert severity="warning">{t('myList.importConfirmWarning')}</Alert>
+                            <Alert severity="warning">
+                                {t('fleetSetup.importConfirmWarning', {
+                                    name: fleetSetup.name,
+                                })}
+                            </Alert>
                             <Box p={1}>
                                 <Typography variant="body2" component="div">
                                     <pre>

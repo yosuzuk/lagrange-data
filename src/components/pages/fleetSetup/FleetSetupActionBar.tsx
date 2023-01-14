@@ -6,6 +6,7 @@ import { FleetSelectionButton } from './FleetSelectionButton';
 import { IFleetSetup } from './types/IFleetSetup';
 import { ShipGroupingButton } from './ShipGroupingButton';
 import { t } from '../../../i18n';
+import { SharingButtonMenu } from './SharingButtonMenu';
 
 interface IProps {
     fleetSetups: IFleetSetup[];
@@ -56,15 +57,12 @@ export const FleetSetupActionBar = (props: IProps) => {
             )}
             right={buttonProps => (
                 <>
-                    <Button
-                        key="share"
-                        variant="outlined"
-                        startIcon={<ShareIcon />}
-                        onClick={onShare}
-                        {...buttonProps}
-                    >
-                        {t('button.share')}
-                    </Button>
+                    <SharingButtonMenu
+                        fleetSetup={fleetSetup}
+                        grouping={grouping}
+                        onCopyAsText={onShare}
+                        buttonProps={buttonProps}
+                    />
                 </>
             )}
         />

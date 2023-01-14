@@ -1,13 +1,12 @@
 import Button from '@mui/material/Button';
 import SettingsIcon from '@mui/icons-material/Settings';
-import ShareIcon from '@mui/icons-material/Share';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import { ColumnConfigButton } from '../../columns/ColumnConfigButton';
 import { t } from '../../../i18n';
-import { ImportExportButtonMenu } from './ImportExportButtonMenu';
+import { SharingButtonMenu } from './SharingButtonMenu';
 
 interface IProps {
     shipFilter: ShipFilterState;
@@ -61,7 +60,7 @@ export const MyListActionBar = (props: IProps) => {
             )}
             right={buttonProps => (
                 <>
-                    <ImportExportButtonMenu onCopyAsText={onCopyAsText} buttonProps={buttonProps} />
+                    <SharingButtonMenu onCopyAsText={onCopyAsText} buttonProps={buttonProps} />
                 </>
             )}
         />
