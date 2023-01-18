@@ -1307,19 +1307,18 @@ export const shipDefinitions: IShipDefinition[] = [
         ],
     },
     {
-        id: ShipId.EDIACARAN_TE,
-        name: 'エディアカラ級-TE（フリゲート生産）',
+        id: ShipId.EDIACARAN,
+        name: 'エディアカラ級',
         type: ShipType.AUXILIARY,
         cost: 40,
-        weight: 0,
+        weight: 5, // TODO verify
         row: ShipRow.MIDDLE,
         operationLimit: 2,
-        source: ShipSource.CITY_TRADE,
+        source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
         modules: [
             {
-                id: 'X1',
+                id: 'M1',
                 name: 'フォートレス艦首重砲システム',
                 description: '対大型＆対小型武装',
                 parts: [
@@ -1328,53 +1327,19 @@ export const shipDefinitions: IShipDefinition[] = [
                             '「フォートレス」Mk4-BG-2650　艦首２連重砲',
                             '対大型艦：',
                             '・直射、実弾、対艦：8456、攻城：1231',
-                            '「フォートレス」Mk4-BG-2650',
+                            'BG-1260型　対艦砲塔',
                             '対小型艦：',
-                            '・直射、実弾、対艦：3418、対空：736、攻城：525',
+                            '・直射、実弾、対艦：3286、対空：736、攻城：525',
                         ],
                         skillSlots: 6,
                     },
                 ],
-                category: 'UNKNOWN',
+                category: 'M',
                 categoryNumber: 1,
                 defaultModule: true,
             },
             {
-                id: 'X2',
-                name: 'フリゲート生産システム',
-                description: '自己保有能力でフリゲートが生産可能',
-                parts: [{
-                    text: [
-                        'MF-2500型　艦上フリゲート生産設備',
-                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲート生産を可能とするが生産効率は低め。',
-                        '支援艦の自己保有容量：80',
-                        'BMP-60型　生産ライン改造モジュール',
-                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
-                        '支援艦の生産能力アップ：10%',
-                    ],
-                    skillSlots: 4,
-                }],
-                category: 'UNKNOWN',
-                categoryNumber: 2,
-                defaultModule: true,
-            },
-        ],
-        relatedShipIds: [ShipId.EDIACARAN_TE_2],
-    },
-    {
-        id: ShipId.EDIACARAN_TE_2,
-        name: 'エディアカラ級-TE（駆逐艦生産）',
-        type: ShipType.AUXILIARY,
-        cost: 40,
-        weight: 0,
-        row: ShipRow.MIDDLE,
-        operationLimit: 2,
-        source: ShipSource.CITY_TRADE,
-        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [
-            {
-                id: 'X3',
+                id: 'M2',
                 name: 'フォートレス攻城電磁加速砲システム',
                 description: '対大型＆対空武装',
                 parts: [
@@ -1390,11 +1355,37 @@ export const shipDefinitions: IShipDefinition[] = [
                         skillSlots: 6,
                     },
                 ],
-                category: 'UNKNOWN',
-                categoryNumber: 3,
+                category: 'M',
+                categoryNumber: 2,
             },
             {
-                id: 'X4',
+                id: 'B1',
+                name: 'フリゲート生産システム',
+                description: '自己保有能力でフリゲートが生産可能',
+                parts: [{
+                    text: [
+                        'MF-2500型　艦上フリゲート生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲート生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'B2',
+                name: 'エスコート生産システム', // TODO verify name
+                description: '自己保有能力で護送艦が生産可能',
+                category: 'B',
+                categoryNumber: 2,
+            },
+            {
+                id: 'B3',
                 name: '駆逐艦生産システム',
                 description: '自己保有能力で駆逐艦が生産可能',
                 parts: [{
@@ -1408,11 +1399,48 @@ export const shipDefinitions: IShipDefinition[] = [
                     ],
                     skillSlots: 4,
                 }],
-                category: 'UNKNOWN',
+                category: 'B',
+                categoryNumber: 3,
+            },
+            {
+                id: 'C1',
+                name: '???',
+                category: 'C',
+                categoryNumber: 1,
+            },
+            {
+                id: 'C2',
+                name: '護送艦ドック',
+                category: 'C',
                 categoryNumber: 2,
             },
             {
-                id: 'X5',
+                id: 'D1',
+                name: '???',
+                category: 'D',
+                categoryNumber: 1,
+            },
+            {
+                id: 'D2',
+                name: '???',
+                category: 'D',
+                categoryNumber: 2,
+            },
+            {
+                id: 'D3',
+                name: '「巨像」防衛UAVシステム',
+                category: 'D',
+                categoryNumber: 3,
+            },
+            {
+                id: 'E1',
+                name: '重量級付加装甲システム',
+                description: '自身の補修を行う',
+                category: 'E',
+                categoryNumber: 1,
+            },
+            {
+                id: 'E2',
                 name: 'ナノレベル自己補修システム',
                 description: '自身の補修を行う',
                 parts: [{
@@ -1422,11 +1450,424 @@ export const shipDefinitions: IShipDefinition[] = [
                     ],
                     skillSlots: 3,
                 }],
-                category: 'UNKNOWN',
+                category: 'E',
                 categoryNumber: 2,
             },
         ],
-        relatedShipIds: [ShipId.EDIACARAN_TE],
+        tags: [
+            ShipTag.PHASE_TWO_BLUEPRINT,
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE,
+        name: 'エディアカラ級-TE エイグラム版',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M1',
+                name: 'フォートレス艦首重砲システム',
+                description: '対大型＆対小型武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BG-2650　艦首２連重砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：8456、攻城：1231',
+                            'BG-1260型　対艦砲塔',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：3286、対空：736、攻城：525',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'B1',
+                name: 'フリゲート生産システム',
+                description: '自己保有能力でフリゲートが生産可能',
+                parts: [{
+                    text: [
+                        'MF-2500型　艦上フリゲート生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲート生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE_2,
+        name: 'エディアカラ級-TE エイグラム版 (M2+B3+E2)',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M2',
+                name: 'フォートレス攻城電磁加速砲システム',
+                description: '対大型＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BR-1850A　艦首攻城重電磁加速砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：13500、攻城：3150',
+                            'BM-2x2808型　対空ミサイルランチャー群',
+                            '対空：',
+                            '・直射、実弾、対艦：1333、対空：2773',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 2,
+            },
+            {
+                id: 'B3',
+                name: '駆逐艦生産システム',
+                description: '自己保有能力で駆逐艦が生産可能',
+                parts: [{
+                    text: [
+                        'MD-2500型　艦上駆逐艦生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独での駆逐艦生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 3,
+            },
+            {
+                id: 'E2',
+                name: 'ナノレベル自己補修システム',
+                description: '自身の補修を行う',
+                parts: [{
+                    text: [
+                        'BST-300型　ナノ補修システム',
+                        '既存の装甲内に追加するナノ自己補修システム。艦船のダメージ管理と自己メンテナンスを行う。戦闘時、自身が受けたHPダメージの補修を自発的に行う。',
+                    ],
+                    skillSlots: 3,
+                }],
+                category: 'E',
+                categoryNumber: 2,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE_PREVIEW1,
+        name: 'エディアカラ級-TE トライアル版',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M1',
+                name: 'フォートレス艦首重砲システム',
+                description: '対大型＆対小型武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BG-2650　艦首２連重砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：8456、攻城：1231',
+                            'BG-1260型　対艦砲塔',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：3286、対空：736、攻城：525',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'B1',
+                name: 'フリゲート生産システム',
+                description: '自己保有能力でフリゲートが生産可能',
+                parts: [{
+                    text: [
+                        'MF-2500型　艦上フリゲート生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲート生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE_PREVIEW2,
+        name: 'エディアカラ級-TE トライアル版 (E2)',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M1',
+                name: 'フォートレス艦首重砲システム',
+                description: '対大型＆対小型武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BG-2650　艦首２連重砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：8456、攻城：1231',
+                            'BG-1260型　対艦砲塔',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：3286、対空：736、攻城：525',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'B1',
+                name: 'フリゲート生産システム',
+                description: '自己保有能力でフリゲートが生産可能',
+                parts: [{
+                    text: [
+                        'MF-2500型　艦上フリゲート生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲート生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'E1',
+                name: '重量級付加装甲システム',
+                description: '自身の補修を行う',
+                category: 'E',
+                categoryNumber: 1,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE_PREVIEW3,
+        name: 'エディアカラ級-TE トライアル版 (B3+E2)',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M1',
+                name: 'フォートレス艦首重砲システム',
+                description: '対大型＆対小型武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BG-2650　艦首２連重砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：8456、攻城：1231',
+                            'BG-1260型　対艦砲塔',
+                            '対小型艦：',
+                            '・直射、実弾、対艦：3286、対空：736、攻城：525',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'B3',
+                name: '駆逐艦生産システム',
+                description: '自己保有能力で駆逐艦が生産可能',
+                parts: [{
+                    text: [
+                        'MD-2500型　艦上駆逐艦生産設備',
+                        '完全な小型艦船生産設備を備え、基地を離れて支援艦単独での駆逐艦生産を可能とするが生産効率は低め。',
+                        '支援艦の自己保有容量：80',
+                        'BMP-60型　生産ライン改造モジュール',
+                        'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
+                        '支援艦の生産能力アップ：10%',
+                    ],
+                    skillSlots: 4,
+                }],
+                category: 'B',
+                categoryNumber: 3,
+            },
+            {
+                id: 'E2',
+                name: 'ナノレベル自己補修システム',
+                description: '自身の補修を行う',
+                parts: [{
+                    text: [
+                        'BST-300型　ナノ補修システム',
+                        '既存の装甲内に追加するナノ自己補修システム。艦船のダメージ管理と自己メンテナンスを行う。戦闘時、自身が受けたHPダメージの補修を自発的に行う。',
+                    ],
+                    skillSlots: 3,
+                }],
+                category: 'E',
+                categoryNumber: 2,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+    },
+    {
+        id: ShipId.EDIACARAN_TE_PREVIEW4,
+        name: 'エディアカラ級-TE トライアル版 (M2+B2+C2+D3)',
+        type: ShipType.AUXILIARY,
+        cost: 40,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 2,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M2',
+                name: 'フォートレス攻城電磁加速砲システム',
+                description: '対大型＆対空武装',
+                parts: [
+                    {
+                        text: [
+                            '「フォートレス」Mk4-BR-1850A　艦首攻城重電磁加速砲',
+                            '対大型艦：',
+                            '・直射、実弾、対艦：13500、攻城：3150',
+                            'BM-2x2808型　対空ミサイルランチャー群',
+                            '対空：',
+                            '・直射、実弾、対艦：1333、対空：2773',
+                        ],
+                        skillSlots: 6,
+                    },
+                ],
+                category: 'M',
+                categoryNumber: 2,
+            },
+            {
+                id: 'B2',
+                name: 'エスコート生産システム', // TODO verify name
+                description: '自己保有能力で護送艦が生産可能',
+                category: 'B',
+                categoryNumber: 2,
+            },
+            {
+                id: 'C2',
+                name: '護送艦ドック',
+                category: 'C',
+                categoryNumber: 2,
+            },
+            {
+                id: 'D3',
+                name: '「巨像」防衛UAVシステム',
+                category: 'D',
+                categoryNumber: 3,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.EDIACARAN,
+            ShipId.EDIACARAN_TE,
+            ShipId.EDIACARAN_TE_2,
+            ShipId.EDIACARAN_TE_PREVIEW1,
+            ShipId.EDIACARAN_TE_PREVIEW2,
+            ShipId.EDIACARAN_TE_PREVIEW3,
+        ],
     },
     {
         id: ShipId.ERIS_I_A,
@@ -2280,9 +2721,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW1,
-        name: 'FSV830-TE',
+        name: 'FSV830-TE トライアル版',
         translatedName: {
-            en: 'FSV830-TE - Ultra Type'
+            en: 'FSV830-TE Trial'
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -2319,9 +2760,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW2,
-        name: 'FSV830-TE (B2)',
+        name: 'FSV830-TE トライアル版 (B2)',
         translatedName: {
-            en: 'FSV830-TE - Ultra Type (B2)'
+            en: 'FSV830-TE Trial (B2)'
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -2358,9 +2799,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW3,
-        name: 'FSV830-TE (E2)',
+        name: 'FSV830-TE トライアル版 (E2)',
         translatedName: {
-            en: 'FSV830-TE - Ultra Type (E2)'
+            en: 'FSV830-TE Trial (E2)'
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -2405,9 +2846,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW4,
-        name: 'FSV830-TE (D2+E1)',
+        name: 'FSV830-TE トライアル版 (D2+E1)',
         translatedName: {
-            en: 'FSV830-TE - Ultra Type (D2+E1)'
+            en: 'FSV830-TE Trial (D2+E1)'
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -2459,9 +2900,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.FSV830_TE_PREVIEW5,
-        name: 'FSV830-TE (B3+C1)',
+        name: 'FSV830-TE トライアル版 (B3+C1)',
         translatedName: {
-            en: 'FSV830-TE - Ultra Type (B3+C1)'
+            en: 'FSV830-TE Trial (B3+C1)'
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -3249,9 +3690,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1,
-        name: 'マーシャルクルックス級-TE',
+        name: 'マーシャルクルックス級-TE トライアル版',
         translatedName: {
-            en: 'Marshal Crux (TE) - Ultra Type',
+            en: 'Marshal Crux (TE) Trial',
         },
         type: ShipType.CARRIER,
         cost: 40,
@@ -3260,7 +3701,11 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        relatedShipIds: [ShipId.MARSHALL_CRUX],
+        relatedShipIds: [
+            ShipId.MARSHALL_CRUX,
+            ShipId.MARSHALL_CRUX_TE_A1_B1,
+            ShipId.MARSHALL_CRUX_TE_A2
+        ],
         staticModules: true,
         modules: [
             {
@@ -3294,9 +3739,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
-        name: 'マーシャルクルックス級-TE (A2)',
+        name: 'マーシャルクルックス級-TE トライアル版 (A2)',
         translatedName: {
-            en: 'Marshal Crux (TE) - Ultra Type (A2)',
+            en: 'Marshal Crux (TE) Trial (A2)',
         },
         type: ShipType.CARRIER,
         cost: 40,
@@ -3305,7 +3750,11 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        relatedShipIds: [ShipId.MARSHALL_CRUX],
+        relatedShipIds: [
+            ShipId.MARSHALL_CRUX,
+            ShipId.MARSHALL_CRUX_TE_A1,
+            ShipId.MARSHALL_CRUX_TE_A1_B1,
+        ],
         staticModules: true,
         modules: [
             {
@@ -3338,9 +3787,9 @@ export const shipDefinitions: IShipDefinition[] = [
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1_B1,
-        name: 'マーシャルクルックス級-TE (B1)',
+        name: 'マーシャルクルックス級-TE トライアル版 (B1)',
         translatedName: {
-            en: 'Marshal Crux (TE) - Ultra Type (B1)',
+            en: 'Marshal Crux (TE) Trial (B1)',
         },
         type: ShipType.CARRIER,
         cost: 40,
@@ -3349,7 +3798,11 @@ export const shipDefinitions: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        relatedShipIds: [ShipId.MARSHALL_CRUX],
+        relatedShipIds: [
+            ShipId.MARSHALL_CRUX,
+            ShipId.MARSHALL_CRUX_TE_A1,
+            ShipId.MARSHALL_CRUX_TE_A2
+        ],
         staticModules: true,
         modules: [
             {
@@ -5238,6 +5691,295 @@ export const shipDefinitions: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
+    },
+    {
+        id: ShipId.THUNDERBOLT_STAR,
+        name: 'スターオブサンダーボルト',
+        type: ShipType.BATTLE_CRUISER,
+        cost: 35,
+        weight: 5, // TODO verify
+        row: ShipRow.MIDDLE,
+        operationLimit: 3,
+        source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.THUNDERBOLT_GROUP,
+        relatedShipIds: [
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
+        ],
+        modules: [
+            {
+                id: 'M1',
+                name: '艦首武器システム「スターオブサンダーボルト」',
+                description: '対小型武装',
+                parts: [{
+                    text: [
+                        'HR-1850型　長レール電磁加速砲',
+                        '対小型艦：',
+                        '・直接、実弾、対艦：27353、攻城：5744',
+                    ],
+                    skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+            {
+                id: 'M2',
+                name: '艦首投射武器システム「スターオブサンダーボルト」',
+                description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 2,
+            },
+            {
+                id: 'M3',
+                name: '「サンダーファイヤースター」弓高エネルギー兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 3,
+            },
+            {
+                id: 'A1',
+                name: '???',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'A',
+                categoryNumber: 1,
+            },
+            {
+                id: 'A2',
+                name: '中型対艦兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'A',
+                categoryNumber: 2,
+            },
+            {
+                id: 'E1',
+                name: '精密投射武器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'E',
+                categoryNumber: 1,
+            },
+            {
+                id: 'E2',
+                name: '大型発射体兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'E',
+                categoryNumber: 2,
+            },
+        ],
+    },
+    {
+        id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
+        name: 'スターオブサンダーボルト-TE トライアル版',
+        type: ShipType.BATTLE_CRUISER,
+        cost: 35,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 3,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.THUNDERBOLT_GROUP,
+        staticModules: true,
+        modules: [
+            {
+                id: 'M1',
+                name: '艦首武器システム「スターオブサンダーボルト」',
+                description: '対小型武装',
+                parts: [{
+                    text: [
+                        'HR-1850型　長レール電磁加速砲',
+                        '対小型艦：',
+                        '・直接、実弾、対艦：27353、攻城：5744',
+                    ],
+                    skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 1,
+                defaultModule: true,
+            },
+        ],
+        relatedShipIds: [
+            ShipId.THUNDERBOLT_STAR,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
+        ],
+    },
+    {
+        id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
+        name: 'スターオブサンダーボルト-TE トライアル版 (M2+E1)',
+        type: ShipType.BATTLE_CRUISER,
+        cost: 35,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 3,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.THUNDERBOLT_GROUP,
+        staticModules: true,
+        relatedShipIds: [
+            ShipId.THUNDERBOLT_STAR,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
+        ],
+        modules: [
+            {
+                id: 'M2',
+                name: '艦首投射武器システム「スターオブサンダーボルト」',
+                description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 2,
+            },
+            {
+                id: 'E1',
+                name: '精密投射武器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'E',
+                categoryNumber: 1,
+            },
+        ],
+    },
+    {
+        id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
+        name: 'スターオブサンダーボルト-TE トライアル版 (M3+A2+E2)',
+        type: ShipType.BATTLE_CRUISER,
+        cost: 35,
+        weight: 0,
+        row: ShipRow.MIDDLE,
+        operationLimit: 3,
+        source: ShipSource.CITY_TRADE,
+        manufacturer: Manufacturer.THUNDERBOLT_GROUP,
+        staticModules: true,
+        relatedShipIds: [
+            ShipId.THUNDERBOLT_STAR,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
+            ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
+        ],
+        modules: [
+            {
+                id: 'M3',
+                name: '「サンダーファイヤースター」弓高エネルギー兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'M',
+                categoryNumber: 3,
+            },
+            {
+                id: 'A2',
+                name: '中型対艦兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'A',
+                categoryNumber: 2,
+            },
+            {
+                id: 'E2',
+                name: '大型発射体兵器システム',
+                // description: '???',
+                parts: [{
+                    text: [
+                        'TODO',
+                    ],
+                    // skillSlots: 6,
+                    skills: [
+                        // TODO find out
+                    ],
+                }],
+                category: 'E',
+                categoryNumber: 2,
+            },
+        ],
     },
     {
         id: ShipId.TUNDRA_A,

@@ -409,7 +409,7 @@
     {
       "ID": "CONSTANTINE_THE_GREAT",
       "JA": "コンスタンティヌス級 - カスタム型",
-      "EN": "Constantine the Great - Ultra Type",
+      "EN": "Constantine the Great",
       "DE": "Konstantin der Große - Ultra-Typ",
       "HP": "125840",
       "speed": "400",
@@ -493,7 +493,7 @@
     {
       "ID": "CV3000",
       "JA": "CV3000級 - カスタム型",
-      "EN": "CV3000 - Ultra Type",
+      "EN": "CV3000",
       "DE": "CV3000 - Ultra-Typ",
       "HP": "254740",
       "speed": "400",
@@ -505,7 +505,7 @@
     {
       "ID": "CV3000_TE",
       "JA": "CV3000級-TE - カスタム型",
-      "EN": "CV3000 (TE) - Ultra Type",
+      "EN": "CV3000 (TE)",
       "DE": "CV3000 (TE) - Ultra-Typ",
       "HP": "254740",
       "speed": "400",
@@ -515,9 +515,18 @@
       "dpmSiege": "619"
     },
     {
+      "ID": "EDIACARAN",
+      "EN": "Ediacaran",
+      "HP": "253080",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "11496",
+      "dpmAntiAir": "8388",
+      "dpmSiege": "1756"
+    },
+    {
       "ID": "EDIACARAN_TE",
-      "JA": "エディアカラ級-TE（フリゲート生産）",
-      "EN": "Ediacaran (TE) - Ultra Type 1",
+      "EN": "Ediacaran (TE) Angulum",
       "HP": "220070",
       "speed": "420",
       "warp": "2100",
@@ -527,14 +536,29 @@
     },
     {
       "ID": "EDIACARAN_TE_2",
-      "JA": "エディアカラ級-TE（駆逐艦生産）",
-      "EN": "Ediacaran (TE) - Ultra Type 2",
+      "EN": "Ediacaran (TE) Angulum (M2+B3+E2)",
       "HP": "220070",
       "speed": "420",
       "warp": "2100",
       "dpmShip": "14833",
       "dpmAntiAir": "10425",
       "dpmSiege": "3150"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW1",
+      "EN": "Ediacaran (TE) Trial"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW2",
+      "EN": "Ediacaran (TE) Trial (E1)"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW3",
+      "EN": "Ediacaran (TE) Trial (B3+E2)"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW4",
+      "EN": "Ediacaran (TE) Trial (M2+B2+C2+D3)"
     },
     {
       "ID": "ERIS_I_A",
@@ -575,7 +599,7 @@
     {
       "ID": "ETERNAL_STORM",
       "JA": "エターナルストーム級 - カスタム型",
-      "EN": "Eternal Storm - Ultra Type",
+      "EN": "Eternal Storm",
       "DE": "Eternal Storm - Ultra-Typ",
       "HP": "130460",
       "speed": "450",
@@ -587,7 +611,7 @@
     {
       "ID": "FSV830",
       "JA": "FSV830 - カスタム型",
-      "EN": "FSV830 - Ultra Type",
+      "EN": "FSV830",
       "DE": "FSV830 - Ultra-Typ",
       "HP": "160450",
       "speed": "560",
@@ -599,7 +623,7 @@
     {
       "ID": "FSV830_TE_PREVIEW1",
       "JA": "FSV830-TE - カスタム型",
-      "EN": "FSV830-TE - Ultra Type",
+      "EN": "FSV830-TE",
       "DE": "FSV830-TE - Ultra-Typ",
       "HP": "160450",
       "speed": "560",
@@ -751,7 +775,7 @@
     {
       "ID": "INDEFATIGABLE",
       "JA": "ルドゥタブル級 - カスタム型",
-      "EN": "Indefatigable - Ultra Type",
+      "EN": "Indefatigable",
       "DE": "Indefatigable - Ultra-Typ",
       "HP": "121350",
       "speed": "250",
@@ -763,7 +787,7 @@
     {
       "ID": "INDEFATIGABLE_TE_S",
       "JA": "ルドゥタブル級-TE - カスタム型（回収）",
-      "EN": "Indefatigable (TE) - Ultra Type (salvaged)",
+      "EN": "Indefatigable (TE) (salvaged)",
       "HP": "121350",
       "speed": "250",
       "warp": "1250",
@@ -1037,7 +1061,7 @@
     {
       "ID": "MARSHALL_CRUX",
       "JA": "マーシャル クルックス級 - カスタム型",
-      "EN": "Marshal Crux - Ultra Type",
+      "EN": "Marshal Crux",
       "DE": "Marshal Crux - Ultra-Typ",
       "HP": "254740",
       "speed": "400",
@@ -1408,7 +1432,7 @@
     {
       "ID": "SOLAR_WHALE",
       "JA": "ソーラーホエール - カスタム型",
-      "EN": "Solar Whale - Ultra Type",
+      "EN": "Solar Whale",
       "DE": "Solar Whale - Ultra-Typ",
       "HP": "292890",
       "speed": "250",
@@ -1420,7 +1444,7 @@
     {
       "ID": "SOLAR_WHALE_TE_S",
       "JA": "ソーラーホエール-TE - カスタム型（回収）",
-      "EN": "Solar Whale (TE) - Ultra Type (salvaged)",
+      "EN": "Solar Whale (TE) (salvaged)",
       "HP": "292890",
       "speed": "250",
       "warp": "1250",
@@ -1431,7 +1455,7 @@
     {
       "ID": "SPEAR_OF_URANUS",
       "JA": "スピアー オブ ウラヌス級 - カスタム型",
-      "EN": "Spear of Uranus - Ultra Type",
+      "EN": "Spear of Uranus",
       "DE": "Speer des Uranus - Ultra-Typ",
       "HP": "160450",
       "speed": "250",
@@ -1455,7 +1479,7 @@
     {
       "ID": "ST59",
       "JA": "ST59級 - カスタム型",
-      "EN": "ST59 - Ultra Type",
+      "EN": "ST59",
       "DE": "ST59 - Ultra-Typ",
       "HP": "121350",
       "speed": "250",
@@ -1581,6 +1605,28 @@
       "dpmShip": "8107",
       "dpmAntiAir": "2825",
       "dpmSiege": "1552"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "EN": "Thunderbolt Star",
+      "HP": "130460",
+      "speed": "400",
+      "warp": "2000",
+      "dpmShip": "46604",
+      "dpmAntiAir": "11550",
+      "dpmSiege": "7151"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW1",
+      "EN": "Thunderbolt Star (TE) Trial"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW2",
+      "EN": "Thunderbolt Star (TE) Trial (M2+E1)"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
+      "EN": "Thunderbolt Star (TE) Trial (M3+A2+E2)"
     },
     {
       "ID": "TUNDRA_A",
@@ -2300,6 +2346,151 @@
       "dpmSiege": "90"
     },
     {
+      "ID": "EDIACARAN",
+      "Module": "M1",
+      "EN": "Fortress Bow-Mounted Heavy Cannon System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "M2",
+      "EN": "Fortress Assault Railgun System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "B1",
+      "EN": "Frigate Production System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "B2",
+      "EN": "Escort Corvette Production System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "B3",
+      "EN": "Destroyer Production System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "C1",
+      "EN": "???"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "C2",
+      "EN": "Corvette Dock"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "D1",
+      "EN": "???"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "D2",
+      "EN": "???"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "D3",
+      "EN": "\"Colossus\" Guard UAV System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "E1",
+      "EN": "Heave Additional Armor System"
+    },
+    {
+      "ID": "EDIACARAN",
+      "Module": "E2",
+      "EN": "Nano Automated Maintenance System"
+    },
+    {
+      "ID": "EDIACARAN_TE",
+      "Module": "M1",
+      "EN": "Fortress Bow-Mounted Heavy Cannon System"
+    },
+    {
+      "ID": "EDIACARAN_TE",
+      "Module": "B1",
+      "EN": "Frigate Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_2",
+      "Module": "M2",
+      "EN": "Fortress Assault Railgun System"
+    },
+    {
+      "ID": "EDIACARAN_TE_2",
+      "Module": "B3",
+      "EN": "Destroyer Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_2",
+      "Module": "E2",
+      "EN": "Nano Automated Maintenance System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW1",
+      "Module": "M1",
+      "EN": "Fortress Bow-Mounted Heavy Cannon System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW1",
+      "Module": "B1",
+      "EN": "Frigate Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW2",
+      "Module": "M1",
+      "EN": "Fortress Bow-Mounted Heavy Cannon System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW2",
+      "Module": "B1",
+      "EN": "Frigate Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW2",
+      "Module": "E1",
+      "EN": "Heave Additional Armor System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW3",
+      "Module": "M1",
+      "EN": "Fortress Bow-Mounted Heavy Cannon System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW3",
+      "Module": "B3",
+      "EN": "Destroyer Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW3",
+      "Module": "E2",
+      "EN": "Nano Automated Maintenance System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW4",
+      "Module": "M2",
+      "EN": "Fortress Assault Railgun System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW4",
+      "Module": "B2",
+      "EN": "Escort Corvette Production System"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW4",
+      "Module": "C2",
+      "EN": "Corvette Dock"
+    },
+    {
+      "ID": "EDIACARAN_TE_PREVIEW4",
+      "Module": "D3",
+      "EN": "\"Colossus\" Guard UAV System"
+    },
+    {
       "ID": "FSV830",
       "Module": "A1*",
       "JA": "作業補修システム",
@@ -2538,6 +2729,74 @@
       "dpmShip": "0",
       "dpmAntiAir": "0",
       "dpmSiege": "0"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "M1",
+      "EN": "\"Thunderbold\" Bow-Mounted Weapon System",
+      "dpmShip": "27353",
+      "dpmAntiAir": "0",
+      "dpmSiege": "5744"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "M2",
+      "EN": "\"Thunderbold\" Bow-Mounted Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "M3",
+      "EN": "\"Thunderbold\" Bow High-Energy Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "A1",
+      "EN": "???"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "A2",
+      "EN": "Medium Anti-Ship Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "E1",
+      "EN": "Accurate Projectile Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "E2",
+      "EN": "Large Projectile Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW1",
+      "Module": "M1",
+      "EN": "\"Thunderbold\" Bow-Mounted Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW2",
+      "Module": "M2",
+      "EN": "\"Thunderbold\" Bow-Mounted Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW2",
+      "Module": "E1",
+      "EN": "Accurate Projectile Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
+      "Module": "M3",
+      "EN": "\"Thunderbold\" Bow High-Energy Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
+      "Module": "A2",
+      "EN": "Medium Anti-Ship Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
+      "Module": "E2",
+      "EN": "Large Projectile Weapon System"
     },
     {
       "ID": "SOLAR_WHALE",
@@ -2834,6 +3093,41 @@
       "dpmShip": "16560",
       "dpmAntiAir": "1152",
       "dpmSiege": "1908"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A1",
+      "Module": "M1",
+      "EN": "White Flashing Integrated Armory"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A1",
+      "Module": "A1",
+      "EN": "Integrated Aircraft Hangar"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A2",
+      "Module": "M1",
+      "EN": "White Flashing Integrated Armory"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A2",
+      "Module": "A2",
+      "EN": "Corvette Dock"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A1_B1",
+      "Module": "M1",
+      "EN": "White Flashing Integrated Armory"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A1_B1",
+      "Module": "A1",
+      "EN": "Integrated Aircraft Hangar"
+    },
+    {
+      "ID": "MARSHALL_CRUX_TE_A1_B1",
+      "Module": "B1",
+      "EN": "Additional Aircraft System"
     },
     {
       "ID": "MARSHALL_CRUX",
