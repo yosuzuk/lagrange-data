@@ -15,6 +15,8 @@ export function translateManufacturer(manufacturer: Manufacturer): string {
             return t('manufacturer.dawnAccord');
         case Manufacturer.HAYREDDIN_CLAN:
             return t('manufacturer.hayreddinClan');
+        case Manufacturer.THUNDERBOLT_GROUP:
+            return t('manufacturer.thunderboltGroup');
     }
 }
 
@@ -30,5 +32,7 @@ export function manufacturerToSortValue(manufacturer: Manufacturer): number {
             return 4;
         case Manufacturer.HAYREDDIN_CLAN:
             return 5;
+        case Manufacturer.THUNDERBOLT_GROUP:
+            return 6;
     }
 }

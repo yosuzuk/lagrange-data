@@ -234,7 +234,8 @@
         "nomaShippingGroup": "Noma Shipping Group",
         "antoniosConsortium": "Antonios Consortium",
         "dawnAccord": "Dawn Accord",
-        "hayreddinClan": "Hayreddin Clan"
+        "hayreddinClan": "Hayreddin Clan",
+        "thunderboltGroup": "Thunderbolt Group"
     },
     "strategyType": {
         "outstandingFirepower": "Outstanding firepower",
