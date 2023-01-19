@@ -6,12 +6,13 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { downloadUserSettings, openUserSettingsFromFile, parseUserSettings, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { getCurrentSerializedUserSettings, openUserSettingsFromFile, parseUserSettings, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { formatShipListForSharing } from './utils/myListUtils';
 import { extractPossesssedShips } from '../../filter/filterUtils';
 import { shipDefinitions } from '../../../data/shipDefinitions';
 import { ImportDataDialog, TConfirmImportCallback, TCancelImportCallback } from '../../dialog/ImportDataDialog';
+import { ExportDataDialog } from '../../dialog/ExportDataDialog';
 
 interface IProps {
     onCopyAsText: () => void;
@@ -21,6 +22,7 @@ interface IProps {
 export const SharingButtonMenu = (props: IProps) => {
     const { onCopyAsText, buttonProps } = props;
     const [importDialogOpened, setImportDialogOpened] = useState<boolean>(false);
+    const [userSettingsForExport, setUserSettingsForExport] = useState<string | null>(null);
 
     const handleClick = useCallback((value: string) => {
         switch (value) {
@@ -33,7 +35,7 @@ export const SharingButtonMenu = (props: IProps) => {
                 break;
             }
             case 'export': {
-                downloadUserSettings();
+                setUserSettingsForExport(getCurrentSerializedUserSettings());
                 break;
             }
         }
@@ -77,6 +79,13 @@ export const SharingButtonMenu = (props: IProps) => {
                     onImport={handleImport}
                     onClose={() => setImportDialogOpened(false)}
                     onSelectFile={handleSelectFile}
+                />
+            )}
+            {userSettingsForExport && (
+                <ExportDataDialog
+                    fileName={'settings'}
+                    jsonContent={userSettingsForExport}
+                    onClose={() => setUserSettingsForExport(null)}
                 />
             )}
         </>

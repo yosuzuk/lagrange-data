@@ -14,7 +14,8 @@
         "copyToClipboard": "Copy to clipboard",
         "unselectAll": "Unselect all",
         "chooseFile": "Choose file",
-        "parseInput": "Parse input"
+        "parseInput": "Parse input",
+        "downloadFile": "Download"
     },
     "label": {
         "ship": "Ship",
@@ -103,6 +104,7 @@
         "dataExport": "Export data",
         "dataImport": "Import data",
         "directInput": "Direct input",
+        "directCopy": "Copy file content",
         "pasteHere": "paste here"
     },
     "validation": {

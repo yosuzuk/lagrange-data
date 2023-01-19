@@ -6,11 +6,12 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { downloadJson, openJson } from '../../../utils/file';
+import { openJson } from '../../../utils/file';
 import { IFleetSetup, IMinifiedFleetSetup } from './types/IFleetSetup';
 import { minifyFleetSetup, saveFleetSetup, unminifyFleetSetup } from './utils/fleetSetupUtils';
 import { formatGroupedShipsForSharing, groupShipsBy } from './utils/shipGroupingUtils';
 import { ImportDataDialog, TConfirmImportCallback, TCancelImportCallback } from '../../dialog/ImportDataDialog';
+import { ExportDataDialog } from '../../dialog/ExportDataDialog';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -22,6 +23,7 @@ interface IProps {
 export const SharingButtonMenu = (props: IProps) => {
     const { fleetSetup, grouping, onCopyAsText, buttonProps } = props;
     const [importDialogOpened, setImportDialogOpened] = useState<boolean>(false);
+    const [exportDialogOpened, setExportDialogOpened] = useState<boolean>(false);
 
     const handleSelectFile = useCallback((confirm: TConfirmImportCallback<IFleetSetup>, cancel: TCancelImportCallback) => {
         (async () => {
@@ -62,8 +64,7 @@ export const SharingButtonMenu = (props: IProps) => {
                 break;
             }
             case 'export': {
-                const minified = minifyFleetSetup(fleetSetup);
-                downloadJson(JSON.stringify(minified), fleetSetup.name);
+                setExportDialogOpened(true);
                 break;
             }
         }
@@ -109,6 +110,13 @@ export const SharingButtonMenu = (props: IProps) => {
                     onImport={handleImport}
                     onClose={() => setImportDialogOpened(false)}
                     onSelectFile={handleSelectFile}
+                />
+            )}
+            {exportDialogOpened && (
+                <ExportDataDialog
+                    fileName={fleetSetup.name}
+                    jsonContent={JSON.stringify(minifyFleetSetup(fleetSetup))}
+                    onClose={() => setExportDialogOpened(false)}
                 />
             )}
         </>

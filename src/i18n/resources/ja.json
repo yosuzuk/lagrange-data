@@ -14,7 +14,8 @@
         "copyToClipboard": "クリップボードにコピー",
         "unselectAll": "全て外す",
         "chooseFile": "ファイルを選択",
-        "parseInput": "取り込み"
+        "parseInput": "取り込む",
+        "downloadFile": "ダウンロード"
     },
     "label": {
         "ship": "艦船",
@@ -102,7 +103,8 @@
         "importFromFile": "ファイルを開く",
         "dataExport": "データの書き出し",
         "dataImport": "データの取り込み",
-        "directInput": "直接入力",
+        "directInput": "ファイル内容を入力",
+        "directCopy": "ファイル内容をコピー",
         "pasteHere": "ここに貼り付け"
     },
     "validation": {
