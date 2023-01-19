@@ -12,7 +12,9 @@
         "displayItems": "表示項目",
         "share": "共有",
         "copyToClipboard": "クリップボードにコピー",
-        "unselectAll": "全て外す"
+        "unselectAll": "全て外す",
+        "chooseFile": "ファイルを選択",
+        "parseInput": "取り込み"
     },
     "label": {
         "ship": "艦船",
@@ -97,7 +99,11 @@
         "comma": "、",
         "copyAsText": "テキスト表示",
         "exportToFile": "ファイルに保存",
-        "importFromFile": "ファイルを開く"
+        "importFromFile": "ファイルを開く",
+        "dataExport": "データの書き出し",
+        "dataImport": "データの取り込み",
+        "directInput": "直接入力",
+        "pasteHere": "ここに貼り付け"
     },
     "validation": {
         "requiredField": "必須項目",
