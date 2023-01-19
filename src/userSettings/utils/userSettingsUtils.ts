@@ -1,6 +1,6 @@
 import { ShipId } from '../../data/shipIds';
 import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
-import { downloadJson, openJson } from '../../utils/file';
+import { openJson } from '../../utils/file';
 import { getShipDefinitionById, isShipObtainableThroughTechFile } from '../../utils/shipDefinitionUtils';
 import { PossessionState } from '../types/PossessionState';
 import { IUserSettings, IMinifiedUserSettings, ShipSettingState, IShipUserSettings, ModuleSettingState } from '../types/UserSettings';
@@ -13,17 +13,14 @@ export function getCurrentUserSettings(): IUserSettings {
     return restoreUserSettings() ?? createInitialUserSettings();
 }
 
+export function getCurrentSerializedUserSettings(): string {
+    const userSettings = getCurrentUserSettings();
+    return JSON.stringify(minifyUserSettings(userSettings));
+}
+
 export function saveUserSettings(userSettings: IUserSettings) {
     const serializedUserSettings = JSON.stringify(minifyUserSettings(userSettings));
     window.localStorage.setItem(STORAGE_KEY, serializedUserSettings);
-}
-
-export async function downloadUserSettings() {
-    const serialiedUserSettings = window.localStorage.getItem(STORAGE_KEY);
-    if (!serialiedUserSettings) {
-        return;
-    }
-    await downloadJson(serialiedUserSettings, 'settings');
 }
 
 export async function openUserSettingsFromFile(): Promise<IUserSettings | null> {
@@ -32,7 +29,7 @@ export async function openUserSettingsFromFile(): Promise<IUserSettings | null> 
         return null;
     }
 
-    return unminifyUserSettings(minified);
+    return migrateUserSettings(unminifyUserSettings(minified));
 }
 
 function restoreUserSettings(): IUserSettings | null {
@@ -41,9 +38,7 @@ function restoreUserSettings(): IUserSettings | null {
         return null;
     }
 
-    const userSettings = parseUserSettings(serializedUserSettings);
-
-    return !!userSettings ? migrateUserSettings(unminifyUserSettings(userSettings)) : null;
+    return parseUserSettings(serializedUserSettings);
 }
 
 function minifyUserSettings(userSettings: IUserSettings): IMinifiedUserSettings {
@@ -108,14 +103,16 @@ function unminifyUserSettings(userSettings: IMinifiedUserSettings): IUserSetting
     };
 }
 
-function parseUserSettings(serializedUserSettings: string): IMinifiedUserSettings | null {
+export function parseUserSettings(value: string): IUserSettings | null {
+    let minified: IMinifiedUserSettings;
     try {
-        return JSON.parse(serializedUserSettings) as IMinifiedUserSettings;
+        minified = JSON.parse(value) as IMinifiedUserSettings;
     } catch (e) {
-        alert('ERROR - Failed to restore user settings');
-        console.error(e);
+        console.error('ERROR - Failed to restore user settings', e);
         return null;
     }
+
+    return minified ? migrateUserSettings(unminifyUserSettings(minified)) : null;
 }
 
 export function createInitialUserSettings(): IUserSettings {

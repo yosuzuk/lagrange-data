@@ -1,8 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { useState, useCallback } from 'react';
 import { ButtonProps } from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -10,13 +6,13 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { downloadUserSettings, openUserSettingsFromFile, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { getCurrentSerializedUserSettings, openUserSettingsFromFile, parseUserSettings, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
-import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 import { formatShipListForSharing } from './utils/myListUtils';
 import { extractPossesssedShips } from '../../filter/filterUtils';
 import { shipDefinitions } from '../../../data/shipDefinitions';
-import { supportsShowOpenFilePicker } from '../../../utils/file';
+import { ImportDataDialog, TConfirmImportCallback, TCancelImportCallback } from '../../dialog/ImportDataDialog';
+import { ExportDataDialog } from '../../dialog/ExportDataDialog';
 
 interface IProps {
     onCopyAsText: () => void;
@@ -25,15 +21,8 @@ interface IProps {
 
 export const SharingButtonMenu = (props: IProps) => {
     const { onCopyAsText, buttonProps } = props;
-    const [importDataToConfirm, setImportDataToConfirm] = useState<IUserSettings | null>(null);
-
-    const importPreview = useMemo<string | null>(() => {
-        if (!importDataToConfirm) {
-            return null;
-        }
-        const ships = extractPossesssedShips(shipDefinitions, importDataToConfirm.ships);
-        return formatShipListForSharing(ships, importDataToConfirm);
-    }, [importDataToConfirm]);
+    const [importDialogOpened, setImportDialogOpened] = useState<boolean>(false);
+    const [userSettingsForExport, setUserSettingsForExport] = useState<string | null>(null);
 
     const handleClick = useCallback((value: string) => {
         switch (value) {
@@ -42,28 +31,15 @@ export const SharingButtonMenu = (props: IProps) => {
                 break;
             }
             case 'import': {
-                (async () => {
-                    const userSettings = await openUserSettingsFromFile();
-                    if (userSettings) {
-                        setImportDataToConfirm(userSettings);
-                    }
-                })();
+                setImportDialogOpened(true);
                 break;
             }
             case 'export': {
-                downloadUserSettings();
+                setUserSettingsForExport(getCurrentSerializedUserSettings());
                 break;
             }
         }
     }, []);
-
-    const handleConfirmImport = useCallback(() => {
-        if (importDataToConfirm) {
-            saveUserSettings(importDataToConfirm);
-            setImportDataToConfirm(null);
-            window.location.reload();
-        }
-    }, [importDataToConfirm]);
 
     return (
         <>
@@ -83,37 +59,59 @@ export const SharingButtonMenu = (props: IProps) => {
                     {
                         key: 'export',
                         icon: <SaveIcon />,
-                        text: t('label.exportToFile'),
+                        text: t('label.dataExport'),
                         value: 'export',
                     },
                     {
                         key: 'import',
                         icon: <FileOpenIcon />,
-                        text: t('label.importFromFile'),
+                        text: t('label.dataImport'),
                         value: 'import',
-                        disabled: !supportsShowOpenFilePicker(),
                     },
                 ]}
             />
-            {importDataToConfirm && (
-                <ConfirmationDialog
-                    title={t('myList.importConfirmTitle')}
-                    question={(
-                        <Stack>
-                            <Alert severity="warning">{t('myList.importConfirmWarning')}</Alert>
-                            <Box p={1}>
-                                <Typography variant="body2" component="div">
-                                    <pre>
-                                        {importPreview}
-                                    </pre>
-                                </Typography>
-                            </Box>
-                        </Stack>
-                    )}
-                    onConfirm={handleConfirmImport}
-                    onCancel={() => setImportDataToConfirm(null)}
+            {importDialogOpened && (
+                <ImportDataDialog
+                    confirmDialogTitle={t('myList.importConfirmTitle')}
+                    confirmWarning={t('myList.importConfirmWarning')}
+                    createPreview={createPreview}
+                    parseInput={parseUserSettings}
+                    onImport={handleImport}
+                    onClose={() => setImportDialogOpened(false)}
+                    onSelectFile={handleSelectFile}
+                />
+            )}
+            {userSettingsForExport && (
+                <ExportDataDialog
+                    fileName={'settings'}
+                    jsonContent={userSettingsForExport}
+                    onClose={() => setUserSettingsForExport(null)}
                 />
             )}
         </>
     );
 };
+
+function createPreview(userSettings: IUserSettings): string {
+    const ships = extractPossesssedShips(shipDefinitions, userSettings.ships);
+    return formatShipListForSharing(ships, userSettings);
+}
+
+function handleImport(userSettings: IUserSettings) {
+    saveUserSettings(userSettings);
+    setTimeout(() => {
+        window.location.reload();
+    }, 0);
+}
+
+function handleSelectFile(confirm: TConfirmImportCallback<IUserSettings>, cancel: TCancelImportCallback) {
+    (async () => {
+        const userSettings = await openUserSettingsFromFile();
+        if (userSettings === null) {
+            cancel();
+            return;
+        }
+
+        confirm(userSettings);
+    })();
+}

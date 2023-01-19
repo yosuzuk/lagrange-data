@@ -1,8 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { useState, useCallback } from 'react';
 import { ButtonProps } from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -10,11 +6,12 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
-import { downloadJson, openJson, supportsShowOpenFilePicker } from '../../../utils/file';
+import { openJson } from '../../../utils/file';
 import { IFleetSetup, IMinifiedFleetSetup } from './types/IFleetSetup';
 import { minifyFleetSetup, saveFleetSetup, unminifyFleetSetup } from './utils/fleetSetupUtils';
 import { formatGroupedShipsForSharing, groupShipsBy } from './utils/shipGroupingUtils';
+import { ImportDataDialog, TConfirmImportCallback, TCancelImportCallback } from '../../dialog/ImportDataDialog';
+import { ExportDataDialog } from '../../dialog/ExportDataDialog';
 
 interface IProps {
     fleetSetup: IFleetSetup;
@@ -25,15 +22,36 @@ interface IProps {
 
 export const SharingButtonMenu = (props: IProps) => {
     const { fleetSetup, grouping, onCopyAsText, buttonProps } = props;
-    const [importDataToConfirm, setImportDataToConfirm] = useState<IFleetSetup | null>(null);
+    const [importDialogOpened, setImportDialogOpened] = useState<boolean>(false);
+    const [exportDialogOpened, setExportDialogOpened] = useState<boolean>(false);
 
-    const importPreview = useMemo<string | null>(() => {
-        if (!importDataToConfirm) {
+    const handleSelectFile = useCallback((confirm: TConfirmImportCallback<IFleetSetup>, cancel: TCancelImportCallback) => {
+        (async () => {
+            const minified = await openJson<IMinifiedFleetSetup>();
+            if (!minified) {
+                cancel();
+                return;
+            }
+            const unminifiedFleetSetup = unminifyFleetSetup(minified, fleetSetup.key);
+            confirm(unminifiedFleetSetup);
+        })();
+    }, [fleetSetup]);
+
+    const handleParse = useCallback((value: string): IFleetSetup | null => {
+        let parsed: IMinifiedFleetSetup;
+        try {
+            parsed = JSON.parse(value) as IMinifiedFleetSetup;
+        } catch (e) {
+            console.log(e);
             return null;
         }
-        const groupedShips = groupShipsBy(grouping, importDataToConfirm);
-        return formatGroupedShipsForSharing(importDataToConfirm, groupedShips);
-    }, [importDataToConfirm, grouping]);
+        return unminifyFleetSetup(parsed, fleetSetup.key);
+    }, [fleetSetup]);
+
+    const createPreview = useCallback((fleetSetup: IFleetSetup) => {
+        const groupedShips = groupShipsBy(grouping, fleetSetup);
+        return formatGroupedShipsForSharing(fleetSetup, groupedShips);
+    }, [grouping]);
 
     const handleClick = useCallback((value: string) => {
         switch (value) {
@@ -42,32 +60,15 @@ export const SharingButtonMenu = (props: IProps) => {
                 break;
             }
             case 'import': {
-                (async () => {
-                    const minified = await openJson<IMinifiedFleetSetup>();
-                    if (minified) {
-                        const unminifiedFleetSetup = unminifyFleetSetup(minified, fleetSetup.key);
-                        setImportDataToConfirm(unminifiedFleetSetup);
-                    }
-                })();
+                setImportDialogOpened(true);
                 break;
             }
             case 'export': {
-                const minified = minifyFleetSetup(fleetSetup);
-                downloadJson(JSON.stringify(minified), fleetSetup.name);
+                setExportDialogOpened(true);
                 break;
             }
         }
     }, [fleetSetup]);
-
-    const handleConfirmImport = useCallback(() => {
-        if (importDataToConfirm) {
-            saveFleetSetup(importDataToConfirm);
-            setImportDataToConfirm(null);
-            const url = new URL(window.location.href);
-            window.location.href = `${url.origin}${url.pathname}#/fleetSetup/${fleetSetup.key}`;
-            window.location.reload();
-        }
-    }, [importDataToConfirm, fleetSetup]);
 
     return (
         <>
@@ -87,41 +88,46 @@ export const SharingButtonMenu = (props: IProps) => {
                     {
                         key: 'export',
                         icon: <SaveIcon />,
-                        text: t('label.exportToFile'),
+                        text: t('label.dataExport'),
                         value: 'export',
                     },
                     {
                         key: 'import',
                         icon: <FileOpenIcon />,
-                        text: t('label.importFromFile'),
+                        text: t('label.dataImport'),
                         value: 'import',
-                        disabled: !supportsShowOpenFilePicker(),
                     },
                 ]}
             />
-            {importDataToConfirm && (
-                <ConfirmationDialog
-                    title={t('fleetSetup.importConfirmTitle')}
-                    question={(
-                        <Stack>
-                            <Alert severity="warning">
-                                {t('fleetSetup.importConfirmWarning', {
-                                    name: fleetSetup.name,
-                                })}
-                            </Alert>
-                            <Box p={1}>
-                                <Typography variant="body2" component="div">
-                                    <pre>
-                                        {importPreview}
-                                    </pre>
-                                </Typography>
-                            </Box>
-                        </Stack>
-                    )}
-                    onConfirm={handleConfirmImport}
-                    onCancel={() => setImportDataToConfirm(null)}
+            {importDialogOpened && (
+                <ImportDataDialog
+                    confirmDialogTitle={t('fleetSetup.importConfirmTitle')}
+                    confirmWarning={t('fleetSetup.importConfirmWarning', {
+                        name: fleetSetup.name,
+                    })}
+                    createPreview={createPreview}
+                    parseInput={handleParse}
+                    onImport={handleImport}
+                    onClose={() => setImportDialogOpened(false)}
+                    onSelectFile={handleSelectFile}
+                />
+            )}
+            {exportDialogOpened && (
+                <ExportDataDialog
+                    fileName={fleetSetup.name}
+                    jsonContent={JSON.stringify(minifyFleetSetup(fleetSetup))}
+                    onClose={() => setExportDialogOpened(false)}
                 />
             )}
         </>
     );
 };
+
+function handleImport(fleetSetup: IFleetSetup) {
+    saveFleetSetup(fleetSetup);
+    setTimeout(() => {
+        const url = new URL(window.location.href);
+        window.location.href = `${url.origin}${url.pathname}#/fleetSetup/${fleetSetup.key}`;
+        window.location.reload();
+    }, 0);
+}

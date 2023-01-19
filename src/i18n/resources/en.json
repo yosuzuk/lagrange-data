@@ -12,7 +12,10 @@
         "displayItems": "Display",
         "share": "Share",
         "copyToClipboard": "Copy to clipboard",
-        "unselectAll": "Unselect all"
+        "unselectAll": "Unselect all",
+        "chooseFile": "Choose file",
+        "parseInput": "Parse input",
+        "downloadFile": "Download"
     },
     "label": {
         "ship": "Ship",
@@ -97,7 +100,12 @@
         "comma": ",",
         "copyAsText": "Copy as text",
         "exportToFile": "Save file",
-        "importFromFile": "Open file"
+        "importFromFile": "Open file",
+        "dataExport": "Export data",
+        "dataImport": "Import data",
+        "directInput": "Direct input",
+        "directCopy": "Copy file content",
+        "pasteHere": "paste here"
     },
     "validation": {
         "requiredField": "Required",
