@@ -546,19 +546,43 @@
     },
     {
       "ID": "EDIACARAN_TE_PREVIEW1",
-      "EN": "Ediacaran (TE) Trial"
+      "EN": "Ediacaran (TE) Trial",
+      "HP": "220070",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "11874",
+      "dpmAntiAir": "8388",
+      "dpmSiege": "1756"
     },
     {
       "ID": "EDIACARAN_TE_PREVIEW2",
-      "EN": "Ediacaran (TE) Trial (E1)"
+      "EN": "Ediacaran (TE) Trial (E1)",
+      "HP": "264084",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "11874",
+      "dpmAntiAir": "8388",
+      "dpmSiege": "1756"
     },
     {
       "ID": "EDIACARAN_TE_PREVIEW3",
-      "EN": "Ediacaran (TE) Trial (B3+E2)"
+      "EN": "Ediacaran (TE) Trial (B3+E2)",
+      "HP": "220070",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "14724",
+      "dpmAntiAir": "8461",
+      "dpmSiege": "1932"
     },
     {
       "ID": "EDIACARAN_TE_PREVIEW4",
-      "EN": "Ediacaran (TE) Trial (M2+B2+C2+D3)"
+      "EN": "Ediacaran (TE) Trial (M2+B2+C2+D3)",
+      "HP": "220070",
+      "speed": "420",
+      "warp": "2100",
+      "dpmShip": "26692",
+      "dpmAntiAir": "2773",
+      "dpmSiege": "4389"
     },
     {
       "ID": "ERIS_I_A",
@@ -1618,15 +1642,33 @@
     },
     {
       "ID": "THUNDERBOLT_STAR_TE_PREVIEW1",
-      "EN": "Thunderbolt Star (TE) Trial"
+      "EN": "Thunderbolt Star (TE) Trial",
+      "HP": "130460",
+      "speed": "400",
+      "warp": "2000",
+      "dpmShip": "47432",
+      "dpmAntiAir": "11643",
+      "dpmSiege": "7151"
     },
     {
       "ID": "THUNDERBOLT_STAR_TE_PREVIEW2",
-      "EN": "Thunderbolt Star (TE) Trial (M2+E1)"
+      "EN": "Thunderbolt Star (TE) Trial (M2+E1)",
+      "HP": "0",
+      "speed": "400",
+      "warp": "2000",
+      "dpmShip": "71160",
+      "dpmAntiAir": "22734",
+      "dpmSiege": "9327"
     },
     {
       "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
-      "EN": "Thunderbolt Star (TE) Trial (M3+A2+E2)"
+      "EN": "Thunderbolt Star (TE) Trial (M3+A2+E2)",
+      "HP": "0",
+      "speed": "400",
+      "warp": "2000",
+      "dpmShip": "91158",
+      "dpmAntiAir": "5089",
+      "dpmSiege": "8062"
     },
     {
       "ID": "TUNDRA_A",
