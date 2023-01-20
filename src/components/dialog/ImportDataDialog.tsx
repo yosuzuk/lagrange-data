@@ -109,30 +109,17 @@ export const ImportDataDialog = <T,>(props: IProps<T>) => {
                         <Typography variant="body1">
                             {t('label.directInput')}
                         </Typography>
-                        <Stack spacing={1} direction="row">
-                            <Box sx={{ flexGrow: 1 }}>
-                                <TextField
-                                    id="json-input"
-                                    placeholder={t('label.pasteHere')}
-                                    variant="outlined"
-                                    value={valueToParse}
-                                    onChange={handleChangeInput}
-                                    error={isInvalidValue}
-                                    helperText={isInvalidValue ? t('validation.invalidValue') : undefined}
-                                    fullWidth={true}
-                                    autoComplete="off"
-                                />
-                            </Box>
-                            <Box pt={1}>
-                                <Button
-                                    variant={valueToParse.length > 0 ? 'contained' : 'outlined'}
-                                    onClick={handleParse}
-                                    disabled={valueToParse.length === 0}
-                                >
-                                    {t('button.parseInput')}
-                                </Button>
-                            </Box>
-                        </Stack>
+                        <TextField
+                            id="json-input"
+                            placeholder={t('label.pasteHere')}
+                            variant="outlined"
+                            value={valueToParse}
+                            onChange={handleChangeInput}
+                            error={isInvalidValue}
+                            helperText={isInvalidValue ? t('validation.invalidValue') : undefined}
+                            fullWidth={true}
+                            autoComplete="off"
+                        />
                     </Stack>
                 </Stack>
             }
@@ -141,6 +128,13 @@ export const ImportDataDialog = <T,>(props: IProps<T>) => {
                 <>
                     <Button variant="outlined" onClick={onClose}>
                         {t('button.cancel')}
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        onClick={handleParse}
+                        disabled={valueToParse.length === 0}
+                    >
+                        {t('button.parseInput')}
                     </Button>
                 </>
             )}
