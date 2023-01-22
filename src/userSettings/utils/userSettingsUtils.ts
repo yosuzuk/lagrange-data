@@ -8,9 +8,10 @@ import { WishState } from '../types/WishState';
 import { migrateShipId } from './migration';
 
 const STORAGE_KEY = 'settings';
+const BACKUP_STORAGE_KEY = 'settingsBackup';
 
 export function getCurrentUserSettings(): IUserSettings {
-    return restoreUserSettings() ?? createInitialUserSettings();
+    return readUserSettingsFromStorage() ?? createInitialUserSettings();
 }
 
 export function getCurrentSerializedUserSettings(): string {
@@ -23,6 +24,26 @@ export function saveUserSettings(userSettings: IUserSettings) {
     window.localStorage.setItem(STORAGE_KEY, serializedUserSettings);
 }
 
+export function backupCurrentUserSettings() {
+    const current = window.localStorage.getItem(STORAGE_KEY);
+    if (current) {
+        window.localStorage.setItem(BACKUP_STORAGE_KEY, current);
+    }
+}
+
+export function readUserSettingsFromBackup(): IUserSettings | null {
+    return readUserSettingsFromStorage(BACKUP_STORAGE_KEY);
+}
+
+export function copyStorageValue(from: string, to: string) {
+    const current = window.localStorage.getItem(from);
+    if (current) {
+        window.localStorage.setItem(to, current);
+    } else {
+        window.localStorage.removeItem(to);
+    }
+}
+
 export async function openUserSettingsFromFile(): Promise<IUserSettings | null> {
     const minified = await openJson<IMinifiedUserSettings>();
     if (minified === null) {
@@ -32,8 +53,8 @@ export async function openUserSettingsFromFile(): Promise<IUserSettings | null> 
     return migrateUserSettings(unminifyUserSettings(minified));
 }
 
-function restoreUserSettings(): IUserSettings | null {
-    const serializedUserSettings = window.localStorage.getItem(STORAGE_KEY);
+function readUserSettingsFromStorage(storageKey: string = STORAGE_KEY): IUserSettings | null {
+    const serializedUserSettings = window.localStorage.getItem(storageKey);
     if (!serializedUserSettings) {
         return null;
     }

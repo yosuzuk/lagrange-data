@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { ButtonProps } from '@mui/material/Button';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -6,7 +6,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import { t } from '../../../i18n';
 import { ButtonMenu } from '../../buttonMenu/ButtonMenu';
-import { getCurrentSerializedUserSettings, openUserSettingsFromFile, parseUserSettings, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
+import { backupCurrentUserSettings, getCurrentSerializedUserSettings, openUserSettingsFromFile, parseUserSettings, readUserSettingsFromBackup, saveUserSettings } from '../../../userSettings/utils/userSettingsUtils';
 import { IUserSettings } from '../../../userSettings/types/UserSettings';
 import { formatShipListForSharing } from './utils/myListUtils';
 import { extractPossesssedShips } from '../../filter/filterUtils';
@@ -23,6 +23,7 @@ export const SharingButtonMenu = (props: IProps) => {
     const { onCopyAsText, buttonProps } = props;
     const [importDialogOpened, setImportDialogOpened] = useState<boolean>(false);
     const [userSettingsForExport, setUserSettingsForExport] = useState<string | null>(null);
+    const [userSettingsBackup, setUserSettingsBackup] = useState<IUserSettings | null>(null);
 
     const handleClick = useCallback((value: string) => {
         switch (value) {
@@ -31,6 +32,7 @@ export const SharingButtonMenu = (props: IProps) => {
                 break;
             }
             case 'import': {
+                setUserSettingsBackup(readUserSettingsFromBackup());
                 setImportDialogOpened(true);
                 break;
             }
@@ -40,6 +42,15 @@ export const SharingButtonMenu = (props: IProps) => {
             }
         }
     }, []);
+
+    const handleRestoreFromBackup = useCallback((confirm: TConfirmImportCallback<IUserSettings>, cancel: TCancelImportCallback) => {
+        if (userSettingsBackup === null) {
+            cancel();
+            return;
+        }
+    
+        confirm(userSettingsBackup);
+    }, [userSettingsBackup]);
 
     return (
         <>
@@ -76,9 +87,11 @@ export const SharingButtonMenu = (props: IProps) => {
                     confirmWarning={t('myList.importConfirmWarning')}
                     createPreview={createPreview}
                     parseInput={parseUserSettings}
+                    canRestore={!!userSettingsBackup}
                     onImport={handleImport}
                     onClose={() => setImportDialogOpened(false)}
                     onSelectFile={handleSelectFile}
+                    onRestoreFromBackup={handleRestoreFromBackup}
                 />
             )}
             {userSettingsForExport && (
@@ -86,6 +99,7 @@ export const SharingButtonMenu = (props: IProps) => {
                     fileName={'settings'}
                     jsonContent={userSettingsForExport}
                     onClose={() => setUserSettingsForExport(null)}
+                    onStoreBackup={backupCurrentUserSettings}
                 />
             )}
         </>

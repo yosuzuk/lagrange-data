@@ -15,7 +15,9 @@
         "unselectAll": "全て外す",
         "chooseFile": "ファイルを選択",
         "parseInput": "取り込む",
-        "downloadFile": "ダウンロード"
+        "downloadFile": "ダウンロード",
+        "storeBackupInStorage": "ローカルストレージに保存",
+        "restoreFromStorage": "ローカルストレージから復元"
     },
     "label": {
         "ship": "艦船",
@@ -105,7 +107,9 @@
         "dataImport": "データの取り込み",
         "directInput": "ファイル内容を入力",
         "directCopy": "ファイル内容をコピー",
-        "pasteHere": "ここに貼り付け"
+        "pasteHere": "ここに貼り付け",
+        "createBackup": "バックアップ",
+        "restoreFromBackup": "バックアップから復元"
     },
     "validation": {
         "requiredField": "必須項目",

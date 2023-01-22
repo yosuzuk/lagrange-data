@@ -15,7 +15,9 @@
         "unselectAll": "Unselect all",
         "chooseFile": "Choose file",
         "parseInput": "Parse input",
-        "downloadFile": "Download"
+        "downloadFile": "Download",
+        "storeBackupInStorage": "Store in local storage",
+        "restoreFromStorage": "Restore from local storage"
     },
     "label": {
         "ship": "Ship",
@@ -101,11 +103,13 @@
         "copyAsText": "Copy as text",
         "exportToFile": "Save file",
         "importFromFile": "Open file",
-        "dataExport": "Export data",
-        "dataImport": "Import data",
-        "directInput": "Direct input",
+        "dataExport": "Save / Export data",
+        "dataImport": "Load / Import data",
+        "directInput": "Input file content",
         "directCopy": "Copy file content",
-        "pasteHere": "paste here"
+        "pasteHere": "paste here",
+        "createBackup": "Create backup",
+        "restoreFromBackup": "Restore from backup"
     },
     "validation": {
         "requiredField": "Required",
