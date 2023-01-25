@@ -1,4 +1,6 @@
 import { Manufacturer } from '../../types/Manufacturer';
+import { ResearchStrategyType } from '../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
 import { ShipRow } from '../../types/ShipRow';
 import { ShipSource } from '../../types/ShipSource';
@@ -133,11 +135,13 @@ export const thunderboldStar: IShipDefinition[] = [
         name: 'スターオブサンダーボルト',
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
-        weight: 5, // TODO verify
+        weight: 2,
         row: ShipRow.MIDDLE,
         operationLimit: 3,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.THUNDERBOLT_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,

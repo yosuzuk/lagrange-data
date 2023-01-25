@@ -1,4 +1,7 @@
 import { Manufacturer } from '../../types/Manufacturer';
+import { ResearchManufacturer } from '../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
 import { ShipRow } from '../../types/ShipRow';
 import { ShipSource } from '../../types/ShipSource';
@@ -210,11 +213,14 @@ export const ediacaran: IShipDefinition[] = [
         name: 'エディアカラ級',
         type: ShipType.AUXILIARY,
         cost: 40,
-        weight: 5, // TODO verify
+        weight: 2,
         row: ShipRow.MIDDLE,
         operationLimit: 2,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
+        researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         modules: [m1, m2, b1, b2, b3, c1, c2, d1, d2, d3, e1],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
