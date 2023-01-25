@@ -134,7 +134,10 @@
         "pageTitle": "研究協定",
         "pageDescription1": "ここでは「研究協定」に関する各種確率を表示しています。",
         "pageDescription2": "研究方針（委託企業、戦略能力、戦術能力）を選択した場合はその組み合わせで手に入る設計図や追加モジュールの確率が表示されます。艦船を選択した場合はその艦船を含む研究方針が確率順に表示されます。",
-        "pageDescription3": "取得済みの設計図はマイリストで設定してください。"
+        "pageDescription3": "取得済みの設計図はマイリストで設定してください。",
+        "environment": "環境",
+        "seasonOne": "シーズン１",
+        "seasonTwoPlus": "シーズン２以降"
     },
     "shipData": {
         "pageTitle": "艦船一覧"

@@ -19,14 +19,17 @@ import { ConfigurationSummary } from './ConfigurationSummary';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { t } from '../../../i18n';
+import { EnvironmentSetting } from './EnvironmentSetting';
+import { Season } from './types/Season';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
 
 export const ResearchAgreementPage = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('ships');
+    const [season, setSeason] = useState<Season>(Season.TWO_PLUS);
 
-    const shipDefinitions = useMemo(() => getShipDefinitionsForResearchAgreement(), []);
+    const shipDefinitions = useMemo(() => getShipDefinitionsForResearchAgreement(season), [season]);
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
     const allFilterOptions = useMemo(() => getAllFilterCombinations(), []);
     const allResearchConfigurations = useMemo(() => allFilterOptions.map(filterState => {
@@ -65,16 +68,30 @@ export const ResearchAgreementPage = () => {
                         </Stack>
                         <Paper>
                             <Box p={2}>
-                                <Stack spacing={2}>
-                                    <Typography variant="body2">
-                                        {t('label.researchDirection')}
-                                    </Typography>
-                                    <div>
-                                        <ResearchFilter filterState={filterState} onChange={setFilterState} shipFilterOptions={shipFilterOptions} />
-                                    </div>
-                                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
-                                        <ViewModeSelection mode={viewMode} onChange={setViewMode} />
-                                    </Box>
+                                <Stack spacing={4}>
+                                    <Stack spacing={2}>
+                                        <Typography variant="body2">
+                                            {t('researchAgreement.environment')}
+                                        </Typography>
+                                        <div>
+                                            <EnvironmentSetting
+                                                season={season}
+                                                seasonDisabled={filterState.shipId !== null}
+                                                onChangeSeason={setSeason}
+                                            />
+                                        </div>
+                                    </Stack>
+                                    <Stack spacing={2}>
+                                        <Typography variant="body2">
+                                            {t('label.researchDirection')}
+                                        </Typography>
+                                        <div>
+                                            <ResearchFilter filterState={filterState} onChange={setFilterState} shipFilterOptions={shipFilterOptions} />
+                                        </div>
+                                        <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                                            <ViewModeSelection mode={viewMode} onChange={setViewMode} />
+                                        </Box>
+                                    </Stack>
                                 </Stack>
                             </Box>
                         </Paper>

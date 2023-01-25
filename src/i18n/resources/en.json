@@ -134,7 +134,10 @@
         "pageTitle": "Research agreement",
         "pageDescription1": "This page shows detailed probabilities for every filter in research agreement",
         "pageDescription2": "Data can be narrowed by company, strategy type and tactic type. Selecting a ship will list up all filters containg that ship sorted by probability.",
-        "pageDescription3": "Blueprints that you have already acquired can be configured on the \"My list\" page."
+        "pageDescription3": "Blueprints that you have already acquired can be configured on the \"My list\" page.",
+        "environment": "Environment",
+        "seasonOne": "Season 1",
+        "seasonTwoPlus": "Season 2 or later"
     },
     "shipData": {
         "pageTitle": "Ship data"

@@ -3,14 +3,22 @@ import { ResearchManufacturer } from '../../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
+import { ShipTag } from '../../../../types/ShipTag';
 import { ShipType } from '../../../../types/ShipType';
 import { IUserSettings } from '../../../../userSettings/types/UserSettings';
 import { getAcquirableModules, getWantedModules, isPossessingShip, isUnwantedShip, isWantedModule, isWantedShip } from '../../../../userSettings/utils/userSettingsUtils';
 import { getShipName } from '../../../../utils/shipDefinitionUtils';
 import { IResearchConfiguration, IResearchFilterState, IShipResearchChance, IShipFilterOptions, IShipFilterEntryForModule, IShipTypeResearchChance } from '../types/IResearchConfiguration';
+import { Season } from '../types/Season';
 
-export function getShipDefinitionsForResearchAgreement(): IShipDefinition[] {
-    return shipDefinitions.filter(shipDefinition => !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes);
+export function getShipDefinitionsForResearchAgreement(season: Season): IShipDefinition[] {
+    return shipDefinitions.filter(shipDefinition => {
+        if (season === Season.ONE && shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT)) {
+            return false;
+        }
+
+        return !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
+    });
 }
 
 export function getShipFilterOptions(shipDefinitions: IShipDefinition[], userSettings: IUserSettings): IShipFilterOptions {

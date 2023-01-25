@@ -3127,6 +3127,9 @@ export const shipDefinitions: IShipDefinition[] = [
                 categoryNumber: 2,
             },
         ],
+        tags: [
+            ShipTag.PHASE_TWO_BLUEPRINT,
+        ],
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1,
