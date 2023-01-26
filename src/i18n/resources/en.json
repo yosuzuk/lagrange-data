@@ -109,7 +109,8 @@
         "directCopy": "Copy file content",
         "pasteHere": "paste here",
         "createBackup": "Create backup",
-        "restoreFromBackup": "Restore from backup"
+        "restoreFromBackup": "Restore from backup",
+        "daysAndHours": "{{days}}d{{hours}}h"
     },
     "validation": {
         "requiredField": "Required",
@@ -137,7 +138,8 @@
         "pageDescription3": "Blueprints that you have already acquired can be configured on the \"My list\" page.",
         "environment": "Environment",
         "seasonOne": "Season 1",
-        "seasonTwoPlus": "Season 2 or later"
+        "seasonTwoPlus": "Season 2 or later",
+        "researchTime": "Time"
     },
     "shipData": {
         "pageTitle": "Ship data"

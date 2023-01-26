@@ -8,6 +8,7 @@ import { useUserSettings } from '../../../userSettings/context/UserSettingsConte
 import { isLanguageWithWhitespace, t } from '../../../i18n';
 import { getModuleName } from '../../../utils/shipDefinitionUtils';
 import { translateShipType } from '../../../utils/shipTypeUtils';
+import { formatResearchTime } from './utils/researchTimeUtils';
 
 interface IProps {
     configuration: IResearchConfiguration;
@@ -158,6 +159,12 @@ export const ConfigurationDetail = (props: IProps) => {
                     value: formatChance(shipTypeChance.chance),
                     separatorBefore: index === 0,
                 })),
+                {
+                    key: `${configuration.id}.duration`,
+                    label: t('researchAgreement.researchTime'),
+                    value: formatResearchTime(configuration.filterState),
+                    separatorBefore: true,
+                },
             ]}
             rowGap={1}
         />

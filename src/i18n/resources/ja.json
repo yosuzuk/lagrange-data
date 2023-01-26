@@ -109,7 +109,8 @@
         "directCopy": "ファイル内容をコピー",
         "pasteHere": "ここに貼り付け",
         "createBackup": "バックアップ",
-        "restoreFromBackup": "バックアップから復元"
+        "restoreFromBackup": "バックアップから復元",
+        "daysAndHours": "{{days}}日{{hours}}時間"
     },
     "validation": {
         "requiredField": "必須項目",
@@ -137,7 +138,8 @@
         "pageDescription3": "取得済みの設計図はマイリストで設定してください。",
         "environment": "環境",
         "seasonOne": "シーズン１",
-        "seasonTwoPlus": "シーズン２以降"
+        "seasonTwoPlus": "シーズン２以降",
+        "researchTime": "所要時間"
     },
     "shipData": {
         "pageTitle": "艦船一覧"
