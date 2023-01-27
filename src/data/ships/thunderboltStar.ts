@@ -91,6 +91,20 @@ const a2: ISystemModule = {
     categoryNumber: 2,
 };
 
+const b1: ISystemModule = {
+    id: 'B1',
+    name: '???',
+    category: 'B',
+    categoryNumber: 1,
+};
+
+const b2: ISystemModule = {
+    id: 'B2',
+    name: '???',
+    category: 'B',
+    categoryNumber: 2,
+};
+
 const e1: ISystemModule = {
     id: 'E1',
     name: '精密投射武器システム',
@@ -129,6 +143,21 @@ const e2: ISystemModule = {
     categoryNumber: 2,
 };
 
+const f1: ISystemModule = {
+    id: 'F1',
+    name: '???',
+    category: 'F',
+    categoryNumber: 1,
+};
+
+const f2: ISystemModule = {
+    id: 'F2',
+    name: '???',
+    description: '対空武装',
+    category: 'F',
+    categoryNumber: 2,
+};
+
 export const thunderboldStar: IShipDefinition[] = [
     {
         id: ShipId.THUNDERBOLT_STAR,
@@ -147,7 +176,7 @@ export const thunderboldStar: IShipDefinition[] = [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         ],
-        modules: [m1, m2, m3, a1, a2, e1, e2],
+        modules: [m1, m2, m3, a1, a2, b1, b2, e1, e2, f1, f2],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,

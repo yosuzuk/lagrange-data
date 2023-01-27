@@ -2802,6 +2802,16 @@
     },
     {
       "ID": "THUNDERBOLT_STAR",
+      "Module": "B1",
+      "EN": "Active Anti-Aircraft System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "B2",
+      "EN": "Range Interception System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
       "Module": "E1",
       "EN": "Accurate Projectile Weapon System"
     },
@@ -2809,6 +2819,15 @@
       "ID": "THUNDERBOLT_STAR",
       "Module": "E2",
       "EN": "Large Projectile Weapon System"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "F1"
+    },
+    {
+      "ID": "THUNDERBOLT_STAR",
+      "Module": "F2",
+      "EN": "Multi-Target Anti-Air System"
     },
     {
       "ID": "THUNDERBOLT_STAR_TE_PREVIEW1",

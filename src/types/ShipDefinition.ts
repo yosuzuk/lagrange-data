@@ -39,7 +39,7 @@ export interface ISystemModule {
     translatedName?: Record<string, string>;
     description?: string;
     parts?: IModulePart[];
-    category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E' | 'UNKNOWN';
+    category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'UNKNOWN';
     categoryNumber: number;
     carryFighter?: number;
     carryCorvette?: number;
