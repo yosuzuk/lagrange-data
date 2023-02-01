@@ -48,7 +48,7 @@ export enum OutputPropertyId {
     LOCK_ON_TIME = 'lockOnTime',
     ATTACKS_PER_ROUND = 'attacksPerRound',
     SHOTS_PER_ATTACK = 'shotsPerAttack',
-    ROUND_TIME = 'roundTime',
+    BATTLE_CYCLE_TIME = 'battleCycleTime',
     DAMAGE_PER_ROUND_IN_STATUS = 'damagePerRoundInStatus',
     DAMAGE_PER_ROUND_IN_BATTLE = 'damagePerRoundInBattle',
     TIME_TO_DESTROY_TARGET = 'timeToDestroyTarget',
@@ -66,7 +66,7 @@ export interface IOutputProperties extends Record<OutputPropertyId, IOutputPrope
     [OutputPropertyId.LOCK_ON_TIME]: INumericOutputProperty;
     [OutputPropertyId.ATTACKS_PER_ROUND]: INumericOutputProperty;
     [OutputPropertyId.SHOTS_PER_ATTACK]: INumericOutputProperty;
-    [OutputPropertyId.ROUND_TIME]: INumericOutputProperty;
+    [OutputPropertyId.BATTLE_CYCLE_TIME]: INumericOutputProperty;
     [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS]: INumericOutputProperty;
     [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE]: INumericOutputProperty;
     [OutputPropertyId.TIME_TO_DESTROY_TARGET]: INumericOutputProperty;

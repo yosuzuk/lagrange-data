@@ -213,7 +213,7 @@ export function createOutputProperties(): IOutputProperties {
                 }
             },
         }),
-        [OutputPropertyId.ROUND_TIME]: createNumericOutputProperty({
+        [OutputPropertyId.BATTLE_CYCLE_TIME]: createNumericOutputProperty({
             label: 'ラウンド時間',
             unit: Unit.SECONDS,
             dependsOn: {
@@ -332,20 +332,20 @@ export function createOutputProperties(): IOutputProperties {
             unit: Unit.SECONDS,
             dependsOn: {
                 targetProperties: [TargetPropertyId.HP],
-                outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.ROUND_TIME, OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE],
+                outputProperties: [OutputPropertyId.COOLDOWN, OutputPropertyId.BATTLE_CYCLE_TIME, OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE],
             },
             update: ({ targetProperties, outputProperties }, self) => {
                 const { hp } = targetProperties;
-                const { cooldown, roundTime, damagePerRoundInBattle } = outputProperties;
-                if (hp.value === null || cooldown.value === null || roundTime.value === null || damagePerRoundInBattle.value === null) {
+                const { cooldown, battleCycleTime, damagePerRoundInBattle } = outputProperties;
+                if (hp.value === null || cooldown.value === null || battleCycleTime.value === null || damagePerRoundInBattle.value === null) {
                     return self;
                 }
                 return {
                     ...self,
-                    value: Math.ceil(hp.value / damagePerRoundInBattle.value) * roundTime.value - cooldown.value,
+                    value: Math.ceil(hp.value / damagePerRoundInBattle.value) * battleCycleTime.value - cooldown.value,
                     formula: {
-                        formula: `ceil([${hp.label}] / [${damagePerRoundInBattle.label}]) * [${roundTime.label}] - [${cooldown.label}]`,
-                        filledFormula: `ceil(${hp.value} / ${formatNumber(damagePerRoundInBattle.value)}) * ${formatNumber(roundTime.value)} - ${formatNumber(cooldown.value)}`,
+                        formula: `ceil([${hp.label}] / [${damagePerRoundInBattle.label}]) * [${battleCycleTime.label}] - [${cooldown.label}]`,
+                        filledFormula: `ceil(${hp.value} / ${formatNumber(damagePerRoundInBattle.value)}) * ${formatNumber(battleCycleTime.value)} - ${formatNumber(cooldown.value)}`,
                     },
                 };
             },
@@ -355,19 +355,19 @@ export function createOutputProperties(): IOutputProperties {
             description: '武装の詳細画面に表示されている武装DPMです（攻撃目標の抵抗値/シールド値は考慮しない数値です）。ゲーム内に表示される数値と比較して合わない場合は上で入力した各数値を再度確認してください。戦闘機の場合は１機分の数値です。',
             unit: Unit.DPM,
             dependsOn: {
-                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS, OutputPropertyId.ROUND_TIME],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_STATUS, OutputPropertyId.BATTLE_CYCLE_TIME],
             },
             update: ({ outputProperties }, self) => {
-                const { damagePerRoundInStatus, roundTime } = outputProperties;
-                if (damagePerRoundInStatus.value === null || roundTime.value === null) {
+                const { damagePerRoundInStatus, battleCycleTime } = outputProperties;
+                if (damagePerRoundInStatus.value === null || battleCycleTime.value === null) {
                     return self;
                 }
                 return {
                     ...self,
-                    value: damagePerRoundInStatus.value / roundTime.value * 60,
+                    value: damagePerRoundInStatus.value / battleCycleTime.value * 60,
                     formula: {
-                        formula: `[${damagePerRoundInStatus.label}] / [${roundTime.label}] * 60`,
-                        filledFormula: `${formatNumber(damagePerRoundInStatus.value)} / ${formatNumber(roundTime.value)} * 60`,
+                        formula: `[${damagePerRoundInStatus.label}] / [${battleCycleTime.label}] * 60`,
+                        filledFormula: `${formatNumber(damagePerRoundInStatus.value)} / ${formatNumber(battleCycleTime.value)} * 60`,
                     },
                 };
             },
@@ -377,19 +377,19 @@ export function createOutputProperties(): IOutputProperties {
             description: '攻撃目標の抵抗値/シールド値を考慮した武装DPMです。戦闘機の場合は１機分の数値です。',
             unit: Unit.DPM,
             dependsOn: {
-                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE, OutputPropertyId.ROUND_TIME],
+                outputProperties: [OutputPropertyId.DAMAGE_PER_ROUND_IN_BATTLE, OutputPropertyId.BATTLE_CYCLE_TIME],
             },
             update: ({ outputProperties }, self) => {
-                const { damagePerRoundInBattle, roundTime } = outputProperties;
-                if (damagePerRoundInBattle.value === null || roundTime.value === null) {
+                const { damagePerRoundInBattle, battleCycleTime } = outputProperties;
+                if (damagePerRoundInBattle.value === null || battleCycleTime.value === null) {
                     return self;
                 }
                 return {
                     ...self,
-                    value: damagePerRoundInBattle.value / roundTime.value * 60,
+                    value: damagePerRoundInBattle.value / battleCycleTime.value * 60,
                     formula: {
-                        formula: `[${damagePerRoundInBattle.label}] / [${roundTime.label}] * 60`,
-                        filledFormula: `${formatNumber(damagePerRoundInBattle.value)} / ${formatNumber(roundTime.value)} * 60`,
+                        formula: `[${damagePerRoundInBattle.label}] / [${battleCycleTime.label}] * 60`,
+                        filledFormula: `${formatNumber(damagePerRoundInBattle.value)} / ${formatNumber(battleCycleTime.value)} * 60`,
                     },
                 };
             },
