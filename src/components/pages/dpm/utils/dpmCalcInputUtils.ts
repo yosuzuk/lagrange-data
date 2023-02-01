@@ -102,11 +102,11 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             unit: Unit.SECONDS,
         }),
         [WeaponBasePropertyId.SHOTS_PER_ATTACK]: createNumericInputProperty({
-            label: '弾数',
+            label: '同時射撃数',
             description: [
                 '１回の攻撃で同時に撃てる弾数',
                 'モジュールステータスで確認できます。「攻撃回数」の左側の数値です。',
-                '例えば「1 x 8」の場合は「1」です。',
+                '例えば「2 x 8」の場合は「2」です（8回にわたって2発ずつ攻撃してます）。',
                 '項目が表示されない場合は「ダメージタイプ」を確認してください。',
             ],
             value: 1,
@@ -117,7 +117,7 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             description: [
                 '１ラウンド毎の攻撃回数',
                 'モジュールステータスで確認できます。「攻撃回数」の右側の数値です',
-                '例えば「1 x 8」の場合は「8」です。',
+                '例えば「2 x 8」の場合は「8」です（8回にわたって2発ずつ攻撃してます）。',
                 '項目が表示されない場合は「ダメージタイプ」を確認してください。',
             ],
             value: 1,
