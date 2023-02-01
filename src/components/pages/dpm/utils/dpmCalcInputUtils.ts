@@ -136,8 +136,8 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             min: 1,
         }),
         [WeaponBasePropertyId.SHOTS_PER_ATTACK_ION]: createNumericInputProperty({
-            label: '弾数（イオン砲）',
-            description: 'イオン砲が１回の攻撃で同時に撃つ弾数は武器の名前に隠されています。武器情報画面内、名前のアルファベット２文字と横線の後に「2x」とあれば２発です。例えば「CI-2x700T型」の場合は「C」が企業、「I」が武器の種類、その後ろの「2x」が弾数です。',
+            label: '同時射撃数（イオン砲）',
+            description: 'イオン砲が１回の攻撃で同時に撃つ弾数は武器の名前に隠されています。武器情報画面内、名前のアルファベット２文字と横線の後に「2x」とあれば２発です。例えば「CI-2x700T型」の場合は「C」が企業、「I」が武器の種類、その後ろの「2x」が同時射撃数です。',
             value: 1,
         }),
         [WeaponBasePropertyId.LOCK_ON_TIME]: createNumericInputProperty({
