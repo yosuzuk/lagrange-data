@@ -4,7 +4,7 @@ export interface IInputProperty {
     type: string;
     id: string;
     label: string;
-    description?: string;
+    description?: string | string[];
 }
 
 export interface INumericInputProperty extends IInputProperty {

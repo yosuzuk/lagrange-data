@@ -5,7 +5,7 @@ export interface IOutputProperty {
     type: string;
     id: string;
     label: string;
-    description?: string;
+    description?: string | string[];
     formula?: IFormula;
     dependsOn?: DependsOn;
     hidden?: boolean;

@@ -11,7 +11,7 @@ import { t } from '../../i18n';
 
 interface IProps {
     title: string;
-    text: string;
+    text: string | string[];
 }
 
 export const HelpPopper = (props: IProps) => {
@@ -41,9 +41,15 @@ export const HelpPopper = (props: IProps) => {
                     {title}
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        {text}
-                    </DialogContentText>
+                    {Array.isArray(text) ? (text as string[]).map((line, index) => (
+                        <DialogContentText
+                            id={`alert-dialog-description-${index}`}
+                            key={`line_${index}`}
+                            gutterBottom={true}
+                        >{line}</DialogContentText>
+                    )) : (
+                        <DialogContentText id="alert-dialog-description">{text}</DialogContentText>
+                    )}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} variant="outlined">{t('button.close')}</Button>
