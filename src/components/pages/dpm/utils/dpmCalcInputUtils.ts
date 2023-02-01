@@ -101,15 +101,15 @@ export function createWeaponBaseProperties(): IWeaponBaseProperties {
             description: 'モジュールステータスで確認できます。「--」と表示される場合は０秒です。別名「出力時間」/「攻撃間隔」/「攻撃時間」',
             unit: Unit.SECONDS,
         }),
-        [WeaponBasePropertyId.ATTACKS_PER_ROUND]: createNumericInputProperty({
-            label: '攻撃回数',
-            description: 'モジュールステータスで確認できます。「攻撃回数」の左側の数値です。例えば「1 x 8」の場合は「1」です。項目が表示されない場合は「ダメージタイプ」を確認してください。',
+        [WeaponBasePropertyId.SHOTS_PER_ATTACK]: createNumericInputProperty({
+            label: '連装数',
+            description: '１回の攻撃で同時に撃てる弾数。モジュールステータスで確認できます。「攻撃回数」の左側の数値です。例えば「1 x 8」の場合は「1」です。項目が表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
-        [WeaponBasePropertyId.SHOTS_PER_ATTACK]: createNumericInputProperty({
-            label: '連装数',
-            description: 'モジュールステータスで確認できます。「攻撃回数」の右側の数値です。例えば「1 x 8」の場合は「8」です。項目が表示されない場合は「ダメージタイプ」を確認してください。',
+        [WeaponBasePropertyId.ATTACKS_PER_ROUND]: createNumericInputProperty({
+            label: '攻撃回数',
+            description: '１ラウンド毎の攻撃回数。モジュールステータスで確認できます。「攻撃回数」の右側の数値です。例えば「1 x 8」の場合は「8」です。項目が表示されない場合は「ダメージタイプ」を確認してください。',
             value: 1,
             min: 1,
         }),
