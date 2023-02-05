@@ -4977,7 +4977,13 @@ export const shipDefinitions: IShipDefinition[] = [
                 description: '抵抗値250アップ（最大400）',
                 parts: [
                     {
-                        // TODO text
+                        text: [
+                            '抵抗値250',
+                            '回避率-10%',
+                            'メイン武器命中率-5%',
+                            'ASX-130型　付加装甲',
+                            '重付加装甲。既存の装甲をベースに装甲厚を増し、中型武器への防御力をアップさせた。ただし艦船の機動性と艦船メイン武器の命中率に影響する。',
+                        ],
                         skillSlots: 2,
                         skills: [
                             {
