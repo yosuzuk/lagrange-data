@@ -671,18 +671,39 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'B1',
                 name: '通常砲システム',
-                description: '対艦＆対空武装',
+                description: '対小型＆対空武装',
                 parts: [{
                     text: [
                         '350mm-CG-1350型　対艦2連砲',
-                        '対艦：', // TODO priority
+                        '対小型：',
                         '・投射、実弾、対艦：8571、攻城：1371',
                         'CG-1160B型　通常砲',
                         '対空：',
-                        '・投射、実弾、対艦：3000、対空：720、攻城：90',
+                        '・投射、実弾、対艦：3000、対空：720、攻城：90、反撃対空',
                     ],
-                    // TODO skillslot
-                    // TODO skills
+                    skillSlots: 4,
+                    skills: [
+                        {
+                            effect: 'ダメージアップ',
+                            properties: '最大10％、技術Pt8',
+                        },
+                        {
+                            effect: 'ダメージアップ',
+                            properties: '最大10％、技術Pt8',
+                        },
+                        {
+                            effect: '冷却時間ダウン',
+                            properties: '最大15％、技術Pt8',
+                        },
+                        {
+                            effect: '冷却時間ダウン',
+                            properties: '最大15％、技術Pt8',
+                        },
+                        {
+                            effect: '戦闘機/護送艦に対する命中率アップ',
+                            properties: '最大15％、技術Pt8',
+                        },
+                    ],
                 }],
                 category: 'B',
                 categoryNumber: 1,
@@ -786,7 +807,7 @@ export const shipDefinitions: IShipDefinition[] = [
                     text: [
                         'CM-2x45B型　近接対空ミサイル',
                         '対空：',
-                        '・投射、実弾、対空：5275',
+                        '・投射、実弾、対空：5275、反撃対空',
                     ],
                     // TODO skillslot
                     // TODO skills
@@ -1190,9 +1211,36 @@ export const shipDefinitions: IShipDefinition[] = [
                             'MK3-SM-6x4008/C型「スターファイア」ミサイルランチャー群',
                             '対空：',
                             '・投射、実弾、対艦：1400、対空：700、攻城：70',
+                            '迎撃効果',
+                            '反撃対空',
                         ],
-                        // TODO skillslot
-                        // TODO skills
+                        skillSlots: 4,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: '対戦闘機/護送艦命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '対戦闘機/護送艦命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                        ],
                     },
                 ],
                 category: 'B',
@@ -3918,19 +3966,56 @@ export const shipDefinitions: IShipDefinition[] = [
             {
                 id: 'A3',
                 name: '総合砲プラットフォーム',
-                description: '対空武装', // TODO verify priority
+                description: '対空＆対小型武装',
                 parts: [
                     {
                         text: [
                             'BG-2180型　対艦砲',
                             '対空：',
-                            '・直射、実弾、対艦：6240、対空：345、攻城：336',
-                            'MK3-BM-8x320「ライトニングフィールド」対艦ミサイル群', // TODO verify name (same as A2)
-                            '対空：', // TODO verify priority
-                            '・投射、実弾、対艦：4911、対空：510、攻城：294',
+                            '・直射、実弾、対艦：6240、対空：345、攻城：336、反撃対空',
+                            'MK3-BM-8x320「ライトニングフィールド」8連対艦ミサイルシステム',
+                            '対小型：',
+                            '・投射、実弾、対艦：4911、対空：510、攻城：294、反撃対空',
                         ],
-                        // TODO skillslots
-                        // TODO skills
+                        skillSlots: 6,
+                        skills: [
+                            {
+                                effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
+                                properties: '戦略、技術Pt15',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '巡洋艦以上に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '冷却時間ダウン',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                            {
+                                effect: '戦闘機/護送艦に対する命中率アップ',
+                                properties: '最大14.8％、技術Pt8',
+                            },
+                        ],
                     },
                 ],
                 category: 'A',
@@ -4041,11 +4126,28 @@ export const shipDefinitions: IShipDefinition[] = [
                         text: [
                             'BM-12x180T型　防御ミサイルシステム',
                             '対空：',
-                            '・投射、実弾、対艦：3272、対空：7854',
+                            '・投射、実弾、対艦：3272、対空：7854、対空支援、迎撃効果',
                             '同じ艦列の味方艦船に対して対空支援を行うことができる',
                         ],
-                        // TODO skillslots
-                        // TODO skills
+                        skillSlots: 3,
+                        skills: [
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                            {
+                                effect: 'ダメージアップ',
+                                properties: '最大10％、技術Pt5',
+                            },
+                            {
+                                effect: '対戦闘機/護送艦命中率アップ',
+                                properties: '最大15％、技術Pt5',
+                            },
+                            {
+                                effect: '対戦闘機/護送艦命中率アップ',
+                                properties: '最大15％、技術Pt5',
+                            },
+                        ],
                     },
                 ],
                 category: 'C',
