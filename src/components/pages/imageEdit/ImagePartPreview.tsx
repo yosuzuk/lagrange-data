@@ -12,33 +12,43 @@ interface IProps {
 
 export const ImagePartPreview = (props: IProps) => {
     const { file, index } = props;
-    const sliderContainerRef = useRef<HTMLDivElement>(null);
+    const cutSliderContainerRef = useRef<HTMLDivElement>(null);
+    const moveSliderContainerRef = useRef<HTMLDivElement>(null);
     const resizerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         const handler = () => {
-            drawImage(file, sliderContainerRef, resizerRef, containerRef, canvasRef);
+            drawImage(file, cutSliderContainerRef, moveSliderContainerRef, resizerRef, containerRef, canvasRef);
         };
         window.addEventListener('resize', handler);
         return () => {
             window.removeEventListener('resize', handler);
         };
-    }, [file, sliderContainerRef, resizerRef, containerRef, canvasRef]);
+    }, [file, cutSliderContainerRef, moveSliderContainerRef, resizerRef, containerRef, canvasRef]);
 
     useEffect(() => {
-        drawImage(file, sliderContainerRef, resizerRef, containerRef, canvasRef);
-    }, [file, sliderContainerRef, resizerRef, containerRef, canvasRef]);
+        drawImage(file, cutSliderContainerRef, moveSliderContainerRef, resizerRef, containerRef, canvasRef);
+    }, [file, cutSliderContainerRef, moveSliderContainerRef, resizerRef, containerRef, canvasRef]);
 
-    const handleChangeSlider = useCallback((event: Event, value: number | number[]) => {
-        if (resizerRef.current !== null) {
+    const handleChangeCutSlider = useCallback((event: Event, value: number | number[]) => {
+        if (resizerRef.current !== null && typeof value === 'number') {
             const { maxHeight } = resizerRef.current.style;
-            if (typeof maxHeight === 'undefined' || typeof value !== 'number') {
+            if (typeof maxHeight === 'undefined') {
                 return;
             }
-            console.log(value);
             resizerRef.current.style.height = `${Number(maxHeight.replace('px', '')) * (1 - (value / 150))}px`;
+        }
+    }, [resizerRef]);
+
+    const handleChangeMoveSlider = useCallback((event: Event, value: number | number[]) => {
+        if (resizerRef.current !== null && typeof value === 'number') {
+            const { maxHeight } = resizerRef.current.style;
+            if (typeof maxHeight === 'undefined') {
+                return;
+            }
+            resizerRef.current.style.marginTop = `-${Number(maxHeight.replace('px', '')) * (value / 150)}px`;
         }
     }, [resizerRef]);
 
@@ -46,19 +56,18 @@ export const ImagePartPreview = (props: IProps) => {
         <>
             <Box
                 sx={{
-                    display: 'flex',
-                    justifyContent: index % 2 === 0 ? 'start' : 'end',
                     position: 'relative',
-                    width: '60px',
+                    width: '120px',
                     alignSelf: 'stretch'
                 }}
             >
                 <Box
-                    ref={sliderContainerRef}
+                    ref={cutSliderContainerRef}
                     pb={4}
                     sx={{
                         position: 'absolute',
                         top: '0',
+                        left: index % 2 === 0 ? '30px' : '0px',
                     }}
                 >
                     {index > 0 && (
@@ -70,14 +79,39 @@ export const ImagePartPreview = (props: IProps) => {
                             }}
                             orientation="vertical"
                             defaultValue={0}
-                            onChange={handleChangeSlider}
+                            onChange={handleChangeCutSlider}
                             valueLabelDisplay="off"
                             onKeyDown={preventHorizontalKeyboardNavigation}
                         />
                     )}
                 </Box>
+                <Box
+                    ref={moveSliderContainerRef}
+                    pb={4}
+                    sx={{
+                        position: 'absolute',
+                        top: '0',
+                        left: index % 2 === 0 ? '90px' : '60px',
+                    }}
+                >
+                    {index > 0 && (
+                        <Slider
+                            sx={{
+                                '& input[type="range"]': {
+                                    WebkitAppearance: 'slider-vertical',
+                                },
+                            }}
+                            orientation="vertical"
+                            defaultValue={0}
+                            onChange={handleChangeMoveSlider}
+                            valueLabelDisplay="off"
+                            onKeyDown={preventHorizontalKeyboardNavigation}
+                            color="secondary"
+                        />
+                    )}
+                </Box>
             </Box>
-            <Box ref={resizerRef} sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex' }}>
+            <Box ref={resizerRef} sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', marginTop: 0 }}>
                 <Box ref={containerRef} sx={{ alignSelf: 'end', width: '100%' }}>
                     <canvas ref={canvasRef} />
                 </Box>
@@ -86,11 +120,19 @@ export const ImagePartPreview = (props: IProps) => {
     );
 };
 
-function drawImage(file: File, sliderContainerRef: RefObject<HTMLDivElement>, resizerRef: RefObject<HTMLDivElement>, containerRef: RefObject<HTMLDivElement>, canvasRef: RefObject<HTMLCanvasElement>) {
-    if (sliderContainerRef.current === null || resizerRef.current === null ||containerRef.current === null || canvasRef.current === null || typeof FileReader === 'undefined') {
+function drawImage(
+    file: File,
+    cutSliderContainerRef: RefObject<HTMLDivElement>,
+    moveSliderContainerRef: RefObject<HTMLDivElement>,
+    resizerRef: RefObject<HTMLDivElement>,
+    containerRef: RefObject<HTMLDivElement>,
+    canvasRef: RefObject<HTMLCanvasElement>,
+) {
+    if (cutSliderContainerRef.current === null || moveSliderContainerRef.current === null || resizerRef.current === null ||containerRef.current === null || canvasRef.current === null || typeof FileReader === 'undefined') {
         return;
     }
-    const sliderContainer = sliderContainerRef.current;
+    const cutSliderContainer = cutSliderContainerRef.current;
+    const moveSliderContainer = moveSliderContainerRef.current;
     const resizer = resizerRef.current;
     const container = containerRef.current;
     const canvas = canvasRef.current;
@@ -102,8 +144,11 @@ function drawImage(file: File, sliderContainerRef: RefObject<HTMLDivElement>, re
             canvas.width = container.offsetWidth;
             canvas.height = Math.round(container.offsetWidth * aspectRatio);
 
-            sliderContainer.style.height = `${canvas.height}px`;
-            sliderContainer.style.top = `-${Math.round(canvas.height / 2)}px`;
+            cutSliderContainer.style.height = `${canvas.height}px`;
+            cutSliderContainer.style.top = `-${Math.round(canvas.height / 2)}px`;
+            moveSliderContainer.style.height = `${canvas.height}px`;
+            moveSliderContainer.style.top = `-${Math.round(canvas.height / 2)}px`;
+
             resizer.style.maxHeight = resizer.style.height = `${canvas.height}px`;
             container.style.height = `${canvas.height}px`;
 
