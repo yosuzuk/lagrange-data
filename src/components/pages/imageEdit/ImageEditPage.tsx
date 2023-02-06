@@ -5,9 +5,6 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import DeleteIcon from '@mui/icons-material/Delete';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { ImagePartPreview } from './ImagePartPreview';
 
 interface IProps {
@@ -82,24 +79,14 @@ const ImageEditPage = (props: IProps) => {
                 {files.map((file: File, index: number) => (
                     <Paper key={`imageRow_${index}`}>
                         <Stack direction="row" alignItems="center" spacing={1}>
-                            <ImagePartPreview file={file} index={index} />
-                            <Stack>
-                                <div>
-                                    <IconButton onClick={() => moveFileUp(index)} disabled={index === 0}>
-                                        <KeyboardArrowUpIcon />
-                                    </IconButton>
-                                </div>
-                                <div>
-                                    <IconButton onClick={() => moveFileDown(index)} disabled={index === files.length - 1}>
-                                        <KeyboardArrowDownIcon />
-                                    </IconButton>
-                                </div>
-                            </Stack>
-                            <div>
-                                <IconButton onClick={() => removeFile(index)}>
-                                    <DeleteIcon />
-                                </IconButton>
-                            </div>
+                            <ImagePartPreview
+                                file={file}
+                                index={index}
+                                total={files.length}
+                                moveFileUp={moveFileUp}
+                                moveFileDown={moveFileDown}
+                                removeFile={removeFile}
+                            />
                         </Stack>
                     </Paper>
                 ))}

@@ -4,14 +4,22 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
+import { IconButton } from '@mui/material';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 interface IProps {
     file: File;
     index: number;
+    total: number;
+    moveFileUp: (index: number) => void;
+    moveFileDown: (index: number) => void;
+    removeFile: (index: number) => void;
 }
 
 export const ImagePartPreview = (props: IProps) => {
-    const { file, index } = props;
+    const { file, index, total, moveFileUp, moveFileDown, removeFile } = props;
     const cutSliderContainerRef = useRef<HTMLDivElement>(null);
     const moveSliderContainerRef = useRef<HTMLDivElement>(null);
     const resizerRef = useRef<HTMLDivElement>(null);
@@ -112,9 +120,28 @@ export const ImagePartPreview = (props: IProps) => {
                 </Box>
             </Box>
             <Box ref={resizerRef} sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', marginTop: 0 }}>
-                <Box ref={containerRef} sx={{ alignSelf: 'end', width: '100%' }}>
-                    <canvas ref={canvasRef} />
-                </Box>
+                <Stack direction="row" alignItems="center" sx={{ flexGrow: 1 }}>
+                    <Box ref={containerRef} sx={{ alignSelf: 'end', width: '100%' }}>
+                        <canvas ref={canvasRef} />
+                    </Box>
+                    <Stack>
+                        <div>
+                            <IconButton onClick={() => moveFileUp(index)} disabled={index === 0}>
+                                <KeyboardArrowUpIcon />
+                            </IconButton>
+                        </div>
+                        <div>
+                            <IconButton onClick={() => moveFileDown(index)} disabled={index === total - 1}>
+                                <KeyboardArrowDownIcon />
+                            </IconButton>
+                        </div>
+                    </Stack>
+                    <div>
+                        <IconButton onClick={() => removeFile(index)}>
+                            <DeleteIcon />
+                        </IconButton>
+                    </div>
+                </Stack>
             </Box>
         </>
     );
