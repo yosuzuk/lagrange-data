@@ -65,7 +65,7 @@ export const ImagePartPreview = (props: IProps) => {
             <Box
                 sx={{
                     position: 'relative',
-                    width: '120px',
+                    flexBasis: '120px',
                     alignSelf: 'stretch'
                 }}
             >
@@ -176,8 +176,7 @@ function drawImage(
             moveSliderContainer.style.height = `${canvas.height}px`;
             moveSliderContainer.style.top = `-${Math.round(canvas.height / 2)}px`;
 
-            resizer.style.maxHeight = resizer.style.height = `${canvas.height}px`;
-            container.style.height = `${canvas.height}px`;
+            container.style.height = resizer.style.maxHeight = resizer.style.height = `${canvas.height}px`;
 
             const ctx = canvas.getContext('2d');
             if (ctx) {
