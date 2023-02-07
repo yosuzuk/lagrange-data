@@ -1,34 +1,43 @@
-import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { ImageEditor } from './ImageEditor';
+import { useImageSelections } from './hooks/useImageSelections';
+import { ImageEditActionBar } from './ImageEditActionBar';
 
-interface IProps {
-    
-}
+const ImageEditPage = () => {
+    const {
+        imageSelections,
+        loading,
+        addFiles,
+        updateImageSelection,
+        moveImageUp,
+        moveImageDown,
+        removeImage,
+        clearImages,
+    } = useImageSelections();
 
-const ImageEditPage = (props: IProps) => {
-    const {  } = props;
-
-    // add action bar
-    // TODO toggle slider modes
-    // measure container size in ImageEditor to align all previews
-    // fix resize
-    // improve react key handling
+    console.log(imageSelections);
 
     return (
         <>
             <NavigationBar currentRoute="/imageEdit" />
+            <ImageEditActionBar
+                imageSelections={imageSelections}
+                disabled={loading}
+                onAddFiles={addFiles}
+                onClearImages={clearImages}
+            />
             <PageContent>
                 <Box p={1}>
-                    <ImageEditor />
+                    <ImageEditor
+                        imageSelections={imageSelections}
+                        onUpdateImage={updateImageSelection}
+                        onMoveUp={moveImageUp}
+                        onMoveDown={moveImageDown}
+                        onRemove={removeImage}
+                    />
                 </Box>
             </PageContent>
             <PageFooter />
