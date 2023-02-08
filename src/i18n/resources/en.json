@@ -14,6 +14,8 @@
         "copyToClipboard": "Copy to clipboard",
         "unselectAll": "Unselect all",
         "chooseFile": "Choose file",
+        "chooseImages": "Choose images",
+        "addImages": "Add images",
         "parseInput": "Parse input",
         "downloadFile": "Download",
         "storeBackupInStorage": "Store in local storage",
