@@ -1,4 +1,4 @@
-import { IImageSelection } from '../types/IImageSelection';
+import { IImageModifier, IImageSelection } from '../types/IImageSelection';
 
 export async function filesToImageSelections(files: FileList): Promise<IImageSelection[]> {
     const result = await Promise.allSettled([...files].map(fileToImageSelection));
@@ -69,4 +69,12 @@ export function deduplicateImageSelections(imageSelections: IImageSelection[]): 
         result.push(selection);
     });
     return result;
+}
+
+export function createImageModifier(properties: Partial<IImageModifier> = {}): IImageModifier {
+    return {
+        cutTop: 0,
+        moveUp: 0,
+        ...properties,
+    };
 }

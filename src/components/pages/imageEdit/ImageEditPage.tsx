@@ -16,6 +16,8 @@ const ImageEditPage = () => {
         moveImageDown,
         removeImage,
         clearImages,
+        setModifier,
+        getModifier,
     } = useImageSelections();
 
     console.log(imageSelections);
@@ -37,6 +39,8 @@ const ImageEditPage = () => {
                         onMoveUp={moveImageUp}
                         onMoveDown={moveImageDown}
                         onRemove={removeImage}
+                        setModifier={setModifier}
+                        getModifier={getModifier}
                     />
                 </Box>
             </PageContent>

@@ -15,4 +15,10 @@ export interface IImageInfo {
 export interface ICanvasInfo {
     width: number;
     height: number;
+    scale: number;
+}
+
+export interface IImageModifier {
+    cutTop: number;
+    moveUp: number;
 }

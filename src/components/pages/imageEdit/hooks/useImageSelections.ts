@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import { IImageSelection } from '../types/IImageSelection';
-import { filesToImageSelections, sortImageSelections, deduplicateImageSelections } from '../utils/imageUtils';
+import { useState, useCallback, useRef } from 'react';
+import { IImageModifier, IImageSelection } from '../types/IImageSelection';
+import { filesToImageSelections, sortImageSelections, deduplicateImageSelections, createImageModifier } from '../utils/imageUtils';
 
 interface IHookResult {
     imageSelections: IImageSelection[];
@@ -11,11 +11,14 @@ interface IHookResult {
     moveImageDown: (index: number) => void;
     removeImage: (index: number) => void;
     clearImages: () => void;
+    setModifier: (selectionId: string, modifier: Partial<IImageModifier>) => void;
+    getModifier: (selectionId: string) => IImageModifier;
 }
 
 export const useImageSelections = (): IHookResult => {
     const [imageSelections, setImageSelections] = useState<IImageSelection[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+    const imageModifierRef = useRef<Record<string, IImageModifier>>({});
 
     const addFiles = useCallback((files: FileList) => {
         setLoading(true);
@@ -61,14 +64,26 @@ export const useImageSelections = (): IHookResult => {
     const removeImage = useCallback((index: number) => {
         setImageSelections(selections => {
             const newSelections = [...selections];
-            newSelections.splice(index, 1);
+            const removedSelection = newSelections.splice(index, 1);
+            if (imageModifierRef.current[removedSelection[0].id]) {
+                delete imageModifierRef.current[removedSelection[0].id];
+            }
             return newSelections;
         });
-    }, []);
+    }, [imageModifierRef]);
 
     const clearImages = useCallback(() => {
         setImageSelections([]);
     }, []);
+
+    const setModifier = useCallback((selectionId: string, modifier: Partial<IImageModifier>) => {
+        const current = imageModifierRef.current[selectionId] ?? createImageModifier();
+        imageModifierRef.current[selectionId] = { ...current, ...modifier };
+    }, [imageModifierRef]);
+
+    const getModifier = useCallback((selectionId: string): IImageModifier => {
+        return imageModifierRef.current[selectionId] ?? createImageModifier();
+    }, [imageModifierRef]);
 
     return {
         imageSelections,
@@ -79,5 +94,7 @@ export const useImageSelections = (): IHookResult => {
         moveImageDown,
         removeImage,
         clearImages,
+        setModifier,
+        getModifier,
     };
 };
