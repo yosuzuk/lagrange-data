@@ -2,6 +2,10 @@ import { useRef, useCallback, Dispatch, SetStateAction } from 'react';
 import Button from '@mui/material/Button';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import ClearIcon from '@mui/icons-material/Clear';
+import ShareIcon from '@mui/icons-material/Share';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { t } from '../../../i18n';
 import { IImageSelection } from './types/IImageSelection';
@@ -44,6 +48,7 @@ export const ImageEditActionBar = (props: IProps) => {
                             <Button
                                 key="addFiles"
                                 variant="outlined"
+                                startIcon={imageSelections.length > 0 ? <AddPhotoAlternateIcon /> : <CollectionsIcon />}
                                 component="label"
                             >
                                 {imageSelections.length > 0 ? t('button.addImages') : t('button.chooseImages')}
@@ -64,6 +69,7 @@ export const ImageEditActionBar = (props: IProps) => {
                                     key="clearImages"
                                     variant="outlined"
                                     onClick={onClearImages}
+                                    startIcon={<ClearIcon />}
                                     disabled={disabled}
                                     {...buttonProps}
                                 >
@@ -135,6 +141,7 @@ export const ImageEditActionBar = (props: IProps) => {
                                 key="share"
                                 variant="outlined"
                                 disabled={disabled || imageSelections.length === 0}
+                                startIcon={<ShareIcon />}
                                 {...buttonProps}
                             >
                                 {t('button.share')}

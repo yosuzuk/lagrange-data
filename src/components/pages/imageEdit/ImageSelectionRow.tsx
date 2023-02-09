@@ -65,6 +65,7 @@ export const ImageSelectionRow = (props: IProps) => {
             const newHeight = imageSelection.canvasInfo.height * (1 - (value / 100));
             const cutTopPx = imageSelection.canvasInfo.height - newHeight;
             resizerRef.current.style.height = `${newHeight}px`;
+            resizerRef.current.style.borderTop = '1px dashed yellow';
             setModifier(imageSelection.id, {
                 cutTop: cutTopPx / imageSelection.canvasInfo.height,
             });
@@ -84,6 +85,12 @@ export const ImageSelectionRow = (props: IProps) => {
             });
         }
     }, [resizerRef, setModifier, imageSelection]);
+
+    const handleCommitSlider = useCallback(() => {
+        if (resizerRef.current?.style?.borderTop) {
+            resizerRef.current.style.borderTop = 'none';
+        }
+    }, [resizerRef]);
 
     const width = imageSelection.canvasInfo?.width ?? Number.NaN;
     const height = imageSelection.canvasInfo?.height ?? Number.NaN;
@@ -134,8 +141,9 @@ export const ImageSelectionRow = (props: IProps) => {
                                 orientation="vertical"
                                 defaultValue={modifier.cutTop * 100}
                                 onChange={handleChangeCutSlider}
-                                valueLabelDisplay="off"
+                                onChangeCommitted={handleCommitSlider}
                                 onKeyDown={preventHorizontalKeyboardNavigation}
+                                valueLabelDisplay="off"
                             />
                         )}
                     </Box>
@@ -173,6 +181,7 @@ export const ImageSelectionRow = (props: IProps) => {
                         overflow: 'hidden',
                         display: 'flex',
                         marginTop: 0,
+                        borderTop: 'none',
                     }}
                     style={{
                         height: (index > 0 && imageSelection.canvasInfo !== null) ? imageSelection.canvasInfo.height * (1 - modifier.cutTop) : 'auto',
