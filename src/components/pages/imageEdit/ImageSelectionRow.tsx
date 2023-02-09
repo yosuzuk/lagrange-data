@@ -169,10 +169,9 @@ export const ImageSelectionRow = (props: IProps) => {
                         marginTop: imageSelection.canvasInfo !== null ? `-${modifier.moveUp * imageSelection.canvasInfo.height}px` : '0',
                     }}
                 >
-                    <Stack direction="row" alignItems="center" sx={{ flexGrow: 1 }}>
+                    <Stack direction="row" alignItems="end" sx={{ flexGrow: 1 }}>
                         <Box ref={imageContainerRef}
                             sx={{
-                                alignSelf: 'end',
                                 width: widthPxOrFullWidth,
                                 height: heightPxOrAuto,
                             }}
@@ -184,23 +183,25 @@ export const ImageSelectionRow = (props: IProps) => {
                                 alt={imageSelection.file.name}
                             />
                         </Box>
-                        <Stack>
+                        <Stack direction="row" alignItems="center" sx={{ height: '100%' }}>
+                            <Stack>
+                                <div>
+                                    <IconButton onClick={() => onMoveUp(index)} disabled={index === 0}>
+                                        <KeyboardArrowUpIcon />
+                                    </IconButton>
+                                </div>
+                                <div>
+                                    <IconButton onClick={() => onMoveDown(index)} disabled={index === total - 1}>
+                                        <KeyboardArrowDownIcon />
+                                    </IconButton>
+                                </div>
+                            </Stack>
                             <div>
-                                <IconButton onClick={() => onMoveUp(index)} disabled={index === 0}>
-                                    <KeyboardArrowUpIcon />
-                                </IconButton>
-                            </div>
-                            <div>
-                                <IconButton onClick={() => onMoveDown(index)} disabled={index === total - 1}>
-                                    <KeyboardArrowDownIcon />
+                                <IconButton onClick={() => onRemove(index)}>
+                                    <DeleteIcon />
                                 </IconButton>
                             </div>
                         </Stack>
-                        <div>
-                            <IconButton onClick={() => onRemove(index)}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </div>
                     </Stack>
                 </Box>
             </Stack>
