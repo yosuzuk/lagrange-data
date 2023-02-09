@@ -14,15 +14,12 @@ interface IProps {
     total: number;
     imageSelection: IImageSelection;
     onUpdateImage: (selection: IImageSelection) => void;
-    onMoveUp: (index: number) => void;
-    onMoveDown: (index: number) => void;
-    onRemove: (index: number) => void;
     setModifier: (selectionId: string, modifier: Partial<IImageModifier>) => void;
     getModifier: (selectionId: string) => IImageModifier;
 }
 
 export const ImageSelectionRow = (props: IProps) => {
-    const { index, total, imageSelection, onUpdateImage, onMoveUp, onMoveDown, onRemove, setModifier, getModifier } = props;
+    const { index, total, imageSelection, onUpdateImage, setModifier, getModifier } = props;
     const modifier = getModifier(imageSelection.id);
 
     const cutSliderContainerRef = useRef<HTMLDivElement>(null);
@@ -94,6 +91,20 @@ export const ImageSelectionRow = (props: IProps) => {
     const heightPxOrAuto = Number.isFinite(height) ? `${height}px` : 'auto';
     const sliderTopPx = Number.isFinite(height) ? `-${Math.round(height / 2)}px` : '0';
 
+    const sliderPositionsA: Record<string, string> = {
+        '0': `${width * 0.35}px`,
+        '1': `${width * 0.05}px`,
+        '2': `${width * 0.15}px`,
+        '3': `${width * 0.25}px`,
+    };
+
+    const sliderPositionsB: Record<string, string> = {
+        '0': `${(width * (1 - 0.35)) - 30}px`,
+        '1': `${(width * (1 - 0.05)) - 30}px`,
+        '2': `${(width * (1 - 0.15)) - 30}px`,
+        '3': `${(width * (1 - 0.25)) - 30}px`,
+    };
+
     return (
         <Paper>
             <Stack direction="row">
@@ -109,7 +120,7 @@ export const ImageSelectionRow = (props: IProps) => {
                         sx={{
                             position: 'absolute',
                             top: sliderTopPx,
-                            left: index % 2 === 0 ? `${width * 0.2}px` : `${width * 0.05}px`,
+                            left: sliderPositionsA[`${index % 4}`],
                             height: heightPxOrAuto,
                         }}
                     >
@@ -134,7 +145,7 @@ export const ImageSelectionRow = (props: IProps) => {
                         sx={{
                             position: 'absolute',
                             top: sliderTopPx,
-                            left: index % 2 === 0 ? `${width * 0.95 - 30}px` : `${width * 0.8 - 30}px`,
+                            left: sliderPositionsB[`${index % 4}`],
                             height: heightPxOrAuto,
                         }}
                     >
@@ -169,7 +180,7 @@ export const ImageSelectionRow = (props: IProps) => {
                         marginTop: (index > 0 && imageSelection.canvasInfo !== null) ? `-${modifier.moveUp * imageSelection.canvasInfo.height}px` : '0',
                     }}
                 >
-                    <Stack direction="row" alignItems="end" sx={{ flexGrow: 1 }}>
+                    <Stack direction="row" alignItems="end">
                         <Box ref={imageContainerRef}
                             sx={{
                                 width: widthPxOrFullWidth,
@@ -183,25 +194,6 @@ export const ImageSelectionRow = (props: IProps) => {
                                 alt={imageSelection.file.name}
                             />
                         </Box>
-                        <Stack direction="row" alignItems="center" sx={{ height: '100%' }}>
-                            <Stack>
-                                <div>
-                                    <IconButton onClick={() => onMoveUp(index)} disabled={index === 0}>
-                                        <KeyboardArrowUpIcon />
-                                    </IconButton>
-                                </div>
-                                <div>
-                                    <IconButton onClick={() => onMoveDown(index)} disabled={index === total - 1}>
-                                        <KeyboardArrowDownIcon />
-                                    </IconButton>
-                                </div>
-                            </Stack>
-                            <div>
-                                <IconButton onClick={() => onRemove(index)}>
-                                    <DeleteIcon />
-                                </IconButton>
-                            </div>
-                        </Stack>
                     </Stack>
                 </Box>
             </Stack>

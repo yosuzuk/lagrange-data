@@ -13,6 +13,7 @@ interface IHookResult {
     clearImages: () => void;
     setModifier: (selectionId: string, modifier: Partial<IImageModifier>) => void;
     getModifier: (selectionId: string) => IImageModifier;
+    clearModifier: () => void;
 }
 
 export const useImageSelections = (): IHookResult => {
@@ -95,6 +96,10 @@ export const useImageSelections = (): IHookResult => {
         return imageModifierRef.current[selectionId] ?? createImageModifier();
     }, [imageModifierRef]);
 
+    const clearModifier = useCallback(() => {
+        imageModifierRef.current = {};
+    }, [imageModifierRef]);
+
     return {
         imageSelections,
         loading,
@@ -106,5 +111,6 @@ export const useImageSelections = (): IHookResult => {
         clearImages,
         setModifier,
         getModifier,
+        clearModifier,
     };
 };

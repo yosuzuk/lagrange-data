@@ -19,7 +19,9 @@
         "parseInput": "取り込む",
         "downloadFile": "ダウンロード",
         "storeBackupInStorage": "ローカルストレージに保存",
-        "restoreFromStorage": "ローカルストレージから復元"
+        "restoreFromStorage": "ローカルストレージから復元",
+        "back": "戻る",
+        "next": "続ける"
     },
     "label": {
         "ship": "艦船",
@@ -247,6 +249,15 @@
     },
     "dpmCalc": {
         "pageTitle": "DPM計算機"
+    },
+    "imageEdit": {
+        "pageTitle": "画像編集",
+        "pageDescription1": "ここでは戦闘レポートや設計図リスト等の分割された画像を一つに繋ぎ合わせることができます。",
+        "pageDescription2": "画像は上にあるボタンから一括で読み込めます。ファイル名を基に自動的にソートされますが手動での並び替えも可能です。",
+        "chooseAndOrder": "画像の選択＆並び替え",
+        "cutAndMove": "画像のカット＆配置",
+        "previewAndConfirm": "確認＆シェア",
+        "cutAndMoveDescription": "左のスライダーで要らない部分をカットしてから右のスライダーで重ねる場所を調整してください。"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

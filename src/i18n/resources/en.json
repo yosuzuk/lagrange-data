@@ -19,7 +19,9 @@
         "parseInput": "Parse input",
         "downloadFile": "Download",
         "storeBackupInStorage": "Store in local storage",
-        "restoreFromStorage": "Restore from local storage"
+        "restoreFromStorage": "Restore from local storage",
+        "back": "Back",
+        "next": "Next"
     },
     "label": {
         "ship": "Ship",
@@ -247,6 +249,15 @@
     },
     "dpmCalc": {
         "pageTitle": "DPM Calculator"
+    },
+    "imageEdit": {
+        "pageTitle": "Image joiner",
+        "pageDescription1": "This page can vertically merge multiple images into one file.",
+        "pageDescription2": "For example, you can use this to crop and merge screenshots from in-game battle reports.",
+        "chooseAndOrder": "Choose and sort images",
+        "cutAndMove": "Crop and position images",
+        "previewAndConfirm": "Confirm result and share",
+        "cutAndMoveDescription": "Use sliders on the left side to crop images. Use sliders on the right side to move images on top of each other."
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",
