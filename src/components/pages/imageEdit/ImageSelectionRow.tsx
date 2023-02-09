@@ -164,9 +164,9 @@ export const ImageSelectionRow = (props: IProps) => {
                         marginTop: 0,
                     }}
                     style={{
-                        height: imageSelection.canvasInfo !== null ? imageSelection.canvasInfo.height * (1 - modifier.cutTop) : 'auto',
+                        height: (index > 0 && imageSelection.canvasInfo !== null) ? imageSelection.canvasInfo.height * (1 - modifier.cutTop) : 'auto',
                         maxHeight: heightPxOrAuto,
-                        marginTop: imageSelection.canvasInfo !== null ? `-${modifier.moveUp * imageSelection.canvasInfo.height}px` : '0',
+                        marginTop: (index > 0 && imageSelection.canvasInfo !== null) ? `-${modifier.moveUp * imageSelection.canvasInfo.height}px` : '0',
                     }}
                 >
                     <Stack direction="row" alignItems="end" sx={{ flexGrow: 1 }}>

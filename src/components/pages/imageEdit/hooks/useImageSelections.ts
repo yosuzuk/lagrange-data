@@ -48,6 +48,11 @@ export const useImageSelections = (): IHookResult => {
             const newSelections = [...selections];
             newSelections[index] = selections[index - 1];
             newSelections[index - 1] = selections[index];
+
+            if (index - 1 === 0) {
+                delete imageModifierRef.current[newSelections[index - 1].id];
+            };
+
             return newSelections;
         });
     }, []);
@@ -57,6 +62,11 @@ export const useImageSelections = (): IHookResult => {
             const newSelections = [...selections];
             newSelections[index] = selections[index + 1];
             newSelections[index + 1] = selections[index];
+
+            if (index === 0) {
+                delete imageModifierRef.current[newSelections[index].id];
+            };
+
             return newSelections;
         });
     }, []);
