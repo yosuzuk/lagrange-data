@@ -6,15 +6,12 @@ import { IImageSelection, IImageModifier } from './types/IImageSelection';
 interface IProps {
     imageSelections: IImageSelection[];
     onUpdateImage: (selection: IImageSelection) => void;
-    onMoveUp: (index: number) => void;
-    onMoveDown: (index: number) => void;
-    onRemove: (index: number) => void;
     setModifier: (selectionId: string, modifier: Partial<IImageModifier>) => void;
     getModifier: (selectionId: string) => IImageModifier;
 }
 
 export const ImageEditor = (props: IProps) => {
-    const { imageSelections, onUpdateImage, onMoveUp, onMoveDown, onRemove, setModifier, getModifier } = props;
+    const { imageSelections, onUpdateImage, setModifier, getModifier } = props;
 
     const height = useMemo<number | null>(() => {
         return imageSelections
@@ -35,9 +32,6 @@ export const ImageEditor = (props: IProps) => {
                     index={index}
                     total={imageSelections.length}
                     onUpdateImage={onUpdateImage}
-                    onMoveUp={onMoveUp}
-                    onMoveDown={onMoveDown}
-                    onRemove={onRemove}
                     setModifier={setModifier}
                     getModifier={getModifier}
                 />

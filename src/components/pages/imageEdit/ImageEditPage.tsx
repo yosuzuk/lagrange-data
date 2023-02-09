@@ -77,9 +77,6 @@ const ImageEditPage = () => {
                             <ImageEditor
                                 imageSelections={imageSelections}
                                 onUpdateImage={updateImageSelection}
-                                onMoveUp={moveImageUp}
-                                onMoveDown={moveImageDown}
-                                onRemove={removeImage}
                                 setModifier={setModifier}
                                 getModifier={getModifier}
                             />
