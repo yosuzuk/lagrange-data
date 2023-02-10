@@ -251,7 +251,7 @@
         "pageTitle": "DPM計算機"
     },
     "imageEdit": {
-        "pageTitle": "画像編集",
+        "pageTitle": "画像結合",
         "pageDescription1": "ここでは戦闘レポートや設計図リスト等の分割された画像を一つに繋ぎ合わせることができます。",
         "pageDescription2": "画像は上にあるボタンから一括で読み込めます。ファイル名を基に自動的にソートされますが手動での並び替えも可能です。",
         "chooseAndOrder": "画像の選択＆並び替え",

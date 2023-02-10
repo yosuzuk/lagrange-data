@@ -34,6 +34,9 @@ const menuItems: Record<string, ReactNode> = {
             </Stack>
         ),
     } : {}),
+    ...(flags.imageEdit && ({
+        '/imageEdit': t('imageEdit.pageTitle'),
+    })),
 };
 
 interface IProps {
