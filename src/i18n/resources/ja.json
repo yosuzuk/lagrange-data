@@ -257,7 +257,8 @@
         "chooseAndOrder": "画像の選択＆並び替え",
         "cutAndMove": "画像のカット＆配置",
         "previewAndConfirm": "確認＆シェア",
-        "cutAndMoveDescription": "左のスライダーで要らない部分をカットしてから右のスライダーで重ねる場所を調整してください。"
+        "cutAndMoveDescription": "左のスライダーで要らない部分をカットしてから右のスライダーで重ねる場所を調整してください。",
+        "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

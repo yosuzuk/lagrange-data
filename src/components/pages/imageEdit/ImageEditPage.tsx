@@ -12,11 +12,10 @@ import { EditorMode } from './types/editorMode';
 import { ReorderList } from './ReorderList';
 import { StepStepper } from './StepStepper';
 import { t } from '../../../i18n';
-import { ImageCanvas } from './ImageCanvas';
 
 const ImageEditPage = () => {
     const [mode, setMode] = useState<EditorMode>(EditorMode.CHOOSE_AND_REORDER);
-    const [resultCanvas, setResultCanvas] = useState<HTMLCanvasElement | null>(null);
+    const [joinedImageUrl, setJoinedImageUrl] = useState<string | null>(null);
 
     const {
         imageSelections,
@@ -30,16 +29,21 @@ const ImageEditPage = () => {
         setModifier,
         getModifier,
         clearModifier,
+        joinImages,
     } = useImageSelections();
 
     const handleChangeEditorMode = useCallback((newMode: EditorMode) => {
-        if (newMode === EditorMode.CHOOSE_AND_REORDER) {
-            clearModifier();
-        }
-        setResultCanvas(null);
-        setMode(newMode);
-        window.scrollTo(0, 0);
-    }, []);
+        (async () => {
+            if (newMode === EditorMode.CHOOSE_AND_REORDER) {
+                clearModifier();
+            }
+            if (newMode === EditorMode.PREVIEW_AND_CONFIRM) {
+                setJoinedImageUrl(await joinImages());
+            }
+            setMode(newMode);
+            window.scrollTo(0, 0);
+        })();
+    }, [clearModifier, joinImages]);
 
     return (
         <>
@@ -48,7 +52,7 @@ const ImageEditPage = () => {
                 mode={mode}
                 imageSelections={imageSelections}
                 disabled={loading}
-                resultCanvas={resultCanvas}
+                resultDataUrl={joinedImageUrl}
                 onAddFiles={addFiles}
                 onClearImages={clearImages}
                 onChangeMode={handleChangeEditorMode}
@@ -89,11 +93,14 @@ const ImageEditPage = () => {
                     {mode === EditorMode.PREVIEW_AND_CONFIRM && (
                         <Stack pt={1} pb={1} spacing={2}>
                             <StepStepper step={EditorMode.PREVIEW_AND_CONFIRM} />
-                            <ImageCanvas
-                                imageSelections={imageSelections}
-                                getModifier={getModifier}
-                                onResultReady={setResultCanvas}
-                            />
+                            <Typography variant="body2">
+                                {t('imageEdit.imageReady')}
+                            </Typography>
+                            <div>
+                                {joinedImageUrl && (
+                                    <img alt="resultImage" src={joinedImageUrl} style={{ width: '100%' }} />
+                                )}
+                            </div>
                         </Stack>
                     )}
                 </Box>

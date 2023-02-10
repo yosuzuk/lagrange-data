@@ -4,18 +4,18 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import DownloadIcon from '@mui/icons-material/Download';
 import ClearIcon from '@mui/icons-material/Clear';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { t } from '../../../i18n';
 import { IImageSelection } from './types/IImageSelection';
 import { EditorMode } from './types/editorMode';
-import { SharingButtonMenu } from './SharindButtonMenu';
 
 interface IProps {
     mode: EditorMode;
     imageSelections: IImageSelection[];
     disabled: boolean;
-    resultCanvas: HTMLCanvasElement | null;
+    resultDataUrl: string | null;
     onAddFiles: (files: FileList) => void;
     onClearImages: () => void;
     onChangeMode: (mode: EditorMode) => void;
@@ -26,7 +26,7 @@ export const ImageEditActionBar = (props: IProps) => {
         mode,
         imageSelections,
         disabled,
-        resultCanvas,
+        resultDataUrl,
         onAddFiles,
         onClearImages,
         onChangeMode,
@@ -139,16 +139,30 @@ export const ImageEditActionBar = (props: IProps) => {
                     )}
                     {mode === EditorMode.PREVIEW_AND_CONFIRM && (
                         <>
-                            <SharingButtonMenu
-                                key="share"
-                                resultCanvas={resultCanvas}
-                                disabled={disabled || resultCanvas === null}
-                                buttonProps={buttonProps}
-                            />
+                            <Button
+                                variant="outlined"
+                                disabled={disabled || resultDataUrl === null}
+                                startIcon={<DownloadIcon />}
+                                onClick={() => {
+                                    if (resultDataUrl !== null) {
+                                        downloadImage(resultDataUrl);
+                                    }
+                                }}
+                                {...buttonProps}
+                            >
+                                {t('button.downloadFile')}
+                            </Button>
                         </>
                     )}
                 </>
             )}
         />
     );
+}
+
+function downloadImage(dataUrl: string) {
+    var link = document.createElement('a');
+    link.download = 'image.jpg';
+    link.href = dataUrl;
+    link.click();
 }

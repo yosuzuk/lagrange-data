@@ -257,7 +257,8 @@
         "chooseAndOrder": "Choose and sort images",
         "cutAndMove": "Crop and position images",
         "previewAndConfirm": "Confirm result and share",
-        "cutAndMoveDescription": "Use sliders on the left side to crop images. Use sliders on the right side to move images on top of each other."
+        "cutAndMoveDescription": "Use sliders on the left side to crop images. Use sliders on the right side to move images on top of each other.",
+        "imageReady": "The image can be saved now. You can also right click the image or long press to open context menu for saving or copying to clipboard."
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

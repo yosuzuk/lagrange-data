@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
 import { IImageModifier, IImageSelection } from '../types/IImageSelection';
-import { filesToImageSelections, sortImageSelections, deduplicateImageSelections, createImageModifier } from '../utils/imageUtils';
+import { filesToImageSelections, sortImageSelections, deduplicateImageSelections, createImageModifier, joinImageSelections } from '../utils/imageUtils';
 
 interface IHookResult {
     imageSelections: IImageSelection[];
@@ -14,12 +14,14 @@ interface IHookResult {
     setModifier: (selectionId: string, modifier: Partial<IImageModifier>) => void;
     getModifier: (selectionId: string) => IImageModifier;
     clearModifier: () => void;
+    joinImages: () => Promise<string | null>;
 }
 
 export const useImageSelections = (): IHookResult => {
     const [imageSelections, setImageSelections] = useState<IImageSelection[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const imageModifierRef = useRef<Record<string, IImageModifier>>({});
+    const [joinedImageUrl, setJoinedImageUrl] = useState<string | null>(null);
 
     const addFiles = useCallback((files: FileList) => {
         setLoading(true);
@@ -100,6 +102,10 @@ export const useImageSelections = (): IHookResult => {
         imageModifierRef.current = {};
     }, [imageModifierRef]);
 
+    const joinImages = useCallback((): Promise<string | null> => {
+        return joinImageSelections(imageSelections, getModifier);
+    }, [imageSelections, getModifier]);
+
     return {
         imageSelections,
         loading,
@@ -112,5 +118,6 @@ export const useImageSelections = (): IHookResult => {
         setModifier,
         getModifier,
         clearModifier,
+        joinImages,
     };
 };
