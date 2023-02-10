@@ -14,13 +14,10 @@ interface IProps {
 export const ImageCanvas = (props: IProps) => {
     const { imageSelections, getModifier, onResultReady } = props;
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [dataUrl, setDataUrl] = useState<string | null>(null);
 
     useEffect(() => {
-        if (canvasRef.current === null) {
-            return;
-        }
-
-        const canvas = canvasRef.current;
+        const canvas = document.createElement('canvas');;
         const ctx = canvas.getContext('2d');
         if (ctx === null) {
             return;
@@ -58,12 +55,15 @@ export const ImageCanvas = (props: IProps) => {
                 });
             }
             onResultReady(canvas);
+            setDataUrl(canvas.toDataURL('image/jpeg'));
         })();
     }, [canvasRef, imageSelections, getModifier, onResultReady]);
 
     return (
         <div>
-            <canvas ref={canvasRef} style={{ width: '100%' }} />
+            {dataUrl && (
+                <img alt="resultImage" src={dataUrl} style={{ width: '100%' }} />
+            )}
         </div>
     );
 };
