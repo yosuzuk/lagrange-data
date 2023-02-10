@@ -12,6 +12,7 @@ import { EditorMode } from './types/editorMode';
 import { ReorderList } from './ReorderList';
 import { StepStepper } from './StepStepper';
 import { t } from '../../../i18n';
+import { ImageCanvas } from './ImageCanvas';
 
 const ImageEditPage = () => {
     const [mode, setMode] = useState<EditorMode>(EditorMode.CHOOSE_AND_REORDER);
@@ -85,6 +86,10 @@ const ImageEditPage = () => {
                     {mode === EditorMode.PREVIEW_AND_CONFIRM && (
                         <Stack pt={1} pb={1} spacing={2}>
                             <StepStepper step={EditorMode.PREVIEW_AND_CONFIRM} />
+                            <ImageCanvas
+                                imageSelections={imageSelections}
+                                getModifier={getModifier}
+                            />
                         </Stack>
                     )}
                 </Box>
