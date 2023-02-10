@@ -16,6 +16,7 @@ import { ImageCanvas } from './ImageCanvas';
 
 const ImageEditPage = () => {
     const [mode, setMode] = useState<EditorMode>(EditorMode.CHOOSE_AND_REORDER);
+    const [resultCanvas, setResultCanvas] = useState<HTMLCanvasElement | null>(null);
 
     const {
         imageSelections,
@@ -35,6 +36,7 @@ const ImageEditPage = () => {
         if (newMode === EditorMode.CHOOSE_AND_REORDER) {
             clearModifier();
         }
+        setResultCanvas(null);
         setMode(newMode);
         window.scrollTo(0, 0);
     }, []);
@@ -46,6 +48,7 @@ const ImageEditPage = () => {
                 mode={mode}
                 imageSelections={imageSelections}
                 disabled={loading}
+                resultCanvas={resultCanvas}
                 onAddFiles={addFiles}
                 onClearImages={clearImages}
                 onChangeMode={handleChangeEditorMode}
@@ -89,6 +92,7 @@ const ImageEditPage = () => {
                             <ImageCanvas
                                 imageSelections={imageSelections}
                                 getModifier={getModifier}
+                                onResultReady={setResultCanvas}
                             />
                         </Stack>
                     )}

@@ -5,16 +5,17 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import ClearIcon from '@mui/icons-material/Clear';
-import ShareIcon from '@mui/icons-material/Share';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { t } from '../../../i18n';
 import { IImageSelection } from './types/IImageSelection';
 import { EditorMode } from './types/editorMode';
+import { SharingButtonMenu } from './SharindButtonMenu';
 
 interface IProps {
     mode: EditorMode;
     imageSelections: IImageSelection[];
     disabled: boolean;
+    resultCanvas: HTMLCanvasElement | null;
     onAddFiles: (files: FileList) => void;
     onClearImages: () => void;
     onChangeMode: (mode: EditorMode) => void;
@@ -25,6 +26,7 @@ export const ImageEditActionBar = (props: IProps) => {
         mode,
         imageSelections,
         disabled,
+        resultCanvas,
         onAddFiles,
         onClearImages,
         onChangeMode,
@@ -137,15 +139,12 @@ export const ImageEditActionBar = (props: IProps) => {
                     )}
                     {mode === EditorMode.PREVIEW_AND_CONFIRM && (
                         <>
-                            <Button
+                            <SharingButtonMenu
                                 key="share"
-                                variant="outlined"
-                                disabled={disabled || imageSelections.length === 0}
-                                startIcon={<ShareIcon />}
-                                {...buttonProps}
-                            >
-                                {t('button.share')}
-                            </Button>
+                                resultCanvas={resultCanvas}
+                                disabled={disabled || resultCanvas === null}
+                                buttonProps={buttonProps}
+                            />
                         </>
                     )}
                 </>
