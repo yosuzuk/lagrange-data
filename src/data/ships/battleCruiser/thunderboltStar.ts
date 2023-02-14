@@ -1,11 +1,11 @@
-import { Manufacturer } from '../../types/Manufacturer';
-import { ResearchStrategyType } from '../../types/ResearchStrategyType';
-import { ResearchTacticType } from '../../types/ResearchTacticType';
-import { IShipDefinition, ISystemModule } from '../../types/ShipDefinition';
-import { ShipRow } from '../../types/ShipRow';
-import { ShipSource } from '../../types/ShipSource';
-import { ShipType } from '../../types/ShipType';
-import { ShipId } from '../shipIds';
+import { Manufacturer } from '../../../types/Manufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../../types/ResearchTacticType';
+import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { ShipRow } from '../../../types/ShipRow';
+import { ShipSource } from '../../../types/ShipSource';
+import { ShipType } from '../../../types/ShipType';
+import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
     id: 'M1',
