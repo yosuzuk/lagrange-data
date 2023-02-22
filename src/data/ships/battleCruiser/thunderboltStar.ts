@@ -100,7 +100,19 @@ const b1: ISystemModule = {
 
 const b2: ISystemModule = {
     id: 'B2',
-    name: '???',
+    name: '範囲要撃システム',
+    description: '対空武装、ミサイル迎撃',
+    parts: [{
+        text: [
+            'HP-1008型　対ミサイルパルス群',
+            '対空：',
+            '・直射、エネルギー、対空：2300',
+            '迎撃効果',
+        ],
+        // skillSlots: 4,
+        // skills: [
+        // ],
+    }],
     category: 'B',
     categoryNumber: 2,
 };
