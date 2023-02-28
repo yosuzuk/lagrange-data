@@ -41,6 +41,7 @@ import { erisI } from './ships/destroyer/erisI';
 import { guardian } from './ships/destroyer/guardian';
 import { helios } from './ships/destroyer/helios';
 import { quaoar } from './ships/destroyer/quaoar';
+import { taurus } from './ships/destroyer/taurus';
 import { tundra } from './ships/destroyer/tundra';
 import { wingedHussar } from './ships/destroyer/wingedHussar';
 import { xt10 } from './ships/destroyer/xt10';
@@ -134,6 +135,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...startSweeper,
     ...stingray,
     ...strixA100,
+    ...taurus,
     ...thunderboldStar,
     ...tundra,
     ...vitasA021,
