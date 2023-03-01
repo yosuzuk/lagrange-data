@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -20,28 +21,28 @@ const m1: ISystemModule = {
             '補修キュー1',
         ],
         skillSlots: 5,
-        skills: [{
-            effect: '補修速度アップ',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: '補修速度アップ',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: 'クイック補修プレハブモジュール消費ダウン',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: '補給速度アップ',
-            properties: '最大34％、技術Pt8',
-        }, {
-            effect: '補給速度アップ',
-            properties: '最大34％、技術Pt8',
-        }, {
-            effect: 'カスタムモジュール容量アップ',
-            properties: '最大15、技術Pt8',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }],
+        skills: [
+            {
+                effect: '補修速度アップ',
+                properties: '最大10％、技術Pt8',
+            }, {
+                effect: '補修速度アップ',
+                properties: '最大10％、技術Pt8',
+            }, {
+                effect: 'クイック補修プレハブモジュール消費ダウン',
+                properties: '最大10％、技術Pt8',
+            }, {
+                effect: '補給速度アップ',
+                properties: '最大34％、技術Pt8',
+            }, {
+                effect: '補給速度アップ',
+                properties: '最大34％、技術Pt8',
+            }, {
+                effect: 'カスタムモジュール容量アップ',
+                properties: '最大15、技術Pt8',
+            },
+            skills.increaseDamage().withValue(10).withCost(5),
+        ],
     }],
     category: 'M',
     categoryNumber: 1,

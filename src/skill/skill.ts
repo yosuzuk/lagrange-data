@@ -20,11 +20,8 @@ class ModuleSkill implements IModuleSkill {
     private _type: SkillType;
     private _subType: SkillSubType;
     private _hasPercentageValues: boolean;
-    private _stepValue: number | null = null;
-    private _totalValue: number | null = null;
-    private _steps: number = 1;
-    private _stepCost: number[] = [];
-    private _totalCost: number | null = null;
+    private _value: number | null = null;
+    private _cost: number | null = null;
     private _textKey: string;
 
     public constructor(type: SkillType, subType: SkillSubType, percentage: boolean = true) {
@@ -42,24 +39,12 @@ class ModuleSkill implements IModuleSkill {
         return this._subType;
     }
 
-    get steps(): number {
-        return this._steps;
+    get value(): number | null {
+        return this._value;
     }
 
-    get stepValue(): number | null {
-        return this._stepValue;
-    }
-
-    get totalValue(): number | null {
-        return this._totalValue ?? (Number.isFinite(this._stepValue) ? (this._stepValue as number) * this._steps : null);
-    }
-
-    get stepCost(): number[] {
-        return this._stepCost;
-    }
-
-    get totalCost(): number | null {
-        return this._totalCost ?? sum(this._stepCost);
+    get cost(): number | null {
+        return this._cost;
     }
 
     get hasPercentageValues(): boolean {
@@ -76,8 +61,7 @@ class ModuleSkill implements IModuleSkill {
         return [
             this.type === SkillType.STRATEGY ? t('skill.strategy') : '',
             this.type === SkillType.FLAGSHIP_EFFECT ? t('skill.flagshipEffect') : '',
-            this.formatValues() ?? '',
-            this.formatCost() ?? '',
+            this.formatValuesAndCost() ?? '',
         ].filter(line => !!line);
     }
 
@@ -86,68 +70,24 @@ class ModuleSkill implements IModuleSkill {
         return this;
     }
 
-    public withSteps(steps: number) {
-        this._steps = steps;
+    public withValue(value: number) {
+        this._value = value;
         return this;
     }
 
-    public withStepValue(value: number) {
-        this._stepValue = value;
+    public withCost(cost: number) {
+        this._cost = cost;
         return this;
     }
 
-    public withTotalValue(value: number) {
-        this._totalValue = value;
-        return this;
-    }
-
-    public withStepCost(cost: number[]) {
-        this._stepCost = cost;
-        return this;
-    }
-
-    public withTotalCost(cost: number) {
-        this._totalCost = cost;
-        return this;
-    }
-
-    public validate(context: string): string[] {
-        const prefix = `${context} - ${this._type}`;
-        const issues: string[] = [];
-        if (this._totalValue !== null && this._stepValue !== null && this._totalValue !== this._totalValue * this._steps) {
-            issues.push(`${prefix}: Explicit totalValue doesn't match sum of explicit stepValue`);
-        }
-        if (this._totalCost !== null && this._stepCost.length > 0 && this._totalCost !== sum(this._stepCost)) {
-            issues.push(`${prefix}: Explicit totalCost doesn't match sum of explicit stepCost`);
-        }
-        if (this._stepCost.length > 0 && this._stepCost.length !== this._steps) {
-            issues.push(`${prefix}: stepCost count doesn't match step count`);
-        }
-        return issues;
-    }
-
-    private formatValues(): string | null {
-        const { totalValue, stepValue, steps } = this;
-        if (totalValue !== null) {
+    private formatValuesAndCost(): string | null {
+        const { value, cost } = this;
+        if (value !== null) {
             const unit = this._hasPercentageValues ? '%' : '';
-            if (stepValue !== null) {
-                return t('skill.totalAndStepValues', { totalValue, unit, stepValue, steps });
+            if (cost !== null) {
+                return t('skill.valueAndCost', { value, unit, cost });
             }
-            return t('skill.totalValue', { totalValue, unit });
-        }
-        return null;
-    }
-
-    private formatCost(): string | null {
-        const { totalCost, stepCost } = this;
-        if (totalCost !== null) {
-            if (stepCost.length > 0) {
-                return t('skill.totalAndStepCost', {
-                    totalCost,
-                    stepCost: stepCost.map(cost => `${cost}`).join('+'),
-                });
-            }
-            return t('skill.totalCost', { totalCost });
+            return t('skill.value', { value, unit });
         }
         return null;
     }

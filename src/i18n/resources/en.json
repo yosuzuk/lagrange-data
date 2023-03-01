@@ -312,5 +312,16 @@
         "dockEffect": "Temporary blueprints acquired by docking effect",
         "salvage": "Ships salvaged from debris",
         "starterShip": "Blueprints acquired by starter tech files"
+    },
+    "skill": {
+        "strategy": "Strategy",
+        "flagshipEffect": "Flagship Effect",
+        "value": "Max: {{value}}{{unit}}",
+        "valueAndCost": "Max: {{value}}{{unit}}, TP: {{cost}}"
+    },
+    "skillType": {
+        "increaseArmor": "Increase Armor",
+        "increaseHp": "Increase HP",
+        "increaseDamage": "Increase Damage"
     }
 }

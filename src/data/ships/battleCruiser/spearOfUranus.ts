@@ -26,8 +26,8 @@ const m1: ISystemModule = {
                     effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
                     properties: '戦略、技術Pt12',
                 },
-                skills.increaseDamage().withTotalValue(10).withTotalCost(8),
-                skills.increaseDamage().withTotalValue(10).withTotalCost(8),
+                skills.increaseDamage().withValue(10).withCost(8),
+                skills.increaseDamage().withValue(10).withCost(8),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
@@ -100,14 +100,8 @@ const a1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、技術Pt10',
@@ -227,10 +221,7 @@ const b2: ISystemModule = {
                     effect: '命中率アップ',
                     properties: '最大20％、技術Pt6',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt6',
-                },
+                skills.increaseDamage().withValue(10).withCost(6),
             ],
         },
     ],

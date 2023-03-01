@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -81,31 +82,27 @@ const a1: ISystemModule = {
             '・投射、実弾、対艦：24000、攻城：1920',
         ],
         skillSlots: 6,
-        skills: [{
-            effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
-            properties: '戦略、技術Pt25',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'クリティカルダメージアップ＆確率アップ',
-            properties: '最大50％、技術Pt12',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt12',
-        }, {
-            effect: '巡洋艦以上に対する命中率アップ',
-            properties: '最大15％、技術Pt12',
-        }, {
-            effect: 'フリゲート/駆逐艦に対する命中率アップ',
-            properties: '最大15％、技術Pt12',
-        }],
+        skills: [
+            {
+                effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
+                properties: '戦略、技術Pt25',
+            },
+            skills.increaseDamage().withValue(10).withCost(12),
+            skills.increaseDamage().withValue(10).withCost(12),
+            {
+                effect: 'クリティカルダメージアップ＆確率アップ',
+                properties: '最大50％、技術Pt12',
+            }, {
+                effect: '冷却時間ダウン',
+                properties: '最大15％、技術Pt12',
+            }, {
+                effect: '巡洋艦以上に対する命中率アップ',
+                properties: '最大15％、技術Pt12',
+            }, {
+                effect: 'フリゲート/駆逐艦に対する命中率アップ',
+                properties: '最大15％、技術Pt12',
+            },
+        ],
     }],
     category: 'A',
     categoryNumber: 1,

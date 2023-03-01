@@ -316,10 +316,8 @@
     "skill": {
         "strategy": "戦略",
         "flagshipEffect": "旗艦スキル",
-        "totalValue": "最大値：{{totalValue}}{{unit}}",
-        "totalAndStepValues": "最大値：{{totalValue}}{{unit}} ({{stepValue}}{{unit}} ×{{step}})",
-        "totalCost": "技術Pt：{{totalCost}}",
-        "totalAndStepCost": "技術Pt：{{totalCost}} ({{stepCost}})"
+        "value": "最大{{value}}{{unit}}",
+        "valueAndCost": "最大{{value}}{{unit}}、技術Pt{{cost}}"
     },
     "skillType": {
         "increaseArmor": "抵抗値アップ",
