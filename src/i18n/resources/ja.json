@@ -133,7 +133,7 @@
         "sumOfProbabilityWeightWithinAvailableShipVariants": "取得していないサブモデルの重みの合計",
         "baseShipVariantRequired": "ベースモデルが必要",
         "baseShipVariantShipTypeProbability": "ベースモデルの艦種確率",
-        "lastShipVariant": "最後のサブモデル"        
+        "lastShipVariant": "最後のサブモデル"
     },
     "researchAgreement": {
         "pageTitle": "研究協定",
@@ -312,5 +312,18 @@
         "dockEffect": "結合効果で手に入る艦船/臨時設計図",
         "salvage": "デブリ回収で取得できる艦船",
         "starterShip": "初期配布で手に入る艦船/設計図"
+    },
+    "skill": {
+        "strategy": "戦略",
+        "flagshipEffect": "旗艦スキル",
+        "totalValue": "最大値：{{totalValue}}{{unit}}",
+        "totalAndStepValues": "最大値：{{totalValue}}{{unit}} ({{stepValue}}{{unit}} ×{{step}})",
+        "totalCost": "技術Pt：{{totalCost}}",
+        "totalAndStepCost": "技術Pt：{{totalCost}} ({{stepCost}})"
+    },
+    "skillType": {
+        "increaseArmor": "抵抗値アップ",
+        "increaseHp": "HPアップ",
+        "increaseDamage": "ダメージアップ"
     }
 }

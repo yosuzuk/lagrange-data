@@ -9,3 +9,7 @@ export function formatNumberWithSuffix(value: number, precision: number = 1): st
 export function formatNumber(value: number, precision: number = 1): string {
     return `${Number(value.toFixed(precision))}`;
 }
+
+export function sum(values: number[]): number | null {
+    return values.length > 0 ? values.reduce((result, next) => result + next, 0) : null;
+}

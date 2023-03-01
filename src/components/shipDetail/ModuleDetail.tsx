@@ -62,7 +62,7 @@ export const ModuleDetail = (props: IProps) => {
                                     {t('shipDetail.detailsUnknown')}
                                 </Typography>
                             )}
-                            {module.parts && (
+                            {module.parts !== undefined && (
                                 <Stack spacing={1}>
                                     {module.parts.map((modulePart, index) =>
                                         <Stack key={`part${index}`} spacing={1}>
@@ -88,7 +88,7 @@ export const ModuleDetail = (props: IProps) => {
                                                 </Typography>
                                             )}
                                             {modulePart.skills?.map((skill, index) => (
-                                                <Box key={`skill_${index}`}>    
+                                                <Box key={`skill_${index}`}>
                                                     <Typography variant="body2">
                                                         {`・${skill.effect}`}
                                                     </Typography>

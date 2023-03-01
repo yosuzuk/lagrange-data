@@ -53,7 +53,7 @@ interface IModulePart {
     skills?: ISkill[];
 }
 
-interface ISkill {
+export interface ISkill {
     effect: string;
     properties?: string | string[];
 }

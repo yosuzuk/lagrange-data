@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -25,14 +26,8 @@ const m1: ISystemModule = {
                     effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
                     properties: '戦略、技術Pt12',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
+                skills.increaseDamage().withTotalValue(10).withTotalCost(8),
+                skills.increaseDamage().withTotalValue(10).withTotalCost(8),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
