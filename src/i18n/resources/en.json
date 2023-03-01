@@ -114,7 +114,9 @@
         "pasteHere": "paste here",
         "createBackup": "Create backup",
         "restoreFromBackup": "Restore from backup",
-        "daysAndHours": "{{days}}d{{hours}}h"
+        "daysAndHours": "{{days}}d{{hours}}h",
+        "effectColonValue": "Effect: {{effect}}",
+        "conditionColonValue": "Condition: {{condition}}"
     },
     "validation": {
         "requiredField": "Required",
@@ -152,6 +154,7 @@
         "detailsUnknown": "Details unknown",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
+        "flagShipSkillsColon": "Flagship effect:",
         "carriedShipCount": "{{shipSubType}} ×{{count}}",
         "carriedShipCountOnModule": "{{shipSubType}} ×{{count}} ({{module}})"
     },
@@ -316,12 +319,32 @@
     "skill": {
         "strategy": "Strategy",
         "flagshipEffect": "Flagship Effect",
-        "value": "Max: {{value}}{{unit}}",
-        "valueAndCost": "Max: {{value}}{{unit}}, TP: {{cost}}"
+        "valueColonValue": "Max: {{value}}{{unit}}",
+        "costColonValue": "TP: {{cost}}",
+        "valueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}"
     },
-    "skillType": {
-        "increaseArmor": "Increase Armor",
+    "skillSubType": {
+        "increaseArmor": "Increase armor",
         "increaseHp": "Increase HP",
-        "increaseDamage": "Increase Damage"
+        "increaseDamage": "Increase damage",
+        "increaseRepairSpeed": "Increase repairing speed",
+        "increaseSupplySpeed": "Increase supply speed",
+        "increaseStorage": "Increase storage",
+        "increaseCustomModuleStorage": "Increase custom module storage",
+        "increaseProjectileHitRateMidRow": "Increase projectile hitrate for mid-row ships",
+        "reducePrefabCost": "Reduce prefab cost for quick repair",
+        "reduceHitByProjectileInBackRow": "Reduce chance of back-row ships being hit by projectile weapons",
+        "reduceHitByProjectileInMidRow": "Reduce chance of mid-row ships being hit by projectile weapons",
+        "reduceHitBySlowInBackRow": "Reduce chance of back-row ships being hit by slow weapons",
+        "disguiseAsDestroyer": "Disguise as destroyer",
+        "focusFire": "Focus fire",
+        "sailingSpeedCoordination": "Sailing speed coordination I"
+    },
+    "skillDescription": {
+        "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
+        "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed."
+    },
+    "skillCondition": {
+        "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
     }
 }

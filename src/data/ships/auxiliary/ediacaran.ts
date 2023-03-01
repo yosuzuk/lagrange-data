@@ -1,7 +1,7 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -178,14 +178,8 @@ const e1: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            {
-                effect: '抵抗値アップ',
-                properties: '最大75',
-            },
-            {
-                effect: 'HPアップ',
-                properties: '最大10％',
-            },
+            skills.increaseArmor().withValue(75),
+            skills.increaseHp().withValue(10),
         ],
     }],
     category: 'E',

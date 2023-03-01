@@ -51,6 +51,7 @@ interface IModulePart {
     text?: string | string[];
     skillSlots?: number;
     skills?: ISkill[];
+    flagShipSkills?: ISkill[];
 }
 
 export interface ISkill {

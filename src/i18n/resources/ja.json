@@ -114,7 +114,9 @@
         "pasteHere": "ここに貼り付け",
         "createBackup": "バックアップ",
         "restoreFromBackup": "バックアップから復元",
-        "daysAndHours": "{{days}}日{{hours}}時間"
+        "daysAndHours": "{{days}}日{{hours}}時間",
+        "effectColonValue": "効果：{{effect}}",
+        "conditionColonValue": "発動条件：{{condition}}"
     },
     "validation": {
         "requiredField": "必須項目",
@@ -152,6 +154,7 @@
         "detailsUnknown": "詳細不明",
         "numberOfSkillSlots": "スキル枠：{{count}}",
         "skillsColon": "スキル：",
+        "flagShipSkillsColon": "旗艦スキル：",
         "carriedShipCount": "{{shipSubType}} ×{{count}}",
         "carriedShipCountOnModule": "{{shipSubType}} ×{{count}}（{{module}}）"
     },
@@ -316,12 +319,34 @@
     "skill": {
         "strategy": "戦略",
         "flagshipEffect": "旗艦スキル",
-        "value": "最大{{value}}{{unit}}",
-        "valueAndCost": "最大{{value}}{{unit}}、技術Pt{{cost}}"
+        "valueColonValue": "最大{{value}}{{unit}}",
+        "costColonValue": "技術Pt{{cost}}",
+        "valueAndCostColonValue": "最大{{value}}{{unit}}、技術Pt{{cost}}"
     },
-    "skillType": {
+    "skillSubType": {
         "increaseArmor": "抵抗値アップ",
         "increaseHp": "HPアップ",
-        "increaseDamage": "ダメージアップ"
+        "increaseDamage": "ダメージアップ",
+        "increaseRepairSpeed": "補修速度アップ",
+        "increaseSupplySpeed": "補給速度アップ",
+        "increaseStorage": "貯蔵力アップ",
+        "increaseCustomModuleStorage": "カスタムモジュール容量アップ",
+        "increaseProjectileHitRateMidRow": "中列のミサイル/魚雷命中率アップ",
+        "reducePrefabCost": "クイック補修プレハブモジュール消費ダウン",
+        "reduceHitByProjectileInBackRow": "後列の投射武器の被命中率ダウン",
+        "reduceHitByProjectileInMidRow": "中列の投射武器の被命中率ダウン",
+        "reduceHitBySlowInBackRow": "後列の低速武器の被命中率ダウン",
+        "disguiseAsDestroyer": "自身が攻撃目標になった時に、駆逐艦と見なされるようにする",
+        "focusFire": "集中砲火",
+        "fleetDock1": "Fleet dock I",
+        "sailingSpeedCoordination1": "Sailing speed coordination I"
+    },
+    "skillDescription": {
+        "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
+        "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
+        "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed."
+    },
+    "skillCondition": {
+        "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
     }
 }
