@@ -20,5 +20,6 @@ export enum SkillSubType {
     DISGUISE_AS_DESTROYER = 'disguiseAsDestroyer',
     FOCUS_FIRE = 'focusFire',
     FLEET_DOCK_1 = 'fleetDock1',
+    FLEET_DOCK_2 = 'fleetDock2',
     CUSTOM = 'custom',
 }

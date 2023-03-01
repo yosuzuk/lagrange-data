@@ -338,10 +338,14 @@
         "reduceHitBySlowInBackRow": "Reduce chance of back-row ships being hit by slow weapons",
         "disguiseAsDestroyer": "Disguise as destroyer",
         "focusFire": "Focus fire",
+        "fleetDock1": "Fleet dock I",
+        "fleetDock2": "Fleet dock II",
         "sailingSpeedCoordination": "Sailing speed coordination I"
     },
     "skillDescription": {
         "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
+        "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
+        "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(skillDescription.fleetDock1)",
         "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed."
     },
     "skillCondition": {

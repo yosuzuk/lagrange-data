@@ -19,6 +19,7 @@ export const skills = {
     flagshipEffect: (textKey: string) => new ModuleSkill(SkillType.FLAGSHIP_EFFECT, SkillSubType.CUSTOM).withTextKey(textKey),
     focusFire: () => new ModuleSkill(SkillType.FLAGSHIP_EFFECT, SkillSubType.FOCUS_FIRE).withDescriptionKey('skillDescription.focusFire'),
     fleetDock1: () => new ModuleSkill(SkillType.FLAGSHIP_EFFECT, SkillSubType.FLEET_DOCK_1).withDescriptionKey('skillDescription.fleetDock1'),
+    fleetDock2: () => new ModuleSkill(SkillType.FLAGSHIP_EFFECT, SkillSubType.FLEET_DOCK_2).withDescriptionKey('skillDescription.fleetDock2'),
     customFlashipEffect: (textKey: string) => new ModuleSkill(SkillType.FLAGSHIP_EFFECT, SkillSubType.FOCUS_FIRE).withTextKey(textKey),
     customStrategy: (textKey: string) => new ModuleSkill(SkillType.STRATEGY, SkillSubType.CUSTOM).withTextKey(textKey),
     custom: (textKey: string) => new ModuleSkill(SkillType.DEFAULT, SkillSubType.CUSTOM).withTextKey(textKey),
