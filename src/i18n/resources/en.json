@@ -340,7 +340,7 @@
         "focusFire": "Focus fire",
         "fleetDock1": "Fleet dock I",
         "fleetDock2": "Fleet dock II",
-        "sailingSpeedCoordination": "Sailing speed coordination I"
+        "sailingSpeedCoordination1": "Sailing speed coordination I"
     },
     "skillDescription": {
         "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",

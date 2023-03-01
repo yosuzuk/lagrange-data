@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -25,14 +26,8 @@ const m1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
+                skills.increaseDamage().withValue(10),
+                skills.increaseDamage().withValue(10),
                 {
                     effect: '命中率アップ',
                     properties: '最大10％', // TODO 技術Pt
@@ -140,9 +135,7 @@ const b1: ISystemModule = {
                 {
                     effect: '冷却時間ダウン',
                 },
-                {
-                    effect: 'ダメージアップ',
-                },
+                skills.increaseDamage(),
             ],
         },
     ],
@@ -165,13 +158,8 @@ const b2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: 'ダメージアップ',
-                },
+                skills.increaseDamage().withValue(10),
+                skills.increaseDamage().withValue(10),
                 {
                     effect: '命中率アップ',
                 },

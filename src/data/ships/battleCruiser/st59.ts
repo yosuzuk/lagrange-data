@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -40,14 +41,8 @@ export const st59: IShipDefinition[] = [
                                 effect: '60秒毎に、システムメイン武器の攻撃・冷却時間が80％ダウンする。効果は15秒続く。冷却時間10秒。',
                                 properties: '戦略、技術Pt15',
                             },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大14.8％、技術Pt8',
@@ -96,14 +91,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 6,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: '冷却時間ダウン',
                                 properties: '最大14.8％、技術Pt8',
@@ -151,22 +140,13 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 6,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: 'クリティカルダメージアップ＆確率アップ',
                                 properties: '最大50％、技術Pt8',
                             },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: '魚雷の被迎撃率ダウン',
                                 properties: '最大30％、技術Pt8',
@@ -205,14 +185,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 5,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: '冷却時間ダウン',
                                 properties: '最大15％、技術Pt8',
@@ -253,14 +227,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 5,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大15％、技術Pt8',
@@ -300,14 +268,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 4,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: '冷却時間ダウン',
                                 properties: '最大15％、技術Pt8',
@@ -343,14 +305,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 4,
                         skills: [
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'ダメージアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseDamage().withValue(10).withCost(8),
+                            skills.increaseDamage().withValue(10).withCost(8),
                             {
                                 effect: '命中率アップ',
                                 properties: '最大10％、技術Pt8',
@@ -455,14 +411,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 2,
                         skills: [
-                            {
-                                effect: 'HPアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'HPアップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseHp().withValue(10).withCost(8),
+                            skills.increaseHp().withValue(10).withCost(8),
                         ],
                     },
                 ],
@@ -511,14 +461,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 2,
                         skills: [
-                            {
-                                effect: '抵抗値アップ',
-                                properties: '最大75、技術Pt8',
-                            },
-                            {
-                                effect: '抵抗値アップ',
-                                properties: '最大75、技術Pt8',
-                            },
+                            skills.increaseArmor().withValue(75).withCost(8),
+                            skills.increaseArmor().withValue(75).withCost(8),
                         ],
                     },
                 ],

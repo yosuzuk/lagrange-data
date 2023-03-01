@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -268,14 +269,8 @@ const b1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
+                skills.increaseDamage().withValue(10).withCost(8),
+                skills.increaseDamage().withValue(10).withCost(8),
                 {
                     effect: '対戦闘機/護送艦命中率アップ',
                     properties: '最大14.8％、技術Pt8',

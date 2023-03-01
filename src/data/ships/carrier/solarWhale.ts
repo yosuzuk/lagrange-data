@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -96,14 +97,8 @@ const a1: ISystemModule = {
                     effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
                     properties: '戦略、技術Pt15',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
+                skills.increaseDamage().withValue(10).withCost(8),
+                skills.increaseDamage().withValue(10).withCost(8),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大14.8％、技術Pt8',
@@ -178,14 +173,8 @@ const a3: ISystemModule = {
                     effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
                     properties: '戦略、技術Pt15',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
+                skills.increaseDamage().withValue(10).withCost(8),
+                skills.increaseDamage().withValue(10).withCost(8),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大14.8％、技術Pt8',
@@ -331,14 +320,8 @@ const c3: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
+                skills.increaseDamage().withValue(10).withCost(5),
+                skills.increaseDamage().withValue(10).withCost(5),
                 {
                     effect: '対戦闘機/護送艦命中率アップ',
                     properties: '最大15％、技術Pt5',

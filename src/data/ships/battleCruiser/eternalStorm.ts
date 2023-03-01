@@ -1,3 +1,4 @@
+import { skills } from '../../../skill/skill';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -25,14 +26,8 @@ const m1: ISystemModule = {
                     effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
                     properties: '戦略、技術Pt15',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、技術Pt10',
@@ -82,14 +77,8 @@ const m2: ISystemModule = {
                     effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
                     properties: '戦略、技術Pt15',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、技術Pt10',
@@ -133,14 +122,8 @@ const a1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '戦闘機/護送艦に対する命中率アップ',
                     properties: '最大15％、技術Pt10',
@@ -178,22 +161,13 @@ const a2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: 'クリティカルダメージアップ＆確率アップ',
                     properties: '最大50％、技術Pt10',
                 },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '攻城ダメージアップ',
                     properties: '最大30％、技術Pt10',
@@ -225,14 +199,8 @@ const a3: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamage().withValue(10).withCost(10),
+                skills.increaseDamage().withValue(10).withCost(10),
                 {
                     effect: '戦闘機/護送艦に対する命中率アップ',
                     properties: '最大15％、技術Pt10',
@@ -272,14 +240,8 @@ const b1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
+                skills.increaseDamage().withValue(10).withCost(5),
+                skills.increaseDamage().withValue(10).withCost(5),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、Pt5',
@@ -312,14 +274,8 @@ const b2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
+                skills.increaseDamage().withValue(10).withCost(5),
+                skills.increaseDamage().withValue(10).withCost(5),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、Pt5',
@@ -449,14 +405,8 @@ const d1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、Pt5',
-                },
+                skills.increaseDamage().withValue(10).withCost(5),
+                skills.increaseDamage().withValue(10).withCost(5),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、Pt5',
@@ -493,14 +443,8 @@ const d2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
+                skills.increaseDamage().withValue(10).withCost(5),
+                skills.increaseDamage().withValue(10).withCost(5),
                 {
                     effect: '冷却時間ダウン',
                     properties: '最大15％、技術Pt5',

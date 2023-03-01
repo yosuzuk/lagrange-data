@@ -141,14 +141,8 @@ const b1: ISystemModule = {
         ],
         skillSlots: 4,
         skills: [
-            {
-                effect: 'ダメージアップ',
-                properties: '最大10％、技術Pt8',
-            },
-            {
-                effect: 'ダメージアップ',
-                properties: '最大10％、技術Pt8',
-            },
+            skills.increaseDamage().withValue(10).withCost(8),
+            skills.increaseDamage().withValue(10).withCost(8),
             {
                 effect: '冷却時間ダウン',
                 properties: '最大15％、技術Pt8',
