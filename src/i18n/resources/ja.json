@@ -325,6 +325,7 @@
     },
     "skillSubType": {
         "increaseArmor": "抵抗値アップ",
+        "increaseShield": "シールド値アップ",
         "increaseHp": "HPアップ",
         "increaseDamage": "ダメージアップ",
         "increaseRepairSpeed": "補修速度アップ",

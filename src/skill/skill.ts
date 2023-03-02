@@ -4,6 +4,7 @@ import { SkillSubType, SkillType } from './types/SkillType';
 
 export const skills = {
     increaseArmor: () => new ModuleSkill(SkillType.DEFAULT, SkillSubType.INCREASE_ARMOR),
+    increaseShield: () => new ModuleSkill(SkillType.DEFAULT, SkillSubType.INCREASE_SHIELD),
     increaseHp: () => new ModuleSkill(SkillType.DEFAULT, SkillSubType.INCREASE_HP, true),
     increaseDamage: () => new ModuleSkill(SkillType.DEFAULT, SkillSubType.INCREASE_DAMAGE, true),
     increaseRepairSpeed: () => new ModuleSkill(SkillType.DEFAULT, SkillSubType.INCREASE_REPAIR_SPEED, true),

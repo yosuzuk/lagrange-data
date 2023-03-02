@@ -432,14 +432,8 @@ export const st59: IShipDefinition[] = [
                         ],
                         skillSlots: 2,
                         skills: [
-                            {
-                                effect: 'シールド値アップ',
-                                properties: '最大10％、技術Pt8',
-                            },
-                            {
-                                effect: 'シールド値アップ',
-                                properties: '最大10％、技術Pt8',
-                            },
+                            skills.increaseShield().withValue(10).withCost(8),
+                            skills.increaseShield().withValue(10).withCost(8),
                         ],
                     },
                 ],

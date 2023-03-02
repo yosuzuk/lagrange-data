@@ -377,10 +377,7 @@ const c3: ISystemModule = {
             ],
             skillSlots: 2,
             skills: [
-                {
-                    effect: 'シールド値アップ',
-                    properties: '最大10％、技術Pt5',
-                },
+                skills.increaseShield().withValue(10).withCost(5),
                 {
                     effect: '被クリティカルダメージダウン',
                     properties: '最大30％、技術Pt5',

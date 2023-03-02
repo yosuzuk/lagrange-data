@@ -6,6 +6,7 @@ export enum SkillType {
 
 export enum SkillSubType {
     INCREASE_ARMOR = 'increaseArmor',
+    INCREASE_SHIELD = 'increaseShield',
     INCREASE_HP = 'increaseHp',
     INCREASE_DAMAGE = 'increaseDamage',
     INCREASE_REPAIR_SPEED = 'increaseRepairSpeed',

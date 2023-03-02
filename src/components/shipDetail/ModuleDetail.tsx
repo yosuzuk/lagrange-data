@@ -26,7 +26,12 @@ export const ModuleDetail = (props: IProps) => {
     return (
         <>
             {modules.map(module => {
-                const expandEnabled = detailsAvailable && !!module.parts;
+                const expandEnabled = detailsAvailable && !!module.parts && module.parts.some(x => {
+                    return Number.isFinite(x.skillSlots)
+                        || (x.skills ?? []).length > 0
+                        || (x.flagShipSkills ?? []).length > 0
+                        || (partTextAvailable && x.text);
+                });
                 return (
                     <Accordion
                         key={`module_${module.id}`}
