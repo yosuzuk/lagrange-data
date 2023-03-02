@@ -51,10 +51,7 @@ export const st59: IShipDefinition[] = [
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大14.8％、技術Pt8',
                             },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
                             {
                                 effect: 'システムHPアップ',
                                 properties: '最大34.8％、技術Pt8',
@@ -93,14 +90,8 @@ export const st59: IShipDefinition[] = [
                         skills: [
                             skills.increaseDamage().withValue(10).withCost(8),
                             skills.increaseDamage().withValue(10).withCost(8),
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8',
-                            },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大14.8％、技術Pt8',
@@ -151,14 +142,8 @@ export const st59: IShipDefinition[] = [
                                 effect: '魚雷の被迎撃率ダウン',
                                 properties: '最大30％、技術Pt8',
                             },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8',
-                            },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大34.8％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
                             {
                                 effect: '60秒毎に、システムメイン武器の攻撃・冷却時間が80％ダウンする。効果は15秒続く。冷却時間10秒。',
                                 properties: '戦略、技術Pt15',
@@ -187,14 +172,8 @@ export const st59: IShipDefinition[] = [
                         skills: [
                             skills.increaseDamage().withValue(10).withCost(8),
                             skills.increaseDamage().withValue(10).withCost(8),
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大15％、技術Pt8',
-                            },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大15％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(15).withCost(8),
+                            skills.reduceCooldown().withValue(15).withCost(8),
                             {
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大15％、技術Pt8',
@@ -237,10 +216,7 @@ export const st59: IShipDefinition[] = [
                                 effect: 'フリゲート/駆逐艦に対する命中率アップ',
                                 properties: '最大15％、技術Pt8',
                             },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大15％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(15).withCost(8),
                             {
                                 effect: 'クリティカルダメージアップ＆確率アップ',
                                 properties: '最大50％、技術Pt8',
@@ -270,14 +246,8 @@ export const st59: IShipDefinition[] = [
                         skills: [
                             skills.increaseDamage().withValue(10).withCost(8),
                             skills.increaseDamage().withValue(10).withCost(8),
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大15％、技術Pt8',
-                            },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大15％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(15).withCost(8),
+                            skills.reduceCooldown().withValue(15).withCost(8),
                             {
                                 effect: '巡洋艦以上に対する命中率アップ',
                                 properties: '最大15％、技術Pt8',
@@ -315,10 +285,7 @@ export const st59: IShipDefinition[] = [
                                 effect: '巡洋艦以上に対する命中率アップ',
                                 properties: '最大14.8％、技術Pt8',
                             },
-                            {
-                                effect: '冷却時間ダウン',
-                                properties: '最大14.8％、技術Pt8',
-                            },
+                            skills.reduceCooldown().withValue(14.8).withCost(8),
                         ],
                     },
                 ],
@@ -340,14 +307,8 @@ export const st59: IShipDefinition[] = [
                                 effect: '艦載機のロックオン速度アップ',
                                 properties: '最大70％、技術Pt8',
                             },
-                            {
-                                effect: '艦載機の帰還冷却時間ダウン',
-                                properties: '最大20％、技術Pt8',
-                            },
-                            {
-                                effect: '艦載機の帰還冷却時間ダウン',
-                                properties: '最大20％、技術Pt8',
-                            },
+                            skills.reduceRtbAircraft().withValue(20).withCost(8),
+                            skills.reduceRtbAircraft().withValue(20).withCost(8),
                             {
                                 effect: '艦載機の命中率アップ',
                                 properties: '最大20％、技術Pt8',
@@ -380,10 +341,7 @@ export const st59: IShipDefinition[] = [
                                 effect: 'UAVのロックオン速度アップ',
                                 properties: '最大70％、技術Pt10',
                             },
-                            {
-                                effect: 'UAVの帰還冷却時間ダウン',
-                                properties: '最大20％、技術Pt10',
-                            },
+                            skills.reduceRtbUav().withValue(20).withCost(10),
                             {
                                 effect: 'UAVの命中率アップ',
                                 properties: '最大20％、技術Pt10',

@@ -20,34 +20,27 @@ const m1: ISystemModule = {
             '・直射、エネルギー、対艦：9000、攻城：1890',
         ],
         skillSlots: 6,
-        skills: [{
-            effect: 'イオン砲ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: 'イオン砲ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: '出力時間ダウン',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: 'イオン砲命中率アップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '巡洋艦以上に対する命中率アップ',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: 'システムＨＰアップ',
-            properties: '最大35％、技術Pt5',
-        }, {
-            effect: '被クリティカルダメージダウン',
-            properties: '最大30％、技術Pt5',
-        }],
+        skills: [
+            skills.increaseIonDamage().withValue(10).withCost(5),
+            skills.increaseIonDamage().withValue(10).withCost(5),
+            skills.reduceCooldown().withValue(15).withCost(5),
+            skills.reduceIonDuration().withValue(10).withCost(5),
+            skills.reduceCooldown().withValue(15).withCost(5),
+            skills.increaseIonHitRate().withValue(10).withCost(5),
+            {
+                effect: 'イオン砲命中率アップ',
+                properties: '最大10％、技術Pt5',
+            }, {
+                effect: '巡洋艦以上に対する命中率アップ',
+                properties: '最大15％、技術Pt5',
+            }, {
+                effect: 'システムＨＰアップ',
+                properties: '最大35％、技術Pt5',
+            }, {
+                effect: '被クリティカルダメージダウン',
+                properties: '最大30％、技術Pt5',
+            }
+        ],
     }],
     category: 'M',
     categoryNumber: 1,
@@ -92,10 +85,9 @@ const a1: ISystemModule = {
             {
                 effect: 'クリティカルダメージアップ＆確率アップ',
                 properties: '最大50％、技術Pt12',
-            }, {
-                effect: '冷却時間ダウン',
-                properties: '最大15％、技術Pt12',
-            }, {
+            },
+            skills.reduceCooldown().withValue(15).withCost(12),
+            {
                 effect: '巡洋艦以上に対する命中率アップ',
                 properties: '最大15％、技術Pt12',
             }, {
@@ -143,14 +135,8 @@ const b1: ISystemModule = {
         skills: [
             skills.increaseDamage().withValue(10).withCost(8),
             skills.increaseDamage().withValue(10).withCost(8),
-            {
-                effect: '冷却時間ダウン',
-                properties: '最大15％、技術Pt8',
-            },
-            {
-                effect: '冷却時間ダウン',
-                properties: '最大15％、技術Pt8',
-            },
+            skills.reduceCooldown().withValue(15).withCost(8),
+            skills.reduceCooldown().withValue(15).withCost(8),
             {
                 effect: '戦闘機/護送艦に対する命中率アップ',
                 properties: '最大15％、技術Pt8',

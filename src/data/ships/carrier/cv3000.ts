@@ -30,14 +30,8 @@ const m1: ISystemModule = {
                     effect: '艦載機のダメージアップ',
                     properties: '最大10％、技術Pt13',
                 },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
                 {
                     effect: '艦載機のダメージアップ',
                     properties: '最大10％、技術Pt13',
@@ -80,14 +74,8 @@ const m2: ISystemModule = {
                     effect: '艦載機/UAVのダメージアップ',
                     properties: '最大10％、技術Pt13',
                 },
-                {
-                    effect: '艦載機/UAVの帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
-                {
-                    effect: '艦載機/UAVの帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
                 {
                     effect: '艦載機/UAVの命中率アップ',
                     properties: '最大20％、技術Pt13',
@@ -129,14 +117,8 @@ const m3: ISystemModule = {
                     effect: '艦載機のダメージアップ',
                     properties: '最大10％、技術Pt13',
                 },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt13',
-                },
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
+                skills.reduceRtbAircraft().withValue(20).withCost(13),
                 {
                     effect: '艦載機の命中率アップ',
                     properties: '最大20％、技術Pt13',
@@ -180,14 +162,8 @@ const a1: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.reduceCooldown().withValue(15).withCost(10),
+                skills.reduceCooldown().withValue(15).withCost(10),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大15％、技術Pt10',
@@ -227,14 +203,8 @@ const a2: ISystemModule = {
                     effect: '戦闘機/護送艦に対する命中率アップ',
                     properties: '最大15％、技術Pt10',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.reduceCooldown().withValue(15).withCost(10),
+                skills.reduceCooldown().withValue(15).withCost(10),
             ],
         },
     ],
@@ -267,14 +237,8 @@ const b1: ISystemModule = {
                     effect: '対戦闘機/護送艦命中率アップ',
                     properties: '最大14.8％、技術Pt8',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
+                skills.reduceCooldown().withValue(14.8).withCost(8),
             ],
         },
     ],
@@ -298,14 +262,8 @@ const b2: ISystemModule = {
                     effect: '艦載機のロックオン速度アップ',
                     properties: '最大70％、技術Pt12',
                 },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大10％、技術Pt12',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大10％、技術Pt12',
-                },
+                skills.reduceRtbAircraft().withValue(10).withCost(12),
+                skills.reduceRtbAircraft().withValue(10).withCost(12),
                 {
                     effect: '艦載機のダメージアップ',
                     properties: '最大10％、技術Pt12',

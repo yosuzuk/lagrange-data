@@ -36,10 +36,7 @@ const m1: ISystemModule = {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
                 {
                     effect: 'システムＨＰアップ',
                     properties: '最大34.8％、技術Pt8',
@@ -102,14 +99,8 @@ const a1: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.reduceCooldown().withValue(15).withCost(10),
+                skills.reduceCooldown().withValue(15).withCost(10),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大15％、技術Pt10',
@@ -209,14 +200,8 @@ const b2: ISystemModule = {
                     effect: 'ロックオン速度アップ',
                     properties: '最大70％、技術Pt6',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大20％、技術Pt6',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大20％、技術Pt6',
-                },
+                skills.reduceCooldown().withValue(20).withCost(6),
+                skills.reduceCooldown().withValue(20).withCost(6),
                 {
                     effect: '命中率アップ',
                     properties: '最大20％、技術Pt6',

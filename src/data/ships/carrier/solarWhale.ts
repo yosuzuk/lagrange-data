@@ -24,14 +24,8 @@ const m1: ISystemModule = {
                     effect: '護送艦のダメージアップ',
                     properties: '最大10％、技術Pt10',
                 },
-                {
-                    effect: '護送艦の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt10',
-                },
+                skills.reduceRtbCorvette().withValue(20).withCost(10),
+                skills.reduceRtbCorvette().withValue(20).withCost(10),
                 {
                     effect: '護送艦の命中率アップ',
                     properties: '最大20％、技術Pt10',
@@ -99,10 +93,7 @@ const a1: ISystemModule = {
                 },
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
@@ -115,14 +106,8 @@ const a1: ISystemModule = {
                     effect: 'ミサイルのダメージアップ',
                     properties: '最大10％、技術Pt8',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
+                skills.reduceCooldown().withValue(14.8).withCost(8),
             ],
         },
     ],
@@ -175,14 +160,8 @@ const a3: ISystemModule = {
                 },
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
+                skills.reduceCooldown().withValue(14.8).withCost(8),
                 {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
@@ -191,10 +170,7 @@ const a3: ISystemModule = {
                     effect: '巡洋艦以上に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.reduceCooldown().withValue(14.8).withCost(8),
                 {
                     effect: '戦闘機/護送艦に対する命中率アップ',
                     properties: '最大14.8％、技術Pt8',
@@ -218,18 +194,9 @@ const b1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
+                skills.reduceRtbCorvette().withValue(5).withCost(8),
+                skills.reduceRtbCorvette().withValue(5).withCost(8),
+                skills.reduceRtbCorvette().withValue(5).withCost(8),
                 {
                     effect: '艦載機のダメージアップ',
                     properties: '最大3％、技術Pt8',
@@ -384,10 +351,7 @@ export const solarWhale: IShipDefinition[] = [
                                 effect: '護送艦のダメージアップ',
                                 properties: '最大10％',
                             },
-                            {
-                                effect: '護送艦の帰還冷却時間ダウン',
-                                properties: '最大20％',
-                            },
+                            skills.reduceRtbCorvette().withValue(20),
                         ],
                     },
                 ],

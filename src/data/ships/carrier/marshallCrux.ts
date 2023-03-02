@@ -36,14 +36,8 @@ const m1: ISystemModule = {
                     effect: 'フリゲート/駆逐艦に対する命中率アップ',
                     properties: '最大15％', // TODO 技術Pt
                 },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％', // TODO 技術Pt
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％', // TODO 技術Pt
-                },
+                skills.reduceCooldown().withValue(15),
+                skills.reduceCooldown().withValue(15),
                 {
                     effect: 'システムHPアップ',
                     properties: '最大35％', // TODO 技術Pt
@@ -79,14 +73,8 @@ const a1: ISystemModule = {
                     effect: '戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。',
                     properties: '戦略、技術Pt20',
                 },
-                {
-                    effect: '帰還冷却時間ダウン',
-                    properties: '最大20％', // TODO 技術Pt
-                },
-                {
-                    effect: '帰還冷却時間ダウン',
-                    properties: '最大20％', // TODO 技術Pt
-                },
+                skills.reduceRtbAircraft().withValue(20),
+                skills.reduceRtbAircraft().withValue(20),
                 {
                     effect: '艦載機の命中率アップ',
                     properties: '最大20％',
@@ -132,9 +120,7 @@ const b1: ISystemModule = {
                     effect: 'ロックオン速度アップ',
                     properties: '最大70％',
                 },
-                {
-                    effect: '冷却時間ダウン',
-                },
+                skills.reduceCooldown(),
                 skills.increaseDamage(),
             ],
         },
