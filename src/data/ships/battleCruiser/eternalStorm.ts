@@ -30,14 +30,8 @@ const m1: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
-                {
-                    effect: '命中率アップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: '巡洋艦以上に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.increaseHitRate().withValue(10).withCost(10),
+                skills.increaseHitRateVsLarge().withValue(15).withCost(10),
                 {
                     effect: 'システムHPアップ',
                     properties: '最大35％、技術Pt10',
@@ -75,14 +69,8 @@ const m2: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '巡洋艦以上に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.increaseHitRateVsSmall().withValue(15).withCost(10),
+                skills.increaseHitRateVsLarge().withValue(15).withCost(10),
                 {
                     effect: '持続時間ダウン',
                     properties: '最大10％、技術Pt10',
@@ -112,14 +100,8 @@ const a1: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 {
                     effect: 'クリティカルダメージアップ＆確率アップ',
@@ -186,14 +168,8 @@ const a3: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 {
                     effect: 'システムのメイン武装が同列に接近する艦載機を攻撃。命中率40％アップ。効果は25秒続く。冷却30秒。',
@@ -226,10 +202,7 @@ const b1: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、Pt5',
-                },
+                skills.increaseHitRateVsSmall().withValue(15).withCost(5),
             ],
         },
     ],
@@ -254,10 +227,7 @@ const b2: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、Pt5',
-                },
+                skills.increaseHitRateVsSmall().withValue(15).withCost(5),
             ],
         }
     ],
@@ -283,10 +253,7 @@ const c1: ISystemModule = {
                     properties: '最大70％、技術Pt5',
                 },
                 skills.reduceRtbUav().withValue(20).withCost(5),
-                {
-                    effect: 'UAVの命中率アップ',
-                    properties: '最大20％、技術Pt5',
-                },
+                skills.increaseHitRateOfUav().withValue(20).withCost(5),
                 {
                     effect: 'UAVのダメージアップ',
                     properties: '最大10％、技術Pt5',
@@ -367,14 +334,8 @@ const d1: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、Pt5',
-                },
-                {
-                    effect: '巡洋艦以上に対する命中率アップ',
-                    properties: '最大15％、Pt5',
-                },
+                skills.increaseHitRateVsSmall().withValue(15).withCost(5),
+                skills.increaseHitRateVsLarge().withValue(15).withCost(5),
             ],
         },
     ],
@@ -399,10 +360,7 @@ const d2: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt5',
-                },
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(5),
                 {
                     effect: 'ミサイル/魚雷要撃率アップ',
                     properties: '最大25％、技術Pt5',

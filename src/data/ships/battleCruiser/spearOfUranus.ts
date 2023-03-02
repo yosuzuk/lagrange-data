@@ -28,14 +28,8 @@ const m1: ISystemModule = {
                 },
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                skills.increaseHitRateVsSmall().withValue(14.8).withCost(8),
+                skills.increaseHitRateVsSmall().withValue(14.8).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
                 {
                     effect: 'システムＨＰアップ',
@@ -101,14 +95,8 @@ const a1: ISystemModule = {
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
+                skills.increaseHitRateVsSmall().withValue(15).withCost(10),
+                skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 {
                     effect: '出力時間ダウン',
                     properties: '最大10％、技術Pt10',
@@ -202,10 +190,7 @@ const b2: ISystemModule = {
                 },
                 skills.reduceCooldown().withValue(20).withCost(6),
                 skills.reduceCooldown().withValue(20).withCost(6),
-                {
-                    effect: '命中率アップ',
-                    properties: '最大20％、技術Pt6',
-                },
+                skills.increaseHitRate().withValue(20).withCost(6),
                 skills.increaseDamage().withValue(10).withCost(6),
             ],
         },

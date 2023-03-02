@@ -28,14 +28,8 @@ const m1: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10),
                 skills.increaseDamage().withValue(10),
-                {
-                    effect: '命中率アップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％', // TODO 技術Pt
-                },
+                skills.increaseHitRate().withValue(10),
+                skills.increaseHitRateVsSmall().withValue(15),
                 skills.reduceCooldown().withValue(15),
                 skills.reduceCooldown().withValue(15),
                 {
@@ -75,10 +69,7 @@ const a1: ISystemModule = {
                 },
                 skills.reduceRtbAircraft().withValue(20),
                 skills.reduceRtbAircraft().withValue(20),
-                {
-                    effect: '艦載機の命中率アップ',
-                    properties: '最大20％',
-                },
+                skills.increaseHitRateOfAircraft().withValue(20),
                 {
                     effect: '艦載機のダメージアップ',
                     properties: '最大10％',
@@ -146,12 +137,8 @@ const b2: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10),
                 skills.increaseDamage().withValue(10),
-                {
-                    effect: '命中率アップ',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                },
+                skills.increaseHitRate(),
+                skills.increaseHitRateVsSmall(),
             ],
         },
     ],
