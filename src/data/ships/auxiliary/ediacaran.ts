@@ -112,7 +112,17 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '???',
+    name: '戦闘機搭載システム',
+    description: '大型戦闘機を2隊搭載可能',
+    parts: [
+        {
+            text: [
+                'CFB-200型　大型戦闘機格納庫',
+                '2隊の大型戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令・探査システムを備える。',
+            ],
+            skillSlots: 6,
+        },
+    ],
     category: 'C',
     categoryNumber: 1,
 };
