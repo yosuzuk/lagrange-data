@@ -24,17 +24,12 @@ const m1: ISystemModule = {
             skills.increaseIonDamage().withValue(10).withCost(5),
             skills.increaseIonDamage().withValue(10).withCost(5),
             skills.reduceCooldown().withValue(15).withCost(5),
-            skills.reduceIonDuration().withValue(10).withCost(5),
+            skills.reduceDuration().withValue(10).withCost(5),
             skills.reduceCooldown().withValue(15).withCost(5),
             skills.increaseIonHitRate().withValue(10).withCost(5),
             skills.increaseHitRateVsLarge().withValue(15).withCost(5),
-            {
-                effect: 'システムＨＰアップ',
-                properties: '最大35％、技術Pt5',
-            }, {
-                effect: '被クリティカルダメージダウン',
-                properties: '最大30％、技術Pt5',
-            }
+            skills.increaseSystemHp().withValue(35).withCost(5),
+            skills.reduceCritialDamageReceived().withValue(30).withCost(5),
         ],
     }],
     category: 'M',
@@ -71,16 +66,10 @@ const a1: ISystemModule = {
         ],
         skillSlots: 6,
         skills: [
-            {
-                effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
-                properties: '戦略、技術Pt25',
-            },
+            skills.concentrateFirePeriodically(80, 90, 15).withCost(25),
             skills.increaseDamage().withValue(10).withCost(12),
             skills.increaseDamage().withValue(10).withCost(12),
-            {
-                effect: 'クリティカルダメージアップ＆確率アップ',
-                properties: '最大50％、技術Pt12',
-            },
+            skills.increaseCriticalDamageAndChance().withValue(50).withCost(12),
             skills.reduceCooldown().withValue(15).withCost(12),
             skills.increaseHitRateVsLarge().withValue(15).withCost(12),
             skills.increaseHitRateVsSmall().withValue(15).withCost(10),

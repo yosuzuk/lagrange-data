@@ -23,24 +23,12 @@ const m1: ISystemModule = {
             skillSlots: 5,
             skills: [
                 skills.increaseHitRateOfAircraft().withValue(20).withCost(13),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
-                {
-                    effect: '艦載機のミサイル回避率アップ',
-                    properties: '最大30％、技術Pt13',
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
+                skills.increaseMissileEvasionOfAircraft().withValue(30).withCost(13),
+                skills.increaseSystemHp().withValue(35).withCost(13),
             ],
         },
     ],
@@ -67,25 +55,13 @@ const m2: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: '艦載機/UAVのダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
                 skills.increaseHitRateOfAircraft().withValue(20).withCost(13),
-                {
-                    effect: '艦載機/UAVのダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
-                {
-                    effect: '艦載機/UAVのミサイル回避率アップ',
-                    properties: '最大30％、技術Pt13',
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
+                skills.increaseMissileEvasionOfAircraft().withValue(30).withCost(13),
+                skills.increaseSystemHp().withValue(35).withCost(13),
             ],
         },
     ],
@@ -107,25 +83,13 @@ const m3: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
                 skills.reduceRtbAircraft().withValue(20).withCost(13),
                 skills.increaseHitRateOfAircraft().withValue(20).withCost(13),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％、技術Pt13',
-                },
-                {
-                    effect: '艦載機のミサイル回避率アップ',
-                    properties: '最大30％、技術Pt13',
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt13',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(13),
+                skills.increaseMissileEvasionOfAircraft().withValue(30).withCost(13),
+                skills.increaseSystemHp().withValue(35).withCost(13),
             ],
         },
     ],
@@ -231,16 +195,10 @@ const b2: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: '艦載機のロックオン速度アップ',
-                    properties: '最大70％、技術Pt12',
-                },
+                skills.reduceLockOnOfAircraft().withValue(70).withCost(12),
                 skills.reduceRtbAircraft().withValue(10).withCost(12),
                 skills.reduceRtbAircraft().withValue(10).withCost(12),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％、技術Pt12',
-                },
+                skills.increaseDamageOfAircraft().withValue(10).withCost(12),
             ],
         },
     ],

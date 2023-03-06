@@ -22,24 +22,15 @@ const m1: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
-                    properties: '戦略、技術Pt15',
-                },
+                skills.overdrive(90, 30, 15).withCost(15),
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.increaseHitRate().withValue(10).withCost(10),
                 skills.increaseHitRateVsLarge().withValue(15).withCost(10),
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt10',
-                },
-                {
-                    effect: '被クリティカルダメージダウン',
-                    properties: '最大30％、技術Pt10',
-                },
+                skills.increaseSystemHp().withValue(35).withCost(10),
+                skills.reduceCritialDamageReceived().withValue(30).withCost(10),
             ],
         },
     ],
@@ -61,20 +52,14 @@ const m2: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '90秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は30秒続く。冷却15秒',
-                    properties: '戦略、技術Pt15',
-                },
+                skills.overdrive(90, 30, 15).withCost(15),
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.increaseHitRateVsSmall().withValue(15).withCost(10),
                 skills.increaseHitRateVsLarge().withValue(15).withCost(10),
-                {
-                    effect: '持続時間ダウン',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.reduceDuration().withValue(10).withCost(10),
             ],
         },
     ],
@@ -103,10 +88,7 @@ const a1: ISystemModule = {
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
-                {
-                    effect: 'クリティカルダメージアップ＆確率アップ',
-                    properties: '最大50％、技術Pt10',
-                },
+                skills.increaseCriticalDamageAndChance().withValue(50).withCost(10),
             ],
         },
     ],
@@ -130,19 +112,10 @@ const a2: ISystemModule = {
             skills: [
                 skills.increaseDamage().withValue(10).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: 'クリティカルダメージアップ＆確率アップ',
-                    properties: '最大50％、技術Pt10',
-                },
+                skills.increaseCriticalDamageAndChance().withValue(50).withCost(10),
                 skills.increaseDamage().withValue(10).withCost(10),
-                {
-                    effect: '攻城ダメージアップ',
-                    properties: '最大30％、技術Pt10',
-                },
-                {
-                    effect: '攻城ダメージアップ',
-                    properties: '最大30％、技術Pt10',
-                },
+                skills.increaseSiegeDamage().withValue(30).withCost(10),
+                skills.increaseSiegeDamage().withValue(30).withCost(10),
             ],
         },
     ],
@@ -171,10 +144,7 @@ const a3: ISystemModule = {
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
                 skills.reduceCooldown().withValue(15).withCost(10),
-                {
-                    effect: 'システムのメイン武装が同列に接近する艦載機を攻撃。命中率40％アップ。効果は25秒続く。冷却30秒。',
-                    properties: '戦略、技術Pt15',
-                },
+                skills.antiAircraftSupport(40, 30, 25).withCost(15),
             ],
         },
     ],
@@ -248,16 +218,10 @@ const c1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: 'UAVのロックオン速度アップ',
-                    properties: '最大70％、技術Pt5',
-                },
+                skills.reduceLockOnOfUav().withValue(70).withCost(5),
                 skills.reduceRtbUav().withValue(20).withCost(5),
                 skills.increaseHitRateOfUav().withValue(20).withCost(5),
-                {
-                    effect: 'UAVのダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
+                skills.increaseDamageOfUav().withValue(10).withCost(5),
             ],
         },
     ],
@@ -279,10 +243,7 @@ const c2: ISystemModule = {
             skills: [
                 skills.reduceRtbUav().withValue(20).withCost(5),
                 skills.reduceRtbUav().withValue(20).withCost(5),
-                {
-                    effect: 'UAVのロックオン速度アップ',
-                    properties: '最大70％、技術Pt5',
-                },
+                skills.reduceLockOnOfUav().withValue(70).withCost(5),
             ],
         },
     ],
@@ -306,10 +267,7 @@ const c3: ISystemModule = {
             skillSlots: 2,
             skills: [
                 skills.increaseShield().withValue(10).withCost(5),
-                {
-                    effect: '被クリティカルダメージダウン',
-                    properties: '最大30％、技術Pt5',
-                },
+                skills.reduceCritialDamageReceived().withValue(30).withCost(5),
             ],
         },
     ],
@@ -361,10 +319,7 @@ const d2: ISystemModule = {
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.reduceCooldown().withValue(15).withCost(5),
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(5),
-                {
-                    effect: 'ミサイル/魚雷要撃率アップ',
-                    properties: '最大25％、技術Pt5',
-                },
+                skills.increaseInterceptionChance().withValue(25).withCost(5),
             ],
         },
     ],

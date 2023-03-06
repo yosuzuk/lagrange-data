@@ -22,31 +22,16 @@ const m1: ISystemModule = {
             ],
             skillSlots: 7,
             skills: [
-                {
-                    effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
-                    properties: '戦略、技術Pt12',
-                },
+                skills.rapidFire(80, 60, 15, 10).withCost(12),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseHitRateVsSmall().withValue(14.8).withCost(8),
                 skills.increaseHitRateVsSmall().withValue(14.8).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
-                {
-                    effect: 'システムＨＰアップ',
-                    properties: '最大34.8％、技術Pt8',
-                },
-                {
-                    effect: 'クリティカルダメージアップ＆確率アップ',
-                    properties: '最大50％、技術Pt8',
-                },
-                {
-                    effect: '攻城ダメージアップ',
-                    properties: '最大30％、技術Pt8',
-                },
-                {
-                    effect: 'システムＨＰアップ',
-                    properties: '最大34.8％、技術Pt8',
-                },
+                skills.increaseSystemHp().withValue(34.8).withCost(8),
+                skills.increaseCriticalDamageAndChance().withValue(50).withCost(8),
+                skills.increaseSiegeDamage().withValue(30).withCost(8),
+                skills.increaseSystemHp().withValue(34.8).withCost(8),
             ],
         }
     ],
@@ -97,10 +82,7 @@ const a1: ISystemModule = {
                 skills.reduceCooldown().withValue(15).withCost(10),
                 skills.increaseHitRateVsSmall().withValue(15).withCost(10),
                 skills.increaseHitRateVsAircraft().withValue(15).withCost(10),
-                {
-                    effect: '出力時間ダウン',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.reduceDuration().withValue(10).withCost(10),
             ],
         },
     ],
@@ -184,10 +166,7 @@ const b2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ロックオン速度アップ',
-                    properties: '最大70％、技術Pt6',
-                },
+                skills.reduceLockOn().withValue(70).withCost(6),
                 skills.reduceCooldown().withValue(20).withCost(6),
                 skills.reduceCooldown().withValue(20).withCost(6),
                 skills.increaseHitRate().withValue(20).withCost(6),

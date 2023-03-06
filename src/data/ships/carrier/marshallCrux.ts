@@ -32,10 +32,7 @@ const m1: ISystemModule = {
                 skills.increaseHitRateVsSmall().withValue(15),
                 skills.reduceCooldown().withValue(15),
                 skills.reduceCooldown().withValue(15),
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％', // TODO 技術Pt
-                },
+                skills.increaseSystemHp().withValue(35),
             ],
         },
     ],
@@ -63,21 +60,12 @@ const a1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: '戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。',
-                    properties: '戦略、技術Pt20',
-                },
+                skills.customStrategy('skillSubType.concentratedStrike').withDescriptionKey('skillDescription.concentratedStrike').withCost(20),
                 skills.reduceRtbAircraft().withValue(20),
                 skills.reduceRtbAircraft().withValue(20),
                 skills.increaseHitRateOfAircraft().withValue(20),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: '艦載機のミサイル回避率アップ',
-                    properties: '最大30％',
-                },
+                skills.increaseDamageOfAircraft().withValue(10),
+                skills.increaseMissileEvasionOfAircraft().withValue(30),
             ],
         },
     ],
@@ -107,10 +95,7 @@ const b1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: 'ロックオン速度アップ',
-                    properties: '最大70％',
-                },
+                skills.reduceLockOn().withValue(70),
                 skills.reduceCooldown(),
                 skills.increaseDamage(),
             ],

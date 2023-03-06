@@ -20,25 +20,13 @@ const m1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: '護送艦のダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
+                skills.increaseDamageOfCorvette().withValue(10).withCost(10),
                 skills.reduceRtbCorvette().withValue(20).withCost(10),
                 skills.reduceRtbCorvette().withValue(20).withCost(10),
                 skills.increaseHitRateOfCorvette().withValue(20).withCost(10),
-                {
-                    effect: '護送艦のダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の対ミサイル回避率アップ',
-                    properties: '最大30％、技術Pt10',
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt10',
-                },
+                skills.increaseDamageOfCorvette().withValue(10).withCost(10),
+                skills.increaseMissileEvasionOfCorvette().withValue(30).withCost(10),
+                skills.increaseSystemHp().withValue(35).withCost(10),
             ],
         },
     ],
@@ -84,19 +72,13 @@ const a1: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
-                    properties: '戦略、技術Pt15',
-                },
+                skills.customStrategy('skillSubType.moraleBooster').withDescriptionKey('skillDescription.moraleBooster').withCost(15),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
                 skills.increaseHitRateVsSmall().withValue(14.8).withCost(8),
                 skills.increaseHitRateVsAircraft().withValue(14.8).withCost(8),
-                {
-                    effect: 'ミサイルのダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
+                skills.increaseMissileDamage().withValue(10).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
             ],
@@ -145,10 +127,7 @@ const a3: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
-                    properties: '戦略、技術Pt15',
-                },
+                skills.customStrategy('skillSubType.moraleBooster').withDescriptionKey('skillDescription.moraleBooster').withCost(15),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.increaseDamage().withValue(10).withCost(8),
                 skills.reduceCooldown().withValue(14.8).withCost(8),
@@ -179,18 +158,9 @@ const b1: ISystemModule = {
                 skills.reduceRtbCorvette().withValue(5).withCost(8),
                 skills.reduceRtbCorvette().withValue(5).withCost(8),
                 skills.reduceRtbCorvette().withValue(5).withCost(8),
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
+                skills.increaseDamageOfAircraft().withValue(3).withCost(8),
+                skills.increaseDamageOfAircraft().withValue(3).withCost(8),
+                skills.increaseDamageOfAircraft().withValue(3).withCost(8),
             ],
         },
     ],
@@ -323,10 +293,7 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                         skillSlots: 5,
                         skills: [
-                            {
-                                effect: '護送艦のダメージアップ',
-                                properties: '最大10％',
-                            },
+                            skills.increaseDamageOfCorvette().withValue(10),
                             skills.reduceRtbCorvette().withValue(20),
                         ],
                     },
