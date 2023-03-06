@@ -1,4 +1,4 @@
-import { flagshipEffect, enhancements } from '../../../skill/enhancements';
+import { flagshipEffect, enhancements } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';

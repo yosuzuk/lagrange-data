@@ -1,4 +1,4 @@
-import { EnhancementType, EnhancementSubType } from './SkillType';
+import { EnhancementType, EnhancementSubType } from './EnhancementType';
 
 export interface IEnhancement {
     type: EnhancementType;

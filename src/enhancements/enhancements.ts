@@ -1,6 +1,6 @@
 import { t } from '../i18n';
 import { IEnhancement, IMutableEnhancement } from './types/IEnhancement';
-import { EnhancementSubType, EnhancementType } from './types/SkillType';
+import { EnhancementSubType, EnhancementType } from './types/EnhancementType';
 
 export const enhancements = {
     customEnhancement: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withTextKey(textKey, options),

@@ -1,4 +1,4 @@
-import { IEnhancement } from '../skill/types/IEnhancement';
+import { IEnhancement } from '../enhancements/types/IEnhancement';
 import { Manufacturer } from './Manufacturer';
 import { ResearchManufacturer } from './ResearchManufacturer';
 import { ResearchStrategyType } from './ResearchStrategyType';

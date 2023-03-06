@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../skill/enhancements';
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';

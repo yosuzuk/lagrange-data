@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import { IEnhancement } from '../../skill/types/IEnhancement';
+import { IEnhancement } from '../../enhancements/types/IEnhancement';
 
 const EnhancementListList = styled('ul')({
     paddingInlineStart: '20px',
