@@ -1,3 +1,4 @@
+import { flagshipEffect, enhancements } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -11,6 +12,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '総合支援プラットフォーム',
+    translatedName: {
+        en: 'Integrated Support Platform',
+    },
     description: '対空武装＆修理ドック',
     parts: [{
         text: [
@@ -20,28 +24,18 @@ const m1: ISystemModule = {
             '補修キュー1',
         ],
         skillSlots: 5,
-        skills: [{
-            effect: '補修速度アップ',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: '補修速度アップ',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: 'クイック補修プレハブモジュール消費ダウン',
-            properties: '最大10％、技術Pt8',
-        }, {
-            effect: '補給速度アップ',
-            properties: '最大34％、技術Pt8',
-        }, {
-            effect: '補給速度アップ',
-            properties: '最大34％、技術Pt8',
-        }, {
-            effect: 'カスタムモジュール容量アップ',
-            properties: '最大15、技術Pt8',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }],
+        skills: [
+            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
+            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
+            enhancements.reducePrefabCost().withValue(10).withCost(8),
+            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
+            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
+            enhancements.increaseCustomModuleStorage().withValue(15).withCost(8),
+            enhancements.increaseDamage().withValue(10).withCost(5),
+        ],
+        flagshipEffects: [
+            flagshipEffect.fleetDock1().withCost(10),
+        ],
     }],
     category: 'M',
     categoryNumber: 1,
@@ -60,22 +54,10 @@ const a1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: '支援補修速度アップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: '支援補修速度アップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: 'グイック補修プレハブモジュール消費ダウン',
-                    properties: '最大10％',
-                },
-                {
-                    effect: 'グイック補修プレハブモジュール消費ダウン',
-                    properties: '最大10％',
-                },
+                enhancements.increaseRepairSpeed().withValue(10),
+                enhancements.increaseRepairSpeed().withValue(10),
+                enhancements.reducePrefabCost().withValue(10),
+                enhancements.reducePrefabCost().withValue(10),
             ],
         },
     ],
@@ -95,18 +77,9 @@ const a2: ISystemModule = {
         // TODO skillslots
         // skillSlots: 99,
         skills: [
-            {
-                effect: '貯蔵力アップ',
-                properties: '最大80％', // TODO 技術Pt
-            },
-            {
-                effect: '補給速度アップ',
-                properties: '最大34％', // TODO 技術Pt
-            },
-            {
-                effect: 'カスタムモジュール容量アップ',
-                properties: '最大15', // TODO 技術Pt
-            },
+            enhancements.increaseStorage().withValue(80),
+            enhancements.increaseSupplySpeed().withValue(34),
+            enhancements.increaseCustomModuleStorage().withValue(15),
             // TODO 4th skill
         ],
     }],
@@ -200,16 +173,15 @@ const d1: ISystemModule = {
             '後列のミサイル攻撃被命中率ダウン：8%',
         ],
         skillSlots: 2,
-        skills: [{
-            effect: '後列の投射武器の被命中率ダウン',
-            properties: '最大8％、技術Pt：8',
-        }, {
-            effect: '中列の投射武器の被命中率ダウン',
-            properties: '最大8％、技術Pt：8',
-        }, {
-            effect: '後列の低速武器の被命中率ダウン',
-            properties: '最大8％、技術Pt：8',
-        }],
+        skills: [
+            enhancements.reduceHitByProjectileInBackRow().withValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInMidRow().withValue(8).withCost(8),
+            enhancements.reduceHitBySlowInBackRow().withValue(8).withCost(8),
+        ],
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.customFlashipEffect('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
+        ],
     }],
     category: 'D',
     categoryNumber: 1,
@@ -227,10 +199,7 @@ const d2: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            {
-                effect: '中列のミサイル/魚雷命中率アップ',
-                properties: '最大8％、技術Pt：8',
-            },
+            enhancements.increaseProjectileHitRateMidRow().withValue(8).withCost(8),
         ],
     }],
     category: 'D',
@@ -247,9 +216,9 @@ const d3: ISystemModule = {
             '自身が攻撃目標になった時に、航空空母と見なされるようにする',
         ],
         skillSlots: 2,
-        skills: [{
-            effect: '自身が攻撃目標になった時に、駆逐艦と見なされるようにする',
-        }],
+        skills: [
+            enhancements.disguiseAsDestroyer(),
+        ],
     }],
     category: 'D',
     categoryNumber: 3,

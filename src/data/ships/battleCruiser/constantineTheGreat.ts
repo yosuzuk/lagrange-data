@@ -1,3 +1,4 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -19,34 +20,17 @@ const m1: ISystemModule = {
             '・直射、エネルギー、対艦：9000、攻城：1890',
         ],
         skillSlots: 6,
-        skills: [{
-            effect: 'イオン砲ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: 'イオン砲ダメージアップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: '出力時間ダウン',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: 'イオン砲命中率アップ',
-            properties: '最大10％、技術Pt5',
-        }, {
-            effect: '巡洋艦以上に対する命中率アップ',
-            properties: '最大15％、技術Pt5',
-        }, {
-            effect: 'システムＨＰアップ',
-            properties: '最大35％、技術Pt5',
-        }, {
-            effect: '被クリティカルダメージダウン',
-            properties: '最大30％、技術Pt5',
-        }],
+        skills: [
+            enhancements.increaseIonDamage().withValue(10).withCost(5),
+            enhancements.increaseIonDamage().withValue(10).withCost(5),
+            enhancements.reduceCooldown().withValue(15).withCost(5),
+            enhancements.reduceDuration().withValue(10).withCost(5),
+            enhancements.reduceCooldown().withValue(15).withCost(5),
+            enhancements.increaseIonHitRate().withValue(10).withCost(5),
+            enhancements.increaseHitRateVsLarge().withValue(15).withCost(5),
+            enhancements.increaseSystemHp().withValue(35).withCost(5),
+            enhancements.reduceCritialDamageReceived().withValue(30).withCost(5),
+        ],
     }],
     category: 'M',
     categoryNumber: 1,
@@ -81,31 +65,15 @@ const a1: ISystemModule = {
             '・投射、実弾、対艦：24000、攻城：1920',
         ],
         skillSlots: 6,
-        skills: [{
-            effect: '90秒毎に15秒間の集中攻撃、冷却80％ダウン',
-            properties: '戦略、技術Pt25',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'ダメージアップ',
-            properties: '最大10％、技術Pt12',
-        }, {
-            effect: 'クリティカルダメージアップ＆確率アップ',
-            properties: '最大50％、技術Pt12',
-        }, {
-            effect: '冷却時間ダウン',
-            properties: '最大15％、技術Pt12',
-        }, {
-            effect: '巡洋艦以上に対する命中率アップ',
-            properties: '最大15％、技術Pt12',
-        }, {
-            effect: 'フリゲート/駆逐艦に対する命中率アップ',
-            properties: '最大15％、技術Pt12',
-        }],
+        skills: [
+            strategy.concentrateFirePeriodically(80, 90, 15).withCost(25),
+            enhancements.increaseDamage().withValue(10).withCost(12),
+            enhancements.increaseDamage().withValue(10).withCost(12),
+            enhancements.increaseCriticalDamageAndChance().withValue(50).withCost(12),
+            enhancements.reduceCooldown().withValue(15).withCost(12),
+            enhancements.increaseHitRateVsLarge().withValue(15).withCost(12),
+            enhancements.increaseHitRateVsSmall().withValue(15).withCost(10),
+        ],
     }],
     category: 'A',
     categoryNumber: 1,
@@ -144,26 +112,11 @@ const b1: ISystemModule = {
         ],
         skillSlots: 4,
         skills: [
-            {
-                effect: 'ダメージアップ',
-                properties: '最大10％、技術Pt8',
-            },
-            {
-                effect: 'ダメージアップ',
-                properties: '最大10％、技術Pt8',
-            },
-            {
-                effect: '冷却時間ダウン',
-                properties: '最大15％、技術Pt8',
-            },
-            {
-                effect: '冷却時間ダウン',
-                properties: '最大15％、技術Pt8',
-            },
-            {
-                effect: '戦闘機/護送艦に対する命中率アップ',
-                properties: '最大15％、技術Pt8',
-            },
+            enhancements.increaseDamage().withValue(10).withCost(8),
+            enhancements.increaseDamage().withValue(10).withCost(8),
+            enhancements.reduceCooldown().withValue(15).withCost(8),
+            enhancements.reduceCooldown().withValue(15).withCost(8),
+            enhancements.increaseHitRateVsAircraft().withValue(15).withCost(8),
         ],
     }],
     category: 'B',

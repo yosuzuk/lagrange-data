@@ -1,3 +1,4 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -19,34 +20,13 @@ const m1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: '護送艦のダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の帰還冷却時間ダウン',
-                    properties: '最大20％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の命中率アップ',
-                    properties: '最大20％、技術Pt10',
-                },
-                {
-                    effect: '護送艦のダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: '護送艦の対ミサイル回避率アップ',
-                    properties: '最大30％、技術Pt10',
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％、技術Pt10',
-                },
+                enhancements.increaseDamageOfCorvette().withValue(10).withCost(10),
+                enhancements.reduceRtbCorvette().withValue(20).withCost(10),
+                enhancements.reduceRtbCorvette().withValue(20).withCost(10),
+                enhancements.increaseHitRateOfCorvette().withValue(20).withCost(10),
+                enhancements.increaseDamageOfCorvette().withValue(10).withCost(10),
+                enhancements.increaseMissileEvasionOfCorvette().withValue(30).withCost(10),
+                enhancements.increaseSystemHp().withValue(35).withCost(10),
             ],
         },
     ],
@@ -92,42 +72,15 @@ const a1: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
-                    properties: '戦略、技術Pt15',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'ミサイルのダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsSmall().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsAircraft().withValue(14.8).withCost(8),
+                enhancements.increaseMissileDamage().withValue(10).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
             ],
         },
     ],
@@ -174,42 +127,15 @@ const a3: ISystemModule = {
             ],
             skillSlots: 6,
             skills: [
-                {
-                    effect: '敵が巡洋艦を失うと10秒間冷却時間85％ダウン',
-                    properties: '戦略、技術Pt15',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '巡洋艦以上に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
+                strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsSmall().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsLarge().withValue(14.8).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsAircraft().withValue(14.8).withCost(8),
             ],
         },
     ],
@@ -229,30 +155,12 @@ const b1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
-                {
-                    effect: '艦載機の帰還冷却時間ダウン',
-                    properties: '最大5％、技術Pt8',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大3％、技術Pt8',
-                },
+                enhancements.reduceRtbCorvette().withValue(5).withCost(8),
+                enhancements.reduceRtbCorvette().withValue(5).withCost(8),
+                enhancements.reduceRtbCorvette().withValue(5).withCost(8),
+                enhancements.increaseDamageOfAircraft().withValue(3).withCost(8),
+                enhancements.increaseDamageOfAircraft().withValue(3).withCost(8),
+                enhancements.increaseDamageOfAircraft().withValue(3).withCost(8),
             ],
         },
     ],
@@ -331,22 +239,10 @@ const c3: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt5',
-                },
-                {
-                    effect: '対戦闘機/護送艦命中率アップ',
-                    properties: '最大15％、技術Pt5',
-                },
-                {
-                    effect: '対戦闘機/護送艦命中率アップ',
-                    properties: '最大15％、技術Pt5',
-                },
+                enhancements.increaseDamage().withValue(10).withCost(5),
+                enhancements.increaseDamage().withValue(10).withCost(5),
+                enhancements.increaseHitRateVsAircraft().withValue(15).withCost(5),
+                enhancements.increaseHitRateVsAircraft().withValue(15).withCost(5),
             ],
         },
     ],
@@ -397,14 +293,8 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                         skillSlots: 5,
                         skills: [
-                            {
-                                effect: '護送艦のダメージアップ',
-                                properties: '最大10％',
-                            },
-                            {
-                                effect: '護送艦の帰還冷却時間ダウン',
-                                properties: '最大20％',
-                            },
+                            enhancements.increaseDamageOfCorvette().withValue(10),
+                            enhancements.reduceRtbCorvette().withValue(20),
                         ],
                     },
                 ],

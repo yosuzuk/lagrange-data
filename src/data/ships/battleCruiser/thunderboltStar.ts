@@ -67,7 +67,7 @@ const m3: ISystemModule = {
 
 const a1: ISystemModule = {
     id: 'A1',
-    name: '???',
+    name: '高速対艦武器システム',
     category: 'A',
     categoryNumber: 1,
 };
@@ -93,7 +93,7 @@ const a2: ISystemModule = {
 
 const b1: ISystemModule = {
     id: 'B1',
-    name: '???',
+    name: 'アクティブ対空システム',
     category: 'B',
     categoryNumber: 1,
 };
@@ -157,15 +157,36 @@ const e2: ISystemModule = {
 
 const f1: ISystemModule = {
     id: 'F1',
-    name: '???',
+    name: '多目的武器システム',
+    description: '対小型武装',
+    parts: [{
+        text: [
+            'HG-1120A型　多目的対艦砲',
+            '対小型艦：',
+            '・直射、実弾、対艦：7590、対空：6072、攻城：759',
+            '反撃対空',
+        ],
+        // skillSlots: 4,
+        // skills: [],
+    }],
     category: 'F',
     categoryNumber: 1,
 };
 
 const f2: ISystemModule = {
     id: 'F2',
-    name: '???',
+    name: '多目的対空システム',
     description: '対空武装',
+    parts: [{
+        text: [
+            'HG-1120B型　多目的対空砲塔',
+            '対空：',
+            '・直射、実弾、対空：4226',
+            '反撃対空',
+        ],
+        // skillSlots: 4,
+        // skills: [],
+    }],
     category: 'F',
     categoryNumber: 2,
 };

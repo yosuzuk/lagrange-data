@@ -1,3 +1,4 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -21,46 +22,16 @@ const m1: ISystemModule = {
             ],
             skillSlots: 7,
             skills: [
-                {
-                    effect: '90秒毎に15秒間攻撃・冷却時間が80％ダウン、冷却10秒',
-                    properties: '戦略、技術Pt12',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt8',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大14.8％、技術Pt8',
-                },
-                {
-                    effect: 'システムＨＰアップ',
-                    properties: '最大34.8％、技術Pt8',
-                },
-                {
-                    effect: 'クリティカルダメージアップ＆確率アップ',
-                    properties: '最大50％、技術Pt8',
-                },
-                {
-                    effect: '攻城ダメージアップ',
-                    properties: '最大30％、技術Pt8',
-                },
-                {
-                    effect: 'システムＨＰアップ',
-                    properties: '最大34.8％、技術Pt8',
-                },
+                strategy.rapidFire(80, 60, 15, 10).withCost(12),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.increaseDamage().withValue(10).withCost(8),
+                enhancements.increaseHitRateVsSmall().withValue(14.8).withCost(8),
+                enhancements.increaseHitRateVsSmall().withValue(14.8).withCost(8),
+                enhancements.reduceCooldown().withValue(14.8).withCost(8),
+                enhancements.increaseSystemHp().withValue(34.8).withCost(8),
+                enhancements.increaseCriticalDamageAndChance().withValue(50).withCost(8),
+                enhancements.increaseSiegeDamage().withValue(30).withCost(8),
+                enhancements.increaseSystemHp().withValue(34.8).withCost(8),
             ],
         }
     ],
@@ -105,34 +76,13 @@ const a1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大10％、技術Pt10',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '戦闘機/護送艦に対する命中率アップ',
-                    properties: '最大15％、技術Pt10',
-                },
-                {
-                    effect: '出力時間ダウン',
-                    properties: '最大10％、技術Pt10',
-                },
+                enhancements.increaseDamage().withValue(10).withCost(10),
+                enhancements.increaseDamage().withValue(10).withCost(10),
+                enhancements.reduceCooldown().withValue(15).withCost(10),
+                enhancements.reduceCooldown().withValue(15).withCost(10),
+                enhancements.increaseHitRateVsSmall().withValue(15).withCost(10),
+                enhancements.increaseHitRateVsAircraft().withValue(15).withCost(10),
+                enhancements.reduceDuration().withValue(10).withCost(10),
             ],
         },
     ],
@@ -216,26 +166,11 @@ const b2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ロックオン速度アップ',
-                    properties: '最大70％、技術Pt6',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大20％、技術Pt6',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大20％、技術Pt6',
-                },
-                {
-                    effect: '命中率アップ',
-                    properties: '最大20％、技術Pt6',
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％、技術Pt6',
-                },
+                enhancements.reduceLockOn().withValue(70).withCost(6),
+                enhancements.reduceCooldown().withValue(20).withCost(6),
+                enhancements.reduceCooldown().withValue(20).withCost(6),
+                enhancements.increaseHitRate().withValue(20).withCost(6),
+                enhancements.increaseDamage().withValue(10).withCost(6),
             ],
         },
     ],

@@ -1,3 +1,4 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -25,34 +26,13 @@ const m1: ISystemModule = {
             ],
             skillSlots: 5,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
-                {
-                    effect: '命中率アップ',
-                    properties: '最大10％', // TODO 技術Pt
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                    properties: '最大15％', // TODO 技術Pt
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％', // TODO 技術Pt
-                },
-                {
-                    effect: '冷却時間ダウン',
-                    properties: '最大15％', // TODO 技術Pt
-                },
-                {
-                    effect: 'システムHPアップ',
-                    properties: '最大35％', // TODO 技術Pt
-                },
+                enhancements.increaseDamage().withValue(10),
+                enhancements.increaseDamage().withValue(10),
+                enhancements.increaseHitRate().withValue(10),
+                enhancements.increaseHitRateVsSmall().withValue(15),
+                enhancements.reduceCooldown().withValue(15),
+                enhancements.reduceCooldown().withValue(15),
+                enhancements.increaseSystemHp().withValue(35),
             ],
         },
     ],
@@ -64,6 +44,20 @@ const m1: ISystemModule = {
 const m2: ISystemModule = {
     id: 'M2',
     name: '「ホワイトフラッシュ」総合武器庫',
+    parts: [
+        {
+            text: [
+                'CG-11058型　通常砲',
+                '対空：',
+                '・直射、実弾、対艦：1800、対空：1080、攻城：90',
+                'CR-1650型　電磁加速砲',
+                '対大型：',
+                '・直射、実弾、対艦：12857、攻城：2185',
+            ],
+            skillSlots: 5,
+            // skills: [],
+        },
+    ],
     category: 'M',
     categoryNumber: 2,
 };
@@ -80,30 +74,12 @@ const a1: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: '戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。',
-                    properties: '戦略、技術Pt20',
-                },
-                {
-                    effect: '帰還冷却時間ダウン',
-                    properties: '最大20％', // TODO 技術Pt
-                },
-                {
-                    effect: '帰還冷却時間ダウン',
-                    properties: '最大20％', // TODO 技術Pt
-                },
-                {
-                    effect: '艦載機の命中率アップ',
-                    properties: '最大20％',
-                },
-                {
-                    effect: '艦載機のダメージアップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: '艦載機のミサイル回避率アップ',
-                    properties: '最大30％',
-                },
+                strategy.customStrategy('concentratedStrike').withDescriptionKey('concentratedStrike').withCost(20),
+                enhancements.reduceRtbAircraft().withValue(20),
+                enhancements.reduceRtbAircraft().withValue(20),
+                enhancements.increaseHitRateOfAircraft().withValue(20),
+                enhancements.increaseDamageOfAircraft().withValue(10),
+                enhancements.increaseMissileEvasionOfAircraft().withValue(30),
             ],
         },
     ],
@@ -133,16 +109,9 @@ const b1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                {
-                    effect: 'ロックオン速度アップ',
-                    properties: '最大70％',
-                },
-                {
-                    effect: '冷却時間ダウン',
-                },
-                {
-                    effect: 'ダメージアップ',
-                },
+                enhancements.reduceLockOn().withValue(70),
+                enhancements.reduceCooldown(),
+                enhancements.increaseDamage(),
             ],
         },
     ],
@@ -165,19 +134,10 @@ const b2: ISystemModule = {
             ],
             skillSlots: 4,
             skills: [
-                {
-                    effect: 'ダメージアップ',
-                    properties: '最大10％',
-                },
-                {
-                    effect: 'ダメージアップ',
-                },
-                {
-                    effect: '命中率アップ',
-                },
-                {
-                    effect: 'フリゲート/駆逐艦に対する命中率アップ',
-                },
+                enhancements.increaseDamage().withValue(10),
+                enhancements.increaseDamage().withValue(10),
+                enhancements.increaseHitRate(),
+                enhancements.increaseHitRateVsSmall(),
             ],
         },
     ],
@@ -203,14 +163,34 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '追加エネルギーシステム',
+    name: '付加エネルギーシステム',
+    description: '艦載機のダメージアップ',
+    parts: [
+        {
+            text: [
+                'RET-200型　エネルギー増加装置',
+                '搭載した艦載機のメイン武器のダメージアップ15%',
+            ],
+            skillSlots: 2,
+        },
+    ],
     category: 'C',
     categoryNumber: 1,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
-    name: '精密誘導システム',
+    name: '射撃統制補助照準システム',
+    description: '艦載機の命中率アップ',
+    parts: [
+        {
+            text: [
+                'XGC-200型　精密誘導システム',
+                '小型機載攻撃補助情報システム。アントニオスプレシジョン製造の艦載機の情報システムと連動できるため、攻撃目標の情報をより多く武器システムに提供し、命中率をアップさせる。',
+                '搭載した艦載機のメイン武器命中率アップ15%',
+            ],
+        },
+    ],
     category: 'C',
     categoryNumber: 2,
 };

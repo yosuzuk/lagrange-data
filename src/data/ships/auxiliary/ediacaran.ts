@@ -1,7 +1,7 @@
+import { enhancements } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -112,7 +112,17 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '???',
+    name: '戦闘機搭載システム',
+    description: '大型戦闘機を2隊搭載可能',
+    parts: [
+        {
+            text: [
+                'CFB-200型　大型戦闘機格納庫',
+                '2隊の大型戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令・探査システムを備える。',
+            ],
+            skillSlots: 6,
+        },
+    ],
     category: 'C',
     categoryNumber: 1,
 };
@@ -178,14 +188,8 @@ const e1: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            {
-                effect: '抵抗値アップ',
-                properties: '最大75',
-            },
-            {
-                effect: 'HPアップ',
-                properties: '最大10％',
-            },
+            enhancements.increaseArmor().withValue(75),
+            enhancements.increaseHp().withValue(10),
         ],
     }],
     category: 'E',
