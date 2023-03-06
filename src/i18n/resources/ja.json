@@ -116,7 +116,7 @@
         "restoreFromBackup": "バックアップから復元",
         "daysAndHours": "{{days}}日{{hours}}時間",
         "effectColonValue": "効果：{{effect}}",
-        "conditionColonValue": "発動条件：{{condition}}"
+        "conditionColonValue": "有効条件：{{condition}}"
     },
     "validation": {
         "requiredField": "必須項目",
@@ -154,7 +154,7 @@
         "detailsUnknown": "詳細不明",
         "numberOfSkillSlots": "スキル枠：{{count}}",
         "skillsColon": "スキル：",
-        "flagShipSkillsColon": "旗艦スキル：",
+        "flagshipEffectsColon": "旗艦スキル：",
         "carriedShipCount": "{{shipSubType}} ×{{count}}",
         "carriedShipCountOnModule": "{{shipSubType}} ×{{count}}（{{module}}）"
     },
@@ -316,14 +316,18 @@
         "salvage": "デブリ回収で取得できる艦船",
         "starterShip": "初期配布で手に入る艦船/設計図"
     },
-    "skill": {
-        "strategy": "戦略",
-        "flagshipEffect": "旗艦スキル",
+    "enhancement": {
         "valueColonValue": "最大{{value}}{{unit}}",
         "costColonValue": "技術Pt{{cost}}",
-        "valueAndCostColonValue": "最大{{value}}{{unit}}、技術Pt{{cost}}"
+        "valueAndCostColonValue": "最大{{value}}{{unit}}、技術Pt{{cost}}",
+        "enabledByDefaultBrackets": "（デフォルトで有効）"
     },
-    "skillSubType": {
+    "enhancementType": {
+        "skill": "スキル",
+        "strategy": "戦略",
+        "flagshipEffect": "旗艦スキル"
+    },
+    "enhancementSubType": {
         "increaseArmor": "抵抗値アップ",
         "increaseShield": "シールド値アップ",
         "increaseHp": "HPアップ",
@@ -370,29 +374,29 @@
         "reduceTorpedoInterception": "魚雷の被迎撃率ダウン",
         "disguiseAsDestroyer": "自身が攻撃目標になった時に、駆逐艦と見なされるようにする",
         "focusFire": "集中砲火",
-        "fleetDock1": "Fleet dock I",
-        "fleetDock2": "Fleet dock II",
-        "sailingSpeedCoordination1": "Sailing speed coordination I",
-        "overdrive": "Overdrive",
+        "fleetDock1": "艦隊結合I",
+        "fleetDock2": "艦隊結合II",
+        "sailingSpeedCoordination1": "航行速度同期I",
+        "overdrive": "過負荷攻撃",
         "antiAircraftSupport": "対空連携",
         "rapidFire": "高速攻撃",
-        "concentratedStrike": "Concentrated strike",
+        "concentratedStrike": "集中爆撃",
         "concentrateFirePeriodically": "周期的集中砲火",
         "moraleBooster": "士気向上"
     },
-    "skillDescription": {
-        "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
-        "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
-        "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(skillDescription.fleetDock1)",
-        "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed.",
+    "enhancementDescription": {
+        "focusFire": "目標選択時、戦場内の選択可能目標数に応じて、一定の割合の目標に優先攻撃を行い、攻撃効率をアップする。",
+        "fleetDock1": "艦隊の結合権限を有効にし、この艦隊が展開して他の艦隊と結合できるようにする。",
+        "fleetDock2": "この艦船の同社艦船に対する補修速度を30%アップする。また、$t(enhancementDescription.fleetDock1)",
+        "sailingSpeedCoordination1": "条件を満たす艦隊の航行速度とワープ速度が全艦船の平均の80+20%に一致する。",
         "overdrive": "{{interval}}秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "antiAircraftSupport": "{{interval}}秒毎に、システム内のメイン武器が同列の範囲内に接近する敵機をロックオンして攻撃する。対戦闘機命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。",
         "rapidFire": "{{interval}}秒毎に、システムメイン武器の攻撃・冷却時間が{{value}}％ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "concentratedStrike": "戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。",
-        "concentrateFirePeriodically": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{reduceCooldown}}% every {{interval}}s for {{duration}}s.",
+        "concentrateFirePeriodically": "{{interval}}秒毎に、システム内の全ての武器で１件の目標を集中攻撃する。武器の冷却時間が{{reduceCooldown}}%ダウンする。効果は{{duration}}秒続く。",
         "moraleBooster": "敵が巡洋艦を失うと10秒間冷却時間85％ダウン"
     },
-    "skillCondition": {
-        "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
+    "enhancementCondition": {
+        "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"
     }
 }

@@ -1,4 +1,4 @@
-import { skills } from '../../../skill/skill';
+import { enhancements } from '../../../skill/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -188,8 +188,8 @@ const e1: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            skills.increaseArmor().withValue(75),
-            skills.increaseHp().withValue(10),
+            enhancements.increaseArmor().withValue(75),
+            enhancements.increaseHp().withValue(10),
         ],
     }],
     category: 'E',

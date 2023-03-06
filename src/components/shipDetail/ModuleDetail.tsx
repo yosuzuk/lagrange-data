@@ -8,7 +8,7 @@ import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
 import { t, getCurrentLanguage, Language } from '../../i18n';
 import { getModuleName } from '../../utils/shipDefinitionUtils';
-import { ModuleSkillList } from './ModuleSkillList';
+import { EnhancementList } from './EnhancementList';
 
 interface IProps {
     shipId: string;
@@ -29,7 +29,7 @@ export const ModuleDetail = (props: IProps) => {
                 const expandEnabled = detailsAvailable && !!module.parts && module.parts.some(x => {
                     return Number.isFinite(x.skillSlots)
                         || (x.skills ?? []).length > 0
-                        || (x.flagShipSkills ?? []).length > 0
+                        || (x.flagshipEffects ?? []).length > 0
                         || (partTextAvailable && x.text);
                 });
                 return (
@@ -93,15 +93,15 @@ export const ModuleDetail = (props: IProps) => {
                                                     <Typography variant="body2" gutterBottom={true}>
                                                         {t('shipDetail.skillsColon')}
                                                     </Typography>
-                                                    <ModuleSkillList skills={modulePart.skills} />
+                                                    <EnhancementList enhancements={modulePart.skills} />
                                                 </>
                                             )}
-                                            {modulePart.flagShipSkills && modulePart.flagShipSkills.length > 0 && (
+                                            {modulePart.flagshipEffects && modulePart.flagshipEffects.length > 0 && (
                                                 <>
                                                     <Typography variant="body2" gutterBottom={true}>
-                                                        {t('shipDetail.flagShipSkillsColon')}
+                                                        {t('shipDetail.flagshipEffectsColon')}
                                                     </Typography>
-                                                    <ModuleSkillList skills={modulePart.flagShipSkills} />
+                                                    <EnhancementList enhancements={modulePart.flagshipEffects} />
                                                 </>
                                             )}
                                         </Stack>

@@ -1,4 +1,4 @@
-import { skills } from '../../../skill/skill';
+import { flagshipEffect, enhancements } from '../../../skill/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -25,16 +25,16 @@ const m1: ISystemModule = {
         ],
         skillSlots: 5,
         skills: [
-            skills.increaseRepairSpeed().withValue(10).withCost(8),
-            skills.increaseRepairSpeed().withValue(10).withCost(8),
-            skills.reducePrefabCost().withValue(10).withCost(8),
-            skills.increaseSupplySpeed().withValue(34).withCost(8),
-            skills.increaseSupplySpeed().withValue(34).withCost(8),
-            skills.increaseCustomModuleStorage().withValue(15).withCost(8),
-            skills.increaseDamage().withValue(10).withCost(5),
+            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
+            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
+            enhancements.reducePrefabCost().withValue(10).withCost(8),
+            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
+            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
+            enhancements.increaseCustomModuleStorage().withValue(15).withCost(8),
+            enhancements.increaseDamage().withValue(10).withCost(5),
         ],
-        flagShipSkills: [
-            skills.fleetDock1(),
+        flagshipEffects: [
+            flagshipEffect.fleetDock1().withCost(10),
         ],
     }],
     category: 'M',
@@ -54,10 +54,10 @@ const a1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                skills.increaseRepairSpeed().withValue(10),
-                skills.increaseRepairSpeed().withValue(10),
-                skills.reducePrefabCost().withValue(10),
-                skills.reducePrefabCost().withValue(10),
+                enhancements.increaseRepairSpeed().withValue(10),
+                enhancements.increaseRepairSpeed().withValue(10),
+                enhancements.reducePrefabCost().withValue(10),
+                enhancements.reducePrefabCost().withValue(10),
             ],
         },
     ],
@@ -77,9 +77,9 @@ const a2: ISystemModule = {
         // TODO skillslots
         // skillSlots: 99,
         skills: [
-            skills.increaseStorage().withValue(80),
-            skills.increaseSupplySpeed().withValue(34),
-            skills.increaseCustomModuleStorage().withValue(15),
+            enhancements.increaseStorage().withValue(80),
+            enhancements.increaseSupplySpeed().withValue(34),
+            enhancements.increaseCustomModuleStorage().withValue(15),
             // TODO 4th skill
         ],
     }],
@@ -174,13 +174,13 @@ const d1: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            skills.reduceHitByProjectileInBackRow().withValue(8).withCost(8),
-            skills.reduceHitByProjectileInMidRow().withValue(8).withCost(8),
-            skills.reduceHitBySlowInBackRow().withValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInBackRow().withValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInMidRow().withValue(8).withCost(8),
+            enhancements.reduceHitBySlowInBackRow().withValue(8).withCost(8),
         ],
-        flagShipSkills: [
-            skills.focusFire(),
-            skills.customFlashipEffect('skillSubType.sailingSpeedCoordination1').withDescriptionKey('skillDescription.sailingSpeedCoordination1').withConditionKey('skillCondition.sailingSpeedCoordination1'),
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.customFlashipEffect('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
         ],
     }],
     category: 'D',
@@ -199,7 +199,7 @@ const d2: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            skills.increaseProjectileHitRateMidRow().withValue(8).withCost(8),
+            enhancements.increaseProjectileHitRateMidRow().withValue(8).withCost(8),
         ],
     }],
     category: 'D',
@@ -217,7 +217,7 @@ const d3: ISystemModule = {
         ],
         skillSlots: 2,
         skills: [
-            skills.disguiseAsDestroyer(),
+            enhancements.disguiseAsDestroyer(),
         ],
     }],
     category: 'D',

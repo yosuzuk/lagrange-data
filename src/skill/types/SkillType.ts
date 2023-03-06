@@ -1,10 +1,10 @@
-export enum SkillType {
-    DEFAULT = 'default',
+export enum EnhancementType {
+    SKILL = 'skill',
     STRATEGY = 'strategy',
     FLAGSHIP_EFFECT = 'flagshipEffect',
 }
 
-export enum SkillSubType {
+export enum EnhancementSubType {
     INCREASE_ARMOR = 'increaseArmor',
     INCREASE_SHIELD = 'increaseShield',
     INCREASE_HP = 'increaseHp',

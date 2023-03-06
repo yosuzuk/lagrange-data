@@ -154,7 +154,7 @@
         "detailsUnknown": "Details unknown",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
-        "flagShipSkillsColon": "Flagship effect:",
+        "flagshipEffectsColon": "Flagship effect:",
         "carriedShipCount": "{{shipSubType}} ×{{count}}",
         "carriedShipCountOnModule": "{{shipSubType}} ×{{count}} ({{module}})"
     },
@@ -316,14 +316,18 @@
         "salvage": "Ships salvaged from debris",
         "starterShip": "Blueprints acquired by starter tech files"
     },
-    "skill": {
-        "strategy": "Strategy",
-        "flagshipEffect": "Flagship Effect",
+    "enhancement": {
         "valueColonValue": "Max: {{value}}{{unit}}",
         "costColonValue": "TP: {{cost}}",
-        "valueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}"
+        "valueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}",
+        "enabledByDefaultBrackets": "(enabled by default)"
     },
-    "skillSubType": {
+    "enhancementType": {
+        "skill": "Skill",
+        "strategy": "Strategy",
+        "flagshipEffect": "Flagship effect"
+    },
+    "enhancementSubType": {
         "increaseArmor": "Increase physical resistance",
         "increaseShield": "Increase energy resistance",
         "increaseHp": "Increase HP",
@@ -380,10 +384,10 @@
         "concentrateFirePeriodically": "Concentrate fire periodically",
         "moraleBooster": "Morale booster"
     },
-    "skillDescription": {
+    "enhancementDescription": {
         "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
         "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
-        "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(skillDescription.fleetDock1)",
+        "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(enhancementDescription.fleetDock1)",
         "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed.",
         "overdrive": "Turns off all other weapon systems, increase damage frequency by 4, increases the continuous firing duration of the main ion cannon by 100%, and increases hit rate by 35% every {{interval}}s for {{duration}}s. Cooldown: {{cooldown}}s.",
         "antiAircraftSupport": "The primary weapon locks onto enemy aircraft in the nearby row and launches attacks, increasing the hit rate by 40% every 30s for 25s.",
@@ -392,7 +396,7 @@
         "concentrateFirePeriodically": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{reduceCooldown}}% every {{interval}}s for {{duration}}s.",
         "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s."
     },
-    "skillCondition": {
+    "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
     }
 }

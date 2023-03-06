@@ -1,3 +1,4 @@
+import { IEnhancement } from '../skill/types/IEnhancement';
 import { Manufacturer } from './Manufacturer';
 import { ResearchManufacturer } from './ResearchManufacturer';
 import { ResearchStrategyType } from './ResearchStrategyType';
@@ -50,11 +51,6 @@ export interface ISystemModule {
 interface IModulePart {
     text?: string | string[];
     skillSlots?: number;
-    skills?: ISkill[];
-    flagShipSkills?: ISkill[];
-}
-
-export interface ISkill {
-    effect: string;
-    properties?: string | string[];
+    skills?: IEnhancement[];
+    flagshipEffects?: IEnhancement[];
 }
