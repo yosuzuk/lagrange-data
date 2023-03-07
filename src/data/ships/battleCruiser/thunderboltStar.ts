@@ -36,6 +36,7 @@ const m2: ISystemModule = {
             'HT-1-850型　高エネルギーランチャー',
             '対大型艦：',
             '・投射、エネルギー、対艦：29885、攻城：5705',
+            'クリティカル',
         ],
         skillSlots: 6,
         skills: [
@@ -68,8 +69,20 @@ const m3: ISystemModule = {
 const a1: ISystemModule = {
     id: 'A1',
     name: '高速対艦武器システム',
+    parts: [{
+        text: [
+            'HG-1220型 速射砲群',
+            '対小型：',
+            '・直射、実弾、対艦：14076、対空：8445、攻城：1407',
+            '反撃対空',
+        ],
+        skillSlots: 6,
+        // skills: [
+        // ],
+    }],
     category: 'A',
     categoryNumber: 1,
+    defaultModule: true,
 };
 
 const a2: ISystemModule = {
@@ -94,8 +107,20 @@ const a2: ISystemModule = {
 const b1: ISystemModule = {
     id: 'B1',
     name: 'アクティブ対空システム',
+    parts: [{
+        text: [
+            'HM-4x60B型 中距離対空ミサイル群',
+            '対空：',
+            '・投射、実弾、対艦：5175、対空：3105',
+            '対空支援',
+        ],
+        skillSlots: 4,
+        // skills: [
+        // ],
+    }],
     category: 'B',
     categoryNumber: 1,
+    defaultModule: true,
 };
 
 const b2: ISystemModule = {
@@ -117,6 +142,57 @@ const b2: ISystemModule = {
     categoryNumber: 2,
 };
 
+const c1: ISystemModule = {
+    id: 'C1',
+    name: '艦載軍需生産統合システム',
+    parts: [{
+        text: [
+            'AOF-300 移動式特殊弾薬合成工場',
+            '大型弾薬合成工場。モジュール化設計により艦船に搭載可能となり、全艦の武器に特殊弾薬を提供できる。',
+            '特殊弾薬：',
+            '全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ',
+            '連鎖破壊：',
+            'メイン武器システムが破壊された時、本システムモジュールも破壊され無効化し、誘爆して10%のHPを失う',
+        ],
+        skillSlots: 3,
+        // skills: [
+        // ],
+    }],
+    category: 'C',
+    categoryNumber: 1,
+    defaultModule: true,
+};
+
+const d1: ISystemModule = {
+    id: 'D1',
+    name: 'Weapon Coordination Center', // TODO JA
+    parts: [{
+        text: [
+            'HNI-260 Weapon Activation Device', // TODO JA
+        ],
+        // skillSlots: 4,
+        // skills: [
+        // ],
+    }],
+    category: 'D',
+    categoryNumber: 1,
+};
+
+const d2: ISystemModule = {
+    id: 'D2',
+    name: 'Fire-Control Calibration System', // TODO JA
+    parts: [{
+        text: [
+            'HNA-240 Real-Time Target Calibration Module', // TODO JA
+        ],
+        // skillSlots: 4,
+        // skills: [
+        // ],
+    }],
+    category: 'D',
+    categoryNumber: 2,
+};
+
 const e1: ISystemModule = {
     id: 'E1',
     name: '精密投射武器システム',
@@ -126,6 +202,7 @@ const e1: ISystemModule = {
             'HM-1x220A型　中距離対艦ミサイル',
             '対小型艦：',
             '・投射、実弾、対艦：14069、対空：9787、攻城：1223',
+            '反撃対空',
         ],
         skillSlots: 4,
         skills: [
@@ -145,6 +222,7 @@ const e2: ISystemModule = {
             'HT-1-450型　大型魚雷ランチャー',
             '対大型艦：',
             '・投射、実弾、対艦：12916、攻城：2086',
+            'クリティカル',
         ],
         skillSlots: 4,
         skills: [
@@ -209,7 +287,7 @@ export const thunderboldStar: IShipDefinition[] = [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         ],
-        modules: [m1, m2, m3, a1, a2, b1, b2, e1, e2, f1, f2],
+        modules: [m1, m2, m3, a1, a2, b1, b2, c1, d1, d2, e1, e2, f1, f2],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
