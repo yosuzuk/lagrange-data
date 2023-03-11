@@ -9,15 +9,19 @@ export interface IEnhancement {
     cost: number | null;
     isDefault: boolean;
     hasPercentageValues: boolean;
+    hasFixedValue: boolean;
     name: string;
     properties: string[];
 }
 
-export interface IMutableEnhancement {
-    withTextKey: (key: string) => IEnhancement;
-    withDescriptionKey: (key: string) => IEnhancement;
-    withConditionKey: (key: string) => IEnhancement;
-    withValue: (value: number) => IEnhancement;
-    withCost: (cost: number) => IEnhancement;
-    withDefaultFlag: () => IEnhancement;
+export interface IMutableEnhancement extends IEnhancement {
+    withTextKey: (key: string) => IMutableEnhancement;
+    withDescriptionKey: (key: string) => IMutableEnhancement;
+    withConditionKey: (key: string) => IMutableEnhancement;
+    withPercentageValue: (value: number) => IMutableEnhancement;
+    withFixedPercentageValue: (value: number) => IMutableEnhancement;
+    withAbsoluteValue: (value: number) => IMutableEnhancement;
+    withFixedAbsoluteValue: (value: number) => IMutableEnhancement;
+    withCost: (cost: number) => IMutableEnhancement;
+    withDefaultFlag: () => IMutableEnhancement;
 }

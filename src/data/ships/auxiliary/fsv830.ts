@@ -20,18 +20,21 @@ const m1: ISystemModule = {
         text: [
             '対空：',
             '・直射、実弾、対艦：3000、対空：360、攻城：90',
-            'カスタムモジュール備蓄量40',
             '補修キュー1',
+        ],
+        effects: [
+            enhancements.increaseCustomModuleStorage().withFixedPercentageValue(40),
+            // TODO 補修キュー1
         ],
         skillSlots: 5,
         skills: [
-            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
-            enhancements.increaseRepairSpeed().withValue(10).withCost(8),
-            enhancements.reducePrefabCost().withValue(10).withCost(8),
-            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
-            enhancements.increaseSupplySpeed().withValue(34).withCost(8),
-            enhancements.increaseCustomModuleStorage().withValue(15).withCost(8),
-            enhancements.increaseDamage().withValue(10).withCost(5),
+            enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+            enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+            enhancements.reducePrefabCost().withPercentageValue(10).withCost(8),
+            enhancements.increaseSupplySpeed().withPercentageValue(34).withCost(8),
+            enhancements.increaseSupplySpeed().withPercentageValue(34).withCost(8),
+            enhancements.increaseCustomModuleStorage().withPercentageValue(15).withCost(8),
+            enhancements.increaseDamage().withPercentageValue(10).withCost(5),
         ],
         flagshipEffects: [
             flagshipEffect.fleetDock1().withCost(10),
@@ -54,10 +57,10 @@ const a1: ISystemModule = {
             ],
             skillSlots: 3,
             skills: [
-                enhancements.increaseRepairSpeed().withValue(10),
-                enhancements.increaseRepairSpeed().withValue(10),
-                enhancements.reducePrefabCost().withValue(10),
-                enhancements.reducePrefabCost().withValue(10),
+                enhancements.increaseRepairSpeed().withPercentageValue(10),
+                enhancements.increaseRepairSpeed().withPercentageValue(10),
+                enhancements.reducePrefabCost().withPercentageValue(10),
+                enhancements.reducePrefabCost().withPercentageValue(10),
             ],
         },
     ],
@@ -74,12 +77,15 @@ const a2: ISystemModule = {
             '積載プラットフォーム',
             '大型露店運送システム。大量の貨物を格納でき、大型汎用艦に用いる。',
         ],
+        effects: [
+            enhancements.increaseStorage().withFixedAbsoluteValue(60000),
+        ],
         // TODO skillslots
         // skillSlots: 99,
         skills: [
-            enhancements.increaseStorage().withValue(80),
-            enhancements.increaseSupplySpeed().withValue(34),
-            enhancements.increaseCustomModuleStorage().withValue(15),
+            enhancements.increaseStorage().withPercentageValue(80),
+            enhancements.increaseSupplySpeed().withPercentageValue(34),
+            enhancements.increaseCustomModuleStorage().withPercentageValue(15),
             // TODO 4th skill
         ],
     }],
@@ -168,15 +174,15 @@ const d1: ISystemModule = {
     name: '指令システムの警告',
     description: '味方艦船の被命中率ダウン（回避アップ）',
     parts: [{
-        text: [
-            '後列の魚雷攻撃被命中率ダウン：8%',
-            '後列のミサイル攻撃被命中率ダウン：8%',
+        effects: [
+            enhancements.reduceHitByTorpedoInBackRow().withFixedPercentageValue(8),
+            enhancements.reduceHitByMissileInBackRow().withFixedPercentageValue(8),
         ],
         skillSlots: 2,
         skills: [
-            enhancements.reduceHitByProjectileInBackRow().withValue(8).withCost(8),
-            enhancements.reduceHitByProjectileInMidRow().withValue(8).withCost(8),
-            enhancements.reduceHitBySlowInBackRow().withValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
+            enhancements.reduceHitBySlowInBackRow().withPercentageValue(8).withCost(8),
         ],
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
@@ -193,13 +199,13 @@ const d2: ISystemModule = {
     name: '協同指令システム',
     description: '味方艦船の命中率アップ',
     parts: [{
-        text: [
-            '後列のミサイル武器命中率アップ：12%',
-            '後列の魚雷武器命中率アップ：12%',
+        effects: [
+            enhancements.increaseMissileHitRateMidRow().withFixedPercentageValue(12),
+            enhancements.increaseTorpedoHitRateMidRow().withFixedPercentageValue(12),
         ],
         skillSlots: 2,
         skills: [
-            enhancements.increaseProjectileHitRateMidRow().withValue(8).withCost(8),
+            enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
         ],
     }],
     category: 'D',

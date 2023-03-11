@@ -65,6 +65,9 @@ const b1: ISystemModule = {
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
             '支援艦の生産能力アップ：10%',
         ],
+        effects: [
+            // TODO '支援艦の生産能力アップ：10%',
+        ],
         skillSlots: 4,
     }],
     category: 'B',
@@ -83,6 +86,9 @@ const b2: ISystemModule = {
             'BMP-60型　生産ライン改造モジュール',
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
             '支援艦の生産能力アップ：10%',
+        ],
+        effects: [
+            // TODO '支援艦の生産能力アップ：10%',
         ],
         skillSlots: 3,
     }],
@@ -103,6 +109,9 @@ const b3: ISystemModule = {
             'BMP-60型　生産ライン改造モジュール',
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
             '支援艦の生産能力アップ：10%',
+        ],
+        effects: [
+            // TODO '支援艦の生産能力アップ：10%',
         ],
         skillSlots: 4,
     }],
@@ -183,13 +192,15 @@ const e1: ISystemModule = {
         text: [
             'ASX-90型　重量級付加装甲',
             '既存の装甲外部に追加する物理強化層。艦船構造の衝撃耐性を効果的に高める。',
-            'ダメージ抵抗：80',
-            '追加のHP：15%',
+        ],
+        effects: [
+            enhancements.increaseArmor().withFixedAbsoluteValue(80),
+            enhancements.increaseHp().withFixedPercentageValue(15),
         ],
         skillSlots: 2,
         skills: [
-            enhancements.increaseArmor().withValue(75),
-            enhancements.increaseHp().withValue(10),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseHp().withPercentageValue(10),
         ],
     }],
     category: 'E',

@@ -73,7 +73,7 @@ export const ModuleDetail = (props: IProps) => {
                                     {module.parts.map((modulePart, index) =>
                                         <Stack key={`part${index}`} spacing={1}>
                                             {partTextAvailable && modulePart.text && (
-                                                <Stack spacing={1}>
+                                                <Stack spacing={1} pb={1}>
                                                     {toArray(modulePart.text).map((line, index) => (
                                                         <Typography variant="body2" key={`line_${index}`}>
                                                             {line}
@@ -81,19 +81,12 @@ export const ModuleDetail = (props: IProps) => {
                                                     )) ?? null}
                                                 </Stack>
                                             )}
-                                            {Number.isFinite(modulePart.skillSlots) && (
-                                                <Typography variant="body2" gutterBottom={true}>
-                                                    {t('shipDetail.numberOfSkillSlots', {
-                                                        count: modulePart.skillSlots,
-                                                    })}
-                                                </Typography>
-                                            )}
-                                            {modulePart.skills && modulePart.skills.length > 0 && (
+                                            {modulePart.effects && modulePart.effects.length > 0 && (
                                                 <>
                                                     <Typography variant="body2" gutterBottom={true}>
-                                                        {t('shipDetail.skillsColon')}
+                                                        {t('shipDetail.effectsColon')}
                                                     </Typography>
-                                                    <EnhancementList enhancements={modulePart.skills} />
+                                                    <EnhancementList enhancements={modulePart.effects} />
                                                 </>
                                             )}
                                             {modulePart.flagshipEffects && modulePart.flagshipEffects.length > 0 && (
@@ -103,6 +96,21 @@ export const ModuleDetail = (props: IProps) => {
                                                     </Typography>
                                                     <EnhancementList enhancements={modulePart.flagshipEffects} />
                                                 </>
+                                            )}
+                                            {modulePart.skills && modulePart.skills.length > 0 && (
+                                                <>
+                                                    <Typography variant="body2" gutterBottom={true}>
+                                                        {t('shipDetail.skillsColon')}
+                                                    </Typography>
+                                                    <EnhancementList enhancements={modulePart.skills} />
+                                                </>
+                                            )}
+                                            {Number.isFinite(modulePart.skillSlots) && (
+                                                <Typography variant="body2" gutterBottom={true}>
+                                                    {t('shipDetail.numberOfSkillSlots', {
+                                                        count: modulePart.skillSlots,
+                                                    })}
+                                                </Typography>
                                             )}
                                         </Stack>
                                     ) ?? null}

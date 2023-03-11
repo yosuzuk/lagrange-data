@@ -50,6 +50,7 @@ export interface ISystemModule {
 
 interface IModulePart {
     text?: string | string[];
+    effects?: IEnhancement[];
     skillSlots?: number;
     skills?: IEnhancement[];
     flagshipEffects?: IEnhancement[];

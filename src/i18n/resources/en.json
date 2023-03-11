@@ -152,6 +152,7 @@
     },
     "shipDetail": {
         "detailsUnknown": "Details unknown",
+        "effectsColon": "Effects:",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
         "flagshipEffectsColon": "Flagship effect:",
@@ -317,9 +318,11 @@
         "starterShip": "Blueprints acquired by starter tech files"
     },
     "enhancement": {
-        "valueColonValue": "Max: {{value}}{{unit}}",
+        "valueColonValue": "{{value}}{{unit}}",
+        "maxValueColonValue": "Max: {{value}}{{unit}}",
         "costColonValue": "TP: {{cost}}",
-        "valueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}",
+        "valueAndCostColonValue": "{{value}}{{unit}}, TP: {{cost}}",
+        "maxValueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}",
         "enabledByDefaultBrackets": "(enabled by default)"
     },
     "enhancementType": {
@@ -334,6 +337,7 @@
         "increaseSystemHp": "Increase system HP",
         "increaseDamage": "Increase damage",
         "increaseDamageOfAircraft": "Increase damage of aircraft/UAV in hangar",
+        "increaseDamageOfAircraftMainWeapon": "Increase main weapon's damage of aircraft in hangar",
         "increaseDamageOfCorvette": "Increase damage of corvettes in hangar",
         "increaseDamageOfUav": "Increase damage of UAV in hangar",
         "increaseIonDamage": "Increase ion cannon damage",
@@ -343,6 +347,7 @@
         "increaseCriticalDamageAndChance": "Increase critical hit damage and chance",
         "increaseHitRate": "Increase hit rate",
         "increaseHitRateOfAircraft": "Increase hit rate of aircraft/UAV in hangar",
+        "increaseHitRateOfAircraftMainWeapon": "Increase main weapon's hit rate of aircraft in hangar",
         "increaseHitRateOfCorvette": "Increase hit rate of corvettes in hangar",
         "increaseHitRateOfUav": "Increase hit rate of UAV in hangar",
         "increaseHitRateVsSmall": "Increase hit rate against frigates/destroyers",
@@ -368,10 +373,15 @@
         "reduceDuration": "Reduce firing duration",
         "reducePrefabCost": "Reduce prefab cost for quick repair",
         "reduceCritialDamageReceived": "Reduce critical damage received by the system",
+        "reduceProjectileDamageReceived": "Reduce damage received from projectile weapons",
         "reduceHitByProjectileInBackRow": "Reduce chance of back-row ships being hit by projectile weapons",
         "reduceHitByProjectileInMidRow": "Reduce chance of mid-row ships being hit by projectile weapons",
+        "reduceHitByTorpedoInBackRow": "Reduce chance of back-row ships being hit by torpedoes",
+        "reduceHitByMissileInBackRow": "Reduce chance of back-row ships being hit by missiles",
         "reduceHitBySlowInBackRow": "Reduce chance of back-row ships being hit by slow weapons",
         "reduceTorpedoInterception": "Reduce chance of torpedoe interception",
+        "reduceEvasion": "Reduce evasion",
+        "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
         "disguiseAsDestroyer": "Disguise as destroyer",
         "focusFire": "Focus fire",
         "fleetDock1": "Fleet dock I",
