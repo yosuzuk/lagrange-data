@@ -2683,7 +2683,37 @@
             "dpmSiege": "0"
         },
         {
+            "ID": "FSV830_TE_PREVIEW3",
+            "Module": "B1",
+            "JA": "フリゲート生産システム",
+            "EN": "Frigates Production System",
+            "DE": "Fregatten-Produktionssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW4",
+            "Module": "B1",
+            "JA": "フリゲート生産システム",
+            "EN": "Frigates Production System",
+            "DE": "Fregatten-Produktionssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
             "ID": "FSV830_TE_PREVIEW1",
+            "Module": "B2*",
+            "JA": "護送艦生産システム",
+            "EN": "Corvette Production System",
+            "DE": "Korvette-Produktionssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW2",
             "Module": "B2*",
             "JA": "護送艦生産システム",
             "EN": "Corvette Production System",
@@ -2703,7 +2733,27 @@
             "dpmSiege": "0"
         },
         {
+            "ID": "FSV830_TE_PREVIEW5",
+            "Module": "B3*",
+            "JA": "戦闘機生産システム",
+            "EN": "Fighter Production System",
+            "DE": "Kurzstrecken-Flugabwehrsystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
             "ID": "FSV830_TE_PREVIEW1",
+            "Module": "C1*",
+            "JA": "艦載機システム",
+            "EN": "Aircraft System",
+            "DE": "Luftfahrzeugsystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW5",
             "Module": "C1*",
             "JA": "艦載機システム",
             "EN": "Aircraft System",
@@ -2733,7 +2783,47 @@
             "dpmSiege": "0"
         },
         {
+            "ID": "FSV830_TE_PREVIEW2",
+            "Module": "D1",
+            "JA": "警報指令システム",
+            "EN": "Warning and Control System",
+            "DE": "Lageerkennungssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW3",
+            "Module": "D1",
+            "JA": "警報指令システム",
+            "EN": "Warning and Control System",
+            "DE": "Lageerkennungssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW5",
+            "Module": "D1",
+            "JA": "警報指令システム",
+            "EN": "Warning and Control System",
+            "DE": "Lageerkennungssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
             "ID": "FSV830_TE_PREVIEW1",
+            "Module": "D2*",
+            "JA": "協同指令システム",
+            "EN": "Coordinate Command System",
+            "DE": "Kommando- und Koordinationssystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW4",
             "Module": "D2*",
             "JA": "協同指令システム",
             "EN": "Coordinate Command System",
@@ -2763,7 +2853,27 @@
             "dpmSiege": "0"
         },
         {
+            "ID": "FSV830_TE_PREVIEW4",
+            "Module": "E1*",
+            "JA": "区域対空システム",
+            "EN": "Area-Defense System",
+            "DE": "Bereich-Abwehrsystem",
+            "dpmShip": "0",
+            "dpmAntiAir": "3920",
+            "dpmSiege": "0"
+        },
+        {
             "ID": "FSV830_TE_PREVIEW1",
+            "Module": "E2*",
+            "JA": "護送艦ドック",
+            "EN": "Corvette Dock",
+            "DE": "Korvette-Dock",
+            "dpmShip": "0",
+            "dpmAntiAir": "0",
+            "dpmSiege": "0"
+        },
+        {
+            "ID": "FSV830_TE_PREVIEW3",
             "Module": "E2*",
             "JA": "護送艦ドック",
             "EN": "Corvette Dock",
