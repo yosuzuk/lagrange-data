@@ -1,3 +1,4 @@
+import { enhancements } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
@@ -149,10 +150,10 @@ const c1: ISystemModule = {
         text: [
             'AOF-300 移動式特殊弾薬合成工場',
             '大型弾薬合成工場。モジュール化設計により艦船に搭載可能となり、全艦の武器に特殊弾薬を提供できる。',
-            '特殊弾薬：',
-            '全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ',
-            '連鎖破壊：',
-            'メイン武器システムが破壊された時、本システムモジュールも破壊され無効化し、誘爆して10%のHPを失う',
+        ],
+        effects: [
+            enhancements.specialAmmo().withDescriptionKey('specialAmmo'),
+            enhancements.collateralDamage().withDescriptionKey('collateralDamage'),
         ],
         skillSlots: 3,
         // skills: [

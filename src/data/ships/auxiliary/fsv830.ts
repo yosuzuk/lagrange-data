@@ -23,10 +23,12 @@ const m1: ISystemModule = {
             '補修キュー1',
         ],
         effects: [
-            enhancements.increaseCustomModuleStorage().withFixedPercentageValue(40),
-            // TODO 補修キュー1
+            enhancements.customModuleStorage().withFixedAbsoluteValue(40),
+            enhancements.repairQueue().withAbsoluteValue(1),
         ],
-        skillSlots: 5,
+        flagshipEffects: [
+            flagshipEffect.fleetDock1().withCost(10),
+        ],
         skills: [
             enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
             enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
@@ -36,9 +38,7 @@ const m1: ISystemModule = {
             enhancements.increaseCustomModuleStorage().withPercentageValue(15).withCost(8),
             enhancements.increaseDamage().withPercentageValue(10).withCost(5),
         ],
-        flagshipEffects: [
-            flagshipEffect.fleetDock1().withCost(10),
-        ],
+        skillSlots: 5,
     }],
     category: 'M',
     categoryNumber: 1,
@@ -55,13 +55,13 @@ const a1: ISystemModule = {
                 'クイック補修装置',
                 '補修ロボットを搭載して、艦船の補修を加速できる。',
             ],
-            skillSlots: 3,
             skills: [
                 enhancements.increaseRepairSpeed().withPercentageValue(10),
                 enhancements.increaseRepairSpeed().withPercentageValue(10),
                 enhancements.reducePrefabCost().withPercentageValue(10),
                 enhancements.reducePrefabCost().withPercentageValue(10),
             ],
+            skillSlots: 3,
         },
     ],
     category: 'A',
@@ -100,9 +100,18 @@ const b1: ISystemModule = {
     parts: [{
         text: [
             '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲートの生産を可能にするが生産効率は低め。',
-            '支援艦の自己保有容量：60',
         ],
-        skillSlots: 3,
+        effects: [
+            enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(60),
+        ],
+        skills: [
+            enhancements.increaseProductionSpeed().withPercentageValue(40),
+            enhancements.increaseProductionSpeed().withPercentageValue(40),
+            enhancements.reduceUeCoinCost().withPercentageValue(15),
+            enhancements.reduceUeCoinCost().withPercentageValue(15),
+            enhancements.increaseSelfHostCapacity().withPercentageValue(40),
+        ],
+        skillSlots: 4,
     }],
     category: 'B',
     categoryNumber: 1,
@@ -178,16 +187,18 @@ const d1: ISystemModule = {
             enhancements.reduceHitByTorpedoInBackRow().withFixedPercentageValue(8),
             enhancements.reduceHitByMissileInBackRow().withFixedPercentageValue(8),
         ],
-        skillSlots: 2,
-        skills: [
-            enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
-            enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
-            enhancements.reduceHitBySlowInBackRow().withPercentageValue(8).withCost(8),
-        ],
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             flagshipEffect.customFlashipEffect('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
         ],
+        skills: [
+            enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
+            enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
+            enhancements.reduceHitBySlowInBackRow().withPercentageValue(8).withCost(8),
+            enhancements.reduceDamageReceived().withAbsoluteValue(5),
+            enhancements.increaseSystemHp().withPercentageValue(10),
+        ],
+        skillSlots: 2,
     }],
     category: 'D',
     categoryNumber: 1,
@@ -203,10 +214,10 @@ const d2: ISystemModule = {
             enhancements.increaseMissileHitRateMidRow().withFixedPercentageValue(12),
             enhancements.increaseTorpedoHitRateMidRow().withFixedPercentageValue(12),
         ],
-        skillSlots: 2,
         skills: [
             enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
         ],
+        skillSlots: 2,
     }],
     category: 'D',
     categoryNumber: 2,
@@ -221,10 +232,10 @@ const d3: ISystemModule = {
             '視覚信号カモフラージュ',
             '自身が攻撃目標になった時に、航空空母と見なされるようにする',
         ],
-        skillSlots: 2,
         skills: [
             enhancements.disguiseAsDestroyer(),
         ],
+        skillSlots: 2,
     }],
     category: 'D',
     categoryNumber: 3,
