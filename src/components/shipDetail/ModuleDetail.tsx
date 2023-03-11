@@ -28,6 +28,7 @@ export const ModuleDetail = (props: IProps) => {
             {modules.map(module => {
                 const expandEnabled = detailsAvailable && !!module.parts && module.parts.some(x => {
                     return Number.isFinite(x.skillSlots)
+                        || (x.effects ?? []).length > 0
                         || (x.skills ?? []).length > 0
                         || (x.flagshipEffects ?? []).length > 0
                         || (partTextAvailable && x.text);

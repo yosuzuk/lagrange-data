@@ -152,7 +152,7 @@
     },
     "shipDetail": {
         "detailsUnknown": "Details unknown",
-        "effectsColon": "Effects:",
+        "effectsColon": "Static effects:",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
         "flagshipEffectsColon": "Flagship effect:",

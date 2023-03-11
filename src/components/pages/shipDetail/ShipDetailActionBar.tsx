@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { ActionBar } from '../../actionBar/ActionBar';
+import { t } from '../../../i18n';
 
 export const ShipDetailActionBar = () => {
     return (
@@ -17,7 +18,7 @@ export const ShipDetailActionBar = () => {
                         fullWidth={buttonProps.fullWidth}
                         size={buttonProps.size}
                     >
-                        {'艦船一覧'}
+                        {t('shipData.pageTitle')}
                     </Button>
                 </>
             )}
