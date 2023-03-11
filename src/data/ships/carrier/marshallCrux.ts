@@ -8,6 +8,7 @@ import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -241,8 +242,10 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A1_B1,
             ShipId.MARSHALL_CRUX_TE_A2
         ],
-        staticModules: true,
-        modules: [m1, a1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(a1),
+        ],
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
@@ -262,8 +265,10 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A1,
             ShipId.MARSHALL_CRUX_TE_A1_B1,
         ],
-        staticModules: true,
-        modules: [m1, a2],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(a2),
+        ],
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1_B1,
@@ -283,7 +288,10 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A1,
             ShipId.MARSHALL_CRUX_TE_A2
         ],
-        staticModules: true,
-        modules: [m1, a1, b1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(a1),
+            modules.toStatic(b1),
+        ],
     },
 ];

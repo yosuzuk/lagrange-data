@@ -7,6 +7,7 @@ import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -255,8 +256,10 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m1, b1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b1),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE_2,
@@ -276,8 +279,11 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m2, b3, e2],
+        modules: [
+            modules.toStatic(m2),
+            modules.toStatic(b3),
+            modules.toStatic(e2),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -297,8 +303,10 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m1, b1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b1),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -318,8 +326,11 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m1, b1, e1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b1),
+            modules.toStatic(e1),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -339,8 +350,11 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m1, b3, e2],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b3),
+            modules.toStatic(e2),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -360,8 +374,12 @@ export const ediacaran: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
-        modules: [m2, b2, c2, d3],
+        modules: [
+            modules.toStatic(m2),
+            modules.toStatic(b2),
+            modules.toStatic(c2),
+            modules.toStatic(d3),
+        ],
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,

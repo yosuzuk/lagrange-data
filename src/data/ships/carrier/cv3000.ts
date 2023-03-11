@@ -6,6 +6,7 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -254,8 +255,10 @@ export const cv3000: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.CV3000],
-        modules: [m1, a1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(a1),
+        ],
     },
 ];

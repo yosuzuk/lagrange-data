@@ -277,7 +277,6 @@ export const solarWhale: IShipDefinition[] = [
         operationLimit: 5,
         source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
         modules: [
             {
                 id: 'X1',
@@ -298,7 +297,7 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                     },
                 ],
-                category: 'UNKNOWN',
+                category: 'STATIC',
                 categoryNumber: 1,
                 carryCorvette: 3,
                 carryFighter: 3,
@@ -322,7 +321,7 @@ export const solarWhale: IShipDefinition[] = [
                         skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
+                category: 'STATIC',
                 categoryNumber: 2,
             },
             {
@@ -341,7 +340,7 @@ export const solarWhale: IShipDefinition[] = [
                         skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
+                category: 'STATIC',
                 categoryNumber: 3,
             },
             {
@@ -358,7 +357,7 @@ export const solarWhale: IShipDefinition[] = [
                         skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
+                category: 'STATIC',
                 categoryNumber: 4,
             },
         ],

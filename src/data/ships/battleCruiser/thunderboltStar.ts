@@ -6,6 +6,7 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -300,8 +301,9 @@ export const thunderboldStar: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.THUNDERBOLT_GROUP,
-        staticModules: true,
-        modules: [m1],
+        modules: [
+            modules.toStatic(m1),
+        ],
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
@@ -318,13 +320,15 @@ export const thunderboldStar: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.THUNDERBOLT_GROUP,
-        staticModules: true,
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         ],
-        modules: [m2, e1],
+        modules: [
+            modules.toStatic(m2),
+            modules.toStatic(e1),
+        ],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
@@ -336,12 +340,15 @@ export const thunderboldStar: IShipDefinition[] = [
         operationLimit: 3,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.THUNDERBOLT_GROUP,
-        staticModules: true,
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
         ],
-        modules: [m3, a2, e2],
+        modules: [
+            modules.toStatic(m3),
+            modules.toStatic(a2),
+            modules.toStatic(e2),
+        ],
     },
 ];

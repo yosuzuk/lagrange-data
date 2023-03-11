@@ -7,6 +7,7 @@ import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -305,9 +306,12 @@ export const fsv830: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
-        modules: [m1, b1, d1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b1),
+            modules.toStatic(d1)
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW2,
@@ -322,9 +326,12 @@ export const fsv830: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
-        modules: [m1, b2, d1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b2),
+            modules.toStatic(d1),
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW3,
@@ -339,9 +346,13 @@ export const fsv830: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
-        modules: [m1, b1, d1, e2],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(b1),
+            modules.toStatic(d1),
+            modules.toStatic(e2),
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW4,
@@ -356,9 +367,13 @@ export const fsv830: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW5],
-        modules: [m1, d2, b1, e1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(d2),
+            modules.toStatic(b1),
+            modules.toStatic(e1),
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW5,
@@ -373,8 +388,12 @@ export const fsv830: IShipDefinition[] = [
         operationLimit: 2,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        staticModules: true,
         relatedShipIds: [ShipId.FSV830, ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4],
-        modules: [m1, d1, b3, c1],
+        modules: [
+            modules.toStatic(m1),
+            modules.toStatic(d1),
+            modules.toStatic(b3),
+            modules.toStatic(c1),
+        ],
     },
 ];
