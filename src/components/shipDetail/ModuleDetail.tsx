@@ -3,12 +3,15 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useTheme } from '@mui/material/styles';
 import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
 import { t, getCurrentLanguage, Language } from '../../i18n';
 import { getModuleName } from '../../utils/shipDefinitionUtils';
 import { EnhancementList } from './EnhancementList';
+import { EnhancementType } from '../../enhancements/types/EnhancementType';
 
 interface IProps {
     shipId: string;
@@ -18,21 +21,20 @@ interface IProps {
 export const ModuleDetail = (props: IProps) => {
     const { shipId, modules } = props;
     const { mode } = useColorMode();
+    const theme = useTheme();
 
     const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
-    const detailsAvailable = true; // getCurrentLanguage() === Language.JAPANESE;
-    const partTextAvailable = getCurrentLanguage() === Language.JAPANESE;
+    const partsAvailable = getCurrentLanguage() === Language.JAPANESE;
 
     return (
         <>
             {modules.map(module => {
-                const expandEnabled = detailsAvailable && !!module.parts && module.parts.some(x => {
-                    return Number.isFinite(x.skillSlots)
-                        || (x.effects ?? []).length > 0
-                        || (x.skills ?? []).length > 0
-                        || (x.flagshipEffects ?? []).length > 0
-                        || (partTextAvailable && x.text);
-                });
+                const expandEnabled = Number.isFinite(module.skillSlots)
+                    || (module.effects ?? []).length > 0
+                    || (module.skills ?? []).length > 0
+                    || (module.flagshipEffects ?? []).length > 0
+                    || (partsAvailable && module.parts?.some(part => !!part.text));
+
                 return (
                     <Accordion
                         key={`module_${module.id}`}
@@ -57,6 +59,26 @@ export const ModuleDetail = (props: IProps) => {
                                         {`${module.description}`}
                                     </Typography>
                                 )}
+                                <Stack spacing={1} direction="row">
+                                    {module.flagshipEffects && module.flagshipEffects.length > 0 && (
+                                        <Chip
+                                            variant="outlined"
+                                            size="small"
+                                            color="primary"
+                                            label={t('enhancementType.flagshipEffect')}
+                                            sx={{ marginTop: theme.spacing(1) }}
+                                        />
+                                    )}
+                                    {module.skills?.some(skill => skill.type === EnhancementType.STRATEGY) && (
+                                        <Chip
+                                            variant="outlined"
+                                            size="small"
+                                            color="primary"
+                                            label={t('enhancementType.strategy')}
+                                            sx={{ marginTop: theme.spacing(1) }}
+                                        />
+                                    )}
+                                </Stack>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails
@@ -64,59 +86,53 @@ export const ModuleDetail = (props: IProps) => {
                                 'backgroundColor': mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(229, 229, 229, 0.5)',
                             }}
                         >
-                            {!module.parts && (
-                                <Typography variant="body2">
-                                    {t('shipDetail.detailsUnknown')}
-                                </Typography>
-                            )}
-                            {module.parts !== undefined && (
-                                <Stack spacing={2}>
-                                    {module.parts.map((modulePart, index) =>
-                                        <Stack key={`part${index}`} spacing={1}>
-                                            {partTextAvailable && modulePart.text && (
-                                                <Stack spacing={1} pb={1}>
-                                                    {toArray(modulePart.text).map((line, index) => (
-                                                        <Typography variant="body2" key={`line_${index}`}>
-                                                            {line}
-                                                        </Typography>
-                                                    )) ?? null}
-                                                </Stack>
-                                            )}
-                                            {modulePart.effects && modulePart.effects.length > 0 && (
-                                                <>
-                                                    <Typography variant="body2" gutterBottom={true}>
-                                                        {t('shipDetail.effectsColon')}
+
+                            <Stack spacing={2}>
+                                {partsAvailable && module.parts !== undefined && module.parts.map((modulePart, index) => (
+                                    <Stack key={`part${index}`} spacing={1}>
+                                        {modulePart.text && (
+                                            <Stack spacing={1} pb={1}>
+                                                {toArray(modulePart.text).map((line, index) => (
+                                                    <Typography variant="body2" key={`line_${index}`}>
+                                                        {line}
                                                     </Typography>
-                                                    <EnhancementList enhancements={modulePart.effects} />
-                                                </>
-                                            )}
-                                            {modulePart.flagshipEffects && modulePart.flagshipEffects.length > 0 && (
-                                                <>
-                                                    <Typography variant="body2" gutterBottom={true}>
-                                                        {t('shipDetail.flagshipEffectsColon')}
-                                                    </Typography>
-                                                    <EnhancementList enhancements={modulePart.flagshipEffects} />
-                                                </>
-                                            )}
-                                            {modulePart.skills && modulePart.skills.length > 0 && (
-                                                <>
-                                                    <Typography variant="body2" gutterBottom={true}>
-                                                        {t('shipDetail.skillsColon')}
-                                                    </Typography>
-                                                    <EnhancementList enhancements={modulePart.skills} />
-                                                </>
-                                            )}
-                                            {Number.isFinite(modulePart.skillSlots) && (
-                                                <Typography variant="body2" gutterBottom={true}>
-                                                    {t('shipDetail.numberOfSkillSlots', {
-                                                        count: modulePart.skillSlots,
-                                                    })}
-                                                </Typography>
-                                            )}
-                                        </Stack>
-                                    ) ?? null}
-                                </Stack>
-                            )}
+                                                )) ?? null}
+                                            </Stack>
+                                        )}
+                                    </Stack>
+                                ))}
+                                {module.effects && module.effects.length > 0 && (
+                                    <>
+                                        <Typography variant="body2" gutterBottom={true}>
+                                            {t('shipDetail.staticEffectsColon')}
+                                        </Typography>
+                                        <EnhancementList enhancements={module.effects} />
+                                    </>
+                                )}
+                                {module.flagshipEffects && module.flagshipEffects.length > 0 && (
+                                    <>
+                                        <Typography variant="body2" gutterBottom={true}>
+                                            {t('shipDetail.flagshipEffectsColon')}
+                                        </Typography>
+                                        <EnhancementList enhancements={module.flagshipEffects} />
+                                    </>
+                                )}
+                                {module.skills && module.skills.length > 0 && (
+                                    <>
+                                        <Typography variant="body2" gutterBottom={true}>
+                                            {t('shipDetail.skillsColon')}
+                                        </Typography>
+                                        <EnhancementList enhancements={module.skills} />
+                                    </>
+                                )}
+                                {Number.isFinite(module.skillSlots) && (
+                                    <Typography variant="body2" gutterBottom={true}>
+                                        {t('shipDetail.numberOfSkillSlots', {
+                                            count: module.skillSlots,
+                                        })}
+                                    </Typography>
+                                )}
+                            </Stack>
                         </AccordionDetails>
                     </Accordion>
                 );

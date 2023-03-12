@@ -40,16 +40,12 @@ export const cellularDefender: IShipDefinition[] = [
             modules.commandSystem(),
             modules.armorSystem(),
             modules.propulsionSystem({
-                parts: [
-                    {
-                        skills: [
-                            enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
-                            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
-                            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
-                        ],
-                        skillSlots: 2,
-                    },
+                skills: [
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
                 ],
+                skillSlots: 2,
             }),
         ],
     },

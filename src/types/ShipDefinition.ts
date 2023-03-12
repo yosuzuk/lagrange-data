@@ -45,12 +45,12 @@ export interface ISystemModule {
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
     defaultModule?: boolean;
-}
-
-interface IModulePart {
-    text?: string | string[];
     effects?: IEnhancement[];
     skillSlots?: number;
     skills?: IEnhancement[];
     flagshipEffects?: IEnhancement[];
+}
+
+interface IModulePart {
+    text?: string | string[];
 }

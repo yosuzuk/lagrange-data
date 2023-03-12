@@ -152,8 +152,7 @@
         "pageTitle": "Ship data"
     },
     "shipDetail": {
-        "detailsUnknown": "Details unknown",
-        "effectsColon": "Static effects:",
+        "staticEffectsColon": "Static effects:",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
         "flagshipEffectsColon": "Flagship effect:",

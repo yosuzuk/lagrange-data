@@ -14,6 +14,10 @@ const m1: ISystemModule = {
     id: 'M1',
     name: 'フォートレス艦首重砲システム',
     description: '対大型＆対小型武装',
+    category: 'M',
+    categoryNumber: 1,
+    defaultModule: true,
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -24,18 +28,17 @@ const m1: ISystemModule = {
                 '対小型艦：',
                 '・直射、実弾、対艦：3286、対空：736、攻城：525',
             ],
-            skillSlots: 6,
         },
     ],
-    category: 'M',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'フォートレス攻城電磁加速砲システム',
     description: '対大型＆対空武装',
+    category: 'M',
+    categoryNumber: 2,
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -46,17 +49,22 @@ const m2: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：1333、対空：2773',
             ],
-            skillSlots: 6,
         },
     ],
-    category: 'M',
-    categoryNumber: 2,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: 'フリゲート生産システム',
     description: '自己保有能力でフリゲートが生産可能',
+    category: 'B',
+    categoryNumber: 1,
+    defaultModule: true,
+    effects: [
+        enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
+        enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
+    ],
+    skillSlots: 4,
     parts: [{
         text: [
             'MF-2500型　艦上フリゲート生産設備',
@@ -64,21 +72,19 @@ const b1: ISystemModule = {
             'BMP-60型　生産ライン改造モジュール',
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
         ],
-        effects: [
-            enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
-            enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
-        ],
-        skillSlots: 4,
     }],
-    category: 'B',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦生産システム',
     description: '自己保有能力で護送艦が生産可能',
+    category: 'B',
+    categoryNumber: 2,
+    effects: [
+        enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
+    ],
+    skillSlots: 3,
     parts: [{
         text: [
             'MC-2500型　艦上護送艦生産設備',
@@ -86,19 +92,20 @@ const b2: ISystemModule = {
             'BMP-60型　生産ライン改造モジュール',
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
         ],
-        effects: [
-            enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
-        ],
-        skillSlots: 3,
     }],
-    category: 'B',
-    categoryNumber: 2,
 };
 
 const b3: ISystemModule = {
     id: 'B3',
     name: '駆逐艦生産システム',
     description: '自己保有能力で駆逐艦が生産可能',
+    category: 'B',
+    categoryNumber: 3,
+    effects: [
+        enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
+        enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
+    ],
+    skillSlots: 4,
     parts: [{
         text: [
             'MD-2500型　艦上駆逐艦生産設備',
@@ -106,49 +113,42 @@ const b3: ISystemModule = {
             'BMP-60型　生産ライン改造モジュール',
             'ノマシッピンググループが支援艦用にカスタマイズした生産ライン改造モジュールて、自己保有艦船の製造効率をアップし、製造する自己保有艦船の構造強化を行うことができる。',
         ],
-        effects: [
-            enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
-            enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
-        ],
-        skillSlots: 4,
     }],
-    category: 'B',
-    categoryNumber: 3,
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: '戦闘機搭載システム',
     description: '大型戦闘機を2隊搭載可能',
+    category: 'C',
+    categoryNumber: 1,
+    skillSlots: 6,
     parts: [
         {
             text: [
                 'CFB-200型　大型戦闘機格納庫',
                 '2隊の大型戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令・探査システムを備える。',
             ],
-            skillSlots: 6,
         },
     ],
-    category: 'C',
-    categoryNumber: 1,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
     name: '護送艦ドック',
     description: '護送艦を3隻搭載可能',
+    carryCorvette: 3,
+    category: 'C',
+    categoryNumber: 2,
+    skillSlots: 4,
     parts: [
         {
             text: [
                 'CBC-2000型　護送艦ドック',
                 '3隻の護送艦を格納可能な艦内格納庫。護送艦の整備、支援システムを備える。',
             ],
-            skillSlots: 4,
         },
     ],
-    carryCorvette: 3,
-    category: 'C',
-    categoryNumber: 2,
 };
 
 const d1: ISystemModule = {
@@ -169,54 +169,54 @@ const d3: ISystemModule = {
     id: 'D3',
     name: '「巨像」防衛UAVシステム',
     description: '防御UAV４機搭載',
+    category: 'D',
+    categoryNumber: 3,
+    skillSlots: 4,
     parts: [{
         text: [
             'CSF-2型　防御UAV格納庫',
             '大型防御UAVを４機搭載し、戦闘UAVの収容と整備を行う。防御UAVは試験型機載パルス武器を搭載しており、味方にフリゲート級に近い火力支援を提供できる。',
             '・エネルギー、対艦：9272', // TODO check, it's probably lower
         ],
-        skillSlots: 4,
     }],
-    category: 'D',
-    categoryNumber: 3,
 };
 
 const e1: ISystemModule = {
     id: 'E1',
     name: '重量級付加装甲システム',
     description: '抵抗値＆HPアップ',
+    category: 'E',
+    categoryNumber: 1,
+    effects: [
+        enhancements.increaseArmor().withFixedAbsoluteValue(80),
+        enhancements.increaseHp().withFixedPercentageValue(15),
+    ],
+    skillSlots: 2,
+    skills: [
+        enhancements.increaseArmor().withAbsoluteValue(75),
+        enhancements.increaseHp().withPercentageValue(10),
+    ],
     parts: [{
         text: [
             'ASX-90型　重量級付加装甲',
             '既存の装甲外部に追加する物理強化層。艦船構造の衝撃耐性を効果的に高める。',
         ],
-        effects: [
-            enhancements.increaseArmor().withFixedAbsoluteValue(80),
-            enhancements.increaseHp().withFixedPercentageValue(15),
-        ],
-        skillSlots: 2,
-        skills: [
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseHp().withPercentageValue(10),
-        ],
     }],
-    category: 'E',
-    categoryNumber: 1,
 };
 
 const e2: ISystemModule = {
     id: 'E2',
     name: 'ナノレベル自己補修システム',
     description: '自身の補修を行う',
+    category: 'E',
+    categoryNumber: 2,
+    skillSlots: 3,
     parts: [{
         text: [
             'BST-300型　ナノ補修システム',
             '既存の装甲内に追加するナノ自己補修システム。艦船のダメージ管理と自己メンテナンスを行う。戦闘時、自身が受けたHPダメージの補修を自発的に行う。',
         ],
-        skillSlots: 3,
     }],
-    category: 'E',
-    categoryNumber: 2,
 };
 
 const staticModules: ISystemModule[] = [

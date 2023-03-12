@@ -14,71 +14,71 @@ const m1: ISystemModule = {
     id: 'M1',
     name: 'ガンマストーム攻撃イオン砲システム',
     description: '対大型艦武装',
+    category: 'M',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.reduceDuration().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.increaseIonHitRate().withPercentageValue(10).withCost(5),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(5),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(5),
+        enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(5),
+    ],
+    skillSlots: 6,
     parts: [{
         text: [
             'CI-2x700T型「ヘリウムフラッシュ」2連超重イオン砲塔',
             '対大型艦：',
             '・直射、エネルギー、対艦：9000、攻城：1890',
         ],
-        skillSlots: 6,
-        skills: [
-            enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
-            enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
-            enhancements.reduceDuration().withPercentageValue(10).withCost(5),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
-            enhancements.increaseIonHitRate().withPercentageValue(10).withCost(5),
-            enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(5),
-            enhancements.increaseSystemHp().withPercentageValue(35).withCost(5),
-            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(5),
-        ],
     }],
-    category: 'M',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'ガンマストーム投射攻撃システム',
     description: '対大型艦武装',
+    category: 'M',
+    categoryNumber: 2,
+    // TODO skills
+    skillSlots: 6,
     parts: [{
         text: [
             'CT-2x600型「ガンマストーム」エネルギー魚雷発射システム',
             '対大型艦：',
             '・投射、エネルギー、対艦：9600、攻城：1344'
         ],
-        skillSlots: 6,
-        // TODO skills
     }],
-    category: 'M',
-    categoryNumber: 2,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: 'ガンマストーム投射武器システム',
     description: '対大型艦武装',
+    category: 'A',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        strategy.concentrateFirePeriodically(80, 90, 15).withCost(25),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(12),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+    ],
+    skillSlots: 6,
     parts: [{
         text: [
             'CM-8x608A型「ガンマストーム」通常ミサイル発射システム',
             '対大型艦：',
             '・投射、実弾、対艦：24000、攻城：1920',
         ],
-        skillSlots: 6,
-        skills: [
-            strategy.concentrateFirePeriodically(80, 90, 15).withCost(25),
-            enhancements.increaseDamage().withPercentageValue(10).withCost(12),
-            enhancements.increaseDamage().withPercentageValue(10).withCost(12),
-            enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(12),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
-            enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(12),
-            enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
-        ],
     }],
-    category: 'A',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const a2: ISystemModule = {
@@ -91,11 +91,11 @@ const a2: ISystemModule = {
             '対大型艦：',
             '・投射、エネルギー、対艦：18162、攻城：1816'
         ],
-        // TODO skillslot
-        // TODO skills
     }],
     category: 'A',
     categoryNumber: 2,
+    // TODO skills
+    // TODO skillslot
 };
 
 const b1: ISystemModule = {
@@ -111,17 +111,17 @@ const b1: ISystemModule = {
             '対空：',
             '・投射、実弾、対艦：3000、対空：720、攻城：90、反撃対空',
         ],
-        skillSlots: 4,
-        skills: [
-            enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-            enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
-            enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
-        ],
     }],
     category: 'B',
     categoryNumber: 1,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
+    ],
+    skillSlots: 4,
 };
 
 const b2: ISystemModule = {
@@ -137,11 +137,11 @@ const b2: ISystemModule = {
             '対空、ミサイル迎撃：',
             '・直射、エネルギー、対空：1788',
         ],
-        // TODO skillslot
-        // TODO skills
     }],
     category: 'B',
     categoryNumber: 2,
+    // TODO skills
+    // TODO skillslot
 };
 
 const b3: ISystemModule = {
@@ -157,29 +157,29 @@ const b3: ISystemModule = {
             '対空、ミサイル迎撃：',
             '・投射、実弾、対艦：1500、対空：3120',
         ],
-        // TODO skillslot
-        // TODO skills
     }],
     category: 'B',
     categoryNumber: 3,
+    // TODO skills
+    // TODO skillslot
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: 'エネルギー圧縮装置',
     description: 'イオン砲ダメージアップ15％',
+    category: 'C',
+    categoryNumber: 1,
+    // TODO skill
+    skillSlots: 2,
     parts: [
         {
             text: [
                 'RIT-650型　エネルギー圧縮装置',
                 'エネルギーコア増強装置。高エネルギー出力密度を高めるのに効果的で、イオン武器の攻撃ダメージをアップさせる。',
             ],
-            skillSlots: 2,
-            // TODO skill
         },
     ],
-    category: 'C',
-    categoryNumber: 1,
 };
 
 const c2: ISystemModule = {
@@ -192,14 +192,14 @@ const c2: ISystemModule = {
                 'XAC-2000型　航空ブリッジ',
                 'CBF-200型　中型格納庫',
             ],
-            // TODO skillslots
-            // TODO skill
         },
     ],
     category: 'C',
     categoryNumber: 2,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    // TODO skill
+    // TODO skillslots
 };
 
 const c3: ISystemModule = {
@@ -212,12 +212,12 @@ const c3: ISystemModule = {
                 'CIT-1型　スポッターUAV格納庫',
                 '周囲の味方艦船に総合的な武器情報支援を提供し、武器の命中率をアップさせる。',
             ],
-            // TODO skillslots
-            // TODO skill
         },
     ],
     category: 'C',
     categoryNumber: 3,
+    // TODO skill
+    // TODO skillslots
 };
 
 const d1: ISystemModule = {
@@ -230,11 +230,11 @@ const d1: ISystemModule = {
             '対空：',
             '・投射、実弾、対空：5275、反撃対空',
         ],
-        // TODO skillslot
-        // TODO skills
     }],
     category: 'D',
     categoryNumber: 1,
+    // TODO skills
+    // TODO skillslot
 };
 
 const d2: ISystemModule = {
@@ -247,12 +247,12 @@ const d2: ISystemModule = {
                 'ASM-220型　重点強化装甲',
                 '艦船メイン武器システムの被クリティカルダメージ60％ダウン',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
     category: 'D',
     categoryNumber: 2,
+    // TODO skills
+    // TODO skillslots
 };
 
 const d3: ISystemModule = {
@@ -265,27 +265,23 @@ const d3: ISystemModule = {
                 'AST-50型　ダメージ管理システム',
                 '艦船の損傷状態を把握すると同時に、補修ロボットを送り出して自身の緊急補修を行うことができる。',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
     category: 'D',
     categoryNumber: 3,
+    // TODO skills
+    // TODO skillslots
 };
 
 const staticModules: ISystemModule[] = [
     modules.propulsionSystem({
-        parts: [
-            {
-                skills: [
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
-                ],
-                skillSlots: 3,
-            },
+        skills: [
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
         ],
+        skillSlots: 3,
     }),
 ];
 

@@ -13,6 +13,22 @@ const m1: ISystemModule = {
     id: 'M1',
     name: '総合艦載機搭載プラットフォーム',
     description: '小～大型艦載機を5機、護送艦を3機搭載可能',
+    category: 'M',
+    categoryNumber: 1,
+    carryCorvette: 3,
+    carryFighter: 5,
+    carryFighterType: ShipSubType.LARGE_FIGHTER,
+    defaultModule: true,
+    skills: [
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
@@ -21,30 +37,28 @@ const m1: ISystemModule = {
                 'CBC-2100型　護送艦ドック',
                 '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
             ],
-            skillSlots: 5,
-            skills: [
-                enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
-                enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
-            ],
         },
     ],
-    category: 'M',
-    categoryNumber: 1,
-    carryCorvette: 3,
-    carryFighter: 5,
-    carryFighterType: ShipSubType.LARGE_FIGHTER,
-    defaultModule: true,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: '総合戦闘機システム',
     description: '小～大型艦載機を5機搭載可能、戦略UAVを5機搭載',
+    category: 'M',
+    categoryNumber: 2,
+    carryFighter: 5,
+    carryFighterType: ShipSubType.LARGE_FIGHTER,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
@@ -54,56 +68,54 @@ const m2: ISystemModule = {
                 '戦略UAV：',
                 '・対艦：3750、攻城：520',
             ],
-            skillSlots: 5,
-            skills: [
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
-                enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
-            ],
         },
     ],
-    category: 'M',
-    categoryNumber: 2,
-    carryFighter: 5,
-    carryFighterType: ShipSubType.LARGE_FIGHTER,
 };
 
 const m3: ISystemModule = {
     id: 'M3',
     name: '大型戦闘機システム',
     description: '大型戦闘機を8機搭載可能',
+    category: 'M',
+    categoryNumber: 3,
+    carryFighter: 8,
+    carryFighterType: ShipSubType.LARGE_FIGHTER,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
                 'CFB-605型　大型戦闘機格納庫',
                 '3隊の重戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊・整備空間を提供し、戦闘機の指令、探査システムを備える。',
             ],
-            skillSlots: 5,
-            skills: [
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-                enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
-                enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
-            ],
         },
     ],
-    category: 'M',
-    categoryNumber: 3,
-    carryFighter: 8,
-    carryFighterType: ShipSubType.LARGE_FIGHTER,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: '「ドラグーン」砲撃システム',
     description: '対小型＆対空武装',
+    category: 'A',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -114,26 +126,25 @@ const a1: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：3300、対空：712、攻城：99',
             ],
-            skillSlots: 4,
-            skills: [
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
-            ],
         },
     ],
-    category: 'A',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: '対空ミサイルプラットフォーム',
     description: '対空武装、ミサイル迎撃',
+    category: 'A',
+    categoryNumber: 2,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -141,25 +152,25 @@ const a2: ISystemModule = {
                 '対空、ミサイル迎撃：',
                 '・投射、実弾、対艦：3375、対空：2362',
             ],
-            skillSlots: 4,
-            skills: [
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-            ],
         },
     ],
-    category: 'A',
-    categoryNumber: 2,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: 'ミサイル防御システム',
     description: '対空武装、ミサイル迎撃',
+    category: 'B',
+    categoryNumber: 1,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -169,49 +180,42 @@ const b1: ISystemModule = {
                 '迎撃効果',
                 '反撃対空',
             ],
-            skillSlots: 4,
-            skills: [
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-            ],
         },
     ],
-    category: 'B',
-    categoryNumber: 1,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦搭載プラットフォーム',
     description: '護送艦を3機搭載可能',
+    category: 'B',
+    categoryNumber: 2,
+    carryCorvette: 3,
+    skills: [
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
+        enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
+        enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(12),
+    ],
+    skillSlots: 3,
     parts: [
         {
             text: [
                 'CBC-2100型　護送艦ドック',
                 '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
             ],
-            skillSlots: 3,
-            skills: [
-                enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
-                enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
-                enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(12),
-            ],
         },
     ],
-    category: 'B',
-    categoryNumber: 2,
-    carryCorvette: 3,
 };
 
 const b3: ISystemModule = {
     id: 'B3',
     name: '情報UAV支援プラットフォーム',
     description: '情報UAVを3機搭載',
+    category: 'B',
+    categoryNumber: 3,
+    // TODO skills
+    // TODO skillslot
     parts: [
         {
             text: [
@@ -220,28 +224,20 @@ const b3: ISystemModule = {
                 '通信指令UAVの収容と整備を担い、信号誘導システムを装備する。',
                 '情報UAVは支援艦の武器命中率をアップさせる。',
             ],
-            // TODO skillslot
-            // TODO skills
         },
     ],
-    category: 'B',
-    categoryNumber: 3,
 };
 
 const staticModules: ISystemModule[] = [
     modules.propulsionSystem({
-        parts: [
-            {
-                skills: [
-                    strategy.evasiveManeuvers(20, 40, 40).withCost(20),
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
-                ],
-                skillSlots: 4,
-            },
+        skills: [
+            strategy.evasiveManeuvers(20, 40, 40).withCost(20),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
         ],
+        skillSlots: 4,
     }),
 ]
 
