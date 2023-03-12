@@ -93,7 +93,7 @@ export const ModuleData = (props: IProps) => {
                         {usedModules}
                     </Typography>
                 </Box>
-                {!moduleSelection.static && (
+                {moduleSelection.configuable && (
                     <Box sx={{ display: 'flex', alignContent: 'end' }}>
                         <Button
                             variant="outlined"

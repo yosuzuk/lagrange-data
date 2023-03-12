@@ -203,6 +203,7 @@ function createModuleSelection(
     const restoredUsedModules = usedModules ?? shipDefinition.modules.filter(module => module.defaultModule).map(module => module.id);
 
     const result: IModuleSelection = {
+        configuable: false,
         groups: {},
     };
 
@@ -218,6 +219,8 @@ function createModuleSelection(
             };
             return;
         }
+
+        result.configuable = true;
 
         result.groups[module.category][module.id] = {
             module,
