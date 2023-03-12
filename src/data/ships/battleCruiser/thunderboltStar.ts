@@ -271,6 +271,10 @@ const f2: ISystemModule = {
     categoryNumber: 2,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({}),
+];
+
 export const thunderboldStar: IShipDefinition[] = [
     {
         id: ShipId.THUNDERBOLT_STAR,
@@ -289,7 +293,7 @@ export const thunderboldStar: IShipDefinition[] = [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         ],
-        modules: [m1, m2, m3, a1, a2, b1, b2, c1, d1, d2, e1, e2, f1, f2],
+        modules: [m1, m2, m3, a1, a2, b1, b2, c1, d1, d2, e1, e2, f1, f2, ...staticModules],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
@@ -303,6 +307,10 @@ export const thunderboldStar: IShipDefinition[] = [
         manufacturer: Manufacturer.THUNDERBOLT_GROUP,
         modules: [
             modules.toStatic(m1),
+            modules.toStatic(a1),
+            modules.toStatic(b1),
+            modules.toStatic(c1),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
@@ -327,7 +335,11 @@ export const thunderboldStar: IShipDefinition[] = [
         ],
         modules: [
             modules.toStatic(m2),
+            modules.toStatic(a1),
+            modules.toStatic(b1),
+            modules.toStatic(c1),
             modules.toStatic(e1),
+            ...staticModules,
         ],
     },
     {
@@ -348,7 +360,10 @@ export const thunderboldStar: IShipDefinition[] = [
         modules: [
             modules.toStatic(m3),
             modules.toStatic(a2),
+            modules.toStatic(b1),
+            modules.toStatic(c1),
             modules.toStatic(e2),
+            ...staticModules,
         ],
     },
 ];

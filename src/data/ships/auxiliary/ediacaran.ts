@@ -219,6 +219,10 @@ const e2: ISystemModule = {
     categoryNumber: 2,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({}),
+];
+
 export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN,
@@ -233,7 +237,7 @@ export const ediacaran: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
-        modules: [m1, m2, b1, b2, b3, c1, c2, d1, d2, d3, e1],
+        modules: [m1, m2, b1, b2, b3, c1, c2, d1, d2, d3, e1, ...staticModules],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -259,6 +263,7 @@ export const ediacaran: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(b1),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,
@@ -283,6 +288,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(m2),
             modules.toStatic(b3),
             modules.toStatic(e2),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,
@@ -306,6 +312,7 @@ export const ediacaran: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(b1),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,
@@ -330,6 +337,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(m1),
             modules.toStatic(b1),
             modules.toStatic(e1),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,
@@ -354,6 +362,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(m1),
             modules.toStatic(b3),
             modules.toStatic(e2),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,
@@ -379,6 +388,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(b2),
             modules.toStatic(c2),
             modules.toStatic(d3),
+            ...staticModules,
         ],
         relatedShipIds: [
             ShipId.EDIACARAN,

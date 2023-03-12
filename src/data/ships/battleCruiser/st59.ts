@@ -3,11 +3,28 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
+
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 3,
+            },
+        ],
+    }),
+];
 
 export const st59: IShipDefinition[] = [
     {
@@ -331,6 +348,7 @@ export const st59: IShipDefinition[] = [
                 category: 'C',
                 categoryNumber: 3,
             },
+            ...staticModules,
         ],
     },
 ];

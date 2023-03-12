@@ -319,7 +319,9 @@
         "starterShip": "初期配布で手に入る艦船/設計図"
     },
     "modules": {
-        "propulsionSystem": ""
+        "commandSystem": "Command System",
+        "armorSystem": "Armor System",
+        "propulsionSystem": "Propulsion System"
     },
     "enhancement": {
         "valueColonValue": "{{value}}{{unit}}",
@@ -368,6 +370,7 @@
         "increaseTorpedoHitRateMidRow": "中列の魚雷命中率アップ",
         "increaseMissileHitRateMidRow": "中列のミサイル命中率アップ",
         "increaseInterceptionChance": "ミサイル/魚雷要撃率アップ",
+        "increaseEvasion": "回避率アップ",
         "increaseMissileEvasionOfAircraft": "艦載機/UAVのミサイル回避率アップ",
         "increaseMissileEvasionOfCorvette": "護送艦のミサイル回避率アップ",
         "increaseMissileEvasionOfUav": "UAVのミサイル回避率アップ",

@@ -6,6 +6,7 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -250,6 +251,22 @@ const c3: ISystemModule = {
     categoryNumber: 3,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 3,
+            },
+        ],
+    }),
+];
+
 export const solarWhale: IShipDefinition[] = [
     {
         id: ShipId.SOLAR_WHALE,
@@ -264,7 +281,7 @@ export const solarWhale: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
-        modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3],
+        modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3, ...staticModules],
         relatedShipIds: [ShipId.SOLAR_WHALE_TE_S],
     },
     {
@@ -360,6 +377,7 @@ export const solarWhale: IShipDefinition[] = [
                 category: 'STATIC',
                 categoryNumber: 4,
             },
+            ...staticModules,
         ],
         relatedShipIds: [ShipId.SOLAR_WHALE],
     },

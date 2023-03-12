@@ -7,6 +7,7 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -272,6 +273,22 @@ const d3: ISystemModule = {
     categoryNumber: 3,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 3,
+            },
+        ],
+    }),
+];
+
 export const constantineTheGreat: IShipDefinition[] = [
     {
         id: ShipId.CONSTANTINE_THE_GREAT,
@@ -286,6 +303,6 @@ export const constantineTheGreat: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, c3, d1, d2, d3],
+        modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, c3, d1, d2, d3, ...staticModules],
     },
 ];

@@ -319,7 +319,9 @@
         "starterShip": "Blueprints acquired by starter tech files"
     },
     "modules": {
-        "propulsionSystem": "Propulsion system"
+        "commandSystem": "Command System",
+        "armorSystem": "Armor System",
+        "propulsionSystem": "Propulsion System"
     },
     "enhancement": {
         "valueColonValue": "{{value}}{{unit}}",
@@ -368,6 +370,7 @@
         "increaseTorpedoHitRateMidRow": "Increase torpedo hitrate for mid-row ships",
         "increaseMissileHitRateMidRow": "Increase missile hitrate for mid-row ships",
         "increaseInterceptionChance": "Increase chance to intercept missles and torpedoes",
+        "increaseEvasion": "Increase evasion",
         "increaseMissileEvasionOfAircraft": "Increase missle evasion of aircraft/UAV in hangar",
         "increaseMissileEvasionOfCorvette": "Increase missle evasion of corvettes in hangar",
         "increaseMissileEvasionOfUav": "Increase missle evasion of UAV in hangar",

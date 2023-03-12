@@ -7,6 +7,7 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
@@ -253,6 +254,22 @@ const c3: ISystemModule = {
     categoryNumber: 3,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                ],
+                skillSlots: 3,
+            },
+        ],
+    }),
+];
+
 export const spearOfUranus: IShipDefinition[] = [
     {
         id: ShipId.SPEAR_OF_URANUS,
@@ -267,6 +284,6 @@ export const spearOfUranus: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        modules: [m1, m2, a1, a2, a3, b1, b2, b3, c1, c2, c3],
+        modules: [m1, m2, a1, a2, a3, b1, b2, b3, c1, c2, c3, ...staticModules],
     },
 ];

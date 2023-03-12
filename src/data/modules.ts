@@ -7,7 +7,22 @@ export const modules = {
         id: `static_${module.id}`,
         category: 'STATIC',
     })),
-    propulsionSystem: (properties: Partial<ISystemModule>): ISystemModule => {
+    static: createStaticModule,
+    commandSystem: (properties: Partial<ISystemModule> = {}): ISystemModule => {
+        return createStaticModule({
+            id: 'commandSystem',
+            name: t('modules.commandSystem'),
+            ...properties,
+        });
+    },
+    armorSystem: (properties: Partial<ISystemModule> = {}): ISystemModule => {
+        return createStaticModule({
+            id: 'armorSystem',
+            name: t('modules.armorSystem'),
+            ...properties,
+        });
+    },
+    propulsionSystem: (properties: Partial<ISystemModule> = {}): ISystemModule => {
         return createStaticModule({
             id: 'propulsionSystem',
             name: t('modules.propulsionSystem'),
