@@ -1,4 +1,4 @@
-import { enhancements } from '../../../enhancements/enhancements';
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -228,6 +228,23 @@ const b3: ISystemModule = {
     categoryNumber: 3,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    strategy.evasiveManeuvers(20, 40, 40).withCost(20),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 4,
+            },
+        ],
+    }),
+]
+
 export const cv3000: IShipDefinition[] = [
     {
         id: ShipId.CV3000,
@@ -243,7 +260,7 @@ export const cv3000: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         relatedShipIds: [ShipId.CV3000_TE],
-        modules: [m1, m2, m3, a1, a2, b1, b2, b3],
+        modules: [m1, m2, m3, a1, a2, b1, b2, b3, ...staticModules],
     },
     {
         id: ShipId.CV3000_TE,
@@ -259,6 +276,7 @@ export const cv3000: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(a1),
+            ...staticModules,
         ],
     },
 ];

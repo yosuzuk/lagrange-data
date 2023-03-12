@@ -164,7 +164,7 @@ export const ShipDetail = (props: IProps) => {
                     ...(staticModules.length > 0 ? [
                         {
                             key: 'staticModules',
-                            label: t('label.staticSystemModule'),
+                            label: t('label.staticSystemModules'),
                             value: (
                                 <ModuleDetail shipId={shipDefinition.id} modules={staticModules} />
                             )
@@ -173,7 +173,7 @@ export const ShipDetail = (props: IProps) => {
                     ...(defaultVariableModules.length > 0 ? [
                         {
                             key: 'modules',
-                            label: t('label.defaultSystemModule'),
+                            label: t('label.defaultSystemModules'),
                             value: (
                                 <ModuleDetail shipId={shipDefinition.id} modules={defaultVariableModules} />
                             )
@@ -182,7 +182,7 @@ export const ShipDetail = (props: IProps) => {
                     ...(additionalVariableModules.length > 0 ? [
                         {
                             key: 'extraModules',
-                            label: t('label.additionalSystemModule'),
+                            label: t('label.additionalSystemModules'),
                             value: (
                                 <ModuleDetail shipId={shipDefinition.id} modules={additionalVariableModules} />
                             )

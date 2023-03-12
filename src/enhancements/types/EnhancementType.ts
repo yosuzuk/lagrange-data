@@ -27,7 +27,9 @@ export enum EnhancementSubType {
     INCREASE_HIT_RATE_VS_SMALL = 'increaseHitRateVsSmall',
     INCREASE_HIT_RATE_VS_LARGE = 'increaseHitRateVsLarge',
     INCREASE_HIT_RATE_VS_AIRCRAFT = 'increaseHitRateVsAircraft',
-    INCREASE_ION_HIT_RATE = 'reduceIonHitRate',
+    INCREASE_ION_HIT_RATE = 'increaseIonHitRate',
+    INCREASE_CRUISING_SPEED = 'increaseCruisingSpeed',
+    INCREASE_WARP_SPEED = 'increaseWarpSpeed',
     INCREASE_REPAIR_SPEED = 'increaseRepairSpeed',
     INCREASE_SUPPLY_SPEED = 'increaseSupplySpeed',
     INCREASE_STORAGE = 'increaseStorage',
@@ -74,5 +76,6 @@ export enum EnhancementSubType {
     ANTI_AIRCRAFT_SUPPORT = 'antiAircraftSupport',
     RAPID_FIRE = 'rapidFire',
     CONCENTRATE_FIRE_PERIODICALLY = 'concentrateFirePeriodically',
+    EVASIVE_MANEUVERS = 'evasiveManeuvers',
     CUSTOM = 'custom',
 }

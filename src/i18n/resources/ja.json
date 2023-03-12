@@ -73,13 +73,14 @@
         "acquiredBlueprintColon": "取得済みの設計図：",
         "systemModulesColon": "システム：",
         "additionalSystemModule": "追加システム",
+        "additionalSystemModules": "追加システム",
         "additionalSystemModuleColonValue": "追加システム：{{value}}",
         "additionalSystemModuleBrackets": "（追加システム）",
         "shipAdditionalSystemModule": "{{shipName}}（追加システム）",
         "wantedAdditionalSystemModule": "欲しい追加システム",
         "remainingAdditionalSystemModules": "残りシステム数",
-        "defaultSystemModule": "初期システム",
-        "staticSystemModule": "固定システム",
+        "defaultSystemModules": "初期システム",
+        "staticSystemModules": "固定システム",
         "blueprintTotal": "設計図合計",
         "techPoints": "技術Pt",
         "techPointsBrackets": "（技術Pt）",
@@ -317,6 +318,9 @@
         "salvage": "デブリ回収で取得できる艦船",
         "starterShip": "初期配布で手に入る艦船/設計図"
     },
+    "modules": {
+        "propulsionSystem": ""
+    },
     "enhancement": {
         "valueColonValue": "{{value}}{{unit}}",
         "maxValueColonValue": "最大{{value}}{{unit}}",
@@ -353,7 +357,9 @@
         "increaseHitRateVsSmall": "フリゲート/駆逐艦に対する命中率アップ",
         "increaseHitRateVsLarge": "巡洋艦以上に対する命中率アップ",
         "increaseHitRateVsAircraft": "戦闘機/護送艦に対する命中率アップ",
-        "reduceIonHitRate": "イオン砲命中率アップ",
+        "increaseIonHitRate": "イオン砲命中率アップ",
+        "increaseCruisingSpeed": "",
+        "increaseWarpSpeed": "",
         "increaseRepairSpeed": "補修速度アップ",
         "increaseSupplySpeed": "補給速度アップ",
         "increaseStorage": "貯蔵力アップ",
@@ -402,6 +408,7 @@
         "rapidFire": "高速攻撃",
         "concentratedStrike": "集中爆撃",
         "concentrateFirePeriodically": "周期的集中砲火",
+        "evasiveManeuvers": "",
         "moraleBooster": "士気向上"
     },
     "enhancementDescription": {

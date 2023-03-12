@@ -27,6 +27,8 @@ export const enhancements = {
     increaseHitRateVsLarge: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HIT_RATE_VS_LARGE),
     increaseHitRateVsAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HIT_RATE_VS_AIRCRAFT),
     increaseIonHitRate: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ION_HIT_RATE),
+    increaseCruisingSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRUISING_SPEED),
+    increaseWarpSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_WARP_SPEED),
     increaseRepairSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_REPAIR_SPEED),
     increaseSupplySpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SUPPLY_SPEED),
     increaseStorage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_STORAGE),
@@ -81,6 +83,7 @@ export const strategy = {
     antiAircraftSupport: (hitRate: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_SUPPORT).withDescriptionKey('antiAircraftSupport', { hitRate, interval, duration }),
     rapidFire: (value: number, interval: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.RAPID_FIRE).withDescriptionKey('rapidFire', { value, interval, duration, cooldown }),
     concentrateFirePeriodically: (reduceCooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CONCENTRATE_FIRE_PERIODICALLY).withDescriptionKey('concentrateFirePeriodically', { reduceCooldown, interval, duration }),
+    evasiveManeuvers: (hp: number, evasion: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.EVASIVE_MANEUVERS).withDescriptionKey('evasiveManeuvers', { hp, evasion, duration }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {

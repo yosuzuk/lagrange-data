@@ -1,4 +1,4 @@
-import { flagshipEffect, enhancements } from '../../../enhancements/enhancements';
+import { flagshipEffect, enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -273,6 +273,24 @@ const e2: ISystemModule = {
     carryCorvette: 3,
 };
 
+const staticModules: ISystemModule[] = [
+    modules.propulsionSystem({
+        parts: [
+            {
+                skills: [
+                    strategy.evasiveManeuvers(20, 40, 40).withCost(20),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 3,
+            },
+        ],
+    }),
+];
+
 export const fsv830: IShipDefinition[] = [
     {
         id: ShipId.FSV830,
@@ -288,7 +306,7 @@ export const fsv830: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         relatedShipIds: [ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
-        modules: [m1, a1, a2, b1, b2, b3, c1, c2, d1, d2, d3, e1, e2],
+        modules: [m1, a1, a2, b1, b2, b3, c1, c2, d1, d2, d3, e1, e2, ...staticModules],
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -310,7 +328,8 @@ export const fsv830: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(b1),
-            modules.toStatic(d1)
+            modules.toStatic(d1),
+            ...staticModules,
         ],
     },
     {
@@ -331,6 +350,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(m1),
             modules.toStatic(b2),
             modules.toStatic(d1),
+            ...staticModules,
         ],
     },
     {
@@ -352,6 +372,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(b1),
             modules.toStatic(d1),
             modules.toStatic(e2),
+            ...staticModules,
         ],
     },
     {
@@ -373,6 +394,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(d2),
             modules.toStatic(b1),
             modules.toStatic(e1),
+            ...staticModules,
         ],
     },
     {
@@ -394,6 +416,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(d1),
             modules.toStatic(b3),
             modules.toStatic(c1),
+            ...staticModules,
         ],
     },
 ];
