@@ -28,6 +28,7 @@ export const enhancements = {
     increaseHitRateVsAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HIT_RATE_VS_AIRCRAFT),
     increaseIonHitRate: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ION_HIT_RATE),
     increaseCruisingSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRUISING_SPEED),
+    increaseCruisingSpeedOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRUISING_SPEED_OF_AIRCRAFT),
     increaseWarpSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_WARP_SPEED),
     increaseRepairSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_REPAIR_SPEED),
     increaseSupplySpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SUPPLY_SPEED),
@@ -79,6 +80,9 @@ export const flagshipEffect = {
     fleetDock2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_2).withDescriptionKey('fleetDock2'),
     siegeTactic2: (duration: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.SIEGE_TACTIC_2).withDescriptionKey('siegeTactic2', { duration }),
     desperateMeasures2: (percentage: string, targetCount: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.DESPERATE_MEASURES_2).withDescriptionKey('desperateMeasures2', { percentage, targetCount }),
+    strategicStrike1: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_1).withDescriptionKey('strategicStrike1', { angle }),
+    strategicStrike2: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_2).withDescriptionKey('strategicStrike1', { angle }),
+    strategicStrike3: (angle: number, distance: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_3).withDescriptionKey('strategicStrike3', { angle, distance }),
 } as const;
 
 export const strategy = {

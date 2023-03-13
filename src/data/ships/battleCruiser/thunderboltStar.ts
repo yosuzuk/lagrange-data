@@ -1,4 +1,4 @@
-import { enhancements } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
@@ -274,7 +274,22 @@ const f2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
-    modules.propulsionSystem(),
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+        ],
+        // TODO skills
+        skillSlots: 2,
+    }),
+    modules.armorSystem({
+        // TODO skills
+        skillSlots: 5,
+    }),
+    modules.propulsionSystem({
+        // TODO skills
+        skillSlots: 4,
+    }),
+    modules.energySystem(),
 ];
 
 export const thunderboldStar: IShipDefinition[] = [
