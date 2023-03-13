@@ -418,7 +418,9 @@
         "moraleBooster": "士気向上",
         "siegeTactic2": "包囲戦術II",
         "patrollingDefense": "Patrolling defense",
-        "combatSurge": "Combat surge"
+        "combatSurge": "Combat surge",
+        "shipChargingStance": "Ship charging stance",
+        "desperateMeasures2": "Desperate measures II"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -436,7 +438,9 @@
         "moraleBooster": "敵が巡洋艦を失うと10秒間冷却時間85％ダウン",
         "siegeTactic2": "艦隊が目標と交戦時、味方の戦闘前の指令Ptが敵側のを上回る場合、敵艦隊は戦闘前{{duration}}秒間は撤収できなくなる。",
         "patrollingDefense": "",
-        "combatSurge": ""
+        "combatSurge": "",
+        "shipChargingStance": "",
+        "desperateMeasures2": "{{percentage}} {{targetCount}}"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"

@@ -418,7 +418,9 @@
         "moraleBooster": "Morale booster",
         "siegeTactic2": "Siege tactic II",
         "patrollingDefense": "Patrolling defense",
-        "combatSurge": "Combat surge"
+        "combatSurge": "Combat surge",
+        "shipChargingStance": "Ship charging stance",
+        "desperateMeasures2": "Desperate measures II"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -436,7 +438,9 @@
         "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s.",
         "siegeTactic2": "If your fleet's command point value is greater than that of the opponent's before entering a combat engagement, then the enemy fleet cannot retreat within the first {{duration}}s of the engagement.",
         "patrollingDefense": "When a fleet guards a resource node, it can also guard other resource nodes within the operation area. Guards up to {{nodeCount}} additional resource node(s).",
-        "combatSurge": "When the fleets engage in combat, they tackle the enemy by approaching them, increasing the time required for both parties's fleet to retreat by {{duration}}s."
+        "combatSurge": "When the fleets engage in combat, they tackle the enemy by approaching them, increasing the time required for both parties's fleet to retreat by {{duration}}s.",
+        "shipChargingStance": "Changes ship position to the front row of your formation",
+        "desperateMeasures2": "While in combat, when the enemy's fleet command point is {{percentage}}% higher than you, priotizes attack on {{targetCount}} target(s) with the lowest HP."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."

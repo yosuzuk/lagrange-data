@@ -78,6 +78,7 @@ export const flagshipEffect = {
     fleetDock1: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_1).withDescriptionKey('fleetDock1'),
     fleetDock2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_2).withDescriptionKey('fleetDock2'),
     siegeTactic2: (duration: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.SIEGE_TACTIC_2).withDescriptionKey('siegeTactic2', { duration }),
+    desperateMeasures2: (percentage: string, targetCount: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.DESPERATE_MEASURES_2).withDescriptionKey('desperateMeasures2', { percentage, targetCount }),
 } as const;
 
 export const strategy = {
