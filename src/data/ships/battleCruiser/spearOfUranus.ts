@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -255,6 +255,31 @@ const c3: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            // TODO max duration
+            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '45+?' }).withCost(90),
+        ],
+        skills: [
+            enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+        ],
+        skillSlots: 2,
+    }),
+    modules.armorSystem({
+        skills: [
+            // TODO cost
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+        ],
+        skillSlots: 5,
+    }),
     modules.propulsionSystem({
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15),
@@ -264,6 +289,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 export const spearOfUranus: IShipDefinition[] = [

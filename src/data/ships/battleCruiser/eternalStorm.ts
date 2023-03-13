@@ -333,9 +333,11 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
+            // TODO max node count
             flagshipEffect.customFlashipEffect('patrollingDefense').withDescriptionKey('patrollingDefense', { nodeCount: '2+?' }).withCost(60),
         ],
         skills: [
+            // TODO cost
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
             enhancements.increaseSystemHp().withPercentageValue(10),
         ],
@@ -343,6 +345,7 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
+            // TODO cost
             enhancements.increaseHp().withPercentageValue(10),
             enhancements.increaseHp().withPercentageValue(10),
             enhancements.increaseArmor().withAbsoluteValue(75),
@@ -355,6 +358,7 @@ const staticModules: ISystemModule[] = [
     }),
     modules.propulsionSystem({
         skills: [
+            // TODO cost
             enhancements.increaseCruisingSpeed().withPercentageValue(15),
             enhancements.increaseCruisingSpeed().withPercentageValue(15),
             enhancements.increaseWarpSpeed().withPercentageValue(15),

@@ -417,7 +417,8 @@
         "evasiveManeuvers": "Evasive maneuvers",
         "moraleBooster": "Morale booster",
         "siegeTactic2": "Siege tactic II",
-        "patrollingDefense": "Patrolling defense"
+        "patrollingDefense": "Patrolling defense",
+        "combatSurge": "Combat surge"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -434,7 +435,8 @@
         "evasiveManeuvers": "When the ship's HP falls to {{hp}}%, increases evasion by {{evasion}}% for {{duration}}s. This effect only triggers once per battle.",
         "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s.",
         "siegeTactic2": "If your fleet's command point value is greater than that of the opponent's before entering a combat engagement, then the enemy fleet cannot retreat within the first {{duration}}s of the engagement.",
-        "patrollingDefense": "When a fleet guards a resource node, it can also guard other resource nodes within the operation area. Guards up to {{nodeCount}} additional resource node(s)."
+        "patrollingDefense": "When a fleet guards a resource node, it can also guard other resource nodes within the operation area. Guards up to {{nodeCount}} additional resource node(s).",
+        "combatSurge": "When the fleets engage in combat, they tackle the enemy by approaching them, increasing the time required for both parties's fleet to retreat by {{duration}}s."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
