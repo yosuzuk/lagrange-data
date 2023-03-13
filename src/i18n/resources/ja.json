@@ -455,7 +455,8 @@
         "strategicStrike3": "{{angle}}° {{distance}}Gm",
         "multiTargetAttack": "{{targetCount}}",
         "auxiliaryAttackRadar": "{{hitrate}}",
-        "rangeExtension": "{{radius}}"
+        "rangeExtension": "{{radius}}",
+        "aircraftEmergencyRepair": "{{damage}}%"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"

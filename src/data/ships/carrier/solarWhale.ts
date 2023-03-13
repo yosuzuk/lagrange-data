@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -252,6 +252,32 @@ const c3: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.strategicStrike2(120).withDefaultFlag(),
+            flagshipEffect.strategicStrike3(360, '15.0+?').withCost(60),
+        ],
+        skills: [
+            // TODO cost
+            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }),
+            enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }),
+            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '5.0+?' }),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+        ],
+        skillSlots: 4,
+    }),
+    modules.armorSystem({
+        skills: [
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+        ],
+        skillSlots: 4,
+    }),
     modules.propulsionSystem({
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -261,6 +287,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 export const solarWhale: IShipDefinition[] = [

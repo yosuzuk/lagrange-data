@@ -429,7 +429,8 @@
         "strategicStrike3": "Strategic strike III",
         "multiTargetAttack": "Multi-target attack",
         "auxiliaryAttackRadar": "Auxiliary attack radar",
-        "rangeExtension": "Range extension"
+        "rangeExtension": "Range extension",
+        "aircraftEmergencyRepair": "Aircraft emergency repair"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -455,7 +456,8 @@
         "strategicStrike3": "Launches a strategic strike on targets within a designated {{angle}}° area within a maximum distance of {{distance}}Gm",
         "multiTargetAttack": "Max strategic strike targets +{{targetCount}}",
         "auxiliaryAttackRadar": "Increases the main weapons hitrate of aircraft carrying out a strategic strike by {{hitrate}}",
-        "rangeExtension": "Strategic strike radius +{{radius}}"
+        "rangeExtension": "Strategic strike radius +{{radius}}",
+        "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
