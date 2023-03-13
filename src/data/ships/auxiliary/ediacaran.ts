@@ -1,4 +1,4 @@
-import { enhancements } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -220,7 +220,27 @@ const e2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
-    modules.propulsionSystem({}),
+    // TODO find out if static: 「ツンドラ」要撃UAVシステム（Ｄ１？）
+    // TODO find out if static: 総合支援ドック
+    modules.static({
+        id: 'supportDock',
+        name: '総合支援ドック',
+        translatedName: {
+            en: 'Integrated Support Dock',
+        },
+    }),
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+        ],
+    }),
+    modules.armorSystem({
+        skillSlots: 4,
+    }),
+    modules.propulsionSystem({
+        skillSlots: 2,
+    }),
+    modules.energySystem(),
 ];
 
 export const ediacaran: IShipDefinition[] = [

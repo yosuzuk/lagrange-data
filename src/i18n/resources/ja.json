@@ -318,16 +318,19 @@
         "starterShip": "初期配布で手に入る艦船/設計図"
     },
     "modules": {
-        "commandSystem": "Command System",
-        "armorSystem": "Armor System",
-        "propulsionSystem": "Propulsion System"
+        "energySystem": "エネルギーシステム",
+        "commandSystem": "指令システム",
+        "armorSystem": "装甲システム",
+        "propulsionSystem": "動力システム"
     },
     "enhancement": {
         "valueColonValue": "{{value}}{{unit}}",
         "maxValueColonValue": "最大{{value}}{{unit}}",
+        "maxValueColonValueValue2": "Max: {{value}}{{unit}}, {{value2}}{{unit}}",
         "costColonValue": "技術Pt：{{cost}}",
         "valueAndCostColonValue": "{{value}}{{unit}}、技術Pt：{{cost}}",
         "maxValueAndCostColonValue": "最大{{value}}{{unit}}、技術Pt：{{cost}}",
+        "maxValueAndCostColonValueValue2": "最大{{value}}{{unit}}、{{value2}}{{unit}}、技術Pt：{{cost}}",
         "enabledByDefaultBrackets": "（デフォルトで有効）"
     },
     "enhancementType": {
@@ -359,8 +362,8 @@
         "increaseHitRateVsLarge": "巡洋艦以上に対する命中率アップ",
         "increaseHitRateVsAircraft": "戦闘機/護送艦に対する命中率アップ",
         "increaseIonHitRate": "イオン砲命中率アップ",
-        "increaseCruisingSpeed": "",
-        "increaseWarpSpeed": "",
+        "increaseCruisingSpeed": "通常移動速度アップ",
+        "increaseWarpSpeed": "ワープ移動速度アップ",
         "increaseRepairSpeed": "補修速度アップ",
         "increaseSupplySpeed": "補給速度アップ",
         "increaseStorage": "貯蔵力アップ",
@@ -374,7 +377,7 @@
         "increaseMissileEvasionOfCorvette": "護送艦のミサイル回避率アップ",
         "increaseMissileEvasionOfUav": "UAVのミサイル回避率アップ",
         "increaseSelfHostCapacity": "支援艦の自己保有容量",
-        "increaseProductionSpeed": "",
+        "increaseProductionSpeed": "支援艦の生産速度アップ",
         "reduceLockOn": "ロックオン速度アップ",
         "reduceLockOnOfAircraft": "艦載機のロックオン速度アップ",
         "reduceLockOnOfUav": "UAVのロックオン速度アップ",
@@ -384,8 +387,8 @@
         "reduceRtbUav": "UAVの帰還冷却時間ダウン",
         "reduceDuration": "出力時間ダウン",
         "reducePrefabCost": "クイック補修プレハブモジュール消費ダウン",
-        "reduceUeCoinCost": "",
-        "reduceDamageReceived": "",
+        "reduceUeCoinCost": "製造で消費するＵＥコインダウン",
+        "reduceDamageReceivedBySystem": "システムの被ダメージダウン",
         "reduceCritialDamageReceived": "被クリティカルダメージダウン",
         "reduceProjectileDamageReceived": "投射武器によるダメージを軽減",
         "reduceHitByProjectileInBackRow": "後列の投射武器の被命中率ダウン",
@@ -393,6 +396,7 @@
         "reduceHitByTorpedoInBackRow": "後列の魚雷の被命中率ダウン",
         "reduceHitByMissileInBackRow": "後列のミサイルの被命中率ダウン",
         "reduceHitBySlowInBackRow": "後列の低速武器の被命中率ダウン",
+        "reduceHitByMissleAndTorpedo": "ミサイルの被命中率ダウン/魚雷の被命中率ダウン",
         "reduceTorpedoInterception": "魚雷の被迎撃率ダウン",
         "reduceEvasion": "回避率ダウン",
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
@@ -410,8 +414,9 @@
         "rapidFire": "高速攻撃",
         "concentratedStrike": "集中爆撃",
         "concentrateFirePeriodically": "周期的集中砲火",
-        "evasiveManeuvers": "",
-        "moraleBooster": "士気向上"
+        "evasiveManeuvers": "機動回避",
+        "moraleBooster": "士気向上",
+        "siegeTactic2": "包囲戦術II"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -425,7 +430,9 @@
         "rapidFire": "{{interval}}秒毎に、システムメイン武器の攻撃・冷却時間が{{value}}％ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "concentratedStrike": "戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。",
         "concentrateFirePeriodically": "{{interval}}秒毎に、システム内の全ての武器で１件の目標を集中攻撃する。武器の冷却時間が{{reduceCooldown}}%ダウンする。効果は{{duration}}秒続く。",
-        "moraleBooster": "敵が巡洋艦を失うと10秒間冷却時間85％ダウン"
+        "evasiveManeuvers": "自身のHPが{{hp}}%になったとき、艦船の回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。この効果は戦闘中に1回しか発生しない。",
+        "moraleBooster": "敵が巡洋艦を失うと10秒間冷却時間85％ダウン",
+        "siegeTactic2": "艦隊が目標と交戦時、味方の戦闘前の指令Ptが敵側のを上回る場合、敵艦隊は戦闘前{{duration}}秒間は撤収できなくなる。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"

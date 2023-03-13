@@ -198,7 +198,7 @@ const d1: ISystemModule = {
         enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
         enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
         enhancements.reduceHitBySlowInBackRow().withPercentageValue(8).withCost(8),
-        enhancements.reduceDamageReceived().withAbsoluteValue(5),
+        enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
         enhancements.increaseSystemHp().withPercentageValue(10),
     ],
     skillSlots: 2,
@@ -270,6 +270,17 @@ const e2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.armorSystem({
+        skills: [
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+        ],
+        skillSlots: 4,
+    }),
     modules.propulsionSystem({
         skills: [
             strategy.evasiveManeuvers(20, 40, 40).withCost(20),
@@ -281,6 +292,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 export const fsv830: IShipDefinition[] = [

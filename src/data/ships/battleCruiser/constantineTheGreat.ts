@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -274,6 +274,29 @@ const d3: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.siegeTactic2(60).withCost(60),
+        ],
+        skills: [
+            enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+        ],
+        skillSlots: 2,
+    }),
+    modules.armorSystem({
+        skills: [
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(8),
+        ],
+        skillSlots: 5,
+    }),
     modules.propulsionSystem({
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -283,6 +306,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 export const constantineTheGreat: IShipDefinition[] = [

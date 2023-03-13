@@ -53,7 +53,7 @@ export const enhancements = {
     reduceDuration: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DURATION),
     reducePrefabCost: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PREFAB_COST),
     reduceUeCoinCost: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_UE_COIN_COST),
-    reduceDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DAMAGE_RECEIVED),
+    reduceDamageReceivedBySystem: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DAMAGE_RECEIVED_BY_SYSTEM),
     reduceCritialDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_CRITICAL_DAMAGE_RECEIVED),
     reduceProjectileDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PROJECTILE_DAMAGE_RECEIVED),
     reduceHitByProjectileInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_PROJECTILE_IN_BACK_ROW),
@@ -61,6 +61,7 @@ export const enhancements = {
     reduceHitByTorpedoInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_TORPEDO_IN_BACK_ROW),
     reduceHitByMissileInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_MISSILE_IN_BACK_ROW),
     reduceHitBySlowInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_SLOW_IN_BACK_ROW),
+    reduceHitByMissleAndTorpedo: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_MISSILE_AND_TORPEDO),
     reduceTorpedoInterception: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_TORPEDO_INTERCEPTION),
     reduceEvasion: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_EVASION),
     reduceHitRateOfMainWeapon: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_RATE_OF_MAIN_WEAPON),
@@ -76,6 +77,7 @@ export const flagshipEffect = {
     focusFire: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FOCUS_FIRE).withDescriptionKey('focusFire'),
     fleetDock1: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_1).withDescriptionKey('fleetDock1'),
     fleetDock2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_2).withDescriptionKey('fleetDock2'),
+    siegeTactic2: (duration: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.SIEGE_TACTIC_2).withDescriptionKey('siegeTactic2', { duration }),
 } as const;
 
 export const strategy = {
@@ -97,6 +99,7 @@ class Enhancement implements IMutableEnhancement {
     private _hasPercentageValues: boolean = false;
     private _hasFixedValue: boolean = false;
     private _value: number | null = null;
+    private _value2: number | null = null;
     private _cost: number | null = null;
     private _textKey: string;
     private _textKeyOptions: Record<string, unknown> = {};
@@ -130,6 +133,10 @@ class Enhancement implements IMutableEnhancement {
 
     get value(): number | null {
         return this._value;
+    }
+
+    get value2(): number | null {
+        return this._value2;
     }
 
     get cost(): number | null {
@@ -186,8 +193,9 @@ class Enhancement implements IMutableEnhancement {
         return this;
     }
 
-    public withPercentageValue(value: number) {
+    public withPercentageValue(value: number, value2?: number) {
         this._value = value;
+        this._value2 = value2 ?? null;
         this._hasFixedValue = false;
         this._hasPercentageValues = true;
         return this;
@@ -225,17 +233,23 @@ class Enhancement implements IMutableEnhancement {
     }
 
     private formatValuesAndCost(): string | null {
-        const { value, cost } = this;
+        const { value, value2, cost } = this;
         if (value !== null) {
             const unit = this._hasPercentageValues ? '%' : '';
             if (cost !== null) {
                 if (this.hasFixedValue) {
                     return t('enhancement.valueAndCostColonValue', { value, unit });
                 }
+                if (value2 !== null) {
+                    return t('enhancement.maxValueAndCostColonValueValue2', { value, value2, unit, cost });
+                }
                 return t('enhancement.maxValueAndCostColonValue', { value, unit, cost });
             }
             if (this.hasFixedValue) {
                 return t('enhancement.valueColonValue', { value, unit });
+            }
+            if (value2 !== null) {
+                return t('enhancement.maxValueColonValueValue2', { value, value2, unit });
             }
             return t('enhancement.maxValueColonValue', { value, unit });
         }

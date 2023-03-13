@@ -8,6 +8,13 @@ export const modules = {
         category: 'STATIC',
     })),
     static: createStaticModule,
+    energySystem: (properties: Partial<ISystemModule> = {}): ISystemModule => {
+        return createStaticModule({
+            id: 'energySystem',
+            name: t('modules.energySystem'),
+            ...properties,
+        });
+    },
     commandSystem: (properties: Partial<ISystemModule> = {}): ISystemModule => {
         return createStaticModule({
             id: 'commandSystem',

@@ -318,6 +318,7 @@
         "starterShip": "Blueprints acquired by starter tech files"
     },
     "modules": {
+        "energySystem": "Energy System",
         "commandSystem": "Command System",
         "armorSystem": "Armor System",
         "propulsionSystem": "Propulsion System"
@@ -325,9 +326,11 @@
     "enhancement": {
         "valueColonValue": "{{value}}{{unit}}",
         "maxValueColonValue": "Max: {{value}}{{unit}}",
+        "maxValueColonValueValue2": "Max: {{value}}{{unit}}, {{value2}}{{unit}}",
         "costColonValue": "TP: {{cost}}",
         "valueAndCostColonValue": "{{value}}{{unit}}, TP: {{cost}}",
         "maxValueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}",
+        "maxValueAndCostColonValueValue2": "Max: {{value}}{{unit}}, {{value2}}{{unit}}, TP: {{cost}}",
         "enabledByDefaultBrackets": "(enabled by default)"
     },
     "enhancementType": {
@@ -385,7 +388,7 @@
         "reduceDuration": "Reduce firing duration",
         "reducePrefabCost": "Reduce prefab cost for quick repair",
         "reduceUeCoinCost": "Reduce uEcoins cost for auxiliary shipbuilding",
-        "reduceDamageReceived": "Reduce damage from the system",
+        "reduceDamageReceivedBySystem": "Reduce damage from the system",
         "reduceCritialDamageReceived": "Reduce critical damage received by the system",
         "reduceProjectileDamageReceived": "Reduce damage received from projectile weapons",
         "reduceHitByProjectileInBackRow": "Reduce chance of back-row ships being hit by projectile weapons",
@@ -393,6 +396,7 @@
         "reduceHitByTorpedoInBackRow": "Reduce chance of back-row ships being hit by torpedoes",
         "reduceHitByMissileInBackRow": "Reduce chance of back-row ships being hit by missiles",
         "reduceHitBySlowInBackRow": "Reduce chance of back-row ships being hit by slow weapons",
+        "reduceHitByMissleAndTorpedo": "Reduce chance of being hit by missiles/torpedoes",
         "reduceTorpedoInterception": "Reduce chance of torpedoe interception",
         "reduceEvasion": "Reduce evasion",
         "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
@@ -411,7 +415,8 @@
         "concentratedStrike": "Concentrated strike",
         "concentrateFirePeriodically": "Concentrate fire periodically",
         "evasiveManeuvers": "Evasive maneuvers",
-        "moraleBooster": "Morale booster"
+        "moraleBooster": "Morale booster",
+        "siegeTactic2": "Siege tactic II"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -426,7 +431,8 @@
         "concentratedStrike": "After the battle begins, the carried aircraft lock onto the same target in the first 4 rounds of attacks and increases the evasion of the carried aircraft by 10%",
         "concentrateFirePeriodically": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{reduceCooldown}}% every {{interval}}s for {{duration}}s.",
         "evasiveManeuvers": "When the ship's HP falls to {{hp}}%, increases evasion by {{evasion}}% for {{duration}}s. This effect only triggers once per battle.",
-        "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s."
+        "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s.",
+        "siegeTactic2": "If your fleet's command point value is greater than that of the opponent's before entering a combat engagement, then the enemy fleet cannot retreat within the first {{duration}}s of the engagement."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
