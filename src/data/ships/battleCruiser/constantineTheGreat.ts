@@ -277,7 +277,7 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
-            flagshipEffect.siegeTactic2(60).withCost(60),
+            flagshipEffect.siegeTactic2('30+30').withCost(60),
         ],
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
