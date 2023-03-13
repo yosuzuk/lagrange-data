@@ -49,6 +49,7 @@ export enum EnhancementSubType {
     REDUCE_LOCK_ON_OF_AIRCRAFT = 'reduceLockOnOfAircraft',
     REDUCE_LOCK_ON_OF_UAV = 'reduceLockOnOfUav',
     REDUCE_COOLDOWN = 'reduceCooldown',
+    REDUCE_ION_COOLDOWN = 'reduceIonCooldown',
     REDUCE_RTB_AIRCRAFT = 'reduceRtbAircraft',
     REDUCE_RTB_CORVETTE = 'reduceRtbCorvette',
     REDUCE_RTB_UAV = 'reduceRtbUav',

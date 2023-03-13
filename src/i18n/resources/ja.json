@@ -383,6 +383,7 @@
         "reduceLockOnOfAircraft": "艦載機のロックオン速度アップ",
         "reduceLockOnOfUav": "UAVのロックオン速度アップ",
         "reduceCooldown": "冷却時間ダウン",
+        "reduceIonCooldown": "Reduce ion cannon cooldown",
         "reduceRtbAircraft": "艦載機の帰還冷却時間ダウン",
         "reduceRtbCorvette": "護送艦の帰還冷却時間ダウン",
         "reduceRtbUav": "UAVの帰還冷却時間ダウン",
@@ -425,7 +426,10 @@
         "waveAdjustment": "Wave adjustment",
         "strategicStrike1": "Strategic strike I",
         "strategicStrike2": "Strategic strike II",
-        "strategicStrike3": "Strategic strike III"
+        "strategicStrike3": "Strategic strike III",
+        "multiTargetAttack": "Multi-target attack",
+        "auxiliaryAttackRadar": "Auxiliary attack radar",
+        "rangeExtension": "Range extension"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -448,7 +452,10 @@
         "desperateMeasures2": "{{percentage}} {{targetCount}}",
         "waveAdjustment": "",
         "strategicStrike1": "{{angle}}°",
-        "strategicStrike3": "{{angle}}° {{distance}}Gm"
+        "strategicStrike3": "{{angle}}° {{distance}}Gm",
+        "multiTargetAttack": "{{targetCount}}",
+        "auxiliaryAttackRadar": "{{hitrate}}",
+        "rangeExtension": "{{radius}}"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"

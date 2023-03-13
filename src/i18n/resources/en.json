@@ -383,6 +383,7 @@
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",
         "reduceCooldown": "Decrease weapon cooldown",
+        "reduceIonCooldown": "Reduce ion cannon cooldown",
         "reduceRtbAircraft": "Reduce RTB cooldown of aircraft/UAV in the hangar",
         "reduceRtbCorvette": "Reduce RTB cooldown of corvettes in the hangar",
         "reduceRtbUav": "Reduce RTB cooldown of UAV in the hangar",
@@ -425,7 +426,10 @@
         "waveAdjustment": "Wave adjustment",
         "strategicStrike1": "Strategic strike I",
         "strategicStrike2": "Strategic strike II",
-        "strategicStrike3": "Strategic strike III"
+        "strategicStrike3": "Strategic strike III",
+        "multiTargetAttack": "Multi-target attack",
+        "auxiliaryAttackRadar": "Auxiliary attack radar",
+        "rangeExtension": "Range extension"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -448,7 +452,10 @@
         "desperateMeasures2": "While in combat, when the enemy's fleet command point is {{percentage}}% higher than you, priotizes attack on {{targetCount}} target(s) with the lowest HP.",
         "waveAdjustment": "Prioritizes launching aircraft squadrons that have extended attack duration in a strategic strike.",
         "strategicStrike1": "Command the fleet to launch a strategic strike on targets within a designated {{angle}}° area.",
-        "strategicStrike3": "Launches a strategic strike on targets within a designated {{angle}}° area within a maximum distance of {{distance}}Gm"
+        "strategicStrike3": "Launches a strategic strike on targets within a designated {{angle}}° area within a maximum distance of {{distance}}Gm",
+        "multiTargetAttack": "Max strategic strike targets +{{targetCount}}",
+        "auxiliaryAttackRadar": "Increases the main weapons hitrate of aircraft carrying out a strategic strike by {{hitrate}}",
+        "rangeExtension": "Strategic strike radius +{{radius}}"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."

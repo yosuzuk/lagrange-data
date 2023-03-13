@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -168,8 +168,14 @@ const c1: ISystemModule = {
     description: '艦載機のダメージアップ',
     category: 'C',
     categoryNumber: 1,
+    defaultModule: true,
     effects: [
         enhancements.increaseDamageOfAircraftMainWeapon().withFixedPercentageValue(15),
+    ],
+    skills: [
+        // TODO cost
+        enhancements.increaseIonDamage().withPercentageValue(10),
+        enhancements.reduceIonCooldown().withPercentageValue(15),
     ],
     skillSlots: 2,
     parts: [
@@ -201,6 +207,35 @@ const c2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.strategicStrike2(120).withDefaultFlag(),
+            // TODO max distance
+            flagshipEffect.strategicStrike3(360, '15.0+?').withCost(60),
+        ],
+        skills: [
+            // TODO cost
+            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }),
+            enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }),
+            enhancements.customEnhancement('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
+            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '5.0+?' }),
+            enhancements.increaseSystemHp().withPercentageValue(10),
+        ],
+        skillSlots: 5,
+    }),
+    modules.armorSystem({
+        skills: [
+            // TODO cost
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30),
+            enhancements.increaseShield().withPercentageValue(10),
+        ],
+        skillSlots: 4,
+    }),
     modules.propulsionSystem({
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15),
@@ -210,6 +245,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 export const marshallCrux: IShipDefinition[] = [
@@ -257,6 +293,7 @@ export const marshallCrux: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(a1),
+            modules.toStatic(c1),
             ...staticModules,
         ],
     },
@@ -281,6 +318,7 @@ export const marshallCrux: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(a2),
+            modules.toStatic(c1),
             ...staticModules,
         ],
     },
@@ -306,6 +344,7 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(m1),
             modules.toStatic(a1),
             modules.toStatic(b1),
+            modules.toStatic(c1),
             ...staticModules,
         ],
     },
