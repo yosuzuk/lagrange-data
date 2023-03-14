@@ -349,7 +349,9 @@
         "increaseDamageOfCorvette": "Increase damage of corvettes in hangar",
         "increaseDamageOfUav": "Increase damage of UAV in hangar",
         "increaseIonDamage": "Increase ion cannon damage",
+        "increaseIonDamageOfShip": "Increase all ion cannon damage",
         "increaseMissileDamage": "Increase missile damage",
+        "increaseMissileAndTorpedoDamage": "Increase missile/torpedo damage",
         "increaseSiegeDamage": "Increase siege damage",
         "increaseCriticalDamage": "Increase critical hit damage",
         "increaseCriticalDamageAndChance": "Increase critical hit damage and chance",
@@ -362,6 +364,7 @@
         "increaseHitRateVsLarge": "Increase hit rate against cruiser and higher-class ships",
         "increaseHitRateVsAircraft": "Increase hit rate against aircraft",
         "increaseIonHitRate": "Increase ion cannon hit rate",
+        "increaseMissileAndTorpedoHitRate": "Increase missile/torpedo hit rate",
         "increaseCruisingSpeed": "Increase cruising speed",
         "increaseCruisingSpeedOfAircraft": "Increasing aircraft cruising speed",
         "increaseWarpSpeed": "Increase warp speed",
@@ -383,7 +386,7 @@
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",
         "reduceCooldown": "Decrease weapon cooldown",
-        "reduceIonCooldown": "Reduce ion cannon cooldown",
+        "reduceIonCooldownOfShip": "Reduce all ion cannon cooldown",
         "reduceRtbAircraft": "Reduce RTB cooldown of aircraft/UAV in the hangar",
         "reduceRtbCorvette": "Reduce RTB cooldown of corvettes in the hangar",
         "reduceRtbUav": "Reduce RTB cooldown of UAV in the hangar",
@@ -393,6 +396,7 @@
         "reduceDamageReceivedBySystem": "Reduce damage from the system",
         "reduceCritialDamageReceived": "Reduce critical damage received by the system",
         "reduceProjectileDamageReceived": "Reduce damage received from projectile weapons",
+        "reduceHitByMissile": "Reduce chance of being hit by missiles",
         "reduceHitByProjectileInBackRow": "Reduce chance of back-row ships being hit by projectile weapons",
         "reduceHitByProjectileInMidRow": "Reduce chance of mid-row ships being hit by projectile weapons",
         "reduceHitByTorpedoInBackRow": "Reduce chance of back-row ships being hit by torpedoes",
@@ -430,7 +434,8 @@
         "multiTargetAttack": "Multi-target attack",
         "auxiliaryAttackRadar": "Auxiliary attack radar",
         "rangeExtension": "Range extension",
-        "aircraftEmergencyRepair": "Aircraft emergency repair"
+        "aircraftEmergencyRepair": "Aircraft emergency repair",
+        "antiAircraftMeasures": "Anti-aircraft measures"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -457,7 +462,8 @@
         "multiTargetAttack": "Max strategic strike targets +{{targetCount}}",
         "auxiliaryAttackRadar": "Increases the main weapons hitrate of aircraft carrying out a strategic strike by {{hitrate}}",
         "rangeExtension": "Strategic strike radius +{{radius}}",
-        "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike."
+        "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
+        "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."

@@ -175,7 +175,7 @@ const c1: ISystemModule = {
     skills: [
         // TODO cost
         enhancements.increaseIonDamage().withPercentageValue(10),
-        enhancements.reduceIonCooldown().withPercentageValue(15),
+        enhancements.reduceIonCooldownOfShip().withPercentageValue(15),
     ],
     skillSlots: 2,
     parts: [
