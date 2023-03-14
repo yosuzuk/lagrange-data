@@ -113,7 +113,7 @@ function getUsedModules(moduleSelection: IModuleSelection): ISystemModule[] {
     return Object.keys(moduleSelection.groups).flatMap((groupId: string) => {
         return Object.keys(moduleSelection.groups[groupId])
             .map(moduleId => moduleSelection.groups[groupId][moduleId])
-            .filter(moduleUsage => moduleUsage.usage === 'used' || moduleSelection.static)
+            .filter(moduleUsage => moduleUsage.usage === 'used' || moduleUsage.module.category === 'STATIC')
             .map(moduleUsage => moduleUsage.module);
     });
 }

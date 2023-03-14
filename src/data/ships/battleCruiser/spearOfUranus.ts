@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -7,12 +7,29 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
     id: 'M1',
     name: '艦首攻城電磁加速砲システム',
     description: '対大型艦武装',
+    category: 'M',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        strategy.rapidFire(80, 60, 15, 10).withCost(12),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+        enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(8),
+        enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(8),
+        enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+    ],
+    skillSlots: 7,
     parts: [
         {
             text: [
@@ -20,47 +37,44 @@ const m1: ISystemModule = {
                 '対大型艦：',
                 '・直射、実弾、対艦：13000、攻城：11310'
             ],
-            skillSlots: 7,
-            skills: [
-                strategy.rapidFire(80, 60, 15, 10).withCost(12),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
-                enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(8),
-                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(8),
-                enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
-            ],
         }
     ],
-    category: 'M',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'イオン砲塔システム',
     description: '対大型艦武装',
+    category: 'M',
+    categoryNumber: 2,
+    // TODO skills
+    skillSlots: 6,
     parts: [{
         text: [
             'BI-850型　2連重イオン砲塔',
             '対大型艦：',
             '・直射、エネルギー、対艦：10285、攻城：1748'
         ],
-        skillSlots: 6,
-        // TODO skills
     }],
-    category: 'M',
-    categoryNumber: 2,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: 'フォートレス砲撃システム',
     description: '対艦＆対空武装',
+    category: 'A',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.reduceDuration().withPercentageValue(10).withCost(10),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
@@ -74,27 +88,18 @@ const a1: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：1200、対空：1440',
             ],
-            skillSlots: 5,
-            skills: [
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
-                enhancements.reduceDuration().withPercentageValue(10).withCost(10),
-            ],
         },
     ],
-    category: 'A',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: 'フォートレス砲撃システム',
     description: '対艦＆対空武装',
+    category: 'A',
+    categoryNumber: 2,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -105,18 +110,18 @@ const a2: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：1200、対空：1440',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'A',
-    categoryNumber: 2,
 };
 
 const a3: ISystemModule = {
     id: 'A3',
     name: 'フォートレス砲撃システム',
     description: '対艦＆対空武装',
+    category: 'A',
+    categoryNumber: 3,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -127,18 +132,18 @@ const a3: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：1200、対空：1440',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'A',
-    categoryNumber: 3,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '「トロッコ」投射装置群',
     description: '対空武装、ミサイル迎撃',
+    category: 'B',
+    categoryNumber: 1,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -146,61 +151,61 @@ const b1: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対艦：6480、対空：1315、攻城：259',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'B',
-    categoryNumber: 1,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦ドック',
     description: '護送艦を3隻搭載可能',
+    category: 'B',
+    categoryNumber: 2,
+    carryCorvette: 3,
+    skills: [
+        enhancements.reduceLockOn().withPercentageValue(70).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(20).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(20).withCost(6),
+        enhancements.increaseHitRate().withPercentageValue(20).withCost(6),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
                 'CBC-2300型　護送艦追加ドック',
                 '護送艦外付け支援システム。最大3隻の護送艦を艦船外に配備できる。',
             ],
-            skillSlots: 4,
-            skills: [
-                enhancements.reduceLockOn().withPercentageValue(70).withCost(6),
-                enhancements.reduceCooldown().withPercentageValue(20).withCost(6),
-                enhancements.reduceCooldown().withPercentageValue(20).withCost(6),
-                enhancements.increaseHitRate().withPercentageValue(20).withCost(6),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(6),
-            ],
         },
     ],
-    category: 'B',
-    categoryNumber: 2,
-    carryCorvette: 3,
 };
 
 const b3: ISystemModule = {
     id: 'B3',
     name: '統合損失管理システム',
     description: '補修ＵＡＶ×2',
+    category: 'B',
+    categoryNumber: 3,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
                 'CRT-3型　汎用ロボット補修ポッド',
                 '標準補修UAVを2機搭載する。補修UAVの収容と整備を行い、信号誘導システムを装備する。補修UAVは損傷した味方艦船を戦闘中に補修できる。',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'B',
-    categoryNumber: 3,
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: '分散型軽量武器統制システム',
     description: '対空武装',
+    category: 'C',
+    categoryNumber: 1,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -208,36 +213,36 @@ const c1: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対空：1512',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'C',
-    categoryNumber: 1,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
     name: '追加装甲システム',
     description: '抵抗値アップ150',
+    category: 'C',
+    categoryNumber: 2,
+    effects: [
+        enhancements.increaseArmor().withFixedAbsoluteValue(150),
+    ],
     parts: [
         {
             text: [
                 '既存の装甲内部に追加するナノ強化層。艦船構造の堅牢性を効果的に高める。',
             ],
-            effects: [
-                enhancements.increaseArmor().withFixedAbsoluteValue(150),
-            ],
         },
     ],
-    category: 'C',
-    categoryNumber: 2,
 };
 
 const c3: ISystemModule = {
     id: 'C3',
     name: '対ミサイル要撃システム',
     description: '対空武装、ミサイル迎撃',
+    category: 'C',
+    categoryNumber: 3,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -245,13 +250,47 @@ const c3: ISystemModule = {
                 '対空：',
                 '・直射、実弾、対空：2159',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'C',
-    categoryNumber: 3,
 };
+
+const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            // TODO max duration
+            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '45+?' }).withCost(90),
+        ],
+        skills: [
+            enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+        ],
+        skillSlots: 2,
+    }),
+    modules.armorSystem({
+        skills: [
+            // TODO cost
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseHp().withPercentageValue(10),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseArmor().withAbsoluteValue(75),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+        ],
+        skillSlots: 5,
+    }),
+    modules.propulsionSystem({
+        skills: [
+            enhancements.increaseCruisingSpeed().withPercentageValue(15),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15),
+            enhancements.increaseWarpSpeed().withPercentageValue(15),
+            enhancements.increaseWarpSpeed().withPercentageValue(15),
+        ],
+        skillSlots: 3,
+    }),
+    modules.energySystem(),
+];
 
 export const spearOfUranus: IShipDefinition[] = [
     {
@@ -267,6 +306,6 @@ export const spearOfUranus: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        modules: [m1, m2, a1, a2, a3, b1, b2, b3, c1, c2, c3],
+        modules: [m1, m2, a1, a2, a3, b1, b2, b3, c1, c2, c3, ...staticModules],
     },
 ];

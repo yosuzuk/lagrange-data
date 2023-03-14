@@ -203,7 +203,7 @@ function createModuleSelection(
     const restoredUsedModules = usedModules ?? shipDefinition.modules.filter(module => module.defaultModule).map(module => module.id);
 
     const result: IModuleSelection = {
-        static: shipDefinition.staticModules === true,
+        configuable: false,
         groups: {},
     };
 
@@ -212,13 +212,15 @@ function createModuleSelection(
             result.groups[module.category] = {};
         }
 
-        if (result.static) {
+        if (module.category === 'STATIC') {
             result.groups[module.category][module.id] = {
                 module,
                 usage: 'used',
             };
             return;
         }
+
+        result.configuable = true;
 
         result.groups[module.category][module.id] = {
             module,

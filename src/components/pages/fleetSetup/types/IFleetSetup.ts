@@ -61,7 +61,7 @@ export interface IMinifiedCarriedShipSelection {
 }
 
 export interface IModuleSelection {
-    static: boolean;
+    configuable: boolean;
     groups: Record<string, Record<string, IModuleUsage>>; // group id, module id
 }
 

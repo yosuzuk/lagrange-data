@@ -41,7 +41,7 @@ export const ModuleData = (props: IProps) => {
         Object.keys(moduleSelection.groups[groupId])
             .map(moduleId => moduleSelection.groups[groupId][moduleId])
             .forEach((moduleUsage: IModuleUsage) => {
-                if (moduleUsage.module.category === 'UNKNOWN') {
+                if (moduleUsage.module.category === 'STATIC') {
                     return;
                 }
 
@@ -93,7 +93,7 @@ export const ModuleData = (props: IProps) => {
                         {usedModules}
                     </Typography>
                 </Box>
-                {!moduleSelection.static && (
+                {moduleSelection.configuable && (
                     <Box sx={{ display: 'flex', alignContent: 'end' }}>
                         <Button
                             variant="outlined"

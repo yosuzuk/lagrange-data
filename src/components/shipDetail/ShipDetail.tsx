@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -20,6 +21,7 @@ import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
 import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 import { isLanguageWithWhitespace, t } from '../../i18n';
+import { ISystemModule } from '../../types/ShipDefinition';
 
 interface IProps {
     shipId: string;
@@ -35,8 +37,8 @@ export const ShipDetail = (props: IProps) => {
 
     const shipDefinition = getShipDefinitionById(shipId);
 
-    const carryCorvettesModule = shipDefinition.modules?.some(module => !!module.carryCorvette) === true;
-    const carryFightersModule = shipDefinition.modules?.some(module => !!module.carryFighter) === true;
+    const carryCorvettesModule = useMemo(() => shipDefinition.modules?.some(module => !!module.carryCorvette) === true, [shipDefinition]);
+    const carryFightersModule = useMemo(() => shipDefinition.modules?.some(module => !!module.carryFighter) === true, [shipDefinition]);
     const carry = !!shipDefinition.carryCorvette || !!shipDefinition.carryFighter || carryCorvettesModule || carryFightersModule;
 
     const relatedSubModels = shipDefinition.baseModelId ? getShipDefinitionById(shipDefinition.baseModelId).subModelIds?.filter(id => id !== shipDefinition.id).map(getShipDefinitionById) ?? [] : [];
@@ -46,6 +48,10 @@ export const ShipDetail = (props: IProps) => {
     const obtainableThoughResearchAgreement = !!shipDefinition.researchManufacturer || !!shipDefinition.researchStrategyTypes || !!shipDefinition.researchTacticTypes;
 
     const shipStats = getShipStats(shipDefinition, null);
+
+    const staticModules = useMemo<ISystemModule[]>(() => shipDefinition.modules?.filter(m => m.category === 'STATIC') ?? [], [shipDefinition]);
+    const defaultVariableModules = useMemo<ISystemModule[]>(() => shipDefinition.modules?.filter(m => m.category !== 'STATIC' && m.defaultModule) ?? [], [shipDefinition]);
+    const additionalVariableModules = useMemo<ISystemModule[]>(() => shipDefinition.modules?.filter(m => m.category !== 'STATIC' && !m.defaultModule) ?? [], [shipDefinition]);
 
     return (
         <Box p={1}>
@@ -115,7 +121,7 @@ export const ShipDetail = (props: IProps) => {
                                     )}
                                     {carryFightersModule && shipDefinition.modules?.filter(module => !!module.carryFighter).map(module => (
                                         <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {module.category !== 'UNKNOWN'
+                                            {module.category !== 'STATIC'
                                                 ? t('shipDetail.carriedShipCountOnModule', {
                                                     shipSubType: translateShipType(ShipType.FIGHTER, module.carryFighterType),
                                                     count: module.carryFighter,
@@ -138,7 +144,7 @@ export const ShipDetail = (props: IProps) => {
                                     )}
                                     {carryCorvettesModule && shipDefinition.modules?.filter(module => !!module.carryCorvette).map(module => (
                                         <Typography key={module.id} variant="body2" gutterBottom={true}>
-                                            {module.category !== 'UNKNOWN'
+                                            {module.category !== 'STATIC'
                                                 ? t('shipDetail.carriedShipCountOnModule', {
                                                     shipSubType: translateShipType(ShipType.CORVETTE),
                                                     count: module.carryCorvette,
@@ -155,34 +161,30 @@ export const ShipDetail = (props: IProps) => {
                             ),
                         },
                     ] : []),
-                    ...((!shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
+                    ...(staticModules.length > 0 ? [
                         {
-                            key: 'modules',
-                            label: t('label.defaultSystemModule'),
+                            key: 'staticModules',
+                            label: t('label.staticSystemModules'),
                             value: (
-                                <ModuleDetail
-                                    shipId={shipDefinition.id}
-                                    modules={shipDefinition.modules.filter(module => module.defaultModule)}
-                                />
-                            )
-                        },
-                        {
-                            key: 'extraModules',
-                            label: t('label.additionalSystemModule'),
-                            value: (
-                                <ModuleDetail
-                                    shipId={shipDefinition.id}
-                                    modules={shipDefinition.modules.filter(module => !module.defaultModule)}
-                                />
+                                <ModuleDetail shipId={shipDefinition.id} modules={staticModules} />
                             )
                         },
                     ] : []),
-                    ...((shipDefinition.staticModules && shipDefinition.modules && shipDefinition.modules.length > 0) ? [
+                    ...(defaultVariableModules.length > 0 ? [
                         {
-                            key: 'staticModules',
-                            label: t('label.staticSystemModule'),
+                            key: 'modules',
+                            label: t('label.defaultSystemModules'),
                             value: (
-                                <ModuleDetail shipId={shipDefinition.id} modules={shipDefinition.modules} />
+                                <ModuleDetail shipId={shipDefinition.id} modules={defaultVariableModules} />
+                            )
+                        },
+                    ] : []),
+                    ...(additionalVariableModules.length > 0 ? [
+                        {
+                            key: 'extraModules',
+                            label: t('label.additionalSystemModules'),
+                            value: (
+                                <ModuleDetail shipId={shipDefinition.id} modules={additionalVariableModules} />
                             )
                         },
                     ] : []),
@@ -246,7 +248,7 @@ export const ShipDetail = (props: IProps) => {
                                     </Typography>
                                 ) : (
                                     <Typography variant="body2" gutterBottom={true}>
-                                        {`${translateShipSource(shipDefinition.source)}${isLanguageWithWhitespace() ? ' ': ''}${shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT) ? t('label.reBrackets') : ''}`}
+                                        {`${translateShipSource(shipDefinition.source)}${isLanguageWithWhitespace() ? ' ' : ''}${shipDefinition.tags?.includes(ShipTag.PHASE_TWO_BLUEPRINT) ? t('label.reBrackets') : ''}`}
                                     </Typography>
                                 )}
                                 {obtainableThoughResearchAgreement && (

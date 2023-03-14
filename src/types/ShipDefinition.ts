@@ -29,7 +29,6 @@ export interface IShipDefinition {
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
-    staticModules?: boolean;
     modules?: ISystemModule[];
     tags?: ShipTag[];
 }
@@ -40,18 +39,18 @@ export interface ISystemModule {
     translatedName?: Record<string, string>;
     description?: string;
     parts?: IModulePart[];
-    category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'UNKNOWN';
+    category: 'M' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'STATIC';
     categoryNumber: number;
     carryFighter?: number;
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
     defaultModule?: boolean;
-}
-
-interface IModulePart {
-    text?: string | string[];
     effects?: IEnhancement[];
     skillSlots?: number;
     skills?: IEnhancement[];
     flagshipEffects?: IEnhancement[];
+}
+
+interface IModulePart {
+    text?: string | string[];
 }

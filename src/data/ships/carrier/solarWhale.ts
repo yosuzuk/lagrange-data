@@ -1,4 +1,4 @@
-import { enhancements, strategy } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -6,60 +6,76 @@ import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
     id: 'M1',
     name: '護送艦ドック',
     description: '護送艦を6隻搭載可能',
+    category: 'M',
+    categoryNumber: 1,
+    carryCorvette: 6,
+    defaultModule: true,
+    skills: [
+        enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
+        enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
+        enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
+        enhancements.increaseHitRateOfCorvette().withPercentageValue(20).withCost(10),
+        enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
+        enhancements.increaseMissileEvasionOfCorvette().withPercentageValue(30).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
                 'CBC-3200型　護送艦ドック',
                 '６隻の護送艦を格納可能な機内格納庫。護送艦の整備、支援システムを備える。',
             ],
-            skillSlots: 5,
-            skills: [
-                enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
-                enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
-                enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
-                enhancements.increaseHitRateOfCorvette().withPercentageValue(20).withCost(10),
-                enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
-                enhancements.increaseMissileEvasionOfCorvette().withPercentageValue(30).withCost(10),
-                enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
-            ],
         },
     ],
-    category: 'M',
-    categoryNumber: 1,
-    carryCorvette: 6,
-    defaultModule: true,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: '大型艦載機システム',
     description: '小～大型戦闘機を8隻搭載可能',
+    category: 'M',
+    categoryNumber: 2,
+    carryFighter: 8,
+    carryFighterType: ShipSubType.LARGE_FIGHTER,
+    // TODO skills
+    skillSlots: 5,
     parts: [
         {
             text: [
                 'CFB-1200型　大型戦闘機格納庫',
                 '8隊の重戦闘機を格納可能な総合戦闘機格納庫。各編隊に独立した停泊、整備空間を提供し、戦闘機の指令・探査システムを備える。',
             ],
-            skillSlots: 5,
-            // TODO skills
         },
     ],
-    category: 'M',
-    categoryNumber: 2,
-    carryFighter: 8,
-    carryFighterType: ShipSubType.LARGE_FIGHTER,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: '総合武器庫',
     description: '対小型＆大型艦武装',
+    category: 'A',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseMissileDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+    ],
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -70,29 +86,18 @@ const a1: ISystemModule = {
                 '対小型艦：',
                 '・投射、実弾、対艦：4911、対空：510、攻城：294',
             ],
-            skillSlots: 6,
-            skills: [
-                strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseMissileDamage().withPercentageValue(10).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-            ],
         },
     ],
-    category: 'A',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: '投射武器プラットフォーム',
     description: '対小型艦＆対空武装',
+    category: 'A',
+    categoryNumber: 2,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -103,18 +108,28 @@ const a2: ISystemModule = {
                 '対空：',
                 '・投射、実弾、対艦：4911、対空：510、攻城：294',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'A',
-    categoryNumber: 2,
 };
 
 const a3: ISystemModule = {
     id: 'A3',
     name: '総合砲プラットフォーム',
     description: '対空＆対小型武装',
+    category: 'A',
+    categoryNumber: 3,
+    skills: [
+        strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
+    ],
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -125,91 +140,81 @@ const a3: ISystemModule = {
                 '対小型：',
                 '・投射、実弾、対艦：4911、対空：510、攻城：294、反撃対空',
             ],
-            skillSlots: 6,
-            skills: [
-                strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
-                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(8),
-            ],
         },
     ],
-    category: 'A',
-    categoryNumber: 3,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '艦船保守システム',
     description: '艦載機を入庫し耐久力を回復',
+    category: 'B',
+    categoryNumber: 1,
+    defaultModule: true,
+    skills: [
+        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
+        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
+        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
                 'BSY-5000型　大型ドック桟橋',
                 '大型の補修ロボットを搭載している。戦闘時に自身の艦載機を補修できる。',
             ],
-            skillSlots: 4,
-            skills: [
-                enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
-                enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
-                enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
-                enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
-            ],
         },
     ],
-    category: 'B',
-    categoryNumber: 1,
-    defaultModule: true,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦搭載プラットフォーム',
     description: '護送艦を3隻搭載可能',
+    category: 'B',
+    categoryNumber: 2,
+    carryCorvette: 3,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
                 'CBC-2000型　護送艦ドック',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'B',
-    categoryNumber: 2,
-    carryCorvette: 3,
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: '艦載機プラットフォーム',
     description: '小～大型艦載機を5機搭載可能',
+    category: 'C',
+    categoryNumber: 1,
+    carryFighter: 5,
+    carryFighterType: ShipSubType.LARGE_FIGHTER,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
                 'CFB-600型　艦載機格納庫',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'C',
-    categoryNumber: 1,
-    carryFighter: 5,
-    carryFighterType: ShipSubType.LARGE_FIGHTER,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
     name: '攻城UAVシステム',
     description: '攻城UAV×4',
+    category: 'C',
+    categoryNumber: 2,
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -217,18 +222,23 @@ const c2: ISystemModule = {
                 '標準攻城UAVを4機搭載する。攻城UAVの収容と整備を担い、信号誘導システムを装備する。',
                 '攻城：6048',
             ],
-            // TODO skillslots
-            // TODO skills
         },
     ],
-    category: 'C',
-    categoryNumber: 2,
 };
 
 const c3: ISystemModule = {
     id: 'C3',
     name: '対空ミサイルプラットフォーム',
     description: '対空武装、ミサイル迎撃',
+    category: 'C',
+    categoryNumber: 3,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+    ],
+    skillSlots: 3,
     parts: [
         {
             text: [
@@ -237,18 +247,48 @@ const c3: ISystemModule = {
                 '・投射、実弾、対艦：3272、対空：7854、対空支援、迎撃効果',
                 '同じ艦列の味方艦船に対して対空支援を行うことができる',
             ],
-            skillSlots: 3,
-            skills: [
-                enhancements.increaseDamage().withPercentageValue(10).withCost(5),
-                enhancements.increaseDamage().withPercentageValue(10).withCost(5),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
-                enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
-            ],
         },
     ],
-    category: 'C',
-    categoryNumber: 3,
 };
+
+const staticModules: ISystemModule[] = [
+    modules.commandSystem({
+        flagshipEffects: [
+            flagshipEffect.focusFire().withDefaultFlag(),
+            flagshipEffect.strategicStrike2(120).withDefaultFlag(),
+            flagshipEffect.strategicStrike3(360, '15.0+?').withCost(60),
+        ],
+        skills: [
+            // TODO cost
+            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }),
+            enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }),
+            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '5.0+?' }),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+        ],
+        skillSlots: 4,
+    }),
+    modules.armorSystem({
+        skills: [
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+        ],
+        skillSlots: 4,
+    }),
+    modules.propulsionSystem({
+        skills: [
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+        ],
+        skillSlots: 3,
+    }),
+    modules.energySystem(),
+];
 
 export const solarWhale: IShipDefinition[] = [
     {
@@ -264,7 +304,7 @@ export const solarWhale: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
-        modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3],
+        modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3, ...staticModules],
         relatedShipIds: [ShipId.SOLAR_WHALE_TE_S],
     },
     {
@@ -277,12 +317,22 @@ export const solarWhale: IShipDefinition[] = [
         operationLimit: 5,
         source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        staticModules: true,
         modules: [
             {
                 id: 'X1',
                 name: '総合艦載機システム',
                 description: '大型戦闘機3機と護送艦を3隻搭載可能',
+                category: 'STATIC',
+                categoryNumber: 1,
+                carryCorvette: 3,
+                carryFighter: 3,
+                carryFighterType: ShipSubType.LARGE_FIGHTER,
+                defaultModule: true,
+                skills: [
+                    enhancements.increaseDamageOfCorvette().withPercentageValue(10),
+                    enhancements.reduceRtbCorvette().withPercentageValue(20),
+                ],
+                skillSlots: 5,
                 parts: [
                     {
                         text: [
@@ -291,24 +341,16 @@ export const solarWhale: IShipDefinition[] = [
                             'CBC-2000型　護送艦ドック',
                             '3隻の護送艦を格納可能な機内格納庫。護送艦の整備・支援システムを備える。',
                         ],
-                        skillSlots: 5,
-                        skills: [
-                            enhancements.increaseDamageOfCorvette().withPercentageValue(10),
-                            enhancements.reduceRtbCorvette().withPercentageValue(20),
-                        ],
                     },
                 ],
-                category: 'UNKNOWN',
-                categoryNumber: 1,
-                carryCorvette: 3,
-                carryFighter: 3,
-                carryFighterType: ShipSubType.LARGE_FIGHTER,
-                defaultModule: true,
             },
             {
                 id: 'X2',
                 name: '「スティンガー」総合UAVシステム',
                 description: '戦闘UAV×3、防御UAV×2',
+                category: 'STATIC',
+                categoryNumber: 2,
+                skillSlots: 4,
                 parts: [
                     {
                         text: [
@@ -319,16 +361,16 @@ export const solarWhale: IShipDefinition[] = [
                             '特殊設定のUAVハンガーシステム。2機の特殊防衛UAVを積載でき、戦場の局所防衛を担える。',
                             '・エネルギー、対空：1500',
                         ],
-                        skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
-                categoryNumber: 2,
             },
             {
                 id: 'X3',
                 name: 'UAV支援システム',
                 description: '補修UAV×2、攻城UAV×4',
+                category: 'STATIC',
+                categoryNumber: 3,
+                skillSlots: 4,
                 parts: [
                     {
                         text: [
@@ -338,16 +380,16 @@ export const solarWhale: IShipDefinition[] = [
                             '標準攻城UAVを4機搭載する。攻城UAVの収容と整備を行い、信号誘導システムを装備する。',
                             '・攻城：6888',
                         ],
-                        skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
-                categoryNumber: 3,
             },
             {
                 id: 'X4',
                 name: '対艦砲撃システム',
                 description: '対小型武装',
+                category: 'STATIC',
+                categoryNumber: 4,
+                skillSlots: 4,
                 parts: [
                     {
                         text: [
@@ -355,12 +397,10 @@ export const solarWhale: IShipDefinition[] = [
                             '対小型艦：',
                             '・直射、実弾、対艦：6624、攻城：806',
                         ],
-                        skillSlots: 4,
                     },
                 ],
-                category: 'UNKNOWN',
-                categoryNumber: 4,
             },
+            ...staticModules,
         ],
         relatedShipIds: [ShipId.SOLAR_WHALE],
     },

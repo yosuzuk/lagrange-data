@@ -14,7 +14,9 @@ export const enhancements = {
     increaseDamageOfCorvette: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_DAMAGE_OF_CORVETTE),
     increaseDamageOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_DAMAGE_OF_UAV),
     increaseIonDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ION_DAMAGE),
+    increaseIonDamageOfShip: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ION_DAMAGE_OF_SHIP),
     increaseMissileDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_DAMAGE),
+    increaseMissileAndTorpedoDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_AND_TORPEDO_DAMAGE),
     increaseSiegeDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SIEGE_DAMAGE),
     increaseCriticalDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRITICAL_DAMAGE),
     increaseCriticalDamageAndChance: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRITICAL_DAMAGE_AND_CHANCE),
@@ -27,6 +29,10 @@ export const enhancements = {
     increaseHitRateVsLarge: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HIT_RATE_VS_LARGE),
     increaseHitRateVsAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HIT_RATE_VS_AIRCRAFT),
     increaseIonHitRate: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ION_HIT_RATE),
+    increaseMissileAndTorpedoHitRate: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_AND_TORPEDO_HIT_RATE),
+    increaseCruisingSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRUISING_SPEED),
+    increaseCruisingSpeedOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_CRUISING_SPEED_OF_AIRCRAFT),
+    increaseWarpSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_WARP_SPEED),
     increaseRepairSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_REPAIR_SPEED),
     increaseSupplySpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SUPPLY_SPEED),
     increaseStorage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_STORAGE),
@@ -35,6 +41,7 @@ export const enhancements = {
     increaseTorpedoHitRateMidRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_TORPEDO_HITRATE_MID_ROW),
     increaseMissileHitRateMidRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_HITRATE_MID_ROW),
     increaseInterceptionChance: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_INTERCEPTION_CHANCE),
+    increaseEvasion: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_EVASION),
     increaseMissileEvasionOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_EVASION_OF_AIRCRAFT),
     increaseMissileEvasionOfCorvette: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_EVASION_OF_CORVETTE),
     increaseMissileEvasionOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MISSILE_EVASION_OF_UAV),
@@ -44,20 +51,23 @@ export const enhancements = {
     reduceLockOnOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_AIRCRAFT),
     reduceLockOnOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_UAV),
     reduceCooldown: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_COOLDOWN),
+    reduceIonCooldownOfShip: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_ION_COOLDOWN_OF_SHIP),
     reduceRtbAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_RTB_AIRCRAFT),
     reduceRtbCorvette: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_RTB_CORVETTE),
     reduceRtbUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_RTB_UAV),
     reduceDuration: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DURATION),
     reducePrefabCost: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PREFAB_COST),
     reduceUeCoinCost: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_UE_COIN_COST),
-    reduceDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DAMAGE_RECEIVED),
+    reduceDamageReceivedBySystem: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_DAMAGE_RECEIVED_BY_SYSTEM),
     reduceCritialDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_CRITICAL_DAMAGE_RECEIVED),
     reduceProjectileDamageReceived: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PROJECTILE_DAMAGE_RECEIVED),
+    reduceHitByMissile: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_MISSILE),
     reduceHitByProjectileInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_PROJECTILE_IN_BACK_ROW),
     reduceHitByProjectileInMidRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_PROJECTILE_IN_MID_ROW),
     reduceHitByTorpedoInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_TORPEDO_IN_BACK_ROW),
     reduceHitByMissileInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_MISSILE_IN_BACK_ROW),
     reduceHitBySlowInBackRow: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_SLOW_IN_BACK_ROW),
+    reduceHitByMissleAndTorpedo: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_BY_MISSILE_AND_TORPEDO),
     reduceTorpedoInterception: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_TORPEDO_INTERCEPTION),
     reduceEvasion: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_EVASION),
     reduceHitRateOfMainWeapon: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_RATE_OF_MAIN_WEAPON),
@@ -73,6 +83,11 @@ export const flagshipEffect = {
     focusFire: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FOCUS_FIRE).withDescriptionKey('focusFire'),
     fleetDock1: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_1).withDescriptionKey('fleetDock1'),
     fleetDock2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_2).withDescriptionKey('fleetDock2'),
+    siegeTactic2: (duration: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.SIEGE_TACTIC_2).withDescriptionKey('siegeTactic2', { duration }),
+    desperateMeasures2: (percentage: string, targetCount: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.DESPERATE_MEASURES_2).withDescriptionKey('desperateMeasures2', { percentage, targetCount }),
+    strategicStrike1: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_1).withDescriptionKey('strategicStrike1', { angle }),
+    strategicStrike2: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_2).withDescriptionKey('strategicStrike1', { angle }),
+    strategicStrike3: (angle: number, distance: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_3).withDescriptionKey('strategicStrike3', { angle, distance }),
 } as const;
 
 export const strategy = {
@@ -81,6 +96,7 @@ export const strategy = {
     antiAircraftSupport: (hitRate: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_SUPPORT).withDescriptionKey('antiAircraftSupport', { hitRate, interval, duration }),
     rapidFire: (value: number, interval: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.RAPID_FIRE).withDescriptionKey('rapidFire', { value, interval, duration, cooldown }),
     concentrateFirePeriodically: (reduceCooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CONCENTRATE_FIRE_PERIODICALLY).withDescriptionKey('concentrateFirePeriodically', { reduceCooldown, interval, duration }),
+    evasiveManeuvers: (hp: number, evasion: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.EVASIVE_MANEUVERS).withDescriptionKey('evasiveManeuvers', { hp, evasion, duration }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {
@@ -93,6 +109,7 @@ class Enhancement implements IMutableEnhancement {
     private _hasPercentageValues: boolean = false;
     private _hasFixedValue: boolean = false;
     private _value: number | null = null;
+    private _value2: number | null = null;
     private _cost: number | null = null;
     private _textKey: string;
     private _textKeyOptions: Record<string, unknown> = {};
@@ -126,6 +143,10 @@ class Enhancement implements IMutableEnhancement {
 
     get value(): number | null {
         return this._value;
+    }
+
+    get value2(): number | null {
+        return this._value2;
     }
 
     get cost(): number | null {
@@ -182,8 +203,9 @@ class Enhancement implements IMutableEnhancement {
         return this;
     }
 
-    public withPercentageValue(value: number) {
+    public withPercentageValue(value: number, value2?: number) {
         this._value = value;
+        this._value2 = value2 ?? null;
         this._hasFixedValue = false;
         this._hasPercentageValues = true;
         return this;
@@ -221,17 +243,23 @@ class Enhancement implements IMutableEnhancement {
     }
 
     private formatValuesAndCost(): string | null {
-        const { value, cost } = this;
+        const { value, value2, cost } = this;
         if (value !== null) {
             const unit = this._hasPercentageValues ? '%' : '';
             if (cost !== null) {
                 if (this.hasFixedValue) {
                     return t('enhancement.valueAndCostColonValue', { value, unit });
                 }
+                if (value2 !== null) {
+                    return t('enhancement.maxValueAndCostColonValueValue2', { value, value2, unit, cost });
+                }
                 return t('enhancement.maxValueAndCostColonValue', { value, unit, cost });
             }
             if (this.hasFixedValue) {
                 return t('enhancement.valueColonValue', { value, unit });
+            }
+            if (value2 !== null) {
+                return t('enhancement.maxValueColonValueValue2', { value, value2, unit });
             }
             return t('enhancement.maxValueColonValue', { value, unit });
         }

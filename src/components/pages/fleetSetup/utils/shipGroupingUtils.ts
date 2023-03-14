@@ -203,10 +203,10 @@ function formatCarriedShipsForSharing(carriedShips: ICarriedShipSelection[]): st
 }
 
 function formatChangedSystemModules(shipSelection: IShipSelection): string | null {
-    if (shipSelection.moduleSelection === null || shipSelection.moduleSelection.static) {
+    if (shipSelection.moduleSelection === null) {
         return null;
     }
-    const changedModuleNames = ['M', 'A', 'B', 'C'].flatMap(groupId => {
+    const changedModuleNames = ['M', 'A', 'B', 'C', 'D', 'E', 'F'].flatMap(groupId => {
         const moduleIds = Object.keys(shipSelection.moduleSelection?.groups[groupId] ?? {});
         const usedModuleId = moduleIds.find(moduleId => shipSelection.moduleSelection?.groups[groupId][moduleId].usage === 'used');
         if (!usedModuleId) {
