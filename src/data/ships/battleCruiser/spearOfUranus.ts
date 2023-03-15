@@ -17,6 +17,7 @@ const m1: ISystemModule = {
     category: 'M',
     categoryNumber: 1,
     defaultModule: true,
+    mainSystem: true,
     skills: [
         strategy.rapidFire(80, 60, 15, 10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -47,6 +48,7 @@ const m2: ISystemModule = {
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 2,
+    mainSystem: true,
     // TODO skills
     skillSlots: 6,
     parts: [{

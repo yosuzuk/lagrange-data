@@ -17,6 +17,7 @@ const m1: ISystemModule = {
     category: 'M',
     categoryNumber: 1,
     defaultModule: true,
+    mainSystem: true,
     skillSlots: 6,
     parts: [
         {
@@ -38,6 +39,8 @@ const m2: ISystemModule = {
     description: '対大型＆対空武装',
     category: 'M',
     categoryNumber: 2,
+    mainSystem: true,
+    // TODO skills
     skillSlots: 6,
     parts: [
         {

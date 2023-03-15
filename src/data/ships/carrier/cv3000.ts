@@ -19,6 +19,7 @@ const m1: ISystemModule = {
     carryFighter: 5,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     defaultModule: true,
+    mainSystem: true,
     skills: [
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
@@ -49,6 +50,7 @@ const m2: ISystemModule = {
     categoryNumber: 2,
     carryFighter: 5,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
+    mainSystem: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
@@ -80,6 +82,7 @@ const m3: ISystemModule = {
     categoryNumber: 3,
     carryFighter: 8,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
+    mainSystem: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),

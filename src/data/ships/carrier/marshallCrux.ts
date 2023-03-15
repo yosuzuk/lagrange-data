@@ -18,6 +18,7 @@ const m1: ISystemModule = {
     category: 'M',
     categoryNumber: 1,
     defaultModule: true,
+    mainSystem: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10),
         enhancements.increaseDamage().withPercentageValue(10),
@@ -47,6 +48,7 @@ const m2: ISystemModule = {
     name: '「ホワイトフラッシュ」総合武器庫',
     category: 'M',
     categoryNumber: 2,
+    mainSystem: true,
     // skills: [],
     skillSlots: 5,
     parts: [

@@ -69,6 +69,8 @@ export enum EnhancementSubType {
     REDUCE_HIT_BY_MISSILE_IN_BACK_ROW = 'reduceHitByMissileInBackRow',
     REDUCE_HIT_BY_SLOW_IN_BACK_ROW = 'reduceHitBySlowInBackRow',
     REDUCE_HIT_BY_MISSILE_AND_TORPEDO = 'reduceHitByMissleAndTorpedo',
+    REDUCE_HIT_BY_DIRECT_FIRE = 'reduceHitByDirectFire',
+    REDUCE_HIT_BY_SLOW = 'reduceHitBySlow',
     REDUCE_TORPEDO_INTERCEPTION = 'reduceTorpedoInterception',
     REDUCE_EVASION = 'reduceEvasion',
     REDUCE_HIT_RATE_OF_MAIN_WEAPON = 'reduceHitRateOfMainWeapon',
@@ -90,5 +92,6 @@ export enum EnhancementSubType {
     RAPID_FIRE = 'rapidFire',
     CONCENTRATE_FIRE_PERIODICALLY = 'concentrateFirePeriodically',
     EVASIVE_MANEUVERS = 'evasiveManeuvers',
+    PRIORITIZE_TARGETS = 'prioritizeTargets',
     CUSTOM = 'custom',
 }

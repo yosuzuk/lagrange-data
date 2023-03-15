@@ -45,6 +45,7 @@ export interface ISystemModule {
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
     defaultModule?: boolean;
+    mainSystem?: boolean;
     effects?: IEnhancement[];
     skillSlots?: number;
     skills?: IEnhancement[];

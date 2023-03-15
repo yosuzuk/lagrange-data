@@ -403,6 +403,8 @@
         "reduceHitByMissileInBackRow": "後列のミサイルの被命中率ダウン",
         "reduceHitBySlowInBackRow": "後列の低速武器の被命中率ダウン",
         "reduceHitByMissleAndTorpedo": "ミサイルの被命中率ダウン/魚雷の被命中率ダウン",
+        "reduceHitByDirectFire": "直接射撃武器の被命中率ダウン",
+        "reduceHitBySlow": "低速武器の被命中率ダウン",
         "reduceTorpedoInterception": "魚雷の被迎撃率ダウン",
         "reduceEvasion": "回避率ダウン",
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
@@ -435,7 +437,8 @@
         "auxiliaryAttackRadar": "攻撃補助レーダー",
         "rangeExtension": "範囲拡大",
         "aircraftEmergencyRepair": "艦載機緊急補修",
-        "antiAircraftMeasures": "対空反応"
+        "antiAircraftMeasures": "対空反応",
+        "prioritizeTargets": "重点出撃"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -463,7 +466,8 @@
         "auxiliaryAttackRadar": "戦略攻撃中の艦載機のメイン武器命中率を{{hitrate}}アップ。",
         "rangeExtension": "戦略攻撃範囲半径+{{radius}}",
         "aircraftEmergencyRepair": "戦略攻撃を実行した艦載機を帰還するたびに{{damage}}%緊急補修する。",
-        "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。"
+        "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
+        "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"

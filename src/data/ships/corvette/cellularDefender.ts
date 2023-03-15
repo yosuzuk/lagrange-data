@@ -31,6 +31,7 @@ export const cellularDefender: IShipDefinition[] = [
                 translatedName: {
                     en: 'Torpedo Attack System',
                 },
+                mainSystem: true,
                 skills: [
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(7),
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(7),
@@ -43,6 +44,15 @@ export const cellularDefender: IShipDefinition[] = [
                     enhancements.reduceTorpedoInterception().withPercentageValue(30).withCost(7),
                 ],
                 skillSlots: 6,
+                parts: [
+                    {
+                        text: [
+                            'CT-4-4500型　「ビーハイヴ」',
+                            '対大型：',
+                            '・投射、実弾、対艦：5460、攻城：1469',
+                        ],
+                    },
+                ],
             }),
             modules.static({
                 id: "w2",
@@ -60,6 +70,24 @@ export const cellularDefender: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(14.8).withCost(7),
                 ],
                 skillSlots: 5,
+                parts: [
+                    {
+                        text: [
+                            'CG-11320型　速射砲',
+                            '対小型：',
+                            '・直射、実弾、対艦：780、対空：655、攻城：187',
+                            '反撃対空',
+                        ],
+                    },
+                    {
+                        text: [
+                            'MK1-CG-628B/D型　近接防御砲',
+                            '対空：',
+                            '・直射、実弾、対空：1149',
+                            '反撃対空',
+                        ],
+                    },
+                ],
             }),
             modules.static({
                 id: "sp1",

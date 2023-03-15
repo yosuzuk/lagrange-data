@@ -16,6 +16,7 @@ const m1: ISystemModule = {
     category: 'M',
     categoryNumber: 1,
     defaultModule: true,
+    mainSystem: true,
     skills: [
         // TODO find out
     ],
@@ -35,6 +36,7 @@ const m2: ISystemModule = {
     description: '対大型武装',
     category: 'M',
     categoryNumber: 2,
+    mainSystem: true,
     skills: [
         // TODO find out
     ],
@@ -55,6 +57,7 @@ const m3: ISystemModule = {
     description: '対大型武装',
     category: 'M',
     categoryNumber: 3,
+    mainSystem: true,
     skills: [
         // TODO find out
     ],

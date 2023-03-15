@@ -17,6 +17,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     carryCorvette: 6,
     defaultModule: true,
+    mainSystem: true,
     skills: [
         enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
         enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
@@ -45,6 +46,7 @@ const m2: ISystemModule = {
     categoryNumber: 2,
     carryFighter: 8,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
+    mainSystem: true,
     // TODO skills
     skillSlots: 5,
     parts: [

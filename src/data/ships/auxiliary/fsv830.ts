@@ -11,15 +11,15 @@ import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const m1: ISystemModule = {
-    id: 'M1',
+    id: 'X1',
     name: '総合支援プラットフォーム',
     translatedName: {
         en: 'Integrated Support Platform',
     },
     description: '対空武装＆修理ドック',
-    category: 'M',
+    category: 'STATIC',
     categoryNumber: 1,
-    defaultModule: true,
+    mainSystem: true,
     effects: [
         enhancements.customModuleStorage().withFixedAbsoluteValue(40),
         enhancements.repairQueue().withAbsoluteValue(1),

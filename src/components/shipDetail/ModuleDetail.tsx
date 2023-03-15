@@ -4,8 +4,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
+import Box from '@mui/material/Box';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useTheme } from '@mui/material/styles';
 import { ISystemModule } from '../../types/ShipDefinition';
 import { useColorMode } from '../../theme/context/ThemeProvider';
 import { t, getCurrentLanguage, Language } from '../../i18n';
@@ -21,7 +21,6 @@ interface IProps {
 export const ModuleDetail = (props: IProps) => {
     const { shipId, modules } = props;
     const { mode } = useColorMode();
-    const theme = useTheme();
 
     const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
     const partsAvailable = getCurrentLanguage() === Language.JAPANESE;
@@ -60,23 +59,35 @@ export const ModuleDetail = (props: IProps) => {
                                     </Typography>
                                 )}
                                 <Stack spacing={1} direction="row">
+                                    {module.mainSystem && (
+                                        <Box pt={1}>
+                                            <Chip
+                                                variant="outlined"
+                                                size="small"
+                                                color="warning"
+                                                label="M"
+                                            />
+                                        </Box>
+                                    )}
                                     {module.flagshipEffects && module.flagshipEffects.length > 0 && (
-                                        <Chip
-                                            variant="outlined"
-                                            size="small"
-                                            color="primary"
-                                            label={t('enhancementType.flagshipEffect')}
-                                            sx={{ marginTop: theme.spacing(1) }}
-                                        />
+                                        <Box pt={1}>
+                                            <Chip
+                                                variant="outlined"
+                                                size="small"
+                                                color="primary"
+                                                label={t('enhancementType.flagshipEffect')}
+                                            />
+                                        </Box>
                                     )}
                                     {module.skills?.some(skill => skill.type === EnhancementType.STRATEGY) && (
-                                        <Chip
-                                            variant="outlined"
-                                            size="small"
-                                            color="primary"
-                                            label={t('enhancementType.strategy')}
-                                            sx={{ marginTop: theme.spacing(1) }}
-                                        />
+                                        <Box pt={1}>
+                                            <Chip
+                                                variant="outlined"
+                                                size="small"
+                                                color="primary"
+                                                label={t('enhancementType.strategy')}
+                                            />
+                                        </Box>
                                     )}
                                 </Stack>
                             </div>

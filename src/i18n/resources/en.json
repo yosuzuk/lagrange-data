@@ -403,6 +403,8 @@
         "reduceHitByMissileInBackRow": "Reduce chance of back-row ships being hit by missiles",
         "reduceHitBySlowInBackRow": "Reduce chance of back-row ships being hit by slow weapons",
         "reduceHitByMissleAndTorpedo": "Reduce chance of being hit by missiles/torpedoes",
+        "reduceHitByDirectFire": "Reduce chance of being hit by direct-fire weapons",
+        "reduceHitBySlow": "Reduce chance of being hit by slow weapons",
         "reduceTorpedoInterception": "Reduce chance of torpedoe interception",
         "reduceEvasion": "Reduce evasion",
         "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
@@ -435,7 +437,8 @@
         "auxiliaryAttackRadar": "Auxiliary attack radar",
         "rangeExtension": "Range extension",
         "aircraftEmergencyRepair": "Aircraft emergency repair",
-        "antiAircraftMeasures": "Anti-aircraft measures"
+        "antiAircraftMeasures": "Anti-aircraft measures",
+        "prioritizeTargets": "Prioritize targets"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -463,7 +466,8 @@
         "auxiliaryAttackRadar": "Increases the main weapons hitrate of aircraft carrying out a strategic strike by {{hitrate}}",
         "rangeExtension": "Strategic strike radius +{{radius}}",
         "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
-        "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s."
+        "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s.",
+        "prioritizeTargets": "When the enemy fleet includes carriers, it prioritizes attacks on these targets."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
