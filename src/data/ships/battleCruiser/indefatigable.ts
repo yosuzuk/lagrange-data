@@ -35,21 +35,49 @@ const b2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
+    modules.static({
+        id: 'w1',
+        name: 'MK2-ロケット発射システム「チリングブリーズ」',
+        translatedName: {
+            en: 'MK2 "Chilling Breeze" Rocket Launching System',
+        },
+        description: '対小型武装',
+        defaultModule: true,
+        // TODO skills
+        skillSlots: 6,
+        dpmShip: 13996,
+        dpmAntiAir: 1701,
+        dpmSiege: 1349,
+    }),
+    modules.static({
+        id: 'w2',
+        name: '艦首電磁加速砲システム',
+        translatedName: {
+            en: 'Bow Railgun System',
+        },
+        description: '対大型武装',
+        // TODO skills
+        skillSlots: 5,
+        dpmShip: 6000,
+        dpmAntiAir: 0,
+        dpmSiege: 540,
+    }),
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
         ],
-        // TODO skill
+        // TODO skills
         skillSlots: 1,
     }),
     modules.armorSystem({
-        // TODO skill
+        // TODO skills
         skillSlots: 6,
     }),
     modules.propulsionSystem({
-        // TODO skill
+        // TODO skills
         skillSlots: 3,
     }),
+    modules.energySystem(),
 ];
 
 const defaultStats: IDefaultShipStats = {
