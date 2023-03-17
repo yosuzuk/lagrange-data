@@ -1336,18 +1336,6 @@
             "dpmSiege": "7694"
         },
         {
-            "ID": "SPEAR_OF_URANUS",
-            "JA": "スピアー オブ ウラヌス級 - カスタム型",
-            "EN": "Spear of Uranus",
-            "DE": "Speer des Uranus - Ultra-Typ",
-            "HP": "160450",
-            "speed": "250",
-            "warp": "1250",
-            "dpmShip": "27700",
-            "dpmAntiAir": "1720",
-            "dpmSiege": "14385"
-        },
-        {
             "ID": "SPORE_A404",
             "JA": "スポアA404 - 対空型",
             "EN": "Spore A404 - Anti-Aircraft Type",
@@ -1865,116 +1853,6 @@
             "dpmShip": "11333",
             "dpmAntiAir": "0",
             "dpmSiege": "2266"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "A1",
-            "JA": "フォートレス砲撃システム",
-            "EN": "Fortress Battery System",
-            "DE": "Fortress-Kanonensystem",
-            "dpmShip": "14700",
-            "dpmAntiAir": "1720",
-            "dpmSiege": "3075"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "A2*",
-            "JA": "フォートレス砲撃システム",
-            "EN": "Fortress Battery System",
-            "DE": "Fortress-Kanonensystem",
-            "dpmShip": "17200",
-            "dpmAntiAir": "1440",
-            "dpmSiege": "2880"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "A3*",
-            "JA": "フォートレス砲撃システム",
-            "EN": "Fortress Battery System",
-            "DE": "Fortress-Kanonensystem",
-            "dpmShip": "19200",
-            "dpmAntiAir": "1980",
-            "dpmSiege": "1800"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "B1*",
-            "JA": "トロッコ投射装置群",
-            "EN": "Minecart Projectile Launching Array",
-            "DE": "Minecart-Projektilabschuss-Array",
-            "dpmShip": "6480",
-            "dpmAntiAir": "1315",
-            "dpmSiege": "259"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "B2*",
-            "JA": "護送艦ドック",
-            "EN": "Corvette Dock",
-            "DE": "Korvette-Dock",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "B3*",
-            "JA": "総合損失管理システム",
-            "EN": "Integrated Damage Control System",
-            "DE": "Integriertes Schadenskontrollsystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "C1*",
-            "JA": "分散型軽量武器統制システム",
-            "EN": "Distributed Light Weapon Control System",
-            "DE": "Verteiltes Leichtwaffen-Kontrollsystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "1512",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "C2*",
-            "JA": "付加装甲システム",
-            "EN": "Additional Armor System",
-            "DE": "Zusätzliches Panzerungssystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "C3*",
-            "JA": "対ミサイル 要撃 システム",
-            "EN": "Anti-Missile System",
-            "DE": "Raketenabwehrsystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "2159",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "M1",
-            "JA": "艦首電磁加速砲システム",
-            "EN": "Bow Railgun System",
-            "DE": "Bug-Railgun-System",
-            "dpmShip": "13000",
-            "dpmAntiAir": "0",
-            "dpmSiege": "11310"
-        },
-        {
-            "ID": "SPEAR_OF_URANUS",
-            "Module": "M2*",
-            "JA": "イオン砲塔システム",
-            "EN": "Ion Turret System",
-            "DE": "Ionengeschützturm-System",
-            "dpmShip": "10285",
-            "dpmAntiAir": "0",
-            "dpmSiege": "1748"
         },
         {
             "ID": "THUNDERBOLT_STAR",

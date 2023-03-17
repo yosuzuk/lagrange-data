@@ -3,7 +3,7 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
@@ -13,6 +13,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '艦首攻城電磁加速砲システム',
+    translatedName: {
+        en: 'Bow Railgun System',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 1,
@@ -40,11 +43,17 @@ const m1: ISystemModule = {
             ],
         }
     ],
+    dpmShip: 13000,
+    dpmAntiAir: 0,
+    dpmSiege: 11310,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'イオン砲塔システム',
+    translatedName: {
+        en: 'Ion Turret System',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 2,
@@ -58,11 +67,17 @@ const m2: ISystemModule = {
             '・直射、エネルギー、対艦：10285、攻城：1748'
         ],
     }],
+    dpmShip: 10285,
+    dpmAntiAir: 0,
+    dpmSiege: 1748,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: 'フォートレス砲撃システム',
+    translatedName: {
+        en: 'Fortress Battery System',
+    },
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 1,
@@ -92,11 +107,17 @@ const a1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 14700,
+    dpmAntiAir: 1720,
+    dpmSiege: 3075,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: 'フォートレス砲撃システム',
+    translatedName: {
+        en: 'Fortress Battery System',
+    },
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
@@ -114,11 +135,17 @@ const a2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 17200,
+    dpmAntiAir: 1440,
+    dpmSiege: 2880,
 };
 
 const a3: ISystemModule = {
     id: 'A3',
     name: 'フォートレス砲撃システム',
+    translatedName: {
+        en: 'Fortress Battery System',
+    },
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 3,
@@ -136,11 +163,17 @@ const a3: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 19200,
+    dpmAntiAir: 1980,
+    dpmSiege: 1800,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '「トロッコ」投射装置群',
+    translatedName: {
+        en: 'Minecart Projectile Launching Array',
+    },
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 1,
@@ -155,11 +188,17 @@ const b1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 6480,
+    dpmAntiAir: 1315,
+    dpmSiege: 259,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦ドック',
+    translatedName: {
+        en: 'Corvette Dock',
+    },
     description: '護送艦を3隻搭載可能',
     category: 'B',
     categoryNumber: 2,
@@ -185,6 +224,9 @@ const b2: ISystemModule = {
 const b3: ISystemModule = {
     id: 'B3',
     name: '統合損失管理システム',
+    translatedName: {
+        en: 'Integrated Damage Control System',
+    },
     description: '補修ＵＡＶ×2',
     category: 'B',
     categoryNumber: 3,
@@ -203,6 +245,9 @@ const b3: ISystemModule = {
 const c1: ISystemModule = {
     id: 'C1',
     name: '分散型軽量武器統制システム',
+    translatedName: {
+        en: 'Distributed Light Weapon Control System',
+    },
     description: '対空武装',
     category: 'C',
     categoryNumber: 1,
@@ -217,11 +262,17 @@ const c1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 0,
+    dpmAntiAir: 1512,
+    dpmSiege: 0,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
     name: '追加装甲システム',
+    translatedName: {
+        en: 'Additional Armor System',
+    },
     description: '抵抗値アップ150',
     category: 'C',
     categoryNumber: 2,
@@ -240,6 +291,9 @@ const c2: ISystemModule = {
 const c3: ISystemModule = {
     id: 'C3',
     name: '対ミサイル要撃システム',
+    translatedName: {
+        en: 'Anti-Missile System',
+    },
     description: '対空武装、ミサイル迎撃',
     category: 'C',
     categoryNumber: 3,
@@ -254,6 +308,9 @@ const c3: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 0,
+    dpmAntiAir: 2159,
+    dpmSiege: 0,
 };
 
 const staticModules: ISystemModule[] = [
@@ -294,10 +351,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 192540,
+    armor: 240,
+    shield: 5,
+    speed: 250,
+    warpSpeed: 1250,
+    dpmShip: 27700,
+    dpmAntiAir: 1720,
+    dpmSiege: 14385,
+};
+
 export const spearOfUranus: IShipDefinition[] = [
     {
         id: ShipId.SPEAR_OF_URANUS,
         name: 'スピアーオブウラヌス級',
+        translatedName: {
+            en: 'Spear of Uranus',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 2,
@@ -309,5 +380,6 @@ export const spearOfUranus: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [m1, m2, a1, a2, a3, b1, b2, b3, c1, c2, c3, ...staticModules],
+        defaultStats,
     },
 ];
