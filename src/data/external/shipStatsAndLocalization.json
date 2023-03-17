@@ -679,29 +679,6 @@
             "dpmSiege": "1986"
         },
         {
-            "ID": "INDEFATIGABLE",
-            "JA": "ルドゥタブル級 - カスタム型",
-            "EN": "Indefatigable",
-            "DE": "Indefatigable - Ultra-Typ",
-            "HP": "121350",
-            "speed": "250",
-            "warp": "1250",
-            "dpmShip": "19996",
-            "dpmAntiAir": "1701",
-            "dpmSiege": "1889"
-        },
-        {
-            "ID": "INDEFATIGABLE_TE_S",
-            "JA": "ルドゥタブル級-TE - カスタム型（回収）",
-            "EN": "Indefatigable (TE) (salvaged)",
-            "HP": "121350",
-            "speed": "250",
-            "warp": "1250",
-            "dpmShip": "22596",
-            "dpmAntiAir": "1701",
-            "dpmSiege": "1889"
-        },
-        {
             "ID": "IO_A",
             "JA": "イオ級 - イオン砲型",
             "EN": "Io - Ion Cannon Type",
@@ -1998,26 +1975,6 @@
             "dpmShip": "10285",
             "dpmAntiAir": "0",
             "dpmSiege": "1748"
-        },
-        {
-            "ID": "INDEFATIGABLE",
-            "Module": "B1*",
-            "JA": "護送艦ドック",
-            "EN": "Corvette Dock",
-            "DE": "Korvette-Dock",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "INDEFATIGABLE",
-            "Module": "B2*",
-            "JA": "通常砲システム",
-            "EN": "Generic Battery System",
-            "DE": "Generisches Batteriesystem",
-            "dpmShip": "3000",
-            "dpmAntiAir": "360",
-            "dpmSiege": "90"
         },
         {
             "ID": "THUNDERBOLT_STAR",
