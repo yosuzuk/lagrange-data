@@ -13,6 +13,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: 'ガンマストーム攻撃イオン砲システム',
+    translatedName: {
+        en: 'Gamma Storm Ion Attack System',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 1,
@@ -37,11 +40,17 @@ const m1: ISystemModule = {
             '・直射、エネルギー、対艦：9000、攻城：1890',
         ],
     }],
+    dpmShip: 9000,
+    dpmAntiAir: 0,
+    dpmSiege: 1890,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'ガンマストーム投射攻撃システム',
+    translatedName: {
+        en: 'Gamma Storm Projectile Attack System',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 2,
@@ -55,11 +64,17 @@ const m2: ISystemModule = {
             '・投射、エネルギー、対艦：9600、攻城：1344'
         ],
     }],
+    dpmShip: 9600,
+    dpmAntiAir: 0,
+    dpmSiege: 1344,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: 'ガンマストーム投射武器システム',
+    translatedName: {
+        en: 'Gamma Storm Projectile Weapon System',
+    },
     description: '対大型艦武装',
     category: 'A',
     categoryNumber: 1,
@@ -81,11 +96,17 @@ const a1: ISystemModule = {
             '・投射、実弾、対艦：24000、攻城：1920',
         ],
     }],
+    dpmShip: 24000,
+    dpmAntiAir: 0,
+    dpmSiege: 1920,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: 'ガンマストーム投射武器システム',
+    translatedName: {
+        en: 'Gamma Storm Projectile Weapon System',
+    },
     description: '対艦武装',
     parts: [{
         text: [
@@ -98,11 +119,17 @@ const a2: ISystemModule = {
     categoryNumber: 2,
     // TODO skills
     // TODO skillslot
+    dpmShip: 27854,
+    dpmAntiAir: 1084,
+    dpmSiege: 2106,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '通常砲システム',
+    translatedName: {
+        en: 'Generic Battery System',
+    },
     description: '対小型＆対空武装',
     parts: [{
         text: [
@@ -124,11 +151,17 @@ const b1: ISystemModule = {
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
     ],
     skillSlots: 4,
+    dpmShip: 11571,
+    dpmAntiAir: 720,
+    dpmSiege: 1461,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: 'パルス対空システム',
+    translatedName: {
+        en: 'Pulse Anti-Aircraft System',
+    },
     description: '対空武装、ミサイル迎撃',
     parts: [{
         text: [
@@ -144,11 +177,17 @@ const b2: ISystemModule = {
     categoryNumber: 2,
     // TODO skills
     // TODO skillslot
+    dpmShip: 3150,
+    dpmAntiAir: 7532,
+    dpmSiege: 0,
 };
 
 const b3: ISystemModule = {
     id: 'B3',
     name: '対空ミサイルシステム',
+    translatedName: {
+        en: 'Anti-Aircraft Missile System',
+    },
     description: '対空武装、ミサイル迎撃',
     parts: [{
         text: [
@@ -164,11 +203,17 @@ const b3: ISystemModule = {
     categoryNumber: 3,
     // TODO skills
     // TODO skillslot
+    dpmShip: 3600,
+    dpmAntiAir: 10310,
+    dpmSiege: 0,
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: 'エネルギー圧縮装置',
+    translatedName: {
+        en: 'Additional Energy Module',
+    },
     description: 'イオン砲ダメージアップ15％',
     category: 'C',
     categoryNumber: 1,
@@ -187,6 +232,9 @@ const c1: ISystemModule = {
 const c2: ISystemModule = {
     id: 'C2',
     name: '戦闘機搭載ハンガー',
+    translatedName: {
+        en: 'Aircraft Module',
+    },
     description: '小～中型戦闘機を2機搭載可能',
     parts: [
         {
@@ -207,6 +255,9 @@ const c2: ISystemModule = {
 const c3: ISystemModule = {
     id: 'C3',
     name: '戦術UAVシステム',
+    translatedName: {
+        en: 'Recon UAV System',
+    },
     description: 'スポッターＵＡＶ×3',
     parts: [
         {
@@ -225,6 +276,9 @@ const c3: ISystemModule = {
 const d1: ISystemModule = {
     id: 'D1',
     name: '近接対空システム',
+    translatedName: {
+        en: 'Short-Range Anti-Aircraft System',
+    },
     description: '対空武装',
     parts: [{
         text: [
@@ -237,11 +291,17 @@ const d1: ISystemModule = {
     categoryNumber: 1,
     // TODO skills
     // TODO skillslot
+    dpmShip: 0,
+    dpmAntiAir: 5275,
+    dpmSiege: 0,
 };
 
 const d2: ISystemModule = {
     id: 'D2',
     name: 'ターゲット保護システム',
+    translatedName: {
+        en: 'Targeted Protection System',
+    },
     description: 'メインシステムへのクリティカルダメージ軽減60％',
     parts: [
         {
@@ -260,6 +320,9 @@ const d2: ISystemModule = {
 const d3: ISystemModule = {
     id: 'D3',
     name: '損失管理システム',
+    translatedName: {
+        en: 'Damage Control System',
+    },
     description: '自己補修ＵＡＶ',
     parts: [
         {
@@ -326,6 +389,9 @@ export const constantineTheGreat: IShipDefinition[] = [
     {
         id: ShipId.CONSTANTINE_THE_GREAT,
         name: 'コンスタンティヌス級',
+        translatedName: {
+            en: 'Constantine the Great',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 2,
