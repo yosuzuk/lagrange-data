@@ -30,7 +30,20 @@ export interface IShipDefinition {
     carryCorvette?: number;
     carryFighterType?: ShipSubType.SMALL_FIGHTER | ShipSubType.MEDIUM_FIGHTER | ShipSubType.LARGE_FIGHTER;
     modules?: ISystemModule[];
+    defaultStats?: IDefaultShipStats;
     tags?: ShipTag[];
+}
+
+export interface IDefaultShipStats {
+    // numbers including stats from default modules like M1
+    hp: number;
+    armor: number;
+    shield: number;
+    speed: number;
+    warpSpeed: number;
+    dpmShip: number;
+    dpmAntiAir: number;
+    dpmSiege: number;
 }
 
 export interface ISystemModule {
@@ -50,6 +63,9 @@ export interface ISystemModule {
     skillSlots?: number;
     skills?: IEnhancement[];
     flagshipEffects?: IEnhancement[];
+    dpmShip?: number;
+    dpmAntiAir?: number;
+    dpmSiege?: number;
 }
 
 interface IModulePart {

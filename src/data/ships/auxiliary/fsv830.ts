@@ -2,7 +2,7 @@ import { flagshipEffect, enhancements, strategy } from '../../../enhancements/en
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
@@ -49,6 +49,9 @@ const m1: ISystemModule = {
 const a1: ISystemModule = {
     id: 'A1',
     name: '作業補修システム',
+    translatedName: {
+        en: 'Engineering Maintenance System',
+    },
     description: 'スキルで補修速度アップ＆プレハブ消費ダウン',
     category: 'A',
     categoryNumber: 1,
@@ -72,6 +75,9 @@ const a1: ISystemModule = {
 const a2: ISystemModule = {
     id: 'A2',
     name: '戦略資源備蓄システム',
+    translatedName: {
+        en: 'Strategic Resource Storage System',
+    },
     description: '貯蔵力60000',
     category: 'A',
     categoryNumber: 2,
@@ -97,6 +103,9 @@ const a2: ISystemModule = {
 const b1: ISystemModule = {
     id: 'B1',
     name: 'フリゲート艦生産システム',
+    translatedName: {
+        en: 'Frigates Production System',
+    },
     description: '自己保有能力でフリゲートが生産可能',
     category: 'B',
     categoryNumber: 1,
@@ -122,6 +131,9 @@ const b1: ISystemModule = {
 const b2: ISystemModule = {
     id: 'B2',
     name: 'エスコート生産システム',
+    translatedName: {
+        en: 'Corvette Production System',
+    },
     description: '自己保有能力で護送艦が生産可能',
     category: 'B',
     categoryNumber: 2,
@@ -136,6 +148,9 @@ const b2: ISystemModule = {
 const b3: ISystemModule = {
     id: 'B3',
     name: '戦闘機生産システム',
+    translatedName: {
+        en: 'Fighter Production System',
+    },
     description: '自己保有能力で戦闘機が生産可能',
     category: 'B',
     categoryNumber: 3,
@@ -150,6 +165,9 @@ const b3: ISystemModule = {
 const c1: ISystemModule = {
     id: 'C1',
     name: 'キャリア航空機システム',
+    translatedName: {
+        en: 'Aircraft System',
+    },
     description: '小～中型戦闘機を２機搭載可能',
     category: 'C',
     categoryNumber: 1,
@@ -167,6 +185,9 @@ const c1: ISystemModule = {
 const c2: ISystemModule = {
     id: 'C2',
     name: 'UAV補修システム',
+    translatedName: {
+        en: 'Repair UAV System',
+    },
     description: '補修ＵＡＶ×２',
     category: 'C',
     categoryNumber: 2,
@@ -182,6 +203,9 @@ const c2: ISystemModule = {
 const d1: ISystemModule = {
     id: 'D1',
     name: '指令システムの警告',
+    translatedName: {
+        en: 'Warning and Control System',
+    },
     description: '味方艦船の被命中率ダウン（回避アップ）',
     category: 'D',
     categoryNumber: 1,
@@ -207,6 +231,9 @@ const d1: ISystemModule = {
 const d2: ISystemModule = {
     id: 'D2',
     name: '協同指令システム',
+    translatedName: {
+        en: 'Coordinate Command System',
+    },
     description: '味方艦船の命中率アップ',
     category: 'D',
     categoryNumber: 2,
@@ -223,6 +250,9 @@ const d2: ISystemModule = {
 const d3: ISystemModule = {
     id: 'D3',
     name: '指令システムの妨害',
+    translatedName: {
+        en: 'Camouflage System',
+    },
     description: '艦種を空母か駆逐艦に偽装',
     category: 'D',
     categoryNumber: 3,
@@ -241,6 +271,9 @@ const d3: ISystemModule = {
 const e1: ISystemModule = {
     id: 'E1',
     name: 'エリア防空システム',
+    translatedName: {
+        en: 'Area-Defense System',
+    },
     description: '対空武装（同列）',
     category: 'E',
     categoryNumber: 1,
@@ -251,11 +284,17 @@ const e1: ISystemModule = {
             '・直射、実弾、対空：3920'
         ],
     }],
+    dpmShip: 0,
+    dpmAntiAir: 3920,
+    dpmSiege: 0,
 };
 
 const e2: ISystemModule = {
     id: 'E2',
     name: 'エスコートドック',
+    translatedName: {
+        en: 'Corvette Dock',
+    },
     description: '護送艦を３機搭載可能',
     category: 'E',
     categoryNumber: 2,
@@ -295,10 +334,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 160450,
+    armor: 90,
+    shield: 15,
+    speed: 560,
+    warpSpeed: 2800,
+    dpmShip: 3000,
+    dpmAntiAir: 360,
+    dpmSiege: 90,
+};
+
 export const fsv830: IShipDefinition[] = [
     {
         id: ShipId.FSV830,
         name: 'FSV830',
+        translatedName: {
+            en: 'FSV830-TE',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 5,
@@ -311,6 +364,7 @@ export const fsv830: IShipDefinition[] = [
         researchTacticTypes: [],
         relatedShipIds: [ShipId.FSV830_TE_PREVIEW1, ShipId.FSV830_TE_PREVIEW2, ShipId.FSV830_TE_PREVIEW3, ShipId.FSV830_TE_PREVIEW4, ShipId.FSV830_TE_PREVIEW5],
         modules: [m1, a1, a2, b1, b2, b3, c1, c2, d1, d2, d3, e1, e2, ...staticModules],
+        defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -335,6 +389,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(d1),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.FSV830_TE_PREVIEW2,
@@ -356,6 +411,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(d1),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.FSV830_TE_PREVIEW3,
@@ -378,6 +434,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(e2),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.FSV830_TE_PREVIEW4,
@@ -400,6 +457,7 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(e1),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.FSV830_TE_PREVIEW5,
@@ -422,5 +480,6 @@ export const fsv830: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
+        defaultStats,
     },
 ];

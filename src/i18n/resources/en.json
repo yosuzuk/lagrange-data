@@ -41,6 +41,8 @@
         "antiAirDpm": "Anti air DPM",
         "siegeDpm": "Siege DPM",
         "hp": "HP",
+        "armor": "Armor",
+        "shield": "Energy resistance",
         "speed": "Speed",
         "cruiseSpeed": "Cruise speed",
         "warpSpeed": "Warp speed",

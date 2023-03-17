@@ -6,18 +6,15 @@ import { formatNumberWithSuffix } from './numberUtils';
 
 export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: IModuleSelection | null): IStats | null {
     const data = getShipStatsAndLocalizationByShipId(shipDefinition.id);
-    if (!data) {
-        return null;
-    }
 
     // stats including default modules
     const defaultStats: IStats = {
-        hp: Number(data.HP),
-        speed: Number(data.speed),
-        warpSpeed: Number(data.warp),
-        dpmShip: Number(data.dpmShip),
-        dpmAntiAir: Number(data.dpmAntiAir),
-        dpmSiege: Number(data.dpmSiege),
+        hp: shipDefinition.defaultStats?.hp ?? (data !== null ? Number(data.HP) : undefined),
+        speed: shipDefinition.defaultStats?.speed ?? (data !== null ? Number(data.speed) : undefined),
+        warpSpeed: shipDefinition.defaultStats?.warpSpeed ?? (data !== null ? Number(data.warp) : undefined),
+        dpmShip: shipDefinition.defaultStats?.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),
+        dpmAntiAir: shipDefinition.defaultStats?.dpmAntiAir ?? (data !== null ? Number(data.dpmAntiAir) : undefined),
+        dpmSiege: shipDefinition.defaultStats?.dpmSiege ?? (data !== null ? Number(data.dpmSiege) : undefined),
     };
 
     if (!moduleSelection) {
@@ -29,7 +26,7 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
 
     // stats excluding default modules
     const baseStats: IStats = defaultModules
-        .map(defaultModule => getSystemModuleStats(shipDefinition.id, defaultModule.id))
+        .map(defaultModule => getSystemModuleStats(shipDefinition.id, defaultModule))
         .reduce((acc: IStats, next: IStats | null) => {
             if (!next) {
                 return acc;
@@ -40,7 +37,7 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
 
     // stats including selected modules
     return usedModules.reduce((acc: IStats, module: ISystemModule) => {
-        const moduleStats = getSystemModuleStats(shipDefinition.id, module.id);
+        const moduleStats = getSystemModuleStats(shipDefinition.id, module);
         if (!moduleStats) {
             return acc;
         }
@@ -49,16 +46,13 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
     }, baseStats);
 }
 
-export function getSystemModuleStats(shipId: string, moduleId: string): IStats | null {
-    const data = getModuleStatsAndLocalizationByShipIdAndModuleId(shipId, moduleId);
-    if (!data) {
-        return null;
-    }
+export function getSystemModuleStats(shipId: string, module: ISystemModule): IStats | null {
+    const data = getModuleStatsAndLocalizationByShipIdAndModuleId(shipId, module.id);
 
     return {
-        dpmShip: Number(data.dpmShip),
-        dpmAntiAir: Number(data.dpmAntiAir),
-        dpmSiege: Number(data.dpmSiege),
+        dpmShip: module.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),
+        dpmAntiAir: module.dpmAntiAir ?? (data !== null ? Number(data.dpmAntiAir) : undefined),
+        dpmSiege: module.dpmSiege ?? (data !== null ? Number(data.dpmSiege) : undefined),
     };
 }
 
@@ -106,7 +100,7 @@ export function formatSpeed(stats: IStats): string {
 
 export function formatHp(stats: IStats): string {
     const { hp } = stats;
-    return Number.isFinite(hp) ? formatNumberWithSuffix(hp as number) : '-';
+    return Number.isFinite(hp) ? `${hp}` : '-';
 }
 
 function getUsedModules(moduleSelection: IModuleSelection): ISystemModule[] {

@@ -41,6 +41,8 @@
         "antiAirDpm": "対空DPM",
         "siegeDpm": "攻城DPM",
         "hp": "HP",
+        "armor": "抵抗値",
+        "shield": "シールド値",
         "speed": "速度",
         "cruiseSpeed": "巡航速度",
         "warpSpeed": "ワープ速度",

@@ -2,7 +2,7 @@ import { enhancements, flagshipEffect } from '../../../enhancements/enhancements
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
@@ -13,6 +13,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: 'フォートレス艦首重砲システム',
+    translatedName: {
+        en: 'Fortress Bow-Mounted Heavy Cannon System',
+    },
     description: '対大型＆対小型武装',
     category: 'M',
     categoryNumber: 1,
@@ -36,6 +39,9 @@ const m1: ISystemModule = {
 const m2: ISystemModule = {
     id: 'M2',
     name: 'フォートレス攻城電磁加速砲システム',
+    translatedName: {
+        en: 'Fortress Assault Railgun System',
+    },
     description: '対大型＆対空武装',
     category: 'M',
     categoryNumber: 2,
@@ -59,6 +65,9 @@ const m2: ISystemModule = {
 const b1: ISystemModule = {
     id: 'B1',
     name: 'フリゲート生産システム',
+    translatedName: {
+        en: 'Frigate Production System',
+    },
     description: '自己保有能力でフリゲートが生産可能',
     category: 'B',
     categoryNumber: 1,
@@ -81,6 +90,9 @@ const b1: ISystemModule = {
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦生産システム',
+    translatedName: {
+        en: 'Escort Corvette Production System',
+    },
     description: '自己保有能力で護送艦が生産可能',
     category: 'B',
     categoryNumber: 2,
@@ -101,6 +113,9 @@ const b2: ISystemModule = {
 const b3: ISystemModule = {
     id: 'B3',
     name: '駆逐艦生産システム',
+    translatedName: {
+        en: 'Destroyer Production System',
+    },
     description: '自己保有能力で駆逐艦が生産可能',
     category: 'B',
     categoryNumber: 3,
@@ -122,6 +137,9 @@ const b3: ISystemModule = {
 const c1: ISystemModule = {
     id: 'C1',
     name: '戦闘機搭載システム',
+    translatedName: {
+        // TODO en
+    },
     description: '大型戦闘機を2隊搭載可能',
     category: 'C',
     categoryNumber: 1,
@@ -139,6 +157,9 @@ const c1: ISystemModule = {
 const c2: ISystemModule = {
     id: 'C2',
     name: '護送艦ドック',
+    translatedName: {
+        en: 'Corvette Dock',
+    },
     description: '護送艦を3隻搭載可能',
     carryCorvette: 3,
     category: 'C',
@@ -170,6 +191,9 @@ const d2: ISystemModule = {
 
 const d3: ISystemModule = {
     id: 'D3',
+    translatedName: {
+        en: '"Colossus" Guard UAV System',
+    },
     name: '「巨像」防衛UAVシステム',
     description: '防御UAV４機搭載',
     category: 'D',
@@ -187,6 +211,9 @@ const d3: ISystemModule = {
 const e1: ISystemModule = {
     id: 'E1',
     name: '重量級付加装甲システム',
+    translatedName: {
+        en: 'Heave Additional Armor System',
+    },
     description: '抵抗値＆HPアップ',
     category: 'E',
     categoryNumber: 1,
@@ -210,6 +237,9 @@ const e1: ISystemModule = {
 const e2: ISystemModule = {
     id: 'E2',
     name: 'ナノレベル自己補修システム',
+    translatedName: {
+        en: 'Nano Automated Maintenance System',
+    },
     description: '自身の補修を行う',
     category: 'E',
     categoryNumber: 2,
@@ -246,10 +276,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 253080,
+    armor: 120,
+    shield: 15,
+    speed: 420,
+    warpSpeed: 2100,
+    dpmShip: 11496,
+    dpmAntiAir: 8388,
+    dpmSiege: 1756,
+};
+
 export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN,
         name: 'エディアカラ級',
+        translatedName: {
+            en: 'Ediacaran',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 2,
@@ -261,6 +305,7 @@ export const ediacaran: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         modules: [m1, m2, b1, b2, b3, c1, c2, d1, d2, d3, e1, ...staticModules],
+        defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -276,6 +321,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE,
         name: 'エディアカラ級-TE エイグラム版',
+        translatedName: {
+            en: 'Ediacaran (TE) Angulum',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -288,6 +336,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(b1),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE_2,
@@ -300,6 +349,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE_2,
         name: 'エディアカラ級-TE エイグラム版 (M2+B3+E2)',
+        translatedName: {
+            en: 'Ediacaran (TE) Angulum (M2+B3+E2)',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -313,6 +365,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(e2),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -325,6 +378,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE_PREVIEW1,
         name: 'エディアカラ級-TE トライアル版',
+        translatedName: {
+            en: 'Ediacaran (TE) Trial',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -337,6 +393,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(b1),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -349,6 +406,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE_PREVIEW2,
         name: 'エディアカラ級-TE トライアル版 (E2)',
+        translatedName: {
+            en: 'Ediacaran (TE) Trial (E1)',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -362,6 +422,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(e1),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -374,6 +435,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE_PREVIEW3,
         name: 'エディアカラ級-TE トライアル版 (B3+E2)',
+        translatedName: {
+            en: 'Ediacaran (TE) Trial (B3+E2)',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -387,6 +451,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(e2),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,
@@ -399,6 +464,9 @@ export const ediacaran: IShipDefinition[] = [
     {
         id: ShipId.EDIACARAN_TE_PREVIEW4,
         name: 'エディアカラ級-TE トライアル版 (M2+B2+C2+D3)',
+        translatedName: {
+            en: 'Ediacaran (TE) Trial (M2+B2+C2+D3)',
+        },
         type: ShipType.AUXILIARY,
         cost: 40,
         weight: 0,
@@ -413,6 +481,7 @@ export const ediacaran: IShipDefinition[] = [
             modules.toStatic(d3),
             ...staticModules,
         ],
+        defaultStats,
         relatedShipIds: [
             ShipId.EDIACARAN,
             ShipId.EDIACARAN_TE,

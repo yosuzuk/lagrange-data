@@ -99,6 +99,20 @@ export const ShipDetail = (props: IProps) => {
                             label: t('label.hp'),
                             value: formatHp(shipStats),
                         },
+                    ] : []),
+                    ...((flags.enableStats && shipDefinition.defaultStats) ? [
+                        {
+                            key: 'armor',
+                            label: t('label.armor'),
+                            value: shipDefinition.defaultStats.armor,
+                        },
+                        {
+                            key: 'shield',
+                            label: t('label.shield'),
+                            value: `${shipDefinition.defaultStats.shield}%`,
+                        },
+                    ] : []),
+                    ...((flags.enableStats && shipStats) ? [
                         {
                             key: 'speed',
                             label: t('label.speed'),

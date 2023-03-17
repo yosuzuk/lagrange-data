@@ -3,7 +3,7 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
@@ -311,6 +311,17 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 125840,
+    armor: 160,
+    shield: 25,
+    speed: 400,
+    warpSpeed: 2000,
+    dpmShip: 33000,
+    dpmAntiAir: 0,
+    dpmSiege: 3810,
+};
+
 export const constantineTheGreat: IShipDefinition[] = [
     {
         id: ShipId.CONSTANTINE_THE_GREAT,
@@ -326,5 +337,6 @@ export const constantineTheGreat: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, c3, d1, d2, d3, ...staticModules],
+        defaultStats,
     },
 ];
