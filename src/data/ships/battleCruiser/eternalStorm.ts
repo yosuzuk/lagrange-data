@@ -3,7 +3,7 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
@@ -13,6 +13,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '「ビゲン」イオン生成システム',
+    translatedName: {
+        en: 'Viggen Ion Generation System',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 1,
@@ -39,11 +42,17 @@ const m1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 16000,
+    dpmAntiAir: 0,
+    dpmSiege: 3360,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: 'プラズマ投射システム',
+    translatedName: {
+        en: 'Experimental Plasma Caster',
+    },
     description: '対大型艦武装',
     category: 'M',
     categoryNumber: 2,
@@ -68,11 +77,17 @@ const m2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 15692,
+    dpmAntiAir: 3640,
+    dpmSiege: 2824,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: '「エターナルポラリス」MARKⅡ投射システム',
+    translatedName: {
+        en: 'Eternal Polaris Mk II Projectile Launching System',
+    },
     description: '対小型＆大型艦武装',
     category: 'A',
     categoryNumber: 1,
@@ -98,11 +113,17 @@ const a1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 12900,
+    dpmAntiAir: 1663,
+    dpmSiege: 1539,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: '「エターナルポラリス」MARKⅡ投射システム',
+    translatedName: {
+        en: 'Eternal Polaris Mk II Projectile Launching System',
+    },
     description: '対大型艦＆攻城武装',
     category: 'A',
     categoryNumber: 2,
@@ -124,11 +145,17 @@ const a2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 12000,
+    dpmAntiAir: 0,
+    dpmSiege: 10440,
 };
 
 const a3: ISystemModule = {
     id: 'A3',
     name: '「エターナルポラリス」MARKⅡ投射システム',
+    translatedName: {
+        en: 'Eternal Polaris Mk II Projectile Launching System',
+    },
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 3,
@@ -153,11 +180,17 @@ const a3: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 11927,
+    dpmAntiAir: 3946,
+    dpmSiege: 1440,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '一般砲撃プラットフォーム',
+    translatedName: {
+        en: 'Generic Cannon Platform',
+    },
     description: '対艦＆対空武装',
     category: 'B',
     categoryNumber: 1,
@@ -181,11 +214,17 @@ const b1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 5250,
+    dpmAntiAir: 840,
+    dpmSiege: 903,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '一般近接防御システム',
+    translatedName: {
+        en: 'Generic Close-in Weapon System',
+    },
     description: '対空武装',
     category: 'B',
     categoryNumber: 2,
@@ -206,11 +245,17 @@ const b2: ISystemModule = {
             ],
         }
     ],
+    dpmShip: 1200,
+    dpmAntiAir: 2160,
+    dpmSiege: 60,
 };
 
 const c1: ISystemModule = {
     id: 'C1',
     name: 'NT UAV対空システム',
+    translatedName: {
+        en: 'NT UAV Anti-Aircraft System',
+    },
     description: '対空UAV×3',
     category: 'C',
     categoryNumber: 1,
@@ -230,11 +275,17 @@ const c1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 0,
+    dpmAntiAir: 6480,
+    dpmSiege: 0,
 };
 
 const c2: ISystemModule = {
     id: 'C2',
     name: '「サンダーストーム」UAVシールドシステム',
+    translatedName: {
+        en: 'Thunderstorm UAV Shield System',
+    },
     description: 'シールドUAV×1',
     category: 'C',
     categoryNumber: 2,
@@ -257,6 +308,9 @@ const c2: ISystemModule = {
 const c3: ISystemModule = {
     id: 'C3',
     name: 'エネルギー補償装甲システム',
+    translatedName: {
+        en: 'Energy Compensation Armor System',
+    },
     description: 'エネルギー＆投射ダメージを軽減',
     category: 'C',
     categoryNumber: 3,
@@ -282,6 +336,9 @@ const c3: ISystemModule = {
 const d1: ISystemModule = {
     id: 'D1',
     name: 'イオン砲塔システム',
+    translatedName: {
+        en: 'Ion Turret System',
+    },
     description: '対艦武装',
     category: 'D',
     categoryNumber: 1,
@@ -303,11 +360,17 @@ const d1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 6857,
+    dpmAntiAir: 0,
+    dpmSiege: 1028,
 };
 
 const d2: ISystemModule = {
     id: 'D2',
     name: 'パルス砲塔システム',
+    translatedName: {
+        en: 'Pulse Turret System',
+    },
     description: '対空武装、ミサイル/魚雷迎撃',
     category: 'D',
     categoryNumber: 2,
@@ -329,6 +392,9 @@ const d2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 0,
+    dpmAntiAir: 2160,
+    dpmSiege: 0,
 };
 
 const staticModules: ISystemModule[] = [
@@ -371,10 +437,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 130460,
+    armor: 180,
+    shield: 10,
+    speed: 450,
+    warpSpeed: 2250,
+    dpmShip: 28900,
+    dpmAntiAir: 1663,
+    dpmSiege: 4899,
+};
+
 export const eternalStorm: IShipDefinition[] = [
     {
         id: ShipId.ETERNAL_STORM,
         name: 'エターナルストーム級',
+        translatedName: {
+            en: 'Eternal Storm',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 32,
         weight: 2,
@@ -386,5 +466,6 @@ export const eternalStorm: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3, d1, d2, ...staticModules],
+        defaultStats,
     },
 ];
