@@ -3,7 +3,7 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
@@ -14,6 +14,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '「ホワイトフラッシュ」総合武器庫',
+    translatedName: {
+        en: 'White Flashing Integrated Armory',
+    },
     description: '対大型＆小型艦武装',
     category: 'M',
     categoryNumber: 1,
@@ -41,11 +44,17 @@ const m1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 16560,
+    dpmAntiAir: 1152,
+    dpmSiege: 1908,
 };
 
 const m2: ISystemModule = {
     id: 'M2',
     name: '「ホワイトフラッシュ」総合武器庫',
+    translatedName: {
+        en: 'White Flashing Integrated Armory',
+    },
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
@@ -63,11 +72,17 @@ const m2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 14657,
+    dpmAntiAir: 1080,
+    dpmSiege: 2275,
 };
 
 const a1: ISystemModule = {
     id: 'A1',
     name: '総合艦載機搭載プラットフォーム',
+    translatedName: {
+        en: 'Integrated Aircraft Hangar',
+    },
     description: '小～大型戦闘機を6機搭載可能',
     category: 'A',
     categoryNumber: 1,
@@ -96,6 +111,9 @@ const a1: ISystemModule = {
 const a2: ISystemModule = {
     id: 'A2',
     name: '護送艦ドック',
+    translatedName: {
+        en: 'Corvette Dock',
+    },
     category: 'A',
     categoryNumber: 2,
     carryCorvette: 6,
@@ -104,6 +122,9 @@ const a2: ISystemModule = {
 const b1: ISystemModule = {
     id: 'B1',
     name: '追加艦載機システム',
+    translatedName: {
+        en: 'Additional Aircraft System',
+    },
     category: 'B',
     categoryNumber: 1,
     carryFighter: 4,
@@ -127,6 +148,9 @@ const b1: ISystemModule = {
 const b2: ISystemModule = {
     id: 'B2',
     name: 'ミサイル防衛システム',
+    translatedName: {
+        en: 'Missile Defense System',
+    },
     category: 'B',
     categoryNumber: 2,
     skills: [
@@ -146,11 +170,17 @@ const b2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 5600,
+    dpmAntiAir: 2856,
+    dpmSiege: 392,
 };
 
 const b3: ISystemModule = {
     id: 'B3',
     name: '偵察UAVシステム',
+    translatedName: {
+        en: 'Recon UAV System',
+    },
     category: 'B',
     categoryNumber: 3,
     skillSlots: 2,
@@ -167,6 +197,9 @@ const b3: ISystemModule = {
 const c1: ISystemModule = {
     id: 'C1',
     name: '付加エネルギーシステム',
+    translatedName: {
+        en: 'Additional Energy System',
+    },
     description: '艦載機のダメージアップ',
     category: 'C',
     categoryNumber: 1,
@@ -192,6 +225,9 @@ const c1: ISystemModule = {
 const c2: ISystemModule = {
     id: 'C2',
     name: '射撃統制補助照準システム',
+    translatedName: {
+        en: 'Fire-Control Auxiliary Calibration System',
+    },
     description: '艦載機の命中率アップ',
     category: 'C',
     categoryNumber: 2,
@@ -250,10 +286,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 254740,
+    armor: 90,
+    shield: 15,
+    speed: 400,
+    warpSpeed: 2000,
+    dpmShip: 16560,
+    dpmAntiAir: 1152,
+    dpmSiege: 1908,
+};
+
 export const marshallCrux: IShipDefinition[] = [
     {
         id: ShipId.MARSHALL_CRUX,
         name: 'マーシャルクルックス級',
+        translatedName: {
+            en: 'Marshal Crux',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 2,
@@ -270,6 +320,7 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A2
         ],
         modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, ...staticModules],
+        defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
@@ -298,6 +349,7 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
@@ -323,6 +375,7 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
+        defaultStats,
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1_B1,
@@ -349,5 +402,6 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
+        defaultStats,
     },
 ];
