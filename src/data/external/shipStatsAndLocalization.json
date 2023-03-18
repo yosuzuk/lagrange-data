@@ -479,30 +479,6 @@
             "dpmSiege": "48"
         },
         {
-            "ID": "CV3000",
-            "JA": "CV3000級 - カスタム型",
-            "EN": "CV3000",
-            "DE": "CV3000 - Ultra-Typ",
-            "HP": "254740",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "7300",
-            "dpmAntiAir": "712",
-            "dpmSiege": "619"
-        },
-        {
-            "ID": "CV3000_TE",
-            "JA": "CV3000級-TE - カスタム型",
-            "EN": "CV3000 (TE)",
-            "DE": "CV3000 (TE) - Ultra-Typ",
-            "HP": "254740",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "7300",
-            "dpmAntiAir": "712",
-            "dpmSiege": "619"
-        },
-        {
             "ID": "ERIS_I_A",
             "JA": "エリスⅠ級 - 大砲型",
             "EN": "Eris I - Cannon Type",
@@ -1857,86 +1833,6 @@
             "dpmShip": "6624",
             "dpmAntiAir": "0",
             "dpmSiege": "806"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "A1",
-            "JA": "「ドラグーン」砲撃システム",
-            "EN": "Dragoon Battery System",
-            "DE": "Dragoon-Kanonensystem",
-            "dpmShip": "7300",
-            "dpmAntiAir": "712",
-            "dpmSiege": "619"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "A2*",
-            "JA": "対空ミサイルプラットフォーム",
-            "EN": "Anti-Aircraft Missile Platform",
-            "DE": "Flugabwehr-Raketenplattform",
-            "dpmShip": "3375",
-            "dpmAntiAir": "2362",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "B1*",
-            "JA": "ミサイル防御システム",
-            "EN": "Missile Defense System",
-            "DE": "Raketenabwehrsystem",
-            "dpmShip": "1400",
-            "dpmAntiAir": "700",
-            "dpmSiege": "70"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "B2*",
-            "JA": "護送艦搭載システム",
-            "EN": "Corvette Loading System",
-            "DE": "Korvette-Ladesystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "B3*",
-            "JA": "情報UAV支援プラットフォーム",
-            "EN": "Info UAV Support Platform",
-            "DE": "Drohnen-Info-Unterstützungsplattform",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "M1",
-            "JA": "総合艦載機搭載プラットフォーム",
-            "EN": "Integrated Aircraft Hangar",
-            "DE": "Integrierter Luftfahrzeughangar",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "M2*",
-            "JA": "総合戦闘機システム",
-            "EN": "Integrated Aircraft System",
-            "DE": "Integriertes Luftfahrzeugsystem",
-            "dpmShip": "3750",
-            "dpmAntiAir": "0",
-            "dpmSiege": "150"
-        },
-        {
-            "ID": "CV3000",
-            "Module": "M3*",
-            "JA": "大型艦載機システム",
-            "EN": "Large Aircraft System",
-            "DE": "Großes Luftfahrzeugsystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
         },
         {
             "ID": "MARSHALL_CRUX",

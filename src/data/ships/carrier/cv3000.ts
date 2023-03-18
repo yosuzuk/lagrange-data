@@ -2,7 +2,7 @@ import { enhancements, flagshipEffect, strategy } from '../../../enhancements/en
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
@@ -12,6 +12,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '総合艦載機搭載プラットフォーム',
+    translatedName: {
+        en: 'Integrated Aircraft Hangar',
+    },
     description: '小～大型艦載機を5機、護送艦を3機搭載可能',
     category: 'M',
     categoryNumber: 1,
@@ -45,6 +48,9 @@ const m1: ISystemModule = {
 const m2: ISystemModule = {
     id: 'M2',
     name: '総合戦闘機システム',
+    translatedName: {
+        en: 'Integrated Aircraft System',
+    },
     description: '小～大型艦載機を5機搭載可能、戦略UAVを5機搭載',
     category: 'M',
     categoryNumber: 2,
@@ -72,11 +78,17 @@ const m2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 3750,
+    dpmAntiAir: 0,
+    dpmSiege: 150,
 };
 
 const m3: ISystemModule = {
     id: 'M3',
     name: '大型戦闘機システム',
+    translatedName: {
+        en: 'Large Aircraft System',
+    },
     description: '大型戦闘機を8機搭載可能',
     category: 'M',
     categoryNumber: 3,
@@ -106,6 +118,9 @@ const m3: ISystemModule = {
 const a1: ISystemModule = {
     id: 'A1',
     name: '「ドラグーン」砲撃システム',
+    translatedName: {
+        en: 'Dragoon Battery System',
+    },
     description: '対小型＆対空武装',
     category: 'A',
     categoryNumber: 1,
@@ -131,11 +146,17 @@ const a1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 7300,
+    dpmAntiAir: 712,
+    dpmSiege: 619,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: '対空ミサイルプラットフォーム',
+    translatedName: {
+        en: 'Anti-Aircraft Missile Platform',
+    },
     description: '対空武装、ミサイル迎撃',
     category: 'A',
     categoryNumber: 2,
@@ -157,11 +178,17 @@ const a2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 3375,
+    dpmAntiAir: 2362,
+    dpmSiege: 0,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: 'ミサイル防御システム',
+    translatedName: {
+        en: 'Missile Defense System',
+    },
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 1,
@@ -185,11 +212,17 @@ const b1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 1400,
+    dpmAntiAir: 700,
+    dpmSiege: 70,
 };
 
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦搭載プラットフォーム',
+    translatedName: {
+        en: 'Corvette Loading System',
+    },
     description: '護送艦を3機搭載可能',
     category: 'B',
     categoryNumber: 2,
@@ -214,6 +247,9 @@ const b2: ISystemModule = {
 const b3: ISystemModule = {
     id: 'B3',
     name: '情報UAV支援プラットフォーム',
+    translatedName: {
+        en: 'Info UAV Support Platform',
+    },
     description: '情報UAVを3機搭載',
     category: 'B',
     categoryNumber: 3,
@@ -267,12 +303,26 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.energySystem(),
-]
+];
+
+const defaultStats: IDefaultShipStats = {
+    hp: 254740,
+    armor: 120,
+    shield: 15,
+    speed: 400,
+    warpSpeed: 2000,
+    dpmShip: 7300,
+    dpmAntiAir: 712,
+    dpmSiege: 619,
+};
 
 export const cv3000: IShipDefinition[] = [
     {
         id: ShipId.CV3000,
         name: 'CV3000級',
+        translatedName: {
+            en: 'CV3000',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 2,
@@ -285,10 +335,14 @@ export const cv3000: IShipDefinition[] = [
         researchTacticTypes: [],
         relatedShipIds: [ShipId.CV3000_TE],
         modules: [m1, m2, m3, a1, a2, b1, b2, b3, ...staticModules],
+        defaultStats,
     },
     {
         id: ShipId.CV3000_TE,
         name: 'CV3000級-TE',
+        translatedName: {
+            en: 'CV3000 (TE)',
+        },
         type: ShipType.CARRIER,
         cost: 40,
         weight: 0,
@@ -302,5 +356,6 @@ export const cv3000: IShipDefinition[] = [
             modules.toStatic(a1),
             ...staticModules,
         ],
+        defaultStats,
     },
 ];
