@@ -1,10 +1,10 @@
 import { shipDefinitions } from '../data/shipDefinitions';
 import { getCurrentLanguage } from '../i18n';
-import { IModuleStatsAndLocalization, IShipStatsAndLocalization } from '../types/externalData';
+import { IShipStatsAndLocalization } from '../types/externalData';
 import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
-import { getModuleStatsAndLocalizationByShipIdAndModuleId, getShipStatsAndLocalizationByShipId } from './externalDataUtils';
+import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
 
 const shipDefinitionsById: Record<string, IShipDefinition> = shipDefinitions.reduce((result, next) => ({
     ...result,
@@ -58,7 +58,5 @@ export function getModuleName(shipId: string, module: ISystemModule): string {
         return module.translatedName[language];
     }
 
-    // lookup externally provided data
-    const property = language.toUpperCase() as keyof IModuleStatsAndLocalization;
-    return getModuleStatsAndLocalizationByShipIdAndModuleId(shipId, module.id)?.[property] ?? module.name;
+    return module.name;
 }

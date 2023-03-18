@@ -918,18 +918,6 @@
             "dpmSiege": "120"
         },
         {
-            "ID": "MARSHALL_CRUX",
-            "JA": "マーシャル クルックス級 - カスタム型",
-            "EN": "Marshal Crux",
-            "DE": "Marshal Crux - Ultra-Typ",
-            "HP": "254740",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "16560",
-            "dpmAntiAir": "1152",
-            "dpmSiege": "1908"
-        },
-        {
             "ID": "MISTRAL",
             "JA": "ミストラル - 対空型",
             "EN": "Mistral - Anti-Aircraft Type",
@@ -1287,29 +1275,6 @@
             "dpmShip": "2250",
             "dpmAntiAir": "0",
             "dpmSiege": "630"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "JA": "ソーラーホエール - カスタム型",
-            "EN": "Solar Whale",
-            "DE": "Solar Whale - Ultra-Typ",
-            "HP": "292890",
-            "speed": "250",
-            "warp": "1250",
-            "dpmShip": "10031",
-            "dpmAntiAir": "510",
-            "dpmSiege": "959"
-        },
-        {
-            "ID": "SOLAR_WHALE_TE_S",
-            "JA": "ソーラーホエール-TE - カスタム型（回収）",
-            "EN": "Solar Whale (TE) (salvaged)",
-            "HP": "292890",
-            "speed": "250",
-            "warp": "1250",
-            "dpmShip": "10824",
-            "dpmAntiAir": "1500",
-            "dpmSiege": "7694"
         },
         {
             "ID": "SPORE_A404",
@@ -1697,142 +1662,5 @@
             "dpmSiege": "97"
         }
     ],
-    "Modules": [
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "A1",
-            "JA": "総合武器庫",
-            "EN": "Integrated Armory",
-            "DE": "Integrierte Panzerung",
-            "dpmShip": "10031",
-            "dpmAntiAir": "510",
-            "dpmSiege": "959"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "A2*",
-            "JA": "投射武器プラットフォーム",
-            "EN": "Projectile Weapon Platform",
-            "DE": "Projektil-Waffenplattform",
-            "dpmShip": "9341",
-            "dpmAntiAir": "510",
-            "dpmSiege": "648"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "A3*",
-            "JA": "総合砲プラットフォーム",
-            "EN": "Integrated Cannon Platform",
-            "DE": "Integrierte Kanonenplattform",
-            "dpmShip": "9711",
-            "dpmAntiAir": "855",
-            "dpmSiege": "630"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "B1",
-            "JA": "艦船保守システム",
-            "EN": "Ship Maintenance System",
-            "DE": "Schiff-Wartungssystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "B2*",
-            "JA": "護送艦搭載プラットフォーム",
-            "EN": "Corvette Loading Platform",
-            "DE": "Korvette-Ladeplattform",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "C1*",
-            "JA": "艦載機プラットフォーム",
-            "EN": "Aircraft Hangar",
-            "DE": "Luftfahrzeughangar",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "C2*",
-            "JA": "攻城UAVシステム",
-            "EN": "Siege UAV System",
-            "DE": "Drohnen-Belagerungssystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "6048"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "C3*",
-            "JA": "対空ミサイルプラットフォーム",
-            "EN": "Anti-Aircraft Missile Platform",
-            "DE": "Flugabwehr-Raketenplattform",
-            "dpmShip": "3272",
-            "dpmAntiAir": "7854",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "M1",
-            "JA": "護送艦ドック",
-            "EN": "Corvette Dock",
-            "DE": "Korvette-Dock",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE",
-            "Module": "M2*",
-            "JA": "大型艦載機システム",
-            "EN": "Large Aircraft System",
-            "DE": "Großes Luftfahrzeugsystem",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE_TE_UAV",
-            "Module": "X1",
-            "JA": "総合艦載機システム",
-            "EN": "TODO",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE_TE_UAV",
-            "Module": "X2",
-            "JA": "「スティンガー」総合UAVシステム",
-            "EN": "TODO",
-            "dpmShip": "4200",
-            "dpmAntiAir": "1500",
-            "dpmSiege": "0"
-        },
-        {
-            "ID": "SOLAR_WHALE_TE_UAV",
-            "Module": "X3",
-            "JA": "UAV支援システム",
-            "EN": "Large Aircraft System",
-            "dpmShip": "0",
-            "dpmAntiAir": "0",
-            "dpmSiege": "6888"
-        },
-        {
-            "ID": "SOLAR_WHALE_TE_UAV",
-            "Module": "X4",
-            "JA": "対艦砲撃システム",
-            "EN": "TODO",
-            "dpmShip": "6624",
-            "dpmAntiAir": "0",
-            "dpmSiege": "806"
-        }
-    ]
+    "Modules": []
 }

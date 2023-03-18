@@ -1,7 +1,7 @@
 import { IModuleSelection } from '../components/pages/fleetSetup/types/IFleetSetup';
 import { IStats } from '../types/IStats';
 import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
-import { getModuleStatsAndLocalizationByShipIdAndModuleId, getShipStatsAndLocalizationByShipId } from './externalDataUtils';
+import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
 import { formatNumberWithSuffix } from './numberUtils';
 
 export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: IModuleSelection | null): IStats | null {
@@ -26,7 +26,7 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
 
     // stats excluding default modules
     const baseStats: IStats = defaultModules
-        .map(defaultModule => getSystemModuleStats(shipDefinition.id, defaultModule))
+        .map(defaultModule => getSystemModuleStats(defaultModule))
         .reduce((acc: IStats, next: IStats | null) => {
             if (!next) {
                 return acc;
@@ -37,7 +37,7 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
 
     // stats including selected modules
     return usedModules.reduce((acc: IStats, module: ISystemModule) => {
-        const moduleStats = getSystemModuleStats(shipDefinition.id, module);
+        const moduleStats = getSystemModuleStats(module);
         if (!moduleStats) {
             return acc;
         }
@@ -46,13 +46,11 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
     }, baseStats);
 }
 
-export function getSystemModuleStats(shipId: string, module: ISystemModule): IStats | null {
-    const data = getModuleStatsAndLocalizationByShipIdAndModuleId(shipId, module.id);
-
+export function getSystemModuleStats(module: ISystemModule): IStats | null {
     return {
-        dpmShip: module.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),
-        dpmAntiAir: module.dpmAntiAir ?? (data !== null ? Number(data.dpmAntiAir) : undefined),
-        dpmSiege: module.dpmSiege ?? (data !== null ? Number(data.dpmSiege) : undefined),
+        dpmShip: module.dpmShip,
+        dpmAntiAir: module.dpmAntiAir,
+        dpmSiege: module.dpmSiege,
     };
 }
 

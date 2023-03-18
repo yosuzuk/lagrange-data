@@ -2,7 +2,7 @@ import { enhancements, flagshipEffect, strategy } from '../../../enhancements/en
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
@@ -12,6 +12,9 @@ import { ShipId } from '../../shipIds';
 const m1: ISystemModule = {
     id: 'M1',
     name: '護送艦ドック',
+    translatedName: {
+        en: 'Corvette Dock',
+    },
     description: '護送艦を6隻搭載可能',
     category: 'M',
     categoryNumber: 1,
@@ -41,6 +44,9 @@ const m1: ISystemModule = {
 const m2: ISystemModule = {
     id: 'M2',
     name: '大型艦載機システム',
+    translatedName: {
+        en: 'Large Aircraft System',
+    },
     description: '小～大型戦闘機を8隻搭載可能',
     category: 'M',
     categoryNumber: 2,
@@ -62,6 +68,9 @@ const m2: ISystemModule = {
 const a1: ISystemModule = {
     id: 'A1',
     name: '総合武器庫',
+    translatedName: {
+        en: 'Integrated Armory',
+    },
     description: '対小型＆大型艦武装',
     category: 'A',
     categoryNumber: 1,
@@ -90,11 +99,17 @@ const a1: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 10031,
+    dpmAntiAir: 510,
+    dpmSiege: 959,
 };
 
 const a2: ISystemModule = {
     id: 'A2',
     name: '投射武器プラットフォーム',
+    translatedName: {
+        en: 'Projectile Weapon Platform',
+    },
     description: '対小型艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
@@ -112,11 +127,17 @@ const a2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 9341,
+    dpmAntiAir: 510,
+    dpmSiege: 648,
 };
 
 const a3: ISystemModule = {
     id: 'A3',
     name: '総合砲プラットフォーム',
+    translatedName: {
+        en: 'Integrated Cannon Platform',
+    },
     description: '対空＆対小型武装',
     category: 'A',
     categoryNumber: 3,
@@ -144,11 +165,17 @@ const a3: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 9711,
+    dpmAntiAir: 855,
+    dpmSiege: 630,
 };
 
 const b1: ISystemModule = {
     id: 'B1',
     name: '艦船保守システム',
+    translatedName: {
+        en: 'Ship Maintenance System',
+    },
     description: '艦載機を入庫し耐久力を回復',
     category: 'B',
     categoryNumber: 1,
@@ -175,6 +202,9 @@ const b1: ISystemModule = {
 const b2: ISystemModule = {
     id: 'B2',
     name: '護送艦搭載プラットフォーム',
+    translatedName: {
+        en: 'Corvette Loading Platform',
+    },
     description: '護送艦を3隻搭載可能',
     category: 'B',
     categoryNumber: 2,
@@ -193,6 +223,9 @@ const b2: ISystemModule = {
 const c1: ISystemModule = {
     id: 'C1',
     name: '艦載機プラットフォーム',
+    translatedName: {
+        en: 'Aircraft Hangar',
+    },
     description: '小～大型艦載機を5機搭載可能',
     category: 'C',
     categoryNumber: 1,
@@ -212,6 +245,9 @@ const c1: ISystemModule = {
 const c2: ISystemModule = {
     id: 'C2',
     name: '攻城UAVシステム',
+    translatedName: {
+        en: 'Siege UAV System',
+    },
     description: '攻城UAV×4',
     category: 'C',
     categoryNumber: 2,
@@ -226,11 +262,17 @@ const c2: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 0,
+    dpmAntiAir: 0,
+    dpmSiege: 6048,
 };
 
 const c3: ISystemModule = {
     id: 'C3',
     name: '対空ミサイルプラットフォーム',
+    translatedName: {
+        en: 'Anti-Aircraft Missile Platform',
+    },
     description: '対空武装、ミサイル迎撃',
     category: 'C',
     categoryNumber: 3,
@@ -251,6 +293,9 @@ const c3: ISystemModule = {
             ],
         },
     ],
+    dpmShip: 3272,
+    dpmAntiAir: 7854,
+    dpmSiege: 0,
 };
 
 const staticModules: ISystemModule[] = [
@@ -292,10 +337,24 @@ const staticModules: ISystemModule[] = [
     modules.energySystem(),
 ];
 
+const defaultStats: IDefaultShipStats = {
+    hp: 292890,
+    armor: 120,
+    shield: 15,
+    speed: 250,
+    warpSpeed: 1250,
+    dpmShip: 10031,
+    dpmAntiAir: 510,
+    dpmSiege: 959,
+};
+
 export const solarWhale: IShipDefinition[] = [
     {
         id: ShipId.SOLAR_WHALE,
         name: 'ソーラーホエール',
+        translatedName: {
+            en: 'Solar Whale',
+        },
         type: ShipType.CARRIER,
         cost: 45,
         weight: 2,
@@ -307,11 +366,15 @@ export const solarWhale: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         modules: [m1, m2, a1, a2, a3, b1, b2, c1, c2, c3, ...staticModules],
+        defaultStats,
         relatedShipIds: [ShipId.SOLAR_WHALE_TE_S],
     },
     {
         id: ShipId.SOLAR_WHALE_TE_S,
         name: 'ソーラーホエール-TE (回収)',
+        translatedName: {
+            en: 'Solar Whale (TE) (salvaged)',
+        },
         type: ShipType.CARRIER,
         cost: 45,
         weight: 0,
@@ -365,6 +428,9 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                     },
                 ],
+                dpmShip: 4200,
+                dpmAntiAir: 1500,
+                dpmSiege: 0,
             },
             {
                 id: 'X3',
@@ -384,6 +450,9 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                     },
                 ],
+                dpmShip: 0,
+                dpmAntiAir: 0,
+                dpmSiege: 6888,
             },
             {
                 id: 'X4',
@@ -401,9 +470,22 @@ export const solarWhale: IShipDefinition[] = [
                         ],
                     },
                 ],
+                dpmShip: 6624,
+                dpmAntiAir: 0,
+                dpmSiege: 806,
             },
             ...staticModules,
         ],
+        defaultStats: {
+            hp: 292890,
+            armor: 120,
+            shield: 15,
+            speed: 250,
+            warpSpeed: 1250,
+            dpmShip: 10824,
+            dpmAntiAir: 1500,
+            dpmSiege: 7694,
+        },
         relatedShipIds: [ShipId.SOLAR_WHALE],
     },
 ];
