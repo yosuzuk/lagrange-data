@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { styled } from '@mui/material/styles';
 import { GridSide, IGridData } from './types/IGridData';
+import { useGridContainerWidth } from './hooks/useGridContainerWidth';
 
 const GRID_CONTROL_SIZE = 50;
 const ROOT_PADDING = 8;
@@ -47,22 +48,17 @@ export const SmallMapGrid = (props: IProps) => {
     const innerColumnOffset = 1;
     const innerRowOffset = 1;
 
-    const availableSpaceRatio = (window.innerHeight - (2 * GRID_CONTROL_SIZE) - (2 * ROOT_PADDING)) / (window.innerWidth - (2 * GRID_CONTROL_SIZE) - (2 * ROOT_PADDING));
-    const requiredSpaceRatio = innerRowCount / innerColumnCount;
-    const adaptToWidth = availableSpaceRatio > requiredSpaceRatio;
-
-    const containerWidth = adaptToWidth ? '100%' : (() => {
-        const innerGridHeight = window.innerHeight - (2 * GRID_CONTROL_SIZE) - (2 * ROOT_PADDING);
-        const maxCellHeight = innerGridHeight / innerRowCount;
-        const innerGridWidth = maxCellHeight * innerColumnCount;
-        return innerGridWidth + (2 * GRID_CONTROL_SIZE);
-    })();
+    const { gridContainerWidth } = useGridContainerWidth({
+        gridData,
+        gridControlSize: GRID_CONTROL_SIZE,
+        rootPadding: ROOT_PADDING,
+    });
 
     return (
         <Stack sx={{ padding: `${ROOT_PADDING}px` }} direction="row" justifyContent="center">
             <Box
                 sx={{
-                    width: containerWidth,
+                    width: gridContainerWidth,
                 }}
             >
                 <GridContainer
