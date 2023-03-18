@@ -23,6 +23,7 @@ const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSet
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
 const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const ImageEditPage = lazy(() => import('./components/pages/imageEdit/ImageEditPage'));
+const SmallMapEditPage = lazy(() => import('./components/pages/mapEdit/SmallMapEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 function App() {
@@ -149,6 +150,16 @@ function App() {
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <ImageEditPage />
+                                        </Suspense>
+                                    )}
+                                />
+                            )}
+                            {flags.smallMapEdit && (
+                                <Route
+                                    path="smallMapEdit"
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <SmallMapEditPage />
                                         </Suspense>
                                     )}
                                 />
