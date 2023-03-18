@@ -1407,46 +1407,6 @@
             "dpmSiege": "1552"
         },
         {
-            "ID": "THUNDERBOLT_STAR",
-            "EN": "Thunderbolt Star",
-            "HP": "130460",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "46604",
-            "dpmAntiAir": "11550",
-            "dpmSiege": "7151"
-        },
-        {
-            "ID": "THUNDERBOLT_STAR_TE_PREVIEW1",
-            "EN": "Thunderbolt Star (TE) Trial",
-            "HP": "130460",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "47432",
-            "dpmAntiAir": "11643",
-            "dpmSiege": "7151"
-        },
-        {
-            "ID": "THUNDERBOLT_STAR_TE_PREVIEW2",
-            "EN": "Thunderbolt Star (TE) Trial (M2+E1)",
-            "HP": "0",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "71160",
-            "dpmAntiAir": "22734",
-            "dpmSiege": "9327"
-        },
-        {
-            "ID": "THUNDERBOLT_STAR_TE_PREVIEW3",
-            "EN": "Thunderbolt Star (TE) Trial (M3+A2+E2)",
-            "HP": "0",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "91158",
-            "dpmAntiAir": "5089",
-            "dpmSiege": "8062"
-        },
-        {
             "ID": "TUNDRA_A",
             "JA": "ツンドラ級 - 支援型",
             "EN": "Tundra - Support Type",

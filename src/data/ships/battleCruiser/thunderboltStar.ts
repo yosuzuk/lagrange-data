@@ -405,6 +405,9 @@ export const thunderboldStar: IShipDefinition[] = [
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW1,
         name: 'スターオブサンダーボルト-TE トライアル版',
+        translatedName: {
+            en: 'Thunderbolt Star (TE) Trial',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 0,
@@ -419,7 +422,12 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
-        defaultStats,
+        defaultStats: {
+            ...defaultStats,
+            dpmShip: 47432,
+            dpmAntiAir: 11643,
+            dpmSiege: 7151,
+        },
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
@@ -429,6 +437,9 @@ export const thunderboldStar: IShipDefinition[] = [
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
         name: 'スターオブサンダーボルト-TE トライアル版 (M2+E1)',
+        translatedName: {
+            en: 'Thunderbolt Star (TE) Trial (M2+E1)',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 0,
@@ -449,11 +460,19 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(e1),
             ...staticModules,
         ],
-        defaultStats,
+        defaultStats: {
+            ...defaultStats,
+            dpmShip: 71160,
+            dpmAntiAir: 22734,
+            dpmSiege: 9327,
+        },
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         name: 'スターオブサンダーボルト-TE トライアル版 (M3+A2+E2)',
+        translatedName: {
+            en: 'Thunderbolt Star (TE) Trial (M3+A2+E2)',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 0,
@@ -467,13 +486,18 @@ export const thunderboldStar: IShipDefinition[] = [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
         ],
         modules: [
-            modules.toStatic(m3),
-            modules.toStatic(a2),
-            modules.toStatic(b1),
+            modules.toStatic(m3), // 28800
+            modules.toStatic(a2), // 12240
+            modules.toStatic(b1), // 4500
             modules.toStatic(c1),
-            modules.toStatic(e2),
+            modules.toStatic(e2), // 8437 -> 53977
             ...staticModules,
         ],
-        defaultStats,
+        defaultStats: {
+            ...defaultStats,
+            dpmShip: 91158,
+            dpmAntiAir: 5089,
+            dpmSiege: 8062,
+        },
     },
 ];

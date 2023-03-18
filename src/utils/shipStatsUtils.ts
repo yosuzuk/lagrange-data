@@ -21,8 +21,8 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
         return defaultStats;
     }
 
-    const defaultModules = getDefaultModules(shipDefinition);
-    const usedModules = getUsedModules(moduleSelection);
+    const defaultModules = getNonStaticDefaultModules(shipDefinition);
+    const usedModules = getUsedNonStaticModules(moduleSelection);
 
     // stats excluding default modules
     const baseStats: IStats = defaultModules
@@ -101,15 +101,15 @@ export function formatHp(stats: IStats): string {
     return Number.isFinite(hp) ? `${hp}` : '-';
 }
 
-function getUsedModules(moduleSelection: IModuleSelection): ISystemModule[] {
+function getUsedNonStaticModules(moduleSelection: IModuleSelection): ISystemModule[] {
     return Object.keys(moduleSelection.groups).flatMap((groupId: string) => {
         return Object.keys(moduleSelection.groups[groupId])
             .map(moduleId => moduleSelection.groups[groupId][moduleId])
-            .filter(moduleUsage => moduleUsage.usage === 'used' || moduleUsage.module.category === 'STATIC')
+            .filter(moduleUsage => moduleUsage.usage === 'used' && moduleUsage.module.category !== 'STATIC')
             .map(moduleUsage => moduleUsage.module);
     });
 }
 
-function getDefaultModules(shipDefinition: IShipDefinition): ISystemModule[] {
-    return shipDefinition.modules?.filter(module => module.defaultModule) ?? [];
+function getNonStaticDefaultModules(shipDefinition: IShipDefinition): ISystemModule[] {
+    return shipDefinition.modules?.filter(module => module.category !== 'STATIC' && module.defaultModule) ?? [];
 }
