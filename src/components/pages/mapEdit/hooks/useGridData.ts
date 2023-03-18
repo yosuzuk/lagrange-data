@@ -15,16 +15,16 @@ export const useGridData = (): IHookResult => {
         setGridData(gridData => {
             switch (side) {
                 case 'left': {
-                    return { ...gridData, minColumnIndex: gridData.minColumnIndex - 1 };
+                    return { ...gridData, minX: gridData.minX - 1 };
                 }
                 case 'right': {
-                    return { ...gridData, maxColumnIndex: gridData.maxColumnIndex + 1 };
+                    return { ...gridData, maxX: gridData.maxX + 1 };
                 }
                 case 'top': {
-                    return { ...gridData, minRowIndex: gridData.minRowIndex - 1 };
+                    return { ...gridData, minY: gridData.minY - 1 };
                 }
                 case 'bottom': {
-                    return { ...gridData, maxRowIndex: gridData.maxRowIndex + 1 };
+                    return { ...gridData, maxY: gridData.maxY + 1 };
                 }
             }
         });
@@ -36,29 +36,29 @@ export const useGridData = (): IHookResult => {
                 case 'left': {
                     return {
                         ...gridData,
-                        cellContent: gridData.cellContent.filter(content => content.columnIndex > gridData.minColumnIndex),
-                        minColumnIndex: gridData.minColumnIndex + 1,
+                        cellContent: gridData.cellContent.filter(content => content.x > gridData.minX),
+                        minX: gridData.minX + 1,
                     };
                 }
                 case 'right': {
                     return {
                         ...gridData,
-                        cellContent: gridData.cellContent.filter(content => content.columnIndex < gridData.maxColumnIndex),
-                        maxColumnIndex: gridData.maxColumnIndex - 1,
+                        cellContent: gridData.cellContent.filter(content => content.x < gridData.maxX),
+                        maxX: gridData.maxX - 1,
                     };
                 }
                 case 'top': {
                     return {
                         ...gridData,
-                        cellContent: gridData.cellContent.filter(content => content.rowIndex > gridData.minRowIndex),
-                        minRowIndex: gridData.minRowIndex + 1,
+                        cellContent: gridData.cellContent.filter(content => content.y > gridData.minY),
+                        minY: gridData.minY + 1,
                     };
                 }
                 case 'bottom': {
                     return {
                         ...gridData,
-                        cellContent: gridData.cellContent.filter(content => content.rowIndex < gridData.maxRowIndex),
-                        maxRowIndex: gridData.maxRowIndex - 1,
+                        cellContent: gridData.cellContent.filter(content => content.y < gridData.maxY),
+                        maxY: gridData.maxY - 1,
                     };
                 }
             }

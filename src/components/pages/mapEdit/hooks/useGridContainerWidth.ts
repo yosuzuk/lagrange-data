@@ -13,8 +13,8 @@ interface IHookResult {
 
 export const useGridContainerWidth = (args: IHookArguments): IHookResult => {
     const { gridData, gridControlSize, rootPadding } = args;
-    const innerColumnCount = gridData.maxColumnIndex - gridData.minColumnIndex + 1;
-    const innerRowCount = gridData.maxRowIndex - gridData.minRowIndex + 1;
+    const innerColumnCount = gridData.maxX - gridData.minX + 1;
+    const innerRowCount = gridData.maxY - gridData.minY + 1;
 
     const availableSpaceRatio = (window.innerHeight - (2 * gridControlSize) - (2 * rootPadding)) / (window.innerWidth - (2 * gridControlSize) - (2 * rootPadding));
     const requiredSpaceRatio = innerRowCount / innerColumnCount;

@@ -1,18 +1,18 @@
 export type GridSide = 'left' | 'right' | 'top' | 'bottom';
 
 export interface IGridData {
-    minColumnIndex: number;
-    maxColumnIndex: number;
-    minRowIndex: number;
-    maxRowIndex: number;
+    minX: number;
+    maxX: number;
+    minY: number;
+    maxY: number;
     cellContent: ICellContent[];
     multiCellContent: IMultiCellContent[];
 }
 
 export interface ICellContent {
     id: string;
-    columnIndex: number;
-    rowIndex: number;
+    x: number;
+    y: number;
 }
 
 export interface IMultiCellContent {

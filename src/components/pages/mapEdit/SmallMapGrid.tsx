@@ -1,14 +1,12 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import Box, { BoxProps } from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import { styled } from '@mui/material/styles';
 import { GridSide, IGridData } from './types/IGridData';
 import { useGridContainerWidth } from './hooks/useGridContainerWidth';
+import { GridSideControl } from './GridSideControl';
+import { useCellContent } from './hooks/useCellContent';
+import { GridCellContent } from './GridCellContent';
 
 const GRID_CONTROL_SIZE = 50;
 const ROOT_PADDING = 8;
@@ -20,12 +18,14 @@ const GridContainer = styled(Box)<BoxProps>(({ theme }) => ({
 }));
 
 const GridCell = styled(Box)<BoxProps>(({ theme }) => ({
+    display: 'flex',
     aspectRatio: '1 / 1',
     overflow: 'hidden',
     outline: '1px dashed #7bacbb',
     '&:hover': {
         backgroundColor: 'rgb(137 214 255 / 10%)',
     },
+    cursor: 'pointer',
 }));
 
 const GridControlCell = styled(Box)<BoxProps>(({ theme }) => ({
@@ -43,8 +43,8 @@ interface IProps {
 export const SmallMapGrid = (props: IProps) => {
     const { gridData, onAddCells, onRemoveCells } = props;
 
-    const innerColumnCount = gridData.maxColumnIndex - gridData.minColumnIndex + 1;
-    const innerRowCount = gridData.maxRowIndex - gridData.minRowIndex + 1;
+    const innerColumnCount = gridData.maxX - gridData.minX + 1;
+    const innerRowCount = gridData.maxY - gridData.minY + 1;
     const innerColumnOffset = 1;
     const innerRowOffset = 1;
 
@@ -52,6 +52,10 @@ export const SmallMapGrid = (props: IProps) => {
         gridData,
         gridControlSize: GRID_CONTROL_SIZE,
         rootPadding: ROOT_PADDING,
+    });
+
+    const { cellContentById } = useCellContent({
+        gridData,
     });
 
     return (
@@ -68,63 +72,31 @@ export const SmallMapGrid = (props: IProps) => {
                     }}
                 >
                     <GridControlCell sx={{ gridRow: `2 / ${2 + innerRowCount}` }}>
-                        {/* LEFT */}
-                        <Stack spacing={1}>
-                            <IconButton color="primary" component="label" onClick={() => onAddCells('left')}>
-                                <AddIcon />
-                            </IconButton>
-                            <IconButton color="primary" component="label" onClick={() => onRemoveCells('left')} disabled={innerColumnCount === 1}>
-                                <RemoveIcon />
-                            </IconButton>
-                        </Stack>
+                        <GridSideControl side="left" onAddCells={onAddCells} onRemoveCells={onRemoveCells} removeDisabled={innerColumnCount === 1} />
                     </GridControlCell>
                     <GridControlCell sx={{ gridRow: `2 / ${2 + innerRowCount}`, gridColumn: innerColumnCount + 2 }}>
-                        {/* RIGHT */}
-                        <Stack spacing={1}>
-                            <IconButton color="primary" component="label" onClick={() => onAddCells('right')}>
-                                <AddIcon />
-                            </IconButton>
-                            <IconButton color="primary" component="label" onClick={() => onRemoveCells('right')} disabled={innerColumnCount === 1}>
-                                <RemoveIcon />
-                            </IconButton>
-                        </Stack>
+                        <GridSideControl side="right" onAddCells={onAddCells} onRemoveCells={onRemoveCells} removeDisabled={innerColumnCount === 1} />
                     </GridControlCell>
                     <GridControlCell sx={{ gridColumn: `2 / ${2 + innerColumnCount}` }}>
-                        {/* TOP */}
-                        <Stack spacing={1} direction="row">
-                            <IconButton color="primary" component="label" onClick={() => onAddCells('top')}>
-                                <AddIcon />
-                            </IconButton>
-                            <IconButton color="primary" component="label" onClick={() => onRemoveCells('top')} disabled={innerRowCount === 1}>
-                                <RemoveIcon />
-                            </IconButton>
-                        </Stack>
+                        <GridSideControl side="top" onAddCells={onAddCells} onRemoveCells={onRemoveCells} removeDisabled={innerRowCount === 1} />
                     </GridControlCell>
                     <GridControlCell sx={{ gridRow: innerRowCount + 2, gridColumn: `2 / ${2 + innerColumnCount}` }}>
-                        {/* BOTTOM */}
-                        <Stack spacing={1} direction="row">
-                            <IconButton color="primary" component="label" onClick={() => onAddCells('bottom')}>
-                                <AddIcon />
-                            </IconButton>
-                            <IconButton color="primary" component="label" onClick={() => onRemoveCells('bottom')} disabled={innerRowCount === 1}>
-                                <RemoveIcon />
-                            </IconButton>
-                        </Stack>
+                        <GridSideControl side="bottom" onAddCells={onAddCells} onRemoveCells={onRemoveCells} removeDisabled={innerRowCount === 1} />
                     </GridControlCell>
                     {[...Array(innerRowCount)].flatMap((_r, ri) => {
-                        const y = ri + gridData.minRowIndex;
+                        const y = ri + gridData.minY;
                         return [...Array(innerColumnCount)].map((_c, ci) => {
-                            const x = ci + gridData.minColumnIndex;
+                            const x = ci + gridData.minX;
                             const id = `${x}/${y}`;
                             return (
                                 <GridCell
                                     key={id}
                                     sx={{
-                                        gridColumn: x - gridData.minColumnIndex + innerColumnOffset + 1,
-                                        gridRow: y - gridData.minRowIndex + innerRowOffset + 1,
+                                        gridColumn: x - gridData.minX + innerColumnOffset + 1,
+                                        gridRow: y - gridData.minY + innerRowOffset + 1,
                                     }}
                                 >
-                                    {`(${x}/${y})`}
+                                    <GridCellContent id={id} x={x} y={y} content={cellContentById[id] ?? []} />
                                 </GridCell>
                             );
                         })
