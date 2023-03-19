@@ -25,6 +25,9 @@ export const cellularDefender: IShipDefinition[] = [
     {
         id: ShipId.CELLULAR_DEFENDER,
         name: 'セルラーディフェンダー',
+        translatedName: {
+            en: 'Cellular Defender - Multi-Role Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,

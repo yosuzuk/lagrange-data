@@ -101,6 +101,9 @@ export const cvMo11: IShipDefinition[] = [
     {
         id: ShipId.CV_M011_A,
         name: 'CV-M011型　Ａミサイル型',
+        translatedName: {
+            en: 'CV-M011 - Missile Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,
@@ -136,6 +139,9 @@ export const cvMo11: IShipDefinition[] = [
     {
         id: ShipId.CV_M011_B,
         name: 'CV-M011型　Ｂ大砲型',
+        translatedName: {
+            en: 'CV-M011 - Cannon Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,

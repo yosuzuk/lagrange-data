@@ -15,6 +15,9 @@ export const cvT800: IShipDefinition[] = [
     {
         id: ShipId.CV_T800,
         name: 'CV-T800型',
+        translatedName: {
+            en: 'CV-T800 - Anti-Aircraft Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,

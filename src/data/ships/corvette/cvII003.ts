@@ -14,6 +14,9 @@ export const cvII003: IShipDefinition[] = [
     {
         id: ShipId.CV_II003,
         name: 'CV-II003型',
+        translatedName: {
+            en: 'CV-II003 - Multi-Role Typ',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,

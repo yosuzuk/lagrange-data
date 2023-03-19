@@ -14,6 +14,9 @@ export const silentAssassin: IShipDefinition[] = [
     {
         id: ShipId.SILENT_ASSASSIN,
         name: 'サイレントアサシン',
+        translatedName: {
+            en: 'Silent Assassin - High-Speed Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,

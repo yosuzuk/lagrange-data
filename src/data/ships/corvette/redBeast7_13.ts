@@ -14,6 +14,9 @@ export const redBeast7_13: IShipDefinition[] = [
     {
         id: ShipId.RED_BEAST_7_13,
         name: 'RB7-13型',
+        translatedName: {
+            en: 'RedBeast 7-13 - Offensive Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,

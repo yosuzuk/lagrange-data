@@ -10,6 +10,9 @@ export const wildFire: IShipDefinition[] = [
     {
         id: ShipId.WILD_FIRE_TE,
         name: 'ワイルドファイヤー-TE',
+        translatedName: {
+            en: 'Wildfire (TE) - Anti-Ship Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 0,

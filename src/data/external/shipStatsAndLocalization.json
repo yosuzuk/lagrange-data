@@ -288,18 +288,6 @@
             "dpmSiege": "724"
         },
         {
-            "ID": "CELLULAR_DEFENDER",
-            "JA": "セルラーディフェンダー - 多機能型",
-            "EN": "Cellular Defender - Multi-Role Type",
-            "DE": "Cellular Defender - Mehrzweck-Typ",
-            "HP": "6100",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "4980",
-            "dpmAntiAir": "1803",
-            "dpmSiege": "1656"
-        },
-        {
             "ID": "CERES_A",
             "JA": "セレス級 - 艦載型",
             "EN": "Ceres - Aircraft Type",
@@ -429,54 +417,6 @@
             "dpmShip": "3200",
             "dpmAntiAir": "1920",
             "dpmSiege": "256"
-        },
-        {
-            "ID": "CV_II003",
-            "JA": "CV-II003型 - 多機能型",
-            "EN": "CV-II003 - Multi-Role Type",
-            "DE": "CV-II003 - Mehrzweck-Typ",
-            "HP": "4500",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "2520",
-            "dpmAntiAir": "237",
-            "dpmSiege": "418"
-        },
-        {
-            "ID": "CV_M011_A",
-            "JA": "CV-M011型 - ミサイル型",
-            "EN": "CV-M011 - Missile Type",
-            "DE": "CV-M011 - Raketen-Typ",
-            "HP": "6900",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3200",
-            "dpmAntiAir": "1280",
-            "dpmSiege": "240"
-        },
-        {
-            "ID": "CV_M011_B",
-            "JA": "CV-M011型 - 大砲型",
-            "EN": "CV-M011 - Cannon Type",
-            "DE": "CV-M011 - Kanonen-Typ",
-            "HP": "6950",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3050",
-            "dpmAntiAir": "1280",
-            "dpmSiege": "247"
-        },
-        {
-            "ID": "CV_T800",
-            "JA": "CV-T800型 - 対空型",
-            "EN": "CV-T800 - Anti-Aircraft Type",
-            "DE": "CV-T800 - Flugabwehr-Typ",
-            "HP": "6900",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "2400",
-            "dpmAntiAir": "3192",
-            "dpmSiege": "48"
         },
         {
             "ID": "ERIS_I_A",
@@ -930,30 +870,6 @@
             "dpmSiege": "0"
         },
         {
-            "ID": "NEBULA_CHASER_A",
-            "JA": "ネビュラチェイサー - 弾道型",
-            "EN": "Nebula Chaser - Ballistic Type",
-            "DE": "Nebula Chaser - Ballistischer Typ",
-            "HP": "5650",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3120",
-            "dpmAntiAir": "667",
-            "dpmSiege": "588"
-        },
-        {
-            "ID": "NEBULA_CHASER_B",
-            "JA": "ネビュラチェイサー - パルス型",
-            "EN": "Nebula Chaser - Pulse Cannon Type",
-            "DE": "Nebula Chaser - Pulskanonen-Typ",
-            "HP": "4950",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3200",
-            "dpmAntiAir": "3200",
-            "dpmSiege": "64"
-        },
-        {
             "ID": "NOMA_330_A",
             "JA": "ノマ330 - 量産型",
             "EN": "NOMA 330 - Standard Type",
@@ -1098,18 +1014,6 @@
             "dpmSiege": "381"
         },
         {
-            "ID": "RED_BEAST_7_13",
-            "JA": "RB7-13型 - 攻撃型",
-            "EN": "RedBeast 7-13 - Offensive Type",
-            "DE": "RedBeast 7-13 - Offensiver Typ",
-            "HP": "4750",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "2640",
-            "dpmAntiAir": "580",
-            "dpmSiege": "184"
-        },
-        {
             "ID": "RAGER_A",
             "JA": "レイジャー級 - 一般型",
             "EN": "Rager - Generic Type",
@@ -1217,30 +1121,6 @@
             "dpmSiege": "656"
         },
         {
-            "ID": "S_LEVI9",
-            "JA": "S-レヴィ9 - 対艦型",
-            "EN": "S-Levy 9 - Anti-Ship Type",
-            "DE": "S-Levy 9 - Antischiff-Typ",
-            "HP": "5400",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3792",
-            "dpmAntiAir": "0",
-            "dpmSiege": "1820"
-        },
-        {
-            "ID": "S_LEVI9_TE",
-            "JA": "S-レヴィ9-TE - 対艦型",
-            "EN": "S-Levy 9 (TE) - Anti-Ship Type",
-            "DE": "S-Levy 9 (TE) - Antischiff-Typ",
-            "HP": "5400",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3792",
-            "dpmAntiAir": "0",
-            "dpmSiege": "1820"
-        },
-        {
             "ID": "SANDRAKE",
             "JA": "サンドレイク - 両用型",
             "EN": "Sandrake - Dual-Purpose Type",
@@ -1263,18 +1143,6 @@
             "dpmShip": "1170",
             "dpmAntiAir": "1170",
             "dpmSiege": "0"
-        },
-        {
-            "ID": "SILENT_ASSASSIN",
-            "JA": "サイレントアサシン - 高速型",
-            "EN": "Silent Assassin - High-Speed Type",
-            "DE": "Silent Assassin - Hochgeschwindigkeitstyp",
-            "HP": "4900",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "2250",
-            "dpmAntiAir": "0",
-            "dpmSiege": "630"
         },
         {
             "ID": "SPORE_A404",
@@ -1464,30 +1332,6 @@
             "dpmShip": "4588",
             "dpmAntiAir": "0",
             "dpmSiege": "1696"
-        },
-        {
-            "ID": "VOID_ELFIN",
-            "JA": "ボイドエルフィン - 攻撃型",
-            "EN": "Void Elfin - Offensive Type",
-            "DE": "Void Elfin - Offensiver Typ",
-            "HP": "4750",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "3980",
-            "dpmAntiAir": "655",
-            "dpmSiege": "315"
-        },
-        {
-            "ID": "WILD_FIRE_TE",
-            "JA": "ワイルドファイア-TE - 対艦型",
-            "EN": "Wildfire (TE) - Anti-Ship Type",
-            "DE": "Wildfire (TE) - Antischiff-Typ",
-            "HP": "4500",
-            "speed": "2500",
-            "warp": "12500",
-            "dpmShip": "1858",
-            "dpmAntiAir": "0",
-            "dpmSiege": "483"
         },
         {
             "ID": "WINGED_HUSSAR_A",

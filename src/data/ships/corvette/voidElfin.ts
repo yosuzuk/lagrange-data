@@ -14,6 +14,9 @@ export const voidElfin: IShipDefinition[] = [
     {
         id: ShipId.VOID_ELFIN,
         name: 'ボイドエルフィン',
+        translatedName: {
+            en: 'Void Elfin - Offensive Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,

@@ -73,6 +73,9 @@ export const sLevi: IShipDefinition[] = [
     {
         id: ShipId.S_LEVI9,
         name: 'S-レヴィ9',
+        translatedName: {
+            en: 'S-Levy 9 - Anti-Ship Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,
@@ -91,6 +94,9 @@ export const sLevi: IShipDefinition[] = [
     {
         id: ShipId.S_LEVI9_TE,
         name: 'S-レヴィ9-TE',
+        translatedName: {
+            en: 'S-Levy 9 (TE) - Anti-Ship Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 0,

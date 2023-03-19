@@ -30,13 +30,15 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 2,
     }),
-    modules.energySystem(),
 ];
 
 export const nebulaChaser: IShipDefinition[] = [
     {
         id: ShipId.NEBULA_CHASER_A,
         name: 'ネビュラチェイサー　Ａ弾道型',
+        translatedName: {
+            en: 'Nebula Chaser - Ballistic Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,
@@ -137,6 +139,9 @@ export const nebulaChaser: IShipDefinition[] = [
     {
         id: ShipId.NEBULA_CHASER_B,
         name: 'ネビュラチェイサー　Ｂパルス型',
+        translatedName: {
+            en: 'Nebula Chaser - Pulse Cannon Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,
