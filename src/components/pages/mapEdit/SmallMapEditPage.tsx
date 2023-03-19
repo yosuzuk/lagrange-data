@@ -7,11 +7,16 @@ import { SmallMapGrid } from './SmallMapGrid';
 import { useGridData } from './hooks/useGridData';
 
 const SmallMapEditPage = () => {
-    const { gridData, addCells, removeCells } = useGridData();
+    const { openedCellId, gridData, addCells, removeCells, toggleCell } = useGridData();
 
     return (
         <>
-            <SmallMapGrid gridData={gridData} onAddCells={addCells} onRemoveCells={removeCells} />
+            {!openedCellId && (
+                <SmallMapGrid gridData={gridData} onToggleCell={toggleCell} onAddCells={addCells} onRemoveCells={removeCells} />
+            )}
+            {openedCellId && (
+                <button onClick={() => toggleCell(openedCellId)}>Clear</button>
+            )}
             <div>AA</div>
             <div>AA</div>
             <div>AA</div>

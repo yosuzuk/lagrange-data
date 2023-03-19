@@ -36,12 +36,13 @@ const GridControlCell = styled(Box)<BoxProps>(({ theme }) => ({
 
 interface IProps {
     gridData: IGridData;
+    onToggleCell: (cellId: string) => void;
     onAddCells: (side: GridSide) => void;
     onRemoveCells: (side: GridSide) => void;
 }
 
 export const SmallMapGrid = (props: IProps) => {
-    const { gridData, onAddCells, onRemoveCells } = props;
+    const { gridData, onToggleCell, onAddCells, onRemoveCells } = props;
 
     const innerColumnCount = gridData.maxX - gridData.minX + 1;
     const innerRowCount = gridData.maxY - gridData.minY + 1;
@@ -95,8 +96,15 @@ export const SmallMapGrid = (props: IProps) => {
                                         gridColumn: x - gridData.minX + innerColumnOffset + 1,
                                         gridRow: y - gridData.minY + innerRowOffset + 1,
                                     }}
+                                    onClick={() => onToggleCell(id)}
                                 >
-                                    <GridCellContent id={id} x={x} y={y} content={cellContentById[id] ?? []} />
+                                    <GridCellContent
+                                        id={id}
+                                        x={x}
+                                        y={y}
+                                        content={cellContentById[id] ?? []}
+                                        gridData={gridData}
+                                    />
                                 </GridCell>
                             );
                         })

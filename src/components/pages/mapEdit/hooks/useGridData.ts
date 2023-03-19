@@ -4,12 +4,15 @@ import { createInitialGridData } from '../utils/gridDataUtils';
 
 interface IHookResult {
     gridData: IGridData;
+    openedCellId: string | null;
     addCells: (side: GridSide) => void;
     removeCells: (side: GridSide) => void;
+    toggleCell: (cellId: string) => void;
 }
 
 export const useGridData = (): IHookResult => {
     const [gridData, setGridData] = useState<IGridData>(createInitialGridData());
+    const [openedCellId, setOpenedCellId] = useState<string | null>(null);
 
     const addCells = useCallback((side: GridSide) => {
         setGridData(gridData => {
@@ -65,9 +68,15 @@ export const useGridData = (): IHookResult => {
         });
     }, []);
 
+    const toggleCell = useCallback((cellId: string) => {
+        setOpenedCellId(state => state === cellId ? null : cellId);
+    }, []);
+
     return {
         gridData,
+        openedCellId,
         addCells,
         removeCells,
+        toggleCell,
     };
 };

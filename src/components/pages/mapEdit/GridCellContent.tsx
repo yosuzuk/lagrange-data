@@ -3,17 +3,18 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { ICellContent } from './types/IGridData';
+import { ICellContent, IGridData } from './types/IGridData';
 
 interface IProps {
     id: string;
     x: number;
     y: number;
     content: ICellContent[];
+    gridData: IGridData;
 }
 
 export const GridCellContent = (props: IProps) => {
-    const { id, x, y, content } = props;
+    const { id, x, y, content, gridData } = props;
 
     const handleAddContent = () => {
 
