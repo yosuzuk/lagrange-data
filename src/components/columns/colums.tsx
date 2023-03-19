@@ -169,6 +169,26 @@ export const shipWeightColumn: ITableColumn<IShipDefinition> = {
     ],
 };
 
+export const armorColumn: ITableColumn<IShipDefinition> = {
+    id: 'armor',
+    renderHeader: () => t('label.armor'),
+    renderCell: (data: IShipDefinition) => data.defaultStats?.armor ?? '-',
+    sortFn: [
+        (a, b) => (a.defaultStats?.armor ?? 0) - (b.defaultStats?.armor ?? 0),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+    ],
+};
+
+export const shieldColumn: ITableColumn<IShipDefinition> = {
+    id: 'shield',
+    renderHeader: () => t('label.shield'),
+    renderCell: (data: IShipDefinition) => data.defaultStats?.shield ?? '-',
+    sortFn: [
+        (a, b) => (a.defaultStats?.shield ?? 0) - (b.defaultStats?.shield ?? 0),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+    ],
+};
+
 export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiShipDpm'), 'dpmShip');
 export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiAirDpm'), 'dpmAntiAir');
 export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.siegeDpm'), 'dpmSiege');

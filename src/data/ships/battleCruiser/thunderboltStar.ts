@@ -385,6 +385,9 @@ export const thunderboldStar: IShipDefinition[] = [
     {
         id: ShipId.THUNDERBOLT_STAR,
         name: 'スターオブサンダーボルト',
+        translatedName: {
+            en: 'Thunderbolt Star',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 35,
         weight: 2,
