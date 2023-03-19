@@ -123,6 +123,16 @@ export const nebulaChaser: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        defaultStats: {
+            hp: 5650,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: 3120,
+            dpmAntiAir: 667,
+            dpmSiege: 588,
+        },
     },
     {
         id: ShipId.NEBULA_CHASER_B,
@@ -197,5 +207,15 @@ export const nebulaChaser: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        defaultStats: {
+            hp: 4950,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: 3680,
+            dpmAntiAir: 3680,
+            dpmSiege: 73,
+        },
     },
 ];

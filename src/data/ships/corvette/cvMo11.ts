@@ -1,12 +1,101 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition } from '../../../types/ShipDefinition';
+import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
+
+const assaultMissileSystem = modules.static({
+    id: 'w1',
+    name: 'ミサイル攻撃システム',
+    translatedName: {
+        en: 'Assault Missile System',
+    },
+    mainSystem: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(10),
+        enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
+        enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
+        enhancements.reduceMissileInterception().withPercentageValue(30).withCost(10),
+    ],
+    skillSlots: 6,
+    dpmShip: 2400,
+    dpmAntiAir: 0,
+    dpmSiege: 240,
+});
+
+const cannonAttackSystem = modules.static({
+    id: 'w1',
+    name: '大砲攻撃システム',
+    translatedName: {
+        en: 'Cannon Attack System',
+    },
+    mainSystem: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(12),
+    ],
+    skillSlots: 4,
+    dpmShip: 2250,
+    dpmAntiAir: 0,
+    dpmSiege: 247,
+});
+
+const defaultModules: ISystemModule[] = [
+    modules.commandSystem(),
+    modules.armorSystem({
+        skills: [
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(5),
+        ],
+        skillSlots: 3,
+    }),
+    modules.propulsionSystem({
+        skills: [
+            enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+        ],
+        skillSlots: 2,
+    }),
+];
+
+const antiAircraftBatterySystem = modules.static({
+    id: 'w2',
+    name: '対空砲システム',
+    translatedName: {
+        en: 'Anti-Aircraft Battery System',
+    },
+    skills: [
+        strategy.antiAircraftMeasures(80, 15, 30).withCost(6),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+        enhancements.increaseDamageVsAircraft().withPercentageValue(20).withCost(3),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
+    ],
+    skillSlots: 5,
+    dpmShip: 800,
+    dpmAntiAir: 1280,
+    dpmSiege: 0,
+});
 
 export const cvMo11: IShipDefinition[] = [
     {
@@ -28,6 +117,21 @@ export const cvMo11: IShipDefinition[] = [
         ],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.CV_M011_B],
+        modules: [
+            assaultMissileSystem,
+            antiAircraftBatterySystem,
+            ...defaultModules,
+        ],
+        defaultStats: {
+            hp: 6900,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: (assaultMissileSystem.dpmShip ?? 0) + (antiAircraftBatterySystem.dpmShip ?? 0),
+            dpmAntiAir: (assaultMissileSystem.dpmAntiAir ?? 0) + (antiAircraftBatterySystem.dpmAntiAir ?? 0),
+            dpmSiege: (assaultMissileSystem.dpmSiege ?? 0) + (antiAircraftBatterySystem.dpmSiege ?? 0),
+        },
     },
     {
         id: ShipId.CV_M011_B,
@@ -43,5 +147,20 @@ export const cvMo11: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CV_M011_A,
+        modules: [
+            cannonAttackSystem,
+            antiAircraftBatterySystem,
+            ...defaultModules,
+        ],
+        defaultStats: {
+            hp: 6950,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: (cannonAttackSystem.dpmShip ?? 0) + (antiAircraftBatterySystem.dpmShip ?? 0),
+            dpmAntiAir: (cannonAttackSystem.dpmAntiAir ?? 0) + (antiAircraftBatterySystem.dpmAntiAir ?? 0),
+            dpmSiege: (cannonAttackSystem.dpmSiege ?? 0) + (antiAircraftBatterySystem.dpmSiege ?? 0),
+        },
     },
 ];
