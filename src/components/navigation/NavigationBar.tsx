@@ -19,15 +19,16 @@ import Chip from '@mui/material/Chip';
 import { Container } from '../container/Container';
 import { getCurrentLanguage, t } from '../../i18n';
 import { flags } from '../../utils/flags';
+import { routes } from '../../utils/routes';
 
 const menuItems: Record<string, ReactNode> = {
-    '/techFiles': t('techFiles.pageTitle'),
-    '/researchAgreement': t('researchAgreement.pageTitle'),
-    '/shipData': t('shipData.pageTitle'),
-    '/fleetSetup': t('fleetSetup.pageTitle'),
-    '/myList': t('myList.pageTitle'),
+    [routes.techFiles.path]: t('techFiles.pageTitle'),
+    [routes.researchAgreement.path]: t('researchAgreement.pageTitle'),
+    [routes.shipData.path]: t('shipData.pageTitle'),
+    [routes.fleetSetup.path]: t('fleetSetup.pageTitle'),
+    [routes.myList.path]: t('myList.pageTitle'),
     ...(flags.dpmCalc && getCurrentLanguage() === 'ja' ? {
-        '/dpmCalc': (
+        [routes.dpmCalc.path]: (
             <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                 <span>{t('dpmCalc.pageTitle')}</span>
                 <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
@@ -35,7 +36,7 @@ const menuItems: Record<string, ReactNode> = {
         ),
     } : {}),
     ...(flags.imageEdit && ({
-        '/imageEdit': t('imageEdit.pageTitle'),
+        [routes.imageEdit.path]: t('imageEdit.pageTitle'),
     })),
 };
 
