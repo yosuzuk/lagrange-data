@@ -24,6 +24,7 @@ import { useCarriedShipsForAddDialog } from './hooks/useCarriedShipsForAddDialog
 import { AddShipsToCarrierDialog } from './AddShipsToCarrierDialog';
 import { PageContent } from '../../pageStructure/PageContent';
 import { isLanguageWithWhitespace, t } from '../../../i18n';
+import { routes } from '../../../utils/routes';
 
 export const FleetSetupEditPage = () => {
     const navigate = useNavigate();
@@ -82,7 +83,7 @@ export const FleetSetupEditPage = () => {
     const groupedShips = useMemo(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
 
     const handleClickCancel = () => {
-        navigate(`/fleetSetup/${fleetSetup.key}`);
+        navigate(routes.fleetSetupByKey.path(fleetSetup.key));
     };
 
     const handleClickSave = () => {

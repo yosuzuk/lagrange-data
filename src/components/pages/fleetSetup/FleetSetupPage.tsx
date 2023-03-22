@@ -20,6 +20,7 @@ import { IGroupedShips } from './types/IGroupedShips';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { isLanguageWithWhitespace, t } from '../../../i18n';
+import { routes } from '../../../utils/routes';
 
 export const FleetSetupPage = () => {
     const navigate = useNavigate();
@@ -33,7 +34,6 @@ export const FleetSetupPage = () => {
     const {
         fleetSetups,
         fleetSetup,
-        switchFleet,
     } = useFleetSelection({
         initialFleetKey: fleetKey ?? null,
     });
@@ -41,8 +41,12 @@ export const FleetSetupPage = () => {
     const [grouping, setGrouping] = useState<string>(GroupAndSortOption.GROUP_BY_ROW_SORT_BY_TYPE_AND_NAME);
     const groupedShips = useMemo<IGroupedShips>(() => groupShipsBy(grouping, fleetSetup), [fleetSetup, grouping]);
 
+    const switchFleet = (fleetKey: string) => {
+        navigate(routes.fleetSetupByKey.path(fleetKey));
+    };
+
     const handleClickEdit = () => {
-        navigate('/fleetSetup/edit/' + fleetSetup.key);
+        navigate(routes.fleetSetupEditByKey.path(fleetSetup.key));
     };
 
     const handleClickShare = () => {
