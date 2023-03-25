@@ -32,6 +32,7 @@ export const callisto: IShipDefinition[] = [
                 translatedName: {
                     en: '"Eternal Polaris" Large Projectile Launching System',
                 },
+                mainSystem: true,
                 skills: [
                     strategy.heavyAmmo(60, 30).withCost(20),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -110,6 +111,7 @@ export const callisto: IShipDefinition[] = [
                 translatedName: {
                     en: '"Eternal Polaris" Large Projectile Launching System',
                 },
+                mainSystem: true,
                 // TODO skills
                 skillSlots: 7,
             }),
@@ -159,6 +161,7 @@ export const callisto: IShipDefinition[] = [
                 translatedName: {
                     en: '"Eternal Polaris" Large Projectile Launching System',
                 },
+                mainSystem: true,
                 // TODO skills
                 skillSlots: 7,
             }),
