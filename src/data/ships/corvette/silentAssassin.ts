@@ -37,15 +37,14 @@ export const silentAssassin: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(15),
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.reduceAttackInterval().withPercentageValue(15),
-                    enhancements.reduceAttackInterval().withPercentageValue(15),
-                    enhancements.reduceLockOn().withPercentageValue(30),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.reduceAttackInterval().withPercentageValue(15).withCost(10),
+                    enhancements.reduceAttackInterval().withPercentageValue(15).withCost(10),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
                 ],
                 skillSlots: 6,
                 dpmShip: 2250,
@@ -55,22 +54,28 @@ export const silentAssassin: IShipDefinition[] = [
             modules.commandSystem(),
             modules.armorSystem({
                 skills: [
-                    // TODO cost
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(6),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                name: '高速動力システム',
+                translatedName: {
+                    en: 'High-Speed Propulsion System',
+                },
+                effects: [
+                    enhancements.reduceLockOn().withFixedPercentageValue(35),
+                    enhancements.increaseHitRateVsSmall().withFixedPercentageValue(15),
+                ],
                 skills: [
-                    // TODO cost
-                    enhancements.increaseEvasion().withPercentageValue(8),
-                    enhancements.increaseEvasion().withPercentageValue(8),
-                    enhancements.reduceLockOn().withPercentageValue(30),
-                    enhancements.reduceHitByMissile().withPercentageValue(14.8),
-                    enhancements.increaseHitRateOfAircraft().withPercentageValue(14.8),
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+                    enhancements.reduceHitByMissile().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateOfAircraft().withPercentageValue(14.8).withCost(8),
                 ],
                 skillSlots: 4,
             }),
