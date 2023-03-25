@@ -483,6 +483,7 @@
         "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
         "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s.",
         "prioritizeTargets": "When the enemy fleet includes carriers, it prioritizes attacks on these targets.",
+        "prioritizeTargetsWithDuration": "When the enemy fleet includes carriers, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
         "prioritizeFirepower": "Reduces the primary weapon's cooldown by {{value}}% and turns off other weapons in the system every {{interval}}s for {{duration}}s.",
         "heavyAmmo": "When the target is a cruiser, it increases damage by {{damage}}% and attack duration by {{duration}}",
         "diveToss": "First 2 rounds of attacks by your primary weapon towards enemy's ships will gain physical armor penetration effects after battle begins.",

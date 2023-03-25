@@ -483,6 +483,7 @@
         "aircraftEmergencyRepair": "戦略攻撃を実行した艦載機を帰還するたびに{{damage}}%緊急補修する。",
         "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。",
+        "prioritizeTargetsWithDuration": "敵艦隊に航空母艦が存在するとき、艦載機/ＵＡＶを出撃させてその航空母艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeFirepower": "{{interval}}秒ごとに、システムメイン武器の冷却時間が{{value}}%ダウンし、システム内の他の武器が使用できなくなる。効果は{{duration}}秒続く。",
         "heavyAmmo": "目標が巡洋艦の場合のとき、ダメージが{{damage}}%、攻撃時間が{{duration}}%アップする。",
         "diveToss": "戦闘開始後、システム内のメイン武器の敵艦船に対する最初の2ラウンドの攻撃が物理シールド貫通効果を得る。",
