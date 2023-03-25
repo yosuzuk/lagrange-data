@@ -359,6 +359,7 @@
         "increaseCriticalDamage": "Increase critical hit damage",
         "increaseCriticalDamageAndChance": "Increase critical hit damage and chance",
         "increaseHitRate": "Increase hit rate",
+        "increaseHitRateOfMainWeapon": "Increase main weapon's hit rate",
         "increaseHitRateOfAircraft": "Increase hit rate of aircraft/UAV in hangar",
         "increaseHitRateOfAircraftMainWeapon": "Increase main weapon's hit rate of aircraft in hangar",
         "increaseHitRateOfCorvette": "Increase hit rate of corvettes in hangar",
@@ -450,7 +451,9 @@
         "prioritizeFirepower": "Prioritize firepower",
         "heavyAmmo": "Heavy Ammo",
         "diveToss": "Dive Toss",
-        "activeInterference": "Active Interference"
+        "activeInterference": "Active Interference",
+        "focusedAttacks": "Focused Attacks",
+        "sustainedDamageOutput": "Sustained Damage Output"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -483,7 +486,9 @@
         "prioritizeFirepower": "Reduces the primary weapon's cooldown by {{value}}% and turns off other weapons in the system every {{interval}}s for {{duration}}s.",
         "heavyAmmo": "When the target is a cruiser, it increases damage by {{damage}}% and attack duration by {{duration}}",
         "diveToss": "First 2 rounds of attacks by your primary weapon towards enemy's ships will gain physical armor penetration effects after battle begins.",
-        "activeInterference": "Activates jamming system and increases evasion by {{evasion}}% every {{interval}}s for {{duration}}s."
+        "activeInterference": "Activates jamming system and increases evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
+        "focusedAttacks": "Syncs all weapons in the system to prioitize attacks against frigates and destroyers, activates a meaneuvering mode, and increases the Hit Rate by {{hitRate}}% and Evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
+        "sustainedDamageOutput": "When the target is a City or Base, turn off all other weapon systems to increase the main weapon's rounds per cycle by {{roundsPerCycle}} and the primary weapon's ion cannon's continuous firing duration by {{duration}}%."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."

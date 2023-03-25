@@ -23,6 +23,7 @@ export enum EnhancementSubType {
     INCREASE_CRITICAL_DAMAGE = 'increaseCriticalDamage',
     INCREASE_CRITICAL_DAMAGE_AND_CHANCE = 'increaseCriticalDamageAndChance',
     INCREASE_HIT_RATE = 'increaseHitRate',
+    INCREASE_HIT_RATE_OF_MAIN_WEAPON = 'increaseHitRateOfMainWeapon',
     INCREASE_HIT_RATE_OF_AIRCRAFT = 'increaseHitRateOfAircraft',
     INCREASE_HIT_RATE_OF_AIRCRAFT_MAIN_WEAPON = 'increaseHitRateOfAircraftMainWeapon',
     INCREASE_HIT_RATE_OF_CORVETTE = 'increaseHitRateOfCorvette',
@@ -102,5 +103,7 @@ export enum EnhancementSubType {
     EVASIVE_MANEUVERS = 'evasiveManeuvers',
     PRIORITIZE_TARGETS = 'prioritizeTargets',
     ACTIVE_INTERFERENCE = 'activeInterference',
+    FOCUSED_ATTACKS = 'focusedAttacks',
+    SUSTAINED_DAMAGE_OUTPUT = 'sustainedDamageOutput',
     CUSTOM = 'custom',
 }

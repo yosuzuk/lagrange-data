@@ -32,7 +32,7 @@ export const conamaraChaos: IShipDefinition[] = [
         modules: [
             modules.static({
                 id: 'w1',
-                name: '',
+                name: '艦首電磁加速砲システム',
                 translatedName: {
                     en: 'Bow Railgun System',
                 },
@@ -52,7 +52,7 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.static({
                 id: 'w2',
-                name: '',
+                name: '対空システム',
                 translatedName: {
                     en: 'Anti-Aircraft System',
                 },
@@ -92,7 +92,7 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.static({
                 id: 'sp1',
-                name: '',
+                name: '追加動力システム',
                 translatedName: {
                     en: 'Additional Propulsion System',
                 },
@@ -125,7 +125,7 @@ export const conamaraChaos: IShipDefinition[] = [
         modules: [
             modules.static({
                 id: 'w1',
-                name: '',
+                name: '艦首プラズマ投射システム',
                 translatedName: {
                     en: 'Bow Mounted Plasma Caster',
                 },
@@ -145,7 +145,7 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.static({
                 id: 'w2',
-                name: '',
+                name: '対空システム',
                 translatedName: {
                     en: 'Anti-Aircraft System',
                 },
@@ -185,7 +185,7 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.static({
                 id: 'sp1',
-                name: '',
+                name: '追加動力システム',
                 translatedName: {
                     en: 'Additional Propulsion System',
                 },
