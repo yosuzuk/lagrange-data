@@ -318,7 +318,7 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             // TODO max duration
-            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '45+?' }).withCost(90),
+            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '60' }).withCost(30),
         ],
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
@@ -328,23 +328,22 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            // TODO cost
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseShield().withPercentageValue(10),
-            enhancements.increaseShield().withPercentageValue(10),
-            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(8),
         ],
         skillSlots: 5,
     }),
     modules.propulsionSystem({
         skills: [
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
         ],
         skillSlots: 3,
     }),
