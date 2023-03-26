@@ -154,7 +154,8 @@
         "pageTitle": "艦船一覧"
     },
     "shipDetail": {
-        "staticEffectsColon": "固定効果：",
+        "staticEffect": "追加効果",
+        "staticEffectsColon": "追加効果：",
         "numberOfSkillSlots": "スキル枠：{{count}}",
         "skillsColon": "スキル：",
         "flagshipEffectsColon": "旗艦スキル：",

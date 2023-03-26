@@ -86,8 +86,8 @@ export const enhancements = {
     repairQueue: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REPAIR_QUEUE),
     specialAmmo: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.SPECIAL_AMMO),
     collateralDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.COLLATERAL_DAMAGE),
-    missileTrackingRadar: (interception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withDescriptionKey('missileTrackingRadar', { interception }),
-    activeAntiMissileInterception: (missileInterception: number, torpedoInterception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withDescriptionKey('activeAntiMissileInterception', { missileInterception, torpedoInterception }),
+    missileTrackingRadar: (interception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.MISSILE_TRACKING_RADAR).withDescriptionKey('missileTrackingRadar', { interception }),
+    activeAntiMissileInterception: (missileInterception: number, torpedoInterception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.ACTIVE_ANTI_MISSILE_INTERCEPTION).withDescriptionKey('activeAntiMissileInterception', { missileInterception, torpedoInterception }),
 } as const;
 
 export const flagshipEffect = {
@@ -118,7 +118,7 @@ export const strategy = {
     focusedAttacks: (hitRate: number, evasion: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.FOCUSED_ATTACKS).withDescriptionKey('focusedAttacks', { hitRate, evasion, interval, duration }),
     sustainedDamageOutput: (roundsPerCycle: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.SUSTAINED_DAMAGE_OUTPUT).withDescriptionKey('sustainedDamageOutput', { roundsPerCycle, duration }),
     informationChain: (hitRate: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.INFORMATION_CHAIN).withDescriptionKey('informationChain', { hitRate }).withConditionKey('informationChain'),
-    allShipsFocusFire: () => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ALL_SHIPS_FOCUS_FIRE).withDescriptionKey('allShipsFocusFire'),
+    allShipsFocusFire: (cooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ALL_SHIPS_FOCUS_FIRE).withDescriptionKey('allShipsFocusFire', { cooldown, interval, duration }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {

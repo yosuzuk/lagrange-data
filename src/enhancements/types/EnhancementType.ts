@@ -87,6 +87,8 @@ export enum EnhancementSubType {
     REPAIR_QUEUE = 'repairQueue',
     SPECIAL_AMMO = 'specialAmmo',
     COLLATERAL_DAMAGE = 'collateralDamage',
+    MISSILE_TRACKING_RADAR = 'missileTrackingRadar',
+    ACTIVE_ANTI_MISSILE_INTERCEPTION = 'activeAntiMissileInterception',
     FOCUS_FIRE = 'focusFire',
     FLEET_DOCK_1 = 'fleetDock1',
     FLEET_DOCK_2 = 'fleetDock2',

@@ -140,7 +140,7 @@ export const lightCone: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
-        relatedShipIds: [ShipId.LIGHT_CONE_C, ShipId.LIGHT_CONE_TE_A_S],
+        relatedShipIds: [ShipId.LIGHT_CONE_TE_A_S],
         modules: [
             modules.static({
                 id: 'w1',
@@ -225,7 +225,7 @@ export const lightCone: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.LIGHT_CONE_A,
-        relatedShipIds: [ShipId.LIGHT_CONE_B, ShipId.LIGHT_CONE_TE_A_S],
+        relatedShipIds: [ShipId.LIGHT_CONE_TE_A_S],
         modules: [
             modules.static({
                 id: 'w1',

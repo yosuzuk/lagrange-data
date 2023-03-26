@@ -35,7 +35,7 @@ export const chimera: IShipDefinition[] = [
                 },
                 mainSystem: true,
                 skills: [
-                    strategy.allShipsFocusFire().withCost(20),
+                    strategy.allShipsFocusFire(80, 90, 10).withCost(20),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(8),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(8),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
@@ -47,7 +47,7 @@ export const chimera: IShipDefinition[] = [
                 skillSlots: 6,
             }),
             modules.static({
-                id: 'w1',
+                id: 'w2',
                 name: 'ミサイル攻撃システム',
                 translatedName: {
                     en: 'Assault Missile System',
