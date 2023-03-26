@@ -97,6 +97,7 @@ export enum EnhancementSubType {
     STRATEGIC_STRIKE_1 = 'strategicStrike1',
     STRATEGIC_STRIKE_2 = 'strategicStrike2',
     STRATEGIC_STRIKE_3 = 'strategicStrike3',
+    ANTI_AIRCRAFT_NETWORK_1 = 'antiAircraftNetwork1',
     ANTI_AIRCRAFT_NETWORK_2 = 'antiAircraftNetwork2',
     OVERDRIVE = 'overdrive',
     PRIORITIZE_FIREPOWER = 'prioritizeFirepower',
@@ -111,5 +112,6 @@ export enum EnhancementSubType {
     SUSTAINED_DAMAGE_OUTPUT = 'sustainedDamageOutput',
     INFORMATION_CHAIN = 'informationChain',
     ALL_SHIPS_FOCUS_FIRE = 'allShipsFocusFire',
+    PRIORITIZE_SUPPORT = 'prioritizeSupport',
     CUSTOM = 'custom',
 }

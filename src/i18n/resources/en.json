@@ -461,7 +461,8 @@
         "informationChain": "Information Chain",
         "missileTrackingRadar": "Missile Tracking Radar",
         "activeAntiMissileInterception": "Active Anti-Missile Interception",
-        "allShipsFocusFire": "All Ships Focus Fire"
+        "allShipsFocusFire": "All Ships Focus Fire",
+        "prioritizeSupport": "Prioritize Support"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -500,16 +501,17 @@
         "focusedAttacks": "Syncs all weapons in the system to prioitize attacks against frigates and destroyers, activates a meaneuvering mode, and increases the Hit Rate by {{hitRate}}% and Evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
         "sustainedDamageOutput": "When the target is a City or Base, turn off all other weapon systems to increase the main weapon's rounds per cycle by {{roundsPerCycle}} and the primary weapon's ion cannon's continuous firing duration by {{duration}}%.",
         "targetGuidance1Kccpv": "Increases the hit rate of KCCPV2.0 cruisers in the fleet during the first 2 firing rounds by {{hitrate}}%.",
+        "antiAircraftNetwork1": "When the aircraft of the fleet is at a disadvantage, anti-air weapons in the fleet will attack aircraft first, increasing hit rate by {{hitRate}}%.",
         "antiAircraftNetwork2": "Taking advantage of Anti-Aircraft UAVs' positioning support system to coordinate the projectile anti-aircraft weaponry of ships in the mid-row, extending the anti-aircraft range to same-row.",
         "informationChain": "Increases your aircraft hit rate against enemy fighters by {{hitRate}}% when your fleet includes fighters.",
         "missileTrackingRadar": "The primary weapon of the aircraft/UAV in the hangar has a {{interception}}% chance to intercept missiles and a {{interception}}% chance to intercept torpedoes.",
         "activeAntiMissileInterception": "Changes ship position to the front row of your formation to expand all weapons' anti-aircraft coverage to your entire fleet, increasing the chance of interception missiles by {{missileInterception}}% and torpedoes by {{torpedoInterception}}%.",
-        "allShipsFocusFire": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{cooldown}}% every {{interval}}s for {{duration}}s."
+        "allShipsFocusFire": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{cooldown}}% every {{interval}}s for {{duration}}s.",
+        "prioritizeSupport": "When your fleet includes cruisers, it prioritizes fire support for them by dispatching aircraft. Increases aircraft's support duration by {{duration}}%."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
         "targetGuidance1Kccpv": "The fleet contains at least 3 KCCPV2.0 cruisers.",
-        "antiAircraftNetwork2": "The fleet contains at least 3 Light Cone ships.",
-        "informationChain": "The fleet contains fighters."
+        "antiAircraftNetwork2": "The fleet contains at least 3 Light Cone ships."
     }
 }
