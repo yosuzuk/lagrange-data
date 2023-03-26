@@ -61,7 +61,7 @@ export const callisto: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
                     // TODO check increaseLockOnEfficiency after update
                 ],
-                skillSlots: 5,
+                skillSlots: 4, // TODO 5 after update
             }),
             modules.commandSystem({
                 flagshipEffects: [

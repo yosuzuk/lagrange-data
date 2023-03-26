@@ -40,7 +40,7 @@ const integratedBatterySystem = modules.static({
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(2),
         // TODO check increaseLockOnEfficiency after update
     ],
-    skillSlots: 5,
+    skillSlots: 4, // TODO 5 after update
 });
 
 const staticModules: ISystemModule[] = [
@@ -233,7 +233,7 @@ export const io: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(2),
                     // TODO check increaseLockOnEfficiency after update
                 ],
-                skillSlots: 5,
+                skillSlots: 4, // TODO 5 after update
             }),
             ...staticModules,
         ],

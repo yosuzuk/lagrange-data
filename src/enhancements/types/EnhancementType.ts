@@ -20,6 +20,7 @@ export enum EnhancementSubType {
     INCREASE_MISSILE_DAMAGE = 'increaseMissileDamage',
     INCREASE_MISSILE_AND_TORPEDO_DAMAGE = 'increaseMissileAndTorpedoDamage',
     INCREASE_SIEGE_DAMAGE = 'increaseSiegeDamage',
+    INCREASE_SIEGE_DAMAGE_OF_AIRCRAFT = 'increaseSiegeDamageOfAircraft',
     INCREASE_CRITICAL_DAMAGE = 'increaseCriticalDamage',
     INCREASE_CRITICAL_DAMAGE_AND_CHANCE = 'increaseCriticalDamageAndChance',
     INCREASE_HIT_RATE = 'increaseHitRate',

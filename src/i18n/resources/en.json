@@ -356,6 +356,7 @@
         "increaseMissileDamage": "Increase missile damage",
         "increaseMissileAndTorpedoDamage": "Increase missile/torpedo damage",
         "increaseSiegeDamage": "Increase siege damage",
+        "increaseSiegeDamageOfAircraft": "Increase siege damage of aircraft/UAV in hangar",
         "increaseCriticalDamage": "Increase critical hit damage",
         "increaseCriticalDamageAndChance": "Increase critical hit damage and chance",
         "increaseHitRate": "Increase hit rate",
@@ -453,7 +454,8 @@
         "diveToss": "Dive Toss",
         "activeInterference": "Active Interference",
         "focusedAttacks": "Focused Attacks",
-        "sustainedDamageOutput": "Sustained Damage Output"
+        "sustainedDamageOutput": "Sustained Damage Output",
+        "targetGuidance1": "Target Guidance I"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -483,15 +485,18 @@
         "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
         "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s.",
         "prioritizeTargets": "When the enemy fleet includes carriers, it prioritizes attacks on these targets.",
-        "prioritizeTargetsWithDuration": "When the enemy fleet includes carriers, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
+        "prioritizeCarriersWithDuration": "When the enemy fleet includes carriers, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
+        "prioritizeCorvettesWithDuration": "When the enemy fleet includes corvettes, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
         "prioritizeFirepower": "Reduces the primary weapon's cooldown by {{value}}% and turns off other weapons in the system every {{interval}}s for {{duration}}s.",
         "heavyAmmo": "When the target is a cruiser, it increases damage by {{damage}}% and attack duration by {{duration}}",
         "diveToss": "First 2 rounds of attacks by your primary weapon towards enemy's ships will gain physical armor penetration effects after battle begins.",
         "activeInterference": "Activates jamming system and increases evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
         "focusedAttacks": "Syncs all weapons in the system to prioitize attacks against frigates and destroyers, activates a meaneuvering mode, and increases the Hit Rate by {{hitRate}}% and Evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
-        "sustainedDamageOutput": "When the target is a City or Base, turn off all other weapon systems to increase the main weapon's rounds per cycle by {{roundsPerCycle}} and the primary weapon's ion cannon's continuous firing duration by {{duration}}%."
+        "sustainedDamageOutput": "When the target is a City or Base, turn off all other weapon systems to increase the main weapon's rounds per cycle by {{roundsPerCycle}} and the primary weapon's ion cannon's continuous firing duration by {{duration}}%.",
+        "targetGuidance1Kccpv": "Increases the hit rate of KCCPV2.0 cruisers in the fleet during the first 2 firing rounds by {{hitrate}}%."
     },
     "enhancementCondition": {
-        "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships."
+        "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
+        "targetGuidance1Kccpv": "The fleet contains at least 3 KCCPV2.0 cruisers."
     }
 }

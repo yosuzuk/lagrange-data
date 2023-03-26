@@ -65,7 +65,7 @@ export const conamaraChaos: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
                     // TODO check increaseLockOnEfficiency after update
                 ],
-                skillSlots: 5,
+                skillSlots: 4, // TODO 5 after update
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -158,7 +158,7 @@ export const conamaraChaos: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
                     // TODO check increaseLockOnEfficiency after update
                 ],
-                skillSlots: 5,
+                skillSlots: 4, // TODO 5 after update
             }),
             modules.commandSystem({
                 flagshipEffects: [

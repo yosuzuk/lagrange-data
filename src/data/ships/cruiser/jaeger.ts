@@ -52,7 +52,7 @@ export const jaeger: IShipDefinition[] = [
                 },
                 carryCorvette: 4,
                 skills: [
-                    strategy.prioritizeTargets(35).withCost(15),
+                    strategy.prioritizeTargets().withDescriptionKey('prioritizeCarriersWithDuration', { duration: 35 }).withCost(15),
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
                     enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
                     enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update

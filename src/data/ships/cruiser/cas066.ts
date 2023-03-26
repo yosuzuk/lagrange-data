@@ -62,7 +62,7 @@ export const cas066: IShipDefinition[] = [
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(8),
                     // TODO check increaseLockOnEfficiency after update
                 ],
-                skillSlots: 5,
+                skillSlots: 4, // TODO 5 after update
             }),
             modules.commandSystem({
                 flagshipEffects: [
