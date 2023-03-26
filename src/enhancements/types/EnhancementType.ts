@@ -108,5 +108,6 @@ export enum EnhancementSubType {
     FOCUSED_ATTACKS = 'focusedAttacks',
     SUSTAINED_DAMAGE_OUTPUT = 'sustainedDamageOutput',
     INFORMATION_CHAIN = 'informationChain',
+    ALL_SHIPS_FOCUS_FIRE = 'allShipsFocusFire',
     CUSTOM = 'custom',
 }

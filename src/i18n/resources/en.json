@@ -459,7 +459,8 @@
         "antiAircraftNetwork2": "Anti-Aircraft Network II",
         "informationChain": "Information Chain",
         "missileTrackingRadar": "Missile Tracking Radar",
-        "activeAntiMissileInterception": "Active Anti-Missile Interception"
+        "activeAntiMissileInterception": "Active Anti-Missile Interception",
+        "allShipsFocusFire": "All Ships Focus Fire"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -500,8 +501,9 @@
         "targetGuidance1Kccpv": "Increases the hit rate of KCCPV2.0 cruisers in the fleet during the first 2 firing rounds by {{hitrate}}%.",
         "antiAircraftNetwork2": "Taking advantage of Anti-Aircraft UAVs' positioning support system to coordinate the projectile anti-aircraft weaponry of ships in the mid-row, extending the anti-aircraft range to same-row.",
         "informationChain": "Increases your aircraft hit rate against enemy fighters by {{hitRate}}% when your fleet includes fighters.",
-        "missileTrackingRadar": "",
-        "activeAntiMissileInterception": "Changes ship position to the front row of your formation to expand all weapons' anti-aircraft coverage to your entire fleet, increasing the chance of interception missiles by {{missileInterception}}% and torpedoes by {{torpedoInterception}}%."
+        "missileTrackingRadar": "The primary weapon of the aircraft/UAV in the hangar has a {{interception}}% chance to intercept missiles and a {{interception}}% chance to intercept torpedoes.",
+        "activeAntiMissileInterception": "Changes ship position to the front row of your formation to expand all weapons' anti-aircraft coverage to your entire fleet, increasing the chance of interception missiles by {{missileInterception}}% and torpedoes by {{torpedoInterception}}%.",
+        "allShipsFocusFire": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{cooldown}}% every {{interval}}s for {{duration}}s."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

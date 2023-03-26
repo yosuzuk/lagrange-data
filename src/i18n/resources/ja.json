@@ -459,7 +459,8 @@
         "antiAircraftNetwork2": "防空ネットワークII",
         "informationChain": "情報チェーン",
         "missileTrackingRadar": "ミサイル捜索レーダー",
-        "activeAntiMissileInterception": "対ミサイル積極要撃"
+        "activeAntiMissileInterception": "対ミサイル積極要撃",
+        "allShipsFocusFire": "全艦集中砲火"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -501,7 +502,8 @@
         "antiAircraftNetwork2": "対空UAVによる補助測位を行い、条件を満たす艦隊の中列艦船の対空投射武器と防空範囲を同列まで拡張する。",
         "informationChain": "味方艦隊に戦闘機が存在するとき、味方の艦載機から相手の戦闘機への命中率が{{hitRate}}%アップする。",
         "missileTrackingRadar": "格納庫内の艦載機/UAVのメイン武器が{{interception}}%のミサイル要撃率/{{interception}}%の魚雷要撃率を取得する",
-        "activeAntiMissileInterception": "艦船が前列に移動する。艦船内の武器の防空範囲が味方全体へ拡張し、ミサイル要撃率が{{missileInterception}}%、魚雷要撃率が{{torpedoInterception}}%アップする。"
+        "activeAntiMissileInterception": "艦船が前列に移動する。艦船内の武器の防空範囲が味方全体へ拡張し、ミサイル要撃率が{{missileInterception}}%、魚雷要撃率が{{torpedoInterception}}%アップする。",
+        "allShipsFocusFire": "{{interval}}秒ごとに、艦船内の全ての武器で1件の目標を集中攻撃する。全ての武器の冷却時間が{{cooldown}}%ダウンする。効果は{{duration}}秒続く。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",
