@@ -86,6 +86,8 @@ export const enhancements = {
     repairQueue: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REPAIR_QUEUE),
     specialAmmo: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.SPECIAL_AMMO),
     collateralDamage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.COLLATERAL_DAMAGE),
+    missileTrackingRadar: (interception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withDescriptionKey('missileTrackingRadar', { interception }),
+    activeAntiMissileInterception: (missileInterception: number, torpedoInterception: number) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withDescriptionKey('activeAntiMissileInterception', { missileInterception, torpedoInterception }),
 } as const;
 
 export const flagshipEffect = {
@@ -98,6 +100,7 @@ export const flagshipEffect = {
     strategicStrike1: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_1).withDescriptionKey('strategicStrike1', { angle }),
     strategicStrike2: (angle: number) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_2).withDescriptionKey('strategicStrike1', { angle }),
     strategicStrike3: (angle: number, distance: string) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.STRATEGIC_STRIKE_3).withDescriptionKey('strategicStrike3', { angle, distance }),
+    antiAircraftNetwork2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.ANTI_AIRCRAFT_NETWORK_2).withDescriptionKey('antiAircraftNetwork2').withConditionKey('antiAircraftNetwork2'),
 } as const;
 
 export const strategy = {
@@ -114,6 +117,7 @@ export const strategy = {
     activeInterference: (evasion: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ACTIVE_INTERFERENCE).withDescriptionKey('activeInterference', { evasion, interval, duration }),
     focusedAttacks: (hitRate: number, evasion: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.FOCUSED_ATTACKS).withDescriptionKey('focusedAttacks', { hitRate, evasion, interval, duration }),
     sustainedDamageOutput: (roundsPerCycle: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.SUSTAINED_DAMAGE_OUTPUT).withDescriptionKey('sustainedDamageOutput', { roundsPerCycle, duration }),
+    informationChain: (hitRate: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.INFORMATION_CHAIN).withDescriptionKey('informationChain', { hitRate }).withConditionKey('informationChain'),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {
