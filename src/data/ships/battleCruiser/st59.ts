@@ -393,7 +393,7 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
-            flagshipEffect.desperateMeasures2('80', '2+?').withCost(60),
+            flagshipEffect.desperateMeasures2('20', '2').withCost(60),
         ],
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),

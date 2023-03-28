@@ -1,3 +1,4 @@
+import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -7,12 +8,16 @@ import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipTag } from '../../../types/ShipTag';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 export const cvT800: IShipDefinition[] = [
     {
         id: ShipId.CV_T800,
         name: 'CV-T800型',
+        translatedName: {
+            en: 'CV-T800 - Anti-Aircraft Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,
@@ -30,5 +35,57 @@ export const cvT800: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        modules: [
+            modules.static({
+                id: 'w1',
+                name: '機載武器システム',
+                translatedName: {
+                    en: 'Airborne Weapon System',
+                },
+                mainSystem: true,
+                skills: [
+                    strategy.rapidFire(80, 60, 15, 10).withCost(18),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(12),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(12),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(12),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(12),
+                ],
+                skillSlots: 6,
+                dpmShip: 2400,
+                dpmAntiAir: 3192,
+                dpmSiege: 48,
+            }),
+            modules.commandSystem(),
+            modules.armorSystem({
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(6),
+                ],
+                skillSlots: 3,
+            }),
+            modules.propulsionSystem({
+                skills: [
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+                ],
+                skillSlots: 2,
+            }),
+        ],
+        defaultStats: {
+            hp: 6900,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: 2400,
+            dpmAntiAir: 3192,
+            dpmSiege: 48,
+        },
     },
 ];

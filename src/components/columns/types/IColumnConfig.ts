@@ -8,6 +8,8 @@ export interface IColumnConfig {
     dpmAntiAir: boolean;
     dpmSiege: boolean;
     hp: boolean;
+    armor: boolean;
+    shield: boolean;
     speed: boolean;
     warpSpeed: boolean;
     dpmShipPerCommandPoint: boolean;

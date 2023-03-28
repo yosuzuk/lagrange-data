@@ -14,29 +14,30 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem(),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(5),
         ],
         skillSlots: 3,
     }),
     modules.propulsionSystem({
         skills: [
-            // TODO cost
-            enhancements.increaseEvasion().withPercentageValue(8),
-            enhancements.reduceLockOn().withPercentageValue(30),
-            enhancements.reduceLockOn().withPercentageValue(30),
+            enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+            enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
         ],
         skillSlots: 2,
     }),
-    modules.energySystem(),
 ];
 
 export const nebulaChaser: IShipDefinition[] = [
     {
         id: ShipId.NEBULA_CHASER_A,
         name: 'ネビュラチェイサー　Ａ弾道型',
+        translatedName: {
+            en: 'Nebula Chaser - Ballistic Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 10,
@@ -58,15 +59,14 @@ export const nebulaChaser: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.prioritizeTargets().withCost(12),
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50),
-                    enhancements.reduceLockOn().withPercentageValue(30),
-                    enhancements.increaseHitRate().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
                 ],
                 skillSlots: 6,
                 parts: [
@@ -87,11 +87,10 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Assault Missile System',
                 },
                 skills: [
-                    // TODO cost
-                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10),
-                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10),
-                    enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
+                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
+                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
+                    enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(10).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
                 ],
                 skillSlots: 3,
                 parts: [
@@ -115,18 +114,30 @@ export const nebulaChaser: IShipDefinition[] = [
                     enhancements.increaseHitRate().withPercentageValue(30),
                 ],
                 skills: [
-                    // TODO cost
-                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20),
-                    enhancements.reduceHitByDirectFire().withPercentageValue(14.8),
+                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20).withCost(8),
+                    enhancements.reduceHitByDirectFire().withPercentageValue(14.8).withCost(8),
                 ],
                 skillSlots: 2,
             }),
             ...staticModules,
         ],
+        defaultStats: {
+            hp: 5650,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: 3120,
+            dpmAntiAir: 667,
+            dpmSiege: 588,
+        },
     },
     {
         id: ShipId.NEBULA_CHASER_B,
         name: 'ネビュラチェイサー　Ｂパルス型',
+        translatedName: {
+            en: 'Nebula Chaser - Pulse Cannon Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,
@@ -148,14 +159,13 @@ export const nebulaChaser: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(13),
-                    // TODO cost & order
-                    enhancements.increaseHitRate().withPercentageValue(10),
-                    enhancements.increaseHitRate().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50),
-                    enhancements.reduceLockOn().withPercentageValue(30),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(9),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(9),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(9),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(9),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(9),
+                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(9),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(9),
                 ],
                 skillSlots: 6,
                 parts: [
@@ -179,9 +189,9 @@ export const nebulaChaser: IShipDefinition[] = [
                     enhancements.increaseHitRate().withPercentageValue(30),
                 ],
                 skills: [
-                    enhancements.reduceHitByDirectFire().withPercentageValue(15),
-                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20),
-                    enhancements.reduceHitBySlow().withPercentageValue(25),
+                    enhancements.reduceHitByDirectFire().withPercentageValue(15).withCost(10),
+                    enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20).withCost(10),
+                    enhancements.reduceHitBySlow().withPercentageValue(25).withCost(10),
                 ],
                 skillSlots: 2,
             }),
@@ -197,5 +207,15 @@ export const nebulaChaser: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        defaultStats: {
+            hp: 4950,
+            armor: 2,
+            shield: 0,
+            speed: 2500,
+            warpSpeed: 12500,
+            dpmShip: 3680,
+            dpmAntiAir: 3680,
+            dpmSiege: 73,
+        },
     },
 ];

@@ -12,6 +12,8 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         dpmAntiAir: false,
         dpmSiege: false,
         hp: false,
+        armor: false,
+        shield: false,
         speed: false,
         warpSpeed: false,
         dpmShipPerCommandPoint: false,
@@ -66,6 +68,14 @@ export function createColumnConfigOptions(args: ICreateColumnConfigOptionArgumen
         {
             columnKey: 'hp',
             name: t('label.hp'),
+        },
+        {
+            columnKey: 'armor',
+            name: t('label.armor'),
+        },
+        {
+            columnKey: 'shield',
+            name: t('label.shield'),
         },
         {
             columnKey: 'speed',

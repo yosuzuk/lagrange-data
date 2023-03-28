@@ -23,13 +23,13 @@ const m1: ISystemModule = {
     defaultModule: true,
     mainSystem: true,
     skills: [
-        enhancements.increaseDamage().withPercentageValue(10),
-        enhancements.increaseDamage().withPercentageValue(10),
-        enhancements.increaseHitRate().withPercentageValue(10),
-        enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-        enhancements.reduceCooldown().withPercentageValue(15),
-        enhancements.reduceCooldown().withPercentageValue(15),
-        enhancements.increaseSystemHp().withPercentageValue(35),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
     ],
     skillSlots: 5,
     parts: [
@@ -58,6 +58,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    // TODO skills
     // skills: [],
     skillSlots: 5,
     parts: [
@@ -91,11 +92,11 @@ const a1: ISystemModule = {
     defaultModule: true,
     skills: [
         strategy.customStrategy('concentratedStrike').withDescriptionKey('concentratedStrike').withCost(20),
-        enhancements.reduceRtbAircraft().withPercentageValue(20),
-        enhancements.reduceRtbAircraft().withPercentageValue(20),
-        enhancements.increaseHitRateOfAircraft().withPercentageValue(20),
-        enhancements.increaseDamageOfAircraft().withPercentageValue(10),
-        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(15),
+        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(15),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(15),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(15),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(15),
     ],
     skillSlots: 4,
     parts: [
@@ -130,6 +131,7 @@ const b1: ISystemModule = {
     carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     skills: [
+        // TODO cost
         enhancements.reduceLockOn().withPercentageValue(70),
         enhancements.reduceCooldown(),
         enhancements.increaseDamage(),
@@ -154,6 +156,7 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     skills: [
+        // TODO cost
         enhancements.increaseDamage().withPercentageValue(10),
         enhancements.increaseDamage().withPercentageValue(10),
         enhancements.increaseHitRate(),
@@ -183,6 +186,7 @@ const b3: ISystemModule = {
     },
     category: 'B',
     categoryNumber: 3,
+    // TODO skills
     skillSlots: 2,
     parts: [
         {
@@ -208,9 +212,8 @@ const c1: ISystemModule = {
         enhancements.increaseDamageOfAircraftMainWeapon().withFixedPercentageValue(15),
     ],
     skills: [
-        // TODO cost
-        enhancements.increaseIonDamage().withPercentageValue(10),
-        enhancements.reduceIonCooldownOfShip().withPercentageValue(15),
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceIonCooldownOfShip().withPercentageValue(15).withCost(10),
     ],
     skillSlots: 2,
     parts: [
@@ -234,6 +237,8 @@ const c2: ISystemModule = {
     effects: [
         enhancements.increaseHitRateOfAircraftMainWeapon().withFixedPercentageValue(15),
     ],
+    // TODO skills
+    // TODO skillslots
     parts: [
         {
             text: [
@@ -249,37 +254,34 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             flagshipEffect.strategicStrike2(120).withDefaultFlag(),
-            // TODO max distance
-            flagshipEffect.strategicStrike3(360, '15.0+?').withCost(60),
+            flagshipEffect.strategicStrike3(360, '25.0').withCost(40),
         ],
         skills: [
-            // TODO cost
-            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }),
-            enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }),
-            enhancements.customEnhancement('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
-            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '5.0+?' }),
-            enhancements.increaseSystemHp().withPercentageValue(10),
+            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }).withCost(20),
+            enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }).withCost(20),
+            enhancements.customEnhancement('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10).withCost(10),
+            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(20),
+            enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
         ],
         skillSlots: 5,
     }),
     modules.armorSystem({
         skills: [
-            // TODO cost
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.reduceCritialDamageReceived().withPercentageValue(30),
-            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
         ],
         skillSlots: 4,
     }),
     modules.propulsionSystem({
         skills: [
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
         ],
         skillSlots: 3,
     }),

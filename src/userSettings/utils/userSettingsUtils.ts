@@ -263,8 +263,8 @@ export function hasAcquirableModules(shipId: string, userSettings: IUserSettings
         return false;
     }
 
-    return !!definition.modules.find(module => {
-        return module.defaultModule !== true && !isPossessingModule(module.id, shipId, userSettings);
+    return definition.modules.some(module => {
+        return module.category !== 'STATIC' && module.defaultModule !== true && !isPossessingModule(module.id, shipId, userSettings);
     });
 }
 
@@ -274,16 +274,16 @@ export function getAcquiredModules(ship: IShipDefinition, userSettings: IUserSet
 
 export function getAcquirableModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
     return ship.modules?.filter(module => {
-        return module.defaultModule !== true && !isPossessingModule(module.id, ship.id, userSettings);
+        return module.category !== 'STATIC' && module.defaultModule !== true && !isPossessingModule(module.id, ship.id, userSettings);
     }) ?? [];
 }
 
 export function getPossessedModules(ship: IShipDefinition, userSettings: IUserSettings, indludeDefault: boolean = true): ISystemModule[] {
-    return ship.modules?.filter(module => (indludeDefault && module.defaultModule) || isPossessingModule(module.id, ship.id, userSettings)) ?? [];
+    return ship.modules?.filter(module => module.category !== 'STATIC' && ((indludeDefault && module.defaultModule) || isPossessingModule(module.id, ship.id, userSettings))) ?? [];
 }
 
 export function getWantedModules(ship: IShipDefinition, userSettings: IUserSettings): ISystemModule[] {
-    return ship.modules?.filter(module => isWantedModule(module.id, ship.id, userSettings)) ?? [];
+    return ship.modules?.filter(module => module.category !== 'STATIC' && isWantedModule(module.id, ship.id, userSettings)) ?? [];
 }
 
 export function hasWantedModule(shipId: string, userSettings: IUserSettings): boolean {
@@ -293,6 +293,6 @@ export function hasWantedModule(shipId: string, userSettings: IUserSettings): bo
     }
 
     return !!definition.modules.find(module => {
-        return module.defaultModule !== true && isWantedModule(module.id, shipId, userSettings);
+        return module.category !== 'STATIC' && module.defaultModule !== true && isWantedModule(module.id, shipId, userSettings);
     });
 }

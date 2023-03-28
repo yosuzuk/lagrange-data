@@ -3,17 +3,31 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
-import { IShipDefinition } from '../../../types/ShipDefinition';
+import { IDefaultShipStats, IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
+const defaultStats: IDefaultShipStats = {
+    hp: 6100,
+    armor: 2,
+    shield: 0,
+    speed: 2500,
+    warpSpeed: 12500,
+    dpmShip: 4980,
+    dpmAntiAir: 1804,
+    dpmSiege: 1656,
+};
+
 export const cellularDefender: IShipDefinition[] = [
     {
         id: ShipId.CELLULAR_DEFENDER,
         name: 'セルラーディフェンダー',
+        translatedName: {
+            en: 'Cellular Defender - Multi-Role Type',
+        },
         type: ShipType.CORVETTE,
         cost: 0,
         weight: 5,
@@ -61,7 +75,7 @@ export const cellularDefender: IShipDefinition[] = [
                     en: 'Rapid-Fire Battery System',
                 },
                 skills: [
-                    strategy.customStrategy('antiAircraftMeasures').withDescriptionKey('antiAircraftMeasures', { cooldownDown: 80, duration: 15, cooldown: 30 }).withCost(10),
+                    strategy.antiAircraftMeasures(80, 15, 30).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(7),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(7),
                     enhancements.reduceCooldown().withPercentageValue(14.8).withCost(7),
@@ -118,5 +132,6 @@ export const cellularDefender: IShipDefinition[] = [
                 skillSlots: 2,
             }),
         ],
+        defaultStats,
     },
 ];
