@@ -36,7 +36,7 @@ export const MyListModuleEdit = (props: IProps) => {
     const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
 
     return (
-        <Box key={module.id} pl={2}>
+        <Box component="div" key={module.id} pl={2}>
             <Stack spacing={3}>
                 <div>
                     <Typography variant="h6">

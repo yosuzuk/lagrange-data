@@ -23,7 +23,7 @@ export const ShipDetailPage = () => {
             <NavigationBar currentRoute="/shipData" />
             <ShipDetailActionBar />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Paper>
                         {shipId && isValidShipId(shipId) ? (
                             <ShipDetail shipId={shipId} onClickShip={handleClickShip} />

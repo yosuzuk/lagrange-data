@@ -43,51 +43,51 @@ export const ShipCountEditList = (props: IProps) => {
         <Stack spacing={1}>
             {shipSelections?.map(shipSelection => (
                 <Paper variant="outlined" key={`${shipSelection.shipDefinition.id}_${shipSelection.reinforcement ?? 'initial'}`}>
-                <Box p={1}>
-                    <Stack spacing={1}>
-                        <MemoizedShipCountEditListItem
-                            shipDefinition={shipSelection.shipDefinition}
-                            count={shipSelection.count}
-                            maxCount={shipSelection.maxCount}
-                            reinforcement={shipSelection.reinforcement}
-                            showCost={showCost}
-                            showReinforcement={showReinforcement}
-                            carrierShipId={carrierShipId}
-                            onChangeShipCount={onChangeShipCount}
-                            onChangeCarriedShipCount={onChangeCarriedShipCount}
-                            shipWarning={shipWarnings[createShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
-                        />
-                        {shipSelection.moduleSelection && onChangeModule && (
-                            <ModuleData
-                                shipId={shipSelection.shipDefinition.id}
+                    <Box component="div" p={1}>
+                        <Stack spacing={1}>
+                            <MemoizedShipCountEditListItem
+                                shipDefinition={shipSelection.shipDefinition}
+                                count={shipSelection.count}
+                                maxCount={shipSelection.maxCount}
                                 reinforcement={shipSelection.reinforcement}
-                                moduleSelection={shipSelection.moduleSelection}
-                                myListOnly={myListOnly}
-                                onChange={onChangeModule}
+                                showCost={showCost}
+                                showReinforcement={showReinforcement}
+                                carrierShipId={carrierShipId}
+                                onChangeShipCount={onChangeShipCount}
+                                onChangeCarriedShipCount={onChangeCarriedShipCount}
+                                shipWarning={shipWarnings[createShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                             />
-                        )}
-                        {showHangar && shipSelection.carrierCapabilities.canCarry && (
-                            <Stack spacing={1}>
-                                <HangarData shipSelection={shipSelection} onOpenAddCarriedShips={onOpenAddCarriedShips} />
-                                {shipSelection.carriedShips?.map(carriedShipSelection => (
-                                    <MemoizedShipCountEditListItem
-                                        key={`${shipSelection.shipDefinition.id}_${carriedShipSelection.shipDefinition.id}_${carriedShipSelection.reinforcement ?? 'initial'}`}
-                                        shipDefinition={carriedShipSelection.shipDefinition}
-                                        count={carriedShipSelection.count}
-                                        maxCount={carriedShipSelection.shipDefinition.operationLimit}
-                                        reinforcement={carriedShipSelection.reinforcement}
-                                        carrierShipId={shipSelection.shipDefinition.id}
-                                        showCost={false}
-                                        showReinforcement={false}
-                                        onChangeCarriedShipCount={onChangeCarriedShipCount}
-                                        shipWarning={shipWarnings[createShipWarningKey(carriedShipSelection.shipDefinition.id, shipSelection.reinforcement)]}
-                                    />
-                                ))}
-                            </Stack>
-                        )}
-                    </Stack>
-                </Box>
-            </Paper>
+                            {shipSelection.moduleSelection && onChangeModule && (
+                                <ModuleData
+                                    shipId={shipSelection.shipDefinition.id}
+                                    reinforcement={shipSelection.reinforcement}
+                                    moduleSelection={shipSelection.moduleSelection}
+                                    myListOnly={myListOnly}
+                                    onChange={onChangeModule}
+                                />
+                            )}
+                            {showHangar && shipSelection.carrierCapabilities.canCarry && (
+                                <Stack spacing={1}>
+                                    <HangarData shipSelection={shipSelection} onOpenAddCarriedShips={onOpenAddCarriedShips} />
+                                    {shipSelection.carriedShips?.map(carriedShipSelection => (
+                                        <MemoizedShipCountEditListItem
+                                            key={`${shipSelection.shipDefinition.id}_${carriedShipSelection.shipDefinition.id}_${carriedShipSelection.reinforcement ?? 'initial'}`}
+                                            shipDefinition={carriedShipSelection.shipDefinition}
+                                            count={carriedShipSelection.count}
+                                            maxCount={carriedShipSelection.shipDefinition.operationLimit}
+                                            reinforcement={carriedShipSelection.reinforcement}
+                                            carrierShipId={shipSelection.shipDefinition.id}
+                                            showCost={false}
+                                            showReinforcement={false}
+                                            onChangeCarriedShipCount={onChangeCarriedShipCount}
+                                            shipWarning={shipWarnings[createShipWarningKey(carriedShipSelection.shipDefinition.id, shipSelection.reinforcement)]}
+                                        />
+                                    ))}
+                                </Stack>
+                            )}
+                        </Stack>
+                    </Box>
+                </Paper>
             ))}
         </Stack>
     );

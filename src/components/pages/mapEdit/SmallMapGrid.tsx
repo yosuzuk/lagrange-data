@@ -62,6 +62,7 @@ export const SmallMapGrid = (props: IProps) => {
     return (
         <Stack sx={{ padding: `${ROOT_PADDING}px` }} direction="row" justifyContent="center">
             <Box
+                component="div"
                 sx={{
                     width: gridContainerWidth,
                 }}

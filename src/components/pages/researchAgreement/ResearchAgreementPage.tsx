@@ -53,7 +53,7 @@ export const ResearchAgreementPage = () => {
         <>
             <NavigationBar currentRoute="/researchAgreement" />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack spacing={1}>
                         <Stack pt={1} pb={1} spacing={2}>
                             <Typography variant="body2">
@@ -67,7 +67,7 @@ export const ResearchAgreementPage = () => {
                             </Typography>
                         </Stack>
                         <Paper>
-                            <Box p={2}>
+                            <Box component="div" p={2}>
                                 <Stack spacing={4}>
                                     <Stack spacing={2}>
                                         <Typography variant="body2">
@@ -88,7 +88,7 @@ export const ResearchAgreementPage = () => {
                                         <div>
                                             <ResearchFilter filterState={filterState} onChange={setFilterState} shipFilterOptions={shipFilterOptions} />
                                         </div>
-                                        <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                                        <Box component="div" sx={{ display: 'flex', justifyContent: 'end' }}>
                                             <ViewModeSelection mode={viewMode} onChange={setViewMode} />
                                         </Box>
                                     </Stack>
@@ -105,7 +105,7 @@ export const ResearchAgreementPage = () => {
                 </Box>
             </PageContent>
             {viewMode === 'table' && (
-                <Box p={1}>    
+                <Box component="div" p={1}>
                     <MemoizedResearchAgreementTable
                         configurations={filteredResearchConfigurations}
                         filterState={filterState}

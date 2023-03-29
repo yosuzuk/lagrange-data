@@ -93,7 +93,7 @@ export const TechFileChart = (props: IProps) => {
     }, [techFile, techFileChances]);
 
     return (
-        <Box height={240}>
+        <Box component="div" height={240}>
             <ResponsiveContainer>
                 <PieChart>
                     <Pie

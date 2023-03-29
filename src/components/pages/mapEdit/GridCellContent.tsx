@@ -21,11 +21,11 @@ export const GridCellContent = (props: IProps) => {
     };
 
     return (
-        <Box sx={{ flexGrow: 1, position: 'relative', overflow: 'hidden' }}>
-            <Box sx={{ position: 'absolute', top: 0, left: 0, color: 'lightgrey', opacity: 0.1 }}>
+        <Box component="div" sx={{ flexGrow: 1, position: 'relative', overflow: 'hidden' }}>
+            <Box component="div" sx={{ position: 'absolute', top: 0, left: 0, color: 'lightgrey', opacity: 0.1 }}>
                 {`(${x}/${y})`}
             </Box>
-            <Box sx={{
+            <Box component="div" sx={{
                 display: 'flex',
                 position: 'absolute',
                 top: 0,

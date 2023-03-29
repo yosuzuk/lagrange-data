@@ -34,7 +34,7 @@ export const ShipDataPage = () => {
                 onColumnConfigChange={setColumnConfig}
             />
             <PageContent disableContainer={disableContainer}>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
                 </Box>
             </PageContent>

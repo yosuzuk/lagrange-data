@@ -14,7 +14,7 @@ export const StepStepper = (props: IProps) => {
 
     return (
         <Paper>
-            <Box p={1}>
+            <Box component="div" p={1}>
                 <Stepper activeStep={step}>
                     <Step>
                         <StepLabel>{t('imageEdit.chooseAndOrder')}</StepLabel>

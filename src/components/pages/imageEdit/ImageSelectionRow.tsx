@@ -116,12 +116,14 @@ export const ImageSelectionRow = (props: IProps) => {
         <Paper>
             <Stack direction="row">
                 <Box
+                    component="div"
                     sx={{
                         position: 'relative',
                         alignSelf: 'stretch'
                     }}
                 >
                     <Box
+                        component="div"
                         ref={cutSliderContainerRef}
                         pb={4}
                         sx={{
@@ -148,6 +150,7 @@ export const ImageSelectionRow = (props: IProps) => {
                         )}
                     </Box>
                     <Box
+                        component="div"
                         ref={moveSliderContainerRef}
                         pb={4}
                         sx={{
@@ -175,6 +178,7 @@ export const ImageSelectionRow = (props: IProps) => {
                     </Box>
                 </Box>
                 <Box
+                    component="div"
                     ref={resizerRef}
                     sx={{
                         flexGrow: 1,
@@ -190,7 +194,7 @@ export const ImageSelectionRow = (props: IProps) => {
                     }}
                 >
                     <Stack direction="row" alignItems="end">
-                        <Box ref={imageContainerRef}
+                        <Box component="div" ref={imageContainerRef}
                             sx={{
                                 width: widthPxOrFullWidth,
                                 height: heightPxOrAuto,

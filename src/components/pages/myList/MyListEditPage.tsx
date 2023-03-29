@@ -61,7 +61,7 @@ export const MyListEditPage = () => {
                 onFilter={setShipFilter}
             />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
                             {t('myListConfig.pageDescription1')}

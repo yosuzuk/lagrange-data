@@ -122,7 +122,7 @@ export const FleetSetupEditPage = () => {
                 saveDisabled={Object.keys(errors).length > 0}
             />
             <PageContent disableContainer={groupDirection === 'row'}>
-                <Box p={1} sx={{ marginBottom: '60px' }}>
+                <Box component="div" p={1} sx={{ marginBottom: '60px' }}>
                     <Stack spacing={1}>
                         <FleetPropertiesEdit
                             fleetSetup={fleetSetup}
@@ -136,7 +136,7 @@ export const FleetSetupEditPage = () => {
                                     key={group.id}
                                     sx={{ width: groupDirection === 'row' ? `${100 / groupedShips.groups.length}%` : undefined }}
                                 >
-                                    <Box p={1}>
+                                    <Box component="div" p={1}>
                                         <Stack spacing={1}>
                                             <Stack
                                                 spacing={1}
@@ -144,7 +144,7 @@ export const FleetSetupEditPage = () => {
                                                 alignItems="center"
                                                 sx={{ width: '100%' }}
                                             >
-                                                <Box sx={{ flexGrow: 1 }}>
+                                                <Box component="div" sx={{ flexGrow: 1 }}>
                                                     <Typography variant="body1">
                                                         {group.name}
                                                         {isLanguageWithWhitespace() && (

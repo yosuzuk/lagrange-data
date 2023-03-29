@@ -22,29 +22,29 @@ export const PageFooter = ({ disableContainer }: IProps) => {
     const { mode, toggleMode } = useColorMode();
 
     return (
-        <Box mt={8}>
+        <Box component="div" mt={8}>
             <Divider />
             <Container disabled={disableContainer}>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack spacing={2} direction="row" alignItems="center" justifyContent="space-between">
                         <Typography variant="body2" color="text.secondary">{'© 2022 yosuzuk'}</Typography>
                         <Stack spacing={2} direction="row" alignItems="center" justifyContent="end">
-                                <Typography variant="body2" color="text.secondary">
-                                    {t('appTitle')}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {`Version ${__APP_VERSION__}`}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
-                                    {'Changelog'}
-                                </Typography>
-                                <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
-                                    <GitHubIcon fontSize="small" />
-                                </IconButton>
-                                <IconButton size="small" onClick={toggleMode}>
-                                    {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                                </IconButton>
-                                <LanguagePicker />
+                            <Typography variant="body2" color="text.secondary">
+                                {t('appTitle')}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {`Version ${__APP_VERSION__}`}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" component="a" href={REPOSITORY_URL + CHANGELOG_URL} target="_blank">
+                                {'Changelog'}
+                            </Typography>
+                            <IconButton size="small" component="a" href={REPOSITORY_URL} target="_blank">
+                                <GitHubIcon fontSize="small" />
+                            </IconButton>
+                            <IconButton size="small" onClick={toggleMode}>
+                                {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                            </IconButton>
+                            <LanguagePicker />
                         </Stack>
                     </Stack>
                 </Box>

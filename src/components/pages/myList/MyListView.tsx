@@ -90,7 +90,7 @@ export const MyListView = (props: IProps) => {
                         details: (
                             <>
                                 <MemoizedShipDataTable shipDefinitions={shipListState.unwishedByData} columnConfig={columnConfig} />
-                                <Box pt={1}>
+                                <Box component="div" pt={1}>
                                     <Typography variant="caption" align="right" paragraph={true}>
                                         {t('myList.unwantedDuplicatesFootnote')}
                                     </Typography>

@@ -35,7 +35,7 @@ interface IProps {
     researchManufacturer?: ResearchManufacturer[] | false;
     researchStrategyTypes?: ResearchStrategyType[] | false;
     researchTacticTypes?: ResearchTacticType[] | false;
-    buttonProps? : ButtonProps;
+    buttonProps?: ButtonProps;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
@@ -112,7 +112,7 @@ export const ShipTypeFilterButton = (props: IProps) => {
                         <div>
                             <ClickAwayListener onClickAway={() => setOpened(false)}>
                                 <Paper>
-                                    <Box sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px`}}>
+                                    <Box component="div" sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px` }}>
                                         <MenuList id="split-button-menu">
                                             {shipFilterOptions.map((option: IFilterOption) => (
                                                 <MenuItem
@@ -121,12 +121,12 @@ export const ShipTypeFilterButton = (props: IProps) => {
                                                     onClick={() => handleClickFilter(option.filterKey)}
                                                 >
                                                     <ListItemIcon>
-                                                    <Checkbox
-                                                        edge="start"
-                                                        checked={filter[option.filterKey]}
-                                                        tabIndex={-1}
-                                                        disableRipple={true}
-                                                    />
+                                                        <Checkbox
+                                                            edge="start"
+                                                            checked={filter[option.filterKey]}
+                                                            tabIndex={-1}
+                                                            disableRipple={true}
+                                                        />
                                                     </ListItemIcon>
                                                     <ListItemText>
                                                         {option.name}
@@ -136,7 +136,7 @@ export const ShipTypeFilterButton = (props: IProps) => {
                                         </MenuList>
                                     </Box>
                                     <Divider />
-                                    <Box p={1} display="flex" justifyContent="end">
+                                    <Box component="div" p={1} display="flex" justifyContent="end">
                                         <Stack spacing={1} direction="row">
                                             <Button variant="outlined" onClick={handleClickFilterOff} disabled={!filterUsed}>
                                                 {t('button.unselectAll')}

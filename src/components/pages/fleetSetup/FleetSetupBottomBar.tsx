@@ -19,12 +19,12 @@ export const FleetSetupBottomBar = (props: IProps) => {
     const exceedingReinforcement = fleetSetup.totalReinforcementCount > fleetSetup.maxReinforcement;
 
     return (
-        <Box sx={{ height: '100px' }}>
+        <Box component="div" sx={{ height: '100px' }}>
             <Paper square={true} sx={{ position: 'fixed', right: 0, bottom: 0, zIndex: 1, width: '100%', borderTop: '1px solid rgba(0, 0, 0, 0.2)' }}>
                 <Container maxWidth="md" disableGutters={true}>
-                    <Box p={1}>
+                    <Box component="div" p={1}>
                         <Stack spacing={1} flexWrap="wrap" direction="row">
-                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+                            <Box component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
                                         {t('fleetSetup.reinforcement')}
@@ -37,7 +37,7 @@ export const FleetSetupBottomBar = (props: IProps) => {
                                     </Typography>
                                 </div>
                             </Box>
-                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+                            <Box component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                                 <div>
                                     <Typography variant="body2" color="text.secondary">
                                         {t('fleetSetup.commandPoints')}

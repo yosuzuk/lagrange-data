@@ -56,7 +56,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
 
     return (
         <Paper>
-            <Box p={1}>
+            <Box component="div" p={1}>
                 <LabeledList
                     sx={{
                         alignItems: 'center',
@@ -104,7 +104,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     {[5, 6, 7, 9, 10].map(count => (
                                         <MenuItem value={`${count}`} key={`reinforcementCount${count}`}>
                                             {t('fleetSetup.shipCount', { value: count })}
-                                        </MenuItem>    
+                                        </MenuItem>
                                     ))}
                                 </TextField>
                             ),
@@ -133,7 +133,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
                                     {[450, 430, 415, 400, 350, 330, 315, 300].map(maxCost => (
                                         <MenuItem value={`${maxCost}`} key={`maxCost${maxCost}`}>
                                             {maxCost}
-                                        </MenuItem>    
+                                        </MenuItem>
                                     ))}
                                 </TextField>
                             ),
