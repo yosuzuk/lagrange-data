@@ -35,3 +35,14 @@ export function getDistance(pos1: GridPosition, pos2: GridPosition): number {
         )
     );
 }
+
+export function getRingThetaByGridPosition(position: GridPosition): number {
+    const [x, y] = position;
+    const temp = Math.atan2(y, x);
+    return temp >= 0 ? temp : temp + (2 * Math.PI);
+}
+
+export function getAngleBetweenVectors(pos1: GridPosition, pos2: GridPosition): number {
+    const temp = Math.atan2(pos2[1], pos2[0]) - Math.atan2(pos1[1], pos1[0]);
+    return temp >= 0 ? temp : temp + (2 * Math.PI);
+}

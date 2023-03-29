@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
+import { degreesToRadians, radiansToDegrees } from '../../../../utils/math';
 import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition } from '../types/Coordinates';
-import { getDistance, toGridPosition } from '../utils/coordinateUtils';
+import { getAngleBetweenVectors, getDistance, getRingThetaByGridPosition, toGridPosition } from '../utils/coordinateUtils';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
@@ -37,9 +38,14 @@ export const Zone = (props: IProps) => {
         const outerGridPosition = toGridPosition(outerPos, gridSize);
         const outerRadius = getDistance(outerGridPosition, [0, 0]);
 
-        const thetaStart = 0;
-        const thetaLength = Math.PI * 2;
-        const thetaSegments = Math.max(60 * (thetaLength / MAX_THETA_LENGTH), MIN_THETA_SEGMENTS);
+        const gridStart = toGridPosition(startPos, gridSize);
+        const gridEnd = toGridPosition(endPos, gridSize);
+
+        // we use gridEnd for thetaStart because the span direction is inversed
+        const thetaStart = getRingThetaByGridPosition(gridEnd);
+        const thetaLength = getAngleBetweenVectors(gridEnd, gridStart);
+
+        const thetaSegments = Math.max(Math.round(60 * (thetaLength / MAX_THETA_LENGTH)), MIN_THETA_SEGMENTS);
 
         return {
             innerRadius,
@@ -49,6 +55,8 @@ export const Zone = (props: IProps) => {
             thetaSegments,
         };
     }, [startPos, endPos, innerPos, outerPos, gridSize]);
+
+    console.log(`${color}: ${toGridPosition(startPos, gridSize)}`)
 
     return (
         <mesh position={[0, 0, 0]}>
