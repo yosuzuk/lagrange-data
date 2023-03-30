@@ -4,7 +4,7 @@ const zLevels = {
     fleet: 3,
     arrow: 2,
     tileStructure: 1,
-    axesHelper: 0,
+    axesHelper: 10,
     gridHelper: 0,
     planet: 0,
     orbit: 0,

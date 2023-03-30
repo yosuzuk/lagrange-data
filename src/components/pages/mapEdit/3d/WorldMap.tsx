@@ -24,8 +24,8 @@ export const WorldMap = (props: IProps) => {
             position: [
                 // map is rotated by 6° on z-axis, 45° on x-axis
                 // => x = tan(rad(6°)) * y, z = y
-                Math.tan(degreesToRadians(6)) * initialCameraDistance,
-                initialCameraDistance,
+                Math.tan(degreesToRadians(-6)) * initialCameraDistance,
+                -1 * initialCameraDistance,
                 initialCameraDistance,
             ],
             zoom: 2,
