@@ -3,6 +3,7 @@ import { degreesToRadians } from '../../../../utils/math';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getDistance, toGridPosition } from '../utils/coordinateUtils';
+import { getZ } from '../utils/zUtils';
 
 interface IProps {
     outerPos: GamePosition;
@@ -34,7 +35,7 @@ export const Orbit = (props: IProps) => {
                 // division
                 64,
             ]}
-            position={[...state.anchorPosition, 0]}
+            position={[...state.anchorPosition, getZ('orbit')]}
             rotation={[degreesToRadians(90), 0, 0]}
         />
     );

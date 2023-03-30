@@ -6,6 +6,7 @@ import { DebugProvider, useDebug } from '../context/DebugContext';
 import { GridSizeProvider } from '../context/GridSizeContext';
 import { SizedContainer } from '../SizedContainer';
 import { translateSizeToGrid } from '../utils/coordinateUtils';
+import { getZ } from '../utils/zUtils';
 
 interface IProps {
     size: number;
@@ -49,7 +50,7 @@ export const WorldMap = (props: IProps) => {
                                 // colorGrid
                                 0x808080,
                             ]}
-                            position={[0, 0, 0]}
+                            position={[0, 0, getZ('gridHelper')]}
                             rotation={[degreesToRadians(90), 0, 0]}
                         />
                         <ambientLight />
@@ -60,7 +61,7 @@ export const WorldMap = (props: IProps) => {
                             rotation={[degreesToRadians(90), 0, 0]}
                         />
                         {debug && (
-                            <axesHelper args={[10]} />
+                            <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
                         )}
                         {children}
                         <MapControls

@@ -3,10 +3,12 @@ import { Zone } from './3d/Zone';
 import { WorldMap } from './3d/WorldMap';
 import { Marker } from './3d/Marker';
 import { Planet } from './3d/Planet';
+import { Sun } from './3d/Sun';
 
 export const LargeMapEditPage = () => {
     return (
         <WorldMap size={10000}>
+            <Sun />
             <Zone
                 number={1}
                 label="My Union"

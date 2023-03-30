@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { degreesToRadians, radiansToDegrees } from '../../../../utils/math';
 import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition } from '../types/Coordinates';
