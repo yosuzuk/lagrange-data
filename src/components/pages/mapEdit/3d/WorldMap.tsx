@@ -2,19 +2,21 @@ import { ReactNode, useMemo, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls, Grid } from '@react-three/drei';
 import { degreesToRadians } from '../../../../utils/math';
-import { DebugProvider, useDebug } from '../context/DebugContext';
+import { DebugProvider } from '../context/DebugContext';
 import { GridSizeProvider } from '../context/GridSizeContext';
-import { SizedContainer } from '../SizedContainer';
+import { ThreeCanvasContainer } from '../ThreeCanvasContainer';
 import { translateSizeToGrid } from '../utils/coordinateUtils';
 import { getZ } from '../utils/zUtils';
+import { Sun } from './Sun';
 
 interface IProps {
+    systemName: string;
     size: number;
     children: ReactNode;
 }
 
 export const WorldMap = (props: IProps) => {
-    const { size, children } = props;
+    const { systemName, size, children } = props;
     const gridSize = translateSizeToGrid(size);
     const [debug, setDebug] = useState<boolean>(false);
 
@@ -37,7 +39,7 @@ export const WorldMap = (props: IProps) => {
     return (
         <DebugProvider value={debug === true}>
             <GridSizeProvider value={gridSize}>
-                <SizedContainer>
+                <ThreeCanvasContainer>
                     <Canvas camera={camera} onClick={() => setDebug(x => !x)}>
                         <gridHelper
                             args={[
@@ -63,6 +65,7 @@ export const WorldMap = (props: IProps) => {
                         {debug && (
                             <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
                         )}
+                        <Sun label={systemName} />
                         {children}
                         <MapControls
                             enableDamping={false}
@@ -70,7 +73,7 @@ export const WorldMap = (props: IProps) => {
                             zoomSpeed={5}
                         />
                     </Canvas>
-                </SizedContainer >
+                </ThreeCanvasContainer >
             </GridSizeProvider >
         </DebugProvider >
     );

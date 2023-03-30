@@ -3,5 +3,5 @@ export function degreesToRadians(degrees: number): number {
 }
 
 export function radiansToDegrees(rad: number): number {
-    return rad * 180 / Math.PI;
+    return (rad * 180 / Math.PI) % 360;
 }

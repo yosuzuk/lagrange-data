@@ -1,12 +1,14 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
+import { useCursorValue } from './context/CursorContext';
 
 interface IProps {
     children: ReactNode;
 }
 
-export const SizedContainer = (props: IProps) => {
+export const ThreeCanvasContainer = (props: IProps) => {
     const { children } = props;
+    const cursor = useCursorValue();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState<[number, number] | null>(null);
@@ -20,7 +22,7 @@ export const SizedContainer = (props: IProps) => {
     return (
         <Box component="div" sx={{ flexGrow: 1 }} ref={containerRef}>
             {size && (
-                <Box component="div" sx={{ width: size[0], height: size[1] }}>
+                <Box component="div" sx={{ width: size[0], height: size[1], cursor }}>
                     {children}
                 </Box>
             )}

@@ -8,6 +8,7 @@ const zLevels = {
     gridHelper: 0,
     planet: 0,
     orbit: 0,
+    zoneText: 0,
     zone: -1,
     mapBackground: -2,
 } as const;

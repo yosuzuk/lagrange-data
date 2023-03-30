@@ -1,10 +1,14 @@
 import { useDebug } from '../context/DebugContext';
 import { getZ } from '../utils/zUtils';
 
-export const Sun = () => {
+interface IProps {
+    label: string;
+}
+
+export const Sun = ({ label }: IProps) => {
     const debug = useDebug();
 
-    const radius = 6;
+    const radius = 7;
     const widthSegments = 16;
 
     return (

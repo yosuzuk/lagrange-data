@@ -1,29 +1,40 @@
-import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useCallback, useMemo } from 'react';
 import { NearestFilter } from 'three';
-import { useGridSize } from '../context/GridSizeContext';
-import { GamePosition } from '../types/Coordinates';
-import { toGridPosition } from '../utils/coordinateUtils';
+import { useCursorControl } from '../context/CursorContext';
+import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
+import { GamePosition, GridPosition } from '../types/Coordinates';
 import { createMarkerImage } from '../utils/spriteUtils';
 
-const markerImage = createMarkerImage();
-
 interface IProps {
-    position: GamePosition;
+    position?: GamePosition;
+    gridPosition?: GridPosition;
+    color?: string;
 }
 
 export const Marker = (props: IProps) => {
-    const { position } = props;
-    const gridSize = useGridSize();
+    const { position: gamePosition, gridPosition, color = 'white' } = props;
+    const { setCursorToPointer, setCursorToDefault } = useCursorControl();
+
+    const position = useNormalizedPosition({
+        gamePosition,
+        gridPosition,
+    });
+
+    const markerImage = useMemo(() => createMarkerImage(color), [color]);
+
+    const handleClick = useCallback(() => {
+        console.log(position);
+    }, [position]);
 
     return (
         <sprite
-            position={[...toGridPosition(position, gridSize), 0]}
+            position={[...position, 0]}
             scale={[markerImage.width * 0.0015, markerImage.height * 0.0015, 1]}
+            onClick={handleClick}
+            onPointerEnter={setCursorToPointer}
+            onPointerLeave={setCursorToDefault}
         >
-            <spriteMaterial
-                sizeAttenuation={false}
-                color="0xffffff"
-            >
+            <spriteMaterial sizeAttenuation={false}>
                 <canvasTexture
                     attach="map"
                     image={markerImage}

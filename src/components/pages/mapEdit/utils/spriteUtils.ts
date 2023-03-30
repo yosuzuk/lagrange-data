@@ -1,13 +1,16 @@
 export function createMarkerImage(color: string = 'white') {
     const { canvas, ctx } = createCanvas();
-    canvas.width = 5;
+    const cubeSize = 5;
+    const paddingSide = 2;
+
+    canvas.width = cubeSize + (2 * paddingSide);
     canvas.height = 20 * 2; // double height because we cannot change the pivot point
     ctx.lineWidth = 1;
     ctx.fillStyle = color;
-    ctx.fillRect(0, 0, 5, 5);
+    ctx.fillRect(paddingSide, 0, 5, 5);
     ctx.beginPath();
-    ctx.moveTo(2.5, 5);
-    ctx.lineTo(2.5, 20);
+    ctx.moveTo(paddingSide + 2.5, 5);
+    ctx.lineTo(paddingSide + 2.5, 20);
     ctx.strokeStyle = color;
     ctx.stroke();
     return canvas;
