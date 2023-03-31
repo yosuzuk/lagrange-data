@@ -1,6 +1,6 @@
 import { ReactNode, useMemo, useState, ComponentProps } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { MapControls, Grid } from '@react-three/drei';
+import { Grid } from '@react-three/drei';
 import { degreesToRadians } from '../../../../utils/math';
 import { DebugProvider } from '../context/DebugContext';
 import { GridSizeProvider } from '../context/GridSizeContext';
@@ -8,6 +8,8 @@ import { ThreeCanvasContainer } from '../ThreeCanvasContainer';
 import { translateSizeToGrid } from '../utils/coordinateUtils';
 import { getZ } from '../utils/zUtils';
 import { Sun } from './Sun';
+import { CameraControls } from './CameraControls';
+import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 
 interface IProps {
     systemName: string;
@@ -19,6 +21,7 @@ export const WorldMap = (props: IProps) => {
     const { systemName, size, children } = props;
     const gridSize = translateSizeToGrid(size);
     const [debug, setDebug] = useState<boolean>(false);
+    const gridVisibility = useZoomBasedVisibility('gameGrid');
 
     const camera = useMemo(() => {
         const initialCameraDistance = gridSize;
@@ -47,7 +50,7 @@ export const WorldMap = (props: IProps) => {
                                 // size
                                 gridSize,
                                 // divisions
-                                debug ? 10 : 1,
+                                debug ? 10 : (gridVisibility ? 100 : 1),
                                 // colorCenterLine
                                 0x0000ff,
                                 // colorGrid
@@ -68,16 +71,7 @@ export const WorldMap = (props: IProps) => {
                         )}
                         <Sun label={systemName} />
                         {children}
-                        <MapControls
-                            enableDamping={false}
-                            enableRotate={false}
-                            zoomSpeed={5}
-                            minDistance={3}
-                            maxDistance={1500}
-                            onChange={(e) => {
-                                console.log(e?.target.getDistance());
-                            }}
-                        />
+                        <CameraControls />
                     </Canvas>
                 </ThreeCanvasContainer >
             </GridSizeProvider >

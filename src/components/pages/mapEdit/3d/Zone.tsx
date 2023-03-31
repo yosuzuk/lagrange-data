@@ -4,8 +4,8 @@ import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getAngleBetweenAngles, getAngleBetweenVectors, getDistance, getGridPositionByAngleAndRadius, getRingThetaByGridPosition, toGridPosition } from '../utils/coordinateUtils';
-import { Marker } from './Marker';
 import { getZ } from '../utils/zUtils';
+import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
@@ -33,6 +33,9 @@ export const Zone = (props: IProps) => {
     const { zoneNumber, color, label, startPos, endPos, innerPos, outerPos } = props;
     const gridSize = useGridSize();
     const debug = useDebug();
+    const backgroundVisible = useZoomBasedVisibility('zoneBackground');
+    const backgroundOpacity = useZoomBasedOpacity('zoneBackground');
+    const labelVisible = useZoomBasedVisibility('zoneLabel');
 
     const state = useMemo<IState>(() => {
         const innerGridPosition = toGridPosition(innerPos, gridSize);
@@ -65,26 +68,33 @@ export const Zone = (props: IProps) => {
 
     return (
         <>
-            <mesh position={[0, 0, getZ('zone')]}>
-                <ringGeometry
-                    args={[
-                        // innerRadius: Float
-                        state.innerRadius,
-                        // outerRadius: Float
-                        state.outerRadius,
-                        // thetaSegments: Integer
-                        state.thetaSegments,
-                        // phiSegments: Integer
-                        1,
-                        // thetaStart: Float
-                        state.thetaStart,
-                        // thetaLength: Float
-                        state.thetaLength,
-                    ]}
-                />
-                <meshStandardMaterial color={color} wireframe={debug} />
-            </mesh>
-            {(Number.isFinite(zoneNumber) || label) && (
+            {backgroundVisible && (
+                <mesh position={[0, 0, getZ('zone')]}>
+                    <ringGeometry
+                        args={[
+                            // innerRadius: Float
+                            state.innerRadius,
+                            // outerRadius: Float
+                            state.outerRadius,
+                            // thetaSegments: Integer
+                            state.thetaSegments,
+                            // phiSegments: Integer
+                            1,
+                            // thetaStart: Float
+                            state.thetaStart,
+                            // thetaLength: Float
+                            state.thetaLength,
+                        ]}
+                    />
+                    <meshStandardMaterial
+                        color={color}
+                        wireframe={debug}
+                        transparent={true}
+                        opacity={backgroundOpacity ?? undefined}
+                    />
+                </mesh>
+            )}
+            {labelVisible && (Number.isFinite(zoneNumber) || label) && (
                 <mesh position={[...state.textPosition, getZ('zoneText')]}>
                     <Text
                         color="white"
