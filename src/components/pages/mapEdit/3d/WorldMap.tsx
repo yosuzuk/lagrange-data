@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo, useState, ComponentProps } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls, Grid } from '@react-three/drei';
 import { degreesToRadians } from '../../../../utils/math';
@@ -22,25 +22,26 @@ export const WorldMap = (props: IProps) => {
 
     const camera = useMemo(() => {
         const initialCameraDistance = gridSize;
-        return {
+        const cameraOptions: ComponentProps<typeof Canvas>['camera'] = {
             position: [
                 // map is rotated by 6° on z-axis, 45° on x-axis
                 // => x = tan(rad(6°)) * y, z = y
-                Math.tan(degreesToRadians(-6)) * initialCameraDistance,
+                Math.tan(degreesToRadians(-5)) * initialCameraDistance,
                 -1 * initialCameraDistance,
                 initialCameraDistance,
             ],
             zoom: 2,
             up: [0, 0, 1],
             far: 10000,
-        } as const;
+        };
+        return cameraOptions;
     }, [gridSize]);
 
     return (
         <DebugProvider value={debug === true}>
             <GridSizeProvider value={gridSize}>
                 <ThreeCanvasContainer>
-                    <Canvas camera={camera} onClick={() => setDebug(x => !x)}>
+                    <Canvas camera={camera} onDoubleClick={() => setDebug(x => !x)}>
                         <gridHelper
                             args={[
                                 // size
@@ -71,6 +72,11 @@ export const WorldMap = (props: IProps) => {
                             enableDamping={false}
                             enableRotate={false}
                             zoomSpeed={5}
+                            minDistance={3}
+                            maxDistance={1500}
+                            onChange={(e) => {
+                                console.log(e?.target.getDistance());
+                            }}
                         />
                     </Canvas>
                 </ThreeCanvasContainer >
