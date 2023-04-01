@@ -13,8 +13,6 @@ export const CameraControls = () => {
         }
         const distance = e.target.getDistance();
 
-        console.log(distance);
-
         setCameraDistance(distance);
     }, [setCameraDistance]);
 

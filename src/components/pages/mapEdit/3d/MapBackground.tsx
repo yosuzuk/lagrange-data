@@ -10,7 +10,6 @@ interface IProps {
 export const MapBackground = (props: IProps) => {
     const { imagePath } = props;
     const gridSize = useGridSize();
-    console.log(imagePath);
     const texture = useLoader(TextureLoader, imagePath);
 
     return (
