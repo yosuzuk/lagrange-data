@@ -4,6 +4,8 @@ The map builder uses a similar syntax to the in-game chat and mail. This allows 
 
 ## Marker
 
+![marker example](markerExample.jpg)
+
 Syntax:
 
 ```
@@ -13,7 +15,7 @@ $marker
 
 You can place multiple markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
 
-`$marker`キーワードの後に複数のマーカーを配置できます。各マーカーは新しい行に指定する必要があります。オプションで色とラベルが指定できます。
+「`$marker`」キーワードの後に複数のマーカーを配置できます。各マーカーは新しい行に指定する必要があります。オプションで色とラベルが指定できます。
 
 Example:
 
