@@ -1,0 +1,106 @@
+import { useState, useCallback, useMemo, useEffect } from 'react';
+import { NearestFilter } from 'three';
+import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
+import { GamePosition, GridPosition } from '../types/Coordinates';
+import { createTextImage } from '../utils/spriteUtils';
+import { getZ } from '../utils/zUtils';
+
+/*function createText2D(text, color, font, size, segW, segH) {
+
+    var canvas = createTextCanvas(text, color, font, size);
+    var plane = new THREE.PlaneGeometry(canvas.width, canvas.height, segW, segH);
+    var tex = new THREE.Texture(canvas);
+
+    tex.needsUpdate = true;
+
+    var planeMat = new THREE.MeshBasicMaterial({
+        map: tex,
+        color: 0xffffff,
+        transparent: true
+    });
+
+    var mesh = new THREE.Mesh(plane, planeMat);
+    mesh.scale.set(0.2, 0.2, 0.2);
+    //mesh.doubleSided = true; // this is no longer a property of mesh // CHANGED
+    mesh.quaternion = camera.quaternion; // CHANGED
+
+    return mesh;
+
+}*/
+
+interface IProps {
+    text: string;
+    position?: GamePosition;
+    gridPosition?: GridPosition;
+    color?: string;
+    font?: string;
+    fontSize?: number;
+    lineSpacing?: number;
+    faceCamera?: boolean;
+    scale?: number;
+    z?: number;
+}
+
+const FONT_SIZE_FOR_NON_CAMERA_FACING_TEXT = 96;
+const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
+
+export const TextLabel = (props: IProps) => {
+    const { text, position: gamePosition, gridPosition, color = 'white', font = 'Arial', fontSize = 12, lineSpacing = 4, faceCamera = false, scale = 1, z } = props;
+
+    const position = useNormalizedPosition({
+        gamePosition,
+        gridPosition,
+    });
+
+    const textImage = useMemo(() => {
+        if (text.trim().length === 0) {
+            return null;
+        }
+        return createTextImage({
+            text,
+            color,
+            font,
+            fontSize: faceCamera ? fontSize : FONT_SIZE_FOR_NON_CAMERA_FACING_TEXT,
+            lineSpacing,
+        });
+    }, [text, color, font, fontSize, lineSpacing, faceCamera]);
+
+    if (!textImage) {
+        console.log('skipped image');
+        return null;
+    }
+
+    if (faceCamera) {
+        return (
+            <sprite
+                position={[...position, 0]}
+                scale={[textImage.width * 0.00175, textImage.height * 0.00175, 1]}
+            >
+                <spriteMaterial sizeAttenuation={false}>
+                    <canvasTexture
+                        attach="map"
+                        image={textImage}
+                        magFilter={NearestFilter}
+                    />
+                </spriteMaterial>
+            </sprite>
+        );
+    }
+
+    return (
+        <mesh position={[...position, z ?? getZ('textLabel')]}>
+            <planeGeometry
+                args={[
+                    textImage.width * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,
+                    textImage.height * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,
+                ]}
+            />
+            <meshBasicMaterial transparent={true}>
+                <canvasTexture
+                    attach="map"
+                    image={textImage}
+                />
+            </meshBasicMaterial>
+        </mesh>
+    );
+};

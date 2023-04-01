@@ -11,7 +11,7 @@ export const MapContent = (props: IProps) => {
     return (
         <>
             {mapContent.marker.map(marker => (
-                <Marker key={marker.id} position={marker.position} color={marker.color} />
+                <Marker key={marker.id} position={marker.position} color={marker.color} label={marker.label} />
             ))}
         </>
     );

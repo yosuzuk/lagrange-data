@@ -1,3 +1,44 @@
+import { normalizeLineEndings } from '../../../../utils/stringUtils';
+
+interface ITextOptions {
+    text: string;
+    color?: string;
+    font?: string;
+    fontSize?: number;
+    lineSpacing?: number;
+}
+
+export function createTextImage(args: ITextOptions) {
+    const {
+        text,
+        color = 'white',
+        font = 'Arial',
+        fontSize = 24,
+        lineSpacing = 4,
+    } = args;
+
+    const lines = normalizeLineEndings(text).split('\n');
+
+    const { canvas, ctx } = createCanvas();
+
+    const fontStr = `${fontSize}px ${font}`;
+    ctx.font = fontStr;
+    canvas.width = Math.max(...lines.map(line => ctx.measureText(line).width));
+    canvas.height = (Math.ceil(fontSize) * lines.length) + (lineSpacing * (lines.length - 1));
+
+    const lineHeight = Math.ceil(fontSize * 0.8);
+
+    let offsetY = 0;
+    lines.forEach((line: string) => {
+        ctx.font = fontStr;
+        ctx.fillStyle = color;
+        ctx.fillText(line, 0, offsetY + lineHeight);
+        offsetY += (lineHeight + lineSpacing);
+    });
+
+    return canvas;
+}
+
 export function createMarkerImage(color: string = 'white') {
     const { canvas, ctx } = createCanvas();
     const cubeSize = 5;
@@ -60,6 +101,17 @@ export function createCityIcon(cityLevel: number, color: string = 'white') {
     canvas.height = 4;
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, 4, 4);
+}
+
+export function mergeIconAndText(iconCanvas: HTMLCanvasElement, textCanvas: HTMLCanvasElement, spacing: number): HTMLCanvasElement {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = iconCanvas.width + spacing + textCanvas.width;
+    canvas.height = Math.max(iconCanvas.height, textCanvas.height);
+    const iconOffsetY = (canvas.height - iconCanvas.height) / 2;
+    const textOffsetY = (canvas.height - textCanvas.height) / 2;
+    ctx.drawImage(iconCanvas, 0, iconOffsetY);
+    ctx.drawImage(textCanvas, iconCanvas.width + spacing, textOffsetY);
+    return canvas;
 }
 
 interface ICreatedCanvas {

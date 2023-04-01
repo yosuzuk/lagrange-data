@@ -1,3 +1,4 @@
+import { normalizeLineEndings } from '../../../../utils/stringUtils';
 import { IMapContent, IMarker, IParseMapContentError } from '../types/IMapContent';
 
 /*
@@ -115,10 +116,6 @@ function createParseMapContentError(message: string, line: number) {
 
 function parseLines(input: string): string[] {
     return normalizeLineEndings(input, '\n').split('\n').map(line => line.trim());
-}
-
-function normalizeLineEndings(input: string, normalized = '\r\n') {
-    return input.replace(/\r?\n/g, normalized);
 }
 
 function removeComment(input: string): string {
