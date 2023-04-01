@@ -9,6 +9,7 @@ interface ITextOptions {
 }
 
 export function createTextImage(args: ITextOptions) {
+    return createTextImage2(args);
     const {
         text,
         color = 'white',
@@ -24,17 +25,39 @@ export function createTextImage(args: ITextOptions) {
     const fontStr = `${fontSize}px ${font}`;
     ctx.font = fontStr;
     canvas.width = Math.max(...lines.map(line => ctx.measureText(line).width));
-    canvas.height = (Math.ceil(fontSize * 0.8) * lines.length) + (lineSpacing * (lines.length - 1));
-
-    const lineHeight = Math.ceil(fontSize * 0.8);
+    const lineHeight = Math.ceil(fontSize);
+    canvas.height = (lineHeight * lines.length) + (lineSpacing * (lines.length - 1));
 
     let offsetY = 0;
     lines.forEach((line: string) => {
         ctx.font = fontStr;
         ctx.fillStyle = color;
-        ctx.fillText(line, 0, offsetY + lineHeight);
+        ctx.fillText(line, 0, offsetY + (lineHeight * 0.8));
         offsetY += (lineHeight + lineSpacing);
     });
+
+    return canvas;
+}
+
+export function createTextImage2(args: ITextOptions) {
+    const {
+        text,
+        color = 'white',
+        font = 'Arial',
+        fontSize = 12,
+        lineSpacing = 4,
+    } = args;
+
+    const { canvas, ctx } = createCanvas();
+
+    const fontStr = `${fontSize}px ${font}`;
+    ctx.font = fontStr;
+    canvas.width = ctx.measureText(text).width;
+    canvas.height = Math.ceil(fontSize);
+
+    ctx.font = fontStr;
+    ctx.fillStyle = color;
+    ctx.fillText(text, 0, Math.ceil(fontSize * 0.8));
 
     return canvas;
 }
@@ -42,10 +65,11 @@ export function createTextImage(args: ITextOptions) {
 export function createMarkerImage(color: string = 'white') {
     const { canvas, ctx } = createCanvas();
     const cubeSize = 5;
+    const stickLength = 15;
     const paddingSide = 2;
 
     canvas.width = cubeSize + (2 * paddingSide);
-    canvas.height = 20 * 2; // double height because we cannot change the pivot point
+    canvas.height = (stickLength + cubeSize) * 2; // double height because we cannot change the pivot point
     ctx.lineWidth = 1;
     ctx.fillStyle = color;
     ctx.fillRect(paddingSide, 0, 5, 5);

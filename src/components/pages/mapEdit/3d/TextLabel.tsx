@@ -35,18 +35,17 @@ interface IProps {
     gridPosition?: GridPosition;
     color?: string;
     font?: string;
-    fontSize?: number;
     lineSpacing?: number;
     faceCamera?: boolean;
     scale?: number;
     z?: number;
 }
 
-const FONT_SIZE_FOR_NON_CAMERA_FACING_TEXT = 96;
+const FONT_SIZE = 72;
 const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
 
 export const TextLabel = (props: IProps) => {
-    const { text, position: gamePosition, gridPosition, color = 'white', font = 'Arial', fontSize = 12, lineSpacing = 4, faceCamera = false, scale = 1, z } = props;
+    const { text, position: gamePosition, gridPosition, color = 'white', font = 'Arial', lineSpacing = 4, faceCamera = false, scale = 1, z } = props;
 
     const position = useNormalizedPosition({
         gamePosition,
@@ -61,10 +60,10 @@ export const TextLabel = (props: IProps) => {
             text,
             color,
             font,
-            fontSize: faceCamera ? fontSize : FONT_SIZE_FOR_NON_CAMERA_FACING_TEXT,
+            fontSize: 12, // FONT_SIZE,
             lineSpacing,
         });
-    }, [text, color, font, fontSize, lineSpacing, faceCamera]);
+    }, [text, color, font, lineSpacing]);
 
     if (!textImage) {
         console.log('skipped image');
