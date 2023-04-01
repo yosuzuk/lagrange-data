@@ -1,16 +1,11 @@
 import { useDebug } from '../context/DebugContext';
 import { getZ } from '../utils/zUtils';
 
-interface IProps {
-    label: string;
-}
+const radius = 7;
+const widthSegments = 16;
 
-export const Sun = ({ label }: IProps) => {
+export const Sun = () => {
     const debug = useDebug();
-
-    const radius = 7;
-    const widthSegments = 16;
-
     return (
         <mesh position={[0, 0, getZ('planet')]}>
             <sphereGeometry args={[radius, widthSegments, widthSegments]} />

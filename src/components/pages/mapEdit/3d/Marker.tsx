@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react';
-import { NearestFilter } from 'three';
 import { useCursorControl } from '../context/CursorContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { createMarkerImage } from '../utils/spriteUtils';
+import { CanvasSprite } from './CanvasSprite';
 import { TextLabel } from './TextLabel';
 
 interface IProps {
@@ -30,21 +30,13 @@ export const Marker = (props: IProps) => {
 
     return (
         <>
-            <sprite
-                position={[...position, 0]}
-                scale={[markerImage.width * 0.0015, markerImage.height * 0.0015, 1]}
+            <CanvasSprite
+                canvas={markerImage}
+                gridPosition={position}
                 onClick={handleClick}
                 onPointerEnter={setCursorToPointer}
                 onPointerLeave={setCursorToDefault}
-            >
-                <spriteMaterial sizeAttenuation={false}>
-                    <canvasTexture
-                        attach="map"
-                        image={markerImage}
-                        magFilter={NearestFilter}
-                    />
-                </spriteMaterial>
-            </sprite>
+            />
             {label && (
                 <TextLabel
                     text={`${label}\n`}

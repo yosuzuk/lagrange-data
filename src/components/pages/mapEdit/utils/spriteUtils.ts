@@ -24,7 +24,7 @@ export function createTextImage(args: ITextOptions) {
     const fontStr = `${fontSize}px ${font}`;
     ctx.font = fontStr;
     canvas.width = Math.max(...lines.map(line => ctx.measureText(line).width));
-    canvas.height = (Math.ceil(fontSize) * lines.length) + (lineSpacing * (lines.length - 1));
+    canvas.height = (Math.ceil(fontSize * 0.8) * lines.length) + (lineSpacing * (lines.length - 1));
 
     const lineHeight = Math.ceil(fontSize * 0.8);
 

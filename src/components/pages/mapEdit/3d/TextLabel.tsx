@@ -4,6 +4,7 @@ import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { createTextImage } from '../utils/spriteUtils';
 import { getZ } from '../utils/zUtils';
+import { CanvasSprite } from './CanvasSprite';
 
 /*function createText2D(text, color, font, size, segW, segH) {
 
@@ -72,18 +73,10 @@ export const TextLabel = (props: IProps) => {
 
     if (faceCamera) {
         return (
-            <sprite
-                position={[...position, 0]}
-                scale={[textImage.width * 0.00175, textImage.height * 0.00175, 1]}
-            >
-                <spriteMaterial sizeAttenuation={false}>
-                    <canvasTexture
-                        attach="map"
-                        image={textImage}
-                        magFilter={NearestFilter}
-                    />
-                </spriteMaterial>
-            </sprite>
+            <CanvasSprite
+                canvas={textImage}
+                gridPosition={position}
+            />
         );
     }
 

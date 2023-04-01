@@ -10,6 +10,7 @@ import { getZ } from '../utils/zUtils';
 import { Sun } from './Sun';
 import { CameraControls } from './CameraControls';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
+import { WorldLabel } from './WorldLabel';
 
 interface IProps {
     systemName: string;
@@ -69,7 +70,8 @@ export const WorldMap = (props: IProps) => {
                         {debug && (
                             <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
                         )}
-                        <Sun label={systemName} />
+                        <Sun />
+                        <WorldLabel worldName={systemName} />
                         {children}
                         <CameraControls />
                     </Canvas>
