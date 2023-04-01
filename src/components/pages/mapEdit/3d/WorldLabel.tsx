@@ -9,17 +9,16 @@ interface IProps {
 export const WorldLabel = (props: IProps) => {
     const { worldName } = props;
 
-    const canvas = useMemo(() => {
-        return mergeIconAndText(
-            createSunIcon(),
-            createTextImage({
-                text: worldName,
-                color: 'white',
-                fontSize: 12,
-            }),
-            4,
-        );
-    }, [worldName]);
+    const canvas = useMemo(() => mergeIconAndText({
+        iconCanvas: createSunIcon(),
+        textCanvas: createTextImage({
+            text: worldName,
+            color: 'white',
+            fontSize: 12,
+        }),
+        spacing: 4,
+        marginTop: 40,
+    }), [worldName]);
 
     return (
         <CanvasSprite canvas={canvas} />

@@ -39,10 +39,9 @@ export const Marker = (props: IProps) => {
             />
             {label && (
                 <TextLabel
-                    text={`${label}`}
+                    text={`${label}\n`}
                     color={color}
-                    scale={1}
-                    lineSpacing={40}
+                    lineSpacing={48}
                     gridPosition={position}
                     faceCamera={true}
                 />

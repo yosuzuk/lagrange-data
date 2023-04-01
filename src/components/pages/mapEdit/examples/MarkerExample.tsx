@@ -17,7 +17,7 @@ export const MarkerExample = () => {
     const { mapContent } = useMapContent(input);
 
     return (
-        <WorldMap systemName="Marker example" size={10000}>
+        <WorldMap systemName="Example Star System" size={10000}>
             {mapContent && (
                 <MapContent mapContent={mapContent} />
             )}

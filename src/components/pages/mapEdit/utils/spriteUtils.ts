@@ -9,7 +9,6 @@ interface ITextOptions {
 }
 
 export function createTextImage(args: ITextOptions) {
-    return createTextImage2(args);
     const {
         text,
         color = 'white',
@@ -32,32 +31,9 @@ export function createTextImage(args: ITextOptions) {
     lines.forEach((line: string) => {
         ctx.font = fontStr;
         ctx.fillStyle = color;
-        ctx.fillText(line, 0, offsetY + (lineHeight * 0.8));
+        ctx.fillText(line, 0, offsetY + (lineHeight * 0.1) + (lineHeight * 0.8));
         offsetY += (lineHeight + lineSpacing);
     });
-
-    return canvas;
-}
-
-export function createTextImage2(args: ITextOptions) {
-    const {
-        text,
-        color = 'white',
-        font = 'Arial',
-        fontSize = 12,
-        lineSpacing = 4,
-    } = args;
-
-    const { canvas, ctx } = createCanvas();
-
-    const fontStr = `${fontSize}px ${font}`;
-    ctx.font = fontStr;
-    canvas.width = ctx.measureText(text).width;
-    canvas.height = Math.ceil(fontSize);
-
-    ctx.font = fontStr;
-    ctx.fillStyle = color;
-    ctx.fillText(text, 0, Math.ceil(fontSize * 0.8));
 
     return canvas;
 }
@@ -127,12 +103,22 @@ export function createCityIcon(cityLevel: number, color: string = 'white') {
     ctx.fillRect(0, 0, 4, 4);
 }
 
-export function mergeIconAndText(iconCanvas: HTMLCanvasElement, textCanvas: HTMLCanvasElement, spacing: number): HTMLCanvasElement {
+interface IMergeIconAndTextArgs {
+    iconCanvas: HTMLCanvasElement;
+    textCanvas: HTMLCanvasElement;
+    spacing: number;
+    marginTop?: number;
+    marginBottom?: number;
+}
+
+export function mergeIconAndText(args: IMergeIconAndTextArgs): HTMLCanvasElement {
+    const { iconCanvas, textCanvas, spacing, marginTop = 0, marginBottom = 0 } = args;
     const { canvas, ctx } = createCanvas();
     canvas.width = iconCanvas.width + spacing + textCanvas.width;
-    canvas.height = Math.max(iconCanvas.height, textCanvas.height);
-    const iconOffsetY = (canvas.height - iconCanvas.height) / 2;
-    const textOffsetY = (canvas.height - textCanvas.height) / 2;
+    const contentHeight = Math.max(iconCanvas.height, textCanvas.height);
+    canvas.height = marginTop + contentHeight + marginBottom;
+    const iconOffsetY = marginTop + (contentHeight - iconCanvas.height) / 2;
+    const textOffsetY = marginTop + (contentHeight - textCanvas.height) / 2;
     ctx.drawImage(iconCanvas, 0, iconOffsetY);
     ctx.drawImage(textCanvas, iconCanvas.width + spacing, textOffsetY);
     return canvas;
