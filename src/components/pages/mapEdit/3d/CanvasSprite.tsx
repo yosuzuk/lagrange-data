@@ -9,6 +9,7 @@ interface IProps {
     canvas: HTMLCanvasElement;
     position?: GamePosition;
     gridPosition?: GridPosition;
+    renderOrder?: number;
     onClick?: () => void;
     onPointerEnter?: () => void;
     onPointerLeave?: () => void;
@@ -22,7 +23,7 @@ interface IProps {
 const REFERENCE_FACTOR_Y = 0.77;
 
 export const CanvasSprite = (props: IProps) => {
-    const { canvas, position: gamePosition, gridPosition, onClick, onPointerEnter, onPointerLeave } = props;
+    const { canvas, position: gamePosition, gridPosition, renderOrder, onClick, onPointerEnter, onPointerLeave } = props;
     const [threeCanvasWidth, threeCanvasHeight] = useThreeCanvasSize();
 
     const [scaleX, scaleY] = useMemo(() => {
@@ -45,8 +46,9 @@ export const CanvasSprite = (props: IProps) => {
             onClick={onClick}
             onPointerEnter={onPointerEnter}
             onPointerLeave={onPointerLeave}
+            renderOrder={renderOrder}
         >
-            <spriteMaterial sizeAttenuation={false} depthWrite={false}>
+            <spriteMaterial sizeAttenuation={false} depthWrite={false} depthTest={false}>
                 <canvasTexture
                     attach="map"
                     image={canvas}

@@ -115,7 +115,7 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
         return [null, createParseMapContentError('Invalid number of colors for region', lineNumber)];
     }
 
-    const lineWithoutColor = lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim();
+    const lineWithoutColor = lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim() + ' ';
 
     const numbers = lineWithoutColor.match(POSITIVE_NUMBER_REG_EXP);
     if (!numbers || numbers.length !== 1) {
