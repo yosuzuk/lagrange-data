@@ -11,6 +11,7 @@ import { Sun } from './Sun';
 import { CameraControls } from './CameraControls';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { WorldLabel } from './WorldLabel';
+import { StarsBackground } from './StarsBackground';
 
 interface IProps {
     systemName: string;
@@ -49,6 +50,8 @@ export const WorldMap = (props: IProps) => {
                         camera={camera}
                         onDoubleClick={() => setDebug(x => !x)}
                     >
+                        <StarsBackground starCount={200} starSize={3} zOffset={300} />
+                        <StarsBackground starCount={1000} starSize={0.2} zOffset={500} />
                         <color attach="background" args={['#292828']} />
                         <gridHelper
                             args={[
