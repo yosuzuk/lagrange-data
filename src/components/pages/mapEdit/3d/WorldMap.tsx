@@ -17,10 +17,11 @@ interface IProps {
     systemName: string;
     size: number;
     children: ReactNode;
+    empty?: boolean;
 }
 
 export const WorldMap = (props: IProps) => {
-    const { systemName, size, children } = props;
+    const { systemName, size, children, empty } = props;
     const gridSize = translateSizeToGrid(size);
     const [debug, setDebug] = useState<boolean>(false);
 
@@ -50,17 +51,22 @@ export const WorldMap = (props: IProps) => {
                         onDoubleClick={() => setDebug(x => !x)}
                     >
                         <color attach="background" args={['#292828']} />
-                        <StarsBackground starCount={200} starSize={3} zOffset={300} />
-                        <StarsBackground starCount={1000} starSize={0.2} zOffset={500} />
-                        <MapBorders />
-                        <MapGrid />
+
                         <ambientLight />
                         <pointLight position={[0, 0, 10]} />
                         {debug && (
                             <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
                         )}
-                        <Sun />
-                        <WorldLabel worldName={systemName} />
+                        {empty !== true && (
+                            <>
+                                <StarsBackground starCount={200} starSize={3} zOffset={300} />
+                                <StarsBackground starCount={1000} starSize={0.2} zOffset={500} />
+                                <MapBorders />
+                                <MapGrid />
+                                <Sun />
+                                <WorldLabel worldName={systemName} />
+                            </>
+                        )}
                         {children}
                         <CameraControls />
                     </Canvas>

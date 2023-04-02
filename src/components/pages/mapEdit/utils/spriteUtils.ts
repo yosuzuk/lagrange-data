@@ -31,7 +31,7 @@ export function createTextImage(args: ITextOptions) {
     lines.forEach((line: string) => {
         ctx.font = fontStr;
         ctx.fillStyle = color;
-        ctx.fillText(line, 0, offsetY + (lineHeight * 0.1) + (lineHeight * 0.8));
+        ctx.fillText(line, 0, offsetY + (lineHeight * 0.8));
         offsetY += (lineHeight + lineSpacing);
     });
 

@@ -4,13 +4,11 @@ The map builder uses a similar syntax to the in-game chat and mail. This allows 
 
 ## Marker
 
-![marker example](markerExample.jpg)
-
 Syntax:
 
 ```
 $marker
-(x,y) [#<color>] [<label>]
+<point> [<color>] [<label>]
 ```
 
 You can place multiple markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
@@ -18,6 +16,8 @@ You can place multiple markers after the `$marker` keyword. Each marker needs to
 「`$marker`」キーワードの後に複数のマーカーを配置できます。各マーカーは新しい行に指定する必要があります。オプションで色とラベルが指定できます。
 
 Example:
+
+![marker example](markerExample.jpg)
 
 ```
 $marker
@@ -38,7 +38,7 @@ Syntax:
 
 ```
 $region
-(x,y)(x,y)(x,y)(x,y) #<color> <number> [<organization>]
+<point><point><point><point> <color> <number> [<organization>]
 ```
 
 You can place multiple regions after the `$region` keyword. Each region needs to be a new line and requires four coordinates, a background color and a region number. The "organization" label is optional.
@@ -49,27 +49,48 @@ Coordinates need to be in the following order:
 - a point to mark the start angle
 - a point to mark the end angle
 
-(choose start and end in clock-wise direction)
+These coordinates do not necessarily have to touch the region area. For example, you can use the same coordinates for all regions that share the same radius.
+
+これらの座標はかならずしも区域に接する必要はありません。同じ半径を共有する区域であれば座標も共有できます。
 
 Example:
 
+![region example](regionExample.jpg)
+
 ```
-(1000,5000)(0,5000)(6000,1000)(1000,6000) #cFF00FF 1 The ruling union
-(2000,5000)(1000,5000)(9000,6000)(6000,1000) #cFF00FF 2 Some big alliance
+$region
+(4653,3802)(3321,2851)(5610,3101)(2838,4696) #c87372C 7 2nd Thornbird Squad
+(4927,4483)(4653,6087)(4324,5779)(5398,3401) #c694226 8 Icarus's Energy Dept.
 ```
 
 ## Colors
 
-```
-#c	Hex code color (i.e. #cFF00FF)
-#B	Blue
-#D	Gold
-#G	Green
-#K	Black
-#O	Orange
-#P	Pink
-#R	Red
-#U	Purple
-#W	White
-#Y	Yellow
-```
+Chat colors:
+
+<div style="display:inline-flex;gap:8px;background-color:#292828;margin-bottom:8px">
+<div style="color:red;">#R</div>
+<div style="color:blue;">#B</div>
+<div style="color:gold;">#D</div>
+<div style="color:green;">#G</div>
+<div style="color:black;">#K</div>
+<div style="color:orange;">#O</div>
+<div style="color:pink;">#P</div>
+<div style="color:purple;">#U</div>
+<div style="color:white;">#W</div>
+<div style="color:yellow;">#Y</div>
+<div style="color:white;">#c&lt;hex color&gt;</div>
+</div>
+
+Example region colors:
+
+<div style="display:inline-flex;gap:4px;color:white;margin-bottom:8px">
+<div style="background-color:#87372C;">#c87372C</div>
+<div style="background-color:#873E2C;">#c873E2C</div>
+<div style="background-color:#985036;">#c985036</div>
+<div style="background-color:#694226;">#c694226</div>
+<div style="background-color:#625828;">#c625828</div>
+</div>
+
+(actual region colors have an alpha value added based on zoom level)
+
+（実際の区域カラーにはズームレベルによってアルファ値が設定されます）
