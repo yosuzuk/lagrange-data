@@ -114,6 +114,12 @@ Example region colors:
 <div style="background-color:#625828;">#c625828</div>
 </div>
 
+Default region color:
+
+<div style="display:inline-flex;color:white;margin-bottom:8px">
+    <div style="background-color:#985036;">#c985036</div>
+</div>
+
 (actual region colors have an alpha value added based on zoom level)
 
 （実際の区域カラーにはズームレベルによってアルファ値が追加されます）

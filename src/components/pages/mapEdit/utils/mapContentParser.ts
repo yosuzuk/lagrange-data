@@ -144,7 +144,7 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             outerRadiusPoint: coordinates[1],
             angleStartPoint: coordinates[2],
             angleEndPoint: coordinates[3],
-            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#87372C',
+            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#985036',
             regionNumber: Number(numbers[0].trim()),
             label: lineWithoutColor || null,
         },
