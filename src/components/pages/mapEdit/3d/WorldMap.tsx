@@ -29,7 +29,7 @@ export const WorldMap = (props: IProps) => {
         const cameraOptions: ComponentProps<typeof Canvas>['camera'] = {
             position: [
                 // map is rotated by 6° on z-axis, 45° on x-axis
-                // => x = tan(rad(6°)) * y, z = y
+                // => x = tan(rad(5°)) * y, z = y
                 Math.tan(degreesToRadians(-5)) * initialCameraDistance,
                 -1 * initialCameraDistance,
                 initialCameraDistance,
@@ -45,7 +45,11 @@ export const WorldMap = (props: IProps) => {
         <DebugProvider value={debug === true}>
             <GridSizeProvider value={gridSize}>
                 <ThreeCanvasContainer>
-                    <Canvas camera={camera} onDoubleClick={() => setDebug(x => !x)}>
+                    <Canvas
+                        camera={camera}
+                        onDoubleClick={() => setDebug(x => !x)}
+                    >
+                        <color attach="background" args={['#292828']} />
                         <gridHelper
                             args={[
                                 // size
@@ -61,7 +65,7 @@ export const WorldMap = (props: IProps) => {
                             rotation={[degreesToRadians(90), 0, 0]}
                         />
                         <ambientLight />
-                        <pointLight position={[10, 10, 10]} />
+                        <pointLight position={[0, 0, 10]} />
                         <Grid
                             args={[10, 10, 1, 1]}
                             cellColor="white"
