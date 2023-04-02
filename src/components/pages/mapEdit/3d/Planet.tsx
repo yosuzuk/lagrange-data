@@ -7,9 +7,9 @@ import { Orbit } from './Orbit';
 import { PlanetLabel } from './PlanetLabel';
 
 const radiusBySize: Record<PlanetSize, number> = {
-    large: 5,
-    medium: 3,
-    small: 1,
+    large: 2.5,
+    medium: 1.5,
+    small: 0.5,
 };
 
 interface IProps {

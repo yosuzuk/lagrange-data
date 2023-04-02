@@ -33,7 +33,7 @@ export const Orbit = (props: IProps) => {
                 // rings
                 1,
                 // division
-                64,
+                state.radius > 200 ? 128 : 64,
             ]}
             position={[...state.anchorPosition, getZ('orbit')]}
             rotation={[degreesToRadians(90), 0, 0]}
