@@ -9,7 +9,7 @@ export const Sun = () => {
     return (
         <mesh position={[0, 0, getZ('planet')]}>
             <sphereGeometry args={[radius, widthSegments, widthSegments]} />
-            <meshStandardMaterial color="yellow" wireframe={debug} />
+            <meshBasicMaterial color="yellow" wireframe={debug} />
         </mesh>
     );
 };

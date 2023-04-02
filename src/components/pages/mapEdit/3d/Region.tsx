@@ -87,7 +87,7 @@ export const Region = (props: IProps) => {
                             state.thetaLength,
                         ]}
                     />
-                    <meshStandardMaterial
+                    <meshBasicMaterial
                         color={color}
                         wireframe={debug}
                         transparent={true}
