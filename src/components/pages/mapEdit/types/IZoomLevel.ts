@@ -10,6 +10,7 @@ export interface IZoomBasedVisibility {
     zoneLabel: boolean;
     gameGrid: boolean;
     planetLabel: boolean;
+    subPlanetOrbit: boolean;
 }
 
 export interface IZoomBasedOpacity {

@@ -1,4 +1,5 @@
 import { useDebug } from '../context/DebugContext';
+import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { PlanetSize } from '../types/PlanetSize';
@@ -25,6 +26,8 @@ export const Planet = (props: IProps) => {
     const { size, color, position: gamePosition, gridPosition, orbitCenter, name } = props;
     const debug = useDebug();
 
+    const subPlanetOrbitVisible = useZoomBasedVisibility('subPlanetOrbit');
+
     const position = useNormalizedPosition({
         gamePosition,
         gridPosition,
@@ -39,7 +42,9 @@ export const Planet = (props: IProps) => {
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
                 <meshStandardMaterial color={color} wireframe={debug} />
             </mesh>
-            <Orbit outerPos={gamePosition} centerPos={orbitCenter} />
+            {(!orbitCenter || subPlanetOrbitVisible) && (
+                <Orbit outerPos={gamePosition} centerPos={orbitCenter} />
+            )}
             {name && (
                 <PlanetLabel gridPosition={position} planetName={name} planetSize={size} />
             )}
