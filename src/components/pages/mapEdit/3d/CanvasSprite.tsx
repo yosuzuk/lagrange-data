@@ -46,7 +46,7 @@ export const CanvasSprite = (props: IProps) => {
             onPointerEnter={onPointerEnter}
             onPointerLeave={onPointerLeave}
         >
-            <spriteMaterial sizeAttenuation={false}>
+            <spriteMaterial sizeAttenuation={false} depthWrite={false}>
                 <canvasTexture
                     attach="map"
                     image={canvas}

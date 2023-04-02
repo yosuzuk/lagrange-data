@@ -21,7 +21,18 @@ interface IProps {
 const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
 
 export const TextLabel = (props: IProps) => {
-    const { text, position: gamePosition, gridPosition, color = 'white', font = 'Arial', fontSize = 12, lineSpacing = 4, faceCamera = false, scale = 1, z } = props;
+    const {
+        text,
+        position: gamePosition,
+        gridPosition,
+        color = 'white',
+        font = 'Arial',
+        fontSize = 12,
+        lineSpacing = 4,
+        faceCamera = false,
+        scale = 1,
+        z,
+    } = props;
 
     const position = useNormalizedPosition({
         gamePosition,
@@ -56,14 +67,14 @@ export const TextLabel = (props: IProps) => {
     }
 
     return (
-        <mesh position={[...position, z ?? getZ('textLabel')]}>
+        <mesh position={[...position, z ?? getZ('textLabel')]} renderOrder={1}>
             <planeGeometry
                 args={[
                     textImage.width * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,
                     textImage.height * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,
                 ]}
             />
-            <meshBasicMaterial transparent={true}>
+            <meshBasicMaterial transparent={true} depthWrite={false}>
                 <canvasTexture
                     attach="map"
                     image={textImage}

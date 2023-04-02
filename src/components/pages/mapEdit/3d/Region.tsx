@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { Text } from '@react-three/drei';
 import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
@@ -7,6 +6,7 @@ import { getAngleBetweenAngles, getAngleBetweenVectors, getDistance, getGridPosi
 import { getZ } from '../utils/zUtils';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { t } from '../../../../i18n';
+import { TextLabel } from './TextLabel';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
@@ -96,20 +96,16 @@ export const Region = (props: IProps) => {
                 </mesh>
             )}
             {labelVisible && (Number.isFinite(regionNumber) || label) && (
-                <mesh position={[...state.textPosition, getZ('regionText')]}>
-                    <Text
-                        color="white"
-                        anchorX="center"
-                        anchorY="middle"
-                        textAlign='center'
-                        fontSize={12}
-                    >
-                        {[
-                            ...(Number.isFinite(regionNumber) ? [t('mapEdit.regionValue', { value: regionNumber })] : []),
-                            ...(label ? [label] : []),
-                        ].join('\n')}
-                    </Text>
-                </mesh>
+                <TextLabel
+                    gridPosition={state.textPosition}
+                    text={[
+                        ...(label ? [label] : []),
+                        ...(Number.isFinite(regionNumber) ? [t('mapEdit.regionValue', { value: regionNumber })] : []),
+                    ].join('\n')}
+                    fontSize={96}
+                    scale={0.5}
+                    z={getZ('regionText')}
+                />
             )}
         </>
     );
