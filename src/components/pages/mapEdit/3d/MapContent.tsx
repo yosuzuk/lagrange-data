@@ -1,5 +1,6 @@
 import { IMapContent } from '../types/IMapContent';
 import { Marker } from './Marker';
+import { Planet } from './Planet';
 import { Region } from './Region';
 
 interface IProps {
@@ -24,6 +25,16 @@ export const MapContent = (props: IProps) => {
                     color={region.color}
                     regionNumber={region.regionNumber}
                     label={region.label}
+                />
+            ))}
+            {mapContent.planets.map(planet => (
+                <Planet
+                    key={planet.id}
+                    position={planet.position}
+                    orbitCenter={planet.orbitCenter}
+                    size={planet.size}
+                    color={planet.color}
+                    name={planet.name}
                 />
             ))}
         </>

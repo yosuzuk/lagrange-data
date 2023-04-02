@@ -1,32 +1,48 @@
 import { useDebug } from '../context/DebugContext';
-import { useGridSize } from '../context/GridSizeContext';
-import { GamePosition } from '../types/Coordinates';
-import { toGridPosition } from '../utils/coordinateUtils';
+import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
+import { GamePosition, GridPosition } from '../types/Coordinates';
+import { PlanetSize } from '../types/PlanetSize';
 import { getZ } from '../utils/zUtils';
 import { Orbit } from './Orbit';
+import { PlanetLabel } from './PlanetLabel';
+
+const radiusBySize: Record<PlanetSize, number> = {
+    large: 5,
+    medium: 3,
+    small: 1,
+};
 
 interface IProps {
-    size: 'large' | 'small';
+    size: PlanetSize;
     color: string;
     position: GamePosition;
-    centerPosition?: GamePosition;
+    gridPosition?: GridPosition;
+    orbitCenter?: GamePosition;
+    name?: string;
 }
 
 export const Planet = (props: IProps) => {
-    const { size, color, position, centerPosition } = props;
-    const gridSize = useGridSize();
+    const { size, color, position: gamePosition, gridPosition, orbitCenter, name } = props;
     const debug = useDebug();
 
-    const radius = size === 'large' ? 2.5 : 0.5;
-    const widthSegments = size === 'large' ? 16 : 8;
+    const position = useNormalizedPosition({
+        gamePosition,
+        gridPosition,
+    })
+
+    const radius = radiusBySize[size];
+    const widthSegments = size === 'small' ? 8 : 16;
 
     return (
         <>
-            <mesh position={[...toGridPosition(position, gridSize), getZ('planet')]}>
+            <mesh position={[...position, getZ('planet')]}>
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
                 <meshStandardMaterial color={color} wireframe={debug} />
             </mesh>
-            <Orbit outerPos={position} centerPos={centerPosition} />
+            <Orbit outerPos={gamePosition} centerPos={orbitCenter} />
+            {name && (
+                <PlanetLabel gridPosition={position} planetName={name} planetSize={size} />
+            )}
         </>
     );
 };

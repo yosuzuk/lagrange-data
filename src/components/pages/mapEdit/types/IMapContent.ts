@@ -1,8 +1,10 @@
 import { GamePosition } from './Coordinates';
+import { PlanetSize } from './PlanetSize';
 
 export interface IMapContent {
     marker: IMarker[];
     regions: IRegion[];
+    planets: IPlanet[];
 }
 
 export interface IMarker {
@@ -21,6 +23,15 @@ export interface IRegion {
     color: string;
     regionNumber: number;
     label: string | null;
+}
+
+export interface IPlanet {
+    id: string;
+    position: GamePosition;
+    orbitCenter?: GamePosition;
+    size: PlanetSize;
+    color: string;
+    name?: string;
 }
 
 export interface IParseMapContentError {

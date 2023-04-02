@@ -11,7 +11,7 @@ $marker
 <point> [<color>] [<label>]
 ```
 
-You can place multiple markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
+You can place markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
 
 「`$marker`」キーワードの後に複数のマーカーを配置できます。各マーカーは新しい行に指定する必要があります。オプションで色とラベルが指定できます。
 
@@ -41,7 +41,7 @@ $region
 <point><point><point><point> <color> <number> [<organization>]
 ```
 
-You can place multiple regions after the `$region` keyword. Each region needs to be a new line and requires four coordinates, a background color and a region number. The "organization" label is optional.
+You can place regions after the `$region` keyword. Each region needs to be a new line and requires four coordinates, a background color and a region number. The "organization" label is optional.
 
 Coordinates need to be in the following order:
 - a point to mark the inner radius
@@ -61,6 +61,28 @@ Example:
 $region
 (4653,3802)(3321,2851)(5610,3101)(2838,4696) #c87372C 7 2nd Thornbird Squad
 (4927,4483)(4653,6087)(4324,5779)(5398,3401) #c694226 8 Icarus's Energy Dept.
+```
+
+## Planets
+
+Syntax:
+
+```
+$planet
+<point>[<point>] [<size>] [<color>] [<name>]
+```
+
+You can place planets after the `$planet` keyword. The optional second point marks the center of the orbit. "size", "color" and "name" are optional. "size" can be one of `large`, `medium`, `small` and defaults to `medium`.
+
+Example:
+
+```
+$planet
+(1234,5678)
+(1234,5678) Fafner
+(1234,5678) #B Jade
+(1234,5678)(1234,5678) small #W Roc
+(3553,3665) large Pathfinder 19A
 ```
 
 ## Colors
@@ -93,4 +115,4 @@ Example region colors:
 
 (actual region colors have an alpha value added based on zoom level)
 
-（実際の区域カラーにはズームレベルによってアルファ値が設定されます）
+（実際の区域カラーにはズームレベルによってアルファ値が追加されます）

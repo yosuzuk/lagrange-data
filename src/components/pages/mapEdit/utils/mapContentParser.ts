@@ -1,5 +1,6 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
-import { IMapContent, IMarker, IParseMapContentError, IRegion } from '../types/IMapContent';
+import { IMapContent, IMarker, IParseMapContentError, IPlanet, IRegion } from '../types/IMapContent';
+import { PlanetSize } from '../types/PlanetSize';
 
 /*
 Example:
@@ -12,12 +13,13 @@ $marker
 (1040,2020) #c00FF00 Hex Color
 */
 
-const sectionKeywords = ['$marker', '$region'];
+const sectionKeywords = ['$marker', '$region', '$planet'];
 
 export function parseMapContent(input: string): [IMapContent, IParseMapContentError | null] {
     const mapContent: IMapContent = {
         marker: [],
         regions: [],
+        planets: [],
     };
     let parseError: IParseMapContentError | null = null;
 
@@ -60,6 +62,16 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
                 }
                 return;
             }
+            case '$planet': {
+                const [planet, error] = parsePlanetLine(trimmedLine, lineNumber);
+                if (planet) {
+                    mapContent.planets.push(planet);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
         }
     });
 
@@ -69,6 +81,7 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
 const COORDINATE_REG_EXP = /\(\d+\,\d+\)/g;
 const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][ABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
+const SIZE_REG_EXP = /^(large|medium|small)\s/g;
 
 function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IParseMapContentError | null] {
     const coordinates = line.match(COORDINATE_REG_EXP);
@@ -84,7 +97,7 @@ function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IPa
 
     const colors = lineWithoutCoordinate.match(COLOR_REG_EXP);
     if (colors && colors.length > 1) {
-        return [null, createParseMapContentError('Cannot have multiple colors for the same marker', lineNumber)];
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
     return [
@@ -105,14 +118,14 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
     }
 
     if (coordinates.length !== 4) {
-        return [null, createParseMapContentError('A region requires 4 coordinates', lineNumber)];
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
     const lineWithoutCoordinate = line.replaceAll(COORDINATE_REG_EXP, '').trim();
 
     const colors = lineWithoutCoordinate.match(COLOR_REG_EXP);
     if (!colors || colors.length > 1) {
-        return [null, createParseMapContentError('Invalid number of colors for region', lineNumber)];
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
     const lineWithoutColor = lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim() + ' ';
@@ -134,6 +147,39 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             color: (colors?.[0]) ? parseColor(colors[0].trim()) : 'white',
             regionNumber: Number(numbers[0].trim()),
             label: lineWithoutRegionNumber || null,
+        },
+        null,
+    ];
+}
+
+function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IParseMapContentError | null] {
+    const coordinates = line.match(COORDINATE_REG_EXP);
+    if (!coordinates || coordinates.length === 0) {
+        return [null, null];
+    }
+
+    if (coordinates.length > 2) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const lineWithoutCoordinate = line.replace(COORDINATE_REG_EXP, '').trim();
+
+    const sizes = (lineWithoutCoordinate + ' ').match(SIZE_REG_EXP);
+    const lineWithoutSize = (lineWithoutCoordinate + ' ').replace(SIZE_REG_EXP, '').trim();
+
+    const colors = lineWithoutSize.match(COLOR_REG_EXP);
+    if (colors && colors.length > 1) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `planet${lineNumber}`,
+            position: coordinates[0],
+            orbitCenter: coordinates[1],
+            size: (sizes?.[0]?.trim() as PlanetSize) ?? 'medium',
+            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#E3A06D',
+            name: lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim(),
         },
         null,
     ];

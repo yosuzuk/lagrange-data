@@ -52,8 +52,8 @@ export const WorldMap = (props: IProps) => {
                     >
                         <color attach="background" args={['#292828']} />
 
-                        <ambientLight />
-                        <pointLight position={[0, 0, 10]} />
+                        <ambientLight intensity={0.1} />
+                        <pointLight position={[0, 0, 40]} castShadow={true} intensity={1.2} />
                         {debug && (
                             <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
                         )}

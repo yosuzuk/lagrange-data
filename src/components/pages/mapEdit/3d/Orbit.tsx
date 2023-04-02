@@ -37,6 +37,8 @@ export const Orbit = (props: IProps) => {
             ]}
             position={[...state.anchorPosition, getZ('orbit')]}
             rotation={[degreesToRadians(90), 0, 0]}
-        />
+        >
+            <lineBasicMaterial color="grey" />
+        </polarGridHelper>
     );
 };
