@@ -6,10 +6,13 @@ interface ICameraDistanceContextValue {
     setCameraDistance: (distance: number) => void;
 }
 
+const MIN_DISTANCE = 5;
+const MAX_DISTANCE = 1500;
+
 const zoomLevels: IZoomLevel[] = [
     {
-        fromDistance: 3,
-        untilDistance: 500,
+        fromDistance: 0,
+        untilDistance: 20,
         visibility: {
             zoneBackground: false,
             zoneLabel: false,
@@ -20,27 +23,39 @@ const zoomLevels: IZoomLevel[] = [
         },
     },
     {
-        fromDistance: 500,
-        untilDistance: 1000,
+        fromDistance: 20,
+        untilDistance: 50,
         visibility: {
-            zoneBackground: true,
-            zoneLabel: true,
+            zoneBackground: false,
+            zoneLabel: false,
             gameGrid: false,
         },
         opacity: {
-            zoneBackground: 0.5,
+            zoneBackground: 0,
         },
     },
     {
-        fromDistance: 1000,
-        untilDistance: 1500,
+        fromDistance: 50,
+        untilDistance: 200,
         visibility: {
             zoneBackground: true,
             zoneLabel: true,
             gameGrid: false,
         },
         opacity: {
-            zoneBackground: 1,
+            zoneBackground: 0.1,
+        },
+    },
+    {
+        fromDistance: 200,
+        untilDistance: MAX_DISTANCE,
+        visibility: {
+            zoneBackground: true,
+            zoneLabel: true,
+            gameGrid: false,
+        },
+        opacity: {
+            zoneBackground: 0.4,
         },
     },
 ];
@@ -104,8 +119,8 @@ export const useCameraDistance = (): ICameraDistanceContextValue => {
 
 export const useZoomDistanceMinMax = () => {
     return {
-        min: zoomLevels.at(0)?.fromDistance ?? 0,
-        max: zoomLevels.at(-1)?.untilDistance ?? Infinity,
+        min: MIN_DISTANCE,
+        max: MAX_DISTANCE,
     } as const;
 };
 

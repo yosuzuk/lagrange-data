@@ -17,7 +17,7 @@ export const MapGrid = () => {
                         // size
                         gridSize,
                         // divisions
-                        debug ? 10 : (gridVisibility ? 100 : 1),
+                        debug ? 10 : (gridVisibility ? 1000 : 1),
                         // colorCenterLine
                         0x0000ff,
                         // colorGrid
