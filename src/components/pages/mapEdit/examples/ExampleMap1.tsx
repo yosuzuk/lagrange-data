@@ -5,7 +5,7 @@ import { Region } from '../3d/Region';
 
 export const ExampleMap1 = () => {
     return (
-        <WorldMap systemName="My start system" size={10000}>
+        <WorldMap systemName="My Star System" size={10000}>
             <Region
                 regionNumber={1}
                 label="My Union"
