@@ -76,13 +76,14 @@ You can place planets after the `$planet` keyword. The optional second point mar
 
 Example:
 
+![planet example](planetExample.jpg)
+
 ```
 $planet
-(1234,5678)
-(1234,5678) Fafner
-(1234,5678) #B Jade
-(1234,5678)(1234,5678) small #W Roc
-(3553,3665) large Pathfinder 19A
+(4340,4143)
+(3814,4207) Fafner
+(3978,3380) large #B Jade
+(4053,3222)(3978,3380) small #W Roc
 ```
 
 ## Colors
