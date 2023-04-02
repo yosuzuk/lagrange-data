@@ -17,6 +17,7 @@ const zoomLevels: IZoomLevel[] = [
             zoneBackground: false,
             zoneLabel: false,
             gameGrid: true,
+            planetLabel: true,
         },
         opacity: {
             zoneBackground: 0,
@@ -29,6 +30,7 @@ const zoomLevels: IZoomLevel[] = [
             zoneBackground: false,
             zoneLabel: false,
             gameGrid: false,
+            planetLabel: true,
         },
         opacity: {
             zoneBackground: 0,
@@ -41,6 +43,7 @@ const zoomLevels: IZoomLevel[] = [
             zoneBackground: true,
             zoneLabel: true,
             gameGrid: false,
+            planetLabel: true,
         },
         opacity: {
             zoneBackground: 0.1,
@@ -53,6 +56,7 @@ const zoomLevels: IZoomLevel[] = [
             zoneBackground: true,
             zoneLabel: true,
             gameGrid: false,
+            planetLabel: false,
         },
         opacity: {
             zoneBackground: 0.4,

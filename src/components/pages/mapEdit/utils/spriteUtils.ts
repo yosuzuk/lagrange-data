@@ -74,6 +74,43 @@ export function createSunIcon(color: string = 'white') {
     return canvas;
 }
 
+export function createLargePlanetIcon(color: string = 'white') {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 12;
+    canvas.height = 12;
+    ctx.setLineDash([9.5, 4, 12.5, 2]);
+    ctx.beginPath();
+    ctx.arc(6, 6, 5, 0, 2 * Math.PI, false);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(6, 6, 2.75, 0, 2 * Math.PI, false);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(2.1, 9.9, 1.1, 0, 2 * Math.PI, false);
+    ctx.fill();
+    return canvas;
+}
+
+export function createSmallPlanetIcon(color: string = 'white') {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 10;
+    canvas.height = 10;
+    ctx.setLineDash([9, 6, 12.5, 2]);
+    ctx.beginPath();
+    ctx.arc(5, 5, 4, 0, 2 * Math.PI, false);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(2, 5, 1.8, 0, 2 * Math.PI, false);
+    ctx.fill();
+    return canvas;
+}
+
 export function createCityIcon(cityLevel: number, color: string = 'white') {
     const { canvas, ctx } = createCanvas();
     ctx.lineWidth = 1;
