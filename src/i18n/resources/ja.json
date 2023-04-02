@@ -267,6 +267,9 @@
         "cutAndMoveDescription": "左のスライダーで要らない部分をカットしてから右のスライダーで重ねる場所を調整してください。",
         "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
+    "mapEdit": {
+        "regionValue": "区域{{value}}"
+    },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
         "nomaShippingGroup": "ノマシッピング",

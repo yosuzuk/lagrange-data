@@ -6,18 +6,19 @@ import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getAngleBetweenAngles, getAngleBetweenVectors, getDistance, getGridPositionByAngleAndRadius, getRingThetaByGridPosition, toGridPosition } from '../utils/coordinateUtils';
 import { getZ } from '../utils/zUtils';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
+import { t } from '../../../../i18n';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
 
 interface IProps {
-    zoneNumber?: number;
-    label?: string;
+    innerRadiusPoint: GamePosition;
+    outerRadiusPoint: GamePosition;
+    angleStartPoint: GamePosition;
+    angleEndPoint: GamePosition;
     color: string;
-    startPos: GamePosition;
-    endPos: GamePosition;
-    innerPos: GamePosition;
-    outerPos: GamePosition;
+    regionNumber?: number;
+    label?: string | null;
 }
 
 interface IState {
@@ -29,8 +30,8 @@ interface IState {
     textPosition: GridPosition;
 }
 
-export const Zone = (props: IProps) => {
-    const { zoneNumber, color, label, startPos, endPos, innerPos, outerPos } = props;
+export const Region = (props: IProps) => {
+    const { regionNumber, color, label, angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint } = props;
     const gridSize = useGridSize();
     const debug = useDebug();
     const backgroundVisible = useZoomBasedVisibility('zoneBackground');
@@ -38,10 +39,10 @@ export const Zone = (props: IProps) => {
     const labelVisible = useZoomBasedVisibility('zoneLabel');
 
     const state = useMemo<IState>(() => {
-        const innerGridPosition = toGridPosition(innerPos, gridSize);
-        const outerGridPosition = toGridPosition(outerPos, gridSize);
-        const gridStart = toGridPosition(startPos, gridSize);
-        const gridEnd = toGridPosition(endPos, gridSize);
+        const innerGridPosition = toGridPosition(innerRadiusPoint, gridSize);
+        const outerGridPosition = toGridPosition(outerRadiusPoint, gridSize);
+        const gridStart = toGridPosition(angleStartPoint, gridSize);
+        const gridEnd = toGridPosition(angleEndPoint, gridSize);
 
         // properties for the ring
         const innerRadius = getDistance(innerGridPosition, [0, 0]);
@@ -64,12 +65,12 @@ export const Zone = (props: IProps) => {
             thetaSegments,
             textPosition,
         };
-    }, [startPos, endPos, innerPos, outerPos, gridSize]);
+    }, [angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint, gridSize]);
 
     return (
         <>
             {backgroundVisible && (
-                <mesh position={[0, 0, getZ('zone')]}>
+                <mesh position={[0, 0, getZ('region')]}>
                     <ringGeometry
                         args={[
                             // innerRadius: Float
@@ -94,8 +95,8 @@ export const Zone = (props: IProps) => {
                     />
                 </mesh>
             )}
-            {labelVisible && (Number.isFinite(zoneNumber) || label) && (
-                <mesh position={[...state.textPosition, getZ('zoneText')]}>
+            {labelVisible && (Number.isFinite(regionNumber) || label) && (
+                <mesh position={[...state.textPosition, getZ('regionText')]}>
                     <Text
                         color="white"
                         anchorX="center"
@@ -104,7 +105,7 @@ export const Zone = (props: IProps) => {
                         fontSize={12}
                     >
                         {[
-                            ...(Number.isFinite(zoneNumber) ? [`Zone ${zoneNumber}`] : []),
+                            ...(Number.isFinite(regionNumber) ? [t('mapEdit.regionValue', { value: regionNumber })] : []),
                             ...(label ? [label] : []),
                         ].join('\n')}
                     </Text>

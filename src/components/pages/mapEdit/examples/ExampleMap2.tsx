@@ -1,7 +1,7 @@
 import { MapContent } from '../3d/MapContent';
 import { Planet } from '../3d/Planet';
 import { WorldMap } from '../3d/WorldMap';
-import { Zone } from '../3d/Zone';
+import { Region } from '../3d/Region';
 import { useMapContent } from '../hooks/useMapContent';
 
 const input = `
@@ -21,41 +21,41 @@ export const ExampleMap2 = () => {
 
     return (
         <WorldMap systemName="My start system" size={10000}>
-            <Zone
-                zoneNumber={1}
+            <Region
+                regionNumber={1}
                 label="My Union"
                 color="red"
-                startPos="(6000,1000)"
-                endPos="(1000,6000)"
-                innerPos="(1000,5000)"
-                outerPos="(0,5000)"
+                angleStartPoint="(6000,1000)"
+                angleEndPoint="(1000,6000)"
+                innerRadiusPoint="(1000,5000)"
+                outerRadiusPoint="(0,5000)"
             />
-            <Zone
-                zoneNumber={2}
+            <Region
+                regionNumber={2}
                 label="My Union"
                 color="orange"
-                startPos="(9000,6000)"
-                endPos="(6000,1000)"
-                innerPos="(2000,5000)"
-                outerPos="(1000,5000)"
+                angleStartPoint="(9000,6000)"
+                angleEndPoint="(6000,1000)"
+                innerRadiusPoint="(2000,5000)"
+                outerRadiusPoint="(1000,5000)"
             />
-            <Zone
-                zoneNumber={3}
+            <Region
+                regionNumber={3}
                 label="My Union"
                 color="pink"
-                startPos="(4000,9000)"
-                endPos="(9000,6000)"
-                innerPos="(3000,5000)"
-                outerPos="(2000,5000)"
+                angleStartPoint="(4000,9000)"
+                angleEndPoint="(9000,6000)"
+                innerRadiusPoint="(3000,5000)"
+                outerRadiusPoint="(2000,5000)"
             />
-            <Zone
-                zoneNumber={4}
+            <Region
+                regionNumber={4}
                 label="My Union"
                 color="purple"
-                startPos="(1000,4000)"
-                endPos="(4000,9000)"
-                innerPos="(4000,5000)"
-                outerPos="(3000,5000)"
+                angleStartPoint="(1000,4000)"
+                angleEndPoint="(4000,9000)"
+                innerRadiusPoint="(4000,5000)"
+                outerRadiusPoint="(3000,5000)"
             />
             <Planet size="large" color="blue" position="(0,5000)" />
             <Planet size="large" color="blue" position="(2000,3000)" />

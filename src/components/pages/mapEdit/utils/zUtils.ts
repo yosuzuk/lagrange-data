@@ -9,8 +9,8 @@ const zLevels = {
     planet: 0,
     orbit: 0,
     textLabel: 0,
-    zoneText: 0,
-    zone: -1,
+    regionText: 0,
+    region: -1,
     mapBackground: -2,
 } as const;
 
