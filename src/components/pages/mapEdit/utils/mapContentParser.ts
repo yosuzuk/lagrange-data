@@ -179,7 +179,7 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
             orbitCenter: coordinates[1],
             size: (sizes?.[0]?.trim() as PlanetSize) ?? 'medium',
             color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#E3A06D',
-            name: lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim(),
+            name: lineWithoutSize.replace(COLOR_REG_EXP, '').trim(),
         },
         null,
     ];
