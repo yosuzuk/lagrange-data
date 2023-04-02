@@ -4,8 +4,8 @@ import { useMapContent } from '../hooks/useMapContent';
 
 const input = `
     $region
-    (4653,3802)(3321,2851)(5610,3101)(2838,4696) #c87372C 7 2nd Thornbird Squad
-    (4927,4483)(4653,6087)(4324,5779)(5398,3401) #c694226 8 Icarus's Energy Dept.
+    (4653,3802)(3321,2851)(5610,3101)(2838,4696) 7 #c87372C 2nd Thornbird Squad
+    (4927,4483)(4653,6087)(4324,5779)(5398,3401) 8 #c694226 Icarus's Energy Dept.
 
     $marker
     (4653,3802) Inner radius

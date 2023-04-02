@@ -38,7 +38,7 @@ Syntax:
 
 ```
 $region
-<point><point><point><point> <color> <number> [<organization>]
+<point><point><point><point> <number> [<color>] [<organization>]
 ```
 
 You can place regions after the `$region` keyword. Each region needs to be a new line and requires four coordinates, a background color and a region number. The "organization" label is optional.
@@ -59,8 +59,8 @@ Example:
 
 ```
 $region
-(4653,3802)(3321,2851)(5610,3101)(2838,4696) #c87372C 7 2nd Thornbird Squad
-(4927,4483)(4653,6087)(4324,5779)(5398,3401) #c694226 8 Icarus's Energy Dept.
+(4653,3802)(3321,2851)(5610,3101)(2838,4696) 7 #c87372C 2nd Thornbird Squad
+(4927,4483)(4653,6087)(4324,5779)(5398,3401) 8 #c694226 Icarus's Energy Dept.
 ```
 
 ## Planets

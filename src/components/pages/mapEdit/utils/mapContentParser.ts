@@ -121,21 +121,21 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
         return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
-    const lineWithoutCoordinate = line.replaceAll(COORDINATE_REG_EXP, '').trim();
+    const lineWithoutCoordinate = line.replaceAll(COORDINATE_REG_EXP, '').trim() + ' ';
 
-    const colors = lineWithoutCoordinate.match(COLOR_REG_EXP);
-    if (!colors || colors.length > 1) {
-        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
-    }
-
-    const lineWithoutColor = lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim() + ' ';
-
-    const numbers = lineWithoutColor.match(POSITIVE_NUMBER_REG_EXP);
+    const numbers = lineWithoutCoordinate.match(POSITIVE_NUMBER_REG_EXP);
     if (!numbers || numbers.length !== 1) {
         return [null, createParseMapContentError('Missing region number', lineNumber)];
     }
 
-    const lineWithoutRegionNumber = lineWithoutColor.replace(POSITIVE_NUMBER_REG_EXP, '').trim();
+    const lineWithoutRegionNumber = lineWithoutCoordinate.replace(POSITIVE_NUMBER_REG_EXP, '').trim() + ' ';
+
+    const colors = lineWithoutRegionNumber.match(COLOR_REG_EXP);
+    if (colors && colors.length > 1) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    const lineWithoutColor = lineWithoutRegionNumber.replace(COLOR_REG_EXP, '').trim();
 
     return [
         {
@@ -144,9 +144,9 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             outerRadiusPoint: coordinates[1],
             angleStartPoint: coordinates[2],
             angleEndPoint: coordinates[3],
-            color: (colors?.[0]) ? parseColor(colors[0].trim()) : 'white',
+            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#87372C',
             regionNumber: Number(numbers[0].trim()),
-            label: lineWithoutRegionNumber || null,
+            label: lineWithoutColor || null,
         },
         null,
     ];
