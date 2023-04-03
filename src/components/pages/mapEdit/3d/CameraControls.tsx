@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { MapControls } from '@react-three/drei';
 import { useCameraDistance, useZoomDistanceMinMax } from '../context/ZoomLevelContext';
-import { Event } from 'three';
+import { Event, MOUSE } from 'three';
 
 export const CameraControls = () => {
     const { setCameraDistance } = useCameraDistance();
@@ -21,6 +21,8 @@ export const CameraControls = () => {
             enableDamping={false}
             enableRotate={false}
             zoomSpeed={5}
+            panSpeed={1}
+            keyPanSpeed={0}
             minDistance={min}
             maxDistance={max}
             onChange={handleChange}
