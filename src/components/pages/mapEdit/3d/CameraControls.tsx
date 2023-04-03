@@ -20,7 +20,7 @@ export const CameraControls = () => {
         <MapControls
             enableDamping={false}
             enableRotate={false}
-            zoomSpeed={5}
+            zoomSpeed={1.2}
             panSpeed={1}
             keyPanSpeed={0}
             minDistance={min}
