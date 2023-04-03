@@ -19,7 +19,7 @@ export const BoxChancePage = () => {
         <>
             <NavigationBar currentRoute="/techFiles" />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
                             {t('techFiles.pageDescription1')}
@@ -33,7 +33,7 @@ export const BoxChancePage = () => {
                     </Stack>
                     <Stack spacing={1}>
                         <Paper>
-                            <Box p={1}>
+                            <Box component="div" p={1}>
                                 <TechFileSelection
                                     id="tech-file-selection"
                                     techFile={techFile}

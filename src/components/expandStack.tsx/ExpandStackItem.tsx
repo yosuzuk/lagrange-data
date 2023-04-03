@@ -24,7 +24,7 @@ export const ExpandStackItem = (props: IProps) => {
     }, [expandable.initiallyOpened, onToggle]);
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box component="div" sx={{ flexGrow: 1 }}>
             <Accordion
                 expanded={expanded}
                 onChange={() => onToggle(expandable.id)}

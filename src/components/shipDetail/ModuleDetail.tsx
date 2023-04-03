@@ -77,7 +77,7 @@ export const ModuleDetail = (props: IProps) => {
                                 )}
                                 <Stack spacing={1} direction="row">
                                     {module.mainSystem && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -87,7 +87,7 @@ export const ModuleDetail = (props: IProps) => {
                                         </Box>
                                     )}
                                     {module.effects && module.effects.length > 0 && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -97,7 +97,7 @@ export const ModuleDetail = (props: IProps) => {
                                         </Box>
                                     )}
                                     {module.flagshipEffects && module.flagshipEffects.length > 0 && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -107,7 +107,7 @@ export const ModuleDetail = (props: IProps) => {
                                         </Box>
                                     )}
                                     {module.skills?.some(skill => skill.type === EnhancementType.STRATEGY) && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"

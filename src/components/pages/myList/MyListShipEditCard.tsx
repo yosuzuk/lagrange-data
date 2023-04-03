@@ -46,7 +46,7 @@ export const MyListShipEditCard = (props: IProps) => {
 
     return (
         <Paper elevation={2} {...rest}>
-            <Box p={1}>
+            <Box component="div" p={1}>
                 <Stack spacing={3}>
                     <Typography variant="h6">
                         {getShipName(ship)}
@@ -67,19 +67,19 @@ export const MyListShipEditCard = (props: IProps) => {
                         && shipPossession === PossessionState.POSSESSED
                         && ship.modules
                         && ship.modules.filter(module => !module.defaultModule).map(module => {
-                        return (
-                            <Fragment key={module.id}>
-                                <Divider />
-                                <MyListModuleEdit
-                                    ship={ship}
-                                    module={module}
-                                    userSettings={userSettings}
-                                    setModulePossession={setModulePossession}
-                                    setModuleWish={setModuleWish}
-                                />
-                            </Fragment>
-                        );
-                    })}
+                            return (
+                                <Fragment key={module.id}>
+                                    <Divider />
+                                    <MyListModuleEdit
+                                        ship={ship}
+                                        module={module}
+                                        userSettings={userSettings}
+                                        setModulePossession={setModulePossession}
+                                        setModuleWish={setModuleWish}
+                                    />
+                                </Fragment>
+                            );
+                        })}
                 </Stack>
             </Box>
         </Paper>

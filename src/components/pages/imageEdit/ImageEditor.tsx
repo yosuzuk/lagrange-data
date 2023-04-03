@@ -21,6 +21,7 @@ export const ImageEditor = (props: IProps) => {
 
     return (
         <Box
+            component="div"
             sx={{
                 height: height !== null ? `${height}px` : 'auto',
             }}

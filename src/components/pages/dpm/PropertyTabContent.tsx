@@ -39,7 +39,7 @@ export const PropertyTabContent = <T extends {}>(props: IProps<T>) => {
         <Stack spacing={3}>
             <Stack direction="row" alignItems="center" flexWrap="wrap" sx={{ gap: '8px' }}>
                 {canRename && (
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box component="div" sx={{ flexGrow: 1 }}>
                         <TextField
                             id={`${idPrefix}_name_${tab.id}`}
                             size="small"

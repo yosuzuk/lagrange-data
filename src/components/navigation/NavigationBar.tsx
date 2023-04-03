@@ -106,6 +106,7 @@ export const NavigationBar = (props: IProps) => {
                         onClose={handleCloseDrawer}
                     >
                         <Box
+                            component="div"
                             sx={{ width: 'auto' }}
                             role="presentation"
                             onClick={handleCloseDrawer}

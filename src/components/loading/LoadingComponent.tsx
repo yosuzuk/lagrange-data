@@ -8,13 +8,13 @@ interface IProps {
 export const LoadingComponent = (props: IProps) => {
     const { height = '200px' } = props;
     return (
-        <Box sx={{
+        <Box component="div" sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             height,
         }}>
-            <CircularProgress  />
+            <CircularProgress />
         </Box>
     );
 };

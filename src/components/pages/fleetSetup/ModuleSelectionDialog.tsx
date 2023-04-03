@@ -64,7 +64,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                         const valueForEmptyOption = `${groupId}#none`;
                         return (
                             <Paper variant="outlined" key={groupId}>
-                                <Box pl={1} pr={1}>
+                                <Box component="div" pl={1} pr={1}>
                                     <FormControl>
                                         <RadioGroup
                                             defaultValue="female"
@@ -95,7 +95,7 @@ export const ModuleSelectionDialog = (props: IProps) => {
                                                     <FormControlLabel
                                                         key={moduleId}
                                                         label={(
-                                                            <Box pt={1} pb={1}>
+                                                            <Box component="div" pt={1} pb={1}>
                                                                 <Typography variant="body1">{`${moduleUsage.module.category}${moduleUsage.module.categoryNumber} ${getModuleName(shipId, moduleUsage.module)}`}</Typography>
                                                                 {getCurrentLanguage() === Language.JAPANESE && moduleUsage.module.description && (
                                                                     <Typography variant="body2" color="text.secondary">{`${moduleUsage.module.description}`}</Typography>

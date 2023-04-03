@@ -81,8 +81,8 @@ export const ComputedProperties = (props: IProps) => {
                 const showColumnsForTargets = !showColumnsForEnhancement && dependsOnTarget && attackTargetTabs.length > 1;
 
                 return (
-                    <Box key={baseOutputProperty.id} pb={6}>
-                        <Box pb={2}>
+                    <Box component="div" key={baseOutputProperty.id} pb={6}>
+                        <Box component="div" pb={2}>
                             <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                                 <Typography variant="body1">{baseOutputProperty.label}</Typography>
                                 {baseOutputProperty.description && (
@@ -90,11 +90,11 @@ export const ComputedProperties = (props: IProps) => {
                                         title={baseOutputProperty.label}
                                         text={baseOutputProperty.description}
                                     />
-                                )}      
+                                )}
                             </Stack>
                         </Box>
                         {showColumnsForEnhancement && (
-                            <Box pl={2}>
+                            <Box component="div" pl={2}>
                                 <TableContainer component={Paper} sx={{ width: 'fit-content' }}>
                                     <Table size="small" sx={{ width: 'fit-content' }}>
                                         <TableHead>
@@ -136,7 +136,7 @@ export const ComputedProperties = (props: IProps) => {
                             </Box>
                         )}
                         {!showColumnsForEnhancement && showColumnsForTargets && (
-                            <Box pl={2}>
+                            <Box component="div" pl={2}>
                                 <TableContainer component={Paper} sx={{ width: 'fit-content' }}>
                                     <Table size="small" sx={{ width: 'fit-content' }}>
                                         <TableHead>
@@ -166,7 +166,7 @@ export const ComputedProperties = (props: IProps) => {
                             </Box>
                         )}
                         {!showColumnsForEnhancement && !showColumnsForTargets && (
-                            <Box pl={2}>
+                            <Box component="div" pl={2}>
                                 <ComputedProperty
                                     property={computedOutputProperties[enhancementTabs[0].id]?.[attackTargetTabs[0].id]?.[baseOutputProperty.id as OutputPropertyId] ?? null}
                                 />

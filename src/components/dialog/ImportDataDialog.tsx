@@ -87,7 +87,7 @@ export const ImportDataDialog = <T,>(props: IProps<T>) => {
                         {confirmWarning && (
                             <Alert severity="warning">{confirmWarning}</Alert>
                         )}
-                        <Box p={1}>
+                        <Box component="div" p={1}>
                             <Typography variant="body2" component="div">
                                 <pre>
                                     {createPreview(importDataToConfirm)}
@@ -123,7 +123,7 @@ export const ImportDataDialog = <T,>(props: IProps<T>) => {
                             {t('label.directInput')}
                         </Typography>
                         <Stack direction="row" spacing={1}>
-                            <Box sx={{ flexGrow: 1 }}>
+                            <Box component="div" sx={{ flexGrow: 1 }}>
                                 <TextField
                                     id="json-input"
                                     placeholder={t('label.pasteHere')}
@@ -165,9 +165,9 @@ export const ImportDataDialog = <T,>(props: IProps<T>) => {
                 <>
                     <Button variant="outlined" onClick={onClose}>
                         {t('button.cancel')}
-                    </Button> 
+                    </Button>
                 </>
             )}
-        />  
+        />
     );
 };

@@ -34,7 +34,7 @@ export const LabeledList = (props: IProps) => {
                         ) : (
                             <div>{row.label}</div>
                         )}
-                        <Box pl={offsetValue ? 1 : 0}>
+                        <Box component="div" pl={offsetValue ? 1 : 0}>
                             <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                         </Box>
                         {(!separator && row.separatorAfter === true) && (
@@ -48,6 +48,7 @@ export const LabeledList = (props: IProps) => {
 
     return (
         <Box
+            component="div"
             sx={{
                 display: 'inline-grid',
                 gridTemplateColumns: 'max-content auto '.repeat(columnCount).trim(),
@@ -63,7 +64,7 @@ export const LabeledList = (props: IProps) => {
                     {(typeof row.label === 'string' || typeof row.label === 'number') ? (
                         <Typography variant="body2" color="text.secondary">{row.label}</Typography>
                     ) : (
-                        <Box display="flex">{row.label}</Box>
+                        <Box component="div" display="flex">{row.label}</Box>
                     )}
                     <LabeledListRowValue row={row} verticalAlignment={verticalAlignment} />
                     {(!separator && row.separatorAfter === true) && index % columnCount === 0 && (

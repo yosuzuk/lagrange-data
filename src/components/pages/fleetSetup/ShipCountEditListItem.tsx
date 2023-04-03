@@ -183,12 +183,12 @@ export const ShipCountEditListItem = (props: IProps) => {
             {!verticalAlignment && (
                 <Stack spacing={1}>
                     <Stack spacing={1} direction="row" flexWrap="wrap" alignItems="center">
-                        <Box pb={1}>
+                        <Box component="div" pb={1}>
                             <Stack spacing={1}>
                                 {shipContext}
                             </Stack>
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
+                        <Box component="div" sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
                             <Paper variant="outlined" sx={{ display: 'inline-block' }}>
                                 <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
                                     {clearButton}

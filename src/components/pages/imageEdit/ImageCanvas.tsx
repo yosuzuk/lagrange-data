@@ -79,7 +79,6 @@ function calculateCanvasHeight(imageSelections: IImageSelection[], getModifier: 
 }
 
 function getCroppedHeight(selection: IImageSelection, getModifier: (selectionId: string) => IImageModifier): number {
-    console.log(getModifier(selection.id).cutTop);
     return Math.round(selection.imageInfo.height * (1 - getModifier(selection.id).cutTop));
 }
 

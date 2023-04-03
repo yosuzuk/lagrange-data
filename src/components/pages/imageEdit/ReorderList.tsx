@@ -33,7 +33,7 @@ export const ReorderList = (props: IProps) => {
 
     return (
         <Paper>
-            <Box p={1}>
+            <Box component="div" p={1}>
                 <Stack spacing={1}>
                     {imageSelections.map((selection, index) => (
                         <Fragment key={selection.id}>
@@ -41,7 +41,7 @@ export const ReorderList = (props: IProps) => {
                                 {selection.file.name}
                             </Typography>
                             <Stack direction="row" spacing={1} alignItems="center" sx={{ minHeight: '90px' }}>
-                                <Box sx={{ flexGrow: 1, position: 'relative' }}>
+                                <Box component="div" sx={{ flexGrow: 1, position: 'relative' }}>
                                     <img
                                         src={selection.dataUrl}
                                         alt={selection.file.name}

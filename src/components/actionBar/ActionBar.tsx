@@ -28,6 +28,7 @@ export const ActionBar = (props: IProps) => {
         <Paper square={true} sx={{ position: 'sticky', top: '48px', zIndex: 1 }}>
             <Container maxWidth="md" disableGutters={true}>
                 <Box
+                    component="div"
                     p={1}
                     sx={matches ? {
                         display: 'flex',
@@ -43,7 +44,7 @@ export const ActionBar = (props: IProps) => {
                     }}
                 >
                     {left?.(buttonProps)}
-                    {matches && <Box flexGrow={1} />}
+                    {matches && <Box component="div" flexGrow={1} />}
                     {right?.(buttonProps)}
                 </Box>
             </Container>

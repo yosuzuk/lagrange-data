@@ -20,7 +20,7 @@ export const AcquiredModules = (props: IProps) => {
     }
 
     return (
-        <Box mt={0.5}>
+        <Box component="div" mt={0.5}>
             {acquiredModules.map(module => (
                 <Typography key={module.id} variant="body2" color="text.secondary">
                     <Typography variant="body2" component="span" color="text.secondary" sx={{ opacity: 0.5 }}>
