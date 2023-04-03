@@ -48,7 +48,7 @@ export const ExampleMap1 = () => {
             <Planet size="large" color="blue" position="(6000,7000)" />
             <Planet size="large" color="blue" position="(4000,6000)" />
             <Planet size="large" color="blue" position="(4000,3000)" />
-            <Planet size="small" color="green" position="(4000,3200)" centerPosition="(4000,3000)" />
+            <Planet size="small" color="green" position="(4000,3200)" orbitCenter="(4000,3000)" />
             <Marker position="(2500,4000)" />
             <Marker position="(2620,3950)" color="green" />
         </WorldMap>
