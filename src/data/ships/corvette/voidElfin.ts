@@ -109,7 +109,7 @@ export const voidElfin: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            hp: 4750,
+            hp: 5200,
             armor: 2,
             shield: 0,
             speed: 2500,

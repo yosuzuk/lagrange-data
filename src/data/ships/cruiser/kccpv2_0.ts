@@ -96,6 +96,9 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 52040,
+        // },
     },
     {
         id: ShipId.KCCPV2_0_B,
@@ -184,6 +187,9 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 52040,
+        // },
     },
     {
         id: ShipId.KCCPV2_0_C,
@@ -239,6 +245,9 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 52040,
+        // },
     },
     {
         id: ShipId.KCCPV2_0_D,
@@ -325,5 +334,8 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 52040,
+        // },
     },
 ];

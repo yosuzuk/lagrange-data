@@ -434,7 +434,7 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 130460,
+    hp: 146740,
     armor: 180,
     shield: 10,
     speed: 450,

@@ -125,6 +125,9 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 69570,
+        // },
     },
     {
         id: ShipId.LIGHT_CONE_B,
@@ -210,6 +213,9 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 69570,
+        // },
     },
     {
         id: ShipId.LIGHT_CONE_C,
@@ -282,6 +288,9 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 69570,
+        // },
     },
     {
         id: ShipId.LIGHT_CONE_TE_A_S,

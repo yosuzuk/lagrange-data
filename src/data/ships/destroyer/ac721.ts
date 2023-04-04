@@ -24,6 +24,9 @@ export const ac721: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
+        // defaultStats: {
+        //     hp: 34140,
+        // },
     },
     {
         id: ShipId.AC721_B,
@@ -40,6 +43,9 @@ export const ac721: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
+        // defaultStats: {
+        //     hp: 34140,
+        // },
     },
     {
         id: ShipId.AC721_D,
@@ -57,6 +63,9 @@ export const ac721: IShipDefinition[] = [
         carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
+        // defaultStats: {
+        //     hp: 30730,
+        // },
     },
     {
         id: ShipId.AC721_TE_A,
@@ -69,6 +78,9 @@ export const ac721: IShipDefinition[] = [
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.AC721_A, ShipId.AC721_B, ShipId.AC721_D, ShipId.AC721_TE_D_S_LEVI9],
+        // defaultStats: {
+        //     hp: 34140,
+        // },
     },
     {
         id: ShipId.AC721_TE_D_S_LEVI9,

@@ -23,5 +23,8 @@ export const vitasA021: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
+        // defaultStats: {
+        //     hp: 5370,
+        // },
     },
 ];

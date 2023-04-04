@@ -23,6 +23,9 @@ export const guardian: IShipDefinition[] = [
         researchStrategyTypes: [],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.GUARDIAN_B, ShipId.GUARDIAN_C],
+        // defaultStats: {
+        //     hp: 25650,
+        // },
     },
     {
         id: ShipId.GUARDIAN_B,
@@ -39,6 +42,9 @@ export const guardian: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.GUARDIAN_A,
         carryCorvette: 2,
+        // defaultStats: {
+        //     hp: 25650,
+        // },
     },
     {
         id: ShipId.GUARDIAN_C,
@@ -54,5 +60,8 @@ export const guardian: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.GUARDIAN_A,
+        // defaultStats: {
+        //     hp: 25650,
+        // },
     },
 ];

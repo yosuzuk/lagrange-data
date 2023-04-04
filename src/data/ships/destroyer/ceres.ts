@@ -24,6 +24,9 @@ export const ceres: IShipDefinition[] = [
         subModelIds: [ShipId.CERES_B, ShipId.CERES_C],
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+        // defaultStats: {
+        //     hp: 32310,
+        // },
     },
     {
         id: ShipId.CERES_B,
@@ -39,6 +42,9 @@ export const ceres: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         baseModelId: ShipId.CERES_A,
+        // defaultStats: {
+        //     hp: 32310,
+        // },
     },
     {
         id: ShipId.CERES_C,
@@ -54,5 +60,8 @@ export const ceres: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         baseModelId: ShipId.CERES_A,
+        // defaultStats: {
+        //     hp: 32310,
+        // },
     },
 ];

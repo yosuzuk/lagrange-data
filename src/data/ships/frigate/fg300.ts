@@ -23,6 +23,9 @@ export const fg300: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.FG300_B, ShipId.FG300_C],
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
     {
         id: ShipId.FG300_B,
@@ -38,6 +41,9 @@ export const fg300: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.FG300_A,
+        // defaultStats: {
+        //     hp: 12540,
+        // },
     },
     {
         id: ShipId.FG300_C,
@@ -53,5 +59,8 @@ export const fg300: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.FG300_A,
+        // defaultStats: {
+        //     hp: 12540,
+        // },
     },
 ];

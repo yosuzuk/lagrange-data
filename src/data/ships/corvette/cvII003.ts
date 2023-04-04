@@ -72,7 +72,7 @@ export const cvII003: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            hp: 4500,
+            hp: 4900,
             armor: 2,
             shield: 0,
             speed: 2500,

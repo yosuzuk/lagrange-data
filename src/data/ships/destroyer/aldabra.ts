@@ -27,6 +27,9 @@ export const aldabra: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        // defaultStats: {
+        //     hp: 37090,
+        // },
     },
     {
         id: ShipId.ALDABRA_B,
@@ -45,5 +48,8 @@ export const aldabra: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        // defaultStats: {
+        //     hp: 37090,
+        // },
     },
 ];

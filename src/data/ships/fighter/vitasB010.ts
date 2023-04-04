@@ -27,5 +27,8 @@ export const vitasB010: IShipDefinition[] = [
             ResearchStrategyType.FIGHTER_AND_CORVETTE,
         ],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        // defaultStats: {
+        //     hp: 5860,
+        // },
     },
 ];

@@ -89,6 +89,9 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 79630,
+        // },
     },
     {
         id: ShipId.CALLISTO_B,
@@ -139,6 +142,9 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 79630,
+        // },
     },
     {
         id: ShipId.CALLISTO_C,
@@ -201,5 +207,8 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 79630,
+        // },
     },
 ];

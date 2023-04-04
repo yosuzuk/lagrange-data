@@ -23,5 +23,8 @@ export const balancerAnderson: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        // defaultStats: {
+        //     hp: 3450,
+        // },
     },
 ];

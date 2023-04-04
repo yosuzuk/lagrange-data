@@ -23,6 +23,9 @@ export const carilion: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.CARILION_B, ShipId.CARILION_C],
+        // defaultStats: {
+        //     hp: 8340,
+        // },
     },
     {
         id: ShipId.CARILION_B,
@@ -38,6 +41,9 @@ export const carilion: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CARILION_A,
+        // defaultStats: {
+        //     hp: 9840,
+        // },
     },
     {
         id: ShipId.CARILION_C,
@@ -53,5 +59,8 @@ export const carilion: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.CARILION_A,
+        // defaultStats: {
+        //     hp: 9770,
+        // },
     },
 ];

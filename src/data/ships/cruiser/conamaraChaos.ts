@@ -104,6 +104,9 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 71600,
+        // },
     },
     {
         id: ShipId.CONAMARA_CHAOS_B,
@@ -197,5 +200,8 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 71600,
+        // },
     },
 ];

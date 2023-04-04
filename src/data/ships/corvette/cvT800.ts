@@ -78,7 +78,7 @@ export const cvT800: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            hp: 6900,
+            hp: 7500,
             armor: 2,
             shield: 0,
             speed: 2500,

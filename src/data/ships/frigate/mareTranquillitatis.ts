@@ -23,6 +23,9 @@ export const mareTranquillitatis: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.MARE_TRANQUILLITATIS_B, ShipId.MARE_TRANQUILLITATIS_C],
+        // defaultStats: {
+        //     hp: 12360,
+        // },
     },
     {
         id: ShipId.MARE_TRANQUILLITATIS_B,
@@ -38,6 +41,9 @@ export const mareTranquillitatis: IShipDefinition[] = [
         researchStrategyTypes: [],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
+        // defaultStats: {
+        //     hp: 12360,
+        // },
     },
     {
         id: ShipId.MARE_TRANQUILLITATIS_C,
@@ -53,5 +59,8 @@ export const mareTranquillitatis: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_TRANQUILLITATIS_A,
+        // defaultStats: {
+        //     hp: 12360,
+        // },
     },
 ];

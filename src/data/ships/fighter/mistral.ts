@@ -27,5 +27,8 @@ export const mistral: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        // defaultStats: {
+        //     hp: 5400,
+        // },
     },
 ];

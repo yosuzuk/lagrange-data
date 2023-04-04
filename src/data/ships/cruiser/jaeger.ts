@@ -25,7 +25,6 @@ export const jaeger: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         subModelIds: [ShipId.JAEGER_B],
-        carryCorvette: 4,
         modules: [
             modules.static({
                 id: 'w1',
@@ -94,6 +93,9 @@ export const jaeger: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 76190,
+        // },
     },
     {
         id: ShipId.JAEGER_B,

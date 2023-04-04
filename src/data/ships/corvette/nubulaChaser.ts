@@ -122,7 +122,7 @@ export const nebulaChaser: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats: {
-            hp: 5650,
+            hp: 6300,
             armor: 2,
             shield: 0,
             speed: 2500,
@@ -208,7 +208,7 @@ export const nebulaChaser: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats: {
-            hp: 4950,
+            hp: 5400,
             armor: 2,
             shield: 0,
             speed: 2500,

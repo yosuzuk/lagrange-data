@@ -26,6 +26,9 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
+        // defaultStats: {
+        //     hp: 14000,
+        // },
     },
     {
         id: ShipId.NOMA_M470_B,
@@ -46,6 +49,9 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
+        // defaultStats: {
+        //     hp: 14000,
+        // },
     },
     {
         id: ShipId.NOMA_M470_C,
@@ -66,6 +72,9 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
+        // defaultStats: {
+        //     hp: 14000,
+        // },
     },
     {
         id: ShipId.NOMA_M470_TE_A,

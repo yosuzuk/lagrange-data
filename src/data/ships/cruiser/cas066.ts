@@ -91,6 +91,9 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 71600,
+        // },
     },
     {
         id: ShipId.CAS066_B,
@@ -141,6 +144,9 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 63340,
+        // },
     },
     {
         id: ShipId.CAS066_C,
@@ -192,5 +198,8 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 66400,
+        // },
     },
 ];

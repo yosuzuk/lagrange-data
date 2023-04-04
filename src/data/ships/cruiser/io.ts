@@ -127,6 +127,9 @@ export const io: IShipDefinition[] = [
             integratedBatterySystem,
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 62120,
+        // },
     },
     {
         id: ShipId.IO_B,
@@ -182,6 +185,9 @@ export const io: IShipDefinition[] = [
             integratedBatterySystem,
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 62120,
+        // },
     },
     {
         id: ShipId.IO_C,
@@ -237,5 +243,8 @@ export const io: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
+        // defaultStats: {
+        //     hp: 62120,
+        // },
     },
 ];

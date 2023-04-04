@@ -81,7 +81,7 @@ export const silentAssassin: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            hp: 4900,
+            hp: 5350,
             armor: 6,
             shield: 0,
             speed: 2500,

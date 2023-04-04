@@ -88,6 +88,9 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 89390,
+        // },
     },
     {
         id: ShipId.CHIMERA_B,
@@ -130,6 +133,9 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 89390,
+        // },
     },
     {
         id: ShipId.CHIMERA_C,
@@ -175,6 +181,9 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 97270,
+        // },
     },
     {
         id: ShipId.CHIMERA_TE_C_S,

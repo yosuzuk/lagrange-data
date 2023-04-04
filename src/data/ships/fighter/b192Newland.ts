@@ -23,5 +23,8 @@ export const b192Newland: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        // defaultStats: {
+        //     hp: 4680,
+        // },
     },
 ];

@@ -29,6 +29,7 @@ const defensiveBatterySystem = modules.static({
 const aircraftLoadingSystem = modules.static({
     id: 'sp1',
     name: '戦闘機搭載システム',
+    carryFighter: 4,
     translatedName: {
         en: 'Aircraft Loading System',
     },
@@ -80,7 +81,6 @@ export const predator: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         subModelIds: [ShipId.PREDATOR_B, ShipId.PREDATOR_C],
-        carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
         modules: [
             modules.static({
@@ -118,6 +118,9 @@ export const predator: IShipDefinition[] = [
             propulsionSystem,
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 76190,
+        // },
     },
     {
         id: ShipId.PREDATOR_B,
@@ -133,7 +136,6 @@ export const predator: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         baseModelId: ShipId.PREDATOR_A,
-        carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
         modules: [
             modules.static({
@@ -166,6 +168,9 @@ export const predator: IShipDefinition[] = [
             propulsionSystem,
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 76190,
+        // },
     },
     {
         id: ShipId.PREDATOR_C,
@@ -181,7 +186,6 @@ export const predator: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         baseModelId: ShipId.PREDATOR_A,
-        carryFighter: 4,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
         modules: [
             modules.static({
@@ -209,5 +213,8 @@ export const predator: IShipDefinition[] = [
             modules.propulsionSystem(),
             modules.energySystem(),
         ],
+        // defaultStats: {
+        //     hp: 76190,
+        // },
     },
 ];
