@@ -24,6 +24,9 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.TAURUS_B, ShipId.TAURUS_C],
         relatedShipIds: [ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
+        // defaultStats: {
+        //     hp: 36040,
+        // },
     },
     {
         id: ShipId.TAURUS_B,
@@ -40,6 +43,9 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
         relatedShipIds: [ShipId.TAURUS_C, ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
+        // defaultStats: {
+        //     hp: 40030,
+        // },
     },
     {
         id: ShipId.TAURUS_C,
@@ -56,6 +62,9 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
         relatedShipIds: [ShipId.TAURUS_B, ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
+        // defaultStats: {
+        //     hp: 40030,
+        // },
     },
     {
         id: ShipId.TAURUS_TE_A_S,

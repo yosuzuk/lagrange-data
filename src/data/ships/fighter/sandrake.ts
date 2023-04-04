@@ -23,5 +23,10 @@ export const sandrake: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        // defaultStats: {
+        //     hp: 4200,
+        //     outboundTime: 6,
+        //     inboundTime: 4,
+        // },
     },
 ];

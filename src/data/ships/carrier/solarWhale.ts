@@ -303,13 +303,12 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             flagshipEffect.strategicStrike2(120).withDefaultFlag(),
-            flagshipEffect.strategicStrike3(360, '15.0+?').withCost(60),
+            flagshipEffect.strategicStrike3(360, '25.0').withCost(60),
         ],
         skills: [
-            // TODO cost
-            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }),
-            enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }),
-            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '5.0+?' }),
+            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }).withCost(30),
+            enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }).withCost(20),
+            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(20),
             enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
         ],
         skillSlots: 4,
@@ -338,7 +337,7 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 292890,
+    hp: 329430,
     armor: 120,
     shield: 15,
     speed: 250,

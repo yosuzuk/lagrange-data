@@ -60,7 +60,7 @@ export const FormControl = (props: IProps) => {
             return (
                 <>
                     <Stack direction="row">
-                        <Box sx={{ width: width ?? DEFAULT_NUMERIC_INPUT_WIDTH }}>
+                        <Box component="div" sx={{ width: width ?? DEFAULT_NUMERIC_INPUT_WIDTH }}>
                             <TextField
                                 id={localProperty.id}
                                 size="small"
@@ -93,7 +93,7 @@ export const FormControl = (props: IProps) => {
             return (
                 <>
                     <Stack direction="row">
-                        <Box sx={{ width: width ?? DEFAULT_SELECT_WIDTH }}>
+                        <Box component="div" sx={{ width: width ?? DEFAULT_SELECT_WIDTH }}>
                             <TextField
                                 id={localProperty.id}
                                 size="small"

@@ -22,6 +22,9 @@ export const xenoStinger: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [],
         subModelIds: [ShipId.XENO_STINGER_B],
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
     {
         id: ShipId.XENO_STINGER_B,
@@ -37,5 +40,8 @@ export const xenoStinger: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
         baseModelId: ShipId.XENO_STINGER_A,
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
 ];

@@ -22,6 +22,9 @@ export const mareNubium: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [],
         subModelIds: [ShipId.MARE_NUBIUM_B],
+        // defaultStats: {
+        //     hp: 9030,
+        // },
     },
     {
         id: ShipId.MARE_NUBIUM_B,
@@ -37,5 +40,8 @@ export const mareNubium: IShipDefinition[] = [
         researchStrategyTypes: [],
         researchTacticTypes: [],
         baseModelId: ShipId.MARE_NUBIUM_A,
+        // defaultStats: {
+        //     hp: 9030,
+        // },
     },
 ];

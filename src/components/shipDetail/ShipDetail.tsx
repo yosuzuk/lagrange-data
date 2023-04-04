@@ -54,9 +54,9 @@ export const ShipDetail = (props: IProps) => {
     const additionalVariableModules = useMemo<ISystemModule[]>(() => shipDefinition.modules?.filter(m => m.category !== 'STATIC' && !m.defaultModule) ?? [], [shipDefinition]);
 
     return (
-        <Box p={1}>
+        <Box component="div" p={1}>
             {!hideName && (
-                <Box pb={1}>
+                <Box component="div" pb={1}>
                     <Typography variant="h6" gutterBottom={true}>
                         {getShipName(shipDefinition)}
                     </Typography>

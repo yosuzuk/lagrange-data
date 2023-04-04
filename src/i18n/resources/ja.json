@@ -154,7 +154,8 @@
         "pageTitle": "艦船一覧"
     },
     "shipDetail": {
-        "staticEffectsColon": "固定効果：",
+        "staticEffect": "追加効果",
+        "staticEffectsColon": "追加効果：",
         "numberOfSkillSlots": "スキル枠：{{count}}",
         "skillsColon": "スキル：",
         "flagshipEffectsColon": "旗艦スキル：",
@@ -266,6 +267,9 @@
         "cutAndMoveDescription": "左のスライダーで要らない部分をカットしてから右のスライダーで重ねる場所を調整してください。",
         "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
+    "mapEdit": {
+        "regionValue": "区域{{value}}"
+    },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
         "nomaShippingGroup": "ノマシッピング",
@@ -356,9 +360,11 @@
         "increaseMissileDamage": "ミサイルのダメージアップ",
         "increaseMissileAndTorpedoDamage": "ミサイル/魚雷のダメージアップ",
         "increaseSiegeDamage": "攻城ダメージアップ",
+        "increaseSiegeDamageOfAircraft": "艦載機/UAVの攻城ダメージアップ",
         "increaseCriticalDamage": "クリティカルダメージアップ",
         "increaseCriticalDamageAndChance": "クリティカルダメージアップ＆確率アップ",
         "increaseHitRate": "命中率アップ",
+        "increaseHitRateOfMainWeapon": "メイン武器の命中率アップ",
         "increaseHitRateOfAircraft": "艦載機/UAVの命中率アップ",
         "increaseHitRateOfAircraftMainWeapon": "艦載機のメイン武器の命中率アップ",
         "increaseHitRateOfCorvette": "護送艦の命中率アップ",
@@ -450,7 +456,17 @@
         "prioritizeFirepower": "優先攻撃",
         "heavyAmmo": "重弾薬",
         "diveToss": "急降下投弾",
-        "activeInterference": "積極干渉"
+        "activeInterference": "積極干渉",
+        "focusedAttacks": "一斉掃討",
+        "sustainedDamageOutput": "持続攻撃",
+        "targetGuidance1": "目標誘導I",
+        "antiAircraftNetwork1": "防空ネットワークI",
+        "antiAircraftNetwork2": "防空ネットワークII",
+        "informationChain": "情報チェーン",
+        "missileTrackingRadar": "ミサイル捜索レーダー",
+        "activeAntiMissileInterception": "対ミサイル積極要撃",
+        "allShipsFocusFire": "全艦集中砲火",
+        "prioritizeSupport": "重点支援"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -480,12 +496,26 @@
         "aircraftEmergencyRepair": "戦略攻撃を実行した艦載機を帰還するたびに{{damage}}%緊急補修する。",
         "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。",
+        "prioritizeCarriersWithDuration": "敵艦隊に航空母艦が存在するとき、艦載機/ＵＡＶを出撃させてその航空母艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
+        "prioritizeCorvettesWithDuration": "敵艦隊に護送艦が存在するとき、艦載機/ＵＡＶを出撃させてその護送艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeFirepower": "{{interval}}秒ごとに、システムメイン武器の冷却時間が{{value}}%ダウンし、システム内の他の武器が使用できなくなる。効果は{{duration}}秒続く。",
         "heavyAmmo": "目標が巡洋艦の場合のとき、ダメージが{{damage}}%、攻撃時間が{{duration}}%アップする。",
         "diveToss": "戦闘開始後、システム内のメイン武器の敵艦船に対する最初の2ラウンドの攻撃が物理シールド貫通効果を得る。",
-        "activeInterference": "{{interval}}秒ごとに干渉システムを発動し、回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。"
+        "activeInterference": "{{interval}}秒ごとに干渉システムを発動し、回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。",
+        "focusedAttacks": "{{interval}}秒ごとに、システム内の武器でフリゲートと駆逐艦を優先的に攻撃する。同時に機動モードに移行し、命中率が{{hitRate}}%、艦船回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。",
+        "sustainedDamageOutput": "システム内の武器の目標が構造物のとき、他の全ての武器が使えなくなり、メイン武器の攻撃回数が{{roundsPerCycle}}アップ、メインイオン砲の持続射撃時間が{{duration}}%アップする。",
+        "targetGuidance1Kccpv": "艦隊内にいるKCCPV2.0巡洋艦の武器が、最初の2ラウンド間は射撃の命中率が{{hitrate}}%アップする。",
+        "antiAircraftNetwork1": "艦隊の艦載機能力が劣っている場合、艦隊内の対空能力を持つ武器が艦載機目標を優先攻撃し、命中率が{{hitRate}}%アップする。",
+        "antiAircraftNetwork2": "対空UAVによる補助測位を行い、条件を満たす艦隊の中列艦船の対空投射武器と防空範囲を同列まで拡張する。",
+        "informationChain": "味方艦隊に戦闘機が存在するとき、味方の艦載機から相手の戦闘機への命中率が{{hitRate}}%アップする。",
+        "missileTrackingRadar": "格納庫内の艦載機/UAVのメイン武器が{{interception}}%のミサイル要撃率/{{interception}}%の魚雷要撃率を取得する",
+        "activeAntiMissileInterception": "艦船が前列に移動する。艦船内の武器の防空範囲が味方全体へ拡張し、ミサイル要撃率が{{missileInterception}}%、魚雷要撃率が{{torpedoInterception}}%アップする。",
+        "allShipsFocusFire": "{{interval}}秒ごとに、艦船内の全ての武器で1件の目標を集中攻撃する。全ての武器の冷却時間が{{cooldown}}%ダウンする。効果は{{duration}}秒続く。",
+        "prioritizeSupport": "味方艦隊に巡洋艦が存在するとき、その巡洋艦を優先的に支援する。支援時間が{{duration}}%アップする。"
     },
     "enhancementCondition": {
-        "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成"
+        "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",
+        "targetGuidance1Kccpv": "艦隊に3隻以上のKCCPV2.0巡洋艦が必要です",
+        "antiAircraftNetwork2": "艦隊に3隻以上のライトコーンが必要です"
     }
 }

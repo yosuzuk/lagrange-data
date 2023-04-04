@@ -41,15 +41,14 @@ export const redBeast7_13: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.heavyAmmo(60, 30).withCost(15),
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseHitRate().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50),
-                    enhancements.increaseCriticalDamage().withPercentageValue(40),
-                    enhancements.reduceMissileInterception().withPercentageValue(30),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(11),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(11),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(11),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(11),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(11),
+                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(11),
+                    enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(11),
+                    enhancements.reduceMissileInterception().withPercentageValue(30).withCost(11),
                 ],
                 skillSlots: 6,
                 dpmShip: 2640,
@@ -59,26 +58,24 @@ export const redBeast7_13: IShipDefinition[] = [
             modules.commandSystem(),
             modules.armorSystem({
                 skills: [
-                    // TODO cost
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.increaseHp().withPercentageValue(10),
-                    enhancements.increaseArmor().withAbsoluteValue(3),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(3).withCost(6),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
                 skills: [
-                    // TODO cost
-                    enhancements.increaseEvasion().withPercentageValue(8),
-                    enhancements.increaseEvasion().withPercentageValue(8),
-                    enhancements.reduceLockOn().withPercentageValue(30),
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
+                    enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
                 ],
                 skillSlots: 2,
             }),
         ],
         defaultStats: {
-            hp: 4750,
+            hp: 5200,
             armor: 2,
             shield: 0,
             speed: 2500,

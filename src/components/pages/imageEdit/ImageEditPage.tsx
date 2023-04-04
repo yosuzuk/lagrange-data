@@ -58,7 +58,7 @@ const ImageEditPage = () => {
                 onChangeMode={handleChangeEditorMode}
             />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     {mode === EditorMode.CHOOSE_AND_REORDER && (
                         <Stack pt={1} pb={1} spacing={2}>
                             <Typography variant="body2">

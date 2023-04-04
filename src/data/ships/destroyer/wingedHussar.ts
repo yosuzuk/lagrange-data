@@ -23,6 +23,9 @@ export const wingedHussar: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
+        // defaultStats: {
+        //     hp: 22710,
+        // },
     },
     {
         id: ShipId.WINGED_HUSSAR_B,
@@ -38,6 +41,9 @@ export const wingedHussar: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.WINGED_HUSSAR_A,
+        // defaultStats: {
+        //     hp: 22710,
+        // },
     },
     {
         id: ShipId.WINGED_HUSSAR_C,
@@ -53,5 +59,8 @@ export const wingedHussar: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.WINGED_HUSSAR_A,
+        // defaultStats: {
+        //     hp: 22710,
+        // },
     },
 ];

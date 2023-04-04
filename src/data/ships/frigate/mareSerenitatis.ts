@@ -23,6 +23,9 @@ export const mareSerenitatis: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.MARE_SERENITATIS_B, ShipId.MARE_SERENITATIS_C],
+        // defaultStats: {
+        //     hp: 14970,
+        // },
     },
     {
         id: ShipId.MARE_SERENITATIS_B,
@@ -38,6 +41,9 @@ export const mareSerenitatis: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_SERENITATIS_A,
+        // defaultStats: {
+        //     hp: 14970,
+        // },
     },
     {
         id: ShipId.MARE_SERENITATIS_C,
@@ -53,5 +59,8 @@ export const mareSerenitatis: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.MARE_SERENITATIS_A,
+        // defaultStats: {
+        //     hp: 14970,
+        // },
     },
 ];

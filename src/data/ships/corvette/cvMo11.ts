@@ -126,7 +126,7 @@ export const cvMo11: IShipDefinition[] = [
             ...defaultModules,
         ],
         defaultStats: {
-            hp: 6900,
+            hp: 7500,
             armor: 2,
             shield: 0,
             speed: 2500,
@@ -159,7 +159,7 @@ export const cvMo11: IShipDefinition[] = [
             ...defaultModules,
         ],
         defaultStats: {
-            hp: 6950,
+            hp: 7500,
             armor: 2,
             shield: 0,
             speed: 2500,

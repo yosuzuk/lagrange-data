@@ -86,7 +86,7 @@ export const ModuleData = (props: IProps) => {
                 justifyContent="end"
                 flexWrap="wrap"
             >
-                <Box sx={{ flexGrow: 1 }}>
+                <Box component="div" sx={{ flexGrow: 1 }}>
                     <Typography variant="body2" color="text.secondary">
                         {t('label.systemModulesColon')}
                         {isLanguageWithWhitespace() ? ' ' : ''}
@@ -94,7 +94,7 @@ export const ModuleData = (props: IProps) => {
                     </Typography>
                 </Box>
                 {moduleSelection.configuable && (
-                    <Box sx={{ display: 'flex', alignContent: 'end' }}>
+                    <Box component="div" sx={{ display: 'flex', alignContent: 'end' }}>
                         <Button
                             variant="outlined"
                             size="small"

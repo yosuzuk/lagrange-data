@@ -154,6 +154,7 @@ const a3: ISystemModule = {
     parts: [
         {
             text: [
+                // TODO adjust after update (added interception)
                 'BG-2350型　対艦砲',
                 '対小型艦：',
                 '・直射、実弾、対艦：18000、対空：540、攻城：1800',
@@ -244,9 +245,9 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '分散型軽量武器統制システム',
+    name: '分散型軽量武器統制システム', // TODO adjust after update
     translatedName: {
-        en: 'Distributed Light Weapon Control System',
+        en: 'Distributed Light Weapon Control System', // TODO adjust after update
     },
     description: '対空武装',
     category: 'C',
@@ -256,6 +257,7 @@ const c1: ISystemModule = {
     parts: [
         {
             text: [
+                // TODO adjust after update
                 'BG-6258型　対空砲',
                 '対空：',
                 '・直射、実弾、対空：1512',
@@ -318,7 +320,7 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             // TODO max duration
-            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '45+?' }).withCost(90),
+            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '60' }).withCost(30),
         ],
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
@@ -328,23 +330,22 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            // TODO cost
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseHp().withPercentageValue(10),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseArmor().withAbsoluteValue(75),
-            enhancements.increaseShield().withPercentageValue(10),
-            enhancements.increaseShield().withPercentageValue(10),
-            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(8),
         ],
         skillSlots: 5,
     }),
     modules.propulsionSystem({
         skills: [
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseCruisingSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
-            enhancements.increaseWarpSpeed().withPercentageValue(15),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
         ],
         skillSlots: 3,
     }),
@@ -352,7 +353,7 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 192540,
+    hp: 180470,
     armor: 240,
     shield: 5,
     speed: 250,

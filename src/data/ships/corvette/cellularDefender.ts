@@ -11,7 +11,7 @@ import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const defaultStats: IDefaultShipStats = {
-    hp: 6100,
+    hp: 6650,
     armor: 2,
     shield: 0,
     speed: 2500,

@@ -56,6 +56,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     skills: [
+        // TODO cost
         enhancements.increaseRepairSpeed().withPercentageValue(10),
         enhancements.increaseRepairSpeed().withPercentageValue(10),
         enhancements.reducePrefabCost().withPercentageValue(10),
@@ -85,6 +86,7 @@ const a2: ISystemModule = {
         enhancements.increaseStorage().withFixedAbsoluteValue(60000),
     ],
     skills: [
+        // TODO cost
         enhancements.increaseStorage().withPercentageValue(80),
         enhancements.increaseSupplySpeed().withPercentageValue(34),
         enhancements.increaseCustomModuleStorage().withPercentageValue(15),
@@ -114,11 +116,11 @@ const b1: ISystemModule = {
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(60),
     ],
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40),
-        enhancements.increaseProductionSpeed().withPercentageValue(40),
-        enhancements.reduceUeCoinCost().withPercentageValue(15),
-        enhancements.reduceUeCoinCost().withPercentageValue(15),
-        enhancements.increaseSelfHostCapacity().withPercentageValue(40),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.increaseSelfHostCapacity().withPercentageValue(40).withCost(20),
     ],
     skillSlots: 4,
     parts: [{
@@ -137,6 +139,7 @@ const b2: ISystemModule = {
     description: '自己保有能力で護送艦が生産可能',
     category: 'B',
     categoryNumber: 2,
+    // TODO skills
     skillSlots: 3,
     parts: [{
         text: [
@@ -154,6 +157,7 @@ const b3: ISystemModule = {
     description: '自己保有能力で戦闘機が生産可能',
     category: 'B',
     categoryNumber: 3,
+    // TODO skills
     skillSlots: 3,
     parts: [{
         text: [
@@ -173,6 +177,7 @@ const c1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -191,6 +196,7 @@ const c2: ISystemModule = {
     description: '補修ＵＡＶ×２',
     category: 'C',
     categoryNumber: 2,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -222,10 +228,10 @@ const d1: ISystemModule = {
         enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
         enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
         enhancements.reduceHitBySlowInBackRow().withPercentageValue(8).withCost(8),
-        enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
-        enhancements.increaseSystemHp().withPercentageValue(10),
+        enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
     ],
-    skillSlots: 2,
+    skillSlots: 3,
 };
 
 const d2: ISystemModule = {
@@ -243,6 +249,7 @@ const d2: ISystemModule = {
     ],
     skills: [
         enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
+        // TODO remaining skills
     ],
     skillSlots: 2,
 };
@@ -258,6 +265,7 @@ const d3: ISystemModule = {
     categoryNumber: 3,
     skills: [
         enhancements.disguiseAsDestroyer(),
+        // TODO remaining skills
     ],
     skillSlots: 2,
     parts: [{
@@ -277,6 +285,7 @@ const e1: ISystemModule = {
     description: '対空武装（同列）',
     category: 'E',
     categoryNumber: 1,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -299,6 +308,7 @@ const e2: ISystemModule = {
     category: 'E',
     categoryNumber: 2,
     carryCorvette: 3,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -335,7 +345,7 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 160450,
+    hp: 180470,
     armor: 90,
     shield: 15,
     speed: 560,

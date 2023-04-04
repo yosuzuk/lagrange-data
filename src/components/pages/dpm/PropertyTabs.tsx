@@ -49,7 +49,7 @@ export const PropertyTabs = <T extends {}>(props: IProps<T>) => {
                     <Tab label={<AddIcon />} onClick={addTab} />
                 )}
             </Tabs>
-            <Box p={1} pt={2}>
+            <Box component="div" p={1} pt={2}>
                 {tabs.map((tab, index) => [tab, index] as const).filter(([_tab, index]) => index === tabIndex).map(([tab, index]) => (
                     <PropertyTabContent
                         idPrefix={idPrefix}

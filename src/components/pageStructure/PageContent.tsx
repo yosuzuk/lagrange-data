@@ -9,7 +9,7 @@ interface IProps {
 
 export const PageContent = ({ children, disableContainer }: IProps) => {
     return (
-        <Box flexGrow={1}>
+        <Box component="div" flexGrow={1}>
             <Container disabled={disableContainer}>
                 {children}
             </Container>

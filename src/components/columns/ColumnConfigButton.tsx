@@ -77,14 +77,14 @@ export const ColumnConfigButton = (props: IProps) => {
                     <Grow
                         {...TransitionProps}
                         style={{
-                        transformOrigin:
-                            placement === 'bottom' ? 'center top' : 'center bottom',
+                            transformOrigin:
+                                placement === 'bottom' ? 'center top' : 'center bottom',
                         }}
                     >
                         <div>
                             <ClickAwayListener onClickAway={() => setOpened(false)}>
                                 <Paper>
-                                    <Box sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px`}}>
+                                    <Box component="div" sx={{ overflowY: 'auto', maxHeight: `${(getMaxPopperHeight(anchorRef.current) ?? 0) - 50}px` }}>
                                         <MenuList id="split-button-menu">
                                             {columnConfigOptions.map((option: IColumnConfigOption) => (
                                                 <MenuItem
@@ -93,12 +93,12 @@ export const ColumnConfigButton = (props: IProps) => {
                                                     onClick={() => handleClickOption(option.columnKey)}
                                                 >
                                                     <ListItemIcon>
-                                                    <Checkbox
-                                                        edge="start"
-                                                        checked={columnConfig[option.columnKey]}
-                                                        tabIndex={-1}
-                                                        disableRipple={true}
-                                                    />
+                                                        <Checkbox
+                                                            edge="start"
+                                                            checked={columnConfig[option.columnKey]}
+                                                            tabIndex={-1}
+                                                            disableRipple={true}
+                                                        />
                                                     </ListItemIcon>
                                                     <ListItemText>
                                                         {option.name}
@@ -108,7 +108,7 @@ export const ColumnConfigButton = (props: IProps) => {
                                         </MenuList>
                                     </Box>
                                     <Divider />
-                                    <Box p={1} display="flex" justifyContent="end">
+                                    <Box component="div" p={1} display="flex" justifyContent="end">
                                         <Button variant="outlined" onClick={() => setOpened(false)}>
                                             {t('button.close')}
                                         </Button>

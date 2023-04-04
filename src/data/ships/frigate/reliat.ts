@@ -23,6 +23,9 @@ export const reliat: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.RELIAT_B, ShipId.RELIAT_C],
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
     {
         id: ShipId.RELIAT_B,
@@ -38,6 +41,9 @@ export const reliat: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.RELIAT_A,
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
     {
         id: ShipId.RELIAT_C,
@@ -53,5 +59,8 @@ export const reliat: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.RELIAT_A,
+        // defaultStats: {
+        //     hp: 10530,
+        // },
     },
 ];

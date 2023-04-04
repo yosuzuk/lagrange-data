@@ -27,6 +27,9 @@ export const quaoar: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        // defaultStats: {
+        //     hp: 30540,
+        // },
     },
     {
         id: ShipId.QUAOAR_B,
@@ -45,5 +48,8 @@ export const quaoar: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
+        // defaultStats: {
+        //     hp: 30540,
+        // },
     },
 ];

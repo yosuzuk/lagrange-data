@@ -142,6 +142,7 @@ const a1: ISystemModule = {
     parts: [
         {
             text: [
+                // TODO adjust after update
                 'MK4-SG-2580型「サンダーボルト」2連重砲',
                 '対小型艦：',
                 '・直射、実弾、対艦：6300、攻城：1134',
@@ -312,11 +313,11 @@ const c1: ISystemModule = {
     translatedName: {
         en: 'Additional Armor System',
     },
-    description: 'HPを15%アップ（最大35％）',
+    description: 'HPを15%アップ（最大40％）',
     category: 'C',
     categoryNumber: 1,
     effects: [
-        enhancements.increaseHp().withFixedPercentageValue(15),
+        enhancements.increaseHp().withFixedPercentageValue(20),
     ],
     skills: [
         enhancements.increaseHp().withPercentageValue(10).withCost(8),
@@ -339,11 +340,11 @@ const c2: ISystemModule = {
     translatedName: {
         en: 'EM Armor System',
     },
-    description: 'シールド値35％アップ（最大55％）',
+    description: 'シールド値20％アップ（最大40％）',
     category: 'C',
     categoryNumber: 2,
     effects: [
-        enhancements.increaseShield().withFixedPercentageValue(35),
+        enhancements.increaseShield().withFixedPercentageValue(20),
     ],
     skills: [
         enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -393,7 +394,7 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
-            flagshipEffect.desperateMeasures2('80', '2+?').withCost(60),
+            flagshipEffect.desperateMeasures2('20', '2').withCost(60),
         ],
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
@@ -426,7 +427,7 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 139552,
+    hp: 136510,
     armor: 180,
     shield: 10,
     speed: 250,

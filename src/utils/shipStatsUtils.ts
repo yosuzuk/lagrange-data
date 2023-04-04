@@ -9,7 +9,7 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
 
     // stats including default modules
     const defaultStats: IStats = {
-        hp: shipDefinition.defaultStats?.hp ?? (data !== null ? Number(data.HP) : undefined),
+        hp: shipDefinition.defaultStats?.hp,
         speed: shipDefinition.defaultStats?.speed ?? (data !== null ? Number(data.speed) : undefined),
         warpSpeed: shipDefinition.defaultStats?.warpSpeed ?? (data !== null ? Number(data.warp) : undefined),
         dpmShip: shipDefinition.defaultStats?.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),

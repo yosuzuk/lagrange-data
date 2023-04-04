@@ -24,5 +24,8 @@ export const hayreddingsLoyal: IShipDefinition[] = [
         manufacturer: Manufacturer.HAYREDDIN_CLAN,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        // defaultStats: {
+        //     hp: 6480,
+        // },
     },
 ];

@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -21,15 +22,26 @@ interface IProps {
 export const ModuleDetail = (props: IProps) => {
     const { shipId, modules } = props;
     const { mode } = useColorMode();
+    const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
     const descriptionAvailable = getCurrentLanguage() === Language.JAPANESE;
     const partsAvailable = getCurrentLanguage() === Language.JAPANESE;
 
+    const handleToggleExpand = useCallback((moduleId: string) => {
+        setExpanded(state => ({
+            ...state,
+            [moduleId]: state[moduleId] === true ? false : true,
+        }));
+    }, []);
+
+    useEffect(() => {
+        setExpanded({});
+    }, [shipId]);
+
     return (
         <>
             {modules.map(module => {
-                const expandEnabled = Number.isFinite(module.skillSlots)
-                    || (module.effects ?? []).length > 0
+                const expandEnabled = (module.effects ?? []).length > 0
                     || (module.skills ?? []).length > 0
                     || (module.flagshipEffects ?? []).length > 0
                     || (partsAvailable && module.parts?.some(part => !!part.text));
@@ -37,7 +49,12 @@ export const ModuleDetail = (props: IProps) => {
                 return (
                     <Accordion
                         key={`module_${module.id}`}
-                        expanded={!expandEnabled ? false : undefined}
+                        expanded={expanded[module.id] ?? false}
+                        onChange={() => {
+                            if (expandEnabled) {
+                                handleToggleExpand(module.id);
+                            }
+                        }}
                         sx={!expandEnabled ? { pointerEvents: 'none' } : undefined}
                     >
                         <AccordionSummary
@@ -60,7 +77,7 @@ export const ModuleDetail = (props: IProps) => {
                                 )}
                                 <Stack spacing={1} direction="row">
                                     {module.mainSystem && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -69,8 +86,18 @@ export const ModuleDetail = (props: IProps) => {
                                             />
                                         </Box>
                                     )}
+                                    {module.effects && module.effects.length > 0 && (
+                                        <Box component="div" pt={1}>
+                                            <Chip
+                                                variant="outlined"
+                                                size="small"
+                                                color="primary"
+                                                label={t('shipDetail.staticEffect')}
+                                            />
+                                        </Box>
+                                    )}
                                     {module.flagshipEffects && module.flagshipEffects.length > 0 && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -80,7 +107,7 @@ export const ModuleDetail = (props: IProps) => {
                                         </Box>
                                     )}
                                     {module.skills?.some(skill => skill.type === EnhancementType.STRATEGY) && (
-                                        <Box pt={1}>
+                                        <Box component="div" pt={1}>
                                             <Chip
                                                 variant="outlined"
                                                 size="small"
@@ -97,7 +124,6 @@ export const ModuleDetail = (props: IProps) => {
                                 'backgroundColor': mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(229, 229, 229, 0.5)',
                             }}
                         >
-
                             <Stack spacing={2}>
                                 {partsAvailable && module.parts !== undefined && module.parts.map((modulePart, index) => (
                                     <Stack key={`part${index}`} spacing={1}>

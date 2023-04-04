@@ -26,7 +26,7 @@ export const ShipCountList = (props: IProps) => {
                         direction="row"
                     >
                         <Stack spacing={1} direction="row" flexWrap="wrap" sx={{ flexGrow: 1 }}>
-                            <Box sx={{ width: '25px' }}>
+                            <Box component="div" sx={{ width: '25px' }}>
                                 <Typography variant="body2" textAlign="end">
                                     {`${shipSelection.count}×`}
                                 </Typography>
@@ -57,7 +57,7 @@ export const ShipCountList = (props: IProps) => {
                                 </Typography>
                             )}
                         </Stack>
-                        <Box sx={{ width: '50px' }}>
+                        <Box component="div" sx={{ width: '50px' }}>
                             {shipSelection.reinforcement === null && (
                                 <Typography variant="body2" textAlign="end">
                                     {`${shipSelection.shipDefinition.cost * shipSelection.count} Pt`}
@@ -75,7 +75,7 @@ export const ShipCountList = (props: IProps) => {
                             <Typography variant="body2" color="text.secondary" sx={{ paddingLeft: '30px', opacity: 0.5 }}>
                                 {`┗`}
                             </Typography>
-                            <Box sx={{ width: '25px' }}>
+                            <Box component="div" sx={{ width: '25px' }}>
                                 <Typography variant="body2" textAlign="end">
                                     {`${carriedShip.count}×`}
                                 </Typography>

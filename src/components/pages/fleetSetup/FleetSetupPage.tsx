@@ -72,7 +72,7 @@ export const FleetSetupPage = () => {
                 onShare={handleClickShare}
             />
             <PageContent disableContainer={groupDirection === 'row'}>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack spacing={1}>
                         <FleetProperties fleetSetup={fleetSetup} />
                         {fleetSetup.ships.length > 0 ? (
@@ -81,7 +81,7 @@ export const FleetSetupPage = () => {
                                     <Stack spacing={1} direction="row" sx={{ width: '100%' }}>
                                         {groupedShips.groups.map(group => (
                                             <Paper key={group.id} sx={{ width: `${100 / groupedShips.groups.length}%` }}>
-                                                <Box p={1}>
+                                                <Box component="div" p={1}>
                                                     <Stack spacing={1}>
                                                         <Typography variant="body1">
                                                             {group.name}
@@ -122,7 +122,7 @@ export const FleetSetupPage = () => {
                             </>
                         ) : (
                             <Paper>
-                                <Box p={2}>
+                                <Box component="div" p={2}>
                                     <Stack spacing={1}>
                                         <Typography variant="body1">
                                             {t('fleetSetup.fleetFormation')}

@@ -67,7 +67,7 @@ export const DpmCalcPage = () => {
         <>
             <NavigationBar currentRoute="/dpmCalc" />
             <PageContent>
-                <Box p={1}>
+                <Box component="div" p={1}>
                     <Stack pt={1} spacing={4}>
                         <Typography variant="body2">
                             {'こちらのDPM計算機では複数のスキル設定を同時に複数の攻撃目標に対して比較できます。'}
@@ -77,7 +77,7 @@ export const DpmCalcPage = () => {
                                 {'艦船情報'}
                             </Typography>
                             <Paper>
-                                <Box p={1}>
+                                <Box component="div" p={1}>
                                     <PropertiesForm
                                         properties={shipProperties}
                                         onChange={handleChangeShipProperties}
@@ -91,7 +91,7 @@ export const DpmCalcPage = () => {
                                 {'武装情報（初期ステータス）'}
                             </Typography>
                             <Paper>
-                                <Box p={1}>
+                                <Box component="div" p={1}>
                                     <PropertiesForm
                                         properties={weaponBaseProperties}
                                         onChange={handleChangeWeaponBaseProperties}
@@ -141,7 +141,7 @@ export const DpmCalcPage = () => {
                                 {'計算結果'}
                             </Typography>
                             <Paper>
-                                <Box p={1}>
+                                <Box component="div" p={1}>
                                     <ComputedProperties
                                         shipProperties={shipProperties}
                                         weaponBaseProperties={weaponBaseProperties}

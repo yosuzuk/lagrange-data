@@ -35,7 +35,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'filter',
                     renderHeader: () => t('label.researchDirection'),
                     renderCell: (configuration => (
-                        <Box sx={{ minWidth: '120px' }}>
+                        <Box component="div" sx={{ minWidth: '120px' }}>
                             {configuration.filterState.manufacturerFilter && (
                                 <Typography variant="body2">
                                     <ScriptedLink onClick={() => onClickConfiguration(configuration)}>
@@ -71,7 +71,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'selectedShipChance',
                     renderHeader: () => t('label.selectedShip'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(getSelectedShipChange(configuration, filterStateShipId))}</Typography>
                         </Box>
                     ),
@@ -87,7 +87,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'totalShipChance',
                     renderHeader: () => t('label.newShip'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalShipChance)}</Typography>
                         </Box>
                     ),
@@ -102,7 +102,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'totalModuleChance',
                     renderHeader: () => t('label.additionalSystemModule'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.totalModuleChance)}</Typography>
                         </Box>
                     ),
@@ -118,7 +118,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'techPointChance',
                     renderHeader: () => t('label.techPoints'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.techPointChance)}</Typography>
                         </Box>
                     ),
@@ -133,7 +133,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'wishedShipChance',
                     renderHeader: () => t('label.wantedBlueprint'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.wishedShipChance)}</Typography>
                         </Box>
                     ),
@@ -148,7 +148,7 @@ export const ResearchAgreementTable = (props: IProps) => {
                     id: 'unwishedShipChance',
                     renderHeader: () => t('label.unwantedBlueprint'),
                     renderCell: configuration => (
-                        <Box sx={{ minWidth: chanceCellMinWidth }}>
+                        <Box component="div" sx={{ minWidth: chanceCellMinWidth }}>
                             <Typography variant="body2">{formatChance(configuration.unwishedShipChance)}</Typography>
                         </Box>
                     ),
