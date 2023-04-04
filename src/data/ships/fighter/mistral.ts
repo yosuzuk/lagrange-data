@@ -29,6 +29,8 @@ export const mistral: IShipDefinition[] = [
         ],
         // defaultStats: {
         //     hp: 5400,
+        //     outboundTime: 3,
+        //     inboundTime: 3,
         // },
     },
 ];

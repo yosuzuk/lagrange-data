@@ -22,7 +22,7 @@ const m1: ISystemModule = {
     defaultModule: true,
     mainSystem: true,
     skills: [
-        strategy.overdrive(90, 30, 15).withCost(15),
+        strategy.overdrive(90, 30, 15).withCost(15), // TODO adjust after update
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -58,7 +58,7 @@ const m2: ISystemModule = {
     categoryNumber: 2,
     mainSystem: true,
     skills: [
-        strategy.overdrive(90, 30, 15).withCost(15),
+        strategy.overdrive(90, 30, 15).withCost(15), // TODO adjust after update
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -152,9 +152,9 @@ const a2: ISystemModule = {
 
 const a3: ISystemModule = {
     id: 'A3',
-    name: '「エターナルポラリス」MARKⅡ投射システム',
+    name: '「エターナルポラリス」MARKⅡ投射システム', // TODO adjust after update
     translatedName: {
-        en: 'Eternal Polaris Mk II Projectile Launching System',
+        en: 'Eternal Polaris Mk II Projectile Launching System', // TODO adjust after update
     },
     description: '対艦＆対空武装',
     category: 'A',
@@ -168,18 +168,6 @@ const a3: ISystemModule = {
         strategy.antiAircraftSupport(40, 30, 25).withCost(15),
     ],
     skillSlots: 4,
-    parts: [
-        {
-            text: [
-                'MK3-AT-800A型「スーパーノヴァホワイト」対艦魚雷',
-                '対艦：',
-                '・投射、実弾、対艦：9600、攻城：1440',
-                'MK2-AM-16x150B型「エターナルポラリス」対空ミサイル群',
-                '対空：',
-                '・投射、実弾、対艦：2327、対空：3946',
-            ],
-        },
-    ],
     dpmShip: 11927,
     dpmAntiAir: 3946,
     dpmSiege: 1440,

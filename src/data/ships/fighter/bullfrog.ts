@@ -25,6 +25,8 @@ export const bullfrog: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         // defaultStats: {
         //     hp: 4740,
+        //     outboundTime: 6,
+        //     inboundTime: 4,
         // },
     },
 ];

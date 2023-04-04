@@ -154,6 +154,7 @@ const a3: ISystemModule = {
     parts: [
         {
             text: [
+                // TODO adjust after update (added interception)
                 'BG-2350型　対艦砲',
                 '対小型艦：',
                 '・直射、実弾、対艦：18000、対空：540、攻城：1800',
@@ -244,9 +245,9 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '分散型軽量武器統制システム',
+    name: '分散型軽量武器統制システム', // TODO adjust after update
     translatedName: {
-        en: 'Distributed Light Weapon Control System',
+        en: 'Distributed Light Weapon Control System', // TODO adjust after update
     },
     description: '対空武装',
     category: 'C',
@@ -256,6 +257,7 @@ const c1: ISystemModule = {
     parts: [
         {
             text: [
+                // TODO adjust after update
                 'BG-6258型　対空砲',
                 '対空：',
                 '・直射、実弾、対空：1512',

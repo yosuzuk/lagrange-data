@@ -25,6 +25,8 @@ export const sporeA404: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         // defaultStats: {
         //     hp: 3550,
+        //     outboundTime: 3,
+        //     inboundTime: 3,
         // },
     },
 ];

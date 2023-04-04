@@ -80,7 +80,7 @@ const a1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     skills: [
-        strategy.concentrateFirePeriodically(80, 90, 15).withCost(25),
+        strategy.concentrateFirePeriodically(80, 90, 15).withCost(25), // TODO adjust after update
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(12),
@@ -307,7 +307,7 @@ const d2: ISystemModule = {
         {
             text: [
                 'ASM-220型　重点強化装甲',
-                '艦船メイン武器システムの被クリティカルダメージ60％ダウン',
+                '各システムの被クリティカルダメージ15％ダウン',
             ],
         },
     ],

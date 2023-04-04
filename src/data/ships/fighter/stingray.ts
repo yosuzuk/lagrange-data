@@ -29,6 +29,8 @@ export const stingray: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         // defaultStats: {
         //     hp: 5200,
+        //     outboundTime: 8,
+        //     inboundTime: 4,
         // },
     },
 ];

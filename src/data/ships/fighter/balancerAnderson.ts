@@ -25,6 +25,8 @@ export const balancerAnderson: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         // defaultStats: {
         //     hp: 3450,
+        //     outboundTime: 6,
+        //     inboundTime: 4,
         // },
     },
 ];

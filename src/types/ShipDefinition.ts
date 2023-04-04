@@ -41,6 +41,8 @@ export interface IDefaultShipStats {
     shield: number;
     speed: number;
     warpSpeed: number;
+    outboundTime?: number;
+    inboundTime?: number;
     dpmShip: number;
     dpmAntiAir: number;
     dpmSiege: number;

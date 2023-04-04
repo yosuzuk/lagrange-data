@@ -25,6 +25,8 @@ export const strixA100: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         // defaultStats: {
         //     hp: 4920,
+        //     outboundTime: 6,
+        //     inboundTime: 4,
         // },
     },
 ];

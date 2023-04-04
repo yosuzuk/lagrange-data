@@ -25,6 +25,8 @@ export const janbiyaAer410: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         // defaultStats: {
         //     hp: 4050,
+        //     outboundTime: 3,
+        //     inboundTime: 3,
         // },
     },
 ];

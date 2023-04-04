@@ -25,6 +25,8 @@ export const vitasA021: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         // defaultStats: {
         //     hp: 5370,
+        //     outboundTime: 5,
+        //     inboundTime: 3,
         // },
     },
 ];

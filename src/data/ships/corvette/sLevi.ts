@@ -63,6 +63,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 0,
     speed: 2500,
     warpSpeed: 12500,
+    outboundTime: 9,
+    inboundTime: 5,
     dpmShip: 3792,
     dpmAntiAir: 0,
     dpmSiege: 1820,

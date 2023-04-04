@@ -25,6 +25,8 @@ export const b192Newland: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         // defaultStats: {
         //     hp: 4680,
+        //     outboundTime: 4,
+        //     inboundTime: 4,
         // },
     },
 ];

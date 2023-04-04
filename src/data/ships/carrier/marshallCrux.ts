@@ -249,6 +249,30 @@ const c2: ISystemModule = {
     ],
 };
 
+const d1: ISystemModule = {
+    id: 'D1',
+    name: '???',
+    translatedName: {
+        en: '???',
+    },
+    category: 'D',
+    categoryNumber: 1,
+    // TODO skills
+    // TODO skillslots
+};
+
+const d2: ISystemModule = {
+    id: 'D2',
+    name: '???',
+    translatedName: {
+        en: '???',
+    },
+    category: 'D',
+    categoryNumber: 1,
+    // TODO skills
+    // TODO skillslots
+};
+
 const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
@@ -321,7 +345,7 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A1_B1,
             ShipId.MARSHALL_CRUX_TE_A2
         ],
-        modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, ...staticModules],
+        modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, d1, d2, ...staticModules],
         defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,

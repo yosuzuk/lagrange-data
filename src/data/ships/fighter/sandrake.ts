@@ -25,6 +25,8 @@ export const sandrake: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         // defaultStats: {
         //     hp: 4200,
+        //     outboundTime: 6,
+        //     inboundTime: 4,
         // },
     },
 ];
