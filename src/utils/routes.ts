@@ -9,6 +9,7 @@ export interface ITechFilesParams {
 }
 
 export interface IResearchAgreementParams {
+    view: 'ships' | 'table';
     season: Season;
     manufacturer: ResearchManufacturer | null;
     strategy: ResearchStrategyType | null;

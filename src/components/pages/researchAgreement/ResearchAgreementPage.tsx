@@ -23,9 +23,6 @@ import { t } from '../../../i18n';
 import { EnvironmentSetting } from './EnvironmentSetting';
 import { Season } from './types/Season';
 import { routes } from '../../../utils/routes';
-import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
-import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-import { ResearchTacticType } from '../../../types/ResearchTacticType';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
@@ -57,13 +54,14 @@ export const ResearchAgreementPage = () => {
 
     useEffect(() => {
         setSearchParams(routes.researchAgreement.createSearchParams({
+            view: viewMode,
             season,
             manufacturer: filterState.manufacturerFilter,
             strategy: filterState.strategyTypeFilter,
             tactic: filterState.tacticTypeFilter,
             shipId: filterState.shipId,
         }));
-    }, [season, filterState, setSearchParams]);
+    }, [viewMode, season, filterState, setSearchParams]);
 
     return (
         <>
