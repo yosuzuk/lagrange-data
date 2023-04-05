@@ -14,6 +14,9 @@ export const callisto: IShipDefinition[] = [
     {
         id: ShipId.CALLISTO_A,
         name: 'カリスト　Ａ魚雷型',
+        translatedName: {
+            en: 'Callisto - Torpedo Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 2,
@@ -89,13 +92,23 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 79630,
-        // },
+        defaultStats: {
+            hp: 79630,
+            armor: 40,
+            shield: 10,
+            speed: 400,
+            warpSpeed: 2000,
+            dpmShip: 15050,
+            dpmAntiAir: 1400,
+            dpmSiege: 3983,
+        },
     },
     {
         id: ShipId.CALLISTO_B,
         name: 'カリスト　Ｂ対艦型',
+        translatedName: {
+            en: 'Callisto - Anti-Ship Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 2,
@@ -142,13 +155,23 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 79630,
-        // },
+        defaultStats: {
+            hp: 79630,
+            armor: 40,
+            shield: 10,
+            speed: 400,
+            warpSpeed: 2000,
+            dpmShip: 18504,
+            dpmAntiAir: 840,
+            dpmSiege: 3728,
+        },
     },
     {
         id: ShipId.CALLISTO_C,
         name: 'カリスト　Ｃ支援型',
+        translatedName: {
+            en: 'Callisto - Support Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 2,
@@ -207,8 +230,15 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 79630,
-        // },
+        defaultStats: {
+            hp: 79630,
+            armor: 40,
+            shield: 10,
+            speed: 400,
+            warpSpeed: 2000,
+            dpmShip: 11550,
+            dpmAntiAir: 5100,
+            dpmSiege: 3003,
+        },
     },
 ];

@@ -14,6 +14,9 @@ export const jaeger: IShipDefinition[] = [
     {
         id: ShipId.JAEGER_A,
         name: 'イエーガー級　Ａ支援型',
+        translatedName: {
+            en: 'Jaeger - Support Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 5,
@@ -93,13 +96,23 @@ export const jaeger: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 76190,
-        // },
+        defaultStats: {
+            hp: 76190,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 3866,
+            dpmAntiAir: 1653,
+            dpmSiege: 273,
+        },
     },
     {
         id: ShipId.JAEGER_B,
         name: 'イエーガー級　Ｂ対艦型',
+        translatedName: {
+            en: 'Jaeger - Anti-Ship Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 5,
@@ -156,5 +169,15 @@ export const jaeger: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
+        defaultStats: {
+            hp: 67730, // TODO check after update
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 9008,
+            dpmAntiAir: 1653,
+            dpmSiege: 1147,
+        }
     },
 ];

@@ -14,6 +14,9 @@ export const chimera: IShipDefinition[] = [
     {
         id: ShipId.CHIMERA_A,
         name: 'キメラ級　Ａ弾道型',
+        translatedName: {
+            en: 'Chimera - Ballistic Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -88,13 +91,23 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 89390,
-        // },
+        defaultStats: {
+            hp: 89390,
+            armor: 80,
+            shield: 0,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 15804,
+            dpmAntiAir: 1200,
+            dpmSiege: 1893,
+        },
     },
     {
         id: ShipId.CHIMERA_B,
         name: 'キメラ級　Ｂ重砲型',
+        translatedName: {
+            en: 'Chimera - Heavy Cannon Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -133,13 +146,23 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 89390,
-        // },
+        defaultStats: {
+            hp: 89390,
+            armor: 80,
+            shield: 0,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 18875,
+            dpmAntiAir: 1200,
+            dpmSiege: 3342,
+        },
     },
     {
         id: ShipId.CHIMERA_C,
         name: 'キメラ級　Ｃ防衛型',
+        translatedName: {
+            en: 'Chimera - Defensive Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -181,13 +204,23 @@ export const chimera: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 97270,
-        // },
+        defaultStats: {
+            hp: 97270,
+            armor: 130,
+            shield: 0,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 11331,
+            dpmAntiAir: 0,
+            dpmSiege: 2415,
+        },
     },
     {
         id: ShipId.CHIMERA_TE_C_S,
         name: 'キメラ級-TE　Ａ防衛型（回収）',
+        translatedName: {
+            en: 'Chimera (TE) - Defensive Type (salvaged)',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 0,

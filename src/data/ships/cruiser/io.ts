@@ -91,6 +91,9 @@ export const io: IShipDefinition[] = [
     {
         id: ShipId.IO_A,
         name: 'イオ級　Ａイオン砲型',
+        translatedName: {
+            en: 'Io - Ion Cannon Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 5,
@@ -127,13 +130,23 @@ export const io: IShipDefinition[] = [
             integratedBatterySystem,
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 62120,
-        // },
+        defaultStats: {
+            hp: 62120,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 19928,
+            dpmAntiAir: 1260,
+            dpmSiege: 3753,
+        },
     },
     {
         id: ShipId.IO_B,
         name: 'イオ級　Ｂ対艦型',
+        translatedName: {
+            en: 'Io - Anti-Ship Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 5,
@@ -185,13 +198,23 @@ export const io: IShipDefinition[] = [
             integratedBatterySystem,
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 62120,
-        // },
+        defaultStats: {
+            hp: 62120,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 15860,
+            dpmAntiAir: 1260,
+            dpmSiege: 946,
+        },
     },
     {
         id: ShipId.IO_C,
         name: 'イオ級　Ｃ攻城型',
+        translatedName: {
+            en: 'Io - Siege Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 5,
@@ -243,8 +266,15 @@ export const io: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 62120,
-        // },
+        defaultStats: {
+            hp: 62120,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 15990,
+            dpmAntiAir: 3085,
+            dpmSiege: 11979,
+        },
     },
 ];

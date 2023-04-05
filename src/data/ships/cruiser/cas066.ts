@@ -14,6 +14,9 @@ export const cas066: IShipDefinition[] = [
     {
         id: ShipId.CAS066_A,
         name: 'CAS066級　Ａ総合型',
+        translatedName: {
+            en: 'CAS066 - Integrated Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -91,13 +94,23 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 71600,
-        // },
+        defaultStats: {
+            hp: 71600,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 11588,
+            dpmAntiAir: 1440,
+            dpmSiege: 3299,
+        },
     },
     {
         id: ShipId.CAS066_B,
         name: 'CAS066級　Ｂ砲撃型',
+        translatedName: {
+            en: 'CAS066 - Artillery Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -144,13 +157,23 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 63340,
-        // },
+        defaultStats: {
+            hp: 63340,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 15646,
+            dpmAntiAir: 1260,
+            dpmSiege: 6423,
+        },
     },
     {
         id: ShipId.CAS066_C,
         name: 'CAS066級　Ｃ艦載型',
+        translatedName: {
+            en: 'CAS066 - Aircraft Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -198,8 +221,15 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 66400,
-        // },
+        defaultStats: {
+            hp: 66400,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 4650,
+            dpmAntiAir: 1440,
+            dpmSiege: 724,
+        },
     },
 ];

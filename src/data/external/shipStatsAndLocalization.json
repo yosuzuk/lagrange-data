@@ -180,42 +180,6 @@
             "dpmSiege": "880"
         },
         {
-            "ID": "CALLISTO_A",
-            "JA": "カリスト - 魚雷型",
-            "EN": "Callisto - Torpedo Type",
-            "DE": "Callisto - Torpedo-Typ",
-            "HP": "70810",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "15050",
-            "dpmAntiAir": "1400",
-            "dpmSiege": "3983"
-        },
-        {
-            "ID": "CALLISTO_B",
-            "JA": "カリスト - 対艦型",
-            "EN": "Callisto - Anti-Ship Type",
-            "DE": "Callisto - Antischiff-Typ",
-            "HP": "70810",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "18504",
-            "dpmAntiAir": "840",
-            "dpmSiege": "3728"
-        },
-        {
-            "ID": "CALLISTO_C",
-            "JA": "カリスト - 支援型",
-            "EN": "Callisto - Support Type",
-            "DE": "Callisto - Unterstützungstyp",
-            "HP": "70810",
-            "speed": "400",
-            "warp": "2000",
-            "dpmShip": "11550",
-            "dpmAntiAir": "5100",
-            "dpmSiege": "3003"
-        },
-        {
             "ID": "CARILION_A",
             "JA": "カリリオン級 - 偵察型",
             "EN": "Carilion - Recon Type",
@@ -252,42 +216,6 @@
             "dpmSiege": "315"
         },
         {
-            "ID": "CAS066_A",
-            "JA": "CAS066級 - 総合型",
-            "EN": "CAS066 - Integrated Type",
-            "DE": "CAS066 - Integrierter Typ",
-            "HP": "61850",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "11588",
-            "dpmAntiAir": "1440",
-            "dpmSiege": "3299"
-        },
-        {
-            "ID": "CAS066_B",
-            "JA": "CAS066級 - 砲撃型",
-            "EN": "CAS066 - Artillery Type",
-            "DE": "CAS066 - Artillerie-Typ",
-            "HP": "56320",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "15646",
-            "dpmAntiAir": "1260",
-            "dpmSiege": "6423"
-        },
-        {
-            "ID": "CAS066_C",
-            "JA": "CAS066級 - 艦載型",
-            "EN": "CAS066 - Aircraft Type",
-            "DE": "CAS066 - Luftfahrzeugtyp",
-            "HP": "59040",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "4650",
-            "dpmAntiAir": "1440",
-            "dpmSiege": "724"
-        },
-        {
             "ID": "CERES_A",
             "JA": "セレス級 - 艦載型",
             "EN": "Ceres - Aircraft Type",
@@ -322,101 +250,6 @@
             "dpmShip": "1800",
             "dpmAntiAir": "1195",
             "dpmSiege": "252"
-        },
-        {
-            "ID": "CHIMERA_A",
-            "JA": "キメラ級 - 弾道型",
-            "EN": "Chimera - Ballistic Type",
-            "DE": "Chimera - Ballistischer Typ",
-            "HP": "77240",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "15804",
-            "dpmAntiAir": "1200",
-            "dpmSiege": "1893"
-        },
-        {
-            "ID": "CHIMERA_B",
-            "JA": "キメラ級 - 重砲型",
-            "EN": "Chimera - Heavy Cannon Type",
-            "DE": "Chimera - Schwerer Kanonen-Typ",
-            "HP": "77240",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "18875",
-            "dpmAntiAir": "1200",
-            "dpmSiege": "3342"
-        },
-        {
-            "ID": "CHIMERA_C",
-            "JA": "キメラ級 - 防護型",
-            "EN": "Chimera - Defensive Type",
-            "DE": "Chimera - Defensiver Typ",
-            "HP": "84040",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "14729",
-            "dpmAntiAir": "0",
-            "dpmSiege": "2415"
-        },
-        {
-            "ID": "CHIMERA_TE_C_S",
-            "JA": "キメラ級-TE - 防護型（回収）",
-            "EN": "Chimera (TE) - Defensive Type (salvaged)",
-            "HP": "84040",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "14729",
-            "dpmAntiAir": "0",
-            "dpmSiege": "2415"
-        },
-        {
-            "ID": "CONAMARA_CHAOS_A",
-            "JA": "コネマラ カオス級 - 電磁加速砲型",
-            "EN": "Conamara Chaos - Railgun Type",
-            "DE": "Conamara Chaos - Railgun-Typ",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "12960",
-            "dpmAntiAir": "3072",
-            "dpmSiege": "1320"
-        },
-        {
-            "ID": "CONAMARA_CHAOS_B",
-            "JA": "コネマラ カオス級 - プラズマ型",
-            "EN": "Conamara Chaos - Plasma Type",
-            "DE": "Conamara Chaos - Plasma-Typ",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "16388",
-            "dpmAntiAir": "3072",
-            "dpmSiege": "2622"
-        },
-        {
-            "ID": "CRASHER_A",
-            "JA": "クラッシャー級 - 一般型",
-            "EN": "Crasher - Generic Type",
-            "DE": "Crasher - Generischer Typ",
-            "HP": "41720",
-            "speed": "600",
-            "warp": "3000",
-            "dpmShip": "3200",
-            "dpmAntiAir": "1920",
-            "dpmSiege": "256"
-        },
-        {
-            "ID": "CRASHER_B",
-            "JA": "クラッシャー級 - 艦載型",
-            "EN": "Crasher - Aircraft Type",
-            "DE": "Crasher - Luftfahrzeugtyp",
-            "HP": "41720",
-            "speed": "600",
-            "warp": "3000",
-            "dpmShip": "3200",
-            "dpmAntiAir": "1920",
-            "dpmSiege": "256"
         },
         {
             "ID": "ERIS_I_A",
@@ -595,66 +428,6 @@
             "dpmSiege": "1986"
         },
         {
-            "ID": "IO_A",
-            "JA": "イオ級 - イオン砲型",
-            "EN": "Io - Ion Cannon Type",
-            "DE": "Io - Ionenkanonen-Typ",
-            "HP": "53690",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "19928",
-            "dpmAntiAir": "1260",
-            "dpmSiege": "3753"
-        },
-        {
-            "ID": "IO_B",
-            "JA": "イオ級 - 対艦型",
-            "EN": "Io - Anti-Ship Type",
-            "DE": "Io - Antischiff-Typ",
-            "HP": "53690",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "15860",
-            "dpmAntiAir": "1260",
-            "dpmSiege": "946"
-        },
-        {
-            "ID": "IO_C",
-            "JA": "イオ級 - 攻城型",
-            "EN": "Io - Siege Type",
-            "DE": "Io - Belagerungstyp",
-            "HP": "53690",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "15990",
-            "dpmAntiAir": "3085",
-            "dpmSiege": "11979"
-        },
-        {
-            "ID": "JAEGER_A",
-            "JA": "イエーガー級 - 支援型",
-            "EN": "Jaeger - Support Type",
-            "DE": "Jaeger - Unterstützungstyp",
-            "HP": "67730",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "3866",
-            "dpmAntiAir": "1652",
-            "dpmSiege": "273"
-        },
-        {
-            "ID": "JAEGER_B",
-            "JA": "イエーガー級 - 対艦型",
-            "EN": "Jaeger - Anti-Ship Type",
-            "DE": "Jaeger - Antischiff-Typ",
-            "HP": "67730",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "9008",
-            "dpmAntiAir": "1652",
-            "dpmSiege": "1147"
-        },
-        {
             "ID": "JANBIYA_AER410",
             "JA": "ジャンビーヤAer410 - 対艦型",
             "EN": "Janbiya Aer410 - Anti-Ship Type",
@@ -665,101 +438,6 @@
             "dpmShip": "2370",
             "dpmAntiAir": "1992",
             "dpmSiege": "246"
-        },
-        {
-            "ID": "KCCPV2_0_A",
-            "JA": "KCCPV2.0 - 総合型",
-            "EN": "KCCPV2.0 - Integrated Type",
-            "DE": "KCCPV2.0 - Integrierter Typ",
-            "HP": "46260",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "9592",
-            "dpmAntiAir": "2358",
-            "dpmSiege": "1965"
-        },
-        {
-            "ID": "KCCPV2_0_B",
-            "JA": "KCCPV2.0 - パルス型",
-            "EN": "KCCPV2.0 - Pulse Cannon Type",
-            "DE": "KCCPV2.0 - Pulskanonen-Typ",
-            "HP": "46260",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "9685",
-            "dpmAntiAir": "1860",
-            "dpmSiege": "734"
-        },
-        {
-            "ID": "KCCPV2_0_C",
-            "JA": "KCCPV2.0 - 電磁加速砲型",
-            "EN": "KCCPV2.0 - Railgun Type",
-            "DE": "KCCPV2.0 - Railgun-Typ",
-            "HP": "46260",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "10285",
-            "dpmAntiAir": "1860",
-            "dpmSiege": "3632"
-        },
-        {
-            "ID": "KCCPV2_0_D",
-            "JA": "KCCPV2.0 - 艦載型",
-            "EN": "KCCPV2.0 - Aircraft Type",
-            "DE": "KCCPV2.0 - Luftfahrzeugtyp",
-            "HP": "46260",
-            "speed": "650",
-            "warp": "3250",
-            "dpmShip": "5485",
-            "dpmAntiAir": "1560",
-            "dpmSiege": "464"
-        },
-        {
-            "ID": "LIGHT_CONE_A",
-            "JA": "ライトコーン級 - 一般型",
-            "EN": "Light Cone - Generic Type",
-            "DE": "Light Cone - Generischer Typ",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "14142",
-            "dpmAntiAir": "6940",
-            "dpmSiege": "1072"
-        },
-        {
-            "ID": "LIGHT_CONE_B",
-            "JA": "ライトコーン級 - 対空型",
-            "EN": "Light Cone - Anti-Aircraft Type",
-            "DE": "Light Cone - Flugabwehr-Typ",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "7200",
-            "dpmAntiAir": "11280",
-            "dpmSiege": "570"
-        },
-        {
-            "ID": "LIGHT_CONE_C",
-            "JA": "ライトコーン級 - 突撃型",
-            "EN": "Light Cone - Assault Type",
-            "DE": "Light Cone - Sturmangriff-Typ",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "14850",
-            "dpmAntiAir": "630",
-            "dpmSiege": "1372"
-        },
-        {
-            "ID": "LIGHT_CONE_TE_A_S",
-            "JA": "ライトコーン級-TE - 一般型（回収）",
-            "EN": "Light Cone (TE) - Generic Type (salvaged)",
-            "HP": "61850",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "17562",
-            "dpmAntiAir": "7079",
-            "dpmSiege": "1072"
         },
         {
             "ID": "MARE_NUBIUM_A",
@@ -954,42 +632,6 @@
             "dpmSiege": "608"
         },
         {
-            "ID": "PREDATOR_A",
-            "JA": "プレデター級 - 一般型",
-            "EN": "Predator - Generic Type",
-            "DE": "Predator - Generischer Typ",
-            "HP": "67730",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "4171",
-            "dpmAntiAir": "2152",
-            "dpmSiege": "119"
-        },
-        {
-            "ID": "PREDATOR_B",
-            "JA": "プレデター級 - 戦術型",
-            "EN": "Predator - Tactical Type",
-            "DE": "Predator - Taktischer Typ",
-            "HP": "67730",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "1200",
-            "dpmAntiAir": "1440",
-            "dpmSiege": "60"
-        },
-        {
-            "ID": "PREDATOR_C",
-            "JA": "プレデター級 - 対空型",
-            "EN": "Predator - Anti-Aircraft Type",
-            "DE": "Predator - Flugabwehr-Typ",
-            "HP": "67730",
-            "speed": "500",
-            "warp": "2500",
-            "dpmShip": "1200",
-            "dpmAntiAir": "4232",
-            "dpmSiege": "60"
-        },
-        {
             "ID": "QUAOAR_A",
             "JA": "クワオアー級 - 電磁加速砲型",
             "EN": "Quaoar - Railgun Type",
@@ -1155,42 +797,6 @@
             "dpmShip": "1380",
             "dpmAntiAir": "3320",
             "dpmSiege": "0"
-        },
-        {
-            "ID": "STAR_SWEEPER_A",
-            "JA": "スタースイーパー級 - イオン砲型",
-            "EN": "Star Sweeper - Ion Cannon Type",
-            "DE": "Sternfeger - Ionenkanonen-Typ",
-            "HP": "48670",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "10800",
-            "dpmAntiAir": "3307",
-            "dpmSiege": "1721"
-        },
-        {
-            "ID": "STAR_SWEEPER_TE_A",
-            "JA": "スタースイーパー級-TE - イオン砲型",
-            "EN": "Star Sweeper (TE) - Ion Cannon Type",
-            "DE": "Sternfeger (TE) - Ionenkanonen-Typ",
-            "HP": "48670",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "10800",
-            "dpmAntiAir": "3307",
-            "dpmSiege": "1721"
-        },
-        {
-            "ID": "STAR_SWEEPER_TE_A_S",
-            "JA": "スタースイーパー級-TE - イオン砲型（回収）",
-            "EN": "Star Sweeper (TE) - Ion Cannon Type (salvaged)",
-            "DE": "Sternfeger (TE) - Ionenkanonen-Typ",
-            "HP": "48670",
-            "speed": "450",
-            "warp": "2250",
-            "dpmShip": "11812",
-            "dpmAntiAir": "4299",
-            "dpmSiege": "1721"
         },
         {
             "ID": "STINGRAY",
@@ -1428,42 +1034,6 @@
             "dpmShip": "7063",
             "dpmAntiAir": "890",
             "dpmSiege": "80"
-        },
-        {
-            "ID": "XT_20_A",
-            "JA": "XT-20級 - 積載型",
-            "EN": "XT-20 - Logistics Type",
-            "DE": "XT-20 - Logistischer Typ",
-            "HP": "51120",
-            "speed": "600",
-            "warp": "3000",
-            "dpmShip": "3240",
-            "dpmAntiAir": "0",
-            "dpmSiege": "97"
-        },
-        {
-            "ID": "XT_20_B",
-            "JA": "XT-20級 - 艦載型",
-            "EN": "XT-20 - Aircraft Type",
-            "DE": "XT-20 - Luftfahrzeugtyp",
-            "HP": "51120",
-            "speed": "600",
-            "warp": "3000",
-            "dpmShip": "4114",
-            "dpmAntiAir": "345",
-            "dpmSiege": "288"
-        },
-        {
-            "ID": "XT_20_C",
-            "JA": "XT-20級 - 支援型",
-            "EN": "XT-20 - Support Type",
-            "DE": "XT-20 - Unterstützungstyp",
-            "HP": "51120",
-            "speed": "600",
-            "warp": "3000",
-            "dpmShip": "3240",
-            "dpmAntiAir": "3840",
-            "dpmSiege": "97"
         }
     ],
     "Modules": []

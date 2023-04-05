@@ -9,6 +9,9 @@ export const startSweeper: IShipDefinition[] = [
     {
         id: ShipId.STAR_SWEEPER_A,
         name: 'スタースィーパー級　Ａイオン砲型',
+        translatedName: {
+            en: 'Star Sweeper - Ion Cannon Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 0,
@@ -17,10 +20,23 @@ export const startSweeper: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.STAR_SWEEPER_TE_A, ShipId.STAR_SWEEPER_TE_A_S],
+        defaultStats: {
+            hp: 48670, // TODO check after update
+            armor: 50,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 10800,
+            dpmAntiAir: 3307,
+            dpmSiege: 1721,
+        },
     },
     {
         id: ShipId.STAR_SWEEPER_TE_A,
         name: 'スタースィーパー級-TE　Ａイオン砲型',
+        translatedName: {
+            en: 'Star Sweeper (TE) - Ion Cannon Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 0,
@@ -33,6 +49,9 @@ export const startSweeper: IShipDefinition[] = [
     {
         id: ShipId.STAR_SWEEPER_TE_A_S,
         name: 'スタースィーパー級-TE　Ａイオン砲型（回収）',
+        translatedName: {
+            en: 'Star Sweeper (TE) - Ion Cannon Type (salvaged)',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 0,

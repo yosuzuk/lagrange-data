@@ -42,6 +42,9 @@ export const lightCone: IShipDefinition[] = [
     {
         id: ShipId.LIGHT_CONE_A,
         name: 'ライトコーン級　Ａ一般型',
+        translatedName: {
+            en: 'Light Cone - Generic Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -125,13 +128,23 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 69570,
-        // },
+        defaultStats: {
+            hp: 69570,
+            armor: 50,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 14142,
+            dpmAntiAir: 6940,
+            dpmSiege: 1072,
+        },
     },
     {
         id: ShipId.LIGHT_CONE_B,
         name: 'ライトコーン級　Ｂ対空型',
+        translatedName: {
+            en: 'Light Cone - Anti-Aircraft Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -213,13 +226,23 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 69570,
-        // },
+        defaultStats: {
+            hp: 69570,
+            armor: 50,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 7200,
+            dpmAntiAir: 11280,
+            dpmSiege: 570,
+        },
     },
     {
         id: ShipId.LIGHT_CONE_C,
         name: 'ライトコーン級　Ｃ突撃型',
+        translatedName: {
+            en: 'Light Cone - Assault Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -288,13 +311,23 @@ export const lightCone: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 69570,
-        // },
+        defaultStats: {
+            hp: 69570,
+            armor: 50,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 14850,
+            dpmAntiAir: 630,
+            dpmSiege: 1372,
+        },
     },
     {
         id: ShipId.LIGHT_CONE_TE_A_S,
         name: 'ライトコーン級-TE　Ａ一般型（回収）',
+        translatedName: {
+            en: 'Light Cone (TE) - Generic Type (salvaged)',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 0,

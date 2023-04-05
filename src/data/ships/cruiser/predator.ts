@@ -70,6 +70,9 @@ export const predator: IShipDefinition[] = [
     {
         id: ShipId.PREDATOR_A,
         name: 'プレデター級　Ａ一般型',
+        translatedName: {
+            en: 'Predator - Generic Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -118,13 +121,23 @@ export const predator: IShipDefinition[] = [
             propulsionSystem,
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 76190,
-        // },
+        defaultStats: {
+            hp: 76190,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 4171,
+            dpmAntiAir: 2153,
+            dpmSiege: 119,
+        },
     },
     {
         id: ShipId.PREDATOR_B,
         name: 'プレデター級　Ｂ戦術型',
+        translatedName: {
+            en: 'Predator - Tactical Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -168,13 +181,23 @@ export const predator: IShipDefinition[] = [
             propulsionSystem,
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 76190,
-        // },
+        defaultStats: {
+            hp: 76190,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 1200,
+            dpmAntiAir: 1440,
+            dpmSiege: 60,
+        },
     },
     {
         id: ShipId.PREDATOR_C,
         name: 'プレデター級　Ｃ対空型',
+        translatedName: {
+            en: 'Predator - Anti-Aircraft Type',
+        },
         type: ShipType.CRUISER,
         cost: 18,
         weight: 10,
@@ -213,8 +236,15 @@ export const predator: IShipDefinition[] = [
             modules.propulsionSystem(),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 76190,
-        // },
+        defaultStats: {
+            hp: 76190,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 1200,
+            dpmAntiAir: 4232,
+            dpmSiege: 60,
+        },
     },
 ];

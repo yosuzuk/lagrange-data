@@ -15,6 +15,9 @@ export const conamaraChaos: IShipDefinition[] = [
     {
         id: ShipId.CONAMARA_CHAOS_A,
         name: 'コネマラカオス級　Ａ電磁加速砲型',
+        translatedName: {
+            en: 'Conamara Chaos - Railgun Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -104,13 +107,23 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 71600,
-        // },
+        defaultStats: {
+            hp: 71600,
+            armor: 30,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 12960,
+            dpmAntiAir: 3072,
+            dpmSiege: 1320,
+        },
     },
     {
         id: ShipId.CONAMARA_CHAOS_B,
         name: 'コネマラカオス級　Ｂプラズマ型',
+        translatedName: {
+            en: 'Conamara Chaos - Plasma Type',
+        },
         type: ShipType.CRUISER,
         cost: 20,
         weight: 5,
@@ -200,8 +213,15 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.energySystem(),
         ],
-        // defaultStats: {
-        //     hp: 71600,
-        // },
+        defaultStats: {
+            hp: 71600,
+            armor: 30,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 16388,
+            dpmAntiAir: 3072,
+            dpmSiege: 2622,
+        },
     },
 ];

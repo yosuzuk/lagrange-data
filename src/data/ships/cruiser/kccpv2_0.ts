@@ -27,6 +27,9 @@ export const kccpv2_0: IShipDefinition[] = [
     {
         id: ShipId.KCCPV2_0_A,
         name: 'KCCPV2.0  Ａ総合型',
+        translatedName: {
+            en: 'KCCPV2.0 - Integrated Type',
+        },
         type: ShipType.CRUISER,
         cost: 16,
         weight: 10,
@@ -96,13 +99,23 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 52040,
-        // },
+        defaultStats: {
+            hp: 52040,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 9592,
+            dpmAntiAir: 2358,
+            dpmSiege: 1965,
+        },
     },
     {
         id: ShipId.KCCPV2_0_B,
         name: 'KCCPV2.0  Ｂパルス型',
+        translatedName: {
+            en: 'KCCPV2.0 - Pulse Cannon Type',
+        },
         type: ShipType.CRUISER,
         cost: 16,
         weight: 10,
@@ -187,13 +200,23 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 52040,
-        // },
+        defaultStats: {
+            hp: 52040,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 9685,
+            dpmAntiAir: 1860,
+            dpmSiege: 734,
+        },
     },
     {
         id: ShipId.KCCPV2_0_C,
         name: 'KCCPV2.0  Ｃ電磁加速砲型',
+        translatedName: {
+            en: 'KCCPV2.0 - Railgun Type',
+        },
         type: ShipType.CRUISER,
         cost: 16,
         weight: 10,
@@ -245,13 +268,23 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 52040,
-        // },
+        defaultStats: {
+            hp: 52040,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 10285,
+            dpmAntiAir: 1860,
+            dpmSiege: 3632,
+        },
     },
     {
         id: ShipId.KCCPV2_0_D,
         name: 'KCCPV2.0  Ｄ艦載型',
+        translatedName: {
+            en: 'KCCPV2.0 - Aircraft Type',
+        },
         type: ShipType.CRUISER,
         cost: 16,
         weight: 10,
@@ -334,8 +367,15 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             ...staticModules,
         ],
-        // defaultStats: {
-        //     hp: 52040,
-        // },
+        defaultStats: {
+            hp: 52040,
+            armor: 50,
+            shield: 10,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 5485,
+            dpmAntiAir: 1560,
+            dpmSiege: 464,
+        },
     },
 ];
