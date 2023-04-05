@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useMemo } from 'react';
-import { Table, ITableData, useTable, ITableColumn } from '../../table';
+import { Table, ITableData, useTable, ITableColumn, SortDirection } from '../../table';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import {
@@ -33,11 +33,13 @@ interface IProps {
     shipDefinitions: IShipDefinition[];
     columnConfig: IColumnConfig;
     decorateName?: (name: ReactNode, data: IShipDefinition) => ReactNode;
+    initialSorting?: [string | null, SortDirection];
+    onChangeSorting?: (sorting: [string | null, SortDirection]) => void;
 }
 
 export const ShipDataTable = (props: IProps) => {
-    const { shipDefinitions, columnConfig, decorateName } = props;
-    const { table, setTableData } = useTable<IShipDefinition>();
+    const { shipDefinitions, columnConfig, decorateName, initialSorting, onChangeSorting } = props;
+    const { table, setTableData } = useTable<IShipDefinition>({ initialSorting, onChangeSorting });
 
     const { openShipDetailDialog } = useShipDetail();
 

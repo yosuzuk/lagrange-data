@@ -1,4 +1,5 @@
-import { useMemo, useState, memo } from 'react';
+import { useMemo, useState, memo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -21,13 +22,15 @@ import { PageFooter } from '../../pageStructure/PageFooter';
 import { t } from '../../../i18n';
 import { EnvironmentSetting } from './EnvironmentSetting';
 import { Season } from './types/Season';
+import { routes } from '../../../utils/routes';
 
 const MemoizedResearchAgreementTable = memo(ResearchAgreementTable);
 const MemoizedResearchAgreementShipsView = memo(ResearchAgreementShipsView);
 
 export const ResearchAgreementPage = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [viewMode, setViewMode] = useState<ViewMode>('ships');
-    const [season, setSeason] = useState<Season>(Season.TWO_PLUS);
+    const [season, setSeason] = useState<Season>(routes.researchAgreement.getSearchParam('season', searchParams) ?? Season.TWO_PLUS);
 
     const shipDefinitions = useMemo(() => getShipDefinitionsForResearchAgreement(season), [season]);
     const userSettings = useMemo<IUserSettings>(() => getCurrentUserSettings(), []);
@@ -39,15 +42,26 @@ export const ResearchAgreementPage = () => {
     const shipFilterOptions = useMemo(() => getShipFilterOptions(shipDefinitions, userSettings), [shipDefinitions, userSettings]);
 
     const [filterState, setFilterState] = useState<IResearchFilterState>({
-        shipId: null,
-        manufacturerFilter: null,
-        strategyTypeFilter: null,
-        tacticTypeFilter: null,
+        shipId: routes.researchAgreement.getSearchParam('shipId', searchParams),
+        manufacturerFilter: routes.researchAgreement.getSearchParam('manufacturer', searchParams),
+        strategyTypeFilter: routes.researchAgreement.getSearchParam('strategy', searchParams),
+        tacticTypeFilter: routes.researchAgreement.getSearchParam('tactic', searchParams),
     });
 
     const filteredResearchConfigurations = useMemo(() => getFilteredResearchConfigurations(allResearchConfigurations, filterState), [allResearchConfigurations, filterState]);
 
     const [configurationForDialog, setConfigurationForDialog] = useState<IResearchConfiguration | null>(null);
+
+    useEffect(() => {
+        setSearchParams(routes.researchAgreement.createSearchParams({
+            view: viewMode,
+            season,
+            manufacturer: filterState.manufacturerFilter,
+            strategy: filterState.strategyTypeFilter,
+            tactic: filterState.tacticTypeFilter,
+            shipId: filterState.shipId,
+        }));
+    }, [viewMode, season, filterState, setSearchParams]);
 
     return (
         <>

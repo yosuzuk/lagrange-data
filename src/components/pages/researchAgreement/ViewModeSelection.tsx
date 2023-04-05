@@ -28,12 +28,12 @@ export const ViewModeSelection = (props: IProps) => {
             size="small"
             aria-label="view mode"
         >
-        <ToggleButton value="ships" aria-label="ships">
-            <AccountTreeIcon />
-        </ToggleButton>
-        <ToggleButton value="table" aria-label="table">
-            <TableRowsIcon />
-        </ToggleButton>
-    </ToggleButtonGroup>
+            <ToggleButton value="ships" aria-label="ships">
+                <AccountTreeIcon />
+            </ToggleButton>
+            <ToggleButton value="table" aria-label="table">
+                <TableRowsIcon />
+            </ToggleButton>
+        </ToggleButtonGroup>
     );
 };

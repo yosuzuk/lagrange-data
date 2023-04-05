@@ -12,6 +12,7 @@ import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
 import { UserSettingsProvider } from './userSettings/context/UserSettingsContext';
 import { ThemeProvider } from './theme/context/ThemeProvider';
 import { flags } from './utils/flags';
+import { routes } from './utils/routes';
 
 const MyListPage = lazy(() => import('./components/pages/myList/MyListPage'));
 const MyListEditPage = lazy(() => import('./components/pages/myList/MyListEditPage'));
@@ -35,7 +36,7 @@ function App() {
                     <ShipDetailProvider>
                         <Routes>
                             <Route
-                                path="techFiles"
+                                path={routes.techFiles.routePath}
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
                                         <BoxChancePage />
@@ -43,7 +44,7 @@ function App() {
                                 )}
                             />
                             <Route
-                                path="researchAgreement"
+                                path={routes.researchAgreement.routePath}
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
                                         <ResearchAgreementPage />
@@ -51,7 +52,7 @@ function App() {
                                 )}
                             />
                             <Route
-                                path="shipData"
+                                path={routes.shipData.routePath}
                                 element={(
                                     <Outlet />
                                 )}
@@ -65,7 +66,7 @@ function App() {
                                     )}
                                 />
                                 <Route
-                                    path=":shipId"
+                                    path={routes.shipDataById.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <ShipDetailPage />
@@ -74,7 +75,7 @@ function App() {
                                 />
                             </Route>
                             <Route
-                                path="myList"
+                                path={routes.myList.routePath}
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
                                         <MyListPage />
@@ -82,7 +83,7 @@ function App() {
                                 )}
                             />
                             <Route
-                                path="myList/edit"
+                                path={routes.myListEdit.routePath}
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
                                         <MyListEditPage />
@@ -90,7 +91,7 @@ function App() {
                                 )}
                             />
                             <Route
-                                path="fleetSetup"
+                                path={routes.fleetSetup.routePath}
                                 element={(
                                     <Outlet />
                                 )}
@@ -104,7 +105,7 @@ function App() {
                                     )}
                                 />
                                 <Route
-                                    path=":fleetKey"
+                                    path={routes.fleetSetupByKey.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <FleetSetupPage />
@@ -113,7 +114,7 @@ function App() {
                                 />
                             </Route>
                             <Route
-                                path="fleetSetup/edit"
+                                path={routes.fleetSetupEdit.routePath}
                                 element={(
                                     <Outlet />
                                 )}
@@ -127,7 +128,7 @@ function App() {
                                     )}
                                 />
                                 <Route
-                                    path=":fleetKey"
+                                    path={routes.fleetSetupEditByKey.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <FleetSetupEditPage />
@@ -137,7 +138,7 @@ function App() {
                             </Route>
                             {flags.dpmCalc && (
                                 <Route
-                                    path="dpmCalc"
+                                    path={routes.dpmCalc.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <DpmCalcPage />
@@ -147,7 +148,7 @@ function App() {
                             )}
                             {flags.imageEdit && (
                                 <Route
-                                    path="imageEdit"
+                                    path={routes.imageEdit.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
                                             <ImageEditPage />
@@ -176,7 +177,7 @@ function App() {
                                 />
                             )}
                             <Route
-                                path="debug"
+                                path={routes.debug.routePath}
                                 element={(
                                     <Suspense fallback={<LoadingIndicator />}>
                                         <TableExample />
@@ -186,7 +187,7 @@ function App() {
                             <Route
                                 path="/"
                                 element={(
-                                    <Navigate replace={true} to="techFiles" />
+                                    <Navigate replace={true} to={routes.techFiles.routePath} />
                                 )}
                             />
                             <Route
@@ -198,8 +199,8 @@ function App() {
                         </Routes>
                     </ShipDetailProvider>
                 </UserSettingsProvider>
-            </ThemeProvider>
-        </Router>
+            </ThemeProvider >
+        </Router >
     );
 }
 

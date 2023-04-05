@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
@@ -11,9 +12,21 @@ import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { t } from '../../../i18n';
+import { routes } from '../../../utils/routes';
 
 export const BoxChancePage = () => {
-    const [techFile, setTechFile] = useState<ITechFile>(techFiles[0]);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const initialId = searchParams.get('id');
+    const initialTechFile = initialId ? techFiles.find(f => f.id === initialId) ?? techFiles[0] : techFiles[0];
+
+    const [techFile, setTechFile] = useState<ITechFile>(initialTechFile);
+
+    useEffect(() => {
+        setSearchParams(routes.techFiles.createSearchParams({
+            id: techFile.id,
+        }));
+    }, [techFile]);
 
     return (
         <>
