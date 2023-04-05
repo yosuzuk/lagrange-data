@@ -92,8 +92,8 @@ const a1: ISystemModule = {
     defaultModule: true,
     skills: [
         strategy.customStrategy('concentratedStrike').withDescriptionKey('concentratedStrike').withCost(20),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(15),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(15),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(15),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(15),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(15),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(15),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(15),

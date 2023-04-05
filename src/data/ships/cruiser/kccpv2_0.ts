@@ -275,7 +275,7 @@ export const kccpv2_0: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.prioritizeTargets().withDescriptionKey('prioritizeCorvettesWithDuration', { duration: 45 }).withCost(12),
-                    enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(8), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),

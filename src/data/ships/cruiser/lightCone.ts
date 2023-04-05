@@ -88,7 +88,7 @@ export const lightCone: IShipDefinition[] = [
                 ],
                 skills: [
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
-                    enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(6),
+                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(6),
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(6),
                     enhancements.reduceHitByProjectile().withPercentageValue(20).withCost(6),
                 ],
@@ -175,7 +175,7 @@ export const lightCone: IShipDefinition[] = [
                 },
                 skills: [
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
-                    enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(6),
+                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(6),
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(6),
                     enhancements.missileTrackingRadar(5).withCost(6),
                 ],

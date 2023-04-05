@@ -308,10 +308,17 @@ const e2: ISystemModule = {
     category: 'E',
     categoryNumber: 2,
     carryCorvette: 3,
-    // TODO skills
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8), // TODO check after update
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
+            'CBC-2000 護送艦ドック',
             '３隻の護送艦を格納可能な機内格納庫。',
             '護送艦の整備・支援システムを備える。',
         ],

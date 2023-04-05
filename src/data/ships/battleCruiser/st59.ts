@@ -266,8 +266,8 @@ const b2: ISystemModule = {
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     skills: [
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(8),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
     ],

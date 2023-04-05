@@ -36,8 +36,8 @@ const aircraftLoadingSystem = modules.static({
     skills: [
         strategy.prioritizeTargets().withDescriptionKey('prioritizeCarriersWithDuration', { duration: 35 }).withCost(15),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(10),
@@ -148,7 +148,7 @@ export const predator: IShipDefinition[] = [
                 skills: [
                     strategy.prioritizeSupport(30).withCost(8),
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(5),
-                    enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(5), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(5), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(5),
                     enhancements.reduceHitByProjectile().withPercentageValue(20).withCost(5),
                 ],

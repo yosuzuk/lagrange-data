@@ -26,8 +26,8 @@ const m1: ISystemModule = {
     skills: [
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
         enhancements.increaseSystemHp().withPercentageValue(35).withCost(13),
@@ -59,8 +59,8 @@ const m2: ISystemModule = {
     mainSystem: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
@@ -97,8 +97,8 @@ const m3: ISystemModule = {
     mainSystem: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
-        enhancements.reduceRtbAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(13),
@@ -229,8 +229,8 @@ const b2: ISystemModule = {
     carryCorvette: 3,
     skills: [
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
-        enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
-        enhancements.reduceRtbAircraft().withPercentageValue(10).withCost(12),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(10).withCost(12),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(10).withCost(12),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(12),
     ],
     skillSlots: 3,

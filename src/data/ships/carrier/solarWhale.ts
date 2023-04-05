@@ -23,8 +23,8 @@ const m1: ISystemModule = {
     mainSystem: true,
     skills: [
         enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
-        enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
-        enhancements.reduceRtbCorvette().withPercentageValue(20).withCost(10),
+        enhancements.reduceRtbOfCorvette().withPercentageValue(20).withCost(10),
+        enhancements.reduceRtbOfCorvette().withPercentageValue(20).withCost(10),
         enhancements.increaseHitRateOfCorvette().withPercentageValue(20).withCost(10),
         enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
         enhancements.increaseMissileEvasionOfCorvette().withPercentageValue(30).withCost(10),
@@ -181,9 +181,9 @@ const b1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     skills: [
-        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
-        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
-        enhancements.reduceRtbCorvette().withPercentageValue(5).withCost(8),
+        enhancements.reduceRtbOfCorvette().withPercentageValue(5).withCost(8),
+        enhancements.reduceRtbOfCorvette().withPercentageValue(5).withCost(8),
+        enhancements.reduceRtbOfCorvette().withPercentageValue(5).withCost(8),
         enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
         enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
         enhancements.increaseDamageOfAircraft().withPercentageValue(3).withCost(8),
@@ -394,7 +394,7 @@ export const solarWhale: IShipDefinition[] = [
                 defaultModule: true,
                 skills: [
                     enhancements.increaseDamageOfCorvette().withPercentageValue(10),
-                    enhancements.reduceRtbCorvette().withPercentageValue(20),
+                    enhancements.reduceRtbOfCorvette().withPercentageValue(20),
                 ],
                 skillSlots: 5,
                 parts: [
