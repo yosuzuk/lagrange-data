@@ -21,7 +21,7 @@ export const FleetPropertiesEdit = (props: IProps) => {
     const [fleetName, setFleetName] = useState<string>(fleetSetup.name);
 
     const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
-        setFleetName(event.target.value.trim());
+        setFleetName(event.target.value);
     };
 
     useEffect(() => {
