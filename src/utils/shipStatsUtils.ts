@@ -1,4 +1,5 @@
 import { IModuleSelection } from '../components/pages/fleetSetup/types/IFleetSetup';
+import { t } from '../i18n';
 import { IStats } from '../types/IStats';
 import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
 import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
@@ -93,6 +94,13 @@ export function formatSpeed(stats: IStats): string {
     return [
         Number.isFinite(speed) ? formatNumberWithSuffix(speed as number) : '-',
         Number.isFinite(warpSpeed) ? formatNumberWithSuffix(warpSpeed as number) : '-',
+    ].join(' | ');
+}
+
+export function formatFlightTime(inboundFlightTime: number, outboundFlightTime: number): string {
+    return [
+        t('quantity.nSecondsShort', { count: inboundFlightTime }),
+        t('quantity.nSecondsShort', { count: outboundFlightTime }),
     ].join(' | ');
 }
 

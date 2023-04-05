@@ -119,7 +119,12 @@
         "restoreFromBackup": "Restore from backup",
         "daysAndHours": "{{days}}d{{hours}}h",
         "effectColonValue": "Effect: {{effect}}",
-        "conditionColonValue": "Condition: {{condition}}"
+        "conditionColonValue": "Condition: {{condition}}",
+        "flightTime": "Flight time"
+    },
+    "quantity": {
+        "nSecondsShort_one": "{{count}}s",
+        "nSecondsShort_other": "{{count}}s"
     },
     "validation": {
         "requiredField": "Required",

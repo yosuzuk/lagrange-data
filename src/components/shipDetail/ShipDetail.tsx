@@ -19,7 +19,7 @@ import { translateResearchStrategyType } from '../../utils/researchStrategyTypeU
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
-import { formatDpmAll, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
+import { formatDpmAll, formatFlightTime, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 import { isLanguageWithWhitespace, t } from '../../i18n';
 import { ISystemModule } from '../../types/ShipDefinition';
 
@@ -117,6 +117,13 @@ export const ShipDetail = (props: IProps) => {
                             key: 'speed',
                             label: t('label.speed'),
                             value: formatSpeed(shipStats),
+                        },
+                    ] : []),
+                    ...((shipDefinition.defaultStats?.inboundTime && shipDefinition.defaultStats?.outboundTime) ? [
+                        {
+                            key: 'flightTime',
+                            label: t('label.flightTime'),
+                            value: formatFlightTime(shipDefinition.defaultStats.inboundTime, shipDefinition.defaultStats.outboundTime),
                         },
                     ] : []),
                     ...(carry ? [

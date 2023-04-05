@@ -119,7 +119,12 @@
         "restoreFromBackup": "バックアップから復元",
         "daysAndHours": "{{days}}日{{hours}}時間",
         "effectColonValue": "効果：{{effect}}",
-        "conditionColonValue": "有効条件：{{condition}}"
+        "conditionColonValue": "有効条件：{{condition}}",
+        "flightTime": "飛行時間"
+    },
+    "quantity": {
+        "nSecondsShort_one": "{{count}}秒",
+        "nSecondsShort_other": "{{count}}秒"
     },
     "validation": {
         "requiredField": "必須項目",
