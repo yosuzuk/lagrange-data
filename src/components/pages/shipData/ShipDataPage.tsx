@@ -12,6 +12,7 @@ import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { routes } from '../../../utils/routes';
+import { SortDirection } from '../../table';
 
 export const ShipDataPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -24,12 +25,19 @@ export const ShipDataPage = () => {
         operationLimit: true,
     })));
 
+    const [sorting, setSorting] = useState<[string | null, SortDirection]>([
+        searchParams.get('sortBy') ?? 'type',
+        searchParams.get('sortDirection') as (SortDirection | null) ?? 'asc',
+    ]);
+
     useEffect(() => {
         setSearchParams(routes.shipData.createSearchParams({
             filter: boolMapToArray<ShipFilterState>(shipFilter),
             columns: boolMapToArray<IColumnConfig>(columnConfig),
+            sortBy: sorting[0] ?? null,
+            sortDirection: sorting[1] ?? 'asc',
         }));
-    }, [shipFilter, columnConfig]);
+    }, [shipFilter, columnConfig, sorting]);
 
     const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
 
@@ -46,7 +54,12 @@ export const ShipDataPage = () => {
             />
             <PageContent disableContainer={disableContainer}>
                 <Box component="div" p={1}>
-                    <ShipDataTable shipDefinitions={filteredShipDefinitions} columnConfig={columnConfig} />
+                    <ShipDataTable
+                        shipDefinitions={filteredShipDefinitions}
+                        columnConfig={columnConfig}
+                        initialSorting={sorting}
+                        onChangeSorting={setSorting}
+                    />
                 </Box>
             </PageContent>
             <PageFooter disableContainer={disableContainer} />

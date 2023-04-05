@@ -2,6 +2,7 @@ import { URLSearchParamsInit } from 'react-router-dom';
 import { IColumnConfig } from '../components/columns/types/IColumnConfig';
 import { FilterKey } from '../components/filter/types/ShipFilterState';
 import { Season } from '../components/pages/researchAgreement/types/Season';
+import { SortDirection } from '../components/table';
 import { ResearchManufacturer } from '../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../types/ResearchStrategyType';
 import { ResearchTacticType } from '../types/ResearchTacticType';
@@ -22,6 +23,8 @@ export interface IResearchAgreementParams {
 export interface IShipDataParams {
     filter: FilterKey[];
     columns: (keyof IColumnConfig)[];
+    sortBy: string | null;
+    sortDirection: SortDirection;
 }
 
 export const routes = {

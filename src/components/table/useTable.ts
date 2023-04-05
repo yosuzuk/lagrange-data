@@ -3,12 +3,19 @@ import { ITableColumn, ITable, ITableData, ITableHeaderCell, IUseTableResult, So
 import { createHeaderCell, createTableRows } from './utils/factory';
 import { createInitialSortState, sortTableData } from './utils/sorting';
 
-export const useTable = <TData>(): IUseTableResult<TData> => {
+interface IHookArgs {
+    initialSorting?: [string | null, SortDirection];
+    onChangeSorting?: (sorting: [string | null, SortDirection]) => void;
+}
+
+export const useTable = <TData>(args: IHookArgs = {}): IUseTableResult<TData> => {
+    const { initialSorting, onChangeSorting } = args;
+
     const [table, setTable] = useState<ITable>({
         header: [],
         rows: [],
-        sortBy: null,
-        sortDirection: null,
+        sortBy: initialSorting?.[0] ?? null,
+        sortDirection: initialSorting?.[1] ?? null,
     });
 
     const tableDataRef = useRef<ITableData<TData> | null>(null);
@@ -59,8 +66,9 @@ export const useTable = <TData>(): IUseTableResult<TData> => {
                 sortBy,
                 sortDirection,
             });
+            onChangeSorting?.([sortBy, sortDirection]);
         }
-    }, [table, tableDataRef]);
+    }, [table, tableDataRef, onChangeSorting]);
 
     return {
         table,
