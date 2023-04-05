@@ -123,7 +123,7 @@ export const ShipDetail = (props: IProps) => {
                         {
                             key: 'flightTime',
                             label: t('label.flightTime'),
-                            value: formatFlightTime(shipDefinition.defaultStats.inboundTime, shipDefinition.defaultStats.outboundTime),
+                            value: formatFlightTime(shipDefinition.defaultStats.outboundTime, shipDefinition.defaultStats.inboundTime),
                         },
                     ] : []),
                     ...(carry ? [

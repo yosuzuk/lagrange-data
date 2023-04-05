@@ -27,10 +27,17 @@ export const stingray: IShipDefinition[] = [
             ResearchStrategyType.FIGHTER_AND_CORVETTE,
         ],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
-        // defaultStats: {
-        //     hp: 5200,
-        //     outboundTime: 8,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 5200,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 8,
+            inboundTime: 4,
+            dpmShip: 3200,
+            dpmAntiAir: 0,
+            dpmSiege: 992,
+        },
     },
 ];

@@ -23,10 +23,17 @@ export const sporeA404: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 3550,
-        //     outboundTime: 3,
-        //     inboundTime: 3,
-        // },
+        defaultStats: {
+            hp: 3550,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 3,
+            inboundTime: 3,
+            dpmShip: 1380,
+            dpmAntiAir: 3320,
+            dpmSiege: 0,
+        },
     },
 ];

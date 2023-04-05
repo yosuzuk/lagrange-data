@@ -16,6 +16,7 @@ export function createInitialColumnConfig(flags: Partial<IColumnConfig> = {}): I
         shield: false,
         speed: false,
         warpSpeed: false,
+        flightTime: false,
         dpmShipPerCommandPoint: false,
         dpmAntiAirPerCommandPoint: false,
         dpmSiegePerCommandPoint: false,
@@ -84,6 +85,10 @@ export function createColumnConfigOptions(args: ICreateColumnConfigOptionArgumen
         {
             columnKey: 'warpSpeed',
             name: t('label.warpSpeed'),
+        },
+        {
+            columnKey: 'flightTime',
+            name: t('label.flightTime'),
         },
         {
             columnKey: 'dpmShipPerCommandPoint',

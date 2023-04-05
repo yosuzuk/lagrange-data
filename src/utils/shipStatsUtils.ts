@@ -97,10 +97,10 @@ export function formatSpeed(stats: IStats): string {
     ].join(' | ');
 }
 
-export function formatFlightTime(inboundFlightTime: number, outboundFlightTime: number): string {
+export function formatFlightTime(outboundFlightTime: number, inboundFlightTime: number): string {
     return [
-        t('quantity.nSecondsShort', { count: inboundFlightTime }),
         t('quantity.nSecondsShort', { count: outboundFlightTime }),
+        t('quantity.nSecondsShort', { count: inboundFlightTime }),
     ].join(' | ');
 }
 

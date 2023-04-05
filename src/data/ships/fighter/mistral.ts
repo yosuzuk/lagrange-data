@@ -27,10 +27,17 @@ export const mistral: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
-        // defaultStats: {
-        //     hp: 5400,
-        //     outboundTime: 3,
-        //     inboundTime: 3,
-        // },
+        defaultStats: {
+            hp: 5400,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 3,
+            inboundTime: 3,
+            dpmShip: 2212,
+            dpmAntiAir: 3544,
+            dpmSiege: 0,
+        },
     },
 ];

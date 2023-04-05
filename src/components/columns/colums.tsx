@@ -189,6 +189,31 @@ export const shieldColumn: ITableColumn<IShipDefinition> = {
     ],
 };
 
+export const flightTimeColumn: ITableColumn<IShipDefinition> = {
+    id: 'flightTime',
+    renderHeader: () => t('label.flightTime'),
+    renderCell: (data: IShipDefinition) => {
+        if (data.defaultStats?.inboundTime && data.defaultStats?.outboundTime) {
+            return [
+                t('quantity.nSecondsShort', { count: data.defaultStats.outboundTime }),
+                t('quantity.nSecondsShort', { count: data.defaultStats.inboundTime }),
+            ].join(' | ');
+        }
+        return '-';
+    },
+    sortFn: [
+        (a, b) => {
+            const aSum = (a.defaultStats?.inboundTime ?? 0) + (a.defaultStats?.outboundTime ?? 0);
+            const bSum = (b.defaultStats?.inboundTime ?? 0) + (b.defaultStats?.outboundTime ?? 0);
+            if (aSum === bSum) {
+                return (a.defaultStats?.outboundTime ?? 0) - (b.defaultStats?.outboundTime ?? 0);
+            }
+            return aSum - bSum;
+        },
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+    ],
+};
+
 export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiShipDpm'), 'dpmShip');
 export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiAirDpm'), 'dpmAntiAir');
 export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.siegeDpm'), 'dpmSiege');

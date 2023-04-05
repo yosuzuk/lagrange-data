@@ -23,10 +23,17 @@ export const b192Newland: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 4680,
-        //     outboundTime: 4,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 4680,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 4,
+            inboundTime: 4,
+            dpmShip: 1800,
+            dpmAntiAir: 1800,
+            dpmSiege: 270,
+        },
     },
 ];

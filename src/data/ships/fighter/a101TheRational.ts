@@ -17,5 +17,17 @@ export const a101TheRationalTe: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        defaultStats: {
+            hp: 3750, // TODO check after update
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            // outboundTime: 0, // TODO check after update
+            // inboundTime: 0, // TODO check after update
+            dpmShip: 3690,
+            dpmAntiAir: 1152,
+            dpmSiege: 180,
+        },
     },
 ];

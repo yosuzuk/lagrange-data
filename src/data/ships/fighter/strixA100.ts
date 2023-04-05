@@ -23,10 +23,17 @@ export const strixA100: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 4920,
-        //     outboundTime: 6,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 4920,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 6,
+            inboundTime: 4,
+            dpmShip: 1989,
+            dpmAntiAir: 2289,
+            dpmSiege: 396,
+        },
     },
 ];

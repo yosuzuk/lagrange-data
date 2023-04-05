@@ -12,6 +12,7 @@ export interface IColumnConfig {
     shield: boolean;
     speed: boolean;
     warpSpeed: boolean;
+    flightTime: boolean;
     dpmShipPerCommandPoint: boolean;
     dpmAntiAirPerCommandPoint: boolean;
     dpmSiegePerCommandPoint: boolean;

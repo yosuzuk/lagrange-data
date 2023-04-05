@@ -24,8 +24,15 @@ export const hayreddingsLoyal: IShipDefinition[] = [
         manufacturer: Manufacturer.HAYREDDIN_CLAN,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 6480,
-        // },
+        defaultStats: {
+            hp: 6480,
+            armor: 3,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            dpmShip: 4614,
+            dpmAntiAir: 3099,
+            dpmSiege: 1521,
+        },
     },
 ];

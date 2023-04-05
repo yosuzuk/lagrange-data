@@ -23,10 +23,17 @@ export const balancerAnderson: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 3450,
-        //     outboundTime: 6,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 3450,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 6,
+            inboundTime: 4,
+            dpmShip: 1500,
+            dpmAntiAir: 1440,
+            dpmSiege: 0,
+        },
     },
 ];

@@ -23,10 +23,17 @@ export const bullfrog: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
-        // defaultStats: {
-        //     hp: 4740,
-        //     outboundTime: 6,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 4740,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 6,
+            inboundTime: 4,
+            dpmShip: 2000,
+            dpmAntiAir: 0,
+            dpmSiege: 880,
+        },
     },
 ];

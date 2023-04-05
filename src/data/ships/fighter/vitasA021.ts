@@ -23,10 +23,17 @@ export const vitasA021: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
-        // defaultStats: {
-        //     hp: 5370,
-        //     outboundTime: 5,
-        //     inboundTime: 3,
-        // },
+        defaultStats: {
+            hp: 5370,
+            armor: 3,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 5,
+            inboundTime: 3,
+            dpmShip: 3618,
+            dpmAntiAir: 900,
+            dpmSiege: 543,
+        },
     },
 ];

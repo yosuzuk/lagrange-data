@@ -23,10 +23,17 @@ export const sandrake: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 4200,
-        //     outboundTime: 6,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 4200,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 6,
+            inboundTime: 4,
+            dpmShip: 1230,
+            dpmAntiAir: 4475,
+            dpmSiege: 0,
+        },
     },
 ];

@@ -27,10 +27,17 @@ export const sc002: IShipDefinition[] = [
             ResearchStrategyType.FIGHTER_AND_CORVETTE,
         ],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 2850,
-        //     outboundTime: 6,
-        //     inboundTime: 4,
-        // },
+        defaultStats: {
+            hp: 2850,
+            armor: 0,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 6,
+            inboundTime: 4,
+            dpmShip: 1170,
+            dpmAntiAir: 1170,
+            dpmSiege: 0,
+        },
     },
 ];

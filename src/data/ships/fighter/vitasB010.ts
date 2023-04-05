@@ -27,10 +27,17 @@ export const vitasB010: IShipDefinition[] = [
             ResearchStrategyType.FIGHTER_AND_CORVETTE,
         ],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
-        // defaultStats: {
-        //     hp: 5860,
-        //     outboundTime: 12,
-        //     inboundTime: 6,
-        // },
+        defaultStats: {
+            hp: 5860,
+            armor: 10,
+            shield: 0,
+            speed: 3000,
+            warpSpeed: 15000,
+            outboundTime: 12,
+            inboundTime: 6,
+            dpmShip: 4588,
+            dpmAntiAir: 0,
+            dpmSiege: 1696,
+        },
     },
 ];
