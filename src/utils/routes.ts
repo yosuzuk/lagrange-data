@@ -1,4 +1,6 @@
 import { URLSearchParamsInit } from 'react-router-dom';
+import { IColumnConfig } from '../components/columns/types/IColumnConfig';
+import { FilterKey } from '../components/filter/types/ShipFilterState';
 import { Season } from '../components/pages/researchAgreement/types/Season';
 import { ResearchManufacturer } from '../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../types/ResearchStrategyType';
@@ -17,10 +19,15 @@ export interface IResearchAgreementParams {
     shipId: string | null;
 }
 
+export interface IShipDataParams {
+    filter: FilterKey[];
+    columns: (keyof IColumnConfig)[];
+}
+
 export const routes = {
     techFiles: createParameterizedRouteDefinition<ITechFilesParams>('techFiles'),
     researchAgreement: createParameterizedRouteDefinition<IResearchAgreementParams>('researchAgreement'),
-    shipData: createRouteDefinition('shipData'),
+    shipData: createParameterizedRouteDefinition<IShipDataParams>('shipData'),
     shipDataById: ({ path: (shipId: string) => `/shipData/${shipId}`, routePath: ':shipId' }),
     fleetSetup: createRouteDefinition('fleetSetup'),
     fleetSetupByKey: ({ path: (fleetKey: string) => `/fleetSetup/${fleetKey}`, routePath: ':fleetKey' }),
@@ -57,13 +64,13 @@ function createParameterizedRouteDefinition<TParams>(basePath: string): IParamet
     return {
         ...createRouteDefinition(basePath),
         createSearchParams: (params: TParams): URLSearchParamsInit => {
-            const parameters = params as unknown as Record<string, string | null>;
+            const parameters = params as unknown as Record<string, string | string[] | null>;
             return Object.keys(parameters).reduce((acc, key: string) => ({
                 ...acc,
                 ...(parameters[key] === null ? {} : {
-                    [key]: `${parameters[key]}`,
+                    [key]: Array.isArray(parameters[key]) ? parameters[key] as string[] : `${parameters[key]}`,
                 }),
-            }), {} as Record<string, string>) as unknown as URLSearchParamsInit;
+            }), {} as Record<string, string | string[]>) as unknown as URLSearchParamsInit;
         },
         createPath: (params: TParams) => `/${basePath}?${(new URLSearchParams(params as unknown as Record<string, string>))}`,
         getSearchParam: <TKey extends keyof TParams>(key: TKey, urlSearchParams: URLSearchParams): TParams[TKey] | null => {
