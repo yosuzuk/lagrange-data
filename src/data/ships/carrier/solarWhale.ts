@@ -157,16 +157,18 @@ const a3: ISystemModule = {
             text: [
                 'BG-2180型　対艦砲',
                 '対空：',
-                '・直射、実弾', // TODO dpm
+                '・直射、実弾、対艦：4200、対空：432、攻城：336',
                 '反撃対空',
                 'MK3-BM-8x320「ライトニングフィールド」8連対艦ミサイルシステム',
                 '対小型：',
-                '・投射、実弾', // TODO dpm
+                '・投射、実弾、対艦：4688、対空：589、攻城：294',
                 '反撃対空',
             ],
         },
     ],
-    // TODO total dpm
+    dpmShip: 8888,
+    dpmAntiAir: 1021,
+    dpmSiege: 630,
 };
 
 const b1: ISystemModule = {

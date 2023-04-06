@@ -173,11 +173,15 @@ const a2: ISystemModule = {
             text: [
                 'BM-12x180T型　防御ミサイルシステム',
                 '対空、ミサイル迎撃：',
-                '・投射、実弾', // TODO dpm
+                '・投射、実弾、対艦：2700、対空：354',
+                '支援対空',
+                '迎撃効果'
             ],
         },
     ],
-    // TODO total dpm
+    dpmShip: 2700,
+    dpmAntiAir: 354,
+    dpmSiege: 0,
 };
 
 const b1: ISystemModule = {
@@ -203,13 +207,15 @@ const b1: ISystemModule = {
             text: [
                 'MK3-SM-6x4008/C型「スターファイア」ミサイルランチャー群',
                 '対空：',
-                '・投射、実弾', // TODO dpm
+                '・投射、実弾、対艦：1200、対空：210、攻城：70',
                 '迎撃効果',
                 '反撃対空',
             ],
         },
     ],
-    // TODO total dpm
+    dpmShip: 1200,
+    dpmAntiAir: 210,
+    dpmSiege: 70,
 };
 
 const b2: ISystemModule = {
