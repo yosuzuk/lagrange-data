@@ -86,6 +86,57 @@ $planet
 (4053,3222)(3978,3380) small #W Roc
 ```
 
+## Space Stations
+
+Syntax:
+
+```
+$station
+<point> <type> [<level>] [<color>] [<name>]
+```
+
+You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold`, `dock` or `trading`. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level. 
+
+## Areas
+
+Syntax:
+
+```
+$area
+<point><point> [<color>] [<name>]
+```
+
+An area can be used to visualize city borders. It needs a point for the bottom left corner and another point for the top right corner. Both points are automatically rounded to fit the area onto the grid.
+
+## Player Bases
+
+Syntax:
+
+```
+$base
+<point> [<color>] [<name>]
+```
+
+## Player Outposts
+
+Syntax:
+
+```
+$outpost
+<point> [<color>] [<name>]
+```
+
+## Mining Platforms
+
+Syntax:
+
+```
+$platform
+<point> <type> [<color>] [<name>]
+```
+
+You can place mining platforms after the `$platform` keyword. It needs a point for the bottom left corner. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. 
+
 ## Colors
 
 Chat colors:
