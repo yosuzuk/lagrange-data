@@ -40,10 +40,13 @@ const m1: ISystemModule = {
     parts: [{
         text: [
             '対空：',
-            '・直射、実弾、対艦：3000、対空：360、攻城：90',
-            '補修キュー1',
+            '・直射、実弾、対艦：2400、対空：270、攻城：90',
+            '反撃対空',
         ],
     }],
+    dpmShip: 2400,
+    dpmAntiAir: 270,
+    dpmSiege: 90,
 };
 
 const a1: ISystemModule = {
@@ -311,7 +314,7 @@ const e2: ISystemModule = {
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
-        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8), // TODO check after update
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
     ],
@@ -328,8 +331,8 @@ const e2: ISystemModule = {
 const staticModules: ISystemModule[] = [
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
@@ -357,8 +360,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 560,
     warpSpeed: 2800,
-    dpmShip: 3000,
-    dpmAntiAir: 360,
+    dpmShip: 2400,
+    dpmAntiAir: 270,
     dpmSiege: 90,
 };
 

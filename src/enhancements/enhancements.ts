@@ -51,6 +51,7 @@ export const enhancements = {
     increaseSelfHostCapacity: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SELF_HOST_CAPACITY),
     increaseProductionSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_PRODUCTION_SPEED),
     increaseEnemyLockOn: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ENEMY_LOCK_ON),
+    increaseLockOnEfficiency: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_LOCK_ON_EFFICIENCY),
     reduceLockOn: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON),
     reduceLockOnOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_AIRCRAFT),
     reduceLockOnOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_UAV),
@@ -106,12 +107,13 @@ export const flagshipEffect = {
 
 export const strategy = {
     customStrategy: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
-    overdrive: (interval: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.OVERDRIVE).withDescriptionKey('overdrive', { interval, duration, cooldown }),
+    overdrive: (interval: number, frequency: number, hitRate: number, duration: number, shield: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.OVERDRIVE).withDescriptionKey('overdrive', { interval, frequency, hitRate, duration, shield, cooldown }),
     antiAircraftSupport: (hitRate: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_SUPPORT).withDescriptionKey('antiAircraftSupport', { hitRate, interval, duration }),
     antiAircraftMeasures: (cooldownDown: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_MEASURES).withDescriptionKey('antiAircraftMeasures', { cooldownDown, duration, cooldown }),
     rapidFire: (value: number, interval: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.RAPID_FIRE).withDescriptionKey('rapidFire', { value, interval, duration, cooldown }),
     concentrateFirePeriodically: (reduceCooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CONCENTRATE_FIRE_PERIODICALLY).withDescriptionKey('concentrateFirePeriodically', { reduceCooldown, interval, duration }),
     evasiveManeuvers: (hp: number, evasion: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.EVASIVE_MANEUVERS).withDescriptionKey('evasiveManeuvers', { hp, evasion, duration }),
+    superCapitalStrike: (duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.SUPER_CAPITAL_STRIKE).withDescriptionKey('superCapitalStrike', { duration }),
     prioritizeTargets: () => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PRIORITIZE_TARGETS).withDescriptionKey('prioritizeTargets'),
     prioritizeFirepower: (value: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PRIORITIZE_FIREPOWER).withDescriptionKey('prioritizeFirepower', { value, interval, duration }),
     heavyAmmo: (damage: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PRIORITIZE_TARGETS).withDescriptionKey('heavyAmmo', { damage, duration }),
@@ -121,6 +123,7 @@ export const strategy = {
     informationChain: (hitRate: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.INFORMATION_CHAIN).withDescriptionKey('informationChain', { hitRate }),
     allShipsFocusFire: (cooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ALL_SHIPS_FOCUS_FIRE).withDescriptionKey('allShipsFocusFire', { cooldown, interval, duration }),
     prioritizeSupport: (duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PRIORITIZE_SUPPORT).withDescriptionKey('prioritizeSupport', { duration }),
+    weakPointStrike: (critDamage: number, hp: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.WEAK_POINT_STRIKE).withDescriptionKey('weakPointStrike', { critDamage, hp }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {

@@ -27,13 +27,16 @@ const m1: ISystemModule = {
             text: [
                 '「フォートレス」Mk4-BG-2650　艦首２連重砲',
                 '対大型艦：',
-                '・直射、実弾、対艦：8456、攻城：1231',
+                '・直射、実弾、対艦：8084、攻城：1231',
                 'BG-1260型　対艦砲塔',
                 '対小型艦：',
-                '・直射、実弾、対艦：3286、対空：736、攻城：525',
+                '・直射、実弾、対艦：2973、対空：394、攻城：525',
             ],
         },
     ],
+    dpmShip: 11057,
+    dpmAntiAir: 394,
+    dpmSiege: 1756,
 };
 
 const m2: ISystemModule = {
@@ -53,13 +56,14 @@ const m2: ISystemModule = {
             text: [
                 '「フォートレス」Mk4-BR-1850A　艦首攻城重電磁加速砲',
                 '対大型艦：',
-                '・直射、実弾、対艦：13500、攻城：3150',
+                '・直射、実弾', // TODO dpm
                 'BM-2x2808型　対空ミサイルランチャー群',
                 '対空：',
-                '・直射、実弾、対艦：1333、対空：2773',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -277,13 +281,13 @@ const staticModules: ISystemModule[] = [
 ];
 
 const defaultStats: IDefaultShipStats = {
-    hp: 240460,
+    hp: 276529,
     armor: 120,
     shield: 15,
     speed: 420,
     warpSpeed: 2100,
-    dpmShip: 11496,
-    dpmAntiAir: 8388,
+    dpmShip: 11057,
+    dpmAntiAir: 5002,
     dpmSiege: 1756,
 };
 

@@ -73,14 +73,11 @@ const m2: ISystemModule = {
                 'CFB-605型　大型戦闘機格納庫',
                 'CIT-5型　戦場支援UAV格納庫',
                 '5隊の戦略UAVを搭載可能な総合UAV格納庫。敵艦の武器システムにピンポイント攻撃を行える。',
-                '戦略UAV：',
-                '・対艦：3750、攻城：520',
+                '戦略UAV' // TODO dpm
             ],
         },
     ],
-    dpmShip: 3750,
-    dpmAntiAir: 0,
-    dpmSiege: 150,
+    // TODO total dpm
 };
 
 const m3: ISystemModule = {
@@ -132,22 +129,24 @@ const a1: ISystemModule = {
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
         enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(10),
     ],
-    skillSlots: 4,
+    skillSlots: 5,
     parts: [
         {
             text: [
                 'MK4-C/SG-3480A型　3連重砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：4000、攻城：520',
+                '・直射、実弾、対艦：3800、攻城：520',
                 'C/SG-190B型　通常連射砲',
                 '対空：',
-                '・直射、実弾、対艦：3300、対空：712、攻城：99',
+                '・直射、実弾、対艦：2700、対空：297、攻城：99',
+                '反撃対空',
             ],
         },
     ],
-    dpmShip: 7300,
-    dpmAntiAir: 712,
+    dpmShip: 6500,
+    dpmAntiAir: 297,
     dpmSiege: 619,
 };
 
@@ -174,13 +173,11 @@ const a2: ISystemModule = {
             text: [
                 'BM-12x180T型　防御ミサイルシステム',
                 '対空、ミサイル迎撃：',
-                '・投射、実弾、対艦：3375、対空：2362',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 3375,
-    dpmAntiAir: 2362,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -206,15 +203,13 @@ const b1: ISystemModule = {
             text: [
                 'MK3-SM-6x4008/C型「スターファイア」ミサイルランチャー群',
                 '対空：',
-                '・投射、実弾、対艦：1400、対空：700、攻城：70',
+                '・投射、実弾', // TODO dpm
                 '迎撃効果',
                 '反撃対空',
             ],
         },
     ],
-    dpmShip: 1400,
-    dpmAntiAir: 700,
-    dpmSiege: 70,
+    // TODO total dpm
 };
 
 const b2: ISystemModule = {
@@ -283,8 +278,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
@@ -311,8 +306,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 400,
     warpSpeed: 2000,
-    dpmShip: 7300,
-    dpmAntiAir: 712,
+    dpmShip: 6500,
+    dpmAntiAir: 297,
     dpmSiege: 619,
 };
 

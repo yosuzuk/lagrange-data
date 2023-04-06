@@ -350,6 +350,7 @@
         "flagshipEffect": "Flagship effect"
     },
     "enhancementSubType": {
+        "unknown": "???",
         "increaseArmor": "Increase physical resistance",
         "increaseShield": "Increase energy resistance",
         "increaseHp": "Increase HP",
@@ -397,6 +398,7 @@
         "increaseSelfHostCapacity": "Increase auxiliary ship self-hold capacity",
         "increaseProductionSpeed": "Increase production speed of auxiliary ship",
         "increaseEnemyLockOn": "Increase enemy weapon lock-on time",
+        "increaseLockOnEfficiency": "Increase anti-air lock-on efficiency",
         "reduceLockOn": "Reduce lock-on time",
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",
@@ -439,7 +441,6 @@
         "overdrive": "Overdrive",
         "antiAircraftSupport": "Anti-Aircraft support",
         "rapidFire": "Rapid fire",
-        "concentratedStrike": "Concentrated strike",
         "concentrateFirePeriodically": "Concentrate fire periodically",
         "evasiveManeuvers": "Evasive maneuvers",
         "moraleBooster": "Morale booster",
@@ -457,6 +458,7 @@
         "rangeExtension": "Range extension",
         "aircraftEmergencyRepair": "Aircraft emergency repair",
         "antiAircraftMeasures": "Anti-aircraft measures",
+        "superCapitalStrike": "Super Capital Strike",
         "prioritizeTargets": "Prioritize targets",
         "prioritizeFirepower": "Prioritize firepower",
         "heavyAmmo": "Heavy Ammo",
@@ -470,7 +472,8 @@
         "missileTrackingRadar": "Missile Tracking Radar",
         "activeAntiMissileInterception": "Active Anti-Missile Interception",
         "allShipsFocusFire": "All Ships Focus Fire",
-        "prioritizeSupport": "Prioritize Support"
+        "prioritizeSupport": "Prioritize Support",
+        "weakPointStrike": "Weak-Point Strike"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -479,10 +482,9 @@
         "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
         "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(enhancementDescription.fleetDock1)",
         "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed.",
-        "overdrive": "Turns off all other weapon systems, increase damage frequency by 4, increases the continuous firing duration of the main ion cannon by 100%, and increases hit rate by 35% every {{interval}}s for {{duration}}s. Cooldown: {{cooldown}}s.",
+        "overdrive": "Every {{interval}}s, increases the primary weapon's damage frequency by {{frequency}}, and the hit rate by {{hitRate}}% for {{duration}}s but reduces the energy resistance by {{shield}}% during the period. Cooldown: {{cooldown}}s.",
         "antiAircraftSupport": "The primary weapon locks onto enemy aircraft in the nearby row and launches attacks, increasing the hit rate by 40% every 30s for 25s.",
         "rapidFire": "Reduces the primary weapon's firing duration and cooldown by {{value}}% every {{interval}}s for {{duration}}s. Cooldown: {{cooldown}}s.",
-        "concentratedStrike": "After the battle begins, the carried aircraft lock onto the same target in the first 4 rounds of attacks and increases the evasion of the carried aircraft by 10%",
         "concentrateFirePeriodically": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{reduceCooldown}}% every {{interval}}s for {{duration}}s.",
         "evasiveManeuvers": "When the ship's HP falls to {{hp}}%, increases evasion by {{evasion}}% for {{duration}}s. This effect only triggers once per battle.",
         "moraleBooster": "Whenever the enemy loses a cruiser, it decreases the weapon system cooldown by 85% for 10s.",
@@ -499,6 +501,7 @@
         "rangeExtension": "Strategic strike radius +{{radius}}",
         "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
         "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s.",
+        "superCapitalStrike": "When the enemy fleet includes a super capital ship, it deploys aircraft/UAV to attack there targets as a priority and reduces attack duration by {{dutation}}%.",
         "prioritizeTargets": "When the enemy fleet includes carriers, it prioritizes attacks on these targets.",
         "prioritizeCarriersWithDuration": "When the enemy fleet includes carriers, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
         "prioritizeCorvettesWithDuration": "When the enemy fleet includes corvettes, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
@@ -515,7 +518,8 @@
         "missileTrackingRadar": "The primary weapon of the aircraft/UAV in the hangar has a {{interception}}% chance to intercept missiles and a {{interception}}% chance to intercept torpedoes.",
         "activeAntiMissileInterception": "Changes ship position to the front row of your formation to expand all weapons' anti-aircraft coverage to your entire fleet, increasing the chance of interception missiles by {{missileInterception}}% and torpedoes by {{torpedoInterception}}%.",
         "allShipsFocusFire": "Syncs all weapons in the system to focus fire on one single target and reduces cooldown by {{cooldown}}% every {{interval}}s for {{duration}}s.",
-        "prioritizeSupport": "When your fleet includes cruisers, it prioritizes fire support for them by dispatching aircraft. Increases aircraft's support duration by {{duration}}%."
+        "prioritizeSupport": "When your fleet includes cruisers, it prioritizes fire support for them by dispatching aircraft. Increases aircraft's support duration by {{duration}}%.",
+        "weakPointStrike": "Increase crit damage dealt by the system's weapons by {{critDamage}} when the target has less than {{hp}}% hp."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

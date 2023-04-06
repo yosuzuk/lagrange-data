@@ -39,11 +39,11 @@ const m1: ISystemModule = {
             text: [
                 'BR-1950C型「ルビー」',
                 '対大型艦：',
-                '・直射、実弾、対艦：13000、攻城：11310'
+                '・直射、実弾、対艦：12950、攻城：11310'
             ],
         }
     ],
-    dpmShip: 13000,
+    dpmShip: 12950,
     dpmAntiAir: 0,
     dpmSiege: 11310,
 };
@@ -64,12 +64,10 @@ const m2: ISystemModule = {
         text: [
             'BI-850型　2連重イオン砲塔',
             '対大型艦：',
-            '・直射、エネルギー、対艦：10285、攻城：1748'
+            '・直射、エネルギー' // TODO dpm
         ],
     }],
-    dpmShip: 10285,
-    dpmAntiAir: 0,
-    dpmSiege: 1748,
+    // TODO total dpm
 };
 
 const a1: ISystemModule = {
@@ -97,18 +95,21 @@ const a1: ISystemModule = {
             text: [
                 'BG-1850型　重砲',
                 '対大型艦：',
-                '・直射、実弾、対艦：9500、攻城：2755',
+                '・直射、実弾、対艦：9400、攻城：2755',
                 'BG-2240型　対艦砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：4000、対空：280、攻城：320',
+                '・直射、実弾、対艦：3600、対空：420、攻城：320',
+                '反撃対空',
                 'BG-340B型　対空砲',
                 '対空：',
-                '・直射、実弾、対艦：1200、対空：1440',
+                '・直射、実弾、対艦：120、対空：216',
+                '反撃対空',
+                '特殊弾薬：対空ダメージ10アップ',
             ],
         },
     ],
-    dpmShip: 14700,
-    dpmAntiAir: 1720,
+    dpmShip: 13120,
+    dpmAntiAir: 636,
     dpmSiege: 3075,
 };
 
@@ -128,16 +129,14 @@ const a2: ISystemModule = {
             text: [
                 'BG-1950型　重砲',
                 '対艦：',
-                '・直射、実弾、対艦：16000、攻城：2880',
+                '・直射、実弾', // TODO dpm
                 'BG-3408型　対空砲',
                 '対空：',
-                '・直射、実弾、対艦：1200、対空：1440',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 17200,
-    dpmAntiAir: 1440,
-    dpmSiege: 2880,
+    // TODO total dpm
 };
 
 const a3: ISystemModule = {
@@ -157,16 +156,14 @@ const a3: ISystemModule = {
                 // TODO adjust after update (added interception)
                 'BG-2350型　対艦砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：18000、対空：540、攻城：1800',
+                '・直射、実弾', // TODO dpm
                 // TODO name
                 '対空：',
-                '・直射、実弾、対艦：1200、対空：1440',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 19200,
-    dpmAntiAir: 1980,
-    dpmSiege: 1800,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -185,13 +182,11 @@ const b1: ISystemModule = {
             text: [
                 'BM-12x250型　通常ミサイル発射群',
                 '対空：',
-                '・直射、実弾、対艦：6480、対空：1315、攻城：259',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 6480,
-    dpmAntiAir: 1315,
-    dpmSiege: 259,
+    // TODO total dpm
 };
 
 const b2: ISystemModule = {
@@ -260,13 +255,11 @@ const c1: ISystemModule = {
                 // TODO adjust after update
                 'BG-6258型　対空砲',
                 '対空：',
-                '・直射、実弾、対空：1512',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 0,
-    dpmAntiAir: 1512,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const c2: ISystemModule = {
@@ -306,13 +299,11 @@ const c3: ISystemModule = {
             text: [
                 'BG-625C1型　領域的対ミサイル要撃砲',
                 '対空：',
-                '・直射、実弾、対空：2159',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 0,
-    dpmAntiAir: 2159,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const staticModules: ISystemModule[] = [
@@ -330,8 +321,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -358,8 +349,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 5,
     speed: 250,
     warpSpeed: 1250,
-    dpmShip: 27700,
-    dpmAntiAir: 1720,
+    dpmShip: 26070,
+    dpmAntiAir: 636,
     dpmSiege: 14385,
 };
 

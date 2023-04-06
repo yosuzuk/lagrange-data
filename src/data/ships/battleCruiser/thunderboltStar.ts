@@ -28,10 +28,10 @@ const m1: ISystemModule = {
         text: [
             'HR-1850型　長レール電磁加速砲',
             '対小型艦：',
-            '・直接、実弾、対艦：27353、攻城：5744',
+            '・直接、実弾、対艦：27225、攻城：5744',
         ],
     }],
-    dpmShip: 23785,
+    dpmShip: 27225,
     dpmAntiAir: 0,
     dpmSiege: 4995,
 };
@@ -54,13 +54,11 @@ const m2: ISystemModule = {
         text: [
             'HT-1-850型　高エネルギーランチャー',
             '対大型艦：',
-            '・投射、エネルギー、対艦：29885、攻城：5705',
+            '・投射、エネルギー', // TODO dpm
             'クリティカル',
         ],
     }],
-    dpmShip: 23625,
-    dpmAntiAir: 0,
-    dpmSiege: 4961,
+    // TODO total dpm
 };
 
 const m3: ISystemModule = {
@@ -81,12 +79,10 @@ const m3: ISystemModule = {
         text: [
             'HI-1250T型　試験型超高エネルギーイオン砲',
             '対大型艦：',
-            '・投射、エネルギー、対艦：39744、攻城：3312',
+            '・投射、エネルギー',
         ],
     }],
-    dpmShip: 28800,
-    dpmAntiAir: 0,
-    dpmSiege: 2880,
+    // TODO total dpm
 };
 
 const a1: ISystemModule = {
@@ -106,12 +102,12 @@ const a1: ISystemModule = {
         text: [
             'HG-1220型 速射砲群',
             '対小型：',
-            '・直射、実弾、対艦：14076、対空：8445、攻城：1407',
+            '・直射、実弾、対艦：12636、対空：1266、攻城：1407',
             '反撃対空',
         ],
     }],
-    dpmShip: 12240,
-    dpmAntiAir: 7344,
+    dpmShip: 12636,
+    dpmAntiAir: 1266,
     dpmSiege: 1224,
 };
 
@@ -132,12 +128,10 @@ const a2: ISystemModule = {
         text: [
             'HG-2280型　2連固定式重砲',
             '対小型艦：',
-            '・直射、実弾、対艦：17884、攻城：1490',
+            '・直射、実弾',
         ],
     }],
-    dpmShip: 12960,
-    dpmAntiAir: 0,
-    dpmSiege: 1296,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -157,12 +151,12 @@ const b1: ISystemModule = {
         text: [
             'HM-4x60B型 中距離対空ミサイル群',
             '対空：',
-            '・投射、実弾、対艦：5175、対空：3105',
+            '・投射、実弾、対艦：3375、対空：465',
             '対空支援',
         ],
     }],
-    dpmShip: 4500,
-    dpmAntiAir: 2700,
+    dpmShip: 3375,
+    dpmAntiAir: 465,
     dpmSiege: 0,
 };
 
@@ -182,13 +176,11 @@ const b2: ISystemModule = {
         text: [
             'HP-1008型　対ミサイルパルス群',
             '対空：',
-            '・直射、エネルギー、対空：2300',
+            '・直射、エネルギー', // TODO dpm
             '迎撃効果',
         ],
     }],
-    dpmShip: 0,
-    dpmAntiAir: 1999,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const c1: ISystemModule = {
@@ -268,13 +260,11 @@ const e1: ISystemModule = {
         text: [
             'HM-1x220A型　中距離対艦ミサイル',
             '対小型艦：',
-            '・投射、実弾、対艦：14069、対空：9787、攻城：1223',
+            '・投射、実弾', // TODO dpm
             '反撃対空',
         ],
     }],
-    dpmShip: 8437,
-    dpmAntiAir: 6749,
-    dpmSiege: 843,
+    // TODO total dpm
 };
 
 const e2: ISystemModule = {
@@ -294,13 +284,11 @@ const e2: ISystemModule = {
         text: [
             'HT-1-450型　大型魚雷ランチャー',
             '対大型艦：',
-            '・投射、実弾、対艦：12916、攻城：2086',
+            '・投射、実弾', // TODO dpm
             'クリティカル',
         ],
     }],
-    dpmShip: 8640,
-    dpmAntiAir: 0,
-    dpmSiege: 1814,
+    // TODO total dpm
 };
 
 const f1: ISystemModule = {
@@ -318,13 +306,11 @@ const f1: ISystemModule = {
         text: [
             'HG-1120A型　多目的対艦砲',
             '対小型艦：',
-            '・直射、実弾、対艦：7590、対空：6072、攻城：759',
+            '・直射、実弾', // TODO dpm
             '反撃対空',
         ],
     }],
-    dpmShip: 6600,
-    dpmAntiAir: 5280,
-    dpmSiege: 660,
+    // TODO total dpm
 };
 
 const f2: ISystemModule = {
@@ -342,13 +328,11 @@ const f2: ISystemModule = {
         text: [
             'HG-1120B型　多目的対空砲塔',
             '対空：',
-            '・直射、実弾、対空：4226',
+            '・直射、実弾', // TODO dpm
             '反撃対空',
         ],
     }],
-    dpmShip: 0,
-    dpmAntiAir: 3675,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const staticModules: ISystemModule[] = [
@@ -376,8 +360,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 400,
     warpSpeed: 2000,
-    dpmShip: 46604,
-    dpmAntiAir: 11550,
+    dpmShip: 43236,
+    dpmAntiAir: 1731,
     dpmSiege: 7151,
 };
 
@@ -425,12 +409,6 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
-        defaultStats: {
-            ...defaultStats,
-            dpmShip: 47432,
-            dpmAntiAir: 11643,
-            dpmSiege: 7151,
-        },
         relatedShipIds: [
             ShipId.THUNDERBOLT_STAR,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
@@ -463,12 +441,6 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(e1),
             ...staticModules,
         ],
-        defaultStats: {
-            ...defaultStats,
-            dpmShip: 71160,
-            dpmAntiAir: 22734,
-            dpmSiege: 9327,
-        },
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
@@ -496,11 +468,5 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(e2), // 8437 -> 53977
             ...staticModules,
         ],
-        defaultStats: {
-            ...defaultStats,
-            dpmShip: 91158,
-            dpmAntiAir: 5089,
-            dpmSiege: 8062,
-        },
     },
 ];

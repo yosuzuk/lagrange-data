@@ -52,6 +52,7 @@ export enum EnhancementSubType {
     INCREASE_SELF_HOST_CAPACITY = 'increaseSelfHostCapacity',
     INCREASE_PRODUCTION_SPEED = 'increaseProductionSpeed',
     INCREASE_ENEMY_LOCK_ON = 'increaseEnemyLockOn',
+    INCREASE_LOCK_ON_EFFICIENCY = 'increaseLockOnEfficiency',
     REDUCE_LOCK_ON = 'reduceLockOn',
     REDUCE_LOCK_ON_OF_AIRCRAFT = 'reduceLockOnOfAircraft',
     REDUCE_LOCK_ON_OF_UAV = 'reduceLockOnOfUav',
@@ -106,6 +107,7 @@ export enum EnhancementSubType {
     RAPID_FIRE = 'rapidFire',
     CONCENTRATE_FIRE_PERIODICALLY = 'concentrateFirePeriodically',
     EVASIVE_MANEUVERS = 'evasiveManeuvers',
+    SUPER_CAPITAL_STRIKE = 'superCapitalStrike',
     PRIORITIZE_TARGETS = 'prioritizeTargets',
     ACTIVE_INTERFERENCE = 'activeInterference',
     FOCUSED_ATTACKS = 'focusedAttacks',
@@ -113,5 +115,6 @@ export enum EnhancementSubType {
     INFORMATION_CHAIN = 'informationChain',
     ALL_SHIPS_FOCUS_FIRE = 'allShipsFocusFire',
     PRIORITIZE_SUPPORT = 'prioritizeSupport',
+    WEAK_POINT_STRIKE = 'weakPointStrike',
     CUSTOM = 'custom',
 }

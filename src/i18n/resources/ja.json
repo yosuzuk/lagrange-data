@@ -350,6 +350,7 @@
         "flagshipEffect": "旗艦スキル"
     },
     "enhancementSubType": {
+        "unknown": "???",
         "increaseArmor": "抵抗値アップ",
         "increaseShield": "シールド値アップ",
         "increaseHp": "HPアップ",
@@ -397,6 +398,7 @@
         "increaseSelfHostCapacity": "支援艦の自己保有容量",
         "increaseProductionSpeed": "支援艦の生産速度アップ",
         "increaseEnemyLockOn": "敵軍武器ロックオン時間アップ",
+        "increaseLockOnEfficiency": "Increase anti-air lock-on efficiency",
         "reduceLockOn": "ロックオン速度アップ",
         "reduceLockOnOfAircraft": "艦載機のロックオン速度アップ",
         "reduceLockOnOfUav": "UAVのロックオン速度アップ",
@@ -439,7 +441,6 @@
         "overdrive": "過負荷攻撃",
         "antiAircraftSupport": "対空連携",
         "rapidFire": "高速攻撃",
-        "concentratedStrike": "集中爆撃",
         "concentrateFirePeriodically": "周期的集中砲火",
         "evasiveManeuvers": "機動回避",
         "moraleBooster": "士気向上",
@@ -457,6 +458,7 @@
         "rangeExtension": "範囲拡大",
         "aircraftEmergencyRepair": "艦載機緊急補修",
         "antiAircraftMeasures": "対空反応",
+        "superCapitalStrike": "Super Capital Strike",
         "prioritizeTargets": "重点出撃",
         "prioritizeFirepower": "優先攻撃",
         "heavyAmmo": "重弾薬",
@@ -471,7 +473,8 @@
         "missileTrackingRadar": "ミサイル捜索レーダー",
         "activeAntiMissileInterception": "対ミサイル積極要撃",
         "allShipsFocusFire": "全艦集中砲火",
-        "prioritizeSupport": "重点支援"
+        "prioritizeSupport": "重点支援",
+        "weakPointStrike": "Weak-Point Strike"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -480,10 +483,9 @@
         "fleetDock1": "艦隊の結合権限を有効にし、この艦隊が展開して他の艦隊と結合できるようにする。",
         "fleetDock2": "この艦船の同社艦船に対する補修速度を30%アップする。また、$t(enhancementDescription.fleetDock1)",
         "sailingSpeedCoordination1": "条件を満たす艦隊の航行速度とワープ速度が全艦船の平均の80+20%に一致する。",
-        "overdrive": "{{interval}}秒毎に、他の全ての武器を停止し、１ラウンドあたり攻撃数が4回、メインイオン砲の連続射撃時間100％、命中率が35％アップする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
+        "overdrive": "Every {{interval}}s, increases the primary weapon's damage frequency by {{frequency}}, and the hit rate by {{hitRate}}% for {{duration}}s but reduces the energy resistance by {{shield}}% during the period. Cooldown: {{cooldown}}s.",
         "antiAircraftSupport": "{{interval}}秒毎に、システム内のメイン武器が同列の範囲内に接近する敵機をロックオンして攻撃する。対戦闘機命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。",
         "rapidFire": "{{interval}}秒毎に、システムメイン武器の攻撃・冷却時間が{{value}}％ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
-        "concentratedStrike": "戦闘開始時、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された戦闘機の回避率が10アップする。",
         "concentrateFirePeriodically": "{{interval}}秒毎に、システム内の全ての武器で１件の目標を集中攻撃する。武器の冷却時間が{{reduceCooldown}}%ダウンする。効果は{{duration}}秒続く。",
         "evasiveManeuvers": "自身のHPが{{hp}}%になったとき、艦船の回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。この効果は戦闘中に1回しか発生しない。",
         "moraleBooster": "敵が巡洋艦を失うと10秒間冷却時間85％ダウン",
@@ -500,6 +502,7 @@
         "rangeExtension": "戦略攻撃範囲半径+{{radius}}",
         "aircraftEmergencyRepair": "戦略攻撃を実行した艦載機を帰還するたびに{{damage}}%緊急補修する。",
         "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
+        "superCapitalStrike": "When the enemy fleet includes a super capital ship, it deploys aircraft/UAV to attack there targets as a priority and reduces attack duration by {{dutation}}%.",
         "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。",
         "prioritizeCarriersWithDuration": "敵艦隊に航空母艦が存在するとき、艦載機/ＵＡＶを出撃させてその航空母艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeCorvettesWithDuration": "敵艦隊に護送艦が存在するとき、艦載機/ＵＡＶを出撃させてその護送艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
@@ -516,7 +519,8 @@
         "missileTrackingRadar": "格納庫内の艦載機/UAVのメイン武器が{{interception}}%のミサイル要撃率/{{interception}}%の魚雷要撃率を取得する",
         "activeAntiMissileInterception": "艦船が前列に移動する。艦船内の武器の防空範囲が味方全体へ拡張し、ミサイル要撃率が{{missileInterception}}%、魚雷要撃率が{{torpedoInterception}}%アップする。",
         "allShipsFocusFire": "{{interval}}秒ごとに、艦船内の全ての武器で1件の目標を集中攻撃する。全ての武器の冷却時間が{{cooldown}}%ダウンする。効果は{{duration}}秒続く。",
-        "prioritizeSupport": "味方艦隊に巡洋艦が存在するとき、その巡洋艦を優先的に支援する。支援時間が{{duration}}%アップする。"
+        "prioritizeSupport": "味方艦隊に巡洋艦が存在するとき、その巡洋艦を優先的に支援する。支援時間が{{duration}}%アップする。",
+        "weakPointStrike": "Increase crit damage dealt by the system's weapons by {{critDamage}} when the target has less than {{hp}}% hp."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

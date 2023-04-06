@@ -22,7 +22,7 @@ const m1: ISystemModule = {
     defaultModule: true,
     mainSystem: true,
     skills: [
-        strategy.overdrive(90, 30, 15).withCost(15), // TODO adjust after update
+        strategy.overdrive(60, 3, 35, 30, 5, 10).withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -58,7 +58,7 @@ const m2: ISystemModule = {
     categoryNumber: 2,
     mainSystem: true,
     skills: [
-        strategy.overdrive(90, 30, 15).withCost(15), // TODO adjust after update
+        strategy.customStrategy('unknown').withCost(15), // TODO find out
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -73,13 +73,11 @@ const m2: ISystemModule = {
             text: [
                 'AIM-850T型　プラズマ投射器',
                 '対大型艦：',
-                '・投射、エネルギー、対艦：15692、対空：3640、攻城：2824',
+                '・投射、エネルギー', // TODO dpm
             ],
         },
     ],
-    dpmShip: 15692,
-    dpmAntiAir: 3640,
-    dpmSiege: 2824,
+    // TODO total dpm
 };
 
 const a1: ISystemModule = {
@@ -106,15 +104,15 @@ const a1: ISystemModule = {
             text: [
                 'MK3-AT-800A型「スーパーノヴァ・ホワイト」対艦魚雷',
                 '対大型艦：',
-                '・投射、実弾、対艦：9600、攻城：1440',
+                '・投射、実弾、対艦：9540、攻城：1440',
                 'MK2-AM-8x300B型「エターナルボラリスK」',
                 '対小型艦：',
-                '・投射、実弾、対艦：3300、対空：1663、攻城：99',
+                '・投射、実弾、対艦：2700、対空：396、攻城：99',
             ],
         },
     ],
-    dpmShip: 12900,
-    dpmAntiAir: 1663,
+    dpmShip: 12240,
+    dpmAntiAir: 396,
     dpmSiege: 1539,
 };
 
@@ -141,13 +139,11 @@ const a2: ISystemModule = {
             text: [
                 'MK2-AM-16x150B型「スーパーノヴァホワイト」攻城魚雷ランチャー群',
                 '対大型艦：',
-                '・投射、実弾、対艦：12000、攻城：10440',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 12000,
-    dpmAntiAir: 0,
-    dpmSiege: 10440,
+    // TODO total dpm
 };
 
 const a3: ISystemModule = {
@@ -168,9 +164,7 @@ const a3: ISystemModule = {
         strategy.antiAircraftSupport(40, 30, 25).withCost(15),
     ],
     skillSlots: 4,
-    dpmShip: 11927,
-    dpmAntiAir: 3946,
-    dpmSiege: 1440,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -195,16 +189,14 @@ const b1: ISystemModule = {
             text: [
                 'AG-2580型　2連重砲',
                 '対大型艦：',
-                '・投射、実弾、対艦；4200、攻城：840',
+                '・投射、実弾', // TODO dpm
                 // TODO name
                 '対空：',
-                '・投射、実弾、対艦：1050、対空；840、攻城；63',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 5250,
-    dpmAntiAir: 840,
-    dpmSiege: 903,
+    // TODO total dpm
 };
 
 const b2: ISystemModule = {
@@ -229,13 +221,11 @@ const b2: ISystemModule = {
             text: [
                 'AG-1105B型　通常砲',
                 '対空：',
-                '・直射、実弾、対艦：1200、対空：2160、攻城：60',
+                '・直射、実弾', // TODO dpm
             ],
         }
     ],
-    dpmShip: 1200,
-    dpmAntiAir: 2160,
-    dpmSiege: 60,
+    // TODO total dpm
 };
 
 const c1: ISystemModule = {
@@ -259,13 +249,11 @@ const c1: ISystemModule = {
             text: [
                 'NT-1型　対空UAVラック',
                 '領域対空UAVを3機搭載する。UAVの収容と整備を行い、信号誘導システムを装備する。',
-                '対空：6480',
+                // TODO dpm
             ],
         },
     ],
-    dpmShip: 0,
-    dpmAntiAir: 6480,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const c2: ISystemModule = {
@@ -344,13 +332,11 @@ const d1: ISystemModule = {
             text: [
                 'AI-450A型　試験的イオン砲塔',
                 '対大型艦：',
-                '・直射、エネルギー、対艦：6857、攻城：1028',
+                '・直射、エネルギー', // TODO dpm
             ],
         },
     ],
-    dpmShip: 6857,
-    dpmAntiAir: 0,
-    dpmSiege: 1028,
+    // TODO total dpm
 };
 
 const d2: ISystemModule = {
@@ -376,13 +362,11 @@ const d2: ISystemModule = {
             text: [
                 'AP-1308型　連射近接防御パルス砲',
                 '対空：',
-                '・直射、エネルギー、対空：2160',
+                '・直射、エネルギー', // TODO dpm
             ],
         },
     ],
-    dpmShip: 0,
-    dpmAntiAir: 2160,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const staticModules: ISystemModule[] = [
@@ -399,8 +383,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -427,8 +411,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 10,
     speed: 450,
     warpSpeed: 2250,
-    dpmShip: 28900,
-    dpmAntiAir: 1663,
+    dpmShip: 28240,
+    dpmAntiAir: 396,
     dpmSiege: 4899,
 };
 

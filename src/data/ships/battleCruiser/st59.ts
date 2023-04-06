@@ -39,11 +39,11 @@ const m1: ISystemModule = {
             text: [
                 'SR-2600型　重電磁加速砲',
                 '対大型艦：',
-                '・直射、実弾、対艦：10500、攻城：3360',
+                '・直射、実弾、対艦：10350、攻城：3360',
             ],
         },
     ],
-    dpmShip: 10500,
+    dpmShip: 10350,
     dpmAntiAir: 0,
     dpmSiege: 3360,
 };
@@ -75,13 +75,11 @@ const m2: ISystemModule = {
             text: [
                 'SG-2400T型　2連速射砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：9600、攻城：768',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 9600,
-    dpmAntiAir: 0,
-    dpmSiege: 768,
+    // TODO total dpm
 };
 
 const m3: ISystemModule = {
@@ -110,13 +108,11 @@ const m3: ISystemModule = {
             text: [
                 'ST-2600型　重魚雷ランチャー',
                 '対大型艦：',
-                '・投射、実弾、対艦：11333、攻城：2266',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 11333,
-    dpmAntiAir: 0,
-    dpmSiege: 2266,
+    // TODO total dpm
 };
 
 const a1: ISystemModule = {
@@ -137,23 +133,25 @@ const a1: ISystemModule = {
         enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(8),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
         enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(8),
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(8),
     ],
-    skillSlots: 5,
+    skillSlots: 6,
     parts: [
         {
             text: [
                 // TODO adjust after update
                 'MK4-SG-2580型「サンダーボルト」2連重砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：6300、攻城：1134',
+                '・直射、実弾、対艦：6075、攻城：1134',
                 'SG-1120B型　通常砲',
                 '対空：',
-                '・直射、実弾、対艦：2400、対空：1440、攻城：72',
+                '・直射、実弾、対艦：1800、対空：216、攻城：72',
+                '反撃対空',
             ],
         },
     ],
-    dpmShip: 8700,
-    dpmAntiAir: 1440,
+    dpmShip: 7875,
+    dpmAntiAir: 216,
     dpmSiege: 1206,
 };
 
@@ -181,13 +179,11 @@ const a2: ISystemModule = {
             text: [
                 'SR-1425型　電磁加速砲塔',
                 '対大型艦：',
-                '・直射、実弾、対艦：13162、対空：212、攻城：1923',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 10125,
-    dpmAntiAir: 212,
-    dpmSiege: 1923,
+    // TODO total dpm
 };
 
 const a3: ISystemModule = {
@@ -213,13 +209,11 @@ const a3: ISystemModule = {
             text: [
                 'SP-430型　パルス砲塔',
                 '対小型艦：',
-                '・直射、エネルギー、対艦：7500、対空：3360、攻城：1200',
+                '・直射、エネルギー', // TODO dpm
             ],
         },
     ],
-    dpmShip: 7500,
-    dpmAntiAir: 3360,
-    dpmSiege: 1200,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -244,11 +238,11 @@ const b1: ISystemModule = {
             text: [
                 'K-ST-12-255A型　3X4クラスター魚雷発射システム',
                 '対大型艦：',
-                '・投射、実弾、対艦：8470、攻城：1185',
+                '・投射、実弾、対艦：8188、攻城：1185',
             ],
         },
     ],
-    dpmShip: 8470,
+    dpmShip: 8188,
     dpmAntiAir: 0,
     dpmSiege: 1185,
 };
@@ -313,10 +307,11 @@ const c1: ISystemModule = {
     translatedName: {
         en: 'Additional Armor System',
     },
-    description: 'HPを15%アップ（最大40％）',
+    description: 'HPを20%アップ（最大40％）',
     category: 'C',
     categoryNumber: 1,
     effects: [
+        enhancements.increaseHp().withFixedAbsoluteValue(27302),
         enhancements.increaseHp().withFixedPercentageValue(20),
     ],
     skills: [
@@ -403,8 +398,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -432,8 +427,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 10,
     speed: 250,
     warpSpeed: 1250,
-    dpmShip: 19200,
-    dpmAntiAir: 1440,
+    dpmShip: 18225,
+    dpmAntiAir: 216,
     dpmSiege: 4566,
 };
 

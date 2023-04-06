@@ -40,12 +40,12 @@ const m1: ISystemModule = {
                 '・直射、エネルギー、対艦：10800、攻城：1620',
                 'CG-2220型　通常2連砲',
                 '対小型艦：',
-                '・直射、実弾、対艦：5760、対空：1152、攻城：288',
+                '・直射、実弾、対艦：5280、対空：691、攻城：288',
             ],
         },
     ],
-    dpmShip: 16560,
-    dpmAntiAir: 1152,
+    dpmShip: 16080,
+    dpmAntiAir: 691,
     dpmSiege: 1908,
 };
 
@@ -66,16 +66,14 @@ const m2: ISystemModule = {
             text: [
                 'CG-11058型　通常砲',
                 '対空：',
-                '・直射、実弾、対艦：1800、対空：1080、攻城：90',
+                '・直射、実弾', // TODO dpm
                 'CR-1650型　電磁加速砲',
                 '対大型：',
-                '・直射、実弾、対艦：12857、攻城：2185',
+                '・直射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 14657,
-    dpmAntiAir: 1080,
-    dpmSiege: 2275,
+    // TODO total dpm
 };
 
 const a1: ISystemModule = {
@@ -91,7 +89,7 @@ const a1: ISystemModule = {
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     defaultModule: true,
     skills: [
-        strategy.customStrategy('concentratedStrike').withDescriptionKey('concentratedStrike').withCost(20),
+        strategy.superCapitalStrike(30).withCost(20),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(15),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(15),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(15),
@@ -169,13 +167,11 @@ const b2: ISystemModule = {
                 'MK2-CM-4x250A型「ストーム」',
                 'ミサイルランチャーネスト',
                 '対小型艦：',
-                '・投射、実弾、対艦：5600、対空：2856、攻城：392',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 5600,
-    dpmAntiAir: 2856,
-    dpmSiege: 392,
+    // TODO total dpm
 };
 
 const b3: ISystemModule = {
@@ -291,8 +287,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
@@ -318,8 +314,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 400,
     warpSpeed: 2000,
-    dpmShip: 16560,
-    dpmAntiAir: 1152,
+    dpmShip: 16080,
+    dpmAntiAir: 691,
     dpmSiege: 1908,
 };
 
@@ -375,7 +371,6 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
-        defaultStats,
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
@@ -401,7 +396,6 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
-        defaultStats,
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A1_B1,
@@ -428,6 +422,5 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
-        defaultStats,
     },
 ];

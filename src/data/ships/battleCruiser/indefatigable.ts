@@ -45,8 +45,8 @@ const staticModules: ISystemModule[] = [
         defaultModule: true,
         // TODO skills
         skillSlots: 6,
-        dpmShip: 13996,
-        dpmAntiAir: 1701,
+        dpmShip: 13403,
+        dpmAntiAir: 1514,
         dpmSiege: 1349,
     }),
     modules.static({
@@ -58,7 +58,7 @@ const staticModules: ISystemModule[] = [
         description: '対大型武装',
         // TODO skills
         skillSlots: 5,
-        dpmShip: 6000,
+        dpmShip: 5966,
         dpmAntiAir: 0,
         dpmSiege: 540,
     }),
@@ -86,8 +86,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 250,
     warpSpeed: 1250,
-    dpmShip: 19996,
-    dpmAntiAir: 1701,
+    dpmShip: 19369,
+    dpmAntiAir: 1514,
     dpmSiege: 1889,
 };
 

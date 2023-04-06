@@ -92,15 +92,16 @@ const a1: ISystemModule = {
             text: [
                 'BG-2450A型　2連重砲',
                 '対大型艦：',
-                '・直射、実弾、対艦5120、攻城：665',
+                '・直射、実弾、対艦4960、攻城：665',
                 'MK3-BM-8x320型「ライトニングフィールド」8連対艦ミサイルシステム',
                 '対小型艦：',
-                '・投射、実弾、対艦：4911、対空：510、攻城：294',
+                '・投射、実弾、対艦：4688、対空：589、攻城：294',
+                '反撃対空',
             ],
         },
     ],
-    dpmShip: 10031,
-    dpmAntiAir: 510,
+    dpmShip: 9648,
+    dpmAntiAir: 589,
     dpmSiege: 959,
 };
 
@@ -120,16 +121,14 @@ const a2: ISystemModule = {
             text: [
                 'MK5-BM-16x180「ライトニングフィールド」対艦ミサイル群',
                 '対小型艦：',
-                '・投射、実弾、対艦：4430、攻城：354',
+                '・投射、実弾', // TODO dpm
                 'MK3-BM-8x320「ライトニングフィールド」対艦ミサイル群',
                 '対空：',
-                '・投射、実弾、対艦：4911、対空：510、攻城：294',
+                '・投射、実弾', // TODO dpm
             ],
         },
     ],
-    dpmShip: 9341,
-    dpmAntiAir: 510,
-    dpmSiege: 648,
+    // TODO total dpm
 };
 
 const a3: ISystemModule = {
@@ -158,16 +157,16 @@ const a3: ISystemModule = {
             text: [
                 'BG-2180型　対艦砲',
                 '対空：',
-                '・直射、実弾、対艦：6240、対空：345、攻城：336、反撃対空',
+                '・直射、実弾', // TODO dpm
+                '反撃対空',
                 'MK3-BM-8x320「ライトニングフィールド」8連対艦ミサイルシステム',
                 '対小型：',
-                '・投射、実弾、対艦：4911、対空：510、攻城：294、反撃対空',
+                '・投射、実弾', // TODO dpm
+                '反撃対空',
             ],
         },
     ],
-    dpmShip: 9711,
-    dpmAntiAir: 855,
-    dpmSiege: 630,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -288,14 +287,13 @@ const c3: ISystemModule = {
             text: [
                 'BM-12x180T型　防御ミサイルシステム',
                 '対空：',
-                '・投射、実弾、対艦：3272、対空：7854、対空支援、迎撃効果',
-                '同じ艦列の味方艦船に対して対空支援を行うことができる',
+                '・投射、実弾',
+                '対空支援',
+                '迎撃効果',
             ],
         },
     ],
-    dpmShip: 3272,
-    dpmAntiAir: 7854,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const staticModules: ISystemModule[] = [
@@ -315,8 +313,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
@@ -342,8 +340,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 15,
     speed: 250,
     warpSpeed: 1250,
-    dpmShip: 10031,
-    dpmAntiAir: 510,
+    dpmShip: 9648,
+    dpmAntiAir: 589,
     dpmSiege: 959,
 };
 
@@ -420,16 +418,14 @@ export const solarWhale: IShipDefinition[] = [
                         text: [
                             '「スティンガー」　攻撃UAVシステム',
                             '特殊設定のUAVハンガーシステム。3機の特殊攻撃UAVを積載でき、小型化されたチャージプラズマ砲により、大型目標に近接爆撃攻撃を行うことができる。',
-                            '・エネルギー、対艦：4200',
+                            '・エネルギー', // TODO dpm
                             '「スティンガー」　防御UAVシステム',
                             '特殊設定のUAVハンガーシステム。2機の特殊防衛UAVを積載でき、戦場の局所防衛を担える。',
-                            '・エネルギー、対空：1500',
+                            '・エネルギー', // TODO dpm
                         ],
                     },
                 ],
-                dpmShip: 4200,
-                dpmAntiAir: 1500,
-                dpmSiege: 0,
+                // TODO total dpm
             },
             {
                 id: 'X3',
@@ -465,26 +461,14 @@ export const solarWhale: IShipDefinition[] = [
                         text: [
                             'BG-2300A　2連対艦砲',
                             '対小型艦：',
-                            '・直射、実弾、対艦：6624、攻城：806',
+                            '・直射、実弾', // TODO dpm
                         ],
                     },
                 ],
-                dpmShip: 6624,
-                dpmAntiAir: 0,
-                dpmSiege: 806,
+                // TODO total dpm
             },
             ...staticModules,
         ],
-        defaultStats: {
-            hp: 292890,
-            armor: 120,
-            shield: 15,
-            speed: 250,
-            warpSpeed: 1250,
-            dpmShip: 10824,
-            dpmAntiAir: 1500,
-            dpmSiege: 7694,
-        },
         relatedShipIds: [ShipId.SOLAR_WHALE],
     },
 ];

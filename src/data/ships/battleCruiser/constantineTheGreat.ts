@@ -64,9 +64,9 @@ const m2: ISystemModule = {
             '・投射、エネルギー、対艦：9600、攻城：1344'
         ],
     }],
-    dpmShip: 9600,
+    dpmShip: 9600, // TODO check
     dpmAntiAir: 0,
-    dpmSiege: 1344,
+    dpmSiege: 1344, // TODO check
 };
 
 const a1: ISystemModule = {
@@ -80,7 +80,7 @@ const a1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     skills: [
-        strategy.concentrateFirePeriodically(80, 90, 15).withCost(25), // TODO adjust after update
+        strategy.weakPointStrike(100, 50).withCost(25),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseCriticalDamageAndChance().withPercentageValue(50).withCost(12),
@@ -93,10 +93,10 @@ const a1: ISystemModule = {
         text: [
             'CM-8x608A型「ガンマストーム」通常ミサイル発射システム',
             '対大型艦：',
-            '・投射、実弾、対艦：24000、攻城：1920',
+            '・投射、実弾、対艦：23717、攻城：1920',
         ],
     }],
-    dpmShip: 24000,
+    dpmShip: 23717,
     dpmAntiAir: 0,
     dpmSiege: 1920,
 };
@@ -112,16 +112,14 @@ const a2: ISystemModule = {
         text: [
             'CM-8x608型「ガンマストーム」パルスエネルギーミサイル発射システム',
             '対大型艦：',
-            '・投射、エネルギー、対艦：18162、攻城：1816'
+            '・投射、エネルギー' // TODO dpm
         ],
     }],
     category: 'A',
     categoryNumber: 2,
     // TODO skills
     // TODO skillslot
-    dpmShip: 27854,
-    dpmAntiAir: 1084,
-    dpmSiege: 2106,
+    // TODO total dpm
 };
 
 const b1: ISystemModule = {
@@ -135,10 +133,11 @@ const b1: ISystemModule = {
         text: [
             '350mm-CG-1350型　対艦2連砲',
             '対小型：',
-            '・投射、実弾、対艦：8571、攻城：1371',
+            '・投射、実弾', // TODO dpm
             'CG-1160B型　通常砲',
             '対空：',
-            '・投射、実弾、対艦：3000、対空：720、攻城：90、反撃対空',
+            '・投射、実弾', // TODO dpm
+            '反撃対空',
         ],
     }],
     category: 'B',
@@ -151,9 +150,7 @@ const b1: ISystemModule = {
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
     ],
     skillSlots: 4,
-    dpmShip: 11571,
-    dpmAntiAir: 720,
-    dpmSiege: 1461,
+    // TODO total dpm
 };
 
 const b2: ISystemModule = {
@@ -167,19 +164,17 @@ const b2: ISystemModule = {
         text: [
             'CP-3x220型　3連対空パルス砲',
             '対空：',
-            '・直射、エネルギー、対艦：3150、対空：5744',
+            '・直射、エネルギー', // TODO dpm
             'CP-120型　対ミサイルパルス群',
             '対空、ミサイル迎撃：',
-            '・直射、エネルギー、対空：1788',
+            '・直射、エネルギー', // TODO dpm
         ],
     }],
     category: 'B',
     categoryNumber: 2,
     // TODO skills
     // TODO skillslot
-    dpmShip: 3150,
-    dpmAntiAir: 7532,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const b3: ISystemModule = {
@@ -193,19 +188,17 @@ const b3: ISystemModule = {
         text: [
             'MK2-CM-4x200B型「ストーム」ミサイルランチャーネスト',
             '対空：',
-            '・投射、実弾、対艦：2100、対空：7190',
+            '・投射、実弾', // TODO dpm
             'CM-2x1888型　ミサイルランチャー群',
             '対空、ミサイル迎撃：',
-            '・投射、実弾、対艦：1500、対空：3120',
+            '・投射、実弾', // TODO dpm
         ],
     }],
     category: 'B',
     categoryNumber: 3,
     // TODO skills
     // TODO skillslot
-    dpmShip: 3600,
-    dpmAntiAir: 10310,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const c1: ISystemModule = {
@@ -284,16 +277,15 @@ const d1: ISystemModule = {
         text: [
             'CM-2x45B型　近接対空ミサイル',
             '対空：',
-            '・投射、実弾、対空：5275、反撃対空',
+            '・投射、実弾', // TODO dpm
+            '反撃対空',
         ],
     }],
     category: 'D',
     categoryNumber: 1,
     // TODO skills
     // TODO skillslot
-    dpmShip: 0,
-    dpmAntiAir: 5275,
-    dpmSiege: 0,
+    // TODO total dpm
 };
 
 const d2: ISystemModule = {
@@ -352,8 +344,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -380,7 +372,7 @@ const defaultStats: IDefaultShipStats = {
     shield: 25,
     speed: 400,
     warpSpeed: 2000,
-    dpmShip: 33000,
+    dpmShip: 32717,
     dpmAntiAir: 0,
     dpmSiege: 3810,
 };
