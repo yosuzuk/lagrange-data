@@ -63,9 +63,9 @@ export const cas066: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(8),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(8),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -74,8 +74,8 @@ export const cas066: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -100,8 +100,8 @@ export const cas066: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 11588,
-            dpmAntiAir: 1440,
+            dpmShip: 10726,
+            dpmAntiAir: 432,
             dpmSiege: 3299,
         },
     },
@@ -163,8 +163,8 @@ export const cas066: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 15646,
-            dpmAntiAir: 1260,
+            dpmShip: 15103,
+            dpmAntiAir: 378,
             dpmSiege: 6423,
         },
     },
@@ -204,7 +204,7 @@ export const cas066: IShipDefinition[] = [
                     en: 'Standard Integrated Battery System',
                 },
                 // TODO skills
-                skillSlots: 5,
+                skillSlots: 6,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -227,8 +227,8 @@ export const cas066: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 4650,
-            dpmAntiAir: 1440,
+            dpmShip: 3975,
+            dpmAntiAir: 432,
             dpmSiege: 724,
         },
     },

@@ -7,6 +7,7 @@ export interface IEnhancement {
     condition: string | null;
     value: number | null;
     value2: number | null;
+    unit: EnhancementValueUnit | null;
     cost: number | null;
     isDefault: boolean;
     hasPercentageValues: boolean;
@@ -23,6 +24,9 @@ export interface IMutableEnhancement extends IEnhancement {
     withFixedPercentageValue: (value: number) => IMutableEnhancement;
     withAbsoluteValue: (value: number) => IMutableEnhancement;
     withFixedAbsoluteValue: (value: number) => IMutableEnhancement;
+    withUnit: (unit: EnhancementValueUnit) => IMutableEnhancement;
     withCost: (cost: number) => IMutableEnhancement;
     withDefaultFlag: () => IMutableEnhancement;
 }
+
+export type EnhancementValueUnit = 'seconds' | 'degree';

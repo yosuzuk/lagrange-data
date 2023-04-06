@@ -22,12 +22,12 @@ export const xt20: IShipDefinition[] = [
         carryCorvette: 4,
         relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
         defaultStats: {
-            hp: 51120, // TODO check after update
+            hp: 57510,
             armor: 50,
             shield: 10,
             speed: 600,
             warpSpeed: 3000,
-            dpmShip: 3240,
+            dpmShip: 2880,
             dpmAntiAir: 0,
             dpmSiege: 97,
         },
@@ -49,13 +49,13 @@ export const xt20: IShipDefinition[] = [
         carryFighterType: ShipSubType.LARGE_FIGHTER,
         relatedShipIds: [ShipId.XT_20_A, ShipId.XT_20_C],
         defaultStats: {
-            hp: 51120, // TODO check after update
+            hp: 57510,
             armor: 50,
             shield: 10,
             speed: 600,
             warpSpeed: 3000,
-            dpmShip: 4114,
-            dpmAntiAir: 345,
+            dpmShip: 3600,
+            dpmAntiAir: 432,
             dpmSiege: 288,
         },
     },
@@ -74,13 +74,13 @@ export const xt20: IShipDefinition[] = [
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
         defaultStats: {
-            hp: 51120, // TODO check after update
+            hp: 57510,
             armor: 50,
             shield: 10,
             speed: 600,
             warpSpeed: 3000,
-            dpmShip: 3240,
-            dpmAntiAir: 3840,
+            dpmShip: 2880,
+            dpmAntiAir: 4608,
             dpmSiege: 97,
         },
     },

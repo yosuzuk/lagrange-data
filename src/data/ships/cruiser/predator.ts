@@ -21,9 +21,9 @@ const defensiveBatterySystem = modules.static({
         enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
         enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
-        // TODO increaseLockOnEfficiency after update
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
     ],
-    skillSlots: 4, // TODO 5 after update
+    skillSlots: 5,
 });
 
 const aircraftLoadingSystem = modules.static({
@@ -34,10 +34,10 @@ const aircraftLoadingSystem = modules.static({
         en: 'Aircraft Loading System',
     },
     skills: [
-        strategy.prioritizeTargets().withDescriptionKey('prioritizeCarriersWithDuration', { duration: 35 }).withCost(15),
+        strategy.prioritizeTargets().withDescriptionKey('superCapitalStrike', { duration: 25 }).withCost(15),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
-        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
-        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(10),
@@ -47,8 +47,8 @@ const aircraftLoadingSystem = modules.static({
 
 const armorSystem = modules.armorSystem({
     skills: [
-        enhancements.increaseHp().withPercentageValue(10).withCost(6),
-        enhancements.increaseHp().withPercentageValue(10).withCost(6),
+        enhancements.increaseHp().withPercentageValue(12).withCost(6),
+        enhancements.increaseHp().withPercentageValue(12).withCost(6),
         enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
         enhancements.increaseShield().withPercentageValue(10).withCost(6),
         enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
@@ -101,9 +101,9 @@ export const predator: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
                 ],
-                skillSlots: 5, // TODO 6 after update
+                skillSlots: 6,
             }),
             defensiveBatterySystem,
             aircraftLoadingSystem,
@@ -127,8 +127,8 @@ export const predator: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 4171,
-            dpmAntiAir: 2153,
+            dpmShip: 3114,
+            dpmAntiAir: 572,
             dpmSiege: 119,
         },
     },
@@ -165,7 +165,7 @@ export const predator: IShipDefinition[] = [
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(5),
                     enhancements.reduceHitByProjectile().withPercentageValue(20).withCost(5),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 4,
             }),
             defensiveBatterySystem,
             aircraftLoadingSystem,
@@ -174,7 +174,10 @@ export const predator: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                     flagshipEffect.strategicStrike2(120).withCost(40),
                 ],
-                // TODO skills
+                skills: [
+                    // TODO cost
+                    enhancements.increaseStrategicStrikeAngle().withAbsoluteValue(60).withUnit('degree'),
+                ],
                 skillSlots: 2,
             }),
             armorSystem,
@@ -187,8 +190,8 @@ export const predator: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 1200,
-            dpmAntiAir: 1440,
+            dpmShip: 600,
+            dpmAntiAir: 216,
             dpmSiege: 60,
         },
     },
@@ -242,8 +245,8 @@ export const predator: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 1200,
-            dpmAntiAir: 4232,
+            dpmShip: 600,
+            dpmAntiAir: 1988,
             dpmSiege: 60,
         },
     },

@@ -1,5 +1,5 @@
 import { t } from '../i18n';
-import { IMutableEnhancement } from './types/IEnhancement';
+import { EnhancementValueUnit, IMutableEnhancement } from './types/IEnhancement';
 import { EnhancementSubType, EnhancementType } from './types/EnhancementType';
 
 export const enhancements = {
@@ -52,6 +52,7 @@ export const enhancements = {
     increaseProductionSpeed: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_PRODUCTION_SPEED),
     increaseEnemyLockOn: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ENEMY_LOCK_ON),
     increaseLockOnEfficiency: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_LOCK_ON_EFFICIENCY),
+    increaseStrategicStrikeAngle: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_STRATEGIC_STRIKE_ANGLE),
     reduceLockOn: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON),
     reduceLockOnOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_AIRCRAFT),
     reduceLockOnOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_UAV),
@@ -83,6 +84,8 @@ export const enhancements = {
     reduceHitRateOfMainWeapon: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_RATE_OF_MAIN_WEAPON),
     reduceBatOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_BAT_OF_AIRCRAFT),
     reduceFlightTime: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME),
+    reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME_AND_PRIMARY_WEAPON_COOLDOWN_OF_AIRCRAFT),
+    reducePreTargetTime: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PRE_TARGET_TIME),
     disguiseAsDestroyer: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.DISGUISE_AS_DESTROYER),
     customModuleStorage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM_MODULE_STORAGE),
     repairQueue: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REPAIR_QUEUE),
@@ -139,6 +142,7 @@ class Enhancement implements IMutableEnhancement {
     private _hasFixedValue: boolean = false;
     private _value: number | null = null;
     private _value2: number | null = null;
+    private _unit: EnhancementValueUnit | null = null;
     private _cost: number | null = null;
     private _textKey: string;
     private _textKeyOptions: Record<string, unknown> = {};
@@ -176,6 +180,10 @@ class Enhancement implements IMutableEnhancement {
 
     get value2(): number | null {
         return this._value2;
+    }
+
+    get unit(): EnhancementValueUnit | null {
+        return this._unit;
     }
 
     get cost(): number | null {
@@ -261,6 +269,11 @@ class Enhancement implements IMutableEnhancement {
         return this;
     }
 
+    public withUnit(unit: EnhancementValueUnit) {
+        this._unit = unit;
+        return this;
+    }
+
     public withCost(cost: number) {
         this._cost = cost;
         return this;
@@ -271,10 +284,23 @@ class Enhancement implements IMutableEnhancement {
         return this;
     }
 
+    private getUnitSymbol(): string {
+        if (this._hasPercentageValues) {
+            return '%';
+        }
+        if (this._unit === 'degree') {
+            return '°';
+        }
+        if (this._unit === 'seconds') {
+            return t('quantity.secondShort');
+        }
+        return '';
+    }
+
     private formatValuesAndCost(): string | null {
         const { value, value2, cost } = this;
         if (value !== null) {
-            const unit = this._hasPercentageValues ? '%' : '';
+            const unit = this.getUnitSymbol();
             if (cost !== null) {
                 if (this.hasFixedValue) {
                     return t('enhancement.valueAndCostColonValue', { value, unit });

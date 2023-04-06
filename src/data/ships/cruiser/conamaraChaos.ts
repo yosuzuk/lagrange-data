@@ -66,9 +66,9 @@ export const conamaraChaos: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(5),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -77,8 +77,8 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                 ],
@@ -113,8 +113,8 @@ export const conamaraChaos: IShipDefinition[] = [
             shield: 10,
             speed: 450,
             warpSpeed: 2250,
-            dpmShip: 12960,
-            dpmAntiAir: 3072,
+            dpmShip: 12380,
+            dpmAntiAir: 529,
             dpmSiege: 1320,
         },
     },
@@ -147,7 +147,7 @@ export const conamaraChaos: IShipDefinition[] = [
                 },
                 mainSystem: true,
                 skills: [
-                    strategy.overdrive(90, 30, 15).withCost(15),
+                    strategy.customStrategy('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -172,9 +172,9 @@ export const conamaraChaos: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(5),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(14.8).withCost(5),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -183,8 +183,8 @@ export const conamaraChaos: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                 ],
@@ -219,8 +219,8 @@ export const conamaraChaos: IShipDefinition[] = [
             shield: 10,
             speed: 450,
             warpSpeed: 2250,
-            dpmShip: 16388,
-            dpmAntiAir: 3072,
+            dpmShip: 15908,
+            dpmAntiAir: 529,
             dpmSiege: 2622,
         },
     },

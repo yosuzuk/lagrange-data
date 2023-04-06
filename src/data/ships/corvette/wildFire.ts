@@ -46,7 +46,7 @@ export const wildFire: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            hp: 4900,
+            hp: 4920,
             armor: 2,
             shield: 0,
             speed: 2500,

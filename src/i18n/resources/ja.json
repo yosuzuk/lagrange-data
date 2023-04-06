@@ -123,6 +123,7 @@
         "flightTime": "飛行時間"
     },
     "quantity": {
+        "secondShort": "秒",
         "nSecondsShort_one": "{{count}}秒",
         "nSecondsShort_other": "{{count}}秒"
     },
@@ -399,6 +400,7 @@
         "increaseProductionSpeed": "支援艦の生産速度アップ",
         "increaseEnemyLockOn": "敵軍武器ロックオン時間アップ",
         "increaseLockOnEfficiency": "対空ロックオン効率アップ",
+        "increaseStrategicStrikeAngle": "戦略攻撃の目標範囲拡大",
         "reduceLockOn": "ロックオン速度アップ",
         "reduceLockOnOfAircraft": "艦載機のロックオン速度アップ",
         "reduceLockOnOfUav": "UAVのロックオン速度アップ",
@@ -430,6 +432,8 @@
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
         "reduceBatOfAircraft": "艦載機メイン武器の攻撃間隔ダウン",
         "reduceFlightTime": "飛行時間ダウン",
+        "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "艦載機/UAVの飛行時間とメイン武器の冷却時間ダウン",
+        "reducePreTargetTime": "飛行目標の早期ロックオン時間ダウン",
         "disguiseAsDestroyer": "自身が攻撃目標になった時に、駆逐艦と見なされるようにする",
         "customModuleStorage": "カスタムモジュール容量",
         "repairQueue": "補修キュー",
@@ -476,7 +480,8 @@
         "allShipsFocusFire": "全艦集中砲火",
         "prioritizeSupport": "重点支援",
         "weakPointStrike": "弱点攻撃",
-        "closeCombatAssault": "近距離突撃"
+        "closeCombatAssault": "近距離突撃",
+        "spreadOutWarhead2": "弾頭散乱II"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -486,6 +491,7 @@
         "fleetDock2": "この艦船の同社艦船に対する補修速度を30%アップする。また、$t(enhancementDescription.fleetDock1)",
         "sailingSpeedCoordination1": "条件を満たす艦隊の航行速度とワープ速度が全艦船の平均の80+20%に一致する。",
         "overdrive": "{{interval}}秒ごとに、主砲は各ラウンドで攻撃するごとに{{frequency}}回ダメージを追加し、命中率が{{hitRate}}%アップする。期間内のエネルギー抵抗値が{{shield}}%ダウンし、{{duration}}秒持続、冷却{{cooldown}}秒。",
+        "overdriveWithDuration": "{{interval}}秒ごとに、他の全ての武器を停止し、1ラウンドあたり攻撃回数が{{frequency}}回、メインイオン砲の連続射撃時間が{{durationUp}}%、命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。冷却{{cooldown}}秒。",
         "antiAircraftSupport": "{{interval}}秒毎に、システム内のメイン武器が同列の範囲内に接近する敵機をロックオンして攻撃する。対戦闘機命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。",
         "rapidFire": "{{interval}}秒毎に、システムメイン武器の攻撃・冷却時間が{{value}}％ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "concentrateFirePeriodically": "{{interval}}秒毎に、システム内の全ての武器で１件の目標を集中攻撃する。武器の冷却時間が{{reduceCooldown}}%ダウンする。効果は{{duration}}秒続く。",
@@ -506,10 +512,10 @@
         "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "superCapitalStrike": "敵艦隊に超主力艦が存在するとき、艦載機/UAVを出撃させてその超主力艦を優先的に攻撃する。持続時間が{{duration}}%ダウンする。",
         "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。",
-        "prioritizeCarriersWithDuration": "敵艦隊に航空母艦が存在するとき、艦載機/ＵＡＶを出撃させてその航空母艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeCorvettesWithDuration": "敵艦隊に護送艦が存在するとき、艦載機/ＵＡＶを出撃させてその護送艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeFirepower": "{{interval}}秒ごとに、システムメイン武器の冷却時間が{{value}}%ダウンし、システム内の他の武器が使用できなくなる。効果は{{duration}}秒続く。",
         "heavyAmmo": "目標が巡洋艦の場合のとき、ダメージが{{damage}}%、攻撃時間が{{duration}}%アップする。",
+        "heavyAmmoWithInterval": "目標が巡洋艦の場合のとき、ダメージが{{damage}}%、攻撃時間が{{duration}}%アップする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
         "diveToss": "戦闘開始後、システム内のメイン武器の敵艦船に対する最初の2ラウンドの攻撃が物理シールド貫通効果を得る。",
         "activeInterference": "{{interval}}秒ごとに干渉システムを発動し、回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。",
         "focusedAttacks": "{{interval}}秒ごとに、システム内の武器でフリゲートと駆逐艦を優先的に攻撃する。同時に機動モードに移行し、命中率が{{hitRate}}%、艦船回避率が{{evasion}}%アップする。効果は{{duration}}秒続く。",
@@ -523,7 +529,8 @@
         "allShipsFocusFire": "{{interval}}秒ごとに、艦船内の全ての武器で1件の目標を集中攻撃する。全ての武器の冷却時間が{{cooldown}}%ダウンする。効果は{{duration}}秒続く。",
         "prioritizeSupport": "味方艦隊に巡洋艦が存在するとき、その巡洋艦を優先的に支援する。支援時間が{{duration}}%アップする。",
         "weakPointStrike": "目標のHPが{{hp}}%を下回る場合、システムの武器命中時のクリティカルダメージが{{critDamage}}%アップする。",
-        "closeCombatAssault": "中列の目標を飛行して攻撃する場合、{{chance}}%の確率で敵対空武器の早期ロックオン効果を無視する。"
+        "closeCombatAssault": "中列の目標を飛行して攻撃する場合、{{chance}}%の確率で敵対空武器の早期ロックオン効果を無視する。",
+        "spreadOutWarhead2": "システム内の対空武器が艦載機目標に命中すると、一定の確率で自身を攻撃中の艦載機すべてに対し同時に100%のクリティカルダメージを与えることがある。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

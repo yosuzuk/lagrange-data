@@ -62,9 +62,9 @@ export const callisto: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -73,8 +73,8 @@ export const callisto: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
@@ -98,8 +98,8 @@ export const callisto: IShipDefinition[] = [
             shield: 10,
             speed: 400,
             warpSpeed: 2000,
-            dpmShip: 15050,
-            dpmAntiAir: 1400,
+            dpmShip: 14350,
+            dpmAntiAir: 216,
             dpmSiege: 3983,
         },
     },
@@ -161,8 +161,8 @@ export const callisto: IShipDefinition[] = [
             shield: 10,
             speed: 400,
             warpSpeed: 2000,
-            dpmShip: 18504,
-            dpmAntiAir: 840,
+            dpmShip: 18095,
+            dpmAntiAir: 126,
             dpmSiege: 3728,
         },
     },
@@ -236,8 +236,8 @@ export const callisto: IShipDefinition[] = [
             shield: 10,
             speed: 400,
             warpSpeed: 2000,
-            dpmShip: 11550,
-            dpmAntiAir: 5100,
+            dpmShip: 10950,
+            dpmAntiAir: 4801,
             dpmSiege: 3003,
         },
     },

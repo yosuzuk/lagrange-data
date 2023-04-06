@@ -76,9 +76,9 @@ export const kccpv2_0: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(14.8).withCost(6),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(6),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -89,8 +89,8 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -105,8 +105,8 @@ export const kccpv2_0: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 9592,
-            dpmAntiAir: 2358,
+            dpmShip: 8702,
+            dpmAntiAir: 1110,
             dpmSiege: 1965,
         },
     },
@@ -190,8 +190,8 @@ export const kccpv2_0: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -206,8 +206,8 @@ export const kccpv2_0: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 9685,
-            dpmAntiAir: 1860,
+            dpmShip: 9064,
+            dpmAntiAir: 1020,
             dpmSiege: 734,
         },
     },
@@ -274,8 +274,8 @@ export const kccpv2_0: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 10285,
-            dpmAntiAir: 1860,
+            dpmShip: 9604,
+            dpmAntiAir: 1020,
             dpmSiege: 3632,
         },
     },
@@ -308,7 +308,7 @@ export const kccpv2_0: IShipDefinition[] = [
                 mainSystem: true,
                 skills: [
                     strategy.prioritizeTargets().withDescriptionKey('prioritizeCorvettesWithDuration', { duration: 45 }).withCost(12),
-                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
@@ -347,9 +347,9 @@ export const kccpv2_0: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(14.8).withCost(3),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
@@ -373,8 +373,8 @@ export const kccpv2_0: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 5485,
-            dpmAntiAir: 1560,
+            dpmShip: 5014,
+            dpmAntiAir: 930,
             dpmSiege: 464,
         },
     },

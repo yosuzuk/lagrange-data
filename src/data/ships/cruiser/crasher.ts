@@ -20,13 +20,13 @@ export const crasher: IShipDefinition[] = [
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         defaultStats: {
-            hp: 41720, // TODO check after update
+            hp: 48290,
             armor: 50,
             shield: 10,
             speed: 600,
             warpSpeed: 3000,
-            dpmShip: 3200,
-            dpmAntiAir: 1920,
+            dpmShip: 2400,
+            dpmAntiAir: 384,
             dpmSiege: 256,
         },
     },
@@ -46,13 +46,13 @@ export const crasher: IShipDefinition[] = [
         carryFighter: 3,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
         defaultStats: {
-            hp: 41720, // TODO check after update
+            hp: 48290,
             armor: 50,
             shield: 10,
             speed: 600,
             warpSpeed: 3000,
-            dpmShip: 3200,
-            dpmAntiAir: 1920,
+            dpmShip: 2400,
+            dpmAntiAir: 384,
             dpmSiege: 256,
         },
     },

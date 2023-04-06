@@ -38,9 +38,9 @@ const integratedBatterySystem = modules.static({
         enhancements.reduceCooldown().withPercentageValue(15).withCost(2),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(2),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(2),
-        // TODO check increaseLockOnEfficiency after update
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(2),
     ],
-    skillSlots: 4, // TODO 5 after update
+    skillSlots: 5,
 });
 
 const staticModules: ISystemModule[] = [
@@ -51,8 +51,8 @@ const staticModules: ISystemModule[] = [
     }),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(6),
-            enhancements.increaseHp().withPercentageValue(10).withCost(6),
+            enhancements.increaseHp().withPercentageValue(12).withCost(6),
+            enhancements.increaseHp().withPercentageValue(12).withCost(6),
             enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
             enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
             enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -114,7 +114,7 @@ export const io: IShipDefinition[] = [
                 },
                 mainSystem: true,
                 skills: [
-                    strategy.overdrive(90, 30, 15).withCost(15),
+                    strategy.customStrategy('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
@@ -136,8 +136,8 @@ export const io: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 19928,
-            dpmAntiAir: 1260,
+            dpmShip: 18985,
+            dpmAntiAir: 189,
             dpmSiege: 3753,
         },
     },
@@ -204,8 +204,8 @@ export const io: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 15860,
-            dpmAntiAir: 1260,
+            dpmShip: 15100,
+            dpmAntiAir: 189,
             dpmSiege: 946,
         },
     },
@@ -260,9 +260,9 @@ export const io: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(2),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(2),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(2),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(10),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 5,
             }),
             ...staticModules,
         ],
@@ -272,8 +272,8 @@ export const io: IShipDefinition[] = [
             shield: 10,
             speed: 650,
             warpSpeed: 3250,
-            dpmShip: 15990,
-            dpmAntiAir: 3085,
+            dpmShip: 15647,
+            dpmAntiAir: 92,
             dpmSiege: 11979,
         },
     },

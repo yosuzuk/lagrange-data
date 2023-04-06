@@ -23,17 +23,27 @@ const defensiveBatterySystem = modules.static({
         enhancements.reduceCooldown().withPercentageValue(15).withCost(2),
         enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(2),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(2),
-        // TODO increaseLockOnEfficiency after update
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(2),
     ],
-    skillSlots: 4,
+    skillSlots: 5,
 });
 
 const armorSystem = modules.armorSystem({
     skills: [
-        enhancements.increaseHp().withPercentageValue(10).withCost(6),
-        enhancements.increaseHp().withPercentageValue(10).withCost(6),
+        enhancements.increaseHp().withPercentageValue(12).withCost(6),
+        enhancements.increaseHp().withPercentageValue(12).withCost(6),
         enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
         enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+    ],
+    skillSlots: 3,
+});
+
+const propulsionSystem = modules.propulsionSystem({
+    skills: [
+        enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+        enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+        enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+        enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
     ],
     skillSlots: 3,
 });
@@ -75,9 +85,9 @@ export const lightCone: IShipDefinition[] = [
                     enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(7),
                     enhancements.increaseSystemHp().withPercentageValue(35).withCost(7),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(7),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(7),
                 ],
-                skillSlots: 6,
+                skillSlots: 7,
             }),
             defensiveBatterySystem,
             modules.static({
@@ -117,15 +127,7 @@ export const lightCone: IShipDefinition[] = [
                 ],
             }),
             armorSystem,
-            modules.propulsionSystem({
-                skills: [
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
-                ],
-                skillSlots: 3,
-            }),
+            propulsionSystem,
             modules.energySystem(),
         ],
         defaultStats: {
@@ -134,8 +136,8 @@ export const lightCone: IShipDefinition[] = [
             shield: 10,
             speed: 450,
             warpSpeed: 2250,
-            dpmShip: 14142,
-            dpmAntiAir: 6940,
+            dpmShip: 12471,
+            dpmAntiAir: 6359,
             dpmSiege: 1072,
         },
     },
@@ -175,9 +177,10 @@ export const lightCone: IShipDefinition[] = [
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
                     enhancements.increaseSystemHp().withPercentageValue(35).withCost(6),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.reducePreTargetTime().withAbsoluteValue(1).withUnit('seconds').withCost(6),
+                    enhancements.customEnhancement('spreadOutWarhead2').withDescriptionKey('spreadOutWarhead2').withCost(6),
                 ],
-                skillSlots: 6,
+                skillSlots: 8,
             }),
             defensiveBatterySystem,
             modules.static({
@@ -232,8 +235,8 @@ export const lightCone: IShipDefinition[] = [
             shield: 10,
             speed: 450,
             warpSpeed: 2250,
-            dpmShip: 7200,
-            dpmAntiAir: 11280,
+            dpmShip: 5850,
+            dpmAntiAir: 6930,
             dpmSiege: 570,
         },
     },
@@ -263,7 +266,18 @@ export const lightCone: IShipDefinition[] = [
                     en: '"Minecart" Projectile Launching Array',
                 },
                 mainSystem: true,
-                // TODO skills
+                skills: [
+                    strategy.customStrategy('heavyAmmo').withDescriptionKey('heavyAmmoWithInterval', { damage: 60, durationUp: 30, duration: 30, cooldown: 30 }).withCost(15),
+                    // TODO cost
+                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10),
+                    enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10),
+                    enhancements.reduceCooldown().withPercentageValue(15),
+                    enhancements.reduceCooldown().withPercentageValue(15),
+                    enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10),
+                    enhancements.increaseHitRateVsLarge().withPercentageValue(15),
+                    enhancements.increaseSiegeDamage().withPercentageValue(30),
+                    enhancements.increaseSystemHp().withPercentageValue(35),
+                ],
                 skillSlots: 6,
             }),
             modules.static({
@@ -272,8 +286,16 @@ export const lightCone: IShipDefinition[] = [
                 translatedName: {
                     en: 'Generic Battery System',
                 },
-                // TODO skills
-                skillSlots: 4,
+                skills: [
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
+                ],
+                skillSlots: 5,
             }),
             modules.static({
                 id: 'sp1',
@@ -281,7 +303,13 @@ export const lightCone: IShipDefinition[] = [
                 translatedName: {
                     en: '"Tundra" Support UAV System',
                 },
-                // TODO skills
+                skills: [
+                    // TODO cost
+                    enhancements.reduceLockOnOfAircraft().withPercentageValue(70),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20),
+                    enhancements.increaseHitRateOfAircraft().withPercentageValue(20),
+                    enhancements.reduceHitByProjectile().withPercentageValue(20),
+                ],
                 skillSlots: 3,
             }),
             modules.static({
@@ -290,9 +318,11 @@ export const lightCone: IShipDefinition[] = [
                 translatedName: {
                     en: 'Warning System',
                 },
-                // TODO effects
+                effects: [
+                    enhancements.reduceHitByMissile().withFixedPercentageValue(30),
+                ],
                 skills: [
-                    strategy.informationChain(30),
+                    strategy.informationChain(30).withCost(12),
                 ],
                 skillSlots: 1,
             }),
@@ -301,14 +331,8 @@ export const lightCone: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
             }),
-            modules.armorSystem({
-                // TODO skills
-                skillSlots: 3,
-            }),
-            modules.propulsionSystem({
-                // TODO skills
-                skillSlots: 3,
-            }),
+            armorSystem,
+            propulsionSystem,
             modules.energySystem(),
         ],
         defaultStats: {
@@ -317,8 +341,8 @@ export const lightCone: IShipDefinition[] = [
             shield: 10,
             speed: 450,
             warpSpeed: 2250,
-            dpmShip: 14850,
-            dpmAntiAir: 630,
+            dpmShip: 13500,
+            dpmAntiAir: 236,
             dpmSiege: 1372,
         },
     },

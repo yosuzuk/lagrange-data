@@ -42,7 +42,7 @@ export const jaeger: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(5),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
-                    // TODO check increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
                 ],
                 skillSlots: 5,
             }),
@@ -54,10 +54,10 @@ export const jaeger: IShipDefinition[] = [
                 },
                 carryCorvette: 4,
                 skills: [
-                    strategy.prioritizeTargets().withDescriptionKey('prioritizeCarriersWithDuration', { duration: 35 }).withCost(15),
+                    strategy.prioritizeTargets().withDescriptionKey('superCapitalStrike', { duration: 25 }).withCost(15),
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
-                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
-                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(10), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
                     enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
                     enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(10),
@@ -77,8 +77,8 @@ export const jaeger: IShipDefinition[] = [
             }),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
@@ -102,8 +102,8 @@ export const jaeger: IShipDefinition[] = [
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 3866,
-            dpmAntiAir: 1653,
+            dpmShip: 3000,
+            dpmAntiAir: 535,
             dpmSiege: 273,
         },
     },
@@ -170,13 +170,13 @@ export const jaeger: IShipDefinition[] = [
             modules.energySystem(),
         ],
         defaultStats: {
-            hp: 67730, // TODO check after update
+            hp: 76190,
             armor: 50,
             shield: 10,
             speed: 500,
             warpSpeed: 2500,
-            dpmShip: 9008,
-            dpmAntiAir: 1653,
+            dpmShip: 7971,
+            dpmAntiAir: 535,
             dpmSiege: 1147,
         }
     },
