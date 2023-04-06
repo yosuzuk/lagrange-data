@@ -504,7 +504,7 @@
         "rangeExtension": "戦略攻撃範囲半径+{{radius}}",
         "aircraftEmergencyRepair": "戦略攻撃を実行した艦載機を帰還するたびに{{damage}}%緊急補修する。",
         "antiAircraftMeasures": "敵戦闘機に攻撃されると、システム内の武器の冷却時間が{{cooldownDown}}%ダウンする。効果は{{duration}}秒続く。冷却時間{{cooldown}}秒。",
-        "superCapitalStrike": "敵艦隊に超主力艦が存在するとき、艦載機/UAVを出撃させてその超主力艦を優先的に攻撃する。持続時間が{{dutation}}%ダウンする。",
+        "superCapitalStrike": "敵艦隊に超主力艦が存在するとき、艦載機/UAVを出撃させてその超主力艦を優先的に攻撃する。持続時間が{{duration}}%ダウンする。",
         "prioritizeTargets": "敵艦隊に航空母艦が存在するとき、航空母艦を優先的に攻撃する。",
         "prioritizeCarriersWithDuration": "敵艦隊に航空母艦が存在するとき、艦載機/ＵＡＶを出撃させてその航空母艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",
         "prioritizeCorvettesWithDuration": "敵艦隊に護送艦が存在するとき、艦載機/ＵＡＶを出撃させてその護送艦を優先的に攻撃する。攻撃時間が{{duration}}%ダウンする。",

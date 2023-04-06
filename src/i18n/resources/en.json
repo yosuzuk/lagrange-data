@@ -503,7 +503,7 @@
         "rangeExtension": "Strategic strike radius +{{radius}}",
         "aircraftEmergencyRepair": "Repairs {{damage}}% damage on aircraft returning from a strategic strike.",
         "antiAircraftMeasures": "When attacked by aircraft, it decreases weapon system cooldown by {{cooldownDown}}% for {{duration}}s. Cooldown: {{cooldown}}s.",
-        "superCapitalStrike": "When the enemy fleet includes a super capital ship, it deploys aircraft/UAV to attack there targets as a priority and reduces attack duration by {{dutation}}%.",
+        "superCapitalStrike": "When the enemy fleet includes a super capital ship, it deploys aircraft/UAV to attack there targets as a priority and reduces attack duration by {{duration}}%.",
         "prioritizeTargets": "When the enemy fleet includes carriers, it prioritizes attacks on these targets.",
         "prioritizeCarriersWithDuration": "When the enemy fleet includes carriers, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
         "prioritizeCorvettesWithDuration": "When the enemy fleet includes corvettes, it deploys aircraft/UAV to attack these targets as priority and reduces attack duration by {{duration}}%.",
