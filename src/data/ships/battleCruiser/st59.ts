@@ -256,7 +256,7 @@ const b2: ISystemModule = {
     description: '小～中型艦載機を2機搭載可能',
     category: 'B',
     categoryNumber: 2,
-    carryFighter: 2,
+    carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     skills: [
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
