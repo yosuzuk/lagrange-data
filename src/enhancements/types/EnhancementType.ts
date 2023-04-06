@@ -83,6 +83,7 @@ export enum EnhancementSubType {
     REDUCE_EVASION = 'reduceEvasion',
     REDUCE_HIT_RATE_OF_MAIN_WEAPON = 'reduceHitRateOfMainWeapon',
     REDUCE_BAT_OF_AIRCRAFT = 'reduceBatOfAircraft',
+    REDUCE_FLIGHT_TIME = 'reduceFlightTime',
     DISGUISE_AS_DESTROYER = 'disguiseAsDestroyer',
     CUSTOM_MODULE_STORAGE = 'customModuleStorage',
     REPAIR_QUEUE = 'repairQueue',
@@ -116,5 +117,6 @@ export enum EnhancementSubType {
     ALL_SHIPS_FOCUS_FIRE = 'allShipsFocusFire',
     PRIORITIZE_SUPPORT = 'prioritizeSupport',
     WEAK_POINT_STRIKE = 'weakPointStrike',
+    CLOSE_COMBAT_ASSAULT = 'closeCombatAssault',
     CUSTOM = 'custom',
 }

@@ -30,7 +30,7 @@ export const wildFire: IShipDefinition[] = [
                 mainSystem: true,
                 // TODO skills
                 skillSlots: 5,
-                dpmShip: 1858,
+                dpmShip: 1780,
                 dpmAntiAir: 0,
                 dpmSiege: 483,
             }),
@@ -51,7 +51,7 @@ export const wildFire: IShipDefinition[] = [
             shield: 0,
             speed: 2500,
             warpSpeed: 12500,
-            dpmShip: 1858,
+            dpmShip: 1780,
             dpmAntiAir: 0,
             dpmSiege: 483,
         },

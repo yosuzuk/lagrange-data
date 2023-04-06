@@ -26,34 +26,34 @@ const defaultModules: ISystemModule[] = [
             enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(12),
             enhancements.increaseCriticalDamageAndChance().withPercentageValue(25).withCost(12),
             enhancements.increaseCriticalDamage().withPercentageValue(45).withCost(12),
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(12), // TODO check cost after update
-            enhancements.reduceCooldown().withPercentageValue(15).withCost(12), // TODO check cost after update
+            enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+            enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
             enhancements.reduceLockOn().withPercentageValue(30).withCost(12),
         ],
         skillSlots: 7,
-        dpmShip: 3792,
+        dpmShip: 3760,
         dpmAntiAir: 0,
         dpmSiege: 1820,
     }),
     modules.commandSystem(),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
-            enhancements.increaseHp().withPercentageValue(10).withCost(8),
+            enhancements.increaseHp().withPercentageValue(12).withCost(8),
+            enhancements.increaseHp().withPercentageValue(12).withCost(8),
+            enhancements.increaseHp().withPercentageValue(12).withCost(8),
             enhancements.increaseEnemyLockOn().withPercentageValue(40).withCost(8),
         ],
         skillSlots: 3,
     }),
     modules.propulsionSystem({
         skills: [
-            // TODO check strategy after update
+            strategy.closeCombatAssault(45).withCost(15),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.reduceBatOfAircraft().withPercentageValue(20).withCost(12),
-            // TODO check reduceFlightTime  after update
+            enhancements.reduceFlightTime().withPercentageValue(30).withCost(12),
         ],
-        skillSlots: 2,
+        skillSlots: 4,
     }),
 ];
 
@@ -65,7 +65,7 @@ const defaultStats: IDefaultShipStats = {
     warpSpeed: 12500,
     outboundTime: 9,
     inboundTime: 5,
-    dpmShip: 3792,
+    dpmShip: 3760,
     dpmAntiAir: 0,
     dpmSiege: 1820,
 };

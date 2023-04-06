@@ -429,6 +429,7 @@
         "reduceEvasion": "回避率ダウン",
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
         "reduceBatOfAircraft": "艦載機メイン武器の攻撃間隔ダウン",
+        "reduceFlightTime": "飛行時間ダウン",
         "disguiseAsDestroyer": "自身が攻撃目標になった時に、駆逐艦と見なされるようにする",
         "customModuleStorage": "カスタムモジュール容量",
         "repairQueue": "補修キュー",
@@ -474,7 +475,8 @@
         "activeAntiMissileInterception": "対ミサイル積極要撃",
         "allShipsFocusFire": "全艦集中砲火",
         "prioritizeSupport": "重点支援",
-        "weakPointStrike": "Weak-Point Strike"
+        "weakPointStrike": "Weak-Point Strike",
+        "closeCombatAssault": "Close Combat Assault"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -520,7 +522,8 @@
         "activeAntiMissileInterception": "艦船が前列に移動する。艦船内の武器の防空範囲が味方全体へ拡張し、ミサイル要撃率が{{missileInterception}}%、魚雷要撃率が{{torpedoInterception}}%アップする。",
         "allShipsFocusFire": "{{interval}}秒ごとに、艦船内の全ての武器で1件の目標を集中攻撃する。全ての武器の冷却時間が{{cooldown}}%ダウンする。効果は{{duration}}秒続く。",
         "prioritizeSupport": "味方艦隊に巡洋艦が存在するとき、その巡洋艦を優先的に支援する。支援時間が{{duration}}%アップする。",
-        "weakPointStrike": "Increase crit damage dealt by the system's weapons by {{critDamage}} when the target has less than {{hp}}% hp."
+        "weakPointStrike": "Increase crit damage dealt by the system's weapons by {{critDamage}} when the target has less than {{hp}}% hp.",
+        "closeCombatAssault": "When flying to attack mid-row target, there is a {{chance}}% chance of ignoring the enemy anti-aircraft weapon's pre-targeting effect."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

@@ -16,8 +16,8 @@ const defaultStats: IDefaultShipStats = {
     shield: 0,
     speed: 2500,
     warpSpeed: 12500,
-    dpmShip: 4980,
-    dpmAntiAir: 1804,
+    dpmShip: 4740,
+    dpmAntiAir: 1159,
     dpmSiege: 1656,
 };
 
@@ -63,10 +63,13 @@ export const cellularDefender: IShipDefinition[] = [
                         text: [
                             'CT-4-4500型　「ビーハイヴ」',
                             '対大型：',
-                            '・投射、実弾、対艦：5460、攻城：1469',
+                            '・投射、実弾、対艦：4080、攻城：1469',
                         ],
                     },
                 ],
+                dpmShip: 4080,
+                dpmAntiAir: 0,
+                dpmSiege: 1469,
             }),
             modules.static({
                 id: "w2",
@@ -89,7 +92,7 @@ export const cellularDefender: IShipDefinition[] = [
                         text: [
                             'CG-11320型　速射砲',
                             '対小型：',
-                            '・直射、実弾、対艦：780、対空：655、攻城：187',
+                            '・直射、実弾、対艦：660、対空：187、攻城：187',
                             '反撃対空',
                         ],
                     },
@@ -97,11 +100,15 @@ export const cellularDefender: IShipDefinition[] = [
                         text: [
                             'MK1-CG-628B/D型　近接防御砲',
                             '対空：',
-                            '・直射、実弾、対空：1149',
+                            '・直射、実弾、対空：691',
                             '反撃対空',
+                            '特殊弾薬：対空ダメージ+5'
                         ],
                     },
                 ],
+                dpmShip: 660,
+                dpmAntiAir: 1159,
+                dpmSiege: 187,
             }),
             modules.static({
                 id: "sp1",
@@ -116,9 +123,9 @@ export const cellularDefender: IShipDefinition[] = [
             modules.commandSystem(),
             modules.armorSystem({
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(10).withCost(5),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(5),
-                    enhancements.increaseHp().withPercentageValue(10).withCost(5),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(5),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(5),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(5),
                     enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(5),
                 ],
                 skillSlots: 3,

@@ -29,7 +29,7 @@ const assaultMissileSystem = modules.static({
         enhancements.reduceMissileInterception().withPercentageValue(30).withCost(10),
     ],
     skillSlots: 6,
-    dpmShip: 2400,
+    dpmShip: 2100,
     dpmAntiAir: 0,
     dpmSiege: 240,
 });
@@ -50,7 +50,7 @@ const cannonAttackSystem = modules.static({
         enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(12),
     ],
     skillSlots: 4,
-    dpmShip: 2250,
+    dpmShip: 2228,
     dpmAntiAir: 0,
     dpmSiege: 247,
 });
@@ -73,9 +73,9 @@ const defaultModules: ISystemModule[] = [
     modules.commandSystem(),
     modules.armorSystem({
         skills: [
-            enhancements.increaseHp().withPercentageValue(10).withCost(5),
-            enhancements.increaseHp().withPercentageValue(10).withCost(5),
-            enhancements.increaseHp().withPercentageValue(10).withCost(5),
+            enhancements.increaseHp().withPercentageValue(12).withCost(5),
+            enhancements.increaseHp().withPercentageValue(12).withCost(5),
+            enhancements.increaseHp().withPercentageValue(12).withCost(5),
             enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(5),
         ],
         skillSlots: 3,

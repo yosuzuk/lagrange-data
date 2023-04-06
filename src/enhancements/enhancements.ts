@@ -82,6 +82,7 @@ export const enhancements = {
     reduceEvasion: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_EVASION),
     reduceHitRateOfMainWeapon: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_RATE_OF_MAIN_WEAPON),
     reduceBatOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_BAT_OF_AIRCRAFT),
+    reduceFlightTime: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME),
     disguiseAsDestroyer: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.DISGUISE_AS_DESTROYER),
     customModuleStorage: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM_MODULE_STORAGE),
     repairQueue: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REPAIR_QUEUE),
@@ -124,6 +125,7 @@ export const strategy = {
     allShipsFocusFire: (cooldown: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ALL_SHIPS_FOCUS_FIRE).withDescriptionKey('allShipsFocusFire', { cooldown, interval, duration }),
     prioritizeSupport: (duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PRIORITIZE_SUPPORT).withDescriptionKey('prioritizeSupport', { duration }),
     weakPointStrike: (critDamage: number, hp: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.WEAK_POINT_STRIKE).withDescriptionKey('weakPointStrike', { critDamage, hp }),
+    closeCombatAssault: (chance: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CLOSE_COMBAT_ASSAULT).withDescriptionKey('closeCombatAssault', { chance }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {
