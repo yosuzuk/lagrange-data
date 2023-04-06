@@ -4,6 +4,39 @@ import { ShipId } from './shipIds';
 
 export const techFiles: ITechFile[] = [
     {
+        id: 'dawnSelectedTechnicalFiles',
+        name: 'エンドレスドーンが選択した技術ファイル',
+        translatedName: {
+            en: 'Dawn selected technical files',
+        },
+        desciption: '期間限定',
+        translatedDescription: {
+            en: 'Time limited',
+        },
+        chanceByShipType: {
+            [ShipType.FRIGATE]: 0.03,
+            [ShipType.DESTROYER]: 0.025,
+            [ShipType.CRUISER]: 0.012,
+            [ShipType.BATTLE_CRUISER]: 0.005,
+            [ShipType.AUXILIARY]: 0,
+            [ShipType.CARRIER]: 0.003,
+            [ShipType.FIGHTER]: 0.01,
+            [ShipType.CORVETTE]: 0.015,
+        },
+        chanceForTechPoint: 0.9,
+        ships: [
+            ShipId.FG300_A,
+            ShipId.AC721_A,
+            ShipId.CAS066_A,
+            ShipId.KCCPV2_0_A,
+            ShipId.ST59,
+            ShipId.CV3000,
+            ShipId.SC002,
+            ShipId.CV_M011_A,
+            ShipId.CV_II003,
+        ],
+    },
+    {
         id: 'blueprintFile',
         name: '艦舶・艦載機設計図ファイル2.0',
         translatedName: {

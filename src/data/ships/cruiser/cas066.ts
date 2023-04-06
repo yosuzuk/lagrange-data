@@ -27,7 +27,7 @@ export const cas066: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
-        subModelIds: [ShipId.CAS066_B, ShipId.CAS066_C],
+        subModelIds: [ShipId.CAS066_B, ShipId.CAS066_C, ShipId.CAS066_D],
         modules: [
             modules.static({
                 id: 'w1',
@@ -229,6 +229,69 @@ export const cas066: IShipDefinition[] = [
             warpSpeed: 2500,
             dpmShip: 4650,
             dpmAntiAir: 1440,
+            dpmSiege: 724,
+        },
+    },
+    {
+        id: ShipId.CAS066_D,
+        name: 'CAS066級　D支援型',
+        translatedName: {
+            en: 'CAS066 - Support Type',
+        },
+        type: ShipType.CRUISER,
+        cost: 18,
+        weight: 10, // TODO verify
+        row: ShipRow.MIDDLE,
+        operationLimit: 12,
+        source: ShipSource.TECH_FILE,
+        manufacturer: Manufacturer.DAWN_ACCORD,
+        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        // researchStrategyTypes: [],
+        // researchTacticTypes: [],
+        baseModelId: ShipId.CAS066_A,
+        modules: [
+            modules.static({
+                id: 'sp1',
+                name: '無人機メンテナンスシステム',
+                translatedName: {
+                    en: 'Corvette Maintenance System',
+                },
+                mainSystem: true,
+                // TODO skills
+                skillSlots: 7,
+            }),
+            modules.static({
+                id: 'w2',
+                name: '標準総合砲システム',
+                translatedName: {
+                    en: 'Standard Integrated Battery System',
+                },
+                // TODO skills
+                skillSlots: 6,
+            }),
+            modules.commandSystem({
+                flagshipEffects: [
+                    flagshipEffect.focusFire().withDefaultFlag(),
+                ],
+            }),
+            modules.armorSystem({
+                // TODO skills
+                skillSlots: 4,
+            }),
+            modules.propulsionSystem({
+                // TODO skills
+                skillSlots: 3,
+            }),
+            modules.energySystem(),
+        ],
+        defaultStats: {
+            hp: 66400,
+            armor: 50,
+            shield: 10,
+            speed: 500,
+            warpSpeed: 2500,
+            dpmShip: 3975,
+            dpmAntiAir: 432,
             dpmSiege: 724,
         },
     },
