@@ -156,7 +156,7 @@ export const ConfigurationDetail = (props: IProps) => {
                 ...configuration.shipTypeChances.map((shipTypeChance: IShipTypeResearchChance, index: number) => ({
                     key: `${configuration.id}.${shipTypeChance.shipType}`,
                     label: translateShipType(shipTypeChance.shipType),
-                    value: formatChance(shipTypeChance.chance),
+                    value: formatChance(shipTypeChance.chance, 1),
                     separatorBefore: index === 0,
                 })),
                 {
@@ -171,6 +171,6 @@ export const ConfigurationDetail = (props: IProps) => {
     );
 };
 
-function formatChance(chance: number): string {
-    return `${Number((chance * 100).toFixed(3))} %`;
+function formatChance(chance: number, fractionDigits: number = 3): string {
+    return `${Number((chance * 100).toFixed(fractionDigits))} %`;
 }

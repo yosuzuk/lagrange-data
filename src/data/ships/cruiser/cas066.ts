@@ -240,14 +240,13 @@ export const cas066: IShipDefinition[] = [
         },
         type: ShipType.CRUISER,
         cost: 18,
-        weight: 10, // TODO verify
+        weight: 10,
         row: ShipRow.MIDDLE,
         operationLimit: 12,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
-        // researchStrategyTypes: [],
-        // researchTacticTypes: [],
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         baseModelId: ShipId.CAS066_A,
         modules: [
             modules.static({

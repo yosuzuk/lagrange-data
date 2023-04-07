@@ -204,14 +204,14 @@ export const cvMo11: IShipDefinition[] = [
         },
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 10, // TODO verify
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 15,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.DAWN_ACCORD,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
-        // researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.CV_M011_A,
         modules: [
             precisionGuidanceSystem,

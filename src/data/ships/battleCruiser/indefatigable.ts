@@ -115,6 +115,9 @@ export const indefatigable: IShipDefinition[] = [
     {
         id: ShipId.INDEFATIGABLE_TE_S,
         name: 'ルドゥタブル級-TE（回収）',
+        translatedName: {
+            en: 'Indefatigable (TE) (salvaged)',
+        },
         type: ShipType.BATTLE_CRUISER,
         cost: 30,
         weight: 0,
