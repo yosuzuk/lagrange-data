@@ -19,9 +19,9 @@ export const MapGrid = () => {
                         // divisions
                         debug ? 10 : (gridVisibility ? gridSize : 1),
                         // colorCenterLine
-                        0x0000ff,
+                        '#3b3b40',
                         // colorGrid
-                        0x808080,
+                        '#3b3b40',
                     ]}
                     position={[0, 0, 0]}
                     rotation={[degreesToRadians(90), 0, 0]}
