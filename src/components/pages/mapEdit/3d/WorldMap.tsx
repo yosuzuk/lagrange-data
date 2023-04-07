@@ -5,13 +5,13 @@ import { DebugProvider } from '../context/DebugContext';
 import { GridSizeProvider } from '../context/GridSizeContext';
 import { ThreeCanvasContainer } from '../ThreeCanvasContainer';
 import { translateSizeToGrid } from '../utils/coordinateUtils';
-import { getZ } from '../utils/zUtils';
 import { Sun } from './Sun';
 import { CameraControls } from './CameraControls';
 import { WorldLabel } from './WorldLabel';
 import { StarsBackground } from './StarsBackground';
 import { MapBorders } from './MapBorders';
 import { MapGrid } from './MapGrid';
+import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
     systemName: string;
@@ -55,7 +55,7 @@ export const WorldMap = (props: IProps) => {
                         <ambientLight intensity={0.1} />
                         <pointLight position={[0, 0, 40]} castShadow={true} intensity={1.2} />
                         {debug && (
-                            <axesHelper args={[10]} position={[0, 0, getZ('axesHelper')]} />
+                            <axesHelper args={[10]} position={[0, 0, 0]} renderOrder={getRendeOrder('axesHelper')} />
                         )}
                         {empty !== true && (
                             <>

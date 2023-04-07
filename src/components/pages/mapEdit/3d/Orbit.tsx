@@ -3,11 +3,11 @@ import { degreesToRadians } from '../../../../utils/math';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getDistance, toGridPosition } from '../utils/coordinateUtils';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
     outerPos: GamePosition;
-    centerPos?: GamePosition;
+    centerPos?: GamePosition | null;
 }
 
 export const Orbit = (props: IProps) => {
@@ -35,8 +35,9 @@ export const Orbit = (props: IProps) => {
                 // division
                 state.radius > 200 ? 128 : 64,
             ]}
-            position={[...state.anchorPosition, getZ('orbit')]}
+            position={[...state.anchorPosition, 0]}
             rotation={[degreesToRadians(90), 0, 0]}
+            renderOrder={getRendeOrder('orbit')}
         >
             <lineBasicMaterial color="grey" />
         </polarGridHelper>

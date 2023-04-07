@@ -3,10 +3,10 @@ import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getAngleBetweenAngles, getAngleBetweenVectors, getDistance, getGridPositionByAngleAndRadius, getRingThetaByGridPosition, toGridPosition } from '../utils/coordinateUtils';
-import { getZ } from '../utils/zUtils';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { t } from '../../../../i18n';
 import { TextLabel } from './TextLabel';
+import { getRendeOrder } from '../utils/renderOrder';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
@@ -70,7 +70,7 @@ export const Region = (props: IProps) => {
     return (
         <>
             {backgroundVisible && (
-                <mesh position={[0, 0, getZ('region')]}>
+                <mesh position={[0, 0, 0]} renderOrder={getRendeOrder('region')}>
                     <ringGeometry
                         args={[
                             // innerRadius: Float
@@ -92,6 +92,7 @@ export const Region = (props: IProps) => {
                         wireframe={debug}
                         transparent={true}
                         opacity={backgroundOpacity ?? undefined}
+                        depthWrite={false}
                     />
                 </mesh>
             )}
@@ -104,7 +105,6 @@ export const Region = (props: IProps) => {
                     ].join('\n')}
                     fontSize={96}
                     scale={0.5}
-                    z={getZ('regionText')}
                 />
             )}
         </>

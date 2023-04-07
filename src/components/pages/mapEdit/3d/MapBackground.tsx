@@ -1,7 +1,7 @@
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { useGridSize } from '../context/GridSizeContext';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
     imagePath: string;
@@ -13,7 +13,7 @@ export const MapBackground = (props: IProps) => {
     const texture = useLoader(TextureLoader, imagePath);
 
     return (
-        <mesh position={[0, 0, getZ('mapBackground')]}>
+        <mesh position={[0, 0, 0]} renderOrder={getRendeOrder('mapBackground')}>
             <planeGeometry args={[gridSize, gridSize]} />
             <meshBasicMaterial map={texture} />
         </mesh>

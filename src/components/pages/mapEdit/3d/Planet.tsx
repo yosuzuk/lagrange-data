@@ -3,7 +3,7 @@ import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { PlanetSize } from '../types/PlanetSize';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
 import { Orbit } from './Orbit';
 import { PlanetLabel } from './PlanetLabel';
 
@@ -18,8 +18,8 @@ interface IProps {
     color: string;
     position: GamePosition;
     gridPosition?: GridPosition;
-    orbitCenter?: GamePosition;
-    name?: string;
+    orbitCenter?: GamePosition | null;
+    name?: string | null;
 }
 
 export const Planet = (props: IProps) => {
@@ -38,7 +38,7 @@ export const Planet = (props: IProps) => {
 
     return (
         <>
-            <mesh position={[...position, getZ('planet')]}>
+            <mesh position={[...position, 0]} renderOrder={getRendeOrder('planet')}>
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
                 <meshStandardMaterial color={color} wireframe={debug} />
             </mesh>

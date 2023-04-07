@@ -1,15 +1,14 @@
 import { useMemo } from 'react';
-import { LinearMipMapLinearFilter, NearestFilter } from 'three';
+import { NearestFilter } from 'three';
 import { useThreeCanvasSize } from '../context/ThreeCanvasSizeContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
     canvas: HTMLCanvasElement;
     position?: GamePosition;
     gridPosition?: GridPosition;
-    renderOrder?: number;
     onClick?: () => void;
     onPointerEnter?: () => void;
     onPointerLeave?: () => void;
@@ -23,7 +22,7 @@ interface IProps {
 const REFERENCE_FACTOR_Y = 0.77;
 
 export const CanvasSprite = (props: IProps) => {
-    const { canvas, position: gamePosition, gridPosition, renderOrder, onClick, onPointerEnter, onPointerLeave } = props;
+    const { canvas, position: gamePosition, gridPosition, onClick, onPointerEnter, onPointerLeave } = props;
     const [threeCanvasWidth, threeCanvasHeight] = useThreeCanvasSize();
 
     const [scaleX, scaleY] = useMemo(() => {
@@ -41,12 +40,12 @@ export const CanvasSprite = (props: IProps) => {
 
     return (
         <sprite
-            position={[...position, getZ('textLabel')]}
+            position={[...position, 0]}
             scale={[scaleX, scaleY, 1]}
             onClick={onClick}
             onPointerEnter={onPointerEnter}
             onPointerLeave={onPointerLeave}
-            renderOrder={renderOrder}
+            renderOrder={getRendeOrder('floadingLabel')}
         >
             <spriteMaterial sizeAttenuation={false} depthWrite={false} depthTest={false}>
                 <canvasTexture

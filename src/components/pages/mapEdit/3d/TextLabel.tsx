@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
+import { getRendeOrder } from '../utils/renderOrder';
 import { createTextImage } from '../utils/spriteUtils';
-import { getZ } from '../utils/zUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
@@ -15,7 +15,6 @@ interface IProps {
     lineSpacing?: number;
     faceCamera?: boolean;
     scale?: number;
-    z?: number;
 }
 
 const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
@@ -31,7 +30,6 @@ export const TextLabel = (props: IProps) => {
         lineSpacing = 4,
         faceCamera = false,
         scale = 1,
-        z,
     } = props;
 
     const position = useNormalizedPosition({
@@ -67,7 +65,7 @@ export const TextLabel = (props: IProps) => {
     }
 
     return (
-        <mesh position={[...position, z ?? getZ('textLabel')]} renderOrder={1}>
+        <mesh position={[...position, 0]} renderOrder={getRendeOrder('fixedLabel')}>
             <planeGeometry
                 args={[
                     textImage.width * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,
