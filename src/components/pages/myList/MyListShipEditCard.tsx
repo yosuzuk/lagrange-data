@@ -66,7 +66,7 @@ export const MyListShipEditCard = (props: IProps) => {
                     {(ship.source === ShipSource.TECH_FILE || ship.source === ShipSource.STARTER_SHIP)
                         && shipPossession === PossessionState.POSSESSED
                         && ship.modules
-                        && ship.modules.filter(module => !module.defaultModule).map(module => {
+                        && ship.modules.filter(module => !module.defaultModule && module.category !== 'STATIC').map(module => {
                             return (
                                 <Fragment key={module.id}>
                                     <Divider />

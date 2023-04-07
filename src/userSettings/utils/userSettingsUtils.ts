@@ -92,7 +92,7 @@ function migrateUserSettings(userSettings: IUserSettings): IUserSettings {
         const shipId = migrateShipId(_shipId);
         const shipDefinition = getShipDefinitionById(shipId);
         const moduleDefinition = shipDefinition?.modules?.find(m => m.id === moduleId);
-        if (!shipDefinition || !moduleDefinition) {
+        if (!shipDefinition || !moduleDefinition || moduleDefinition.category === 'STATIC') {
             return result;
         }
 
