@@ -3,6 +3,7 @@ import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
 import { Region } from './Region';
+import { Station } from './Station';
 
 interface IProps {
     mapContent: IMapContent;
@@ -39,10 +40,10 @@ export const MapContent = (props: IProps) => {
                 />
             ))}
             {mapContent.areas.map(area => (
-                <Area
-                    key={area.id}
-                    area={area}
-                />
+                <Area key={area.id} area={area} />
+            ))}
+            {mapContent.stations.map(station => (
+                <Station key={station.id} station={station} />
             ))}
         </>
     );

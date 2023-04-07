@@ -94,7 +94,7 @@ const COORDINATE_REG_EXP = /\(\d+\,\d+\)/g;
 const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][abcdefABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
-const STATION_TYPE_REG_EXP = /^(city|stronghold|default)\s/g;
+const STATION_TYPE_REG_EXP = /^(city|stronghold|base|default)\s/g;
 const AREA_TYPE_REG_EXP = /^(city|default)\s/g;
 
 function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IParseMapContentError | null] {

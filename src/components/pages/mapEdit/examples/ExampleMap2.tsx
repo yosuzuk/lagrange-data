@@ -60,6 +60,11 @@ const input = `
     (5530,3560) C2
     (5590,3560) D1
     (5560,3590) D2
+
+    $area
+    (5610,3550)(5620,3560) #c0077ff
+    $station
+    (5615,3555) base #c0077ff
 `;
 
 export const ExampleMap2 = () => {

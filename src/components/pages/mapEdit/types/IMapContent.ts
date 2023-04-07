@@ -36,7 +36,7 @@ export interface IPlanet {
     name: string | null;
 }
 
-export type StationType = 'city' | 'stronghold' | 'default';
+export type StationType = 'city' | 'stronghold' | 'base' | 'default';
 
 export interface IStation {
     id: string;

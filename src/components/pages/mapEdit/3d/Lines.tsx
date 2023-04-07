@@ -3,10 +3,11 @@ interface IProps {
     color: string;
     lineWidth?: number;
     renderOrder?: number;
+    opacity?: number;
 }
 
 export const Lines = (props: IProps) => {
-    const { points, color, renderOrder = 0 } = props;
+    const { points, color, renderOrder = 0, opacity = 1 } = props;
 
     return (
         <lineSegments renderOrder={renderOrder}>
@@ -22,6 +23,8 @@ export const Lines = (props: IProps) => {
                 attach="material"
                 color={color}
                 depthWrite={false}
+                transparent={opacity !== 1}
+                opacity={opacity}
             />
         </lineSegments>
     );
