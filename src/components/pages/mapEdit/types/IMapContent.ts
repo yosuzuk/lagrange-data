@@ -55,7 +55,6 @@ export interface IArea {
     position1: GamePosition;
     position2: GamePosition;
     color: string;
-    name: string | null;
 }
 
 export interface IParseMapContentError {

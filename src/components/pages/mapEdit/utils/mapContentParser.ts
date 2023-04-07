@@ -91,7 +91,7 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
 }
 
 const COORDINATE_REG_EXP = /\(\d+\,\d+\)/g;
-const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][ABCDEF0-9]{6}))\s/g;
+const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][abcdefABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
 const STATION_TYPE_REG_EXP = /^(city|stronghold|default)\s/g;
@@ -266,7 +266,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
             type: stationTypes[0] ?? 'default',
             position: coordinates[0],
             level: Number(stationlevels[0]) || null,
-            color: parseColor(colors[0], '#E3A06D'),
+            color: parseColor(colors[0], '#F7C360'),
             name: lineWithoutColors || null,
         },
         null,
@@ -297,7 +297,6 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
     const {
         error: colorError,
         matches: colors,
-        line: lineWithoutColors,
     } = parseWithRegExp(lineWithoutAreaTypes, COLOR_REG_EXP, 0, 1);
 
     if (colorError) {
@@ -310,8 +309,7 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
             type: areaTypes[0] ?? 'default',
             position1: coordinates[0],
             position2: coordinates[1],
-            color: parseColor(colors[0], '#EDDC1C'),
-            name: lineWithoutColors || null,
+            color: parseColor(colors[0], '#F7C360'),
         },
         null,
     ];
