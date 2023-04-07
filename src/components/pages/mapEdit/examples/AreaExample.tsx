@@ -4,7 +4,7 @@ import { useMapContent } from '../hooks/useMapContent';
 
 const input = `
     $area
-    (5500,3500)(5550,3550)
+    (5550,3550)(5500,3500)
     (5560,3500)(5610,3550) city
     (5500,3560)(5550,3610) city #cFF0000
     (5560,3560)(5610,3610) #c0000FF My Area

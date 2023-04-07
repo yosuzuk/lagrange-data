@@ -1,4 +1,5 @@
 import { IMapContent } from '../types/IMapContent';
+import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
 import { Region } from './Region';
@@ -35,6 +36,12 @@ export const MapContent = (props: IProps) => {
                     size={planet.size}
                     color={planet.color}
                     name={planet.name}
+                />
+            ))}
+            {mapContent.areas.map(area => (
+                <Area
+                    key={area.id}
+                    area={area}
                 />
             ))}
         </>

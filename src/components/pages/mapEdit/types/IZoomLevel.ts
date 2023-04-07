@@ -11,8 +11,15 @@ export interface IZoomBasedVisibility {
     gameGrid: boolean;
     planetLabel: boolean;
     subPlanetOrbit: boolean;
+
+    // area
+    defaultArea: boolean;
+    defaultAreaEdge: boolean;
+    cityArea: boolean;
+    cityAreaEdge: boolean;
 }
 
 export interface IZoomBasedOpacity {
     zoneBackground: number;
+    areaBackground: number;
 }

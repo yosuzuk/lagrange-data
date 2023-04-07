@@ -12,6 +12,25 @@ const MAX_DISTANCE = 1500;
 const zoomLevels: IZoomLevel[] = [
     {
         fromDistance: 0,
+        untilDistance: 5,
+        visibility: {
+            zoneBackground: false,
+            zoneLabel: false,
+            gameGrid: true,
+            planetLabel: true,
+            subPlanetOrbit: true,
+            defaultArea: true,
+            defaultAreaEdge: false,
+            cityArea: true,
+            cityAreaEdge: false,
+        },
+        opacity: {
+            zoneBackground: 0,
+            areaBackground: 0.03,
+        },
+    },
+    {
+        fromDistance: 5,
         untilDistance: 20,
         visibility: {
             zoneBackground: false,
@@ -19,9 +38,14 @@ const zoomLevels: IZoomLevel[] = [
             gameGrid: true,
             planetLabel: true,
             subPlanetOrbit: true,
+            defaultArea: true,
+            defaultAreaEdge: true,
+            cityArea: true,
+            cityAreaEdge: true,
         },
         opacity: {
             zoneBackground: 0,
+            areaBackground: 0.2,
         },
     },
     {
@@ -33,9 +57,14 @@ const zoomLevels: IZoomLevel[] = [
             gameGrid: false,
             planetLabel: true,
             subPlanetOrbit: true,
+            defaultArea: true,
+            defaultAreaEdge: true,
+            cityArea: true,
+            cityAreaEdge: true,
         },
         opacity: {
             zoneBackground: 0,
+            areaBackground: 0.2,
         },
     },
     {
@@ -47,9 +76,14 @@ const zoomLevels: IZoomLevel[] = [
             gameGrid: false,
             planetLabel: true,
             subPlanetOrbit: true,
+            defaultArea: false,
+            defaultAreaEdge: false,
+            cityArea: true,
+            cityAreaEdge: true,
         },
         opacity: {
             zoneBackground: 0.1,
+            areaBackground: 0.2,
         },
     },
     {
@@ -61,9 +95,14 @@ const zoomLevels: IZoomLevel[] = [
             gameGrid: false,
             planetLabel: false,
             subPlanetOrbit: false,
+            defaultArea: false,
+            defaultAreaEdge: false,
+            cityArea: false,
+            cityAreaEdge: false,
         },
         opacity: {
             zoneBackground: 0.4,
+            areaBackground: 0,
         },
     },
 ];
