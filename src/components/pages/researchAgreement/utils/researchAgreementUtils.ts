@@ -172,8 +172,18 @@ export function createResearchConfiguration(
         }
     });
 
-    const shipTypeChances: IShipTypeResearchChance[] = Object.values(ShipType).map(_shipType => {
-        const shipType = _shipType as ShipType;
+    const orderedShipTypes = [
+        ShipType.FIGHTER,
+        ShipType.CORVETTE,
+        ShipType.FRIGATE,
+        ShipType.DESTROYER,
+        ShipType.CRUISER,
+        ShipType.BATTLE_CRUISER,
+        ShipType.AUXILIARY,
+        ShipType.CARRIER,
+    ];
+
+    const shipTypeChances: IShipTypeResearchChance[] = orderedShipTypes.map(shipType => {
         return {
             shipType,
             chance: shipChances
