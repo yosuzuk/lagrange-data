@@ -12,7 +12,7 @@ const MAX_DISTANCE = 1500;
 const zoomLevels: IZoomLevel[] = [
     {
         fromDistance: 0,
-        untilDistance: 5,
+        untilDistance: 8,
         visibility: {
             zoneBackground: false,
             zoneLabel: false,
@@ -30,7 +30,7 @@ const zoomLevels: IZoomLevel[] = [
         },
     },
     {
-        fromDistance: 5,
+        fromDistance: 8,
         untilDistance: 20,
         visibility: {
             zoneBackground: false,

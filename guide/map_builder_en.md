@@ -106,7 +106,7 @@ $area
 <point><point> [<type>] [<color>] [<name>]
 ```
 
-You can place various types of areas after the `$area` keyword. "type" can be one of `city` or `default` if specified. It needs a point for the bottom left corner and a second point for the top right corner. Both points are automatically rounded to fit the area onto the grid.
+You can place various types of areas after the `$area` keyword. Each area needs two corner points. Both points are automatically rounded to fit the area onto the grid. "type" can be one of `city` or `default` if specified. Areas become visible at different zoom levels depending on their type.
 
 ## Player Bases
 

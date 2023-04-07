@@ -1,5 +1,3 @@
-import { useState, useCallback, useMemo, useEffect } from 'react';
-
 interface IProps {
     points: Float32Array;
     color: string;

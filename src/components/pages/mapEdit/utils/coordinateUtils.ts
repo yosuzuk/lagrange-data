@@ -1,4 +1,3 @@
-import { radiansToDegrees } from '../../../../utils/math';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 
 const GRID_SCALE = 0.1;
@@ -60,4 +59,16 @@ export function getGridPositionByAngleAndRadius(angle: number, radius: number): 
         Math.round(radius * Math.cos(angle)),
         Math.round(radius * Math.sin(angle)),
     ] as GridPosition;
+}
+
+export function snapToGrid(position: GridPosition): GridPosition {
+    const [x, y] = position;
+    const gameX = (x / GRID_SCALE);
+    const gameY = (y / GRID_SCALE);
+    const snappedGameX = Math.round(gameX / 10) * 10;
+    const snappedGameY = Math.round(gameY / 10) * 10;
+    return [
+        snappedGameX * GRID_SCALE,
+        snappedGameY * GRID_SCALE,
+    ];
 }
