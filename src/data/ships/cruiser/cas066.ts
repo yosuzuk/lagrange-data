@@ -247,6 +247,7 @@ export const cas066: IShipDefinition[] = [
         manufacturer: Manufacturer.DAWN_ACCORD,
         researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
+        researchTacticTypes: [],
         baseModelId: ShipId.CAS066_A,
         modules: [
             modules.static({
