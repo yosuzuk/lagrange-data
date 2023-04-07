@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useCursorControl } from '../context/CursorContext';
+import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { createMarkerImage } from '../utils/spriteUtils';
@@ -16,6 +17,7 @@ interface IProps {
 export const Marker = (props: IProps) => {
     const { position: gamePosition, gridPosition, color = 'white', label } = props;
     const { setCursorToPointer, setCursorToDefault } = useCursorControl();
+    const labelVisible = useZoomBasedVisibility('markerLabel');
 
     const position = useNormalizedPosition({
         gamePosition,
@@ -37,7 +39,7 @@ export const Marker = (props: IProps) => {
                 onPointerEnter={setCursorToPointer}
                 onPointerLeave={setCursorToDefault}
             />
-            {label && (
+            {label && labelVisible && (
                 <TextLabel
                     text={`${label}\n`}
                     color={color}

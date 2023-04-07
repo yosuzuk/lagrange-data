@@ -11,6 +11,7 @@ export interface IZoomBasedVisibility {
     gameGrid: boolean;
     planetLabel: boolean;
     subPlanetOrbit: boolean;
+    markerLabel: boolean;
 
     // area
     defaultArea: boolean;
