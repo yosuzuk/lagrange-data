@@ -1,25 +1,17 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
-import { IMapContent, IMarker, IParseMapContentError, IPlanet, IRegion } from '../types/IMapContent';
+import { GamePosition } from '../types/Coordinates';
+import { AreaType, IArea, IMapContent, IMarker, IParseMapContentError, IPlanet, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 
-/*
-Example:
-$marker
-(1000,2000)
-(1000,2020)
-(1020,2000) Gather here
-(1020,2020) Target
-(1040,2000) #R Red
-(1040,2020) #c00FF00 Hex Color
-*/
-
-const sectionKeywords = ['$marker', '$region', '$planet'];
+const sectionKeywords = ['$marker', '$region', '$planet', '$station', '$area'];
 
 export function parseMapContent(input: string): [IMapContent, IParseMapContentError | null] {
     const mapContent: IMapContent = {
         marker: [],
         regions: [],
         planets: [],
+        stations: [],
+        areas: [],
     };
     let parseError: IParseMapContentError | null = null;
 
@@ -72,6 +64,26 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
                 }
                 return;
             }
+            case '$station': {
+                const [station, error] = parseStationLine(trimmedLine, lineNumber);
+                if (station) {
+                    mapContent.stations.push(station);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
+            case '$area': {
+                const [area, error] = parseAreaLine(trimmedLine, lineNumber);
+                if (area) {
+                    mapContent.areas.push(area);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
         }
     });
 
@@ -82,21 +94,27 @@ const COORDINATE_REG_EXP = /\(\d+\,\d+\)/g;
 const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][ABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
+const STATION_TYPE_REG_EXP = /^(city|stronghold|default)\s/g;
+const AREA_TYPE_REG_EXP = /^(city|default)\s/g;
 
 function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IParseMapContentError | null] {
-    const coordinates = line.match(COORDINATE_REG_EXP);
-    if (!coordinates || coordinates.length === 0) {
-        return [null, null];
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
-    if (coordinates.length > 1) {
-        return [null, createParseMapContentError('Each marker needs to be a separate line', lineNumber)];
-    }
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutCoordinates, COLOR_REG_EXP, 0, 1);
 
-    const lineWithoutCoordinate = line.replace(COORDINATE_REG_EXP, '').trim();
-
-    const colors = lineWithoutCoordinate.match(COLOR_REG_EXP);
-    if (colors && colors.length > 1) {
+    if (colorError) {
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
@@ -104,38 +122,43 @@ function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IPa
         {
             id: `marker${lineNumber}`,
             position: coordinates[0],
-            color: (colors?.[0]) ? parseColor(colors[0].trim()) : 'white',
-            label: lineWithoutCoordinate.replace(COLOR_REG_EXP, '').trim(),
+            color: parseColor(colors[0], 'white'),
+            label: lineWithoutColors || null,
         },
         null,
     ];
 }
 
 function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IParseMapContentError | null] {
-    const coordinates = line.match(COORDINATE_REG_EXP);
-    if (!coordinates || coordinates.length === 0) {
-        return [null, null];
-    }
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 4, 4);
 
-    if (coordinates.length !== 4) {
+    if (coordinatesError) {
         return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
-    const lineWithoutCoordinate = line.replaceAll(COORDINATE_REG_EXP, '').trim() + ' ';
+    const {
+        error: regionNumbersError,
+        matches: regionNumbers,
+        line: lineWithoutRegionNumbers,
+    } = parseWithRegExp<string>(lineWithoutCoordinates, POSITIVE_NUMBER_REG_EXP, 1, 1);
 
-    const numbers = lineWithoutCoordinate.match(POSITIVE_NUMBER_REG_EXP);
-    if (!numbers || numbers.length !== 1) {
-        return [null, createParseMapContentError('Missing region number', lineNumber)];
+    if (regionNumbersError) {
+        return [null, createParseMapContentError('Invalid number of region numbers', lineNumber)];
     }
 
-    const lineWithoutRegionNumber = lineWithoutCoordinate.replace(POSITIVE_NUMBER_REG_EXP, '').trim() + ' ';
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutRegionNumbers, COLOR_REG_EXP, 0, 1);
 
-    const colors = lineWithoutRegionNumber.match(COLOR_REG_EXP);
-    if (colors && colors.length > 1) {
+    if (colorError) {
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
-
-    const lineWithoutColor = lineWithoutRegionNumber.replace(COLOR_REG_EXP, '').trim();
 
     return [
         {
@@ -144,31 +167,42 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             outerRadiusPoint: coordinates[1],
             angleStartPoint: coordinates[2],
             angleEndPoint: coordinates[3],
-            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#985036',
-            regionNumber: Number(numbers[0].trim()),
-            label: lineWithoutColor || null,
+            regionNumber: Number(regionNumbers[0]),
+            color: parseColor(colors[0], '#985036'),
+            label: lineWithoutColors || null,
         },
         null,
     ];
 }
 
 function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IParseMapContentError | null] {
-    const coordinates = line.match(COORDINATE_REG_EXP);
-    if (!coordinates || coordinates.length === 0) {
-        return [null, null];
-    }
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 2);
 
-    if (coordinates.length > 2) {
+    if (coordinatesError) {
         return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
-    const lineWithoutCoordinate = line.replace(COORDINATE_REG_EXP, '').trim();
+    const {
+        error: planetSizeError,
+        matches: planetSizes,
+        line: lineWithoutPlanetSizes,
+    } = parseWithRegExp<PlanetSize>(lineWithoutCoordinates, SIZE_REG_EXP, 0, 1);
 
-    const sizes = (lineWithoutCoordinate + ' ').match(SIZE_REG_EXP);
-    const lineWithoutSize = (lineWithoutCoordinate + ' ').replace(SIZE_REG_EXP, '').trim();
+    if (planetSizeError) {
+        return [null, createParseMapContentError('Invalid number of planet sizes', lineNumber)];
+    }
 
-    const colors = lineWithoutSize.match(COLOR_REG_EXP);
-    if (colors && colors.length > 1) {
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutPlanetSizes, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
@@ -177,15 +211,145 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
             id: `planet${lineNumber}`,
             position: coordinates[0],
             orbitCenter: coordinates[1],
-            size: (sizes?.[0]?.trim() as PlanetSize) ?? 'medium',
-            color: (colors?.[0]) ? parseColor(colors[0].trim()) : '#E3A06D',
-            name: lineWithoutSize.replace(COLOR_REG_EXP, '').trim(),
+            size: planetSizes[0] ?? 'medium',
+            color: parseColor(colors[0], '#E3A06D'),
+            name: lineWithoutColors || null,
         },
         null,
     ];
 }
 
-function parseColor(input: string): string {
+function parseStationLine(line: string, lineNumber: number): [IStation | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: stationTypeError,
+        matches: stationTypes,
+        line: lineWithoutStationTypes,
+    } = parseWithRegExp<AreaType>(lineWithoutCoordinates, STATION_TYPE_REG_EXP, 0, 1);
+
+    if (stationTypeError) {
+        return [null, createParseMapContentError('Invalid number of station types', lineNumber)];
+    }
+
+    const {
+        error: stationLevelError,
+        matches: stationlevels,
+        line: lineWithoutStationLevels,
+    } = parseWithRegExp<string>(lineWithoutStationTypes, POSITIVE_NUMBER_REG_EXP, 0, 1);
+
+    if (stationLevelError) {
+        return [null, createParseMapContentError('Invalid number of station levels', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutStationLevels, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `station${lineNumber}`,
+            type: stationTypes[0] ?? 'default',
+            position: coordinates[0],
+            level: Number(stationlevels[0]) || null,
+            color: parseColor(colors[0], '#E3A06D'),
+            name: lineWithoutColors || null,
+        },
+        null,
+    ];
+}
+
+function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 2, 2);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: areaTypeError,
+        matches: areaTypes,
+        line: lineWithoutAreaTypes,
+    } = parseWithRegExp<AreaType>(lineWithoutCoordinates, AREA_TYPE_REG_EXP, 0, 1);
+
+    if (areaTypeError) {
+        return [null, createParseMapContentError('Invalid number of area types', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutAreaTypes, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `area${lineNumber}`,
+            type: areaTypes[0] ?? 'default',
+            position1: coordinates[0],
+            position2: coordinates[1],
+            color: parseColor(colors[0], '#EDDC1C'),
+            name: lineWithoutColors || null,
+        },
+        null,
+    ];
+}
+
+interface IParseWithRegExpResult<TResult> {
+    error: boolean;
+    matches: TResult[];
+    line: string;
+}
+
+function parseWithRegExp<TResult = string>(line: string, regexp: RegExp, minCount: number, maxCount: number): IParseWithRegExpResult<TResult> {
+    const matches = (line + ' ').match(regexp);
+    if (matches && (matches.length < minCount || matches.length > maxCount)) {
+        return {
+            error: true,
+            matches: [],
+            line,
+        };
+    }
+
+    let remainingLine = line;
+    for (let i = 0; i < (matches?.length ?? 0); i++) {
+        remainingLine = (remainingLine + ' ').replace(regexp, '');
+    }
+
+    return {
+        error: false,
+        matches: matches?.map(m => m.trim() as TResult) ?? [],
+        line: remainingLine.trim()
+    };
+}
+
+function parseColor(input: string | undefined, defaultColor: string): string {
+    if (!input) {
+        return defaultColor;
+    }
+
     if (input.startsWith('#c')) {
         return `#${input.split('#c')[1]}`;
     }

@@ -92,10 +92,10 @@ Syntax:
 
 ```
 $station
-<point> <type> [<level>] [<color>] [<name>]
+<point> [<type>] [<level>] [<color>] [<name>]
 ```
 
-You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold`, `dock` or `trading`. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level. 
+You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level. 
 
 ## Areas
 
@@ -103,10 +103,10 @@ Syntax:
 
 ```
 $area
-<point><point> [<color>] [<name>]
+<point><point> [<type>] [<color>] [<name>]
 ```
 
-An area can be used to visualize city borders. It needs a point for the bottom left corner and another point for the top right corner. Both points are automatically rounded to fit the area onto the grid.
+You can place various types of areas after the `$area` keyword. "type" can be one of `city` or `default` if specified. It needs a point for the bottom left corner and a second point for the top right corner. Both points are automatically rounded to fit the area onto the grid.
 
 ## Player Bases
 

@@ -5,6 +5,8 @@ export interface IMapContent {
     marker: IMarker[];
     regions: IRegion[];
     planets: IPlanet[];
+    stations: IStation[];
+    areas: IArea[];
 }
 
 export interface IMarker {
@@ -28,10 +30,32 @@ export interface IRegion {
 export interface IPlanet {
     id: string;
     position: GamePosition;
-    orbitCenter?: GamePosition;
+    orbitCenter: GamePosition | null;
     size: PlanetSize;
     color: string;
-    name?: string;
+    name: string | null;
+}
+
+export type StationType = 'city' | 'stronghold' | 'default';
+
+export interface IStation {
+    id: string;
+    position: GamePosition;
+    type: StationType;
+    level: number | null;
+    color: string;
+    name: string | null;
+}
+
+export type AreaType = 'city' | 'default';
+
+export interface IArea {
+    id: string;
+    type: AreaType;
+    position1: GamePosition;
+    position2: GamePosition;
+    color: string;
+    name: string | null;
 }
 
 export interface IParseMapContentError {
