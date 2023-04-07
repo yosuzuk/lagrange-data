@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getRendeOrder } from '../utils/renderOrder';
-import { createTextImage } from '../utils/spriteUtils';
+import { createTextImage, applyMarginToImage } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
@@ -10,9 +10,13 @@ interface IProps {
     position?: GamePosition;
     gridPosition?: GridPosition;
     color?: string;
+    backgroundColor?: string;
     font?: string;
     fontSize?: number;
     lineSpacing?: number;
+    padding?: number;
+    marginTop?: number;
+    marginBottom?: number;
     faceCamera?: boolean;
     scale?: number;
 }
@@ -25,9 +29,13 @@ export const TextLabel = (props: IProps) => {
         position: gamePosition,
         gridPosition,
         color = 'white',
+        backgroundColor,
         font = 'Arial',
         fontSize = 12,
         lineSpacing = 4,
+        padding = 0,
+        marginTop = 0,
+        marginBottom = 0,
         faceCamera = false,
         scale = 1,
     } = props;
@@ -41,14 +49,26 @@ export const TextLabel = (props: IProps) => {
         if (text.trim().length === 0) {
             return null;
         }
-        return createTextImage({
+        const textImage = createTextImage({
             text,
             color,
+            backgroundColor,
             font,
             fontSize,
             lineSpacing,
+            padding,
         });
-    }, [text, color, font, fontSize, lineSpacing]);
+
+        if (marginTop > 0 || marginBottom > 0) {
+            return applyMarginToImage({
+                image: textImage,
+                marginTop,
+                marginBottom,
+            });
+        }
+
+        return textImage;
+    }, [text, color, backgroundColor, font, fontSize, lineSpacing, padding, marginTop, marginBottom]);
 
     if (!textImage) {
         console.log('skipped image');
