@@ -95,7 +95,9 @@ $station
 <point> [<type>] [<level>] [<color>] [<name>]
 ```
 
-You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level. 
+You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
+
+Player bases and platforms have their own dedicated keyword (`$base` and `$platform`). `$station` is mostly used for creating cities.
 
 ## Areas
 
@@ -110,6 +112,8 @@ $area
 
 You can place various types of areas after the `$area` keyword. Each area needs two corner points. Both points are automatically rounded to fit the area onto the grid. "type" can be one of `city` or `default` if specified. Areas become visible at different zoom levels depending on their type.
 
+You don't need `$area` for placing player bases and platform areas. Those are automatically placed when using the `$base` or `$platform` keyword. `$area` is mostly used for creating city areas.
+
 Example:
 
 ```
@@ -122,12 +126,16 @@ $area
 
 ## Player Bases
 
+![base example](assets/baseExample.jpg)
+
 Syntax:
 
 ```
 $base
 <point> [<color>] [<name>]
 ```
+
+You can place player bases after the `$base` keyword. The given point is automatically rounded to fit the base onto the grid. Bases are only visible at a certain zoom level.
 
 ## Player Outposts
 

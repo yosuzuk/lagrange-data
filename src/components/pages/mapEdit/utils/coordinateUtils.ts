@@ -10,12 +10,17 @@ export function normalizePosition(gamePosition: GamePosition | undefined, gridPo
     return gridPosition ?? (gamePosition ? toGridPosition(gamePosition, gridSize) : [0, 0]);
 }
 
-export function toGridPosition(gamePosition: GamePosition, gridSize: number): GridPosition {
+export function parseGamePosition(gamePosition: GamePosition): [number, number] {
     const x = Array.isArray(gamePosition) ? gamePosition[0] : Number(`${gamePosition}`.split(',')[0].replace('(', ''));
     const y = Array.isArray(gamePosition) ? gamePosition[1] : Number(`${gamePosition}`.split(',')[1].replace(')', ''));
     if (!Number.isFinite(x) || !Number.isFinite(y)) {
         throw new Error(`Invalid in-game coordinates: ${JSON.stringify(gamePosition)}`);
     }
+    return [x, y];
+}
+
+export function toGridPosition(gamePosition: GamePosition, gridSize: number): GridPosition {
+    const [x, y] = parseGamePosition(gamePosition);
 
     // 1000,3000 => -400,-100
 
@@ -71,4 +76,12 @@ export function snapToGrid(position: GridPosition): GridPosition {
         snappedGameX * GRID_SCALE,
         snappedGameY * GRID_SCALE,
     ];
+}
+
+export function snapGamePositionToGridCellCenter(position: GamePosition): [GamePosition, number, number] {
+    const [x, y] = parseGamePosition(position);
+    // snap to grid cell center, e.g. 1234 => 123,4 => 123 => 1230 => 1235
+    const snappedX = Math.floor(x * 0.1) * 10 + 5;
+    const snappedY = Math.floor(y * 0.1) * 10 + 5;
+    return [`(${snappedX},${snappedY})`, snappedX, snappedY];
 }

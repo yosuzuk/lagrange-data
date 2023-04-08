@@ -2,8 +2,14 @@ import { normalizeLineEndings } from '../../../../utils/stringUtils';
 import { GamePosition } from '../types/Coordinates';
 import { AreaType, IArea, IMapContent, IMarker, IParseMapContentError, IPlanet, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
+import { snapGamePositionToGridCellCenter } from './coordinateUtils';
 
-const sectionKeywords = ['$marker', '$region', '$planet', '$station', '$area'];
+const DEFAULT_REGION_COLOR = '#985036';
+const DEFAULT_PLANET_COLOR = '#E3A06D';
+const NEUTRAL_FACTION_COLOR = '#F7C360';
+const DEFAULT_PLAYER_COLOR = '#0077ff';
+
+const sectionKeywords = ['$marker', '$region', '$planet', '$station', '$area', '$base'];
 
 export function parseMapContent(input: string): [IMapContent, IParseMapContentError | null] {
     const mapContent: IMapContent = {
@@ -78,6 +84,17 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
                 const [area, error] = parseAreaLine(trimmedLine, lineNumber);
                 if (area) {
                     mapContent.areas.push(area);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
+            case '$base': {
+                const [area, station, error] = parsePlayerBaseLine(trimmedLine, lineNumber);
+                if (area && station) {
+                    mapContent.areas.push(area);
+                    mapContent.stations.push(station);
                 }
                 if (error) {
                     parseError = error;
@@ -168,7 +185,7 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             angleStartPoint: coordinates[2],
             angleEndPoint: coordinates[3],
             regionNumber: Number(regionNumbers[0]),
-            color: parseColor(colors[0], '#985036'),
+            color: parseColor(colors[0], DEFAULT_REGION_COLOR),
             label: lineWithoutColors || null,
         },
         null,
@@ -212,7 +229,7 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
             position: coordinates[0],
             orbitCenter: coordinates[1],
             size: planetSizes[0] ?? 'medium',
-            color: parseColor(colors[0], '#E3A06D'),
+            color: parseColor(colors[0], DEFAULT_PLANET_COLOR),
             name: lineWithoutColors || null,
         },
         null,
@@ -266,7 +283,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
             type: stationTypes[0] ?? 'default',
             position: coordinates[0],
             level: Number(stationlevels[0]) || null,
-            color: parseColor(colors[0], '#F7C360'),
+            color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
             name: lineWithoutColors || null,
         },
         null,
@@ -309,7 +326,50 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
             type: areaTypes[0] ?? 'default',
             position1: coordinates[0],
             position2: coordinates[1],
-            color: parseColor(colors[0], '#F7C360'),
+            color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
+        },
+        null,
+    ];
+}
+
+function parsePlayerBaseLine(line: string, lineNumber: number): [IArea | null, IStation | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+
+    if (coordinatesError) {
+        return [null, null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutCoordinates, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
+
+    return [
+        {
+            id: `area${lineNumber}`,
+            type: 'default',
+            position1: `(${x - 5},${y - 5})`,
+            position2: `(${x + 5},${y + 5})`,
+            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        },
+        {
+            id: `station${lineNumber}`,
+            type: 'base',
+            position: position,
+            level: null,
+            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+            name: lineWithoutColors || null,
         },
         null,
     ];

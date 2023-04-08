@@ -6,6 +6,7 @@ import { ExampleMap2 as Map } from './examples/ExampleMap2';
 // import { RegionExample as Map } from './examples/RegionExample';
 // import { PlanetExample as Map } from './examples/PlanetExample';
 // import { AreaExample as Map } from './examples/AreaExample';
+// import { BaseExample as Map } from './examples/BaseExample';
 
 export const LargeMapEditPage = () => {
     return (
