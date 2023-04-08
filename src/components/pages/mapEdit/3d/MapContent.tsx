@@ -2,6 +2,7 @@ import { IMapContent } from '../types/IMapContent';
 import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
+import { PlayerBase } from './PlayerBase';
 import { Region } from './Region';
 import { Station } from './Station';
 
@@ -44,6 +45,9 @@ export const MapContent = (props: IProps) => {
             ))}
             {mapContent.stations.map(station => (
                 <Station key={station.id} station={station} />
+            ))}
+            {mapContent.bases.map(base => (
+                <PlayerBase key={base.id} base={base} />
             ))}
         </>
     );

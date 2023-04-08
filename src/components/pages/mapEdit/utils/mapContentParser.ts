@@ -1,6 +1,6 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapContent, IMarker, IParseMapContentError, IPlanet, IRegion, IStation } from '../types/IMapContent';
+import { AreaType, IArea, IMapContent, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { snapGamePositionToGridCellCenter } from './coordinateUtils';
 
@@ -18,6 +18,7 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
         planets: [],
         stations: [],
         areas: [],
+        bases: [],
     };
     let parseError: IParseMapContentError | null = null;
 
@@ -91,10 +92,9 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
                 return;
             }
             case '$base': {
-                const [area, station, error] = parsePlayerBaseLine(trimmedLine, lineNumber);
-                if (area && station) {
-                    mapContent.areas.push(area);
-                    mapContent.stations.push(station);
+                const [base, error] = parsePlayerBaseLine(trimmedLine, lineNumber);
+                if (base) {
+                    mapContent.bases.push(base);
                 }
                 if (error) {
                     parseError = error;
@@ -332,7 +332,7 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
     ];
 }
 
-function parsePlayerBaseLine(line: string, lineNumber: number): [IArea | null, IStation | null, IParseMapContentError | null] {
+function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | null, IParseMapContentError | null] {
     const {
         error: coordinatesError,
         matches: coordinates,
@@ -340,7 +340,7 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IArea | null, I
     } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
 
     if (coordinatesError) {
-        return [null, null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
     const {
@@ -350,26 +350,32 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IArea | null, I
     } = parseWithRegExp(lineWithoutCoordinates, COLOR_REG_EXP, 0, 1);
 
     if (colorError) {
-        return [null, null, createParseMapContentError('Invalid number of colors', lineNumber)];
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
     const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
 
+    const area: IArea = {
+        id: `area${lineNumber}`,
+        type: 'default',
+        position1: `(${x - 5},${y - 5})`,
+        position2: `(${x + 5},${y + 5})`,
+        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+    };
+    const station: IStation = {
+        id: `station${lineNumber}`,
+        type: 'base',
+        position: position,
+        level: null,
+        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        name: lineWithoutColors || null,
+    };
+
     return [
         {
-            id: `area${lineNumber}`,
-            type: 'default',
-            position1: `(${x - 5},${y - 5})`,
-            position2: `(${x + 5},${y + 5})`,
-            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        },
-        {
-            id: `station${lineNumber}`,
-            type: 'base',
-            position: position,
-            level: null,
-            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-            name: lineWithoutColors || null,
+            id: `base${lineNumber}`,
+            station,
+            area,
         },
         null,
     ];

@@ -7,6 +7,7 @@ export interface IMapContent {
     planets: IPlanet[];
     stations: IStation[];
     areas: IArea[];
+    bases: IPlayerBase[];
 }
 
 export interface IMarker {
@@ -55,6 +56,12 @@ export interface IArea {
     position1: GamePosition;
     position2: GamePosition;
     color: string;
+}
+
+export interface IPlayerBase {
+    id: string;
+    station: IStation;
+    area: IArea;
 }
 
 export interface IParseMapContentError {
