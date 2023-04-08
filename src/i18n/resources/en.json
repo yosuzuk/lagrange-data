@@ -274,7 +274,9 @@
         "imageReady": "The image can be saved now. You can also right click the image or long press to open context menu for saving or copying to clipboard."
     },
     "mapEdit": {
-        "regionValue": "Region {{value}}"
+        "regionValue": "Region {{value}}",
+        "invalidUrl": "Please enter a valid URL",
+        "visualizeMap": "Visualize map"
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

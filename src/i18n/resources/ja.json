@@ -274,7 +274,9 @@
         "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
     "mapEdit": {
-        "regionValue": "区域{{value}}"
+        "regionValue": "区域{{value}}",
+        "invalidUrl": "有効なURLを入力してください",
+        "visualizeMap": "マップを表示"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

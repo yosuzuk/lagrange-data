@@ -1,11 +1,6 @@
 import { Suspense, lazy } from 'react';
-import {
-    HashRouter as Router,
-    Routes,
-    Route,
-    Navigate,
-    Outlet,
-} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query'
 import Typography from '@mui/material/Typography';
 import { LoadingIndicator } from './components/loading/LoadingIndicator';
 import { ShipDetailProvider } from './components/shipDetail/ShipDetailProvider';
@@ -24,182 +19,208 @@ const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSet
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
 const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const ImageEditPage = lazy(() => import('./components/pages/imageEdit/ImageEditPage'));
+const MapSelectionPage = lazy(() => import('./components/pages/mapEdit/MapSelectionPage'));
+const MapSelectedPage = lazy(() => import('./components/pages/mapEdit/MapSelectedPage'));
 const LargeMapEditPage = lazy(() => import('./components/pages/mapEdit/LargeMapEditPage'));
 const SmallMapEditPage = lazy(() => import('./components/pages/mapEdit/SmallMapEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
+const queryClient = new QueryClient();
+
 function App() {
     return (
         <Router>
-            <ThemeProvider>
-                <UserSettingsProvider>
-                    <ShipDetailProvider>
-                        <Routes>
-                            <Route
-                                path={routes.techFiles.routePath}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <BoxChancePage />
-                                    </Suspense>
-                                )}
-                            />
-                            <Route
-                                path={routes.researchAgreement.routePath}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <ResearchAgreementPage />
-                                    </Suspense>
-                                )}
-                            />
-                            <Route
-                                path={routes.shipData.routePath}
-                                element={(
-                                    <Outlet />
-                                )}
-                            >
+            <QueryClientProvider client={queryClient}>
+                <ThemeProvider>
+                    <UserSettingsProvider>
+                        <ShipDetailProvider>
+                            <Routes>
                                 <Route
-                                    index={true}
+                                    path={routes.techFiles.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
-                                            <ShipDataPage />
+                                            <BoxChancePage />
                                         </Suspense>
                                     )}
                                 />
                                 <Route
-                                    path={routes.shipDataById.routePath}
+                                    path={routes.researchAgreement.routePath}
                                     element={(
                                         <Suspense fallback={<LoadingIndicator />}>
-                                            <ShipDetailPage />
+                                            <ResearchAgreementPage />
                                         </Suspense>
                                     )}
                                 />
-                            </Route>
-                            <Route
-                                path={routes.myList.routePath}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <MyListPage />
-                                    </Suspense>
+                                <Route
+                                    path={routes.shipData.routePath}
+                                    element={(
+                                        <Outlet />
+                                    )}
+                                >
+                                    <Route
+                                        index={true}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <ShipDataPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                    <Route
+                                        path={routes.shipDataById.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <ShipDetailPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                </Route>
+                                <Route
+                                    path={routes.myList.routePath}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <MyListPage />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path={routes.myListEdit.routePath}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <MyListEditPage />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path={routes.fleetSetup.routePath}
+                                    element={(
+                                        <Outlet />
+                                    )}
+                                >
+                                    <Route
+                                        index={true}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <FleetSetupPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                    <Route
+                                        path={routes.fleetSetupByKey.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <FleetSetupPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                </Route>
+                                <Route
+                                    path={routes.fleetSetupEdit.routePath}
+                                    element={(
+                                        <Outlet />
+                                    )}
+                                >
+                                    <Route
+                                        index={true}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <FleetSetupEditPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                    <Route
+                                        path={routes.fleetSetupEditByKey.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <FleetSetupEditPage />
+                                            </Suspense>
+                                        )}
+                                    />
+                                </Route>
+                                {flags.dpmCalc && (
+                                    <Route
+                                        path={routes.dpmCalc.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <DpmCalcPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            />
-                            <Route
-                                path={routes.myListEdit.routePath}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <MyListEditPage />
-                                    </Suspense>
+                                {flags.imageEdit && (
+                                    <Route
+                                        path={routes.imageEdit.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <ImageEditPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            />
-                            <Route
-                                path={routes.fleetSetup.routePath}
-                                element={(
-                                    <Outlet />
+                                {flags.largeMapEdit && (
+                                    <Route
+                                        path={routes.mapSelection.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <MapSelectionPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            >
-                                <Route
-                                    index={true}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <FleetSetupPage />
-                                        </Suspense>
-                                    )}
-                                />
-                                <Route
-                                    path={routes.fleetSetupByKey.routePath}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <FleetSetupPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            </Route>
-                            <Route
-                                path={routes.fleetSetupEdit.routePath}
-                                element={(
-                                    <Outlet />
+                                {flags.largeMapEdit && (
+                                    <Route
+                                        path={routes.mapSelected.routePath}
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <MapSelectedPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            >
-                                <Route
-                                    index={true}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <FleetSetupEditPage />
-                                        </Suspense>
-                                    )}
-                                />
-                                <Route
-                                    path={routes.fleetSetupEditByKey.routePath}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <FleetSetupEditPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            </Route>
-                            {flags.dpmCalc && (
-                                <Route
-                                    path={routes.dpmCalc.routePath}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <DpmCalcPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            )}
-                            {flags.imageEdit && (
-                                <Route
-                                    path={routes.imageEdit.routePath}
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <ImageEditPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            )}
-                            {flags.largeMapEdit && (
-                                <Route
-                                    path="largeMapEdit"
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <LargeMapEditPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            )}
-                            {flags.smallMapEdit && (
-                                <Route
-                                    path="smallMapEdit"
-                                    element={(
-                                        <Suspense fallback={<LoadingIndicator />}>
-                                            <SmallMapEditPage />
-                                        </Suspense>
-                                    )}
-                                />
-                            )}
-                            <Route
-                                path={routes.debug.routePath}
-                                element={(
-                                    <Suspense fallback={<LoadingIndicator />}>
-                                        <TableExample />
-                                    </Suspense>
+                                {flags.largeMapEdit && (
+                                    <Route
+                                        path="largeMapEdit"
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <LargeMapEditPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            />
-                            <Route
-                                path="/"
-                                element={(
-                                    <Navigate replace={true} to={routes.techFiles.routePath} />
+                                {flags.smallMapEdit && (
+                                    <Route
+                                        path="smallMapEdit"
+                                        element={(
+                                            <Suspense fallback={<LoadingIndicator />}>
+                                                <SmallMapEditPage />
+                                            </Suspense>
+                                        )}
+                                    />
                                 )}
-                            />
-                            <Route
-                                path="*"
-                                element={(
-                                    <Typography variant="body1">{'Page not found'}</Typography>
-                                )}
-                            />
-                        </Routes>
-                    </ShipDetailProvider>
-                </UserSettingsProvider>
-            </ThemeProvider >
+                                <Route
+                                    path={routes.debug.routePath}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <TableExample />
+                                        </Suspense>
+                                    )}
+                                />
+                                <Route
+                                    path="/"
+                                    element={(
+                                        <Navigate replace={true} to={routes.techFiles.routePath} />
+                                    )}
+                                />
+                                <Route
+                                    path="*"
+                                    element={(
+                                        <Typography variant="body1">{'Page not found'}</Typography>
+                                    )}
+                                />
+                            </Routes>
+                        </ShipDetailProvider>
+                    </UserSettingsProvider>
+                </ThemeProvider >
+            </QueryClientProvider>
         </Router >
     );
 }
