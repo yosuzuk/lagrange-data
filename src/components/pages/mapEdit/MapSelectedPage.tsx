@@ -2,15 +2,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import Button from '@mui/material/Button';
 import { useMapContent } from './hooks/useMapContent';
 import { MapContent } from './3d/MapContent';
 import { WorldMap } from './3d/WorldMap';
 import { CursorProvider } from './context/CursorContext';
 import { ZoomLevelProvider } from './context/ZoomLevelContext';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
-import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
-import { t } from '../../../i18n';
+import { MapEditDialog } from './MapEditDialog';
 
 const MapSelectedPage = () => {
     const {
@@ -68,29 +66,12 @@ const MapSelectedPage = () => {
                 <button onClick={setEditMode}>Edit</button>
             </Box>
             {mode === 'edit' && (
-                <ResponsiveDialog
-                    maxWidth="md"
-                    content={(
-                        <>
-                            {parseError && (
-                                <Alert severity="error">
-                                    <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
-                                    {parseError.message}
-                                </Alert>
-                            )}
-                            <textarea value={input} onChange={e => setInput(e.target.value)} />
-                        </>
-                    )}
-                    actions={(
-                        <>
-                            <Button variant="outlined" onClick={cancelEditMode}>
-                                {t('button.cancel')}
-                            </Button>
-                            <Button variant="contained" onClick={applyInput}>
-                                {t('button.confirm')}
-                            </Button>
-                        </>
-                    )}
+                <MapEditDialog
+                    input={input}
+                    setInput={setInput}
+                    parseError={parseError}
+                    onCancel={cancelEditMode}
+                    onApply={applyInput}
                 />
             )}
         </>
