@@ -35,6 +35,7 @@ export const MapEditDialog = (props: IProps) => {
                 </Alert>
             )}
             maxWidth="md"
+            disableRestoreFocus={true}
             backgroundColor="rgba(0,0,0,0.1)"
             content={(
                 <Editor

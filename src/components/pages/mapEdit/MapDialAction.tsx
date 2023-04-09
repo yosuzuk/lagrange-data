@@ -1,0 +1,65 @@
+import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import { routes } from '../../../utils/routes';
+
+interface IProps {
+    onEdit: () => void;
+}
+
+export const MapDialAction = (props: IProps) => {
+    const { onEdit } = props;
+    const navigate = useNavigate();
+    const [open, setOpen] = useState<boolean>(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const handleClickEdit = useCallback(() => {
+        setOpen(false);
+        onEdit();
+    }, [onEdit]);
+
+    const handleClickExit = useCallback(() => {
+        navigate(routes.mapSelection.path);
+    }, [navigate]);
+
+    return (
+        <SpeedDial
+            ariaLabel='menu'
+            onClose={handleClose}
+            onOpen={handleOpen}
+            open={open}
+            sx={{
+                position: 'absolute',
+                bottom: '8px',
+                right: '8px',
+            }}
+            icon={(
+                <SpeedDialIcon />
+            )}
+            FabProps={{
+                sx: {
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                }
+            }}
+        >
+            <SpeedDialAction
+                icon={<EditIcon />}
+                onClick={handleClickEdit}
+                tooltipTitle={'Edit'}
+                tooltipOpen={true}
+            />
+            <SpeedDialAction
+                icon={<ExitToAppIcon />}
+                onClick={handleClickExit}
+                tooltipTitle={'Exit'}
+                tooltipOpen={true}
+            />
+        </SpeedDial>
+    );
+};

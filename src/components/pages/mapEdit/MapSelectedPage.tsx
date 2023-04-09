@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -9,6 +8,7 @@ import { CursorProvider } from './context/CursorContext';
 import { ZoomLevelProvider } from './context/ZoomLevelContext';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
+import { MapDialAction } from './MapDialAction';
 
 const MapSelectedPage = () => {
     const {
@@ -62,9 +62,7 @@ const MapSelectedPage = () => {
                     </WorldMap>
                 </ZoomLevelProvider>
             </CursorProvider>
-            <Box component="div" sx={{ position: 'absolute', right: '0' }}>
-                <button onClick={setEditMode}>Edit</button>
-            </Box>
+            <MapDialAction onEdit={setEditMode} />
             {mode === 'edit' && (
                 <MapEditDialog
                     input={input}
