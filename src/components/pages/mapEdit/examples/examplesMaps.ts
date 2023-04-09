@@ -1,3 +1,8 @@
+interface IExampleMap {
+    name: string;
+    url: string;
+}
+
 export function getExampleMaps() {
     return {
         fullMapExample: createExample('Full map', 'fullMap.txt'),
@@ -9,11 +14,14 @@ export function getExampleMaps() {
     } as const;
 }
 
-export function getMapTemplateUrl() {
-    return window.location.origin + window.location.pathname + 'assets/mapExamples/template.txt';
+export function getTemplateMaps(): IExampleMap[] {
+    return [
+        createExample('9000 x 9000', 'template9k.txt'),
+        createExample('10000 x 10000', 'template10k.txt'),
+    ]
 }
 
-function createExample(name: string, filename: string) {
+function createExample(name: string, filename: string): IExampleMap {
     return {
         name,
         url: window.location.origin + window.location.pathname + 'assets/mapExamples/' + filename,

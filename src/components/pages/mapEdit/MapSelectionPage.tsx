@@ -9,7 +9,7 @@ import { LoadMapFromUrl } from './LoadMapFromUrl';
 import { routes } from '../../../utils/routes';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { useMemo } from 'react';
-import { getExampleMaps, getMapTemplateUrl } from './examples/examplesMaps';
+import { getExampleMaps, getTemplateMaps } from './examples/examplesMaps';
 import { ScriptedLink } from '../../link/ScriptedLink';
 
 const MapSelectionPage = () => {
@@ -22,6 +22,7 @@ const MapSelectionPage = () => {
     };
 
     const examples = useMemo(() => Object.values(getExampleMaps()), []);
+    const templates = useMemo(() => getTemplateMaps(), []);
 
     return (
         <>
@@ -64,7 +65,13 @@ const MapSelectionPage = () => {
                                 id: 'empty',
                                 summary: 'Open empty map',
                                 details: (
-                                    <button onClick={() => navigateToMap(getMapTemplateUrl())}>TODO</button>
+                                    <Stack spacing={1}>
+                                        {templates.map(template => (
+                                            <ScriptedLink key={template.url} onClick={() => navigateToMap(template.url)}>
+                                                {template.name}
+                                            </ScriptedLink>
+                                        ))}
+                                    </Stack>
                                 ),
                                 initiallyOpened: false,
                             },
