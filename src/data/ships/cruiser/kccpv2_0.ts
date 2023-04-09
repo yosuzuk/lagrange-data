@@ -132,19 +132,18 @@ export const kccpv2_0: IShipDefinition[] = [
                 id: 'w1',
                 name: '速射パルス砲システム',
                 translatedName: {
-                    en: '',
+                    en: '', // TODO translate
                 },
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(12),
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(14.8),
-                    enhancements.reduceCooldown().withPercentageValue(14.8),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8),
-                    enhancements.increaseHitRateVsLarge().withPercentageValue(14.8),
-                    enhancements.increaseInterceptionChance().withPercentageValue(2),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseInterceptionChance().withPercentageValue(2).withCost(8),
                 ],
                 skillSlots: 6,
             }),
@@ -155,14 +154,13 @@ export const kccpv2_0: IShipDefinition[] = [
                     en: 'Generic Projectile Weapon System',
                 },
                 skills: [
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(14.8),
-                    enhancements.reduceCooldown().withPercentageValue(14.8),
-                    enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(6),
+                    enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(6),
                 ],
-                skillSlots: 4,
+                skillSlots: 5,
             }),
             modules.static({
                 id: 'w3',
@@ -177,9 +175,9 @@ export const kccpv2_0: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(14.8).withCost(3),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
-                    // TODO increaseLockOnEfficiency after update
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
                 ],
-                skillSlots: 4, // TODO 5 after update
+                skillSlots: 4,
             }),
             modules.commandSystem({
                 flagshipEffects: [
