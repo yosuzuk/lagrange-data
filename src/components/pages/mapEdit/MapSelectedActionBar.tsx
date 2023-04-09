@@ -16,7 +16,7 @@ export const MapSelectedActionBar = (props: IProps) => {
     const navigate = useNavigate();
 
     const navigateBack = () => {
-        navigate(routes.mapSelection.path);
+        navigate(routes.map.path);
     };
 
     return (

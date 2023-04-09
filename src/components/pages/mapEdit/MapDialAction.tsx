@@ -25,7 +25,7 @@ export const MapDialAction = (props: IProps) => {
     }, [onEdit]);
 
     const handleClickExit = useCallback(() => {
-        navigate(routes.mapSelection.path);
+        navigate(routes.map.path);
     }, [navigate]);
 
     return (

@@ -45,7 +45,7 @@ export const routes = {
     myListEdit: createRouteDefinition('myList/edit'),
     dpmCalc: createRouteDefinition('dpmCalc'),
     imageEdit: createRouteDefinition('imageEdit'),
-    mapSelection: createRouteDefinition('map'),
+    map: createRouteDefinition('map'),
     mapSelected: createParameterizedRouteDefinition<IMapSelectedParams>('map/selected'),
     debug: createRouteDefinition('debug'),
 } as const;

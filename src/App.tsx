@@ -21,7 +21,6 @@ const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const ImageEditPage = lazy(() => import('./components/pages/imageEdit/ImageEditPage'));
 const MapSelectionPage = lazy(() => import('./components/pages/mapEdit/MapSelectionPage'));
 const MapSelectedPage = lazy(() => import('./components/pages/mapEdit/MapSelectedPage'));
-const SmallMapEditPage = lazy(() => import('./components/pages/mapEdit/SmallMapEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
 const queryClient = new QueryClient();
@@ -157,7 +156,7 @@ function App() {
                                 )}
                                 {flags.largeMapEdit && (
                                     <Route
-                                        path={routes.mapSelection.routePath}
+                                        path={routes.map.routePath}
                                         element={(
                                             <Suspense fallback={<LoadingIndicator />}>
                                                 <MapSelectionPage />
@@ -171,16 +170,6 @@ function App() {
                                         element={(
                                             <Suspense fallback={<LoadingIndicator />}>
                                                 <MapSelectedPage />
-                                            </Suspense>
-                                        )}
-                                    />
-                                )}
-                                {flags.smallMapEdit && (
-                                    <Route
-                                        path="smallMapEdit"
-                                        element={(
-                                            <Suspense fallback={<LoadingIndicator />}>
-                                                <SmallMapEditPage />
                                             </Suspense>
                                         )}
                                     />

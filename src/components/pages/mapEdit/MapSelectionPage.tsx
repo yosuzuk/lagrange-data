@@ -26,7 +26,7 @@ const MapSelectionPage = () => {
 
     return (
         <>
-            <NavigationBar currentRoute={routes.mapSelection.path} />
+            <NavigationBar currentRoute={routes.map.path} />
             <PageContent>
                 <Box component="div" p={1}>
                     {/*<Stack pt={1} pb={2} spacing={2}>
