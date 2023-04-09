@@ -8,10 +8,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Breakpoint, useTheme } from '@mui/material/styles';
 
 export interface IProps {
-    title: ReactNode;
+    title?: ReactNode;
     content: ReactNode;
     actions?: ReactNode;
-    onClose: () => void;
+    onClose?: () => void;
     maxWidth?: Breakpoint | false;
 }
 
@@ -28,7 +28,9 @@ export const ResponsiveDialog = (props: IProps) => {
             onClose={onClose}
             open={true}
         >
-            <DialogTitle>{title}</DialogTitle>
+            {title && (
+                <DialogTitle>{title}</DialogTitle>
+            )}
             <Divider />
             <DialogContent>
                 {content}

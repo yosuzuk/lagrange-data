@@ -2,19 +2,17 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { routes } from '../../../utils/routes';
-import { NavigationBar } from '../../navigation/NavigationBar';
-import { PageContent } from '../../pageStructure/PageContent';
-import { MapSelectedActionBar } from './MapSelectedActionBar';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import { PageFooter } from '../../pageStructure/PageFooter';
+import Button from '@mui/material/Button';
 import { useMapContent } from './hooks/useMapContent';
 import { MapContent } from './3d/MapContent';
 import { WorldMap } from './3d/WorldMap';
 import { CursorProvider } from './context/CursorContext';
 import { ZoomLevelProvider } from './context/ZoomLevelContext';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
+import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
+import { t } from '../../../i18n';
 
 const MapSelectedPage = () => {
     const {
@@ -25,48 +23,31 @@ const MapSelectedPage = () => {
         mapContent,
         parseError,
         setEditMode,
+        cancelEditMode,
         setInput,
         applyInput,
     } = useMapContent();
 
-    if (mode === 'edit') {
+    if (!mapUrl) {
         return (
-            <>
-                <NavigationBar currentRoute={routes.mapSelected.path} />
-                <MapSelectedActionBar onApply={applyInput} canApply={queryResult.isSuccess} />
-                <PageContent>
-                    <Box component="div" p={1}>
-                        {parseError && (
-                            <Alert severity="error">
-                                <AlertTitle>{`Syntax error in line ${parseError.line}`}</AlertTitle>
-                                {parseError.message}
-                            </Alert>
-                        )}
-                        {(!mapUrl) && (
-                            <Alert severity="error">
-                                <AlertTitle>{'Invalid map'}</AlertTitle>
-                            </Alert>
-                        )}
-                        {queryResult.isLoading && (
-                            <Typography variant="body2">{'Loading...'}</Typography>
-                        )}
-                        {queryResult.isError && (
-                            <Alert severity="error">
-                                <AlertTitle>{'Error'}</AlertTitle>
-                                {`${queryResult.error}`}
-                            </Alert>
-                        )}
-                        {queryResult.isSuccess && (
-                            <Paper>
-                                <Stack p={1} spacing={2}>
-                                    <textarea value={input} onChange={e => setInput(e.target.value)} />
-                                </Stack>
-                            </Paper>
-                        )}
-                    </Box>
-                </PageContent>
-                <PageFooter />
-            </>
+            <Alert severity="error">
+                <AlertTitle>{'Invalid map'}</AlertTitle>
+            </Alert>
+        );
+    }
+
+    if (queryResult.isLoading) {
+        return (
+            <Typography variant="body2">{'Loading...'}</Typography>
+        );
+    }
+
+    if (queryResult.isError) {
+        return (
+            <Alert severity="error">
+                <AlertTitle>{'Error'}</AlertTitle>
+                {`${queryResult.error}`}
+            </Alert>
         );
     }
 
@@ -86,8 +67,34 @@ const MapSelectedPage = () => {
                 </ZoomLevelProvider>
             </CursorProvider>
             <Box component="div" sx={{ position: 'absolute', right: '0' }}>
-                <button onClick={setEditMode}>Back</button>
+                <button onClick={setEditMode}>Edit</button>
             </Box>
+            {mode === 'edit' && (
+                <ResponsiveDialog
+                    maxWidth="md"
+                    content={(
+                        <>
+                            {parseError && (
+                                <Alert severity="error">
+                                    <AlertTitle>{`Syntax error in line ${parseError.line}`}</AlertTitle>
+                                    {parseError.message}
+                                </Alert>
+                            )}
+                            <textarea value={input} onChange={e => setInput(e.target.value)} />
+                        </>
+                    )}
+                    actions={(
+                        <>
+                            <Button variant="outlined" onClick={cancelEditMode}>
+                                {t('button.cancel')}
+                            </Button>
+                            <Button variant="contained" onClick={applyInput}>
+                                {t('button.confirm')}
+                            </Button>
+                        </>
+                    )}
+                />
+            )}
         </>
     );
 };

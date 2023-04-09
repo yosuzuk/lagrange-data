@@ -16,6 +16,7 @@ interface IHookResult {
     mapContent: IMapContent | null;
     parseError: IParseMapContentError | null;
     setEditMode: () => void;
+    cancelEditMode: () => void;
     setInput: (input: string) => void;
     applyInput: () => void;
 }
@@ -29,6 +30,7 @@ export const useMapContent = (): IHookResult => {
     const [mode, setMode] = useState<Mode>('view');
     const [input, setInput] = useState<string>('');
     const [lastValidMapContent, setLastValidMapContent] = useState<IMapContent | null>(null);
+    const [lastValidInput, setLastValidInput] = useState<string>('');
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
 
     // update query parameter
@@ -54,6 +56,7 @@ export const useMapContent = (): IHookResult => {
                     setMode('edit');
                     return;
                 }
+                setLastValidInput(queryResult.data);
                 setLastValidMapContent(mapContent);
                 return;
             }
@@ -69,6 +72,7 @@ export const useMapContent = (): IHookResult => {
             return;
         }
         setParseError(null);
+        setLastValidInput(input);
         setLastValidMapContent(mapContent);
         setMode('view');
     }, [input]);
@@ -76,6 +80,12 @@ export const useMapContent = (): IHookResult => {
     const setEditMode = useCallback(() => {
         setMode('edit');
     }, []);
+
+    const cancelEditMode = useCallback(() => {
+        setParseError(null);
+        setInput(lastValidInput);
+        setMode('view');
+    }, [lastValidInput]);
 
     return {
         mode,
@@ -85,6 +95,7 @@ export const useMapContent = (): IHookResult => {
         mapContent: lastValidMapContent,
         parseError,
         setEditMode,
+        cancelEditMode,
         setInput,
         applyInput,
     };
