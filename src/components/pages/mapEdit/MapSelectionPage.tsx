@@ -29,14 +29,14 @@ const MapSelectionPage = () => {
             <NavigationBar currentRoute={routes.mapSelection.path} />
             <PageContent>
                 <Box component="div" p={1}>
-                    <Stack pt={1} pb={2} spacing={2}>
+                    {/*<Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
                             {'TODO text'}
                         </Typography>
                         <Typography variant="body2">
                             {'TODO text'}
                         </Typography>
-                    </Stack>
+                    </Stack>*/}
                     <ExpandStack
                         expandables={[
                             {
@@ -71,6 +71,7 @@ const MapSelectionPage = () => {
                                                 {template.name}
                                             </ScriptedLink>
                                         ))}
+                                        <Typography variant="body2" color="text.secondary">{'(size can be adjusted)'}</Typography>
                                     </Stack>
                                 ),
                                 initiallyOpened: false,

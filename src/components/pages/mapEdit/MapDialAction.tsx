@@ -49,13 +49,23 @@ export const MapDialAction = (props: IProps) => {
             }}
         >
             <SpeedDialAction
-                icon={<EditIcon />}
+                icon={<EditIcon color="primary" />}
+                FabProps={{
+                    sx: {
+                        border: '1px solid lightgrey',
+                    },
+                }}
                 onClick={handleClickEdit}
                 tooltipTitle={'Edit'}
                 tooltipOpen={true}
             />
             <SpeedDialAction
-                icon={<ExitToAppIcon />}
+                icon={<ExitToAppIcon color="primary" />}
+                FabProps={{
+                    sx: {
+                        border: '1px solid lightgrey',
+                    },
+                }}
                 onClick={handleClickExit}
                 tooltipTitle={'Exit'}
                 tooltipOpen={true}
