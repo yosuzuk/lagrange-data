@@ -2,6 +2,17 @@
 
 The map builder uses a similar syntax to the in-game chat and mail. This allows us to easily copy & paste content into both directions.
 
+## Star system properties
+
+Syntax:
+
+```
+$system
+<point><point>[point] [name]
+```
+
+Basic properties for the star system are defined after the `$system` keyword. Two corner points are required to specify the edges of the star system. An optional third point can be specified to mark the center of the map, where the sun is being placed. The name is optional. 
+
 ## Marker
 
 ![marker example](assets/markerExample.jpg)

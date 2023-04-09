@@ -1,4 +1,4 @@
-import { IMapContent } from '../types/IMapContent';
+import { IMap } from '../types/IMapContent';
 import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
@@ -7,7 +7,7 @@ import { Region } from './Region';
 import { Station } from './Station';
 
 interface IProps {
-    mapContent: IMapContent;
+    mapContent: IMap;
 }
 
 export const MapContent = (props: IProps) => {

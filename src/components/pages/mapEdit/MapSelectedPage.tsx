@@ -1,6 +1,4 @@
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -76,7 +74,7 @@ const MapSelectedPage = () => {
                         <>
                             {parseError && (
                                 <Alert severity="error">
-                                    <AlertTitle>{`Syntax error in line ${parseError.line}`}</AlertTitle>
+                                    <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
                                     {parseError.message}
                                 </Alert>
                             )}

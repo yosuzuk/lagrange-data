@@ -276,7 +276,8 @@
     "mapEdit": {
         "regionValue": "Region {{value}}",
         "invalidUrl": "Please enter a valid URL",
-        "visualizeMap": "Visualize map"
+        "visualizeMap": "Visualize map",
+        "syntaxErrorInLine": "Syntax error in line {{value}}"
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

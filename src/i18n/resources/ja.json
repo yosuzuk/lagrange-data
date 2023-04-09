@@ -276,7 +276,8 @@
     "mapEdit": {
         "regionValue": "区域{{value}}",
         "invalidUrl": "有効なURLを入力してください",
-        "visualizeMap": "マップを表示"
+        "visualizeMap": "マップを表示",
+        "syntaxErrorInLine": "構文エラー（ライン：{{value}}）"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

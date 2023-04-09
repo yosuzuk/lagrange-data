@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { UseQueryResult } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
 import { routes } from '../../../../utils/routes';
-import { IMapContent, IParseMapContentError } from '../types/IMapContent';
+import { IMap, IParseMapContentError } from '../types/IMapContent';
 import { parseMapContent } from '../utils/mapContentParser';
 import { useQueryMapData } from './useQueryMapData';
 
@@ -13,7 +13,7 @@ interface IHookResult {
     mapUrl: string | null;
     queryResult: UseQueryResult<string | null, unknown>;
     input: string;
-    mapContent: IMapContent | null;
+    mapContent: IMap | null;
     parseError: IParseMapContentError | null;
     setEditMode: () => void;
     cancelEditMode: () => void;
@@ -29,7 +29,7 @@ export const useMapContent = (): IHookResult => {
 
     const [mode, setMode] = useState<Mode>('view');
     const [input, setInput] = useState<string>('');
-    const [lastValidMapContent, setLastValidMapContent] = useState<IMapContent | null>(null);
+    const [lastValidMapContent, setLastValidMapContent] = useState<IMap | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
 

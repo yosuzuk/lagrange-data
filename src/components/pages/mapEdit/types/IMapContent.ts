@@ -1,18 +1,21 @@
 import { GamePosition } from './Coordinates';
 import { PlanetSize } from './PlanetSize';
 
-export interface IParseMapResult {
-    mapContent: IMapContent | null;
-    parseError: IParseMapContentError | null;
-}
-
-export interface IMapContent {
+export interface IMap {
+    system: IStarSystem | null;
     marker: IMarker[];
     regions: IRegion[];
     planets: IPlanet[];
     stations: IStation[];
     areas: IArea[];
     bases: IPlayerBase[];
+}
+
+export interface IStarSystem {
+    startPoint: GamePosition | null;
+    endPoint: GamePosition | null;
+    centerPoint: GamePosition | null;
+    name: string | null;
 }
 
 export interface IMarker {

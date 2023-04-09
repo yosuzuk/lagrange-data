@@ -1,6 +1,6 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapContent, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
+import { AreaType, IArea, IMap, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { snapGamePositionToGridCellCenter } from './coordinateUtils';
 
@@ -9,10 +9,11 @@ const DEFAULT_PLANET_COLOR = '#E3A06D';
 const NEUTRAL_FACTION_COLOR = '#F7C360';
 const DEFAULT_PLAYER_COLOR = '#0077ff';
 
-const sectionKeywords = ['$marker', '$region', '$planet', '$station', '$area', '$base'];
+const sectionKeywords = ['$system', '$marker', '$region', '$planet', '$station', '$area', '$base'];
 
-export function parseMapContent(input: string): [IMapContent, IParseMapContentError | null] {
-    const mapContent: IMapContent = {
+export function parseMapContent(input: string): [IMap, IParseMapContentError | null] {
+    const mapContent: IMap = {
+        system: null,
         marker: [],
         regions: [],
         planets: [],
@@ -41,6 +42,10 @@ export function parseMapContent(input: string): [IMapContent, IParseMapContentEr
         }
 
         switch (currentSection) {
+            case '$system': {
+                // TODO implement
+                return;
+            }
             case '$marker': {
                 const [marker, error] = parseMarkerLine(trimmedLine, lineNumber);
                 if (marker) {
