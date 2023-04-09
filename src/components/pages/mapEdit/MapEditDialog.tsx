@@ -1,11 +1,12 @@
 import { CSSProperties } from 'react';
+import Editor from 'react-simple-code-editor';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { IParseMapContentError } from './types/IMapContent';
 import { t } from '../../../i18n';
+import { hightlightCode } from './utils/hightlightCode';
 
 interface IProps {
     input: string;
@@ -27,22 +28,26 @@ export const MapEditDialog = (props: IProps) => {
 
     return (
         <ResponsiveDialog
+            title={parseError && (
+                <Alert severity="error">
+                    <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
+                    {parseError.message}
+                </Alert>
+            )}
             maxWidth="md"
             backgroundColor="rgba(0,0,0,0.1)"
             content={(
-                <Stack spacing={1}>
-                    {parseError && (
-                        <Alert severity="error">
-                            <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
-                            {parseError.message}
-                        </Alert>
-                    )}
-                    <textarea
-                        value={input}
-                        style={textAreaStyles}
-                        onChange={e => setInput(e.target.value)}
-                    />
-                </Stack>
+                <Editor
+                    value={input}
+                    onValueChange={code => setInput(code)}
+                    highlight={hightlightCode}
+                    padding={10}
+                    style={{
+                        fontFamily: '"Fira code", "Fira Mono", monospace',
+                        fontSize: 12,
+                        backgroundColor: 'rgba(0,0,0,0.75)'
+                    }}
+                />
             )}
             actions={(
                 <>

@@ -23,6 +23,8 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.10.0",
     "react-query": "3.39.3",
+    "react-simple-code-editor": "0.13.1",
+    "react-string-replace": "1.1.0",
     "recharts": "2.1.14",
     "three": "0.150.1"
   },

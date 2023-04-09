@@ -1,15 +1,13 @@
-import { normalizeLineEndings } from '../../../../utils/stringUtils';
 import { GamePosition } from '../types/Coordinates';
 import { AreaType, IArea, IMap, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
+import { parseLines, removeComment, sectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter } from './coordinateUtils';
 
 const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
 const NEUTRAL_FACTION_COLOR = '#F7C360';
 const DEFAULT_PLAYER_COLOR = '#0077ff';
-
-const sectionKeywords = ['$system', '$marker', '$region', '$planet', '$station', '$area', '$base'];
 
 export function parseMapContent(input: string): [IMap, IParseMapContentError | null] {
     const mapContent: IMap = {
@@ -444,12 +442,4 @@ function createParseMapContentError(message: string, line: number) {
         message,
         line,
     };
-}
-
-function parseLines(input: string): string[] {
-    return normalizeLineEndings(input, '\n').split('\n').map(line => line.trim());
-}
-
-function removeComment(input: string): string {
-    return input.split('//')[0].trim();
 }
