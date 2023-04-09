@@ -1,17 +1,21 @@
 # Map Builder Syntax
 
-The map builder uses a similar syntax to the in-game chat and mail. This allows us to easily copy & paste content into both directions.
+The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. This allows us to quickly build a map by copy and paste. 
 
-## Star system properties
+Colors are indicated using escape codes like `#R` or `#cFF0000` (more details below). 
+
+There are special keywords for placing map content (e.g. `$marker` for placing marker points). Any line after such a keyword belongs to the same content type. You don't have to repeat these keywords for every line of content.
+
+## Basic map properties
 
 Syntax:
 
 ```
-$system
-<point><point>[point] [name]
+$name <name>
+$size <size>
 ```
 
-Basic properties for the star system are defined after the `$system` keyword. Two corner points are required to specify the edges of the star system. An optional third point can be specified to mark the center of the map, where the sun is being placed. The name is optional. 
+Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. A sun will be placed at the center point, with the given "name" as label if specified.
 
 ## Marker
 

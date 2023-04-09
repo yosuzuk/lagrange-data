@@ -14,15 +14,17 @@ import { MapGrid } from './MapGrid';
 import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
-    systemName: string;
-    size: number;
+    systemName: string | null;
+    size: number | null;
     children: ReactNode;
     empty?: boolean;
 }
 
+const DEFAULT_MAP_SIZE = 10000;
+
 export const WorldMap = (props: IProps) => {
     const { systemName, size, children, empty } = props;
-    const gridSize = translateSizeToGrid(size);
+    const gridSize = translateSizeToGrid(size ?? DEFAULT_MAP_SIZE);
     const [debug, setDebug] = useState<boolean>(false);
 
     const camera = useMemo(() => {
@@ -64,13 +66,15 @@ export const WorldMap = (props: IProps) => {
                                 <MapBorders />
                                 <MapGrid />
                                 <Sun />
-                                <WorldLabel worldName={systemName} />
+                                {systemName && (
+                                    <WorldLabel worldName={systemName} />
+                                )}
                             </>
                         )}
                         {children}
                         <CameraControls />
                     </Canvas>
-                </ThreeCanvasContainer >
+                </ThreeCanvasContainer>
             </GridSizeProvider >
         </DebugProvider >
     );

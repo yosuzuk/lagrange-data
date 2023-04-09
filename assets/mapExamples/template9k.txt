@@ -1,3 +1,6 @@
-$system
-(0,0)(9000,9000)(4500,4500) My Star System
+$name My Star System
+$size 9000
 
+$marker (0,0)
+$marker (4500,4500)
+$marker (9000,9000)

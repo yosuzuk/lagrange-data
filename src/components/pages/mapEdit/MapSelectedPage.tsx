@@ -9,6 +9,7 @@ import { ZoomLevelProvider } from './context/ZoomLevelContext';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
 import { MapDialAction } from './MapDialAction';
+import { t } from '../../../i18n';
 
 const MapSelectedPage = () => {
     const {
@@ -47,6 +48,15 @@ const MapSelectedPage = () => {
         );
     }
 
+    if (!mapContent && parseError) {
+        return (
+            <Alert severity="error">
+                <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
+                {parseError.message}
+            </Alert>
+        )
+    }
+
     if (!mapContent) {
         return (
             <LoadingIndicator />
@@ -57,13 +67,13 @@ const MapSelectedPage = () => {
         <>
             <CursorProvider>
                 <ZoomLevelProvider>
-                    <WorldMap systemName="My Star System" size={9000}>
+                    <WorldMap systemName={mapContent.name} size={mapContent.size}>
                         <MapContent mapContent={mapContent} />
                     </WorldMap>
                 </ZoomLevelProvider>
             </CursorProvider>
             <MapDialAction onEdit={setEditMode} />
-            {mode === 'edit' && (
+            {(mode === 'edit') && (
                 <MapEditDialog
                     input={input}
                     setInput={setInput}

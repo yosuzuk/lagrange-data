@@ -11,7 +11,8 @@ const DEFAULT_PLAYER_COLOR = '#0077ff';
 
 export function parseMapContent(input: string): [IMap, IParseMapContentError | null] {
     const mapContent: IMap = {
-        system: null,
+        name: null,
+        size: null,
         marker: [],
         regions: [],
         planets: [],
@@ -28,20 +29,34 @@ export function parseMapContent(input: string): [IMap, IParseMapContentError | n
         }
 
         const lineNumber = index + 1;
-        const trimmedLine = removeComment(line);
+        let trimmedLine = removeComment(line);
 
         if (trimmedLine.length === 0) {
             return;
         }
 
-        if (sectionKeywords.includes(trimmedLine)) {
-            currentSection = line;
-            return;
+        const keywordHit = sectionKeywords.find(keyword => trimmedLine === keyword || trimmedLine.startsWith(keyword + ' '));
+        if (keywordHit) {
+            currentSection = keywordHit;
+            trimmedLine = trimmedLine.substring(keywordHit.length).trim();
+            if (trimmedLine.length === 0) {
+                return;
+            }
         }
 
         switch (currentSection) {
-            case '$system': {
-                // TODO implement
+            case '$name': {
+                mapContent.name = trimmedLine;
+                return;
+            }
+            case '$size': {
+                const [size, error] = parseGridSizeLine(trimmedLine, lineNumber);
+                if (size) {
+                    mapContent.size = size;
+                }
+                if (error) {
+                    parseError = error;
+                }
                 return;
             }
             case '$marker': {
@@ -117,6 +132,22 @@ const SIZE_REG_EXP = /^(large|medium|small)\s/g;
 const STATION_TYPE_REG_EXP = /^(city|stronghold|base|default)\s/g;
 const AREA_TYPE_REG_EXP = /^(city|default)\s/g;
 
+function parseGridSizeLine(line: string, lineNumber: number): [number | null, IParseMapContentError | null] {
+    const {
+        error: mapSizeError,
+        matches: numbers,
+    } = parseWithRegExp<string>(line, POSITIVE_NUMBER_REG_EXP, 1, 1);
+
+    if (mapSizeError) {
+        return [null, createParseMapContentError('Invalid size', lineNumber)];
+    }
+
+    return [
+        Number(numbers[0]),
+        null,
+    ];
+}
+
 function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IParseMapContentError | null] {
     const {
         error: coordinatesError,
@@ -141,6 +172,8 @@ function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IPa
     return [
         {
             id: `marker${lineNumber}`,
+            contentType: 'marker',
+            lineNumber,
             position: coordinates[0],
             color: parseColor(colors[0], 'white'),
             label: lineWithoutColors || null,
@@ -183,6 +216,8 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
     return [
         {
             id: `region${lineNumber}`,
+            contentType: 'region',
+            lineNumber,
             innerRadiusPoint: coordinates[0],
             outerRadiusPoint: coordinates[1],
             angleStartPoint: coordinates[2],
@@ -229,6 +264,8 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
     return [
         {
             id: `planet${lineNumber}`,
+            contentType: 'planet',
+            lineNumber,
             position: coordinates[0],
             orbitCenter: coordinates[1],
             size: planetSizes[0] ?? 'medium',
@@ -283,6 +320,8 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
     return [
         {
             id: `station${lineNumber}`,
+            contentType: 'station',
+            lineNumber,
             type: stationTypes[0] ?? 'default',
             position: coordinates[0],
             level: Number(stationlevels[0]) || null,
@@ -326,6 +365,8 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
     return [
         {
             id: `area${lineNumber}`,
+            contentType: 'area',
+            lineNumber,
             type: areaTypes[0] ?? 'default',
             position1: coordinates[0],
             position2: coordinates[1],
@@ -360,6 +401,8 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
 
     const area: IArea = {
         id: `area${lineNumber}`,
+        contentType: 'area',
+        lineNumber,
         type: 'default',
         position1: `(${x - 5},${y - 5})`,
         position2: `(${x + 5},${y + 5})`,
@@ -367,6 +410,8 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
     };
     const station: IStation = {
         id: `station${lineNumber}`,
+        contentType: 'station',
+        lineNumber,
         type: 'base',
         position: position,
         level: null,
@@ -377,6 +422,8 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
     return [
         {
             id: `base${lineNumber}`,
+            contentType: 'base',
+            lineNumber,
             station,
             area,
         },
