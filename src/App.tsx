@@ -21,7 +21,6 @@ const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
 const ImageEditPage = lazy(() => import('./components/pages/imageEdit/ImageEditPage'));
 const MapSelectionPage = lazy(() => import('./components/pages/mapEdit/MapSelectionPage'));
 const MapSelectedPage = lazy(() => import('./components/pages/mapEdit/MapSelectedPage'));
-const LargeMapEditPage = lazy(() => import('./components/pages/mapEdit/LargeMapEditPage'));
 const SmallMapEditPage = lazy(() => import('./components/pages/mapEdit/SmallMapEditPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
@@ -172,16 +171,6 @@ function App() {
                                         element={(
                                             <Suspense fallback={<LoadingIndicator />}>
                                                 <MapSelectedPage />
-                                            </Suspense>
-                                        )}
-                                    />
-                                )}
-                                {flags.largeMapEdit && (
-                                    <Route
-                                        path="largeMapEdit"
-                                        element={(
-                                            <Suspense fallback={<LoadingIndicator />}>
-                                                <LargeMapEditPage />
                                             </Suspense>
                                         )}
                                     />

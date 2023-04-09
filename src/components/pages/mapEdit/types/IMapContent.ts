@@ -1,6 +1,11 @@
 import { GamePosition } from './Coordinates';
 import { PlanetSize } from './PlanetSize';
 
+export interface IParseMapResult {
+    mapContent: IMapContent | null;
+    parseError: IParseMapContentError | null;
+}
+
 export interface IMapContent {
     marker: IMarker[];
     regions: IRegion[];

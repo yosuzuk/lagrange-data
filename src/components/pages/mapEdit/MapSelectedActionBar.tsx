@@ -7,19 +7,16 @@ import { t } from '../../../i18n';
 import { routes } from '../../../utils/routes';
 
 interface IProps {
-    mapDataValid: boolean;
+    canApply: boolean;
+    onApply: () => void;
 }
 
 export const MapSelectedActionBar = (props: IProps) => {
-    const { mapDataValid } = props;
+    const { canApply, onApply } = props;
     const navigate = useNavigate();
 
     const navigateBack = () => {
         navigate(routes.mapSelection.path);
-    };
-
-    const renderMap = () => {
-        // navigate(routes.mapSelection.path);
     };
 
     return (
@@ -42,9 +39,9 @@ export const MapSelectedActionBar = (props: IProps) => {
                     <Button
                         key="render"
                         variant="outlined"
-                        onClick={renderMap}
+                        onClick={onApply}
                         endIcon={<NavigateNextIcon />}
-                        disabled={!mapDataValid}
+                        disabled={!canApply}
                         {...buttonProps}
                     >
                         {t('mapEdit.visualizeMap')}

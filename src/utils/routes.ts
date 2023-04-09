@@ -29,6 +29,7 @@ export interface IShipDataParams {
 
 export interface IMapSelectedParams {
     d: string;
+    mode?: 'view' | 'edit';
 }
 
 export const routes = {
