@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, Fragment } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
@@ -59,17 +59,16 @@ export const Station = (props: IProps) => {
     }, [station]);
 
     return (
-        <>
+        <Fragment key={`${station.id}_${updateIterationRef.current}`}>
             {coneVisible && (
                 <StationCone position={position} color={station.color} base={station.type === 'base'} />
             )}
             {labelImage && labelVisible && (
                 <CanvasSprite
-                    key={`${station.id}_label_${updateIterationRef.current}`}
                     canvas={labelImage}
                     gridPosition={position}
                 />
             )}
-        </>
+        </Fragment>
     );
 };

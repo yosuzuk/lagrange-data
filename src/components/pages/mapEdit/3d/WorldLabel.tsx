@@ -31,6 +31,6 @@ export const WorldLabel = (props: IProps) => {
     }
 
     return (
-        <CanvasSprite canvas={canvas} />
+        <CanvasSprite key={worldName} canvas={canvas} />
     );
 };

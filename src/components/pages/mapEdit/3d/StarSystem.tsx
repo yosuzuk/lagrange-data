@@ -41,27 +41,10 @@ export const StarSystem = (props: IProps) => {
                 <Marker key={marker.id} marker={marker} />
             ))}
             {mapData.regions.map(region => (
-                <Region
-                    key={region.id}
-                    id={region.id}
-                    innerRadiusPoint={region.innerRadiusPoint}
-                    outerRadiusPoint={region.outerRadiusPoint}
-                    angleStartPoint={region.angleStartPoint}
-                    angleEndPoint={region.angleEndPoint}
-                    color={region.color}
-                    regionNumber={region.regionNumber}
-                    label={region.label}
-                />
+                <Region key={region.id} region={region} />
             ))}
             {mapData.planets.map(planet => (
-                <Planet
-                    key={planet.id}
-                    position={planet.position}
-                    orbitCenter={planet.orbitCenter}
-                    size={planet.size}
-                    color={planet.color}
-                    name={planet.name}
-                />
+                <Planet key={planet.id} planet={planet} />
             ))}
             {mapData.areas.map(area => (
                 <Area key={area.id} area={area} />

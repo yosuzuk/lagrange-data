@@ -1,5 +1,5 @@
+import { useCallback, useMemo, useRef, Fragment } from 'react';
 import { ThreeEvent } from '@react-three/fiber';
-import { useCallback, useMemo, useRef } from 'react';
 import { useCursorControl } from '../context/CursorContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -35,9 +35,8 @@ export const Marker = (props: IProps) => {
     }, [position]);
 
     return (
-        <>
+        <Fragment key={`${marker.id}_${updateIterationRef.current}`}>
             <CanvasSprite
-                key={`${marker.id}_${updateIterationRef.current}`}
                 canvas={markerImage}
                 gridPosition={position}
                 onClick={handleClick}
@@ -46,7 +45,6 @@ export const Marker = (props: IProps) => {
             />
             {marker.label && labelVisible && (
                 <TextLabel
-                    id={`${marker.id}_label`}
                     text={marker.label}
                     color={marker.color}
                     marginBottom={60}
@@ -54,6 +52,6 @@ export const Marker = (props: IProps) => {
                     faceCamera={true}
                 />
             )}
-        </>
+        </Fragment>
     );
 };

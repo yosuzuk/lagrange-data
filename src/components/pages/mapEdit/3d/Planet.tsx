@@ -2,6 +2,7 @@ import { useDebug } from '../context/DebugContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
+import { IPlanet } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { getRendeOrder } from '../utils/renderOrder';
 import { Orbit } from './Orbit';
@@ -14,39 +15,38 @@ const radiusBySize: Record<PlanetSize, number> = {
 };
 
 interface IProps {
-    size: PlanetSize;
-    color: string;
-    position: GamePosition;
-    gridPosition?: GridPosition;
-    orbitCenter?: GamePosition | null;
-    name?: string | null;
+    planet: IPlanet;
 }
 
 export const Planet = (props: IProps) => {
-    const { size, color, position: gamePosition, gridPosition, orbitCenter, name } = props;
+    const { planet } = props;
     const debug = useDebug();
 
     const subPlanetOrbitVisible = useZoomBasedVisibility('subPlanetOrbit');
 
     const position = useNormalizedPosition({
-        gamePosition,
-        gridPosition,
-    })
+        gamePosition: planet.position,
+    });
 
-    const radius = radiusBySize[size];
-    const widthSegments = size === 'small' ? 8 : 16;
+    const radius = radiusBySize[planet.size];
+    const widthSegments = planet.size === 'small' ? 8 : 16;
 
     return (
         <>
             <mesh position={[...position, 0]} renderOrder={getRendeOrder('planet')}>
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
-                <meshStandardMaterial color={color} wireframe={debug} />
+                <meshStandardMaterial color={planet.color} wireframe={debug} />
             </mesh>
-            {(!orbitCenter || subPlanetOrbitVisible) && (
-                <Orbit outerPos={gamePosition} centerPos={orbitCenter} />
+            {(!planet.orbitCenter || subPlanetOrbitVisible) && (
+                <Orbit outerPos={planet.position} centerPos={planet.orbitCenter} />
             )}
-            {name && (
-                <PlanetLabel gridPosition={position} planetName={name} planetSize={size} />
+            {planet.name && (
+                <PlanetLabel
+                    key={`${planet.id}_${planet.name}`}
+                    gridPosition={position}
+                    planetName={planet.name}
+                    planetSize={planet.size}
+                />
             )}
         </>
     );

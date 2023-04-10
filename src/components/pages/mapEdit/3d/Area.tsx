@@ -130,7 +130,7 @@ export const Area = (props: IProps) => {
     const lineRenderOrder = getRendeOrder('areaLines');
 
     return (
-        <>
+        <Fragment key={`${area.id}_${updateIterationRef.current}`}>
             <Plane
                 position={[state.x, state.y, 0]}
                 width={state.width}
@@ -141,11 +141,9 @@ export const Area = (props: IProps) => {
                 renderOrder={getRendeOrder('area')}
             />
             {edgeVisible ? (
-                <Fragment key={`${area.id}_simpleEdge_${updateIterationRef.current}`}>
-                    <Lines points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
-                </Fragment>
+                <Lines points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
             ) : (
-                <Fragment key={`${area.id}_detailed_edge_${updateIterationRef.current}`}>
+                <>
                     <Lines points={state.topLeftLines} color={area.color} renderOrder={lineRenderOrder} />
                     <Lines points={state.topRightLines} color={area.color} renderOrder={lineRenderOrder} />
                     <Lines points={state.bottomLeftLines} color={area.color} renderOrder={lineRenderOrder} />
@@ -160,8 +158,8 @@ export const Area = (props: IProps) => {
                     <Plane position={[state.xRight, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
                     <Plane position={[state.xLeft, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
                     <Plane position={[state.xRight, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                </Fragment>
+                </>
             )}
-        </>
+        </Fragment>
     );
 };

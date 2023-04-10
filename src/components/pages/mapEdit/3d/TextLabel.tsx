@@ -6,7 +6,6 @@ import { createTextImage, applyMarginToImage } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
-    id: string;
     text: string;
     position?: GamePosition;
     gridPosition?: GridPosition;
@@ -26,7 +25,6 @@ const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
 
 export const TextLabel = (props: IProps) => {
     const {
-        id,
         text,
         position: gamePosition,
         gridPosition,
@@ -85,7 +83,6 @@ export const TextLabel = (props: IProps) => {
     if (faceCamera) {
         return (
             <CanvasSprite
-                key={`${id}_${updateIterationRef.current}`}
                 canvas={textImage}
                 gridPosition={position}
             />
