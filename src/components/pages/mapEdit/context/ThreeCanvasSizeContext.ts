@@ -1,11 +1,14 @@
 import { createContext, useContext } from 'react';
 
-export const ThreeCanvasSizeContext = createContext<[number | null, number | null]>([null, null]);
+type GetSizeFn = () => ([number, number] | null);
+
+export const ThreeCanvasSizeContext = createContext<GetSizeFn>(() => null);
 
 export const useThreeCanvasSize = (): [number, number] => {
-    const [width, height] = useContext(ThreeCanvasSizeContext);
-    if (width === null || height === null) {
-        throw new Error('Missing three canvas size context');
+    const getSizeFn = useContext(ThreeCanvasSizeContext);
+    const size = getSizeFn();
+    if (size === null) {
+        throw new Error('Missing canvas size');
     }
-    return [width, height];
+    return size;
 };
