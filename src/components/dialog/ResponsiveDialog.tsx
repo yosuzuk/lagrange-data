@@ -8,15 +8,17 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Breakpoint, useTheme } from '@mui/material/styles';
 
 export interface IProps {
-    title: ReactNode;
+    title?: ReactNode;
     content: ReactNode;
     actions?: ReactNode;
-    onClose: () => void;
+    onClose?: () => void;
     maxWidth?: Breakpoint | false;
+    backgroundColor?: string;
+    disableRestoreFocus?: boolean;
 }
 
 export const ResponsiveDialog = (props: IProps) => {
-    const { title, content, actions, onClose, maxWidth = 'xs' } = props;
+    const { title, content, actions, onClose, maxWidth = 'xs', backgroundColor, disableRestoreFocus = false } = props;
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -27,8 +29,16 @@ export const ResponsiveDialog = (props: IProps) => {
             maxWidth={maxWidth}
             onClose={onClose}
             open={true}
+            disableRestoreFocus={disableRestoreFocus}
+            PaperProps={{
+                sx: {
+                    backgroundColor,
+                }
+            }}
         >
-            <DialogTitle>{title}</DialogTitle>
+            {title && (
+                <DialogTitle>{title}</DialogTitle>
+            )}
             <Divider />
             <DialogContent>
                 {content}

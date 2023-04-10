@@ -2,7 +2,7 @@ import { degreesToRadians } from '../../../../utils/math';
 import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
 
 export const MapGrid = () => {
     const gridSize = useGridSize();
@@ -17,14 +17,15 @@ export const MapGrid = () => {
                         // size
                         gridSize,
                         // divisions
-                        debug ? 10 : (gridVisibility ? 1000 : 1),
+                        debug ? 10 : (gridVisibility ? gridSize : 1),
                         // colorCenterLine
-                        0x0000ff,
+                        '#3b3b40',
                         // colorGrid
-                        0x808080,
+                        '#3b3b40',
                     ]}
-                    position={[0, 0, getZ('gridHelper')]}
+                    position={[0, 0, 0]}
                     rotation={[degreesToRadians(90), 0, 0]}
+                    renderOrder={getRendeOrder('gridHelper')}
                 />
             )}
         </>

@@ -6,6 +6,9 @@ interface ITextOptions {
     font?: string;
     fontSize?: number;
     lineSpacing?: number;
+    backgroundColor?: string;
+    padding?: number;
+    marginBottom?: number;
 }
 
 export function createTextImage(args: ITextOptions) {
@@ -15,6 +18,9 @@ export function createTextImage(args: ITextOptions) {
         font = 'Arial',
         fontSize = 24,
         lineSpacing = 4,
+        backgroundColor,
+        padding = 0,
+        marginBottom = 0,
     } = args;
 
     const lines = normalizeLineEndings(text).split('\n');
@@ -23,15 +29,21 @@ export function createTextImage(args: ITextOptions) {
 
     const fontStr = `${fontSize}px ${font}`;
     ctx.font = fontStr;
-    canvas.width = Math.max(...lines.map(line => ctx.measureText(line).width));
+    canvas.width = Math.max(...lines.map(line => ctx.measureText(line).width)) + padding + padding;
     const lineHeight = Math.ceil(fontSize);
-    canvas.height = (lineHeight * lines.length) + (lineSpacing * (lines.length - 1));
+    const contentHeight = (lineHeight * lines.length) + (lineSpacing * (lines.length - 1)) + padding + padding;
+    canvas.height = contentHeight + marginBottom;
+
+    if (backgroundColor) {
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, 0, canvas.width, contentHeight);
+    }
 
     let offsetY = 0;
     lines.forEach((line: string) => {
         ctx.font = fontStr;
         ctx.fillStyle = color;
-        ctx.fillText(line, 0, offsetY + (lineHeight * 0.8));
+        ctx.fillText(line, padding, padding + offsetY + (lineHeight * 0.8));
         offsetY += (lineHeight + lineSpacing);
     });
 
@@ -54,6 +66,41 @@ export function createMarkerImage(color: string = 'white') {
     ctx.lineTo(paddingSide + 2.5, 20);
     ctx.strokeStyle = color;
     ctx.stroke();
+    return canvas;
+}
+
+export function createPlayerBaseIcon(color: string = 'white') {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 12;
+    canvas.height = 12;
+
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(1, 5);
+    ctx.lineTo(5, 1);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(1, 7);
+    ctx.lineTo(5, 11);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(7, 1);
+    ctx.lineTo(11, 5);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(7, 11);
+    ctx.lineTo(11, 7);
+    ctx.stroke();
+
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(3, 6);
+    ctx.lineTo(6, 3);
+    ctx.lineTo(9, 6);
+    ctx.lineTo(6, 9);
+    ctx.fill();
+
     return canvas;
 }
 
@@ -146,18 +193,41 @@ interface IMergeIconAndTextArgs {
     spacing: number;
     marginTop?: number;
     marginBottom?: number;
+    padding?: number;
+    backgroundColor?: string;
 }
 
 export function mergeIconAndText(args: IMergeIconAndTextArgs): HTMLCanvasElement {
-    const { iconCanvas, textCanvas, spacing, marginTop = 0, marginBottom = 0 } = args;
+    const { iconCanvas, textCanvas, spacing, marginTop = 0, marginBottom = 0, padding = 0, backgroundColor } = args;
     const { canvas, ctx } = createCanvas();
-    canvas.width = iconCanvas.width + spacing + textCanvas.width;
+    canvas.width = iconCanvas.width + spacing + textCanvas.width + padding + padding;
     const contentHeight = Math.max(iconCanvas.height, textCanvas.height);
-    canvas.height = marginTop + contentHeight + marginBottom;
-    const iconOffsetY = marginTop + (contentHeight - iconCanvas.height) / 2;
-    const textOffsetY = marginTop + (contentHeight - textCanvas.height) / 2;
-    ctx.drawImage(iconCanvas, 0, iconOffsetY);
-    ctx.drawImage(textCanvas, iconCanvas.width + spacing, textOffsetY);
+    canvas.height = marginTop + contentHeight + marginBottom + padding + padding;
+
+    if (backgroundColor) {
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, marginTop, canvas.width, contentHeight + padding + padding);
+    }
+
+    const iconOffsetY = marginTop + padding + (contentHeight - iconCanvas.height) / 2;
+    const textOffsetY = marginTop + padding + (contentHeight - textCanvas.height) / 2;
+    ctx.drawImage(iconCanvas, padding, iconOffsetY);
+    ctx.drawImage(textCanvas, padding + iconCanvas.width + spacing, textOffsetY);
+    return canvas;
+}
+
+interface IApplyMarginArgs {
+    image: HTMLCanvasElement;
+    marginTop?: number;
+    marginBottom?: number;
+}
+
+export function applyMarginToImage(args: IApplyMarginArgs): HTMLCanvasElement {
+    const { image, marginTop = 0, marginBottom = 0 } = args;
+    const { canvas, ctx } = createCanvas();
+    canvas.width = image.width;
+    canvas.height = marginTop + image.height + marginBottom;
+    ctx.drawImage(image, 0, marginTop);
     return canvas;
 }
 

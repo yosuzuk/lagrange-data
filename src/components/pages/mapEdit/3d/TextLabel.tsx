@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
-import { createTextImage } from '../utils/spriteUtils';
-import { getZ } from '../utils/zUtils';
+import { getRendeOrder } from '../utils/renderOrder';
+import { createTextImage, applyMarginToImage } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
@@ -10,12 +10,15 @@ interface IProps {
     position?: GamePosition;
     gridPosition?: GridPosition;
     color?: string;
+    backgroundColor?: string;
     font?: string;
     fontSize?: number;
     lineSpacing?: number;
+    padding?: number;
+    marginTop?: number;
+    marginBottom?: number;
     faceCamera?: boolean;
     scale?: number;
-    z?: number;
 }
 
 const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
@@ -26,13 +29,18 @@ export const TextLabel = (props: IProps) => {
         position: gamePosition,
         gridPosition,
         color = 'white',
+        backgroundColor,
         font = 'Arial',
         fontSize = 12,
         lineSpacing = 4,
+        padding = 0,
+        marginTop = 0,
+        marginBottom = 0,
         faceCamera = false,
         scale = 1,
-        z,
     } = props;
+
+    const updateIterationRef = useRef<number>(0);
 
     const position = useNormalizedPosition({
         gamePosition,
@@ -43,14 +51,29 @@ export const TextLabel = (props: IProps) => {
         if (text.trim().length === 0) {
             return null;
         }
-        return createTextImage({
+
+        updateIterationRef.current++;
+
+        const textImage = createTextImage({
             text,
             color,
+            backgroundColor,
             font,
             fontSize,
             lineSpacing,
+            padding,
         });
-    }, [text, color, font, fontSize, lineSpacing]);
+
+        if (marginTop > 0 || marginBottom > 0) {
+            return applyMarginToImage({
+                image: textImage,
+                marginTop,
+                marginBottom,
+            });
+        }
+
+        return textImage;
+    }, [updateIterationRef, text, color, backgroundColor, font, fontSize, lineSpacing, padding, marginTop, marginBottom]);
 
     if (!textImage) {
         console.log('skipped image');
@@ -67,7 +90,7 @@ export const TextLabel = (props: IProps) => {
     }
 
     return (
-        <mesh position={[...position, z ?? getZ('textLabel')]} renderOrder={1}>
+        <mesh position={[...position, 0]} renderOrder={getRendeOrder('fixedLabel')}>
             <planeGeometry
                 args={[
                     textImage.width * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,

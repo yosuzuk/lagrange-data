@@ -27,6 +27,11 @@ export interface IShipDataParams {
     sortDirection: SortDirection;
 }
 
+export interface IMapSelectedParams {
+    d: string;
+    mode?: 'view' | 'edit';
+}
+
 export const routes = {
     techFiles: createParameterizedRouteDefinition<ITechFilesParams>('techFiles'),
     researchAgreement: createParameterizedRouteDefinition<IResearchAgreementParams>('researchAgreement'),
@@ -40,6 +45,8 @@ export const routes = {
     myListEdit: createRouteDefinition('myList/edit'),
     dpmCalc: createRouteDefinition('dpmCalc'),
     imageEdit: createRouteDefinition('imageEdit'),
+    map: createRouteDefinition('map'),
+    mapSelected: createParameterizedRouteDefinition<IMapSelectedParams>('map/selected'),
     debug: createRouteDefinition('debug'),
 } as const;
 

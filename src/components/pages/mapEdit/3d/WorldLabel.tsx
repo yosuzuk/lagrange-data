@@ -3,24 +3,34 @@ import { createSunIcon, createTextImage, mergeIconAndText } from '../utils/sprit
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
-    worldName: string;
+    worldName?: string | null;
 }
 
 export const WorldLabel = (props: IProps) => {
     const { worldName } = props;
 
-    const canvas = useMemo(() => mergeIconAndText({
-        iconCanvas: createSunIcon(),
-        textCanvas: createTextImage({
-            text: worldName,
-            color: 'white',
-            fontSize: 12,
-        }),
-        spacing: 4,
-        marginTop: 40,
-    }), [worldName]);
+    const canvas = useMemo(() => {
+        if (!worldName) {
+            return null;
+        }
+
+        return mergeIconAndText({
+            iconCanvas: createSunIcon(),
+            textCanvas: createTextImage({
+                text: worldName,
+                color: 'white',
+                fontSize: 12,
+            }),
+            spacing: 4,
+            marginTop: 40,
+        });
+    }, [worldName]);
+
+    if (!canvas) {
+        return null;
+    }
 
     return (
-        <CanvasSprite canvas={canvas} renderOrder={2} />
+        <CanvasSprite key={worldName} canvas={canvas} />
     );
 };

@@ -21,9 +21,12 @@
         "storeBackupInStorage": "Store in local storage",
         "restoreFromStorage": "Restore from local storage",
         "back": "Back",
-        "next": "Next"
+        "next": "Next",
+        "exit": "Exit",
+        "validate": "Validate"
     },
     "label": {
+        "error": "Error",
         "ship": "Ship",
         "ships": "Ships",
         "selectedShip": "Selected ship",
@@ -274,7 +277,16 @@
         "imageReady": "The image can be saved now. You can also right click the image or long press to open context menu for saving or copying to clipboard."
     },
     "mapEdit": {
-        "regionValue": "Region {{value}}"
+        "loadAndOpenMap": "Load map",
+        "invalidMap": "Invalid map",
+        "regionValue": "Region {{value}}",
+        "invalidUrl": "Please enter a valid URL",
+        "visualizeMap": "Visualize map",
+        "syntaxErrorInLine": "Syntax error in line {{value}}",
+        "openExternalMap": "Open external map",
+        "openExampleMap": "Open example map",
+        "openEmptyMap": "Open empty map",
+        "sizeCanBeAdjustedBrackets": "(size can be adjusted)"
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

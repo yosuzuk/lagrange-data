@@ -21,9 +21,12 @@
         "storeBackupInStorage": "ローカルストレージに保存",
         "restoreFromStorage": "ローカルストレージから復元",
         "back": "戻る",
-        "next": "続ける"
+        "next": "続ける",
+        "exit": "終了",
+        "validate": "入力チェック"
     },
     "label": {
+        "error": "エラー",
         "ship": "艦船",
         "ships": "艦船",
         "selectedShip": "選択した艦船",
@@ -274,7 +277,16 @@
         "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
     "mapEdit": {
-        "regionValue": "区域{{value}}"
+        "loadAndOpenMap": "マップを開く",
+        "invalidMap": "無効なマップ",
+        "regionValue": "区域{{value}}",
+        "invalidUrl": "有効なURLを入力してください",
+        "visualizeMap": "マップを表示",
+        "syntaxErrorInLine": "構文エラー（ライン：{{value}}）",
+        "openExternalMap": "外部マップを開く",
+        "openExampleMap": "サンプルマップを開く",
+        "openEmptyMap": "空のマップを開く",
+        "sizeCanBeAdjustedBrackets": "（サイズは後からも調整可能）"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

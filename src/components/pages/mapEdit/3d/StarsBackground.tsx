@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useGridSize } from '../context/GridSizeContext';
+import { getRendeOrder } from '../utils/renderOrder';
 
 
 interface IProps {
@@ -28,7 +29,7 @@ export const StarsBackground = (props: IProps) => {
     }, [starCount, zOffset, gridSize]);
 
     return (
-        <points frustumCulled={false}>
+        <points frustumCulled={false} renderOrder={getRendeOrder('starsBackground')}>
             <bufferGeometry>
                 <bufferAttribute attach="attributes-position" args={[vertices, 3]} />
             </bufferGeometry>

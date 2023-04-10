@@ -9,6 +9,9 @@ export const baseConfig = {
         __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
         __APP_TARGET__: '"gh-pages"',
     },
+    assetsInclude: [
+        'assets/*.txt',
+    ],
 };
 
 export default defineConfig(baseConfig);

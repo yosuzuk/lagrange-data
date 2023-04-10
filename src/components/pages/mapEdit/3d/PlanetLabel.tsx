@@ -31,6 +31,6 @@ export const PlanetLabel = (props: IProps) => {
     }
 
     return (
-        <CanvasSprite gridPosition={gridPosition} canvas={canvas} renderOrder={2} />
+        <CanvasSprite gridPosition={gridPosition} canvas={canvas} />
     );
 };

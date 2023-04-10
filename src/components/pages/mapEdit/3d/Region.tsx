@@ -1,24 +1,19 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useDebug } from '../context/DebugContext';
 import { useGridSize } from '../context/GridSizeContext';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getAngleBetweenAngles, getAngleBetweenVectors, getDistance, getGridPositionByAngleAndRadius, getRingThetaByGridPosition, toGridPosition } from '../utils/coordinateUtils';
-import { getZ } from '../utils/zUtils';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { t } from '../../../../i18n';
 import { TextLabel } from './TextLabel';
+import { getRendeOrder } from '../utils/renderOrder';
+import { IRegion } from '../types/IMapContent';
 
 const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
 
 interface IProps {
-    innerRadiusPoint: GamePosition;
-    outerRadiusPoint: GamePosition;
-    angleStartPoint: GamePosition;
-    angleEndPoint: GamePosition;
-    color: string;
-    regionNumber?: number;
-    label?: string | null;
+    region: IRegion;
 }
 
 interface IState {
@@ -31,18 +26,22 @@ interface IState {
 }
 
 export const Region = (props: IProps) => {
-    const { regionNumber, color, label, angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint } = props;
+    const { region } = props;
     const gridSize = useGridSize();
     const debug = useDebug();
     const backgroundVisible = useZoomBasedVisibility('zoneBackground');
     const backgroundOpacity = useZoomBasedOpacity('zoneBackground');
     const labelVisible = useZoomBasedVisibility('zoneLabel');
 
+    const updateIterationRef = useRef<number>(0);
+
     const state = useMemo<IState>(() => {
-        const innerGridPosition = toGridPosition(innerRadiusPoint, gridSize);
-        const outerGridPosition = toGridPosition(outerRadiusPoint, gridSize);
-        const gridStart = toGridPosition(angleStartPoint, gridSize);
-        const gridEnd = toGridPosition(angleEndPoint, gridSize);
+        updateIterationRef.current++;
+
+        const innerGridPosition = toGridPosition(region.innerRadiusPoint, gridSize);
+        const outerGridPosition = toGridPosition(region.outerRadiusPoint, gridSize);
+        const gridStart = toGridPosition(region.angleStartPoint, gridSize);
+        const gridEnd = toGridPosition(region.angleEndPoint, gridSize);
 
         // properties for the ring
         const innerRadius = getDistance(innerGridPosition, [0, 0]);
@@ -65,12 +64,12 @@ export const Region = (props: IProps) => {
             thetaSegments,
             textPosition,
         };
-    }, [angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint, gridSize]);
+    }, [region, gridSize, updateIterationRef]);
 
     return (
         <>
             {backgroundVisible && (
-                <mesh position={[0, 0, getZ('region')]}>
+                <mesh position={[0, 0, 0]} renderOrder={getRendeOrder('region')}>
                     <ringGeometry
                         args={[
                             // innerRadius: Float
@@ -88,23 +87,24 @@ export const Region = (props: IProps) => {
                         ]}
                     />
                     <meshBasicMaterial
-                        color={color}
+                        color={region.color}
                         wireframe={debug}
                         transparent={true}
                         opacity={backgroundOpacity ?? undefined}
+                        depthWrite={false}
                     />
                 </mesh>
             )}
-            {labelVisible && (Number.isFinite(regionNumber) || label) && (
+            {labelVisible && (Number.isFinite(region.regionNumber) || region.label) && (
                 <TextLabel
+                    key={`${region.id}_label_${updateIterationRef.current}`}
                     gridPosition={state.textPosition}
                     text={[
-                        ...(label ? [label] : []),
-                        ...(Number.isFinite(regionNumber) ? [t('mapEdit.regionValue', { value: regionNumber })] : []),
+                        ...(region.label ? [region.label] : []),
+                        ...(Number.isFinite(region.regionNumber) ? [t('mapEdit.regionValue', { value: region.regionNumber })] : []),
                     ].join('\n')}
                     fontSize={96}
                     scale={0.5}
-                    z={getZ('regionText')}
                 />
             )}
         </>
