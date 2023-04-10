@@ -1,15 +1,13 @@
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import { useMapContent } from './hooks/useMapContent';
-import { MapContent } from './3d/MapContent';
-import { WorldMap } from './3d/WorldMap';
-import { CursorProvider } from './context/CursorContext';
-import { ZoomLevelProvider } from './context/ZoomLevelContext';
+import { useMapData } from './hooks/useMapData';
+import { StarSystem } from './3d/StarSystem';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
 import { MapDialAction } from './MapDialAction';
 import { t } from '../../../i18n';
+import { MapProviders } from './MapProviders';
 
 const MapSelectedPage = () => {
     const {
@@ -17,13 +15,13 @@ const MapSelectedPage = () => {
         mapUrl,
         queryResult,
         input,
-        mapContent,
+        mapData,
         parseError,
         setEditMode,
         cancelEditMode,
         setInput,
         applyInput,
-    } = useMapContent();
+    } = useMapData();
 
     if (!mapUrl) {
         return (
@@ -48,7 +46,7 @@ const MapSelectedPage = () => {
         );
     }
 
-    if (!mapContent && parseError) {
+    if (!mapData && parseError) {
         return (
             <Alert severity="error">
                 <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
@@ -57,7 +55,7 @@ const MapSelectedPage = () => {
         )
     }
 
-    if (!mapContent) {
+    if (!mapData) {
         return (
             <LoadingIndicator />
         );
@@ -65,13 +63,9 @@ const MapSelectedPage = () => {
 
     return (
         <>
-            <CursorProvider>
-                <ZoomLevelProvider>
-                    <WorldMap systemName={mapContent.name} size={mapContent.size}>
-                        <MapContent mapContent={mapContent} />
-                    </WorldMap>
-                </ZoomLevelProvider>
-            </CursorProvider>
+            <MapProviders mapData={mapData}>
+                <StarSystem mapData={mapData} />
+            </MapProviders>
             <MapDialAction onEdit={setEditMode} />
             {(mode === 'edit') && (
                 <MapEditDialog

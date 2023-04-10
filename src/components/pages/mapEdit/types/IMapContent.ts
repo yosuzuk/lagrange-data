@@ -1,7 +1,7 @@
 import { GamePosition } from './Coordinates';
 import { PlanetSize } from './PlanetSize';
 
-export interface IMap {
+export interface IMapData {
     name: string | null;
     size: number | null;
     marker: IMarker[];

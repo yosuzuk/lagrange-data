@@ -1,5 +1,5 @@
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMap, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
+import { AreaType, IArea, IMapData, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, sectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter } from './coordinateUtils';
@@ -9,8 +9,8 @@ const DEFAULT_PLANET_COLOR = '#E3A06D';
 const NEUTRAL_FACTION_COLOR = '#F7C360';
 const DEFAULT_PLAYER_COLOR = '#0077ff';
 
-export function parseMapContent(input: string): [IMap, IParseMapContentError | null] {
-    const mapContent: IMap = {
+export function parseMapData(input: string): [IMapData, IParseMapContentError | null] {
+    const mapContent: IMapData = {
         name: null,
         size: null,
         marker: [],

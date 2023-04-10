@@ -1,4 +1,9 @@
-import { IMap } from '../types/IMapContent';
+import { Sun } from './Sun';
+import { WorldLabel } from './WorldLabel';
+import { StarsBackground } from './StarsBackground';
+import { MapBorders } from './MapBorders';
+import { MapGrid } from './MapGrid';
+import { IMapData } from '../types/IMapContent';
 import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
@@ -7,18 +12,27 @@ import { Region } from './Region';
 import { Station } from './Station';
 
 interface IProps {
-    mapContent: IMap;
+    mapData: IMapData;
 }
 
-export const MapContent = (props: IProps) => {
-    const { mapContent } = props;
+export const StarSystem = (props: IProps) => {
+    const { mapData } = props;
 
     return (
         <>
-            {mapContent.marker.map(marker => (
+            <StarsBackground starCount={200} starSize={3} zOffset={300} />
+            <StarsBackground starCount={1000} starSize={0.2} zOffset={500} />
+            <MapBorders />
+            <MapGrid />
+            <Sun />
+            <pointLight position={[0, 0, 40]} castShadow={true} intensity={1.2} />
+            {mapData.name && (
+                <WorldLabel worldName={mapData.name} />
+            )}
+            {mapData.marker.map(marker => (
                 <Marker key={marker.id} position={marker.position} color={marker.color} label={marker.label} />
             ))}
-            {mapContent.regions.map(region => (
+            {mapData.regions.map(region => (
                 <Region
                     key={region.id}
                     innerRadiusPoint={region.innerRadiusPoint}
@@ -30,7 +44,7 @@ export const MapContent = (props: IProps) => {
                     label={region.label}
                 />
             ))}
-            {mapContent.planets.map(planet => (
+            {mapData.planets.map(planet => (
                 <Planet
                     key={planet.id}
                     position={planet.position}
@@ -40,13 +54,13 @@ export const MapContent = (props: IProps) => {
                     name={planet.name}
                 />
             ))}
-            {mapContent.areas.map(area => (
+            {mapData.areas.map(area => (
                 <Area key={area.id} area={area} />
             ))}
-            {mapContent.stations.map(station => (
+            {mapData.stations.map(station => (
                 <Station key={station.id} station={station} />
             ))}
-            {mapContent.bases.map(base => (
+            {mapData.bases.map(base => (
                 <PlayerBase key={base.id} base={base} />
             ))}
         </>

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { ThreeEvent } from '@react-three/fiber';
 import { NearestFilter } from 'three';
 import { useThreeCanvasSize } from '../context/ThreeCanvasSizeContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -9,7 +10,7 @@ interface IProps {
     canvas: HTMLCanvasElement;
     position?: GamePosition;
     gridPosition?: GridPosition;
-    onClick?: () => void;
+    onClick?: (e: ThreeEvent<MouseEvent>) => void;
     onPointerEnter?: () => void;
     onPointerLeave?: () => void;
 }

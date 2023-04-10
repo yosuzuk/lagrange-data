@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { UseQueryResult } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
 import { routes } from '../../../../utils/routes';
-import { IMap, IParseMapContentError } from '../types/IMapContent';
-import { parseMapContent } from '../utils/mapContentParser';
+import { IMapData, IParseMapContentError } from '../types/IMapContent';
+import { parseMapData } from '../utils/mapDataParser';
 import { useQueryMapData } from './useQueryMapData';
 
 type Mode = 'edit' | 'view';
@@ -13,7 +13,7 @@ interface IHookResult {
     mapUrl: string | null;
     queryResult: UseQueryResult<string | null, unknown>;
     input: string;
-    mapContent: IMap | null;
+    mapData: IMapData | null;
     parseError: IParseMapContentError | null;
     setEditMode: () => void;
     cancelEditMode: () => void;
@@ -21,7 +21,7 @@ interface IHookResult {
     applyInput: () => void;
 }
 
-export const useMapContent = (): IHookResult => {
+export const useMapData = (): IHookResult => {
     const [searchParams, setSearchParams] = useSearchParams();
     const encodedMapUrl = searchParams.get('d');
     const mapUrl = useMemo<string | null>(() => encodedMapUrl ? window.atob(encodedMapUrl) : null, [encodedMapUrl]);
@@ -29,7 +29,7 @@ export const useMapContent = (): IHookResult => {
 
     const [mode, setMode] = useState<Mode>('view');
     const [input, setInput] = useState<string>('');
-    const [lastValidMapContent, setLastValidMapContent] = useState<IMap | null>(null);
+    const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
 
@@ -45,35 +45,35 @@ export const useMapContent = (): IHookResult => {
 
     // apply loaded initial data
     useEffect(() => {
-        if (queryResult.isSuccess && queryResult.data && lastValidMapContent === null && parseError === null) {
+        if (queryResult.isSuccess && queryResult.data && lastValidMapData === null && parseError === null) {
             setInput(queryResult.data);
 
             if (mode === 'view') {
-                const [mapContent, parseError] = parseMapContent(queryResult.data);
+                const [mapData, parseError] = parseMapData(queryResult.data);
                 if (parseError) {
-                    console.warn(`Failed to parse map content: ${parseError.message} (line: ${parseError.line})`);
+                    console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
                     setParseError(parseError);
                     setMode('edit');
                     return;
                 }
                 setLastValidInput(queryResult.data);
-                setLastValidMapContent(mapContent);
+                setLastValidMapData(mapData);
                 return;
             }
         }
-    }, [queryResult.isSuccess, queryResult.data, lastValidMapContent, parseError, mode]);
+    }, [queryResult.isSuccess, queryResult.data, lastValidMapData, parseError, mode]);
 
     // apply manual input
     const applyInput = useCallback(() => {
-        const [mapContent, parseError] = parseMapContent(input);
+        const [mapData, parseError] = parseMapData(input);
         if (parseError) {
-            console.warn(`Failed to parse map content: ${parseError.message} (line: ${parseError.line})`);
+            console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
             setParseError(parseError);
             return;
         }
         setParseError(null);
         setLastValidInput(input);
-        setLastValidMapContent(mapContent);
+        setLastValidMapData(mapData);
         setMode('view');
     }, [input]);
 
@@ -92,7 +92,7 @@ export const useMapContent = (): IHookResult => {
         mapUrl,
         queryResult,
         input,
-        mapContent: lastValidMapContent,
+        mapData: lastValidMapData,
         parseError,
         setEditMode,
         cancelEditMode,

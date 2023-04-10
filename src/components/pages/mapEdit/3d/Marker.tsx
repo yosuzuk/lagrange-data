@@ -1,3 +1,4 @@
+import { ThreeEvent } from '@react-three/fiber';
 import { useCallback, useMemo } from 'react';
 import { useCursorControl } from '../context/CursorContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
@@ -26,7 +27,8 @@ export const Marker = (props: IProps) => {
 
     const markerImage = useMemo(() => createMarkerImage(color), [color]);
 
-    const handleClick = useCallback(() => {
+    const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
+        e.stopPropagation();
         console.log(position);
     }, [position]);
 
