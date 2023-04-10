@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
@@ -15,11 +15,15 @@ export const Station = (props: IProps) => {
     const coneVisible = useZoomBasedVisibility('stationCone');
     const labelVisible = useZoomBasedVisibility('baseLabel');
 
+    const updateIterationRef = useRef<number>(0);
+
     const position = useNormalizedPosition({
         gamePosition: station.position,
     });
 
     const labelImage = useMemo<HTMLCanvasElement | null>(() => {
+        updateIterationRef.current++;
+
         if (!station.name) {
             return null;
         }
@@ -61,6 +65,7 @@ export const Station = (props: IProps) => {
             )}
             {labelImage && labelVisible && (
                 <CanvasSprite
+                    key={`${station.id}_label_${updateIterationRef.current}`}
                     canvas={labelImage}
                     gridPosition={position}
                 />

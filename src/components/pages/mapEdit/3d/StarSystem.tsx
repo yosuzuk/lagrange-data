@@ -38,7 +38,7 @@ export const StarSystem = (props: IProps) => {
                 <WorldLabel worldName={mapData.name} />
             )}
             {mapData.marker.map(marker => (
-                <Marker key={marker.id} id={marker.id} position={marker.position} color={marker.color} label={marker.label} />
+                <Marker key={marker.id} marker={marker} />
             ))}
             {mapData.regions.map(region => (
                 <Region
