@@ -51,7 +51,7 @@ $base
 (5635,3545) #c0077FF プレイヤー
 
 $station
-(3819,3519) city 10 Three-Headed Eagle
+(3819,3519)(3680,3370)(3980,3670) city 10 Three-Headed Eagle
 (1893,2833) city 7 St. Nowshak
 (3398,5577) city 7 Cappadocia
 (5098,4897) city 7 Moco
@@ -64,7 +64,7 @@ $station
 (2420,1620) city 6 St. Megiddo
 (2640,3820) city 6 Parthia Volante
 (3632,5570) city 6 Ofgut
-(4096,3591) city 6 Meroe Volante
+(4096,3591)(4010,3571)(4130,3690) city 6 Meroe Volante
 (4569,1611) city 6 Tanis
 (5322,4890) city 6 New Thasos
 (5269,3551) city 6 Liam Volante
@@ -118,7 +118,7 @@ $station
 (1939,7698) city 3 Kribi
 (3672,5307) city 3 Nitro
 (3296,5418) city 3 Cartago
-(3713,3746) city 3 Mutter
+(3713,3746)(3700,3730)(3780,3810) city 3 Mutter
 (5372,4627) city 3 Cooma
 (4996,4738) city 3 Yala
 (5410,688) city 3 Balboa
@@ -128,7 +128,3 @@ $station
 (6379,7978) city 3 Zunil
 (7046,3157) city 3 New Dundalk
 (8530,4929) city 3 Koga
-
-// details for Three-Headed Eagle
-$area
-(3679,3368)(3981,3670) city

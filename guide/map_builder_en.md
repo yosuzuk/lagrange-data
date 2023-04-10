@@ -107,12 +107,23 @@ Syntax:
 
 ```
 $station
-<point> [<type>] [<level>] [<color>] [<name>]
+<point>[<point><point>] [<type>] [<level>] [<color>] [<name>]
 ```
 
 You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `subCity`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
 
+Two additional points can be specified to mark the area around the station.
+
 Player bases and platforms have their own dedicated keyword (`$base` and `$platform`). `$station` is mostly used for creating cities.
+
+Example:
+
+```
+$station
+(3819,3519)(3680,3370)(3980,3670) city 10 Three-Headed Eagle
+(4096,3591)(4010,3571)(4130,3690) city 6 Meroe Volante
+(3713,3746)(3700,3730)(3780,3810) city 3 Mutter
+```
 
 ## Areas
 

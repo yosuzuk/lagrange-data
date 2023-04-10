@@ -1,5 +1,4 @@
 import { IPlayerBase } from '../types/IMapContent';
-import { Area } from './Area';
 import { Station } from './Station';
 
 interface IProps {
@@ -10,9 +9,6 @@ export const PlayerBase = (props: IProps) => {
     const { base } = props;
 
     return (
-        <>
-            <Station station={base.station} />
-            <Area area={base.area} />
-        </>
+        <Station station={base.station} />
     );
 };

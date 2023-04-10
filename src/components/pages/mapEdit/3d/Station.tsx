@@ -3,6 +3,7 @@ import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
 import { createCityIcon, createPlayerBaseIcon, createTextImage, mergeIconAndText } from '../utils/spriteUtils';
+import { Area } from './Area';
 import { CanvasSprite } from './CanvasSprite';
 import { StationCone } from './StationCone';
 
@@ -77,6 +78,9 @@ export const Station = (props: IProps) => {
                         />
                     )}
                 </>
+            )}
+            {station.area && (
+                <Area area={station.area} />
             )}
         </Fragment>
     );

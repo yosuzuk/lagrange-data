@@ -281,9 +281,9 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
         error: coordinatesError,
         matches: coordinates,
         line: lineWithoutCoordinates,
-    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 3);
 
-    if (coordinatesError) {
+    if (coordinatesError || coordinates.length === 2) {
         return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
     }
 
@@ -317,6 +317,8 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
+    const color = parseColor(colors[0], NEUTRAL_FACTION_COLOR);
+
     return [
         {
             id: `station${lineNumber}`,
@@ -325,8 +327,17 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
             type: stationTypes[0] ?? 'default',
             position: coordinates[0],
             level: Number(stationlevels[0]) || null,
-            color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
+            color,
             name: lineWithoutColors || null,
+            area: coordinates.length === 3 ? {
+                id: `stationArea${lineNumber}`,
+                contentType: 'area',
+                type: 'city',
+                position1: coordinates[1],
+                position2: coordinates[2],
+                color,
+                lineNumber,
+            } : undefined,
         },
         null,
     ];
@@ -399,15 +410,6 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
 
     const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
 
-    const area: IArea = {
-        id: `area${lineNumber}`,
-        contentType: 'area',
-        lineNumber,
-        type: 'default',
-        position1: `(${x - 5},${y - 5})`,
-        position2: `(${x + 5},${y + 5})`,
-        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-    };
     const station: IStation = {
         id: `station${lineNumber}`,
         contentType: 'station',
@@ -417,6 +419,15 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
         level: null,
         color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
         name: lineWithoutColors || null,
+        area: {
+            id: `area${lineNumber}`,
+            contentType: 'area',
+            lineNumber,
+            type: 'default',
+            position1: `(${x - 5},${y - 5})`,
+            position2: `(${x + 5},${y + 5})`,
+            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        },
     };
 
     return [
@@ -425,7 +436,6 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
             contentType: 'base',
             lineNumber,
             station,
-            area,
         },
         null,
     ];

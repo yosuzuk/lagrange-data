@@ -54,6 +54,7 @@ export interface IStation extends IMapContent {
     level: number | null;
     color: string;
     name: string | null;
+    area?: IArea;
 }
 
 export type AreaType = 'city' | 'default';
@@ -69,7 +70,6 @@ export interface IArea extends IMapContent {
 export interface IPlayerBase extends IMapContent {
     contentType: 'base',
     station: IStation;
-    area: IArea;
 }
 
 export interface IParseMapContentError {
