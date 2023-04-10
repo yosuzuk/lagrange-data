@@ -1,21 +1,18 @@
 import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import EditIcon from '@mui/icons-material/Edit';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import { routes } from '../../../utils/routes';
 import { t } from '../../../i18n';
 
 interface IProps {
     onEdit: () => void;
+    onExit: () => void;
 }
 
 export const MapDialAction = (props: IProps) => {
-    const { onEdit } = props;
-    const navigate = useNavigate();
+    const { onEdit, onExit } = props;
     const [open, setOpen] = useState<boolean>(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -24,10 +21,6 @@ export const MapDialAction = (props: IProps) => {
         setOpen(false);
         onEdit();
     }, [onEdit]);
-
-    const handleClickExit = useCallback(() => {
-        navigate(routes.map.path);
-    }, [navigate]);
 
     return (
         <SpeedDial
@@ -67,7 +60,7 @@ export const MapDialAction = (props: IProps) => {
                         border: '1px solid lightgrey',
                     },
                 }}
-                onClick={handleClickExit}
+                onClick={onExit}
                 tooltipTitle={t('button.exit')}
                 tooltipOpen={true}
             />

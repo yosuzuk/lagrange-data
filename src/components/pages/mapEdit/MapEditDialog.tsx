@@ -14,17 +14,11 @@ interface IProps {
     parseError: IParseMapContentError | null;
     onCancel: () => void;
     onApply: () => void;
+    onValidate: () => void;
 }
 
 export const MapEditDialog = (props: IProps) => {
-    const { input, parseError, setInput, onCancel, onApply } = props;
-
-    const textAreaStyles: CSSProperties = {
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        color: 'white',
-        width: '100%',
-        height: '55vh',
-    };
+    const { input, parseError, setInput, onCancel, onApply, onValidate } = props;
 
     return (
         <ResponsiveDialog
@@ -54,6 +48,9 @@ export const MapEditDialog = (props: IProps) => {
                 <>
                     <Button variant="outlined" onClick={onCancel}>
                         {t('button.cancel')}
+                    </Button>
+                    <Button variant="outlined" onClick={onValidate}>
+                        {t('button.validate')}
                     </Button>
                     <Button variant="contained" onClick={onApply}>
                         {t('button.confirm')}

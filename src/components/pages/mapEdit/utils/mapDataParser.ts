@@ -439,6 +439,15 @@ interface IParseWithRegExpResult<TResult> {
 
 function parseWithRegExp<TResult = string>(line: string, regexp: RegExp, minCount: number, maxCount: number): IParseWithRegExpResult<TResult> {
     const matches = (line + ' ').match(regexp);
+
+    if (minCount > 0 && (!matches || matches.length === 0)) {
+        return {
+            error: true,
+            matches: [],
+            line,
+        };
+    }
+
     if (matches && (matches.length < minCount || matches.length > maxCount)) {
         return {
             error: true,

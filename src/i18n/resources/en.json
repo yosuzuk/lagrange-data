@@ -22,7 +22,8 @@
         "restoreFromStorage": "Restore from local storage",
         "back": "Back",
         "next": "Next",
-        "exit": "Exit"
+        "exit": "Exit",
+        "validate": "Validate"
     },
     "label": {
         "error": "Error",

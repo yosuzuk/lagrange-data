@@ -1,4 +1,5 @@
-import Typography from '@mui/material/Typography';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import { useMapData } from './hooks/useMapData';
@@ -8,6 +9,7 @@ import { MapEditDialog } from './MapEditDialog';
 import { MapDialAction } from './MapDialAction';
 import { t } from '../../../i18n';
 import { MapProviders } from './MapProviders';
+import { routes } from '../../../utils/routes';
 
 const MapSelectedPage = () => {
     const {
@@ -21,7 +23,13 @@ const MapSelectedPage = () => {
         cancelEditMode,
         setInput,
         applyInput,
+        validateInput,
     } = useMapData();
+
+    const navigate = useNavigate();
+    const handleClickExit = useCallback(() => {
+        navigate(routes.map.path);
+    }, [navigate]);
 
     if (!mapUrl) {
         return (
@@ -33,7 +41,7 @@ const MapSelectedPage = () => {
 
     if (queryResult.isLoading) {
         return (
-            <Typography variant="body2">{'Loading...'}</Typography>
+            <LoadingIndicator />
         );
     }
 
@@ -46,34 +54,22 @@ const MapSelectedPage = () => {
         );
     }
 
-    if (!mapData && parseError) {
-        return (
-            <Alert severity="error">
-                <AlertTitle>{t('mapEdit.syntaxErrorInLine', { value: parseError.line })}</AlertTitle>
-                {parseError.message}
-            </Alert>
-        )
-    }
-
-    if (!mapData) {
-        return (
-            <LoadingIndicator />
-        );
-    }
-
     return (
         <>
-            <MapProviders mapData={mapData}>
-                <StarSystem mapData={mapData} />
-            </MapProviders>
-            <MapDialAction onEdit={setEditMode} />
+            {mapData && (
+                <MapProviders mapData={mapData}>
+                    <StarSystem mapData={mapData} />
+                </MapProviders>
+            )}
+            <MapDialAction onEdit={setEditMode} onExit={handleClickExit} />
             {(mode === 'edit') && (
                 <MapEditDialog
                     input={input}
                     setInput={setInput}
                     parseError={parseError}
-                    onCancel={cancelEditMode}
+                    onCancel={!!mapData ? cancelEditMode : handleClickExit}
                     onApply={applyInput}
+                    onValidate={validateInput}
                 />
             )}
         </>

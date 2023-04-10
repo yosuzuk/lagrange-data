@@ -19,6 +19,7 @@ interface IHookResult {
     cancelEditMode: () => void;
     setInput: (input: string) => void;
     applyInput: () => void;
+    validateInput: () => void;
 }
 
 export const useMapData = (): IHookResult => {
@@ -45,23 +46,20 @@ export const useMapData = (): IHookResult => {
 
     // apply loaded initial data
     useEffect(() => {
-        if (queryResult.isSuccess && queryResult.data && lastValidMapData === null && parseError === null) {
+        if (queryResult.isSuccess && queryResult.data) {
             setInput(queryResult.data);
 
-            if (mode === 'view') {
-                const [mapData, parseError] = parseMapData(queryResult.data);
-                if (parseError) {
-                    console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
-                    setParseError(parseError);
-                    setMode('edit');
-                    return;
-                }
-                setLastValidInput(queryResult.data);
-                setLastValidMapData(mapData);
+            const [mapData, parseError] = parseMapData(queryResult.data);
+            if (parseError) {
+                console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
+                setParseError(parseError);
+                setMode('edit');
                 return;
             }
+            setLastValidInput(queryResult.data);
+            setLastValidMapData(mapData);
         }
-    }, [queryResult.isSuccess, queryResult.data, lastValidMapData, parseError, mode]);
+    }, [queryResult.isSuccess, queryResult.data]);
 
     // apply manual input
     const applyInput = useCallback(() => {
@@ -75,6 +73,17 @@ export const useMapData = (): IHookResult => {
         setLastValidInput(input);
         setLastValidMapData(mapData);
         setMode('view');
+    }, [input]);
+
+    // just validate
+    const validateInput = useCallback(() => {
+        const [_mapData, parseError] = parseMapData(input);
+        if (parseError) {
+            console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
+            setParseError(parseError);
+            return;
+        }
+        setParseError(null);
     }, [input]);
 
     const setEditMode = useCallback(() => {
@@ -98,5 +107,6 @@ export const useMapData = (): IHookResult => {
         cancelEditMode,
         setInput,
         applyInput,
+        validateInput,
     };
 }

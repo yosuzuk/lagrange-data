@@ -22,7 +22,8 @@
         "restoreFromStorage": "ローカルストレージから復元",
         "back": "戻る",
         "next": "続ける",
-        "exit": "終了"
+        "exit": "終了",
+        "validate": "入力チェック"
     },
     "label": {
         "error": "エラー",
