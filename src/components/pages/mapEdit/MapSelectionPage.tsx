@@ -11,6 +11,7 @@ import { PageFooter } from '../../pageStructure/PageFooter';
 import { useMemo } from 'react';
 import { getExampleMaps, getTemplateMaps } from './examples/examplesMaps';
 import { ScriptedLink } from '../../link/ScriptedLink';
+import { t } from '../../../i18n';
 
 const MapSelectionPage = () => {
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ const MapSelectionPage = () => {
                         expandables={[
                             {
                                 id: 'load',
-                                summary: 'Open external map',
+                                summary: t('mapEdit.openExternalMap'),
                                 details: (
                                     <LoadMapFromUrl />
                                 ),
@@ -49,7 +50,7 @@ const MapSelectionPage = () => {
                             },
                             {
                                 id: 'examples',
-                                summary: 'Open example map',
+                                summary: t('mapEdit.openExampleMap'),
                                 details: (
                                     <Stack spacing={1}>
                                         {examples.map(example => (
@@ -63,7 +64,7 @@ const MapSelectionPage = () => {
                             },
                             {
                                 id: 'empty',
-                                summary: 'Open empty map',
+                                summary: t('mapEdit.openEmptyMap'),
                                 details: (
                                     <Stack spacing={1}>
                                         {templates.map(template => (
@@ -71,7 +72,7 @@ const MapSelectionPage = () => {
                                                 {template.name}
                                             </ScriptedLink>
                                         ))}
-                                        <Typography variant="body2" color="text.secondary">{'(size can be adjusted)'}</Typography>
+                                        <Typography variant="body2" color="text.secondary">{t('mapEdit.sizeCanBeAdjustedBrackets')}</Typography>
                                     </Stack>
                                 ),
                                 initiallyOpened: false,

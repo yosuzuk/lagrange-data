@@ -7,6 +7,7 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import { routes } from '../../../utils/routes';
+import { t } from '../../../i18n';
 
 interface IProps {
     onEdit: () => void;
@@ -56,7 +57,7 @@ export const MapDialAction = (props: IProps) => {
                     },
                 }}
                 onClick={handleClickEdit}
-                tooltipTitle={'Edit'}
+                tooltipTitle={t('button.edit')}
                 tooltipOpen={true}
             />
             <SpeedDialAction
@@ -67,7 +68,7 @@ export const MapDialAction = (props: IProps) => {
                     },
                 }}
                 onClick={handleClickExit}
-                tooltipTitle={'Exit'}
+                tooltipTitle={t('button.exit')}
                 tooltipOpen={true}
             />
         </SpeedDial>

@@ -59,7 +59,7 @@ export const LoadMapFromUrl = () => {
                         onClick={handleConfirmMapUrl}
                         disabled={mapUrl.length === 0}
                     >
-                        {t('button.confirm')}
+                        {t('mapEdit.loadAndOpenMap')}
                     </Button>
                 </div>
             </Stack>

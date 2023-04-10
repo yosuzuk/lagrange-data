@@ -28,7 +28,7 @@ const MapSelectedPage = () => {
     if (!mapUrl) {
         return (
             <Alert severity="error">
-                <AlertTitle>{'Invalid map'}</AlertTitle>
+                <AlertTitle>{t('mapEdit.invalidMap')}</AlertTitle>
             </Alert>
         );
     }
@@ -42,7 +42,7 @@ const MapSelectedPage = () => {
     if (queryResult.isError) {
         return (
             <Alert severity="error">
-                <AlertTitle>{'Error'}</AlertTitle>
+                <AlertTitle>{t('label.error')}</AlertTitle>
                 {`${queryResult.error}`}
             </Alert>
         );
