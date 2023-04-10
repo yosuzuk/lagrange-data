@@ -50,9 +50,40 @@ $base
 (5635,3555) #c0077FF Player
 (5635,3545) #c0077FF プレイヤー
 
+$marker
+(5645,3545)
+
 $station
 (3819,3519)(3680,3370)(3980,3670) city 10 Three-Headed Eagle
+
 (3721,3417) subCity 9 Alitus
+(3719,3406) stronghold
+(3710,3415) stronghold
+(3715,3426) stronghold
+(3728,3424) stronghold
+(3730,3412) stronghold
+
+(3820,3429) subCity 9 Mafra
+(3820,3418) stronghold
+(3810,3426) stronghold
+(3812,3436) stronghold
+(3825,3437) stronghold
+(3830,3425) stronghold
+
+(3949,3473) subCity 9 Rossby
+(3950,3462) stronghold
+(3939,3468) stronghold
+(3941,3480) stronghold
+(3954,3481) stronghold
+(3959,3470) stronghold
+
+(3730,3614) subCity 9 Clova
+(3739,3610) stronghold
+(3729,3603) stronghold
+(3720,3611) stronghold
+(3723,3623) stronghold
+(3736,3622) stronghold
+
 (1893,2833) city 7 St. Nowshak
 (3398,5577) city 7 Cappadocia
 (5098,4897) city 7 Moco
@@ -65,7 +96,21 @@ $station
 (2420,1620) city 6 St. Megiddo
 (2640,3820) city 6 Parthia Volante
 (3632,5570) city 6 Ofgut
+
 (4096,3591)(4010,3571)(4130,3690) city 6 Meroe Volante
+
+(4090,3616) subCity 5 Belz
+(4082,3610) stronghold
+(4082,3620) stronghold
+(4095,3622) stronghold
+(4096,3609) stronghold
+
+(4107,3671) subCity 5 Kholm
+(4100,3665) stronghold
+(4100,3676) stronghold
+(4113,3676) stronghold
+(4112,3664) stronghold
+
 (4569,1611) city 6 Tanis
 (5322,4890) city 6 New Thasos
 (5269,3551) city 6 Liam Volante
@@ -119,7 +164,12 @@ $station
 (1939,7698) city 3 Kribi
 (3672,5307) city 3 Nitro
 (3296,5418) city 3 Cartago
+
 (3713,3746)(3700,3730)(3780,3810) city 3 Mutter
+(3713,3740) stronghold
+(3708,3748) stronghold
+(3717,3749) stronghold
+
 (5372,4627) city 3 Cooma
 (4996,4738) city 3 Yala
 (5410,688) city 3 Balboa

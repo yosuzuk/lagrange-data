@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
-import { createPlayerBaseIcon, createCityIcon, createDefaultStationIcon, createTextImage, mergeIconAndText } from '../utils/spriteUtils';
+import { createPlayerBaseIcon, createCityIcon, createDefaultStationIcon, createTextImage, mergeIconAndText, applyMarginToImage, createStrongholdIcon } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IImages {
@@ -83,20 +83,6 @@ export const StationLabel = (props: IProps) => {
                 />
             );
         }
-        // case 'subCity': {
-        //     if (!cityIconVisible) {
-        //         return null;
-        //     }
-        //     if (!cityLabelVisible) {
-        //         // just show icon at city position
-        //         return (
-        //             <CanvasSprite
-        //                 canvas={images.icon}
-        //                 gridPosition={position}
-        //             />
-        //         );
-        //     }
-        // }
         default: {
             if (!stationLabelVisible) {
                 return null;
@@ -125,6 +111,9 @@ function getIcon(station: IStation): HTMLCanvasElement {
         }
         case 'city': {
             return createCityIcon(station.level, station.color);
+        }
+        case 'stronghold': {
+            return createStrongholdIcon(station.color);
         }
         default: {
             return createDefaultStationIcon(station.color);
@@ -163,7 +152,17 @@ function getTextCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCan
             backgroundColor: 'rgba(0,0,0,0.3)',
         });
     }
-    return textCanvas ?? iconCanvas ?? null;
+
+    const image = textCanvas ?? iconCanvas ?? null;
+    if (!image) {
+        return null;
+    }
+
+    return applyMarginToImage({
+        image,
+        marginBottom: 90,
+        backgroundColor: 'rgba(0,0,0,0.3)',
+    });
 }
 
 function getIconCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCanvas: HTMLCanvasElement | null): HTMLCanvasElement | null {
@@ -187,4 +186,8 @@ function showLevel(station: IStation): boolean {
         default:
             return Number.isFinite(station.level);
     }
+}
+
+function isHighLevelCity(station: IStation): boolean {
+    return station.type === 'city' && (station.level ?? 0) > 7;
 }

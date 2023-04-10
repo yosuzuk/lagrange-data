@@ -9,8 +9,9 @@ export function getExampleMaps() {
         markerExample: createExample('Marker', 'marker.txt'),
         planetsExample: createExample('Planets', 'planets.txt'),
         regionsExample: createExample('Regions', 'regions.txt'),
-        areaExample: createExample('Areas', 'areas.txt'),
+        citiesExample: createExample('Cities', 'cities.txt'),
         baseExample: createExample('Player bases', 'base.txt'),
+        areaExample: createExample('Areas', 'areas.txt'),
     } as const;
 }
 

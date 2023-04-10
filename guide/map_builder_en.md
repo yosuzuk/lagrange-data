@@ -1,4 +1,6 @@
-# Map Builder Syntax
+# Map Builder
+
+![map example](assets/mapExample.jpg)
 
 The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. This allows us to quickly build a map by copy and paste. 
 
@@ -29,8 +31,6 @@ $marker
 ```
 
 You can place markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
-
-「`$marker`」キーワードの後に複数のマーカーを配置できます。各マーカーは新しい行に指定する必要があります。オプションで色とラベルが指定できます。
 
 Example:
 
@@ -68,8 +68,6 @@ Coordinates need to be in the following order:
 
 These coordinates do not necessarily have to touch the region area. For example, you can use the same coordinates for all regions that share the same radius.
 
-これらの座標はかならずしも区域に接する必要はありません。同じ半径を共有する区域であれば座標も共有できます。
-
 Example:
 
 ```
@@ -103,6 +101,8 @@ $planet
 
 ## Space Stations
 
+![station example](assets/stationExample.jpg)
+
 Syntax:
 
 ```
@@ -120,9 +120,10 @@ Example:
 
 ```
 $station
-(3819,3519)(3680,3370)(3980,3670) city 10 Three-Headed Eagle
-(4096,3591)(4010,3571)(4130,3690) city 6 Meroe Volante
-(3713,3746)(3700,3730)(3780,3810) city 3 Mutter
+(8530,4929) city 3 Koga
+(4096,3591)(4010,3571)(4130,3690) city 6 #c0077FF Meroe Volante
+(4090,3616) subCity 5 #c0077FF Belz
+(4082,3610) stronghold #c0077FF
 ```
 
 ## Areas

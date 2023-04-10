@@ -1,5 +1,6 @@
 const renderOrder = {
-    axesHelper: 10,
+    axesHelper: 11,
+    highLevelCityLabel: 10,
     floadingLabel: 9,
     fleet: 8,
     arrow: 7,

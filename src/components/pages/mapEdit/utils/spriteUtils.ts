@@ -168,6 +168,29 @@ export function createDefaultStationIcon(color: string = 'white') {
     return canvas;
 }
 
+export function createStrongholdIcon(color: string = 'white') {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 10;
+    canvas.height = 10;
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = color;
+    ctx.moveTo(1.5, 1.5 + 2);
+    ctx.lineTo(1.5, 1.5);
+    ctx.lineTo(canvas.width - 1.5, 1.5);
+    ctx.lineTo(canvas.width - 1.5, 1.5 + 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = color;
+    ctx.moveTo(1.5, canvas.height - 1.5 - 2);
+    ctx.lineTo(1.5, canvas.height - 1.5);
+    ctx.lineTo(canvas.width - 1.5, canvas.height - 1.5);
+    ctx.lineTo(canvas.width - 1.5, canvas.height - 1.5 - 2);
+    ctx.stroke();
+    return canvas;
+}
+
 export function createCityIcon(cityLevel: number | null, color: string = 'white') {
     const { canvas, ctx } = createCanvas();
 
@@ -247,13 +270,20 @@ interface IApplyMarginArgs {
     image: HTMLCanvasElement;
     marginTop?: number;
     marginBottom?: number;
+    backgroundColor?: string;
 }
 
 export function applyMarginToImage(args: IApplyMarginArgs): HTMLCanvasElement {
-    const { image, marginTop = 0, marginBottom = 0 } = args;
+    const { image, marginTop = 0, marginBottom = 0, backgroundColor } = args;
     const { canvas, ctx } = createCanvas();
     canvas.width = image.width;
     canvas.height = marginTop + image.height + marginBottom;
+
+    if (backgroundColor) {
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, marginTop, canvas.width, image.height);
+    }
+
     ctx.drawImage(image, 0, marginTop);
     return canvas;
 }

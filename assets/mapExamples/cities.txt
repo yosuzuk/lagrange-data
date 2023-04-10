@@ -1,0 +1,17 @@
+$station
+(4096,3591)(4010,3571)(4130,3690) city 6 #c0077FF Meroe Volante
+
+(4090,3616) subCity 5 #c0077FF Belz
+(4082,3610) stronghold #c0077FF
+(4082,3620) stronghold #c0077FF
+(4095,3622) stronghold #c0077FF
+(4096,3609) stronghold #c0077FF
+
+(4107,3671) subCity 5 #c0077FF Kholm
+(4100,3665) stronghold #c0077FF
+(4100,3676) stronghold #c0077FF
+(4113,3676) stronghold #c0077FF
+(4112,3664) stronghold #c0077FF
+
+$marker
+(3980,3571)
