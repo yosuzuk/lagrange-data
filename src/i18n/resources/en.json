@@ -277,6 +277,7 @@
         "imageReady": "The image can be saved now. You can also right click the image or long press to open context menu for saving or copying to clipboard."
     },
     "mapEdit": {
+        "pageTitle": "Map builder",
         "loadAndOpenMap": "Load map",
         "invalidMap": "Invalid map",
         "regionValue": "Region {{value}}",

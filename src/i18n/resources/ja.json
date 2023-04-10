@@ -277,6 +277,7 @@
         "imageReady": "完成しました。下の画像は右クリック/長押しメニューからも保存/クリップボードにコピーできます。"
     },
     "mapEdit": {
+        "pageTitle": "マップ",
         "loadAndOpenMap": "マップを開く",
         "invalidMap": "無効なマップ",
         "regionValue": "区域{{value}}",

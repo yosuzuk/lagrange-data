@@ -35,9 +35,12 @@ const menuItems: Record<string, ReactNode> = {
             </Stack>
         ),
     } : {}),
-    ...(flags.imageEdit && ({
+    ...(flags.largeMapEdit ? {
+        [routes.map.path]: t('mapEdit.pageTitle'),
+    } : {}),
+    ...(flags.imageEdit ? {
         [routes.imageEdit.path]: t('imageEdit.pageTitle'),
-    })),
+    } : {}),
 };
 
 interface IProps {
@@ -48,7 +51,7 @@ export const NavigationBar = (props: IProps) => {
     const { currentRoute } = props;
 
     const theme = useTheme();
-    const burgerMenu = useMediaQuery(theme.breakpoints.down('md'));
+    const burgerMenu = useMediaQuery(theme.breakpoints.down('lg'));
 
     const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
 
