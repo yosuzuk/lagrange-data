@@ -49,6 +49,7 @@ export const MapProviders = (props: IProps) => {
                             <Canvas
                                 camera={camera}
                                 onDoubleClick={() => setDebug(x => !x)}
+                                frameloop="demand"
                             >
                                 <CameraControls />
                                 <color attach="background" args={['#292828']} />

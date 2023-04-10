@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useThree } from '@react-three/fiber';
 import { Sun } from './Sun';
 import { WorldLabel } from './WorldLabel';
 import { StarsBackground } from './StarsBackground';
@@ -17,6 +19,12 @@ interface IProps {
 
 export const StarSystem = (props: IProps) => {
     const { mapData } = props;
+    const { invalidate } = useThree();
+
+    useEffect(() => {
+        console.log(`invalidate frame for "${mapData.name}"`);
+        invalidate();
+    }, [invalidate, mapData]);
 
     return (
         <>
