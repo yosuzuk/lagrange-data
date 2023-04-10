@@ -12,6 +12,7 @@ const MAX_THETA_LENGTH = Math.PI * 2;
 const MIN_THETA_SEGMENTS = 3;
 
 interface IProps {
+    id: string;
     innerRadiusPoint: GamePosition;
     outerRadiusPoint: GamePosition;
     angleStartPoint: GamePosition;
@@ -31,7 +32,7 @@ interface IState {
 }
 
 export const Region = (props: IProps) => {
-    const { regionNumber, color, label, angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint } = props;
+    const { id, regionNumber, color, label, angleStartPoint, angleEndPoint, innerRadiusPoint, outerRadiusPoint } = props;
     const gridSize = useGridSize();
     const debug = useDebug();
     const backgroundVisible = useZoomBasedVisibility('zoneBackground');
@@ -98,6 +99,7 @@ export const Region = (props: IProps) => {
             )}
             {labelVisible && (Number.isFinite(regionNumber) || label) && (
                 <TextLabel
+                    id={`${id}_label`}
                     gridPosition={state.textPosition}
                     text={[
                         ...(label ? [label] : []),

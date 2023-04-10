@@ -1,5 +1,4 @@
-import { Edges } from '@react-three/drei';
-import { useMemo } from 'react';
+import { useMemo, useRef, Fragment } from 'react';
 import { useGridSize } from '../context/GridSizeContext';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { IArea } from '../types/IMapContent';
@@ -23,7 +22,11 @@ export const Area = (props: IProps) => {
     const edgeVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityAreaEdge' : 'defaultAreaEdge');
     const backgroundOpacity = useZoomBasedOpacity('areaBackground');
 
+    const updateIterationRef = useRef<number>(0);
+
     const state = useMemo(() => {
+        updateIterationRef.current++;
+
         const [x1, y1] = snapToGrid(toGridPosition(area.position1, gridSize));
         const [x2, y2] = snapToGrid(toGridPosition(area.position2, gridSize));
 
@@ -118,7 +121,7 @@ export const Area = (props: IProps) => {
             bottomLeftDiagonalLine,
             bottomRightDiagonalLine,
         } as const;
-    }, [area, gridSize]);
+    }, [area, gridSize, updateIterationRef]);
 
     if (!areaVisible) {
         return null;
@@ -138,9 +141,11 @@ export const Area = (props: IProps) => {
                 renderOrder={getRendeOrder('area')}
             />
             {edgeVisible ? (
-                <Lines points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
+                <Fragment key={`${area.id}_simpleEdge_${updateIterationRef.current}`}>
+                    <Lines points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
+                </Fragment>
             ) : (
-                <>
+                <Fragment key={`${area.id}_detailed_edge_${updateIterationRef.current}`}>
                     <Lines points={state.topLeftLines} color={area.color} renderOrder={lineRenderOrder} />
                     <Lines points={state.topRightLines} color={area.color} renderOrder={lineRenderOrder} />
                     <Lines points={state.bottomLeftLines} color={area.color} renderOrder={lineRenderOrder} />
@@ -155,7 +160,7 @@ export const Area = (props: IProps) => {
                     <Plane position={[state.xRight, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
                     <Plane position={[state.xLeft, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
                     <Plane position={[state.xRight, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                </>
+                </Fragment>
             )}
         </>
     );

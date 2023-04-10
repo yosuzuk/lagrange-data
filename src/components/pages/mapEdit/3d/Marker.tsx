@@ -1,5 +1,5 @@
 import { ThreeEvent } from '@react-three/fiber';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { useCursorControl } from '../context/CursorContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -9,6 +9,7 @@ import { CanvasSprite } from './CanvasSprite';
 import { TextLabel } from './TextLabel';
 
 interface IProps {
+    id: string;
     position?: GamePosition;
     gridPosition?: GridPosition;
     color?: string;
@@ -16,16 +17,20 @@ interface IProps {
 }
 
 export const Marker = (props: IProps) => {
-    const { position: gamePosition, gridPosition, color = 'white', label } = props;
+    const { id, position: gamePosition, gridPosition, color = 'white', label } = props;
     const { setCursorToPointer, setCursorToDefault } = useCursorControl();
     const labelVisible = useZoomBasedVisibility('markerLabel');
+    const updateIterationRef = useRef<number>(0);
 
     const position = useNormalizedPosition({
         gamePosition,
         gridPosition,
     });
 
-    const markerImage = useMemo(() => createMarkerImage(color), [color]);
+    const markerImage = useMemo(() => {
+        updateIterationRef.current++;
+        return createMarkerImage(color);
+    }, [color, updateIterationRef]);
 
     const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
         e.stopPropagation();
@@ -35,6 +40,7 @@ export const Marker = (props: IProps) => {
     return (
         <>
             <CanvasSprite
+                key={`${id}_${updateIterationRef.current}`}
                 canvas={markerImage}
                 gridPosition={position}
                 onClick={handleClick}
@@ -43,6 +49,7 @@ export const Marker = (props: IProps) => {
             />
             {label && labelVisible && (
                 <TextLabel
+                    id={`${id}_label`}
                     text={label}
                     color={color}
                     marginBottom={60}

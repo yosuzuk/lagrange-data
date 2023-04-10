@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getRendeOrder } from '../utils/renderOrder';
@@ -6,6 +6,7 @@ import { createTextImage, applyMarginToImage } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 
 interface IProps {
+    id: string;
     text: string;
     position?: GamePosition;
     gridPosition?: GridPosition;
@@ -25,6 +26,7 @@ const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
 
 export const TextLabel = (props: IProps) => {
     const {
+        id,
         text,
         position: gamePosition,
         gridPosition,
@@ -40,6 +42,8 @@ export const TextLabel = (props: IProps) => {
         scale = 1,
     } = props;
 
+    const updateIterationRef = useRef<number>(0);
+
     const position = useNormalizedPosition({
         gamePosition,
         gridPosition,
@@ -49,6 +53,9 @@ export const TextLabel = (props: IProps) => {
         if (text.trim().length === 0) {
             return null;
         }
+
+        updateIterationRef.current++;
+
         const textImage = createTextImage({
             text,
             color,
@@ -68,7 +75,7 @@ export const TextLabel = (props: IProps) => {
         }
 
         return textImage;
-    }, [text, color, backgroundColor, font, fontSize, lineSpacing, padding, marginTop, marginBottom]);
+    }, [updateIterationRef, text, color, backgroundColor, font, fontSize, lineSpacing, padding, marginTop, marginBottom]);
 
     if (!textImage) {
         console.log('skipped image');
@@ -78,6 +85,7 @@ export const TextLabel = (props: IProps) => {
     if (faceCamera) {
         return (
             <CanvasSprite
+                key={`${id}_${updateIterationRef.current}`}
                 canvas={textImage}
                 gridPosition={position}
             />
