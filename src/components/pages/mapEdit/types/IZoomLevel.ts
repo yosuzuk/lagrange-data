@@ -12,7 +12,7 @@ export interface IZoomBasedVisibility {
     planetLabel: boolean;
     subPlanetOrbit: boolean;
     markerLabel: boolean;
-    baseLabel: boolean;
+    stationLabel: boolean;
     stationCone: boolean;
 
     // city

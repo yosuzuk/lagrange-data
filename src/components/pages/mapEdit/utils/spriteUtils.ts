@@ -158,6 +158,16 @@ export function createSmallPlanetIcon(color: string = 'white') {
     return canvas;
 }
 
+export function createDefaultStationIcon(color: string = 'white') {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 8;
+    canvas.height = 8;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = color;
+    ctx.strokeRect(1.5, 1.5, 5, 5);
+    return canvas;
+}
+
 export function createCityIcon(cityLevel: number | null, color: string = 'white') {
     const { canvas, ctx } = createCanvas();
 

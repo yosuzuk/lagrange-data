@@ -52,6 +52,7 @@ $base
 
 $station
 (3819,3519)(3680,3370)(3980,3670) city 10 Three-Headed Eagle
+(3721,3417) subCity 9 Alitus
 (1893,2833) city 7 St. Nowshak
 (3398,5577) city 7 Cappadocia
 (5098,4897) city 7 Moco
