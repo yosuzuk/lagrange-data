@@ -158,12 +158,12 @@ export function createSmallPlanetIcon(color: string = 'white') {
     return canvas;
 }
 
-export function createCityIcon(cityLevel: number, color: string = 'white') {
+export function createCityIcon(cityLevel: number | null, color: string = 'white') {
     const { canvas, ctx } = createCanvas();
     ctx.lineWidth = 1;
     ctx.strokeStyle = color;
 
-    if (cityLevel >= 7) {
+    if (cityLevel && cityLevel >= 7) {
         canvas.width = 8;
         canvas.height = 8;
         ctx.strokeRect(0, 0, 8, 8);
@@ -172,7 +172,7 @@ export function createCityIcon(cityLevel: number, color: string = 'white') {
         return canvas;
     }
 
-    if (cityLevel >= 5) {
+    if (cityLevel && cityLevel >= 5) {
         canvas.width = 6;
         canvas.height = 6;
         ctx.strokeRect(0, 0, 6, 6);
@@ -185,6 +185,7 @@ export function createCityIcon(cityLevel: number, color: string = 'white') {
     canvas.height = 4;
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, 4, 4);
+    return canvas;
 }
 
 interface IMergeIconAndTextArgs {

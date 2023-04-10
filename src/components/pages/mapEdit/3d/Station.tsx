@@ -2,7 +2,7 @@ import { useMemo, useRef, Fragment } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
-import { createPlayerBaseIcon, createTextImage, mergeIconAndText } from '../utils/spriteUtils';
+import { createCityIcon, createPlayerBaseIcon, createTextImage, mergeIconAndText } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
 import { StationCone } from './StationCone';
 
@@ -29,6 +29,22 @@ export const Station = (props: IProps) => {
         }
 
         switch (station.type) {
+            case 'city': {
+                const iconCanvas = createCityIcon(station.level, station.color);
+                const textCanvas = createTextImage({
+                    text: station.name,
+                    fontSize: 12,
+                    color: station.color,
+                });
+                return mergeIconAndText({
+                    iconCanvas,
+                    textCanvas,
+                    spacing: 4,
+                    padding: 1,
+                    marginBottom: 90,
+                    backgroundColor: 'rgba(0,0,0,0.3)',
+                });
+            }
             case 'base': {
                 const iconCanvas = createPlayerBaseIcon(station.color);
                 const textCanvas = createTextImage({

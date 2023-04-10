@@ -44,6 +44,94 @@ $planet
 (6812,3296)(6852,3234) small Fafner
 (7018,3175)(6852,3234) small Pohjola
 
+$base
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF Player
+(5635,3545) #c0077FF プレイヤー
+
+$station
+(3819,3519) city 10 Three-Headed Eagle
+(1893,2833) city 7 St. Nowshak
+(3398,5577) city 7 Cappadocia
+(5098,4897) city 7 Moco
+(5741,5969) city 7 Great Calakmul
+(6158,7437) city 7 St. Psophis
+(6773,3093) city 7 Bithynia Volante
+(1750,4940) city 6 Inanna
+(1739,5891) city 6 Idrisi
+(2132,3050) city 6 Russel Volante
+(2420,1620) city 6 St. Megiddo
+(2640,3820) city 6 Parthia Volante
+(3632,5570) city 6 Ofgut
+(4096,3591) city 6 Meroe Volante
+(4569,1611) city 6 Tanis
+(5322,4890) city 6 New Thasos
+(5269,3551) city 6 Liam Volante
+(5179,5751) city 6 New Sheerness
+(5852,6150) city 6 Sleipnir
+(6150,3220) city 6 New Korata
+(6392,7430) city 6 Icaria
+(6529,4071) city 6 New Himera
+(7012,3310) city 6 Galatia
+(6720,6560) city 6 Great Virgil
+(7049,5771) city 6 Beatrice
+(7870,5460) city 6 New Abydos
+(1725,4818) city 5 Porvoo
+(1614,5073) city 5 Taltal
+(1852,5988) city 5 Catota
+(1840,5818) city 5 Timbuktu
+(1755,5779) city 5 Warra
+(1951,3027) city 5 Lipany
+(1779,3070) city 5 New Beleville
+(2607,1654) city 5 Hartwell
+(2614,1393) city 5 San Juan
+(2827,3854) city 5 Leleque
+(2834,3593) city 5 New Holmfirth
+(4292,1598) city 5 Sandila
+(4570,1398) city 5 Makhambet
+(4435,1439) city 5 Amida
+(5232,3789) city 5 Rana
+(5158,3719) city 5 Tuscaloosa
+(5030,3540) city 5 Walfra
+(5195,5639) city 5 Sokol
+(5280,5678) city 5 Rugby
+(5292,5848) city 5 New Aysgarth
+(5671,6167) city 5 Dush
+(6126,3362) city 5 Sedona
+(5936,3354) city 5 Sudbury
+(6290,4060) city 5 Evpatoriya
+(6418,4239) city 5 Jampur
+(6492,4309) city 5 Izola
+(6831,3287) city 5 Sitka
+(6659,3330) city 5 Ayr
+(6907,6594) city 5 Okotoks
+(6914,6333) city 5 Aspe
+(6772,5758) city 5 Olynthus
+(7050,5558) city 5 Bak
+(6915,5599) city 5 Salkhad
+(7846,5602) city 5 Scylla
+(7656,5594) city 5 Port-Au-Prince
+(370,4728) city 3 Dank
+(1770,1408) city 3 New Warwick
+(2166,2897) city 3 Tsau
+(1939,7698) city 3 Kribi
+(3672,5307) city 3 Nitro
+(3296,5418) city 3 Cartago
+(3713,3746) city 3 Mutter
+(5372,4627) city 3 Cooma
+(4996,4738) city 3 Yala
+(5410,688) city 3 Balboa
+(5867,6008) city 3 Aktaj
+(6432,7167) city 3 Gortyna
+(6056,7278) city 3 Jezero
+(6379,7978) city 3 Zunil
+(7046,3157) city 3 New Dundalk
+(8530,4929) city 3 Koga
+
+$marker
+(8530,4929)
+
 $area
 (5500,3550)(5550,3500)
 (5560,3510)(5600,3550) city #cBA6E34
@@ -58,9 +146,3 @@ $marker
 (5530,3560) C2
 (5590,3560) D1
 (5560,3590) D2
-
-$base
-(5615,3555) #cF7C360
-(5625,3565) #c40C0C3
-(5635,3555) #c0077FF Player
-(5635,3545) #c0077FF プレイヤー
