@@ -6,7 +6,7 @@ import { snapGamePositionToGridCellCenter } from './coordinateUtils';
 
 const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
-const NEUTRAL_FACTION_COLOR = '#F7C360';
+const NEUTRAL_FACTION_COLOR = '#D0AE55';
 const DEFAULT_PLAYER_COLOR = '#0077ff';
 
 export function parseMapData(input: string): [IMapData, IParseMapContentError | null] {

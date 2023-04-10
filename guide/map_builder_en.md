@@ -213,4 +213,4 @@ Default colors:
 ![985036](assets/colors/985036.png) regions (#c)
 ![E3A06D](assets/colors/E3A06D.png) planets (#cE3A06D)
 ![4D85BE](assets/colors/4D85BE.png) player (#c4D85BE)
-![F7C360](assets/colors/F7C360.png) areas & stations (#cF7C360)
+![D0AE55](assets/colors/D0AE55.png) areas & stations (#cD0AE55)
