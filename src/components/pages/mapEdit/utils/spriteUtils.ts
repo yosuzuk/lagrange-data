@@ -160,31 +160,35 @@ export function createSmallPlanetIcon(color: string = 'white') {
 
 export function createCityIcon(cityLevel: number | null, color: string = 'white') {
     const { canvas, ctx } = createCanvas();
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = color;
 
     if (cityLevel && cityLevel >= 7) {
-        canvas.width = 8;
-        canvas.height = 8;
-        ctx.strokeRect(0, 0, 8, 8);
+        canvas.width = 13;
+        canvas.height = 13;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = color;
+        ctx.strokeRect(1.5, 1.5, 10, 10);
         ctx.fillStyle = color;
-        ctx.fillRect(2, 2, 4, 4);
+        ctx.fillRect(4, 4, 5, 5);
         return canvas;
     }
 
     if (cityLevel && cityLevel >= 5) {
-        canvas.width = 6;
-        canvas.height = 6;
-        ctx.strokeRect(0, 0, 6, 6);
+        canvas.width = 10;
+        canvas.height = 10;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = color;
+        ctx.strokeRect(1.5, 1.5, 7, 7);
         ctx.fillStyle = color;
-        ctx.fillRect(2, 2, 2, 2);
+        ctx.fillRect(4, 4, 2, 2);
         return canvas;
     }
 
-    canvas.width = 4;
-    canvas.height = 4;
+    canvas.width = 6;
+    canvas.height = 6;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = color;
     ctx.fillStyle = color;
-    ctx.fillRect(0, 0, 4, 4);
+    ctx.fillRect(0, 0, 6, 6);
     return canvas;
 }
 
@@ -196,24 +200,36 @@ interface IMergeIconAndTextArgs {
     marginBottom?: number;
     padding?: number;
     backgroundColor?: string;
+    centerIcon?: boolean;
 }
 
 export function mergeIconAndText(args: IMergeIconAndTextArgs): HTMLCanvasElement {
-    const { iconCanvas, textCanvas, spacing, marginTop = 0, marginBottom = 0, padding = 0, backgroundColor } = args;
+    const { iconCanvas, textCanvas, spacing, marginTop = 0, marginBottom = 0, padding = 0, backgroundColor, centerIcon = false } = args;
     const { canvas, ctx } = createCanvas();
-    canvas.width = iconCanvas.width + spacing + textCanvas.width + padding + padding;
+
+    const centeringOffset = centerIcon ? (textCanvas.width + spacing) : 0;
+
+    canvas.width = [
+        padding,
+        centeringOffset,
+        iconCanvas.width,
+        spacing,
+        textCanvas.width,
+        padding,
+    ].reduce((acc, next) => acc + next, 0);
+
     const contentHeight = Math.max(iconCanvas.height, textCanvas.height);
     canvas.height = marginTop + contentHeight + marginBottom + padding + padding;
 
     if (backgroundColor) {
         ctx.fillStyle = backgroundColor;
-        ctx.fillRect(0, marginTop, canvas.width, contentHeight + padding + padding);
+        ctx.fillRect(centeringOffset, marginTop, canvas.width - centeringOffset, contentHeight + padding + padding);
     }
 
-    const iconOffsetY = marginTop + padding + (contentHeight - iconCanvas.height) / 2;
-    const textOffsetY = marginTop + padding + (contentHeight - textCanvas.height) / 2;
-    ctx.drawImage(iconCanvas, padding, iconOffsetY);
-    ctx.drawImage(textCanvas, padding + iconCanvas.width + spacing, textOffsetY);
+    const iconOffsetY = marginTop + padding + Math.ceil((contentHeight - iconCanvas.height) / 2);
+    const textOffsetY = marginTop + padding + Math.ceil((contentHeight - textCanvas.height) / 2);
+    ctx.drawImage(iconCanvas, padding + centeringOffset, iconOffsetY);
+    ctx.drawImage(textCanvas, padding + centeringOffset + iconCanvas.width + spacing, textOffsetY);
     return canvas;
 }
 

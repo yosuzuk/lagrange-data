@@ -15,6 +15,12 @@ export interface IZoomBasedVisibility {
     baseLabel: boolean;
     stationCone: boolean;
 
+    // city
+    cityIcon: boolean;
+    cityLabel: boolean;
+    cityLabel7up: boolean;
+    cityLevel: boolean;
+
     // area
     defaultArea: boolean;
     defaultAreaEdge: boolean;

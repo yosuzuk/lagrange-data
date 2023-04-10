@@ -1,4 +1,5 @@
 import { useMemo, useRef } from 'react';
+import { NearestFilter } from 'three';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getRendeOrder } from '../utils/renderOrder';

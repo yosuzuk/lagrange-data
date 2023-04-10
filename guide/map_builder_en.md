@@ -110,7 +110,7 @@ $station
 <point> [<type>] [<level>] [<color>] [<name>]
 ```
 
-You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
+You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `subCity`, `stronghold` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
 
 Player bases and platforms have their own dedicated keyword (`$base` and `$platform`). `$station` is mostly used for creating cities.
 
