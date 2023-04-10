@@ -15,6 +15,8 @@ interface IImages {
     icon: HTMLCanvasElement;
     iconCenteredLabel: HTMLCanvasElement | null;
     textCenteredLabel: HTMLCanvasElement | null;
+    iconCenteredLabelWithLevel: HTMLCanvasElement | null;
+    textCenteredLabelWithLevel: HTMLCanvasElement | null;
 }
 
 export const Station = (props: IProps) => {
@@ -34,14 +36,17 @@ export const Station = (props: IProps) => {
     const images = useMemo<IImages>(() => {
         updateIterationRef.current++;
         const icon = getIcon(station);
-        const text = getTextImage(station, cityLevelVisible);
+        const text = getTextImage(station, false);
+        const textWithLevel = station.type === 'city' ? getTextImage(station, true) : null;
 
         return {
             icon,
             iconCenteredLabel: getIconCenteredLabelImage(icon, text),
             textCenteredLabel: getTextCenteredLabelImage(icon, text),
+            iconCenteredLabelWithLevel: textWithLevel ? getIconCenteredLabelImage(icon, textWithLevel) : null,
+            textCenteredLabelWithLevel: textWithLevel ? getTextCenteredLabelImage(icon, textWithLevel) : null,
         };
-    }, [station, updateIterationRef, cityLevelVisible]);
+    }, [station, updateIterationRef]);
 
     return (
         <Fragment key={`${station.id}_${updateIterationRef.current}`}>
@@ -66,14 +71,14 @@ export const Station = (props: IProps) => {
                     {/* show label but keep the icon at city position */}
                     {cityLabelVisible && !coneVisible && (
                         <CanvasSprite
-                            canvas={images.iconCenteredLabel ?? images.icon}
+                            canvas={(cityLevelVisible ? images.iconCenteredLabelWithLevel : null) ?? images.iconCenteredLabel ?? images.icon}
                             gridPosition={position}
                         />
                     )}
                     {/* show label above the city structure */}
                     {cityLabelVisible && coneVisible && (
                         <CanvasSprite
-                            canvas={images.textCenteredLabel ?? images.icon}
+                            canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
                             gridPosition={position}
                         />
                     )}
