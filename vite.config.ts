@@ -10,7 +10,7 @@ export const baseConfig = {
         __APP_TARGET__: '"gh-pages"',
     },
     assetsInclude: [
-        'assets/*.txt',
+        'assets/mapExamples/*.txt',
     ],
 };
 
