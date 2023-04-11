@@ -181,16 +181,45 @@ const c2: ISystemModule = {
 
 const d1: ISystemModule = {
     id: 'D1',
-    name: '???',
+    name: '「ツンドラ」要撃UAVシステム',
+    translatedName: {
+        en: '"Tsundra" Interceptor UAV System',
+    },
+    description: '対空UAVを4機搭載',
+    // TODO skills
+    skillSlots: 5,
     category: 'D',
     categoryNumber: 1,
+    parts: [
+        {
+            text: [
+                'CAT/R-6',
+                '領域対空UAVポッド', // TODO ja
+                '対空：',
+                '・対空：4608',
+            ],
+        },
+    ],
 };
 
 const d2: ISystemModule = {
     id: 'D2',
-    name: '???',
+    name: '"Hummingbird" Firepower Recon UAV System', // TODO ja
+    translatedName: {
+        en: '"Hummingbird" Firepower Recon UAV System',
+    },
+    description: '偵察UAVを4機搭載',
     category: 'D',
     categoryNumber: 2,
+    // TODO skills
+    parts: [
+        {
+            text: [
+                'CFT-6',
+                '偵察UAVポッド', // TODO ja
+            ],
+        },
+    ],
 };
 
 const d3: ISystemModule = {
@@ -257,8 +286,6 @@ const e2: ISystemModule = {
 };
 
 const staticModules: ISystemModule[] = [
-    // TODO find out if static: 「ツンドラ」要撃UAVシステム（Ｄ１？）
-    // TODO find out if static: 総合支援ドック
     modules.static({
         id: 'supportDock',
         name: '総合支援ドック',
