@@ -1,0 +1,2 @@
+$name My Star System
+$size 10000
