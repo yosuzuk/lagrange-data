@@ -4,13 +4,14 @@ interface IProps {
     lineWidth?: number;
     renderOrder?: number;
     opacity?: number;
+    visible?: boolean;
 }
 
 export const Lines = (props: IProps) => {
-    const { points, color, renderOrder = 0, opacity = 1 } = props;
+    const { points, color, renderOrder = 0, opacity = 1, visible = true } = props;
 
     return (
-        <lineSegments renderOrder={renderOrder}>
+        <lineSegments visible={visible} renderOrder={renderOrder}>
             <bufferGeometry attach="geometry">
                 <bufferAttribute
                     attach="attributes-position"

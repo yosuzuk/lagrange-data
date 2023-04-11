@@ -2,22 +2,30 @@
 
 ![map example](assets/mapExample.jpg)
 
-The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. This allows us to quickly build a map by copy and paste. 
+The map builder can be used to visualize and share a star system. Its content, the map data, is described in text form and the syntax for it is described on this page.
 
-Colors are indicated using escape codes like `#R` or `#cFF0000` (more details below). 
+## Syntax
 
-There are special keywords for placing map content (e.g. `$marker` for placing marker points). Any line after such a keyword belongs to the same content type. You don't have to repeat these keywords for every line of content.
+The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. Colors are indicated using escape codes like `#R` or `#cFF0000`. This allows us to copy and paste some of the content into both directions. 
 
-## Basic map properties
+Special keywords are defined for placing map content, e.g. `$marker` for placing marker points. Any line after such a keyword belongs to the same content type. You do not have to repeat these keywords for every line of content.
 
-Syntax:
+![editor](assets/editor.jpg)
 
-```
-$name <name>
-$size <size>
-```
+Keywords:
 
-Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. A sun will be placed at the center point, with the given "name" as label if specified.
+- `$marker` for placing marker points
+- `$region` for defining region areas
+- `$planet` for placing planets and their orbit
+- `$station` for building space stations and cities
+- `$area` for defining areas that span over multiple grid cells
+- `$base` for placing player bases
+- `$name` for the name of the star system
+- `$size` for the size of the coordinate system
+
+(these keywords are explained in more detail below)
+
+Comments can be added after a double slash.
 
 ## Marker
 
@@ -114,7 +122,7 @@ You can place various types of space stations after the `$station` keyword. "typ
 
 Two additional points can be specified to mark the area around the station.
 
-Player bases and platforms have their own dedicated keyword (`$base` and `$platform`). `$station` is mostly used for creating cities.
+Player bases ~~and platforms~~ have their own dedicated keyword (`$base` ~~and `$platform`~~). `$station` is mostly used for creating cities.
 
 Example:
 
@@ -139,7 +147,7 @@ $area
 
 You can place various types of areas after the `$area` keyword. Each area needs two corner points. Both points are automatically rounded to fit the area onto the grid. "type" can be one of `city` or `default` if specified. Areas become visible at different zoom levels depending on their type.
 
-You don't need `$area` for placing player bases and platform areas. Those are automatically placed when using the `$base` or `$platform` keyword. `$area` is mostly used for creating city areas.
+You don't need `$area` for placing player bases and platform areas. Those are automatically placed when using the `$base` ~~or `$platform`~~ keyword. `$area` is mostly used for creating city areas.
 
 Example:
 
@@ -164,25 +172,16 @@ $base
 
 You can place player bases after the `$base` keyword. The given point is automatically rounded to fit the base onto the grid. Bases are only visible at a certain zoom level.
 
-## Player Outposts
+## Basic map properties
 
 Syntax:
 
 ```
-$outpost
-<point> [<color>] [<name>]
+$name <name>
+$size <size>
 ```
 
-## Mining Platforms
-
-Syntax:
-
-```
-$platform
-<point> <type> [<color>] [<name>]
-```
-
-You can place mining platforms after the `$platform` keyword. It needs a point for the bottom left corner. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. 
+Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. A sun will be placed at the center point, with the given "name" as label if specified.
 
 ## Colors
 

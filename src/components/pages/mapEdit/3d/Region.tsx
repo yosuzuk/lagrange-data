@@ -68,33 +68,31 @@ export const Region = (props: IProps) => {
 
     return (
         <>
-            {backgroundVisible && (
-                <mesh position={[0, 0, 0]} renderOrder={getRendeOrder('region')}>
-                    <ringGeometry
-                        args={[
-                            // innerRadius: Float
-                            state.innerRadius,
-                            // outerRadius: Float
-                            state.outerRadius,
-                            // thetaSegments: Integer
-                            state.thetaSegments,
-                            // phiSegments: Integer
-                            1,
-                            // thetaStart: Float
-                            state.thetaStart,
-                            // thetaLength: Float
-                            state.thetaLength,
-                        ]}
-                    />
-                    <meshBasicMaterial
-                        color={region.color}
-                        wireframe={debug}
-                        transparent={true}
-                        opacity={backgroundOpacity ?? undefined}
-                        depthWrite={false}
-                    />
-                </mesh>
-            )}
+            <mesh visible={backgroundVisible} position={[0, 0, 0]} renderOrder={getRendeOrder('region')}>
+                <ringGeometry
+                    args={[
+                        // innerRadius: Float
+                        state.innerRadius,
+                        // outerRadius: Float
+                        state.outerRadius,
+                        // thetaSegments: Integer
+                        state.thetaSegments,
+                        // phiSegments: Integer
+                        1,
+                        // thetaStart: Float
+                        state.thetaStart,
+                        // thetaLength: Float
+                        state.thetaLength,
+                    ]}
+                />
+                <meshBasicMaterial
+                    color={region.color}
+                    wireframe={debug}
+                    transparent={true}
+                    opacity={backgroundOpacity ?? undefined}
+                    depthWrite={false}
+                />
+            </mesh>
             {labelVisible && (Number.isFinite(region.regionNumber) || region.label) && (
                 <TextLabel
                     key={`${region.id}_label_${updateIterationRef.current}`}

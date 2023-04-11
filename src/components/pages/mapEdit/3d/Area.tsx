@@ -140,26 +140,23 @@ export const Area = (props: IProps) => {
                 border={edgeVisible}
                 renderOrder={getRendeOrder('area')}
             />
-            {edgeVisible ? (
-                <Lines points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
-            ) : (
-                <>
-                    <Lines points={state.topLeftLines} color={area.color} renderOrder={lineRenderOrder} />
-                    <Lines points={state.topRightLines} color={area.color} renderOrder={lineRenderOrder} />
-                    <Lines points={state.bottomLeftLines} color={area.color} renderOrder={lineRenderOrder} />
-                    <Lines points={state.bottomRightLines} color={area.color} renderOrder={lineRenderOrder} />
+            <Lines visible={edgeVisible} points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
+            <group visible={!edgeVisible}>
+                <Lines points={state.topLeftLines} color={area.color} renderOrder={lineRenderOrder} />
+                <Lines points={state.topRightLines} color={area.color} renderOrder={lineRenderOrder} />
+                <Lines points={state.bottomLeftLines} color={area.color} renderOrder={lineRenderOrder} />
+                <Lines points={state.bottomRightLines} color={area.color} renderOrder={lineRenderOrder} />
 
-                    <Lines points={state.topLeftDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
-                    <Lines points={state.topRightDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
-                    <Lines points={state.bottomLeftDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
-                    <Lines points={state.bottomRightDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
+                <Lines points={state.topLeftDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
+                <Lines points={state.topRightDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
+                <Lines points={state.bottomLeftDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
+                <Lines points={state.bottomRightDiagonalLine} color={DIAGONAL_LINE_COLOR} renderOrder={lineRenderOrder} />
 
-                    <Plane position={[state.xLeft, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                    <Plane position={[state.xRight, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                    <Plane position={[state.xLeft, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                    <Plane position={[state.xRight, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
-                </>
-            )}
+                <Plane position={[state.xLeft, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
+                <Plane position={[state.xRight, state.yTop, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
+                <Plane position={[state.xLeft, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
+                <Plane position={[state.xRight, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
+            </group>
         </Fragment>
     );
 };

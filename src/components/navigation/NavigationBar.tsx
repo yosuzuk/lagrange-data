@@ -27,14 +27,14 @@ const menuItems: Record<string, ReactNode> = {
     [routes.shipData.path]: t('shipData.pageTitle'),
     [routes.fleetSetup.path]: t('fleetSetup.pageTitle'),
     [routes.myList.path]: t('myList.pageTitle'),
-    ...(flags.dpmCalc && getCurrentLanguage() === 'ja' ? {
-        [routes.dpmCalc.path]: (
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                <span>{t('dpmCalc.pageTitle')}</span>
-                <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
-            </Stack>
-        ),
-    } : {}),
+    // ...(flags.dpmCalc && getCurrentLanguage() === 'ja' ? {
+    //     [routes.dpmCalc.path]: (
+    //         <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+    //             <span>{t('dpmCalc.pageTitle')}</span>
+    //             <Chip label={'β版'} variant="outlined" size="small" sx={{ textTransform: 'initial' }} />
+    //         </Stack>
+    //     ),
+    // } : {}),
     ...(flags.largeMapEdit ? {
         [routes.map.path]: t('mapEdit.pageTitle'),
     } : {}),
