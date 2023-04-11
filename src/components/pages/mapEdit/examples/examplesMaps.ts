@@ -25,6 +25,6 @@ export function getTemplateMaps(): IExampleMap[] {
 function createExample(name: string, filename: string): IExampleMap {
     return {
         name,
-        url: window.location.origin + window.location.pathname + 'assets/mapExamples/' + filename,
+        url: window.location.origin + window.location.pathname + 'mapExamples/' + filename,
     };
 }
