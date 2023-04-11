@@ -142,7 +142,7 @@ const c1: ISystemModule = {
     id: 'C1',
     name: '戦闘機搭載システム',
     translatedName: {
-        // TODO en
+        en: 'Aircraft System', // TODO en
     },
     description: '大型戦闘機を2隊搭載可能',
     category: 'C',
@@ -207,7 +207,7 @@ const d3: ISystemModule = {
         text: [
             'CSF-2型　防御UAV格納庫',
             '大型防御UAVを４機搭載し、戦闘UAVの収容と整備を行う。防御UAVは試験型機載パルス武器を搭載しており、味方にフリゲート級に近い火力支援を提供できる。',
-            '・エネルギー、対艦：9272', // TODO check, it's probably lower
+            '・エネルギー、対艦：8072',
         ],
     }],
 };

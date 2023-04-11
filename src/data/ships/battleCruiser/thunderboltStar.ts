@@ -1,4 +1,4 @@
-import { enhancements, flagshipEffect } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../../types/ResearchTacticType';
@@ -128,10 +128,12 @@ const a2: ISystemModule = {
         text: [
             'HG-2280型　2連固定式重砲',
             '対小型艦：',
-            '・直射、実弾',
+            '・直射、実弾、対艦：17884、対空：0、攻城：1490',
         ],
     }],
-    // TODO total dpm
+    dpmShip: 17884,
+    dpmAntiAir: 0,
+    dpmSiege: 1490,
 };
 
 const b1: ISystemModule = {
@@ -215,6 +217,9 @@ const d1: ISystemModule = {
     },
     category: 'D',
     categoryNumber: 1,
+    effects: [
+        strategy.customStrategy('oscillatoryExcitation').withDescriptionKey('oscillatoryExcitation'),
+    ],
     // skills: [
     // ],
     // skillSlots: 4,

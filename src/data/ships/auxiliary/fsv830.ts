@@ -135,7 +135,7 @@ const b1: ISystemModule = {
 
 const b2: ISystemModule = {
     id: 'B2',
-    name: 'エスコート生産システム',
+    name: '護送艦生産システム',
     translatedName: {
         en: 'Corvette Production System',
     },
@@ -171,7 +171,7 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: 'キャリア航空機システム',
+    name: '艦載機システム',
     translatedName: {
         en: 'Aircraft System',
     },
@@ -370,7 +370,7 @@ export const fsv830: IShipDefinition[] = [
         id: ShipId.FSV830,
         name: 'FSV830',
         translatedName: {
-            en: 'FSV830-TE',
+            en: 'FSV830',
         },
         type: ShipType.AUXILIARY,
         cost: 40,

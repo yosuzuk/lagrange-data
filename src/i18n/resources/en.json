@@ -493,7 +493,8 @@
         "prioritizeSupport": "Prioritize Support",
         "weakPointStrike": "Weak-Point Strike",
         "closeCombatAssault": "Close Combat Assault",
-        "spreadOutWarhead2": "Spread Out Warhead II"
+        "spreadOutWarhead2": "Spread Out Warhead II",
+        "oscillatoryExcitation": "Oscillatory Excitation"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -542,7 +543,8 @@
         "prioritizeSupport": "When your fleet includes cruisers, it prioritizes fire support for them by dispatching aircraft. Increases aircraft's support duration by {{duration}}%.",
         "weakPointStrike": "Increase crit damage dealt by the system's weapons by {{critDamage}} when the target has less than {{hp}}% hp.",
         "closeCombatAssault": "When flying to attack mid-row target, there is a {{chance}}% chance of ignoring the enemy anti-aircraft weapon's pre-targeting effect.",
-        "spreadOutWarhead2": "When the system's anti-aircraft weapons hit an aircraft target, there is a chance to deal 100% crit damage on all aircraft that is attacking you."
+        "spreadOutWarhead2": "When the system's anti-aircraft weapons hit an aircraft target, there is a chance to deal 100% crit damage on all aircraft that is attacking you.",
+        "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
