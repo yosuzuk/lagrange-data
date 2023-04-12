@@ -1,7 +1,22 @@
 import { ReactNode } from 'react';
 import reactStringReplace from 'react-string-replace';
+import { styled } from '@mui/material/styles';
 import { colorMap, getTextColorBasedOnBackgroundColor } from '../../../../utils/colorUtils';
 import { parseLines, sectionKeywords } from './codeUtils';
+
+const CodeLine = styled('span')`
+    &:before {
+        position: absolute;
+        right: 100%;
+        margin-right: 10px;
+        text-align: right;
+        opacity: .5;
+        user-select: none;
+        counter-increment: line;
+        content: counter(line);
+        color: 'white'
+    }
+`;
 
 export function hightlightCode(code: string): ReactNode {
     let lines: Array<ReactNode[]> = parseLines(code).map(l => [l]);
@@ -19,7 +34,7 @@ export function hightlightCode(code: string): ReactNode {
     lines = lines.map((line: ReactNode[], i: number) => {
         return reactStringReplace(line, new RegExp('([\()][0-9]+\,[0-9]+[\)])'), (match, j) => {
             return (
-                <span key={`point_${match}_${i}_${j}`} style={{ color: 'pink' }}>{match}</span>
+                <span key={`point_${match}_${i}_${j} `} style={{ color: 'pink' }}>{match}</span>
             );
         }) as ReactNode[];
     });
@@ -30,7 +45,7 @@ export function hightlightCode(code: string): ReactNode {
             return reactStringReplace(line, new RegExp('(#' + colorKey + ')'), (match, j) => {
                 const [backgroundColor, color] = colorMap[colorKey] ?? ['transparent', 'inherit'];
                 return (
-                    <span key={`keyword_${colorKey}_${i}_${j}`} style={{ backgroundColor, color }}>{match}</span>
+                    <span key={`keyword_${colorKey}_${i}_${j} `} style={{ backgroundColor, color }}>{match}</span>
                 );
             }) as ReactNode[];
         });
@@ -42,7 +57,7 @@ export function hightlightCode(code: string): ReactNode {
             const backgroundColor = '#' + match.substring(2);
             const color = getTextColorBasedOnBackgroundColor(backgroundColor);
             return (
-                <span key={`color_${match}_${i}_${j}`} style={{ backgroundColor, color }}>{match}</span>
+                <span key={`color_${match}_${i}_${j} `} style={{ backgroundColor, color }}>{match}</span>
             );
         }) as ReactNode[];
     });
@@ -52,11 +67,14 @@ export function hightlightCode(code: string): ReactNode {
         lines = lines.map((line: ReactNode[], i: number) => {
             return reactStringReplace(line, new RegExp('(\\' + keyword + ')'), (match, j) => {
                 return (
-                    <span key={`keyword_${keyword}_${i}_${j}`} style={{ color: 'orange' }}>{match}</span>
+                    <span key={`keyword_${keyword}_${i}_${j} `} style={{ color: 'orange' }}>{match}</span>
                 );
             }) as ReactNode[];
         });
     });
 
-    return lines.flatMap(line => [...line, '\n']);
+    return lines.flatMap((line, index) => [
+        <CodeLine key={`line_${index} `}>{line}</CodeLine>,
+        '\n'
+    ]);
 }

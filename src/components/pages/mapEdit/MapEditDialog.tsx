@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { ClassNames } from '@emotion/react'
 import Editor from 'react-simple-code-editor';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -32,17 +32,28 @@ export const MapEditDialog = (props: IProps) => {
             disableRestoreFocus={true}
             backgroundColor="rgba(0,0,0,0.1)"
             content={(
-                <Editor
-                    value={input}
-                    onValueChange={code => setInput(code)}
-                    highlight={hightlightCode}
-                    padding={10}
-                    style={{
-                        fontFamily: '"Fira code", "Fira Mono", monospace',
-                        fontSize: 12,
-                        backgroundColor: 'rgba(0,0,0,0.75)'
-                    }}
-                />
+                <ClassNames>
+                    {({ css }) => (
+                        <Editor
+                            value={input}
+                            onValueChange={code => setInput(code)}
+                            highlight={hightlightCode}
+                            padding={10}
+                            style={{
+                                fontFamily: '"Fira code", "Fira Mono", monospace',
+                                fontSize: 12,
+                                backgroundColor: 'rgba(0,0,0,0.75)',
+                                // for line numbers:
+                                overflow: 'visible',
+                                marginLeft: '15px',
+                            }}
+                            preClassName={css({
+                                // for line numbers:
+                                counterReset: 'line',
+                            })}
+                        />
+                    )}
+                </ClassNames>
             )}
             actions={(
                 <>
