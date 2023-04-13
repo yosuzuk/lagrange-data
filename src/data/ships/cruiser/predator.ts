@@ -30,6 +30,7 @@ const aircraftLoadingSystem = modules.static({
     id: 'sp1',
     name: '戦闘機搭載システム',
     carryFighter: 4,
+    carryFighterType: ShipSubType.MEDIUM_FIGHTER,
     translatedName: {
         en: 'Aircraft Loading System',
     },
