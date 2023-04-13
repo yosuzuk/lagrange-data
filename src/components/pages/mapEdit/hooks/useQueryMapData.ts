@@ -9,7 +9,13 @@ const fetchMapData = async (url: string | null): Promise<string | null> => {
         return null;
     }
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+        mode: 'cors',
+        cache: 'no-cache',
+    });
     if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`);
     }
