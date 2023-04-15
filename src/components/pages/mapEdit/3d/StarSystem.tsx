@@ -22,7 +22,6 @@ export const StarSystem = (props: IProps) => {
     const { invalidate } = useThree();
 
     useEffect(() => {
-        console.log(`invalidate frame for "${mapData.name}"`);
         invalidate();
     }, [invalidate, mapData]);
 

@@ -85,3 +85,10 @@ export function snapGamePositionToGridCellCenter(position: GamePosition): [GameP
     const snappedY = Math.floor(y * 0.1) * 10 + 5;
     return [`(${snappedX},${snappedY})`, snappedX, snappedY];
 }
+
+export function formatGamePosition(position: GamePosition): string {
+    if (Array.isArray(position)) {
+        return `(${(position as number[]).join(',')})`;
+    }
+    return `${position}`;
+}

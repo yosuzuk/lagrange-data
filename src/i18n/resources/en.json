@@ -23,7 +23,8 @@
         "back": "Back",
         "next": "Next",
         "exit": "Exit",
-        "validate": "Validate"
+        "validate": "Validate",
+        "find": "Find"
     },
     "label": {
         "error": "Error",
@@ -287,7 +288,14 @@
         "openExternalMap": "Open external map",
         "openExampleMap": "Open example map",
         "openEmptyMap": "Open empty map",
-        "sizeCanBeAdjustedBrackets": "(size can be adjusted)"
+        "sizeCanBeAdjustedBrackets": "(size can be adjusted)",
+        "noContent": "No content",
+        "station": {
+            "city": "City",
+            "subCity": "Sub-City",
+            "stronghold": "Stronghold",
+            "base": "Player base"
+        }
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

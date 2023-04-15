@@ -10,6 +10,7 @@ import { MapDialAction } from './MapDialAction';
 import { t } from '../../../i18n';
 import { MapProviders } from './MapProviders';
 import { routes } from '../../../utils/routes';
+import { MapNavigatorBar } from './MapNavigatorBar';
 
 const MapSelectedPage = () => {
     const {
@@ -19,11 +20,12 @@ const MapSelectedPage = () => {
         input,
         mapData,
         parseError,
-        setEditMode,
+        setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
+        removeContent,
     } = useMapData();
 
     const navigate = useNavigate();
@@ -61,8 +63,8 @@ const MapSelectedPage = () => {
                     <StarSystem mapData={mapData} />
                 </MapProviders>
             )}
-            <MapDialAction onEdit={setEditMode} onExit={handleClickExit} />
-            {(mode === 'edit') && (
+            <MapDialAction setMode={setMode} onExit={handleClickExit} />
+            {mode === 'edit' && (
                 <MapEditDialog
                     input={input}
                     setInput={setInput}
@@ -71,6 +73,9 @@ const MapSelectedPage = () => {
                     onApply={applyInput}
                     onValidate={validateInput}
                 />
+            )}
+            {mode === 'find' && mapData && (
+                <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} />
             )}
         </>
     );

@@ -1,26 +1,33 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, Dispatch, SetStateAction } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import SearchIcon from '@mui/icons-material/Search';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import { MapInteractionMode } from './types/Mode';
 import { t } from '../../../i18n';
 
 interface IProps {
-    onEdit: () => void;
+    setMode: Dispatch<SetStateAction<MapInteractionMode>>;
     onExit: () => void;
 }
 
 export const MapDialAction = (props: IProps) => {
-    const { onEdit, onExit } = props;
+    const { setMode, onExit } = props;
     const [open, setOpen] = useState<boolean>(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const handleClickFind = useCallback(() => {
+        setOpen(false);
+        setMode(mode => mode === 'find' ? 'view' : 'find');
+    }, [setMode]);
+
     const handleClickEdit = useCallback(() => {
         setOpen(false);
-        onEdit();
-    }, [onEdit]);
+        setMode('edit');
+    }, [setMode]);
 
     return (
         <SpeedDial
@@ -42,6 +49,17 @@ export const MapDialAction = (props: IProps) => {
                 }
             }}
         >
+            <SpeedDialAction
+                icon={<SearchIcon color="primary" />}
+                FabProps={{
+                    sx: {
+                        border: '1px solid lightgrey',
+                    },
+                }}
+                onClick={handleClickFind}
+                tooltipTitle={t('button.find')}
+                tooltipOpen={true}
+            />
             <SpeedDialAction
                 icon={<EditIcon color="primary" />}
                 FabProps={{

@@ -1,6 +1,7 @@
 import { URLSearchParamsInit } from 'react-router-dom';
 import { IColumnConfig } from '../components/columns/types/IColumnConfig';
 import { FilterKey } from '../components/filter/types/ShipFilterState';
+import { MapInteractionMode } from '../components/pages/mapEdit/types/Mode';
 import { Season } from '../components/pages/researchAgreement/types/Season';
 import { SortDirection } from '../components/table';
 import { ResearchManufacturer } from '../types/ResearchManufacturer';
@@ -29,7 +30,7 @@ export interface IShipDataParams {
 
 export interface IMapSelectedParams {
     d: string;
-    mode?: 'view' | 'edit';
+    mode?: MapInteractionMode;
 }
 
 export const routes = {
