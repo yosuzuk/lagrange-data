@@ -72,7 +72,7 @@ export const MapNavigatorBar = (props: IProps) => {
             component="div"
             sx={{
                 position: 'absolute',
-                left: '6px',
+                left: '8px',
                 bottom: '16px',
                 border: '1px solid grey',
             }}

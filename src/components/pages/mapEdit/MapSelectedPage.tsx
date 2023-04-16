@@ -6,11 +6,12 @@ import { useMapData } from './hooks/useMapData';
 import { StarSystem } from './3d/StarSystem';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
-import { MapDialAction } from './MapDialAction';
 import { t } from '../../../i18n';
 import { MapProviders } from './MapProviders';
 import { routes } from '../../../utils/routes';
 import { MapNavigatorBar } from './MapNavigatorBar';
+import { MapTopRightBar } from './MapTopRightBar';
+import { EditMapButton } from './EditMapButton';
 
 const MapSelectedPage = () => {
     const {
@@ -65,7 +66,7 @@ const MapSelectedPage = () => {
                     <StarSystem mapData={mapData} />
                 </MapProviders>
             )}
-            <MapDialAction setMode={setMode} onExit={handleClickExit} />
+            <MapTopRightBar mode={mode} onExit={handleClickExit} setMode={setMode} />
             {mode === 'edit' && (
                 <MapEditDialog
                     input={input}
@@ -76,8 +77,11 @@ const MapSelectedPage = () => {
                     onValidate={validateInput}
                 />
             )}
-            {mode === 'find' && mapData && (
-                <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
+            {mode === 'interactive' && mapData && (
+                <>
+                    <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
+                    <EditMapButton setMode={setMode} />
+                </>
             )}
         </>
     );

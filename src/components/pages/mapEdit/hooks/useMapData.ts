@@ -31,7 +31,7 @@ export const useMapData = (): IHookResult => {
     const mapUrl = useMemo<string | null>(() => encodedMapUrl ? window.atob(encodedMapUrl) : null, [encodedMapUrl]);
     const queryResult = useQueryMapData(mapUrl);
 
-    const [mode, setMode] = useState<MapInteractionMode>('view');
+    const [mode, setMode] = useState<MapInteractionMode>('interactive');
     const [input, setInput] = useState<string>('');
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
@@ -73,7 +73,6 @@ export const useMapData = (): IHookResult => {
             setParseError(parseError);
             return;
         }
-        setTargetToMark(null);
         setParseError(null);
         setLastValidInput(input);
         setLastValidMapData(mapData);
@@ -94,7 +93,7 @@ export const useMapData = (): IHookResult => {
     const cancelEditMode = useCallback(() => {
         setParseError(null);
         setInput(lastValidInput);
-        setMode('view');
+        setMode('interactive');
     }, [lastValidInput]);
 
     const removeContent = useCallback((content: IMapContent) => {
@@ -117,6 +116,10 @@ export const useMapData = (): IHookResult => {
         setLastValidInput(result);
         setLastValidMapData(mapData);
     }, [input]);
+
+    useEffect(() => {
+        setTargetToMark(null);
+    }, [mode]);
 
     return {
         mode,

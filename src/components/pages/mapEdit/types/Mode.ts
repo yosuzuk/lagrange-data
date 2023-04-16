@@ -1,1 +1,1 @@
-export type MapInteractionMode = 'edit' | 'view' | 'find';
+export type MapInteractionMode = 'edit' | 'view' | 'interactive';
