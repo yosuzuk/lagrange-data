@@ -1,17 +1,17 @@
-import { useMemo, useState, Fragment, useCallback } from 'react';
+import { useMemo, useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ClearIcon from '@mui/icons-material/Clear';
 import Divider from '@mui/material/Divider';
 import { IMapContent, IMapData, IMarker, IPlanet, IStation } from './types/IMapContent';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
 import { formatStationLabelForList, matchStation } from './utils/mapContentUtils';
+import { useColorMode } from '../../../theme/context/ThemeProvider';
 
 interface IProps {
     mapData: IMapData;
@@ -24,6 +24,7 @@ interface IProps {
 export const MapContentSearchList = (props: IProps) => {
     const { mapData, currentMenu, menuItemIdPrefix, onClickItem, onClickRemoveItem } = props;
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const colorMode = useColorMode();
 
     const planets: IPlanet[] = useMemo(() => {
         if (currentMenu !== 'planets') {
@@ -39,10 +40,11 @@ export const MapContentSearchList = (props: IProps) => {
         if (currentMenu !== 'stations') {
             return [];
         }
+        const searchableStations = mapData.stations.filter(station => station.type !== 'stronghold');
         if (searchTerm.length === 0) {
-            return mapData.stations;
+            return searchableStations;
         }
-        return mapData.stations.filter(station => matchStation(station, searchTerm));
+        return searchableStations.filter(station => matchStation(station, searchTerm));
     }, [mapData, currentMenu, searchTerm]);
 
     const markers: IMarker[] = useMemo(() => {
@@ -54,6 +56,8 @@ export const MapContentSearchList = (props: IProps) => {
         }
         return mapData.marker.filter(marker => marker.label?.toLowerCase().includes(searchTerm) ?? false);
     }, [mapData, currentMenu, searchTerm]);
+
+    const smallMenu = document.body.getBoundingClientRect().width < 640;
 
     return (
         <Stack spacing={1}>
@@ -71,7 +75,7 @@ export const MapContentSearchList = (props: IProps) => {
                     aria-labelledby="composition-button"
                     dense={true}
                     sx={{
-                        height: document.body.getBoundingClientRect().width >= 640 ? '60vh' : '25vh',
+                        height: smallMenu ? '25vh' : '60vh',
                         overflowY: 'auto',
                         paddingTop: 0,
                     }}
@@ -107,7 +111,7 @@ export const MapContentSearchList = (props: IProps) => {
                                         alignSelf: 'stretch',
                                         alignItems: 'center',
                                         width: '30px',
-                                        backgroundColor: 'rgba(255,255,255,0.05)', // TODO theme
+                                        backgroundColor: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
                                     }}
                                 >
                                     <Box
@@ -153,7 +157,13 @@ export const MapContentSearchList = (props: IProps) => {
                     ]}
                 </MenuList>
             ) : (
-                <Box component="div" p={2} sx={{ height: '60vh' }}>
+                <Box
+                    component="div"
+                    p={2}
+                    sx={{
+                        height: smallMenu ? '25vh' : '60vh',
+                    }}
+                >
                     <Typography variant="body1" color="text.secondary">
                         {t('mapEdit.noContent')}
                     </Typography>

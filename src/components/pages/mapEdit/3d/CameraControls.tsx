@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { MapControls } from '@react-three/drei';
 import { Event } from 'three';
 import { useThree } from '@react-three/fiber';
 import { MapControls as MapControlsImpl } from 'three-stdlib';
 import { useCameraDistance, useZoomDistanceMinMax } from '../context/ZoomLevelContext';
 import { degreesToRadians } from '../../../../utils/math';
+import { TargetSprite } from './TargetSprite';
 
 interface IProps {
     targetToMark: string | null;
@@ -16,6 +17,7 @@ export const CameraControls = (props: IProps) => {
     const { min, max } = useZoomDistanceMinMax();
     const { invalidate, scene, camera } = useThree();
     const controlRef = useRef<MapControlsImpl>(null);
+    const [targetUpdateIteration, setTargetUpdateIteration] = useState<number>(0);
 
     const handleChange = useCallback((e: Event | undefined) => {
         if (!e) {
@@ -28,7 +30,13 @@ export const CameraControls = (props: IProps) => {
 
     // effect for moving camera to a new target
     useEffect(() => {
-        if (!controlRef.current || !targetToMark) {
+        if (!controlRef.current) {
+            return;
+        }
+
+        if (targetToMark === null) {
+            setTargetUpdateIteration(i => i + 1);
+            invalidate();
             return;
         }
 
@@ -55,20 +63,32 @@ export const CameraControls = (props: IProps) => {
             controlRef.current.target.z ?? 0,
         );
 
+        setTargetUpdateIteration(i => i + 1);
         invalidate();
     }, [controlRef, invalidate, scene, camera, targetToMark]);
 
     return (
-        <MapControls
-            ref={controlRef}
-            enableDamping={false}
-            enableRotate={false}
-            zoomSpeed={1.2}
-            panSpeed={1}
-            keyPanSpeed={0}
-            minDistance={min}
-            maxDistance={max}
-            onChange={handleChange}
-        />
+        <>
+            <MapControls
+                ref={controlRef}
+                enableDamping={false}
+                enableRotate={false}
+                zoomSpeed={1.2}
+                panSpeed={1}
+                keyPanSpeed={0}
+                minDistance={min}
+                maxDistance={max}
+                onChange={handleChange}
+            />
+            {targetToMark && controlRef.current && (
+                <TargetSprite
+                    key={`target_${targetUpdateIteration}`}
+                    gridPosition={[
+                        controlRef.current.target.x,
+                        controlRef.current.target.y,
+                    ]}
+                />
+            )}
+        </>
     );
 };

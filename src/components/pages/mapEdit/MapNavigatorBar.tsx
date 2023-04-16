@@ -8,6 +8,13 @@ import Divider from '@mui/material/Divider';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { IMapContent, IMapData } from './types/IMapContent';
 import { MapContentSearchList } from './MapContentSearchList';
+import planetIconWhite from './assets/planetWhite.png';
+import planetIconBlack from './assets/planetBlack.png';
+import cityIconWhite from './assets/cityWhite.png';
+import cityIconBlack from './assets/cityBlack.png';
+import pinIconWhite from './assets/pinWhite.png';
+import pinIconBlack from './assets/pinBlack.png';
+import { useColorMode } from '../../../theme/context/ThemeProvider';
 
 const MENU_ITEM_ID_PREFIX = 'menuItem.';
 
@@ -21,6 +28,7 @@ export const MapNavigatorBar = (props: IProps) => {
     const { mapData, onMarkTarget, onRemoveContent } = props;
     const [currentMenu, setCurrentMenu] = useState<string | null>(null);
     const menuRootRef = useRef<HTMLDivElement>(null);
+    const colorMode = useColorMode();
 
     const handleClickMenu = useCallback((event: React.MouseEvent<HTMLElement>) => {
         const menuId = event.currentTarget?.id ?? 'unknown';
@@ -72,13 +80,19 @@ export const MapNavigatorBar = (props: IProps) => {
             <Stack
                 direction="row"
                 ref={menuRootRef}
-                sx={{ bgcolor: 'background.paper' }}
+                sx={{ bgcolor: 'background.paper', height: '29px', padding: '4px 0' }}
             >
-                <Button id="planets" onClick={handleClickMenu}>Planets</Button>
+                <Button id="planets" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <img alt="planets" src={colorMode.mode === 'dark' ? planetIconWhite : planetIconBlack} />
+                </Button>
                 <Divider orientation="vertical" flexItem />
-                <Button id="stations" onClick={handleClickMenu}>Stations</Button>
+                <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <img alt="stations" src={colorMode.mode === 'dark' ? cityIconWhite : cityIconBlack} />
+                </Button>
                 <Divider orientation="vertical" flexItem />
-                <Button id="markers" onClick={handleClickMenu}>Marker</Button>
+                <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <img alt="markers" src={colorMode.mode === 'dark' ? pinIconWhite : pinIconBlack} />
+                </Button>
             </Stack>
             {menuRootRef.current && currentMenu && (
                 <Popper key={currentMenu} open={true} placement="top-start" anchorEl={menuRootRef.current}>
