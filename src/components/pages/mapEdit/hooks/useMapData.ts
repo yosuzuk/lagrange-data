@@ -1,25 +1,28 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, SetStateAction, Dispatch } from 'react';
 import { UseQueryResult } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
 import { routes } from '../../../../utils/routes';
-import { IMapData, IParseMapContentError } from '../types/IMapContent';
+import { IMapContent, IMapData, IParseMapContentError } from '../types/IMapContent';
+import { MapInteractionMode } from '../types/Mode';
+import { parseLines } from '../utils/codeUtils';
 import { parseMapData } from '../utils/mapDataParser';
 import { useQueryMapData } from './useQueryMapData';
 
-type Mode = 'edit' | 'view';
-
 interface IHookResult {
-    mode: Mode;
+    mode: MapInteractionMode;
     mapUrl: string | null;
     queryResult: UseQueryResult<string | null, unknown>;
     input: string;
     mapData: IMapData | null;
     parseError: IParseMapContentError | null;
-    setEditMode: () => void;
+    targetToMark: string | null;
+    setMode: Dispatch<SetStateAction<MapInteractionMode>>;
     cancelEditMode: () => void;
     setInput: (input: string) => void;
     applyInput: () => void;
     validateInput: () => void;
+    removeContent: (content: IMapContent) => void;
+    markTarget: Dispatch<SetStateAction<string | null>>;
 }
 
 export const useMapData = (): IHookResult => {
@@ -28,11 +31,12 @@ export const useMapData = (): IHookResult => {
     const mapUrl = useMemo<string | null>(() => encodedMapUrl ? window.atob(encodedMapUrl) : null, [encodedMapUrl]);
     const queryResult = useQueryMapData(mapUrl);
 
-    const [mode, setMode] = useState<Mode>('view');
+    const [mode, setMode] = useState<MapInteractionMode>('interactive');
     const [input, setInput] = useState<string>('');
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
+    const [targetToMark, setTargetToMark] = useState<string | null>(null);
 
     // update query parameter
     useEffect(() => {
@@ -86,15 +90,36 @@ export const useMapData = (): IHookResult => {
         setParseError(null);
     }, [input]);
 
-    const setEditMode = useCallback(() => {
-        setMode('edit');
-    }, []);
-
     const cancelEditMode = useCallback(() => {
         setParseError(null);
         setInput(lastValidInput);
-        setMode('view');
+        setMode('interactive');
     }, [lastValidInput]);
+
+    const removeContent = useCallback((content: IMapContent) => {
+        const lines = parseLines(input);
+        const lineIndex = content.lineNumber - 1;
+        if (lineIndex < 0 || lineIndex > lines.length) {
+            throw new Error(`Invalid line number "${content.lineNumber}" for content "${content.id}", lines: "${lines.length}"`);
+        }
+        const newLines = [...lines];
+        newLines.splice(lineIndex, 1);
+        const result = [...newLines].join('\n');
+
+        const [mapData, parseError] = parseMapData(result);
+        if (parseError) {
+            throw new Error(`${parseError.message}, line: ${parseError.line}`);
+        }
+
+        setTargetToMark(target => target === content.id ? null : target);
+        setInput(result);
+        setLastValidInput(result);
+        setLastValidMapData(mapData);
+    }, [input]);
+
+    useEffect(() => {
+        setTargetToMark(null);
+    }, [mode]);
 
     return {
         mode,
@@ -103,10 +128,13 @@ export const useMapData = (): IHookResult => {
         input,
         mapData: lastValidMapData,
         parseError,
-        setEditMode,
+        targetToMark,
+        setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
+        removeContent,
+        markTarget: setTargetToMark,
     };
 }

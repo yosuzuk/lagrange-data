@@ -225,6 +225,28 @@ export function createCityIcon(cityLevel: number | null, color: string = 'white'
     return canvas;
 }
 
+export function createTargetSprite() {
+    const { canvas, ctx } = createCanvas();
+    const w = 8;
+    canvas.width = 60;
+    canvas.height = 45;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'orange';
+    ctx.beginPath();
+    ctx.moveTo(1.5 + w, 1.5);
+    ctx.lineTo(1.5, 1.5);
+    ctx.lineTo(1.5, canvas.height - 1.5);
+    ctx.lineTo(1.5 + w, canvas.height - 1.5);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(canvas.width - 1.5 - w, 1.5);
+    ctx.lineTo(canvas.width - 1.5, 1.5);
+    ctx.lineTo(canvas.width - 1.5, canvas.height - 1.5);
+    ctx.lineTo(canvas.width - 1.5 - w, canvas.height - 1.5);
+    ctx.stroke();
+    return canvas;
+}
+
 interface IMergeIconAndTextArgs {
     iconCanvas: HTMLCanvasElement;
     textCanvas: HTMLCanvasElement;

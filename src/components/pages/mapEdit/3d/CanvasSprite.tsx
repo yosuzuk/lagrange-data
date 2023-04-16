@@ -7,6 +7,7 @@ import { GamePosition, GridPosition } from '../types/Coordinates';
 import { getRendeOrder } from '../utils/renderOrder';
 
 interface IProps {
+    name?: string;
     canvas: HTMLCanvasElement;
     position?: GamePosition;
     gridPosition?: GridPosition;
@@ -23,7 +24,7 @@ interface IProps {
 const REFERENCE_FACTOR_Y = 0.77;
 
 export const CanvasSprite = (props: IProps) => {
-    const { canvas, position: gamePosition, gridPosition, onClick, onPointerEnter, onPointerLeave } = props;
+    const { name, canvas, position: gamePosition, gridPosition, onClick, onPointerEnter, onPointerLeave } = props;
     const [threeCanvasWidth, threeCanvasHeight] = useThreeCanvasSize();
 
     const [scaleX, scaleY] = useMemo(() => {
@@ -41,6 +42,7 @@ export const CanvasSprite = (props: IProps) => {
 
     return (
         <sprite
+            name={name}
             position={[...position, 0]}
             scale={[scaleX, scaleY, 1]}
             onClick={onClick}

@@ -23,7 +23,8 @@
         "back": "戻る",
         "next": "続ける",
         "exit": "終了",
-        "validate": "入力チェック"
+        "validate": "入力チェック",
+        "find": "検索"
     },
     "label": {
         "error": "エラー",
@@ -287,7 +288,14 @@
         "openExternalMap": "外部マップを開く",
         "openExampleMap": "サンプルマップを開く",
         "openEmptyMap": "空のマップを開く",
-        "sizeCanBeAdjustedBrackets": "（サイズは後からも調整可能）"
+        "sizeCanBeAdjustedBrackets": "（サイズは後からも調整可能）",
+        "noContent": "該当なし",
+        "station": {
+            "city": "都市",
+            "subCity": "都市（サブ）",
+            "stronghold": "防衛拠点",
+            "base": "プレイヤー基地"
+        }
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",

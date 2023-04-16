@@ -13,6 +13,7 @@ const CONE_OPACITY = 0.75;
 const LINE_Z = 0.01;
 
 interface IProps {
+    name?: string;
     position: GridPosition;
     color: string;
     base: boolean;
@@ -20,7 +21,7 @@ interface IProps {
 }
 
 export const StationCone = (props: IProps) => {
-    const { position, color, base, visible = true } = props;
+    const { name, position, color, base, visible = true } = props;
 
     const lines = useMemo<[Float32Array, Float32Array] | null>(() => {
         if (!base) {
@@ -54,7 +55,7 @@ export const StationCone = (props: IProps) => {
 
     return (
         <group visible={visible}>
-            <mesh position={[...position, CONE_HEIGHT * 1.5]} rotation={[degreesToRadians(90), 0, 0]}>
+            <mesh name={name} position={[...position, CONE_HEIGHT * 1.5]} rotation={[degreesToRadians(90), 0, 0]}>
                 <coneGeometry args={[CONE_RADIUS, CONE_HEIGHT, CONE_RADIAL_SEGMENTS, CONE_HEIGHT_SEGMENTS, CONE_OPEN_ENDED]} />
                 <meshStandardMaterial
                     emissive={color}
