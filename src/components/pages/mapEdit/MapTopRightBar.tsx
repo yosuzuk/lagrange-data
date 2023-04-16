@@ -41,12 +41,13 @@ export const MapTopRightBar = (props: IProps) => {
                 <Box
                     component="div"
                     sx={{
-                        bgcolor: mode === 'interactive' ? 'background.paper' : 'transparent',
+                        backgroundColor: mode === 'interactive' ? '#121212' : 'transparent',
                         border: mode === 'interactive' ? '1px solid grey' : '1px solid transparent',
                     }}
                 >
                     <IconButton size="small" aria-label="viewMode" onClick={handleToggleViewMode} sx={{ height: '26px', scale: '0.75' }}>
                         <VisibilityIcon sx={{
+                            color: 'white',
                             opacity: mode === 'interactive' ? 1 : 0.25,
                         }} />
                     </IconButton>
@@ -55,12 +56,12 @@ export const MapTopRightBar = (props: IProps) => {
                     component="div"
                     sx={{
                         visibility: mode === 'interactive' ? 'visible' : 'hidden',
-                        bgcolor: 'background.paper',
+                        backgroundColor: '#121212',
                         border: '1px solid grey',
                     }}
                 >
                     <IconButton size="small" aria-label="viewMode" onClick={onExit} sx={{ height: '26px', scale: '0.75' }}>
-                        <KeyboardReturnIcon />
+                        <KeyboardReturnIcon sx={{ color: 'white' }} />
                     </IconButton>
                 </Box>
             </Stack>

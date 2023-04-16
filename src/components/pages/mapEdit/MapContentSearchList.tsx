@@ -146,10 +146,18 @@ export const MapContentSearchList = (props: IProps) => {
                                         width: '36px',
                                     }}
                                 >
-                                    <ClearIcon onClick={e => {
-                                        e.stopPropagation();
-                                        onClickRemoveItem(marker)
-                                    }} />
+                                    <ClearIcon
+                                        sx={{
+                                            color: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)',
+                                            '&:hover': {
+                                                color: colorMode.mode === 'dark' ? 'white' : 'rgba(0,0,0,0.75)',
+                                            }
+                                        }}
+                                        onClick={e => {
+                                            e.stopPropagation();
+                                            onClickRemoveItem(marker)
+                                        }}
+                                    />
                                 </Box>
                             </MenuItem>,
                             <Divider key={`divider_${marker.id}`} style={{ margin: 0 }} />
