@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider';
 import { IMapContent, IMapData, IMarker, IPlanet, IStation } from './types/IMapContent';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
-import { formatStationLabelForList, matchStation } from './utils/mapContentUtils';
+import { formatStationLabelForList, matchMarker, matchPlanet, matchStation } from './utils/mapContentUtils';
 import { useColorMode } from '../../../theme/context/ThemeProvider';
 
 interface IProps {
@@ -33,7 +33,7 @@ export const MapContentSearchList = (props: IProps) => {
         if (searchTerm.length === 0) {
             return mapData.planets;
         }
-        return mapData.planets.filter(planet => planet.name?.toLowerCase().includes(searchTerm) ?? false);
+        return mapData.planets.filter(planet => matchPlanet(planet, searchTerm));
     }, [mapData, currentMenu, searchTerm]);
 
     const stations: IStation[] = useMemo(() => {
@@ -54,7 +54,7 @@ export const MapContentSearchList = (props: IProps) => {
         if (searchTerm.length === 0) {
             return mapData.marker;
         }
-        return mapData.marker.filter(marker => marker.label?.toLowerCase().includes(searchTerm) ?? false);
+        return mapData.marker.filter(marker => matchMarker(marker, searchTerm));
     }, [mapData, currentMenu, searchTerm]);
 
     const smallMenu = document.body.getBoundingClientRect().width < 640;

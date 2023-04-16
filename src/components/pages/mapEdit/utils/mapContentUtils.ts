@@ -1,5 +1,5 @@
 import { t } from '../../../../i18n';
-import { IStation } from '../types/IMapContent';
+import { IMarker, IPlanet, IStation } from '../types/IMapContent';
 import { formatGamePosition } from './coordinateUtils';
 
 export function formatStationLabelForList(station: IStation): string {
@@ -26,5 +26,22 @@ export function matchStation(station: IStation, searchTerm: string): boolean {
     if (station.level !== null) {
         return `${station.name?.toLowerCase()} lv${station.level}`.includes(searchTerm) ?? false;
     }
-    return station.name?.toLowerCase().includes(searchTerm) ?? false;
+    if (station.name) {
+        return station.name.toLowerCase().includes(searchTerm);
+    }
+    return formatGamePosition(station.position).includes(searchTerm);
+}
+
+export function matchMarker(marker: IMarker, searchTerm: string): boolean {
+    if (marker.label) {
+        return marker.label.toLowerCase().includes(searchTerm);
+    }
+    return formatGamePosition(marker.position).includes(searchTerm);
+}
+
+export function matchPlanet(planet: IPlanet, searchTerm: string): boolean {
+    if (planet.name) {
+        return planet.name.toLowerCase().includes(searchTerm);
+    }
+    return formatGamePosition(planet.position).includes(searchTerm);
 }
