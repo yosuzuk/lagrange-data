@@ -1,11 +1,14 @@
+import { getCurrentLanguage } from '../../../../i18n';
+
 interface IExampleMap {
     name: string;
     url: string;
 }
 
 export function getExampleMaps() {
+    const language = getCurrentLanguage();
     return {
-        fullMapExample: createExample('Full map', 'fullMap.txt'),
+        fullMapExample: createExample('Full map', language === 'ja' ? 'fullMap_ja.txt' : 'fullMap.txt'),
         markerExample: createExample('Marker', 'marker.txt'),
         planetsExample: createExample('Planets', 'planets.txt'),
         regionsExample: createExample('Regions', 'regions.txt'),
