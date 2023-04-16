@@ -12,6 +12,9 @@ import { Planet } from './Planet';
 import { PlayerBase } from './PlayerBase';
 import { Region } from './Region';
 import { Station } from './Station';
+import { Vector3 } from 'three';
+import { degreesToRadians } from '../../../../utils/math';
+import { useGridSize } from '../context/GridSizeContext';
 
 interface IProps {
     mapData: IMapData;

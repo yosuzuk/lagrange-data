@@ -33,7 +33,7 @@ export const Planet = (props: IProps) => {
 
     return (
         <>
-            <mesh position={[...position, 0]} renderOrder={getRendeOrder('planet')}>
+            <mesh name={planet.id} position={[...position, 0]} renderOrder={getRendeOrder('planet')}>
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
                 <meshStandardMaterial color={planet.color} wireframe={debug} />
             </mesh>

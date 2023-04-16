@@ -37,6 +37,7 @@ export const Marker = (props: IProps) => {
     return (
         <Fragment key={`${marker.id}_${updateIterationRef.current}`}>
             <CanvasSprite
+                name={marker.id}
                 canvas={markerImage}
                 gridPosition={position}
                 onClick={handleClick}

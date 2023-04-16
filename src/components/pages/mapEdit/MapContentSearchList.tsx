@@ -70,7 +70,11 @@ export const MapContentSearchList = (props: IProps) => {
                     id="map-content-menu"
                     aria-labelledby="composition-button"
                     dense={true}
-                    sx={{ height: '60vh', overflowY: 'auto', paddingTop: 0 }}
+                    sx={{
+                        height: document.body.getBoundingClientRect().width >= 640 ? '60vh' : '25vh',
+                        overflowY: 'auto',
+                        paddingTop: 0,
+                    }}
                 >
                     {[
                         <Divider key="first-divider" />,

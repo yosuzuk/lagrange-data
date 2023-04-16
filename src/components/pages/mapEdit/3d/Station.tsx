@@ -19,7 +19,7 @@ export const Station = (props: IProps) => {
 
     return (
         <>
-            <StationCone visible={coneVisible} position={position} color={station.color} base={station.type === 'base'} />
+            <StationCone name={station.id} visible={coneVisible} position={position} color={station.color} base={station.type === 'base'} />
             <StationLabel station={station} />
             {station.area && (
                 <Area area={station.area} />

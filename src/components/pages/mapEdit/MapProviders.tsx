@@ -13,13 +13,14 @@ import { getRendeOrder } from './utils/renderOrder';
 
 interface IProps {
     mapData: IMapData;
+    targetToMark: string | null;
     children: ReactNode;
 }
 
 const DEFAULT_MAP_SIZE = 9000;
 
 export const MapProviders = (props: IProps) => {
-    const { mapData, children } = props;
+    const { mapData, targetToMark, children } = props;
     const [debug, setDebug] = useState<boolean>(false);
     const gridSize = translateSizeToGrid(mapData.size ?? DEFAULT_MAP_SIZE);
 
@@ -51,7 +52,7 @@ export const MapProviders = (props: IProps) => {
                                 onDoubleClick={() => setDebug(x => !x)}
                                 frameloop="demand"
                             >
-                                <CameraControls />
+                                <CameraControls targetToMark={targetToMark} />
                                 <color attach="background" args={['#292828']} />
                                 <ambientLight intensity={0.1} />
                                 {children}

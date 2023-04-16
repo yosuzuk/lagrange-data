@@ -20,12 +20,14 @@ const MapSelectedPage = () => {
         input,
         mapData,
         parseError,
+        targetToMark,
         setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
         removeContent,
+        markTarget,
     } = useMapData();
 
     const navigate = useNavigate();
@@ -59,7 +61,7 @@ const MapSelectedPage = () => {
     return (
         <>
             {mapData && (
-                <MapProviders mapData={mapData}>
+                <MapProviders mapData={mapData} targetToMark={targetToMark}>
                     <StarSystem mapData={mapData} />
                 </MapProviders>
             )}
@@ -75,7 +77,7 @@ const MapSelectedPage = () => {
                 />
             )}
             {mode === 'find' && mapData && (
-                <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} />
+                <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
             )}
         </>
     );
