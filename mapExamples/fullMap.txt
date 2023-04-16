@@ -179,3 +179,100 @@ $station
 (6379,7978) city 3 Zunil
 (7046,3157) city 3 New Dundalk
 (8530,4929) city 3 Koga
+
+(184,3454) city 2 Topola
+(364,6314) city 2 Bogra
+(324,2955) city 2 Victoria
+(754,2464) city 2 Oituz
+(604,3694) city 2 Cue
+(634,4244) city 2 Bison
+(624,4694) city 2 Ruhea
+(644,5754) city 2 Vaduz
+(774,2154) city 2 Santa Fe
+(744,1934) city 2 Cwmbran
+(774,6204) city 2 Elim
+(954,3044) city 2 Wabash
+(944,2774) city 2 St. Dodona
+(1114,4604) city 2 Nqutu
+(1114,2314) city 2 Schroeter
+(1084,5094) city 2 Bordeaux
+(1114,6144) city 2 Caicus
+(1274,6794) city 2 Kasra
+(1174,5484) city 2 Gondola
+(1284,6574) city 2 Chamba
+(1394,2654) city 2 Nune
+(1324,7674) city 2 Fregallae
+(1444,6254) city 2 Marysville
+(1514,6934) city 2 Woolwich
+(1484,1414) city 2 New Aston
+(1564,2414) city 2 Auce
+(1624,7934) city 2 Quorn
+(1834,7354) city 2 Shambe
+(1784,7154) city 2 Salamis
+(1844,2134) city 2 Eudoxus
+(2014,8044) city 2 Bost
+(2044,1534) city 2 New Rosetta
+(2064,7054) city 2 Dixie
+(2314,1764) city 2 Bunnik
+(2204,7694) city 2 Gulch
+(2324,7395) city 2 Lachute
+(2514,524) city 2 Ikej
+(3034,7854) city 2 Rimac
+(2944,8234) city 2 Angelica
+(3354,764) city 2 Wason
+(3252,5706) city 2 Revda
+(3414,294) city 2 Lexington
+(3454,8444) city 2 Azul
+(3694,634) city 2 Meget
+(3814,7794) city 2 Hamelin
+(3704,1054) city 2 Blitta
+(3744,275) city 2 Kontum
+(4074,944) city 2 Freedom
+(4084,8294) city 2 Auki
+(4514,8724) city 2 Liberta
+(4614,8304) city 2 Torsö
+(4734,554) city 2 Rincon
+(4744,8815) city 2 Naryn
+(4951,5025) city 2 Belyov
+(5084,8815) city 2 Funchal
+(5254,8074) city 2 Taunton
+(5434,944) city 2 Spur
+(5879,5900) city 2 Mendota
+(5774,7634) city 2 Crosby
+(5814,8464) city 2 Globe
+(6074,424) city 2 Echt
+(5904,8195) city 2 New Bharat
+(6011,7566) city 2 Tumul
+(6304,554) city 2 Mohawk
+(6834,7574) city 2 Kourou
+(6764,1434) city 2 Pitmedden
+(6974,6904) city 2 Groves
+(6984,8014) city 2 Pylos
+(7174,834) city 2 Fidman
+(7084,7695) city 2 Bentham
+(7414,6984) city 2 Galu
+(7574,2104) city 2 Mari
+(7474,1284) city 2 Quick
+(7424,1694) city 2 Yoro
+(7594,6284) city 2 Shardi
+(7594,6654) city 2 Faqu
+(7664,7334) city 2 Ome
+(7744,1694) city 2 Crivitz
+(7914,1914) city 2 Achar
+(7704,3235) city 2 Taine
+(7994,2254) city 2 Corozal
+(8114,6374) city 2 Karshi
+(8154,5404) city 2 Palos
+(8484,2814) city 2 Igal
+(8594,3054) city 2 Kaid
+(8564,3434) city 2 New Wigtown
+(8734,3634) city 2 Amsterdam
+(8674,4144) city 2 Penticton
+(8724,5534) city 2 Randi
+
+(1687,5951) LAGRANGE GATE
+(4517,1671) Stargate Remains
+(5217,3611) Stargate Remains
+(5127,5811) Stargate Remains
+(6477,4131) Stargate Remains
+(6997,5831) Stargate Remains
