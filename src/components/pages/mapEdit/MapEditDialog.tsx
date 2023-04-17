@@ -7,6 +7,8 @@ import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { IParseMapContentError } from './types/IMapContent';
 import { t } from '../../../i18n';
 import { hightlightCode } from './utils/hightlightCode';
+import { useColorMode } from '../../../theme/context/ThemeProvider';
+import Box from '@mui/material/Box';
 
 interface IProps {
     input: string;
@@ -19,6 +21,7 @@ interface IProps {
 
 export const MapEditDialog = (props: IProps) => {
     const { input, parseError, setInput, onCancel, onApply, onValidate } = props;
+    const colorMode = useColorMode();
 
     return (
         <ResponsiveDialog
@@ -30,30 +33,39 @@ export const MapEditDialog = (props: IProps) => {
             )}
             maxWidth="md"
             disableRestoreFocus={true}
-            backgroundColor="rgba(0,0,0,0.1)"
+            backgroundColor={colorMode.mode === 'dark' ? 'rgba(0,0,0,0.1)' : 'rgb(255,255,255)'}
             content={(
-                <ClassNames>
-                    {({ css }) => (
-                        <Editor
-                            value={input}
-                            onValueChange={code => setInput(code)}
-                            highlight={hightlightCode}
-                            padding={10}
-                            style={{
-                                fontFamily: '"Fira code", "Fira Mono", monospace',
-                                fontSize: 12,
-                                backgroundColor: 'rgba(0,0,0,0.75)',
-                                // for line numbers:
-                                overflow: 'visible',
-                                marginLeft: '15px',
-                            }}
-                            preClassName={css({
-                                // for line numbers:
-                                counterReset: 'line',
-                            })}
-                        />
-                    )}
-                </ClassNames>
+                <Box
+                    component="div"
+                    sx={{
+                        backgroundColor: colorMode.mode === 'dark' ? 'rgba(0,0,0,0.75)' : 'rgba(0,0,0,0.87)',
+                        margin: '0 -16px',
+                    }}
+                >
+                    <ClassNames>
+                        {({ css }) => (
+                            <Editor
+                                value={input}
+                                onValueChange={code => setInput(code)}
+                                highlight={hightlightCode}
+                                padding={10}
+                                style={{
+                                    fontFamily: '"Fira code", "Fira Mono", monospace',
+                                    fontSize: 12,
+                                    backgroundColor: colorMode.mode === 'dark' ? 'rgba(0,0,0,0.75)' : 'rgba(0,0,0,0.87)',
+                                    color: 'white',
+                                    // for line numbers:
+                                    overflow: 'visible',
+                                    marginLeft: '40px',
+                                }}
+                                preClassName={css({
+                                    // for line numbers:
+                                    counterReset: 'line',
+                                })}
+                            />
+                        )}
+                    </ClassNames>
+                </Box>
             )}
             actions={(
                 <>

@@ -31,3 +31,7 @@ function createExample(name: string, filename: string): IExampleMap {
         url: window.location.origin + window.location.pathname + 'mapExamples/' + filename,
     };
 }
+
+export function isExampleMapUrl(url: string): boolean {
+    return url.includes(window.location.origin + window.location.pathname + 'mapExamples/');
+}

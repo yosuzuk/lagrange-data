@@ -280,6 +280,7 @@
     "mapEdit": {
         "pageTitle": "マップ",
         "loadAndOpenMap": "マップを開く",
+        "saveMap": "マップを保存",
         "invalidMap": "無効なマップ",
         "regionValue": "区域{{value}}",
         "invalidUrl": "有効なURLを入力してください",
@@ -290,6 +291,8 @@
         "openEmptyMap": "空のマップを開く",
         "sizeCanBeAdjustedBrackets": "（サイズは後からも調整可能）",
         "noContent": "該当なし",
+        "editKeyInstruction": "編集用のパスコードを入力してください",
+        "editKeyPlaceholder": "パスコード",
         "station": {
             "city": "都市",
             "subCity": "都市（サブ）",
