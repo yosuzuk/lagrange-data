@@ -46,6 +46,7 @@ import { tundra } from './ships/destroyer/tundra';
 import { wingedHussar } from './ships/destroyer/wingedHussar';
 import { xt10 } from './ships/destroyer/xt10';
 import { a101TheRationalTe } from './ships/fighter/a101TheRational';
+import { at021 } from './ships/fighter/at021';
 import { b192Newland } from './ships/fighter/b192Newland';
 import { balancerAnderson } from './ships/fighter/balancerAnderson';
 import { bullfrog } from './ships/fighter/bullfrog';
@@ -78,6 +79,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...ac721,
     ...aldabra,
     ...argus,
+    ...at021,
     ...b192Newland,
     ...balancerAnderson,
     ...boreas,
