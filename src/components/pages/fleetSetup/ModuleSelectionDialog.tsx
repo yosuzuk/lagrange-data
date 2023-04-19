@@ -60,6 +60,10 @@ export const ModuleSelectionDialog = (props: IProps) => {
             content={(
                 <Stack spacing={3}>
                     {Object.keys(newModuleSelection.groups).map(groupId => {
+                        if (groupId === 'STATIC') {
+                            return null;
+                        }
+
                         const currentValue = getCurrentValue(groupId);
                         const valueForEmptyOption = `${groupId}#none`;
                         return (

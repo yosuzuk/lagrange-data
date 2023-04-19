@@ -200,7 +200,7 @@ function createModuleSelection(
         return null;
     }
 
-    const restoredUsedModules = usedModules ?? shipDefinition.modules.filter(module => module.defaultModule).map(module => module.id);
+    const restoredUsedModules = usedModules ?? shipDefinition.modules.filter(module => module.defaultModule && module.category !== 'STATIC').map(module => module.id);
 
     const result: IModuleSelection = {
         configuable: false,
