@@ -23,10 +23,11 @@ export const EditMapButton = (props: IProps) => {
                 position: 'absolute',
                 right: '8px',
                 bottom: '8px',
-                backgroundColor: 'rgba(255,255,255,0.2)',
+                backgroundColor: '#121212',
+                border: '1px solid grey',
             }}
         >
-            <EditIcon />
+            <EditIcon sx={{ color: 'white' }} />
         </Fab>
     );
 };

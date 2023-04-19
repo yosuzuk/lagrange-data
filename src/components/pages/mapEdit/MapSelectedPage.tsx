@@ -12,21 +12,29 @@ import { routes } from '../../../utils/routes';
 import { MapNavigatorBar } from './MapNavigatorBar';
 import { MapTopRightBar } from './MapTopRightBar';
 import { EditMapButton } from './EditMapButton';
+import { SaveMapButton } from './SaveMapButton';
+import Box from '@mui/material/Box';
 
 const MapSelectedPage = () => {
     const {
         mode,
         mapUrl,
-        queryResult,
         input,
         mapData,
         parseError,
         targetToMark,
+        loading,
+        saving,
+        isError,
+        error,
+        changeState,
+        allowSave,
         setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
+        saveInput,
         removeContent,
         markTarget,
     } = useMapData();
@@ -44,24 +52,23 @@ const MapSelectedPage = () => {
         );
     }
 
-    if (queryResult.isLoading) {
+    if (loading) {
         return (
             <LoadingIndicator />
         );
     }
 
-    if (queryResult.isError) {
-        return (
-            <Alert severity="error">
-                <AlertTitle>{t('label.error')}</AlertTitle>
-                {`${queryResult.error}`}
-            </Alert>
-        );
-    }
-
     return (
         <>
-            {mapData && (
+            {isError && (
+                <Box component="div" sx={{ position: 'absolute', top: '8px', left: '8px' }}>
+                    <Alert severity="error">
+                        <AlertTitle>{t('label.error')}</AlertTitle>
+                        {`${error}`}
+                    </Alert>
+                </Box>
+            )}
+            {!isError && mapData && (
                 <MapProviders mapData={mapData} targetToMark={targetToMark}>
                     <StarSystem mapData={mapData} />
                 </MapProviders>
@@ -80,6 +87,7 @@ const MapSelectedPage = () => {
             {mode === 'interactive' && mapData && (
                 <>
                     <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
+                    <SaveMapButton saving={saving} save={saveInput} changeState={changeState} allowSave={allowSave} />
                     <EditMapButton setMode={setMode} />
                 </>
             )}

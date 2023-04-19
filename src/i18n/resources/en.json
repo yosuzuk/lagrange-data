@@ -280,6 +280,7 @@
     "mapEdit": {
         "pageTitle": "Map builder",
         "loadAndOpenMap": "Load map",
+        "saveMap": "Save map",
         "invalidMap": "Invalid map",
         "regionValue": "Region {{value}}",
         "invalidUrl": "Please enter a valid URL",
@@ -290,6 +291,8 @@
         "openEmptyMap": "Open empty map",
         "sizeCanBeAdjustedBrackets": "(size can be adjusted)",
         "noContent": "No content",
+        "editKeyInstruction": "Please enter your edit key",
+        "editKeyPlaceholder": "Key",
         "station": {
             "city": "City",
             "subCity": "Sub-City",

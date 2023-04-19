@@ -1,26 +1,33 @@
 import { useCallback, useEffect, useMemo, useState, SetStateAction, Dispatch } from 'react';
-import { UseQueryResult } from 'react-query';
 import { useSearchParams } from 'react-router-dom';
 import { routes } from '../../../../utils/routes';
 import { IMapContent, IMapData, IParseMapContentError } from '../types/IMapContent';
 import { MapInteractionMode } from '../types/Mode';
 import { parseLines } from '../utils/codeUtils';
 import { parseMapData } from '../utils/mapDataParser';
-import { useQueryMapData } from './useQueryMapData';
+import { useMutateMapData, useQueryMapData } from './useQueryMapData';
+import { MutationState } from '../types/MutationState';
+import { isExampleMapUrl } from '../examples/examplesMaps';
 
 interface IHookResult {
     mode: MapInteractionMode;
     mapUrl: string | null;
-    queryResult: UseQueryResult<string | null, unknown>;
     input: string;
     mapData: IMapData | null;
     parseError: IParseMapContentError | null;
     targetToMark: string | null;
+    loading: boolean;
+    saving: boolean;
+    isError: boolean;
+    error: unknown | null;
+    changeState: MutationState;
+    allowSave: boolean;
     setMode: Dispatch<SetStateAction<MapInteractionMode>>;
     cancelEditMode: () => void;
     setInput: (input: string) => void;
     applyInput: () => void;
     validateInput: () => void;
+    saveInput: (editKey: string) => void;
     removeContent: (content: IMapContent) => void;
     markTarget: Dispatch<SetStateAction<string | null>>;
 }
@@ -29,9 +36,12 @@ export const useMapData = (): IHookResult => {
     const [searchParams, setSearchParams] = useSearchParams();
     const encodedMapUrl = searchParams.get('d');
     const mapUrl = useMemo<string | null>(() => encodedMapUrl ? window.atob(encodedMapUrl) : null, [encodedMapUrl]);
-    const queryResult = useQueryMapData(mapUrl);
+    const mapDataQueryResult = useQueryMapData(mapUrl);
+    const mapDataMutation = useMutateMapData();
+    const allowSave = useMemo<boolean>(() => !!mapUrl && !isExampleMapUrl(mapUrl), [mapUrl]);
 
     const [mode, setMode] = useState<MapInteractionMode>('interactive');
+    const [changeState, setChangeState] = useState<MutationState>('noData');
     const [input, setInput] = useState<string>('');
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
@@ -50,20 +60,20 @@ export const useMapData = (): IHookResult => {
 
     // apply loaded initial data
     useEffect(() => {
-        if (queryResult.isSuccess && queryResult.data) {
-            setInput(queryResult.data);
+        if (mapDataQueryResult.isSuccess && mapDataQueryResult.data) {
+            setInput(mapDataQueryResult.data);
 
-            const [mapData, parseError] = parseMapData(queryResult.data);
+            const [mapData, parseError] = parseMapData(mapDataQueryResult.data);
             if (parseError) {
                 console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
                 setParseError(parseError);
                 setMode('edit');
                 return;
             }
-            setLastValidInput(queryResult.data);
+            setLastValidInput(mapDataQueryResult.data);
             setLastValidMapData(mapData);
         }
-    }, [queryResult.isSuccess, queryResult.data]);
+    }, [mapDataQueryResult.isSuccess, mapDataQueryResult.data]);
 
     // apply manual input
     const applyInput = useCallback(() => {
@@ -76,7 +86,8 @@ export const useMapData = (): IHookResult => {
         setParseError(null);
         setLastValidInput(input);
         setLastValidMapData(mapData);
-        setMode('view');
+        setMode('interactive');
+        setChangeState('unsaved');
     }, [input]);
 
     // just validate
@@ -89,6 +100,25 @@ export const useMapData = (): IHookResult => {
         }
         setParseError(null);
     }, [input]);
+
+    // save map
+    const saveInput = useCallback((editKey: string) => {
+        if (parseError || !mapUrl || mapDataMutation.isLoading) {
+            return;
+        }
+        mapDataMutation.mutate({
+            mapUrl,
+            mapData: input,
+            key: editKey,
+        }, {
+            onSuccess: () => {
+                setChangeState('saved');
+            },
+            onError: () => {
+                setChangeState('unsaved');
+            },
+        });
+    }, [mapUrl, input, parseError, mapDataMutation]);
 
     const cancelEditMode = useCallback(() => {
         setParseError(null);
@@ -115,6 +145,7 @@ export const useMapData = (): IHookResult => {
         setInput(result);
         setLastValidInput(result);
         setLastValidMapData(mapData);
+        setChangeState('unsaved');
     }, [input]);
 
     useEffect(() => {
@@ -124,16 +155,22 @@ export const useMapData = (): IHookResult => {
     return {
         mode,
         mapUrl,
-        queryResult,
         input,
         mapData: lastValidMapData,
         parseError,
         targetToMark,
+        loading: !mapDataQueryResult.isFetched || mapDataQueryResult.isLoading,
+        saving: mapDataMutation.isLoading,
+        isError: mapDataQueryResult.isError || mapDataMutation.isError,
+        error: mapDataQueryResult.error ?? mapDataMutation.error ?? null,
+        changeState,
+        allowSave,
         setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
+        saveInput,
         removeContent,
         markTarget: setTargetToMark,
     };
