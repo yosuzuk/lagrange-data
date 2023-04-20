@@ -18,9 +18,11 @@ Keywords:
 - `$region` for defining region areas
 - `$planet` for placing planets and their orbit
 - `$station` for building space stations and cities
-- `$area` for defining areas that span over multiple grid cells
 - `$base` for placing player bases
-- `$name` for the name of the star system
+- `$outpost` for placing player outposts
+- `$platform` for playing mining platforms
+- `$name` to name the map
+- `$serverName` for server name / name of the star system
 - `$size` for the size of the coordinate system
 
 (these keywords are explained in more detail below)
@@ -122,7 +124,7 @@ You can place various types of space stations after the `$station` keyword. "typ
 
 Two additional points can be specified to mark the area around the station.
 
-Player bases ~~and platforms~~ have their own dedicated keyword (`$base` ~~and `$platform`~~). `$station` is mostly used for creating cities.
+Player bases, outposts and mining platforms have their own dedicated keyword (`$base`, `$outpost` and `$platform`). `$station` is mostly used for creating cities and miscellaneous NPC stations.
 
 Example:
 
@@ -146,6 +148,28 @@ $base
 ```
 
 You can place player bases after the `$base` keyword. The given point is automatically rounded to fit the base onto the grid. Bases are only visible at a certain zoom level.
+
+## Player Outposts
+
+Syntax:
+
+```
+$outpost
+<point> [<color>] [<name>]
+```
+
+You can place player outposts after the `$outpost` keyword. Each line will place a 1x1 area and a space station with an outpost icon.
+
+## Mining Platforms
+
+Syntax:
+
+```
+$platform
+<point> <type> [<color>] [<name>]
+```
+
+You can place mining platforms after the `$platform` keyword. Each platform needs at least a center point and a type. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. The station will have a default name based on the given type. An optional "name" can be provided to override the type specific default name. Each line will place a 2x2 area and a space station with a platform type specifc icon.  
 
 ## Basic map properties
 
