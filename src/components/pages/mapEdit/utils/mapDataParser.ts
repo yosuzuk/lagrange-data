@@ -12,6 +12,7 @@ const DEFAULT_PLAYER_COLOR = '#0077ff';
 export function parseMapData(input: string): [IMapData, IParseMapContentError | null] {
     const mapContent: IMapData = {
         name: null,
+        serverName: null,
         size: null,
         marker: [],
         regions: [],
@@ -47,6 +48,10 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         switch (currentSection) {
             case '$name': {
                 mapContent.name = trimmedLine;
+                return;
+            }
+            case '$serverName': {
+                mapContent.serverName = trimmedLine;
                 return;
             }
             case '$size': {
@@ -121,6 +126,8 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
             }
         }
     });
+
+    mapContent.serverName = mapContent.serverName ?? mapContent.name ?? null;
 
     return [mapContent, parseError];
 }

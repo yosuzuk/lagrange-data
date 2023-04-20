@@ -1,3 +1,5 @@
+$name Planet Example
+
 $planet
 (4340,4143)
 (3814,4207) Fafner

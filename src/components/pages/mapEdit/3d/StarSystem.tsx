@@ -36,8 +36,8 @@ export const StarSystem = (props: IProps) => {
             <MapGrid />
             <Sun />
             <pointLight position={[0, 0, 40]} castShadow={true} intensity={1.2} />
-            {mapData.name && (
-                <WorldLabel worldName={mapData.name} />
+            {mapData.serverName && (
+                <WorldLabel worldName={mapData.serverName} />
             )}
             {mapData.marker.map(marker => (
                 <Marker key={marker.id} marker={marker} />

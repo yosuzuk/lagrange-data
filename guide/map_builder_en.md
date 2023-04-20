@@ -178,10 +178,25 @@ Syntax:
 
 ```
 $name <name>
+$serverName <name>
 $size <size>
 ```
 
-Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. A sun will be placed at the center point, with the given "name" as label if specified.
+Basic map properties are optional.
+
+Use the `$name` keyword to give your map a name for the map selection screen.
+
+Use the `$serverName` keyword to name the server / star system. The server name gets displayed at the center of your map, below the sun.
+
+Use the `$size` keyword to specify the overall map size. Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. The sun will be placed at the center point, with the given server name as label if specified.
+
+Example:
+
+```
+$name My Awesome Map
+$serverName V1357 Leo
+$size 9000
+```
 
 ## Colors
 

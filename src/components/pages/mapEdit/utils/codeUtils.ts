@@ -1,6 +1,6 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
 
-export const sectionKeywords = ['$name', '$size', '$marker', '$region', '$planet', '$station', '$area', '$base'];
+export const sectionKeywords = ['$name', '$serverName', '$size', '$marker', '$region', '$planet', '$station', '$area', '$base'];
 
 export function parseLines(input: string): string[] {
     return normalizeLineEndings(input, '\n').split('\n').map(line => line.trim());

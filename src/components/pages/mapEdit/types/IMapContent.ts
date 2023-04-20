@@ -3,6 +3,7 @@ import { PlanetSize } from './PlanetSize';
 
 export interface IMapData {
     name: string | null;
+    serverName: string | null;
     size: number | null;
     marker: IMarker[];
     regions: IRegion[];
