@@ -134,31 +134,6 @@ $station
 (4082,3610) stronghold #c0077FF
 ```
 
-## Areas
-
-![area example](assets/areaExample.jpg)
-
-Syntax:
-
-```
-$area
-<point><point> [<type>] [<color>]
-```
-
-You can place various types of areas after the `$area` keyword. Each area needs two corner points. Both points are automatically rounded to fit the area onto the grid. "type" can be one of `city` or `default` if specified. Areas become visible at different zoom levels depending on their type.
-
-You don't need `$area` for placing player bases and platform areas. Those are automatically placed when using the `$base` ~~or `$platform`~~ keyword. `$area` is mostly used for creating city areas.
-
-Example:
-
-```
-$area
-(5500,3550)(5550,3500)
-(5560,3510)(5600,3550) city #cBA6E34
-(5550,3580)(5530,3560) city #cFF0000
-(5590,3560)(5560,3590) #c4D85BE
-```
-
 ## Player Bases
 
 ![base example](assets/baseExample.jpg)

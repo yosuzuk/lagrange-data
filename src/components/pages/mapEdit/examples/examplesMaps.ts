@@ -14,7 +14,6 @@ export function getExampleMaps() {
         regionsExample: createExample('Regions', 'regions.txt'),
         citiesExample: createExample('Cities', 'cities.txt'),
         baseExample: createExample('Player bases', 'base.txt'),
-        areaExample: createExample('Areas', 'areas.txt'),
     } as const;
 }
 

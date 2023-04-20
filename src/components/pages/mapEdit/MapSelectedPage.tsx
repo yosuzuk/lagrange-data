@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -7,13 +7,15 @@ import { StarSystem } from './3d/StarSystem';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
 import { t } from '../../../i18n';
-import { MapProviders } from './MapProviders';
+import { MapProviders as _MapProviders } from './MapProviders';
 import { routes } from '../../../utils/routes';
 import { MapNavigatorBar } from './MapNavigatorBar';
 import { MapTopRightBar } from './MapTopRightBar';
 import { EditMapButton } from './EditMapButton';
 import { SaveMapButton } from './SaveMapButton';
 import Box from '@mui/material/Box';
+
+const MapProviders = memo(_MapProviders);
 
 const MapSelectedPage = () => {
     const {

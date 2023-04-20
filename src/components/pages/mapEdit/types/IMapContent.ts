@@ -9,7 +9,6 @@ export interface IMapData {
     regions: IRegion[];
     planets: IPlanet[];
     stations: IStation[];
-    areas: IArea[];
     bases: IPlayerBase[];
 }
 
