@@ -10,6 +10,8 @@ export interface IMapData {
     planets: IPlanet[];
     stations: IStation[];
     bases: IPlayerBase[];
+    outposts: IPlayerOutpost[];
+    platforms: IPlayerPlatform[];
 }
 
 export interface IMapContent {
@@ -19,14 +21,14 @@ export interface IMapContent {
 }
 
 export interface IMarker extends IMapContent {
-    contentType: 'marker',
+    contentType: 'marker';
     position: GamePosition;
     color: string;
     label: string | null;
 }
 
 export interface IRegion extends IMapContent {
-    contentType: 'region',
+    contentType: 'region';
     innerRadiusPoint: GamePosition;
     outerRadiusPoint: GamePosition;
     angleStartPoint: GamePosition;
@@ -37,7 +39,7 @@ export interface IRegion extends IMapContent {
 }
 
 export interface IPlanet extends IMapContent {
-    contentType: 'planet',
+    contentType: 'planet';
     position: GamePosition;
     orbitCenter: GamePosition | null;
     size: PlanetSize;
@@ -45,10 +47,10 @@ export interface IPlanet extends IMapContent {
     name: string | null;
 }
 
-export type StationType = 'city' | 'subCity' | 'stronghold' | 'base' | 'default';
+export type StationType = 'city' | 'subCity' | 'stronghold' | 'base' | 'outpost' | 'platform' | 'default';
 
 export interface IStation extends IMapContent {
-    contentType: 'station',
+    contentType: 'station';
     position: GamePosition;
     type: StationType;
     level: number | null;
@@ -60,7 +62,7 @@ export interface IStation extends IMapContent {
 export type AreaType = 'city' | 'default';
 
 export interface IArea extends IMapContent {
-    contentType: 'area',
+    contentType: 'area';
     type: AreaType;
     position1: GamePosition;
     position2: GamePosition;
@@ -68,7 +70,20 @@ export interface IArea extends IMapContent {
 }
 
 export interface IPlayerBase extends IMapContent {
-    contentType: 'base',
+    contentType: 'base';
+    station: IStation;
+}
+
+export interface IPlayerOutpost extends IMapContent {
+    contentType: 'outpost';
+    station: IStation;
+}
+
+export type PlatformType = 'basic' | 'intermediate' | 'advanced' | 'bmp' | 'imp' | 'amp';
+
+export interface IPlayerPlatform extends IMapContent {
+    contentType: 'platform';
+    type: PlatformType;
     station: IStation;
 }
 

@@ -115,6 +115,11 @@ function getIcon(station: IStation): HTMLCanvasElement {
         case 'stronghold': {
             return createStrongholdIcon(station.color);
         }
+        case 'outpost':
+        case 'platform': {
+            // TODO new icon
+            return createDefaultStationIcon(station.color);
+        }
         default: {
             return createDefaultStationIcon(station.color);
         }
@@ -186,8 +191,4 @@ function showLevel(station: IStation): boolean {
         default:
             return Number.isFinite(station.level);
     }
-}
-
-function isHighLevelCity(station: IStation): boolean {
-    return station.type === 'city' && (station.level ?? 0) > 7;
 }

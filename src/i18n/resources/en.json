@@ -297,7 +297,11 @@
             "city": "City",
             "subCity": "Sub-City",
             "stronghold": "Stronghold",
-            "base": "Player base"
+            "base": "Player base",
+            "outpost": "Outpost",
+            "bmp": "Basic Mining Platform",
+            "imp": "Intermediate Mining Platform",
+            "amp": "Advanced Mining Platform"
         }
     },
     "manufacturer": {

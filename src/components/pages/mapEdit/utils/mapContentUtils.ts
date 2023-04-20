@@ -1,5 +1,5 @@
 import { t } from '../../../../i18n';
-import { IMarker, IPlanet, IStation } from '../types/IMapContent';
+import { IMarker, IPlanet, IStation, PlatformType } from '../types/IMapContent';
 import { formatGamePosition } from './coordinateUtils';
 
 export function formatStationLabelForList(station: IStation): string {
@@ -18,6 +18,23 @@ export function formatStationLabelForList(station: IStation): string {
         }
         default: {
             return station.name ?? `${formatGamePosition(station.position)}`;
+        }
+    }
+}
+
+export function formatPlatformLabel(platformType: PlatformType): string {
+    switch (platformType) {
+        case 'basic':
+        case 'bmp': {
+            return t('mapEdit.station.bmp');
+        }
+        case 'intermediate':
+        case 'imp': {
+            return t('mapEdit.station.imp');
+        }
+        case 'advanced':
+        case 'amp': {
+            return t('mapEdit.station.amp');
         }
     }
 }

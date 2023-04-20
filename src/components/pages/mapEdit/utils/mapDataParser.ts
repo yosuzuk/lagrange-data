@@ -1,8 +1,10 @@
+import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapData, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IRegion, IStation } from '../types/IMapContent';
+import { AreaType, IArea, IMapData, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, sectionKeywords } from './codeUtils';
-import { snapGamePositionToGridCellCenter } from './coordinateUtils';
+import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
+import { formatPlatformLabel } from './mapContentUtils';
 
 const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
@@ -19,6 +21,8 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         planets: [],
         stations: [],
         bases: [],
+        outposts: [],
+        platforms: [],
     };
     let parseError: IParseMapContentError | null = null;
 
@@ -113,6 +117,26 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
                 }
                 return;
             }
+            case '$outpost': {
+                const [outpost, error] = parsePlayerOutpostLine(trimmedLine, lineNumber);
+                if (outpost) {
+                    mapContent.outposts.push(outpost);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
+            case '$platform': {
+                const [platform, error] = parsePlayerPlatformLine(trimmedLine, lineNumber);
+                if (platform) {
+                    mapContent.platforms.push(platform);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
         }
     });
 
@@ -125,7 +149,8 @@ const COORDINATE_REG_EXP = /\(\d+\,\d+\)/g;
 const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][abcdefABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
-const STATION_TYPE_REG_EXP = /^(city|subCity|stronghold|base|default)\s/g;
+const STATION_TYPE_REG_EXP = /^(city|subCity|stronghold|base|outpost|platform|default)\s/g;
+const PLATFORM_TYPE_REG_EXP = /^(basic|intermediate|advanced|bmp|imp|amp)\s/g;
 
 function parseGridSizeLine(line: string, lineNumber: number): [number | null, IParseMapContentError | null] {
     const {
@@ -385,6 +410,127 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
         {
             id: `base${lineNumber}`,
             contentType: 'base',
+            lineNumber,
+            station,
+        },
+        null,
+    ];
+}
+
+function parsePlayerOutpostLine(line: string, lineNumber: number): [IPlayerOutpost | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutCoordinates, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
+
+    const station: IStation = {
+        id: `station${lineNumber}`,
+        contentType: 'station',
+        lineNumber,
+        type: 'outpost',
+        position: position,
+        level: null,
+        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        name: lineWithoutColors || t('mapEdit.station.outpost'),
+        area: {
+            id: `area${lineNumber}`,
+            contentType: 'area',
+            lineNumber,
+            type: 'default',
+            position1: `(${x - 5},${y - 5})`,
+            position2: `(${x + 5},${y + 5})`,
+            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        },
+    };
+
+    return [
+        {
+            id: `outpost${lineNumber}`,
+            contentType: 'outpost',
+            lineNumber,
+            station,
+        },
+        null,
+    ];
+}
+
+function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlatform | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 1, 1);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: platformTypeError,
+        matches: platformTypes,
+        line: lineWithoutPlatformTypes,
+    } = parseWithRegExp<AreaType>(lineWithoutCoordinates, PLATFORM_TYPE_REG_EXP, 0, 1);
+
+    if (platformTypeError) {
+        return [null, createParseMapContentError('Invalid number of platform types', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutPlatformTypes, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    const [position, x, y] = snapGamePositionToGridCellCorner(coordinates[0] as GamePosition);
+
+    const platformType = platformTypes[0] as PlatformType;
+
+    const station: IStation = {
+        id: `station${lineNumber}`,
+        contentType: 'station',
+        lineNumber,
+        type: 'platform',
+        position: position,
+        level: null,
+        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        name: lineWithoutColors || formatPlatformLabel(platformType),
+        area: {
+            id: `area${lineNumber}`,
+            contentType: 'area',
+            lineNumber,
+            type: 'default',
+            position1: `(${x - 10},${y - 10})`,
+            position2: `(${x + 10},${y + 10})`,
+            color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
+        },
+    };
+
+    return [
+        {
+            id: `platform${lineNumber}`,
+            contentType: 'platform',
+            type: platformTypes[0] as PlatformType,
             lineNumber,
             station,
         },

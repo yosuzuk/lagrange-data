@@ -80,9 +80,21 @@ export function snapToGrid(position: GridPosition): GridPosition {
 
 export function snapGamePositionToGridCellCenter(position: GamePosition): [GamePosition, number, number] {
     const [x, y] = parseGamePosition(position);
-    // snap to grid cell center, e.g. 1234 => 123,4 => 123 => 1230 => 1235
+    // snap to grid cell center
+    // e.g. 1234 => 123,4 => 123 => 1230 => 1235
+    // e.g. 1239 => 123,9 => 123 => 1230 => 1235
     const snappedX = Math.floor(x * 0.1) * 10 + 5;
     const snappedY = Math.floor(y * 0.1) * 10 + 5;
+    return [`(${snappedX},${snappedY})`, snappedX, snappedY];
+}
+
+export function snapGamePositionToGridCellCorner(position: GamePosition): [GamePosition, number, number] {
+    const [x, y] = parseGamePosition(position);
+    // snap to grid cell corner
+    // e.g. 1234 => 123,4 => 123 => 1230
+    // e.g. 1239 => 123,9 => 124 => 1240
+    const snappedX = Math.round(x * 0.1) * 10;
+    const snappedY = Math.round(y * 0.1) * 10;
     return [`(${snappedX},${snappedY})`, snappedX, snappedY];
 }
 
