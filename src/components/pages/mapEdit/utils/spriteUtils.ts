@@ -1,6 +1,6 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
 
-interface ITextOptions {
+type ITextOptions = {
     text: string;
     color?: string;
     font?: string;
@@ -11,7 +11,7 @@ interface ITextOptions {
     marginBottom?: number;
 }
 
-export function createTextImage(args: ITextOptions) {
+export const createTextImage = memoizeComplexCanvasFactory((args: ITextOptions) => {
     const {
         text,
         color = 'white',
@@ -48,9 +48,9 @@ export function createTextImage(args: ITextOptions) {
     });
 
     return canvas;
-}
+});
 
-export function createMarkerImage(color: string = 'white') {
+export const createMarkerImage = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     const cubeSize = 5;
     const stickLength = 15;
@@ -67,9 +67,9 @@ export function createMarkerImage(color: string = 'white') {
     ctx.strokeStyle = color;
     ctx.stroke();
     return canvas;
-}
+});
 
-export function createPlayerBaseIcon(color: string = 'white') {
+export const createPlayerBaseIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 12;
     canvas.height = 12;
@@ -102,9 +102,9 @@ export function createPlayerBaseIcon(color: string = 'white') {
     ctx.fill();
 
     return canvas;
-}
+});
 
-export function createSunIcon(color: string = 'white') {
+export const createSunIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 12;
     canvas.height = 12;
@@ -119,9 +119,9 @@ export function createSunIcon(color: string = 'white') {
     ctx.fillStyle = color;
     ctx.fill();
     return canvas;
-}
+});
 
-export function createLargePlanetIcon(color: string = 'white') {
+export const createLargePlanetIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 12;
     canvas.height = 12;
@@ -139,9 +139,9 @@ export function createLargePlanetIcon(color: string = 'white') {
     ctx.arc(2.1, 9.9, 1.1, 0, 2 * Math.PI, false);
     ctx.fill();
     return canvas;
-}
+});
 
-export function createSmallPlanetIcon(color: string = 'white') {
+export const createSmallPlanetIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 10;
     canvas.height = 10;
@@ -156,9 +156,9 @@ export function createSmallPlanetIcon(color: string = 'white') {
     ctx.arc(2, 5, 1.8, 0, 2 * Math.PI, false);
     ctx.fill();
     return canvas;
-}
+});
 
-export function createDefaultStationIcon(color: string = 'white') {
+export const createDefaultStationIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 8;
     canvas.height = 8;
@@ -166,9 +166,9 @@ export function createDefaultStationIcon(color: string = 'white') {
     ctx.strokeStyle = color;
     ctx.strokeRect(1.5, 1.5, 5, 5);
     return canvas;
-}
+});
 
-export function createStrongholdIcon(color: string = 'white') {
+export const createStrongholdIcon = memoizeSimpleCanvasFactory((color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
     canvas.width = 10;
     canvas.height = 10;
@@ -189,9 +189,9 @@ export function createStrongholdIcon(color: string = 'white') {
     ctx.lineTo(canvas.width - 1.5, canvas.height - 1.5 - 2);
     ctx.stroke();
     return canvas;
-}
+});
 
-export function createCityIcon(cityLevel: number | null, color: string = 'white') {
+export const createCityIcon = memoizeSimpleCanvasFactory((cityLevel: number | null, color: string = 'white') => {
     const { canvas, ctx } = createCanvas();
 
     if (cityLevel && cityLevel >= 7) {
@@ -223,9 +223,9 @@ export function createCityIcon(cityLevel: number | null, color: string = 'white'
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, 6, 6);
     return canvas;
-}
+});
 
-export function createTargetSprite() {
+export const createTargetSprite = memoizeSimpleCanvasFactory(() => {
     const { canvas, ctx } = createCanvas();
     const w = 8;
     canvas.width = 60;
@@ -245,9 +245,9 @@ export function createTargetSprite() {
     ctx.lineTo(canvas.width - 1.5 - w, canvas.height - 1.5);
     ctx.stroke();
     return canvas;
-}
+});
 
-interface IMergeIconAndTextArgs {
+type IMergeIconAndTextArgs = {
     iconCanvas: HTMLCanvasElement;
     textCanvas: HTMLCanvasElement;
     spacing: number;
@@ -323,4 +323,38 @@ function createCanvas(): ICreatedCanvas {
     }
 
     return { canvas, ctx };
+}
+
+function memoizeSimpleCanvasFactory<T>(fn: T): T {
+    const canvasCache: Record<string, HTMLCanvasElement> = {};
+
+    if (typeof fn !== 'function') {
+        throw new Error('');
+    }
+
+    return ((...args: unknown[]) => {
+        const cacheKey = args.map(a => `${a}`).join();
+        if (cacheKey in canvasCache) {
+            return canvasCache[cacheKey];
+        }
+        const canvas = fn(...args);
+        canvasCache[cacheKey] = canvas;
+        return canvas;
+    }) as T;
+}
+
+type TComplexCanvasFactory<TOptions> = (options: TOptions) => HTMLCanvasElement;
+
+function memoizeComplexCanvasFactory<TOptions extends Record<string, unknown>>(fn: TComplexCanvasFactory<TOptions>): TComplexCanvasFactory<TOptions> {
+    const canvasCache: Record<string, HTMLCanvasElement> = {};
+
+    return (options: TOptions) => {
+        const cacheKey = Object.values(options).join(',');
+        if (cacheKey in canvasCache) {
+            return canvasCache[cacheKey];
+        }
+        const canvas = fn(options);
+        canvasCache[cacheKey] = canvas;
+        return canvas;
+    };
 }
