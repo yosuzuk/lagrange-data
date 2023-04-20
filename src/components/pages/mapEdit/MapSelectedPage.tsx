@@ -3,11 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import { useMapData } from './hooks/useMapData';
-import { StarSystem } from './3d/StarSystem';
 import { LoadingIndicator } from '../../loading/LoadingIndicator';
 import { MapEditDialog } from './MapEditDialog';
 import { t } from '../../../i18n';
-import { MapProviders as _MapProviders } from './MapProviders';
+import { MapRenderer as _MapRenderer } from './MapRenderer';
 import { routes } from '../../../utils/routes';
 import { MapNavigatorBar } from './MapNavigatorBar';
 import { MapTopRightBar } from './MapTopRightBar';
@@ -15,7 +14,7 @@ import { EditMapButton } from './EditMapButton';
 import { SaveMapButton } from './SaveMapButton';
 import Box from '@mui/material/Box';
 
-const MapProviders = memo(_MapProviders);
+const MapRenderer = memo(_MapRenderer);
 
 const MapSelectedPage = () => {
     const {
@@ -71,9 +70,7 @@ const MapSelectedPage = () => {
                 </Box>
             )}
             {!isError && mapData && (
-                <MapProviders mapData={mapData} targetToMark={targetToMark}>
-                    <StarSystem mapData={mapData} />
-                </MapProviders>
+                <MapRenderer mapData={mapData} targetToMark={targetToMark} />
             )}
             <MapTopRightBar mode={mode} onExit={handleClickExit} setMode={setMode} />
             {mode === 'edit' && (

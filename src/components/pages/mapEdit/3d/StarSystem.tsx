@@ -6,15 +6,11 @@ import { StarsBackground } from './StarsBackground';
 import { MapBorders } from './MapBorders';
 import { MapGrid } from './MapGrid';
 import { IMapData } from '../types/IMapContent';
-import { Area } from './Area';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
 import { PlayerBase } from './PlayerBase';
 import { Region } from './Region';
 import { Station } from './Station';
-import { Vector3 } from 'three';
-import { degreesToRadians } from '../../../../utils/math';
-import { useGridSize } from '../context/GridSizeContext';
 
 interface IProps {
     mapData: IMapData;
@@ -47,9 +43,6 @@ export const StarSystem = (props: IProps) => {
             ))}
             {mapData.planets.map(planet => (
                 <Planet key={planet.id} planet={planet} />
-            ))}
-            {mapData.areas.map(area => (
-                <Area key={area.id} area={area} />
             ))}
             {mapData.stations.map(station => (
                 <Station key={station.id} station={station} />

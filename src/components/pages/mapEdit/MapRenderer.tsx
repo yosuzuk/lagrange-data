@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState, ComponentProps } from 'react';
+import { useMemo, useState, ComponentProps } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { DebugProvider } from './context/DebugContext';
 import { GridSizeProvider } from './context/GridSizeContext';
@@ -10,17 +10,17 @@ import { translateSizeToGrid } from './utils/coordinateUtils';
 import { CameraControls } from './3d/CameraControls';
 import { degreesToRadians } from '../../../utils/math';
 import { getRendeOrder } from './utils/renderOrder';
+import { StarSystem } from './3d/StarSystem';
 
 interface IProps {
     mapData: IMapData;
     targetToMark: string | null;
-    children: ReactNode;
 }
 
 const DEFAULT_MAP_SIZE = 9000;
 
-export const MapProviders = (props: IProps) => {
-    const { mapData, targetToMark, children } = props;
+export const MapRenderer = (props: IProps) => {
+    const { mapData, targetToMark } = props;
     const [debug, setDebug] = useState<boolean>(false);
     const gridSize = translateSizeToGrid(mapData.size ?? DEFAULT_MAP_SIZE);
 
@@ -55,7 +55,7 @@ export const MapProviders = (props: IProps) => {
                                 <CameraControls targetToMark={targetToMark} />
                                 <color attach="background" args={['#292828']} />
                                 <ambientLight intensity={0.1} />
-                                {children}
+                                <StarSystem mapData={mapData} />
                                 {debug && (
                                     <axesHelper args={[10]} position={[0, 0, 0]} renderOrder={getRendeOrder('axesHelper')} />
                                 )}
