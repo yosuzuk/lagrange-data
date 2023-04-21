@@ -30,14 +30,14 @@ const MapSelectionPage = () => {
             <NavigationBar currentRoute={routes.map.path} />
             <PageContent>
                 <Box component="div" p={1}>
-                    {/*<Stack pt={1} pb={2} spacing={2}>
+                    <Stack pt={1} pb={2} spacing={2}>
                         <Typography variant="body2">
-                            {'TODO text'}
+                            {t('mapEdit.pageDescription1')}
                         </Typography>
                         <Typography variant="body2">
-                            {'TODO text'}
+                            {t('mapEdit.pageDescription2')}
                         </Typography>
-                    </Stack>*/}
+                    </Stack>
                     <ExpandStack
                         expandables={[
                             {

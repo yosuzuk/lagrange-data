@@ -6,7 +6,6 @@ interface IExampleMap {
 }
 
 export function getExampleMaps() {
-    const language = getCurrentLanguage();
     return {
         // 'Full map', language === 'ja' ? 'fullMap_ja.txt' : 'fullMap.txt'
         fullMapExample: createExample({
