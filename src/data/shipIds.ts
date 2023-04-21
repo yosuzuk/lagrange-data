@@ -92,6 +92,7 @@ export const ShipId = {
     KCCPV2_0_B: 'KCCPV2_0_B',
     KCCPV2_0_C: 'KCCPV2_0_C',
     KCCPV2_0_D: 'KCCPV2_0_D',
+    KCCPV2_0_TE_D: 'KCCPV2_0_TE_D',
     LIGHT_CONE_A: 'LIGHT_CONE_A',
     LIGHT_CONE_B: 'LIGHT_CONE_B',
     LIGHT_CONE_C: 'LIGHT_CONE_C',
