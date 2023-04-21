@@ -1,0 +1,10 @@
+$name Outpost Example
+
+$outpost
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF My warp point
+(5635,3545) #c0077FF ワープ用
+
+$marker
+(5600,3550)

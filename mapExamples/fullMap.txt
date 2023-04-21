@@ -1,4 +1,5 @@
-$name Sagittarius 515
+$name Example Map
+$serverName Sagittarius 515
 $size 9000
 
 $region
@@ -49,6 +50,14 @@ $base
 (5625,3565) #c40C0C3
 (5635,3555) #c0077FF Player
 (5635,3545) #c0077FF プレイヤー
+
+$outpost
+(5645,3575) #cBE393A
+(5655,3575) #cBE393A Warp point
+
+$platform
+(5630,3580) advanced #cBE393A
+(5610,3570) basic #cBE393A
 
 $marker
 (5645,3545)

@@ -1,3 +1,16 @@
+$name Area Example
+
+// Note:
+//
+// The $area keyword still works but you should consider to use one of the following keywords instead:
+//
+// - $station
+// - $base
+// - $outpost
+// - $platform
+//
+// These keywords can automatically place an area.
+
 $area
 (5500,3550)(5550,3500)
 (5560,3510)(5600,3550) city #cBA6E34

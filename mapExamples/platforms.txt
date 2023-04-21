@@ -1,0 +1,12 @@
+$name Platforms Example
+
+$platform
+(5610,3550) basic #cF7C360
+(5640,3550) intermediate #c40C0C3
+(5670,3550) advanced #c40C0C3
+(5620,3580) bmp #c0077FF
+(5650,3580) imp #c0077FF Intermediate Mining Platform
+(5680,3580) amp #c0077FF 上級プラットフォーム
+
+$marker
+(5590,3550)

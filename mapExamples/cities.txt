@@ -1,3 +1,5 @@
+$name City Example
+
 $station
 (4096,3591)(4010,3571)(4130,3690) city 6 #c0077FF Meroe Volante
 
