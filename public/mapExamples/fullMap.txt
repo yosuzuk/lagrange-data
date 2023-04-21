@@ -51,6 +51,14 @@ $base
 (5635,3555) #c0077FF Player
 (5635,3545) #c0077FF プレイヤー
 
+$outpost
+(5645,3575) #cBE393A
+(5655,3575) #cBE393A Warp point
+
+$platform
+(5630,3580) advanced #cBE393A
+(5610,3570) basic #cBE393A
+
 $marker
 (5645,3545)
 
