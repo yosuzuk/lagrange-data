@@ -2,7 +2,7 @@ import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
 import { AreaType, IArea, IMapData, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
-import { parseLines, removeComment, sectionKeywords } from './codeUtils';
+import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
 import { formatPlatformLabel } from './mapContentUtils';
 
@@ -20,6 +20,7 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         regions: [],
         planets: [],
         stations: [],
+        areas: [],
         bases: [],
         outposts: [],
         platforms: [],
@@ -39,7 +40,7 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
             return;
         }
 
-        const keywordHit = sectionKeywords.find(keyword => trimmedLine === keyword || trimmedLine.startsWith(keyword + ' '));
+        const keywordHit = allSectionKeywords.find(keyword => trimmedLine === keyword || trimmedLine.startsWith(keyword + ' '));
         if (keywordHit) {
             currentSection = keywordHit;
             trimmedLine = trimmedLine.substring(keywordHit.length).trim();
@@ -107,6 +108,16 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
                 }
                 return;
             }
+            case '$area': {
+                const [area, error] = parseAreaLine(trimmedLine, lineNumber);
+                if (area) {
+                    mapContent.areas.push(area);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
             case '$base': {
                 const [base, error] = parsePlayerBaseLine(trimmedLine, lineNumber);
                 if (base) {
@@ -150,6 +161,7 @@ const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][abcdefABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
 const STATION_TYPE_REG_EXP = /^(city|subCity|stronghold|base|outpost|platform|default)\s/g;
+const AREA_TYPE_REG_EXP = /^(city|default)\s/g;
 const PLATFORM_TYPE_REG_EXP = /^(basic|intermediate|advanced|bmp|imp|amp)\s/g;
 
 function parseGridSizeLine(line: string, lineNumber: number): [number | null, IParseMapContentError | null] {
@@ -358,6 +370,50 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
                 color,
                 lineNumber,
             } : undefined,
+        },
+        null,
+    ];
+}
+
+function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 2, 2);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: areaTypeError,
+        matches: areaTypes,
+        line: lineWithoutAreaTypes,
+    } = parseWithRegExp<AreaType>(lineWithoutCoordinates, AREA_TYPE_REG_EXP, 0, 1);
+
+    if (areaTypeError) {
+        return [null, createParseMapContentError('Invalid number of area types', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+    } = parseWithRegExp(lineWithoutAreaTypes, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `area${lineNumber}`,
+            contentType: 'area',
+            lineNumber,
+            type: areaTypes[0] ?? 'default',
+            position1: coordinates[0],
+            position2: coordinates[1],
+            color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
         },
         null,
     ];

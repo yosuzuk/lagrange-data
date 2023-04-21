@@ -13,8 +13,13 @@ export const sectionKeywords = [
     '$platform',
 ];
 
-export const removedSectionKeywords = [
+export const deprecatedSectionKeywords = [
     '$area',
+];
+
+export const allSectionKeywords = [
+    ...sectionKeywords,
+    ...deprecatedSectionKeywords,
 ];
 
 export function parseLines(input: string): string[] {

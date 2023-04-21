@@ -13,6 +13,7 @@ import { Region } from './Region';
 import { Station } from './Station';
 import { PlayerOutpost } from './PlayerOutpost';
 import { PlayerPlatform } from './PlayerPlatform';
+import { Area } from './Area';
 
 interface IProps {
     mapData: IMapData;
@@ -48,6 +49,9 @@ export const StarSystem = (props: IProps) => {
             ))}
             {mapData.stations.map(station => (
                 <Station key={station.id} station={station} />
+            ))}
+            {mapData.areas.map(area => (
+                <Area key={area.id} area={area} />
             ))}
             {mapData.bases.map(base => (
                 <PlayerBase key={base.id} base={base} />

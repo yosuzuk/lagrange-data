@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import reactStringReplace from 'react-string-replace';
 import { styled } from '@mui/material/styles';
 import { colorMap, getTextColorBasedOnBackgroundColor } from '../../../../utils/colorUtils';
-import { parseLines, removedSectionKeywords, sectionKeywords } from './codeUtils';
+import { parseLines, deprecatedSectionKeywords, sectionKeywords } from './codeUtils';
 
 const CodeLine = styled('span')`
     &:before {
@@ -63,10 +63,10 @@ export function hightlightCode(code: string): ReactNode {
     });
 
     // keywords
-    [...sectionKeywords, ...removedSectionKeywords].forEach((keyword: string) => {
+    [...sectionKeywords, ...deprecatedSectionKeywords].forEach((keyword: string) => {
         lines = lines.map((line: ReactNode[], i: number) => {
             return reactStringReplace(line, new RegExp('(\\' + keyword + ')'), (match, j) => {
-                const isRemovedKeyword = removedSectionKeywords.includes(keyword);
+                const isRemovedKeyword = deprecatedSectionKeywords.includes(keyword);
                 return (
                     <span
                         key={`keyword_${keyword}_${i}_${j} `}
