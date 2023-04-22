@@ -123,14 +123,10 @@ export const Area = (props: IProps) => {
         } as const;
     }, [area, gridSize, updateIterationRef]);
 
-    if (!areaVisible) {
-        return null;
-    }
-
     const lineRenderOrder = getRendeOrder('areaLines');
 
     return (
-        <Fragment key={`${area.id}_${updateIterationRef.current}`}>
+        <group key={`${area.id}_${updateIterationRef.current}`} visible={areaVisible}>
             <Plane
                 position={[state.x, state.y, 0]}
                 width={state.width}
@@ -157,6 +153,6 @@ export const Area = (props: IProps) => {
                 <Plane position={[state.xLeft, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
                 <Plane position={[state.xRight, state.yBottom, LINE_Z]} width={CORNER_POINT_SIZE} height={CORNER_POINT_SIZE} color="white" renderOrder={lineRenderOrder} />
             </group>
-        </Fragment>
+        </group>
     );
 };

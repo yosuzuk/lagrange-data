@@ -8,10 +8,11 @@ import { getRendeOrder } from '../utils/renderOrder';
 interface IProps {
     outerPos: GamePosition;
     centerPos?: GamePosition | null;
+    visible?: boolean;
 }
 
 export const Orbit = (props: IProps) => {
-    const { outerPos, centerPos } = props;
+    const { outerPos, centerPos, visible = true } = props;
     const gridSize = useGridSize();
 
     const state = useMemo(() => {
@@ -25,6 +26,7 @@ export const Orbit = (props: IProps) => {
 
     return (
         <polarGridHelper
+            visible={visible}
             args={[
                 // radius
                 state.radius,

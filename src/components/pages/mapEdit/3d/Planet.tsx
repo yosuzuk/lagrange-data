@@ -37,9 +37,7 @@ export const Planet = (props: IProps) => {
                 <sphereGeometry args={[radius, widthSegments, widthSegments]} />
                 <meshStandardMaterial color={planet.color} wireframe={debug} />
             </mesh>
-            {(!planet.orbitCenter || subPlanetOrbitVisible) && (
-                <Orbit outerPos={planet.position} centerPos={planet.orbitCenter} />
-            )}
+            <Orbit outerPos={planet.position} centerPos={planet.orbitCenter} visible={!planet.orbitCenter || subPlanetOrbitVisible} />
             {planet.name && (
                 <PlanetLabel
                     key={`${planet.id}_${planet.name}`}

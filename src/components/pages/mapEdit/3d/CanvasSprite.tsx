@@ -11,6 +11,7 @@ interface IProps {
     canvas: HTMLCanvasElement;
     position?: GamePosition;
     gridPosition?: GridPosition;
+    visible?: boolean;
     onClick?: (e: ThreeEvent<MouseEvent>) => void;
     onPointerEnter?: () => void;
     onPointerLeave?: () => void;
@@ -24,7 +25,7 @@ interface IProps {
 const REFERENCE_FACTOR_Y = 0.77;
 
 export const CanvasSprite = (props: IProps) => {
-    const { name, canvas, position: gamePosition, gridPosition, onClick, onPointerEnter, onPointerLeave } = props;
+    const { name, canvas, position: gamePosition, gridPosition, visible = true, onClick, onPointerEnter, onPointerLeave } = props;
     const [threeCanvasWidth, threeCanvasHeight] = useThreeCanvasSize();
 
     const [scaleX, scaleY] = useMemo(() => {
@@ -42,6 +43,7 @@ export const CanvasSprite = (props: IProps) => {
 
     return (
         <sprite
+            visible={visible}
             name={name}
             position={[...position, 0]}
             scale={[scaleX, scaleY, 1]}

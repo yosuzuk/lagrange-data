@@ -10,24 +10,21 @@ export const MapGrid = () => {
     const debug = useDebug();
 
     return (
-        <>
-            {(gridVisibility || debug) && (
-                <gridHelper
-                    args={[
-                        // size
-                        gridSize,
-                        // divisions
-                        debug ? 10 : (gridVisibility ? gridSize : 1),
-                        // colorCenterLine
-                        '#3b3b40',
-                        // colorGrid
-                        '#3b3b40',
-                    ]}
-                    position={[0, 0, 0]}
-                    rotation={[degreesToRadians(90), 0, 0]}
-                    renderOrder={getRendeOrder('gridHelper')}
-                />
-            )}
-        </>
+        <gridHelper
+            visible={gridVisibility || debug}
+            args={[
+                // size
+                gridSize,
+                // divisions
+                debug ? 10 : (gridVisibility ? gridSize : 1),
+                // colorCenterLine
+                '#3b3b40',
+                // colorGrid
+                '#3b3b40',
+            ]}
+            position={[0, 0, 0]}
+            rotation={[degreesToRadians(90), 0, 0]}
+            renderOrder={getRendeOrder('gridHelper')}
+        />
     );
 };

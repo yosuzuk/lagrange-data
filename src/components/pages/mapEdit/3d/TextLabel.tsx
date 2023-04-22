@@ -20,6 +20,7 @@ interface IProps {
     marginBottom?: number;
     faceCamera?: boolean;
     scale?: number;
+    visible?: boolean;
 }
 
 const FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT = 0.2;
@@ -39,6 +40,7 @@ export const TextLabel = (props: IProps) => {
         marginBottom = 0,
         faceCamera = false,
         scale = 1,
+        visible = true,
     } = props;
 
     const updateIterationRef = useRef<number>(0);
@@ -86,12 +88,13 @@ export const TextLabel = (props: IProps) => {
             <CanvasSprite
                 canvas={textImage}
                 gridPosition={position}
+                visible={visible}
             />
         );
     }
 
     return (
-        <mesh position={[...position, 0]} renderOrder={getRendeOrder('fixedLabel')}>
+        <mesh visible={visible} position={[...position, 0]} renderOrder={getRendeOrder('fixedLabel')}>
             <planeGeometry
                 args={[
                     textImage.width * scale * FIXED_SCALE_FOR_NON_CAMERA_FACING_TEXT,

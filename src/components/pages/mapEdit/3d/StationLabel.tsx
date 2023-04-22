@@ -22,6 +22,7 @@ export const StationLabel = (props: IProps) => {
     const coneVisible = useZoomBasedVisibility('stationCone');
     const stationLabelVisible = useZoomBasedVisibility('stationLabel');
     const cityIconVisible = useZoomBasedVisibility('cityIcon');
+    const subCityIconVisible = useZoomBasedVisibility('subCityIcon');
     const cityLabelVisible = useZoomBasedVisibility((station.type === 'city' && (station.level ?? 1) >= 7) ? 'cityLabel7up' : 'cityLabel');
     const cityLevelVisible = useZoomBasedVisibility('cityLevel');
 
@@ -49,45 +50,31 @@ export const StationLabel = (props: IProps) => {
     switch (station.type) {
         case 'subCity':
         case 'city': {
-            if (!cityIconVisible) {
-                return null;
-            }
-            if (!cityLabelVisible) {
-                // just show icon at city position
-                return (
+            const iconVisible = station.type === 'subCity' ? subCityIconVisible : cityIconVisible;
+            return (
+                <group visible={iconVisible}>
                     <CanvasSprite
                         key={`${station.id}_icon_${updateIterationRef.current}`}
                         canvas={images.icon}
                         gridPosition={position}
+                        visible={!cityLabelVisible}
                     />
-                );
-            }
-
-            if (!coneVisible) {
-                // show label but keep the icon at city position
-                return (
                     <CanvasSprite
                         key={`${station.id}_iconCenteredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
                         canvas={(cityLevelVisible ? images.iconCenteredLabelWithLevel : null) ?? images.iconCenteredLabel ?? images.icon}
                         gridPosition={position}
+                        visible={cityLabelVisible && !coneVisible}
                     />
-                );
-            }
-
-            // show label above the city structure
-            return (
-                <CanvasSprite
-                    key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
-                    canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
-                    gridPosition={position}
-                />
+                    <CanvasSprite
+                        key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
+                        canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
+                        gridPosition={position}
+                        visible={cityLabelVisible && coneVisible}
+                    />
+                </group>
             );
         }
         default: {
-            if (!stationLabelVisible) {
-                return null;
-            }
-
             const labelImage = (showLevel(station) ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? null;
             if (!labelImage) {
                 return null;
@@ -98,6 +85,7 @@ export const StationLabel = (props: IProps) => {
                     key={`${station.id}_label_${updateIterationRef.current}`}
                     canvas={labelImage}
                     gridPosition={position}
+                    visible={stationLabelVisible}
                 />
             );
         }

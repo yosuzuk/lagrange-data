@@ -93,7 +93,7 @@ export const Region = (props: IProps) => {
                     depthWrite={false}
                 />
             </mesh>
-            {labelVisible && (Number.isFinite(region.regionNumber) || region.label) && (
+            {(Number.isFinite(region.regionNumber) || region.label) && (
                 <TextLabel
                     key={`${region.id}_label_${updateIterationRef.current}`}
                     gridPosition={state.textPosition}
@@ -103,6 +103,7 @@ export const Region = (props: IProps) => {
                     ].join('\n')}
                     fontSize={96}
                     scale={0.5}
+                    visible={labelVisible}
                 />
             )}
         </>
