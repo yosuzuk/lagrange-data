@@ -93,18 +93,281 @@ $station
 (3723,3623) stronghold
 (3736,3622) stronghold
 
-(1893,2833) city 7 St. Nowshak
-(3398,5577) city 7 Cappadocia
-(5098,4897) city 7 Moco
-(5741,5969) city 7 Great Calakmul
-(6158,7437) city 7 St. Psophis
-(6773,3093) city 7 Bithynia Volante
-(1750,4940) city 6 Inanna
-(1739,5891) city 6 Idrisi
-(2132,3050) city 6 Russel Volante
-(2420,1620) city 6 St. Megiddo
-(2640,3820) city 6 Parthia Volante
-(3632,5570) city 6 Ofgut
+(1893,2833)(1820,2800)(1940,2920) city 7 St. Nowshak
+
+(1835,2905) subCity 7 Dowa
+(1830,2900) stronghold
+(1830,2909) stronghold
+(1840,2909) stronghold
+(1840,2900) stronghold
+
+(1843,2853) subCity 7 Matara
+(1838,2848) stronghold
+(1837,2858) stronghold
+(1847,2857) stronghold
+(1848,2849) stronghold
+
+(1902,2876) subCity 7 Tehachapi
+(1897,2871) stronghold
+(1897,2879) stronghold
+(1906,2880) stronghold
+(1907,2871) stronghold
+
+(1924,2904) subCity 7 Charlieu
+(1920,2898) stronghold
+(1919,2908) stronghold
+(1929,2909) stronghold
+(1929,2899) stronghold
+
+(3398,5577)(3330,5530)(3450,5650) city 7 Cappadocia
+
+(3345,5634) subCity 7 Noord
+(3340,5628) stronghold
+(3341,5639) stronghold
+(3350,5637) stronghold
+(3350,5630) stronghold
+
+(3374,5562) subCity 7 Porthcawl
+(3369,5557) stronghold
+(3369,5566) stronghold
+(3378,5566) stronghold
+(3378,5557) stronghold
+
+(3415,5596) subCity 7 Vätö
+(3410,5591) stronghold
+(3410,5600) stronghold
+(3420,5599) stronghold
+(3418,5590) stronghold
+
+(3434,5635) subCity 7 Avarua
+(3429,5630) stronghold
+(3429,5639) stronghold
+(3438,5639) stronghold
+(3438,5630) stronghold
+
+(5098,4897)(5030,4850)(5150,4970) city 7 Moco
+
+(5074,4882) subCity 7 Kem
+(5069,4877) stronghold
+(5069,4886) stronghold
+(5078,4886) stronghold
+(5078,4877) stronghold
+
+(5045,4954) subCity 7 Poti
+(5040,4948) stronghold
+(5041,4959) stronghold
+(5050,4957) stronghold
+(5050,4950) stronghold
+
+(5115,4916) subCity 7 Porthos
+(5110,4911) stronghold
+(5110,4920) stronghold
+(5120,4919) stronghold
+(5118,4910) stronghold
+
+(5134,4955) subCity 7 Darvel
+(5129,4950) stronghold
+(5129,4959) stronghold
+(5138,4959) stronghold
+(5138,4950) stronghold
+
+(5741,5969)(5679,5919)(5800,6040) city 7 Great Calakmul
+
+(5695,6025) subCity 7 Ehden
+(5689,6019) stronghold
+(5689,6029) stronghold
+(5699,6029) stronghold
+(5699,6019) stronghold
+
+(5703,5973) subCity 7 New Esna
+(5697,5968) stronghold
+(5698,5977) stronghold
+(5708,5977) stronghold
+(5707,5968) stronghold
+
+(5762,5996) subCity 7 Zilair
+(5757,5990) stronghold
+(5756,6000) stronghold
+(5766,6001) stronghold
+(5766,5991) stronghold
+
+(5784,6025) subCity 7 New Tamworth
+(5780,6019) stronghold
+(5779,6029) stronghold
+(5789,6030) stronghold
+(5787,6019) stronghold
+
+(6158,7437)(6090,7390)(6210,7510) city 7 St. Psophis
+
+(6105,7494) subCity 7 Istok
+(6100,7488) stronghold
+(6101,7499) stronghold
+(6110,7497) stronghold
+(6110,7490) stronghold
+
+(6134,7422) subCity 7 Singa
+(6129,7417) stronghold
+(6129,7426) stronghold
+(6138,7426) stronghold
+(6138,7417) stronghold
+
+(6175,7456) subCity 7 Camargo
+(6170,7451) stronghold
+(6170,7460) stronghold
+(6180,7459) stronghold
+(6178,7450) stronghold
+
+(6194,7495) subCity 7 Calthorpe
+(6189,7490) stronghold
+(6189,7499) stronghold
+(6198,7499) stronghold
+(6198,7490) stronghold
+
+(6773,3093)(6700,3060)(6820,3180) city 7 Bithynia Volante
+
+(6715,3165) subCity 7 Steinheim
+(6710,3160) stronghold
+(6710,3169) stronghold
+(6720,3169) stronghold
+(6720,3160) stronghold
+
+(6723,3113) subCity 7 Littleton
+(6718,3108) stronghold
+(6717,3118) stronghold
+(6727,3117) stronghold
+(6728,3109) stronghold
+
+(6782,3136) subCity 7 Princeton
+(6777,3131) stronghold
+(6777,3139) stronghold
+(6786,3140) stronghold
+(6787,3131) stronghold
+
+(6804,3164) subCity 7 Kankossa
+(6800,3158) stronghold
+(6799,3168) stronghold
+(6809,3169) stronghold
+(6809,3159) stronghold
+
+(1750,4940)(1690,4880)(1810,5000) city 6 Inanna
+
+(1715,4924) subCity 5 Ins
+(1709,4920) stronghold
+(1710,4929) stronghold
+(1719,4928) stronghold
+(1719,4919) stronghold
+
+(1755,4990) subCity 5 Nisibis
+(1750,4985) stronghold
+(1750,4994) stronghold
+(1759,4994) stronghold
+(1759,4985) stronghold
+
+(1785,4924) subCity 5 Porter
+(1779,4920) stronghold
+(1780,4929) stronghold
+(1789,4929) stronghold
+(1789,4919) stronghold
+
+(1739,5891)(1640,5870)(1760,5990) city 6 Idrisi
+
+(1665,5924) subCity 5 Culter
+(1660,5919) stronghold
+(1660,5929) stronghold
+(1669,5928) stronghold
+(1669,5919) stronghold
+
+(1684,5976) subCity 5 Gamboa
+(1679,5971) stronghold
+(1680,5980) stronghold
+(1688,5980) stronghold
+(1688,5971) stronghold
+
+(1715,5924) subCity 5 Lota
+(1710,5919) stronghold
+(1710,5928) stronghold
+(1719,5928) stronghold
+(1719,5919) stronghold
+
+(1715,5875) subCity 5 Patara
+(1708,5874) stronghold
+(1711,5879) stronghold
+(1719,5879) stronghold
+(1720,5872) stronghold
+
+(1747,5974) subCity 5 Nipigon
+(1742,5969) stronghold
+(1742,5978) stronghold
+(1751,5978) stronghold
+(1752,5969) stronghold
+
+(2132,3050)(2090,3020)(2170,3100) city 6 Russel Volante
+
+(2116,3033) subCity 5 Talsi
+(2110,3028) stronghold
+(2110,3038) stronghold
+(2121,3038) stronghold
+(2120,3027) stronghold
+
+(2113,3065) subCity 5 Los
+(2108,3060) stronghold
+(2108,3069) stronghold
+(2117,3069) stronghold
+(2117,3060) stronghold
+
+(2420,1620)(2360,1560)(2480,1680) city 6 St. Megiddo
+
+(2385,1604) subCity 5 Casimir
+(2380,1599) stronghold
+(2380,1608) stronghold
+(2389,1608) stronghold
+(2389,1599) stronghold
+
+(2425,1670) subCity 5 Kalocsa
+(2420,1665) stronghold
+(2420,1673) stronghold
+(2429,1674) stronghold
+(2429,1665) stronghold
+
+(2455,1604) subCity 5 Numidia
+(2450,1600) stronghold
+(2450,1608) stronghold
+(2459,1608) stronghold
+(2459,1599) stronghold
+
+(2640,3820)(2580,3760)(2700,3880) city 6 Parthia Volante
+
+(2605,3804) subCity 5 Troika
+(2600,3799) stronghold
+(2600,3808) stronghold
+(2609,3808) stronghold
+(2609,3799) stronghold
+
+(2645,3870) subCity 5 Astri
+(2640,3865) stronghold
+(2640,3873) stronghold
+(2649,3874) stronghold
+(2649,3865) stronghold
+
+(2675,3804) subCity 5 Ada
+(2670,3800) stronghold
+(2670,3808) stronghold
+(2679,3808) stronghold
+(2679,3799) stronghold
+
+(3632,5570)(3590,5540)(3670,5620) city 6 Ofgut
+
+(3613,5585) subCity 5 Bise
+(3607,5581) stronghold
+(3607,5588) stronghold
+(3617,5589) stronghold
+(3617,5580) stronghold
+
+(3616,5553) subCity 5 Sechi
+(3611,5548) stronghold
+(3612,5558) stronghold
+(3621,5557) stronghold
+(3620,5548) stronghold
 
 (4096,3591)(4010,3571)(4130,3690) city 6 Meroe Volante
 
@@ -120,74 +383,571 @@ $station
 (4113,3676) stronghold
 (4112,3664) stronghold
 
-(4569,1611) city 6 Tanis
-(5322,4890) city 6 New Thasos
-(5269,3551) city 6 Liam Volante
-(5179,5751) city 6 New Sheerness
-(5852,6150) city 6 Sleipnir
-(6150,3220) city 6 New Korata
-(6392,7430) city 6 Icaria
-(6529,4071) city 6 New Himera
-(7012,3310) city 6 Galatia
-(6720,6560) city 6 Great Virgil
-(7049,5771) city 6 Beatrice
-(7870,5460) city 6 New Abydos
-(1725,4818) city 5 Porvoo
-(1614,5073) city 5 Taltal
-(1852,5988) city 5 Catota
-(1840,5818) city 5 Timbuktu
-(1755,5779) city 5 Warra
-(1951,3027) city 5 Lipany
-(1779,3070) city 5 New Beleville
-(2607,1654) city 5 Hartwell
-(2614,1393) city 5 San Juan
-(2827,3854) city 5 Leleque
-(2834,3593) city 5 New Holmfirth
-(4292,1598) city 5 Sandila
-(4570,1398) city 5 Makhambet
-(4435,1439) city 5 Amida
-(5232,3789) city 5 Rana
-(5158,3719) city 5 Tuscaloosa
-(5030,3540) city 5 Walfra
-(5195,5639) city 5 Sokol
-(5280,5678) city 5 Rugby
-(5292,5848) city 5 New Aysgarth
-(5671,6167) city 5 Dush
-(6126,3362) city 5 Sedona
-(5936,3354) city 5 Sudbury
-(6290,4060) city 5 Evpatoriya
-(6418,4239) city 5 Jampur
-(6492,4309) city 5 Izola
-(6831,3287) city 5 Sitka
-(6659,3330) city 5 Ayr
-(6907,6594) city 5 Okotoks
-(6914,6333) city 5 Aspe
-(6772,5758) city 5 Olynthus
-(7050,5558) city 5 Bak
-(6915,5599) city 5 Salkhad
-(7846,5602) city 5 Scylla
-(7656,5594) city 5 Port-Au-Prince
-(370,4728) city 3 Dank
-(1770,1408) city 3 New Warwick
-(2166,2897) city 3 Tsau
-(1939,7698) city 3 Kribi
-(3672,5307) city 3 Nitro
-(3296,5418) city 3 Cartago
+(4569,1611)(4470,1590)(4590,1710) city 6 Tanis
+
+(4495,1644) subCity 5 Tivat
+(4490,1640) stronghold
+(4491,1648) stronghold
+(4500,1647) stronghold
+(4498,1639) stronghold
+
+(4514,1696) subCity 5 Gwash
+(4509,1691) stronghold
+(4509,1699) stronghold
+(4518,1700) stronghold
+(4518,1691) stronghold
+
+(4545,1644) subCity 5 Yelwa
+(4540,1640) stronghold
+(4540,1648) stronghold
+(4549,1648) stronghold
+(4549,1640) stronghold
+
+(4545,1595) subCity 5 Longa
+(4538,1593) stronghold
+(4540,1599) stronghold
+(4549,1599) stronghold
+(4550,1592) stronghold
+
+(4577,1694) subCity 5 Lapri
+(4572,1689) stronghold
+(4572,1698) stronghold
+(4581,1698) stronghold
+(4581,1689) stronghold
+
+(5322,4890)(5290,4860)(5370,4940) city 6 New Thasos
+
+(5316,4873) subCity 5 Sucre
+(5311,4868) stronghold
+(5312,4878) stronghold
+(5321,4877) stronghold
+(5320,4868) stronghold
+
+(5313,4905) subCity 5 Eilat
+(5307,4901) stronghold
+(5307,4908) stronghold
+(5317,4909) stronghold
+(5317,4900) stronghold
+
+(5269,3551)(5170,3530)(5290,3650) city 6 Liam Volante
+
+(5195,3584) subCity 5 Glazov
+(5190,3580) stronghold
+(5190,3589) stronghold
+(5199,3588) stronghold
+(5199,3579) stronghold
+
+(5214,3636) subCity 5 Runanga
+(5207,3632) stronghold
+(5209,3641) stronghold
+(5220,3639) stronghold
+(5217,3630) stronghold
+
+(5243,3584) subCity 5 Choyr
+(5237,3580) stronghold
+(5239,3588) stronghold
+(5248,3587) stronghold
+(5246,3579) stronghold
+
+(5245,3535) subCity 5 Gerar
+(5239,3531) stronghold
+(5240,3539) stronghold
+(5249,3539) stronghold
+(5250,3531) stronghold
+
+(5277,3634) subCity 5 Bhor
+(5272,3629) stronghold
+(5272,3638) stronghold
+(5281,3638) stronghold
+(5280,3629) stronghold
+
+(5179,5751)(5080,5730)(5200,5850) city 6 New Sheerness
+
+(5105,5784) subCity 5 Congleton
+(5100,5779) stronghold
+(5100,5789) stronghold
+(5109,5788) stronghold
+(5109,5779) stronghold
+
+(5124,5836) subCity 5 Gaan
+(5119,5831) stronghold
+(5120,5840) stronghold
+(5128,5840) stronghold
+(5128,5831) stronghold
+
+(5155,5784) subCity 5 Sangar
+(5150,5779) stronghold
+(5150,5788) stronghold
+(5159,5788) stronghold
+(5159,5779) stronghold
+
+(5155,5735) subCity 5 Viana
+(5148,5734) stronghold
+(5151,5739) stronghold
+(5159,5739) stronghold
+(5160,5732) stronghold
+
+(5187,5834) subCity 5 Kantang
+(5182,5829) stronghold
+(5182,5838) stronghold
+(5191,5838) stronghold
+(5192,5829) stronghold
+
+(5852,6150)(5809,6119)(5890,6200) city 6 Sleipnir
+
+(5833,6165) subCity 5 Degena
+(5828,6160) stronghold
+(5828,6169) stronghold
+(5838,6169) stronghold
+(5838,6160) stronghold
+
+(5836,6133) subCity 5 Lins
+(5830,6127) stronghold
+(5830,6138) stronghold
+(5840,6139) stronghold
+(5840,6128) stronghold
+
+(6150,3220)(6090,3160)(6210,3280) city 6 New Korata
+
+(6115,3204) subCity 5 Cobalt
+(6109,3199) stronghold
+(6110,3208) stronghold
+(6119,3208) stronghold
+(6118,3199) stronghold
+
+(6155,3270) subCity 5 Abington
+(6150,3265) stronghold
+(6150,3274) stronghold
+(6159,3274) stronghold
+(6159,3265) stronghold
+
+(6185,3204) subCity 5 Milly
+(6180,3199) stronghold
+(6180,3208) stronghold
+(6189,3208) stronghold
+(6189,3199) stronghold
+
+(6392,7430)(6350,7400)(6430,7480) city 6 Icaria
+
+(6376,7413) subCity 5 Luba
+(6371,7408) stronghold
+(6372,7418) stronghold
+(6381,7417) stronghold
+(6380,7408) stronghold
+
+(6373,7445) subCity 5 Turbi
+(6367,7441) stronghold
+(6367,7448) stronghold
+(6377,7449) stronghold
+(6377,7440) stronghold
+
+(6529,4071)(6430,4050)(6550,4170) city 6 New Himera
+
+(6455,4104) subCity 5 Ohara
+(6450,4100) stronghold
+(6450,4109) stronghold
+(6459,4108) stronghold
+(6459,4099) stronghold
+
+(6474,4156) subCity 5 Amelas
+(6467,4152) stronghold
+(6469,4161) stronghold
+(6480,4159) stronghold
+(6477,4150) stronghold
+
+(6503,4104) subCity 5 Jal
+(6497,4100) stronghold
+(6499,4108) stronghold
+(6508,4107) stronghold
+(6506,4099) stronghold
+
+(6505,4055) subCity 5 Bridgetown
+(6499,4051) stronghold
+(6500,4059) stronghold
+(6509,4059) stronghold
+(6510,4051) stronghold
+
+(6537,4154) subCity 5 Kaw
+(6532,4149) stronghold
+(6532,4158) stronghold
+(6541,4158) stronghold
+(6540,4149) stronghold
+
+(7012,3310)(6970,3280)(7050,3360) city 6 Galatia
+
+(6996,3293) subCity 5 Olenek
+(6990,3288) stronghold
+(6990,3298) stronghold
+(7001,3298) stronghold
+(7000,3287) stronghold
+
+(6993,3325) subCity 5 Swanage
+(6988,3320) stronghold
+(6988,3329) stronghold
+(6997,3329) stronghold
+(6997,3320) stronghold
+
+(6720,6560)(6660,6500)(6780,6620) city 6 Great Virgil
+
+(6685,6544) subCity 5 Woolgar
+(6680,6539) stronghold
+(6680,6548) stronghold
+(6689,6548) stronghold
+(6689,6539) stronghold
+
+(6725,6610) subCity 5 Sarno
+(6720,6605) stronghold
+(6720,6613) stronghold
+(6729,6614) stronghold
+(6729,6605) stronghold
+
+(6755,6544) subCity 5 Baro
+(6750,6540) stronghold
+(6750,6548) stronghold
+(6759,6548) stronghold
+(6759,6539) stronghold
+
+(7049,5771)(6950,5750)(7070,5870) city 6 Beatrice
+
+(6975,5804) subCity 5 Bole
+(6970,5800) stronghold
+(6971,5808) stronghold
+(6980,5807) stronghold
+(6978,5799) stronghold
+
+(6994,5856) subCity 5 Kibuye
+(6989,5851) stronghold
+(6989,5859) stronghold
+(6998,5860) stronghold
+(6998,5851) stronghold
+
+(7025,5804) subCity 5 Cairns
+(7020,5800) stronghold
+(7020,5808) stronghold
+(7029,5808) stronghold
+(7029,5800) stronghold
+
+(7025,5755) subCity 5 Mena
+(7018,5753) stronghold
+(7020,5759) stronghold
+(7029,5759) stronghold
+(7030,5752) stronghold
+
+(7057,5854) subCity 5 Llanesco
+(7052,5849) stronghold
+(7052,5858) stronghold
+(7061,5858) stronghold
+(7061,5849) stronghold
+
+(7870,5460)(7810,5401)(7930,5520) city 6 New Abydos
+
+(7835,5444) subCity 5 Corinto
+(7829,5439) stronghold
+(7830,5448) stronghold
+(7839,5448) stronghold
+(7838,5439) stronghold
+
+(7875,5510) subCity 5 Salaga
+(7870,5505) stronghold
+(7870,5514) stronghold
+(7879,5514) stronghold
+(7879,5505) stronghold
+
+(7905,5444) subCity 5 Canso
+(7900,5439) stronghold
+(7900,5448) stronghold
+(7909,5448) stronghold
+(7909,5439) stronghold
+
+(1725,4818)(1700,4770)(1770,4840) city 5 Porvoo
+(1720,4812) stronghold
+(1720,4822) stronghold
+(1728,4822) stronghold
+(1729,4813) stronghold
+
+(1614,5073)(1590,5050)(1640,5100) city 5 Taltal
+(1609,5068) stronghold
+(1609,5077) stronghold
+(1619,5077) stronghold
+(1618,5067) stronghold
+
+(1852,5988)(1840,5980)(1880,6020) city 5 Catota
+(1847,5983) stronghold
+(1847,5992) stronghold
+(1856,5992) stronghold
+(1856,5983) stronghold
+
+(1840,5818)(1830,5810)(1870,5850) city 5 Timbuktu
+(1835,5813) stronghold
+(1835,5822) stronghold
+(1844,5822) stronghold
+(1844,5813) stronghold
+
+(1755,5779)(1740,5770)(1780,5810) city 5 Warra
+(1750,5774) stronghold
+(1750,5783) stronghold
+(1759,5783) stronghold
+(1759,5774) stronghold
+
+(1951,3027)(1910,3020)(1960,3070) city 5 Lipany
+(1946,3022) stronghold
+(1946,3032) stronghold
+(1955,3030) stronghold
+(1955,3022) stronghold
+
+(1779,3070)(1760,3050)(1800,3090) city 5 New Belleville
+(1774,3062) stronghold
+(1772,3076) stronghold
+(1784,3077) stronghold
+(1784,3063) stronghold
+
+(2607,1654)(2580,1610)(2650,1680) city 5 Hartwell
+(2603,1646) stronghold
+(2600,1659) stronghold
+(2610,1661) stronghold
+(2612,1647) stronghold
+
+(2614,1393)(2590,1370)(2640,1420) city 5 San Juan
+(2609,1388) stronghold
+(2609,1397) stronghold
+(2618,1397) stronghold
+(2618,1387) stronghold
+
+(2827,3854)(2800,3810)(2870,3880) city 5 Leleque
+(2823,3846) stronghold
+(2820,3859) stronghold
+(2830,3861) stronghold
+(2832,3847) stronghold
+
+(2834,3593)(2810,3570)(2860,3620) city 5 New Holmfirth
+(2829,3588) stronghold
+(2829,3597) stronghold
+(2838,3597) stronghold
+(2838,3587) stronghold
+
+(4292,1598)(4280,1590)(4320,1630) city 5 Sandila
+(4287,1593) stronghold
+(4287,1601) stronghold
+(4296,1602) stronghold
+(4296,1594) stronghold
+
+(4570,1398)(4560,1390)(4600,1430) city 5 Makhambet
+(4565,1393) stronghold
+(4565,1402) stronghold
+(4574,1402) stronghold
+(4574,1393) stronghold
+
+(4435,1439)(4420,1430)(4460,1470) city 5 Amida
+(4430,1434) stronghold
+(4429,1443) stronghold
+(4439,1443) stronghold
+(4439,1433) stronghold
+
+(5232,3789)(5219,3780)(5259,3819) city 5 Rana
+(5225,3783) stronghold
+(5225,3795) stronghold
+(5239,3793) stronghold
+(5238,3784) stronghold
+
+(5158,3719)(5140,3710)(5180,3750) city 5 Tuscaloosa
+(5151,3713) stronghold
+(5151,3725) stronghold
+(5163,3725) stronghold
+(5165,3715) stronghold
+
+(5030,3540)(5020,3530)(5060,3570) city 5 Walfra
+(5022,3536) stronghold
+(5024,3545) stronghold
+(5037,3543) stronghold
+(5036,3534) stronghold
+
+(5195,5639)(5180,5630)(5220,5670) city 5 Sokol
+(5190,5634) stronghold
+(5190,5643) stronghold
+(5199,5643) stronghold
+(5199,5634) stronghold
+
+(5280,5678)(5270,5670)(5310,5710) city 5 Rugby
+(5275,5673) stronghold
+(5275,5682) stronghold
+(5284,5682) stronghold
+(5284,5673) stronghold
+
+(5292,5848)(5280,5840)(5320,5880) city 5 New Aysgarth
+(5287,5843) stronghold
+(5287,5852) stronghold
+(5296,5852) stronghold
+(5296,5843) stronghold
+
+(5671,6167)(5629,6160)(5680,6210) city 5 Dush
+(5666,6162) stronghold
+(5666,6171) stronghold
+(5675,6171) stronghold
+(5675,6163) stronghold
+
+(6126,3362)(6100,3340)(6150,3390) city 5 Sedona
+(6120,3355) stronghold
+(6120,3367) stronghold
+(6131,3367) stronghold
+(6132,3356) stronghold
+
+(5936,3354)(5910,3310)(5980,3380) city 5 Sudbury
+(5930,3347) stronghold
+(5929,3359) stronghold
+(5942,3360) stronghold
+(5940,3346) stronghold
+
+(6290,4060)(6280,4050)(6320,4090) city 5 Evpatoriya
+(6282,4056) stronghold
+(6284,4065) stronghold
+(6297,4063) stronghold
+(6296,4054) stronghold
+
+(6418,4239)(6400,4230)(6440,4270) city 5 Jampur
+(6411,4233) stronghold
+(6411,4245) stronghold
+(6423,4245) stronghold
+(6425,4235) stronghold
+
+(6492,4309)(6480,4300)(6520,4340) city 5 Izola
+(6485,4303) stronghold
+(6485,4315) stronghold
+(6499,4313) stronghold
+(6498,4304) stronghold
+
+(6831,3287)(6790,3280)(6840,3330) city 5 Sitka
+(6826,3282) stronghold
+(6826,3292) stronghold
+(6835,3290) stronghold
+(6835,3282) stronghold
+
+(6659,3330)(6640,3310)(6680,3350) city 5 Ayr
+(6654,3322) stronghold
+(6652,3336) stronghold
+(6664,3337) stronghold
+(6664,3323) stronghold
+
+(6907,6594)(6880,6550)(6950,6620) city 5 Okotoks
+(6903,6586) stronghold
+(6900,6599) stronghold
+(6910,6601) stronghold
+(6912,6587) stronghold
+
+(6914,6333)(6890,6310)(6940,6360) city 5 Aspe
+(6909,6328) stronghold
+(6909,6337) stronghold
+(6918,6337) stronghold
+(6918,6327) stronghold
+
+(6772,5758)(6760,5750)(6800,5790) city 5 Olynthus
+(6767,5753) stronghold
+(6767,5761) stronghold
+(6776,5762) stronghold
+(6776,5754) stronghold
+
+(7050,5558)(7040,5550)(7080,5590) city 5 Bak
+(7045,5553) stronghold
+(7045,5562) stronghold
+(7054,5562) stronghold
+(7054,5553) stronghold
+
+(6915,5599)(6900,5590)(6940,5630) city 5 Salkhad
+(6910,5594) stronghold
+(6909,5603) stronghold
+(6919,5603) stronghold
+(6919,5593) stronghold
+
+(7846,5602)(7820,5580)(7870,5630) city 5 Scylla
+(7840,5595) stronghold
+(7840,5607) stronghold
+(7851,5607) stronghold
+(7852,5596) stronghold
+
+(7656,5594)(7630,5550)(7700,5620) city 5 Port-Au-Prince
+(7650,5587) stronghold
+(7649,5599) stronghold
+(7662,5600) stronghold
+(7660,5586) stronghold
+
+(370,4728)(340,4700)(400,4760) city 3 Dank
+(366,4731) stronghold
+(374,4731) stronghold
+(370,4722) stronghold
+
+(1770,1408)(1740,1380)(1800,1440) city 3 New Warwick
+(1766,1411) stronghold
+(1774,1411) stronghold
+(1770,1402) stronghold
+
+(2166,2897)(2120,2890)(2180,2950) city 3 Tsau
+(2161,2901) stronghold
+(2170,2900) stronghold
+(2170,2892) stronghold
+
+(1939,7698)(1910,7670)(1970,7730) city 3 Kribi
+(1934,7700) stronghold
+(1943,7701) stronghold
+(1938,7692) stronghold
+
+(3672,5307)(3630,5300)(3680,5350) city 3 Nitro
+(3667,5310) stronghold
+(3676,5311) stronghold
+(3675,5302) stronghold
+
+(3296,5418)(3250,5410)(3310,5470) city 3 Cartago
+(3291,5412) stronghold
+(3291,5423) stronghold
+(3302,5422) stronghold
 
 (3713,3746)(3700,3730)(3780,3810) city 3 Mutter
 (3713,3740) stronghold
 (3708,3748) stronghold
 (3717,3749) stronghold
 
-(5372,4627) city 3 Cooma
-(4996,4738) city 3 Yala
-(5410,688) city 3 Balboa
-(5867,6008) city 3 Aktaj
-(6432,7167) city 3 Gortyna
-(6056,7278) city 3 Jezero
-(6379,7978) city 3 Zunil
-(7046,3157) city 3 New Dundalk
-(8530,4929) city 3 Koga
+(5372,4627)(5330,4620)(5380,4670) city 3 Cooma
+(5367,4630) stronghold
+(5376,4631) stronghold
+(5375,4622) stronghold
+
+(4996,4738)(4950,4730)(5010,4790) city 3 Yala
+(4991,4732) stronghold
+(4991,4743) stronghold
+(5002,4742) stronghold
+
+(5410,688)(5380,660)(5440,720) city 3 Balboa
+(5406,691) stronghold
+(5414,691) stronghold
+(5410,682) stronghold
+
+(5867,6008)(5819,6000)(5879,6060) city 3 Aktaj
+(5862,6003) stronghold
+(5861,6012) stronghold
+(5872,6010) stronghold
+
+(6432,7167)(6390,7160)(6440,7210) city 3 Gortyna
+(6427,7170) stronghold
+(6436,7171) stronghold
+(6435,7162) stronghold
+
+(6056,7278)(6010,7270)(6070,7330) city 3 Jezero
+(6051,7272) stronghold
+(6051,7283) stronghold
+(6062,7282) stronghold
+
+(6379,7978)(6350,7950)(6410,8010) city 3 Zunil
+(6374,7980) stronghold
+(6383,7981) stronghold
+(6378,7972) stronghold
+
+(7046,3157)(7000,3150)(7060,3210) city 3 New Dundalk
+(7041,3161) stronghold
+(7050,3160) stronghold
+(7050,3152) stronghold
+
+(8530,4929)(8500,4900)(8560,4960) city 3 Koga
+(8525,4933) stronghold
+(8534,4933) stronghold
+(8529,4922) stronghold
 
 (184,3454) city 2 Topola
 (364,6314) city 2 Bogra
@@ -222,14 +982,24 @@ $station
 (2014,8044) city 2 Bost
 (2044,1534) city 2 New Rosetta
 (2064,7054) city 2 Dixie
-(2314,1764) city 2 Bunnik
+
+(2314,1764)(2300,1740)(2340,1780) city 2 Bunnik
+(2314,1757) stronghold
+(2309,1768) stronghold
+(2319,1768) stronghold
+
 (2204,7694) city 2 Gulch
 (2324,7395) city 2 Lachute
 (2514,524) city 2 Ikej
 (3034,7854) city 2 Rimac
 (2944,8234) city 2 Angelica
 (3354,764) city 2 Wason
-(3252,5706) city 2 Revda
+
+(3252,5706)(3240,5680)(3280,5720) city 2 Revda
+(3247,5711) stronghold
+(3256,5710) stronghold
+(3250,5699) stronghold
+
 (3414,294) city 2 Lexington
 (3454,8444) city 2 Azul
 (3694,634) city 2 Meget
@@ -242,16 +1012,31 @@ $station
 (4614,8304) city 2 Torsö
 (4734,554) city 2 Rincon
 (4744,8815) city 2 Naryn
-(4951,5025) city 2 Belyov
+
+(4951,5025)(4940,5010)(4980,5050) city 2 Belyov
+(4950,5019) stronghold
+(4947,5031) stronghold
+(4956,5030) stronghold
+
 (5084,8815) city 2 Funchal
 (5254,8074) city 2 Taunton
 (5434,944) city 2 Spur
-(5879,5900) city 2 Mendota
+
+(5879,5900)(5859,5880)(5900,5920) city 2 Mendota
+(5878,5893) stronghold
+(5874,5904) stronghold
+(5883,5904) stronghold
+
 (5774,7634) city 2 Crosby
 (5814,8464) city 2 Globe
 (6074,424) city 2 Echt
 (5904,8195) city 2 New Bharat
-(6011,7566) city 2 Tumul
+
+(6011,7566)(6000,7550)(6040,7590) city 2 Tumul
+(6010,7559) stronghold
+(6007,7571) stronghold
+(6016,7570) stronghold
+
 (6304,554) city 2 Mohawk
 (6834,7574) city 2 Kourou
 (6764,1434) city 2 Pitmedden
