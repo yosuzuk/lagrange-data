@@ -1,4 +1,4 @@
-$name サンプルマップ
+$name サンプルマップ・いて座515
 $serverName いて座515
 $size 9000
 

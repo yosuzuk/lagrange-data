@@ -1,0 +1,59 @@
+$name Example Map: Pioneers System
+$serverName Pioneers System
+$size 9000
+
+$planet
+(3180,4500) large #c4A89FF Garden Planet
+(3182,4570)(3180,4500) small Astarte
+(3307,4374)(3180,4500) small #c29D0D6 Nero
+(2971,4404)(3180,4500) small #cC2C2C2 Galanodel
+
+$station
+(2988,4506)(2850,4341)(3250,4740) city 10 Antontas
+(2969,4474) default Station
+(2966,4534) default Station
+(3015,4535) default Station
+(3014,4476) default Station
+(2934,4428) subCity 9 Uranus Research Center
+(3089,4462) subCity 9 Moore Trade Center
+(2915,4614) subCity 9 Moore Military Center
+(3084,4676) subCity 9 Moore Transit Center
+(2873,4647)(2860,4640)(2880,4660) default 5 WASP-67 Military Center
+(2893,4672)(2880,4660)(2900,4680) default 5 HD-142022-A Tactical Operations Center
+(2908,4409)(2900,4400)(2920,4420) default 5 DA2 Research Center
+(2869,4318)(2860,4310)(2880,4330) default 5 HIP-67851 Research Center
+(2916,4278)(2910,4270)(2930,4290) default 5 LMC-175746 Military Center
+(3032,4307)(3020,4300)(3040,4320) default 5 GV9 Tactical Operations Center
+(3101,4429)(3090,4420)(3110,4440) default 5 HD-101930 Tactical Operations Center
+(3060,4447)(3050,4441)(3070,4460) default 5 RZ215 Trade Center
+(3088,4508)(3080,4500)(3100,4520) default 5 HK151 Trade Center
+(3121,4577)(3110,4570)(3130,4590) default 5 NGC-3603-B Mining Center
+(3069,4619)(3060,4610)(3080,4630) default 5 HD-212301 Transit Center
+(3131,4658)(3120,4650)(3140,4670) default 5 YW134 Transit Center
+(3169,4689)(3160,4680)(3180,4700) default 5 LMC-54365 Transit Center
+(3180,4720)(3170,4710)(3190,4730) default 5 JG81 Research Center
+(3268,4668)(3260,4660)(3280,4680) default 5 PB171 Mining Center
+(3203,4767)(3190,4760)(3210,4780) default 5 AZ84 Military Center
+(3049,4770)(3040,4760)(3060,4780) default 5 HD-229059 Military Center
+
+(2641,4656)(2570,4600)(2690,4720) city 6 Orrery
+(2607,4702) subCity 5 Antonios Trade Center
+(2667,4689) subCity 5 Roland-Carilion Research Center
+(2660,4616) subCity 5 Andrews Transit Center
+(2596,4629) subCity 5 Andrews Military Center
+(2624,4670) default Pioneers Gate
+(2527,4715)(2520,4710)(2540,4730) default 4 WW31 Operational Base
+(2528,4659)(2520,4650)(2540,4670) default 3 TY430 Transport Hub
+(2525,4578)(2520,4570)(2540,4590) default 4 WASP-103 Industrial Base
+(2546,4555)(2540,4550)(2560,4570) default 4 LMC-54365 Industrial Base
+(2617,4572)(2610,4560)(2630,4580) default HD-200964 Military Base
+(2653,4554)(2640,4540)(2660,4560) default 4 HD-4313 Industrial Base
+(2679,4556)(2671,4550)(2690,4571) default 4 HX11 Operational Base
+(2724,4634)(2721,4620)(2740,4640) default 5 HT-11 Research Center
+(2739,4698)(2730,4690)(2750,4710) default 3 HATS-3 Transit Center
+(2718,4723)(2710,4710)(2730,4730) default 4 HD-38529 Operational Base
+(2624,4757)(2610,4750)(2630,4770) default 4 WR116 Military Base
+(2590,4670)(2581,4660)(2600,4681) default 4 KN76 Transport Hub
+(2629,4619)(2621,4610)(2641,4631) default 4 HAT-P-2 Military Base
+(2670,4639)(2660,4630)(2680,4650) default 4 HD-155358 Transport Hub
+(2662,4709)(2650,4700)(2670,4720) default 5 HATS-10 Research Center
