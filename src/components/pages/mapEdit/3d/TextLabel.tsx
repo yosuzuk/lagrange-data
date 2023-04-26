@@ -70,14 +70,14 @@ export const TextLabel = (props: IProps) => {
         if (marginTop > 0) {
             return applyMarginToImage({
                 image: textImage,
-                marginTop: marginTop + (2 * Math.floor(textImage.height / 2)),
+                marginTop: marginTop + textImage.height,
             });
         }
 
         if (marginBottom > 0) {
             return applyMarginToImage({
                 image: textImage,
-                marginBottom: marginBottom + (2 * Math.ceil(textImage.height / 2)),
+                marginBottom: marginBottom + textImage.height,
             });
         }
 

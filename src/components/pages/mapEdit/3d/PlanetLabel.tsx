@@ -15,16 +15,20 @@ export const PlanetLabel = (props: IProps) => {
     const { gridPosition, planetName, planetSize } = props;
     const visible = useZoomBasedVisibility('planetLabel');
 
-    const canvas = useMemo(() => mergeIconAndText({
-        iconCanvas: planetSize === 'small' ? createSmallPlanetIcon() : createLargePlanetIcon(),
-        textCanvas: createTextImage({
+    const canvas = useMemo(() => {
+        const iconCanvas = planetSize === 'small' ? createSmallPlanetIcon() : createLargePlanetIcon();
+        const textCanvas = createTextImage({
             text: planetName,
             color: 'white',
             fontSize: 12,
-        }),
-        spacing: 4,
-        marginTop: planetSize === 'large' ? 60 : 40,
-    }), [planetName, planetSize]);
+        });
+        return mergeIconAndText({
+            iconCanvas,
+            textCanvas,
+            spacing: 4,
+            marginTop: (planetSize === 'large' ? 55 : 35) + Math.max(iconCanvas.height, textCanvas.height),
+        });
+    }, [planetName, planetSize]);
 
     if (!visible) {
         return null;

@@ -51,11 +51,11 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
 
         switch (currentSection) {
             case '$name': {
-                mapContent.name = trimmedLine;
+                mapContent.name = parsePlainText(trimmedLine);
                 return;
             }
             case '$serverName': {
-                mapContent.serverName = trimmedLine;
+                mapContent.serverName = parsePlainText(trimmedLine);
                 return;
             }
             case '$size': {

@@ -14,15 +14,18 @@ export const WorldLabel = (props: IProps) => {
             return null;
         }
 
+        const iconCanvas = createSunIcon();
+        const textCanvas = createTextImage({
+            text: worldName,
+            color: 'white',
+            fontSize: 12,
+        });
+
         return mergeIconAndText({
-            iconCanvas: createSunIcon(),
-            textCanvas: createTextImage({
-                text: worldName,
-                color: 'white',
-                fontSize: 12,
-            }),
+            iconCanvas,
+            textCanvas,
             spacing: 4,
-            marginTop: 40,
+            marginTop: 35 + Math.max(iconCanvas.height, textCanvas.height),
         });
     }, [worldName]);
 
