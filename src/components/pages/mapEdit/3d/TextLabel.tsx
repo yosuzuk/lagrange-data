@@ -67,11 +67,17 @@ export const TextLabel = (props: IProps) => {
             padding,
         });
 
-        if (marginTop > 0 || marginBottom > 0) {
+        if (marginTop > 0) {
             return applyMarginToImage({
                 image: textImage,
-                marginTop,
-                marginBottom,
+                marginTop: marginTop + (2 * Math.floor(textImage.height / 2)),
+            });
+        }
+
+        if (marginBottom > 0) {
+            return applyMarginToImage({
+                image: textImage,
+                marginBottom: marginBottom + (2 * Math.ceil(textImage.height / 2)),
             });
         }
 

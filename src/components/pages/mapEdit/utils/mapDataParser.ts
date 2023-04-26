@@ -208,7 +208,7 @@ function parseMarkerLine(line: string, lineNumber: number): [IMarker | null, IPa
             lineNumber,
             position: coordinates[0],
             color: parseColor(colors[0], 'white'),
-            label: lineWithoutColors || null,
+            label: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
         },
         null,
     ];
@@ -256,7 +256,7 @@ function parseRegionLine(line: string, lineNumber: number): [IRegion | null, IPa
             angleEndPoint: coordinates[3],
             regionNumber: Number(regionNumbers[0]),
             color: parseColor(colors[0], DEFAULT_REGION_COLOR),
-            label: lineWithoutColors || null,
+            label: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
         },
         null,
     ];
@@ -302,7 +302,7 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
             orbitCenter: coordinates[1],
             size: planetSizes[0] ?? 'medium',
             color: parseColor(colors[0], DEFAULT_PLANET_COLOR),
-            name: lineWithoutColors || null,
+            name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
         },
         null,
     ];
@@ -360,7 +360,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
             position: coordinates[0],
             level: Number(stationlevels[0]) || null,
             color,
-            name: lineWithoutColors || null,
+            name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
             area: coordinates.length === 3 ? {
                 id: `stationArea${lineNumber}`,
                 contentType: 'area',
@@ -450,7 +450,7 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
         position: position,
         level: null,
         color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors || null,
+        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -504,7 +504,7 @@ function parsePlayerOutpostLine(line: string, lineNumber: number): [IPlayerOutpo
         position: position,
         level: null,
         color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors || t('mapEdit.station.outpost'),
+        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : t('mapEdit.station.outpost'),
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -570,7 +570,7 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
         position: position,
         level: null,
         color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors || formatPlatformLabel(platformType),
+        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : formatPlatformLabel(platformType),
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -592,6 +592,10 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
         },
         null,
     ];
+}
+
+function parsePlainText(text: string): string {
+    return text.split('#r').map(line => line.trim()).join('\n');
 }
 
 interface IParseWithRegExpResult<TResult> {
