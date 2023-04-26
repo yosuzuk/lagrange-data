@@ -121,7 +121,7 @@ export const MapContentSearchList = (props: IProps) => {
                                         {station.level ? `Lv${station.level}` : null}
                                     </Box>
                                 </Box>
-                                <ListItemText sx={{ padding: '0 6px' }}>
+                                <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                     {formatStationLabelForList(station)}
                                 </ListItemText>
                             </MenuItem>,
@@ -134,7 +134,7 @@ export const MapContentSearchList = (props: IProps) => {
                                 onClick={onClickItem}
                                 disableGutters={true}
                             >
-                                <ListItemText sx={{ padding: '0 6px' }}>
+                                <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                     {marker.label ?? marker.position}
                                 </ListItemText>
                                 <Divider orientation="vertical" flexItem />
