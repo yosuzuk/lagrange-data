@@ -2,9 +2,10 @@ $name 10013 V1448 Cygnus
 $serverName V1448 Cygnus
 $size 9000
 
-// Rank 1: Rodina (67.8)
-// Rank 3: UNSC (8.7)
-// Rank 5: Terran Empire (2.1)
+$overlay
+Rodina (67.8%)
+UNSC (8.7%)
+Terran Empire (2.1%)
 
 $station
 (1734,1624) city 2 #cFD7844 UNSC

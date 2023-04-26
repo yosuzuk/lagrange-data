@@ -2,9 +2,10 @@ $name 10015 Grus T
 $serverName Grus T
 $size 9000
 
-// Rank 1: Вавилон (54.0)
-// Rank 2: Teamrus (34.3)
-// Rank 3: GermanIndusries (9.4)
+$overlay
+Вавилон (54.0%)
+Teamrus (34.3%)
+GermanIndusries (9.4%)
 
 $station
 (1734,1624) city 2 #cE5B36C Вавилон

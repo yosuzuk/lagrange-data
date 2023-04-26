@@ -2,10 +2,11 @@ $name 10213 Perseus 67
 $serverName Perseus 67
 $size 9000
 
-// Rank 1: Sigil of Eden (35.0)
-// Rank 2: GEYERSBURG (25.5)
-// Rank 3: DUCIS村 (23.3)
-// Rank 4: Dark Star (16.0)
+$overlay
+Sigil of Eden (35.0%)
+GEYERSBURG (25.5%)
+DUCIS村 (23.3%)
+Dark Star (16.0%)
 
 $station
 (3814,8244) city 2 #cE5B36C Sigil of Eden

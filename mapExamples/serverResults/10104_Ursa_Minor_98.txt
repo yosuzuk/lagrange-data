@@ -2,9 +2,10 @@ $name 10104 Ursa Minor 98
 $serverName Ursa Minor 98
 $size 9000
 
-// Rank 1: 조선인민군 (54.7)
-// Rank 2: 단또단또 (43.0)
-// Rank 3: 감의 의지 (2.1)
+$overlay
+조선인민군 (54.7%)
+단또단또 (43.0%)
+감의 의지 (2.1%)
 
 $station
 (2654,0524) city 2 #c4A99FB 단또단또

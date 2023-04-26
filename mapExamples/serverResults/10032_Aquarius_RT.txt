@@ -2,8 +2,9 @@ $name 10032 Aquarius RT
 $serverName Aquarius RT
 $size 9000
 
-// Rank 1: The Warlords (53.2)
-// Rank 2: Hammerstein (46.7)
+$overlay
+The Warlords (53.2%)
+Hammerstein (46.7%)
 
 $station
 (3794,0974) city 2 #cE5B36C The Warlords

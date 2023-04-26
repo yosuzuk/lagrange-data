@@ -2,10 +2,11 @@ $name 10008 V1026Hercules
 $serverName V1026Hercules
 $size 9000
 
-// Rank 1: Mass Effect (50.3)
-// Rank 2: EVE (35.7)
-// Rank 3: OMNI Phoenix 2 (11.6)
-// Rank 4: LEGION (2.1)
+$overlay
+Mass Effect (50.3%)
+EVE (35.7%)
+OMNI Phoenix 2 (11.6%)
+LEGION (2.1%)
 
 $station
 (0350,4668) city 3 #cE5B36C Mass Effect

@@ -2,10 +2,11 @@ $name 10014 V781 Norma
 $serverName V781 Norma
 $size 9000
 
-// Rank 1: SOVIET RUSSIA (51.8)
-// Rank 2: Alpha (32.1)
-// Rank 3: Stargate SG1 (11.6)
-// Rank 4: STAR WARS (4.3)
+$overlay
+SOVIET RUSSIA (51.8%)
+Alpha (32.1%)
+Stargate SG1 (11.6%)
+STAR WARS (4.3%)
 
 $station
 (1967,5294) city 5 #c49E7C0 STAR WARS

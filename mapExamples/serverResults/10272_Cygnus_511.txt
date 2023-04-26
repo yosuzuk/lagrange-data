@@ -2,10 +2,11 @@ $name 10272 Cygnus 511
 $serverName Cygnus 511
 $size 9000
 
-// Rank 1: Ewoks (49.6)
-// Rank 2: Neo Osaka (21.1)
-// Rank 4: FallenEmpire (6.5)
-// Rank 5: Planet Hoppers (6.5)
+$overlay
+Ewoks (49.6%)
+Neo Osaka (21.1%)
+FallenEmpire (6.5%)
+Planet Hoppers (6.5%)
 
 $station
 (0354,3344) city 2 #c4A99FB Neo Osaka

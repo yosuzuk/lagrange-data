@@ -2,10 +2,11 @@ $name 10020 Piscis Austrinus 79
 $serverName Piscis Austrinus 79
 $size 9000
 
-// Rank 1: Dark Void (39.4)
-// Rank 2: Stellar Legi0n (37.9)
-// Rank 3: Legion (11.6)
-// Rank 4: Stellar Uni0n (10.9)
+$overlay
+Dark Void (39.4%)
+Stellar Legi0n (37.9%)
+Legion (11.6%)
+Stellar Uni0n (10.9%)
 
 $station
 (1694,7744) city 2 #cFD7844 Legion

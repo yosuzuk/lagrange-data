@@ -2,10 +2,11 @@ $name 10131 Centaurus 101
 $serverName Centaurus 101
 $size 9000
 
-// Rank 1: 新麦茶連邦 (44.5)
-// Rank 2: ZERO (27.7)
-// Rank 3: New Jedi Order (16.0)
-// Rank 4: Jormungand (11.6)
+$overlay
+新麦茶連邦 (44.5%)
+ZERO (27.7%)
+New Jedi Order (16.0%)
+Jormungand (11.6%)
 
 $station
 (4352,5249) city 5 #c4A99FB ZERO

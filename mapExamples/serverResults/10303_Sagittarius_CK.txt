@@ -2,11 +2,12 @@ $name 10303 Sagittarius CK
 $serverName Sagittarius CK
 $size 9000
 
-// Rank 1: СССР (37.9)
-// Rank 2: Sturdy Fiends (35.0)
-// Rank 3: THE BLACKSMITHS (16.0)
-// Rank 4: The First Order (6.5)
-// Rank 5: TheOldGods (2.1)
+$overlay
+СССР (37.9%)
+Sturdy Fiends (35.0%)
+THE BLACKSMITHS (16.0%)
+The First Order (6.5%)
+TheOldGods (2.1%)
 
 $station
 (4951,5025) city 2 #cFD7844 THE BLACKSMITHS

@@ -2,9 +2,10 @@ $name 10172 Capricornus AB
 $serverName Capricornus AB
 $size 9000
 
-// Rank 1: 創世界 (56.2)
-// Rank 2: OHM (32.1)
-// Rank 3: Dark Empire (11.6)
+$overlay
+創世界 (56.2%)
+OHM (32.1%)
+Dark Empire (11.6%)
 
 $station
 (1494,7254) city 2 #c4A99FB OHM

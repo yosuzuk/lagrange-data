@@ -2,10 +2,11 @@ $name 10309 Delphinus 142
 $serverName Delphinus 142
 $size 9000
 
-// Rank 1: The Contingency (29.9)
-// Rank 2: Varangians (26.2)
-// Rank 4: Twelve Gates (8.7)
-// Rank 7: BloodedGuild (2.1)
+$overlay
+The Contingency (29.9%)
+Varangians (26.2%)
+Twelve Gates (8.7%)
+BloodedGuild (2.1%)
 
 $station
 (1174,5484) city 2 #c4A99FB Varangians

@@ -2,11 +2,12 @@ $name 10216 Ursa Minor 94
 $serverName Ursa Minor 94
 $size 9000
 
-// Rank 1: AngrySpceChimps (30.6)
-// Rank 2: The Union (16.0)
-// Rank 7: Turanic Raiders (6.5)
-// Rank 8: La colmena (4.3)
-// Rank 9: 해병성채2기 (4.3)
+$overlay
+AngrySpceChimps (30.6%)
+The Union (16.0%)
+Turanic Raiders (6.5%)
+La colmena (4.3%)
+해병성채2기 (4.3%)
 
 $station
 (3786,3411) city 5 #cF1F1F1 해병성채2기

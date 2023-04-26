@@ -2,13 +2,14 @@ $name 10091 Hydra RX
 $serverName Hydra RX
 $size 9000
 
-// Rank 1: 붉은악마 (56.2)
-// Rank 2: KBYユニオン (30.6)
-// Rank 3: Space Plate (4.3)
-// Rank 4: NIGHTRAID (2.1)
-// Rank 5: 푸른악마 (2.1)
-// Rank 6: 星間帝国 (2.1)
-// Rank 7: 星間帝国NAP (2.1)
+$overlay
+붉은악마 (56.2%)
+KBYユニオン (30.6%)
+Space Plate (4.3%)
+NIGHTRAID (2.1%)
+푸른악마 (2.1%)
+星間帝国 (2.1%)
+星間帝国NAP (2.1%)
 
 $station
 (1494,7244) city 2 #c49E7C0 NIGHTRAID

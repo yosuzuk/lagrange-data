@@ -2,11 +2,12 @@ $name 10100 Leo Minor W
 $serverName Leo Minor W
 $size 9000
 
-// Rank 1: 艦隊同盟 (55.4)
-// Rank 2: Nightmare (18.9)
-// Rank 3: 初心者 (11.6)
-// Rank 4: 日本連邦 (11.6)
-// Rank 5: LUKE (2.1)
+$overlay
+艦隊同盟 (55.4%)
+Nightmare (18.9%)
+初心者 (11.6%)
+日本連邦 (11.6%)
+LUKE (2.1%)
 
 $station
 (1732,3850) city 5 #cE5B36C 艦隊同盟

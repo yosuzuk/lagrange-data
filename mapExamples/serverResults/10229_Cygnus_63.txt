@@ -2,9 +2,10 @@ $name 10229 Cygnus 63
 $serverName Cygnus 63
 $size 9000
 
-// Rank 1: The Covenant (44.5)
-// Rank 2: Chaosward (18.2)
-// Rank 6: ViceVersa (4.3)
+$overlay
+The Covenant (44.5%)
+Chaosward (18.2%)
+ViceVersa (4.3%)
 
 $station
 (1634,1294) city 2 #c4A99FB Chaosward

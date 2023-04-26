@@ -2,7 +2,8 @@ $name 10295 V1391 Andromeda
 $serverName V1391 Andromeda
 $size 9000
 
-// Rank 1: THE ENDLESS (32.8)
+$overlay
+THE ENDLESS (32.8%)
 
 $station
 (1174,5484) city 2 #cE5B36C THE ENDLESS

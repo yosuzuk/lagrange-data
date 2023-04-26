@@ -2,10 +2,11 @@ $name 10260 Ursa Major 294
 $serverName Ursa Major 294
 $size 9000
 
-// Rank 1: PlanetCHAR (44.5)
-// Rank 2: ETERNAL EMPIRE (16.0)
-// Rank 5: Angel Fly (6.5)
-// Rank 6: Void Legion (4.3)
+$overlay
+PlanetCHAR (44.5%)
+ETERNAL EMPIRE (16.0%)
+Angel Fly (6.5%)
+Void Legion (4.3%)
 
 $station
 (1154,6804) city 2 #cE63A3A Angel Fly

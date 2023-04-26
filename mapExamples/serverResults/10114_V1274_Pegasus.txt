@@ -2,11 +2,12 @@ $name 10114 V1274 Pegasus
 $serverName V1274 Pegasus
 $size 9000
 
-// Rank 1: KOREA TEAM (53.2)
-// Rank 2: Olympus (32.8)
-// Rank 3: TLORCーstf (9.4)
-// Rank 4: 日本同盟軍 (2.1)
-// Rank 5: The Wraithguard (2.1)
+$overlay
+KOREA TEAM (53.2%)
+Olympus (32.8%)
+TLORCーstf (9.4%)
+日本同盟軍 (2.1%)
+The Wraithguard (2.1%)
 
 $station
 (1234,7134) city 2 #c49E7C0 日本同盟軍

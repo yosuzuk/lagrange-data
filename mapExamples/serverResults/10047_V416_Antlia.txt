@@ -2,9 +2,10 @@ $name 10047 V416 Antlia
 $serverName V416 Antlia
 $size 9000
 
-// Rank 1: Legacy (51.0)
-// Rank 2: Cerberus (41.6)
-// Rank 3: Stardust Union (7.2)
+$overlay
+Legacy (51.0%)
+Cerberus (41.6%)
+Stardust Union (7.2%)
 
 $station
 (1244,2755) city 2 #cE5B36C Legacy

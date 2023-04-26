@@ -2,9 +2,10 @@ $name 10224 Octans 145
 $serverName Octans 145
 $size 9000
 
-// Rank 1: legion (35.0)
-// Rank 2: Memoria Atelier (32.8)
-// Rank 3: 宇宙 (32.1)
+$overlay
+legion (35.0%)
+Memoria Atelier (32.8%)
+宇宙 (32.1%)
 
 $station
 (1770,1408) city 3 #cE5B36C legion

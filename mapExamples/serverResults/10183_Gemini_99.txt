@@ -2,9 +2,10 @@ $name 10183 Gemini 99
 $serverName Gemini 99
 $size 9000
 
-// Rank 1: 殘月帝國 (51.0)
-// Rank 2: Iron Guard (46.7)
-// Rank 3: LoneWolves (2.1)
+$overlay
+殘月帝國 (51.0%)
+Iron Guard (46.7%)
+LoneWolves (2.1%)
 
 $station
 (1204,5914) city 2 #cE5B36C 殘月帝國

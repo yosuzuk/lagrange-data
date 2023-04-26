@@ -2,9 +2,10 @@ $name 10113 V936 Carina
 $serverName V936 Carina
 $size 9000
 
-// Rank 1: SOJU (60.5)
-// Rank 2: 猫の夜会 (37.2)
-// Rank 3: Sith Empire (2.1)
+$overlay
+SOJU (60.5%)
+猫の夜会 (37.2%)
+Sith Empire (2.1%)
 
 $station
 (3521,5389) city 7 #c4A99FB 猫の夜会

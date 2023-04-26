@@ -2,9 +2,10 @@ $name 10122 Fornax 141
 $serverName Fornax 141
 $size 9000
 
-// Rank 1: Novas Vici (48.9)
-// Rank 2: Alliance (30.6)
-// Rank 3: 한국인연합 (20.4)
+$overlay
+Novas Vici (48.9%)
+Alliance (30.6%)
+한국인연합 (20.4%)
 
 $station
 (1404,6294) city 2 #cE5B36C Novas Vici

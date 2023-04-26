@@ -2,8 +2,9 @@ $name 10034 V704 Indus
 $serverName V704 Indus
 $size 9000
 
-// Rank 1: Reapers (54.7)
-// Rank 2: SpaceFAM (45.2)
+$overlay
+Reapers (54.7%)
+SpaceFAM (45.2%)
 
 $station
 (1304,2734) city 2 #c4A99FB SpaceFAM

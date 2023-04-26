@@ -2,9 +2,10 @@ $name 10056 Hydrus 60
 $serverName Hydrus 60
 $size 9000
 
-// Rank 1: Interstellar (35.0)
-// Rank 2: Heavens Titans (34.3)
-// Rank 3: Los Corsarios (30.6)
+$overlay
+Interstellar (35.0%)
+Heavens Titans (34.3%)
+Los Corsarios (30.6%)
 
 $station
 (2994,8144) city 2 #c4A99FB Heavens Titans

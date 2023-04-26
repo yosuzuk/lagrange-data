@@ -2,8 +2,9 @@ $name 10236 V1312 Triangulum
 $serverName V1312 Triangulum
 $size 9000
 
-// Rank 1: Gunboat Diplo (69.3)
-// Rank 2: Gunboat Alpha (13.1)
+$overlay
+Gunboat Diplo (69.3%)
+Gunboat Alpha (13.1%)
 
 $station
 (1154,6804) city 2 #cE5B36C Gunboat Diplo

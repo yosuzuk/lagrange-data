@@ -2,8 +2,9 @@ $name 10126 Lyra 158
 $serverName Lyra 158
 $size 9000
 
-// Rank 1: Terra (51.8)
-// Rank 2: Fairy Tail (45.9)
+$overlay
+Terra (51.8%)
+Fairy Tail (45.9%)
 
 $station
 (1374,5814) city 2 #c4A99FB Fairy Tail

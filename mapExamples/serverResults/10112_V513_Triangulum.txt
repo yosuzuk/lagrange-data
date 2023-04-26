@@ -2,9 +2,10 @@ $name 10112 V513 Triangulum
 $serverName V513 Triangulum
 $size 9000
 
-// Rank 1: 銀河帝国 (36.4)
-// Rank 2: 인피니티 (32.8)
-// Rank 3: 1st Order (30.6)
+$overlay
+銀河帝国 (36.4%)
+인피니티 (32.8%)
+1st Order (30.6%)
 
 $station
 (1104,6894) city 2 #cFD7844 1st Order

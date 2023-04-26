@@ -2,9 +2,10 @@ $name 10255 Corvus 488
 $serverName Corvus 488
 $size 9000
 
-// Rank 1: Chloris (51.8)
-// Rank 2: Zephyros (27.7)
-// Rank 3: Choccy Melons (16.0)
+$overlay
+Chloris (51.8%)
+Zephyros (27.7%)
+Choccy Melons (16.0%)
 
 $station
 (3381,1509) city 7 #c4A99FB Zephyros

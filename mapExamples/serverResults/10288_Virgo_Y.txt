@@ -2,11 +2,12 @@ $name 10288 Virgo Y
 $serverName Virgo Y
 $size 9000
 
-// Rank 1: Iron Knights (35.0)
-// Rank 2: Arkiteck (32.8)
-// Rank 3: BLACK HOLE R6 (16.0)
-// Rank 4: Solemn (9.4)
-// Rank 5: ГОСТ (6.5)
+$overlay
+Iron Knights (35.0%)
+Arkiteck (32.8%)
+BLACK HOLE R6 (16.0%)
+Solemn (9.4%)
+ГОСТ (6.5%)
 
 $station
 (4084,8294) city 2 #cFD7844 BLACK HOLE R6

@@ -2,10 +2,11 @@ $name 10290 Ursa Minor 298
 $serverName Ursa Minor 298
 $size 9000
 
-// Rank 1: Alpha Corvus (42.3)
-// Rank 2: Engineers (10.9)
-// Rank 7: UNSC (6.5)
-// Rank 8: GUARDIAN (4.3)
+$overlay
+Alpha Corvus (42.3%)
+Engineers (10.9%)
+UNSC (6.5%)
+GUARDIAN (4.3%)
 
 $station
 (1284,6574) city 2 #cE5B36C Alpha Corvus

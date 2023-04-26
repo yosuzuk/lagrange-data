@@ -2,9 +2,10 @@ $name 10133 Apus 60
 $serverName Apus 60
 $size 9000
 
-// Rank 1: TheLastOrder (35.0)
-// Rank 2: SAT우주연합 (34.3)
-// Rank 3: ISERLOHN (30.6)
+$overlay
+TheLastOrder (35.0%)
+SAT우주연합 (34.3%)
+ISERLOHN (30.6%)
 
 $station
 (1184,1755) city 2 #cE5B36C TheLastOrder

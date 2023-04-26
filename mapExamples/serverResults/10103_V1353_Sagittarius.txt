@@ -2,10 +2,11 @@ $name 10103 V1353 Sagittarius
 $serverName V1353 Sagittarius
 $size 9000
 
-// Rank 1: FAF (67.8)
-// Rank 2: 무과금 (21.1)
-// Rank 3: TH Federation (8.7)
-// Rank 4: Space X (2.1)
+$overlay
+FAF (67.8%)
+무과금 (21.1%)
+TH Federation (8.7%)
+Space X (2.1%)
 
 $station
 (1374,5814) city 2 #c49E7C0 Space X

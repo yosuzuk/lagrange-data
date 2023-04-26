@@ -2,8 +2,9 @@ $name 10204 V1067 Eridanus
 $serverName V1067 Eridanus
 $size 9000
 
-// Rank 1: HSSS (54.0)
-// Rank 2: Phantom Order (45.9)
+$overlay
+HSSS (54.0%)
+Phantom Order (45.9%)
 
 $station
 (3774,8664) city 2 #c4A99FB Phantom Order

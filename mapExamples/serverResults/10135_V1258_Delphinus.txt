@@ -2,8 +2,9 @@ $name 10135 V1258 Delphinus
 $serverName V1258 Delphinus
 $size 9000
 
-// Rank 1: RISE and FALL (53.2)
-// Rank 2: GENESIS (46.7)
+$overlay
+RISE and FALL (53.2%)
+GENESIS (46.7%)
 
 $station
 (1204,5914) city 2 #c4A99FB GENESIS

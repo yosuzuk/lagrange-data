@@ -2,12 +2,13 @@ $name 10017 Cepheus AZ
 $serverName Cepheus AZ
 $size 9000
 
-// Rank 1: Gate Defender (30.6)
-// Rank 3: Deutsche Union (11.6)
-// Rank 4: Nuke (11.6)
-// Rank 5: bundschuh (11.6)
-// Rank 6: Germany City (10.9)
-// Rank 7: NUKE 2 (2.1)
+$overlay
+Gate Defender (30.6%)
+Deutsche Union (11.6%)
+Nuke (11.6%)
+bundschuh (11.6%)
+Germany City (10.9%)
+NUKE 2 (2.1%)
 
 $station
 (0254,4284) city 2 #cE5B36C Gate Defender

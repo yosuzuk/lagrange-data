@@ -2,9 +2,10 @@ $name 10196 V1106 Eridanus
 $serverName V1106 Eridanus
 $size 9000
 
-// Rank 1: Frozen Empire (60.5)
-// Rank 2: Space Zombies (18.2)
-// Rank 3: 12 Colonies (11.6)
+$overlay
+Frozen Empire (60.5%)
+Space Zombies (18.2%)
+12 Colonies (11.6%)
 
 $station
 (1494,7254) city 2 #cE5B36C Frozen Empire

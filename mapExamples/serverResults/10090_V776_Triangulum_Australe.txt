@@ -2,10 +2,11 @@ $name 10090 V776 Triangulum Australe
 $serverName V776 Triangulum Australe
 $size 9000
 
-// Rank 1: 냥냥펀치 (51.8)
-// Rank 2: Voyager (35.0)
-// Rank 3: KOR SPACE FLEET (8.7)
-// Rank 4: 어쩌다보니 (4.3)
+$overlay
+냥냥펀치 (51.8%)
+Voyager (35.0%)
+KOR SPACE FLEET (8.7%)
+어쩌다보니 (4.3%)
 
 $station
 (1734,7424) city 2 #cE5B36C 냥냥펀치

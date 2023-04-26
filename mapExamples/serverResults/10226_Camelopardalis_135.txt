@@ -2,9 +2,10 @@ $name 10226 Camelopardalis 135
 $serverName Camelopardalis 135
 $size 9000
 
-// Rank 1: Guardian (51.8)
-// Rank 2: Liberation (41.6)
-// Rank 3: Stark industry (4.3)
+$overlay
+Guardian (51.8%)
+Liberation (41.6%)
+Stark industry (4.3%)
 
 $station
 (1504,2435) city 2 #cE5B36C Guardian

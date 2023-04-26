@@ -2,10 +2,11 @@ $name 10310 V1629 Mensa
 $serverName V1629 Mensa
 $size 9000
 
-// Rank 1: 吞噬星空 (29.9)
-// Rank 3: Rev Crew (13.8)
-// Rank 7: JADE (4.3)
-// Rank 8: Империя (4.3)
+$overlay
+吞噬星空 (29.9%)
+Rev Crew (13.8%)
+JADE (4.3%)
+Империя (4.3%)
 
 $station
 (4951,5025) city 2 #cF284FF JADE

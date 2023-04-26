@@ -2,9 +2,10 @@ $name 10009 V754 Triangulum
 $serverName V754 Triangulum
 $size 9000
 
-// Rank 1: Violators (54.0)
-// Rank 2: Luftwaffe (32.1)
-// Rank 3: Tower INc (13.8)
+$overlay
+Violators (54.0%)
+Luftwaffe (32.1%)
+Tower INc (13.8%)
 
 $station
 (0254,4284) city 2 #cE5B36C Violators

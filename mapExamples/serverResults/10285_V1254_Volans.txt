@@ -2,11 +2,12 @@ $name 10285 V1254 Volans
 $serverName V1254 Volans
 $size 9000
 
-// Rank 1: Valkyries (27.7)
-// Rank 2: Horde (25.5)
-// Rank 4: TITANS (11.6)
-// Rank 5: New Generation (8.7)
-// Rank 7: NanTianMen (2.1)
+$overlay
+Valkyries (27.7%)
+Horde (25.5%)
+TITANS (11.6%)
+New Generation (8.7%)
+NanTianMen (2.1%)
 
 $station
 (3414,0294) city 2 #c49E7C0 TITANS

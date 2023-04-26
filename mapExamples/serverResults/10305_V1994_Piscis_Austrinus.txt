@@ -2,11 +2,12 @@ $name 10305 V1994 Piscis Austrinus
 $serverName V1994 Piscis Austrinus
 $size 9000
 
-// Rank 1: CottonMiningCo (32.8)
-// Rank 2: Agent (32.1)
-// Rank 3: tormenta (11.6)
-// Rank 6: NILFGAARD CITY (4.3)
-// Rank 7: Valhalla (2.1)
+$overlay
+CottonMiningCo (32.8%)
+Agent (32.1%)
+tormenta (11.6%)
+NILFGAARD CITY (4.3%)
+Valhalla (2.1%)
 
 $station
 (3454,8444) city 2 #c4A99FB Agent

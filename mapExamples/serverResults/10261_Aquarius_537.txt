@@ -2,9 +2,10 @@ $name 10261 Aquarius 537
 $serverName Aquarius 537
 $size 9000
 
-// Rank 1: Interstellar (53.2)
-// Rank 2: Terran (35.0)
-// Rank 4: SYM (2.1)
+$overlay
+Interstellar (53.2%)
+Terran (35.0%)
+SYM (2.1%)
 
 $station
 (1974,1084) city 2 #c4A99FB Terran

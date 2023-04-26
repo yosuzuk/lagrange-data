@@ -2,9 +2,10 @@ $name 10208 V1341 Sculptor
 $serverName V1341 Sculptor
 $size 9000
 
-// Rank 1: Lost in Space (46.7)
-// Rank 2: Dust Devils (37.2)
-// Rank 4: NovaGate (6.5)
+$overlay
+Lost in Space (46.7%)
+Dust Devils (37.2%)
+NovaGate (6.5%)
 
 $station
 (4921,7609) city 7 #c4A99FB Dust Devils

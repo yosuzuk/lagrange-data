@@ -2,9 +2,10 @@ $name 10245 Norma 102
 $serverName Norma 102
 $size 9000
 
-// Rank 1: Addicted (51.8)
-// Rank 5: AERO FEDERATION (6.5)
-// Rank 6: New Star (2.1)
+$overlay
+Addicted (51.8%)
+AERO FEDERATION (6.5%)
+New Star (2.1%)
 
 $station
 (7089,5531) city 5 #c7E67F2 New Star

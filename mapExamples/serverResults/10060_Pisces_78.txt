@@ -2,10 +2,11 @@ $name 10060 Pisces 78
 $serverName Pisces 78
 $size 9000
 
-// Rank 1: Architects (51.8)
-// Rank 2: VENI VIDI VICI (32.1)
-// Rank 3: Nebulosa Azul (11.6)
-// Rank 4: The Divine Wind (4.3)
+$overlay
+Architects (51.8%)
+VENI VIDI VICI (32.1%)
+Nebulosa Azul (11.6%)
+The Divine Wind (4.3%)
 
 $station
 (4330,1500) city 5 #cFD7844 Nebulosa Azul

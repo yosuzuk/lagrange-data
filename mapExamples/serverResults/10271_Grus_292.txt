@@ -2,9 +2,10 @@ $name 10271 Grus 292
 $serverName Grus 292
 $size 9000
 
-// Rank 1: The Brotherhood (35.0)
-// Rank 2: PlayerHustlers (11.6)
-// Rank 3: Pact of steel (11.6)
+$overlay
+The Brotherhood (35.0%)
+PlayerHustlers (11.6%)
+Pact of steel (11.6%)
 
 $station
 (1424,2074) city 2 #cE5B36C The Brotherhood

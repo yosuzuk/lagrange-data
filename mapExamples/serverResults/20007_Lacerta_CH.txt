@@ -2,9 +2,10 @@ $name 20007 Lacerta CH
 $serverName Lacerta CH
 $size 9000
 
-// Rank 1: Galaxy Patrol (54.0)
-// Rank 2: EclipseProject (43.7)
-// Rank 3: Basshounds (2.1)
+$overlay
+Galaxy Patrol (54.0%)
+EclipseProject (43.7%)
+Basshounds (2.1%)
 
 $station
 (1479,2900) city 2 #c4A99FB EclipseProject

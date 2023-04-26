@@ -2,10 +2,11 @@ $name 10231 V604 Horologium
 $serverName V604 Horologium
 $size 9000
 
-// Rank 1: Space Titans (54.0)
-// Rank 2: OrpheusX (18.2)
-// Rank 3: Ashtar Command (16.0)
-// Rank 4: Tranquillity (11.6)
+$overlay
+Space Titans (54.0%)
+OrpheusX (18.2%)
+Ashtar Command (16.0%)
+Tranquillity (11.6%)
 
 $station
 (1919,7798) city 3 #cE5B36C Space Titans

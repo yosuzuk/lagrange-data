@@ -2,9 +2,10 @@ $name 10286 Crux 358
 $serverName Crux 358
 $size 9000
 
-// Rank 1: ATLANTIS (46.7)
-// Rank 2: Nebula (29.9)
-// Rank 4: The Sith Order (4.3)
+$overlay
+ATLANTIS (46.7%)
+Nebula (29.9%)
+The Sith Order (4.3%)
 
 $station
 (1893,2833) city 7 #cE5B36C ATLANTIS

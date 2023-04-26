@@ -2,11 +2,12 @@ $name 10119 Fornax 89
 $serverName Fornax 89
 $size 9000
 
-// Rank 1: Shadow Council (41.6)
-// Rank 2: サイド3 (32.8)
-// Rank 3: KOREA (21.1)
-// Rank 4: Domination (2.1)
-// Rank 5: von Braun (2.1)
+$overlay
+Shadow Council (41.6%)
+サイド3 (32.8%)
+KOREA (21.1%)
+Domination (2.1%)
+von Braun (2.1%)
 
 $station
 (1454,2654) city 2 #cE5B36C Shadow Council

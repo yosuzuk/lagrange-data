@@ -2,11 +2,12 @@ $name 10022 V1323 Canis Minor
 $serverName V1323 Canis Minor
 $size 9000
 
-// Rank 1: DaFukArounds (35.0)
-// Rank 2: OP4S (32.8)
-// Rank 3: RougeSquadron (16.0)
-// Rank 4: Reaper Union (13.8)
-// Rank 5: F҉F҉F҉ (2.1)
+$overlay
+DaFukArounds (35.0%)
+OP4S (32.8%)
+RougeSquadron (16.0%)
+Reaper Union (13.8%)
+F҉F҉F҉ (2.1%)
 
 $station
 (1644,6714) city 2 #c4A99FB OP4S

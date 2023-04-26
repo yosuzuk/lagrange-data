@@ -2,10 +2,11 @@ $name 10071 V1139 Centaurus
 $serverName V1139 Centaurus
 $size 9000
 
-// Rank 1: Decepticons (51.0)
-// Rank 2: Kumo CreW (44.5)
-// Rank 3: Soul Assassins (2.1)
-// Rank 4: Ninth Militia (2.1)
+$overlay
+Decepticons (51.0%)
+Kumo CreW (44.5%)
+Soul Assassins (2.1%)
+Ninth Militia (2.1%)
 
 $station
 (1244,2755) city 2 #cE5B36C Decepticons

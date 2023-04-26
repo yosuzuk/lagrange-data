@@ -2,9 +2,10 @@ $name 10296 V2249 Lepus
 $serverName V2249 Lepus
 $size 9000
 
-// Rank 1: Foreign Legion (30.6)
-// Rank 2: Winwin (18.2)
-// Rank 6: Nebulas Eyes (2.1)
+$overlay
+Foreign Legion (30.6%)
+Winwin (18.2%)
+Nebulas Eyes (2.1%)
 
 $station
 (1844,2134) city 2 #c4A99FB Winwin

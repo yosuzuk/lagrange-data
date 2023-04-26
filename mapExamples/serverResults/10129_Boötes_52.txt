@@ -2,9 +2,10 @@ $name 10129 Boötes 52
 $serverName Boötes 52
 $size 9000
 
-// Rank 1: KOR RedDevil (25.5)
-// Rank 2: SCP財団 (22.6)
-// Rank 7: SU Empire (2.1)
+$overlay
+KOR RedDevil (25.5%)
+SCP財団 (22.6%)
+SU Empire (2.1%)
 
 $station
 (4330,2620) city 5 #c4A99FB SCP財団

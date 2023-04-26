@@ -2,9 +2,10 @@ $name 10066 V1086 Leo Minor
 $serverName V1086 Leo Minor
 $size 9000
 
-// Rank 1: Royal Oak (72.2)
-// Rank 2: Reaper Union (16.0)
-// Rank 4: Grim Reapers (4.3)
+$overlay
+Royal Oak (72.2%)
+Reaper Union (16.0%)
+Grim Reapers (4.3%)
 
 $station
 (2374,7584) city 2 #cE5B36C Royal Oak

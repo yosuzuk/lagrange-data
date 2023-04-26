@@ -2,9 +2,10 @@ $name 10118 V872 Equuleus
 $serverName V872 Equuleus
 $size 9000
 
-// Rank 1: Stargod Legion (35.0)
-// Rank 2: Black Hole (32.8)
-// Rank 3: Wa No Kuni (32.1)
+$overlay
+Stargod Legion (35.0%)
+Black Hole (32.8%)
+Wa No Kuni (32.1%)
 
 $station
 (1734,1624) city 2 #cE5B36C Stargod Legion

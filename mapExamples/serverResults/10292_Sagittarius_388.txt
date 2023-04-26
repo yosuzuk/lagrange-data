@@ -2,10 +2,11 @@ $name 10292 Sagittarius 388
 $serverName Sagittarius 388
 $size 9000
 
-// Rank 1: Academy (40.1)
-// Rank 2: Lunar Eclipse (16.0)
-// Rank 3: Yilzetaid Echo (16.0)
-// Rank 6: Yilzetaid Sygma (2.1)
+$overlay
+Academy (40.1%)
+Lunar Eclipse (16.0%)
+Yilzetaid Echo (16.0%)
+Yilzetaid Sygma (2.1%)
 
 $station
 (3819,3519) city 9 #cE5B36C Academy

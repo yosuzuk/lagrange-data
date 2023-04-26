@@ -2,10 +2,11 @@ $name 10085 Ophiuchus V912
 $serverName Ophiuchus V912
 $size 9000
 
-// Rank 1: Titan (32.8)
-// Rank 2: The Guardians (32.8)
-// Rank 3: The Nexus (32.1)
-// Rank 4: The Republic (2.1)
+$overlay
+Titan (32.8%)
+The Guardians (32.8%)
+The Nexus (32.1%)
+The Republic (2.1%)
 
 $station
 (5956,4951) city 5 #c4A99FB The Guardians

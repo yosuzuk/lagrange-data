@@ -2,9 +2,10 @@ $name 10084 Camelopardalis 62
 $serverName Camelopardalis 62
 $size 9000
 
-// Rank 1: SPACEX (37.2)
-// Rank 2: Optimus Crime (32.1)
-// Rank 3: Agmar Empire (30.6)
+$overlay
+SPACEX (37.2%)
+Optimus Crime (32.1%)
+Agmar Empire (30.6%)
 
 $station
 (1244,2755) city 2 #c4A99FB Optimus Crime

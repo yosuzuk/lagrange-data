@@ -2,9 +2,10 @@ $name 10031 Boötes 60
 $serverName Boötes 60
 $size 9000
 
-// Rank 1: Basshounds (50.3)
-// Rank 2: Galaxy Patrol (40.8)
-// Rank 3: Mandalorians (6.5)
+$overlay
+Basshounds (50.3%)
+Galaxy Patrol (40.8%)
+Mandalorians (6.5%)
 
 $station
 (4092,4350) city 5 #c4A99FB Galaxy Patrol

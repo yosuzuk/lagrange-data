@@ -2,11 +2,12 @@ $name 20006 Volans 75
 $serverName Volans 75
 $size 9000
 
-// Rank 1: Legion (34.3)
-// Rank 2: FoxDen (30.6)
-// Rank 3: Dawn Of Orbitek (21.1)
-// Rank 4: Orbitek (11.6)
-// Rank 5: The Covenant (2.1)
+$overlay
+Legion (34.3%)
+FoxDen (30.6%)
+Dawn Of Orbitek (21.1%)
+Orbitek (11.6%)
+The Covenant (2.1%)
 
 $station
 (2878,4057) city 7 #c49E7C0 Orbitek

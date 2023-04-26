@@ -2,12 +2,13 @@ $name 10109 Virgo 109
 $serverName Virgo 109
 $size 9000
 
-// Rank 1: Empire of Korea (41.6)
-// Rank 2: Hallo (18.9)
-// Rank 3: Imperium of Man (11.6)
-// Rank 4: Citadel (11.6)
-// Rank 5: ミルチア軍 (11.6)
-// Rank 6: 大丈夫 (4.3)
+$overlay
+Empire of Korea (41.6%)
+Hallo (18.9%)
+Imperium of Man (11.6%)
+Citadel (11.6%)
+ミルチア軍 (11.6%)
+大丈夫 (4.3%)
 
 $station
 (0454,5074) city 2 #c49E7C0 Citadel

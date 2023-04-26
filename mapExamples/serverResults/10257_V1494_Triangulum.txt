@@ -2,10 +2,11 @@ $name 10257 V1494 Triangulum
 $serverName V1494 Triangulum
 $size 9000
 
-// Rank 1: Seed of Chaos (42.3)
-// Rank 2: EDEN (20.4)
-// Rank 3: UNSC (13.8)
-// Rank 6: ОДКБ (2.1)
+$overlay
+Seed of Chaos (42.3%)
+EDEN (20.4%)
+UNSC (13.8%)
+ОДКБ (2.1%)
 
 $station
 (1772,3330) city 5 #c4A99FB EDEN

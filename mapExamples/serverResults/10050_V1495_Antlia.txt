@@ -2,8 +2,9 @@ $name 10050 V1495 Antlia
 $serverName V1495 Antlia
 $size 9000
 
-// Rank 1: A B Y S S (58.3)
-// Rank 2: Warzone (41.6)
+$overlay
+A B Y S S (58.3%)
+Warzone (41.6%)
 
 $station
 (1533,3113) city 7 #c4A99FB Warzone

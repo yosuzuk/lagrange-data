@@ -2,8 +2,9 @@ $name 10069 Aries 132
 $serverName Aries 132
 $size 9000
 
-// Rank 1: Bloody Pandas (58.3)
-// Rank 2: R3 Cataclysm (41.6)
+$overlay
+Bloody Pandas (58.3%)
+R3 Cataclysm (41.6%)
 
 $station
 (1254,1624) city 2 #c4A99FB R3 Cataclysm

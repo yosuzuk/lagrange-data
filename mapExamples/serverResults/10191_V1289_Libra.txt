@@ -2,9 +2,10 @@ $name 10191 V1289 Libra
 $serverName V1289 Libra
 $size 9000
 
-// Rank 1: Iron Planet (51.0)
-// Rank 2: ChaosInsurgents (42.3)
-// Rank 3: 나쁜녀석들 (4.3)
+$overlay
+Iron Planet (51.0%)
+ChaosInsurgents (42.3%)
+나쁜녀석들 (4.3%)
 
 $station
 (1436,3178) city 3 #c4A99FB ChaosInsurgents

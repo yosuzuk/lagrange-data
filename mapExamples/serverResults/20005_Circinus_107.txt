@@ -2,13 +2,14 @@ $name 20005 Circinus 107
 $serverName Circinus 107
 $size 9000
 
-// Rank 1: RougeSquadron (23.3)
-// Rank 2: OP4S (16.7)
-// Rank 3: DaFukArounds (16.0)
-// Rank 4: Reaper Union (16.0)
-// Rank 5: The Drukharis (13.8)
-// Rank 6: Visionaries (11.6)
-// Rank 7: Wreckerz (2.1)
+$overlay
+RougeSquadron (23.3%)
+OP4S (16.7%)
+DaFukArounds (16.0%)
+Reaper Union (16.0%)
+The Drukharis (13.8%)
+Visionaries (11.6%)
+Wreckerz (2.1%)
 
 $station
 (4572,8110) city 5 #cE63A3A The Drukharis

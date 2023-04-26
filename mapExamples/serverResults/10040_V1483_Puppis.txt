@@ -2,10 +2,11 @@ $name 10040 V1483 Puppis
 $serverName V1483 Puppis
 $size 9000
 
-// Rank 1: Martian Marines (54.7)
-// Rank 2: FerretOverlords (40.8)
-// Rank 3: Grand Republic (2.1)
-// Rank 4: Event Horizon (2.1)
+$overlay
+Martian Marines (54.7%)
+FerretOverlords (40.8%)
+Grand Republic (2.1%)
+Event Horizon (2.1%)
 
 $station
 (1494,1974) city 2 #cE5B36C Martian Marines

@@ -2,9 +2,10 @@ $name 10073 V1270 Camelopardalis
 $serverName V1270 Camelopardalis
 $size 9000
 
-// Rank 1: IMPERIUM (51.8)
-// Rank 2: Arbiter of Fate (45.9)
-// Rank 3: GildaMercatoria (2.1)
+$overlay
+IMPERIUM (51.8%)
+Arbiter of Fate (45.9%)
+GildaMercatoria (2.1%)
 
 $station
 (1304,2734) city 2 #cE5B36C IMPERIUM

@@ -2,10 +2,11 @@ $name 10076 V925 Norma
 $serverName V925 Norma
 $size 9000
 
-// Rank 1: Empire of Man (51.8)
-// Rank 2: Alpha (21.1)
-// Rank 3: 战争帝国 (18.2)
-// Rank 4: infinitedestiny (8.7)
+$overlay
+Empire of Man (51.8%)
+Alpha (21.1%)
+战争帝国 (18.2%)
+infinitedestiny (8.7%)
 
 $station
 (4306,2762) city 5 #c49E7C0 infinitedestiny

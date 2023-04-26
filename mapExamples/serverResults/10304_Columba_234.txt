@@ -2,9 +2,10 @@ $name 10304 Columba 234
 $serverName Columba 234
 $size 9000
 
-// Rank 1: Oblivion (28.4)
-// Rank 2: Apotheosis (23.3)
-// Rank 3: Dust of Time (18.9)
+$overlay
+Oblivion (28.4%)
+Apotheosis (23.3%)
+Dust of Time (18.9%)
 
 $station
 (3819,3519) city 9 #cFD7844 Dust of Time

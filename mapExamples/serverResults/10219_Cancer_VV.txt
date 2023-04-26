@@ -2,10 +2,11 @@ $name 10219 Cancer VV
 $serverName Cancer VV
 $size 9000
 
-// Rank 1: NorthStar Inc (32.8)
-// Rank 2: House of Sparta (27.7)
-// Rank 3: Prometheus (18.2)
-// Rank 5: JPTraders (4.3)
+$overlay
+NorthStar Inc (32.8%)
+House of Sparta (27.7%)
+Prometheus (18.2%)
+JPTraders (4.3%)
 
 $station
 (1514,6934) city 2 #cE63A3A JPTraders

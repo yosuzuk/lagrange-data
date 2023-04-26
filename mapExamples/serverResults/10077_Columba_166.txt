@@ -2,10 +2,11 @@ $name 10077 Columba 166
 $serverName Columba 166
 $size 9000
 
-// Rank 1: Horimiya (41.6)
-// Rank 2: Pathfinder (35.7)
-// Rank 3: Unified (20.4)
-// Rank 4: Llamtopia (2.1)
+$overlay
+Horimiya (41.6%)
+Pathfinder (35.7%)
+Unified (20.4%)
+Llamtopia (2.1%)
 
 $station
 (1806,4982) city 5 #cE5B36C Horimiya

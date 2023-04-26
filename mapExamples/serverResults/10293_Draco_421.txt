@@ -2,10 +2,11 @@ $name 10293 Draco 421
 $serverName Draco 421
 $size 9000
 
-// Rank 1: BabyJedi (56.2)
-// Rank 2: PANDEMONIUM (18.2)
-// Rank 5: 星系戦略連合 (2.1)
-// Rank 6: ETO (2.1)
+$overlay
+BabyJedi (56.2%)
+PANDEMONIUM (18.2%)
+星系戦略連合 (2.1%)
+ETO (2.1%)
 
 $station
 (1770,1408) city 3 #c7E67F2 ETO

@@ -2,10 +2,11 @@ $name 10237 Capricornus 116
 $serverName Capricornus 116
 $size 9000
 
-// Rank 1: Decepticons (42.3)
-// Rank 2: Your Mom (13.8)
-// Rank 6: Arcadia Knights (6.5)
-// Rank 7: Space Ferrets (4.3)
+$overlay
+Decepticons (42.3%)
+Your Mom (13.8%)
+Arcadia Knights (6.5%)
+Space Ferrets (4.3%)
 
 $station
 (1424,2074) city 2 #cE5B36C Decepticons

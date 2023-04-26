@@ -2,8 +2,9 @@ $name 10027 V627 Perseus
 $serverName V627 Perseus
 $size 9000
 
-// Rank 1: InTz BR (23.3)
-// Rank 3: Bismarck (11.6)
+$overlay
+InTz BR (23.3%)
+Bismarck (11.6%)
 
 $station
 (2314,1774) city 2 #cFD7844 Bismarck

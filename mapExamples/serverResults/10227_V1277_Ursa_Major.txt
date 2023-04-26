@@ -2,9 +2,10 @@ $name 10227 V1277 Ursa Major
 $serverName V1277 Ursa Major
 $size 9000
 
-// Rank 1: RosCosmos (58.3)
-// Rank 2: Reclaimers (37.2)
-// Rank 3: 宇宙仓鼠 (4.3)
+$overlay
+RosCosmos (58.3%)
+Reclaimers (37.2%)
+宇宙仓鼠 (4.3%)
 
 $station
 (1772,3330) city 5 #cFD7844 宇宙仓鼠

@@ -2,16 +2,17 @@ $name 10089 V508 Auriga
 $serverName V508 Auriga
 $size 9000
 
-// Rank 1: Destiny (40.1)
-// Rank 2: JP01 (30.6)
-// Rank 3: UNSC (13.8)
-// Rank 4: Titians (2.1)
-// Rank 5: GAグループ (2.1)
-// Rank 6: Space Debris (2.1)
-// Rank 7: NMYK (2.1)
-// Rank 8: ニホンネコ (2.1)
-// Rank 9: 社会人連盟 (2.1)
-// Rank 10: 誰でもOK (2.1)
+$overlay
+Destiny (40.1%)
+JP01 (30.6%)
+UNSC (13.8%)
+Titians (2.1%)
+GAグループ (2.1%)
+Space Debris (2.1%)
+NMYK (2.1%)
+ニホンネコ (2.1%)
+社会人連盟 (2.1%)
+誰でもOK (2.1%)
 
 $station
 (1889,5951) city 5 #cE5B36C Destiny

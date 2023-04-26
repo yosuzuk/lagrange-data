@@ -2,9 +2,10 @@ $name 10197 V1438 Ara
 $serverName V1438 Ara
 $size 9000
 
-// Rank 1: DeadlyKins (52.5)
-// Rank 2: INSANITY (45.2)
-// Rank 3: Space Navy1 (2.1)
+$overlay
+DeadlyKins (52.5%)
+INSANITY (45.2%)
+Space Navy1 (2.1%)
 
 $station
 (1772,3330) city 5 #cFD7844 Space Navy1

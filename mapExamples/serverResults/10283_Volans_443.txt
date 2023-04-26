@@ -2,8 +2,9 @@ $name 10283 Volans 443
 $serverName Volans 443
 $size 9000
 
-// Rank 1: Radiant Gravity (48.9)
-// Rank 2: LA HEROICA (13.8)
+$overlay
+Radiant Gravity (48.9%)
+LA HEROICA (13.8%)
 
 $station
 (1444,6254) city 2 #cE5B36C Radiant Gravity

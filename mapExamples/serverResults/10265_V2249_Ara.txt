@@ -2,12 +2,13 @@ $name 10265 V2249 Ara
 $serverName V2249 Ara
 $size 9000
 
-// Rank 1: Galileo (20.4)
-// Rank 3: UNSC (10.9)
-// Rank 4: BlackSmoke (8.7)
-// Rank 10: 제국 (4.3)
-// Rank 11: Pillar o Autumn (2.1)
-// Rank 12: STAR KINGDOM (2.1)
+$overlay
+Galileo (20.4%)
+UNSC (10.9%)
+BlackSmoke (8.7%)
+제국 (4.3%)
+Pillar o Autumn (2.1%)
+STAR KINGDOM (2.1%)
 
 $station
 (3134,0644) city 2 #c929292 Pillar o Autumn

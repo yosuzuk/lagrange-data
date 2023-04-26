@@ -2,11 +2,12 @@ $name 10221 V799 Ursa Minor
 $serverName V799 Ursa Minor
 $size 9000
 
-// Rank 1: Explorers (35.0)
-// Rank 2: Infection (32.1)
-// Rank 5: 宇宙最強 (4.3)
-// Rank 6: Vallhalla (4.3)
-// Rank 7: БолтМ24 (2.1)
+$overlay
+Explorers (35.0%)
+Infection (32.1%)
+宇宙最強 (4.3%)
+Vallhalla (4.3%)
+БолтМ24 (2.1%)
 
 $station
 (1554,7224) city 2 #cE5B36C Explorers

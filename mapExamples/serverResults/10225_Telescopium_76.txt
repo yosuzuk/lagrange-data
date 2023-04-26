@@ -2,10 +2,11 @@ $name 10225 Telescopium 76
 $serverName Telescopium 76
 $size 9000
 
-// Rank 1: Стеллар (47.4)
-// Rank 2: Lagrange Corp (23.3)
-// Rank 3: The Alliance (16.0)
-// Rank 4: great crusaders (2.1)
+$overlay
+Стеллар (47.4%)
+Lagrange Corp (23.3%)
+The Alliance (16.0%)
+great crusaders (2.1%)
 
 $station
 (1424,2074) city 2 #cE5B36C Стеллар

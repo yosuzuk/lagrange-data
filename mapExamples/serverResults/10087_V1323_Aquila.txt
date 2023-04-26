@@ -2,10 +2,11 @@ $name 10087 V1323 Aquila
 $serverName V1323 Aquila
 $size 9000
 
-// Rank 1: Astral Dragons (44.5)
-// Rank 2: Dawn Operation (44.5)
-// Rank 3: INVICTUS (6.5)
-// Rank 4: Titans (4.3)
+$overlay
+Astral Dragons (44.5%)
+Dawn Operation (44.5%)
+INVICTUS (6.5%)
+Titans (4.3%)
 
 $station
 (1494,1974) city 2 #c4A99FB Dawn Operation

@@ -2,9 +2,10 @@ $name 10010 Antlia 151
 $serverName Antlia 151
 $size 9000
 
-// Rank 1: New World Order (54.0)
-// Rank 2: ВАВИЛОН (32.1)
-// Rank 3: Exodus (13.8)
+$overlay
+New World Order (54.0%)
+ВАВИЛОН (32.1%)
+Exodus (13.8%)
 
 $station
 (1704,7534) city 2 #cE5B36C New World Order

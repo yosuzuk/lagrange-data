@@ -2,12 +2,13 @@ $name 10238 V833 Canis Major
 $serverName V833 Canis Major
 $size 9000
 
-// Rank 1: Mendoris (42.3)
-// Rank 2: Olimp (39.4)
-// Rank 3: Rebel Alliance (11.6)
-// Rank 4: Galactic Empire (2.1)
-// Rank 5: Imperium of Man (2.1)
-// Rank 6: The Old Gods (2.1)
+$overlay
+Mendoris (42.3%)
+Olimp (39.4%)
+Rebel Alliance (11.6%)
+Galactic Empire (2.1%)
+Imperium of Man (2.1%)
+The Old Gods (2.1%)
 
 $station
 (3339,4559) city 9 #cE5B36C Mendoris

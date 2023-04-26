@@ -2,11 +2,12 @@ $name 10262 V2024 Canis Minor
 $serverName V2024 Canis Minor
 $size 9000
 
-// Rank 1: THE PRIMORDIALS (47.4)
-// Rank 2: 漂泊家族 (25.5)
-// Rank 3: Divine Order (18.2)
-// Rank 4: HELLISH ANGELS (4.3)
-// Rank 5: Kobayashi Maru (2.1)
+$overlay
+THE PRIMORDIALS (47.4%)
+漂泊家族 (25.5%)
+Divine Order (18.2%)
+HELLISH ANGELS (4.3%)
+Kobayashi Maru (2.1%)
 
 $station
 (3339,4559) city 9 #cE5B36C THE PRIMORDIALS

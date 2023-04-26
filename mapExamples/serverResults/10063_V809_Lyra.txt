@@ -2,8 +2,9 @@ $name 10063 V809 Lyra
 $serverName V809 Lyra
 $size 9000
 
-// Rank 1: S E E L E (83.9)
-// Rank 2: Force (16.0)
+$overlay
+S E E L E (83.9%)
+Force (16.0%)
 
 $station
 (1454,2654) city 2 #cE5B36C S E E L E

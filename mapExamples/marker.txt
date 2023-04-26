@@ -8,3 +8,6 @@ $marker
 (3060,2020) #D Gold
 (3060,3040) #c00FF00 Hex Color #00FF00
 (4080,2020) 集合場所
+
+(1020,4060) Line1#rLine2
+(1120,4060) Line1#rLine2#rLine3

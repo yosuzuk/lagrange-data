@@ -2,11 +2,12 @@ $name 10082 Auriga FW
 $serverName Auriga FW
 $size 9000
 
-// Rank 1: Fallen Angels (56.9)
-// Rank 2: Tengucorp (18.2)
-// Rank 3: Black Diamond (11.6)
-// Rank 4: Evolution (10.9)
-// Rank 5: High Council (2.1)
+$overlay
+Fallen Angels (56.9%)
+Tengucorp (18.2%)
+Black Diamond (11.6%)
+Evolution (10.9%)
+High Council (2.1%)
 
 $station
 (1493,3633) city 7 #cE5B36C Fallen Angels

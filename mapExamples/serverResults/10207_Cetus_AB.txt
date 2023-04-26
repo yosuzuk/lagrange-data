@@ -2,10 +2,11 @@ $name 10207 Cetus AB
 $serverName Cetus AB
 $size 9000
 
-// Rank 1: CARPE DIEM (44.5)
-// Rank 2: Space Troopers (32.8)
-// Rank 3: New World Order (18.2)
-// Rank 4: Apollon (4.3)
+$overlay
+CARPE DIEM (44.5%)
+Space Troopers (32.8%)
+New World Order (18.2%)
+Apollon (4.3%)
 
 $station
 (0124,3475) city 2 #cE5B36C CARPE DIEM

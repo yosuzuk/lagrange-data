@@ -2,10 +2,11 @@ $name 10235 V430 Ursa Minor
 $serverName V430 Ursa Minor
 $size 9000
 
-// Rank 1: Garden Of Eden (37.9)
-// Rank 2: AMERICA LATINO (16.0)
-// Rank 3: Risen (11.6)
-// Rank 4: Immunity (9.4)
+$overlay
+Garden Of Eden (37.9%)
+AMERICA LATINO (16.0%)
+Risen (11.6%)
+Immunity (9.4%)
 
 $station
 (3289,4291) city 5 #cE5B36C Garden Of Eden

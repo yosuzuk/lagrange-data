@@ -2,9 +2,10 @@ $name 10102 Delphinus 160
 $serverName Delphinus 160
 $size 9000
 
-// Rank 1: UNSC (51.0)
-// Rank 2: 世界連合 (46.7)
-// Rank 3: 孤狼の星 (2.1)
+$overlay
+UNSC (51.0%)
+世界連合 (46.7%)
+孤狼の星 (2.1%)
 
 $station
 (1044,6595) city 2 #c4A99FB 世界連合

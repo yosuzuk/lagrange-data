@@ -2,9 +2,10 @@ $name 10202 V909 Andromeda
 $serverName V909 Andromeda
 $size 9000
 
-// Rank 1: 蔚藍星空 (51.0)
-// Rank 2: Seven Sky (27.7)
-// Rank 3: For All (18.9)
+$overlay
+蔚藍星空 (51.0%)
+Seven Sky (27.7%)
+For All (18.9%)
 
 $station
 (1494,7254) city 2 #cFD7844 For All

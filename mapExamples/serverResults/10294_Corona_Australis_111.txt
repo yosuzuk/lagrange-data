@@ -2,10 +2,11 @@ $name 10294 Corona Australis 111
 $serverName Corona Australis 111
 $size 9000
 
-// Rank 1: 奇門遁甲 (23.3)
-// Rank 2: Arrakis (20.4)
-// Rank 3: Galactic Sith (16.0)
-// Rank 7: AresFenderation (2.1)
+$overlay
+奇門遁甲 (23.3%)
+Arrakis (20.4%)
+Galactic Sith (16.0%)
+AresFenderation (2.1%)
 
 $station
 (3454,8444) city 2 #cF284FF AresFenderation

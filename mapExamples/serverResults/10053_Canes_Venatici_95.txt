@@ -2,9 +2,10 @@ $name 10053 Canes Venatici 95
 $serverName Canes Venatici 95
 $size 9000
 
-// Rank 1: Laconian empire (35.0)
-// Rank 2: Based Brigade (32.8)
-// Rank 3: AXIOS (32.1)
+$overlay
+Laconian empire (35.0%)
+Based Brigade (32.8%)
+AXIOS (32.1%)
 
 $station
 (4946,6077) city 3 #cE5B36C Laconian empire

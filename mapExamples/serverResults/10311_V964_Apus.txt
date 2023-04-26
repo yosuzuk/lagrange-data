@@ -2,11 +2,12 @@ $name 10311 V964 Apus
 $serverName V964 Apus
 $size 9000
 
-// Rank 1: Grim Legion (47.4)
-// Rank 2: Star Keeper (16.0)
-// Rank 5: ECLIPSE (6.5)
-// Rank 6: Night Witches (4.3)
-// Rank 7: 이카루스 (2.1)
+$overlay
+Grim Legion (47.4%)
+Star Keeper (16.0%)
+ECLIPSE (6.5%)
+Night Witches (4.3%)
+이카루스 (2.1%)
 
 $station
 (3398,5577) city 7 #cE5B36C Grim Legion

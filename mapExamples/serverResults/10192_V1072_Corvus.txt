@@ -2,9 +2,10 @@ $name 10192 V1072 Corvus
 $serverName V1072 Corvus
 $size 9000
 
-// Rank 1: Galaxy Order (49.6)
-// Rank 2: ZERO (32.1)
-// Rank 3: Nexus (10.9)
+$overlay
+Galaxy Order (49.6%)
+ZERO (32.1%)
+Nexus (10.9%)
 
 $station
 (0354,3344) city 2 #cE5B36C Galaxy Order

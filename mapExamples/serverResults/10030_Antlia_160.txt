@@ -2,9 +2,10 @@ $name 10030 Antlia 160
 $serverName Antlia 160
 $size 9000
 
-// Rank 1: EclipseProject (58.3)
-// Rank 2: HyperionNexus (29.9)
-// Rank 3: Star Empire (11.6)
+$overlay
+EclipseProject (58.3%)
+HyperionNexus (29.9%)
+Star Empire (11.6%)
 
 $station
 (1533,3113) city 7 #cFD7844 Star Empire

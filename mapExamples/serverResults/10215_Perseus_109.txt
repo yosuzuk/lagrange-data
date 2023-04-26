@@ -2,9 +2,10 @@ $name 10215 Perseus 109
 $serverName Perseus 109
 $size 9000
 
-// Rank 1: NEO KYOTO (51.8)
-// Rank 2: EDEN (22.6)
-// Rank 3: The Guardians (11.6)
+$overlay
+NEO KYOTO (51.8%)
+EDEN (22.6%)
+The Guardians (11.6%)
 
 $station
 (1554,7224) city 2 #cE5B36C NEO KYOTO

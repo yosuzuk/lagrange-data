@@ -2,9 +2,10 @@ $name 10263 V1427 Lynx
 $serverName V1427 Lynx
 $size 9000
 
-// Rank 1: Espada (45.9)
-// Rank 6: Odins Army (4.3)
-// Rank 7: 星海璀璨 (2.1)
+$overlay
+Espada (45.9%)
+Odins Army (4.3%)
+星海璀璨 (2.1%)
 
 $station
 (1574,1944) city 2 #c7E67F2 Odins Army

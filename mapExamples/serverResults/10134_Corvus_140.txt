@@ -2,8 +2,9 @@ $name 10134 Corvus 140
 $serverName Corvus 140
 $size 9000
 
-// Rank 1: 流星雨 (65.6)
-// Rank 2: Savage Dominion (17.5)
+$overlay
+流星雨 (65.6%)
+Savage Dominion (17.5%)
 
 $station
 (1889,5751) city 5 #cE5B36C 流星雨

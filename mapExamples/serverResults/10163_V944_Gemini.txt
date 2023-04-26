@@ -2,10 +2,11 @@ $name 10163 V944 Gemini
 $serverName V944 Gemini
 $size 9000
 
-// Rank 1: 幽靈樂園 (42.3)
-// Rank 2: 東北航空站 (38.6)
-// Rank 3: CryptoCorp (11.6)
-// Rank 4: Superiocracy (7.2)
+$overlay
+幽靈樂園 (42.3%)
+東北航空站 (38.6%)
+CryptoCorp (11.6%)
+Superiocracy (7.2%)
 
 $station
 (3289,4291) city 5 #cE5B36C 幽靈樂園

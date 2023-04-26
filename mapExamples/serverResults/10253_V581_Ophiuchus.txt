@@ -2,10 +2,11 @@ $name 10253 V581 Ophiuchus
 $serverName V581 Ophiuchus
 $size 9000
 
-// Rank 1: ParalleL (54.7)
-// Rank 3: Talrir (8.7)
-// Rank 5: Luminous Union (4.3)
-// Rank 6: GOAT Legion (2.1)
+$overlay
+ParalleL (54.7%)
+Talrir (8.7%)
+Luminous Union (4.3%)
+GOAT Legion (2.1%)
 
 $station
 (1621,3669) city 7 #cE5B36C ParalleL

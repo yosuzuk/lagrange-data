@@ -2,8 +2,9 @@ $name 10055 V776 Horologium
 $serverName V776 Horologium
 $size 9000
 
-// Rank 1: CollectiveAlpha (93.4)
-// Rank 2: NPC (6.5)
+$overlay
+CollectiveAlpha (93.4%)
+NPC (6.5%)
 
 $station
 (1254,1624) city 2 #cE5B36C CollectiveAlpha

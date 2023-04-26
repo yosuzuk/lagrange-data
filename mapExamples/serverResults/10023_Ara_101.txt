@@ -2,9 +2,10 @@ $name 10023 Ara 101
 $serverName Ara 101
 $size 9000
 
-// Rank 1: Unity (54.0)
-// Rank 2: Infinite Empire (43.7)
-// Rank 3: Gravemind (2.1)
+$overlay
+Unity (54.0%)
+Infinite Empire (43.7%)
+Gravemind (2.1%)
 
 $station
 (1454,6204) city 2 #c4A99FB Infinite Empire

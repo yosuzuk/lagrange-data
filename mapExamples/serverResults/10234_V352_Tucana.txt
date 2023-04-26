@@ -2,9 +2,10 @@ $name 10234 V352 Tucana
 $serverName V352 Tucana
 $size 9000
 
-// Rank 1: YAKUZA (51.0)
-// Rank 2: MASTER BLACK 01 (11.6)
-// Rank 3: The Syndicate (11.6)
+$overlay
+YAKUZA (51.0%)
+MASTER BLACK 01 (11.6%)
+The Syndicate (11.6%)
 
 $station
 (0354,3344) city 2 #cE5B36C YAKUZA

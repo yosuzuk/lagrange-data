@@ -2,10 +2,11 @@ $name 10101 V1189 Pisces
 $serverName V1189 Pisces
 $size 9000
 
-// Rank 1: 狂和国 (51.8)
-// Rank 2: ROK Space Force (20.4)
-// Rank 3: 星界の紋章 (13.8)
-// Rank 4: ジオン公国 (13.8)
+$overlay
+狂和国 (51.8%)
+ROK Space Force (20.4%)
+星界の紋章 (13.8%)
+ジオン公国 (13.8%)
 
 $station
 (1324,7674) city 2 #cE5B36C 狂和国

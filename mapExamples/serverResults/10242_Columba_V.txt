@@ -2,12 +2,13 @@ $name 10242 Columba V
 $serverName Columba V
 $size 9000
 
-// Rank 1: UNOVA ALLIANCE (27.7)
-// Rank 3: Andromeda (13.8)
-// Rank 4: Columba V R2 (8.7)
-// Rank 8: UNOVA REPUBLIC (4.3)
-// Rank 9: 神聖緋焔帝國 (2.1)
-// Rank 10: UNOVA CORP (2.1)
+$overlay
+UNOVA ALLIANCE (27.7%)
+Andromeda (13.8%)
+Columba V R2 (8.7%)
+UNOVA REPUBLIC (4.3%)
+神聖緋焔帝國 (2.1%)
+UNOVA CORP (2.1%)
 
 $station
 (0354,3344) city 2 #cE5B36C UNOVA ALLIANCE

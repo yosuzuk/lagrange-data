@@ -2,11 +2,12 @@ $name 10239 V1300 Apus
 $serverName V1300 Apus
 $size 9000
 
-// Rank 1: Deux Deux Crew (44.5)
-// Rank 2: The Zod1ac (18.2)
-// Rank 6: Hyperion (6.5)
-// Rank 7: SpartanWarriors (2.1)
-// Rank 8: Kancolle (2.1)
+$overlay
+Deux Deux Crew (44.5%)
+The Zod1ac (18.2%)
+Hyperion (6.5%)
+SpartanWarriors (2.1%)
+Kancolle (2.1%)
 
 $station
 (1554,7224) city 2 #cF284FF SpartanWarriors

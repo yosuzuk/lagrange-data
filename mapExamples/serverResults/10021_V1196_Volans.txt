@@ -2,8 +2,9 @@ $name 10021 V1196 Volans
 $serverName V1196 Volans
 $size 9000
 
-// Rank 1: The Drukharis (53.2)
-// Rank 2: RuSquad (46.7)
+$overlay
+The Drukharis (53.2%)
+RuSquad (46.7%)
 
 $station
 (1734,1624) city 2 #c4A99FB RuSquad

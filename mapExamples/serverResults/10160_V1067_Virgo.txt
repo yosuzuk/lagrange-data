@@ -2,9 +2,10 @@ $name 10160 V1067 Virgo
 $serverName V1067 Virgo
 $size 9000
 
-// Rank 1: 為了聯盟 (44.5)
-// Rank 2: 星光雅筑 (43.7)
-// Rank 3: 天行者 (11.6)
+$overlay
+為了聯盟 (44.5%)
+星光雅筑 (43.7%)
+天行者 (11.6%)
 
 $station
 (3233,4786) city 3 #cE5B36C 為了聯盟

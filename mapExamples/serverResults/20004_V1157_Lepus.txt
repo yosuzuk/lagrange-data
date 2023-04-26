@@ -2,11 +2,12 @@ $name 20004 V1157 Lepus
 $serverName V1157 Lepus
 $size 9000
 
-// Rank 1: Орден (35.0)
-// Rank 2: StarWars (30.6)
-// Rank 3: Deutsche Union (11.6)
-// Rank 4: Mjölnir (11.6)
-// Rank 5: StarWars Rebels (10.9)
+$overlay
+Орден (35.0%)
+StarWars (30.6%)
+Deutsche Union (11.6%)
+Mjölnir (11.6%)
+StarWars Rebels (10.9%)
 
 $station
 (3394,6894) city 2 #cFD7844 Deutsche Union

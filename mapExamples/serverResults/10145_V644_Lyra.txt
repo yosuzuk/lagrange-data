@@ -2,10 +2,11 @@ $name 10145 V644 Lyra
 $serverName V644 Lyra
 $size 9000
 
-// Rank 1: WinterFall (51.8)
-// Rank 2: Dark Empire (34.3)
-// Rank 3: HEAVENS GATE (11.6)
-// Rank 4: VENI VIDI VICI (2.1)
+$overlay
+WinterFall (51.8%)
+Dark Empire (34.3%)
+HEAVENS GATE (11.6%)
+VENI VIDI VICI (2.1%)
 
 $station
 (0124,3475) city 2 #cFD7844 HEAVENS GATE

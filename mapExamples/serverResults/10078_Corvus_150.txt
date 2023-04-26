@@ -2,8 +2,9 @@ $name 10078 Corvus 150
 $serverName Corvus 150
 $size 9000
 
-// Rank 1: Phoenix (55.4)
-// Rank 2: Draco Union (44.5)
+$overlay
+Phoenix (55.4%)
+Draco Union (44.5%)
 
 $station
 (4254,8184) city 2 #c4A99FB Draco Union

@@ -2,8 +2,9 @@ $name 10039 V379 Cancer
 $serverName V379 Cancer
 $size 9000
 
-// Rank 1: The Last Empire (56.9)
-// Rank 2: Regrettables (40.8)
+$overlay
+The Last Empire (56.9%)
+Regrettables (40.8%)
 
 $station
 (1304,2734) city 2 #c4A99FB Regrettables
