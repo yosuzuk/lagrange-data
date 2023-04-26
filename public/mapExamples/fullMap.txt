@@ -1,4 +1,4 @@
-$name Example Map
+$name Example Map: Sagittarius 515
 $serverName Sagittarius 515
 $size 9000
 

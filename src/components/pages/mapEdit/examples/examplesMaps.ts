@@ -10,12 +10,22 @@ export function getExampleMaps() {
     return {
         // 'Full map', language === 'ja' ? 'fullMap_ja.txt' : 'fullMap.txt'
         fullMapExample: createExample({
-            name: 'Full Map Example',
+            name: 'Example Map: Sagittarius 515',
             filename: 'fullMap.txt',
             translated: {
                 ja: {
-                    name: 'サンプルマップ',
+                    name: 'サンプルマップ・いて座515',
                     filename: 'fullMap_ja.txt',
+                },
+            },
+        }),
+        pioneerSystem: createExample({
+            name: 'Example Map: Pioneer System',
+            filename: 'pioneersSystem.txt',
+            translated: {
+                ja: {
+                    name: 'サンプルマップ・パイオニア星系',
+                    filename: 'pioneersSystem_ja.txt',
                 },
             },
         }),
