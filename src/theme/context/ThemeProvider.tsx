@@ -49,6 +49,17 @@ export const ThemeProvider = (props: IProps) => {
                     default: colorModeContextValue.mode === 'dark' ? '#121212' : '#e5e5e5',
                 },
             },
+            typography: {
+                h1: {
+                    fontSize: '1.6rem',
+                },
+                h2: {
+                    fontSize: '1.4rem',
+                },
+                h3: {
+                    fontSize: '1.2rem',
+                },
+            },
         });
 
         theme.typography.body2 = {
@@ -57,7 +68,7 @@ export const ThemeProvider = (props: IProps) => {
                 fontSize: '0.6rem',
             },
         };
-        
+
         theme.typography.caption = {
             ...theme.typography.caption,
             [theme.breakpoints.down('sm')]: {

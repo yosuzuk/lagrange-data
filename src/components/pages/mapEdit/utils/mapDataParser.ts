@@ -1,6 +1,6 @@
 import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapData, IMarker, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType } from '../types/IMapContent';
+import { AreaType, IArea, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
@@ -24,6 +24,7 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         bases: [],
         outposts: [],
         platforms: [],
+        overlayText: [],
     };
     let parseError: IParseMapContentError | null = null;
 
@@ -146,6 +147,10 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
                 if (error) {
                     parseError = error;
                 }
+                return;
+            }
+            case '$overlay': {
+                mapContent.overlayText.push(...parseOverlay(trimmedLine));
                 return;
             }
         }
@@ -592,6 +597,27 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
         },
         null,
     ];
+}
+
+function parseOverlay(rawText: string): IOverlayText[] {
+    const [type, text] = getOverlayTextType(rawText);
+    return text.split('#r').map(line => ({
+        text: line.trim(),
+        type,
+    }));
+}
+
+function getOverlayTextType(line: string): [IOverlayText['type'], string] {
+    if (line.startsWith('### ')) {
+        return ['h3', line.substring(4)];
+    }
+    if (line.startsWith('## ')) {
+        return ['h2', line.substring(3)];
+    }
+    if (line.startsWith('# ')) {
+        return ['h1', line.substring(2)];
+    }
+    return ['normal', line];
 }
 
 function parsePlainText(text: string): string {

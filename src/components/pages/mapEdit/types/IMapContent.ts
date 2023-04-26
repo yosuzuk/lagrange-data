@@ -13,6 +13,7 @@ export interface IMapData {
     bases: IPlayerBase[];
     outposts: IPlayerOutpost[];
     platforms: IPlayerPlatform[];
+    overlayText: IOverlayText[];
 }
 
 export interface IMapContent {
@@ -86,6 +87,11 @@ export interface IPlayerPlatform extends IMapContent {
     contentType: 'platform';
     type: PlatformType;
     station: IStation;
+}
+
+export interface IOverlayText {
+    text: string;
+    type: 'normal' | 'h1' | 'h2' | 'h3';
 }
 
 export interface IParseMapContentError {

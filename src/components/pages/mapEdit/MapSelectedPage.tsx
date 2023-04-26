@@ -13,6 +13,7 @@ import { MapTopRightBar } from './MapTopRightBar';
 import { EditMapButton } from './EditMapButton';
 import { SaveMapButton } from './SaveMapButton';
 import Box from '@mui/material/Box';
+import { MapOverlay } from './MapOverlay';
 
 const MapRenderer = memo(_MapRenderer);
 
@@ -88,6 +89,9 @@ const MapSelectedPage = () => {
                     <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
                     <SaveMapButton saving={saving} save={saveInput} changeState={changeState} allowSave={allowSave} />
                     <EditMapButton setMode={setMode} />
+                    {mapData.overlayText.length > 0 && (
+                        <MapOverlay overlayText={mapData.overlayText} />
+                    )}
                 </>
             )}
         </>

@@ -11,6 +11,7 @@ export const sectionKeywords = [
     '$base',
     '$outpost',
     '$platform',
+    '$overlay',
 ];
 
 export const deprecatedSectionKeywords = [

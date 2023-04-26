@@ -101,6 +101,15 @@ export function getExampleMaps() {
                 },
             },
         }),
+        overlayExample: createExample({
+            name: 'Overlay',
+            filename: 'overlay.txt',
+            translated: {
+                ja: {
+                    name: 'オーバーレイ',
+                },
+            },
+        }),
     } as const;
 }
 
