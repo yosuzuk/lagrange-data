@@ -25,7 +25,7 @@ export const MapRenderer = (props: IProps) => {
     const gridSize = translateSizeToGrid(mapData.size ?? DEFAULT_MAP_SIZE);
 
     const camera = useMemo(() => {
-        const initialCameraDistance = gridSize;
+        const initialCameraDistance = gridSize * 0.7;
         const cameraOptions: ComponentProps<typeof Canvas>['camera'] = {
             position: [
                 // map is rotated by 6° on z-axis, 45° on x-axis

@@ -13,7 +13,7 @@ interface IProps {
 
 export const CameraControls = (props: IProps) => {
     const { targetToMark } = props;
-    const { setCameraDistance } = useCameraDistance();
+    const { setCameraDistance, getCameraDistance } = useCameraDistance();
     const { min, max } = useZoomDistanceMinMax();
     const { invalidate, scene, camera } = useThree();
     const controlRef = useRef<MapControlsImpl>(null);
@@ -27,6 +27,15 @@ export const CameraControls = (props: IProps) => {
         const distance = Math.round(control.getDistance());
         setCameraDistance(distance);
     }, [setCameraDistance]);
+
+    // set initial distance
+    useEffect(() => {
+        if (!controlRef.current || getCameraDistance() !== null) {
+            return;
+        }
+        const cameraDistance = camera.position.distanceTo(controlRef.current.target);
+        setCameraDistance(cameraDistance);
+    }, [camera, getCameraDistance, setCameraDistance]);
 
     // effect for moving camera to a new target
     useEffect(() => {

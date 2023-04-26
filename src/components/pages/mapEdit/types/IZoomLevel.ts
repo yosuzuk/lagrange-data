@@ -18,6 +18,7 @@ export interface IZoomBasedVisibility {
     // city
     cityIcon: boolean;
     subCityIcon: boolean;
+    subCityLabel: boolean;
     cityLabel: boolean;
     cityLabel7up: boolean;
     cityLevel: boolean;
