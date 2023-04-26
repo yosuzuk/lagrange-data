@@ -1,0 +1,217 @@
+$name 10110 V673 Leo
+$serverName V673 Leo
+$size 9000
+
+// Rank 1: 銀河帝国 (34.3)
+// Rank 2: 肉食べたい (30.6)
+// Rank 3: 치즈연방국 (11.6)
+// Rank 4: SPACE ASSAULT (11.6)
+// Rank 5: 한국인 (11.6)
+
+$station
+(4438,3937) city 7 #c49E7C0 SPACE ASSAULT
+(4672,3930) city 5 #c49E7C0 SPACE ASSAULT
+(4712,3667) city 3 #c49E7C0 SPACE ASSAULT
+(4336,3778) city 3 #c49E7C0 SPACE ASSAULT
+(4292,4076) city 2 #c49E7C0 SPACE ASSAULT
+(5534,0334) city 2 #c49E7C0 SPACE ASSAULT
+(5824,1234) city 2 #c49E7C0 SPACE ASSAULT
+(6164,1114) city 2 #c49E7C0 SPACE ASSAULT
+(6204,1454) city 2 #c49E7C0 SPACE ASSAULT
+(6547,2074) city 5 #c49E7C0 SPACE ASSAULT
+(6554,1813) city 5 #c49E7C0 SPACE ASSAULT
+(6360,2040) city 5 #c49E7C0 SPACE ASSAULT
+(6674,0804) city 2 #c49E7C0 SPACE ASSAULT
+(6714,0524) city 2 #c49E7C0 SPACE ASSAULT
+(6834,1694) city 2 #c49E7C0 SPACE ASSAULT
+(6994,0844) city 2 #c49E7C0 SPACE ASSAULT
+(7134,8054) city 2 #c49E7C0 SPACE ASSAULT
+(7234,6654) city 2 #c49E7C0 SPACE ASSAULT
+(7204,2154) city 2 #c49E7C0 SPACE ASSAULT
+(7554,6644) city 2 #c49E7C0 SPACE ASSAULT
+(7490,1968) city 3 #c49E7C0 SPACE ASSAULT
+(7594,2764) city 2 #c49E7C0 SPACE ASSAULT
+(7654,6014) city 2 #c49E7C0 SPACE ASSAULT
+(7834,7234) city 2 #c49E7C0 SPACE ASSAULT
+(7994,6694) city 2 #c49E7C0 SPACE ASSAULT
+(7974,6054) city 2 #c49E7C0 SPACE ASSAULT
+(7884,3895) city 2 #c49E7C0 SPACE ASSAULT
+(7924,7135) city 2 #c49E7C0 SPACE ASSAULT
+(8234,1864) city 2 #c49E7C0 SPACE ASSAULT
+(8044,5515) city 2 #c49E7C0 SPACE ASSAULT
+(8234,2764) city 2 #c49E7C0 SPACE ASSAULT
+(8294,5744) city 2 #c49E7C0 SPACE ASSAULT
+(8334,5084) city 2 #c49E7C0 SPACE ASSAULT
+(8324,4614) city 2 #c49E7C0 SPACE ASSAULT
+(8364,4294) city 2 #c49E7C0 SPACE ASSAULT
+(8399,4838) city 3 #c49E7C0 SPACE ASSAULT
+(8674,3024) city 2 #c49E7C0 SPACE ASSAULT
+(8634,3804) city 2 #c49E7C0 SPACE ASSAULT
+(8794,3334) city 2 #c49E7C0 SPACE ASSAULT
+(8854,4104) city 2 #c49E7C0 SPACE ASSAULT
+(8834,5104) city 2 #c49E7C0 SPACE ASSAULT
+(3289,4291) city 5 #cE5B36C 銀河帝国
+(3214,1064) city 2 #cE5B36C 銀河帝国
+(3381,1509) city 7 #cE5B36C 銀河帝国
+(3492,1690) city 5 #cE5B36C 銀河帝国
+(3311,1707) city 5 #cE5B36C 銀河帝国
+(3507,1548) city 3 #cE5B36C 銀河帝国
+(3519,1440) city 2 #cE5B36C 銀河帝国
+(4164,0534) city 2 #cE5B36C 銀河帝国
+(4306,2762) city 5 #cE5B36C 銀河帝国
+(4116,2754) city 5 #cE5B36C 銀河帝国
+(4330,2620) city 5 #cE5B36C 銀河帝国
+(4419,1651) city 5 #cE5B36C 銀河帝国
+(4435,1539) city 5 #cE5B36C 銀河帝国
+(4520,1578) city 5 #cE5B36C 銀河帝国
+(4532,1748) city 5 #cE5B36C 銀河帝国
+(4654,0614) city 2 #cE5B36C 銀河帝国
+(5134,0534) city 2 #cE5B36C 銀河帝国
+(5489,2731) city 5 #cE5B36C 銀河帝国
+(5250,2720) city 5 #cE5B36C 銀河帝国
+(5378,2899) city 5 #cE5B36C 銀河帝国
+(5452,2969) city 5 #cE5B36C 銀河帝国
+(6187,3574) city 5 #cE5B36C 銀河帝国
+(6194,3313) city 5 #cE5B36C 銀河帝国
+(6000,3540) city 5 #cE5B36C 銀河帝国
+(6252,4238) city 5 #cE5B36C 銀河帝国
+(6530,4038) city 5 #cE5B36C 銀河帝国
+(6395,4079) city 5 #cE5B36C 銀河帝国
+(6529,4251) city 5 #cE5B36C 銀河帝国
+(6681,3149) city 7 #cE5B36C 銀河帝国
+(6792,3330) city 5 #cE5B36C 銀河帝国
+(6611,3347) city 5 #cE5B36C 銀河帝国
+(6807,3188) city 3 #cE5B36C 銀河帝国
+(6819,3080) city 2 #cE5B36C 銀河帝国
+(7009,5711) city 5 #cE5B36C 銀河帝国
+(7594,1624) city 2 #cE5B36C 銀河帝国
+(7794,1604) city 2 #cE5B36C 銀河帝国
+(8004,4215) city 2 #cE5B36C 銀河帝国
+(8164,2515) city 2 #cE5B36C 銀河帝国
+(3130,6718) city 5 #c4A99FB 肉食べたい
+(3129,6931) city 5 #c4A99FB 肉食べたい
+(3694,7804) city 2 #c4A99FB 肉食べたい
+(3814,8254) city 2 #c4A99FB 肉食べたい
+(4254,8184) city 2 #c4A99FB 肉食べたい
+(4384,7994) city 2 #c4A99FB 肉食べたい
+(4673,6013) city 7 #c4A99FB 肉食べたい
+(4912,6230) city 5 #c4A99FB 肉食べたい
+(4731,6207) city 5 #c4A99FB 肉食べたい
+(4946,6077) city 3 #c4A99FB 肉食べたい
+(4559,6250) city 5 #c4A99FB 肉食べたい
+(5334,7744) city 2 #c4A99FB 肉食べたい
+(5956,4951) city 5 #c4A99FB 肉食べたい
+(5573,5106) city 3 #c4A99FB 肉食べたい
+(5701,4896) city 9 #c4A99FB 肉食べたい
+(5907,6254) city 5 #c4A99FB 肉食べたい
+(5914,5993) city 5 #c4A99FB 肉食べたい
+(5720,6220) city 5 #c4A99FB 肉食べたい
+(6732,5698) city 5 #c4A99FB 肉食べたい
+(7010,5498) city 5 #c4A99FB 肉食べたい
+(6875,5539) city 5 #c4A99FB 肉食べたい
+(7394,6964) city 2 #c4A99FB 肉食べたい
+(1044,6595) city 2 #cFD7844 치즈연방국
+(1064,2395) city 2 #cFD7844 치즈연방국
+(1254,5824) city 2 #cFD7844 치즈연방국
+(1454,2654) city 2 #cFD7844 치즈연방국
+(1324,7674) city 2 #cFD7844 치즈연방국
+(1424,2074) city 2 #cFD7844 치즈연방국
+(0274,4314) city 2 #cFD7844 치즈연방국
+(1454,6204) city 2 #cFD7844 치즈연방국
+(1554,1624) city 2 #cFD7844 치즈연방국
+(1614,2344) city 2 #cFD7844 치즈연방국
+(1734,7424) city 2 #cFD7844 치즈연방국
+(1914,7094) city 2 #cFD7844 치즈연방국
+(1926,5522) city 5 #cFD7844 치즈연방국
+(1736,5514) city 5 #cFD7844 치즈연방국
+(1950,5380) city 5 #cFD7844 치즈연방국
+(1874,2024) city 2 #cFD7844 치즈연방국
+(2174,1434) city 2 #cFD7844 치즈연방국
+(0414,5074) city 2 #cFD7844 치즈연방국
+(2434,7284) city 2 #cFD7844 치즈연방국
+(2614,1414) city 2 #cFD7844 치즈연방국
+(2534,0544) city 2 #cFD7844 치즈연방국
+(0454,5784) city 2 #cFD7844 치즈연방국
+(2854,1364) city 2 #cFD7844 치즈연방국
+(0254,4724) city 2 #cFD7844 치즈연방국
+(2852,6918) city 5 #cFD7844 치즈연방국
+(2995,6759) city 5 #cFD7844 치즈연방국
+(3050,4280) city 5 #cFD7844 치즈연방국
+(3178,4459) city 5 #cFD7844 치즈연방국
+(3252,4529) city 5 #cFD7844 치즈연방국
+(0339,4658) city 3 #cFD7844 치즈연방국
+(3621,4869) city 7 #cFD7844 치즈연방국
+(3732,5050) city 5 #cFD7844 치즈연방국
+(3551,5067) city 5 #cFD7844 치즈연방국
+(3747,4908) city 3 #cFD7844 치즈연방국
+(3759,4800) city 2 #cFD7844 치즈연방국
+(3804,0254) city 2 #cFD7844 치즈연방국
+(4304,0174) city 2 #cFD7844 치즈연방국
+(0524,2595) city 2 #cFD7844 치즈연방국
+(0674,3194) city 2 #cFD7844 치즈연방국
+(0604,4354) city 2 #cFD7844 치즈연방국
+(0584,5055) city 2 #cFD7844 치즈연방국
+(0694,5664) city 2 #cFD7844 치즈연방국
+(0690,2808) city 3 #cFD7844 치즈연방국
+(0814,6844) city 2 #cFD7844 치즈연방국
+(0924,4274) city 2 #cFD7844 치즈연방국
+(1034,2694) city 2 #cFD7844 치즈연방국
+(1114,1964) city 2 #cFD7844 치즈연방국
+(1114,4984) city 2 #cFD7844 치즈연방국
+(1234,7134) city 2 #cFD7844 치즈연방국
+(1104,5594) city 2 #cFD7844 치즈연방국
+(1930,7808) city 3 #cE63A3A 한국인
+(1984,8154) city 2 #cE63A3A 한국인
+(2254,7604) city 2 #cE63A3A 한국인
+(2224,8055) city 2 #cE63A3A 한국인
+(2484,8394) city 2 #cE63A3A 한국인
+(2564,8115) city 2 #cE63A3A 한국인
+(3114,7804) city 2 #cE63A3A 한국인
+(3374,7824) city 2 #cE63A3A 한국인
+(3374,8444) city 2 #cE63A3A 한국인
+(3661,7149) city 7 #cE63A3A 한국인
+(3772,7330) city 5 #cE63A3A 한국인
+(3591,7347) city 5 #cE63A3A 한국인
+(3787,7188) city 3 #cE63A3A 한국인
+(3799,7080) city 2 #cE63A3A 한국인
+(4194,8544) city 2 #cE63A3A 한국인
+(4764,8815) city 2 #cE63A3A 한국인
+(5314,8694) city 2 #cE63A3A 한국인
+(5634,8574) city 2 #cE63A3A 한국인
+(5694,7924) city 2 #cE63A3A 한국인
+(5784,8574) city 2 #cE63A3A 한국인
+(6024,8535) city 2 #cE63A3A 한국인
+(6406,7442) city 5 #cE63A3A 한국인
+(6216,7434) city 5 #cE63A3A 한국인
+(6430,7300) city 5 #cE63A3A 한국인
+(6430,8049) city 3 #cE63A3A 한국인
+(6814,7914) city 2 #cE63A3A 한국인
+(6754,7594) city 2 #cE63A3A 한국인
+(7254,7554) city 2 #cE63A3A 한국인
+(7504,7674) city 2 #cE63A3A 한국인
+
+$planet
+(6632,3254) large
+(6592,3356)(6632,3254) small
+(6778,3205)(6632,3254) small
+(3332,1614) large
+(3292,1716)(3332,1614) small
+(3478,1565)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3612,7254) large
+(3572,7356)(3612,7254) small
+(4691,3682)(4512,3854) small
+(4512,3854) large
+(4575,3910)(4512,3854) small
+(4309,3796)(4512,3854) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5775,5009) large
+(5612,5130)(5775,5009) small
+(4712,6216)(4752,6154) small
+(4918,6095)(4752,6154) small
+(4752,6154) large
+(4499,4497) medium

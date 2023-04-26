@@ -1,0 +1,218 @@
+$name 10010 Antlia 151
+$serverName Antlia 151
+$size 9000
+
+// Rank 1: New World Order (54.0)
+// Rank 2: ВАВИЛОН (32.1)
+// Rank 3: Exodus (13.8)
+
+$station
+(1704,7534) city 2 #cE5B36C New World Order
+(1684,7215) city 2 #cE5B36C New World Order
+(1967,5614) city 5 #cE5B36C New World Order
+(1780,5580) city 5 #cE5B36C New World Order
+(1970,7869) city 3 #cE5B36C New World Order
+(1964,8134) city 2 #cE5B36C New World Order
+(2294,7614) city 2 #cE5B36C New World Order
+(2852,6918) city 5 #cE5B36C New World Order
+(3130,6718) city 5 #cE5B36C New World Order
+(2995,6759) city 5 #cE5B36C New World Order
+(3129,6931) city 5 #cE5B36C New World Order
+(2944,7914) city 2 #cE5B36C New World Order
+(2964,8574) city 2 #cE5B36C New World Order
+(3289,4291) city 5 #cE5B36C New World Order
+(3050,4280) city 5 #cE5B36C New World Order
+(3178,4459) city 5 #cE5B36C New World Order
+(3252,4529) city 5 #cE5B36C New World Order
+(3494,7814) city 2 #cE5B36C New World Order
+(3621,4869) city 7 #cE5B36C New World Order
+(3732,5050) city 5 #cE5B36C New World Order
+(3551,5067) city 5 #cE5B36C New World Order
+(3747,4908) city 3 #cE5B36C New World Order
+(3759,4800) city 2 #cE5B36C New World Order
+(3538,7337) city 7 #cE5B36C New World Order
+(3772,7330) city 5 #cE5B36C New World Order
+(3812,7067) city 3 #cE5B36C New World Order
+(3436,7178) city 3 #cE5B36C New World Order
+(3442,7446) city 2 #cE5B36C New World Order
+(3442,7446) city 7 #cE5B36C New World Order
+(4801,6049) city 7 #cE5B36C New World Order
+(4912,6230) city 5 #cE5B36C New World Order
+(4731,6247) city 5 #cE5B36C New World Order
+(4927,6088) city 3 #cE5B36C New World Order
+(4939,5980) city 2 #cE5B36C New World Order
+(5701,4896) city 3 #cE5B36C New World Order
+(5624,7735) city 2 #cE5B36C New World Order
+(5866,6162) city 5 #cE5B36C New World Order
+(5676,6154) city 5 #cE5B36C New World Order
+(5890,6020) city 5 #cE5B36C New World Order
+(5784,8574) city 2 #cE5B36C New World Order
+(6134,8074) city 2 #cE5B36C New World Order
+(6074,7734) city 2 #cE5B36C New World Order
+(6174,8434) city 2 #cE5B36C New World Order
+(6406,7442) city 5 #cE5B36C New World Order
+(6216,7434) city 5 #cE5B36C New World Order
+(6430,7300) city 5 #cE5B36C New World Order
+(6574,8224) city 2 #cE5B36C New World Order
+(6379,7978) city 3 #cE5B36C New World Order
+(6734,7234) city 2 #cE5B36C New World Order
+(6694,7924) city 2 #cE5B36C New World Order
+(6854,6924) city 2 #cE5B36C New World Order
+(6904,8015) city 2 #cE5B36C New World Order
+(7314,7574) city 2 #cE5B36C New World Order
+(0934,6824) city 2 #cE5B36C New World Order
+(0874,5314) city 2 #cE5B36C New World Order
+(1064,6594) city 2 #cE5B36C New World Order
+(1064,7234) city 2 #cE5B36C New World Order
+(1274,5494) city 2 #cE5B36C New World Order
+(1274,6794) city 2 #cE5B36C New World Order
+(1494,6214) city 2 #cE5B36C New World Order
+(1474,6924) city 2 #cE5B36C New World Order
+(1734,2334) city 2 #c4A99FB ВАВИЛОН
+(1874,2024) city 2 #c4A99FB ВАВИЛОН
+(2134,1454) city 2 #c4A99FB ВАВИЛОН
+(2234,1794) city 2 #c4A99FB ВАВИЛОН
+(3014,1034) city 2 #c4A99FB ВАВИЛОН
+(3004,0794) city 2 #c4A99FB ВАВИЛОН
+(3381,1509) city 7 #c4A99FB ВАВИЛОН
+(3492,1690) city 5 #c4A99FB ВАВИЛОН
+(3311,1707) city 5 #c4A99FB ВАВИЛОН
+(3507,1548) city 3 #c4A99FB ВАВИЛОН
+(3519,1440) city 2 #c4A99FB ВАВИЛОН
+(3574,0314) city 2 #c4A99FB ВАВИЛОН
+(3974,0154) city 2 #c4A99FB ВАВИЛОН
+(4194,0934) city 2 #c4A99FB ВАВИЛОН
+(4306,2762) city 5 #c4A99FB ВАВИЛОН
+(4116,2754) city 5 #c4A99FB ВАВИЛОН
+(4330,2620) city 5 #c4A99FB ВАВИЛОН
+(4304,0174) city 2 #c4A99FB ВАВИЛОН
+(4569,1511) city 5 #c4A99FB ВАВИЛОН
+(4330,1500) city 5 #c4A99FB ВАВИЛОН
+(4458,1679) city 5 #c4A99FB ВАВИЛОН
+(4532,1749) city 5 #c4A99FB ВАВИЛОН
+(4561,3749) city 7 #c4A99FB ВАВИЛОН
+(4672,3930) city 5 #c4A99FB ВАВИЛОН
+(4687,3788) city 3 #c4A99FB ВАВИЛОН
+(4699,3680) city 2 #c4A99FB ВАВИЛОН
+(4384,1035) city 2 #c4A99FB ВАВИЛОН
+(0584,2574) city 2 #c4A99FB ВАВИЛОН
+(5094,0514) city 2 #c4A99FB ВАВИЛОН
+(5489,2731) city 5 #c4A99FB ВАВИЛОН
+(5250,2720) city 5 #c4A99FB ВАВИЛОН
+(5378,2899) city 5 #c4A99FB ВАВИЛОН
+(5452,2969) city 5 #c4A99FB ВАВИЛОН
+(6074,0424) city 2 #c4A99FB ВАВИЛОН
+(6170,3340) city 5 #c4A99FB ВАВИЛОН
+(6184,1434) city 2 #c4A99FB ВАВИЛОН
+(6144,1115) city 2 #c4A99FB ВАВИЛОН
+(6304,0574) city 2 #c4A99FB ВАВИЛОН
+(6547,2074) city 5 #c4A99FB ВАВИЛОН
+(6554,1813) city 5 #c4A99FB ВАВИЛОН
+(6360,2040) city 5 #c4A99FB ВАВИЛОН
+(6792,3330) city 5 #c4A99FB ВАВИЛОН
+(6684,1795) city 2 #c4A99FB ВАВИЛОН
+(6784,1454) city 2 #c4A99FB ВАВИЛОН
+(0624,2255) city 2 #c4A99FB ВАВИЛОН
+(7104,1514) city 2 #c4A99FB ВАВИЛОН
+(0730,2869) city 3 #c4A99FB ВАВИЛОН
+(7204,2154) city 2 #c4A99FB ВАВИЛОН
+(7444,1754) city 2 #c4A99FB ВАВИЛОН
+(7490,1968) city 3 #c4A99FB ВАВИЛОН
+(7564,2534) city 2 #c4A99FB ВАВИЛОН
+(7764,2034) city 2 #c4A99FB ВАВИЛОН
+(8074,2234) city 2 #c4A99FB ВАВИЛОН
+(1044,2414) city 2 #c4A99FB ВАВИЛОН
+(1084,2074) city 2 #c4A99FB ВАВИЛОН
+(1424,2074) city 2 #c4A99FB ВАВИЛОН
+(5956,4951) city 5 #cFD7844 Exodus
+(6146,3482) city 5 #cFD7844 Exodus
+(5956,3474) city 5 #cFD7844 Exodus
+(6492,4288) city 5 #cFD7844 Exodus
+(6480,4118) city 5 #cFD7844 Exodus
+(6395,4079) city 5 #cFD7844 Exodus
+(6379,4191) city 5 #cFD7844 Exodus
+(6558,3337) city 7 #cFD7844 Exodus
+(6832,3067) city 3 #cFD7844 Exodus
+(6456,3178) city 3 #cFD7844 Exodus
+(6462,3446) city 2 #cFD7844 Exodus
+(6462,3446) city 7 #cFD7844 Exodus
+(7009,5511) city 5 #cFD7844 Exodus
+(6770,5500) city 5 #cFD7844 Exodus
+(6898,5679) city 5 #cFD7844 Exodus
+(6972,5749) city 5 #cFD7844 Exodus
+(7384,7074) city 2 #cFD7844 Exodus
+(7564,2874) city 2 #cFD7844 Exodus
+(7654,6014) city 2 #cFD7844 Exodus
+(7684,7354) city 2 #cFD7844 Exodus
+(7994,6694) city 2 #cFD7844 Exodus
+(8054,6024) city 2 #cFD7844 Exodus
+(8074,4964) city 2 #cFD7844 Exodus
+(7994,6384) city 2 #cFD7844 Exodus
+(8234,4084) city 2 #cFD7844 Exodus
+(8044,5515) city 2 #cFD7844 Exodus
+(8174,3444) city 2 #cFD7844 Exodus
+(8124,2875) city 2 #cFD7844 Exodus
+(8374,3074) city 2 #cFD7844 Exodus
+(8244,6714) city 2 #cFD7844 Exodus
+(8454,3774) city 2 #cFD7844 Exodus
+(8284,5174) city 2 #cFD7844 Exodus
+(8344,4634) city 2 #cFD7844 Exodus
+(8364,4294) city 2 #cFD7844 Exodus
+(8554,6204) city 2 #cFD7844 Exodus
+(8450,4909) city 3 #cFD7844 Exodus
+(8554,2724) city 2 #cFD7844 Exodus
+(8584,3434) city 2 #cFD7844 Exodus
+(8634,5784) city 2 #cFD7844 Exodus
+(8854,4464) city 2 #cFD7844 Exodus
+
+$planet
+(6811,3082)(6632,3254) small
+(6811,3082)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6632,3254) large
+(6632,3254)(6632,3254) small
+(6429,3196)(6632,3254) small
+(6429,3196)(6632,3254) small
+(3332,1614) large
+(3332,1614)(3332,1614) small
+(3478,1565)(3332,1614) small
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3572,4974) large
+(3572,4974)(3572,4974) small
+(3718,4925)(3572,4974) small
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3532,5076)(3572,4974) small
+(4712,6256)(4752,6154) small
+(4712,6256)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4752,6154) large
+(4752,6154)(4752,6154) small
+(4512,3854) large
+(4512,3854)(4512,3854) small
+(4472,3956)(4512,3854) small
+(4472,3956)(4512,3854) small
+(4658,3805)(4512,3854) small
+(4658,3805)(4512,3854) small
+(5775,5009) large
+(5775,5009)(5775,5009) small
+(5883,4981)(5775,5009) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5612,5130)(5775,5009) small
+(5612,5130)(5775,5009) small
+(4499,4497) large
+(4499,4497)(4499,4497) small
+(3791,7082)(3612,7254) small
+(3791,7082)(3612,7254) small
+(3675,7310)(3612,7254) small
+(3675,7310)(3612,7254) small
+(3409,7196)(3612,7254) small
+(3409,7196)(3612,7254) small
+(3612,7254) large
+(3612,7254)(3612,7254) small

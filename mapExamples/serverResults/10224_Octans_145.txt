@@ -1,0 +1,159 @@
+$name 10224 Octans 145
+$serverName Octans 145
+$size 9000
+
+// Rank 1: legion (35.0)
+// Rank 2: Memoria Atelier (32.8)
+// Rank 3: 宇宙 (32.1)
+
+$station
+(1770,1408) city 3 #cE5B36C legion
+(2634,0504) city 2 #cE5B36C legion
+(2804,1454) city 2 #cE5B36C legion
+(3414,0294) city 2 #cE5B36C legion
+(4066,3456) city 5 #cE5B36C legion
+(3894,0174) city 2 #cE5B36C legion
+(4419,1551) city 5 #cE5B36C legion
+(4534,0934) city 2 #cE5B36C legion
+(5221,4709) city 7 #cE5B36C legion
+(5347,4748) city 3 #cE5B36C legion
+(5359,4640) city 2 #cE5B36C legion
+(5269,3751) city 5 #cE5B36C legion
+(5289,5511) city 5 #cE5B36C legion
+(5252,5749) city 5 #cE5B36C legion
+(5384,1034) city 2 #cE5B36C legion
+(5399,0678) city 3 #cE5B36C legion
+(5741,5969) city 7 #cE5B36C legion
+(5867,6008) city 3 #cE5B36C legion
+(5879,5900) city 2 #cE5B36C legion
+(6126,3362) city 5 #cE5B36C legion
+(6150,3220) city 5 #cE5B36C legion
+(6374,0984) city 2 #cE5B36C legion
+(6374,0454) city 2 #cE5B36C legion
+(6252,4258) city 5 #cE5B36C legion
+(6529,4271) city 5 #cE5B36C legion
+(6430,8049) city 3 #cE5B36C legion
+(6754,0534) city 2 #cE5B36C legion
+(6901,3129) city 7 #cE5B36C legion
+(7027,3168) city 3 #cE5B36C legion
+(7039,3060) city 2 #cE5B36C legion
+(6784,1454) city 2 #cE5B36C legion
+(6804,7014) city 2 #cE5B36C legion
+(6899,5671) city 5 #cE5B36C legion
+(7012,5768) city 5 #cE5B36C legion
+(7014,2024) city 2 #cE5B36C legion
+(7194,1394) city 2 #cE5B36C legion
+(7414,6984) city 2 #cE5B36C legion
+(7494,2134) city 2 #cE5B36C legion
+(7514,6314) city 2 #cE5B36C legion
+(7604,7355) city 2 #cE5B36C legion
+(7914,1594) city 2 #cE5B36C legion
+(7764,6815) city 2 #cE5B36C legion
+(7924,2354) city 2 #cE5B36C legion
+(8034,4594) city 2 #cE5B36C legion
+(8034,6394) city 2 #cE5B36C legion
+(8294,3424) city 2 #cE5B36C legion
+(8254,3084) city 2 #cE5B36C legion
+(8184,5855) city 2 #cE5B36C legion
+(8434,3724) city 2 #cE5B36C legion
+(8204,4675) city 2 #cE5B36C legion
+(8654,2704) city 2 #cE5B36C legion
+(8674,3024) city 2 #cE5B36C legion
+(8530,4929) city 3 #cE5B36C legion
+(8734,3324) city 2 #cE5B36C legion
+(8794,4134) city 2 #cE5B36C legion
+(1244,1734) city 2 #cFD7844 宇宙
+(1554,1314) city 2 #cFD7844 宇宙
+(1898,3057) city 7 #cFD7844 宇宙
+(2172,2787) city 3 #cFD7844 宇宙
+(1796,2898) city 3 #cFD7844 宇宙
+(1752,3196) city 2 #cFD7844 宇宙
+(2590,1420) city 5 #cFD7844 宇宙
+(2640,3820) city 5 #cFD7844 宇宙
+(3034,8154) city 2 #cFD7844 宇宙
+(3774,8664) city 2 #cFD7844 宇宙
+(5332,4890) city 5 #cFD7844 宇宙
+(0634,2484) city 2 #cFD7844 宇宙
+(5314,8684) city 2 #cFD7844 宇宙
+(5374,7774) city 2 #cFD7844 宇宙
+(5852,6150) city 5 #cFD7844 宇宙
+(5664,8054) city 2 #cFD7844 宇宙
+(6281,7249) city 7 #cFD7844 宇宙
+(6392,7430) city 5 #cFD7844 宇宙
+(6407,7288) city 3 #cFD7844 宇宙
+(6419,7180) city 2 #cFD7844 宇宙
+(6354,1324) city 2 #cFD7844 宇宙
+(6584,7335) city 2 #cFD7844 宇宙
+(6604,7695) city 2 #cFD7844 宇宙
+(7012,3310) city 5 #cFD7844 宇宙
+(6866,6502) city 5 #cFD7844 宇宙
+(6890,6360) city 5 #cFD7844 宇宙
+(7054,7914) city 2 #cFD7844 宇宙
+(7094,7244) city 2 #cFD7844 宇宙
+(0854,2134) city 2 #cFD7844 宇宙
+(7384,7675) city 2 #cFD7844 宇宙
+(7790,5560) city 5 #cFD7844 宇宙
+(0894,1804) city 2 #cFD7844 宇宙
+(8034,7024) city 2 #cFD7844 宇宙
+(8494,6114) city 2 #cFD7844 宇宙
+(1154,6804) city 2 #c4A99FB Memoria Atelier
+(1374,6494) city 2 #c4A99FB Memoria Atelier
+(1444,7034) city 2 #c4A99FB Memoria Atelier
+(1794,7824) city 2 #c4A99FB Memoria Atelier
+(1660,5040) city 5 #c4A99FB Memoria Atelier
+(1889,5751) city 5 #c4A99FB Memoria Atelier
+(1650,5740) city 5 #c4A99FB Memoria Atelier
+(1778,5919) city 5 #c4A99FB Memoria Atelier
+(2132,3050) city 5 #c4A99FB Memoria Atelier
+(1950,7708) city 3 #c4A99FB Memoria Atelier
+(0204,5575) city 2 #c4A99FB Memoria Atelier
+(2224,7714) city 2 #c4A99FB Memoria Atelier
+(2454,7934) city 2 #c4A99FB Memoria Atelier
+(2434,7284) city 2 #c4A99FB Memoria Atelier
+(0224,5915) city 2 #c4A99FB Memoria Atelier
+(3521,5389) city 7 #c4A99FB Memoria Atelier
+(3632,5570) city 5 #c4A99FB Memoria Atelier
+(3647,5428) city 3 #c4A99FB Memoria Atelier
+(3659,5320) city 2 #c4A99FB Memoria Atelier
+(0324,2955) city 2 #c4A99FB Memoria Atelier
+(0359,4718) city 3 #c4A99FB Memoria Atelier
+(3814,3702) city 9 #c4A99FB Memoria Atelier
+(3786,3411) city 5 #c4A99FB Memoria Atelier
+(4824,8814) city 2 #c4A99FB Memoria Atelier
+(0634,3584) city 2 #c4A99FB Memoria Atelier
+(0524,4355) city 2 #c4A99FB Memoria Atelier
+(0544,4695) city 2 #c4A99FB Memoria Atelier
+(0154,3784) city 2 #c4A99FB Memoria Atelier
+(0674,6524) city 2 #c4A99FB Memoria Atelier
+(0814,4934) city 2 #c4A99FB Memoria Atelier
+(0664,6315) city 2 #c4A99FB Memoria Atelier
+(0954,4164) city 2 #c4A99FB Memoria Atelier
+(0944,4714) city 2 #c4A99FB Memoria Atelier
+(1114,4984) city 2 #c4A99FB Memoria Atelier
+(1114,6144) city 2 #c4A99FB Memoria Atelier
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

@@ -1,0 +1,155 @@
+$name 10137 Piscis Austrinus SS
+$serverName Piscis Austrinus SS
+$size 9000
+
+// Rank 1: Reset (62.7)
+// Rank 2: デュシス (11.6)
+// Rank 5: RUSSIA (4.3)
+
+$station
+(1574,1944) city 2 #cE5B36C Reset
+(1364,7035) city 2 #cE5B36C Reset
+(1538,3337) city 7 #cE5B36C Reset
+(1772,3330) city 5 #cE5B36C Reset
+(1812,3067) city 3 #cE5B36C Reset
+(1436,3178) city 3 #cE5B36C Reset
+(1392,3476) city 2 #cE5B36C Reset
+(1514,1304) city 2 #cE5B36C Reset
+(1614,2324) city 2 #cE5B36C Reset
+(1974,5033) city 5 #cE5B36C Reset
+(1780,5260) city 5 #cE5B36C Reset
+(1974,1094) city 2 #cE5B36C Reset
+(2234,0724) city 2 #cE5B36C Reset
+(2254,7604) city 2 #cE5B36C Reset
+(2454,7934) city 2 #cE5B36C Reset
+(2574,1414) city 2 #cE5B36C Reset
+(2574,0554) city 2 #cE5B36C Reset
+(2564,8434) city 2 #cE5B36C Reset
+(2714,7934) city 2 #cE5B36C Reset
+(0304,2915) city 2 #cE5B36C Reset
+(2934,1054) city 2 #cE5B36C Reset
+(3092,6968) city 5 #cE5B36C Reset
+(2884,7935) city 2 #cE5B36C Reset
+(3114,8124) city 2 #cE5B36C Reset
+(3526,4936) city 5 #cE5B36C Reset
+(3246,4891) city 5 #cE5B36C Reset
+(3273,5174) city 9 #cE5B36C Reset
+(0370,4808) city 3 #cE5B36C Reset
+(3464,0734) city 2 #cE5B36C Reset
+(3633,5893) city 7 #cE5B36C Reset
+(3872,6110) city 5 #cE5B36C Reset
+(3691,6087) city 5 #cE5B36C Reset
+(3906,5957) city 3 #cE5B36C Reset
+(3874,0944) city 2 #cE5B36C Reset
+(3764,8454) city 2 #cE5B36C Reset
+(3934,0604) city 2 #cE5B36C Reset
+(3858,4357) city 7 #cE5B36C Reset
+(4092,4350) city 5 #cE5B36C Reset
+(3756,4198) city 3 #cE5B36C Reset
+(3712,4496) city 2 #cE5B36C Reset
+(3974,0154) city 2 #cE5B36C Reset
+(4214,8544) city 2 #cE5B36C Reset
+(4424,0735) city 2 #cE5B36C Reset
+(0754,2464) city 2 #cE5B36C Reset
+(4844,0994) city 2 #cE5B36C Reset
+(4824,7974) city 2 #cE5B36C Reset
+(4904,8494) city 2 #cE5B36C Reset
+(5124,0654) city 2 #cE5B36C Reset
+(5559,3800) city 2 #cE5B36C Reset
+(5212,2918) city 5 #cE5B36C Reset
+(5490,2718) city 5 #cE5B36C Reset
+(5355,2759) city 5 #cE5B36C Reset
+(5489,2931) city 5 #cE5B36C Reset
+(0754,4224) city 2 #cE5B36C Reset
+(5632,7290) city 5 #cE5B36C Reset
+(5296,7138) city 3 #cE5B36C Reset
+(5252,7436) city 2 #cE5B36C Reset
+(5494,0324) city 2 #cE5B36C Reset
+(5752,5468) city 5 #cE5B36C Reset
+(5914,5993) city 5 #cE5B36C Reset
+(5720,6220) city 5 #cE5B36C Reset
+(5984,8194) city 2 #cE5B36C Reset
+(6146,3482) city 5 #cE5B36C Reset
+(5956,3474) city 5 #cE5B36C Reset
+(6170,3340) city 5 #cE5B36C Reset
+(6124,1455) city 2 #cE5B36C Reset
+(6350,7400) city 5 #cE5B36C Reset
+(6492,4288) city 5 #cE5B36C Reset
+(6379,4191) city 5 #cE5B36C Reset
+(6314,2073) city 5 #cE5B36C Reset
+(0704,2254) city 2 #cE5B36C Reset
+(6519,3430) city 5 #cE5B36C Reset
+(0679,2798) city 3 #cE5B36C Reset
+(7014,2014) city 2 #cE5B36C Reset
+(7089,5531) city 5 #cE5B36C Reset
+(0814,6844) city 2 #cE5B36C Reset
+(7194,1394) city 2 #cE5B36C Reset
+(7124,1814) city 2 #cE5B36C Reset
+(7174,6584) city 2 #cE5B36C Reset
+(7314,7564) city 2 #cE5B36C Reset
+(7404,1414) city 2 #cE5B36C Reset
+(7444,6714) city 2 #cE5B36C Reset
+(0834,5284) city 2 #cE5B36C Reset
+(0944,2774) city 2 #cE5B36C Reset
+(0984,6595) city 2 #cE5B36C Reset
+(1194,5534) city 2 #cE5B36C Reset
+(1194,6814) city 2 #cE5B36C Reset
+(1224,2394) city 2 #cE5B36C Reset
+(6450,1940) city 5 #cE63A3A RUSSIA
+(6872,3410) city 5 #cE63A3A RUSSIA
+(6691,3387) city 5 #cE63A3A RUSSIA
+(6906,3257) city 3 #cE63A3A RUSSIA
+(7734,5984) city 2 #cE63A3A RUSSIA
+(8054,6024) city 2 #cE63A3A RUSSIA
+(7924,5094) city 2 #cE63A3A RUSSIA
+(7884,4695) city 2 #cE63A3A RUSSIA
+(8104,5494) city 2 #cE63A3A RUSSIA
+(8334,6634) city 2 #cE63A3A RUSSIA
+(8454,6104) city 2 #cE63A3A RUSSIA
+(8399,4838) city 3 #cE63A3A RUSSIA
+(8524,3114) city 2 #cE63A3A RUSSIA
+(8774,3634) city 2 #cE63A3A RUSSIA
+(8784,5194) city 2 #cE63A3A RUSSIA
+(5421,3869) city 7 #c4A99FB デュシス
+(5532,4050) city 5 #c4A99FB デュシス
+(5547,3908) city 3 #c4A99FB デュシス
+(5639,5371) city 5 #c4A99FB デュシス
+(6914,1664) city 2 #c4A99FB デュシス
+(7490,1968) city 3 #c4A99FB デュシス
+(7734,2424) city 2 #c4A99FB デュシス
+(7744,2014) city 2 #c4A99FB デュシス
+(7744,3214) city 2 #c4A99FB デュシス
+(7934,2244) city 2 #c4A99FB デュシス
+(7884,2914) city 2 #c4A99FB デュシス
+(8114,3774) city 2 #c4A99FB デュシス
+(8104,3534) city 2 #c4A99FB デュシス
+(8254,3084) city 2 #c4A99FB デュシス
+(8434,3744) city 2 #c4A99FB デュシス
+
+$planet
+(3932,4274) large
+(3729,4216)(3932,4274) small
+(4111,4102)(3932,4274) small
+(3995,4330)(3932,4274) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1791,3082)(1612,3254) small
+(1675,3310)(1612,3254) small
+(1612,3254) large
+(1409,3196)(1612,3254) small
+(3399,5072) large
+(3414,5163)(3399,5072) small
+(3201,4960)(3399,5072) small
+(3562,4960)(3399,5072) small
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(5372,3974) large
+(5332,4076)(5372,3974) small
+(5518,3925)(5372,3974) small
+(5651,7042)(5472,7214) small
+(5269,7156)(5472,7214) small
+(5472,7214) large
+(5535,7270)(5472,7214) small
+(4499,4497) medium

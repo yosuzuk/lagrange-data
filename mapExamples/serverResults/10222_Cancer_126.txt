@@ -1,0 +1,177 @@
+$name 10222 Cancer 126
+$serverName Cancer 126
+$size 9000
+
+// Rank 1: Adebow (51.8)
+// Rank 2: Noxus Knight (32.1)
+// Rank 3: Inter Corp (11.6)
+// Rank 4: TheUnion (4.3)
+
+$station
+(1770,1408) city 3 #cE5B36C Adebow
+(1898,3057) city 7 #cE5B36C Adebow
+(2132,3050) city 5 #cE5B36C Adebow
+(2172,2787) city 3 #cE5B36C Adebow
+(1796,2898) city 3 #cE5B36C Adebow
+(1752,3196) city 2 #cE5B36C Adebow
+(0204,5575) city 2 #cE5B36C Adebow
+(2314,1064) city 2 #cE5B36C Adebow
+(2566,1562) city 5 #cE5B36C Adebow
+(2376,1554) city 5 #cE5B36C Adebow
+(2590,1420) city 5 #cE5B36C Adebow
+(0224,5915) city 2 #cE5B36C Adebow
+(2634,0504) city 2 #cE5B36C Adebow
+(2834,3593) city 5 #cE5B36C Adebow
+(2640,3820) city 5 #cE5B36C Adebow
+(2804,1454) city 2 #cE5B36C Adebow
+(2984,0774) city 2 #cE5B36C Adebow
+(3521,5389) city 7 #cE5B36C Adebow
+(0324,2955) city 2 #cE5B36C Adebow
+(3434,0334) city 2 #cE5B36C Adebow
+(3814,3702) city 9 #cE5B36C Adebow
+(3786,3411) city 5 #cE5B36C Adebow
+(4066,3456) city 5 #cE5B36C Adebow
+(3894,0174) city 2 #cE5B36C Adebow
+(4174,0504) city 2 #cE5B36C Adebow
+(4419,1551) city 5 #cE5B36C Adebow
+(4534,0934) city 2 #cE5B36C Adebow
+(4654,0614) city 2 #cE5B36C Adebow
+(5094,0504) city 2 #cE5B36C Adebow
+(5221,4709) city 7 #cE5B36C Adebow
+(5347,4748) city 3 #cE5B36C Adebow
+(5359,4640) city 2 #cE5B36C Adebow
+(5269,3751) city 5 #cE5B36C Adebow
+(5135,3579) city 5 #cE5B36C Adebow
+(5270,3538) city 5 #cE5B36C Adebow
+(4992,3738) city 5 #cE5B36C Adebow
+(5289,5511) city 5 #cE5B36C Adebow
+(5252,5749) city 5 #cE5B36C Adebow
+(5154,0144) city 2 #cE5B36C Adebow
+(0634,2484) city 2 #cE5B36C Adebow
+(5259,0638) city 3 #cE5B36C Adebow
+(5384,1034) city 2 #cE5B36C Adebow
+(5867,6008) city 3 #cE5B36C Adebow
+(5914,0794) city 2 #cE5B36C Adebow
+(6126,3362) city 5 #cE5B36C Adebow
+(0524,4355) city 2 #cE5B36C Adebow
+(6354,1324) city 2 #cE5B36C Adebow
+(6374,0474) city 2 #cE5B36C Adebow
+(6754,0534) city 2 #cE5B36C Adebow
+(0814,4934) city 2 #cE5B36C Adebow
+(7194,1394) city 2 #cE5B36C Adebow
+(0954,4164) city 2 #cE5B36C Adebow
+(0974,3024) city 2 #cE5B36C Adebow
+(0944,4714) city 2 #cE5B36C Adebow
+(2827,3854) city 5 #cFD7844 Inter Corp
+(3451,5587) city 5 #cFD7844 Inter Corp
+(3814,8324) city 2 #cFD7844 Inter Corp
+(4004,7995) city 2 #cFD7844 Inter Corp
+(4824,8814) city 2 #cFD7844 Inter Corp
+(5050,5500) city 5 #cFD7844 Inter Corp
+(5314,8684) city 2 #cFD7844 Inter Corp
+(5374,7774) city 2 #cFD7844 Inter Corp
+(5671,6167) city 5 #cFD7844 Inter Corp
+(5644,8034) city 2 #cFD7844 Inter Corp
+(6134,8034) city 2 #cFD7844 Inter Corp
+(6281,7249) city 7 #cFD7844 Inter Corp
+(6392,7430) city 5 #cFD7844 Inter Corp
+(6211,7447) city 5 #cFD7844 Inter Corp
+(6407,7288) city 3 #cFD7844 Inter Corp
+(6419,7180) city 2 #cFD7844 Inter Corp
+(6344,7794) city 2 #cFD7844 Inter Corp
+(6430,8049) city 3 #cFD7844 Inter Corp
+(6584,7335) city 2 #cFD7844 Inter Corp
+(6604,7695) city 2 #cFD7844 Inter Corp
+(6866,6502) city 5 #cFD7844 Inter Corp
+(6676,6494) city 5 #cFD7844 Inter Corp
+(6890,6360) city 5 #cFD7844 Inter Corp
+(6804,7014) city 2 #cFD7844 Inter Corp
+(6915,5559) city 5 #cFD7844 Inter Corp
+(7000,5598) city 5 #cFD7844 Inter Corp
+(7012,5768) city 5 #cFD7844 Inter Corp
+(7054,7914) city 2 #cFD7844 Inter Corp
+(7094,7244) city 2 #cFD7844 Inter Corp
+(7514,7014) city 2 #cFD7844 Inter Corp
+(7514,6314) city 2 #cFD7844 Inter Corp
+(7544,7675) city 2 #cFD7844 Inter Corp
+(7604,7355) city 2 #cFD7844 Inter Corp
+(1660,5040) city 5 #c4A99FB Noxus Knight
+(5332,4890) city 5 #c4A99FB Noxus Knight
+(5741,5969) city 7 #c4A99FB Noxus Knight
+(5852,6150) city 5 #c4A99FB Noxus Knight
+(5879,5900) city 2 #c4A99FB Noxus Knight
+(6150,3220) city 5 #c4A99FB Noxus Knight
+(6252,4258) city 5 #c4A99FB Noxus Knight
+(6529,4271) city 5 #c4A99FB Noxus Knight
+(6901,3129) city 7 #c4A99FB Noxus Knight
+(7012,3310) city 5 #c4A99FB Noxus Knight
+(6831,3327) city 5 #c4A99FB Noxus Knight
+(7027,3168) city 3 #c4A99FB Noxus Knight
+(7039,3060) city 2 #c4A99FB Noxus Knight
+(6784,1454) city 2 #c4A99FB Noxus Knight
+(6899,5671) city 5 #c4A99FB Noxus Knight
+(7014,2024) city 2 #c4A99FB Noxus Knight
+(7494,2114) city 2 #c4A99FB Noxus Knight
+(7790,5560) city 5 #c4A99FB Noxus Knight
+(7914,1594) city 2 #c4A99FB Noxus Knight
+(7764,6815) city 2 #c4A99FB Noxus Knight
+(7974,6394) city 2 #c4A99FB Noxus Knight
+(7924,2354) city 2 #c4A99FB Noxus Knight
+(8034,4594) city 2 #c4A99FB Noxus Knight
+(8034,7024) city 2 #c4A99FB Noxus Knight
+(8194,3384) city 2 #c4A99FB Noxus Knight
+(8124,5895) city 2 #c4A99FB Noxus Knight
+(8254,3084) city 2 #c4A99FB Noxus Knight
+(8434,3684) city 2 #c4A99FB Noxus Knight
+(8244,4655) city 2 #c4A99FB Noxus Knight
+(8410,4909) city 3 #c4A99FB Noxus Knight
+(8494,6314) city 2 #c4A99FB Noxus Knight
+(8674,2684) city 2 #c4A99FB Noxus Knight
+(8674,3024) city 2 #c4A99FB Noxus Knight
+(8754,3324) city 2 #c4A99FB Noxus Knight
+(8814,4194) city 2 #c4A99FB Noxus Knight
+(1174,6474) city 2 #c49E7C0 TheUnion
+(1154,6804) city 2 #c49E7C0 TheUnion
+(1444,7034) city 2 #c49E7C0 TheUnion
+(1814,7724) city 2 #c49E7C0 TheUnion
+(1889,5751) city 5 #c49E7C0 TheUnion
+(1778,5919) city 5 #c49E7C0 TheUnion
+(1852,5989) city 5 #c49E7C0 TheUnion
+(1950,7708) city 3 #c49E7C0 TheUnion
+(2224,7714) city 2 #c49E7C0 TheUnion
+(2454,7934) city 2 #c49E7C0 TheUnion
+(2434,7284) city 2 #c49E7C0 TheUnion
+(3014,8154) city 2 #c49E7C0 TheUnion
+(3632,5570) city 5 #c49E7C0 TheUnion
+(3647,5428) city 3 #c49E7C0 TheUnion
+(3659,5320) city 2 #c49E7C0 TheUnion
+(3774,8664) city 2 #c49E7C0 TheUnion
+(0594,6524) city 2 #c49E7C0 TheUnion
+(0664,6315) city 2 #c49E7C0 TheUnion
+(1234,6124) city 2 #c49E7C0 TheUnion
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

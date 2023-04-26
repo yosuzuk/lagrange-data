@@ -1,0 +1,184 @@
+$name 10172 Capricornus AB
+$serverName Capricornus AB
+$size 9000
+
+// Rank 1: 創世界 (56.2)
+// Rank 2: OHM (32.1)
+// Rank 3: Dark Empire (11.6)
+
+$station
+(1494,7254) city 2 #c4A99FB OHM
+(1534,1974) city 2 #c4A99FB OHM
+(1474,6924) city 2 #c4A99FB OHM
+(1464,1374) city 2 #c4A99FB OHM
+(1593,4913) city 7 #c4A99FB OHM
+(1832,5130) city 5 #c4A99FB OHM
+(0334,4414) city 2 #c4A99FB OHM
+(1651,5107) city 5 #c4A99FB OHM
+(1866,4977) city 3 #c4A99FB OHM
+(1479,5150) city 5 #c4A99FB OHM
+(1504,2435) city 2 #c4A99FB OHM
+(1684,7514) city 2 #c4A99FB OHM
+(1974,1124) city 2 #c4A99FB OHM
+(1994,2004) city 2 #c4A99FB OHM
+(1904,8155) city 2 #c4A99FB OHM
+(2150,2700) city 5 #c4A99FB OHM
+(2125,2578) city 5 #c4A99FB OHM
+(2014,2833) city 5 #c4A99FB OHM
+(2174,7094) city 2 #c4A99FB OHM
+(0224,5195) city 2 #c4A99FB OHM
+(2444,8394) city 2 #c4A99FB OHM
+(2514,1064) city 2 #c4A99FB OHM
+(2730,3720) city 5 #c4A99FB OHM
+(2705,3598) city 5 #c4A99FB OHM
+(2594,3853) city 5 #c4A99FB OHM
+(0370,4728) city 3 #c4A99FB OHM
+(2890,6680) city 5 #c4A99FB OHM
+(3018,6859) city 5 #c4A99FB OHM
+(3092,6929) city 5 #c4A99FB OHM
+(2960,1920) city 5 #c4A99FB OHM
+(3616,4631) city 5 #c4A99FB OHM
+(3233,4786) city 3 #c4A99FB OHM
+(0494,6114) city 2 #c4A99FB OHM
+(3534,0694) city 2 #c4A99FB OHM
+(4152,6330) city 5 #c4A99FB OHM
+(0544,3314) city 2 #c4A99FB OHM
+(4389,5011) city 5 #c4A99FB OHM
+(4484,0714) city 2 #c4A99FB OHM
+(5090,2860) city 5 #c4A99FB OHM
+(5065,2738) city 5 #c4A99FB OHM
+(4954,2993) city 5 #c4A99FB OHM
+(0634,4244) city 2 #c4A99FB OHM
+(5113,4193) city 7 #c4A99FB OHM
+(5404,1054) city 2 #c4A99FB OHM
+(5744,0894) city 2 #c4A99FB OHM
+(0814,4924) city 2 #c4A99FB OHM
+(6204,1094) city 2 #c4A99FB OHM
+(6631,3207) city 5 #c4A99FB OHM
+(6846,3077) city 3 #c4A99FB OHM
+(6664,0614) city 2 #c4A99FB OHM
+(0784,6954) city 2 #c4A99FB OHM
+(0994,2684) city 2 #c4A99FB OHM
+(1074,7164) city 2 #c4A99FB OHM
+(1114,6444) city 2 #c4A99FB OHM
+(1044,6915) city 2 #c4A99FB OHM
+(1394,2284) city 2 #c4A99FB OHM
+(1830,1468) city 3 #cE5B36C 創世界
+(1939,7698) city 3 #cE5B36C 創世界
+(2084,1195) city 2 #cE5B36C 創世界
+(2374,7954) city 2 #cE5B36C 創世界
+(2484,0634) city 2 #cE5B36C 創世界
+(2824,1154) city 2 #cE5B36C 創世界
+(3129,6691) city 5 #cE5B36C 創世界
+(3154,1693) city 5 #cE5B36C 創世界
+(3094,0684) city 2 #cE5B36C 創世界
+(3354,1044) city 2 #cE5B36C 創世界
+(3339,4559) city 9 #cE5B36C 創世界
+(3494,7804) city 2 #cE5B36C 創世界
+(3934,8324) city 2 #cE5B36C 創世界
+(3784,0234) city 2 #cE5B36C 創世界
+(3913,6113) city 7 #cE5B36C 創世界
+(4186,6177) city 3 #cE5B36C 創世界
+(4072,3668) city 5 #cE5B36C 創世界
+(4060,3498) city 5 #cE5B36C 創世界
+(3975,3459) city 5 #cE5B36C 創世界
+(3959,3571) city 5 #cE5B36C 創世界
+(4064,7974) city 2 #cE5B36C 創世界
+(4174,8214) city 2 #cE5B36C 創世界
+(4314,8554) city 2 #cE5B36C 創世界
+(4354,0084) city 2 #cE5B36C 創世界
+(4554,7874) city 2 #cE5B36C 創世界
+(4514,8724) city 2 #cE5B36C 創世界
+(4584,8314) city 2 #cE5B36C 創世界
+(4774,0234) city 2 #cE5B36C 創世界
+(4921,7609) city 7 #cE5B36C 創世界
+(5032,7790) city 5 #cE5B36C 創世界
+(4851,7807) city 5 #cE5B36C 創世界
+(5059,7540) city 2 #cE5B36C 創世界
+(4824,8814) city 2 #cE5B36C 創世界
+(5352,4410) city 5 #cE5B36C 創世界
+(5386,4257) city 3 #cE5B36C 創世界
+(5214,0574) city 2 #cE5B36C 創世界
+(5194,8064) city 2 #cE5B36C 創世界
+(5444,0414) city 2 #cE5B36C 創世界
+(5399,0698) city 3 #cE5B36C 創世界
+(5821,5089) city 7 #cE5B36C 創世界
+(5932,5270) city 5 #cE5B36C 創世界
+(5751,5287) city 5 #cE5B36C 創世界
+(5947,5128) city 3 #cE5B36C 創世界
+(5959,5020) city 2 #cE5B36C 創世界
+(5934,8444) city 2 #cE5B36C 創世界
+(6509,6531) city 5 #cE5B36C 創世界
+(6472,6769) city 5 #cE5B36C 創世界
+(6252,4258) city 5 #cE5B36C 創世界
+(6530,4058) city 5 #cE5B36C 創世界
+(6395,4099) city 5 #cE5B36C 創世界
+(6529,4271) city 5 #cE5B36C 創世界
+(6494,7664) city 2 #cE5B36C 創世界
+(6379,7978) city 3 #cE5B36C 創世界
+(6814,1344) city 2 #cE5B36C 創世界
+(6974,6904) city 2 #cE5B36C 創世界
+(7024,0974) city 2 #cE5B36C 創世界
+(7274,1364) city 2 #cE5B36C 創世界
+(7140,4340) city 5 #cE5B36C 創世界
+(7164,6754) city 2 #cE5B36C 創世界
+(7144,7675) city 2 #cE5B36C 創世界
+(7514,1214) city 2 #cE5B36C 創世界
+(7554,6644) city 2 #cE5B36C 創世界
+(7734,5974) city 2 #cE5B36C 創世界
+(7714,7244) city 2 #cE5B36C 創世界
+(7790,5560) city 5 #cE5B36C 創世界
+(7765,5438) city 5 #cE5B36C 創世界
+(7654,5693) city 5 #cE5B36C 創世界
+(7914,1584) city 2 #cE5B36C 創世界
+(7764,2034) city 2 #cE5B36C 創世界
+(7934,3114) city 2 #cE5B36C 創世界
+(7994,6694) city 2 #cE5B36C 創世界
+(8054,2804) city 2 #cE5B36C 創世界
+(7884,3895) city 2 #cE5B36C 創世界
+(7944,4674) city 2 #cE5B36C 創世界
+(8154,4204) city 2 #cE5B36C 創世界
+(7924,7135) city 2 #cE5B36C 創世界
+(8124,3534) city 2 #cE5B36C 創世界
+(8264,6814) city 2 #cE5B36C 創世界
+(8284,3874) city 2 #cE5B36C 創世界
+(8284,4194) city 2 #cE5B36C 創世界
+(8334,5064) city 2 #cE5B36C 創世界
+(8534,2724) city 2 #cE5B36C 創世界
+(8774,4144) city 2 #cE5B36C 創世界
+(8644,3774) city 2 #cE5B36C 創世界
+(8644,3434) city 2 #cE5B36C 創世界
+(3147,1954) city 5 #cFD7844 Dark Empire
+(4532,1648) city 5 #cFD7844 Dark Empire
+(4520,1478) city 5 #cFD7844 Dark Empire
+(4435,1439) city 5 #cFD7844 Dark Empire
+(4419,1551) city 5 #cFD7844 Dark Empire
+(4999,4430) city 5 #cFD7844 Dark Empire
+(6573,3013) city 7 #cFD7844 Dark Empire
+(6812,3230) city 5 #cFD7844 Dark Empire
+(6459,3250) city 5 #cFD7844 Dark Empire
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

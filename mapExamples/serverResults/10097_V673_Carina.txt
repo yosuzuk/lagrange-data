@@ -1,0 +1,172 @@
+$name 10097 V673 Carina
+$serverName V673 Carina
+$size 9000
+
+// Rank 1: Global Cosmos (46.7)
+// Rank 2: ゆるキャン (23.3)
+// Rank 3: 第5軍団 (23.3)
+// Rank 4: 第六連合会 (4.3)
+// Rank 5: JPN区域5 (2.1)
+
+$station
+(1374,5814) city 2 #cE5B36C Global Cosmos
+(1534,1964) city 2 #cE5B36C Global Cosmos
+(1574,6194) city 2 #cE5B36C Global Cosmos
+(1474,6924) city 2 #cE5B36C Global Cosmos
+(1721,4949) city 7 #cE5B36C Global Cosmos
+(1832,5130) city 5 #cE5B36C Global Cosmos
+(1651,5147) city 5 #cE5B36C Global Cosmos
+(1847,4988) city 3 #cE5B36C Global Cosmos
+(1859,4880) city 2 #cE5B36C Global Cosmos
+(0294,4404) city 2 #cE5B36C Global Cosmos
+(0374,5094) city 2 #cE5B36C Global Cosmos
+(2834,3593) city 5 #cE5B36C Global Cosmos
+(2640,3820) city 5 #cE5B36C Global Cosmos
+(0024,4855) city 2 #cE5B36C Global Cosmos
+(0359,4718) city 3 #cE5B36C Global Cosmos
+(3129,6691) city 5 #cE5B36C Global Cosmos
+(2890,6680) city 5 #cE5B36C Global Cosmos
+(3018,6859) city 5 #cE5B36C Global Cosmos
+(3092,6929) city 5 #cE5B36C Global Cosmos
+(0454,6104) city 2 #cE5B36C Global Cosmos
+(3334,4742) city 9 #cE5B36C Global Cosmos
+(3306,4451) city 5 #cE5B36C Global Cosmos
+(3586,4496) city 5 #cE5B36C Global Cosmos
+(4152,6330) city 5 #cE5B36C Global Cosmos
+(4352,5249) city 5 #cE5B36C Global Cosmos
+(4278,5179) city 5 #cE5B36C Global Cosmos
+(4150,5000) city 5 #cE5B36C Global Cosmos
+(4389,5011) city 5 #cE5B36C Global Cosmos
+(0524,3695) city 2 #cE5B36C Global Cosmos
+(0654,4584) city 2 #cE5B36C Global Cosmos
+(5484,8694) city 2 #cE5B36C Global Cosmos
+(5698,5277) city 7 #cE5B36C Global Cosmos
+(5932,5270) city 5 #cE5B36C Global Cosmos
+(5972,5007) city 3 #cE5B36C Global Cosmos
+(5596,5118) city 3 #cE5B36C Global Cosmos
+(5814,8464) city 2 #cE5B36C Global Cosmos
+(0814,4924) city 2 #cE5B36C Global Cosmos
+(6460,6598) city 5 #cE5B36C Global Cosmos
+(6375,6559) city 5 #cE5B36C Global Cosmos
+(6359,6671) city 5 #cE5B36C Global Cosmos
+(6584,7335) city 2 #cE5B36C Global Cosmos
+(7844,6814) city 2 #cE5B36C Global Cosmos
+(0194,3244) city 2 #cE5B36C Global Cosmos
+(0844,4275) city 2 #cE5B36C Global Cosmos
+(0944,4714) city 2 #cE5B36C Global Cosmos
+(1024,7254) city 2 #cE5B36C Global Cosmos
+(1124,6914) city 2 #cE5B36C Global Cosmos
+(1304,2734) city 2 #c4A99FB ゆるキャン
+(1614,2324) city 2 #c4A99FB ゆるキャン
+(1824,1254) city 2 #c4A99FB ゆるキャン
+(1870,1529) city 3 #c4A99FB ゆるキャン
+(2247,2834) city 5 #c4A99FB ゆるキャン
+(2254,2573) city 5 #c4A99FB ゆるキャン
+(2060,2800) city 5 #c4A99FB ゆるキャン
+(2134,1464) city 2 #c4A99FB ゆるキャン
+(2607,1654) city 5 #c4A99FB ゆるキャン
+(2614,1393) city 5 #c4A99FB ゆるキャン
+(2420,1620) city 5 #c4A99FB ゆるキャン
+(2514,1064) city 2 #c4A99FB ゆるキャン
+(2827,3854) city 5 #c4A99FB ゆるキャン
+(3913,6113) city 7 #c4A99FB ゆるキャン
+(3971,6307) city 5 #c4A99FB ゆるキャン
+(4186,6177) city 3 #c4A99FB ゆるキャン
+(3799,6350) city 5 #c4A99FB ゆるキャン
+(4109,3431) city 5 #c4A99FB ゆるキャン
+(3870,3420) city 5 #c4A99FB ゆるキャン
+(3998,3599) city 5 #c4A99FB ゆるキャン
+(4072,3669) city 5 #c4A99FB ゆるキャン
+(4798,7797) city 7 #c4A99FB ゆるキャン
+(5032,7790) city 5 #c4A99FB ゆるキャン
+(5072,7527) city 3 #c4A99FB ゆるキャン
+(4696,7638) city 3 #c4A99FB ゆるキャン
+(5194,8064) city 2 #c4A99FB ゆるキャン
+(5224,7855) city 2 #c4A99FB ゆるキャン
+(5552,5416) city 2 #c4A99FB ゆるキャン
+(5834,7924) city 2 #c4A99FB ゆるキャン
+(6004,7834) city 2 #c4A99FB ゆるキャン
+(7134,7984) city 2 #c4A99FB ゆるキャン
+(7454,6974) city 2 #c4A99FB ゆるキャン
+(7834,7234) city 2 #c4A99FB ゆるキャン
+(4419,1551) city 5 #cFD7844 第5軍団
+(5090,2860) city 5 #cFD7844 第5軍団
+(5065,2738) city 5 #cFD7844 第5軍団
+(4954,2993) city 5 #cFD7844 第5軍団
+(5118,4417) city 7 #cFD7844 第5軍団
+(5016,4258) city 3 #cFD7844 第5軍団
+(4962,4556) city 2 #cFD7844 第5軍団
+(5994,1134) city 2 #cFD7844 第5軍団
+(6224,0555) city 2 #cFD7844 第5軍団
+(6395,4099) city 5 #cFD7844 第5軍団
+(6573,3013) city 7 #cFD7844 第5軍団
+(6812,3230) city 5 #cFD7844 第5軍団
+(6631,3207) city 5 #cFD7844 第5軍団
+(6846,3077) city 3 #cFD7844 第5軍団
+(6459,3250) city 5 #cFD7844 第5軍団
+(7114,0894) city 2 #cFD7844 第5軍団
+(7310,4140) city 5 #cFD7844 第5軍団
+(7364,1315) city 2 #cFD7844 第5軍団
+(7544,2854) city 2 #cFD7844 第5軍団
+(7914,1584) city 2 #cFD7844 第5軍団
+(7934,3104) city 2 #cFD7844 第5軍団
+(8114,3764) city 2 #cFD7844 第5軍団
+(8064,2014) city 2 #cFD7844 第5軍団
+(8354,2744) city 2 #cFD7844 第5軍団
+(8314,2414) city 2 #cFD7844 第5軍団
+(8334,5064) city 2 #cFD7844 第5軍団
+(8344,4634) city 2 #cFD7844 第5軍団
+(8490,4889) city 3 #cFD7844 第5軍団
+(8604,4254) city 2 #cFD7844 第5軍団
+(8694,3344) city 2 #cFD7844 第5軍団
+(8874,5114) city 2 #cFD7844 第5軍団
+(6934,1334) city 2 #cE63A3A JPN区域5
+(7286,4282) city 5 #cE63A3A JPN区域5
+(7790,5560) city 5 #cE63A3A JPN区域5
+(7924,2354) city 2 #cE63A3A JPN区域5
+(1674,1584) city 2 #c49E7C0 第六連合会
+(0694,3194) city 2 #c49E7C0 第六連合会
+(5352,4410) city 5 #c49E7C0 第六連合会
+(5392,4147) city 3 #c49E7C0 第六連合会
+(6492,4308) city 5 #c49E7C0 第六連合会
+(6480,4138) city 5 #c49E7C0 第六連合会
+(6379,4211) city 5 #c49E7C0 第六連合会
+(7474,6304) city 2 #c49E7C0 第六連合会
+(0804,5414) city 2 #c49E7C0 第六連合会
+(7504,6734) city 2 #c49E7C0 第六連合会
+(7765,5438) city 5 #c49E7C0 第六連合会
+(7654,5693) city 5 #c49E7C0 第六連合会
+(0994,3054) city 2 #c49E7C0 第六連合会
+(8244,5834) city 2 #c49E7C0 第六連合会
+(8434,6264) city 2 #c49E7C0 第六連合会
+(8874,5414) city 2 #c49E7C0 第六連合会
+(0964,2794) city 2 #c49E7C0 第六連合会
+(1104,5614) city 2 #c49E7C0 第六連合会
+
+$planet
+(4872,7714) large
+(4935,7770)(4872,7714) small
+(5051,7542)(4872,7714) small
+(4669,7656)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(5772,5194) large
+(5569,5136)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5835,5250)(5772,5194) small
+(4989,4276)(5192,4334) small
+(5192,4334) large
+(5371,4162)(5192,4334) small
+(5255,4390)(5192,4334) small
+(1818,5005)(1672,5054) small
+(1672,5054) large
+(1632,5156)(1672,5054) small
+(4499,4497) medium
+(3261,4520)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3459,4632) large

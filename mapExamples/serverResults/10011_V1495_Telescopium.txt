@@ -1,0 +1,210 @@
+$name 10011 V1495 Telescopium
+$serverName V1495 Telescopium
+$size 9000
+
+// Rank 1: Orion Knights (59.1)
+// Rank 2: TEMPLER ORDEN (16.0)
+// Rank 3: Стеллар (13.8)
+// Rank 4: Orion Knights 2 (4.3)
+// Rank 5: Black Legion (4.3)
+
+$station
+(1734,1624) city 2 #cE5B36C Orion Knights
+(1734,7754) city 2 #cE5B36C Orion Knights
+(1810,1469) city 3 #cE5B36C Orion Knights
+(1893,2833) city 7 #cE5B36C Orion Knights
+(1984,8154) city 2 #cE5B36C Orion Knights
+(2304,8054) city 2 #cE5B36C Orion Knights
+(2510,1520) city 5 #cE5B36C Orion Knights
+(0359,4718) city 3 #cE5B36C Orion Knights
+(3034,8474) city 2 #cE5B36C Orion Knights
+(3694,7804) city 2 #cE5B36C Orion Knights
+(3794,0974) city 2 #cE5B36C Orion Knights
+(3814,3702) city 9 #cE5B36C Orion Knights
+(3834,8354) city 2 #cE5B36C Orion Knights
+(4304,0174) city 2 #cE5B36C Orion Knights
+(4569,1411) city 5 #cE5B36C Orion Knights
+(4330,1400) city 5 #cE5B36C Orion Knights
+(4458,1579) city 5 #cE5B36C Orion Knights
+(4532,1649) city 5 #cE5B36C Orion Knights
+(4844,0994) city 2 #cE5B36C Orion Knights
+(5094,0514) city 2 #cE5B36C Orion Knights
+(5347,4748) city 3 #cE5B36C Orion Knights
+(5139,5651) city 5 #cE5B36C Orion Knights
+(5234,8714) city 2 #cE5B36C Orion Knights
+(5184,8174) city 2 #cE5B36C Orion Knights
+(5259,0638) city 3 #cE5B36C Orion Knights
+(5554,0934) city 2 #cE5B36C Orion Knights
+(5618,6157) city 7 #cE5B36C Orion Knights
+(5852,6150) city 5 #cE5B36C Orion Knights
+(5892,5887) city 3 #cE5B36C Orion Knights
+(5516,5998) city 3 #cE5B36C Orion Knights
+(5522,6266) city 2 #cE5B36C Orion Knights
+(5522,6266) city 7 #cE5B36C Orion Knights
+(5844,0555) city 2 #cE5B36C Orion Knights
+(6281,7249) city 7 #cE5B36C Orion Knights
+(6392,7430) city 5 #cE5B36C Orion Knights
+(6211,7447) city 5 #cE5B36C Orion Knights
+(6407,7288) city 3 #cE5B36C Orion Knights
+(6379,4211) city 5 #cE5B36C Orion Knights
+(6574,8234) city 2 #cE5B36C Orion Knights
+(6390,7988) city 3 #cE5B36C Orion Knights
+(6901,3129) city 7 #cE5B36C Orion Knights
+(6831,3327) city 5 #cE5B36C Orion Knights
+(7027,3168) city 3 #cE5B36C Orion Knights
+(7039,3060) city 2 #cE5B36C Orion Knights
+(7049,5531) city 5 #cE5B36C Orion Knights
+(6938,5699) city 5 #cE5B36C Orion Knights
+(7214,7234) city 2 #cE5B36C Orion Knights
+(7174,1724) city 2 #cE5B36C Orion Knights
+(7164,6754) city 2 #cE5B36C Orion Knights
+(7304,7075) city 2 #cE5B36C Orion Knights
+(7594,1634) city 2 #cE5B36C Orion Knights
+(7504,6734) city 2 #cE5B36C Orion Knights
+(7654,2454) city 2 #cE5B36C Orion Knights
+(7504,6115) city 2 #cE5B36C Orion Knights
+(7684,7354) city 2 #cE5B36C Orion Knights
+(7684,1715) city 2 #cE5B36C Orion Knights
+(7794,1924) city 2 #cE5B36C Orion Knights
+(7934,3104) city 2 #cE5B36C Orion Knights
+(7764,6815) city 2 #cE5B36C Orion Knights
+(7824,2935) city 2 #cE5B36C Orion Knights
+(8074,2224) city 2 #cE5B36C Orion Knights
+(7984,7114) city 2 #cE5B36C Orion Knights
+(8064,4194) city 2 #cE5B36C Orion Knights
+(8174,3444) city 2 #cE5B36C Orion Knights
+(8294,3094) city 2 #cE5B36C Orion Knights
+(8334,5754) city 2 #cE5B36C Orion Knights
+(8374,3794) city 2 #cE5B36C Orion Knights
+(8384,4314) city 2 #cE5B36C Orion Knights
+(8574,2734) city 2 #cE5B36C Orion Knights
+(8444,3155) city 2 #cE5B36C Orion Knights
+(8490,4868) city 3 #cE5B36C Orion Knights
+(8704,4234) city 2 #cE5B36C Orion Knights
+(1634,1284) city 2 #cE5B36C Orion Knights
+(5221,4709) city 7 #c4A99FB TEMPLER ORDEN
+(5332,4890) city 5 #c4A99FB TEMPLER ORDEN
+(5151,4907) city 5 #c4A99FB TEMPLER ORDEN
+(5359,4640) city 2 #c4A99FB TEMPLER ORDEN
+(5269,3751) city 5 #c4A99FB TEMPLER ORDEN
+(5252,5748) city 5 #c4A99FB TEMPLER ORDEN
+(5240,5578) city 5 #c4A99FB TEMPLER ORDEN
+(5155,5539) city 5 #c4A99FB TEMPLER ORDEN
+(6907,6594) city 5 #c4A99FB TEMPLER ORDEN
+(6914,6333) city 5 #c4A99FB TEMPLER ORDEN
+(6720,6560) city 5 #c4A99FB TEMPLER ORDEN
+(7700,5660) city 5 #c4A99FB TEMPLER ORDEN
+(1806,4982) city 5 #cFD7844 Стеллар
+(1830,4840) city 5 #cFD7844 Стеллар
+(1644,6714) city 2 #cFD7844 Стеллар
+(0454,5064) city 2 #cFD7844 Стеллар
+(1612,5938) city 5 #cFD7844 Стеллар
+(1890,5738) city 5 #cFD7844 Стеллар
+(1755,5779) city 5 #cFD7844 Стеллар
+(1889,5951) city 5 #cFD7844 Стеллар
+(0374,5814) city 2 #cFD7844 Стеллар
+(1950,7708) city 3 #cFD7844 Стеллар
+(2374,7584) city 2 #cFD7844 Стеллар
+(3521,5389) city 7 #cFD7844 Стеллар
+(3632,5570) city 5 #cFD7844 Стеллар
+(3647,5428) city 3 #cFD7844 Стеллар
+(3659,5320) city 2 #cFD7844 Стеллар
+(3324,7914) city 2 #cFD7844 Стеллар
+(0424,6214) city 2 #cFD7844 Стеллар
+(3444,8214) city 2 #cFD7844 Стеллар
+(5854,7604) city 2 #cFD7844 Стеллар
+(6419,7180) city 2 #cFD7844 Стеллар
+(6644,7314) city 2 #cFD7844 Стеллар
+(0794,6514) city 2 #cFD7844 Стеллар
+(6824,7034) city 2 #cFD7844 Стеллар
+(0934,6824) city 2 #cFD7844 Стеллар
+(0724,5415) city 2 #cFD7844 Стеллар
+(1114,4984) city 2 #cFD7844 Стеллар
+(1124,5574) city 2 #cFD7844 Стеллар
+(1254,5824) city 2 #cFD7844 Стеллар
+(1244,2755) city 2 #cFD7844 Стеллар
+(1554,7254) city 2 #cFD7844 Стеллар
+(1494,6214) city 2 #cFD7844 Стеллар
+(1424,7014) city 2 #cFD7844 Стеллар
+(2132,3050) city 5 #c49E7C0 Orion Knights 2
+(1951,3027) city 5 #c49E7C0 Orion Knights 2
+(2166,2897) city 3 #c49E7C0 Orion Knights 2
+(1779,3070) city 5 #c49E7C0 Orion Knights 2
+(1764,2135) city 2 #c49E7C0 Orion Knights 2
+(2314,1774) city 2 #c49E7C0 Orion Knights 2
+(2485,1398) city 5 #c49E7C0 Orion Knights 2
+(2374,1653) city 5 #c49E7C0 Orion Knights 2
+(0404,2954) city 2 #c49E7C0 Orion Knights 2
+(2744,1475) city 2 #c49E7C0 Orion Knights 2
+(3354,1004) city 2 #c49E7C0 Orion Knights 2
+(4066,3456) city 5 #c49E7C0 Orion Knights 2
+(4044,1054) city 2 #c49E7C0 Orion Knights 2
+(4164,0534) city 2 #c49E7C0 Orion Knights 2
+(0464,3315) city 2 #c49E7C0 Orion Knights 2
+(0634,2484) city 2 #c49E7C0 Orion Knights 2
+(0754,3564) city 2 #c49E7C0 Orion Knights 2
+(0754,4224) city 2 #c49E7C0 Orion Knights 2
+(7012,3310) city 5 #c49E7C0 Orion Knights 2
+(0854,2134) city 2 #c49E7C0 Orion Knights 2
+(8604,5894) city 2 #c49E7C0 Orion Knights 2
+(0924,4274) city 2 #c49E7C0 Orion Knights 2
+(1044,2414) city 2 #c49E7C0 Orion Knights 2
+(1144,1735) city 2 #c49E7C0 Orion Knights 2
+(1574,1944) city 2 #c49E7C0 Orion Knights 2
+(2827,3854) city 5 #cE63A3A Black Legion
+(2834,3593) city 5 #cE63A3A Black Legion
+(2640,3820) city 5 #cE63A3A Black Legion
+(3451,5587) city 5 #cE63A3A Black Legion
+(3786,3411) city 5 #cE63A3A Black Legion
+(5135,3579) city 5 #cE63A3A Black Legion
+(5270,3538) city 5 #cE63A3A Black Legion
+
+$planet
+(4102,3480)(3939,3592) small
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3939,3592)(3939,3592) small
+(3954,3683)(3939,3592) small
+(3954,3683)(3939,3592) small
+(2138,2915)(1972,2974) small
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1972,2974)(1972,2974) small
+(1932,3036)(1972,2974) small
+(1932,3036)(1972,2974) small
+(3432,5596)(3472,5494) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(3472,5494)(3472,5494) small
+(5318,4765)(5172,4814) small
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(5172,4814)(5172,4814) small
+(6232,7354) large
+(6232,7354)(6232,7354) small
+(6378,7305)(6232,7354) small
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(6852,3234)(6852,3234) small
+(5871,5902)(5692,6074) small
+(5871,5902)(5692,6074) small
+(5489,6016)(5692,6074) small
+(5489,6016)(5692,6074) small
+(5755,6130)(5692,6074) small
+(5755,6130)(5692,6074) small
+(5692,6074) large
+(5692,6074)(5692,6074) small
+(4499,4497) large
+(4499,4497)(4499,4497) small

@@ -1,0 +1,99 @@
+$name 20002 Aquarius 130
+$serverName Aquarius 130
+$size 9000
+
+// Rank 1: Blue Alliance (46.7)
+// Rank 2: ANTANTA (30.6)
+// Rank 3: Voices of War (11.6)
+// Rank 4: Madman (10.9)
+
+$station
+(1029,3071) city 5 #c49E7C0 Madman
+(0790,3060) city 5 #c49E7C0 Madman
+(0918,3239) city 5 #c49E7C0 Madman
+(3910,0400) city 5 #c49E7C0 Madman
+(0206,4631) city 5 #c49E7C0 Madman
+(7272,1790) city 5 #c49E7C0 Madman
+(2520,1020) city 5 #c49E7C0 Madman
+(3434,2504) city 2 #cFD7844 Voices of War
+(3684,2294) city 2 #cFD7844 Voices of War
+(3839,1898) city 3 #cFD7844 Voices of War
+(1494,6773) city 5 #cFD7844 Voices of War
+(1300,7000) city 5 #cFD7844 Voices of War
+(4153,3413) city 7 #cFD7844 Voices of War
+(4426,3477) city 3 #cFD7844 Voices of War
+(4404,2494) city 2 #cFD7844 Voices of War
+(6109,5671) city 5 #cFD7844 Voices of War
+(5870,5660) city 5 #cFD7844 Voices of War
+(5998,5839) city 5 #cFD7844 Voices of War
+(2034,5124) city 2 #cFD7844 Voices of War
+(2114,5494) city 2 #cFD7844 Voices of War
+(2099,4518) city 3 #cFD7844 Voices of War
+(2354,5994) city 2 #cFD7844 Voices of War
+(2504,6074) city 2 #cFD7844 Voices of War
+(2524,5374) city 2 #cFD7844 Voices of War
+(3029,7991) city 5 #cE5B36C Blue Alliance
+(2790,7980) city 5 #cE5B36C Blue Alliance
+(2918,8159) city 5 #cE5B36C Blue Alliance
+(2992,8229) city 5 #cE5B36C Blue Alliance
+(2790,5988) city 3 #cE5B36C Blue Alliance
+(3054,6294) city 2 #cE5B36C Blue Alliance
+(3466,4002) city 5 #cE5B36C Blue Alliance
+(3276,3994) city 5 #cE5B36C Blue Alliance
+(3474,6264) city 2 #cE5B36C Blue Alliance
+(3244,6995) city 2 #cE5B36C Blue Alliance
+(3594,6564) city 2 #cE5B36C Blue Alliance
+(3813,6073) city 7 #cE5B36C Blue Alliance
+(4052,6290) city 5 #cE5B36C Blue Alliance
+(3871,6267) city 5 #cE5B36C Blue Alliance
+(4086,6137) city 3 #cE5B36C Blue Alliance
+(3894,6734) city 2 #cE5B36C Blue Alliance
+(4059,4851) city 5 #cE5B36C Blue Alliance
+(4075,4739) city 5 #cE5B36C Blue Alliance
+(4160,4777) city 5 #cE5B36C Blue Alliance
+(4172,4948) city 5 #cE5B36C Blue Alliance
+(1487,7034) city 5 #cE5B36C Blue Alliance
+(4211,3607) city 5 #cE5B36C Blue Alliance
+(4039,3650) city 5 #cE5B36C Blue Alliance
+(4333,7893) city 7 #cE5B36C Blue Alliance
+(4572,8110) city 5 #cE5B36C Blue Alliance
+(4391,8087) city 5 #cE5B36C Blue Alliance
+(4219,8130) city 5 #cE5B36C Blue Alliance
+(4359,5318) city 3 #cE5B36C Blue Alliance
+(4714,6664) city 2 #cE5B36C Blue Alliance
+(5181,4469) city 7 #cE5B36C Blue Alliance
+(5111,4667) city 5 #cE5B36C Blue Alliance
+(5307,4508) city 3 #cE5B36C Blue Alliance
+(5730,8280) city 5 #cE5B36C Blue Alliance
+(5705,8158) city 5 #cE5B36C Blue Alliance
+(5594,8413) city 5 #cE5B36C Blue Alliance
+(7138,6417) city 7 #cE5B36C Blue Alliance
+(7372,6410) city 5 #cE5B36C Blue Alliance
+(7412,6147) city 3 #cE5B36C Blue Alliance
+(7036,6258) city 3 #cE5B36C Blue Alliance
+(6982,6556) city 2 #cE5B36C Blue Alliance
+(7910,6860) city 5 #cE5B36C Blue Alliance
+(7774,6993) city 5 #cE5B36C Blue Alliance
+(8499,4991) city 5 #cE5B36C Blue Alliance
+(8612,5088) city 5 #cE5B36C Blue Alliance
+(0223,4917) city 9 #c4A99FB ANTANTA
+(0992,3309) city 5 #c4A99FB ANTANTA
+(3490,3860) city 5 #c4A99FB ANTANTA
+(3886,0542) city 5 #c4A99FB ANTANTA
+(4024,2554) city 2 #c4A99FB ANTANTA
+(4392,3630) city 5 #c4A99FB ANTANTA
+(4894,2134) city 2 #c4A99FB ANTANTA
+(5292,4650) city 5 #c4A99FB ANTANTA
+(1774,4124) city 2 #c4A99FB ANTANTA
+(1854,4444) city 2 #c4A99FB ANTANTA
+(7033,1573) city 7 #c4A99FB ANTANTA
+(7306,1637) city 3 #c4A99FB ANTANTA
+(6919,1810) city 5 #c4A99FB ANTANTA
+(8052,2518) city 5 #c4A99FB ANTANTA
+(8195,2359) city 5 #c4A99FB ANTANTA
+(8329,2531) city 5 #c4A99FB ANTANTA
+(2254,3284) city 2 #c4A99FB ANTANTA
+(2324,3694) city 2 #c4A99FB ANTANTA
+(2707,1054) city 5 #c4A99FB ANTANTA
+
+$planet

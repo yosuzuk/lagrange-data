@@ -1,0 +1,161 @@
+$name 10071 V1139 Centaurus
+$serverName V1139 Centaurus
+$size 9000
+
+// Rank 1: Decepticons (51.0)
+// Rank 2: Kumo CreW (44.5)
+// Rank 3: Soul Assassins (2.1)
+// Rank 4: Ninth Militia (2.1)
+
+$station
+(1244,2755) city 2 #cE5B36C Decepticons
+(1574,1944) city 2 #cE5B36C Decepticons
+(1634,1284) city 2 #cE5B36C Decepticons
+(1734,1624) city 2 #cE5B36C Decepticons
+(1810,1469) city 3 #cE5B36C Decepticons
+(1893,2833) city 7 #cE5B36C Decepticons
+(2132,3050) city 5 #cE5B36C Decepticons
+(1951,3027) city 5 #cE5B36C Decepticons
+(2166,2897) city 3 #cE5B36C Decepticons
+(1779,3070) city 5 #cE5B36C Decepticons
+(1764,2135) city 2 #cE5B36C Decepticons
+(2314,1774) city 2 #cE5B36C Decepticons
+(2510,1520) city 5 #cE5B36C Decepticons
+(2485,1398) city 5 #cE5B36C Decepticons
+(2374,1653) city 5 #cE5B36C Decepticons
+(2834,3593) city 5 #cE5B36C Decepticons
+(2640,3820) city 5 #cE5B36C Decepticons
+(2744,1475) city 2 #cE5B36C Decepticons
+(0404,2954) city 2 #cE5B36C Decepticons
+(3354,1004) city 2 #cE5B36C Decepticons
+(3794,0974) city 2 #cE5B36C Decepticons
+(3814,3702) city 9 #cE5B36C Decepticons
+(3786,3411) city 5 #cE5B36C Decepticons
+(4066,3456) city 5 #cE5B36C Decepticons
+(4044,1054) city 2 #cE5B36C Decepticons
+(4164,0534) city 2 #cE5B36C Decepticons
+(0464,3315) city 2 #cE5B36C Decepticons
+(4844,0994) city 2 #cE5B36C Decepticons
+(5094,0514) city 2 #cE5B36C Decepticons
+(5269,3751) city 5 #cE5B36C Decepticons
+(5135,3579) city 5 #cE5B36C Decepticons
+(5270,3538) city 5 #cE5B36C Decepticons
+(4992,3738) city 5 #cE5B36C Decepticons
+(0634,2484) city 2 #cE5B36C Decepticons
+(0754,3564) city 2 #cE5B36C Decepticons
+(6070,3320) city 5 #cE5B36C Decepticons
+(6045,3198) city 5 #cE5B36C Decepticons
+(5934,3453) city 5 #cE5B36C Decepticons
+(6419,7180) city 2 #cE5B36C Decepticons
+(6492,4308) city 5 #cE5B36C Decepticons
+(6480,4138) city 5 #cE5B36C Decepticons
+(6395,4099) city 5 #cE5B36C Decepticons
+(6379,4211) city 5 #cE5B36C Decepticons
+(6901,3129) city 7 #cE5B36C Decepticons
+(7012,3310) city 5 #cE5B36C Decepticons
+(7039,3060) city 2 #cE5B36C Decepticons
+(7049,5731) city 5 #cE5B36C Decepticons
+(7304,7075) city 2 #cE5B36C Decepticons
+(0854,2134) city 2 #cE5B36C Decepticons
+(7504,6115) city 2 #cE5B36C Decepticons
+(7700,5660) city 5 #cE5B36C Decepticons
+(8064,4194) city 2 #cE5B36C Decepticons
+(8374,5094) city 2 #cE5B36C Decepticons
+(1044,2414) city 2 #cE5B36C Decepticons
+(1144,1735) city 2 #cE5B36C Decepticons
+(4304,0174) city 2 #cFD7844 Soul Assassins
+(4569,1411) city 5 #cFD7844 Soul Assassins
+(4330,1400) city 5 #cFD7844 Soul Assassins
+(4458,1579) city 5 #cFD7844 Soul Assassins
+(4532,1649) city 5 #cFD7844 Soul Assassins
+(5259,0638) city 3 #cFD7844 Soul Assassins
+(5554,0934) city 2 #cFD7844 Soul Assassins
+(5844,0555) city 2 #cFD7844 Soul Assassins
+(6831,3327) city 5 #cFD7844 Soul Assassins
+(7027,3168) city 3 #cFD7844 Soul Assassins
+(7174,1724) city 2 #cFD7844 Soul Assassins
+(7594,1634) city 2 #cFD7844 Soul Assassins
+(7654,2454) city 2 #cFD7844 Soul Assassins
+(7684,1715) city 2 #cFD7844 Soul Assassins
+(7794,1924) city 2 #cFD7844 Soul Assassins
+(7934,3104) city 2 #cFD7844 Soul Assassins
+(7824,2935) city 2 #cFD7844 Soul Assassins
+(8074,2224) city 2 #cFD7844 Soul Assassins
+(8174,3444) city 2 #cFD7844 Soul Assassins
+(8294,3094) city 2 #cFD7844 Soul Assassins
+(8374,3794) city 2 #cFD7844 Soul Assassins
+(8384,4314) city 2 #cFD7844 Soul Assassins
+(8574,2734) city 2 #cFD7844 Soul Assassins
+(8444,3155) city 2 #cFD7844 Soul Assassins
+(8490,4868) city 3 #cFD7844 Soul Assassins
+(8704,4234) city 2 #cFD7844 Soul Assassins
+(1554,7254) city 2 #c4A99FB Kumo CreW
+(1494,6214) city 2 #c4A99FB Kumo CreW
+(1424,7014) city 2 #c4A99FB Kumo CreW
+(1806,4982) city 5 #c4A99FB Kumo CreW
+(1616,4974) city 5 #c4A99FB Kumo CreW
+(1830,4840) city 5 #c4A99FB Kumo CreW
+(1644,6714) city 2 #c4A99FB Kumo CreW
+(1734,7754) city 2 #c4A99FB Kumo CreW
+(1612,5938) city 5 #c4A99FB Kumo CreW
+(1890,5738) city 5 #c4A99FB Kumo CreW
+(1755,5779) city 5 #c4A99FB Kumo CreW
+(1889,5951) city 5 #c4A99FB Kumo CreW
+(0454,5064) city 2 #c4A99FB Kumo CreW
+(1984,8154) city 2 #c4A99FB Kumo CreW
+(1950,7708) city 3 #c4A99FB Kumo CreW
+(0374,5814) city 2 #c4A99FB Kumo CreW
+(2304,8054) city 2 #c4A99FB Kumo CreW
+(0359,4718) city 3 #c4A99FB Kumo CreW
+(3521,5389) city 7 #c4A99FB Kumo CreW
+(3632,5570) city 5 #c4A99FB Kumo CreW
+(3451,5587) city 5 #c4A99FB Kumo CreW
+(3647,5428) city 3 #c4A99FB Kumo CreW
+(3659,5320) city 2 #c4A99FB Kumo CreW
+(0424,6214) city 2 #c4A99FB Kumo CreW
+(3834,8354) city 2 #c4A99FB Kumo CreW
+(4996,4738) city 3 #c4A99FB Kumo CreW
+(5372,4627) city 3 #c4A99FB Kumo CreW
+(5098,4897) city 7 #c4A99FB Kumo CreW
+(5252,5748) city 5 #c4A99FB Kumo CreW
+(5240,5578) city 5 #c4A99FB Kumo CreW
+(5139,5651) city 5 #c4A99FB Kumo CreW
+(5234,8714) city 2 #c4A99FB Kumo CreW
+(5184,8174) city 2 #c4A99FB Kumo CreW
+(5472,6286) city 2 #c4A99FB Kumo CreW
+(5516,5998) city 3 #c4A99FB Kumo CreW
+(5892,5887) city 3 #c4A99FB Kumo CreW
+(5852,6150) city 5 #c4A99FB Kumo CreW
+(5618,6157) city 7 #c4A99FB Kumo CreW
+(5854,7604) city 2 #c4A99FB Kumo CreW
+(0754,4224) city 2 #c4A99FB Kumo CreW
+(6281,7249) city 7 #c4A99FB Kumo CreW
+(6392,7430) city 5 #c4A99FB Kumo CreW
+(6211,7447) city 5 #c4A99FB Kumo CreW
+(6407,7288) city 3 #c4A99FB Kumo CreW
+(6574,8234) city 2 #c4A99FB Kumo CreW
+(6644,7314) city 2 #c4A99FB Kumo CreW
+(0794,6514) city 2 #c4A99FB Kumo CreW
+(6907,6594) city 5 #c4A99FB Kumo CreW
+(6914,6333) city 5 #c4A99FB Kumo CreW
+(6720,6560) city 5 #c4A99FB Kumo CreW
+(6824,7034) city 2 #c4A99FB Kumo CreW
+(6772,5718) city 5 #c4A99FB Kumo CreW
+(7214,7234) city 2 #c4A99FB Kumo CreW
+(7164,6754) city 2 #c4A99FB Kumo CreW
+(0934,6824) city 2 #c4A99FB Kumo CreW
+(0724,5415) city 2 #c4A99FB Kumo CreW
+(0924,4274) city 2 #c4A99FB Kumo CreW
+(1114,4984) city 2 #c4A99FB Kumo CreW
+(1124,5574) city 2 #c4A99FB Kumo CreW
+(1254,5824) city 2 #c4A99FB Kumo CreW
+(2374,7584) city 2 #c49E7C0 Ninth Militia
+(3034,8474) city 2 #c49E7C0 Ninth Militia
+(3324,7914) city 2 #c49E7C0 Ninth Militia
+(3444,8214) city 2 #c49E7C0 Ninth Militia
+(3694,7804) city 2 #c49E7C0 Ninth Militia
+(4952,5036) city 2 #c49E7C0 Ninth Militia
+(5332,4890) city 5 #c49E7C0 Ninth Militia
+(5155,5539) city 5 #c49E7C0 Ninth Militia
+
+$planet

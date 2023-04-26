@@ -1,0 +1,135 @@
+$name 10214 Taurus 76
+$serverName Taurus 76
+$size 9000
+
+// Rank 1: Star Legion (30.6)
+// Rank 2: Celestial Arms (20.4)
+// Rank 3: Myrkheim (18.2)
+
+$station
+(1474,6924) city 2 #cFD7844 Myrkheim
+(1684,7514) city 2 #cFD7844 Myrkheim
+(1904,8155) city 2 #cFD7844 Myrkheim
+(1939,7698) city 3 #cFD7844 Myrkheim
+(2174,7094) city 2 #cFD7844 Myrkheim
+(2374,7954) city 2 #cFD7844 Myrkheim
+(3129,6691) city 5 #cFD7844 Myrkheim
+(3616,4631) city 5 #cFD7844 Myrkheim
+(3233,4786) city 3 #cFD7844 Myrkheim
+(3494,7804) city 2 #cFD7844 Myrkheim
+(3913,6113) city 7 #cFD7844 Myrkheim
+(4152,6330) city 5 #cFD7844 Myrkheim
+(3971,6307) city 5 #cFD7844 Myrkheim
+(4186,6177) city 3 #cFD7844 Myrkheim
+(3799,6350) city 5 #cFD7844 Myrkheim
+(4064,7974) city 2 #cFD7844 Myrkheim
+(4174,8214) city 2 #cFD7844 Myrkheim
+(4389,5011) city 5 #cFD7844 Myrkheim
+(4554,7874) city 2 #cFD7844 Myrkheim
+(5032,7790) city 5 #cFD7844 Myrkheim
+(4851,7807) city 5 #cFD7844 Myrkheim
+(5047,7648) city 3 #cFD7844 Myrkheim
+(5059,7540) city 2 #cFD7844 Myrkheim
+(1593,4913) city 7 #cE5B36C Star Legion
+(1832,5130) city 5 #cE5B36C Star Legion
+(4584,8314) city 2 #cE5B36C Star Legion
+(4921,7609) city 7 #cE5B36C Star Legion
+(4824,8814) city 2 #cE5B36C Star Legion
+(5386,4257) city 3 #cE5B36C Star Legion
+(5194,8064) city 2 #cE5B36C Star Legion
+(5821,5089) city 7 #cE5B36C Star Legion
+(5932,5270) city 5 #cE5B36C Star Legion
+(5751,5287) city 5 #cE5B36C Star Legion
+(5947,5128) city 3 #cE5B36C Star Legion
+(5959,5020) city 2 #cE5B36C Star Legion
+(5934,8444) city 2 #cE5B36C Star Legion
+(6509,6531) city 5 #cE5B36C Star Legion
+(6270,6520) city 5 #cE5B36C Star Legion
+(6398,6699) city 5 #cE5B36C Star Legion
+(6472,6769) city 5 #cE5B36C Star Legion
+(6494,7664) city 2 #cE5B36C Star Legion
+(6379,7978) city 3 #cE5B36C Star Legion
+(6834,7564) city 2 #cE5B36C Star Legion
+(6974,6904) city 2 #cE5B36C Star Legion
+(7164,6754) city 2 #cE5B36C Star Legion
+(7144,7675) city 2 #cE5B36C Star Legion
+(7554,6644) city 2 #cE5B36C Star Legion
+(7734,5974) city 2 #cE5B36C Star Legion
+(7714,7244) city 2 #cE5B36C Star Legion
+(7790,5560) city 5 #cE5B36C Star Legion
+(7765,5438) city 5 #cE5B36C Star Legion
+(7654,5693) city 5 #cE5B36C Star Legion
+(7994,6694) city 2 #cE5B36C Star Legion
+(7844,5095) city 2 #cE5B36C Star Legion
+(7924,7135) city 2 #cE5B36C Star Legion
+(8264,6814) city 2 #cE5B36C Star Legion
+(8334,5064) city 2 #cE5B36C Star Legion
+(8794,5434) city 2 #cE5B36C Star Legion
+(1044,6915) city 2 #cE5B36C Star Legion
+(0334,4414) city 2 #c4A99FB Celestial Arms
+(1866,4977) city 3 #c4A99FB Celestial Arms
+(0224,5195) city 2 #c4A99FB Celestial Arms
+(0370,4728) city 3 #c4A99FB Celestial Arms
+(3959,3571) city 5 #c4A99FB Celestial Arms
+(5090,2860) city 5 #c4A99FB Celestial Arms
+(0634,4244) city 2 #c4A99FB Celestial Arms
+(5113,4193) city 7 #c4A99FB Celestial Arms
+(5352,4410) city 5 #c4A99FB Celestial Arms
+(5214,0574) city 2 #c4A99FB Celestial Arms
+(5404,1054) city 2 #c4A99FB Celestial Arms
+(5444,0414) city 2 #c4A99FB Celestial Arms
+(5744,0894) city 2 #c4A99FB Celestial Arms
+(0814,4924) city 2 #c4A99FB Celestial Arms
+(6204,1094) city 2 #c4A99FB Celestial Arms
+(6529,4271) city 5 #c4A99FB Celestial Arms
+(6812,3230) city 5 #c4A99FB Celestial Arms
+(6631,3207) city 5 #c4A99FB Celestial Arms
+(6846,3077) city 3 #c4A99FB Celestial Arms
+(6664,0614) city 2 #c4A99FB Celestial Arms
+(6814,1344) city 2 #c4A99FB Celestial Arms
+(7024,0974) city 2 #c4A99FB Celestial Arms
+(7274,1364) city 2 #c4A99FB Celestial Arms
+(7140,4340) city 5 #c4A99FB Celestial Arms
+(0954,5294) city 2 #c4A99FB Celestial Arms
+(7914,1584) city 2 #c4A99FB Celestial Arms
+(7764,2034) city 2 #c4A99FB Celestial Arms
+(7934,3114) city 2 #c4A99FB Celestial Arms
+(8054,2804) city 2 #c4A99FB Celestial Arms
+(7884,3895) city 2 #c4A99FB Celestial Arms
+(7944,4674) city 2 #c4A99FB Celestial Arms
+(8154,4204) city 2 #c4A99FB Celestial Arms
+(8124,3534) city 2 #c4A99FB Celestial Arms
+(8284,3874) city 2 #c4A99FB Celestial Arms
+(8284,4194) city 2 #c4A99FB Celestial Arms
+(8534,2724) city 2 #c4A99FB Celestial Arms
+(8439,4818) city 3 #c4A99FB Celestial Arms
+(8774,4144) city 2 #c4A99FB Celestial Arms
+(8644,3774) city 2 #c4A99FB Celestial Arms
+(8644,3434) city 2 #c4A99FB Celestial Arms
+(8954,5094) city 2 #c4A99FB Celestial Arms
+(1114,6444) city 2 #c4A99FB Celestial Arms
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

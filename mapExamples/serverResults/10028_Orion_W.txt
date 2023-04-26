@@ -1,0 +1,124 @@
+$name 10028 Orion W
+$serverName Orion W
+$size 9000
+
+// Rank 1: Harbingers (40.1)
+// Rank 2: War (32.1)
+
+$station
+(4673,6013) city 7 #cE5B36C Harbingers
+(5956,4951) city 5 #cE5B36C Harbingers
+(5573,5106) city 3 #cE5B36C Harbingers
+(5701,4896) city 9 #cE5B36C Harbingers
+(5907,6254) city 5 #cE5B36C Harbingers
+(5914,5993) city 5 #cE5B36C Harbingers
+(5720,6220) city 5 #cE5B36C Harbingers
+(6187,3574) city 5 #cE5B36C Harbingers
+(6194,3313) city 5 #cE5B36C Harbingers
+(6252,4238) city 5 #cE5B36C Harbingers
+(6530,4038) city 5 #cE5B36C Harbingers
+(6395,4079) city 5 #cE5B36C Harbingers
+(6529,4251) city 5 #cE5B36C Harbingers
+(6681,3149) city 7 #cE5B36C Harbingers
+(6792,3330) city 5 #cE5B36C Harbingers
+(6611,3347) city 5 #cE5B36C Harbingers
+(6807,3188) city 3 #cE5B36C Harbingers
+(6819,3080) city 2 #cE5B36C Harbingers
+(6732,5698) city 5 #cE5B36C Harbingers
+(7010,5498) city 5 #cE5B36C Harbingers
+(6875,5539) city 5 #cE5B36C Harbingers
+(7009,5711) city 5 #cE5B36C Harbingers
+(7234,6654) city 2 #cE5B36C Harbingers
+(7364,7054) city 2 #cE5B36C Harbingers
+(7554,6644) city 2 #cE5B36C Harbingers
+(7594,2764) city 2 #cE5B36C Harbingers
+(7654,6014) city 2 #cE5B36C Harbingers
+(7834,7234) city 2 #cE5B36C Harbingers
+(7994,6694) city 2 #cE5B36C Harbingers
+(7974,6054) city 2 #cE5B36C Harbingers
+(7884,3895) city 2 #cE5B36C Harbingers
+(7924,7135) city 2 #cE5B36C Harbingers
+(8234,1904) city 2 #cE5B36C Harbingers
+(8004,4215) city 2 #cE5B36C Harbingers
+(8044,5515) city 2 #cE5B36C Harbingers
+(8234,2764) city 2 #cE5B36C Harbingers
+(8164,2515) city 2 #cE5B36C Harbingers
+(8294,5744) city 2 #cE5B36C Harbingers
+(8334,5084) city 2 #cE5B36C Harbingers
+(8324,4614) city 2 #cE5B36C Harbingers
+(8364,4294) city 2 #cE5B36C Harbingers
+(8399,4838) city 3 #cE5B36C Harbingers
+(8674,3024) city 2 #cE5B36C Harbingers
+(8754,3334) city 2 #cE5B36C Harbingers
+(8634,3804) city 2 #cE5B36C Harbingers
+(8854,4104) city 2 #cE5B36C Harbingers
+(8834,5104) city 2 #cE5B36C Harbingers
+(3289,4291) city 5 #c4A99FB War
+(3381,1509) city 7 #c4A99FB War
+(3492,1690) city 5 #c4A99FB War
+(3311,1707) city 5 #c4A99FB War
+(3507,1548) city 3 #c4A99FB War
+(3519,1440) city 2 #c4A99FB War
+(3804,0254) city 2 #c4A99FB War
+(4164,0534) city 2 #c4A99FB War
+(4306,2762) city 5 #c4A99FB War
+(4116,2754) city 5 #c4A99FB War
+(4330,2620) city 5 #c4A99FB War
+(4419,1651) city 5 #c4A99FB War
+(4435,1539) city 5 #c4A99FB War
+(4520,1578) city 5 #c4A99FB War
+(4532,1748) city 5 #c4A99FB War
+(4292,4076) city 2 #c4A99FB War
+(4336,3778) city 3 #c4A99FB War
+(4712,3667) city 3 #c4A99FB War
+(4672,3930) city 5 #c4A99FB War
+(4438,3937) city 7 #c4A99FB War
+(4654,0614) city 2 #c4A99FB War
+(4734,0224) city 2 #c4A99FB War
+(5014,0534) city 2 #c4A99FB War
+(5489,2731) city 5 #c4A99FB War
+(5250,2720) city 5 #c4A99FB War
+(5378,2899) city 5 #c4A99FB War
+(5452,2969) city 5 #c4A99FB War
+(5534,0334) city 2 #c4A99FB War
+(5824,1234) city 2 #c4A99FB War
+(6000,3540) city 5 #c4A99FB War
+(6204,1454) city 2 #c4A99FB War
+(6204,1094) city 2 #c4A99FB War
+(6547,2074) city 5 #c4A99FB War
+(6554,1813) city 5 #c4A99FB War
+(6360,2040) city 5 #c4A99FB War
+(6674,0804) city 2 #c4A99FB War
+(6714,0524) city 2 #c4A99FB War
+(6834,1694) city 2 #c4A99FB War
+(7174,0904) city 2 #c4A99FB War
+(7204,2154) city 2 #c4A99FB War
+(7594,1624) city 2 #c4A99FB War
+(7490,1968) city 3 #c4A99FB War
+(7794,1604) city 2 #c4A99FB War
+
+$planet
+(4309,3796)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4512,3854) large
+(4691,3682)(4512,3854) small
+(3532,5076)(3572,4974) small
+(3718,4925)(3572,4974) small
+(3572,4974) large
+(5612,5130)(5775,5009) small
+(5775,5009) large
+(5821,5013)(5775,5009) small
+(5883,4981)(5775,5009) small
+(4499,4497) medium
+(6778,3205)(6632,3254) small
+(6592,3356)(6632,3254) small
+(6632,3254) large
+(3572,7356)(3612,7254) small
+(3612,7254) large
+(3758,7205)(3612,7254) small
+(4918,6095)(4752,6154) small
+(4712,6216)(4752,6154) small
+(4752,6154) large
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3332,1614) large

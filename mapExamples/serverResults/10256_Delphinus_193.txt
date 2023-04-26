@@ -1,0 +1,131 @@
+$name 10256 Delphinus 193
+$serverName Delphinus 193
+$size 9000
+
+// Rank 1: EnergyShocks (41.6)
+// Rank 2: Reavers (32.8)
+
+$station
+(1534,1974) city 2 #cE5B36C EnergyShocks
+(1504,2435) city 2 #cE5B36C EnergyShocks
+(1974,1124) city 2 #cE5B36C EnergyShocks
+(1994,2004) city 2 #cE5B36C EnergyShocks
+(1830,1468) city 3 #cE5B36C EnergyShocks
+(2150,2700) city 5 #cE5B36C EnergyShocks
+(2084,1195) city 2 #cE5B36C EnergyShocks
+(2514,1064) city 2 #cE5B36C EnergyShocks
+(2484,0634) city 2 #cE5B36C EnergyShocks
+(2730,3720) city 5 #cE5B36C EnergyShocks
+(2824,1154) city 2 #cE5B36C EnergyShocks
+(2960,1920) city 5 #cE5B36C EnergyShocks
+(3094,0684) city 2 #cE5B36C EnergyShocks
+(3354,1044) city 2 #cE5B36C EnergyShocks
+(3534,0694) city 2 #cE5B36C EnergyShocks
+(3784,0234) city 2 #cE5B36C EnergyShocks
+(3959,3571) city 5 #cE5B36C EnergyShocks
+(0544,3314) city 2 #cE5B36C EnergyShocks
+(4354,0084) city 2 #cE5B36C EnergyShocks
+(4532,1648) city 5 #cE5B36C EnergyShocks
+(4419,1551) city 5 #cE5B36C EnergyShocks
+(4484,0714) city 2 #cE5B36C EnergyShocks
+(4774,0234) city 2 #cE5B36C EnergyShocks
+(5090,2860) city 5 #cE5B36C EnergyShocks
+(5113,4193) city 7 #cE5B36C EnergyShocks
+(5386,4257) city 3 #cE5B36C EnergyShocks
+(5214,0574) city 2 #cE5B36C EnergyShocks
+(5404,1054) city 2 #cE5B36C EnergyShocks
+(5444,0414) city 2 #cE5B36C EnergyShocks
+(5399,0698) city 3 #cE5B36C EnergyShocks
+(5821,5089) city 7 #cE5B36C EnergyShocks
+(5932,5270) city 5 #cE5B36C EnergyShocks
+(5751,5287) city 5 #cE5B36C EnergyShocks
+(5947,5128) city 3 #cE5B36C EnergyShocks
+(5959,5020) city 2 #cE5B36C EnergyShocks
+(5744,0894) city 2 #cE5B36C EnergyShocks
+(6204,1094) city 2 #cE5B36C EnergyShocks
+(6252,4258) city 5 #cE5B36C EnergyShocks
+(6529,4271) city 5 #cE5B36C EnergyShocks
+(6573,3013) city 7 #cE5B36C EnergyShocks
+(6812,3230) city 5 #cE5B36C EnergyShocks
+(6846,3077) city 3 #cE5B36C EnergyShocks
+(6664,0614) city 2 #cE5B36C EnergyShocks
+(7274,1364) city 2 #cE5B36C EnergyShocks
+(7514,1214) city 2 #cE5B36C EnergyShocks
+(7914,1584) city 2 #cE5B36C EnergyShocks
+(7934,3114) city 2 #cE5B36C EnergyShocks
+(8054,2804) city 2 #cE5B36C EnergyShocks
+(7944,4674) city 2 #cE5B36C EnergyShocks
+(8334,5064) city 2 #cE5B36C EnergyShocks
+(8439,4818) city 3 #cE5B36C EnergyShocks
+(0994,2684) city 2 #cE5B36C EnergyShocks
+(1394,2284) city 2 #cE5B36C EnergyShocks
+(1593,4913) city 7 #c4A99FB Reavers
+(1832,5130) city 5 #c4A99FB Reavers
+(1904,8155) city 2 #c4A99FB Reavers
+(2174,7094) city 2 #c4A99FB Reavers
+(2374,7954) city 2 #c4A99FB Reavers
+(2444,8394) city 2 #c4A99FB Reavers
+(3034,8444) city 2 #c4A99FB Reavers
+(3129,6691) city 5 #c4A99FB Reavers
+(3494,7804) city 2 #c4A99FB Reavers
+(3724,8754) city 2 #c4A99FB Reavers
+(3934,8324) city 2 #c4A99FB Reavers
+(3913,6113) city 7 #c4A99FB Reavers
+(4152,6330) city 5 #c4A99FB Reavers
+(4186,6177) city 3 #c4A99FB Reavers
+(4064,7974) city 2 #c4A99FB Reavers
+(4174,8214) city 2 #c4A99FB Reavers
+(4314,8554) city 2 #c4A99FB Reavers
+(4554,7874) city 2 #c4A99FB Reavers
+(4514,8724) city 2 #c4A99FB Reavers
+(4584,8314) city 2 #c4A99FB Reavers
+(4921,7609) city 7 #c4A99FB Reavers
+(5032,7790) city 5 #c4A99FB Reavers
+(5047,7648) city 3 #c4A99FB Reavers
+(5059,7540) city 2 #c4A99FB Reavers
+(4824,8814) city 2 #c4A99FB Reavers
+(5194,8064) city 2 #c4A99FB Reavers
+(5934,8444) city 2 #c4A99FB Reavers
+(6509,6531) city 5 #c4A99FB Reavers
+(6472,6769) city 5 #c4A99FB Reavers
+(6494,7664) city 2 #c4A99FB Reavers
+(6379,7978) city 3 #c4A99FB Reavers
+(6834,7564) city 2 #c4A99FB Reavers
+(6974,6904) city 2 #c4A99FB Reavers
+(7164,6754) city 2 #c4A99FB Reavers
+(7144,7675) city 2 #c4A99FB Reavers
+(0954,5294) city 2 #c4A99FB Reavers
+(7554,6644) city 2 #c4A99FB Reavers
+(7734,5974) city 2 #c4A99FB Reavers
+(7714,7244) city 2 #c4A99FB Reavers
+(7654,5693) city 5 #c4A99FB Reavers
+(7994,6694) city 2 #c4A99FB Reavers
+(7844,5095) city 2 #c4A99FB Reavers
+(7924,7135) city 2 #c4A99FB Reavers
+(8264,6814) city 2 #c4A99FB Reavers
+(8954,5094) city 2 #c4A99FB Reavers
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

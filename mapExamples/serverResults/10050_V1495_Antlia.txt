@@ -1,0 +1,180 @@
+$name 10050 V1495 Antlia
+$serverName V1495 Antlia
+$size 9000
+
+// Rank 1: A B Y S S (58.3)
+// Rank 2: Warzone (41.6)
+
+$station
+(1533,3113) city 7 #c4A99FB Warzone
+(1772,3330) city 5 #c4A99FB Warzone
+(1806,3177) city 3 #c4A99FB Warzone
+(1419,3350) city 5 #c4A99FB Warzone
+(1584,6735) city 2 #c4A99FB Warzone
+(1919,7798) city 3 #c4A99FB Warzone
+(2174,7094) city 2 #c4A99FB Warzone
+(0554,2834) city 2 #c4A99FB Warzone
+(2784,1155) city 2 #c4A99FB Warzone
+(0390,4729) city 3 #c4A99FB Warzone
+(0454,6104) city 2 #c4A99FB Warzone
+(3853,4133) city 7 #c4A99FB Warzone
+(4092,4350) city 5 #c4A99FB Warzone
+(4126,4197) city 3 #c4A99FB Warzone
+(3739,4370) city 5 #c4A99FB Warzone
+(4569,1511) city 5 #c4A99FB Warzone
+(0524,2595) city 2 #c4A99FB Warzone
+(0754,3574) city 2 #c4A99FB Warzone
+(5152,4196) city 2 #c4A99FB Warzone
+(5196,3898) city 3 #c4A99FB Warzone
+(5572,3787) city 3 #c4A99FB Warzone
+(5532,4050) city 5 #c4A99FB Warzone
+(5212,2918) city 5 #c4A99FB Warzone
+(5355,2759) city 5 #c4A99FB Warzone
+(5489,2931) city 5 #c4A99FB Warzone
+(6090,3440) city 5 #c4A99FB Warzone
+(5954,3573) city 5 #c4A99FB Warzone
+(0644,6634) city 2 #c4A99FB Warzone
+(6252,4238) city 5 #c4A99FB Warzone
+(6530,4038) city 5 #c4A99FB Warzone
+(6395,4079) city 5 #c4A99FB Warzone
+(6529,4251) city 5 #c4A99FB Warzone
+(0814,4924) city 2 #c4A99FB Warzone
+(6547,2074) city 5 #c4A99FB Warzone
+(6554,1813) city 5 #c4A99FB Warzone
+(6360,2040) city 5 #c4A99FB Warzone
+(6633,3193) city 7 #c4A99FB Warzone
+(6872,3410) city 5 #c4A99FB Warzone
+(6906,3257) city 3 #c4A99FB Warzone
+(6519,3430) city 5 #c4A99FB Warzone
+(6704,1455) city 2 #c4A99FB Warzone
+(0854,2124) city 2 #c4A99FB Warzone
+(7014,2014) city 2 #c4A99FB Warzone
+(0334,3814) city 2 #c4A99FB Warzone
+(7094,0934) city 2 #c4A99FB Warzone
+(7104,1474) city 2 #c4A99FB Warzone
+(7294,1714) city 2 #c4A99FB Warzone
+(0730,2869) city 3 #c4A99FB Warzone
+(7184,2134) city 2 #c4A99FB Warzone
+(0724,6294) city 2 #c4A99FB Warzone
+(7530,2029) city 3 #c4A99FB Warzone
+(7714,2754) city 2 #c4A99FB Warzone
+(7794,1924) city 2 #c4A99FB Warzone
+(7854,3134) city 2 #c4A99FB Warzone
+(0704,6955) city 2 #c4A99FB Warzone
+(7904,2334) city 2 #c4A99FB Warzone
+(7964,3894) city 2 #c4A99FB Warzone
+(8114,4564) city 2 #c4A99FB Warzone
+(8084,2034) city 2 #c4A99FB Warzone
+(8294,3434) city 2 #c4A99FB Warzone
+(8374,3074) city 2 #c4A99FB Warzone
+(8284,3874) city 2 #c4A99FB Warzone
+(8410,4848) city 3 #c4A99FB Warzone
+(8524,3154) city 2 #c4A99FB Warzone
+(8524,3915) city 2 #c4A99FB Warzone
+(8704,4234) city 2 #c4A99FB Warzone
+(8734,4484) city 2 #c4A99FB Warzone
+(0994,4174) city 2 #c4A99FB Warzone
+(0924,3494) city 2 #c4A99FB Warzone
+(1034,2694) city 2 #c4A99FB Warzone
+(0884,4735) city 2 #c4A99FB Warzone
+(1064,5074) city 2 #c4A99FB Warzone
+(1234,6124) city 2 #c4A99FB Warzone
+(1104,6894) city 2 #c4A99FB Warzone
+(1404,6294) city 2 #cE5B36C A B Y S S
+(1974,5033) city 5 #cE5B36C A B Y S S
+(1780,5260) city 5 #cE5B36C A B Y S S
+(2254,7604) city 2 #cE5B36C A B Y S S
+(2454,7924) city 2 #cE5B36C A B Y S S
+(2564,8035) city 2 #cE5B36C A B Y S S
+(2852,6918) city 5 #cE5B36C A B Y S S
+(3130,6718) city 5 #cE5B36C A B Y S S
+(2995,6759) city 5 #cE5B36C A B Y S S
+(3129,6931) city 5 #cE5B36C A B Y S S
+(2994,8144) city 2 #cE5B36C A B Y S S
+(2944,8554) city 2 #cE5B36C A B Y S S
+(3556,5071) city 5 #cE5B36C A B Y S S
+(3173,5226) city 3 #cE5B36C A B Y S S
+(3301,5016) city 9 #cE5B36C A B Y S S
+(3264,8575) city 2 #cE5B36C A B Y S S
+(3633,5893) city 7 #cE5B36C A B Y S S
+(3872,6110) city 5 #cE5B36C A B Y S S
+(3691,6087) city 5 #cE5B36C A B Y S S
+(3906,5957) city 3 #cE5B36C A B Y S S
+(3519,6130) city 5 #cE5B36C A B Y S S
+(3694,7804) city 2 #cE5B36C A B Y S S
+(4004,7995) city 2 #cE5B36C A B Y S S
+(4084,8675) city 2 #cE5B36C A B Y S S
+(4384,7994) city 2 #cE5B36C A B Y S S
+(4514,8724) city 2 #cE5B36C A B Y S S
+(4974,8694) city 2 #cE5B36C A B Y S S
+(4934,8384) city 2 #cE5B36C A B Y S S
+(5164,8154) city 2 #cE5B36C A B Y S S
+(5298,4057) city 7 #cE5B36C A B Y S S
+(5374,7774) city 2 #cE5B36C A B Y S S
+(5393,7073) city 7 #cE5B36C A B Y S S
+(5632,7290) city 5 #cE5B36C A B Y S S
+(5451,7267) city 5 #cE5B36C A B Y S S
+(5666,7137) city 3 #cE5B36C A B Y S S
+(5279,7310) city 5 #cE5B36C A B Y S S
+(5752,5468) city 5 #cE5B36C A B Y S S
+(5740,5298) city 5 #cE5B36C A B Y S S
+(5655,5259) city 5 #cE5B36C A B Y S S
+(5639,5371) city 5 #cE5B36C A B Y S S
+(5754,7974) city 2 #cE5B36C A B Y S S
+(5854,7614) city 2 #cE5B36C A B Y S S
+(5866,6162) city 5 #cE5B36C A B Y S S
+(5676,6154) city 5 #cE5B36C A B Y S S
+(5890,6020) city 5 #cE5B36C A B Y S S
+(5854,8474) city 2 #cE5B36C A B Y S S
+(5984,8194) city 2 #cE5B36C A B Y S S
+(6065,3318) city 5 #cE5B36C A B Y S S
+(6174,8434) city 2 #cE5B36C A B Y S S
+(6406,7442) city 5 #cE5B36C A B Y S S
+(6216,7434) city 5 #cE5B36C A B Y S S
+(6430,7300) city 5 #cE5B36C A B Y S S
+(6424,8354) city 2 #cE5B36C A B Y S S
+(6430,8049) city 3 #cE5B36C A B Y S S
+(6691,3387) city 5 #cE5B36C A B Y S S
+(6734,7234) city 2 #cE5B36C A B Y S S
+(6814,7914) city 2 #cE5B36C A B Y S S
+(6604,7695) city 2 #cE5B36C A B Y S S
+(6854,6924) city 2 #cE5B36C A B Y S S
+(7089,5731) city 5 #cE5B36C A B Y S S
+(6904,8015) city 2 #cE5B36C A B Y S S
+(7314,6624) city 2 #cE5B36C A B Y S S
+(7314,7564) city 2 #cE5B36C A B Y S S
+(7200,4940) city 5 #cE5B36C A B Y S S
+(7384,7074) city 2 #cE5B36C A B Y S S
+(7594,6284) city 2 #cE5B36C A B Y S S
+(7444,6755) city 2 #cE5B36C A B Y S S
+(7914,6714) city 2 #cE5B36C A B Y S S
+(7904,5074) city 2 #cE5B36C A B Y S S
+(8034,6394) city 2 #cE5B36C A B Y S S
+(8184,6735) city 2 #cE5B36C A B Y S S
+(8834,5104) city 2 #cE5B36C A B Y S S
+
+$planet
+(3932,4274) large
+(3892,4336)(3932,4274) small
+(4098,4215)(3932,4274) small
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small
+(5435,4030)(5372,3974) small
+(5169,3916)(5372,3974) small
+(5372,3974) large
+(5551,3802)(5372,3974) small
+(3483,5101)(3375,5129) small
+(3421,5133)(3375,5129) small
+(3212,5250)(3375,5129) small
+(3375,5129) large
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(4499,4497) medium

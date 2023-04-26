@@ -1,0 +1,177 @@
+$name 10062 Hydra 156
+$serverName Hydra 156
+$size 9000
+
+// Rank 1: Matallan Empire (58.3)
+// Rank 2: ATLAS (41.6)
+
+$station
+(1244,2755) city 2 #c4A99FB ATLAS
+(1554,7254) city 2 #c4A99FB ATLAS
+(1574,1944) city 2 #c4A99FB ATLAS
+(1494,6214) city 2 #c4A99FB ATLAS
+(1424,7014) city 2 #c4A99FB ATLAS
+(1634,1284) city 2 #c4A99FB ATLAS
+(1734,1624) city 2 #c4A99FB ATLAS
+(1806,4982) city 5 #c4A99FB ATLAS
+(1616,4974) city 5 #c4A99FB ATLAS
+(1830,4840) city 5 #c4A99FB ATLAS
+(1644,6714) city 2 #c4A99FB ATLAS
+(1734,7754) city 2 #c4A99FB ATLAS
+(1612,5938) city 5 #c4A99FB ATLAS
+(1890,5738) city 5 #c4A99FB ATLAS
+(1755,5779) city 5 #c4A99FB ATLAS
+(1889,5951) city 5 #c4A99FB ATLAS
+(1810,1469) city 3 #c4A99FB ATLAS
+(1893,2833) city 7 #c4A99FB ATLAS
+(2132,3050) city 5 #c4A99FB ATLAS
+(1951,3027) city 5 #c4A99FB ATLAS
+(2166,2897) city 3 #c4A99FB ATLAS
+(1779,3070) city 5 #c4A99FB ATLAS
+(0454,5064) city 2 #c4A99FB ATLAS
+(1764,2135) city 2 #c4A99FB ATLAS
+(1984,8154) city 2 #c4A99FB ATLAS
+(0374,5814) city 2 #c4A99FB ATLAS
+(2314,1774) city 2 #c4A99FB ATLAS
+(2374,7584) city 2 #c4A99FB ATLAS
+(2304,8054) city 2 #c4A99FB ATLAS
+(2834,3593) city 5 #c4A99FB ATLAS
+(2640,3820) city 5 #c4A99FB ATLAS
+(2744,1475) city 2 #c4A99FB ATLAS
+(0404,2954) city 2 #c4A99FB ATLAS
+(3034,8474) city 2 #c4A99FB ATLAS
+(0359,4718) city 3 #c4A99FB ATLAS
+(3354,1004) city 2 #c4A99FB ATLAS
+(3521,5389) city 7 #c4A99FB ATLAS
+(3632,5570) city 5 #c4A99FB ATLAS
+(3451,5587) city 5 #c4A99FB ATLAS
+(3647,5428) city 3 #c4A99FB ATLAS
+(3659,5320) city 2 #c4A99FB ATLAS
+(3324,7914) city 2 #c4A99FB ATLAS
+(3444,8214) city 2 #c4A99FB ATLAS
+(3694,7804) city 2 #c4A99FB ATLAS
+(3786,3411) city 5 #c4A99FB ATLAS
+(0424,6214) city 2 #c4A99FB ATLAS
+(3834,8354) city 2 #c4A99FB ATLAS
+(0464,3315) city 2 #c4A99FB ATLAS
+(4952,5036) city 2 #c4A99FB ATLAS
+(4996,4738) city 3 #c4A99FB ATLAS
+(5372,4627) city 3 #c4A99FB ATLAS
+(5332,4890) city 5 #c4A99FB ATLAS
+(5098,4897) city 7 #c4A99FB ATLAS
+(5269,3751) city 5 #c4A99FB ATLAS
+(5240,5578) city 5 #c4A99FB ATLAS
+(5139,5651) city 5 #c4A99FB ATLAS
+(0634,2484) city 2 #c4A99FB ATLAS
+(5234,8714) city 2 #c4A99FB ATLAS
+(5184,8174) city 2 #c4A99FB ATLAS
+(0754,3564) city 2 #c4A99FB ATLAS
+(5472,6286) city 2 #c4A99FB ATLAS
+(5516,5998) city 3 #c4A99FB ATLAS
+(0754,4224) city 2 #c4A99FB ATLAS
+(6407,7288) city 3 #c4A99FB ATLAS
+(6574,8234) city 2 #c4A99FB ATLAS
+(6390,7988) city 3 #c4A99FB ATLAS
+(6644,7314) city 2 #c4A99FB ATLAS
+(0794,6514) city 2 #c4A99FB ATLAS
+(6824,7034) city 2 #c4A99FB ATLAS
+(7214,7234) city 2 #c4A99FB ATLAS
+(7164,6754) city 2 #c4A99FB ATLAS
+(0854,2134) city 2 #c4A99FB ATLAS
+(7684,7354) city 2 #c4A99FB ATLAS
+(7764,6815) city 2 #c4A99FB ATLAS
+(0934,6824) city 2 #c4A99FB ATLAS
+(7984,7114) city 2 #c4A99FB ATLAS
+(8334,5754) city 2 #c4A99FB ATLAS
+(0724,5415) city 2 #c4A99FB ATLAS
+(0924,4274) city 2 #c4A99FB ATLAS
+(1044,2414) city 2 #c4A99FB ATLAS
+(1114,4984) city 2 #c4A99FB ATLAS
+(1124,5574) city 2 #c4A99FB ATLAS
+(1144,1735) city 2 #c4A99FB ATLAS
+(1254,5824) city 2 #c4A99FB ATLAS
+(1950,7708) city 3 #cE5B36C Matallan Empire
+(2510,1520) city 5 #cE5B36C Matallan Empire
+(3794,0974) city 2 #cE5B36C Matallan Empire
+(3814,3702) city 9 #cE5B36C Matallan Empire
+(4066,3456) city 5 #cE5B36C Matallan Empire
+(4044,1054) city 2 #cE5B36C Matallan Empire
+(4164,0534) city 2 #cE5B36C Matallan Empire
+(4304,0174) city 2 #cE5B36C Matallan Empire
+(4569,1411) city 5 #cE5B36C Matallan Empire
+(4330,1400) city 5 #cE5B36C Matallan Empire
+(4458,1579) city 5 #cE5B36C Matallan Empire
+(4532,1649) city 5 #cE5B36C Matallan Empire
+(4844,0994) city 2 #cE5B36C Matallan Empire
+(5094,0514) city 2 #cE5B36C Matallan Empire
+(5270,3538) city 5 #cE5B36C Matallan Empire
+(5259,0638) city 3 #cE5B36C Matallan Empire
+(5554,0934) city 2 #cE5B36C Matallan Empire
+(5892,5887) city 3 #cE5B36C Matallan Empire
+(5852,6150) city 5 #cE5B36C Matallan Empire
+(5618,6157) city 7 #cE5B36C Matallan Empire
+(5844,0555) city 2 #cE5B36C Matallan Empire
+(6070,3320) city 5 #cE5B36C Matallan Empire
+(5934,3453) city 5 #cE5B36C Matallan Empire
+(6281,7249) city 7 #cE5B36C Matallan Empire
+(6392,7430) city 5 #cE5B36C Matallan Empire
+(6419,7180) city 2 #cE5B36C Matallan Empire
+(6492,4308) city 5 #cE5B36C Matallan Empire
+(6379,4211) city 5 #cE5B36C Matallan Empire
+(6901,3129) city 7 #cE5B36C Matallan Empire
+(7012,3310) city 5 #cE5B36C Matallan Empire
+(6831,3327) city 5 #cE5B36C Matallan Empire
+(7027,3168) city 3 #cE5B36C Matallan Empire
+(7039,3060) city 2 #cE5B36C Matallan Empire
+(6720,6560) city 5 #cE5B36C Matallan Empire
+(7049,5731) city 5 #cE5B36C Matallan Empire
+(7174,1724) city 2 #cE5B36C Matallan Empire
+(7304,7075) city 2 #cE5B36C Matallan Empire
+(7594,1634) city 2 #cE5B36C Matallan Empire
+(7504,6734) city 2 #cE5B36C Matallan Empire
+(7654,2454) city 2 #cE5B36C Matallan Empire
+(7504,6115) city 2 #cE5B36C Matallan Empire
+(7700,5660) city 5 #cE5B36C Matallan Empire
+(7684,1715) city 2 #cE5B36C Matallan Empire
+(7794,1924) city 2 #cE5B36C Matallan Empire
+(7934,3104) city 2 #cE5B36C Matallan Empire
+(7824,2935) city 2 #cE5B36C Matallan Empire
+(8074,2224) city 2 #cE5B36C Matallan Empire
+(8064,4194) city 2 #cE5B36C Matallan Empire
+(8174,3444) city 2 #cE5B36C Matallan Empire
+(8294,3094) city 2 #cE5B36C Matallan Empire
+(8374,3794) city 2 #cE5B36C Matallan Empire
+(8374,5094) city 2 #cE5B36C Matallan Empire
+(8384,4314) city 2 #cE5B36C Matallan Empire
+(8574,2734) city 2 #cE5B36C Matallan Empire
+(8444,3155) city 2 #cE5B36C Matallan Empire
+(8490,4868) city 3 #cE5B36C Matallan Empire
+(8604,5894) city 2 #cE5B36C Matallan Empire
+(8704,4234) city 2 #cE5B36C Matallan Empire
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(3432,5596)(3472,5494) small
+(3939,3592) large
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3954,3683)(3939,3592) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(6998,3185)(6852,3234) small
+(6852,3234) large
+(6812,3336)(6852,3234) small
+(5489,6016)(5692,6074) small
+(5692,6074) large
+(5871,5902)(5692,6074) small
+(5755,6130)(5692,6074) small
+(6378,7305)(6232,7354) small
+(6232,7354) large
+(6192,7456)(6232,7354) small
+(4499,4497) medium

@@ -1,0 +1,200 @@
+$name 10082 Auriga FW
+$serverName Auriga FW
+$size 9000
+
+// Rank 1: Fallen Angels (56.9)
+// Rank 2: Tengucorp (18.2)
+// Rank 3: Black Diamond (11.6)
+// Rank 4: Evolution (10.9)
+// Rank 5: High Council (2.1)
+
+$station
+(1493,3633) city 7 #cE5B36C Fallen Angels
+(1914,7094) city 2 #cE5B36C Fallen Angels
+(3289,4291) city 5 #cE5B36C Fallen Angels
+(3621,4869) city 7 #cE5B36C Fallen Angels
+(3551,5067) city 5 #cE5B36C Fallen Angels
+(3747,4908) city 3 #cE5B36C Fallen Angels
+(4306,2762) city 5 #cE5B36C Fallen Angels
+(4116,2754) city 5 #cE5B36C Fallen Angels
+(4292,4076) city 2 #cE5B36C Fallen Angels
+(4438,3937) city 7 #cE5B36C Fallen Angels
+(5956,4951) city 5 #cE5B36C Fallen Angels
+(5573,5106) city 3 #cE5B36C Fallen Angels
+(5701,4896) city 9 #cE5B36C Fallen Angels
+(6187,3574) city 5 #cE5B36C Fallen Angels
+(6194,3313) city 5 #cE5B36C Fallen Angels
+(6000,3540) city 5 #cE5B36C Fallen Angels
+(6406,7442) city 5 #cE5B36C Fallen Angels
+(6466,4222) city 5 #cE5B36C Fallen Angels
+(6276,4214) city 5 #cE5B36C Fallen Angels
+(6490,4080) city 5 #cE5B36C Fallen Angels
+(6360,2040) city 5 #cE5B36C Fallen Angels
+(6741,3089) city 7 #cE5B36C Fallen Angels
+(6852,3270) city 5 #cE5B36C Fallen Angels
+(6671,3287) city 5 #cE5B36C Fallen Angels
+(6867,3128) city 3 #cE5B36C Fallen Angels
+(6879,3020) city 2 #cE5B36C Fallen Angels
+(7234,6654) city 2 #cE5B36C Fallen Angels
+(7234,7594) city 2 #cE5B36C Fallen Angels
+(7364,7054) city 2 #cE5B36C Fallen Angels
+(7554,6644) city 2 #cE5B36C Fallen Angels
+(7594,2764) city 2 #cE5B36C Fallen Angels
+(7654,6014) city 2 #cE5B36C Fallen Angels
+(7834,7234) city 2 #cE5B36C Fallen Angels
+(7994,6694) city 2 #cE5B36C Fallen Angels
+(7884,3895) city 2 #cE5B36C Fallen Angels
+(7924,7135) city 2 #cE5B36C Fallen Angels
+(8234,1904) city 2 #cE5B36C Fallen Angels
+(8004,4215) city 2 #cE5B36C Fallen Angels
+(0814,6844) city 2 #cE5B36C Fallen Angels
+(8044,5515) city 2 #cE5B36C Fallen Angels
+(8234,2764) city 2 #cE5B36C Fallen Angels
+(8164,2515) city 2 #cE5B36C Fallen Angels
+(8294,5744) city 2 #cE5B36C Fallen Angels
+(8334,5084) city 2 #cE5B36C Fallen Angels
+(8324,4614) city 2 #cE5B36C Fallen Angels
+(8364,4294) city 2 #cE5B36C Fallen Angels
+(8399,4838) city 3 #cE5B36C Fallen Angels
+(8674,3024) city 2 #cE5B36C Fallen Angels
+(8754,3334) city 2 #cE5B36C Fallen Angels
+(8634,3804) city 2 #cE5B36C Fallen Angels
+(8854,4104) city 2 #cE5B36C Fallen Angels
+(8834,5104) city 2 #cE5B36C Fallen Angels
+(2434,7284) city 2 #c4A99FB Tengucorp
+(2564,8035) city 2 #c4A99FB Tengucorp
+(3010,6860) city 5 #c4A99FB Tengucorp
+(2985,6738) city 5 #c4A99FB Tengucorp
+(2874,6993) city 5 #c4A99FB Tengucorp
+(3114,7804) city 2 #c4A99FB Tengucorp
+(3374,7824) city 2 #c4A99FB Tengucorp
+(3374,8464) city 2 #c4A99FB Tengucorp
+(3694,7804) city 2 #c4A99FB Tengucorp
+(3914,8334) city 2 #c4A99FB Tengucorp
+(4254,8184) city 2 #c4A99FB Tengucorp
+(4384,7994) city 2 #c4A99FB Tengucorp
+(5041,7229) city 7 #c4A99FB Tengucorp
+(5152,7410) city 5 #c4A99FB Tengucorp
+(4971,7427) city 5 #c4A99FB Tengucorp
+(5167,7268) city 3 #c4A99FB Tengucorp
+(5179,7160) city 2 #c4A99FB Tengucorp
+(5314,8694) city 2 #c4A99FB Tengucorp
+(5334,7744) city 2 #c4A99FB Tengucorp
+(5634,8574) city 2 #c4A99FB Tengucorp
+(5714,7964) city 2 #c4A99FB Tengucorp
+(5907,6254) city 5 #c4A99FB Tengucorp
+(5914,5993) city 5 #c4A99FB Tengucorp
+(5720,6220) city 5 #c4A99FB Tengucorp
+(5784,8574) city 2 #c4A99FB Tengucorp
+(6024,8535) city 2 #c4A99FB Tengucorp
+(6216,7434) city 5 #c4A99FB Tengucorp
+(6430,7300) city 5 #c4A99FB Tengucorp
+(6430,8049) city 3 #c4A99FB Tengucorp
+(6814,7914) city 2 #c4A99FB Tengucorp
+(6754,7594) city 2 #c4A99FB Tengucorp
+(6890,5640) city 5 #c4A99FB Tengucorp
+(6865,5518) city 5 #c4A99FB Tengucorp
+(6754,5773) city 5 #c4A99FB Tengucorp
+(7134,7894) city 2 #c4A99FB Tengucorp
+(1454,2654) city 2 #cE63A3A High Council
+(1424,2074) city 2 #cE63A3A High Council
+(1766,3697) city 3 #cE63A3A High Council
+(1614,1644) city 2 #cE63A3A High Council
+(1614,2344) city 2 #cE63A3A High Council
+(0294,4294) city 2 #cE63A3A High Council
+(1926,5522) city 5 #cE63A3A High Council
+(1736,5514) city 5 #cE63A3A High Council
+(1950,5380) city 5 #cE63A3A High Council
+(1874,2024) city 2 #cE63A3A High Council
+(2134,1454) city 2 #cE63A3A High Council
+(2314,1074) city 2 #cE63A3A High Council
+(0454,5074) city 2 #cE63A3A High Council
+(2534,0544) city 2 #cE63A3A High Council
+(0254,4724) city 2 #cE63A3A High Council
+(0339,4658) city 3 #cE63A3A High Council
+(3804,0254) city 2 #cE63A3A High Council
+(4164,0534) city 2 #cE63A3A High Council
+(0614,3214) city 2 #cE63A3A High Council
+(4654,0614) city 2 #cE63A3A High Council
+(0524,2595) city 2 #cE63A3A High Council
+(0604,4354) city 2 #cE63A3A High Council
+(0584,5055) city 2 #cE63A3A High Council
+(0694,5664) city 2 #cE63A3A High Council
+(0690,2808) city 3 #cE63A3A High Council
+(0784,5394) city 2 #cE63A3A High Council
+(0924,4274) city 2 #cE63A3A High Council
+(1034,2694) city 2 #cE63A3A High Council
+(0964,2415) city 2 #cE63A3A High Council
+(1114,4984) city 2 #cE63A3A High Council
+(2854,1364) city 2 #cFD7844 Black Diamond
+(3050,4280) city 5 #cFD7844 Black Diamond
+(3381,1389) city 7 #cFD7844 Black Diamond
+(3492,1570) city 5 #cFD7844 Black Diamond
+(3311,1587) city 5 #cFD7844 Black Diamond
+(3507,1428) city 3 #cFD7844 Black Diamond
+(3519,1320) city 2 #cFD7844 Black Diamond
+(4304,0174) city 2 #cFD7844 Black Diamond
+(4360,1740) city 5 #cFD7844 Black Diamond
+(4734,0224) city 2 #cFD7844 Black Diamond
+(5014,0534) city 2 #cFD7844 Black Diamond
+(5534,0334) city 2 #cFD7844 Black Diamond
+(5824,1234) city 2 #cFD7844 Black Diamond
+(6204,1454) city 2 #cFD7844 Black Diamond
+(6204,1094) city 2 #cFD7844 Black Diamond
+(6674,0804) city 2 #cFD7844 Black Diamond
+(6714,0524) city 2 #cFD7844 Black Diamond
+(6834,1694) city 2 #cFD7844 Black Diamond
+(7174,0904) city 2 #cFD7844 Black Diamond
+(7204,2154) city 2 #cFD7844 Black Diamond
+(7594,1624) city 2 #cFD7844 Black Diamond
+(7490,1968) city 3 #cFD7844 Black Diamond
+(7794,1604) city 2 #cFD7844 Black Diamond
+(1104,5594) city 2 #cFD7844 Black Diamond
+(1254,5824) city 2 #c49E7C0 Evolution
+(1324,7674) city 2 #c49E7C0 Evolution
+(1732,3850) city 5 #c49E7C0 Evolution
+(1551,3827) city 5 #c49E7C0 Evolution
+(1379,3870) city 5 #c49E7C0 Evolution
+(1454,6204) city 2 #c49E7C0 Evolution
+(1734,7424) city 2 #c49E7C0 Evolution
+(1910,7808) city 3 #c49E7C0 Evolution
+(1984,8154) city 2 #c49E7C0 Evolution
+(2254,7604) city 2 #c49E7C0 Evolution
+(2224,8055) city 2 #c49E7C0 Evolution
+(2544,8414) city 2 #c49E7C0 Evolution
+(0454,5784) city 2 #c49E7C0 Evolution
+(3178,4459) city 5 #c49E7C0 Evolution
+(3252,4529) city 5 #c49E7C0 Evolution
+(3732,5050) city 5 #c49E7C0 Evolution
+(4330,2620) city 5 #c49E7C0 Evolution
+(4547,1774) city 5 #c49E7C0 Evolution
+(4672,3930) city 5 #c49E7C0 Evolution
+(5280,2960) city 5 #c49E7C0 Evolution
+(0984,6595) city 2 #c49E7C0 Evolution
+(1234,7134) city 2 #c49E7C0 Evolution
+
+$planet
+(1738,3715)(1572,3774) small
+(1572,3774) large
+(1532,3836)(1572,3774) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(4691,3682)(4512,3854) small
+(4512,3854) large
+(4575,3910)(4512,3854) small
+(4309,3796)(4512,3854) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5775,5009) large
+(5612,5130)(5775,5009) small
+(5138,7285)(4992,7334) small
+(4992,7334) large
+(4952,7436)(4992,7334) small
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small
+(3332,1494) large
+(6652,3296)(6692,3194) small
+(6692,3194) large
+(6838,3145)(6692,3194) small
+(4499,4497) medium

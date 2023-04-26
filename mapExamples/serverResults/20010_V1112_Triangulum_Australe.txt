@@ -1,0 +1,143 @@
+$name 20010 V1112 Triangulum Australe
+$serverName V1112 Triangulum Australe
+$size 9000
+
+// Rank 1: Kangaeru (41.6)
+// Rank 2: The Flood (30.6)
+// Rank 3: No1china (16.0)
+// Rank 4: UnitedRUS (11.6)
+
+$station
+(1479,2900) city 2 #cE5B36C Kangaeru
+(2798,5337) city 7 #cE5B36C Kangaeru
+(3032,5330) city 5 #cE5B36C Kangaeru
+(2652,5476) city 2 #cE5B36C Kangaeru
+(2879,2238) city 3 #cE5B36C Kangaeru
+(3014,2554) city 2 #cE5B36C Kangaeru
+(3204,2294) city 2 #cE5B36C Kangaeru
+(3319,3151) city 5 #cE5B36C Kangaeru
+(3335,3039) city 5 #cE5B36C Kangaeru
+(3420,3077) city 5 #cE5B36C Kangaeru
+(3432,3248) city 5 #cE5B36C Kangaeru
+(3761,8269) city 7 #cE5B36C Kangaeru
+(3872,8450) city 5 #cE5B36C Kangaeru
+(3691,8467) city 5 #cE5B36C Kangaeru
+(3887,8308) city 3 #cE5B36C Kangaeru
+(3899,8200) city 2 #cE5B36C Kangaeru
+(4029,4691) city 5 #cE5B36C Kangaeru
+(3790,4680) city 5 #cE5B36C Kangaeru
+(3918,4859) city 5 #cE5B36C Kangaeru
+(3992,4929) city 5 #cE5B36C Kangaeru
+(4084,1774) city 2 #cE5B36C Kangaeru
+(4379,5358) city 3 #cE5B36C Kangaeru
+(4524,2014) city 2 #cE5B36C Kangaeru
+(0619,4771) city 5 #cE5B36C Kangaeru
+(5259,4658) city 3 #cE5B36C Kangaeru
+(5554,2614) city 2 #cE5B36C Kangaeru
+(7452,6147) city 3 #cE5B36C Kangaeru
+(8166,2362) city 5 #cE5B36C Kangaeru
+(7976,2354) city 5 #cE5B36C Kangaeru
+(8190,2220) city 5 #cE5B36C Kangaeru
+(8539,4931) city 5 #cE5B36C Kangaeru
+(8555,4819) city 5 #cE5B36C Kangaeru
+(8640,4858) city 5 #cE5B36C Kangaeru
+(8652,5028) city 5 #cE5B36C Kangaeru
+(2234,6004) city 2 #cE5B36C Kangaeru
+(2330,1240) city 5 #cE5B36C Kangaeru
+(0732,4868) city 5 #cE5B36C Kangaeru
+(1341,2969) city 7 #cE5B36C Kangaeru
+(1452,3150) city 5 #cE5B36C Kangaeru
+(1271,3167) city 5 #cE5B36C Kangaeru
+(1467,3008) city 3 #cE5B36C Kangaeru
+(4610,8480) city 5 #cFD7844 No1china
+(4585,8358) city 5 #cFD7844 No1china
+(4474,8613) city 5 #cFD7844 No1china
+(5872,8088) city 5 #cFD7844 No1china
+(5860,7918) city 5 #cFD7844 No1china
+(5775,7879) city 5 #cFD7844 No1china
+(5759,7991) city 5 #cFD7844 No1china
+(2007,7694) city 5 #cFD7844 No1china
+(1820,7660) city 5 #cFD7844 No1china
+(7178,6417) city 7 #cFD7844 No1china
+(7412,6410) city 5 #cFD7844 No1china
+(7776,6674) city 5 #cFD7844 No1china
+(2614,6084) city 2 #c49E7C0 UnitedRUS
+(3072,5067) city 3 #c49E7C0 UnitedRUS
+(2696,5178) city 3 #c49E7C0 UnitedRUS
+(2934,5574) city 2 #c49E7C0 UnitedRUS
+(2984,6734) city 2 #c49E7C0 UnitedRUS
+(3084,6334) city 2 #c49E7C0 UnitedRUS
+(3394,6894) city 2 #c49E7C0 UnitedRUS
+(3344,6375) city 2 #c49E7C0 UnitedRUS
+(3474,6564) city 2 #c49E7C0 UnitedRUS
+(1353,6453) city 7 #c49E7C0 UnitedRUS
+(1592,6670) city 5 #c49E7C0 UnitedRUS
+(1411,6647) city 5 #c49E7C0 UnitedRUS
+(1626,6517) city 3 #c49E7C0 UnitedRUS
+(3704,6354) city 2 #c49E7C0 UnitedRUS
+(4044,6774) city 2 #c49E7C0 UnitedRUS
+(4534,6354) city 2 #c49E7C0 UnitedRUS
+(4614,6664) city 2 #c49E7C0 UnitedRUS
+(4744,6455) city 2 #c49E7C0 UnitedRUS
+(5110,6349) city 3 #c49E7C0 UnitedRUS
+(5614,6724) city 2 #c49E7C0 UnitedRUS
+(5994,6444) city 2 #c49E7C0 UnitedRUS
+(7966,6682) city 5 #c49E7C0 UnitedRUS
+(7990,6540) city 5 #c49E7C0 UnitedRUS
+(1924,5614) city 2 #c49E7C0 UnitedRUS
+(2124,5255) city 2 #c49E7C0 UnitedRUS
+(2450,5188) city 3 #c49E7C0 UnitedRUS
+(2744,3254) city 2 #c4A99FB The Flood
+(2814,2844) city 2 #c4A99FB The Flood
+(3446,3982) city 5 #c4A99FB The Flood
+(3256,3974) city 5 #c4A99FB The Flood
+(3470,3840) city 5 #c4A99FB The Flood
+(3894,6774) city 2 #c4A99FB The Flood
+(4058,4117) city 7 #c4A99FB The Flood
+(4292,4110) city 5 #c4A99FB The Flood
+(4332,3847) city 3 #c4A99FB The Flood
+(3956,3958) city 3 #c4A99FB The Flood
+(3912,4256) city 2 #c4A99FB The Flood
+(4254,2114) city 2 #c4A99FB The Flood
+(5412,1068) city 5 #c4A99FB The Flood
+(5400,0898) city 5 #c4A99FB The Flood
+(5315,0859) city 5 #c4A99FB The Flood
+(5299,0971) city 5 #c4A99FB The Flood
+(1684,4914) city 2 #c4A99FB The Flood
+(6999,1199) city 9 #c4A99FB The Flood
+(7276,1271) city 5 #c4A99FB The Flood
+(6893,1426) city 3 #c4A99FB The Flood
+(2154,3654) city 2 #c4A99FB The Flood
+(2254,3994) city 2 #c4A99FB The Flood
+(2354,4824) city 2 #c4A99FB The Flood
+(2364,4574) city 2 #c4A99FB The Flood
+(2384,4214) city 2 #c4A99FB The Flood
+(2530,3908) city 3 #c4A99FB The Flood
+
+$planet
+(4311,3862)(4132,4034) small
+(3929,3976)(4132,4034) small
+(4195,4090)(4132,4034) small
+(4132,4034) large
+(7203,1301)(7095,1329) small
+(7095,1329) large
+(7141,1333)(7095,1329) small
+(6932,1450)(7095,1329) small
+(1392,6656)(1432,6594) small
+(1598,6535)(1432,6594) small
+(1432,6594) large
+(3051,5082)(2872,5254) small
+(2669,5196)(2872,5254) small
+(2935,5310)(2872,5254) small
+(2872,5254) large
+(3712,8374) large
+(3858,8325)(3712,8374) small
+(3672,8476)(3712,8374) small
+(1252,3176)(1292,3074) small
+(1438,3025)(1292,3074) small
+(1292,3074) large
+(7431,6162)(7252,6334) small
+(7315,6390)(7252,6334) small
+(7252,6334) large
+(7049,6276)(7252,6334) small
+(4499,4497) medium

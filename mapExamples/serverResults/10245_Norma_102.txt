@@ -1,0 +1,139 @@
+$name 10245 Norma 102
+$serverName Norma 102
+$size 9000
+
+// Rank 1: Addicted (51.8)
+// Rank 5: AERO FEDERATION (6.5)
+// Rank 6: New Star (2.1)
+
+$station
+(7089,5531) city 5 #c7E67F2 New Star
+(7052,5769) city 5 #c7E67F2 New Star
+(8399,4838) city 3 #c7E67F2 New Star
+(1538,3337) city 7 #cE5B36C Addicted
+(1772,3330) city 5 #cE5B36C Addicted
+(2254,7604) city 2 #cE5B36C Addicted
+(2454,7934) city 2 #cE5B36C Addicted
+(2714,7934) city 2 #cE5B36C Addicted
+(2884,7935) city 2 #cE5B36C Addicted
+(3526,4936) city 5 #cE5B36C Addicted
+(3246,4891) city 5 #cE5B36C Addicted
+(3273,5174) city 9 #cE5B36C Addicted
+(3414,8474) city 2 #cE5B36C Addicted
+(3614,8114) city 2 #cE5B36C Addicted
+(3633,5893) city 7 #cE5B36C Addicted
+(3872,6110) city 5 #cE5B36C Addicted
+(3906,5957) city 3 #cE5B36C Addicted
+(3519,6130) city 5 #cE5B36C Addicted
+(3764,8454) city 2 #cE5B36C Addicted
+(4092,4350) city 5 #cE5B36C Addicted
+(4132,4087) city 3 #cE5B36C Addicted
+(3756,4198) city 3 #cE5B36C Addicted
+(3712,4496) city 2 #cE5B36C Addicted
+(4214,8544) city 2 #cE5B36C Addicted
+(4824,7974) city 2 #cE5B36C Addicted
+(4904,8494) city 2 #cE5B36C Addicted
+(5314,8694) city 2 #cE5B36C Addicted
+(5421,3869) city 7 #cE5B36C Addicted
+(5532,4050) city 5 #cE5B36C Addicted
+(5547,3908) city 3 #cE5B36C Addicted
+(5559,3800) city 2 #cE5B36C Addicted
+(5672,7027) city 3 #cE5B36C Addicted
+(5296,7138) city 3 #cE5B36C Addicted
+(5252,7436) city 2 #cE5B36C Addicted
+(5752,5468) city 5 #cE5B36C Addicted
+(5740,5298) city 5 #cE5B36C Addicted
+(5655,5259) city 5 #cE5B36C Addicted
+(5639,5371) city 5 #cE5B36C Addicted
+(5984,8194) city 2 #cE5B36C Addicted
+(6492,4288) city 5 #cE5B36C Addicted
+(6379,4191) city 5 #cE5B36C Addicted
+(6494,7664) city 2 #cE5B36C Addicted
+(6390,7988) city 3 #cE5B36C Addicted
+(6906,3257) city 3 #cE5B36C Addicted
+(6664,8034) city 2 #cE5B36C Addicted
+(7134,7894) city 2 #cE5B36C Addicted
+(7174,6584) city 2 #cE5B36C Addicted
+(7314,7564) city 2 #cE5B36C Addicted
+(7444,6714) city 2 #cE5B36C Addicted
+(7714,2754) city 2 #cE5B36C Addicted
+(7734,5984) city 2 #cE5B36C Addicted
+(7744,3214) city 2 #cE5B36C Addicted
+(7934,2244) city 2 #cE5B36C Addicted
+(7884,2914) city 2 #cE5B36C Addicted
+(8054,6024) city 2 #cE5B36C Addicted
+(7924,5094) city 2 #cE5B36C Addicted
+(8114,3774) city 2 #cE5B36C Addicted
+(7884,4695) city 2 #cE5B36C Addicted
+(8114,6364) city 2 #cE5B36C Addicted
+(8104,3534) city 2 #cE5B36C Addicted
+(8104,5494) city 2 #cE5B36C Addicted
+(8274,2774) city 2 #cE5B36C Addicted
+(8254,3084) city 2 #cE5B36C Addicted
+(8334,6634) city 2 #cE5B36C Addicted
+(8434,3744) city 2 #cE5B36C Addicted
+(8284,5174) city 2 #cE5B36C Addicted
+(8494,4184) city 2 #cE5B36C Addicted
+(8344,4634) city 2 #cE5B36C Addicted
+(8454,6104) city 2 #cE5B36C Addicted
+(8524,3114) city 2 #cE5B36C Addicted
+(8634,5784) city 2 #cE5B36C Addicted
+(8774,3634) city 2 #cE5B36C Addicted
+(8784,5194) city 2 #cE5B36C Addicted
+(2234,0724) city 2 #cE63A3A AERO FEDERATION
+(2574,1414) city 2 #cE63A3A AERO FEDERATION
+(2934,1054) city 2 #cE63A3A AERO FEDERATION
+(3464,0734) city 2 #cE63A3A AERO FEDERATION
+(3874,0944) city 2 #cE63A3A AERO FEDERATION
+(3934,0604) city 2 #cE63A3A AERO FEDERATION
+(3974,0154) city 2 #cE63A3A AERO FEDERATION
+(4569,1711) city 5 #cE63A3A AERO FEDERATION
+(4424,0735) city 2 #cE63A3A AERO FEDERATION
+(4844,0994) city 2 #cE63A3A AERO FEDERATION
+(5124,0654) city 2 #cE63A3A AERO FEDERATION
+(5494,0324) city 2 #cE63A3A AERO FEDERATION
+(6074,0434) city 2 #cE63A3A AERO FEDERATION
+(6170,3340) city 5 #cE63A3A AERO FEDERATION
+(6124,1455) city 2 #cE63A3A AERO FEDERATION
+(6454,0454) city 2 #cE63A3A AERO FEDERATION
+(6450,1940) city 5 #cE63A3A AERO FEDERATION
+(6425,1818) city 5 #cE63A3A AERO FEDERATION
+(6314,2073) city 5 #cE63A3A AERO FEDERATION
+(6914,1664) city 2 #cE63A3A AERO FEDERATION
+(7014,2014) city 2 #cE63A3A AERO FEDERATION
+(7194,1394) city 2 #cE63A3A AERO FEDERATION
+(7124,1814) city 2 #cE63A3A AERO FEDERATION
+(7184,2134) city 2 #cE63A3A AERO FEDERATION
+(7404,1414) city 2 #cE63A3A AERO FEDERATION
+(7490,1968) city 3 #cE63A3A AERO FEDERATION
+(7734,2424) city 2 #cE63A3A AERO FEDERATION
+(7744,1694) city 2 #cE63A3A AERO FEDERATION
+(7744,2014) city 2 #cE63A3A AERO FEDERATION
+
+$planet
+(3932,4274) large
+(3729,4216)(3932,4274) small
+(4111,4102)(3932,4274) small
+(3995,4330)(3932,4274) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1791,3082)(1612,3254) small
+(1675,3310)(1612,3254) small
+(1612,3254) large
+(1409,3196)(1612,3254) small
+(3399,5072) large
+(3414,5163)(3399,5072) small
+(3201,4960)(3399,5072) small
+(3562,4960)(3399,5072) small
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(5372,3974) large
+(5332,4076)(5372,3974) small
+(5518,3925)(5372,3974) small
+(5651,7042)(5472,7214) small
+(5269,7156)(5472,7214) small
+(5472,7214) large
+(5535,7270)(5472,7214) small
+(4499,4497) medium

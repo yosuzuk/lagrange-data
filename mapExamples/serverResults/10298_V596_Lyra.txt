@@ -1,0 +1,152 @@
+$name 10298 V596 Lyra
+$serverName V596 Lyra
+$size 9000
+
+// Rank 1: OmicronKWAK (16.0)
+// Rank 2: EMPIRE (16.0)
+// Rank 4: Shadow Society (9.4)
+// Rank 8: DarkLegion (6.5)
+// Rank 9: REDRUM (6.5)
+
+$station
+(1174,5484) city 2 #c9FE23E DarkLegion
+(1284,6574) city 2 #c9FE23E DarkLegion
+(1324,7674) city 2 #c9FE23E DarkLegion
+(1514,6934) city 2 #c9FE23E DarkLegion
+(1624,7934) city 2 #c9FE23E DarkLegion
+(0364,6314) city 2 #c9FE23E DarkLegion
+(1939,7698) city 3 #c9FE23E DarkLegion
+(2204,7694) city 2 #c9FE23E DarkLegion
+(3252,5706) city 2 #c9FE23E DarkLegion
+(3454,8444) city 2 #c9FE23E DarkLegion
+(3814,7794) city 2 #c9FE23E DarkLegion
+(4084,8294) city 2 #c9FE23E DarkLegion
+(4514,8724) city 2 #c9FE23E DarkLegion
+(4614,8304) city 2 #c9FE23E DarkLegion
+(4744,8815) city 2 #c9FE23E DarkLegion
+(5012,5698) city 5 #c9FE23E DarkLegion
+(5289,5711) city 5 #c9FE23E DarkLegion
+(5254,8074) city 2 #c9FE23E DarkLegion
+(5852,6150) city 5 #c9FE23E DarkLegion
+(5774,7634) city 2 #c9FE23E DarkLegion
+(5814,8464) city 2 #c9FE23E DarkLegion
+(5904,8195) city 2 #c9FE23E DarkLegion
+(6392,7430) city 5 #c9FE23E DarkLegion
+(0644,5754) city 2 #c9FE23E DarkLegion
+(6379,7978) city 3 #c9FE23E DarkLegion
+(6974,6904) city 2 #c9FE23E DarkLegion
+(6984,8014) city 2 #c9FE23E DarkLegion
+(0774,6204) city 2 #c9FE23E DarkLegion
+(7594,6654) city 2 #c9FE23E DarkLegion
+(1274,6794) city 2 #c9FE23E DarkLegion
+(1893,2833) city 7 #c4A99FB EMPIRE
+(2132,3050) city 5 #c4A99FB EMPIRE
+(2640,3820) city 5 #c4A99FB EMPIRE
+(5269,3551) city 5 #c4A99FB EMPIRE
+(5867,6008) city 3 #c4A99FB EMPIRE
+(6126,3362) city 5 #c4A99FB EMPIRE
+(6529,4071) city 5 #c4A99FB EMPIRE
+(7594,6284) city 2 #c4A99FB EMPIRE
+(8114,6374) city 2 #c4A99FB EMPIRE
+(8154,5404) city 2 #c4A99FB EMPIRE
+(8530,4929) city 3 #c4A99FB EMPIRE
+(8564,3434) city 2 #c4A99FB EMPIRE
+(8734,3634) city 2 #c4A99FB EMPIRE
+(8674,4144) city 2 #c4A99FB EMPIRE
+(8724,5534) city 2 #c4A99FB EMPIRE
+(1394,2654) city 2 #cE5B36C OmicronKWAK
+(1564,2414) city 2 #cE5B36C OmicronKWAK
+(1739,5891) city 5 #cE5B36C OmicronKWAK
+(1770,1408) city 3 #cE5B36C OmicronKWAK
+(2166,2897) city 3 #cE5B36C OmicronKWAK
+(2014,8044) city 2 #cE5B36C OmicronKWAK
+(0324,2955) city 2 #cE5B36C OmicronKWAK
+(2324,7395) city 2 #cE5B36C OmicronKWAK
+(2614,1393) city 5 #cE5B36C OmicronKWAK
+(3034,7854) city 2 #cE5B36C OmicronKWAK
+(2944,8234) city 2 #cE5B36C OmicronKWAK
+(3354,0764) city 2 #cE5B36C OmicronKWAK
+(3398,5577) city 7 #cE5B36C OmicronKWAK
+(3632,5570) city 5 #cE5B36C OmicronKWAK
+(3414,0294) city 2 #cE5B36C OmicronKWAK
+(3694,0634) city 2 #cE5B36C OmicronKWAK
+(3704,1054) city 2 #cE5B36C OmicronKWAK
+(4096,3591) city 5 #cE5B36C OmicronKWAK
+(3713,3746) city 3 #cE5B36C OmicronKWAK
+(4569,1411) city 5 #cE5B36C OmicronKWAK
+(0744,1934) city 2 #cE5B36C OmicronKWAK
+(0954,3044) city 2 #cE5B36C OmicronKWAK
+(0944,2774) city 2 #cE5B36C OmicronKWAK
+(1084,5094) city 2 #cE5B36C OmicronKWAK
+(1114,6144) city 2 #cE5B36C OmicronKWAK
+(2514,0524) city 2 #c49E7C0 Shadow Society
+(3744,0275) city 2 #c49E7C0 Shadow Society
+(4074,0944) city 2 #c49E7C0 Shadow Society
+(0604,3694) city 2 #c49E7C0 Shadow Society
+(4734,0554) city 2 #c49E7C0 Shadow Society
+(5434,0944) city 2 #c49E7C0 Shadow Society
+(5410,0688) city 3 #c49E7C0 Shadow Society
+(5879,5900) city 2 #c49E7C0 Shadow Society
+(6074,0424) city 2 #c49E7C0 Shadow Society
+(6304,0554) city 2 #c49E7C0 Shadow Society
+(6290,4060) city 5 #c49E7C0 Shadow Society
+(6418,4239) city 5 #c49E7C0 Shadow Society
+(6773,3093) city 7 #c49E7C0 Shadow Society
+(7012,3310) city 5 #c49E7C0 Shadow Society
+(6831,3287) city 5 #c49E7C0 Shadow Society
+(7046,3157) city 3 #c49E7C0 Shadow Society
+(6659,3330) city 5 #c49E7C0 Shadow Society
+(6764,1434) city 2 #c49E7C0 Shadow Society
+(7174,0834) city 2 #c49E7C0 Shadow Society
+(7574,2104) city 2 #c49E7C0 Shadow Society
+(7474,1284) city 2 #c49E7C0 Shadow Society
+(7424,1694) city 2 #c49E7C0 Shadow Society
+(7744,1694) city 2 #c49E7C0 Shadow Society
+(7914,1914) city 2 #c49E7C0 Shadow Society
+(7704,3235) city 2 #c49E7C0 Shadow Society
+(7994,2254) city 2 #c49E7C0 Shadow Society
+(8484,2814) city 2 #c49E7C0 Shadow Society
+(8594,3054) city 2 #c49E7C0 Shadow Society
+(0184,3454) city 2 #c49E7C0 Shadow Society
+(3672,5307) city 3 #cF1F1F1 REDRUM
+(3296,5418) city 3 #cF1F1F1 REDRUM
+(5332,4890) city 5 #cF1F1F1 REDRUM
+(5084,8815) city 2 #cF1F1F1 REDRUM
+(6432,7167) city 3 #cF1F1F1 REDRUM
+(6056,7278) city 3 #cF1F1F1 REDRUM
+(6011,7566) city 2 #cF1F1F1 REDRUM
+(6834,7574) city 2 #cF1F1F1 REDRUM
+(6907,6594) city 5 #cF1F1F1 REDRUM
+(6899,5671) city 5 #cF1F1F1 REDRUM
+(7084,7695) city 2 #cF1F1F1 REDRUM
+(7414,6984) city 2 #cF1F1F1 REDRUM
+(7664,7334) city 2 #cF1F1F1 REDRUM
+(7870,5460) city 5 #cF1F1F1 REDRUM
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium

@@ -1,0 +1,128 @@
+$name 10008 V1026Hercules
+$serverName V1026Hercules
+$size 9000
+
+// Rank 1: Mass Effect (50.3)
+// Rank 2: EVE (35.7)
+// Rank 3: OMNI Phoenix 2 (11.6)
+// Rank 4: LEGION (2.1)
+
+$station
+(0350,4668) city 3 #cE5B36C Mass Effect
+(3633,5893) city 7 #cE5B36C Mass Effect
+(3872,6110) city 5 #cE5B36C Mass Effect
+(3691,6087) city 5 #cE5B36C Mass Effect
+(3906,5957) city 3 #cE5B36C Mass Effect
+(3519,6130) city 5 #cE5B36C Mass Effect
+(4092,4350) city 5 #cE5B36C Mass Effect
+(4126,4197) city 3 #cE5B36C Mass Effect
+(4569,1511) city 5 #cE5B36C Mass Effect
+(4458,1679) city 5 #cE5B36C Mass Effect
+(5298,4057) city 7 #cE5B36C Mass Effect
+(5532,4050) city 5 #cE5B36C Mass Effect
+(5572,3787) city 3 #cE5B36C Mass Effect
+(5196,3898) city 3 #cE5B36C Mass Effect
+(5202,4166) city 2 #cE5B36C Mass Effect
+(5202,4166) city 7 #cE5B36C Mass Effect
+(5212,2918) city 5 #cE5B36C Mass Effect
+(5490,2718) city 5 #cE5B36C Mass Effect
+(5355,2759) city 5 #cE5B36C Mass Effect
+(5489,2931) city 5 #cE5B36C Mass Effect
+(5789,5231) city 5 #cE5B36C Mass Effect
+(5678,5399) city 5 #cE5B36C Mass Effect
+(5752,5469) city 5 #cE5B36C Mass Effect
+(5676,6154) city 5 #cE5B36C Mass Effect
+(5890,6020) city 5 #cE5B36C Mass Effect
+(6090,3440) city 5 #cE5B36C Mass Effect
+(6065,3318) city 5 #cE5B36C Mass Effect
+(6274,1354) city 2 #cE5B36C Mass Effect
+(6252,4238) city 5 #cE5B36C Mass Effect
+(6530,4038) city 5 #cE5B36C Mass Effect
+(6395,4079) city 5 #cE5B36C Mass Effect
+(6529,4251) city 5 #cE5B36C Mass Effect
+(6360,2040) city 5 #cE5B36C Mass Effect
+(6633,3193) city 7 #cE5B36C Mass Effect
+(6872,3410) city 5 #cE5B36C Mass Effect
+(6906,3257) city 3 #cE5B36C Mass Effect
+(6854,6924) city 2 #cE5B36C Mass Effect
+(7089,5731) city 5 #cE5B36C Mass Effect
+(0730,2869) city 3 #cE5B36C Mass Effect
+(7200,4940) city 5 #cE5B36C Mass Effect
+(7594,6284) city 2 #cE5B36C Mass Effect
+(7714,2754) city 2 #cE5B36C Mass Effect
+(7904,5074) city 2 #cE5B36C Mass Effect
+(7964,3894) city 2 #cE5B36C Mass Effect
+(8114,4564) city 2 #cE5B36C Mass Effect
+(8034,6394) city 2 #cE5B36C Mass Effect
+(8410,4848) city 3 #cE5B36C Mass Effect
+(8704,4234) city 2 #cE5B36C Mass Effect
+(8734,4484) city 2 #cE5B36C Mass Effect
+(8834,5104) city 2 #cE5B36C Mass Effect
+(1967,5294) city 5 #c4A99FB EVE
+(1974,5033) city 5 #c4A99FB EVE
+(1780,5260) city 5 #c4A99FB EVE
+(0554,2834) city 2 #c4A99FB EVE
+(3301,4976) city 9 #c4A99FB EVE
+(3556,5031) city 5 #c4A99FB EVE
+(3853,4133) city 7 #c4A99FB EVE
+(3911,4327) city 5 #c4A99FB EVE
+(3739,4370) city 5 #c4A99FB EVE
+(0754,3574) city 2 #c4A99FB EVE
+(0814,4924) city 2 #c4A99FB EVE
+(0334,3814) city 2 #c4A99FB EVE
+(0994,4174) city 2 #c4A99FB EVE
+(0924,3494) city 2 #c4A99FB EVE
+(0884,4735) city 2 #c4A99FB EVE
+(1064,5074) city 2 #c4A99FB EVE
+(1533,3113) city 7 #c4A99FB EVE
+(1772,3330) city 5 #c4A99FB EVE
+(1591,3307) city 5 #c4A99FB EVE
+(1806,3177) city 3 #c4A99FB EVE
+(1419,3350) city 5 #c4A99FB EVE
+(2174,7094) city 2 #c49E7C0 LEGION
+(2979,6871) city 5 #c49E7C0 LEGION
+(2995,6759) city 5 #c49E7C0 LEGION
+(3080,6798) city 5 #c49E7C0 LEGION
+(4084,8675) city 2 #cFD7844 OMNI Phoenix 2
+(4384,7994) city 2 #cFD7844 OMNI Phoenix 2
+(4934,8384) city 2 #cFD7844 OMNI Phoenix 2
+(5374,7774) city 2 #cFD7844 OMNI Phoenix 2
+(5393,7073) city 7 #cFD7844 OMNI Phoenix 2
+(5632,7290) city 5 #cFD7844 OMNI Phoenix 2
+(5451,7267) city 5 #cFD7844 OMNI Phoenix 2
+(5666,7137) city 3 #cFD7844 OMNI Phoenix 2
+(5754,7974) city 2 #cFD7844 OMNI Phoenix 2
+(5854,7614) city 2 #cFD7844 OMNI Phoenix 2
+(5866,6162) city 5 #cFD7844 OMNI Phoenix 2
+(6430,7300) city 5 #cFD7844 OMNI Phoenix 2
+(6424,8354) city 2 #cFD7844 OMNI Phoenix 2
+(6734,7234) city 2 #cFD7844 OMNI Phoenix 2
+(6814,7914) city 2 #cFD7844 OMNI Phoenix 2
+(6604,7695) city 2 #cFD7844 OMNI Phoenix 2
+(6904,8015) city 2 #cFD7844 OMNI Phoenix 2
+
+$planet
+(3932,4274) large
+(3892,4336)(3932,4274) small
+(4098,4215)(3932,4274) small
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small
+(5435,4030)(5372,3974) small
+(5169,3916)(5372,3974) small
+(5372,3974) large
+(5551,3802)(5372,3974) small
+(3483,5061)(3375,5089) small
+(3212,5210)(3375,5089) small
+(3421,5093)(3375,5089) small
+(3375,5089) large
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(4499,4497) medium

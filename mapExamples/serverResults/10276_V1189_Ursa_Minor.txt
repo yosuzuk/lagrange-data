@@ -1,0 +1,111 @@
+$name 10276 V1189 Ursa Minor
+$serverName V1189 Ursa Minor
+$size 9000
+
+// Rank 1: EGO (51.8)
+// Rank 2: OnlyOne (16.0)
+// Rank 5: 大唐 (4.3)
+// Rank 6: PA1N (2.1)
+
+$station
+(1750,4940) city 5 #c7E67F2 PA1N
+(1614,5073) city 5 #c7E67F2 PA1N
+(2514,0524) city 2 #c7E67F2 PA1N
+(8154,5404) city 2 #c7E67F2 PA1N
+(1444,6254) city 2 #cE5B36C EGO
+(1852,5988) city 5 #cE5B36C EGO
+(1840,5818) city 5 #cE5B36C EGO
+(1755,5779) city 5 #cE5B36C EGO
+(1739,5891) city 5 #cE5B36C EGO
+(1770,1408) city 3 #cE5B36C EGO
+(1893,2833) city 7 #cE5B36C EGO
+(2166,2897) city 3 #cE5B36C EGO
+(2044,1534) city 2 #cE5B36C EGO
+(2314,1764) city 2 #cE5B36C EGO
+(3354,0764) city 2 #cE5B36C EGO
+(3398,5577) city 7 #cE5B36C EGO
+(3632,5570) city 5 #cE5B36C EGO
+(3252,5706) city 2 #cE5B36C EGO
+(3819,3519) city 9 #cE5B36C EGO
+(4096,3591) city 5 #cE5B36C EGO
+(4569,1411) city 5 #cE5B36C EGO
+(0634,4244) city 2 #cE5B36C EGO
+(5158,3719) city 5 #cE5B36C EGO
+(5269,3551) city 5 #cE5B36C EGO
+(5289,5711) city 5 #cE5B36C EGO
+(5741,5969) city 7 #cE5B36C EGO
+(6529,4071) city 5 #cE5B36C EGO
+(0954,3044) city 2 #cE5B36C EGO
+(0944,2774) city 2 #cE5B36C EGO
+(1114,4604) city 2 #cE5B36C EGO
+(1114,6144) city 2 #cE5B36C EGO
+(4514,8724) city 2 #c4A99FB OnlyOne
+(4614,8304) city 2 #c4A99FB OnlyOne
+(5254,8074) city 2 #c4A99FB OnlyOne
+(5852,6150) city 5 #c4A99FB OnlyOne
+(5867,6008) city 3 #c4A99FB OnlyOne
+(5879,5900) city 2 #c4A99FB OnlyOne
+(5774,7634) city 2 #c4A99FB OnlyOne
+(5814,8464) city 2 #c4A99FB OnlyOne
+(5904,8195) city 2 #c4A99FB OnlyOne
+(6158,7437) city 7 #c4A99FB OnlyOne
+(6392,7430) city 5 #c4A99FB OnlyOne
+(6432,7167) city 3 #c4A99FB OnlyOne
+(6056,7278) city 3 #c4A99FB OnlyOne
+(6011,7566) city 2 #c4A99FB OnlyOne
+(6379,7978) city 3 #c4A99FB OnlyOne
+(6834,7574) city 2 #c4A99FB OnlyOne
+(6907,6594) city 5 #c4A99FB OnlyOne
+(6914,6333) city 5 #c4A99FB OnlyOne
+(6720,6560) city 5 #c4A99FB OnlyOne
+(6974,6904) city 2 #c4A99FB OnlyOne
+(6899,5671) city 5 #c4A99FB OnlyOne
+(7012,5768) city 5 #c4A99FB OnlyOne
+(6984,8014) city 2 #c4A99FB OnlyOne
+(7084,7695) city 2 #c4A99FB OnlyOne
+(7414,6984) city 2 #c4A99FB OnlyOne
+(7594,6284) city 2 #c4A99FB OnlyOne
+(7594,6654) city 2 #c4A99FB OnlyOne
+(7664,7334) city 2 #c4A99FB OnlyOne
+(8114,6374) city 2 #c4A99FB OnlyOne
+(8724,5534) city 2 #c4A99FB OnlyOne
+(1394,2654) city 2 #cE63A3A 大唐
+(1484,1414) city 2 #cE63A3A 大唐
+(1564,2414) city 2 #cE63A3A 大唐
+(1844,2134) city 2 #cE63A3A 大唐
+(2420,1620) city 5 #cE63A3A 大唐
+(2827,3854) city 5 #cE63A3A 大唐
+(2640,3820) city 5 #cE63A3A 大唐
+(3713,3746) city 3 #cE63A3A 大唐
+(0754,2464) city 2 #cE63A3A 大唐
+(0774,2154) city 2 #cE63A3A 大唐
+(0744,1934) city 2 #cE63A3A 大唐
+(1114,2314) city 2 #cE63A3A 大唐
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium

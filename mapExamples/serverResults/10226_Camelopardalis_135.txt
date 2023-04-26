@@ -1,0 +1,151 @@
+$name 10226 Camelopardalis 135
+$serverName Camelopardalis 135
+$size 9000
+
+// Rank 1: Guardian (51.8)
+// Rank 2: Liberation (41.6)
+// Rank 3: Stark industry (4.3)
+
+$station
+(1504,2435) city 2 #cE5B36C Guardian
+(2084,1195) city 2 #cE5B36C Guardian
+(2484,0634) city 2 #cE5B36C Guardian
+(2705,3598) city 5 #cE5B36C Guardian
+(3354,1044) city 2 #cE5B36C Guardian
+(3339,4559) city 9 #cE5B36C Guardian
+(4514,8724) city 2 #cE5B36C Guardian
+(4584,8314) city 2 #cE5B36C Guardian
+(4921,7609) city 7 #cE5B36C Guardian
+(5032,7790) city 5 #cE5B36C Guardian
+(5047,7648) city 3 #cE5B36C Guardian
+(5059,7540) city 2 #cE5B36C Guardian
+(4824,8814) city 2 #cE5B36C Guardian
+(4954,2993) city 5 #cE5B36C Guardian
+(5352,4410) city 5 #cE5B36C Guardian
+(5386,4257) city 3 #cE5B36C Guardian
+(5194,8064) city 2 #cE5B36C Guardian
+(5821,5089) city 7 #cE5B36C Guardian
+(5932,5270) city 5 #cE5B36C Guardian
+(6529,4271) city 5 #cE5B36C Guardian
+(6494,7664) city 2 #cE5B36C Guardian
+(6573,3013) city 7 #cE5B36C Guardian
+(6812,3230) city 5 #cE5B36C Guardian
+(6631,3207) city 5 #cE5B36C Guardian
+(6846,3077) city 3 #cE5B36C Guardian
+(6459,3250) city 5 #cE5B36C Guardian
+(6834,7564) city 2 #cE5B36C Guardian
+(6974,6904) city 2 #cE5B36C Guardian
+(7140,4340) city 5 #cE5B36C Guardian
+(7164,6754) city 2 #cE5B36C Guardian
+(7144,7675) city 2 #cE5B36C Guardian
+(7554,6644) city 2 #cE5B36C Guardian
+(7734,5974) city 2 #cE5B36C Guardian
+(7790,5560) city 5 #cE5B36C Guardian
+(7994,6694) city 2 #cE5B36C Guardian
+(8054,2804) city 2 #cE5B36C Guardian
+(7844,5095) city 2 #cE5B36C Guardian
+(8154,4204) city 2 #cE5B36C Guardian
+(7924,7135) city 2 #cE5B36C Guardian
+(8124,3534) city 2 #cE5B36C Guardian
+(8264,6814) city 2 #cE5B36C Guardian
+(8284,4194) city 2 #cE5B36C Guardian
+(8334,5064) city 2 #cE5B36C Guardian
+(8534,2724) city 2 #cE5B36C Guardian
+(8439,4818) city 3 #cE5B36C Guardian
+(0994,2684) city 2 #cE5B36C Guardian
+(8774,4144) city 2 #cE5B36C Guardian
+(8644,3434) city 2 #cE5B36C Guardian
+(8794,5434) city 2 #cE5B36C Guardian
+(8954,5094) city 2 #cE5B36C Guardian
+(1394,2284) city 2 #cE5B36C Guardian
+(1494,7254) city 2 #c4A99FB Liberation
+(1474,6924) city 2 #c4A99FB Liberation
+(1593,4913) city 7 #c4A99FB Liberation
+(1832,5130) city 5 #c4A99FB Liberation
+(0334,4414) city 2 #c4A99FB Liberation
+(1866,4977) city 3 #c4A99FB Liberation
+(1684,7514) city 2 #c4A99FB Liberation
+(1994,2004) city 2 #c4A99FB Liberation
+(1939,7698) city 3 #c4A99FB Liberation
+(2150,2700) city 5 #c4A99FB Liberation
+(2174,7094) city 2 #c4A99FB Liberation
+(0224,5195) city 2 #c4A99FB Liberation
+(2374,7954) city 2 #c4A99FB Liberation
+(2730,3720) city 5 #c4A99FB Liberation
+(3034,8444) city 2 #c4A99FB Liberation
+(0370,4728) city 3 #c4A99FB Liberation
+(3129,6691) city 5 #c4A99FB Liberation
+(2890,6680) city 5 #c4A99FB Liberation
+(3018,6859) city 5 #c4A99FB Liberation
+(3092,6929) city 5 #c4A99FB Liberation
+(2960,1920) city 5 #c4A99FB Liberation
+(3616,4631) city 5 #c4A99FB Liberation
+(3233,4786) city 3 #c4A99FB Liberation
+(0494,6114) city 2 #c4A99FB Liberation
+(3494,7804) city 2 #c4A99FB Liberation
+(3724,8754) city 2 #c4A99FB Liberation
+(3913,6113) city 7 #c4A99FB Liberation
+(4152,6330) city 5 #c4A99FB Liberation
+(4186,6177) city 3 #c4A99FB Liberation
+(0544,3314) city 2 #c4A99FB Liberation
+(4064,7974) city 2 #c4A99FB Liberation
+(4389,5011) city 5 #c4A99FB Liberation
+(4554,7874) city 2 #c4A99FB Liberation
+(5090,2860) city 5 #c4A99FB Liberation
+(0634,4244) city 2 #c4A99FB Liberation
+(5113,4193) city 7 #c4A99FB Liberation
+(0814,4924) city 2 #c4A99FB Liberation
+(0784,6954) city 2 #c4A99FB Liberation
+(0954,5294) city 2 #c4A99FB Liberation
+(1114,6444) city 2 #c4A99FB Liberation
+(1044,6915) city 2 #c4A99FB Liberation
+(2824,1154) city 2 #cFD7844 Stark industry
+(3534,0694) city 2 #cFD7844 Stark industry
+(3784,0234) city 2 #cFD7844 Stark industry
+(3975,3459) city 5 #cFD7844 Stark industry
+(3959,3571) city 5 #cFD7844 Stark industry
+(4354,0084) city 2 #cFD7844 Stark industry
+(4532,1648) city 5 #cFD7844 Stark industry
+(4419,1551) city 5 #cFD7844 Stark industry
+(4484,0714) city 2 #cFD7844 Stark industry
+(4774,0234) city 2 #cFD7844 Stark industry
+(5065,2738) city 5 #cFD7844 Stark industry
+(5214,0574) city 2 #cFD7844 Stark industry
+(5404,1054) city 2 #cFD7844 Stark industry
+(5444,0414) city 2 #cFD7844 Stark industry
+(5399,0698) city 3 #cFD7844 Stark industry
+(5947,5128) city 3 #cFD7844 Stark industry
+(5959,5020) city 2 #cFD7844 Stark industry
+(5744,0894) city 2 #cFD7844 Stark industry
+(6204,1094) city 2 #cFD7844 Stark industry
+(6664,0614) city 2 #cFD7844 Stark industry
+(7024,0974) city 2 #cFD7844 Stark industry
+(7514,1214) city 2 #cFD7844 Stark industry
+(7934,3114) city 2 #cFD7844 Stark industry
+(7944,4674) city 2 #cFD7844 Stark industry
+(8284,3874) city 2 #cFD7844 Stark industry
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

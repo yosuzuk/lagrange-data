@@ -1,0 +1,135 @@
+$name 10206 Horologium RU
+$serverName Horologium RU
+$size 9000
+
+// Rank 1: Among us (51.0)
+// Rank 2: War Maiden (48.9)
+
+$station
+(1154,6804) city 2 #c4A99FB War Maiden
+(1374,6494) city 2 #c4A99FB War Maiden
+(1444,7034) city 2 #c4A99FB War Maiden
+(1889,5751) city 5 #c4A99FB War Maiden
+(2434,7284) city 2 #c4A99FB War Maiden
+(3034,8154) city 2 #c4A99FB War Maiden
+(3521,5389) city 7 #c4A99FB War Maiden
+(3659,5320) city 2 #c4A99FB War Maiden
+(3774,8664) city 2 #c4A99FB War Maiden
+(4004,7995) city 2 #c4A99FB War Maiden
+(4419,1551) city 5 #c4A99FB War Maiden
+(4435,1439) city 5 #c4A99FB War Maiden
+(4520,1478) city 5 #c4A99FB War Maiden
+(4532,1648) city 5 #c4A99FB War Maiden
+(4534,0934) city 2 #c4A99FB War Maiden
+(4824,8814) city 2 #c4A99FB War Maiden
+(5221,4709) city 7 #c4A99FB War Maiden
+(5332,4890) city 5 #c4A99FB War Maiden
+(5151,4907) city 5 #c4A99FB War Maiden
+(5347,4748) city 3 #c4A99FB War Maiden
+(5359,4640) city 2 #c4A99FB War Maiden
+(5269,3751) city 5 #c4A99FB War Maiden
+(5289,5511) city 5 #c4A99FB War Maiden
+(5374,7774) city 2 #c4A99FB War Maiden
+(5741,5969) city 7 #c4A99FB War Maiden
+(5867,6008) city 3 #c4A99FB War Maiden
+(5879,5900) city 2 #c4A99FB War Maiden
+(5664,8054) city 2 #c4A99FB War Maiden
+(6281,7249) city 7 #c4A99FB War Maiden
+(6407,7288) city 3 #c4A99FB War Maiden
+(6419,7180) city 2 #c4A99FB War Maiden
+(6529,4271) city 5 #c4A99FB War Maiden
+(6344,7794) city 2 #c4A99FB War Maiden
+(6430,8049) city 3 #c4A99FB War Maiden
+(0674,6524) city 2 #c4A99FB War Maiden
+(6584,7335) city 2 #c4A99FB War Maiden
+(6604,7695) city 2 #c4A99FB War Maiden
+(6866,6502) city 5 #c4A99FB War Maiden
+(6676,6494) city 5 #c4A99FB War Maiden
+(6890,6360) city 5 #c4A99FB War Maiden
+(0814,4934) city 2 #c4A99FB War Maiden
+(6804,7014) city 2 #c4A99FB War Maiden
+(6899,5671) city 5 #c4A99FB War Maiden
+(6915,5559) city 5 #c4A99FB War Maiden
+(7000,5598) city 5 #c4A99FB War Maiden
+(7012,5768) city 5 #c4A99FB War Maiden
+(7054,7914) city 2 #c4A99FB War Maiden
+(7094,7244) city 2 #c4A99FB War Maiden
+(7414,6984) city 2 #c4A99FB War Maiden
+(7514,6314) city 2 #c4A99FB War Maiden
+(7384,7675) city 2 #c4A99FB War Maiden
+(7604,7355) city 2 #c4A99FB War Maiden
+(7790,5560) city 5 #c4A99FB War Maiden
+(8034,6394) city 2 #c4A99FB War Maiden
+(8034,7024) city 2 #c4A99FB War Maiden
+(8184,5855) city 2 #c4A99FB War Maiden
+(1854,4813) city 5 #cE5B36C Among us
+(1660,5040) city 5 #cE5B36C Among us
+(1898,3057) city 7 #cE5B36C Among us
+(2132,3050) city 5 #cE5B36C Among us
+(1752,3196) city 2 #cE5B36C Among us
+(2590,1420) city 5 #cE5B36C Among us
+(2834,3593) city 5 #cE5B36C Among us
+(2640,3820) city 5 #cE5B36C Among us
+(3354,0764) city 2 #cE5B36C Among us
+(3632,5570) city 5 #cE5B36C Among us
+(3814,3702) city 9 #cE5B36C Among us
+(3786,3411) city 5 #cE5B36C Among us
+(4066,3456) city 5 #cE5B36C Among us
+(3894,0174) city 2 #cE5B36C Among us
+(4194,0424) city 2 #cE5B36C Among us
+(4814,0534) city 2 #cE5B36C Among us
+(5154,0504) city 2 #cE5B36C Among us
+(5135,3579) city 5 #cE5B36C Among us
+(5270,3538) city 5 #cE5B36C Among us
+(5154,0144) city 2 #cE5B36C Among us
+(5384,1034) city 2 #cE5B36C Among us
+(5399,0678) city 3 #cE5B36C Among us
+(5852,6150) city 5 #cE5B36C Among us
+(5914,0794) city 2 #cE5B36C Among us
+(6126,3362) city 5 #cE5B36C Among us
+(5936,3354) city 5 #cE5B36C Among us
+(6150,3220) city 5 #cE5B36C Among us
+(6392,7430) city 5 #cE5B36C Among us
+(6354,1324) city 2 #cE5B36C Among us
+(6374,0984) city 2 #cE5B36C Among us
+(6374,0454) city 2 #cE5B36C Among us
+(6252,4258) city 5 #cE5B36C Among us
+(6754,0534) city 2 #cE5B36C Among us
+(6901,3129) city 7 #cE5B36C Among us
+(7012,3310) city 5 #cE5B36C Among us
+(7027,3168) city 3 #cE5B36C Among us
+(7039,3060) city 2 #cE5B36C Among us
+(6784,1454) city 2 #cE5B36C Among us
+(7014,2024) city 2 #cE5B36C Among us
+(7194,1394) city 2 #cE5B36C Among us
+(7494,2134) city 2 #cE5B36C Among us
+(7914,1594) city 2 #cE5B36C Among us
+(0664,6315) city 2 #cE5B36C Among us
+(8254,3084) city 2 #cE5B36C Among us
+(8674,3024) city 2 #cE5B36C Among us
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

@@ -1,0 +1,165 @@
+$name 10202 V909 Andromeda
+$serverName V909 Andromeda
+$size 9000
+
+// Rank 1: 蔚藍星空 (51.0)
+// Rank 2: Seven Sky (27.7)
+// Rank 3: For All (18.9)
+
+$station
+(1494,7254) city 2 #cFD7844 For All
+(1474,6924) city 2 #cFD7844 For All
+(1684,7514) city 2 #cFD7844 For All
+(1904,8155) city 2 #cFD7844 For All
+(1939,7698) city 3 #cFD7844 For All
+(2174,7094) city 2 #cFD7844 For All
+(0224,5195) city 2 #cFD7844 For All
+(2374,7954) city 2 #cFD7844 For All
+(2444,8394) city 2 #cFD7844 For All
+(3034,8444) city 2 #cFD7844 For All
+(2890,6680) city 5 #cFD7844 For All
+(3018,6859) city 5 #cFD7844 For All
+(3092,6929) city 5 #cFD7844 For All
+(0494,6114) city 2 #cFD7844 For All
+(3724,8754) city 2 #cFD7844 For All
+(3913,6113) city 7 #cFD7844 For All
+(4152,6330) city 5 #cFD7844 For All
+(3971,6307) city 5 #cFD7844 For All
+(4186,6177) city 3 #cFD7844 For All
+(4554,7874) city 2 #cFD7844 For All
+(4921,7609) city 7 #cFD7844 For All
+(5032,7790) city 5 #cFD7844 For All
+(0784,6954) city 2 #cFD7844 For All
+(1074,7164) city 2 #cFD7844 For All
+(1114,6444) city 2 #cFD7844 For All
+(1044,6915) city 2 #cFD7844 For All
+(1464,1374) city 2 #cE5B36C 蔚藍星空
+(0334,4414) city 2 #cE5B36C 蔚藍星空
+(1504,2435) city 2 #cE5B36C 蔚藍星空
+(1974,1124) city 2 #cE5B36C 蔚藍星空
+(1994,2004) city 2 #cE5B36C 蔚藍星空
+(2484,0634) city 2 #cE5B36C 蔚藍星空
+(2705,3598) city 5 #cE5B36C 蔚藍星空
+(2594,3853) city 5 #cE5B36C 蔚藍星空
+(2824,1154) city 2 #cE5B36C 蔚藍星空
+(3129,6691) city 5 #cE5B36C 蔚藍星空
+(3339,4559) city 9 #cE5B36C 蔚藍星空
+(3616,4631) city 5 #cE5B36C 蔚藍星空
+(3233,4786) city 3 #cE5B36C 蔚藍星空
+(3494,7804) city 2 #cE5B36C 蔚藍星空
+(3934,8324) city 2 #cE5B36C 蔚藍星空
+(3975,3459) city 5 #cE5B36C 蔚藍星空
+(3959,3571) city 5 #cE5B36C 蔚藍星空
+(0544,3314) city 2 #cE5B36C 蔚藍星空
+(4064,7974) city 2 #cE5B36C 蔚藍星空
+(4174,8214) city 2 #cE5B36C 蔚藍星空
+(4314,8554) city 2 #cE5B36C 蔚藍星空
+(4352,5249) city 5 #cE5B36C 蔚藍星空
+(4389,5011) city 5 #cE5B36C 蔚藍星空
+(4532,1648) city 5 #cE5B36C 蔚藍星空
+(4419,1551) city 5 #cE5B36C 蔚藍星空
+(4514,8724) city 2 #cE5B36C 蔚藍星空
+(4584,8314) city 2 #cE5B36C 蔚藍星空
+(5047,7648) city 3 #cE5B36C 蔚藍星空
+(5059,7540) city 2 #cE5B36C 蔚藍星空
+(4824,8814) city 2 #cE5B36C 蔚藍星空
+(0634,4244) city 2 #cE5B36C 蔚藍星空
+(5399,0698) city 3 #cE5B36C 蔚藍星空
+(5821,5089) city 7 #cE5B36C 蔚藍星空
+(5932,5270) city 5 #cE5B36C 蔚藍星空
+(5947,5128) city 3 #cE5B36C 蔚藍星空
+(5959,5020) city 2 #cE5B36C 蔚藍星空
+(0814,4924) city 2 #cE5B36C 蔚藍星空
+(5934,8444) city 2 #cE5B36C 蔚藍星空
+(6204,1094) city 2 #cE5B36C 蔚藍星空
+(6509,6531) city 5 #cE5B36C 蔚藍星空
+(6529,4271) city 5 #cE5B36C 蔚藍星空
+(6379,7978) city 3 #cE5B36C 蔚藍星空
+(6573,3013) city 7 #cE5B36C 蔚藍星空
+(6812,3230) city 5 #cE5B36C 蔚藍星空
+(6631,3207) city 5 #cE5B36C 蔚藍星空
+(6846,3077) city 3 #cE5B36C 蔚藍星空
+(6664,0614) city 2 #cE5B36C 蔚藍星空
+(7024,0974) city 2 #cE5B36C 蔚藍星空
+(7274,1364) city 2 #cE5B36C 蔚藍星空
+(7140,4340) city 5 #cE5B36C 蔚藍星空
+(0954,5294) city 2 #cE5B36C 蔚藍星空
+(7554,6644) city 2 #cE5B36C 蔚藍星空
+(7734,5974) city 2 #cE5B36C 蔚藍星空
+(7914,1584) city 2 #cE5B36C 蔚藍星空
+(7764,2034) city 2 #cE5B36C 蔚藍星空
+(7934,3114) city 2 #cE5B36C 蔚藍星空
+(7994,6694) city 2 #cE5B36C 蔚藍星空
+(8054,2804) city 2 #cE5B36C 蔚藍星空
+(7844,5095) city 2 #cE5B36C 蔚藍星空
+(7884,3895) city 2 #cE5B36C 蔚藍星空
+(7944,4674) city 2 #cE5B36C 蔚藍星空
+(8154,4204) city 2 #cE5B36C 蔚藍星空
+(8264,6814) city 2 #cE5B36C 蔚藍星空
+(8284,3874) city 2 #cE5B36C 蔚藍星空
+(8284,4194) city 2 #cE5B36C 蔚藍星空
+(8334,5064) city 2 #cE5B36C 蔚藍星空
+(8439,4818) city 3 #cE5B36C 蔚藍星空
+(0994,2684) city 2 #cE5B36C 蔚藍星空
+(8774,4144) city 2 #cE5B36C 蔚藍星空
+(8644,3774) city 2 #cE5B36C 蔚藍星空
+(8644,3434) city 2 #cE5B36C 蔚藍星空
+(8794,5434) city 2 #cE5B36C 蔚藍星空
+(1394,2284) city 2 #cE5B36C 蔚藍星空
+(1534,1974) city 2 #c4A99FB Seven Sky
+(1593,4913) city 7 #c4A99FB Seven Sky
+(1832,5130) city 5 #c4A99FB Seven Sky
+(1866,4977) city 3 #c4A99FB Seven Sky
+(2150,2700) city 5 #c4A99FB Seven Sky
+(2730,3720) city 5 #c4A99FB Seven Sky
+(3147,1954) city 5 #c4A99FB Seven Sky
+(2960,1920) city 5 #c4A99FB Seven Sky
+(3094,0684) city 2 #c4A99FB Seven Sky
+(3354,1044) city 2 #c4A99FB Seven Sky
+(3534,0694) city 2 #c4A99FB Seven Sky
+(3784,0234) city 2 #c4A99FB Seven Sky
+(4354,0084) city 2 #c4A99FB Seven Sky
+(4520,1478) city 5 #c4A99FB Seven Sky
+(4435,1439) city 5 #c4A99FB Seven Sky
+(4484,0714) city 2 #c4A99FB Seven Sky
+(4774,0234) city 2 #c4A99FB Seven Sky
+(5090,2860) city 5 #c4A99FB Seven Sky
+(5065,2738) city 5 #c4A99FB Seven Sky
+(4954,2993) city 5 #c4A99FB Seven Sky
+(5113,4193) city 7 #c4A99FB Seven Sky
+(5352,4410) city 5 #c4A99FB Seven Sky
+(5386,4257) city 3 #c4A99FB Seven Sky
+(5214,0574) city 2 #c4A99FB Seven Sky
+(5404,1054) city 2 #c4A99FB Seven Sky
+(5444,0414) city 2 #c4A99FB Seven Sky
+(5744,0894) city 2 #c4A99FB Seven Sky
+(6814,1344) city 2 #c4A99FB Seven Sky
+(7514,1214) city 2 #c4A99FB Seven Sky
+(8124,3534) city 2 #c4A99FB Seven Sky
+(8534,2724) city 2 #c4A99FB Seven Sky
+(8954,5094) city 2 #c4A99FB Seven Sky
+
+$planet
+(5192,4334) large
+(5152,4396)(5192,4334) small
+(5358,4275)(5192,4334) small
+(5018,7665)(4872,7714) small
+(4832,7816)(4872,7714) small
+(4872,7714) large
+(3272,4810)(3435,4689) small
+(3435,4689) large
+(3481,4693)(3435,4689) small
+(3543,4661)(3435,4689) small
+(4158,6195)(3992,6254) small
+(3992,6254) large
+(3952,6316)(3992,6254) small
+(4499,4497) medium
+(5918,5145)(5772,5194) small
+(5772,5194) large
+(5732,5296)(5772,5194) small
+(1672,5054) large
+(1838,4995)(1672,5054) small
+(1632,5116)(1672,5054) small
+(6818,3095)(6652,3154) small
+(6612,3216)(6652,3154) small
+(6652,3154) large

@@ -1,0 +1,159 @@
+$name 20005 Circinus 107
+$serverName Circinus 107
+$size 9000
+
+// Rank 1: RougeSquadron (23.3)
+// Rank 2: OP4S (16.7)
+// Rank 3: DaFukArounds (16.0)
+// Rank 4: Reaper Union (16.0)
+// Rank 5: The Drukharis (13.8)
+// Rank 6: Visionaries (11.6)
+// Rank 7: Wreckerz (2.1)
+
+$station
+(4572,8110) city 5 #cE63A3A The Drukharis
+(5814,6404) city 2 #cE63A3A The Drukharis
+(5834,6074) city 2 #cE63A3A The Drukharis
+(5998,5839) city 5 #cE63A3A The Drukharis
+(6072,5909) city 5 #cE63A3A The Drukharis
+(6444,4395) city 2 #cE63A3A The Drukharis
+(6574,4604) city 2 #cE63A3A The Drukharis
+(6624,6434) city 2 #cE63A3A The Drukharis
+(6839,4618) city 3 #cE63A3A The Drukharis
+(7138,6417) city 7 #cE63A3A The Drukharis
+(7372,6410) city 5 #cE63A3A The Drukharis
+(7412,6147) city 3 #cE63A3A The Drukharis
+(7036,6258) city 3 #cE63A3A The Drukharis
+(6982,6556) city 2 #cE63A3A The Drukharis
+(7885,6738) city 5 #cE63A3A The Drukharis
+(7774,6993) city 5 #cE63A3A The Drukharis
+(8499,4991) city 5 #cE63A3A The Drukharis
+(8515,4879) city 5 #cE63A3A The Drukharis
+(8600,4918) city 5 #cE63A3A The Drukharis
+(8612,5088) city 5 #cE63A3A The Drukharis
+(0223,4917) city 9 #c4A99FB OP4S
+(2918,8159) city 5 #c4A99FB OP4S
+(2992,8229) city 5 #c4A99FB OP4S
+(3276,3994) city 5 #c4A99FB OP4S
+(3734,1874) city 2 #c4A99FB OP4S
+(3684,2294) city 2 #c4A99FB OP4S
+(4086,6137) city 3 #c4A99FB OP4S
+(0206,4631) city 5 #c4A99FB OP4S
+(4075,4739) city 5 #c4A99FB OP4S
+(4160,4777) city 5 #c4A99FB OP4S
+(4144,1774) city 2 #c4A99FB OP4S
+(0486,4676) city 5 #c4A99FB OP4S
+(4391,8087) city 5 #c4A99FB OP4S
+(4606,7957) city 3 #c4A99FB OP4S
+(4219,8130) city 5 #c4A99FB OP4S
+(4364,7094) city 2 #c4A99FB OP4S
+(4554,1934) city 2 #c4A99FB OP4S
+(4714,6664) city 2 #c4A99FB OP4S
+(4839,6618) city 3 #c4A99FB OP4S
+(5534,6754) city 2 #c4A99FB OP4S
+(5705,8158) city 5 #c4A99FB OP4S
+(5594,8413) city 5 #c4A99FB OP4S
+(1774,4124) city 2 #c4A99FB OP4S
+(1854,4444) city 2 #c4A99FB OP4S
+(2099,4518) city 3 #c4A99FB OP4S
+(2324,3694) city 2 #c4A99FB OP4S
+(2384,4574) city 2 #c4A99FB OP4S
+(2934,1944) city 2 #cFD7844 DaFukArounds
+(3886,0542) city 5 #cFD7844 DaFukArounds
+(3696,0534) city 5 #cFD7844 DaFukArounds
+(3910,0400) city 5 #cFD7844 DaFukArounds
+(4059,4851) city 5 #cFD7844 DaFukArounds
+(5870,5660) city 5 #cFD7844 DaFukArounds
+(6904,4034) city 2 #cFD7844 DaFukArounds
+(7033,1573) city 7 #cFD7844 DaFukArounds
+(7272,1790) city 5 #cFD7844 DaFukArounds
+(7091,1767) city 5 #cFD7844 DaFukArounds
+(7306,1637) city 3 #cFD7844 DaFukArounds
+(6919,1810) city 5 #cFD7844 DaFukArounds
+(8052,2518) city 5 #cFD7844 DaFukArounds
+(8330,2318) city 5 #cFD7844 DaFukArounds
+(2707,1054) city 5 #cFD7844 DaFukArounds
+(2714,0793) city 5 #cFD7844 DaFukArounds
+(2520,1020) city 5 #cFD7844 DaFukArounds
+(2790,7980) city 5 #cE5B36C RougeSquadron
+(1029,3071) city 5 #cE5B36C RougeSquadron
+(0790,3060) city 5 #cE5B36C RougeSquadron
+(0918,3239) city 5 #cE5B36C RougeSquadron
+(0992,3309) city 5 #cE5B36C RougeSquadron
+(3264,2294) city 2 #cE5B36C RougeSquadron
+(3434,2504) city 2 #cE5B36C RougeSquadron
+(3466,4002) city 5 #cE5B36C RougeSquadron
+(3490,3860) city 5 #cE5B36C RougeSquadron
+(3624,2634) city 2 #cE5B36C RougeSquadron
+(3839,1898) city 3 #cE5B36C RougeSquadron
+(4172,4948) city 5 #cE5B36C RougeSquadron
+(4254,2114) city 2 #cE5B36C RougeSquadron
+(4333,7893) city 7 #cE5B36C RougeSquadron
+(4359,5318) city 3 #cE5B36C RougeSquadron
+(5181,4469) city 7 #cE5B36C RougeSquadron
+(5292,4650) city 5 #cE5B36C RougeSquadron
+(5111,4667) city 5 #cE5B36C RougeSquadron
+(5319,4400) city 2 #cE5B36C RougeSquadron
+(6109,5671) city 5 #cE5B36C RougeSquadron
+(2524,5374) city 2 #cE5B36C RougeSquadron
+(4153,3413) city 7 #c49E7C0 Reaper Union
+(4392,3630) city 5 #c49E7C0 Reaper Union
+(4211,3607) city 5 #c49E7C0 Reaper Union
+(4426,3477) city 3 #c49E7C0 Reaper Union
+(4039,3650) city 5 #c49E7C0 Reaper Union
+(4704,2514) city 2 #c49E7C0 Reaper Union
+(5307,4508) city 3 #c49E7C0 Reaper Union
+(5730,8280) city 5 #c49E7C0 Reaper Union
+(7910,6860) city 5 #c49E7C0 Reaper Union
+(8195,2359) city 5 #c49E7C0 Reaper Union
+(8329,2531) city 5 #c49E7C0 Reaper Union
+(2790,5988) city 3 #c7E67F2 Visionaries
+(3054,6294) city 2 #c7E67F2 Visionaries
+(3474,6264) city 2 #c7E67F2 Visionaries
+(3244,6995) city 2 #c7E67F2 Visionaries
+(3594,6564) city 2 #c7E67F2 Visionaries
+(3813,6073) city 7 #c7E67F2 Visionaries
+(4052,6290) city 5 #c7E67F2 Visionaries
+(3871,6267) city 5 #c7E67F2 Visionaries
+(3699,6310) city 5 #c7E67F2 Visionaries
+(3894,6734) city 2 #c7E67F2 Visionaries
+(1487,7034) city 5 #c7E67F2 Visionaries
+(1494,6773) city 5 #c7E67F2 Visionaries
+(1300,7000) city 5 #c7E67F2 Visionaries
+(4304,6475) city 2 #c7E67F2 Visionaries
+(2114,5494) city 2 #c7E67F2 Visionaries
+(2354,5994) city 2 #c7E67F2 Visionaries
+(2504,6074) city 2 #c7E67F2 Visionaries
+(2624,6474) city 2 #c7E67F2 Visionaries
+(2764,3234) city 2 #cF284FF Wreckerz
+(3029,7991) city 5 #cF284FF Wreckerz
+(4974,1804) city 2 #cF284FF Wreckerz
+(6174,2264) city 2 #cF284FF Wreckerz
+(6254,3604) city 2 #cF284FF Wreckerz
+(6564,2714) city 2 #cF284FF Wreckerz
+
+$planet
+(4412,8034) large
+(4578,7975)(4412,8034) small
+(4372,8096)(4412,8034) small
+(7391,6162)(7212,6334) small
+(7212,6334) large
+(7009,6276)(7212,6334) small
+(7275,6390)(7212,6334) small
+(7072,1776)(7112,1714) small
+(7278,1655)(7112,1714) small
+(7112,1714) large
+(5132,4574) large
+(5092,4676)(5132,4574) small
+(5278,4525)(5132,4574) small
+(4232,3554) large
+(4192,3616)(4232,3554) small
+(4398,3495)(4232,3554) small
+(522,4700)(359,4812) small
+(359,4812) large
+(374,4903)(359,4812) small
+(161,4700)(359,4812) small
+(4058,6155)(3892,6214) small
+(3852,6276)(3892,6214) small
+(3892,6214) large
+(4499,4497) medium

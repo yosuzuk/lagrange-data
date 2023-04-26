@@ -1,0 +1,128 @@
+$name 10267 Corona Borealis AA
+$serverName Corona Borealis AA
+$size 9000
+
+// Rank 1: New World (41.6)
+// Rank 6: TheRomanEmpire (6.5)
+// Rank 7: GalaxyConqueror (4.3)
+// Rank 8: Caldari Navy (2.1)
+
+$station
+(1424,2074) city 2 #c7E67F2 TheRomanEmpire
+(1634,1294) city 2 #c7E67F2 TheRomanEmpire
+(1504,1714) city 2 #c7E67F2 TheRomanEmpire
+(1504,2455) city 2 #c7E67F2 TheRomanEmpire
+(1974,1084) city 2 #c7E67F2 TheRomanEmpire
+(1874,2024) city 2 #c7E67F2 TheRomanEmpire
+(0184,5195) city 2 #c7E67F2 TheRomanEmpire
+(2614,1414) city 2 #c7E67F2 TheRomanEmpire
+(2534,0544) city 2 #c7E67F2 TheRomanEmpire
+(2804,1454) city 2 #c7E67F2 TheRomanEmpire
+(3154,0664) city 2 #c7E67F2 TheRomanEmpire
+(3214,1064) city 2 #c7E67F2 TheRomanEmpire
+(0134,4744) city 2 #c7E67F2 TheRomanEmpire
+(3492,1690) city 5 #c7E67F2 TheRomanEmpire
+(3311,1707) city 5 #c7E67F2 TheRomanEmpire
+(3507,1548) city 3 #c7E67F2 TheRomanEmpire
+(3519,1440) city 2 #c7E67F2 TheRomanEmpire
+(0390,4729) city 3 #c7E67F2 TheRomanEmpire
+(3534,0924) city 2 #c7E67F2 TheRomanEmpire
+(3814,0624) city 2 #c7E67F2 TheRomanEmpire
+(3974,0144) city 2 #c7E67F2 TheRomanEmpire
+(4250,2720) city 5 #c7E67F2 TheRomanEmpire
+(4225,2598) city 5 #c7E67F2 TheRomanEmpire
+(4672,3930) city 5 #c7E67F2 TheRomanEmpire
+(0524,2595) city 2 #c7E67F2 TheRomanEmpire
+(0674,4254) city 2 #c7E67F2 TheRomanEmpire
+(0544,4695) city 2 #c7E67F2 TheRomanEmpire
+(0679,2798) city 3 #c7E67F2 TheRomanEmpire
+(0944,4714) city 2 #c7E67F2 TheRomanEmpire
+(1154,1974) city 2 #c7E67F2 TheRomanEmpire
+(4292,1698) city 5 #c9FE23E Caldari Navy
+(4570,1498) city 5 #c9FE23E Caldari Navy
+(4435,1539) city 5 #c9FE23E Caldari Navy
+(4534,0934) city 2 #c9FE23E Caldari Navy
+(4854,0204) city 2 #c9FE23E Caldari Navy
+(5384,1034) city 2 #c9FE23E Caldari Navy
+(5914,0784) city 2 #c9FE23E Caldari Navy
+(6274,1354) city 2 #c9FE23E Caldari Navy
+(6547,2074) city 5 #c9FE23E Caldari Navy
+(6554,1813) city 5 #c9FE23E Caldari Navy
+(6360,2040) city 5 #c9FE23E Caldari Navy
+(6832,3067) city 3 #c9FE23E Caldari Navy
+(6456,3178) city 3 #c9FE23E Caldari Navy
+(6854,1354) city 2 #c9FE23E Caldari Navy
+(6894,2044) city 2 #c9FE23E Caldari Navy
+(7254,1394) city 2 #c9FE23E Caldari Navy
+(7479,1958) city 3 #c9FE23E Caldari Navy
+(7744,1694) city 2 #c9FE23E Caldari Navy
+(7794,1924) city 2 #c9FE23E Caldari Navy
+(8074,2234) city 2 #c9FE23E Caldari Navy
+(8114,1884) city 2 #c9FE23E Caldari Navy
+(8244,2514) city 2 #c9FE23E Caldari Navy
+(8674,2714) city 2 #c9FE23E Caldari Navy
+(3289,4291) city 5 #cE5B36C New World
+(3661,7149) city 7 #cE5B36C New World
+(3772,7330) city 5 #cE5B36C New World
+(3787,7188) city 3 #cE5B36C New World
+(4004,7995) city 2 #cE5B36C New World
+(4164,8654) city 2 #cE5B36C New World
+(4336,3778) city 3 #cE5B36C New World
+(4292,4076) city 2 #cE5B36C New World
+(4634,8734) city 2 #cE5B36C New World
+(4801,6049) city 7 #cE5B36C New World
+(4912,6230) city 5 #cE5B36C New World
+(4927,6088) city 3 #cE5B36C New World
+(4939,5980) city 2 #cE5B36C New World
+(5489,2731) city 5 #cE5B36C New World
+(5452,2969) city 5 #cE5B36C New World
+(5374,7754) city 2 #cE5B36C New World
+(5646,4771) city 5 #cE5B36C New World
+(5720,6220) city 5 #cE5B36C New World
+(6194,3313) city 5 #cE5B36C New World
+(6000,3540) city 5 #cE5B36C New World
+(6074,7734) city 2 #cE5B36C New World
+(6254,8414) city 2 #cE5B36C New World
+(6447,7534) city 5 #cE5B36C New World
+(6529,4251) city 5 #cE5B36C New World
+(6558,3337) city 7 #cE5B36C New World
+(6792,3330) city 5 #cE5B36C New World
+(6412,3466) city 2 #cE5B36C New World
+(6584,7335) city 2 #cE5B36C New World
+(6732,5698) city 5 #cE5B36C New World
+(7334,7534) city 2 #cE5B36C New World
+(7654,7544) city 2 #cE5B36C New World
+(8364,4294) city 2 #cE5B36C New World
+(6454,7273) city 5 #cF284FF GalaxyConqueror
+(6260,7500) city 5 #cF284FF GalaxyConqueror
+(7009,5711) city 5 #cF284FF GalaxyConqueror
+(6804,7014) city 2 #cF284FF GalaxyConqueror
+(7514,6314) city 2 #cF284FF GalaxyConqueror
+(8074,7034) city 2 #cF284FF GalaxyConqueror
+
+$planet
+(6811,3082)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6632,3254) large
+(6429,3196)(6632,3254) small
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(3332,1614) large
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3572,7356)(3612,7254) small
+(3612,7254) large
+(4712,6256)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4752,6154) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4499,4497) medium

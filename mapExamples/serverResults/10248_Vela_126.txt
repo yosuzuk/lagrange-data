@@ -1,0 +1,158 @@
+$name 10248 Vela 126
+$serverName Vela 126
+$size 9000
+
+// Rank 1: Outer Heaven (20.4)
+// Rank 2: Stellar (18.9)
+// Rank 4: Order of Ursa (13.8)
+// Rank 5: RAGNARÖK (11.6)
+// Rank 6: ACTIVE (8.7)
+// Rank 8: ARD Workshop (4.3)
+
+$station
+(4419,1551) city 5 #cE5B36C Outer Heaven
+(5269,3751) city 5 #cE5B36C Outer Heaven
+(5914,0794) city 2 #cE5B36C Outer Heaven
+(6126,3362) city 5 #cE5B36C Outer Heaven
+(6150,3220) city 5 #cE5B36C Outer Heaven
+(6354,1324) city 2 #cE5B36C Outer Heaven
+(6374,0984) city 2 #cE5B36C Outer Heaven
+(6395,4099) city 5 #cE5B36C Outer Heaven
+(6529,4271) city 5 #cE5B36C Outer Heaven
+(6754,0534) city 2 #cE5B36C Outer Heaven
+(6901,3129) city 7 #cE5B36C Outer Heaven
+(7012,3310) city 5 #cE5B36C Outer Heaven
+(6831,3327) city 5 #cE5B36C Outer Heaven
+(7039,3060) city 2 #cE5B36C Outer Heaven
+(7014,2024) city 2 #cE5B36C Outer Heaven
+(7494,2134) city 2 #cE5B36C Outer Heaven
+(7790,5560) city 5 #cE5B36C Outer Heaven
+(1244,1734) city 2 #c49E7C0 Order of Ursa
+(1554,1314) city 2 #c49E7C0 Order of Ursa
+(1770,1408) city 3 #c49E7C0 Order of Ursa
+(1898,3057) city 7 #c49E7C0 Order of Ursa
+(2132,3050) city 5 #c49E7C0 Order of Ursa
+(2172,2787) city 3 #c49E7C0 Order of Ursa
+(1796,2898) city 3 #c49E7C0 Order of Ursa
+(1752,3196) city 2 #c49E7C0 Order of Ursa
+(2566,1562) city 5 #c49E7C0 Order of Ursa
+(2376,1554) city 5 #c49E7C0 Order of Ursa
+(2590,1420) city 5 #c49E7C0 Order of Ursa
+(2634,0504) city 2 #c49E7C0 Order of Ursa
+(2827,3854) city 5 #c49E7C0 Order of Ursa
+(2834,3593) city 5 #c49E7C0 Order of Ursa
+(2640,3820) city 5 #c49E7C0 Order of Ursa
+(2804,1454) city 2 #c49E7C0 Order of Ursa
+(3004,0794) city 2 #c49E7C0 Order of Ursa
+(3354,0764) city 2 #c49E7C0 Order of Ursa
+(3414,0294) city 2 #c49E7C0 Order of Ursa
+(4066,3456) city 5 #c49E7C0 Order of Ursa
+(4534,0934) city 2 #c49E7C0 Order of Ursa
+(0634,2484) city 2 #c49E7C0 Order of Ursa
+(5384,1034) city 2 #c49E7C0 Order of Ursa
+(0854,2134) city 2 #c49E7C0 Order of Ursa
+(0894,1804) city 2 #c49E7C0 Order of Ursa
+(3774,8664) city 2 #c4A99FB Stellar
+(4004,7995) city 2 #c4A99FB Stellar
+(4824,8814) city 2 #c4A99FB Stellar
+(5359,4640) city 2 #c4A99FB Stellar
+(5252,5749) city 5 #c4A99FB Stellar
+(5374,7774) city 2 #c4A99FB Stellar
+(5741,5969) city 7 #c4A99FB Stellar
+(5852,6150) city 5 #c4A99FB Stellar
+(5671,6167) city 5 #c4A99FB Stellar
+(5867,6008) city 3 #c4A99FB Stellar
+(5879,5900) city 2 #c4A99FB Stellar
+(5664,8054) city 2 #c4A99FB Stellar
+(6134,8074) city 2 #c4A99FB Stellar
+(6281,7249) city 7 #c4A99FB Stellar
+(6392,7430) city 5 #c4A99FB Stellar
+(6211,7447) city 5 #c4A99FB Stellar
+(6407,7288) city 3 #c4A99FB Stellar
+(6419,7180) city 2 #c4A99FB Stellar
+(6344,7794) city 2 #c4A99FB Stellar
+(6584,7335) city 2 #c4A99FB Stellar
+(6604,7695) city 2 #c4A99FB Stellar
+(6676,6494) city 5 #c4A99FB Stellar
+(6804,7014) city 2 #c4A99FB Stellar
+(7054,7914) city 2 #c4A99FB Stellar
+(7414,6984) city 2 #c4A99FB Stellar
+(7514,6314) city 2 #c4A99FB Stellar
+(7384,7675) city 2 #c4A99FB Stellar
+(7604,7355) city 2 #c4A99FB Stellar
+(7764,6815) city 2 #c4A99FB Stellar
+(8034,4594) city 2 #c4A99FB Stellar
+(8034,6394) city 2 #c4A99FB Stellar
+(8034,7024) city 2 #c4A99FB Stellar
+(8294,3424) city 2 #c4A99FB Stellar
+(8254,3084) city 2 #c4A99FB Stellar
+(8184,5855) city 2 #c4A99FB Stellar
+(8434,3724) city 2 #c4A99FB Stellar
+(8204,4675) city 2 #c4A99FB Stellar
+(8494,6114) city 2 #c4A99FB Stellar
+(8654,2704) city 2 #c4A99FB Stellar
+(8674,3024) city 2 #c4A99FB Stellar
+(8530,4929) city 3 #c4A99FB Stellar
+(8734,3324) city 2 #c4A99FB Stellar
+(8794,4134) city 2 #c4A99FB Stellar
+(1114,6144) city 2 #c4A99FB Stellar
+(1854,4813) city 5 #cE63A3A RAGNARÖK
+(1660,5040) city 5 #cE63A3A RAGNARÖK
+(3521,5389) city 7 #cE63A3A RAGNARÖK
+(3632,5570) city 5 #cE63A3A RAGNARÖK
+(3451,5587) city 5 #cE63A3A RAGNARÖK
+(3647,5428) city 3 #cE63A3A RAGNARÖK
+(3659,5320) city 2 #cE63A3A RAGNARÖK
+(1154,6804) city 2 #c9FE23E ARD Workshop
+(1374,6494) city 2 #c9FE23E ARD Workshop
+(1444,7034) city 2 #c9FE23E ARD Workshop
+(1794,7824) city 2 #c9FE23E ARD Workshop
+(1889,5751) city 5 #c9FE23E ARD Workshop
+(1950,7708) city 3 #c9FE23E ARD Workshop
+(2224,7714) city 2 #c9FE23E ARD Workshop
+(2454,7934) city 2 #c9FE23E ARD Workshop
+(2434,7284) city 2 #c9FE23E ARD Workshop
+(3034,8154) city 2 #c9FE23E ARD Workshop
+(5332,4890) city 5 #c9FE23E ARD Workshop
+(5347,4748) city 3 #c9FE23E ARD Workshop
+(0674,6524) city 2 #c9FE23E ARD Workshop
+(0664,6315) city 2 #c9FE23E ARD Workshop
+(3786,3411) city 5 #c7E67F2 ACTIVE
+(3894,0174) city 2 #c7E67F2 ACTIVE
+(4194,0424) city 2 #c7E67F2 ACTIVE
+(4532,1648) city 5 #c7E67F2 ACTIVE
+(4814,0534) city 2 #c7E67F2 ACTIVE
+(5154,0504) city 2 #c7E67F2 ACTIVE
+(5289,5511) city 5 #c7E67F2 ACTIVE
+(5154,0144) city 2 #c7E67F2 ACTIVE
+(5399,0678) city 3 #c7E67F2 ACTIVE
+(7027,3168) city 3 #c7E67F2 ACTIVE
+(6890,6360) city 5 #c7E67F2 ACTIVE
+(6784,1454) city 2 #c7E67F2 ACTIVE
+(6899,5671) city 5 #c7E67F2 ACTIVE
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

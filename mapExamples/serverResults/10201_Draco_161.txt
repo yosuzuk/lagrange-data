@@ -1,0 +1,175 @@
+$name 10201 Draco 161
+$serverName Draco 161
+$size 9000
+
+// Rank 1: Star Craft (62.7)
+// Rank 2: UniOasis (23.3)
+// Rank 3: 공격주의 (11.6)
+// Rank 4: Poor Jedi (2.1)
+
+$station
+(1874,2024) city 2 #cE5B36C Star Craft
+(2614,1414) city 2 #cE5B36C Star Craft
+(2804,1454) city 2 #cE5B36C Star Craft
+(3154,0664) city 2 #cE5B36C Star Craft
+(3214,1064) city 2 #cE5B36C Star Craft
+(3381,1509) city 7 #cE5B36C Star Craft
+(3492,1690) city 5 #cE5B36C Star Craft
+(3311,1707) city 5 #cE5B36C Star Craft
+(3507,1548) city 3 #cE5B36C Star Craft
+(3519,1440) city 2 #cE5B36C Star Craft
+(3534,0924) city 2 #cE5B36C Star Craft
+(3814,0624) city 2 #cE5B36C Star Craft
+(3974,0144) city 2 #cE5B36C Star Craft
+(4250,2720) city 5 #cE5B36C Star Craft
+(4569,1711) city 5 #cE5B36C Star Craft
+(4438,3937) city 7 #cE5B36C Star Craft
+(4672,3930) city 5 #cE5B36C Star Craft
+(4292,4076) city 2 #cE5B36C Star Craft
+(4534,0934) city 2 #cE5B36C Star Craft
+(4854,0204) city 2 #cE5B36C Star Craft
+(5489,2731) city 5 #cE5B36C Star Craft
+(5250,2720) city 5 #cE5B36C Star Craft
+(5378,2899) city 5 #cE5B36C Star Craft
+(5452,2969) city 5 #cE5B36C Star Craft
+(5384,1034) city 2 #cE5B36C Star Craft
+(5926,4816) city 5 #cE5B36C Star Craft
+(5646,4771) city 5 #cE5B36C Star Craft
+(5673,5054) city 9 #cE5B36C Star Craft
+(5720,6220) city 5 #cE5B36C Star Craft
+(5914,0784) city 2 #cE5B36C Star Craft
+(6000,3540) city 5 #cE5B36C Star Craft
+(6274,1354) city 2 #cE5B36C Star Craft
+(6260,7500) city 5 #cE5B36C Star Craft
+(6530,4038) city 5 #cE5B36C Star Craft
+(6395,4079) city 5 #cE5B36C Star Craft
+(6529,4251) city 5 #cE5B36C Star Craft
+(6547,2074) city 5 #cE5B36C Star Craft
+(6554,1813) city 5 #cE5B36C Star Craft
+(6360,2040) city 5 #cE5B36C Star Craft
+(6558,3337) city 7 #cE5B36C Star Craft
+(6792,3330) city 5 #cE5B36C Star Craft
+(6832,3067) city 3 #cE5B36C Star Craft
+(6456,3178) city 3 #cE5B36C Star Craft
+(6412,3466) city 2 #cE5B36C Star Craft
+(6854,1354) city 2 #cE5B36C Star Craft
+(6894,2044) city 2 #cE5B36C Star Craft
+(7254,1394) city 2 #cE5B36C Star Craft
+(7514,6314) city 2 #cE5B36C Star Craft
+(7479,1958) city 3 #cE5B36C Star Craft
+(7744,1694) city 2 #cE5B36C Star Craft
+(7794,1924) city 2 #cE5B36C Star Craft
+(8054,6024) city 2 #cE5B36C Star Craft
+(8074,2234) city 2 #cE5B36C Star Craft
+(8034,4594) city 2 #cE5B36C Star Craft
+(8074,7034) city 2 #cE5B36C Star Craft
+(8114,1884) city 2 #cE5B36C Star Craft
+(8244,2514) city 2 #cE5B36C Star Craft
+(8454,5064) city 2 #cE5B36C Star Craft
+(8344,4634) city 2 #cE5B36C Star Craft
+(8364,4294) city 2 #cE5B36C Star Craft
+(8774,4134) city 2 #cE5B36C Star Craft
+(5907,6254) city 5 #c49E7C0 Poor Jedi
+(5914,5993) city 5 #c49E7C0 Poor Jedi
+(6732,5698) city 5 #c49E7C0 Poor Jedi
+(6875,5539) city 5 #c49E7C0 Poor Jedi
+(7009,5711) city 5 #c49E7C0 Poor Jedi
+(8114,6364) city 2 #c49E7C0 Poor Jedi
+(8154,4114) city 2 #c49E7C0 Poor Jedi
+(8154,5404) city 2 #c49E7C0 Poor Jedi
+(8404,6294) city 2 #c49E7C0 Poor Jedi
+(8399,4838) city 3 #c49E7C0 Poor Jedi
+(8674,2714) city 2 #c49E7C0 Poor Jedi
+(8674,5794) city 2 #c49E7C0 Poor Jedi
+(8794,3324) city 2 #c49E7C0 Poor Jedi
+(1204,5914) city 2 #cFD7844 공격주의
+(1919,7798) city 3 #cFD7844 공격주의
+(2852,6918) city 5 #cFD7844 공격주의
+(3130,6718) city 5 #cFD7844 공격주의
+(2995,6759) city 5 #cFD7844 공격주의
+(3129,6931) city 5 #cFD7844 공격주의
+(3551,5067) city 5 #cFD7844 공격주의
+(3661,7149) city 7 #cFD7844 공격주의
+(3772,7330) city 5 #cFD7844 공격주의
+(3591,7347) city 5 #cFD7844 공격주의
+(3787,7188) city 3 #cFD7844 공격주의
+(4225,2598) city 5 #cFD7844 공격주의
+(4114,2853) city 5 #cFD7844 공격주의
+(4164,8654) city 2 #cFD7844 공격주의
+(4634,8734) city 2 #cFD7844 공격주의
+(5084,8815) city 2 #cFD7844 공격주의
+(6074,7734) city 2 #cFD7844 공격주의
+(6814,7904) city 2 #cFD7844 공격주의
+(6804,7014) city 2 #cFD7844 공격주의
+(0124,3475) city 2 #c4A99FB UniOasis
+(1424,2074) city 2 #c4A99FB UniOasis
+(1514,6934) city 2 #c4A99FB UniOasis
+(1634,1294) city 2 #c4A99FB UniOasis
+(1504,1714) city 2 #c4A99FB UniOasis
+(1504,2455) city 2 #c4A99FB UniOasis
+(1694,7744) city 2 #c4A99FB UniOasis
+(1967,5614) city 5 #c4A99FB UniOasis
+(1974,5353) city 5 #c4A99FB UniOasis
+(1780,5580) city 5 #c4A99FB UniOasis
+(1974,1084) city 2 #c4A99FB UniOasis
+(2014,8044) city 2 #c4A99FB UniOasis
+(0184,5195) city 2 #c4A99FB UniOasis
+(2434,7284) city 2 #c4A99FB UniOasis
+(2534,0544) city 2 #c4A99FB UniOasis
+(3289,4291) city 5 #c4A99FB UniOasis
+(3050,4280) city 5 #c4A99FB UniOasis
+(3178,4459) city 5 #c4A99FB UniOasis
+(3252,4529) city 5 #c4A99FB UniOasis
+(0134,4744) city 2 #c4A99FB UniOasis
+(0324,2955) city 2 #c4A99FB UniOasis
+(3621,4869) city 7 #c4A99FB UniOasis
+(3732,5050) city 5 #c4A99FB UniOasis
+(3759,4800) city 2 #c4A99FB UniOasis
+(0390,4729) city 3 #c4A99FB UniOasis
+(3799,7080) city 2 #c4A99FB UniOasis
+(0574,6094) city 2 #c4A99FB UniOasis
+(4801,6049) city 7 #c4A99FB UniOasis
+(4912,6230) city 5 #c4A99FB UniOasis
+(4731,6247) city 5 #c4A99FB UniOasis
+(4927,6088) city 3 #c4A99FB UniOasis
+(4939,5980) city 2 #c4A99FB UniOasis
+(0524,2595) city 2 #c4A99FB UniOasis
+(6254,8414) city 2 #c4A99FB UniOasis
+(0544,4695) city 2 #c4A99FB UniOasis
+(0734,5674) city 2 #c4A99FB UniOasis
+(7334,7534) city 2 #c4A99FB UniOasis
+(7654,7544) city 2 #c4A99FB UniOasis
+(7444,6755) city 2 #c4A99FB UniOasis
+(0814,6214) city 2 #c4A99FB UniOasis
+(7874,6704) city 2 #c4A99FB UniOasis
+(0704,6955) city 2 #c4A99FB UniOasis
+(0834,5324) city 2 #c4A99FB UniOasis
+(0944,4714) city 2 #c4A99FB UniOasis
+(1154,1974) city 2 #c4A99FB UniOasis
+
+$planet
+(6811,3082)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6632,3254) large
+(6429,3196)(6632,3254) small
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(3332,1614) large
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3572,7356)(3612,7254) small
+(3612,7254) large
+(4712,6256)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4752,6154) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4499,4497) medium

@@ -1,0 +1,155 @@
+$name 10142 Carina 112
+$serverName Carina 112
+$size 9000
+
+// Rank 1: BEVERAGES (41.6)
+// Rank 2: GalacticSpartan (27.7)
+// Rank 4: 고려공화국 (11.6)
+// Rank 5: 爆発落ち団 (2.1)
+
+$station
+(1474,6924) city 2 #c4A99FB GalacticSpartan
+(3129,6691) city 5 #c4A99FB GalacticSpartan
+(2890,6680) city 5 #c4A99FB GalacticSpartan
+(3018,6859) city 5 #c4A99FB GalacticSpartan
+(3092,6929) city 5 #c4A99FB GalacticSpartan
+(3233,4786) city 3 #c4A99FB GalacticSpartan
+(3913,6113) city 7 #c4A99FB GalacticSpartan
+(4152,6330) city 5 #c4A99FB GalacticSpartan
+(3971,6307) city 5 #c4A99FB GalacticSpartan
+(4186,6177) city 3 #c4A99FB GalacticSpartan
+(3799,6350) city 5 #c4A99FB GalacticSpartan
+(3959,3571) city 5 #c4A99FB GalacticSpartan
+(4352,5249) city 5 #c4A99FB GalacticSpartan
+(4278,5179) city 5 #c4A99FB GalacticSpartan
+(4584,8314) city 2 #c4A99FB GalacticSpartan
+(4921,7609) city 7 #c4A99FB GalacticSpartan
+(5032,7790) city 5 #c4A99FB GalacticSpartan
+(5047,7648) city 3 #c4A99FB GalacticSpartan
+(5059,7540) city 2 #c4A99FB GalacticSpartan
+(5932,5270) city 5 #c4A99FB GalacticSpartan
+(5751,5287) city 5 #c4A99FB GalacticSpartan
+(5947,5128) city 3 #c4A99FB GalacticSpartan
+(5959,5020) city 2 #c4A99FB GalacticSpartan
+(6509,6531) city 5 #c4A99FB GalacticSpartan
+(6472,6769) city 5 #c4A99FB GalacticSpartan
+(6494,7664) city 2 #c4A99FB GalacticSpartan
+(6379,7978) city 3 #c4A99FB GalacticSpartan
+(6974,6904) city 2 #c4A99FB GalacticSpartan
+(7164,6754) city 2 #c4A99FB GalacticSpartan
+(7144,7675) city 2 #c4A99FB GalacticSpartan
+(7734,5974) city 2 #c4A99FB GalacticSpartan
+(7714,7244) city 2 #c4A99FB GalacticSpartan
+(7994,6694) city 2 #c4A99FB GalacticSpartan
+(7924,7135) city 2 #c4A99FB GalacticSpartan
+(8264,6814) city 2 #c4A99FB GalacticSpartan
+(1593,4913) city 7 #cE5B36C BEVERAGES
+(1832,5130) city 5 #cE5B36C BEVERAGES
+(0334,4414) city 2 #cE5B36C BEVERAGES
+(1651,5107) city 5 #cE5B36C BEVERAGES
+(1866,4977) city 3 #cE5B36C BEVERAGES
+(1479,5150) city 5 #cE5B36C BEVERAGES
+(2150,2700) city 5 #cE5B36C BEVERAGES
+(2484,0634) city 2 #cE5B36C BEVERAGES
+(2730,3720) city 5 #cE5B36C BEVERAGES
+(2705,3598) city 5 #cE5B36C BEVERAGES
+(2594,3853) city 5 #cE5B36C BEVERAGES
+(2824,1154) city 2 #cE5B36C BEVERAGES
+(3147,1954) city 5 #cE5B36C BEVERAGES
+(3154,1693) city 5 #cE5B36C BEVERAGES
+(2960,1920) city 5 #cE5B36C BEVERAGES
+(3094,0684) city 2 #cE5B36C BEVERAGES
+(3616,4631) city 5 #cE5B36C BEVERAGES
+(3534,0694) city 2 #cE5B36C BEVERAGES
+(4354,0084) city 2 #cE5B36C BEVERAGES
+(4532,1648) city 5 #cE5B36C BEVERAGES
+(4520,1478) city 5 #cE5B36C BEVERAGES
+(4435,1439) city 5 #cE5B36C BEVERAGES
+(4419,1551) city 5 #cE5B36C BEVERAGES
+(4484,0714) city 2 #cE5B36C BEVERAGES
+(4774,0234) city 2 #cE5B36C BEVERAGES
+(5113,4193) city 7 #cE5B36C BEVERAGES
+(5386,4257) city 3 #cE5B36C BEVERAGES
+(5214,0574) city 2 #cE5B36C BEVERAGES
+(5404,1054) city 2 #cE5B36C BEVERAGES
+(5444,0414) city 2 #cE5B36C BEVERAGES
+(5399,0698) city 3 #cE5B36C BEVERAGES
+(5744,0894) city 2 #cE5B36C BEVERAGES
+(6204,1094) city 2 #cE5B36C BEVERAGES
+(6252,4258) city 5 #cE5B36C BEVERAGES
+(6529,4271) city 5 #cE5B36C BEVERAGES
+(6573,3013) city 7 #cE5B36C BEVERAGES
+(6812,3230) city 5 #cE5B36C BEVERAGES
+(6631,3207) city 5 #cE5B36C BEVERAGES
+(6846,3077) city 3 #cE5B36C BEVERAGES
+(6459,3250) city 5 #cE5B36C BEVERAGES
+(6664,0614) city 2 #cE5B36C BEVERAGES
+(6814,1344) city 2 #cE5B36C BEVERAGES
+(7274,1364) city 2 #cE5B36C BEVERAGES
+(7334,4113) city 5 #cE5B36C BEVERAGES
+(7140,4340) city 5 #cE5B36C BEVERAGES
+(0954,5294) city 2 #cE5B36C BEVERAGES
+(7554,6644) city 2 #cE5B36C BEVERAGES
+(7914,1584) city 2 #cE5B36C BEVERAGES
+(7934,3114) city 2 #cE5B36C BEVERAGES
+(8054,2804) city 2 #cE5B36C BEVERAGES
+(7844,5095) city 2 #cE5B36C BEVERAGES
+(7884,3895) city 2 #cE5B36C BEVERAGES
+(7944,4674) city 2 #cE5B36C BEVERAGES
+(8284,3874) city 2 #cE5B36C BEVERAGES
+(8644,3434) city 2 #cE5B36C BEVERAGES
+(5090,2860) city 5 #c49E7C0 고려공화국
+(5065,2738) city 5 #c49E7C0 고려공화국
+(5352,4410) city 5 #c49E7C0 고려공화국
+(5171,4387) city 5 #c49E7C0 고려공화국
+(5821,5089) city 7 #c49E7C0 고려공화국
+(6530,4058) city 5 #c49E7C0 고려공화국
+(6395,4099) city 5 #c49E7C0 고려공화국
+(7327,4374) city 5 #c49E7C0 고려공화국
+(7514,1214) city 2 #c49E7C0 고려공화국
+(7764,2034) city 2 #c49E7C0 고려공화국
+(8154,4204) city 2 #c49E7C0 고려공화국
+(8124,3534) city 2 #c49E7C0 고려공화국
+(8284,4194) city 2 #c49E7C0 고려공화국
+(8334,5064) city 2 #c49E7C0 고려공화국
+(8534,2724) city 2 #c49E7C0 고려공화국
+(8439,4818) city 3 #c49E7C0 고려공화국
+(8774,4144) city 2 #c49E7C0 고려공화국
+(8644,3774) city 2 #c49E7C0 고려공화국
+(8794,5434) city 2 #c49E7C0 고려공화국
+(8954,5094) city 2 #c49E7C0 고려공화국
+(4851,7807) city 5 #cE63A3A 爆発落ち団
+(4824,8814) city 2 #cE63A3A 爆発落ち団
+(5194,8064) city 2 #cE63A3A 爆発落ち団
+(5934,8444) city 2 #cE63A3A 爆発落ち団
+(6270,6520) city 5 #cE63A3A 爆発落ち団
+(6398,6699) city 5 #cE63A3A 爆発落ち団
+(6834,7564) city 2 #cE63A3A 爆発落ち団
+(7790,5560) city 5 #cE63A3A 爆発落ち団
+(7765,5438) city 5 #cE63A3A 爆発落ち団
+(7654,5693) city 5 #cE63A3A 爆発落ち団
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

@@ -1,0 +1,106 @@
+$name 10308 Aquarius 385
+$serverName Aquarius 385
+$size 9000
+
+// Rank 1: Good Game (25.5)
+// Rank 7: Inf Solutions (6.5)
+// Rank 8: 大唐帝国 (2.1)
+
+$station
+(3354,0764) city 2 #cE5B36C Good Game
+(3694,0634) city 2 #cE5B36C Good Game
+(3704,1054) city 2 #cE5B36C Good Game
+(3713,3746) city 3 #cE5B36C Good Game
+(3744,0275) city 2 #cE5B36C Good Game
+(4074,0944) city 2 #cE5B36C Good Game
+(4569,1411) city 5 #cE5B36C Good Game
+(4734,0554) city 2 #cE5B36C Good Game
+(5269,3551) city 5 #cE5B36C Good Game
+(5434,0944) city 2 #cE5B36C Good Game
+(5410,0688) city 3 #cE5B36C Good Game
+(5741,5969) city 7 #cE5B36C Good Game
+(6074,0424) city 2 #cE5B36C Good Game
+(6126,3362) city 5 #cE5B36C Good Game
+(6150,3220) city 5 #cE5B36C Good Game
+(6304,0554) city 2 #cE5B36C Good Game
+(6529,4071) city 5 #cE5B36C Good Game
+(6492,4309) city 5 #cE5B36C Good Game
+(6773,3093) city 7 #cE5B36C Good Game
+(7012,3310) city 5 #cE5B36C Good Game
+(7046,3157) city 3 #cE5B36C Good Game
+(6764,1434) city 2 #cE5B36C Good Game
+(7174,0834) city 2 #cE5B36C Good Game
+(7574,2104) city 2 #cE5B36C Good Game
+(7474,1284) city 2 #cE5B36C Good Game
+(7424,1694) city 2 #cE5B36C Good Game
+(7744,1694) city 2 #cE5B36C Good Game
+(7914,1914) city 2 #cE5B36C Good Game
+(7704,3235) city 2 #cE5B36C Good Game
+(8594,3054) city 2 #cE5B36C Good Game
+(5852,6150) city 5 #cF284FF Inf Solutions
+(5867,6008) city 3 #cF284FF Inf Solutions
+(5879,5900) city 2 #cF284FF Inf Solutions
+(6392,7430) city 5 #cF284FF Inf Solutions
+(7012,5768) city 5 #cF284FF Inf Solutions
+(7414,6984) city 2 #cF284FF Inf Solutions
+(7594,6284) city 2 #cF284FF Inf Solutions
+(7594,6654) city 2 #cF284FF Inf Solutions
+(7846,5602) city 5 #cF284FF Inf Solutions
+(7656,5594) city 5 #cF284FF Inf Solutions
+(7870,5460) city 5 #cF284FF Inf Solutions
+(8114,6374) city 2 #cF284FF Inf Solutions
+(8154,5404) city 2 #cF284FF Inf Solutions
+(8530,4929) city 3 #cF284FF Inf Solutions
+(8564,3434) city 2 #cF284FF Inf Solutions
+(8734,3634) city 2 #cF284FF Inf Solutions
+(8674,4144) city 2 #cF284FF Inf Solutions
+(8724,5534) city 2 #cF284FF Inf Solutions
+(1284,6574) city 2 #c9FE23E 大唐帝国
+(1324,7674) city 2 #c9FE23E 大唐帝国
+(1444,6254) city 2 #c9FE23E 大唐帝国
+(1514,6934) city 2 #c9FE23E 大唐帝国
+(1624,7934) city 2 #c9FE23E 大唐帝国
+(1739,5891) city 5 #c9FE23E 大唐帝国
+(1834,7354) city 2 #c9FE23E 大唐帝国
+(1784,7154) city 2 #c9FE23E 大唐帝国
+(2014,8044) city 2 #c9FE23E 大唐帝国
+(1939,7698) city 3 #c9FE23E 大唐帝国
+(2064,7054) city 2 #c9FE23E 大唐帝国
+(2204,7694) city 2 #c9FE23E 大唐帝国
+(2324,7395) city 2 #c9FE23E 大唐帝国
+(3034,7854) city 2 #c9FE23E 大唐帝国
+(2944,8234) city 2 #c9FE23E 大唐帝国
+(3296,5418) city 3 #c9FE23E 大唐帝国
+(3252,5706) city 2 #c9FE23E 大唐帝国
+(3454,8444) city 2 #c9FE23E 大唐帝国
+(3814,7794) city 2 #c9FE23E 大唐帝国
+(1114,6144) city 2 #c9FE23E 大唐帝国
+(1274,6794) city 2 #c9FE23E 大唐帝国
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium

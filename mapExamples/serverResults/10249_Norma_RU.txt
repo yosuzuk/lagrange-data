@@ -1,0 +1,106 @@
+$name 10249 Norma RU
+$serverName Norma RU
+$size 9000
+
+// Rank 2: HumanitiesGuard (18.2)
+// Rank 3: GalacticRus (9.4)
+// Rank 5: Celestial Waves (4.3)
+// Rank 6: Celestial Power (4.3)
+
+$station
+(2434,7284) city 2 #c7E67F2 Celestial Power
+(3772,7330) city 5 #c7E67F2 Celestial Power
+(3787,7188) city 3 #c7E67F2 Celestial Power
+(3814,8244) city 2 #c7E67F2 Celestial Power
+(4634,8734) city 2 #c7E67F2 Celestial Power
+(4912,6230) city 5 #c7E67F2 Celestial Power
+(5374,7754) city 2 #c7E67F2 Celestial Power
+(6187,3574) city 5 #c7E67F2 Celestial Power
+(6252,4238) city 5 #c7E67F2 Celestial Power
+(6430,8049) city 3 #c7E67F2 Celestial Power
+(1204,5914) city 2 #cE63A3A Celestial Waves
+(1514,6934) city 2 #cE63A3A Celestial Waves
+(1694,7744) city 2 #cE63A3A Celestial Waves
+(1780,5580) city 5 #cE63A3A Celestial Waves
+(1919,7798) city 3 #cE63A3A Celestial Waves
+(2014,8044) city 2 #cE63A3A Celestial Waves
+(0184,5195) city 2 #cE63A3A Celestial Waves
+(3129,6931) city 5 #cE63A3A Celestial Waves
+(3050,4280) city 5 #cE63A3A Celestial Waves
+(3178,4459) city 5 #cE63A3A Celestial Waves
+(3252,4529) city 5 #cE63A3A Celestial Waves
+(0390,4729) city 3 #cE63A3A Celestial Waves
+(3591,7347) city 5 #cE63A3A Celestial Waves
+(0574,6094) city 2 #cE63A3A Celestial Waves
+(4927,6088) city 3 #cE63A3A Celestial Waves
+(5926,4816) city 5 #cE63A3A Celestial Waves
+(0734,5674) city 2 #cE63A3A Celestial Waves
+(0814,6214) city 2 #cE63A3A Celestial Waves
+(0704,6955) city 2 #cE63A3A Celestial Waves
+(0834,5324) city 2 #cE63A3A Celestial Waves
+(1154,6484) city 2 #cE63A3A Celestial Waves
+(4672,3930) city 5 #c4A99FB HumanitiesGuard
+(5720,6220) city 5 #c4A99FB HumanitiesGuard
+(6529,4251) city 5 #c4A99FB HumanitiesGuard
+(6360,2040) city 5 #c4A99FB HumanitiesGuard
+(6558,3337) city 7 #c4A99FB HumanitiesGuard
+(6792,3330) city 5 #c4A99FB HumanitiesGuard
+(6832,3067) city 3 #c4A99FB HumanitiesGuard
+(7514,6314) city 2 #c4A99FB HumanitiesGuard
+(7444,6755) city 2 #c4A99FB HumanitiesGuard
+(7794,1924) city 2 #c4A99FB HumanitiesGuard
+(8074,2234) city 2 #c4A99FB HumanitiesGuard
+(8114,1884) city 2 #c4A99FB HumanitiesGuard
+(8154,4114) city 2 #c4A99FB HumanitiesGuard
+(8154,5404) city 2 #c4A99FB HumanitiesGuard
+(8244,2514) city 2 #c4A99FB HumanitiesGuard
+(8404,6294) city 2 #c4A99FB HumanitiesGuard
+(8674,2714) city 2 #c4A99FB HumanitiesGuard
+(8794,3324) city 2 #c4A99FB HumanitiesGuard
+(8774,4134) city 2 #c4A99FB HumanitiesGuard
+(4004,7995) city 2 #cFD7844 GalacticRus
+(4164,8654) city 2 #cFD7844 GalacticRus
+(4801,6049) city 7 #cFD7844 GalacticRus
+(6260,7500) city 5 #cFD7844 GalacticRus
+(6412,3466) city 2 #cFD7844 GalacticRus
+(6584,7335) city 2 #cFD7844 GalacticRus
+(6814,7904) city 2 #cFD7844 GalacticRus
+(7010,5498) city 5 #cFD7844 GalacticRus
+(6804,7014) city 2 #cFD7844 GalacticRus
+(7334,7534) city 2 #cFD7844 GalacticRus
+(7394,6964) city 2 #cFD7844 GalacticRus
+(7654,7544) city 2 #cFD7844 GalacticRus
+(7874,6704) city 2 #cFD7844 GalacticRus
+(8054,6024) city 2 #cFD7844 GalacticRus
+(8114,6364) city 2 #cFD7844 GalacticRus
+(8074,7034) city 2 #cFD7844 GalacticRus
+(8414,5724) city 2 #cFD7844 GalacticRus
+(8454,5064) city 2 #cFD7844 GalacticRus
+(8674,5794) city 2 #cFD7844 GalacticRus
+
+$planet
+(6811,3082)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6632,3254) large
+(6429,3196)(6632,3254) small
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(3332,1614) large
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3572,7356)(3612,7254) small
+(3612,7254) large
+(4712,6256)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4752,6154) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4499,4497) medium

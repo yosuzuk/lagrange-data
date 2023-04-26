@@ -1,0 +1,155 @@
+$name 10228 Virgo RU
+$serverName Virgo RU
+$size 9000
+
+// Rank 1: Reactive Sword (51.8)
+// Rank 2: Armada (27.7)
+// Rank 4: Stormwind (2.1)
+
+$station
+(3774,8664) city 2 #c49E7C0 Stormwind
+(3814,8324) city 2 #c49E7C0 Stormwind
+(4824,8814) city 2 #c49E7C0 Stormwind
+(5135,3579) city 5 #c49E7C0 Stormwind
+(5270,3538) city 5 #c49E7C0 Stormwind
+(5314,8684) city 2 #c49E7C0 Stormwind
+(5374,7774) city 2 #c49E7C0 Stormwind
+(5644,8034) city 2 #c49E7C0 Stormwind
+(6134,8034) city 2 #c49E7C0 Stormwind
+(6211,7447) city 5 #c49E7C0 Stormwind
+(6407,7288) city 3 #c49E7C0 Stormwind
+(6344,7794) city 2 #c49E7C0 Stormwind
+(6430,8049) city 3 #c49E7C0 Stormwind
+(7027,3168) city 3 #c49E7C0 Stormwind
+(6866,6502) city 5 #c49E7C0 Stormwind
+(6676,6494) city 5 #c49E7C0 Stormwind
+(6899,5671) city 5 #c49E7C0 Stormwind
+(7054,7914) city 2 #c49E7C0 Stormwind
+(7514,7014) city 2 #c49E7C0 Stormwind
+(7544,7675) city 2 #c49E7C0 Stormwind
+(7604,7355) city 2 #c49E7C0 Stormwind
+(7764,6815) city 2 #c49E7C0 Stormwind
+(8034,7024) city 2 #c49E7C0 Stormwind
+(8494,6314) city 2 #c49E7C0 Stormwind
+(8674,3024) city 2 #c49E7C0 Stormwind
+(1174,6474) city 2 #cE5B36C Reactive Sword
+(1770,1408) city 3 #cE5B36C Reactive Sword
+(1752,3196) city 2 #cE5B36C Reactive Sword
+(2314,1064) city 2 #cE5B36C Reactive Sword
+(2634,0504) city 2 #cE5B36C Reactive Sword
+(2834,3593) city 5 #cE5B36C Reactive Sword
+(2804,1454) city 2 #cE5B36C Reactive Sword
+(2984,0774) city 2 #cE5B36C Reactive Sword
+(3659,5320) city 2 #cE5B36C Reactive Sword
+(3434,0334) city 2 #cE5B36C Reactive Sword
+(3814,3702) city 9 #cE5B36C Reactive Sword
+(3894,0174) city 2 #cE5B36C Reactive Sword
+(4174,0504) city 2 #cE5B36C Reactive Sword
+(4419,1551) city 5 #cE5B36C Reactive Sword
+(4435,1439) city 5 #cE5B36C Reactive Sword
+(4520,1478) city 5 #cE5B36C Reactive Sword
+(4534,0934) city 2 #cE5B36C Reactive Sword
+(5094,0504) city 2 #cE5B36C Reactive Sword
+(5221,4709) city 7 #cE5B36C Reactive Sword
+(5332,4890) city 5 #cE5B36C Reactive Sword
+(5347,4748) city 3 #cE5B36C Reactive Sword
+(5359,4640) city 2 #cE5B36C Reactive Sword
+(5269,3751) city 5 #cE5B36C Reactive Sword
+(5289,5511) city 5 #cE5B36C Reactive Sword
+(5178,5679) city 5 #cE5B36C Reactive Sword
+(5252,5749) city 5 #cE5B36C Reactive Sword
+(5259,0638) city 3 #cE5B36C Reactive Sword
+(5384,1034) city 2 #cE5B36C Reactive Sword
+(5741,5969) city 7 #cE5B36C Reactive Sword
+(5852,6150) city 5 #cE5B36C Reactive Sword
+(5671,6167) city 5 #cE5B36C Reactive Sword
+(5867,6008) city 3 #cE5B36C Reactive Sword
+(5879,5900) city 2 #cE5B36C Reactive Sword
+(5914,0794) city 2 #cE5B36C Reactive Sword
+(6126,3362) city 5 #cE5B36C Reactive Sword
+(6150,3220) city 5 #cE5B36C Reactive Sword
+(6419,7180) city 2 #cE5B36C Reactive Sword
+(6354,1324) city 2 #cE5B36C Reactive Sword
+(6374,0984) city 2 #cE5B36C Reactive Sword
+(6252,4258) city 5 #cE5B36C Reactive Sword
+(6529,4271) city 5 #cE5B36C Reactive Sword
+(6584,7335) city 2 #cE5B36C Reactive Sword
+(6754,0534) city 2 #cE5B36C Reactive Sword
+(6604,7695) city 2 #cE5B36C Reactive Sword
+(6901,3129) city 7 #cE5B36C Reactive Sword
+(7039,3060) city 2 #cE5B36C Reactive Sword
+(6784,1454) city 2 #cE5B36C Reactive Sword
+(6804,7014) city 2 #cE5B36C Reactive Sword
+(7012,5768) city 5 #cE5B36C Reactive Sword
+(7014,2024) city 2 #cE5B36C Reactive Sword
+(7094,7244) city 2 #cE5B36C Reactive Sword
+(7194,1394) city 2 #cE5B36C Reactive Sword
+(7494,2114) city 2 #cE5B36C Reactive Sword
+(7914,1594) city 2 #cE5B36C Reactive Sword
+(7974,6394) city 2 #cE5B36C Reactive Sword
+(7924,2354) city 2 #cE5B36C Reactive Sword
+(8034,4594) city 2 #cE5B36C Reactive Sword
+(8124,5895) city 2 #cE5B36C Reactive Sword
+(8244,4655) city 2 #cE5B36C Reactive Sword
+(8410,4909) city 3 #cE5B36C Reactive Sword
+(8674,2684) city 2 #cE5B36C Reactive Sword
+(1154,6804) city 2 #c4A99FB Armada
+(0354,3344) city 2 #c4A99FB Armada
+(1244,1734) city 2 #c4A99FB Armada
+(1554,1314) city 2 #c4A99FB Armada
+(1854,4813) city 5 #c4A99FB Armada
+(1660,5040) city 5 #c4A99FB Armada
+(1889,5751) city 5 #c4A99FB Armada
+(1898,3057) city 7 #c4A99FB Armada
+(2132,3050) city 5 #c4A99FB Armada
+(2172,2787) city 3 #c4A99FB Armada
+(1796,2898) city 3 #c4A99FB Armada
+(0204,5575) city 2 #c4A99FB Armada
+(1950,7708) city 3 #c4A99FB Armada
+(0224,5915) city 2 #c4A99FB Armada
+(2640,3820) city 5 #c4A99FB Armada
+(3521,5389) city 7 #c4A99FB Armada
+(3632,5570) city 5 #c4A99FB Armada
+(0324,2955) city 2 #c4A99FB Armada
+(0359,4598) city 3 #c4A99FB Armada
+(3786,3411) city 5 #c4A99FB Armada
+(0594,6524) city 2 #c4A99FB Armada
+(0634,2484) city 2 #c4A99FB Armada
+(0634,3584) city 2 #c4A99FB Armada
+(0524,4355) city 2 #c4A99FB Armada
+(0544,4695) city 2 #c4A99FB Armada
+(0154,3824) city 2 #c4A99FB Armada
+(0814,4934) city 2 #c4A99FB Armada
+(0854,2134) city 2 #c4A99FB Armada
+(0664,6315) city 2 #c4A99FB Armada
+(0954,4164) city 2 #c4A99FB Armada
+(0974,3024) city 2 #c4A99FB Armada
+(0944,4714) city 2 #c4A99FB Armada
+(1114,4984) city 2 #c4A99FB Armada
+(1234,6124) city 2 #c4A99FB Armada
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

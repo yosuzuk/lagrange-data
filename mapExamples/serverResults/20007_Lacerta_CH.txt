@@ -1,0 +1,122 @@
+$name 20007 Lacerta CH
+$serverName Lacerta CH
+$size 9000
+
+// Rank 1: Galaxy Patrol (54.0)
+// Rank 2: EclipseProject (43.7)
+// Rank 3: Basshounds (2.1)
+
+$station
+(1479,2900) city 2 #c4A99FB EclipseProject
+(2614,6084) city 2 #c4A99FB EclipseProject
+(2614,6404) city 2 #c4A99FB EclipseProject
+(2798,5337) city 7 #c4A99FB EclipseProject
+(3032,5330) city 5 #c4A99FB EclipseProject
+(3319,3151) city 5 #c4A99FB EclipseProject
+(3432,3248) city 5 #c4A99FB EclipseProject
+(3761,8269) city 7 #c4A99FB EclipseProject
+(3872,8450) city 5 #c4A99FB EclipseProject
+(3887,8308) city 3 #c4A99FB EclipseProject
+(1353,6453) city 7 #c4A99FB EclipseProject
+(1592,6670) city 5 #c4A99FB EclipseProject
+(1411,6647) city 5 #c4A99FB EclipseProject
+(1626,6517) city 3 #c4A99FB EclipseProject
+(4029,4691) city 5 #c4A99FB EclipseProject
+(4292,4110) city 5 #c4A99FB EclipseProject
+(4610,8480) city 5 #c4A99FB EclipseProject
+(4474,8613) city 5 #c4A99FB EclipseProject
+(0619,4771) city 5 #c4A99FB EclipseProject
+(5872,8088) city 5 #c4A99FB EclipseProject
+(5759,7991) city 5 #c4A99FB EclipseProject
+(2014,7433) city 5 #c4A99FB EclipseProject
+(1820,7660) city 5 #c4A99FB EclipseProject
+(7032,6546) city 2 #c4A99FB EclipseProject
+(2234,6004) city 2 #c4A99FB EclipseProject
+(2244,5754) city 2 #c4A99FB EclipseProject
+(1467,3008) city 3 #c4A99FB EclipseProject
+(2774,2284) city 2 #cE5B36C Galaxy Patrol
+(2984,6734) city 2 #cE5B36C Galaxy Patrol
+(3470,3840) city 5 #cE5B36C Galaxy Patrol
+(3684,2294) city 2 #cE5B36C Galaxy Patrol
+(3790,4680) city 5 #cE5B36C Galaxy Patrol
+(3918,4859) city 5 #cE5B36C Galaxy Patrol
+(3992,4929) city 5 #cE5B36C Galaxy Patrol
+(4058,4117) city 7 #cE5B36C Galaxy Patrol
+(4332,3847) city 3 #cE5B36C Galaxy Patrol
+(3956,3958) city 3 #cE5B36C Galaxy Patrol
+(3912,4256) city 2 #cE5B36C Galaxy Patrol
+(4084,1774) city 2 #cE5B36C Galaxy Patrol
+(4254,2114) city 2 #cE5B36C Galaxy Patrol
+(4524,2014) city 2 #cE5B36C Galaxy Patrol
+(4844,1854) city 2 #cE5B36C Galaxy Patrol
+(5412,1068) city 5 #cE5B36C Galaxy Patrol
+(5400,0898) city 5 #cE5B36C Galaxy Patrol
+(5315,0859) city 5 #cE5B36C Galaxy Patrol
+(5299,0971) city 5 #cE5B36C Galaxy Patrol
+(5259,4658) city 3 #cE5B36C Galaxy Patrol
+(5554,2614) city 2 #cE5B36C Galaxy Patrol
+(5550,2148) city 3 #cE5B36C Galaxy Patrol
+(5874,2484) city 2 #cE5B36C Galaxy Patrol
+(2007,7694) city 5 #cE5B36C Galaxy Patrol
+(6730,4989) city 3 #cE5B36C Galaxy Patrol
+(6999,1199) city 9 #cE5B36C Galaxy Patrol
+(7276,1271) city 5 #cE5B36C Galaxy Patrol
+(6893,1426) city 3 #cE5B36C Galaxy Patrol
+(7178,6417) city 7 #cE5B36C Galaxy Patrol
+(7412,6410) city 5 #cE5B36C Galaxy Patrol
+(7452,6147) city 3 #cE5B36C Galaxy Patrol
+(7076,6258) city 3 #cE5B36C Galaxy Patrol
+(7966,6682) city 5 #cE5B36C Galaxy Patrol
+(7776,6674) city 5 #cE5B36C Galaxy Patrol
+(7990,6540) city 5 #cE5B36C Galaxy Patrol
+(8166,2362) city 5 #cE5B36C Galaxy Patrol
+(7976,2354) city 5 #cE5B36C Galaxy Patrol
+(8190,2220) city 5 #cE5B36C Galaxy Patrol
+(8539,4931) city 5 #cE5B36C Galaxy Patrol
+(8555,4819) city 5 #cE5B36C Galaxy Patrol
+(8640,4858) city 5 #cE5B36C Galaxy Patrol
+(8652,5028) city 5 #cE5B36C Galaxy Patrol
+(0635,4659) city 5 #cE5B36C Galaxy Patrol
+(0720,4698) city 5 #cE5B36C Galaxy Patrol
+(2330,1240) city 5 #cE5B36C Galaxy Patrol
+(2194,1373) city 5 #cE5B36C Galaxy Patrol
+(0732,4868) city 5 #cE5B36C Galaxy Patrol
+(1341,2969) city 7 #cE5B36C Galaxy Patrol
+(2824,2055) city 2 #cFD7844 Basshounds
+(3204,2294) city 2 #cFD7844 Basshounds
+(5314,2354) city 2 #cFD7844 Basshounds
+(6234,2294) city 2 #cFD7844 Basshounds
+(6334,2784) city 2 #cFD7844 Basshounds
+(6614,3564) city 2 #cFD7844 Basshounds
+(7054,3924) city 2 #cFD7844 Basshounds
+(2305,1118) city 5 #cFD7844 Basshounds
+(1452,3150) city 5 #cFD7844 Basshounds
+(1271,3167) city 5 #cFD7844 Basshounds
+
+$planet
+(4311,3862)(4132,4034) small
+(4132,4034) large
+(4195,4090)(4132,4034) small
+(3929,3976)(4132,4034) small
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(6932,1450)(7095,1329) small
+(7141,1333)(7095,1329) small
+(7095,1329) large
+(7203,1301)(7095,1329) small
+(3672,8476)(3712,8374) small
+(3858,8325)(3712,8374) small
+(3712,8374) large
+(1292,3074) large
+(1438,3025)(1292,3074) small
+(1252,3176)(1292,3074) small
+(2872,5254) large
+(2935,5310)(2872,5254) small
+(2669,5196)(2872,5254) small
+(3051,5082)(2872,5254) small
+(4499,4497) medium
+(1432,6594) large
+(1598,6535)(1432,6594) small
+(1392,6656)(1432,6594) small

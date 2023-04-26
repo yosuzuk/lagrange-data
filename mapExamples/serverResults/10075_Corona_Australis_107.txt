@@ -1,0 +1,160 @@
+$name 10075 Corona Australis 107
+$serverName Corona Australis 107
+$size 9000
+
+// Rank 1: LagrangeUnionRE (67.8)
+// Rank 2: Explorers Guild (32.1)
+
+$station
+(1254,1624) city 2 #c4A99FB Explorers Guild
+(1404,6294) city 2 #c4A99FB Explorers Guild
+(1806,3177) city 3 #c4A99FB Explorers Guild
+(1584,6735) city 2 #c4A99FB Explorers Guild
+(1967,5294) city 5 #c4A99FB Explorers Guild
+(1780,5260) city 5 #c4A99FB Explorers Guild
+(1970,7869) city 3 #c4A99FB Explorers Guild
+(2254,7604) city 2 #c4A99FB Explorers Guild
+(2454,7924) city 2 #c4A99FB Explorers Guild
+(0554,2834) city 2 #c4A99FB Explorers Guild
+(2564,8035) city 2 #c4A99FB Explorers Guild
+(2979,6871) city 5 #c4A99FB Explorers Guild
+(2995,6759) city 5 #c4A99FB Explorers Guild
+(3080,6798) city 5 #c4A99FB Explorers Guild
+(0350,4668) city 3 #c4A99FB Explorers Guild
+(2994,8144) city 2 #c4A99FB Explorers Guild
+(3204,1134) city 2 #c4A99FB Explorers Guild
+(3556,5031) city 5 #c4A99FB Explorers Guild
+(3173,5186) city 3 #c4A99FB Explorers Guild
+(0454,6104) city 2 #c4A99FB Explorers Guild
+(3633,5893) city 7 #c4A99FB Explorers Guild
+(3872,6110) city 5 #c4A99FB Explorers Guild
+(3691,6087) city 5 #c4A99FB Explorers Guild
+(3906,5957) city 3 #c4A99FB Explorers Guild
+(3519,6130) city 5 #c4A99FB Explorers Guild
+(4126,4197) city 3 #c4A99FB Explorers Guild
+(0524,2595) city 2 #c4A99FB Explorers Guild
+(4514,8724) city 2 #c4A99FB Explorers Guild
+(4934,8384) city 2 #c4A99FB Explorers Guild
+(0754,3574) city 2 #c4A99FB Explorers Guild
+(5164,8154) city 2 #c4A99FB Explorers Guild
+(5532,4050) city 5 #c4A99FB Explorers Guild
+(5393,7073) city 7 #c4A99FB Explorers Guild
+(5632,7290) city 5 #c4A99FB Explorers Guild
+(5678,5399) city 5 #c4A99FB Explorers Guild
+(5890,6020) city 5 #c4A99FB Explorers Guild
+(0644,6634) city 2 #c4A99FB Explorers Guild
+(6430,7300) city 5 #c4A99FB Explorers Guild
+(0814,4924) city 2 #c4A99FB Explorers Guild
+(0854,2124) city 2 #c4A99FB Explorers Guild
+(0334,3814) city 2 #c4A99FB Explorers Guild
+(0730,2869) city 3 #c4A99FB Explorers Guild
+(0724,6294) city 2 #c4A99FB Explorers Guild
+(0704,6955) city 2 #c4A99FB Explorers Guild
+(0994,4174) city 2 #c4A99FB Explorers Guild
+(1034,2694) city 2 #c4A99FB Explorers Guild
+(0884,4735) city 2 #c4A99FB Explorers Guild
+(1064,5074) city 2 #c4A99FB Explorers Guild
+(1234,6124) city 2 #c4A99FB Explorers Guild
+(1104,6894) city 2 #c4A99FB Explorers Guild
+(1494,1974) city 2 #cE5B36C LagrangeUnionRE
+(1533,3113) city 7 #cE5B36C LagrangeUnionRE
+(1772,3330) city 5 #cE5B36C LagrangeUnionRE
+(2174,7094) city 2 #cE5B36C LagrangeUnionRE
+(2944,8554) city 2 #cE5B36C LagrangeUnionRE
+(3301,4976) city 9 #cE5B36C LagrangeUnionRE
+(3264,8575) city 2 #cE5B36C LagrangeUnionRE
+(3694,7804) city 2 #cE5B36C LagrangeUnionRE
+(3853,4133) city 7 #cE5B36C LagrangeUnionRE
+(4092,4350) city 5 #cE5B36C LagrangeUnionRE
+(3739,4370) city 5 #cE5B36C LagrangeUnionRE
+(4004,7995) city 2 #cE5B36C LagrangeUnionRE
+(4569,1511) city 5 #cE5B36C LagrangeUnionRE
+(4384,7994) city 2 #cE5B36C LagrangeUnionRE
+(4974,8694) city 2 #cE5B36C LagrangeUnionRE
+(5152,4196) city 2 #cE5B36C LagrangeUnionRE
+(5196,3898) city 3 #cE5B36C LagrangeUnionRE
+(5572,3787) city 3 #cE5B36C LagrangeUnionRE
+(5298,4057) city 7 #cE5B36C LagrangeUnionRE
+(5212,2918) city 5 #cE5B36C LagrangeUnionRE
+(5355,2759) city 5 #cE5B36C LagrangeUnionRE
+(5489,2931) city 5 #cE5B36C LagrangeUnionRE
+(5374,7774) city 2 #cE5B36C LagrangeUnionRE
+(5666,7137) city 3 #cE5B36C LagrangeUnionRE
+(5789,5231) city 5 #cE5B36C LagrangeUnionRE
+(5752,5469) city 5 #cE5B36C LagrangeUnionRE
+(5854,7614) city 2 #cE5B36C LagrangeUnionRE
+(5854,8474) city 2 #cE5B36C LagrangeUnionRE
+(5994,1124) city 2 #cE5B36C LagrangeUnionRE
+(6090,3440) city 5 #cE5B36C LagrangeUnionRE
+(6274,1354) city 2 #cE5B36C LagrangeUnionRE
+(6252,4238) city 5 #cE5B36C LagrangeUnionRE
+(6530,4038) city 5 #cE5B36C LagrangeUnionRE
+(6529,4251) city 5 #cE5B36C LagrangeUnionRE
+(6547,2074) city 5 #cE5B36C LagrangeUnionRE
+(6554,1813) city 5 #cE5B36C LagrangeUnionRE
+(6360,2040) city 5 #cE5B36C LagrangeUnionRE
+(6430,8049) city 3 #cE5B36C LagrangeUnionRE
+(6633,3193) city 7 #cE5B36C LagrangeUnionRE
+(6872,3410) city 5 #cE5B36C LagrangeUnionRE
+(6906,3257) city 3 #cE5B36C LagrangeUnionRE
+(6519,3430) city 5 #cE5B36C LagrangeUnionRE
+(6734,7234) city 2 #cE5B36C LagrangeUnionRE
+(6814,7914) city 2 #cE5B36C LagrangeUnionRE
+(6714,0524) city 2 #cE5B36C LagrangeUnionRE
+(6604,7695) city 2 #cE5B36C LagrangeUnionRE
+(6704,1455) city 2 #cE5B36C LagrangeUnionRE
+(6854,6924) city 2 #cE5B36C LagrangeUnionRE
+(7014,2014) city 2 #cE5B36C LagrangeUnionRE
+(7089,5731) city 5 #cE5B36C LagrangeUnionRE
+(6904,8015) city 2 #cE5B36C LagrangeUnionRE
+(7094,0934) city 2 #cE5B36C LagrangeUnionRE
+(7104,1474) city 2 #cE5B36C LagrangeUnionRE
+(7294,1714) city 2 #cE5B36C LagrangeUnionRE
+(7184,2134) city 2 #cE5B36C LagrangeUnionRE
+(7200,4940) city 5 #cE5B36C LagrangeUnionRE
+(7530,2029) city 3 #cE5B36C LagrangeUnionRE
+(7714,2754) city 2 #cE5B36C LagrangeUnionRE
+(7794,1924) city 2 #cE5B36C LagrangeUnionRE
+(7854,3134) city 2 #cE5B36C LagrangeUnionRE
+(7904,2334) city 2 #cE5B36C LagrangeUnionRE
+(7904,5074) city 2 #cE5B36C LagrangeUnionRE
+(7964,3894) city 2 #cE5B36C LagrangeUnionRE
+(8114,4564) city 2 #cE5B36C LagrangeUnionRE
+(8084,2034) city 2 #cE5B36C LagrangeUnionRE
+(8294,3434) city 2 #cE5B36C LagrangeUnionRE
+(8374,3074) city 2 #cE5B36C LagrangeUnionRE
+(8184,6735) city 2 #cE5B36C LagrangeUnionRE
+(8284,3874) city 2 #cE5B36C LagrangeUnionRE
+(8410,4848) city 3 #cE5B36C LagrangeUnionRE
+(8524,3154) city 2 #cE5B36C LagrangeUnionRE
+(8524,3915) city 2 #cE5B36C LagrangeUnionRE
+(8704,4234) city 2 #cE5B36C LagrangeUnionRE
+(8734,4484) city 2 #cE5B36C LagrangeUnionRE
+(8834,5104) city 2 #cE5B36C LagrangeUnionRE
+(0924,3494) city 2 #cE5B36C LagrangeUnionRE
+
+$planet
+(3932,4274) large
+(3892,4336)(3932,4274) small
+(4098,4215)(3932,4274) small
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small
+(5435,4030)(5372,3974) small
+(5169,3916)(5372,3974) small
+(5372,3974) large
+(5551,3802)(5372,3974) small
+(3483,5061)(3375,5089) small
+(3212,5210)(3375,5089) small
+(3421,5093)(3375,5089) small
+(3375,5089) large
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(4499,4497) medium

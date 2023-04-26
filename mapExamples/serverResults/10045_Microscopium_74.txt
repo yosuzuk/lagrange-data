@@ -1,0 +1,208 @@
+$name 10045 Microscopium 74
+$serverName Microscopium 74
+$size 9000
+
+// Rank 1: Klingon Empire (54.0)
+// Rank 2: Freedom (32.1)
+// Rank 3: Grand Union (13.8)
+
+$station
+(1254,1624) city 2 #cE5B36C Klingon Empire
+(1494,1974) city 2 #cE5B36C Klingon Empire
+(1404,6294) city 2 #cE5B36C Klingon Empire
+(1533,3113) city 7 #cE5B36C Klingon Empire
+(1772,3330) city 5 #cE5B36C Klingon Empire
+(1591,3307) city 5 #cE5B36C Klingon Empire
+(1806,3177) city 3 #cE5B36C Klingon Empire
+(1419,3350) city 5 #cE5B36C Klingon Empire
+(1584,6735) city 2 #cE5B36C Klingon Empire
+(1967,5294) city 5 #cE5B36C Klingon Empire
+(1974,5033) city 5 #cE5B36C Klingon Empire
+(1919,7798) city 3 #cE5B36C Klingon Empire
+(2254,7604) city 2 #cE5B36C Klingon Empire
+(2454,7924) city 2 #cE5B36C Klingon Empire
+(2654,0524) city 2 #cE5B36C Klingon Empire
+(0554,2834) city 2 #cE5B36C Klingon Empire
+(2564,8035) city 2 #cE5B36C Klingon Empire
+(2784,1155) city 2 #cE5B36C Klingon Empire
+(2852,6918) city 5 #cE5B36C Klingon Empire
+(3130,6718) city 5 #cE5B36C Klingon Empire
+(2995,6759) city 5 #cE5B36C Klingon Empire
+(0390,4729) city 3 #cE5B36C Klingon Empire
+(2924,0795) city 2 #cE5B36C Klingon Empire
+(3204,1134) city 2 #cE5B36C Klingon Empire
+(3556,5071) city 5 #cE5B36C Klingon Empire
+(3173,5226) city 3 #cE5B36C Klingon Empire
+(3301,5016) city 9 #cE5B36C Klingon Empire
+(0454,6104) city 2 #cE5B36C Klingon Empire
+(3574,0314) city 2 #cE5B36C Klingon Empire
+(3764,0714) city 2 #cE5B36C Klingon Empire
+(4126,4197) city 3 #cE5B36C Klingon Empire
+(3974,0154) city 2 #cE5B36C Klingon Empire
+(4569,1511) city 5 #cE5B36C Klingon Empire
+(4330,1500) city 5 #cE5B36C Klingon Empire
+(4458,1679) city 5 #cE5B36C Klingon Empire
+(4532,1749) city 5 #cE5B36C Klingon Empire
+(4464,1034) city 2 #cE5B36C Klingon Empire
+(0524,2595) city 2 #cE5B36C Klingon Empire
+(4654,0614) city 2 #cE5B36C Klingon Empire
+(4824,0974) city 2 #cE5B36C Klingon Empire
+(5094,0514) city 2 #cE5B36C Klingon Empire
+(0754,3574) city 2 #cE5B36C Klingon Empire
+(5152,4196) city 2 #cE5B36C Klingon Empire
+(5196,3898) city 3 #cE5B36C Klingon Empire
+(5572,3787) city 3 #cE5B36C Klingon Empire
+(5532,4050) city 5 #cE5B36C Klingon Empire
+(5298,4057) city 7 #cE5B36C Klingon Empire
+(5212,2918) city 5 #cE5B36C Klingon Empire
+(5490,2718) city 5 #cE5B36C Klingon Empire
+(5355,2759) city 5 #cE5B36C Klingon Empire
+(5489,2931) city 5 #cE5B36C Klingon Empire
+(5444,0414) city 2 #cE5B36C Klingon Empire
+(5752,5468) city 5 #cE5B36C Klingon Empire
+(5740,5298) city 5 #cE5B36C Klingon Empire
+(5655,5259) city 5 #cE5B36C Klingon Empire
+(5639,5371) city 5 #cE5B36C Klingon Empire
+(5994,1124) city 2 #cE5B36C Klingon Empire
+(6065,3318) city 5 #cE5B36C Klingon Empire
+(5954,3573) city 5 #cE5B36C Klingon Empire
+(0644,6634) city 2 #cE5B36C Klingon Empire
+(6274,1354) city 2 #cE5B36C Klingon Empire
+(6252,4238) city 5 #cE5B36C Klingon Empire
+(6530,4038) city 5 #cE5B36C Klingon Empire
+(6395,4079) city 5 #cE5B36C Klingon Empire
+(6529,4251) city 5 #cE5B36C Klingon Empire
+(0814,4924) city 2 #cE5B36C Klingon Empire
+(6547,2074) city 5 #cE5B36C Klingon Empire
+(6554,1813) city 5 #cE5B36C Klingon Empire
+(6360,2040) city 5 #cE5B36C Klingon Empire
+(6633,3193) city 7 #cE5B36C Klingon Empire
+(6519,3430) city 5 #cE5B36C Klingon Empire
+(6714,0524) city 2 #cE5B36C Klingon Empire
+(6704,1455) city 2 #cE5B36C Klingon Empire
+(0854,2124) city 2 #cE5B36C Klingon Empire
+(7014,2014) city 2 #cE5B36C Klingon Empire
+(0334,3814) city 2 #cE5B36C Klingon Empire
+(7094,0934) city 2 #cE5B36C Klingon Empire
+(7104,1474) city 2 #cE5B36C Klingon Empire
+(7294,1714) city 2 #cE5B36C Klingon Empire
+(0730,2869) city 3 #cE5B36C Klingon Empire
+(7184,2134) city 2 #cE5B36C Klingon Empire
+(0724,6294) city 2 #cE5B36C Klingon Empire
+(7530,2029) city 3 #cE5B36C Klingon Empire
+(7794,1924) city 2 #cE5B36C Klingon Empire
+(0704,6955) city 2 #cE5B36C Klingon Empire
+(7904,2334) city 2 #cE5B36C Klingon Empire
+(8084,2034) city 2 #cE5B36C Klingon Empire
+(0994,4174) city 2 #cE5B36C Klingon Empire
+(0924,3494) city 2 #cE5B36C Klingon Empire
+(1034,2694) city 2 #cE5B36C Klingon Empire
+(0884,4735) city 2 #cE5B36C Klingon Empire
+(1114,1964) city 2 #cE5B36C Klingon Empire
+(1064,5074) city 2 #cE5B36C Klingon Empire
+(1234,6124) city 2 #cE5B36C Klingon Empire
+(1104,6894) city 2 #cE5B36C Klingon Empire
+(2994,8144) city 2 #cFD7844 Grand Union
+(2944,8554) city 2 #cFD7844 Grand Union
+(3264,8575) city 2 #cFD7844 Grand Union
+(3694,7804) city 2 #cFD7844 Grand Union
+(4004,7995) city 2 #cFD7844 Grand Union
+(4084,8675) city 2 #cFD7844 Grand Union
+(4384,7994) city 2 #cFD7844 Grand Union
+(4514,8724) city 2 #cFD7844 Grand Union
+(4974,8694) city 2 #cFD7844 Grand Union
+(4934,8384) city 2 #cFD7844 Grand Union
+(5164,8154) city 2 #cFD7844 Grand Union
+(5374,7774) city 2 #cFD7844 Grand Union
+(5393,7073) city 7 #cFD7844 Grand Union
+(5632,7290) city 5 #cFD7844 Grand Union
+(5451,7267) city 5 #cFD7844 Grand Union
+(5666,7137) city 3 #cFD7844 Grand Union
+(5279,7310) city 5 #cFD7844 Grand Union
+(5754,7974) city 2 #cFD7844 Grand Union
+(5854,7614) city 2 #cFD7844 Grand Union
+(5866,6162) city 5 #cFD7844 Grand Union
+(5676,6154) city 5 #cFD7844 Grand Union
+(5890,6020) city 5 #cFD7844 Grand Union
+(5854,8474) city 2 #cFD7844 Grand Union
+(5984,8194) city 2 #cFD7844 Grand Union
+(6174,8434) city 2 #cFD7844 Grand Union
+(6406,7442) city 5 #cFD7844 Grand Union
+(6216,7434) city 5 #cFD7844 Grand Union
+(6430,7300) city 5 #cFD7844 Grand Union
+(6424,8354) city 2 #cFD7844 Grand Union
+(6430,8049) city 3 #cFD7844 Grand Union
+(6906,3257) city 3 #cFD7844 Grand Union
+(6734,7234) city 2 #cFD7844 Grand Union
+(6814,7914) city 2 #cFD7844 Grand Union
+(6604,7695) city 2 #cFD7844 Grand Union
+(6854,6924) city 2 #cFD7844 Grand Union
+(6904,8015) city 2 #cFD7844 Grand Union
+(7314,7564) city 2 #cFD7844 Grand Union
+(7384,7074) city 2 #cFD7844 Grand Union
+(8184,6735) city 2 #cFD7844 Grand Union
+(1780,5260) city 5 #c4A99FB Freedom
+(2174,7094) city 2 #c4A99FB Freedom
+(3129,6931) city 5 #c4A99FB Freedom
+(3633,5893) city 7 #c4A99FB Freedom
+(3872,6110) city 5 #c4A99FB Freedom
+(3691,6087) city 5 #c4A99FB Freedom
+(3906,5957) city 3 #c4A99FB Freedom
+(3519,6130) city 5 #c4A99FB Freedom
+(3853,4133) city 7 #c4A99FB Freedom
+(4092,4350) city 5 #c4A99FB Freedom
+(6090,3440) city 5 #c4A99FB Freedom
+(6872,3410) city 5 #c4A99FB Freedom
+(6691,3387) city 5 #c4A99FB Freedom
+(6812,5718) city 5 #c4A99FB Freedom
+(7090,5518) city 5 #c4A99FB Freedom
+(6955,5559) city 5 #c4A99FB Freedom
+(7089,5731) city 5 #c4A99FB Freedom
+(7314,6624) city 2 #c4A99FB Freedom
+(7387,4974) city 5 #c4A99FB Freedom
+(7394,4713) city 5 #c4A99FB Freedom
+(7200,4940) city 5 #c4A99FB Freedom
+(7594,6284) city 2 #c4A99FB Freedom
+(7444,6755) city 2 #c4A99FB Freedom
+(7714,2754) city 2 #c4A99FB Freedom
+(7854,3134) city 2 #c4A99FB Freedom
+(7914,6714) city 2 #c4A99FB Freedom
+(7904,5074) city 2 #c4A99FB Freedom
+(7964,3894) city 2 #c4A99FB Freedom
+(8114,4564) city 2 #c4A99FB Freedom
+(8034,6394) city 2 #c4A99FB Freedom
+(8294,3434) city 2 #c4A99FB Freedom
+(8374,3074) city 2 #c4A99FB Freedom
+(8284,3874) city 2 #c4A99FB Freedom
+(8410,4848) city 3 #c4A99FB Freedom
+(8524,3154) city 2 #c4A99FB Freedom
+(8524,3915) city 2 #c4A99FB Freedom
+(8704,4234) city 2 #c4A99FB Freedom
+(8734,4484) city 2 #c4A99FB Freedom
+(8834,5104) city 2 #c4A99FB Freedom
+
+$planet
+(3932,4274) large
+(3892,4336)(3932,4274) small
+(4098,4215)(3932,4274) small
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small
+(5435,4030)(5372,3974) small
+(5169,3916)(5372,3974) small
+(5372,3974) large
+(5551,3802)(5372,3974) small
+(3483,5101)(3375,5129) small
+(3421,5133)(3375,5129) small
+(3212,5250)(3375,5129) small
+(3375,5129) large
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(4499,4497) medium
