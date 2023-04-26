@@ -2,10 +2,11 @@ $name 10052 V1207 Sagittarius
 $serverName V1207 Sagittarius
 $size 9000
 
-// Rank 1: The Union (40.1)
-// Rank 2: AscendedLegends (35.0)
-// Rank 3: Fondation SCP (13.8)
-// Rank 4: XCOM (10.9)
+$overlay
+The Union (40.1%)
+AscendedLegends (35.0%)
+Fondation SCP (13.8%)
+XCOM (10.9%)
 
 $station
 (1574,1944) city 2 #c4A99FB AscendedLegends

@@ -2,10 +2,11 @@ $name 10058 Libra EU
 $serverName Libra EU
 $size 9000
 
-// Rank 1: TKs Realm (60.5)
-// Rank 2: Kyrpnos (30.6)
-// Rank 3: Legion Hispana (4.3)
-// Rank 4: AERO FEDERATION (4.3)
+$overlay
+TKs Realm (60.5%)
+Kyrpnos (30.6%)
+Legion Hispana (4.3%)
+AERO FEDERATION (4.3%)
 
 $station
 (3114,7804) city 2 #cE5B36C TKs Realm

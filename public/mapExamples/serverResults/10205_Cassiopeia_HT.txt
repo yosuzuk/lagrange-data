@@ -2,9 +2,10 @@ $name 10205 Cassiopeia HT
 $serverName Cassiopeia HT
 $size 9000
 
-// Rank 1: Yilzetaid (37.9)
-// Rank 2: Retribution (31.3)
-// Rank 3: Sons of Korhal (30.6)
+$overlay
+Yilzetaid (37.9%)
+Retribution (31.3%)
+Sons of Korhal (30.6%)
 
 $station
 (1204,5914) city 2 #cE5B36C Yilzetaid

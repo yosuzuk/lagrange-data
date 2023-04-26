@@ -2,10 +2,11 @@ $name 10121 V1009 Leo
 $serverName V1009 Leo
 $size 9000
 
-// Rank 1: Arcturus (48.9)
-// Rank 2: The Fallen 1000 (37.2)
-// Rank 3: 日本商連 (11.6)
-// Rank 4: fukking fallen (2.1)
+$overlay
+Arcturus (48.9%)
+The Fallen 1000 (37.2%)
+日本商連 (11.6%)
+fukking fallen (2.1%)
 
 $station
 (1374,5814) city 2 #c4A99FB The Fallen 1000

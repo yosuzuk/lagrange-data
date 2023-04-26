@@ -2,10 +2,11 @@ $name 10142 Carina 112
 $serverName Carina 112
 $size 9000
 
-// Rank 1: BEVERAGES (41.6)
-// Rank 2: GalacticSpartan (27.7)
-// Rank 4: 고려공화국 (11.6)
-// Rank 5: 爆発落ち団 (2.1)
+$overlay
+BEVERAGES (41.6%)
+GalacticSpartan (27.7%)
+고려공화국 (11.6%)
+爆発落ち団 (2.1%)
 
 $station
 (1474,6924) city 2 #c4A99FB GalacticSpartan

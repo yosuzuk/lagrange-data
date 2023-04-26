@@ -2,8 +2,9 @@ $name 10006 Piscis Austrinus 150
 $serverName Piscis Austrinus 150
 $size 9000
 
-// Rank 1: Hydra (67.8)
-// Rank 2: Empire (32.1)
+$overlay
+Hydra (67.8%)
+Empire (32.1%)
 
 $station
 (2607,1654) city 5 #c4A99FB Empire

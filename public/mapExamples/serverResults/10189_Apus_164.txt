@@ -2,9 +2,10 @@ $name 10189 Apus 164
 $serverName Apus 164
 $size 9000
 
-// Rank 1: The Alliance (51.0)
-// Rank 2: suspicion (42.3)
-// Rank 3: Terminator (4.3)
+$overlay
+The Alliance (51.0%)
+suspicion (42.3%)
+Terminator (4.3%)
 
 $station
 (3381,1509) city 7 #cE5B36C The Alliance

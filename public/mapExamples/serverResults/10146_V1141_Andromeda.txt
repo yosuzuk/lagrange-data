@@ -2,10 +2,11 @@ $name 10146 V1141 Andromeda
 $serverName V1141 Andromeda
 $size 9000
 
-// Rank 1: NEWBIEHELPER (58.3)
-// Rank 2: 協和連邦 (35.0)
-// Rank 3: AgnicaCayell (4.3)
-// Rank 4: RAINFALL PH (2.1)
+$overlay
+NEWBIEHELPER (58.3%)
+協和連邦 (35.0%)
+AgnicaCayell (4.3%)
+RAINFALL PH (2.1%)
 
 $station
 (1794,7824) city 2 #cE5B36C NEWBIEHELPER

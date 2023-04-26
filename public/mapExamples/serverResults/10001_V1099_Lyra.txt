@@ -2,10 +2,11 @@ $name 10001 V1099 Lyra
 $serverName V1099 Lyra
 $size 9000
 
-// Rank 1: Alpha (53.2)
-// Rank 2: Альфа (32.8)
-// Rank 3: Монолит (11.6)
-// Rank 4: WildAnimals (2.1)
+$overlay
+Alpha (53.2%)
+Альфа (32.8%)
+Монолит (11.6%)
+WildAnimals (2.1%)
 
 $station
 (1926,5522) city 5 #cE5B36C Alpha

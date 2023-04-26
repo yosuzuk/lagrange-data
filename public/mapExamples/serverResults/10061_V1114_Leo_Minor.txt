@@ -2,10 +2,11 @@ $name 10061 V1114 Leo Minor
 $serverName V1114 Leo Minor
 $size 9000
 
-// Rank 1: MCRN (67.8)
-// Rank 2: SpartanWarriors (16.0)
-// Rank 3: GalacticStorm (13.8)
-// Rank 4: Alliance (2.1)
+$overlay
+MCRN (67.8%)
+SpartanWarriors (16.0%)
+GalacticStorm (13.8%)
+Alliance (2.1%)
 
 $station
 (2784,1155) city 2 #c49E7C0 Alliance

@@ -2,11 +2,12 @@ $name 10269 Canis Minor 346
 $serverName Canis Minor 346
 $size 9000
 
-// Rank 1: Death Watch (24.8)
-// Rank 2: 永恆紀元 (16.0)
-// Rank 4: The Chosen (11.6)
-// Rank 5: CYCO Inc (11.6)
-// Rank 8: ALPHA TAURY (4.3)
+$overlay
+Death Watch (24.8%)
+永恆紀元 (16.0%)
+The Chosen (11.6%)
+CYCO Inc (11.6%)
+ALPHA TAURY (4.3%)
 
 $station
 (3712,4496) city 2 #c9FE23E ALPHA TAURY

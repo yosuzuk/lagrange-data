@@ -2,10 +2,11 @@ $name 10222 Cancer 126
 $serverName Cancer 126
 $size 9000
 
-// Rank 1: Adebow (51.8)
-// Rank 2: Noxus Knight (32.1)
-// Rank 3: Inter Corp (11.6)
-// Rank 4: TheUnion (4.3)
+$overlay
+Adebow (51.8%)
+Noxus Knight (32.1%)
+Inter Corp (11.6%)
+TheUnion (4.3%)
 
 $station
 (1770,1408) city 3 #cE5B36C Adebow

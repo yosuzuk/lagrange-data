@@ -2,10 +2,11 @@ $name 10065 V577 Cepheus
 $serverName V577 Cepheus
 $size 9000
 
-// Rank 1: ×Paragon× (39.4)
-// Rank 2: Brotherhood (32.8)
-// Rank 3: Reavers (25.5)
-// Rank 4: Blood Angels (2.1)
+$overlay
+×Paragon× (39.4%)
+Brotherhood (32.8%)
+Reavers (25.5%)
+Blood Angels (2.1%)
 
 $station
 (5152,4196) city 2 #cE5B36C ×Paragon×

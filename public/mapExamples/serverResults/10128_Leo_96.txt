@@ -2,9 +2,10 @@ $name 10128 Leo 96
 $serverName Leo 96
 $size 9000
 
-// Rank 1: Void Expanse (42.3)
-// Rank 5: DarKWorlD (4.3)
-// Rank 6: Space Devils (2.1)
+$overlay
+Void Expanse (42.3%)
+DarKWorlD (4.3%)
+Space Devils (2.1%)
 
 $station
 (6070,3320) city 5 #cE63A3A DarKWorlD

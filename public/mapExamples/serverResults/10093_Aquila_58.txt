@@ -2,10 +2,11 @@ $name 10093 Aquila 58
 $serverName Aquila 58
 $size 9000
 
-// Rank 1: 대한민국 (41.6)
-// Rank 2: 평화주의 (23.3)
-// Rank 3: 갈매기 (21.1)
-// Rank 4: The Imperium (13.8)
+$overlay
+대한민국 (41.6%)
+평화주의 (23.3%)
+갈매기 (21.1%)
+The Imperium (13.8%)
 
 $station
 (1254,5824) city 2 #cE5B36C 대한민국

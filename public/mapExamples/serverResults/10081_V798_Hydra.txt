@@ -2,10 +2,11 @@ $name 10081 V798 Hydra
 $serverName V798 Hydra
 $size 9000
 
-// Rank 1: Immortal Hydra (42.3)
-// Rank 2: OVERLORD UNITED (30.6)
-// Rank 3: The New Order (16.0)
-// Rank 4: Hydra Autocracy (10.9)
+$overlay
+Immortal Hydra (42.3%)
+OVERLORD UNITED (30.6%)
+The New Order (16.0%)
+Hydra Autocracy (10.9%)
 
 $station
 (1533,3113) city 7 #cFD7844 The New Order

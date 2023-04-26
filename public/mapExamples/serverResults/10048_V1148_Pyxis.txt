@@ -2,9 +2,10 @@ $name 10048 V1148 Pyxis
 $serverName V1148 Pyxis
 $size 9000
 
-// Rank 1: Star Alliance (37.2)
-// Rank 2: 2Fast4You (32.1)
-// Rank 3: Animosity (30.6)
+$overlay
+Star Alliance (37.2%)
+2Fast4You (32.1%)
+Animosity (30.6%)
 
 $station
 (3289,4291) city 5 #cE5B36C Star Alliance

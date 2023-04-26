@@ -2,10 +2,11 @@ $name 10079 Crux 95
 $serverName Crux 95
 $size 9000
 
-// Rank 1: Damage Inc (51.8)
-// Rank 2: Royal Vanguards (32.1)
-// Rank 3: TERRA EMPIRE (13.8)
-// Rank 4: Dark Phoenix (2.1)
+$overlay
+Damage Inc (51.8%)
+Royal Vanguards (32.1%)
+TERRA EMPIRE (13.8%)
+Dark Phoenix (2.1%)
 
 $station
 (3334,4742) city 9 #cE5B36C Damage Inc

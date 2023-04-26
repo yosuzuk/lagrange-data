@@ -2,11 +2,12 @@ $name 10241 Lepus 105
 $serverName Lepus 105
 $size 9000
 
-// Rank 1: 華府 (37.9)
-// Rank 2: GALACTIC ORDER (20.4)
-// Rank 3: COROT 7B (13.8)
-// Rank 4: ギアーデ帝国 (8.7)
-// Rank 7: Conquerors (2.1)
+$overlay
+華府 (37.9%)
+GALACTIC ORDER (20.4%)
+COROT 7B (13.8%)
+ギアーデ帝国 (8.7%)
+Conquerors (2.1%)
 
 $station
 (0124,3475) city 2 #c49E7C0 ギアーデ帝国

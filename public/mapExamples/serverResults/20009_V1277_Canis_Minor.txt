@@ -2,8 +2,9 @@ $name 20009 V1277 Canis Minor
 $serverName V1277 Canis Minor
 $size 9000
 
-// Rank 1: RX 784 (51.0)
-// Rank 2: Hydra (48.9)
+$overlay
+RX 784 (51.0%)
+Hydra (48.9%)
 
 $station
 (2699,2858) city 3 #c4A99FB Hydra

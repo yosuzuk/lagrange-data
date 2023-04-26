@@ -2,10 +2,11 @@ $name 10043 Equuleus 120
 $serverName Equuleus 120
 $size 9000
 
-// Rank 1: Hellfireclub (30.6)
-// Rank 2: Murder Inc (20.4)
-// Rank 3: The Flood (20.4)
-// Rank 5: UnitedRUS (11.6)
+$overlay
+Hellfireclub (30.6%)
+Murder Inc (20.4%)
+The Flood (20.4%)
+UnitedRUS (11.6%)
 
 $station
 (1424,2074) city 2 #c4A99FB Murder Inc

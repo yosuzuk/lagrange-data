@@ -2,9 +2,10 @@ $name 10033 V621 Crux
 $serverName V621 Crux
 $size 9000
 
-// Rank 1: The Consortium (35.0)
-// Rank 2: Forsaken (32.8)
-// Rank 3: Annihilation (32.1)
+$overlay
+The Consortium (35.0%)
+Forsaken (32.8%)
+Annihilation (32.1%)
 
 $station
 (1454,2654) city 2 #cFD7844 Annihilation

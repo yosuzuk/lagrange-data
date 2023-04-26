@@ -2,9 +2,10 @@ $name 10130 Coma Berenices SU
 $serverName Coma Berenices SU
 $size 9000
 
-// Rank 1: Grand Line (79.5)
-// Rank 2: Exodus (16.0)
-// Rank 3: Garuda (2.1)
+$overlay
+Grand Line (79.5%)
+Exodus (16.0%)
+Garuda (2.1%)
 
 $station
 (1064,2395) city 2 #c4A99FB Exodus

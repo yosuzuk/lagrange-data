@@ -2,10 +2,11 @@ $name 10198 V847 Horologium
 $serverName V847 Horologium
 $size 9000
 
-// Rank 1: Lagrange Corp (40.1)
-// Rank 2: Phosphorus (30.6)
-// Rank 3: Mercedes (16.0)
-// Rank 4: JPN (10.9)
+$overlay
+Lagrange Corp (40.1%)
+Phosphorus (30.6%)
+Mercedes (16.0%)
+JPN (10.9%)
 
 $station
 (2827,3854) city 5 #cE5B36C Lagrange Corp

@@ -2,8 +2,9 @@ $name 10181 Cetus 53
 $serverName Cetus 53
 $size 9000
 
-// Rank 1: shadow barons (56.2)
-// Rank 2: 北辰星 (43.7)
+$overlay
+shadow barons (56.2%)
+北辰星 (43.7%)
 
 $station
 (1780,5580) city 5 #cE5B36C shadow barons

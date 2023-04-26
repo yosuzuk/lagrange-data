@@ -2,10 +2,11 @@ $name 10259 V1254 Orion
 $serverName V1254 Orion
 $size 9000
 
-// Rank 1: AVALON (30.6)
-// Rank 2: Titans (16.0)
-// Rank 4: IronPlanet (13.8)
-// Rank 5: We The Fallen (10.9)
+$overlay
+AVALON (30.6%)
+Titans (16.0%)
+IronPlanet (13.8%)
+We The Fallen (10.9%)
 
 $station
 (3289,4291) city 5 #cE5B36C AVALON

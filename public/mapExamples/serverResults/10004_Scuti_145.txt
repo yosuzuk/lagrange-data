@@ -2,9 +2,10 @@ $name 10004 Scuti 145
 $serverName Scuti 145
 $size 9000
 
-// Rank 1: Snow Devils (37.2)
-// Rank 2: Umbrella Corp (32.1)
-// Rank 3: Sternenflotte (30.6)
+$overlay
+Snow Devils (37.2%)
+Umbrella Corp (32.1%)
+Sternenflotte (30.6%)
 
 $station
 (3324,7914) city 2 #cE5B36C Snow Devils

@@ -2,10 +2,11 @@ $name 10276 V1189 Ursa Minor
 $serverName V1189 Ursa Minor
 $size 9000
 
-// Rank 1: EGO (51.8)
-// Rank 2: OnlyOne (16.0)
-// Rank 5: 大唐 (4.3)
-// Rank 6: PA1N (2.1)
+$overlay
+EGO (51.8%)
+OnlyOne (16.0%)
+大唐 (4.3%)
+PA1N (2.1%)
 
 $station
 (1750,4940) city 5 #c7E67F2 PA1N

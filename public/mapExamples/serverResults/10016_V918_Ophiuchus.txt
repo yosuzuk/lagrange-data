@@ -2,9 +2,10 @@ $name 10016 V918 Ophiuchus
 $serverName V918 Ophiuchus
 $size 9000
 
-// Rank 1: Horizon (35.0)
-// Rank 2: HUGA (32.8)
-// Rank 3: FrenchConnexion (32.1)
+$overlay
+Horizon (35.0%)
+HUGA (32.8%)
+FrenchConnexion (32.1%)
 
 $station
 (3914,8334) city 2 #cE5B36C Horizon

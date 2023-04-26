@@ -2,12 +2,13 @@ $name 10275 Piscis Austrinus 421
 $serverName Piscis Austrinus 421
 $size 9000
 
-// Rank 1: NIGHTFALL (16.0)
-// Rank 2: hunting clan (16.0)
-// Rank 4: Zeros (13.8)
-// Rank 5: flying tigers (11.6)
-// Rank 8: We are Legion (2.1)
-// Rank 9: The expanse (2.1)
+$overlay
+NIGHTFALL (16.0%)
+hunting clan (16.0%)
+Zeros (13.8%)
+flying tigers (11.6%)
+We are Legion (2.1%)
+The expanse (2.1%)
 
 $station
 (4084,8294) city 2 #c4A99FB hunting clan

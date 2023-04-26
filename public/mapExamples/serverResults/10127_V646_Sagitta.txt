@@ -2,10 +2,11 @@ $name 10127 V646 Sagitta
 $serverName V646 Sagitta
 $size 9000
 
-// Rank 1: EarthFederation (51.8)
-// Rank 2: Legion (41.6)
-// Rank 3: 月の雫 (2.1)
-// Rank 4: Black Star (2.1)
+$overlay
+EarthFederation (51.8%)
+Legion (41.6%)
+月の雫 (2.1%)
+Black Star (2.1%)
 
 $station
 (4132,4087) city 3 #c4A99FB Legion

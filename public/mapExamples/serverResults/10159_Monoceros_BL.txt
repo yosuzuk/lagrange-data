@@ -2,11 +2,12 @@ $name 10159 Monoceros BL
 $serverName Monoceros BL
 $size 9000
 
-// Rank 1: 遊俠團 (41.6)
-// Rank 2: 北極圈 (32.8)
-// Rank 3: 烏托邦 (11.6)
-// Rank 4: 自由同盟 (11.6)
-// Rank 5: 光耀帝國 (2.1)
+$overlay
+遊俠團 (41.6%)
+北極圈 (32.8%)
+烏托邦 (11.6%)
+自由同盟 (11.6%)
+光耀帝國 (2.1%)
 
 $station
 (1204,5914) city 2 #cFD7844 烏托邦

@@ -2,10 +2,11 @@ $name 10185 V1272 Scuti
 $serverName V1272 Scuti
 $size 9000
 
-// Rank 1: Space Marine (34.3)
-// Rank 2: Legion SI (32.8)
-// Rank 3: 해병성채 (30.6)
-// Rank 4: Space Marine 2 (2.1)
+$overlay
+Space Marine (34.3%)
+Legion SI (32.8%)
+해병성채 (30.6%)
+Space Marine 2 (2.1%)
 
 $station
 (3273,5174) city 9 #cFD7844 해병성채

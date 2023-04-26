@@ -2,10 +2,11 @@ $name 10083 Andromeda 53
 $serverName Andromeda 53
 $size 9000
 
-// Rank 1: UN GALACTIC PH (48.9)
-// Rank 2: Crimson Cartel (46.7)
-// Rank 3: TigerEmpire (2.1)
-// Rank 4: Tera (2.1)
+$overlay
+UN GALACTIC PH (48.9%)
+Crimson Cartel (46.7%)
+TigerEmpire (2.1%)
+Tera (2.1%)
 
 $station
 (1494,6214) city 2 #cFD7844 TigerEmpire

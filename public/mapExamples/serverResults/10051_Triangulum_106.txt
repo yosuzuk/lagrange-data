@@ -2,9 +2,10 @@ $name 10051 Triangulum 106
 $serverName Triangulum 106
 $size 9000
 
-// Rank 1: Iceni (81.7)
-// Rank 2: VOID (13.8)
-// Rank 3: UN Federation (4.3)
+$overlay
+Iceni (81.7%)
+VOID (13.8%)
+UN Federation (4.3%)
 
 $station
 (3574,0314) city 2 #cFD7844 UN Federation

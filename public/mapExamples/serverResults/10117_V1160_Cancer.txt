@@ -2,8 +2,9 @@ $name 10117 V1160 Cancer
 $serverName V1160 Cancer
 $size 9000
 
-// Rank 1: 키리스나 (83.9)
-// Rank 2: 狐空の彼方 (16.0)
+$overlay
+키리스나 (83.9%)
+狐空の彼方 (16.0%)
 
 $station
 (1214,1624) city 2 #cE5B36C 키리스나

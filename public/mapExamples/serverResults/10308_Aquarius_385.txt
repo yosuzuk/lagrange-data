@@ -2,9 +2,10 @@ $name 10308 Aquarius 385
 $serverName Aquarius 385
 $size 9000
 
-// Rank 1: Good Game (25.5)
-// Rank 7: Inf Solutions (6.5)
-// Rank 8: 大唐帝国 (2.1)
+$overlay
+Good Game (25.5%)
+Inf Solutions (6.5%)
+大唐帝国 (2.1%)
 
 $station
 (3354,0764) city 2 #cE5B36C Good Game

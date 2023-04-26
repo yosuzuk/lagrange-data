@@ -2,9 +2,10 @@ $name 10156 Corona Australis 52
 $serverName Corona Australis 52
 $size 9000
 
-// Rank 1: 한국ROK navy (54.0)
-// Rank 2: Rising Phoenix (43.7)
-// Rank 3: IntG RD Cmral (2.1)
+$overlay
+한국ROK navy (54.0%)
+Rising Phoenix (43.7%)
+IntG RD Cmral (2.1%)
 
 $station
 (2984,0774) city 2 #c4A99FB Rising Phoenix

@@ -2,11 +2,12 @@ $name 10166 V572 Tucana
 $serverName V572 Tucana
 $size 9000
 
-// Rank 1: 來點正常人 (33.5)
-// Rank 2: Borg Empire (32.8)
-// Rank 3: 星際聯盟 (11.6)
-// Rank 4: 코스모스 (10.9)
-// Rank 5: 長眠之地 (10.9)
+$overlay
+來點正常人 (33.5%)
+Borg Empire (32.8%)
+星際聯盟 (11.6%)
+코스모스 (10.9%)
+長眠之地 (10.9%)
 
 $station
 (1534,1974) city 2 #cFD7844 星際聯盟

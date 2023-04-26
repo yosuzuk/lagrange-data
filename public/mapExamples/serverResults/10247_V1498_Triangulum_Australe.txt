@@ -2,10 +2,11 @@ $name 10247 V1498 Triangulum Australe
 $serverName V1498 Triangulum Australe
 $size 9000
 
-// Rank 1: The Vanguard (32.8)
-// Rank 2: StarGuardians (27.7)
-// Rank 3: AstralVoid (21.1)
-// Rank 4: WinterDawn (13.8)
+$overlay
+The Vanguard (32.8%)
+StarGuardians (27.7%)
+AstralVoid (21.1%)
+WinterDawn (13.8%)
 
 $station
 (1204,5914) city 2 #c4A99FB StarGuardians

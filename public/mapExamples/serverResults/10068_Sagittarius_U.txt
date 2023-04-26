@@ -2,9 +2,10 @@ $name 10068 Sagittarius U
 $serverName Sagittarius U
 $size 9000
 
-// Rank 1: Intel Corporate (72.2)
-// Rank 2: Planet Express (11.6)
-// Rank 4: Ardens Legion (6.5)
+$overlay
+Intel Corporate (72.2%)
+Planet Express (11.6%)
+Ardens Legion (6.5%)
 
 $station
 (1494,7574) city 2 #cE5B36C Intel Corporate

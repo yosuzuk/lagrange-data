@@ -2,9 +2,10 @@ $name 10116 Cygnus 125
 $serverName Cygnus 125
 $size 9000
 
-// Rank 1: GGCompany (40.1)
-// Rank 2: EMPIRE (32.1)
-// Rank 3: 독도가는길 (27.7)
+$overlay
+GGCompany (40.1%)
+EMPIRE (32.1%)
+독도가는길 (27.7%)
 
 $station
 (1374,5814) city 2 #cE5B36C GGCompany

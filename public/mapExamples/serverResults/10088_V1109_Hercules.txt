@@ -2,9 +2,10 @@ $name 10088 V1109 Hercules
 $serverName V1109 Hercules
 $size 9000
 
-// Rank 1: Endless Tera (35.0)
-// Rank 2: The Guardians (32.8)
-// Rank 3: The Titans (32.1)
+$overlay
+Endless Tera (35.0%)
+The Guardians (32.8%)
+The Titans (32.1%)
 
 $station
 (1984,8154) city 2 #c4A99FB The Guardians

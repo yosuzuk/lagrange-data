@@ -2,9 +2,10 @@ $name 10218 V860 Sculptor
 $serverName V860 Sculptor
 $size 9000
 
-// Rank 1: UN Space Corps (74.4)
-// Rank 2: core (13.8)
-// Rank 3: STAR LEGION (11.6)
+$overlay
+UN Space Corps (74.4%)
+core (13.8%)
+STAR LEGION (11.6%)
 
 $station
 (0354,3344) city 2 #cE5B36C UN Space Corps

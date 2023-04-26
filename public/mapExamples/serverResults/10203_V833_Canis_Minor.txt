@@ -2,8 +2,9 @@ $name 10203 V833 Canis Minor
 $serverName V833 Canis Minor
 $size 9000
 
-// Rank 1: The Scourge (51.8)
-// Rank 2: Iron Planet (48.1)
+$overlay
+The Scourge (51.8%)
+Iron Planet (48.1%)
 
 $station
 (1554,7224) city 2 #cE5B36C The Scourge

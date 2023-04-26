@@ -2,10 +2,11 @@ $name 10249 Norma RU
 $serverName Norma RU
 $size 9000
 
-// Rank 2: HumanitiesGuard (18.2)
-// Rank 3: GalacticRus (9.4)
-// Rank 5: Celestial Waves (4.3)
-// Rank 6: Celestial Power (4.3)
+$overlay
+HumanitiesGuard (18.2%)
+GalacticRus (9.4%)
+Celestial Waves (4.3%)
+Celestial Power (4.3%)
 
 $station
 (2434,7284) city 2 #c7E67F2 Celestial Power

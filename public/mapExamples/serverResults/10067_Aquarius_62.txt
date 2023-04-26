@@ -2,9 +2,10 @@ $name 10067 Aquarius 62
 $serverName Aquarius 62
 $size 9000
 
-// Rank 1: Legio Astartes (51.0)
-// Rank 2: Deathstar (32.1)
-// Rank 3: Goliath (16.7)
+$overlay
+Legio Astartes (51.0%)
+Deathstar (32.1%)
+Goliath (16.7%)
 
 $station
 (4532,1748) city 5 #cFD7844 Goliath

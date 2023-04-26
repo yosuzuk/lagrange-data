@@ -2,11 +2,12 @@ $name 10110 V673 Leo
 $serverName V673 Leo
 $size 9000
 
-// Rank 1: 銀河帝国 (34.3)
-// Rank 2: 肉食べたい (30.6)
-// Rank 3: 치즈연방국 (11.6)
-// Rank 4: SPACE ASSAULT (11.6)
-// Rank 5: 한국인 (11.6)
+$overlay
+銀河帝国 (34.3%)
+肉食べたい (30.6%)
+치즈연방국 (11.6%)
+SPACE ASSAULT (11.6%)
+한국인 (11.6%)
 
 $station
 (4438,3937) city 7 #c49E7C0 SPACE ASSAULT

@@ -2,8 +2,9 @@ $name 10035 Musca 94
 $serverName Musca 94
 $size 9000
 
-// Rank 1: Soviet Union (51.0)
-// Rank 2: Enterprise (32.1)
+$overlay
+Soviet Union (51.0%)
+Enterprise (32.1%)
 
 $station
 (1254,1624) city 2 #cE5B36C Soviet Union

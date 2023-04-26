@@ -2,11 +2,12 @@ $name 10095 Ophiuchus 143
 $serverName Ophiuchus 143
 $size 9000
 
-// Rank 1: 무지개 (44.5)
-// Rank 2: HEROES (28.4)
-// Rank 3: TラボJP (20.4)
-// Rank 4: 中央司令部 (4.3)
-// Rank 5: 蛇使い座143 (2.1)
+$overlay
+무지개 (44.5%)
+HEROES (28.4%)
+TラボJP (20.4%)
+中央司令部 (4.3%)
+蛇使い座143 (2.1%)
 
 $station
 (3494,8144) city 2 #c4A99FB HEROES

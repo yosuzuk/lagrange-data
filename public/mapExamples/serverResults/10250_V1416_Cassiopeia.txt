@@ -2,9 +2,10 @@ $name 10250 V1416 Cassiopeia
 $serverName V1416 Cassiopeia
 $size 9000
 
-// Rank 1: The Kwakken (42.3)
-// Rank 6: 7 PIECES OF 9 (4.3)
-// Rank 7: Galactic Might (2.1)
+$overlay
+The Kwakken (42.3%)
+7 PIECES OF 9 (4.3%)
+Galactic Might (2.1%)
 
 $station
 (1504,2435) city 2 #c7E67F2 7 PIECES OF 9

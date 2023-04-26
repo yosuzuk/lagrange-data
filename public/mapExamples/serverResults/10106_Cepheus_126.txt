@@ -2,11 +2,12 @@ $name 10106 Cepheus 126
 $serverName Cepheus 126
 $size 9000
 
-// Rank 1: お散歩隊 (30.6)
-// Rank 2: mrksクラブ (23.3)
-// Rank 3: にゃーん (23.3)
-// Rank 4: ひかり (11.6)
-// Rank 5: 조선방범대 (10.9)
+$overlay
+お散歩隊 (30.6%)
+mrksクラブ (23.3%)
+にゃーん (23.3%)
+ひかり (11.6%)
+조선방범대 (10.9%)
 
 $station
 (1534,1964) city 2 #c4A99FB mrksクラブ

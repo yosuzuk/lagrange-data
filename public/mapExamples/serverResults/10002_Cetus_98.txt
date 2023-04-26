@@ -2,8 +2,9 @@ $name 10002 Cetus 98
 $serverName Cetus 98
 $size 9000
 
-// Rank 1: Т Б К (64.9)
-// Rank 2: Eingreiftruppe (35.0)
+$overlay
+Т Б К (64.9%)
+Eingreiftruppe (35.0%)
 
 $station
 (1694,7744) city 2 #cE5B36C Т Б К

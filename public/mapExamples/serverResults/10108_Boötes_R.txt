@@ -2,10 +2,11 @@ $name 10108 Boötes R
 $serverName Boötes R
 $size 9000
 
-// Rank 1: 대한민국 (48.9)
-// Rank 2: 橘連合 (46.7)
-// Rank 3: Noxus Empire (2.1)
-// Rank 4: Blitz Korps (2.1)
+$overlay
+대한민국 (48.9%)
+橘連合 (46.7%)
+Noxus Empire (2.1%)
+Blitz Korps (2.1%)
 
 $station
 (1184,1755) city 2 #c4A99FB 橘連合

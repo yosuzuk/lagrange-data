@@ -2,10 +2,11 @@ $name 10266 Leo Minor 391
 $serverName Leo Minor 391
 $size 9000
 
-// Rank 1: ASGARD (48.9)
-// Rank 2: Phoenix Down (32.1)
-// Rank 4: Fire Force (2.1)
-// Rank 5: PA1N (2.1)
+$overlay
+ASGARD (48.9%)
+Phoenix Down (32.1%)
+Fire Force (2.1%)
+PA1N (2.1%)
 
 $station
 (0354,3344) city 2 #cE5B36C ASGARD

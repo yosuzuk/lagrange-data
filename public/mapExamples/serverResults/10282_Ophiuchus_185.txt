@@ -2,8 +2,9 @@ $name 10282 Ophiuchus 185
 $serverName Ophiuchus 185
 $size 9000
 
-// Rank 1: THE ARCHANGELS (44.5)
-// Rank 2: HumanitysSword (21.1)
+$overlay
+THE ARCHANGELS (44.5%)
+HumanitysSword (21.1%)
 
 $station
 (1284,6574) city 2 #cE5B36C THE ARCHANGELS

@@ -2,10 +2,11 @@ $name 10111 Piscis Austrinus AC
 $serverName Piscis Austrinus AC
 $size 9000
 
-// Rank 1: 람쥐썬더 (50.3)
-// Rank 2: Japanese Union (18.2)
-// Rank 3: Archspace (18.2)
-// Rank 4: Human Resources (13.1)
+$overlay
+람쥐썬더 (50.3%)
+Japanese Union (18.2%)
+Archspace (18.2%)
+Human Resources (13.1%)
 
 $station
 (1494,7244) city 2 #c49E7C0 Human Resources

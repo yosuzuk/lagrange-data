@@ -2,8 +2,9 @@ $name 10036 Orion 143
 $serverName Orion 143
 $size 9000
 
-// Rank 1: Hydra (89.0)
-// Rank 2: Manticore (10.9)
+$overlay
+Hydra (89.0%)
+Manticore (10.9%)
 
 $station
 (3911,4327) city 5 #c4A99FB Manticore

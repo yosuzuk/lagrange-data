@@ -2,10 +2,11 @@ $name 10300 Aquarius 239
 $serverName Aquarius 239
 $size 9000
 
-// Rank 1: SALVATION (49.6)
-// Rank 2: Rapid Fire V (10.9)
-// Rank 3: 星海羅盤 (8.7)
-// Rank 7: NORD (2.1)
+$overlay
+SALVATION (49.6%)
+Rapid Fire V (10.9%)
+星海羅盤 (8.7%)
+NORD (2.1%)
 
 $station
 (1739,5891) city 5 #cE5B36C SALVATION

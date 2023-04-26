@@ -2,11 +2,12 @@ $name 10251 Sagitta EU
 $serverName Sagitta EU
 $size 9000
 
-// Rank 1: We Love War (18.2)
-// Rank 3: OLYMPUS (13.8)
-// Rank 4: GG Union (11.6)
-// Rank 5: GALACTIC KING (10.9)
-// Rank 9: Stargazers (2.1)
+$overlay
+We Love War (18.2%)
+OLYMPUS (13.8%)
+GG Union (11.6%)
+GALACTIC KING (10.9%)
+Stargazers (2.1%)
 
 $station
 (1514,1304) city 2 #cFD7844 OLYMPUS

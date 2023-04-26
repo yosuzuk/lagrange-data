@@ -2,9 +2,10 @@ $name 10228 Virgo RU
 $serverName Virgo RU
 $size 9000
 
-// Rank 1: Reactive Sword (51.8)
-// Rank 2: Armada (27.7)
-// Rank 4: Stormwind (2.1)
+$overlay
+Reactive Sword (51.8%)
+Armada (27.7%)
+Stormwind (2.1%)
 
 $station
 (3774,8664) city 2 #c49E7C0 Stormwind

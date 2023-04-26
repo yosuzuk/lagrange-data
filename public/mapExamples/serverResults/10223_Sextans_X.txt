@@ -2,11 +2,12 @@ $name 10223 Sextans X
 $serverName Sextans X
 $size 9000
 
-// Rank 1: Enders (42.3)
-// Rank 2: 大夏星联 (18.2)
-// Rank 3: The Syndicate (16.0)
-// Rank 6: Galactic Empire (2.1)
-// Rank 7: Terra (2.1)
+$overlay
+Enders (42.3%)
+大夏星联 (18.2%)
+The Syndicate (16.0%)
+Galactic Empire (2.1%)
+Terra (2.1%)
 
 $station
 (1204,5914) city 2 #cE5B36C Enders

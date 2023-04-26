@@ -2,8 +2,9 @@ $name 10254 Aquarius 496
 $serverName Aquarius 496
 $size 9000
 
-// Rank 1: ENTENTE (44.5)
-// Rank 2: Space X (29.9)
+$overlay
+ENTENTE (44.5%)
+Space X (29.9%)
 
 $station
 (2454,7934) city 2 #c4A99FB Space X

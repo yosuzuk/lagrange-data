@@ -2,9 +2,10 @@ $name 10277 V1969 Carina
 $serverName V1969 Carina
 $size 9000
 
-// Rank 1: Order Of Eden (42.3)
-// Rank 2: Eclipse Order (22.6)
-// Rank 5: vintage (4.3)
+$overlay
+Order Of Eden (42.3%)
+Eclipse Order (22.6%)
+vintage (4.3%)
 
 $station
 (1484,1414) city 2 #cE63A3A vintage

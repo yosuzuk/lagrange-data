@@ -2,11 +2,12 @@ $name 10099 V440 Corona Borealis
 $serverName V440 Corona Borealis
 $size 9000
 
-// Rank 1: 옴뇸뇸 (41.6)
-// Rank 2: Excalibur (30.6)
-// Rank 3: Levian (13.8)
-// Rank 4: Final Frontier (11.6)
-// Rank 5: 日本連合 (2.1)
+$overlay
+옴뇸뇸 (41.6%)
+Excalibur (30.6%)
+Levian (13.8%)
+Final Frontier (11.6%)
+日本連合 (2.1%)
 
 $station
 (2827,3854) city 5 #cE5B36C 옴뇸뇸

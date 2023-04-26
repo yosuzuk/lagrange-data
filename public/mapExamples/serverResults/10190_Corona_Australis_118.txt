@@ -2,8 +2,9 @@ $name 10190 Corona Australis 118
 $serverName Corona Australis 118
 $size 9000
 
-// Rank 1: TerraCorp (53.2)
-// Rank 2: ARMADA (46.7)
+$overlay
+TerraCorp (53.2%)
+ARMADA (46.7%)
 
 $station
 (1684,7514) city 2 #c4A99FB ARMADA

@@ -2,9 +2,10 @@ $name 10284 Telescopium Y
 $serverName Telescopium Y
 $size 9000
 
-// Rank 1: Xenomorph (30.6)
-// Rank 2: SolarChildren (11.6)
-// Rank 3: Soul Cyphons (11.6)
+$overlay
+Xenomorph (30.6%)
+SolarChildren (11.6%)
+Soul Cyphons (11.6%)
 
 $station
 (3694,0634) city 2 #c4A99FB SolarChildren

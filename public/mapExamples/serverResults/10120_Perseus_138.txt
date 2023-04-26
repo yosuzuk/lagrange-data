@@ -2,9 +2,10 @@ $name 10120 Perseus 138
 $serverName Perseus 138
 $size 9000
 
-// Rank 1: 한국연방 (47.4)
-// Rank 2: Star Team (41.6)
-// Rank 3: 高天原 (10.9)
+$overlay
+한국연방 (47.4%)
+Star Team (41.6%)
+高天原 (10.9%)
 
 $station
 (1064,2395) city 2 #c4A99FB Star Team

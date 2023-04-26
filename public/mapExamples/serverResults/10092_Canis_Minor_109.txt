@@ -2,11 +2,12 @@ $name 10092 Canis Minor 109
 $serverName Canis Minor 109
 $size 9000
 
-// Rank 1: Valhalla (35.0)
-// Rank 2: Revenants (28.4)
-// Rank 3: 大日本 (18.2)
-// Rank 4: Ants (16.0)
-// Rank 5: Korea (2.1)
+$overlay
+Valhalla (35.0%)
+Revenants (28.4%)
+大日本 (18.2%)
+Ants (16.0%)
+Korea (2.1%)
 
 $station
 (3301,5016) city 9 #c4A99FB Revenants

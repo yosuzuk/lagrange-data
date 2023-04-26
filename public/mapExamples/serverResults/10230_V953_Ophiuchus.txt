@@ -2,10 +2,11 @@ $name 10230 V953 Ophiuchus
 $serverName V953 Ophiuchus
 $size 9000
 
-// Rank 1: Petrichor (43.7)
-// Rank 2: Asteroidbelt (11.6)
-// Rank 3: White Tiger Inc (11.6)
-// Rank 7: Villains (2.1)
+$overlay
+Petrichor (43.7%)
+Asteroidbelt (11.6%)
+White Tiger Inc (11.6%)
+Villains (2.1%)
 
 $station
 (0354,3344) city 2 #cE5B36C Petrichor

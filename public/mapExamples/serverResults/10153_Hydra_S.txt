@@ -2,8 +2,9 @@ $name 10153 Hydra S
 $serverName Hydra S
 $size 9000
 
-// Rank 1: Legio Astartes (51.0)
-// Rank 2: Redwood (48.9)
+$overlay
+Legio Astartes (51.0%)
+Redwood (48.9%)
 
 $station
 (1204,5914) city 2 #c4A99FB Redwood

@@ -2,10 +2,11 @@ $name 10267 Corona Borealis AA
 $serverName Corona Borealis AA
 $size 9000
 
-// Rank 1: New World (41.6)
-// Rank 6: TheRomanEmpire (6.5)
-// Rank 7: GalaxyConqueror (4.3)
-// Rank 8: Caldari Navy (2.1)
+$overlay
+New World (41.6%)
+TheRomanEmpire (6.5%)
+GalaxyConqueror (4.3%)
+Caldari Navy (2.1%)
 
 $station
 (1424,2074) city 2 #c7E67F2 TheRomanEmpire

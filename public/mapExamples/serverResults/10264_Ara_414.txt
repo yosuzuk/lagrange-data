@@ -2,10 +2,11 @@ $name 10264 Ara 414
 $serverName Ara 414
 $size 9000
 
-// Rank 1: VÏRUS EMPIRE (42.3)
-// Rank 2: RETRIBUTION (37.2)
-// Rank 3: HEAVENLY DEMONS (16.0)
-// Rank 4: Forerunners (2.1)
+$overlay
+VÏRUS EMPIRE (42.3%)
+RETRIBUTION (37.2%)
+HEAVENLY DEMONS (16.0%)
+Forerunners (2.1%)
 
 $station
 (3434,0334) city 2 #cFD7844 HEAVENLY DEMONS

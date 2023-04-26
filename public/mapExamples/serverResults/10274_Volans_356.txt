@@ -2,12 +2,13 @@ $name 10274 Volans 356
 $serverName Volans 356
 $size 9000
 
-// Rank 1: ALTER (35.0)
-// Rank 2: The Outlaws (23.3)
-// Rank 4: Bears (8.7)
-// Rank 6: Caldari Navy (2.1)
-// Rank 7: USSR (2.1)
-// Rank 8: Manticor Navy (2.1)
+$overlay
+ALTER (35.0%)
+The Outlaws (23.3%)
+Bears (8.7%)
+Caldari Navy (2.1%)
+USSR (2.1%)
+Manticor Navy (2.1%)
 
 $station
 (3252,5706) city 2 #cE5B36C ALTER

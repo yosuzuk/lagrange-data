@@ -2,8 +2,9 @@ $name 10256 Delphinus 193
 $serverName Delphinus 193
 $size 9000
 
-// Rank 1: EnergyShocks (41.6)
-// Rank 2: Reavers (32.8)
+$overlay
+EnergyShocks (41.6%)
+Reavers (32.8%)
 
 $station
 (1534,1974) city 2 #cE5B36C EnergyShocks

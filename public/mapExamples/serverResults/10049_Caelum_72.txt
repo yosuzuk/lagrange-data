@@ -2,7 +2,8 @@ $name 10049 Caelum 72
 $serverName Caelum 72
 $size 9000
 
-// Rank 1: The Black Hand (100.0)
+$overlay
+The Black Hand (100.0%)
 
 $station
 (1304,2734) city 2 #cE5B36C The Black Hand

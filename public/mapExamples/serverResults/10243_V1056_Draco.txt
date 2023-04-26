@@ -2,12 +2,13 @@ $name 10243 V1056 Draco
 $serverName V1056 Draco
 $size 9000
 
-// Rank 1: 大威天龙 (40.1)
-// Rank 2: Gray Cerberus (13.8)
-// Rank 3: TEF (13.8)
-// Rank 4: ClownsWithCrown (8.7)
-// Rank 7: 日本連盟 (4.3)
-// Rank 8: 잉여가되고파 (2.1)
+$overlay
+大威天龙 (40.1%)
+Gray Cerberus (13.8%)
+TEF (13.8%)
+ClownsWithCrown (8.7%)
+日本連盟 (4.3%)
+잉여가되고파 (2.1%)
 
 $station
 (5374,7754) city 2 #c9FE23E 잉여가되고파

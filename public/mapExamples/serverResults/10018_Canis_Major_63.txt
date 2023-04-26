@@ -2,9 +2,10 @@ $name 10018 Canis Major 63
 $serverName Canis Major 63
 $size 9000
 
-// Rank 1: StarWars (44.5)
-// Rank 2: DS13 (43.7)
-// Rank 3: Russian Bears (11.6)
+$overlay
+StarWars (44.5%)
+DS13 (43.7%)
+Russian Bears (11.6%)
 
 $station
 (2564,8035) city 2 #c4A99FB DS13

@@ -2,10 +2,11 @@ $name 20003 Triangulum W
 $serverName Triangulum W
 $size 9000
 
-// Rank 1: FoxHounds (51.0)
-// Rank 2: СНГ (33.5)
-// Rank 3: Orion Knights (10.9)
-// Rank 4: PhoeniX (4.3)
+$overlay
+FoxHounds (51.0%)
+СНГ (33.5%)
+Orion Knights (10.9%)
+PhoeniX (4.3%)
 
 $station
 (1772,2970) city 5 #cFD7844 Orion Knights

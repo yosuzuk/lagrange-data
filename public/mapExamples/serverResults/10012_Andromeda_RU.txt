@@ -2,9 +2,10 @@ $name 10012 Andromeda RU
 $serverName Andromeda RU
 $size 9000
 
-// Rank 1: FoxHounds (60.5)
-// Rank 2: СНГ (32.8)
-// Rank 3: ВКС РФ (4.3)
+$overlay
+FoxHounds (60.5%)
+СНГ (32.8%)
+ВКС РФ (4.3%)
 
 $station
 (1734,7424) city 2 #cE5B36C FoxHounds

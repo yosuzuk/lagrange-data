@@ -2,10 +2,11 @@ $name 10003 Horologium ZR
 $serverName Horologium ZR
 $size 9000
 
-// Rank 1: Multi Nation (51.8)
-// Rank 2: Evil Empire (32.1)
-// Rank 3: Pirate Life (13.8)
-// Rank 4: Les midgardiens (2.1)
+$overlay
+Multi Nation (51.8%)
+Evil Empire (32.1%)
+Pirate Life (13.8%)
+Les midgardiens (2.1%)
 
 $station
 (1584,6735) city 2 #cE5B36C Multi Nation

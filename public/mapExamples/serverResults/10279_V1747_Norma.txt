@@ -2,12 +2,13 @@ $name 10279 V1747 Norma
 $serverName V1747 Norma
 $size 9000
 
-// Rank 1: VÂĤÂŁŁÄ (35.7)
-// Rank 2: GermanElite (11.6)
-// Rank 3: GalacticRepubli (10.9)
-// Rank 4: Empire (9.4)
-// Rank 7: PhionixRising (6.5)
-// Rank 8: ORPHANS MSG (4.3)
+$overlay
+VÂĤÂŁŁÄ (35.7%)
+GermanElite (11.6%)
+GalacticRepubli (10.9%)
+Empire (9.4%)
+PhionixRising (6.5%)
+ORPHANS MSG (4.3%)
 
 $station
 (1394,2654) city 2 #c4A99FB GermanElite

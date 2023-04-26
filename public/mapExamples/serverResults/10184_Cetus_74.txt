@@ -2,10 +2,11 @@ $name 10184 Cetus 74
 $serverName Cetus 74
 $size 9000
 
-// Rank 1: ALL IN (56.2)
-// Rank 2: Origin (11.6)
-// Rank 3: 승리호 (11.6)
-// Rank 4: 神隱流派 (10.9)
+$overlay
+ALL IN (56.2%)
+Origin (11.6%)
+승리호 (11.6%)
+神隱流派 (10.9%)
 
 $station
 (1494,7254) city 2 #c4A99FB Origin

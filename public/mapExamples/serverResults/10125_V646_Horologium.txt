@@ -2,10 +2,11 @@ $name 10125 V646 Horologium
 $serverName V646 Horologium
 $size 9000
 
-// Rank 1: DESTINY (53.2)
-// Rank 2: Delaz Fleet (30.6)
-// Rank 3: 은하수 (11.6)
-// Rank 4: DEMON CORPs (4.3)
+$overlay
+DESTINY (53.2%)
+Delaz Fleet (30.6%)
+은하수 (11.6%)
+DEMON CORPs (4.3%)
 
 $station
 (1064,2395) city 2 #cE5B36C DESTINY

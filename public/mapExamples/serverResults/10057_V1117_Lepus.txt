@@ -2,9 +2,10 @@ $name 10057 V1117 Lepus
 $serverName V1117 Lepus
 $size 9000
 
-// Rank 1: The Time Lords (51.0)
-// Rank 2: Hells Symphony (32.8)
-// Rank 3: Serenity (13.8)
+$overlay
+The Time Lords (51.0%)
+Hells Symphony (32.8%)
+Serenity (13.8%)
 
 $station
 (3444,8214) city 2 #cE5B36C The Time Lords

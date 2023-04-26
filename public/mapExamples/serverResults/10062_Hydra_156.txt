@@ -2,8 +2,9 @@ $name 10062 Hydra 156
 $serverName Hydra 156
 $size 9000
 
-// Rank 1: Matallan Empire (58.3)
-// Rank 2: ATLAS (41.6)
+$overlay
+Matallan Empire (58.3%)
+ATLAS (41.6%)
 
 $station
 (1244,2755) city 2 #c4A99FB ATLAS

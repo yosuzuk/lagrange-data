@@ -2,11 +2,12 @@ $name 10244 Hydra 61
 $serverName Hydra 61
 $size 9000
 
-// Rank 1: ASGARD (32.8)
-// Rank 2: Fairy Tail (16.0)
-// Rank 7: TokyoManji (4.3)
-// Rank 8: WolfStorm Clã (2.1)
-// Rank 9: Tarot Pack (2.1)
+$overlay
+ASGARD (32.8%)
+Fairy Tail (16.0%)
+TokyoManji (4.3%)
+WolfStorm Clã (2.1%)
+Tarot Pack (2.1%)
 
 $station
 (3129,6691) city 5 #cE5B36C ASGARD

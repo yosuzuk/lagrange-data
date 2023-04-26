@@ -2,11 +2,12 @@ $name 10105 Centaurus FW
 $serverName Centaurus FW
 $size 9000
 
-// Rank 1: Alpha (42.3)
-// Rank 2: 第三帝国 (23.3)
-// Rank 3: Prosperity (20.4)
-// Rank 4: Stellaria (11.6)
-// Rank 5: 亜艦隊 (2.1)
+$overlay
+Alpha (42.3%)
+第三帝国 (23.3%)
+Prosperity (20.4%)
+Stellaria (11.6%)
+亜艦隊 (2.1%)
 
 $station
 (1424,7014) city 2 #cE5B36C Alpha

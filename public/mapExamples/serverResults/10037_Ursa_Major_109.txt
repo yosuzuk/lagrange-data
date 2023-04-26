@@ -2,9 +2,10 @@ $name 10037 Ursa Major 109
 $serverName Ursa Major 109
 $size 9000
 
-// Rank 1: Legion (46.7)
-// Rank 2: Galactic Order (29.9)
-// Rank 3: Republic (23.3)
+$overlay
+Legion (46.7%)
+Galactic Order (29.9%)
+Republic (23.3%)
 
 $station
 (3794,0974) city 2 #c4A99FB Galactic Order

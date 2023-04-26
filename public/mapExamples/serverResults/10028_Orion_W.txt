@@ -2,8 +2,9 @@ $name 10028 Orion W
 $serverName Orion W
 $size 9000
 
-// Rank 1: Harbingers (40.1)
-// Rank 2: War (32.1)
+$overlay
+Harbingers (40.1%)
+War (32.1%)
 
 $station
 (4673,6013) city 7 #cE5B36C Harbingers

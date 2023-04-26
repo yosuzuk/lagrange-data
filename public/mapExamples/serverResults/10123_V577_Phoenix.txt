@@ -2,8 +2,9 @@ $name 10123 V577 Phoenix
 $serverName V577 Phoenix
 $size 9000
 
-// Rank 1: Astro Unity (51.0)
-// Rank 2: Engineers (48.9)
+$overlay
+Astro Unity (51.0%)
+Engineers (48.9%)
 
 $station
 (3034,8474) city 2 #cE5B36C Astro Unity

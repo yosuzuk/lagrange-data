@@ -2,9 +2,10 @@ $name 10217 V873 Corona Australis
 $serverName V873 Corona Australis
 $size 9000
 
-// Rank 1: Rance Quest IX (32.1)
-// Rank 2: Second Order (16.0)
-// Rank 4: Demon Penguins (11.6)
+$overlay
+Rance Quest IX (32.1%)
+Second Order (16.0%)
+Demon Penguins (11.6%)
 
 $station
 (3507,1428) city 3 #c4A99FB Second Order

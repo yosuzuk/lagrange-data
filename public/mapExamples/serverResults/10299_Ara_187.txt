@@ -2,9 +2,10 @@ $name 10299 Ara 187
 $serverName Ara 187
 $size 9000
 
-// Rank 1: REDEMPTION (59.1)
-// Rank 2: RogueSquadron (10.9)
-// Rank 5: Iron Wolves (4.3)
+$overlay
+REDEMPTION (59.1%)
+RogueSquadron (10.9%)
+Iron Wolves (4.3%)
 
 $station
 (1174,5484) city 2 #c4A99FB RogueSquadron

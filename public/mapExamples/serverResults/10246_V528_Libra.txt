@@ -2,10 +2,11 @@ $name 10246 V528 Libra
 $serverName V528 Libra
 $size 9000
 
-// Rank 2: M3nT4L 0n3z (16.0)
-// Rank 3: 新月之地 (16.0)
-// Rank 4: Dominatorz (13.8)
-// Rank 8: UNIONGALACTIQUE (6.5)
+$overlay
+M3nT4L 0n3z (16.0%)
+新月之地 (16.0%)
+Dominatorz (13.8%)
+UNIONGALACTIQUE (6.5%)
 
 $station
 (3774,8664) city 2 #cFD7844 新月之地

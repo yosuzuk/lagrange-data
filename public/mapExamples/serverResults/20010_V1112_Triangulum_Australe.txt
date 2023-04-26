@@ -2,10 +2,11 @@ $name 20010 V1112 Triangulum Australe
 $serverName V1112 Triangulum Australe
 $size 9000
 
-// Rank 1: Kangaeru (41.6)
-// Rank 2: The Flood (30.6)
-// Rank 3: No1china (16.0)
-// Rank 4: UnitedRUS (11.6)
+$overlay
+Kangaeru (41.6%)
+The Flood (30.6%)
+No1china (16.0%)
+UnitedRUS (11.6%)
 
 $station
 (1479,2900) city 2 #cE5B36C Kangaeru

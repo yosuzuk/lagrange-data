@@ -2,10 +2,11 @@ $name 10307 V2006 Lynx
 $serverName V2006 Lynx
 $size 9000
 
-// Rank 1: Outsiders (25.5)
-// Rank 3: MORA (13.8)
-// Rank 4: GFS (13.1)
-// Rank 8: NIFLHEIM (2.1)
+$overlay
+Outsiders (25.5%)
+MORA (13.8%)
+GFS (13.1%)
+NIFLHEIM (2.1%)
 
 $station
 (3694,0634) city 2 #c9FE23E NIFLHEIM

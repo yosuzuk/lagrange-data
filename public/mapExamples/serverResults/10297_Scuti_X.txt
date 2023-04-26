@@ -2,10 +2,11 @@ $name 10297 Scuti X
 $serverName Scuti X
 $size 9000
 
-// Rank 1: Gargantua (32.8)
-// Rank 2: HEAVENLY DEMONS (27.7)
-// Rank 4: GunBoat Diplo (13.8)
-// Rank 5: IRON PLANET (4.3)
+$overlay
+Gargantua (32.8%)
+HEAVENLY DEMONS (27.7%)
+GunBoat Diplo (13.8%)
+IRON PLANET (4.3%)
 
 $station
 (1614,5073) city 5 #cE5B36C Gargantua

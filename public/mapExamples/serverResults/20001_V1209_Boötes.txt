@@ -2,14 +2,15 @@ $name 20001 V1209 Boötes
 $serverName V1209 Boötes
 $size 9000
 
-// Rank 1: Umbrella Corp (23.3)
-// Rank 2: Multi Nation (18.9)
-// Rank 3: Альфа (16.0)
-// Rank 4: Evil Empire (13.8)
-// Rank 5: Alpha (11.6)
-// Rank 6: Sternenmacht (11.6)
-// Rank 7: Snow Devils (2.1)
-// Rank 8: Pirate Life (2.1)
+$overlay
+Umbrella Corp (23.3%)
+Multi Nation (18.9%)
+Альфа (16.0%)
+Evil Empire (13.8%)
+Alpha (11.6%)
+Sternenmacht (11.6%)
+Snow Devils (2.1%)
+Pirate Life (2.1%)
 
 $station
 (2984,6734) city 2 #cE63A3A Alpha

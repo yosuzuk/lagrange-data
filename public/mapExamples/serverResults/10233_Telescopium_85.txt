@@ -2,10 +2,11 @@ $name 10233 Telescopium 85
 $serverName Telescopium 85
 $size 9000
 
-// Rank 1: Arcadia Pirates (56.2)
-// Rank 2: NRW I (27.7)
-// Rank 3: Roughnecks (11.6)
-// Rank 4: RoMania (4.3)
+$overlay
+Arcadia Pirates (56.2%)
+NRW I (27.7%)
+Roughnecks (11.6%)
+RoMania (4.3%)
 
 $station
 (1574,1944) city 2 #c4A99FB NRW I

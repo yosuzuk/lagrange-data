@@ -2,11 +2,12 @@ $name 10011 V1495 Telescopium
 $serverName V1495 Telescopium
 $size 9000
 
-// Rank 1: Orion Knights (59.1)
-// Rank 2: TEMPLER ORDEN (16.0)
-// Rank 3: Стеллар (13.8)
-// Rank 4: Orion Knights 2 (4.3)
-// Rank 5: Black Legion (4.3)
+$overlay
+Orion Knights (59.1%)
+TEMPLER ORDEN (16.0%)
+Стеллар (13.8%)
+Orion Knights 2 (4.3%)
+Black Legion (4.3%)
 
 $station
 (1734,1624) city 2 #cE5B36C Orion Knights

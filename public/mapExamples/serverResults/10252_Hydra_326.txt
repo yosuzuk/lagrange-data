@@ -2,9 +2,10 @@ $name 10252 Hydra 326
 $serverName Hydra 326
 $size 9000
 
-// Rank 1: HEAVENLY DEMONS (39.4)
-// Rank 3: RevenantCorps (11.6)
-// Rank 6: ROKA (2.1)
+$overlay
+HEAVENLY DEMONS (39.4%)
+RevenantCorps (11.6%)
+ROKA (2.1%)
 
 $station
 (1770,1408) city 3 #cE5B36C HEAVENLY DEMONS

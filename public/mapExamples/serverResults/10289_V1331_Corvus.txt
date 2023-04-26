@@ -2,12 +2,13 @@ $name 10289 V1331 Corvus
 $serverName V1331 Corvus
 $size 9000
 
-// Rank 1: Shadow Realm (25.5)
-// Rank 2: La Orden Oscura (25.5)
-// Rank 4: ANDROMEDA (9.4)
-// Rank 6: 古今東西 (6.5)
-// Rank 7: FFDDMM (4.3)
-// Rank 8: AGE連合 (2.1)
+$overlay
+Shadow Realm (25.5%)
+La Orden Oscura (25.5%)
+ANDROMEDA (9.4%)
+古今東西 (6.5%)
+FFDDMM (4.3%)
+AGE連合 (2.1%)
 
 $station
 (1484,1414) city 2 #c4A99FB La Orden Oscura

@@ -2,9 +2,10 @@ $name 10220 V923 Tucana
 $serverName V923 Tucana
 $size 9000
 
-// Rank 1: 100013 (53.2)
-// Rank 2: Enders Game (18.2)
-// Rank 6: PRL deux (2.1)
+$overlay
+100013 (53.2%)
+Enders Game (18.2%)
+PRL deux (2.1%)
 
 $station
 (1494,7254) city 2 #cE5B36C 100013

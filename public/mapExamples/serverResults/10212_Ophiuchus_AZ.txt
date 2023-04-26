@@ -2,11 +2,12 @@ $name 10212 Ophiuchus AZ
 $serverName Ophiuchus AZ
 $size 9000
 
-// Rank 1: Capital Forge (44.5)
-// Rank 2: The University (13.8)
-// Rank 3: Warsaw (13.8)
-// Rank 4: SakuraDrops (8.7)
-// Rank 7: 菊水の宴 (2.1)
+$overlay
+Capital Forge (44.5%)
+The University (13.8%)
+Warsaw (13.8%)
+SakuraDrops (8.7%)
+菊水の宴 (2.1%)
 
 $station
 (0354,3344) city 2 #cE5B36C Capital Forge

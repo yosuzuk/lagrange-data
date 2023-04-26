@@ -2,12 +2,13 @@ $name 10281 Andromeda 316
 $serverName Andromeda 316
 $size 9000
 
-// Rank 1: Made in Heaven (18.9)
-// Rank 2: Delos (16.0)
-// Rank 3: Dark Empire (16.0)
-// Rank 4: CottonMiningCo (9.4)
-// Rank 6: The Wolf Fleet (8.7)
-// Rank 9: The Empire (2.1)
+$overlay
+Made in Heaven (18.9%)
+Delos (16.0%)
+Dark Empire (16.0%)
+CottonMiningCo (9.4%)
+The Wolf Fleet (8.7%)
+The Empire (2.1%)
 
 $station
 (3454,8444) city 2 #c4A99FB Delos

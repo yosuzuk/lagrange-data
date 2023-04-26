@@ -2,10 +2,11 @@ $name 10193 Corona Borealis AC
 $serverName Corona Borealis AC
 $size 9000
 
-// Rank 1: Celestial Order (42.3)
-// Rank 2: Black Diamond (25.5)
-// Rank 3: Sendaris (13.8)
-// Rank 5: JPN adámas (4.3)
+$overlay
+Celestial Order (42.3%)
+Black Diamond (25.5%)
+Sendaris (13.8%)
+JPN adámas (4.3%)
 
 $station
 (1974,1084) city 2 #c4A99FB Black Diamond

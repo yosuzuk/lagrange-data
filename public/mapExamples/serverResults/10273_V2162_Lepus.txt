@@ -2,9 +2,10 @@ $name 10273 V2162 Lepus
 $serverName V2162 Lepus
 $size 9000
 
-// Rank 1: The Rankers (27.7)
-// Rank 2: Blood Pact (21.1)
-// Rank 6: DSMA (4.3)
+$overlay
+The Rankers (27.7%)
+Blood Pact (21.1%)
+DSMA (4.3%)
 
 $station
 (1739,5891) city 5 #cE5B36C The Rankers

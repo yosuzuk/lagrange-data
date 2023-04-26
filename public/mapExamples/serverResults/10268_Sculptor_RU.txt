@@ -2,8 +2,9 @@ $name 10268 Sculptor RU
 $serverName Sculptor RU
 $size 9000
 
-// Rank 1: EMPIRE (51.8)
-// Rank 5: 海援隊 (2.1)
+$overlay
+EMPIRE (51.8%)
+海援隊 (2.1%)
 
 $station
 (4520,1478) city 5 #cE63A3A 海援隊

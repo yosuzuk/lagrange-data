@@ -2,11 +2,12 @@ $name 10278 Horologium 349
 $serverName Horologium 349
 $size 9000
 
-// Rank 1: Cerebus Empire (56.2)
-// Rank 2: voyager (16.0)
-// Rank 3: JYP ltd (13.8)
-// Rank 4: GUARDIANS CORP (11.6)
-// Rank 5: Skywalker (2.1)
+$overlay
+Cerebus Empire (56.2%)
+voyager (16.0%)
+JYP ltd (13.8%)
+GUARDIANS CORP (11.6%)
+Skywalker (2.1%)
 
 $station
 (1324,7674) city 2 #cE63A3A Skywalker

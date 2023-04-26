@@ -2,11 +2,12 @@ $name 10298 V596 Lyra
 $serverName V596 Lyra
 $size 9000
 
-// Rank 1: OmicronKWAK (16.0)
-// Rank 2: EMPIRE (16.0)
-// Rank 4: Shadow Society (9.4)
-// Rank 8: DarkLegion (6.5)
-// Rank 9: REDRUM (6.5)
+$overlay
+OmicronKWAK (16.0%)
+EMPIRE (16.0%)
+Shadow Society (9.4%)
+DarkLegion (6.5%)
+REDRUM (6.5%)
 
 $station
 (1174,5484) city 2 #c9FE23E DarkLegion

@@ -2,10 +2,11 @@ $name 10209 V713 Ursa Minor
 $serverName V713 Ursa Minor
 $size 9000
 
-// Rank 1: Rheinbund Union (32.1)
-// Rank 4: Crimson Union (8.7)
-// Rank 8: The Halos (4.3)
-// Rank 9: Bulu Ketek (2.1)
+$overlay
+Rheinbund Union (32.1%)
+Crimson Union (8.7%)
+The Halos (4.3%)
+Bulu Ketek (2.1%)
 
 $station
 (2254,7604) city 2 #cE5B36C Rheinbund Union

@@ -2,9 +2,10 @@ $name 10045 Microscopium 74
 $serverName Microscopium 74
 $size 9000
 
-// Rank 1: Klingon Empire (54.0)
-// Rank 2: Freedom (32.1)
-// Rank 3: Grand Union (13.8)
+$overlay
+Klingon Empire (54.0%)
+Freedom (32.1%)
+Grand Union (13.8%)
 
 $station
 (1254,1624) city 2 #cE5B36C Klingon Empire

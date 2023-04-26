@@ -2,10 +2,11 @@ $name 10232 V365 Gemini
 $serverName V365 Gemini
 $size 9000
 
-// Rank 1: Nova Core (24.0)
-// Rank 2: Angels of War (22.6)
-// Rank 3: Light of Ruin (20.4)
-// Rank 4: InvalidArgument (18.2)
+$overlay
+Nova Core (24.0%)
+Angels of War (22.6%)
+Light of Ruin (20.4%)
+InvalidArgument (18.2%)
 
 $station
 (2590,1420) city 5 #c49E7C0 InvalidArgument

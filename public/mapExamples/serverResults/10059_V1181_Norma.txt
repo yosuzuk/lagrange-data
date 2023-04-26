@@ -2,9 +2,10 @@ $name 10059 V1181 Norma
 $serverName V1181 Norma
 $size 9000
 
-// Rank 1: Proxima Prime (51.8)
-// Rank 2: SpaceHippies (43.7)
-// Rank 3: Infinite Guard (4.3)
+$overlay
+Proxima Prime (51.8%)
+SpaceHippies (43.7%)
+Infinite Guard (4.3%)
 
 $station
 (1494,7574) city 2 #cE5B36C Proxima Prime

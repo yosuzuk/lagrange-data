@@ -2,10 +2,11 @@ $name 10024 Carina BL
 $serverName Carina BL
 $size 9000
 
-// Rank 1: Dawn Of Orbitek (54.0)
-// Rank 2: Orbitek (32.1)
-// Rank 3: Night Alliance (11.6)
-// Rank 4: Crimson Corp (2.1)
+$overlay
+Dawn Of Orbitek (54.0%)
+Orbitek (32.1%)
+Night Alliance (11.6%)
+Crimson Corp (2.1%)
 
 $station
 (1494,7574) city 2 #c4A99FB Orbitek

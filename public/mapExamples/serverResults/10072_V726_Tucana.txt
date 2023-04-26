@@ -2,8 +2,9 @@ $name 10072 V726 Tucana
 $serverName V726 Tucana
 $size 9000
 
-// Rank 1: Sandwich Club (58.3)
-// Rank 2: RoMania (41.6)
+$overlay
+Sandwich Club (58.3%)
+RoMania (41.6%)
 
 $station
 (1454,2654) city 2 #c4A99FB RoMania

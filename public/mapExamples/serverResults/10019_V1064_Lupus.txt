@@ -2,8 +2,9 @@ $name 10019 V1064 Lupus
 $serverName V1064 Lupus
 $size 9000
 
-// Rank 1: UNSC (51.8)
-// Rank 2: Орден (48.1)
+$overlay
+UNSC (51.8%)
+Орден (48.1%)
 
 $station
 (3080,6798) city 5 #c4A99FB Орден

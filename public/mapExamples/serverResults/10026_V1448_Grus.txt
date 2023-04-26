@@ -2,11 +2,12 @@ $name 10026 V1448 Grus
 $serverName V1448 Grus
 $size 9000
 
-// Rank 1: Legion (54.0)
-// Rank 2: Federation (11.6)
-// Rank 3: The Covenant (11.6)
-// Rank 4: Red Baron (10.9)
-// Rank 6: Orden Oscura (2.1)
+$overlay
+Legion (54.0%)
+Federation (11.6%)
+The Covenant (11.6%)
+Red Baron (10.9%)
+Orden Oscura (2.1%)
 
 $station
 (3556,5031) city 5 #cE5B36C Legion

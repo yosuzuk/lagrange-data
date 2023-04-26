@@ -2,11 +2,12 @@ $name 10210 V444 Andromeda
 $serverName V444 Andromeda
 $size 9000
 
-// Rank 1: KRAKENS (32.8)
-// Rank 2: Mercenaries (20.4)
-// Rank 4: 日本連合 (13.8)
-// Rank 5: Peacekeepers (11.6)
-// Rank 6: UNSC (2.1)
+$overlay
+KRAKENS (32.8%)
+Mercenaries (20.4%)
+日本連合 (13.8%)
+Peacekeepers (11.6%)
+UNSC (2.1%)
 
 $station
 (5332,4890) city 5 #c4A99FB Mercenaries

@@ -2,10 +2,11 @@ $name 10080 V1086 Cetus
 $serverName V1086 Cetus
 $size 9000
 
-// Rank 1: LEGION (44.5)
-// Rank 2: Star Crusaders (32.1)
-// Rank 3: Sacred Dawn (11.6)
-// Rank 4: PillarsOfAutumn (11.6)
+$overlay
+LEGION (44.5%)
+Star Crusaders (32.1%)
+Sacred Dawn (11.6%)
+PillarsOfAutumn (11.6%)
 
 $station
 (1254,1624) city 2 #cE5B36C LEGION

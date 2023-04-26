@@ -2,10 +2,11 @@ $name 10086 Sagittarius 155
 $serverName Sagittarius 155
 $size 9000
 
-// Rank 1: GRIMS (37.9)
-// Rank 2: Efilon (36.4)
-// Rank 3: MaharlikaPH (13.8)
-// Rank 4: The Empire (11.6)
+$overlay
+GRIMS (37.9%)
+Efilon (36.4%)
+MaharlikaPH (13.8%)
+The Empire (11.6%)
 
 $station
 (4564,8294) city 2 #c49E7C0 The Empire

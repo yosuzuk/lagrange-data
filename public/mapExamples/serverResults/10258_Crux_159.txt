@@ -2,11 +2,12 @@ $name 10258 Crux 159
 $serverName Crux 159
 $size 9000
 
-// Rank 1: BERSERKERS (30.6)
-// Rank 2: SPACE RANGERS (27.7)
-// Rank 5: powerSTAR (6.5)
-// Rank 6: Sacred Dawn (2.1)
-// Rank 7: Phantom (2.1)
+$overlay
+BERSERKERS (30.6%)
+SPACE RANGERS (27.7%)
+powerSTAR (6.5%)
+Sacred Dawn (2.1%)
+Phantom (2.1%)
 
 $station
 (1898,3057) city 7 #cE5B36C BERSERKERS

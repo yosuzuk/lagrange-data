@@ -2,9 +2,10 @@ $name 10280 Libra 246
 $serverName Libra 246
 $size 9000
 
-// Rank 1: SPACE FORCE ® (51.8)
-// Rank 2: For the Quest (32.1)
-// Rank 3: ARCHONS (16.0)
+$overlay
+SPACE FORCE ® (51.8%)
+For the Quest (32.1%)
+ARCHONS (16.0%)
 
 $station
 (3672,5307) city 3 #c4A99FB For the Quest

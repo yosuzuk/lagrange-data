@@ -2,9 +2,10 @@ $name 10038 Lynx CK
 $serverName Lynx CK
 $size 9000
 
-// Rank 1: RX 784 (51.8)
-// Rank 2: Mars Etherial (41.6)
-// Rank 3: Requiem (6.5)
+$overlay
+RX 784 (51.8%)
+Mars Etherial (41.6%)
+Requiem (6.5%)
 
 $station
 (1254,5824) city 2 #cE5B36C RX 784

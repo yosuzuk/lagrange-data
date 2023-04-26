@@ -2,9 +2,10 @@ $name 10042 Horologium 64
 $serverName Horologium 64
 $size 9000
 
-// Rank 1: No1china (51.8)
-// Rank 2: Kangaeru (43.7)
-// Rank 3: Event Horizon (4.3)
+$overlay
+No1china (51.8%)
+Kangaeru (43.7%)
+Event Horizon (4.3%)
 
 $station
 (1244,2755) city 2 #cFD7844 Event Horizon

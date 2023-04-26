@@ -2,8 +2,9 @@ $name 10206 Horologium RU
 $serverName Horologium RU
 $size 9000
 
-// Rank 1: Among us (51.0)
-// Rank 2: War Maiden (48.9)
+$overlay
+Among us (51.0%)
+War Maiden (48.9%)
 
 $station
 (1154,6804) city 2 #c4A99FB War Maiden

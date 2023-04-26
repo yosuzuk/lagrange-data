@@ -2,10 +2,11 @@ $name 10005 Crux FR
 $serverName Crux FR
 $size 9000
 
-// Rank 1: Madman (58.3)
-// Rank 2: Protection (37.2)
-// Rank 3: Viking Raiders (2.1)
-// Rank 4: Domination (2.1)
+$overlay
+Madman (58.3%)
+Protection (37.2%)
+Viking Raiders (2.1%)
+Domination (2.1%)
 
 $station
 (3130,6718) city 5 #c49E7C0 Domination

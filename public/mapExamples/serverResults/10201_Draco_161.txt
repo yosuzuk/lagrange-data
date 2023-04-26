@@ -2,10 +2,11 @@ $name 10201 Draco 161
 $serverName Draco 161
 $size 9000
 
-// Rank 1: Star Craft (62.7)
-// Rank 2: UniOasis (23.3)
-// Rank 3: 공격주의 (11.6)
-// Rank 4: Poor Jedi (2.1)
+$overlay
+Star Craft (62.7%)
+UniOasis (23.3%)
+공격주의 (11.6%)
+Poor Jedi (2.1%)
 
 $station
 (1874,2024) city 2 #cE5B36C Star Craft

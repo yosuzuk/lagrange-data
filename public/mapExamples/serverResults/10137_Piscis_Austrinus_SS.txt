@@ -2,9 +2,10 @@ $name 10137 Piscis Austrinus SS
 $serverName Piscis Austrinus SS
 $size 9000
 
-// Rank 1: Reset (62.7)
-// Rank 2: デュシス (11.6)
-// Rank 5: RUSSIA (4.3)
+$overlay
+Reset (62.7%)
+デュシス (11.6%)
+RUSSIA (4.3%)
 
 $station
 (1574,1944) city 2 #cE5B36C Reset

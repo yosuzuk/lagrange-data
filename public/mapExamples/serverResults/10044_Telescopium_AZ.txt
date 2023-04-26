@@ -2,8 +2,9 @@ $name 10044 Telescopium AZ
 $serverName Telescopium AZ
 $size 9000
 
-// Rank 1: Eternal Wolves (51.8)
-// Rank 2: The Red Nebula (45.9)
+$overlay
+Eternal Wolves (51.8%)
+The Red Nebula (45.9%)
 
 $station
 (1304,2734) city 2 #c4A99FB The Red Nebula

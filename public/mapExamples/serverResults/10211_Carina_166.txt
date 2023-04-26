@@ -2,10 +2,11 @@ $name 10211 Carina 166
 $serverName Carina 166
 $size 9000
 
-// Rank 1: ACE (51.0)
-// Rank 3: UNOVA COSMOSIS (11.6)
-// Rank 4: Umbrella Corp (10.9)
-// Rank 6: Galactic Empire (4.3)
+$overlay
+ACE (51.0%)
+UNOVA COSMOSIS (11.6%)
+Umbrella Corp (10.9%)
+Galactic Empire (4.3%)
 
 $station
 (4634,8714) city 2 #c7E67F2 Galactic Empire

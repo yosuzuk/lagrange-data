@@ -2,9 +2,10 @@ $name 20008 V682 Pyxis
 $serverName V682 Pyxis
 $size 9000
 
-// Rank 1: SpaceFAM (51.8)
-// Rank 2: Reapers (32.1)
-// Rank 3: Undying Cinders (16.0)
+$overlay
+SpaceFAM (51.8%)
+Reapers (32.1%)
+Undying Cinders (16.0%)
 
 $station
 (0223,4917) city 9 #cE5B36C SpaceFAM

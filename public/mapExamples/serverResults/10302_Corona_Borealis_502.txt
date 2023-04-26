@@ -2,10 +2,11 @@ $name 10302 Corona Borealis 502
 $serverName Corona Borealis 502
 $size 9000
 
-// Rank 1: 战争帝国 (44.5)
-// Rank 2: AlphaApocalypse (11.6)
-// Rank 3: Empire of Man (8.7)
-// Rank 7: Kwakken III (6.5)
+$overlay
+战争帝国 (44.5%)
+AlphaApocalypse (11.6%)
+Empire of Man (8.7%)
+Kwakken III (6.5%)
 
 $station
 (1174,5484) city 2 #cE5B36C 战争帝国

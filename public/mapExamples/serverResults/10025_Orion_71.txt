@@ -2,9 +2,10 @@ $name 10025 Orion 71
 $serverName Orion 71
 $size 9000
 
-// Rank 1: Old Empire (56.2)
-// Rank 2: Lolis Union (23.3)
-// Rank 3: K1R Imperium (13.8)
+$overlay
+Old Empire (56.2%)
+Lolis Union (23.3%)
+K1R Imperium (13.8%)
 
 $station
 (2852,6918) city 5 #cE5B36C Old Empire

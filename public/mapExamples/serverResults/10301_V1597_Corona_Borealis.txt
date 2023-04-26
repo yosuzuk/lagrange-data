@@ -2,9 +2,10 @@ $name 10301 V1597 Corona Borealis
 $serverName V1597 Corona Borealis
 $size 9000
 
-// Rank 1: Dark Angels (20.4)
-// Rank 2: HYDRA (20.4)
-// Rank 8: YKUDZA (4.3)
+$overlay
+Dark Angels (20.4%)
+HYDRA (20.4%)
+YKUDZA (4.3%)
 
 $station
 (2640,3820) city 5 #cE5B36C Dark Angels

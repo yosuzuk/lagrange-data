@@ -2,9 +2,10 @@ $name 10064 Puppis X
 $serverName Puppis X
 $size 9000
 
-// Rank 1: Black Legion (39.4)
-// Rank 2: DEMIGODS UNITY (32.1)
-// Rank 3: Kings (28.4)
+$overlay
+Black Legion (39.4%)
+DEMIGODS UNITY (32.1%)
+Kings (28.4%)
 
 $station
 (1304,2734) city 2 #cE5B36C Black Legion

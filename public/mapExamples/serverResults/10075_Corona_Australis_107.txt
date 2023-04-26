@@ -2,8 +2,9 @@ $name 10075 Corona Australis 107
 $serverName Corona Australis 107
 $size 9000
 
-// Rank 1: LagrangeUnionRE (67.8)
-// Rank 2: Explorers Guild (32.1)
+$overlay
+LagrangeUnionRE (67.8%)
+Explorers Guild (32.1%)
 
 $station
 (1254,1624) city 2 #c4A99FB Explorers Guild

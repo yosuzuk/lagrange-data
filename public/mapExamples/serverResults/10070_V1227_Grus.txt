@@ -2,8 +2,9 @@ $name 10070 V1227 Grus
 $serverName V1227 Grus
 $size 9000
 
-// Rank 1: Blackout (54.0)
-// Rank 2: SpaceX (45.9)
+$overlay
+Blackout (54.0%)
+SpaceX (45.9%)
 
 $station
 (2994,8144) city 2 #cE5B36C Blackout

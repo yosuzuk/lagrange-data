@@ -2,11 +2,12 @@ $name 10115 V1396 Dorado
 $serverName V1396 Dorado
 $size 9000
 
-// Rank 1: 노바1492 (54.0)
-// Rank 2: Galactic Union (21.1)
-// Rank 3: Phantom beast (11.6)
-// Rank 4: aegis (10.9)
-// Rank 5: NIGHTSHADE (2.1)
+$overlay
+노바1492 (54.0%)
+Galactic Union (21.1%)
+Phantom beast (11.6%)
+aegis (10.9%)
+NIGHTSHADE (2.1%)
 
 $station
 (4438,3937) city 7 #c4A99FB Galactic Union

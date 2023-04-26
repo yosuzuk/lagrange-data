@@ -2,8 +2,9 @@ $name 10007 V1017 Lepus
 $serverName V1017 Lepus
 $size 9000
 
-// Rank 1: alicorn (51.8)
-// Rank 2: Blue Alliance (48.1)
+$overlay
+alicorn (51.8%)
+Blue Alliance (48.1%)
 
 $station
 (1584,6735) city 2 #cE5B36C alicorn

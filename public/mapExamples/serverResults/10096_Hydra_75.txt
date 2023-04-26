@@ -2,13 +2,14 @@ $name 10096 Hydra 75
 $serverName Hydra 75
 $size 9000
 
-// Rank 1: DCINSIDE (21.8)
-// Rank 2: MTN Empire (13.8)
-// Rank 3: 草刈り鎌 (13.8)
-// Rank 4: Artemis (13.8)
-// Rank 5: マイペース (13.1)
-// Rank 6: Igrok (11.6)
-// Rank 7: 皇帝軍 (11.6)
+$overlay
+DCINSIDE (21.8%)
+MTN Empire (13.8%)
+草刈り鎌 (13.8%)
+Artemis (13.8%)
+マイペース (13.1%)
+Igrok (11.6%)
+皇帝軍 (11.6%)
 
 $station
 (2534,0544) city 2 #cE5B36C DCINSIDE

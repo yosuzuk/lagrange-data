@@ -2,10 +2,11 @@ $name 10240 Crux 150
 $serverName Crux 150
 $size 9000
 
-// Rank 1: DAWN OPERATIONS (27.7)
-// Rank 2: 銀河帝国 (18.2)
-// Rank 7: The Republic (4.3)
-// Rank 8: Immortal (2.1)
+$overlay
+DAWN OPERATIONS (27.7%)
+銀河帝国 (18.2%)
+The Republic (4.3%)
+Immortal (2.1%)
 
 $station
 (1554,1314) city 2 #cE5B36C DAWN OPERATIONS

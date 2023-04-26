@@ -2,9 +2,10 @@ $name 10094 V670 Eridanus
 $serverName V670 Eridanus
 $size 9000
 
-// Rank 1: The Immortals (55.4)
-// Rank 2: KSF (42.3)
-// Rank 3: GGCompany (2.1)
+$overlay
+The Immortals (55.4%)
+KSF (42.3%)
+GGCompany (2.1%)
 
 $station
 (1234,7134) city 2 #cFD7844 GGCompany

@@ -2,8 +2,9 @@ $name 10041 V1343 Leo
 $serverName V1343 Leo
 $size 9000
 
-// Rank 1: CelestialBeing (51.0)
-// Rank 2: Cytus (44.5)
+$overlay
+CelestialBeing (51.0%)
+Cytus (44.5%)
 
 $station
 (1404,6294) city 2 #c4A99FB Cytus

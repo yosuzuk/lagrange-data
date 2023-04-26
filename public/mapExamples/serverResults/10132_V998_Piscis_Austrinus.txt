@@ -2,8 +2,9 @@ $name 10132 V998 Piscis Austrinus
 $serverName V998 Piscis Austrinus
 $size 9000
 
-// Rank 1: FairyTail (75.1)
-// Rank 2: Eradicators (10.9)
+$overlay
+FairyTail (75.1%)
+Eradicators (10.9%)
 
 $station
 (1104,6894) city 2 #cE5B36C FairyTail

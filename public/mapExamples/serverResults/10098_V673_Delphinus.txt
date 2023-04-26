@@ -2,11 +2,12 @@ $name 10098 V673 Delphinus
 $serverName V673 Delphinus
 $size 9000
 
-// Rank 1: Battle ship (32.8)
-// Rank 2: 日本自衛隊 (22.6)
-// Rank 3: 第五連隊 (16.7)
-// Rank 4: NEMESIS (16.0)
-// Rank 5: まーろっく (11.6)
+$overlay
+Battle ship (32.8%)
+日本自衛隊 (22.6%)
+第五連隊 (16.7%)
+NEMESIS (16.0%)
+まーろっく (11.6%)
 
 $station
 (0524,2595) city 2 #c49E7C0 NEMESIS

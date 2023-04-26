@@ -2,11 +2,12 @@ $name 10097 V673 Carina
 $serverName V673 Carina
 $size 9000
 
-// Rank 1: Global Cosmos (46.7)
-// Rank 2: ゆるキャン (23.3)
-// Rank 3: 第5軍団 (23.3)
-// Rank 4: 第六連合会 (4.3)
-// Rank 5: JPN区域5 (2.1)
+$overlay
+Global Cosmos (46.7%)
+ゆるキャン (23.3%)
+第5軍団 (23.3%)
+第六連合会 (4.3%)
+JPN区域5 (2.1%)
 
 $station
 (1374,5814) city 2 #cE5B36C Global Cosmos

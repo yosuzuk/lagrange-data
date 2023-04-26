@@ -2,9 +2,10 @@ $name 10199 Fornax 158
 $serverName Fornax 158
 $size 9000
 
-// Rank 1: PRL inc (86.8)
-// Rank 2: SSORB (10.9)
-// Rank 3: 赤曦sunlight (2.1)
+$overlay
+PRL inc (86.8%)
+SSORB (10.9%)
+赤曦sunlight (2.1%)
 
 $station
 (5280,2960) city 5 #c4A99FB SSORB

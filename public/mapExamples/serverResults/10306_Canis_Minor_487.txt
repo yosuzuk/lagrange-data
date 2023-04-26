@@ -2,10 +2,11 @@ $name 10306 Canis Minor 487
 $serverName Canis Minor 487
 $size 9000
 
-// Rank 1: Kawabanga (32.8)
-// Rank 2: Hells Acolytes (25.5)
-// Rank 4: Black Throne (16.0)
-// Rank 5: 블럭 (2.1)
+$overlay
+Kawabanga (32.8%)
+Hells Acolytes (25.5%)
+Black Throne (16.0%)
+블럭 (2.1%)
 
 $station
 (3694,0634) city 2 #c49E7C0 Black Throne

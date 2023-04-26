@@ -2,9 +2,10 @@ $name 10124 V1270 Sagittarius
 $serverName V1270 Sagittarius
 $size 9000
 
-// Rank 1: SPACE (41.6)
-// Rank 2: M C R N (30.6)
-// Rank 3: Tokyo Manji (27.7)
+$overlay
+SPACE (41.6%)
+M C R N (30.6%)
+Tokyo Manji (27.7%)
 
 $station
 (1104,5594) city 2 #cE5B36C SPACE

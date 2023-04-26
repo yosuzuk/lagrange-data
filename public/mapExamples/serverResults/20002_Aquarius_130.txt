@@ -2,10 +2,11 @@ $name 20002 Aquarius 130
 $serverName Aquarius 130
 $size 9000
 
-// Rank 1: Blue Alliance (46.7)
-// Rank 2: ANTANTA (30.6)
-// Rank 3: Voices of War (11.6)
-// Rank 4: Madman (10.9)
+$overlay
+Blue Alliance (46.7%)
+ANTANTA (30.6%)
+Voices of War (11.6%)
+Madman (10.9%)
 
 $station
 (1029,3071) city 5 #c49E7C0 Madman

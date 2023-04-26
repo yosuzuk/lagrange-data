@@ -2,12 +2,13 @@ $name 10248 Vela 126
 $serverName Vela 126
 $size 9000
 
-// Rank 1: Outer Heaven (20.4)
-// Rank 2: Stellar (18.9)
-// Rank 4: Order of Ursa (13.8)
-// Rank 5: RAGNARÖK (11.6)
-// Rank 6: ACTIVE (8.7)
-// Rank 8: ARD Workshop (4.3)
+$overlay
+Outer Heaven (20.4%)
+Stellar (18.9%)
+Order of Ursa (13.8%)
+RAGNARÖK (11.6%)
+ACTIVE (8.7%)
+ARD Workshop (4.3%)
 
 $station
 (4419,1551) city 5 #cE5B36C Outer Heaven
