@@ -1,0 +1,172 @@
+$name 10132 V998 Piscis Austrinus
+$serverName V998 Piscis Austrinus
+$size 9000
+
+// Rank 1: FairyTail (75.1)
+// Rank 2: Eradicators (10.9)
+
+$station
+(1104,6894) city 2 #cE5B36C FairyTail
+(1404,6294) city 2 #cE5B36C FairyTail
+(1533,3113) city 7 #cE5B36C FairyTail
+(1772,3330) city 5 #cE5B36C FairyTail
+(1591,3307) city 5 #cE5B36C FairyTail
+(1806,3177) city 3 #cE5B36C FairyTail
+(1419,3350) city 5 #cE5B36C FairyTail
+(1584,6735) city 2 #cE5B36C FairyTail
+(1967,5294) city 5 #cE5B36C FairyTail
+(1974,5033) city 5 #cE5B36C FairyTail
+(1780,5260) city 5 #cE5B36C FairyTail
+(1919,7798) city 3 #cE5B36C FairyTail
+(2174,7094) city 2 #cE5B36C FairyTail
+(2254,7604) city 2 #cE5B36C FairyTail
+(2454,7924) city 2 #cE5B36C FairyTail
+(0534,2794) city 2 #cE5B36C FairyTail
+(2564,8035) city 2 #cE5B36C FairyTail
+(0414,6164) city 2 #cE5B36C FairyTail
+(2852,6918) city 5 #cE5B36C FairyTail
+(3129,6931) city 5 #cE5B36C FairyTail
+(2994,8144) city 2 #cE5B36C FairyTail
+(2944,8554) city 2 #cE5B36C FairyTail
+(0410,4869) city 3 #cE5B36C FairyTail
+(3556,5071) city 5 #cE5B36C FairyTail
+(3173,5226) city 3 #cE5B36C FairyTail
+(3301,5016) city 9 #cE5B36C FairyTail
+(3264,8575) city 2 #cE5B36C FairyTail
+(3638,6117) city 7 #cE5B36C FairyTail
+(3872,6110) city 5 #cE5B36C FairyTail
+(3912,5847) city 3 #cE5B36C FairyTail
+(3536,5958) city 3 #cE5B36C FairyTail
+(3492,6256) city 2 #cE5B36C FairyTail
+(3694,7804) city 2 #cE5B36C FairyTail
+(0524,6634) city 2 #cE5B36C FairyTail
+(3756,4198) city 3 #cE5B36C FairyTail
+(3712,4496) city 2 #cE5B36C FairyTail
+(3984,8675) city 2 #cE5B36C FairyTail
+(4004,7995) city 2 #cE5B36C FairyTail
+(4532,1749) city 5 #cE5B36C FairyTail
+(4384,7994) city 2 #cE5B36C FairyTail
+(4514,8724) city 2 #cE5B36C FairyTail
+(4974,8694) city 2 #cE5B36C FairyTail
+(0524,2595) city 2 #cE5B36C FairyTail
+(4934,8384) city 2 #cE5B36C FairyTail
+(5421,3869) city 7 #cE5B36C FairyTail
+(5547,3908) city 3 #cE5B36C FairyTail
+(5559,3800) city 2 #cE5B36C FairyTail
+(0274,3814) city 2 #cE5B36C FairyTail
+(0754,3574) city 2 #cE5B36C FairyTail
+(5212,2918) city 5 #cE5B36C FairyTail
+(5489,2931) city 5 #cE5B36C FairyTail
+(5393,7073) city 7 #cE5B36C FairyTail
+(5632,7290) city 5 #cE5B36C FairyTail
+(5451,7267) city 5 #cE5B36C FairyTail
+(5666,7137) city 3 #cE5B36C FairyTail
+(5279,7310) city 5 #cE5B36C FairyTail
+(5639,5371) city 5 #cE5B36C FairyTail
+(5854,7614) city 2 #cE5B36C FairyTail
+(5866,6162) city 5 #cE5B36C FairyTail
+(5954,3573) city 5 #cE5B36C FairyTail
+(0814,4924) city 2 #cE5B36C FairyTail
+(6274,1354) city 2 #cE5B36C FairyTail
+(6406,7442) city 5 #cE5B36C FairyTail
+(6216,7434) city 5 #cE5B36C FairyTail
+(6430,7300) city 5 #cE5B36C FairyTail
+(6252,4238) city 5 #cE5B36C FairyTail
+(6395,4079) city 5 #cE5B36C FairyTail
+(6529,4251) city 5 #cE5B36C FairyTail
+(6424,8354) city 2 #cE5B36C FairyTail
+(6430,8049) city 3 #cE5B36C FairyTail
+(6761,3229) city 7 #cE5B36C FairyTail
+(6872,3410) city 5 #cE5B36C FairyTail
+(0730,2869) city 3 #cE5B36C FairyTail
+(6734,7234) city 2 #cE5B36C FairyTail
+(6604,7695) city 2 #cE5B36C FairyTail
+(6854,6924) city 2 #cE5B36C FairyTail
+(0724,6294) city 2 #cE5B36C FairyTail
+(7014,2014) city 2 #cE5B36C FairyTail
+(6904,8015) city 2 #cE5B36C FairyTail
+(7174,6584) city 2 #cE5B36C FairyTail
+(7184,2134) city 2 #cE5B36C FairyTail
+(0704,6955) city 2 #cE5B36C FairyTail
+(7384,7074) city 2 #cE5B36C FairyTail
+(7594,6284) city 2 #cE5B36C FairyTail
+(7384,6735) city 2 #cE5B36C FairyTail
+(0834,5284) city 2 #cE5B36C FairyTail
+(7874,6714) city 2 #cE5B36C FairyTail
+(7934,2244) city 2 #cE5B36C FairyTail
+(7904,5074) city 2 #cE5B36C FairyTail
+(8034,6394) city 2 #cE5B36C FairyTail
+(8084,2034) city 2 #cE5B36C FairyTail
+(8184,6735) city 2 #cE5B36C FairyTail
+(0994,4174) city 2 #cE5B36C FairyTail
+(8544,3755) city 2 #cE5B36C FairyTail
+(0924,3494) city 2 #cE5B36C FairyTail
+(0884,4735) city 2 #cE5B36C FairyTail
+(1064,5074) city 2 #cE5B36C FairyTail
+(1234,6124) city 2 #cE5B36C FairyTail
+(1494,1974) city 2 #c4A99FB Eradicators
+(2654,0524) city 2 #c4A99FB Eradicators
+(2784,1155) city 2 #c4A99FB Eradicators
+(2864,0795) city 2 #c4A99FB Eradicators
+(3384,1154) city 2 #c4A99FB Eradicators
+(3574,0314) city 2 #c4A99FB Eradicators
+(3764,0714) city 2 #c4A99FB Eradicators
+(4132,4087) city 3 #c4A99FB Eradicators
+(3974,0154) city 2 #c4A99FB Eradicators
+(4464,1034) city 2 #c4A99FB Eradicators
+(4654,0614) city 2 #c4A99FB Eradicators
+(4824,0974) city 2 #c4A99FB Eradicators
+(5274,0534) city 2 #c4A99FB Eradicators
+(5532,4050) city 5 #c4A99FB Eradicators
+(5444,0414) city 2 #c4A99FB Eradicators
+(5994,1124) city 2 #c4A99FB Eradicators
+(6090,3440) city 5 #c4A99FB Eradicators
+(6360,2040) city 5 #c4A99FB Eradicators
+(6714,0524) city 2 #c4A99FB Eradicators
+(6704,1455) city 2 #c4A99FB Eradicators
+(7090,5518) city 5 #c4A99FB Eradicators
+(7089,5731) city 5 #c4A99FB Eradicators
+(6974,0854) city 2 #c4A99FB Eradicators
+(7104,1474) city 2 #c4A99FB Eradicators
+(7294,1714) city 2 #c4A99FB Eradicators
+(7387,4974) city 5 #c4A99FB Eradicators
+(7394,4713) city 5 #c4A99FB Eradicators
+(7200,4940) city 5 #c4A99FB Eradicators
+(7530,2029) city 3 #c4A99FB Eradicators
+(7714,2754) city 2 #c4A99FB Eradicators
+(7794,1924) city 2 #c4A99FB Eradicators
+(8274,3434) city 2 #c4A99FB Eradicators
+(8374,3074) city 2 #c4A99FB Eradicators
+(8264,3854) city 2 #c4A99FB Eradicators
+(8410,4848) city 3 #c4A99FB Eradicators
+(8544,3134) city 2 #c4A99FB Eradicators
+(8664,4294) city 2 #c4A99FB Eradicators
+(1034,2694) city 2 #c4A99FB Eradicators
+(1114,1964) city 2 #c4A99FB Eradicators
+
+$planet
+(3932,4274) large
+(3729,4216)(3932,4274) small
+(4111,4102)(3932,4274) small
+(3995,4330)(3932,4274) small
+(3712,6034) large
+(3509,5976)(3712,6034) small
+(3891,5862)(3712,6034) small
+(3775,6090)(3712,6034) small
+(6858,3285)(6712,3334) small
+(6712,3334) large
+(6672,3436)(6712,3334) small
+(5372,3974) large
+(5332,4076)(5372,3974) small
+(5518,3925)(5372,3974) small
+(4499,4497) medium
+(3421,5133)(3375,5129) small
+(3212,5250)(3375,5129) small
+(3483,5101)(3375,5129) small
+(3375,5129) large
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small

@@ -1,0 +1,174 @@
+$name 10216 Ursa Minor 94
+$serverName Ursa Minor 94
+$size 9000
+
+// Rank 1: AngrySpceChimps (30.6)
+// Rank 2: The Union (16.0)
+// Rank 7: Turanic Raiders (6.5)
+// Rank 8: La colmena (4.3)
+// Rank 9: 해병성채2기 (4.3)
+
+$station
+(3786,3411) city 5 #cF1F1F1 해병성채2기
+(4066,3456) city 5 #cF1F1F1 해병성채2기
+(3894,0174) city 2 #cF1F1F1 해병성채2기
+(4174,0504) city 2 #cF1F1F1 해병성채2기
+(4435,1439) city 5 #cF1F1F1 해병성채2기
+(4520,1478) city 5 #cF1F1F1 해병성채2기
+(4532,1648) city 5 #cF1F1F1 해병성채2기
+(4534,0934) city 2 #cF1F1F1 해병성채2기
+(4654,0614) city 2 #cF1F1F1 해병성채2기
+(5094,0504) city 2 #cF1F1F1 해병성채2기
+(5332,4890) city 5 #cF1F1F1 해병성채2기
+(5154,0144) city 2 #cF1F1F1 해병성채2기
+(5259,0638) city 3 #cF1F1F1 해병성채2기
+(5384,1034) city 2 #cF1F1F1 해병성채2기
+(6354,1324) city 2 #cF1F1F1 해병성채2기
+(6374,0984) city 2 #cF1F1F1 해병성채2기
+(6374,0474) city 2 #cF1F1F1 해병성채2기
+(6754,0534) city 2 #cF1F1F1 해병성채2기
+(6784,1454) city 2 #cF1F1F1 해병성채2기
+(5359,4640) city 2 #cF284FF Turanic Raiders
+(6126,3362) city 5 #cF284FF Turanic Raiders
+(6150,3220) city 5 #cF284FF Turanic Raiders
+(6252,4258) city 5 #cF284FF Turanic Raiders
+(6529,4271) city 5 #cF284FF Turanic Raiders
+(7012,3310) city 5 #cF284FF Turanic Raiders
+(6831,3327) city 5 #cF284FF Turanic Raiders
+(7027,3168) city 3 #cF284FF Turanic Raiders
+(7039,3060) city 2 #cF284FF Turanic Raiders
+(7014,2024) city 2 #cF284FF Turanic Raiders
+(7194,1394) city 2 #cF284FF Turanic Raiders
+(7494,2114) city 2 #cF284FF Turanic Raiders
+(7914,1594) city 2 #cF284FF Turanic Raiders
+(7924,2354) city 2 #cF284FF Turanic Raiders
+(8194,3384) city 2 #cF284FF Turanic Raiders
+(8124,5895) city 2 #cF284FF Turanic Raiders
+(8254,3084) city 2 #cF284FF Turanic Raiders
+(8434,3684) city 2 #cF284FF Turanic Raiders
+(8244,4655) city 2 #cF284FF Turanic Raiders
+(8410,4909) city 3 #cF284FF Turanic Raiders
+(8674,2684) city 2 #cF284FF Turanic Raiders
+(8674,3024) city 2 #cF284FF Turanic Raiders
+(8754,3324) city 2 #cF284FF Turanic Raiders
+(8814,4194) city 2 #cF284FF Turanic Raiders
+(1244,1734) city 2 #c4A99FB The Union
+(1554,1314) city 2 #c4A99FB The Union
+(1770,1408) city 3 #c4A99FB The Union
+(1898,3057) city 7 #c4A99FB The Union
+(2132,3050) city 5 #c4A99FB The Union
+(2172,2787) city 3 #c4A99FB The Union
+(1796,2898) city 3 #c4A99FB The Union
+(1752,3196) city 2 #c4A99FB The Union
+(2314,1064) city 2 #c4A99FB The Union
+(2566,1562) city 5 #c4A99FB The Union
+(2376,1554) city 5 #c4A99FB The Union
+(2590,1420) city 5 #c4A99FB The Union
+(2634,0504) city 2 #c4A99FB The Union
+(2827,3854) city 5 #c4A99FB The Union
+(2834,3593) city 5 #c4A99FB The Union
+(2804,1454) city 2 #c4A99FB The Union
+(2984,0774) city 2 #c4A99FB The Union
+(0324,2955) city 2 #c4A99FB The Union
+(3434,0334) city 2 #c4A99FB The Union
+(4419,1551) city 5 #c4A99FB The Union
+(5269,3751) city 5 #c4A99FB The Union
+(0634,2484) city 2 #c4A99FB The Union
+(5914,0794) city 2 #c4A99FB The Union
+(0854,2134) city 2 #c4A99FB The Union
+(3774,8664) city 2 #c9FE23E La colmena
+(3814,8324) city 2 #c9FE23E La colmena
+(4004,7995) city 2 #c9FE23E La colmena
+(4824,8814) city 2 #c9FE23E La colmena
+(5289,5511) city 5 #c9FE23E La colmena
+(5314,8684) city 2 #c9FE23E La colmena
+(5374,7774) city 2 #c9FE23E La colmena
+(5852,6150) city 5 #c9FE23E La colmena
+(5671,6167) city 5 #c9FE23E La colmena
+(5867,6008) city 3 #c9FE23E La colmena
+(5879,5900) city 2 #c9FE23E La colmena
+(5644,8034) city 2 #c9FE23E La colmena
+(6134,8034) city 2 #c9FE23E La colmena
+(6211,7447) city 5 #c9FE23E La colmena
+(6407,7288) city 3 #c9FE23E La colmena
+(6419,7180) city 2 #c9FE23E La colmena
+(6344,7794) city 2 #c9FE23E La colmena
+(6430,8049) city 3 #c9FE23E La colmena
+(6584,7335) city 2 #c9FE23E La colmena
+(6604,7695) city 2 #c9FE23E La colmena
+(6804,7014) city 2 #c9FE23E La colmena
+(7054,7914) city 2 #c9FE23E La colmena
+(7094,7244) city 2 #c9FE23E La colmena
+(7514,7014) city 2 #c9FE23E La colmena
+(7514,6314) city 2 #c9FE23E La colmena
+(7544,7675) city 2 #c9FE23E La colmena
+(7604,7355) city 2 #c9FE23E La colmena
+(7764,6815) city 2 #c9FE23E La colmena
+(7974,6394) city 2 #c9FE23E La colmena
+(8034,7024) city 2 #c9FE23E La colmena
+(8494,6314) city 2 #c9FE23E La colmena
+(1174,6474) city 2 #cE5B36C AngrySpceChimps
+(1154,6804) city 2 #cE5B36C AngrySpceChimps
+(0354,3344) city 2 #cE5B36C AngrySpceChimps
+(1444,7034) city 2 #cE5B36C AngrySpceChimps
+(1847,5074) city 5 #cE5B36C AngrySpceChimps
+(1854,4813) city 5 #cE5B36C AngrySpceChimps
+(1660,5040) city 5 #cE5B36C AngrySpceChimps
+(1814,7724) city 2 #cE5B36C AngrySpceChimps
+(1889,5751) city 5 #cE5B36C AngrySpceChimps
+(1778,5919) city 5 #cE5B36C AngrySpceChimps
+(1852,5989) city 5 #cE5B36C AngrySpceChimps
+(0204,5575) city 2 #cE5B36C AngrySpceChimps
+(1950,7708) city 3 #cE5B36C AngrySpceChimps
+(2224,7714) city 2 #cE5B36C AngrySpceChimps
+(2454,7934) city 2 #cE5B36C AngrySpceChimps
+(2434,7284) city 2 #cE5B36C AngrySpceChimps
+(0224,5915) city 2 #cE5B36C AngrySpceChimps
+(2640,3820) city 5 #cE5B36C AngrySpceChimps
+(3014,8154) city 2 #cE5B36C AngrySpceChimps
+(3521,5389) city 7 #cE5B36C AngrySpceChimps
+(3632,5570) city 5 #cE5B36C AngrySpceChimps
+(3451,5587) city 5 #cE5B36C AngrySpceChimps
+(3647,5428) city 3 #cE5B36C AngrySpceChimps
+(3659,5320) city 2 #cE5B36C AngrySpceChimps
+(0359,4598) city 3 #cE5B36C AngrySpceChimps
+(3814,3702) city 9 #cE5B36C AngrySpceChimps
+(0594,6524) city 2 #cE5B36C AngrySpceChimps
+(0634,3584) city 2 #cE5B36C AngrySpceChimps
+(5936,3354) city 5 #cE5B36C AngrySpceChimps
+(0524,4355) city 2 #cE5B36C AngrySpceChimps
+(0544,4695) city 2 #cE5B36C AngrySpceChimps
+(0154,3824) city 2 #cE5B36C AngrySpceChimps
+(0814,4934) city 2 #cE5B36C AngrySpceChimps
+(0664,6315) city 2 #cE5B36C AngrySpceChimps
+(0954,4164) city 2 #cE5B36C AngrySpceChimps
+(0974,3024) city 2 #cE5B36C AngrySpceChimps
+(0944,4714) city 2 #cE5B36C AngrySpceChimps
+(1114,4984) city 2 #cE5B36C AngrySpceChimps
+(1234,6124) city 2 #cE5B36C AngrySpceChimps
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

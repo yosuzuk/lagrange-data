@@ -1,0 +1,153 @@
+$name 10239 V1300 Apus
+$serverName V1300 Apus
+$size 9000
+
+// Rank 1: Deux Deux Crew (44.5)
+// Rank 2: The Zod1ac (18.2)
+// Rank 6: Hyperion (6.5)
+// Rank 7: SpartanWarriors (2.1)
+// Rank 8: Kancolle (2.1)
+
+$station
+(1554,7224) city 2 #cF284FF SpartanWarriors
+(1724,7434) city 2 #cF284FF SpartanWarriors
+(1919,7798) city 3 #cF284FF SpartanWarriors
+(2254,7604) city 2 #cF284FF SpartanWarriors
+(2454,7934) city 2 #cF284FF SpartanWarriors
+(2714,7934) city 2 #cF284FF SpartanWarriors
+(3526,4936) city 5 #cF284FF SpartanWarriors
+(3872,6110) city 5 #cF284FF SpartanWarriors
+(3519,6130) city 5 #cF284FF SpartanWarriors
+(0504,6614) city 2 #cF284FF SpartanWarriors
+(0814,6844) city 2 #cF284FF SpartanWarriors
+(0984,6595) city 2 #cF284FF SpartanWarriors
+(1194,6814) city 2 #cF284FF SpartanWarriors
+(1574,1944) city 2 #cE5B36C Deux Deux Crew
+(1364,7035) city 2 #cE5B36C Deux Deux Crew
+(1538,3337) city 7 #cE5B36C Deux Deux Crew
+(1772,3330) city 5 #cE5B36C Deux Deux Crew
+(1812,3067) city 3 #cE5B36C Deux Deux Crew
+(1436,3178) city 3 #cE5B36C Deux Deux Crew
+(1392,3476) city 2 #cE5B36C Deux Deux Crew
+(1514,1304) city 2 #cE5B36C Deux Deux Crew
+(1614,2324) city 2 #cE5B36C Deux Deux Crew
+(1974,5033) city 5 #cE5B36C Deux Deux Crew
+(1780,5260) city 5 #cE5B36C Deux Deux Crew
+(1974,1094) city 2 #cE5B36C Deux Deux Crew
+(2234,0724) city 2 #cE5B36C Deux Deux Crew
+(2574,1414) city 2 #cE5B36C Deux Deux Crew
+(0304,2915) city 2 #cE5B36C Deux Deux Crew
+(0134,4744) city 2 #cE5B36C Deux Deux Crew
+(3246,4891) city 5 #cE5B36C Deux Deux Crew
+(3273,5174) city 9 #cE5B36C Deux Deux Crew
+(0370,4808) city 3 #cE5B36C Deux Deux Crew
+(3633,5893) city 7 #cE5B36C Deux Deux Crew
+(3756,4198) city 3 #cE5B36C Deux Deux Crew
+(3712,4496) city 2 #cE5B36C Deux Deux Crew
+(0754,2464) city 2 #cE5B36C Deux Deux Crew
+(5489,2931) city 5 #cE5B36C Deux Deux Crew
+(0754,4224) city 2 #cE5B36C Deux Deux Crew
+(5752,5468) city 5 #cE5B36C Deux Deux Crew
+(5639,5371) city 5 #cE5B36C Deux Deux Crew
+(5720,6220) city 5 #cE5B36C Deux Deux Crew
+(6146,3482) city 5 #cE5B36C Deux Deux Crew
+(6379,4191) city 5 #cE5B36C Deux Deux Crew
+(6314,2073) city 5 #cE5B36C Deux Deux Crew
+(0704,2254) city 2 #cE5B36C Deux Deux Crew
+(0679,2798) city 3 #cE5B36C Deux Deux Crew
+(7014,2014) city 2 #cE5B36C Deux Deux Crew
+(7124,1814) city 2 #cE5B36C Deux Deux Crew
+(7154,4973) city 5 #cE5B36C Deux Deux Crew
+(0834,5284) city 2 #cE5B36C Deux Deux Crew
+(7714,2754) city 2 #cE5B36C Deux Deux Crew
+(7734,2424) city 2 #cE5B36C Deux Deux Crew
+(7924,5094) city 2 #cE5B36C Deux Deux Crew
+(8104,5494) city 2 #cE5B36C Deux Deux Crew
+(8494,4184) city 2 #cE5B36C Deux Deux Crew
+(0944,2774) city 2 #cE5B36C Deux Deux Crew
+(1194,5534) city 2 #cE5B36C Deux Deux Crew
+(1224,2394) city 2 #cE5B36C Deux Deux Crew
+(2564,8434) city 2 #c7E67F2 Hyperion
+(2934,1054) city 2 #c7E67F2 Hyperion
+(3092,6968) city 5 #c7E67F2 Hyperion
+(2979,6871) city 5 #c7E67F2 Hyperion
+(2884,7935) city 2 #c7E67F2 Hyperion
+(3114,8124) city 2 #c7E67F2 Hyperion
+(3414,8474) city 2 #c7E67F2 Hyperion
+(3614,8114) city 2 #c7E67F2 Hyperion
+(3906,5957) city 3 #c7E67F2 Hyperion
+(3764,8454) city 2 #c7E67F2 Hyperion
+(4092,4350) city 5 #c7E67F2 Hyperion
+(4132,4087) city 3 #c7E67F2 Hyperion
+(4214,8544) city 2 #c7E67F2 Hyperion
+(4804,8794) city 2 #c7E67F2 Hyperion
+(5212,2918) city 5 #c7E67F2 Hyperion
+(5355,2759) city 5 #c7E67F2 Hyperion
+(5632,7290) city 5 #c7E67F2 Hyperion
+(5672,7027) city 3 #c7E67F2 Hyperion
+(5296,7138) city 3 #c7E67F2 Hyperion
+(5252,7436) city 2 #c7E67F2 Hyperion
+(5914,5993) city 5 #c7E67F2 Hyperion
+(6124,1455) city 2 #c7E67F2 Hyperion
+(6325,7278) city 5 #c7E67F2 Hyperion
+(6214,7533) city 5 #c7E67F2 Hyperion
+(6906,3257) city 3 #c7E67F2 Hyperion
+(6914,1664) city 2 #c7E67F2 Hyperion
+(7134,7254) city 2 #c7E67F2 Hyperion
+(7194,1394) city 2 #c7E67F2 Hyperion
+(7184,2134) city 2 #c7E67F2 Hyperion
+(7444,6714) city 2 #c7E67F2 Hyperion
+(7744,1694) city 2 #c7E67F2 Hyperion
+(7744,2014) city 2 #c7E67F2 Hyperion
+(4824,7974) city 2 #c9FE23E Kancolle
+(4904,8494) city 2 #c9FE23E Kancolle
+(5314,8694) city 2 #c9FE23E Kancolle
+(5907,6254) city 5 #c9FE23E Kancolle
+(5984,8194) city 2 #c9FE23E Kancolle
+(6350,7400) city 5 #c9FE23E Kancolle
+(6494,7664) city 2 #c9FE23E Kancolle
+(6390,7988) city 3 #c9FE23E Kancolle
+(6664,8034) city 2 #c9FE23E Kancolle
+(7134,7894) city 2 #c9FE23E Kancolle
+(7314,7564) city 2 #c9FE23E Kancolle
+(5532,4050) city 5 #c4A99FB The Zod1ac
+(5547,3908) city 3 #c4A99FB The Zod1ac
+(5559,3800) city 2 #c4A99FB The Zod1ac
+(6170,3340) city 5 #c4A99FB The Zod1ac
+(6492,4288) city 5 #c4A99FB The Zod1ac
+(6480,4118) city 5 #c4A99FB The Zod1ac
+(6395,4079) city 5 #c4A99FB The Zod1ac
+(6450,1940) city 5 #c4A99FB The Zod1ac
+(6633,3193) city 7 #c4A99FB The Zod1ac
+(6872,3410) city 5 #c4A99FB The Zod1ac
+(7290,4840) city 5 #c4A99FB The Zod1ac
+(7744,3214) city 2 #c4A99FB The Zod1ac
+(7884,2914) city 2 #c4A99FB The Zod1ac
+
+$planet
+(3932,4274) large
+(3729,4216)(3932,4274) small
+(4111,4102)(3932,4274) small
+(3995,4330)(3932,4274) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1791,3082)(1612,3254) small
+(1675,3310)(1612,3254) small
+(1612,3254) large
+(1409,3196)(1612,3254) small
+(3399,5072) large
+(3414,5163)(3399,5072) small
+(3201,4960)(3399,5072) small
+(3562,4960)(3399,5072) small
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(5372,3974) large
+(5332,4076)(5372,3974) small
+(5518,3925)(5372,3974) small
+(5651,7042)(5472,7214) small
+(5269,7156)(5472,7214) small
+(5472,7214) large
+(5535,7270)(5472,7214) small
+(4499,4497) medium

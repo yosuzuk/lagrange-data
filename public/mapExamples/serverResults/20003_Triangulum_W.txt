@@ -1,0 +1,106 @@
+$name 20003 Triangulum W
+$serverName Triangulum W
+$size 9000
+
+// Rank 1: FoxHounds (51.0)
+// Rank 2: СНГ (33.5)
+// Rank 3: Orion Knights (10.9)
+// Rank 4: PhoeniX (4.3)
+
+$station
+(1772,2970) city 5 #cFD7844 Orion Knights
+(5334,2034) city 2 #cFD7844 Orion Knights
+(6229,1071) city 5 #cFD7844 Orion Knights
+(6444,4395) city 2 #cFD7844 Orion Knights
+(6904,3694) city 2 #cFD7844 Orion Knights
+(7254,4514) city 2 #cFD7844 Orion Knights
+(8007,2494) city 5 #cFD7844 Orion Knights
+(8014,2233) city 5 #cFD7844 Orion Knights
+(7820,2460) city 5 #cFD7844 Orion Knights
+(8499,5011) city 5 #cFD7844 Orion Knights
+(1940,1720) city 5 #cFD7844 Orion Knights
+(3112,4050) city 5 #cE5B36C FoxHounds
+(2770,5968) city 3 #cE5B36C FoxHounds
+(3014,6604) city 2 #cE5B36C FoxHounds
+(3192,8136) city 2 #cE5B36C FoxHounds
+(3236,7838) city 3 #cE5B36C FoxHounds
+(3612,7727) city 3 #cE5B36C FoxHounds
+(3572,7990) city 5 #cE5B36C FoxHounds
+(3338,7997) city 7 #cE5B36C FoxHounds
+(3474,6264) city 2 #cE5B36C FoxHounds
+(3624,2634) city 2 #cE5B36C FoxHounds
+(3704,6415) city 2 #cE5B36C FoxHounds
+(1533,2753) city 7 #cE5B36C FoxHounds
+(4409,0359) city 9 #cE5B36C FoxHounds
+(4386,0091) city 5 #cE5B36C FoxHounds
+(1591,2947) city 5 #cE5B36C FoxHounds
+(1806,2817) city 3 #cE5B36C FoxHounds
+(1419,2990) city 5 #cE5B36C FoxHounds
+(5012,4050) city 5 #cE5B36C FoxHounds
+(5027,3908) city 3 #cE5B36C FoxHounds
+(0790,3180) city 5 #cE5B36C FoxHounds
+(5252,5350) city 5 #cE5B36C FoxHounds
+(5267,5208) city 3 #cE5B36C FoxHounds
+(0918,3359) city 5 #cE5B36C FoxHounds
+(0992,3429) city 5 #cE5B36C FoxHounds
+(1689,7071) city 5 #cE5B36C FoxHounds
+(1652,7309) city 5 #cE5B36C FoxHounds
+(6190,8100) city 5 #cE5B36C FoxHounds
+(6314,2594) city 2 #cE5B36C FoxHounds
+(1774,4124) city 2 #cE5B36C FoxHounds
+(7530,7140) city 5 #cE5B36C FoxHounds
+(7505,7018) city 5 #cE5B36C FoxHounds
+(7394,7273) city 5 #cE5B36C FoxHounds
+(8132,6370) city 5 #cE5B36C FoxHounds
+(7742,6516) city 2 #cE5B36C FoxHounds
+(8612,5108) city 5 #cE5B36C FoxHounds
+(2127,1754) city 5 #cE5B36C FoxHounds
+(2134,1493) city 5 #cE5B36C FoxHounds
+(2254,3284) city 2 #cE5B36C FoxHounds
+(2324,3694) city 2 #cE5B36C FoxHounds
+(1030,6480) city 5 #cE5B36C FoxHounds
+(1005,6358) city 5 #cE5B36C FoxHounds
+(2732,4196) city 2 #c4A99FB СНГ
+(2776,3898) city 3 #c4A99FB СНГ
+(3152,3787) city 3 #c4A99FB СНГ
+(2878,4057) city 7 #c4A99FB СНГ
+(3894,6734) city 2 #c4A99FB СНГ
+(4304,6475) city 2 #c4A99FB СНГ
+(4714,6664) city 2 #c4A99FB СНГ
+(4901,3869) city 7 #c4A99FB СНГ
+(4831,4067) city 5 #c4A99FB СНГ
+(5039,3800) city 2 #c4A99FB СНГ
+(1029,3191) city 5 #c4A99FB СНГ
+(4844,6414) city 2 #c4A99FB СНГ
+(4850,6608) city 3 #c4A99FB СНГ
+(5141,5169) city 7 #c4A99FB СНГ
+(5071,5367) city 5 #c4A99FB СНГ
+(5279,5100) city 2 #c4A99FB СНГ
+(5534,6754) city 2 #c4A99FB СНГ
+(5814,6404) city 2 #c4A99FB СНГ
+(5834,6074) city 2 #c4A99FB СНГ
+(6049,5611) city 5 #c4A99FB СНГ
+(5810,5600) city 5 #c4A99FB СНГ
+(6254,3094) city 2 #c4A99FB СНГ
+(6150,2868) city 3 #c4A99FB СНГ
+(6234,3604) city 2 #c4A99FB СНГ
+(6624,6434) city 2 #c4A99FB СНГ
+(1854,4444) city 2 #c4A99FB СНГ
+(7898,6377) city 7 #c4A99FB СНГ
+(3594,6564) city 2 #c49E7C0 PhoeniX
+(4006,6082) city 5 #c49E7C0 PhoeniX
+(3816,6074) city 5 #c49E7C0 PhoeniX
+(4030,5940) city 5 #c49E7C0 PhoeniX
+(4129,4911) city 5 #c49E7C0 PhoeniX
+(3995,4739) city 5 #c49E7C0 PhoeniX
+(4130,4698) city 5 #c49E7C0 PhoeniX
+(3852,4898) city 5 #c49E7C0 PhoeniX
+(4364,7094) city 2 #c49E7C0 PhoeniX
+(4350,5208) city 3 #c49E7C0 PhoeniX
+(1450,7060) city 5 #c49E7C0 PhoeniX
+(6564,2714) city 2 #c49E7C0 PhoeniX
+(2099,4518) city 3 #c49E7C0 PhoeniX
+(2384,4574) city 2 #c49E7C0 PhoeniX
+(0894,6613) city 5 #c49E7C0 PhoeniX
+
+$planet

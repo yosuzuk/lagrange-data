@@ -1,0 +1,187 @@
+$name 10109 Virgo 109
+$serverName Virgo 109
+$size 9000
+
+// Rank 1: Empire of Korea (41.6)
+// Rank 2: Hallo (18.9)
+// Rank 3: Imperium of Man (11.6)
+// Rank 4: Citadel (11.6)
+// Rank 5: ミルチア軍 (11.6)
+// Rank 6: 大丈夫 (4.3)
+
+$station
+(0454,5074) city 2 #c49E7C0 Citadel
+(3694,7804) city 2 #c49E7C0 Citadel
+(3934,8334) city 2 #c49E7C0 Citadel
+(4254,8184) city 2 #c49E7C0 Citadel
+(4154,8524) city 2 #c49E7C0 Citadel
+(4384,7994) city 2 #c49E7C0 Citadel
+(4744,8815) city 2 #c49E7C0 Citadel
+(4918,7417) city 7 #c49E7C0 Citadel
+(5152,7410) city 5 #c49E7C0 Citadel
+(5192,7147) city 3 #c49E7C0 Citadel
+(4772,7556) city 2 #c49E7C0 Citadel
+(5314,8694) city 2 #c49E7C0 Citadel
+(5334,7744) city 2 #c49E7C0 Citadel
+(5634,8574) city 2 #c49E7C0 Citadel
+(5654,7984) city 2 #c49E7C0 Citadel
+(5784,8574) city 2 #c49E7C0 Citadel
+(6024,8535) city 2 #c49E7C0 Citadel
+(6406,7442) city 5 #c49E7C0 Citadel
+(6216,7434) city 5 #c49E7C0 Citadel
+(6430,7300) city 5 #c49E7C0 Citadel
+(6430,8049) city 3 #c49E7C0 Citadel
+(6814,7914) city 2 #c49E7C0 Citadel
+(6754,7594) city 2 #c49E7C0 Citadel
+(7134,7894) city 2 #c49E7C0 Citadel
+(7214,7574) city 2 #c49E7C0 Citadel
+(7364,7054) city 2 #c49E7C0 Citadel
+(7464,7674) city 2 #c49E7C0 Citadel
+(1454,2654) city 2 #c4A99FB Hallo
+(1493,3633) city 7 #c4A99FB Hallo
+(1732,3850) city 5 #c4A99FB Hallo
+(1551,3827) city 5 #c4A99FB Hallo
+(1766,3697) city 3 #c4A99FB Hallo
+(1379,3870) city 5 #c4A99FB Hallo
+(1574,1644) city 2 #c4A99FB Hallo
+(0294,4294) city 2 #c4A99FB Hallo
+(1614,2344) city 2 #c4A99FB Hallo
+(1874,2024) city 2 #c4A99FB Hallo
+(2194,1434) city 2 #c4A99FB Hallo
+(2314,1074) city 2 #c4A99FB Hallo
+(2534,0544) city 2 #c4A99FB Hallo
+(0254,4724) city 2 #c4A99FB Hallo
+(2854,1364) city 2 #c4A99FB Hallo
+(0339,4618) city 3 #c4A99FB Hallo
+(0614,3214) city 2 #c4A99FB Hallo
+(4116,2754) city 5 #c4A99FB Hallo
+(4438,3937) city 7 #c4A99FB Hallo
+(4672,3930) city 5 #c4A99FB Hallo
+(4712,3667) city 3 #c4A99FB Hallo
+(4336,3778) city 3 #c4A99FB Hallo
+(4292,4076) city 2 #c4A99FB Hallo
+(0524,2595) city 2 #c4A99FB Hallo
+(0604,4354) city 2 #c4A99FB Hallo
+(0584,5055) city 2 #c4A99FB Hallo
+(6671,3287) city 5 #c4A99FB Hallo
+(0690,2808) city 3 #c4A99FB Hallo
+(0924,4274) city 2 #c4A99FB Hallo
+(1034,2694) city 2 #c4A99FB Hallo
+(0944,2435) city 2 #c4A99FB Hallo
+(1114,1964) city 2 #c4A99FB Hallo
+(1114,4944) city 2 #c4A99FB Hallo
+(5573,5106) city 3 #c7E67F2 大丈夫
+(5907,6254) city 5 #c7E67F2 大丈夫
+(5914,5993) city 5 #c7E67F2 大丈夫
+(5720,6220) city 5 #c7E67F2 大丈夫
+(6276,4214) city 5 #c7E67F2 大丈夫
+(6890,5640) city 5 #c7E67F2 大丈夫
+(6865,5518) city 5 #c7E67F2 大丈夫
+(6754,5773) city 5 #c7E67F2 大丈夫
+(7234,6654) city 2 #c7E67F2 大丈夫
+(7654,6014) city 2 #c7E67F2 大丈夫
+(7994,6694) city 2 #c7E67F2 大丈夫
+(7884,4015) city 2 #c7E67F2 大丈夫
+(8044,5515) city 2 #c7E67F2 大丈夫
+(8214,5724) city 2 #c7E67F2 大丈夫
+(8834,5104) city 2 #c7E67F2 大丈夫
+(1234,7134) city 2 #cFD7844 Imperium of Man
+(1104,5594) city 2 #cFD7844 Imperium of Man
+(1254,5824) city 2 #cFD7844 Imperium of Man
+(1324,7674) city 2 #cFD7844 Imperium of Man
+(1454,6204) city 2 #cFD7844 Imperium of Man
+(1734,7424) city 2 #cFD7844 Imperium of Man
+(1914,7094) city 2 #cFD7844 Imperium of Man
+(1926,5522) city 5 #cFD7844 Imperium of Man
+(1736,5514) city 5 #cFD7844 Imperium of Man
+(1950,5380) city 5 #cFD7844 Imperium of Man
+(0374,5764) city 2 #cFD7844 Imperium of Man
+(1910,7808) city 3 #cFD7844 Imperium of Man
+(1984,8154) city 2 #cFD7844 Imperium of Man
+(2254,7604) city 2 #cFD7844 Imperium of Man
+(2224,8055) city 2 #cFD7844 Imperium of Man
+(2434,7284) city 2 #cFD7844 Imperium of Man
+(2564,8035) city 2 #cFD7844 Imperium of Man
+(2624,8434) city 2 #cFD7844 Imperium of Man
+(3010,6860) city 5 #cFD7844 Imperium of Man
+(2985,6738) city 5 #cFD7844 Imperium of Man
+(2874,6993) city 5 #cFD7844 Imperium of Man
+(3114,7804) city 2 #cFD7844 Imperium of Man
+(3374,7824) city 2 #cFD7844 Imperium of Man
+(3374,8464) city 2 #cFD7844 Imperium of Man
+(3498,5057) city 7 #cFD7844 Imperium of Man
+(3494,8144) city 2 #cFD7844 Imperium of Man
+(0674,5584) city 2 #cFD7844 Imperium of Man
+(0814,5244) city 2 #cFD7844 Imperium of Man
+(0814,6844) city 2 #cFD7844 Imperium of Man
+(0984,6595) city 2 #cFD7844 Imperium of Man
+(3381,1389) city 7 #cE63A3A ミルチア軍
+(3492,1570) city 5 #cE63A3A ミルチア軍
+(3311,1587) city 5 #cE63A3A ミルチア軍
+(4774,0534) city 2 #cE63A3A ミルチア軍
+(5467,2994) city 5 #cE63A3A ミルチア軍
+(5280,2960) city 5 #cE63A3A ミルチア軍
+(6547,2074) city 5 #cE63A3A ミルチア軍
+(6674,0804) city 2 #cE63A3A ミルチア軍
+(6714,0524) city 2 #cE63A3A ミルチア軍
+(7974,2244) city 2 #cE63A3A ミルチア軍
+(1424,2074) city 2 #cE5B36C Empire of Korea
+(3289,4291) city 5 #cE5B36C Empire of Korea
+(3050,4280) city 5 #cE5B36C Empire of Korea
+(3178,4459) city 5 #cE5B36C Empire of Korea
+(3252,4529) city 5 #cE5B36C Empire of Korea
+(3507,1428) city 3 #cE5B36C Empire of Korea
+(3732,5050) city 5 #cE5B36C Empire of Korea
+(3772,4787) city 3 #cE5B36C Empire of Korea
+(3396,4898) city 3 #cE5B36C Empire of Korea
+(3352,5196) city 2 #cE5B36C Empire of Korea
+(3804,0254) city 2 #cE5B36C Empire of Korea
+(4124,0534) city 2 #cE5B36C Empire of Korea
+(4306,2762) city 5 #cE5B36C Empire of Korea
+(4330,2620) city 5 #cE5B36C Empire of Korea
+(4304,0174) city 2 #cE5B36C Empire of Korea
+(4547,1774) city 5 #cE5B36C Empire of Korea
+(4554,1513) city 5 #cE5B36C Empire of Korea
+(4360,1740) city 5 #cE5B36C Empire of Korea
+(4734,0224) city 2 #cE5B36C Empire of Korea
+(4816,7258) city 3 #cE5B36C Empire of Korea
+(5014,0534) city 2 #cE5B36C Empire of Korea
+(5474,2733) city 5 #cE5B36C Empire of Korea
+(5534,0334) city 2 #cE5B36C Empire of Korea
+(5956,4951) city 5 #cE5B36C Empire of Korea
+(5701,4896) city 9 #cE5B36C Empire of Korea
+(5824,1234) city 2 #cE5B36C Empire of Korea
+(6187,3574) city 5 #cE5B36C Empire of Korea
+(6194,3313) city 5 #cE5B36C Empire of Korea
+(6000,3540) city 5 #cE5B36C Empire of Korea
+(6204,1094) city 2 #cE5B36C Empire of Korea
+(6466,4222) city 5 #cE5B36C Empire of Korea
+(6490,4080) city 5 #cE5B36C Empire of Korea
+(6554,1813) city 5 #cE5B36C Empire of Korea
+(6360,2040) city 5 #cE5B36C Empire of Korea
+(6741,3089) city 7 #cE5B36C Empire of Korea
+(6852,3270) city 5 #cE5B36C Empire of Korea
+(6867,3128) city 3 #cE5B36C Empire of Korea
+(6879,3020) city 2 #cE5B36C Empire of Korea
+(7594,1624) city 2 #cE5B36C Empire of Korea
+(7554,6644) city 2 #cE5B36C Empire of Korea
+(7490,1968) city 3 #cE5B36C Empire of Korea
+(7594,2764) city 2 #cE5B36C Empire of Korea
+(7834,7234) city 2 #cE5B36C Empire of Korea
+(7794,1604) city 2 #cE5B36C Empire of Korea
+(7974,6054) city 2 #cE5B36C Empire of Korea
+(7924,4355) city 2 #cE5B36C Empire of Korea
+(7924,7135) city 2 #cE5B36C Empire of Korea
+(8234,1904) city 2 #cE5B36C Empire of Korea
+(8254,2804) city 2 #cE5B36C Empire of Korea
+(8164,2595) city 2 #cE5B36C Empire of Korea
+(8334,5084) city 2 #cE5B36C Empire of Korea
+(8304,4314) city 2 #cE5B36C Empire of Korea
+(8324,4634) city 2 #cE5B36C Empire of Korea
+(8399,4838) city 3 #cE5B36C Empire of Korea
+(8714,2984) city 2 #cE5B36C Empire of Korea
+(8754,3294) city 2 #cE5B36C Empire of Korea
+(8634,3824) city 2 #cE5B36C Empire of Korea
+(8814,4124) city 2 #cE5B36C Empire of Korea
+
+$planet

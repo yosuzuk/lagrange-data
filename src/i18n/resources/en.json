@@ -291,6 +291,7 @@
         "openExternalMap": "Configure backend",
         "openExampleMap": "Open example map",
         "openEmptyMap": "Open empty map",
+        "openServerResultMap": "View server results",
         "sizeCanBeAdjustedBrackets": "(size can be adjusted)",
         "noContent": "No content",
         "editKeyInstruction": "Please enter your edit key",

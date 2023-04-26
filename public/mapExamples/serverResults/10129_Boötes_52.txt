@@ -1,0 +1,149 @@
+$name 10129 Boötes 52
+$serverName Boötes 52
+$size 9000
+
+// Rank 1: KOR RedDevil (25.5)
+// Rank 2: SCP財団 (22.6)
+// Rank 7: SU Empire (2.1)
+
+$station
+(4330,2620) city 5 #c4A99FB SCP財団
+(4712,3667) city 3 #c4A99FB SCP財団
+(5474,2733) city 5 #c4A99FB SCP財団
+(5956,4951) city 5 #c4A99FB SCP財団
+(5573,5106) city 3 #c4A99FB SCP財団
+(5907,6254) city 5 #c4A99FB SCP財団
+(5914,5993) city 5 #c4A99FB SCP財団
+(6187,3574) city 5 #c4A99FB SCP財団
+(6194,3313) city 5 #c4A99FB SCP財団
+(6000,3540) city 5 #c4A99FB SCP財団
+(6466,4222) city 5 #c4A99FB SCP財団
+(6490,4080) city 5 #c4A99FB SCP財団
+(6360,2040) city 5 #c4A99FB SCP財団
+(6741,3089) city 7 #c4A99FB SCP財団
+(6852,3270) city 5 #c4A99FB SCP財団
+(6671,3287) city 5 #c4A99FB SCP財団
+(6867,3128) city 3 #c4A99FB SCP財団
+(6879,3020) city 2 #c4A99FB SCP財団
+(6890,5640) city 5 #c4A99FB SCP財団
+(6865,5518) city 5 #c4A99FB SCP財団
+(6754,5773) city 5 #c4A99FB SCP財団
+(7214,7574) city 2 #c4A99FB SCP財団
+(7234,6654) city 2 #c4A99FB SCP財団
+(7364,7054) city 2 #c4A99FB SCP財団
+(7554,6644) city 2 #c4A99FB SCP財団
+(7594,2764) city 2 #c4A99FB SCP財団
+(7654,6014) city 2 #c4A99FB SCP財団
+(7834,7234) city 2 #c4A99FB SCP財団
+(7994,6694) city 2 #c4A99FB SCP財団
+(7974,6054) city 2 #c4A99FB SCP財団
+(7974,2244) city 2 #c4A99FB SCP財団
+(7884,4015) city 2 #c4A99FB SCP財団
+(7924,4355) city 2 #c4A99FB SCP財団
+(7924,7135) city 2 #c4A99FB SCP財団
+(8044,5515) city 2 #c4A99FB SCP財団
+(8214,5724) city 2 #c4A99FB SCP財団
+(8254,2804) city 2 #c4A99FB SCP財団
+(8164,2595) city 2 #c4A99FB SCP財団
+(8334,5084) city 2 #c4A99FB SCP財団
+(8304,4314) city 2 #c4A99FB SCP財団
+(8324,4634) city 2 #c4A99FB SCP財団
+(8399,4838) city 3 #c4A99FB SCP財団
+(8714,2984) city 2 #c4A99FB SCP財団
+(8754,3294) city 2 #c4A99FB SCP財団
+(8634,3824) city 2 #c4A99FB SCP財団
+(8814,4124) city 2 #c4A99FB SCP財団
+(8834,5104) city 2 #c4A99FB SCP財団
+(1424,2074) city 2 #cF284FF SU Empire
+(1574,1644) city 2 #cF284FF SU Empire
+(1874,2024) city 2 #cF284FF SU Empire
+(3492,1570) city 5 #cF284FF SU Empire
+(4124,0534) city 2 #cF284FF SU Empire
+(4774,0534) city 2 #cF284FF SU Empire
+(4734,0224) city 2 #cF284FF SU Empire
+(5014,0534) city 2 #cF284FF SU Empire
+(6204,1454) city 2 #cF284FF SU Empire
+(6547,2074) city 5 #cF284FF SU Empire
+(6554,1813) city 5 #cF284FF SU Empire
+(6674,0804) city 2 #cF284FF SU Empire
+(6834,1694) city 2 #cF284FF SU Empire
+(7174,0904) city 2 #cF284FF SU Empire
+(7204,2154) city 2 #cF284FF SU Empire
+(7594,1624) city 2 #cF284FF SU Empire
+(7490,1968) city 3 #cF284FF SU Empire
+(1234,7134) city 2 #cE5B36C KOR RedDevil
+(1104,5594) city 2 #cE5B36C KOR RedDevil
+(1254,5824) city 2 #cE5B36C KOR RedDevil
+(1454,6204) city 2 #cE5B36C KOR RedDevil
+(1734,7424) city 2 #cE5B36C KOR RedDevil
+(1914,7094) city 2 #cE5B36C KOR RedDevil
+(1950,5380) city 5 #cE5B36C KOR RedDevil
+(0374,5764) city 2 #cE5B36C KOR RedDevil
+(1910,7808) city 3 #cE5B36C KOR RedDevil
+(1984,8154) city 2 #cE5B36C KOR RedDevil
+(2254,7604) city 2 #cE5B36C KOR RedDevil
+(2224,8055) city 2 #cE5B36C KOR RedDevil
+(2434,7284) city 2 #cE5B36C KOR RedDevil
+(2564,8035) city 2 #cE5B36C KOR RedDevil
+(2624,8434) city 2 #cE5B36C KOR RedDevil
+(3114,7804) city 2 #cE5B36C KOR RedDevil
+(3289,4291) city 5 #cE5B36C KOR RedDevil
+(3374,7824) city 2 #cE5B36C KOR RedDevil
+(3374,8464) city 2 #cE5B36C KOR RedDevil
+(3498,5057) city 7 #cE5B36C KOR RedDevil
+(3352,5196) city 2 #cE5B36C KOR RedDevil
+(3494,8144) city 2 #cE5B36C KOR RedDevil
+(3694,7804) city 2 #cE5B36C KOR RedDevil
+(3934,8334) city 2 #cE5B36C KOR RedDevil
+(4384,7994) city 2 #cE5B36C KOR RedDevil
+(4744,8815) city 2 #cE5B36C KOR RedDevil
+(4918,7417) city 7 #cE5B36C KOR RedDevil
+(5152,7410) city 5 #cE5B36C KOR RedDevil
+(5192,7147) city 3 #cE5B36C KOR RedDevil
+(4816,7258) city 3 #cE5B36C KOR RedDevil
+(4772,7556) city 2 #cE5B36C KOR RedDevil
+(5314,8694) city 2 #cE5B36C KOR RedDevil
+(5334,7744) city 2 #cE5B36C KOR RedDevil
+(5634,8574) city 2 #cE5B36C KOR RedDevil
+(5654,7984) city 2 #cE5B36C KOR RedDevil
+(5720,6220) city 5 #cE5B36C KOR RedDevil
+(0674,5584) city 2 #cE5B36C KOR RedDevil
+(6024,8535) city 2 #cE5B36C KOR RedDevil
+(6216,7434) city 5 #cE5B36C KOR RedDevil
+(6430,7300) city 5 #cE5B36C KOR RedDevil
+(0584,5055) city 2 #cE5B36C KOR RedDevil
+(6430,8049) city 3 #cE5B36C KOR RedDevil
+(6814,7914) city 2 #cE5B36C KOR RedDevil
+(6754,7594) city 2 #cE5B36C KOR RedDevil
+(7134,7894) city 2 #cE5B36C KOR RedDevil
+(7464,7674) city 2 #cE5B36C KOR RedDevil
+(0814,6844) city 2 #cE5B36C KOR RedDevil
+(0984,6595) city 2 #cE5B36C KOR RedDevil
+
+$planet
+(3369,4916)(3572,4974) small
+(3572,4974) large
+(3635,5030)(3572,4974) small
+(3751,4802)(3572,4974) small
+(5055,7390)(4992,7334) small
+(4789,7276)(4992,7334) small
+(5171,7162)(4992,7334) small
+(4992,7334) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(5775,5009) large
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5612,5130)(5775,5009) small
+(4499,4497) medium
+(3332,1494) large
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small
+(1532,3836)(1572,3774) small
+(1738,3715)(1572,3774) small
+(1572,3774) large
+(6838,3145)(6692,3194) small
+(6652,3296)(6692,3194) small
+(6692,3194) large

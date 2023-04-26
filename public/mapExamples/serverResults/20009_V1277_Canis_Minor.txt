@@ -1,0 +1,126 @@
+$name 20009 V1277 Canis Minor
+$serverName V1277 Canis Minor
+$size 9000
+
+// Rank 1: RX 784 (51.0)
+// Rank 2: Hydra (48.9)
+
+$station
+(2699,2858) city 3 #c4A99FB Hydra
+(2914,3154) city 2 #c4A99FB Hydra
+(2931,4027) city 5 #c4A99FB Hydra
+(3146,3897) city 3 #c4A99FB Hydra
+(2759,4070) city 5 #c4A99FB Hydra
+(2770,5968) city 3 #c4A99FB Hydra
+(2954,6604) city 2 #c4A99FB Hydra
+(3461,7809) city 7 #c4A99FB Hydra
+(3572,7990) city 5 #c4A99FB Hydra
+(3391,8007) city 5 #c4A99FB Hydra
+(3587,7848) city 3 #c4A99FB Hydra
+(3599,7740) city 2 #c4A99FB Hydra
+(3594,6564) city 2 #c4A99FB Hydra
+(3624,2634) city 2 #c4A99FB Hydra
+(3894,6734) city 2 #c4A99FB Hydra
+(3704,6415) city 2 #c4A99FB Hydra
+(4006,6082) city 5 #c4A99FB Hydra
+(3816,6074) city 5 #c4A99FB Hydra
+(4030,5940) city 5 #c4A99FB Hydra
+(4129,4911) city 5 #c4A99FB Hydra
+(3995,4739) city 5 #c4A99FB Hydra
+(4130,4698) city 5 #c4A99FB Hydra
+(3852,4898) city 5 #c4A99FB Hydra
+(4024,2574) city 2 #c4A99FB Hydra
+(1787,2828) city 3 #c4A99FB Hydra
+(4409,0359) city 9 #c4A99FB Hydra
+(4666,0136) city 5 #c4A99FB Hydra
+(4364,7094) city 2 #c4A99FB Hydra
+(4304,6475) city 2 #c4A99FB Hydra
+(4350,5208) city 3 #c4A99FB Hydra
+(4404,2494) city 2 #c4A99FB Hydra
+(4714,6664) city 2 #c4A99FB Hydra
+(5012,4050) city 5 #c4A99FB Hydra
+(5052,3787) city 3 #c4A99FB Hydra
+(4676,3898) city 3 #c4A99FB Hydra
+(4704,2514) city 2 #c4A99FB Hydra
+(4814,2124) city 2 #c4A99FB Hydra
+(4844,6414) city 2 #c4A99FB Hydra
+(4850,6608) city 3 #c4A99FB Hydra
+(5141,5169) city 7 #c4A99FB Hydra
+(5071,5367) city 5 #c4A99FB Hydra
+(5267,5208) city 3 #c4A99FB Hydra
+(5279,5100) city 2 #c4A99FB Hydra
+(5034,1784) city 2 #c4A99FB Hydra
+(0992,3429) city 5 #c4A99FB Hydra
+(1689,7071) city 5 #c4A99FB Hydra
+(1652,7309) city 5 #c4A99FB Hydra
+(5534,6754) city 2 #c4A99FB Hydra
+(5814,6404) city 2 #c4A99FB Hydra
+(5834,6074) city 2 #c4A99FB Hydra
+(6012,5849) city 5 #c4A99FB Hydra
+(5952,1058) city 5 #c4A99FB Hydra
+(6166,8242) city 5 #c4A99FB Hydra
+(6190,8100) city 5 #c4A99FB Hydra
+(6150,2868) city 3 #c4A99FB Hydra
+(6234,3604) city 2 #c4A99FB Hydra
+(6334,6144) city 2 #c4A99FB Hydra
+(6624,6434) city 2 #c4A99FB Hydra
+(7530,7140) city 5 #c4A99FB Hydra
+(8132,6370) city 5 #c4A99FB Hydra
+(2114,5494) city 2 #c4A99FB Hydra
+(2099,4518) city 3 #c4A99FB Hydra
+(2384,4574) city 2 #c4A99FB Hydra
+(1030,6480) city 5 #c4A99FB Hydra
+(1005,6358) city 5 #c4A99FB Hydra
+(0894,6613) city 5 #c4A99FB Hydra
+(2873,3833) city 7 #cE5B36C RX 784
+(3112,4050) city 5 #cE5B36C RX 784
+(2854,1944) city 2 #cE5B36C RX 784
+(1661,2789) city 7 #cE5B36C RX 784
+(1772,2970) city 5 #cE5B36C RX 784
+(4234,2134) city 2 #cE5B36C RX 784
+(4386,0091) city 5 #cE5B36C RX 784
+(4778,4057) city 7 #cE5B36C RX 784
+(1029,3191) city 5 #cE5B36C RX 784
+(0790,3180) city 5 #cE5B36C RX 784
+(0918,3359) city 5 #cE5B36C RX 784
+(5252,5350) city 5 #cE5B36C RX 784
+(6049,5611) city 5 #cE5B36C RX 784
+(6230,0858) city 5 #cE5B36C RX 784
+(6095,0899) city 5 #cE5B36C RX 784
+(6229,1071) city 5 #cE5B36C RX 784
+(8007,2494) city 5 #cE5B36C RX 784
+(8014,2233) city 5 #cE5B36C RX 784
+(7820,2460) city 5 #cE5B36C RX 784
+(7898,6377) city 7 #cE5B36C RX 784
+(7742,6516) city 2 #cE5B36C RX 784
+(8499,5011) city 5 #cE5B36C RX 784
+(2127,1754) city 5 #cE5B36C RX 784
+(2134,1493) city 5 #cE5B36C RX 784
+(1940,1720) city 5 #cE5B36C RX 784
+
+$planet
+(4554,363)(4539,272) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4702,160)(4539,272) small
+(5031,3802)(4852,3974) small
+(4649,3916)(4852,3974) small
+(4852,3974) large
+(4915,4030)(4852,3974) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(8035,6350)(7972,6294) small
+(7769,6236)(7972,6294) small
+(7972,6294) large
+(8151,6122)(7972,6294) small
+(2952,3974) large
+(3118,3915)(2952,3974) small
+(2912,4036)(2952,3974) small
+(5052,5376)(5092,5274) small
+(5092,5274) large
+(5238,5225)(5092,5274) small
+(3372,8016)(3412,7914) small
+(3412,7914) large
+(3558,7865)(3412,7914) small
+(4499,4497) medium

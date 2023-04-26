@@ -1,0 +1,117 @@
+$name 20006 Volans 75
+$serverName Volans 75
+$size 9000
+
+// Rank 1: Legion (34.3)
+// Rank 2: FoxDen (30.6)
+// Rank 3: Dawn Of Orbitek (21.1)
+// Rank 4: Orbitek (11.6)
+// Rank 5: The Covenant (2.1)
+
+$station
+(2878,4057) city 7 #c49E7C0 Orbitek
+(1772,2970) city 5 #c49E7C0 Orbitek
+(4666,0136) city 5 #c49E7C0 Orbitek
+(1806,2817) city 3 #c49E7C0 Orbitek
+(1419,2990) city 5 #c49E7C0 Orbitek
+(0790,3180) city 5 #c49E7C0 Orbitek
+(2134,1493) city 5 #c49E7C0 Orbitek
+(1940,1720) city 5 #c49E7C0 Orbitek
+(3192,8136) city 2 #cFD7844 Dawn Of Orbitek
+(1533,2753) city 7 #cFD7844 Dawn Of Orbitek
+(5039,3800) city 2 #cFD7844 Dawn Of Orbitek
+(1689,7071) city 5 #cFD7844 Dawn Of Orbitek
+(1450,7060) city 5 #cFD7844 Dawn Of Orbitek
+(1578,7239) city 5 #cFD7844 Dawn Of Orbitek
+(1652,7309) city 5 #cFD7844 Dawn Of Orbitek
+(6229,1071) city 5 #cFD7844 Dawn Of Orbitek
+(6254,3094) city 2 #cFD7844 Dawn Of Orbitek
+(6444,4395) city 2 #cFD7844 Dawn Of Orbitek
+(6564,2714) city 2 #cFD7844 Dawn Of Orbitek
+(7820,2460) city 5 #cFD7844 Dawn Of Orbitek
+(7898,6377) city 7 #cFD7844 Dawn Of Orbitek
+(1005,6358) city 5 #cFD7844 Dawn Of Orbitek
+(0894,6613) city 5 #cFD7844 Dawn Of Orbitek
+(3572,7990) city 5 #c4A99FB FoxDen
+(3338,7997) city 7 #c4A99FB FoxDen
+(4006,6082) city 5 #c4A99FB FoxDen
+(4409,0359) city 9 #c4A99FB FoxDen
+(4386,0091) city 5 #c4A99FB FoxDen
+(4364,7094) city 2 #c4A99FB FoxDen
+(5279,5100) city 2 #c4A99FB FoxDen
+(5534,6754) city 2 #c4A99FB FoxDen
+(5938,5779) city 5 #c4A99FB FoxDen
+(6012,5849) city 5 #c4A99FB FoxDen
+(6190,8100) city 5 #c4A99FB FoxDen
+(1030,6480) city 5 #c4A99FB FoxDen
+(2776,3898) city 3 #cE5B36C Legion
+(3152,3787) city 3 #cE5B36C Legion
+(3112,4050) city 5 #cE5B36C Legion
+(3624,2634) city 2 #cE5B36C Legion
+(4030,5940) city 5 #cE5B36C Legion
+(4129,4911) city 5 #cE5B36C Legion
+(3852,4898) city 5 #cE5B36C Legion
+(4350,5208) city 3 #cE5B36C Legion
+(4901,3869) city 7 #cE5B36C Legion
+(5012,4050) city 5 #cE5B36C Legion
+(4831,4067) city 5 #cE5B36C Legion
+(5027,3908) city 3 #cE5B36C Legion
+(1029,3191) city 5 #cE5B36C Legion
+(4844,6414) city 2 #cE5B36C Legion
+(5141,5169) city 7 #cE5B36C Legion
+(5252,5350) city 5 #cE5B36C Legion
+(5071,5367) city 5 #cE5B36C Legion
+(5267,5208) city 3 #cE5B36C Legion
+(0918,3359) city 5 #cE5B36C Legion
+(0992,3429) city 5 #cE5B36C Legion
+(5334,2034) city 2 #cE5B36C Legion
+(5834,6074) city 2 #cE5B36C Legion
+(5954,2444) city 2 #cE5B36C Legion
+(6049,5611) city 5 #cE5B36C Legion
+(5810,5600) city 5 #cE5B36C Legion
+(5952,1058) city 5 #cE5B36C Legion
+(6095,0899) city 5 #cE5B36C Legion
+(6234,3604) city 2 #cE5B36C Legion
+(6314,2594) city 2 #cE5B36C Legion
+(6624,6434) city 2 #cE5B36C Legion
+(7505,7018) city 5 #cE5B36C Legion
+(7394,7273) city 5 #cE5B36C Legion
+(8132,6370) city 5 #cE5B36C Legion
+(8172,6107) city 3 #cE5B36C Legion
+(7796,6218) city 3 #cE5B36C Legion
+(7742,6516) city 2 #cE5B36C Legion
+(8499,5011) city 5 #cE5B36C Legion
+(8515,4899) city 5 #cE5B36C Legion
+(8600,4938) city 5 #cE5B36C Legion
+(8612,5108) city 5 #cE5B36C Legion
+(6166,8242) city 5 #cE63A3A The Covenant
+(5976,8234) city 5 #cE63A3A The Covenant
+(7530,7140) city 5 #cE63A3A The Covenant
+
+$planet
+(8035,6350)(7972,6294) small
+(8151,6122)(7972,6294) small
+(7972,6294) large
+(7769,6236)(7972,6294) small
+(2749,3916)(2952,3974) small
+(3131,3802)(2952,3974) small
+(3015,4030)(2952,3974) small
+(2952,3974) large
+(4998,3925)(4852,3974) small
+(4852,3974) large
+(4812,4076)(4852,3974) small
+(3412,7914) large
+(3475,7970)(3412,7914) small
+(3209,7856)(3412,7914) small
+(3591,7742)(3412,7914) small
+(5238,5225)(5092,5274) small
+(5092,5274) large
+(5052,5376)(5092,5274) small
+(1612,2894) large
+(1572,2956)(1612,2894) small
+(1778,2835)(1612,2894) small
+(4499,4497) medium
+(4702,160)(4539,272) small
+(4554,363)(4539,272) small
+(4539,272) large
+(4341,160)(4539,272) small

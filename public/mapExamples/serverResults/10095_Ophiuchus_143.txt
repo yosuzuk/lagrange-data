@@ -1,0 +1,133 @@
+$name 10095 Ophiuchus 143
+$serverName Ophiuchus 143
+$size 9000
+
+// Rank 1: 무지개 (44.5)
+// Rank 2: HEROES (28.4)
+// Rank 3: TラボJP (20.4)
+// Rank 4: 中央司令部 (4.3)
+// Rank 5: 蛇使い座143 (2.1)
+
+$station
+(3494,8144) city 2 #c4A99FB HEROES
+(4744,8815) city 2 #c4A99FB HEROES
+(5314,8694) city 2 #c4A99FB HEROES
+(5634,8574) city 2 #c4A99FB HEROES
+(5956,4951) city 5 #c4A99FB HEROES
+(5701,4896) city 9 #c4A99FB HEROES
+(5824,1234) city 2 #c4A99FB HEROES
+(6466,4222) city 5 #c4A99FB HEROES
+(6490,4080) city 5 #c4A99FB HEROES
+(6741,3089) city 7 #c4A99FB HEROES
+(6852,3270) city 5 #c4A99FB HEROES
+(6867,3128) city 3 #c4A99FB HEROES
+(7974,2244) city 2 #c4A99FB HEROES
+(7884,4015) city 2 #c4A99FB HEROES
+(7924,4355) city 2 #c4A99FB HEROES
+(8334,5084) city 2 #c4A99FB HEROES
+(8304,4314) city 2 #c4A99FB HEROES
+(8324,4634) city 2 #c4A99FB HEROES
+(8399,4838) city 3 #c4A99FB HEROES
+(8754,3294) city 2 #c4A99FB HEROES
+(8634,3824) city 2 #c4A99FB HEROES
+(8834,5104) city 2 #c4A99FB HEROES
+(3492,1570) city 5 #cFD7844 TラボJP
+(4254,8184) city 2 #cFD7844 TラボJP
+(4306,2762) city 5 #cFD7844 TラボJP
+(4116,2754) city 5 #cFD7844 TラボJP
+(4330,2620) city 5 #cFD7844 TラボJP
+(4547,1774) city 5 #cFD7844 TラボJP
+(4360,1740) city 5 #cFD7844 TラボJP
+(4438,3937) city 7 #cFD7844 TラボJP
+(4672,3930) city 5 #cFD7844 TラボJP
+(4712,3667) city 3 #cFD7844 TラボJP
+(4292,4076) city 2 #cFD7844 TラボJP
+(4384,7994) city 2 #cFD7844 TラボJP
+(5467,2994) city 5 #cFD7844 TラボJP
+(5474,2733) city 5 #cFD7844 TラボJP
+(5280,2960) city 5 #cFD7844 TラボJP
+(6204,1454) city 2 #cFD7844 TラボJP
+(6547,2074) city 5 #cFD7844 TラボJP
+(6554,1813) city 5 #cFD7844 TラボJP
+(6360,2040) city 5 #cFD7844 TラボJP
+(6834,1694) city 2 #cFD7844 TラボJP
+(7204,2154) city 2 #cFD7844 TラボJP
+(8234,1904) city 2 #cFD7844 TラボJP
+(5907,6254) city 5 #c49E7C0 中央司令部
+(5914,5993) city 5 #c49E7C0 中央司令部
+(5720,6220) city 5 #c49E7C0 中央司令部
+(6890,5640) city 5 #c49E7C0 中央司令部
+(6865,5518) city 5 #c49E7C0 中央司令部
+(6754,5773) city 5 #c49E7C0 中央司令部
+(7654,6014) city 2 #c49E7C0 中央司令部
+(7974,6054) city 2 #c49E7C0 中央司令部
+(8044,5515) city 2 #c49E7C0 中央司令部
+(8214,5724) city 2 #c49E7C0 中央司令部
+(6430,7300) city 5 #cE63A3A 蛇使い座143
+(6879,3020) city 2 #cE63A3A 蛇使い座143
+(7464,7674) city 2 #cE63A3A 蛇使い座143
+(8814,4124) city 2 #cE63A3A 蛇使い座143
+(1454,2654) city 2 #cE5B36C 무지개
+(1493,3633) city 7 #cE5B36C 무지개
+(1732,3850) city 5 #cE5B36C 무지개
+(1551,3827) city 5 #cE5B36C 무지개
+(1766,3697) city 3 #cE5B36C 무지개
+(1914,7094) city 2 #cE5B36C 무지개
+(1926,5522) city 5 #cE5B36C 무지개
+(1736,5514) city 5 #cE5B36C 무지개
+(1950,5380) city 5 #cE5B36C 무지개
+(1874,2024) city 2 #cE5B36C 무지개
+(1984,8154) city 2 #cE5B36C 무지개
+(2434,7284) city 2 #cE5B36C 무지개
+(3010,6860) city 5 #cE5B36C 무지개
+(2985,6738) city 5 #cE5B36C 무지개
+(2874,6993) city 5 #cE5B36C 무지개
+(3289,4291) city 5 #cE5B36C 무지개
+(3050,4280) city 5 #cE5B36C 무지개
+(3178,4459) city 5 #cE5B36C 무지개
+(3252,4529) city 5 #cE5B36C 무지개
+(3381,1389) city 7 #cE5B36C 무지개
+(3311,1587) city 5 #cE5B36C 무지개
+(3519,1320) city 2 #cE5B36C 무지개
+(3498,5057) city 7 #cE5B36C 무지개
+(3732,5050) city 5 #cE5B36C 무지개
+(3772,4787) city 3 #cE5B36C 무지개
+(3396,4898) city 3 #cE5B36C 무지개
+(3352,5196) city 2 #cE5B36C 무지개
+(0614,3214) city 2 #cE5B36C 무지개
+(4918,7417) city 7 #cE5B36C 무지개
+(5152,7410) city 5 #cE5B36C 무지개
+(5192,7147) city 3 #cE5B36C 무지개
+(4816,7258) city 3 #cE5B36C 무지개
+(4772,7556) city 2 #cE5B36C 무지개
+(6187,3574) city 5 #cE5B36C 무지개
+(6194,3313) city 5 #cE5B36C 무지개
+(6000,3540) city 5 #cE5B36C 무지개
+
+$planet
+(3369,4916)(3572,4974) small
+(3751,4802)(3572,4974) small
+(3635,5030)(3572,4974) small
+(3572,4974) large
+(6692,3194) large
+(6652,3296)(6692,3194) small
+(6838,3145)(6692,3194) small
+(4992,7334) large
+(5171,7162)(4992,7334) small
+(4789,7276)(4992,7334) small
+(5055,7390)(4992,7334) small
+(4575,3910)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4309,3796)(4512,3854) small
+(4512,3854) large
+(5612,5130)(5775,5009) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5775,5009) large
+(3478,1445)(3332,1494) small
+(3292,1596)(3332,1494) small
+(3332,1494) large
+(1572,3774) large
+(1738,3715)(1572,3774) small
+(1532,3836)(1572,3774) small
+(4499,4497) medium

@@ -1,0 +1,152 @@
+$name 10072 V726 Tucana
+$serverName V726 Tucana
+$size 9000
+
+// Rank 1: Sandwich Club (58.3)
+// Rank 2: RoMania (41.6)
+
+$station
+(1454,2654) city 2 #c4A99FB RoMania
+(1424,2074) city 2 #c4A99FB RoMania
+(1614,1644) city 2 #c4A99FB RoMania
+(1614,2344) city 2 #c4A99FB RoMania
+(0294,4294) city 2 #c4A99FB RoMania
+(1874,2024) city 2 #c4A99FB RoMania
+(2134,1454) city 2 #c4A99FB RoMania
+(2314,1074) city 2 #c4A99FB RoMania
+(0454,5074) city 2 #c4A99FB RoMania
+(2534,0544) city 2 #c4A99FB RoMania
+(0454,5784) city 2 #c4A99FB RoMania
+(2854,1364) city 2 #c4A99FB RoMania
+(3114,7804) city 2 #c4A99FB RoMania
+(0254,4724) city 2 #c4A99FB RoMania
+(3381,1509) city 7 #c4A99FB RoMania
+(3492,1690) city 5 #c4A99FB RoMania
+(3507,1548) city 3 #c4A99FB RoMania
+(3519,1440) city 2 #c4A99FB RoMania
+(0339,4658) city 3 #c4A99FB RoMania
+(3804,0254) city 2 #c4A99FB RoMania
+(4164,0534) city 2 #c4A99FB RoMania
+(4330,2620) city 5 #c4A99FB RoMania
+(0614,3214) city 2 #c4A99FB RoMania
+(4304,0174) city 2 #c4A99FB RoMania
+(4419,1651) city 5 #c4A99FB RoMania
+(4532,1748) city 5 #c4A99FB RoMania
+(4336,3778) city 3 #c4A99FB RoMania
+(4672,3930) city 5 #c4A99FB RoMania
+(4438,3937) city 7 #c4A99FB RoMania
+(4654,0614) city 2 #c4A99FB RoMania
+(0524,2595) city 2 #c4A99FB RoMania
+(4734,0224) city 2 #c4A99FB RoMania
+(5014,0534) city 2 #c4A99FB RoMania
+(5489,2731) city 5 #c4A99FB RoMania
+(5250,2720) city 5 #c4A99FB RoMania
+(5378,2899) city 5 #c4A99FB RoMania
+(5452,2969) city 5 #c4A99FB RoMania
+(5534,0334) city 2 #c4A99FB RoMania
+(0604,4354) city 2 #c4A99FB RoMania
+(5824,1234) city 2 #c4A99FB RoMania
+(6000,3540) city 5 #c4A99FB RoMania
+(6204,1454) city 2 #c4A99FB RoMania
+(6204,1094) city 2 #c4A99FB RoMania
+(6530,4038) city 5 #c4A99FB RoMania
+(6529,4251) city 5 #c4A99FB RoMania
+(6360,2040) city 5 #c4A99FB RoMania
+(6681,3149) city 7 #c4A99FB RoMania
+(6792,3330) city 5 #c4A99FB RoMania
+(6611,3347) city 5 #c4A99FB RoMania
+(6819,3080) city 2 #c4A99FB RoMania
+(0584,5055) city 2 #c4A99FB RoMania
+(6674,0804) city 2 #c4A99FB RoMania
+(6714,0524) city 2 #c4A99FB RoMania
+(6834,1694) city 2 #c4A99FB RoMania
+(7174,0904) city 2 #c4A99FB RoMania
+(7234,6654) city 2 #c4A99FB RoMania
+(7204,2154) city 2 #c4A99FB RoMania
+(7594,1624) city 2 #c4A99FB RoMania
+(0690,2808) city 3 #c4A99FB RoMania
+(7554,6644) city 2 #c4A99FB RoMania
+(7490,1968) city 3 #c4A99FB RoMania
+(7594,2764) city 2 #c4A99FB RoMania
+(7794,1604) city 2 #c4A99FB RoMania
+(7884,3895) city 2 #c4A99FB RoMania
+(8234,1904) city 2 #c4A99FB RoMania
+(8004,4215) city 2 #c4A99FB RoMania
+(8044,5515) city 2 #c4A99FB RoMania
+(8234,2764) city 2 #c4A99FB RoMania
+(8164,2515) city 2 #c4A99FB RoMania
+(8294,5744) city 2 #c4A99FB RoMania
+(8334,5084) city 2 #c4A99FB RoMania
+(8324,4614) city 2 #c4A99FB RoMania
+(8364,4294) city 2 #c4A99FB RoMania
+(8399,4838) city 3 #c4A99FB RoMania
+(0784,5394) city 2 #c4A99FB RoMania
+(8674,3024) city 2 #c4A99FB RoMania
+(8754,3334) city 2 #c4A99FB RoMania
+(8634,3804) city 2 #c4A99FB RoMania
+(8854,4104) city 2 #c4A99FB RoMania
+(8834,5104) city 2 #c4A99FB RoMania
+(0924,4274) city 2 #c4A99FB RoMania
+(1034,2694) city 2 #c4A99FB RoMania
+(0964,2415) city 2 #c4A99FB RoMania
+(1114,1964) city 2 #c4A99FB RoMania
+(1114,4984) city 2 #c4A99FB RoMania
+(1254,5824) city 2 #cE5B36C Sandwich Club
+(1324,7674) city 2 #cE5B36C Sandwich Club
+(1454,6204) city 2 #cE5B36C Sandwich Club
+(1734,7424) city 2 #cE5B36C Sandwich Club
+(1914,7094) city 2 #cE5B36C Sandwich Club
+(1926,5522) city 5 #cE5B36C Sandwich Club
+(1736,5514) city 5 #cE5B36C Sandwich Club
+(1950,5380) city 5 #cE5B36C Sandwich Club
+(1984,8154) city 2 #cE5B36C Sandwich Club
+(2254,7604) city 2 #cE5B36C Sandwich Club
+(2224,8055) city 2 #cE5B36C Sandwich Club
+(2434,7284) city 2 #cE5B36C Sandwich Club
+(2544,8414) city 2 #cE5B36C Sandwich Club
+(2564,8035) city 2 #cE5B36C Sandwich Club
+(2852,6918) city 5 #cE5B36C Sandwich Club
+(3130,6718) city 5 #cE5B36C Sandwich Club
+(3129,6931) city 5 #cE5B36C Sandwich Club
+(3289,4291) city 5 #cE5B36C Sandwich Club
+(3050,4280) city 5 #cE5B36C Sandwich Club
+(3178,4459) city 5 #cE5B36C Sandwich Club
+(3252,4529) city 5 #cE5B36C Sandwich Club
+(3374,7824) city 2 #cE5B36C Sandwich Club
+(3374,8464) city 2 #cE5B36C Sandwich Club
+(3621,4869) city 7 #cE5B36C Sandwich Club
+(3732,5050) city 5 #cE5B36C Sandwich Club
+(3759,4800) city 2 #cE5B36C Sandwich Club
+(3661,7149) city 7 #cE5B36C Sandwich Club
+(3772,7330) city 5 #cE5B36C Sandwich Club
+(3591,7347) city 5 #cE5B36C Sandwich Club
+(3787,7188) city 3 #cE5B36C Sandwich Club
+(3799,7080) city 2 #cE5B36C Sandwich Club
+(3694,7804) city 2 #cE5B36C Sandwich Club
+(4292,4076) city 2 #cE5B36C Sandwich Club
+(4384,7994) city 2 #cE5B36C Sandwich Club
+(4673,6013) city 7 #cE5B36C Sandwich Club
+(4912,6230) city 5 #cE5B36C Sandwich Club
+(4731,6207) city 5 #cE5B36C Sandwich Club
+(4946,6077) city 3 #cE5B36C Sandwich Club
+(4559,6250) city 5 #cE5B36C Sandwich Club
+(5956,4951) city 5 #cE5B36C Sandwich Club
+(5573,5106) city 3 #cE5B36C Sandwich Club
+(5701,4896) city 9 #cE5B36C Sandwich Club
+(5914,5993) city 5 #cE5B36C Sandwich Club
+(5720,6220) city 5 #cE5B36C Sandwich Club
+(6430,7300) city 5 #cE5B36C Sandwich Club
+(6252,4238) city 5 #cE5B36C Sandwich Club
+(7009,5711) city 5 #cE5B36C Sandwich Club
+(0694,5664) city 2 #cE5B36C Sandwich Club
+(7654,6014) city 2 #cE5B36C Sandwich Club
+(7834,7234) city 2 #cE5B36C Sandwich Club
+(7994,6694) city 2 #cE5B36C Sandwich Club
+(7974,6054) city 2 #cE5B36C Sandwich Club
+(0814,6844) city 2 #cE5B36C Sandwich Club
+(7924,7135) city 2 #cE5B36C Sandwich Club
+(0984,6595) city 2 #cE5B36C Sandwich Club
+(1234,7134) city 2 #cE5B36C Sandwich Club
+(1104,5594) city 2 #cE5B36C Sandwich Club
+
+$planet

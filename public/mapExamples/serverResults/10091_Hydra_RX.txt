@@ -1,0 +1,196 @@
+$name 10091 Hydra RX
+$serverName Hydra RX
+$size 9000
+
+// Rank 1: 붉은악마 (56.2)
+// Rank 2: KBYユニオン (30.6)
+// Rank 3: Space Plate (4.3)
+// Rank 4: NIGHTRAID (2.1)
+// Rank 5: 푸른악마 (2.1)
+// Rank 6: 星間帝国 (2.1)
+// Rank 7: 星間帝国NAP (2.1)
+
+$station
+(1494,7244) city 2 #c49E7C0 NIGHTRAID
+(1494,7574) city 2 #c49E7C0 NIGHTRAID
+(1694,7744) city 2 #c49E7C0 NIGHTRAID
+(1774,7434) city 2 #c49E7C0 NIGHTRAID
+(1904,8155) city 2 #c49E7C0 NIGHTRAID
+(1939,7698) city 3 #c49E7C0 NIGHTRAID
+(2224,7714) city 2 #c49E7C0 NIGHTRAID
+(2454,7924) city 2 #c49E7C0 NIGHTRAID
+(2404,7394) city 2 #c49E7C0 NIGHTRAID
+(2884,8574) city 2 #c49E7C0 NIGHTRAID
+(2890,6680) city 5 #c49E7C0 NIGHTRAID
+(3018,6859) city 5 #c49E7C0 NIGHTRAID
+(3092,6929) city 5 #c49E7C0 NIGHTRAID
+(3774,8664) city 2 #c49E7C0 NIGHTRAID
+(3971,6307) city 5 #c49E7C0 NIGHTRAID
+(4186,6177) city 3 #c49E7C0 NIGHTRAID
+(3799,6350) city 5 #c49E7C0 NIGHTRAID
+(4314,8554) city 2 #c49E7C0 NIGHTRAID
+(4404,8835) city 2 #c49E7C0 NIGHTRAID
+(4564,8294) city 2 #c49E7C0 NIGHTRAID
+(5032,7790) city 5 #c49E7C0 NIGHTRAID
+(4696,7638) city 3 #c49E7C0 NIGHTRAID
+(4652,7936) city 2 #c49E7C0 NIGHTRAID
+(4974,8394) city 2 #c49E7C0 NIGHTRAID
+(3129,6691) city 5 #cE5B36C 붉은악마
+(3184,1154) city 2 #cE5B36C 붉은악마
+(3334,4742) city 9 #cE5B36C 붉은악마
+(4152,6330) city 5 #cE5B36C 붉은악마
+(4109,3431) city 5 #cE5B36C 붉은악마
+(4914,0894) city 2 #cE5B36C 붉은악마
+(4954,2993) city 5 #cE5B36C 붉은악마
+(5118,4417) city 7 #cE5B36C 붉은악마
+(5352,4410) city 5 #cE5B36C 붉은악마
+(5392,4147) city 3 #cE5B36C 붉은악마
+(5016,4258) city 3 #cE5B36C 붉은악마
+(5698,5277) city 7 #cE5B36C 붉은악마
+(5932,5270) city 5 #cE5B36C 붉은악마
+(5972,5007) city 3 #cE5B36C 붉은악마
+(5596,5118) city 3 #cE5B36C 붉은악마
+(5552,5416) city 2 #cE5B36C 붉은악마
+(6379,4211) city 5 #cE5B36C 붉은악마
+(6573,3013) city 7 #cE5B36C 붉은악마
+(6812,3230) city 5 #cE5B36C 붉은악마
+(6631,3207) city 5 #cE5B36C 붉은악마
+(6846,3077) city 3 #cE5B36C 붉은악마
+(6459,3250) city 5 #cE5B36C 붉은악마
+(6934,1334) city 2 #cE5B36C 붉은악마
+(7114,0894) city 2 #cE5B36C 붉은악마
+(6984,7355) city 2 #cE5B36C 붉은악마
+(7286,4282) city 5 #cE5B36C 붉은악마
+(7096,4274) city 5 #cE5B36C 붉은악마
+(7310,4140) city 5 #cE5B36C 붉은악마
+(7364,1315) city 2 #cE5B36C 붉은악마
+(7544,2854) city 2 #cE5B36C 붉은악마
+(7790,5560) city 5 #cE5B36C 붉은악마
+(7914,1584) city 2 #cE5B36C 붉은악마
+(7934,3104) city 2 #cE5B36C 붉은악마
+(7824,6155) city 2 #cE5B36C 붉은악마
+(7924,2354) city 2 #cE5B36C 붉은악마
+(8114,3764) city 2 #cE5B36C 붉은악마
+(8064,2014) city 2 #cE5B36C 붉은악마
+(8354,2744) city 2 #cE5B36C 붉은악마
+(8314,2414) city 2 #cE5B36C 붉은악마
+(8374,4114) city 2 #cE5B36C 붉은악마
+(8334,5064) city 2 #cE5B36C 붉은악마
+(8344,4634) city 2 #cE5B36C 붉은악마
+(8490,4889) city 3 #cE5B36C 붉은악마
+(8604,4254) city 2 #cE5B36C 붉은악마
+(8794,3644) city 2 #cE5B36C 붉은악마
+(8694,3344) city 2 #cE5B36C 붉은악마
+(8774,4494) city 2 #cE5B36C 붉은악마
+(8874,5414) city 2 #cE5B36C 붉은악마
+(8874,5114) city 2 #cE5B36C 붉은악마
+(1614,2324) city 2 #c7E67F2 星間帝国
+(3684,0734) city 2 #c7E67F2 星間帝国
+(3874,0954) city 2 #c7E67F2 星間帝国
+(3998,3599) city 5 #c7E67F2 星間帝国
+(4532,1648) city 5 #c7E67F2 星間帝国
+(4435,1439) city 5 #c7E67F2 星間帝国
+(4464,1034) city 2 #c7E67F2 星間帝国
+(5090,2860) city 5 #c7E67F2 星間帝国
+(5410,0708) city 3 #c7E67F2 星間帝国
+(6480,4138) city 5 #c7E67F2 星間帝国
+(6395,4099) city 5 #c7E67F2 星間帝国
+(7765,5438) city 5 #c7E67F2 星間帝国
+(7654,5693) city 5 #c7E67F2 星間帝国
+(1374,5814) city 2 #c4A99FB KBYユニオン
+(1304,2734) city 2 #c4A99FB KBYユニオン
+(1534,1964) city 2 #c4A99FB KBYユニオン
+(1721,4949) city 7 #c4A99FB KBYユニオン
+(1832,5130) city 5 #c4A99FB KBYユニオン
+(1651,5147) city 5 #c4A99FB KBYユニオン
+(1859,4880) city 2 #c4A99FB KBYユニオン
+(1870,1529) city 3 #c4A99FB KBYユニオン
+(2247,2834) city 5 #c4A99FB KBYユニオン
+(2254,2573) city 5 #c4A99FB KBYユニオン
+(2060,2800) city 5 #c4A99FB KBYユニオン
+(2607,1654) city 5 #c4A99FB KBYユニオン
+(2514,1064) city 2 #c4A99FB KBYユニオン
+(2504,0654) city 2 #c4A99FB KBYユニオン
+(2640,3820) city 5 #c4A99FB KBYユニオン
+(0454,6104) city 2 #c4A99FB KBYユニオン
+(3913,6113) city 7 #c4A99FB KBYユニオン
+(3870,3420) city 5 #c4A99FB KBYユニオン
+(4352,5249) city 5 #c4A99FB KBYユニオン
+(4278,5179) city 5 #c4A99FB KBYユニオン
+(4150,5000) city 5 #c4A99FB KBYユニオン
+(4389,5011) city 5 #c4A99FB KBYユニオン
+(4554,7874) city 2 #c4A99FB KBYユニオン
+(4774,0234) city 2 #c4A99FB KBYユニオン
+(4798,7797) city 7 #c4A99FB KBYユニオン
+(5072,7527) city 3 #c4A99FB KBYユニオン
+(5065,2738) city 5 #c4A99FB KBYユニオン
+(0804,5414) city 2 #c4A99FB KBYユニオン
+(0964,2794) city 2 #c4A99FB KBYユニオン
+(1104,5614) city 2 #c4A99FB KBYユニオン
+(1847,4988) city 3 #cFD7844 Space Plate
+(0294,4404) city 2 #cFD7844 Space Plate
+(0374,5094) city 2 #cFD7844 Space Plate
+(2614,1393) city 5 #cFD7844 Space Plate
+(2420,1620) city 5 #cFD7844 Space Plate
+(2827,3854) city 5 #cFD7844 Space Plate
+(2834,3593) city 5 #cFD7844 Space Plate
+(3306,4451) city 5 #cFD7844 Space Plate
+(3586,4496) city 5 #cFD7844 Space Plate
+(0814,4924) city 2 #cFD7844 Space Plate
+(0944,4714) city 2 #cFD7844 Space Plate
+(1024,7254) city 2 #cFD7844 Space Plate
+(4072,3669) city 5 #cF284FF 星間帝国NAP
+(4520,1478) city 5 #cF284FF 星間帝国NAP
+(4419,1551) city 5 #cF284FF 星間帝国NAP
+(5474,0954) city 2 #cF284FF 星間帝国NAP
+(5994,1134) city 2 #cF284FF 星間帝国NAP
+(6224,0555) city 2 #cF284FF 星間帝国NAP
+(6492,4308) city 5 #cF284FF 星間帝国NAP
+(1124,6914) city 2 #cF284FF 星間帝国NAP
+(5194,8064) city 2 #cE63A3A 푸른악마
+(5834,7924) city 2 #cE63A3A 푸른악마
+(6472,6768) city 5 #cE63A3A 푸른악마
+(6460,6598) city 5 #cE63A3A 푸른악마
+(6375,6559) city 5 #cE63A3A 푸른악마
+(6359,6671) city 5 #cE63A3A 푸른악마
+(6414,7694) city 2 #cE63A3A 푸른악마
+(6379,7978) city 3 #cE63A3A 푸른악마
+(6584,7335) city 2 #cE63A3A 푸른악마
+(6754,7594) city 2 #cE63A3A 푸른악마
+(7134,7984) city 2 #cE63A3A 푸른악마
+(7454,6974) city 2 #cE63A3A 푸른악마
+(7474,6304) city 2 #cE63A3A 푸른악마
+(7504,6734) city 2 #cE63A3A 푸른악마
+(7834,7234) city 2 #cE63A3A 푸른악마
+(7844,6814) city 2 #cE63A3A 푸른악마
+(8244,5834) city 2 #cE63A3A 푸른악마
+(8184,6815) city 2 #cE63A3A 푸른악마
+(8434,6264) city 2 #cE63A3A 푸른악마
+
+$planet
+(5255,4390)(5192,4334) small
+(4989,4276)(5192,4334) small
+(5192,4334) large
+(5371,4162)(5192,4334) small
+(4872,7714) large
+(4935,7770)(4872,7714) small
+(5051,7542)(4872,7714) small
+(4669,7656)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(5772,5194) large
+(5569,5136)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5835,5250)(5772,5194) small
+(1818,5005)(1672,5054) small
+(1672,5054) large
+(1632,5156)(1672,5054) small
+(4499,4497) medium
+(3261,4520)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3459,4632) large

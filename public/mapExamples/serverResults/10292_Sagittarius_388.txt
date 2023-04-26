@@ -1,0 +1,141 @@
+$name 10292 Sagittarius 388
+$serverName Sagittarius 388
+$size 9000
+
+// Rank 1: Academy (40.1)
+// Rank 2: Lunar Eclipse (16.0)
+// Rank 3: Yilzetaid Echo (16.0)
+// Rank 6: Yilzetaid Sygma (2.1)
+
+$station
+(3819,3519) city 9 #cE5B36C Academy
+(3713,3746) city 3 #cE5B36C Academy
+(4734,0554) city 2 #cE5B36C Academy
+(5098,4897) city 7 #cE5B36C Academy
+(5332,4890) city 5 #cE5B36C Academy
+(5269,3551) city 5 #cE5B36C Academy
+(5434,0944) city 2 #cE5B36C Academy
+(5867,6008) city 3 #cE5B36C Academy
+(5879,5900) city 2 #cE5B36C Academy
+(6150,3220) city 5 #cE5B36C Academy
+(6304,0554) city 2 #cE5B36C Academy
+(6529,4071) city 5 #cE5B36C Academy
+(6418,4239) city 5 #cE5B36C Academy
+(6492,4309) city 5 #cE5B36C Academy
+(6773,3093) city 7 #cE5B36C Academy
+(7012,3310) city 5 #cE5B36C Academy
+(6659,3330) city 5 #cE5B36C Academy
+(6764,1434) city 2 #cE5B36C Academy
+(7174,0834) city 2 #cE5B36C Academy
+(7574,2104) city 2 #cE5B36C Academy
+(7474,1284) city 2 #cE5B36C Academy
+(7424,1694) city 2 #cE5B36C Academy
+(7846,5602) city 5 #cE5B36C Academy
+(7744,1694) city 2 #cE5B36C Academy
+(7914,1914) city 2 #cE5B36C Academy
+(7704,3235) city 2 #cE5B36C Academy
+(7994,2254) city 2 #cE5B36C Academy
+(8154,5404) city 2 #cE5B36C Academy
+(8484,2814) city 2 #cE5B36C Academy
+(8594,3054) city 2 #cE5B36C Academy
+(8530,4929) city 3 #cE5B36C Academy
+(8564,3434) city 2 #cE5B36C Academy
+(8734,3634) city 2 #cE5B36C Academy
+(8674,4144) city 2 #cE5B36C Academy
+(1564,2414) city 2 #cFD7844 Yilzetaid Echo
+(1750,4940) city 5 #cFD7844 Yilzetaid Echo
+(1770,1408) city 3 #cFD7844 Yilzetaid Echo
+(1893,2833) city 7 #cFD7844 Yilzetaid Echo
+(2132,3050) city 5 #cFD7844 Yilzetaid Echo
+(1844,2134) city 2 #cFD7844 Yilzetaid Echo
+(2607,1654) city 5 #cFD7844 Yilzetaid Echo
+(2614,1393) city 5 #cFD7844 Yilzetaid Echo
+(2640,3820) city 5 #cFD7844 Yilzetaid Echo
+(0370,4728) city 3 #cFD7844 Yilzetaid Echo
+(4096,3591) city 5 #cFD7844 Yilzetaid Echo
+(0634,4244) city 2 #cFD7844 Yilzetaid Echo
+(0954,3044) city 2 #cFD7844 Yilzetaid Echo
+(0944,2774) city 2 #cFD7844 Yilzetaid Echo
+(1114,4604) city 2 #cFD7844 Yilzetaid Echo
+(1174,5484) city 2 #c4A99FB Lunar Eclipse
+(1324,7674) city 2 #c4A99FB Lunar Eclipse
+(1484,1414) city 2 #c4A99FB Lunar Eclipse
+(1624,7934) city 2 #c4A99FB Lunar Eclipse
+(1614,5073) city 5 #c4A99FB Lunar Eclipse
+(0364,6314) city 2 #c4A99FB Lunar Eclipse
+(2064,7054) city 2 #c4A99FB Lunar Eclipse
+(2324,7395) city 2 #c4A99FB Lunar Eclipse
+(3034,7854) city 2 #c4A99FB Lunar Eclipse
+(2944,8234) city 2 #c4A99FB Lunar Eclipse
+(3454,8444) city 2 #c4A99FB Lunar Eclipse
+(3814,7794) city 2 #c4A99FB Lunar Eclipse
+(4514,8724) city 2 #c4A99FB Lunar Eclipse
+(4614,8304) city 2 #c4A99FB Lunar Eclipse
+(4744,8815) city 2 #c4A99FB Lunar Eclipse
+(4951,5025) city 2 #c4A99FB Lunar Eclipse
+(5289,5711) city 5 #c4A99FB Lunar Eclipse
+(5084,8815) city 2 #c4A99FB Lunar Eclipse
+(5254,8074) city 2 #c4A99FB Lunar Eclipse
+(5741,5969) city 7 #c4A99FB Lunar Eclipse
+(5852,6150) city 5 #c4A99FB Lunar Eclipse
+(5774,7634) city 2 #c4A99FB Lunar Eclipse
+(5814,8464) city 2 #c4A99FB Lunar Eclipse
+(6126,3362) city 5 #c4A99FB Lunar Eclipse
+(5904,8195) city 2 #c4A99FB Lunar Eclipse
+(6392,7430) city 5 #c4A99FB Lunar Eclipse
+(6432,7167) city 3 #c4A99FB Lunar Eclipse
+(6056,7278) city 3 #c4A99FB Lunar Eclipse
+(6011,7566) city 2 #c4A99FB Lunar Eclipse
+(6379,7978) city 3 #c4A99FB Lunar Eclipse
+(6834,7574) city 2 #c4A99FB Lunar Eclipse
+(7046,3157) city 3 #c4A99FB Lunar Eclipse
+(6914,6333) city 5 #c4A99FB Lunar Eclipse
+(6974,6904) city 2 #c4A99FB Lunar Eclipse
+(6899,5671) city 5 #c4A99FB Lunar Eclipse
+(7012,5768) city 5 #c4A99FB Lunar Eclipse
+(0744,1934) city 2 #c4A99FB Lunar Eclipse
+(6984,8014) city 2 #c4A99FB Lunar Eclipse
+(7084,7695) city 2 #c4A99FB Lunar Eclipse
+(7414,6984) city 2 #c4A99FB Lunar Eclipse
+(7594,6284) city 2 #c4A99FB Lunar Eclipse
+(7594,6654) city 2 #c4A99FB Lunar Eclipse
+(7664,7334) city 2 #c4A99FB Lunar Eclipse
+(8114,6374) city 2 #c4A99FB Lunar Eclipse
+(8724,5534) city 2 #c4A99FB Lunar Eclipse
+(1084,5094) city 2 #c4A99FB Lunar Eclipse
+(2166,2897) city 3 #c7E67F2 Yilzetaid Sygma
+(1779,3070) city 5 #c7E67F2 Yilzetaid Sygma
+(2044,1534) city 2 #c7E67F2 Yilzetaid Sygma
+(2314,1764) city 2 #c7E67F2 Yilzetaid Sygma
+(2420,1620) city 5 #c7E67F2 Yilzetaid Sygma
+(3252,5706) city 2 #c7E67F2 Yilzetaid Sygma
+(0774,2154) city 2 #c7E67F2 Yilzetaid Sygma
+(1114,2314) city 2 #c7E67F2 Yilzetaid Sygma
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium

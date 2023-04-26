@@ -1,6 +1,7 @@
 import { getCurrentLanguage } from '../../../../i18n';
+import { serverResults } from './serverResultMaps';
 
-interface IExampleMap {
+interface ISelectableMap {
     name: string;
     url: string;
 }
@@ -93,11 +94,21 @@ export function getExampleMaps() {
     } as const;
 }
 
-export function getTemplateMaps(): IExampleMap[] {
+export function getTemplateMaps(): ISelectableMap[] {
     return [
         createExample({ name: '9000 x 9000', filename: 'template9k.txt' }),
         createExample({ name: '10000 x 10000', filename: 'template10k.txt' }),
     ]
+}
+
+export function getServerResultMaps(): ISelectableMap[] {
+    return serverResults.map((result: [number, string, string, string]) => {
+        const [serverId, serverName, timestamp, filename] = result;
+        return {
+            name: `${serverId} ${serverName} (${timestamp})`,
+            url: window.location.origin + window.location.pathname + 'mapExamples/serverResults/' + filename,
+        };
+    });
 }
 
 interface ICreateExampleArgs {
@@ -109,7 +120,7 @@ interface ICreateExampleArgs {
     }>;
 }
 
-function createExample(args: ICreateExampleArgs): IExampleMap {
+function createExample(args: ICreateExampleArgs): ISelectableMap {
     const { name, filename, translated } = args;
     const language = getCurrentLanguage();
 

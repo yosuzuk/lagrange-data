@@ -1,0 +1,160 @@
+$name 10019 V1064 Lupus
+$serverName V1064 Lupus
+$size 9000
+
+// Rank 1: UNSC (51.8)
+// Rank 2: Орден (48.1)
+
+$station
+(3080,6798) city 5 #c4A99FB Орден
+(2994,8144) city 2 #c4A99FB Орден
+(2944,8554) city 2 #c4A99FB Орден
+(3264,8575) city 2 #c4A99FB Орден
+(3906,5957) city 3 #c4A99FB Орден
+(3694,7804) city 2 #c4A99FB Орден
+(3974,0154) city 2 #c4A99FB Орден
+(4004,7995) city 2 #c4A99FB Орден
+(4084,8675) city 2 #c4A99FB Орден
+(4384,7994) city 2 #c4A99FB Орден
+(4514,8724) city 2 #c4A99FB Орден
+(4974,8694) city 2 #c4A99FB Орден
+(4934,8384) city 2 #c4A99FB Орден
+(5164,8154) city 2 #c4A99FB Орден
+(5298,4057) city 7 #c4A99FB Орден
+(5532,4050) city 5 #c4A99FB Орден
+(5572,3787) city 3 #c4A99FB Орден
+(5196,3898) city 3 #c4A99FB Орден
+(5202,4166) city 7 #c4A99FB Орден
+(5212,2918) city 5 #c4A99FB Орден
+(5490,2718) city 5 #c4A99FB Орден
+(5355,2759) city 5 #c4A99FB Орден
+(5489,2931) city 5 #c4A99FB Орден
+(5374,7774) city 2 #c4A99FB Орден
+(5393,7073) city 7 #c4A99FB Орден
+(5632,7290) city 5 #c4A99FB Орден
+(5451,7267) city 5 #c4A99FB Орден
+(5666,7137) city 3 #c4A99FB Орден
+(5279,7310) city 5 #c4A99FB Орден
+(5789,5231) city 5 #c4A99FB Орден
+(5550,5220) city 5 #c4A99FB Орден
+(5678,5399) city 5 #c4A99FB Орден
+(5752,5469) city 5 #c4A99FB Орден
+(5754,7974) city 2 #c4A99FB Орден
+(5854,7614) city 2 #c4A99FB Орден
+(5866,6162) city 5 #c4A99FB Орден
+(5676,6154) city 5 #c4A99FB Орден
+(5890,6020) city 5 #c4A99FB Орден
+(5854,8474) city 2 #c4A99FB Орден
+(5984,8194) city 2 #c4A99FB Орден
+(6090,3440) city 5 #c4A99FB Орден
+(6065,3318) city 5 #c4A99FB Орден
+(5954,3573) city 5 #c4A99FB Орден
+(6174,8434) city 2 #c4A99FB Орден
+(6406,7442) city 5 #c4A99FB Орден
+(6216,7434) city 5 #c4A99FB Орден
+(6430,7300) city 5 #c4A99FB Орден
+(6252,4238) city 5 #c4A99FB Орден
+(6530,4038) city 5 #c4A99FB Орден
+(6395,4079) city 5 #c4A99FB Орден
+(6529,4251) city 5 #c4A99FB Орден
+(6547,2074) city 5 #c4A99FB Орден
+(6360,2040) city 5 #c4A99FB Орден
+(6424,8354) city 2 #c4A99FB Орден
+(6430,8049) city 3 #c4A99FB Орден
+(6633,3193) city 7 #c4A99FB Орден
+(6872,3410) city 5 #c4A99FB Орден
+(6519,3430) city 5 #c4A99FB Орден
+(6734,7234) city 2 #c4A99FB Орден
+(6814,7914) city 2 #c4A99FB Орден
+(6604,7695) city 2 #c4A99FB Орден
+(6854,6924) city 2 #c4A99FB Орден
+(6812,5718) city 5 #c4A99FB Орден
+(7090,5518) city 5 #c4A99FB Орден
+(6955,5559) city 5 #c4A99FB Орден
+(7089,5731) city 5 #c4A99FB Орден
+(6904,8015) city 2 #c4A99FB Орден
+(7314,6624) city 2 #c4A99FB Орден
+(7314,7564) city 2 #c4A99FB Орден
+(7387,4974) city 5 #c4A99FB Орден
+(7394,4713) city 5 #c4A99FB Орден
+(7200,4940) city 5 #c4A99FB Орден
+(7384,7074) city 2 #c4A99FB Орден
+(7594,6284) city 2 #c4A99FB Орден
+(7444,6755) city 2 #c4A99FB Орден
+(7714,2754) city 2 #c4A99FB Орден
+(7914,6714) city 2 #c4A99FB Орден
+(7904,5074) city 2 #c4A99FB Орден
+(8184,6735) city 2 #c4A99FB Орден
+(1584,6735) city 2 #cE5B36C UNSC
+(1780,5260) city 5 #cE5B36C UNSC
+(2174,7094) city 2 #cE5B36C UNSC
+(2454,7924) city 2 #cE5B36C UNSC
+(2654,0524) city 2 #cE5B36C UNSC
+(0554,2834) city 2 #cE5B36C UNSC
+(2564,8035) city 2 #cE5B36C UNSC
+(2784,1155) city 2 #cE5B36C UNSC
+(2979,6871) city 5 #cE5B36C UNSC
+(3092,6968) city 5 #cE5B36C UNSC
+(0350,4668) city 3 #cE5B36C UNSC
+(2924,0795) city 2 #cE5B36C UNSC
+(3204,1134) city 2 #cE5B36C UNSC
+(3301,4976) city 9 #cE5B36C UNSC
+(3556,5031) city 5 #cE5B36C UNSC
+(0454,6104) city 2 #cE5B36C UNSC
+(3633,5893) city 7 #cE5B36C UNSC
+(3872,6110) city 5 #cE5B36C UNSC
+(3853,4133) city 7 #cE5B36C UNSC
+(4092,4350) city 5 #cE5B36C UNSC
+(3911,4327) city 5 #cE5B36C UNSC
+(4126,4197) city 3 #cE5B36C UNSC
+(3739,4370) city 5 #cE5B36C UNSC
+(4569,1511) city 5 #cE5B36C UNSC
+(4330,1500) city 5 #cE5B36C UNSC
+(4458,1679) city 5 #cE5B36C UNSC
+(4532,1749) city 5 #cE5B36C UNSC
+(0524,2595) city 2 #cE5B36C UNSC
+(0754,3574) city 2 #cE5B36C UNSC
+(0644,6634) city 2 #cE5B36C UNSC
+(0814,4924) city 2 #cE5B36C UNSC
+(0854,2124) city 2 #cE5B36C UNSC
+(0724,6294) city 2 #cE5B36C UNSC
+(0334,3814) city 2 #cE5B36C UNSC
+(0994,4174) city 2 #cE5B36C UNSC
+(0924,3494) city 2 #cE5B36C UNSC
+(1034,2694) city 2 #cE5B36C UNSC
+(0884,4735) city 2 #cE5B36C UNSC
+(1114,1964) city 2 #cE5B36C UNSC
+(1064,5074) city 2 #cE5B36C UNSC
+(1234,6124) city 2 #cE5B36C UNSC
+(1104,6894) city 2 #cE5B36C UNSC
+(1254,1624) city 2 #cE5B36C UNSC
+(1494,1974) city 2 #cE5B36C UNSC
+(1404,6294) city 2 #cE5B36C UNSC
+(1533,3113) city 7 #cE5B36C UNSC
+(1772,3330) city 5 #cE5B36C UNSC
+
+$planet
+(3932,4274) large
+(3892,4336)(3932,4274) small
+(4098,4215)(3932,4274) small
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(3712,6034) large
+(3672,6096)(3712,6034) small
+(3878,5975)(3712,6034) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small
+(5435,4030)(5372,3974) small
+(5169,3916)(5372,3974) small
+(5372,3974) large
+(5551,3802)(5372,3974) small
+(3483,5061)(3375,5089) small
+(3212,5210)(3375,5089) small
+(3421,5093)(3375,5089) small
+(3375,5089) large
+(6712,3334) large
+(6672,3396)(6712,3334) small
+(6878,3275)(6712,3334) small
+(4499,4497) medium

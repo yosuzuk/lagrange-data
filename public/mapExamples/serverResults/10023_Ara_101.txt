@@ -1,0 +1,179 @@
+$name 10023 Ara 101
+$serverName Ara 101
+$size 9000
+
+// Rank 1: Unity (54.0)
+// Rank 2: Infinite Empire (43.7)
+// Rank 3: Gravemind (2.1)
+
+$station
+(1454,6204) city 2 #c4A99FB Infinite Empire
+(2434,7284) city 2 #c4A99FB Infinite Empire
+(2854,1364) city 2 #c4A99FB Infinite Empire
+(2852,6918) city 5 #c4A99FB Infinite Empire
+(3289,4291) city 5 #c4A99FB Infinite Empire
+(3374,7824) city 2 #c4A99FB Infinite Empire
+(3772,7330) city 5 #c4A99FB Infinite Empire
+(3787,7188) city 3 #c4A99FB Infinite Empire
+(3799,7080) city 2 #c4A99FB Infinite Empire
+(3694,7804) city 2 #c4A99FB Infinite Empire
+(4306,2762) city 5 #c4A99FB Infinite Empire
+(4116,2754) city 5 #c4A99FB Infinite Empire
+(4330,2620) city 5 #c4A99FB Infinite Empire
+(4419,1651) city 5 #c4A99FB Infinite Empire
+(4435,1539) city 5 #c4A99FB Infinite Empire
+(4520,1578) city 5 #c4A99FB Infinite Empire
+(4532,1748) city 5 #c4A99FB Infinite Empire
+(4292,4076) city 2 #c4A99FB Infinite Empire
+(4336,3778) city 3 #c4A99FB Infinite Empire
+(4712,3667) city 3 #c4A99FB Infinite Empire
+(4672,3930) city 5 #c4A99FB Infinite Empire
+(5489,2731) city 5 #c4A99FB Infinite Empire
+(5250,2720) city 5 #c4A99FB Infinite Empire
+(5378,2899) city 5 #c4A99FB Infinite Empire
+(5452,2969) city 5 #c4A99FB Infinite Empire
+(5701,4896) city 9 #c4A99FB Infinite Empire
+(5824,1234) city 2 #c4A99FB Infinite Empire
+(6187,3574) city 5 #c4A99FB Infinite Empire
+(6194,3313) city 5 #c4A99FB Infinite Empire
+(6000,3540) city 5 #c4A99FB Infinite Empire
+(6204,1454) city 2 #c4A99FB Infinite Empire
+(6204,1094) city 2 #c4A99FB Infinite Empire
+(6406,7442) city 5 #c4A99FB Infinite Empire
+(6252,4238) city 5 #c4A99FB Infinite Empire
+(6530,4038) city 5 #c4A99FB Infinite Empire
+(6395,4079) city 5 #c4A99FB Infinite Empire
+(6529,4251) city 5 #c4A99FB Infinite Empire
+(6547,2074) city 5 #c4A99FB Infinite Empire
+(6554,1813) city 5 #c4A99FB Infinite Empire
+(6360,2040) city 5 #c4A99FB Infinite Empire
+(6681,3149) city 7 #c4A99FB Infinite Empire
+(6792,3330) city 5 #c4A99FB Infinite Empire
+(6611,3347) city 5 #c4A99FB Infinite Empire
+(6807,3188) city 3 #c4A99FB Infinite Empire
+(6819,3080) city 2 #c4A99FB Infinite Empire
+(6674,0804) city 2 #c4A99FB Infinite Empire
+(6714,0524) city 2 #c4A99FB Infinite Empire
+(6834,1694) city 2 #c4A99FB Infinite Empire
+(7174,0904) city 2 #c4A99FB Infinite Empire
+(7204,2154) city 2 #c4A99FB Infinite Empire
+(7594,1624) city 2 #c4A99FB Infinite Empire
+(7490,1968) city 3 #c4A99FB Infinite Empire
+(7594,2764) city 2 #c4A99FB Infinite Empire
+(7794,1604) city 2 #c4A99FB Infinite Empire
+(7884,3895) city 2 #c4A99FB Infinite Empire
+(8234,1904) city 2 #c4A99FB Infinite Empire
+(8004,4215) city 2 #c4A99FB Infinite Empire
+(8234,2764) city 2 #c4A99FB Infinite Empire
+(8164,2515) city 2 #c4A99FB Infinite Empire
+(8364,4294) city 2 #c4A99FB Infinite Empire
+(8674,3024) city 2 #c4A99FB Infinite Empire
+(8754,3334) city 2 #c4A99FB Infinite Empire
+(8634,3804) city 2 #c4A99FB Infinite Empire
+(8854,4104) city 2 #c4A99FB Infinite Empire
+(1254,5824) city 2 #cE5B36C Unity
+(1926,5522) city 5 #cE5B36C Unity
+(1736,5514) city 5 #cE5B36C Unity
+(1950,5380) city 5 #cE5B36C Unity
+(1930,7808) city 3 #cE5B36C Unity
+(1984,8154) city 2 #cE5B36C Unity
+(2314,1074) city 2 #cE5B36C Unity
+(2224,8055) city 2 #cE5B36C Unity
+(2564,8035) city 2 #cE5B36C Unity
+(3129,6931) city 5 #cE5B36C Unity
+(3114,7804) city 2 #cE5B36C Unity
+(3252,4529) city 5 #cE5B36C Unity
+(3381,1509) city 7 #cE5B36C Unity
+(3492,1690) city 5 #cE5B36C Unity
+(3507,1548) city 3 #cE5B36C Unity
+(3519,1440) city 2 #cE5B36C Unity
+(3374,8464) city 2 #cE5B36C Unity
+(3621,4869) city 7 #cE5B36C Unity
+(3732,5050) city 5 #cE5B36C Unity
+(3551,5067) city 5 #cE5B36C Unity
+(3747,4908) city 3 #cE5B36C Unity
+(3759,4800) city 2 #cE5B36C Unity
+(3661,7149) city 7 #cE5B36C Unity
+(3804,0254) city 2 #cE5B36C Unity
+(4164,0534) city 2 #cE5B36C Unity
+(4304,0174) city 2 #cE5B36C Unity
+(4438,3937) city 7 #cE5B36C Unity
+(4654,0614) city 2 #cE5B36C Unity
+(4673,6013) city 7 #cE5B36C Unity
+(4912,6230) city 5 #cE5B36C Unity
+(4731,6207) city 5 #cE5B36C Unity
+(4946,6077) city 3 #cE5B36C Unity
+(4559,6250) city 5 #cE5B36C Unity
+(4734,0224) city 2 #cE5B36C Unity
+(5014,0534) city 2 #cE5B36C Unity
+(5534,0334) city 2 #cE5B36C Unity
+(5956,4951) city 5 #cE5B36C Unity
+(5573,5106) city 3 #cE5B36C Unity
+(5907,6254) city 5 #cE5B36C Unity
+(5914,5993) city 5 #cE5B36C Unity
+(5720,6220) city 5 #cE5B36C Unity
+(6732,5698) city 5 #cE5B36C Unity
+(6875,5539) city 5 #cE5B36C Unity
+(7009,5711) city 5 #cE5B36C Unity
+(0694,5664) city 2 #cE5B36C Unity
+(7234,6654) city 2 #cE5B36C Unity
+(7364,7054) city 2 #cE5B36C Unity
+(7554,6644) city 2 #cE5B36C Unity
+(7654,6014) city 2 #cE5B36C Unity
+(8044,5515) city 2 #cE5B36C Unity
+(8334,5084) city 2 #cE5B36C Unity
+(8324,4614) city 2 #cE5B36C Unity
+(8399,4838) city 3 #cE5B36C Unity
+(0784,5394) city 2 #cE5B36C Unity
+(0984,6595) city 2 #cE5B36C Unity
+(1104,5594) city 2 #cE5B36C Unity
+(1324,7674) city 2 #cFD7844 Gravemind
+(1734,7424) city 2 #cFD7844 Gravemind
+(1914,7094) city 2 #cFD7844 Gravemind
+(2254,7604) city 2 #cFD7844 Gravemind
+(3914,8334) city 2 #cFD7844 Gravemind
+(4254,8184) city 2 #cFD7844 Gravemind
+(4194,8564) city 2 #cFD7844 Gravemind
+(4384,7994) city 2 #cFD7844 Gravemind
+(4744,8815) city 2 #cFD7844 Gravemind
+(5314,8694) city 2 #cFD7844 Gravemind
+(5334,7744) city 2 #cFD7844 Gravemind
+(5634,8574) city 2 #cFD7844 Gravemind
+(5714,7964) city 2 #cFD7844 Gravemind
+(5784,8574) city 2 #cFD7844 Gravemind
+(6024,8535) city 2 #cFD7844 Gravemind
+(6216,7434) city 5 #cFD7844 Gravemind
+(6430,7300) city 5 #cFD7844 Gravemind
+(6430,8049) city 3 #cFD7844 Gravemind
+(6814,7914) city 2 #cFD7844 Gravemind
+(6754,7594) city 2 #cFD7844 Gravemind
+(7134,7894) city 2 #cFD7844 Gravemind
+(7234,7594) city 2 #cFD7844 Gravemind
+(7464,7674) city 2 #cFD7844 Gravemind
+(1234,7134) city 2 #cFD7844 Gravemind
+
+$planet
+(6592,3356)(6632,3254) small
+(6778,3205)(6632,3254) small
+(6632,3254) large
+(3332,1614) large
+(3292,1716)(3332,1614) small
+(3478,1565)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3612,7254) large
+(3572,7356)(3612,7254) small
+(4691,3682)(4512,3854) small
+(4512,3854) large
+(4575,3910)(4512,3854) small
+(4309,3796)(4512,3854) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5775,5009) large
+(5612,5130)(5775,5009) small
+(4712,6216)(4752,6154) small
+(4918,6095)(4752,6154) small
+(4752,6154) large
+(4499,4497) medium

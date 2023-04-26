@@ -1,0 +1,153 @@
+$name 20001 V1209 Boötes
+$serverName V1209 Boötes
+$size 9000
+
+// Rank 1: Umbrella Corp (23.3)
+// Rank 2: Multi Nation (18.9)
+// Rank 3: Альфа (16.0)
+// Rank 4: Evil Empire (13.8)
+// Rank 5: Alpha (11.6)
+// Rank 6: Sternenmacht (11.6)
+// Rank 7: Snow Devils (2.1)
+// Rank 8: Pirate Life (2.1)
+
+$station
+(2984,6734) city 2 #cE63A3A Alpha
+(3394,6894) city 2 #cE63A3A Alpha
+(3633,8233) city 7 #cE63A3A Alpha
+(3691,8427) city 5 #cE63A3A Alpha
+(3906,8297) city 3 #cE63A3A Alpha
+(3519,8470) city 5 #cE63A3A Alpha
+(4064,6774) city 2 #cE63A3A Alpha
+(4534,6354) city 2 #cE63A3A Alpha
+(4585,8358) city 5 #cE63A3A Alpha
+(4474,8613) city 5 #cE63A3A Alpha
+(4594,6684) city 2 #cE63A3A Alpha
+(4744,6455) city 2 #cE63A3A Alpha
+(5860,7918) city 5 #cE63A3A Alpha
+(5775,7879) city 5 #cE63A3A Alpha
+(5759,7991) city 5 #cE63A3A Alpha
+(7231,6427) city 5 #cE63A3A Alpha
+(7427,6268) city 3 #cE63A3A Alpha
+(7439,6160) city 2 #cE63A3A Alpha
+(7966,6682) city 5 #cE63A3A Alpha
+(7776,6674) city 5 #cE63A3A Alpha
+(7990,6540) city 5 #cE63A3A Alpha
+(2274,4824) city 2 #cE63A3A Alpha
+(4610,8480) city 5 #cFD7844 Альфа
+(5614,6724) city 2 #cFD7844 Альфа
+(7301,6229) city 7 #cFD7844 Альфа
+(7412,6410) city 5 #cFD7844 Альфа
+(8166,2362) city 5 #cFD7844 Альфа
+(7976,2354) city 5 #cFD7844 Альфа
+(8190,2220) city 5 #cFD7844 Альфа
+(8539,4931) city 5 #cFD7844 Альфа
+(8640,4858) city 5 #cFD7844 Альфа
+(8652,5028) city 5 #cFD7844 Альфа
+(3470,3840) city 5 #c7E67F2 Sternenmacht
+(3912,4256) city 2 #c7E67F2 Sternenmacht
+(3956,3958) city 3 #c7E67F2 Sternenmacht
+(4292,4110) city 5 #c7E67F2 Sternenmacht
+(4058,4117) city 7 #c7E67F2 Sternenmacht
+(1218,3157) city 7 #c4A99FB Multi Nation
+(2652,5476) city 2 #c4A99FB Multi Nation
+(3072,5067) city 3 #c4A99FB Multi Nation
+(3032,5330) city 5 #c4A99FB Multi Nation
+(2798,5337) city 7 #c4A99FB Multi Nation
+(2934,5614) city 2 #c4A99FB Multi Nation
+(4029,4691) city 5 #c4A99FB Multi Nation
+(3790,4680) city 5 #c4A99FB Multi Nation
+(3918,4859) city 5 #c4A99FB Multi Nation
+(3992,4929) city 5 #c4A99FB Multi Nation
+(5110,6349) city 3 #c4A99FB Multi Nation
+(5872,8088) city 5 #c4A99FB Multi Nation
+(1592,6670) city 5 #c9FE23E Pirate Life
+(1411,6647) city 5 #c9FE23E Pirate Life
+(1626,6517) city 3 #c9FE23E Pirate Life
+(1704,4914) city 2 #c9FE23E Pirate Life
+(2254,3994) city 2 #c9FE23E Pirate Life
+(2674,6384) city 2 #c49E7C0 Evil Empire
+(2964,6374) city 2 #c49E7C0 Evil Empire
+(3244,6395) city 2 #c49E7C0 Evil Empire
+(3872,8450) city 5 #c49E7C0 Evil Empire
+(1353,6453) city 7 #c49E7C0 Evil Empire
+(1239,6690) city 5 #c49E7C0 Evil Empire
+(0619,4771) city 5 #c49E7C0 Evil Empire
+(2007,7694) city 5 #c49E7C0 Evil Empire
+(2014,7433) city 5 #c49E7C0 Evil Empire
+(1820,7660) city 5 #c49E7C0 Evil Empire
+(1944,5594) city 2 #c49E7C0 Evil Empire
+(2154,3654) city 2 #c49E7C0 Evil Empire
+(0635,4659) city 5 #c49E7C0 Evil Empire
+(2234,6004) city 2 #c49E7C0 Evil Empire
+(0720,4698) city 5 #c49E7C0 Evil Empire
+(2284,5754) city 2 #c49E7C0 Evil Empire
+(0732,4868) city 5 #c49E7C0 Evil Empire
+(2364,4574) city 2 #c49E7C0 Evil Empire
+(2384,4214) city 2 #c49E7C0 Evil Empire
+(2530,3908) city 3 #c49E7C0 Evil Empire
+(1072,3296) city 2 #c49E7C0 Evil Empire
+(1116,2998) city 3 #c49E7C0 Evil Empire
+(2634,5964) city 2 #c49E7C0 Evil Empire
+(3684,2294) city 2 #cF284FF Snow Devils
+(4254,2114) city 2 #cF284FF Snow Devils
+(4924,1894) city 2 #cF284FF Snow Devils
+(6134,6064) city 2 #cF284FF Snow Devils
+(7184,4654) city 2 #cF284FF Snow Devils
+(2330,1240) city 5 #cF284FF Snow Devils
+(2305,1118) city 5 #cF284FF Snow Devils
+(2194,1373) city 5 #cF284FF Snow Devils
+(2774,2284) city 2 #cE5B36C Umbrella Corp
+(1452,3150) city 5 #cE5B36C Umbrella Corp
+(2744,3254) city 2 #cE5B36C Umbrella Corp
+(2824,2055) city 2 #cE5B36C Umbrella Corp
+(3034,2474) city 2 #cE5B36C Umbrella Corp
+(2919,2238) city 3 #cE5B36C Umbrella Corp
+(3264,2294) city 2 #cE5B36C Umbrella Corp
+(3319,3151) city 5 #cE5B36C Umbrella Corp
+(3335,3039) city 5 #cE5B36C Umbrella Corp
+(3420,3077) city 5 #cE5B36C Umbrella Corp
+(3432,3248) city 5 #cE5B36C Umbrella Corp
+(3704,6354) city 2 #cE5B36C Umbrella Corp
+(3894,6734) city 2 #cE5B36C Umbrella Corp
+(5294,2334) city 2 #cE5B36C Umbrella Corp
+(5412,1068) city 5 #cE5B36C Umbrella Corp
+(5400,0898) city 5 #cE5B36C Umbrella Corp
+(5315,0859) city 5 #cE5B36C Umbrella Corp
+(5299,0971) city 5 #cE5B36C Umbrella Corp
+(5259,4658) city 3 #cE5B36C Umbrella Corp
+(5550,2108) city 3 #cE5B36C Umbrella Corp
+(6614,3924) city 2 #cE5B36C Umbrella Corp
+(6999,1199) city 9 #cE5B36C Umbrella Corp
+(7276,1271) city 5 #cE5B36C Umbrella Corp
+(6893,1426) city 3 #cE5B36C Umbrella Corp
+(8555,4819) city 5 #cE5B36C Umbrella Corp
+(1492,2887) city 3 #cE5B36C Umbrella Corp
+
+$planet
+(6932,1450)(7095,1329) small
+(7141,1333)(7095,1329) small
+(7095,1329) large
+(7203,1301)(7095,1329) small
+(1292,3074) large
+(1355,3130)(1292,3074) small
+(1471,2902)(1292,3074) small
+(1089,3016)(1292,3074) small
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4132,4034) large
+(4195,4090)(4132,4034) small
+(3929,3976)(4132,4034) small
+(4311,3862)(4132,4034) small
+(2872,5254) large
+(2935,5310)(2872,5254) small
+(2669,5196)(2872,5254) small
+(3051,5082)(2872,5254) small
+(4499,4497) medium
+(3878,8315)(3712,8374) small
+(3712,8374) large
+(3672,8436)(3712,8374) small
+(1432,6594) large
+(1598,6535)(1432,6594) small
+(1392,6656)(1432,6594) small

@@ -1,0 +1,185 @@
+$name 10126 Lyra 158
+$serverName Lyra 158
+$size 9000
+
+// Rank 1: Terra (51.8)
+// Rank 2: Fairy Tail (45.9)
+
+$station
+(1374,5814) city 2 #c4A99FB Fairy Tail
+(1304,2734) city 2 #c4A99FB Fairy Tail
+(1494,7244) city 2 #c4A99FB Fairy Tail
+(1494,7574) city 2 #c4A99FB Fairy Tail
+(1534,1964) city 2 #c4A99FB Fairy Tail
+(1574,6194) city 2 #c4A99FB Fairy Tail
+(1674,1584) city 2 #c4A99FB Fairy Tail
+(1721,4949) city 7 #c4A99FB Fairy Tail
+(1832,5130) city 5 #c4A99FB Fairy Tail
+(1651,5147) city 5 #c4A99FB Fairy Tail
+(1847,4988) city 3 #c4A99FB Fairy Tail
+(1859,4880) city 2 #c4A99FB Fairy Tail
+(0294,4404) city 2 #c4A99FB Fairy Tail
+(1614,2324) city 2 #c4A99FB Fairy Tail
+(1774,7434) city 2 #c4A99FB Fairy Tail
+(1824,1254) city 2 #c4A99FB Fairy Tail
+(1870,1529) city 3 #c4A99FB Fairy Tail
+(2254,2573) city 5 #c4A99FB Fairy Tail
+(2060,2800) city 5 #c4A99FB Fairy Tail
+(2134,1464) city 2 #c4A99FB Fairy Tail
+(0374,5094) city 2 #c4A99FB Fairy Tail
+(2404,7394) city 2 #c4A99FB Fairy Tail
+(2607,1654) city 5 #c4A99FB Fairy Tail
+(2614,1393) city 5 #c4A99FB Fairy Tail
+(2420,1620) city 5 #c4A99FB Fairy Tail
+(2514,1064) city 2 #c4A99FB Fairy Tail
+(2504,0654) city 2 #c4A99FB Fairy Tail
+(2834,3593) city 5 #c4A99FB Fairy Tail
+(2640,3820) city 5 #c4A99FB Fairy Tail
+(0024,4855) city 2 #c4A99FB Fairy Tail
+(0359,4718) city 3 #c4A99FB Fairy Tail
+(3129,6691) city 5 #c4A99FB Fairy Tail
+(3018,6859) city 5 #c4A99FB Fairy Tail
+(3092,6929) city 5 #c4A99FB Fairy Tail
+(3184,1154) city 2 #c4A99FB Fairy Tail
+(0454,6104) city 2 #c4A99FB Fairy Tail
+(3306,4451) city 5 #c4A99FB Fairy Tail
+(3684,0734) city 2 #c4A99FB Fairy Tail
+(3874,0954) city 2 #c4A99FB Fairy Tail
+(3774,8664) city 2 #c4A99FB Fairy Tail
+(3804,0254) city 2 #c4A99FB Fairy Tail
+(3913,6113) city 7 #c4A99FB Fairy Tail
+(4152,6330) city 5 #c4A99FB Fairy Tail
+(4186,6177) city 3 #c4A99FB Fairy Tail
+(4109,3431) city 5 #c4A99FB Fairy Tail
+(4072,3669) city 5 #c4A99FB Fairy Tail
+(0694,3194) city 2 #c4A99FB Fairy Tail
+(4394,0094) city 2 #c4A99FB Fairy Tail
+(4532,1648) city 5 #c4A99FB Fairy Tail
+(4554,7874) city 2 #c4A99FB Fairy Tail
+(4464,1034) city 2 #c4A99FB Fairy Tail
+(4404,8835) city 2 #c4A99FB Fairy Tail
+(4564,8294) city 2 #c4A99FB Fairy Tail
+(4774,0234) city 2 #c4A99FB Fairy Tail
+(5072,7527) city 3 #c4A99FB Fairy Tail
+(4696,7638) city 3 #c4A99FB Fairy Tail
+(4652,7936) city 2 #c4A99FB Fairy Tail
+(0524,3695) city 2 #c4A99FB Fairy Tail
+(4914,0894) city 2 #c4A99FB Fairy Tail
+(4954,2993) city 5 #c4A99FB Fairy Tail
+(5016,4258) city 3 #c4A99FB Fairy Tail
+(4962,4556) city 2 #c4A99FB Fairy Tail
+(5194,8064) city 2 #c4A99FB Fairy Tail
+(5224,7855) city 2 #c4A99FB Fairy Tail
+(0654,4584) city 2 #c4A99FB Fairy Tail
+(5474,0954) city 2 #c4A99FB Fairy Tail
+(5410,0708) city 3 #c4A99FB Fairy Tail
+(5484,8694) city 2 #c4A99FB Fairy Tail
+(5698,5277) city 7 #c4A99FB Fairy Tail
+(5932,5270) city 5 #c4A99FB Fairy Tail
+(5552,5416) city 2 #c4A99FB Fairy Tail
+(5834,7924) city 2 #c4A99FB Fairy Tail
+(5814,8464) city 2 #c4A99FB Fairy Tail
+(5994,1134) city 2 #c4A99FB Fairy Tail
+(6004,7834) city 2 #c4A99FB Fairy Tail
+(0814,4924) city 2 #c4A99FB Fairy Tail
+(6224,0555) city 2 #c4A99FB Fairy Tail
+(0684,2234) city 2 #c4A99FB Fairy Tail
+(6492,4308) city 5 #c4A99FB Fairy Tail
+(6379,4211) city 5 #c4A99FB Fairy Tail
+(6414,7694) city 2 #c4A99FB Fairy Tail
+(6379,7978) city 3 #c4A99FB Fairy Tail
+(7134,7984) city 2 #c4A99FB Fairy Tail
+(7114,0894) city 2 #c4A99FB Fairy Tail
+(0804,5414) city 2 #c4A99FB Fairy Tail
+(7834,7234) city 2 #c4A99FB Fairy Tail
+(7790,5560) city 5 #c4A99FB Fairy Tail
+(7765,5438) city 5 #c4A99FB Fairy Tail
+(0994,3054) city 2 #c4A99FB Fairy Tail
+(0194,3244) city 2 #c4A99FB Fairy Tail
+(0844,4275) city 2 #c4A99FB Fairy Tail
+(0964,2794) city 2 #c4A99FB Fairy Tail
+(0944,4714) city 2 #c4A99FB Fairy Tail
+(1024,7254) city 2 #c4A99FB Fairy Tail
+(1104,5614) city 2 #c4A99FB Fairy Tail
+(1124,6914) city 2 #c4A99FB Fairy Tail
+(3334,4742) city 9 #cE5B36C Terra
+(4419,1551) city 5 #cE5B36C Terra
+(4798,7797) city 7 #cE5B36C Terra
+(5032,7790) city 5 #cE5B36C Terra
+(4974,8394) city 2 #cE5B36C Terra
+(5090,2860) city 5 #cE5B36C Terra
+(5118,4417) city 7 #cE5B36C Terra
+(5352,4410) city 5 #cE5B36C Terra
+(5392,4147) city 3 #cE5B36C Terra
+(5972,5007) city 3 #cE5B36C Terra
+(5596,5118) city 3 #cE5B36C Terra
+(6472,6768) city 5 #cE5B36C Terra
+(6359,6671) city 5 #cE5B36C Terra
+(6480,4138) city 5 #cE5B36C Terra
+(6573,3013) city 7 #cE5B36C Terra
+(6812,3230) city 5 #cE5B36C Terra
+(6631,3207) city 5 #cE5B36C Terra
+(6846,3077) city 3 #cE5B36C Terra
+(6459,3250) city 5 #cE5B36C Terra
+(6584,7335) city 2 #cE5B36C Terra
+(6754,7594) city 2 #cE5B36C Terra
+(6934,1334) city 2 #cE5B36C Terra
+(6984,7355) city 2 #cE5B36C Terra
+(7286,4282) city 5 #cE5B36C Terra
+(7310,4140) city 5 #cE5B36C Terra
+(7454,6974) city 2 #cE5B36C Terra
+(7364,1315) city 2 #cE5B36C Terra
+(7474,6304) city 2 #cE5B36C Terra
+(7504,6734) city 2 #cE5B36C Terra
+(7544,2854) city 2 #cE5B36C Terra
+(7654,5693) city 5 #cE5B36C Terra
+(7914,1584) city 2 #cE5B36C Terra
+(7934,3104) city 2 #cE5B36C Terra
+(7844,6814) city 2 #cE5B36C Terra
+(7824,6155) city 2 #cE5B36C Terra
+(7924,2354) city 2 #cE5B36C Terra
+(8114,3764) city 2 #cE5B36C Terra
+(8064,2014) city 2 #cE5B36C Terra
+(8354,2744) city 2 #cE5B36C Terra
+(8314,2414) city 2 #cE5B36C Terra
+(8244,5834) city 2 #cE5B36C Terra
+(8184,6815) city 2 #cE5B36C Terra
+(8374,4114) city 2 #cE5B36C Terra
+(8334,5064) city 2 #cE5B36C Terra
+(8344,4634) city 2 #cE5B36C Terra
+(8434,6264) city 2 #cE5B36C Terra
+(8490,4889) city 3 #cE5B36C Terra
+(8604,4254) city 2 #cE5B36C Terra
+(8794,3644) city 2 #cE5B36C Terra
+(8694,3344) city 2 #cE5B36C Terra
+(8774,4494) city 2 #cE5B36C Terra
+(8874,5414) city 2 #cE5B36C Terra
+(8874,5114) city 2 #cE5B36C Terra
+
+$planet
+(4872,7714) large
+(4935,7770)(4872,7714) small
+(5051,7542)(4872,7714) small
+(4669,7656)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(5772,5194) large
+(5569,5136)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5835,5250)(5772,5194) small
+(4989,4276)(5192,4334) small
+(5192,4334) large
+(5371,4162)(5192,4334) small
+(5255,4390)(5192,4334) small
+(1818,5005)(1672,5054) small
+(1672,5054) large
+(1632,5156)(1672,5054) small
+(4499,4497) medium
+(3261,4520)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3459,4632) large

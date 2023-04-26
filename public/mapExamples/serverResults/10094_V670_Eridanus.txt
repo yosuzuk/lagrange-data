@@ -1,0 +1,187 @@
+$name 10094 V670 Eridanus
+$serverName V670 Eridanus
+$size 9000
+
+// Rank 1: The Immortals (55.4)
+// Rank 2: KSF (42.3)
+// Rank 3: GGCompany (2.1)
+
+$station
+(1234,7134) city 2 #cFD7844 GGCompany
+(1324,7674) city 2 #cFD7844 GGCompany
+(1614,2344) city 2 #cFD7844 GGCompany
+(1734,7424) city 2 #cFD7844 GGCompany
+(1914,7094) city 2 #cFD7844 GGCompany
+(0374,5764) city 2 #cFD7844 GGCompany
+(2254,7604) city 2 #cFD7844 GGCompany
+(2434,7284) city 2 #cFD7844 GGCompany
+(2564,8035) city 2 #cFD7844 GGCompany
+(2624,8434) city 2 #cFD7844 GGCompany
+(2985,6738) city 5 #cFD7844 GGCompany
+(2874,6993) city 5 #cFD7844 GGCompany
+(3252,4529) city 5 #cFD7844 GGCompany
+(3374,8464) city 2 #cFD7844 GGCompany
+(3772,4787) city 3 #cFD7844 GGCompany
+(3396,4898) city 3 #cFD7844 GGCompany
+(3494,8144) city 2 #cFD7844 GGCompany
+(6187,3574) city 5 #cFD7844 GGCompany
+(6000,3540) city 5 #cFD7844 GGCompany
+(0584,5055) city 2 #cFD7844 GGCompany
+(0814,5244) city 2 #cFD7844 GGCompany
+(0814,6844) city 2 #cFD7844 GGCompany
+(1034,2694) city 2 #cFD7844 GGCompany
+(0984,6595) city 2 #cFD7844 GGCompany
+(3519,1320) city 2 #c4A99FB KSF
+(3934,8334) city 2 #c4A99FB KSF
+(4292,4076) city 2 #c4A99FB KSF
+(4384,7994) city 2 #c4A99FB KSF
+(4774,0534) city 2 #c4A99FB KSF
+(4744,8815) city 2 #c4A99FB KSF
+(4918,7417) city 7 #c4A99FB KSF
+(5152,7410) city 5 #c4A99FB KSF
+(5192,7147) city 3 #c4A99FB KSF
+(5014,0534) city 2 #c4A99FB KSF
+(5334,7744) city 2 #c4A99FB KSF
+(5534,0334) city 2 #c4A99FB KSF
+(5956,4951) city 5 #c4A99FB KSF
+(5701,4896) city 9 #c4A99FB KSF
+(5907,6254) city 5 #c4A99FB KSF
+(5914,5993) city 5 #c4A99FB KSF
+(5720,6220) city 5 #c4A99FB KSF
+(5824,1234) city 2 #c4A99FB KSF
+(6204,1454) city 2 #c4A99FB KSF
+(6204,1094) city 2 #c4A99FB KSF
+(6406,7442) city 5 #c4A99FB KSF
+(6216,7434) city 5 #c4A99FB KSF
+(6430,7300) city 5 #c4A99FB KSF
+(6466,4222) city 5 #c4A99FB KSF
+(6276,4214) city 5 #c4A99FB KSF
+(6490,4080) city 5 #c4A99FB KSF
+(6547,2074) city 5 #c4A99FB KSF
+(6554,1813) city 5 #c4A99FB KSF
+(6430,8049) city 3 #c4A99FB KSF
+(6674,0804) city 2 #c4A99FB KSF
+(6741,3089) city 7 #c4A99FB KSF
+(6671,3287) city 5 #c4A99FB KSF
+(6814,7914) city 2 #c4A99FB KSF
+(6714,0524) city 2 #c4A99FB KSF
+(6754,7594) city 2 #c4A99FB KSF
+(6890,5640) city 5 #c4A99FB KSF
+(6754,5773) city 5 #c4A99FB KSF
+(7134,7894) city 2 #c4A99FB KSF
+(7174,0904) city 2 #c4A99FB KSF
+(7214,7574) city 2 #c4A99FB KSF
+(7364,7054) city 2 #c4A99FB KSF
+(7464,7674) city 2 #c4A99FB KSF
+(7834,7234) city 2 #c4A99FB KSF
+(7994,6694) city 2 #c4A99FB KSF
+(7974,2244) city 2 #c4A99FB KSF
+(7924,7135) city 2 #c4A99FB KSF
+(1104,5594) city 2 #cE5B36C The Immortals
+(1254,5824) city 2 #cE5B36C The Immortals
+(1454,2654) city 2 #cE5B36C The Immortals
+(1424,2074) city 2 #cE5B36C The Immortals
+(1493,3633) city 7 #cE5B36C The Immortals
+(1732,3850) city 5 #cE5B36C The Immortals
+(1551,3827) city 5 #cE5B36C The Immortals
+(1766,3697) city 3 #cE5B36C The Immortals
+(1379,3870) city 5 #cE5B36C The Immortals
+(1454,6204) city 2 #cE5B36C The Immortals
+(1574,1644) city 2 #cE5B36C The Immortals
+(0294,4294) city 2 #cE5B36C The Immortals
+(1926,5522) city 5 #cE5B36C The Immortals
+(1736,5514) city 5 #cE5B36C The Immortals
+(1950,5380) city 5 #cE5B36C The Immortals
+(1874,2024) city 2 #cE5B36C The Immortals
+(1910,7808) city 3 #cE5B36C The Immortals
+(1984,8154) city 2 #cE5B36C The Immortals
+(2194,1434) city 2 #cE5B36C The Immortals
+(2314,1074) city 2 #cE5B36C The Immortals
+(2224,8055) city 2 #cE5B36C The Immortals
+(2534,0544) city 2 #cE5B36C The Immortals
+(0454,5074) city 2 #cE5B36C The Immortals
+(0254,4724) city 2 #cE5B36C The Immortals
+(2854,1364) city 2 #cE5B36C The Immortals
+(3010,6860) city 5 #cE5B36C The Immortals
+(3114,7804) city 2 #cE5B36C The Immortals
+(3289,4291) city 5 #cE5B36C The Immortals
+(3050,4280) city 5 #cE5B36C The Immortals
+(3178,4459) city 5 #cE5B36C The Immortals
+(0339,4618) city 3 #cE5B36C The Immortals
+(3381,1389) city 7 #cE5B36C The Immortals
+(3492,1570) city 5 #cE5B36C The Immortals
+(3311,1587) city 5 #cE5B36C The Immortals
+(3507,1428) city 3 #cE5B36C The Immortals
+(3374,7824) city 2 #cE5B36C The Immortals
+(3498,5057) city 7 #cE5B36C The Immortals
+(3732,5050) city 5 #cE5B36C The Immortals
+(3352,5196) city 2 #cE5B36C The Immortals
+(3694,7804) city 2 #cE5B36C The Immortals
+(4254,8184) city 2 #cE5B36C The Immortals
+(0614,3214) city 2 #cE5B36C The Immortals
+(4154,8524) city 2 #cE5B36C The Immortals
+(4306,2762) city 5 #cE5B36C The Immortals
+(4116,2754) city 5 #cE5B36C The Immortals
+(4330,2620) city 5 #cE5B36C The Immortals
+(4360,1740) city 5 #cE5B36C The Immortals
+(4438,3937) city 7 #cE5B36C The Immortals
+(4672,3930) city 5 #cE5B36C The Immortals
+(4712,3667) city 3 #cE5B36C The Immortals
+(0524,2595) city 2 #cE5B36C The Immortals
+(4816,7258) city 3 #cE5B36C The Immortals
+(4772,7556) city 2 #cE5B36C The Immortals
+(5314,8694) city 2 #cE5B36C The Immortals
+(5467,2994) city 5 #cE5B36C The Immortals
+(5474,2733) city 5 #cE5B36C The Immortals
+(5280,2960) city 5 #cE5B36C The Immortals
+(0604,4354) city 2 #cE5B36C The Immortals
+(5634,8574) city 2 #cE5B36C The Immortals
+(5573,5106) city 3 #cE5B36C The Immortals
+(5654,7984) city 2 #cE5B36C The Immortals
+(5784,8574) city 2 #cE5B36C The Immortals
+(6194,3313) city 5 #cE5B36C The Immortals
+(0674,5584) city 2 #cE5B36C The Immortals
+(6024,8535) city 2 #cE5B36C The Immortals
+(6360,2040) city 5 #cE5B36C The Immortals
+(6852,3270) city 5 #cE5B36C The Immortals
+(6867,3128) city 3 #cE5B36C The Immortals
+(6834,1694) city 2 #cE5B36C The Immortals
+(0690,2808) city 3 #cE5B36C The Immortals
+(7594,1624) city 2 #cE5B36C The Immortals
+(7490,1968) city 3 #cE5B36C The Immortals
+(7594,2764) city 2 #cE5B36C The Immortals
+(7794,1604) city 2 #cE5B36C The Immortals
+(8234,1904) city 2 #cE5B36C The Immortals
+(8164,2595) city 2 #cE5B36C The Immortals
+(0924,4274) city 2 #cE5B36C The Immortals
+(0944,2435) city 2 #cE5B36C The Immortals
+(1114,1964) city 2 #cE5B36C The Immortals
+(1114,4944) city 2 #cE5B36C The Immortals
+
+$planet
+(1532,3836)(1572,3774) small
+(1738,3715)(1572,3774) small
+(1572,3774) large
+(3369,4916)(3572,4974) small
+(3572,4974) large
+(3635,5030)(3572,4974) small
+(3751,4802)(3572,4974) small
+(5055,7390)(4992,7334) small
+(4789,7276)(4992,7334) small
+(5171,7162)(4992,7334) small
+(4992,7334) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(5775,5009) large
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5612,5130)(5775,5009) small
+(4499,4497) medium
+(3332,1494) large
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small
+(6838,3145)(6692,3194) small
+(6652,3296)(6692,3194) small
+(6692,3194) large

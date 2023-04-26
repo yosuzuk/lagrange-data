@@ -1,0 +1,190 @@
+$name 10017 Cepheus AZ
+$serverName Cepheus AZ
+$size 9000
+
+// Rank 1: Gate Defender (30.6)
+// Rank 3: Deutsche Union (11.6)
+// Rank 4: Nuke (11.6)
+// Rank 5: bundschuh (11.6)
+// Rank 6: Germany City (10.9)
+// Rank 7: NUKE 2 (2.1)
+
+$station
+(0254,4284) city 2 #cE5B36C Gate Defender
+(2247,2834) city 5 #cE5B36C Gate Defender
+(2254,2573) city 5 #cE5B36C Gate Defender
+(0374,5094) city 2 #cE5B36C Gate Defender
+(2827,3854) city 5 #cE5B36C Gate Defender
+(2834,3593) city 5 #cE5B36C Gate Defender
+(2640,3820) city 5 #cE5B36C Gate Defender
+(0024,4855) city 2 #cE5B36C Gate Defender
+(2890,6680) city 5 #cE5B36C Gate Defender
+(0359,4718) city 3 #cE5B36C Gate Defender
+(3586,4496) city 5 #cE5B36C Gate Defender
+(3306,4451) city 5 #cE5B36C Gate Defender
+(3334,4742) city 9 #cE5B36C Gate Defender
+(0454,6104) city 2 #cE5B36C Gate Defender
+(4278,5179) city 5 #cE5B36C Gate Defender
+(4150,5000) city 5 #cE5B36C Gate Defender
+(4389,5011) city 5 #cE5B36C Gate Defender
+(0524,3695) city 2 #cE5B36C Gate Defender
+(0654,4584) city 2 #cE5B36C Gate Defender
+(0814,4924) city 2 #cE5B36C Gate Defender
+(0804,5414) city 2 #cE5B36C Gate Defender
+(0844,4275) city 2 #cE5B36C Gate Defender
+(0944,4714) city 2 #cE5B36C Gate Defender
+(1044,7254) city 2 #cE5B36C Gate Defender
+(1104,5614) city 2 #cE5B36C Gate Defender
+(1124,6914) city 2 #cE5B36C Gate Defender
+(1374,5814) city 2 #cE5B36C Gate Defender
+(1574,6194) city 2 #cE5B36C Gate Defender
+(1721,4949) city 7 #cE5B36C Gate Defender
+(1832,5130) city 5 #cE5B36C Gate Defender
+(1651,5147) city 5 #cE5B36C Gate Defender
+(1847,4988) city 3 #cE5B36C Gate Defender
+(1859,4880) city 2 #cE5B36C Gate Defender
+(3913,6113) city 7 #c49E7C0 Nuke
+(3971,6307) city 5 #c49E7C0 Nuke
+(5072,7527) city 3 #c49E7C0 Nuke
+(5214,8064) city 2 #c49E7C0 Nuke
+(5224,7855) city 2 #c49E7C0 Nuke
+(5484,8694) city 2 #c49E7C0 Nuke
+(5834,7944) city 2 #c49E7C0 Nuke
+(5814,8464) city 2 #c49E7C0 Nuke
+(6004,7834) city 2 #c49E7C0 Nuke
+(6472,6768) city 5 #c49E7C0 Nuke
+(6359,6671) city 5 #c49E7C0 Nuke
+(6414,7694) city 2 #c49E7C0 Nuke
+(6379,7978) city 3 #c49E7C0 Nuke
+(6584,7335) city 2 #c49E7C0 Nuke
+(6754,7594) city 2 #c49E7C0 Nuke
+(7134,7884) city 2 #c49E7C0 Nuke
+(6984,7355) city 2 #c49E7C0 Nuke
+(7454,6974) city 2 #c49E7C0 Nuke
+(7834,7234) city 2 #c49E7C0 Nuke
+(7790,5560) city 5 #c49E7C0 Nuke
+(1734,1624) city 2 #c7E67F2 Germany City
+(1614,2324) city 2 #c7E67F2 Germany City
+(1824,1214) city 2 #c7E67F2 Germany City
+(1810,1469) city 3 #c7E67F2 Germany City
+(2094,1444) city 2 #c7E67F2 Germany City
+(2060,2800) city 5 #c7E67F2 Germany City
+(2314,1064) city 2 #c7E67F2 Germany City
+(2607,1654) city 5 #c7E67F2 Germany City
+(2614,1393) city 5 #c7E67F2 Germany City
+(2420,1620) city 5 #c7E67F2 Germany City
+(2504,0654) city 2 #c7E67F2 Germany City
+(3184,1114) city 2 #c7E67F2 Germany City
+(3764,0714) city 2 #c7E67F2 Germany City
+(4109,3431) city 5 #c7E67F2 Germany City
+(3998,3599) city 5 #c7E67F2 Germany City
+(0694,3194) city 2 #c7E67F2 Germany City
+(4435,1439) city 5 #c7E67F2 Germany City
+(4419,1551) city 5 #c7E67F2 Germany City
+(7310,4140) city 5 #c7E67F2 Germany City
+(0684,2234) city 2 #c7E67F2 Germany City
+(0994,3054) city 2 #c7E67F2 Germany City
+(0964,2794) city 2 #c7E67F2 Germany City
+(0234,3364) city 2 #c7E67F2 Germany City
+(1304,2734) city 2 #c7E67F2 Germany City
+(1574,1944) city 2 #c7E67F2 Germany City
+(1694,7744) city 2 #cFD7844 Deutsche Union
+(1774,7434) city 2 #cFD7844 Deutsche Union
+(1904,8155) city 2 #cFD7844 Deutsche Union
+(1939,7698) city 3 #cFD7844 Deutsche Union
+(2224,7714) city 2 #cFD7844 Deutsche Union
+(2454,7924) city 2 #cFD7844 Deutsche Union
+(2404,7394) city 2 #cFD7844 Deutsche Union
+(3129,6691) city 5 #cFD7844 Deutsche Union
+(3018,6859) city 5 #cFD7844 Deutsche Union
+(3092,6929) city 5 #cFD7844 Deutsche Union
+(2964,8574) city 2 #cFD7844 Deutsche Union
+(3774,8664) city 2 #cFD7844 Deutsche Union
+(4314,8554) city 2 #cFD7844 Deutsche Union
+(4352,5249) city 5 #cFD7844 Deutsche Union
+(4554,7874) city 2 #cFD7844 Deutsche Union
+(4404,8835) city 2 #cFD7844 Deutsche Union
+(4564,8414) city 2 #cFD7844 Deutsche Union
+(4798,7797) city 7 #cFD7844 Deutsche Union
+(5032,7790) city 5 #cFD7844 Deutsche Union
+(4696,7638) city 3 #cFD7844 Deutsche Union
+(4702,7906) city 2 #cFD7844 Deutsche Union
+(4702,7906) city 7 #cFD7844 Deutsche Union
+(4974,8394) city 2 #cFD7844 Deutsche Union
+(1494,7574) city 2 #cFD7844 Deutsche Union
+(1534,7244) city 2 #cFD7844 Deutsche Union
+(5090,2860) city 5 #cE63A3A bundschuh
+(5065,2738) city 5 #cE63A3A bundschuh
+(4954,2993) city 5 #cE63A3A bundschuh
+(5118,4417) city 7 #cE63A3A bundschuh
+(5022,4526) city 7 #cE63A3A bundschuh
+(5932,5270) city 5 #cE63A3A bundschuh
+(5596,5118) city 3 #cE63A3A bundschuh
+(5994,1134) city 2 #cE63A3A bundschuh
+(6224,0575) city 2 #cE63A3A bundschuh
+(6934,1334) city 2 #cE63A3A bundschuh
+(4152,6330) city 5 #cF284FF NUKE 2
+(4186,6177) city 3 #cF284FF NUKE 2
+(3799,6350) city 5 #cF284FF NUKE 2
+(6460,6598) city 5 #cF284FF NUKE 2
+(6375,6559) city 5 #cF284FF NUKE 2
+(7474,6304) city 2 #cF284FF NUKE 2
+(7504,6734) city 2 #cF284FF NUKE 2
+(7844,6814) city 2 #cF284FF NUKE 2
+(7824,6155) city 2 #cF284FF NUKE 2
+(8184,6735) city 2 #cF284FF NUKE 2
+(8434,6224) city 2 #cF284FF NUKE 2
+
+$planet
+(5255,4390)(5192,4334) small
+(5255,4390)(5192,4334) small
+(4989,4276)(5192,4334) small
+(4989,4276)(5192,4334) small
+(5192,4334) large
+(5192,4334)(5192,4334) small
+(5371,4162)(5192,4334) small
+(5371,4162)(5192,4334) small
+(4872,7714) large
+(4872,7714)(4872,7714) small
+(4935,7770)(4872,7714) small
+(4935,7770)(4872,7714) small
+(5051,7542)(4872,7714) small
+(5051,7542)(4872,7714) small
+(4669,7656)(4872,7714) small
+(4669,7656)(4872,7714) small
+(6652,3154) large
+(6652,3154)(6652,3154) small
+(6612,3216)(6652,3154) small
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(3992,6254)(3992,6254) small
+(4158,6195)(3992,6254) small
+(4158,6195)(3992,6254) small
+(5772,5194) large
+(5772,5194)(5772,5194) small
+(5569,5136)(5772,5194) small
+(5569,5136)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5835,5250)(5772,5194) small
+(5835,5250)(5772,5194) small
+(1818,5005)(1672,5054) small
+(1818,5005)(1672,5054) small
+(1672,5054) large
+(1672,5054)(1672,5054) small
+(1632,5156)(1672,5054) small
+(1632,5156)(1672,5054) small
+(4499,4497) large
+(4499,4497)(4499,4497) small
+(3261,4520)(3459,4632) small
+(3261,4520)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3459,4632) large
+(3459,4632)(3459,4632) small

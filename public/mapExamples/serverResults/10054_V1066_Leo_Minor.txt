@@ -1,0 +1,175 @@
+$name 10054 V1066 Leo Minor
+$serverName V1066 Leo Minor
+$size 9000
+
+// Rank 1: Hellas (58.3)
+// Rank 2: Pax Mundi (41.6)
+
+$station
+(1304,2734) city 2 #cE5B36C Hellas
+(1494,7574) city 2 #cE5B36C Hellas
+(1534,7244) city 2 #cE5B36C Hellas
+(1574,1944) city 2 #cE5B36C Hellas
+(1574,6194) city 2 #cE5B36C Hellas
+(1721,4949) city 7 #cE5B36C Hellas
+(1832,5130) city 5 #cE5B36C Hellas
+(1847,4988) city 3 #cE5B36C Hellas
+(1859,4880) city 2 #cE5B36C Hellas
+(1734,1624) city 2 #cE5B36C Hellas
+(0254,4284) city 2 #cE5B36C Hellas
+(1614,2324) city 2 #cE5B36C Hellas
+(1694,7744) city 2 #cE5B36C Hellas
+(1774,7434) city 2 #cE5B36C Hellas
+(1824,1214) city 2 #cE5B36C Hellas
+(1810,1469) city 3 #cE5B36C Hellas
+(1904,8155) city 2 #cE5B36C Hellas
+(1939,7698) city 3 #cE5B36C Hellas
+(0024,4855) city 2 #cE5B36C Hellas
+(2094,1444) city 2 #cE5B36C Hellas
+(2247,2834) city 5 #cE5B36C Hellas
+(2254,2573) city 5 #cE5B36C Hellas
+(2060,2800) city 5 #cE5B36C Hellas
+(2314,1064) city 2 #cE5B36C Hellas
+(0374,5094) city 2 #cE5B36C Hellas
+(2224,7714) city 2 #cE5B36C Hellas
+(2454,7924) city 2 #cE5B36C Hellas
+(2404,7394) city 2 #cE5B36C Hellas
+(2607,1654) city 5 #cE5B36C Hellas
+(2614,1393) city 5 #cE5B36C Hellas
+(2420,1620) city 5 #cE5B36C Hellas
+(2504,0654) city 2 #cE5B36C Hellas
+(2640,3820) city 5 #cE5B36C Hellas
+(3129,6691) city 5 #cE5B36C Hellas
+(3092,6929) city 5 #cE5B36C Hellas
+(0359,4718) city 3 #cE5B36C Hellas
+(2964,8574) city 2 #cE5B36C Hellas
+(3184,1114) city 2 #cE5B36C Hellas
+(3334,4742) city 9 #cE5B36C Hellas
+(3306,4451) city 5 #cE5B36C Hellas
+(0454,6104) city 2 #cE5B36C Hellas
+(3774,8664) city 2 #cE5B36C Hellas
+(3824,0274) city 2 #cE5B36C Hellas
+(3913,6113) city 7 #cE5B36C Hellas
+(4152,6330) city 5 #cE5B36C Hellas
+(3971,6307) city 5 #cE5B36C Hellas
+(4186,6177) city 3 #cE5B36C Hellas
+(3799,6350) city 5 #cE5B36C Hellas
+(4109,3431) city 5 #cE5B36C Hellas
+(3870,3420) city 5 #cE5B36C Hellas
+(0694,3194) city 2 #cE5B36C Hellas
+(4314,8554) city 2 #cE5B36C Hellas
+(4352,5249) city 5 #cE5B36C Hellas
+(4278,5179) city 5 #cE5B36C Hellas
+(4150,5000) city 5 #cE5B36C Hellas
+(4389,5011) city 5 #cE5B36C Hellas
+(4394,0094) city 2 #cE5B36C Hellas
+(4554,7874) city 2 #cE5B36C Hellas
+(4404,8835) city 2 #cE5B36C Hellas
+(4564,8414) city 2 #cE5B36C Hellas
+(4652,7936) city 2 #cE5B36C Hellas
+(4696,7638) city 3 #cE5B36C Hellas
+(5072,7527) city 3 #cE5B36C Hellas
+(5032,7790) city 5 #cE5B36C Hellas
+(4798,7797) city 7 #cE5B36C Hellas
+(0524,3695) city 2 #cE5B36C Hellas
+(4974,8394) city 2 #cE5B36C Hellas
+(5214,8064) city 2 #cE5B36C Hellas
+(5224,7855) city 2 #cE5B36C Hellas
+(0654,4584) city 2 #cE5B36C Hellas
+(5484,8694) city 2 #cE5B36C Hellas
+(5834,7944) city 2 #cE5B36C Hellas
+(5814,8464) city 2 #cE5B36C Hellas
+(6004,7834) city 2 #cE5B36C Hellas
+(6414,7694) city 2 #cE5B36C Hellas
+(0814,4924) city 2 #cE5B36C Hellas
+(6754,7594) city 2 #cE5B36C Hellas
+(0684,2234) city 2 #cE5B36C Hellas
+(7824,6155) city 2 #cE5B36C Hellas
+(0804,5414) city 2 #cE5B36C Hellas
+(0994,3054) city 2 #cE5B36C Hellas
+(0844,4275) city 2 #cE5B36C Hellas
+(0964,2794) city 2 #cE5B36C Hellas
+(0944,4714) city 2 #cE5B36C Hellas
+(1044,7254) city 2 #cE5B36C Hellas
+(0234,3364) city 2 #cE5B36C Hellas
+(1104,5614) city 2 #cE5B36C Hellas
+(1124,6914) city 2 #cE5B36C Hellas
+(1374,5814) city 2 #cE5B36C Hellas
+(4532,1648) city 5 #c4A99FB Pax Mundi
+(4520,1478) city 5 #c4A99FB Pax Mundi
+(4435,1439) city 5 #c4A99FB Pax Mundi
+(4419,1551) city 5 #c4A99FB Pax Mundi
+(4464,1034) city 2 #c4A99FB Pax Mundi
+(5090,2860) city 5 #c4A99FB Pax Mundi
+(5065,2738) city 5 #c4A99FB Pax Mundi
+(4954,2993) city 5 #c4A99FB Pax Mundi
+(5016,4258) city 3 #c4A99FB Pax Mundi
+(5392,4147) city 3 #c4A99FB Pax Mundi
+(5352,4410) city 5 #c4A99FB Pax Mundi
+(5118,4417) city 7 #c4A99FB Pax Mundi
+(5552,5416) city 2 #c4A99FB Pax Mundi
+(5972,5007) city 3 #c4A99FB Pax Mundi
+(5932,5270) city 5 #c4A99FB Pax Mundi
+(5698,5277) city 7 #c4A99FB Pax Mundi
+(6359,6671) city 5 #c4A99FB Pax Mundi
+(6492,4308) city 5 #c4A99FB Pax Mundi
+(6480,4138) city 5 #c4A99FB Pax Mundi
+(6395,4099) city 5 #c4A99FB Pax Mundi
+(6379,4211) city 5 #c4A99FB Pax Mundi
+(6573,3013) city 7 #c4A99FB Pax Mundi
+(6812,3230) city 5 #c4A99FB Pax Mundi
+(6631,3207) city 5 #c4A99FB Pax Mundi
+(6846,3077) city 3 #c4A99FB Pax Mundi
+(6459,3250) city 5 #c4A99FB Pax Mundi
+(6934,1334) city 2 #c4A99FB Pax Mundi
+(7094,0934) city 2 #c4A99FB Pax Mundi
+(7286,4282) city 5 #c4A99FB Pax Mundi
+(7310,4140) city 5 #c4A99FB Pax Mundi
+(7344,1435) city 2 #c4A99FB Pax Mundi
+(7474,6304) city 2 #c4A99FB Pax Mundi
+(7544,2854) city 2 #c4A99FB Pax Mundi
+(7790,5560) city 5 #c4A99FB Pax Mundi
+(7914,1584) city 2 #c4A99FB Pax Mundi
+(7934,3104) city 2 #c4A99FB Pax Mundi
+(7924,2354) city 2 #c4A99FB Pax Mundi
+(8114,3764) city 2 #c4A99FB Pax Mundi
+(8064,2014) city 2 #c4A99FB Pax Mundi
+(8354,2744) city 2 #c4A99FB Pax Mundi
+(8314,2414) city 2 #c4A99FB Pax Mundi
+(8454,5064) city 2 #c4A99FB Pax Mundi
+(8344,4634) city 2 #c4A99FB Pax Mundi
+(8454,4214) city 2 #c4A99FB Pax Mundi
+(8530,4929) city 3 #c4A99FB Pax Mundi
+(8634,3364) city 2 #c4A99FB Pax Mundi
+(8754,3784) city 2 #c4A99FB Pax Mundi
+(8684,4214) city 2 #c4A99FB Pax Mundi
+(8774,4494) city 2 #c4A99FB Pax Mundi
+(8874,5114) city 2 #c4A99FB Pax Mundi
+
+$planet
+(4872,7714) large
+(4935,7770)(4872,7714) small
+(5051,7542)(4872,7714) small
+(4669,7656)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(5772,5194) large
+(5569,5136)(5772,5194) small
+(5951,5022)(5772,5194) small
+(5835,5250)(5772,5194) small
+(4989,4276)(5192,4334) small
+(5192,4334) large
+(5371,4162)(5192,4334) small
+(5255,4390)(5192,4334) small
+(1818,5005)(1672,5054) small
+(1672,5054) large
+(1632,5156)(1672,5054) small
+(4499,4497) medium
+(3261,4520)(3459,4632) small
+(3474,4723)(3459,4632) small
+(3622,4520)(3459,4632) small
+(3459,4632) large

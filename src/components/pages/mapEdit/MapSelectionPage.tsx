@@ -9,7 +9,7 @@ import { LoadMapFromUrl } from './LoadMapFromUrl';
 import { routes } from '../../../utils/routes';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { useMemo } from 'react';
-import { getExampleMaps, getTemplateMaps } from './examples/examplesMaps';
+import { getExampleMaps, getServerResultMaps, getTemplateMaps } from './examples/examplesMaps';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { t } from '../../../i18n';
 
@@ -24,6 +24,7 @@ const MapSelectionPage = () => {
 
     const examples = useMemo(() => Object.values(getExampleMaps()), []);
     const templates = useMemo(() => getTemplateMaps(), []);
+    const serverResults = useMemo(() => Object.values(getServerResultMaps()).reverse(), []);
 
     return (
         <>
@@ -73,6 +74,20 @@ const MapSelectionPage = () => {
                                             </ScriptedLink>
                                         ))}
                                         <Typography variant="body2" color="text.secondary">{t('mapEdit.sizeCanBeAdjustedBrackets')}</Typography>
+                                    </Stack>
+                                ),
+                                initiallyOpened: false,
+                            },
+                            {
+                                id: 'serverResults',
+                                summary: t('mapEdit.openServerResultMap'),
+                                details: (
+                                    <Stack spacing={1}>
+                                        {serverResults.map(serverResult => (
+                                            <ScriptedLink key={serverResult.url} onClick={() => navigateToMap(serverResult.url)}>
+                                                {serverResult.name}
+                                            </ScriptedLink>
+                                        ))}
                                     </Stack>
                                 ),
                                 initiallyOpened: false,

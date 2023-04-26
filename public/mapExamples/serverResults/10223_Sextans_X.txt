@@ -1,0 +1,181 @@
+$name 10223 Sextans X
+$serverName Sextans X
+$size 9000
+
+// Rank 1: Enders (42.3)
+// Rank 2: 大夏星联 (18.2)
+// Rank 3: The Syndicate (16.0)
+// Rank 6: Galactic Empire (2.1)
+// Rank 7: Terra (2.1)
+
+$station
+(1204,5914) city 2 #cE5B36C Enders
+(2434,7284) city 2 #cE5B36C Enders
+(3289,4291) city 5 #cE5B36C Enders
+(3050,4280) city 5 #cE5B36C Enders
+(3178,4459) city 5 #cE5B36C Enders
+(3252,4529) city 5 #cE5B36C Enders
+(3519,1320) city 2 #cE5B36C Enders
+(3414,0664) city 2 #cE5B36C Enders
+(3621,4869) city 7 #cE5B36C Enders
+(3732,5050) city 5 #cE5B36C Enders
+(3551,5067) city 5 #cE5B36C Enders
+(3747,4908) city 3 #cE5B36C Enders
+(3759,4800) city 2 #cE5B36C Enders
+(3814,0624) city 2 #cE5B36C Enders
+(3974,0144) city 2 #cE5B36C Enders
+(4438,3937) city 7 #cE5B36C Enders
+(4672,3930) city 5 #cE5B36C Enders
+(4712,3667) city 3 #cE5B36C Enders
+(4336,3778) city 3 #cE5B36C Enders
+(4292,4076) city 2 #cE5B36C Enders
+(4534,0934) city 2 #cE5B36C Enders
+(4854,0204) city 2 #cE5B36C Enders
+(5167,7268) city 3 #cE5B36C Enders
+(5179,7160) city 2 #cE5B36C Enders
+(5374,7754) city 2 #cE5B36C Enders
+(5384,1034) city 2 #cE5B36C Enders
+(5926,4816) city 5 #cE5B36C Enders
+(5646,4771) city 5 #cE5B36C Enders
+(5673,5054) city 9 #cE5B36C Enders
+(5914,5993) city 5 #cE5B36C Enders
+(5894,0784) city 2 #cE5B36C Enders
+(6187,3574) city 5 #cE5B36C Enders
+(6194,3313) city 5 #cE5B36C Enders
+(6000,3540) city 5 #cE5B36C Enders
+(6274,1354) city 2 #cE5B36C Enders
+(6466,4222) city 5 #cE5B36C Enders
+(6276,4214) city 5 #cE5B36C Enders
+(6490,4080) city 5 #cE5B36C Enders
+(6547,2074) city 5 #cE5B36C Enders
+(6554,1813) city 5 #cE5B36C Enders
+(6892,3007) city 3 #cE5B36C Enders
+(6516,3118) city 3 #cE5B36C Enders
+(6472,3406) city 2 #cE5B36C Enders
+(6584,7335) city 2 #cE5B36C Enders
+(6814,7904) city 2 #cE5B36C Enders
+(6854,1354) city 2 #cE5B36C Enders
+(6894,2044) city 2 #cE5B36C Enders
+(7254,1394) city 2 #cE5B36C Enders
+(7444,6755) city 2 #cE5B36C Enders
+(7479,1958) city 3 #cE5B36C Enders
+(7744,1694) city 2 #cE5B36C Enders
+(7794,1924) city 2 #cE5B36C Enders
+(0814,6214) city 2 #cE5B36C Enders
+(7974,2244) city 2 #cE5B36C Enders
+(8034,4594) city 2 #cE5B36C Enders
+(8074,4254) city 2 #cE5B36C Enders
+(8114,1924) city 2 #cE5B36C Enders
+(8244,2594) city 2 #cE5B36C Enders
+(8304,4314) city 2 #cE5B36C Enders
+(8754,3284) city 2 #cE5B36C Enders
+(8734,4154) city 2 #cE5B36C Enders
+(1094,6484) city 2 #cE5B36C Enders
+(0124,3475) city 2 #c7E67F2 Galactic Empire
+(1424,2074) city 2 #c7E67F2 Galactic Empire
+(1732,3850) city 5 #c7E67F2 Galactic Empire
+(1551,3867) city 5 #c7E67F2 Galactic Empire
+(1747,3708) city 3 #c7E67F2 Galactic Empire
+(1759,3600) city 2 #c7E67F2 Galactic Empire
+(1634,1294) city 2 #c7E67F2 Galactic Empire
+(1524,1734) city 2 #c7E67F2 Galactic Empire
+(1504,2455) city 2 #c7E67F2 Galactic Empire
+(1974,1084) city 2 #c7E67F2 Galactic Empire
+(1874,2024) city 2 #c7E67F2 Galactic Empire
+(2314,1074) city 2 #c7E67F2 Galactic Empire
+(0224,5195) city 2 #c7E67F2 Galactic Empire
+(2534,0544) city 2 #c7E67F2 Galactic Empire
+(2804,1454) city 2 #c7E67F2 Galactic Empire
+(3134,0644) city 2 #c7E67F2 Galactic Empire
+(0134,4744) city 2 #c7E67F2 Galactic Empire
+(0304,2935) city 2 #c7E67F2 Galactic Empire
+(3311,1587) city 5 #c7E67F2 Galactic Empire
+(3507,1428) city 3 #c7E67F2 Galactic Empire
+(0390,4689) city 3 #c7E67F2 Galactic Empire
+(0524,2595) city 2 #c7E67F2 Galactic Empire
+(0674,4254) city 2 #c7E67F2 Galactic Empire
+(0544,4695) city 2 #c7E67F2 Galactic Empire
+(0679,2798) city 3 #c7E67F2 Galactic Empire
+(0814,5244) city 2 #c7E67F2 Galactic Empire
+(0944,4714) city 2 #c7E67F2 Galactic Empire
+(1154,1974) city 2 #c7E67F2 Galactic Empire
+(5720,6220) city 5 #cF284FF Terra
+(6756,5674) city 5 #cF284FF Terra
+(4250,2720) city 5 #c4A99FB 大夏星联
+(5280,2960) city 5 #c4A99FB 大夏星联
+(6454,7273) city 5 #c4A99FB 大夏星联
+(6360,2040) city 5 #c4A99FB 大夏星联
+(6618,3277) city 7 #c4A99FB 大夏星联
+(6852,3270) city 5 #c4A99FB 大夏星联
+(6970,5540) city 5 #c4A99FB 大夏星联
+(6804,7014) city 2 #c4A99FB 大夏星联
+(7294,7554) city 2 #c4A99FB 大夏星联
+(7514,6314) city 2 #c4A99FB 大夏星联
+(7614,7544) city 2 #c4A99FB 大夏星联
+(7874,6704) city 2 #c4A99FB 大夏星联
+(8054,6024) city 2 #c4A99FB 大夏星联
+(8054,6344) city 2 #c4A99FB 大夏星联
+(8074,7034) city 2 #c4A99FB 大夏星联
+(8154,5404) city 2 #c4A99FB 大夏星联
+(8334,5704) city 2 #c4A99FB 大夏星联
+(8454,5064) city 2 #c4A99FB 大夏星联
+(8344,4654) city 2 #c4A99FB 大夏星联
+(8424,6374) city 2 #c4A99FB 大夏星联
+(8399,4838) city 3 #c4A99FB 大夏星联
+(8594,5734) city 2 #c4A99FB 大夏星联
+(8714,2674) city 2 #c4A99FB 大夏星联
+(1514,6934) city 2 #cFD7844 The Syndicate
+(1694,7744) city 2 #cFD7844 The Syndicate
+(1967,5614) city 5 #cFD7844 The Syndicate
+(1974,5353) city 5 #cFD7844 The Syndicate
+(1780,5580) city 5 #cFD7844 The Syndicate
+(1899,7798) city 3 #cFD7844 The Syndicate
+(2014,8044) city 2 #cFD7844 The Syndicate
+(3010,6860) city 5 #cFD7844 The Syndicate
+(2985,6738) city 5 #cFD7844 The Syndicate
+(2874,6993) city 5 #cFD7844 The Syndicate
+(3494,8144) city 2 #cFD7844 The Syndicate
+(3934,8324) city 2 #cFD7844 The Syndicate
+(0554,6094) city 2 #cFD7844 The Syndicate
+(4004,7995) city 2 #cFD7844 The Syndicate
+(4124,8634) city 2 #cFD7844 The Syndicate
+(4634,8714) city 2 #cFD7844 The Syndicate
+(5041,7229) city 7 #cFD7844 The Syndicate
+(5152,7410) city 5 #cFD7844 The Syndicate
+(4971,7427) city 5 #cFD7844 The Syndicate
+(5084,8815) city 2 #cFD7844 The Syndicate
+(6074,7734) city 2 #cFD7844 The Syndicate
+(6254,8414) city 2 #cFD7844 The Syndicate
+(6447,7534) city 5 #cFD7844 The Syndicate
+(6260,7500) city 5 #cFD7844 The Syndicate
+(6344,7794) city 2 #cFD7844 The Syndicate
+(0714,5594) city 2 #cFD7844 The Syndicate
+(6430,8049) city 3 #cFD7844 The Syndicate
+(0704,6955) city 2 #cFD7844 The Syndicate
+
+$planet
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(1532,3876)(1572,3774) small
+(1572,3774) large
+(1718,3725)(1572,3774) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(6871,3022)(6692,3194) small
+(6755,3250)(6692,3194) small
+(6692,3194) large
+(6489,3136)(6692,3194) small
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4952,7436)(4992,7334) small
+(5138,7285)(4992,7334) small
+(4992,7334) large
+(4499,4497) medium
+(3332,1494) large
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small

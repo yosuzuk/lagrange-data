@@ -1,0 +1,131 @@
+$name 10190 Corona Australis 118
+$serverName Corona Australis 118
+$size 9000
+
+// Rank 1: TerraCorp (53.2)
+// Rank 2: ARMADA (46.7)
+
+$station
+(1684,7514) city 2 #c4A99FB ARMADA
+(2374,7954) city 2 #c4A99FB ARMADA
+(3129,6691) city 5 #c4A99FB ARMADA
+(3018,6859) city 5 #c4A99FB ARMADA
+(3354,1044) city 2 #c4A99FB ARMADA
+(3339,4559) city 9 #c4A99FB ARMADA
+(3233,4786) city 3 #c4A99FB ARMADA
+(4186,6177) city 3 #c4A99FB ARMADA
+(3799,6350) city 5 #c4A99FB ARMADA
+(3975,3459) city 5 #c4A99FB ARMADA
+(3959,3571) city 5 #c4A99FB ARMADA
+(4064,7974) city 2 #c4A99FB ARMADA
+(4174,8214) city 2 #c4A99FB ARMADA
+(4554,7874) city 2 #c4A99FB ARMADA
+(4484,0714) city 2 #c4A99FB ARMADA
+(4921,7609) city 7 #c4A99FB ARMADA
+(5047,7648) city 3 #c4A99FB ARMADA
+(5059,7540) city 2 #c4A99FB ARMADA
+(5090,2860) city 5 #c4A99FB ARMADA
+(5065,2738) city 5 #c4A99FB ARMADA
+(4954,2993) city 5 #c4A99FB ARMADA
+(5113,4193) city 7 #c4A99FB ARMADA
+(5352,4410) city 5 #c4A99FB ARMADA
+(5386,4257) city 3 #c4A99FB ARMADA
+(5194,8064) city 2 #c4A99FB ARMADA
+(5932,5270) city 5 #c4A99FB ARMADA
+(5751,5287) city 5 #c4A99FB ARMADA
+(5947,5128) city 3 #c4A99FB ARMADA
+(5959,5020) city 2 #c4A99FB ARMADA
+(5934,8444) city 2 #c4A99FB ARMADA
+(6509,6531) city 5 #c4A99FB ARMADA
+(6270,6520) city 5 #c4A99FB ARMADA
+(6398,6699) city 5 #c4A99FB ARMADA
+(6472,6769) city 5 #c4A99FB ARMADA
+(6529,4271) city 5 #c4A99FB ARMADA
+(6494,7664) city 2 #c4A99FB ARMADA
+(6379,7978) city 3 #c4A99FB ARMADA
+(6834,7564) city 2 #c4A99FB ARMADA
+(6974,6904) city 2 #c4A99FB ARMADA
+(7164,6754) city 2 #c4A99FB ARMADA
+(7144,7675) city 2 #c4A99FB ARMADA
+(7554,6644) city 2 #c4A99FB ARMADA
+(7734,5974) city 2 #c4A99FB ARMADA
+(7714,7244) city 2 #c4A99FB ARMADA
+(7790,5560) city 5 #c4A99FB ARMADA
+(7765,5438) city 5 #c4A99FB ARMADA
+(7654,5693) city 5 #c4A99FB ARMADA
+(7994,6694) city 2 #c4A99FB ARMADA
+(7844,5095) city 2 #c4A99FB ARMADA
+(7924,7135) city 2 #c4A99FB ARMADA
+(8264,6814) city 2 #c4A99FB ARMADA
+(8794,5434) city 2 #c4A99FB ARMADA
+(1593,4913) city 7 #cE5B36C TerraCorp
+(1832,5130) city 5 #cE5B36C TerraCorp
+(2150,2700) city 5 #cE5B36C TerraCorp
+(2730,3720) city 5 #cE5B36C TerraCorp
+(2960,1920) city 5 #cE5B36C TerraCorp
+(3616,4631) city 5 #cE5B36C TerraCorp
+(3913,6113) city 7 #cE5B36C TerraCorp
+(4152,6330) city 5 #cE5B36C TerraCorp
+(4389,5011) city 5 #cE5B36C TerraCorp
+(4419,1551) city 5 #cE5B36C TerraCorp
+(4774,0234) city 2 #cE5B36C TerraCorp
+(5032,7790) city 5 #cE5B36C TerraCorp
+(5404,1054) city 2 #cE5B36C TerraCorp
+(5444,0414) city 2 #cE5B36C TerraCorp
+(5821,5089) city 7 #cE5B36C TerraCorp
+(5744,0894) city 2 #cE5B36C TerraCorp
+(6204,1094) city 2 #cE5B36C TerraCorp
+(6252,4258) city 5 #cE5B36C TerraCorp
+(6530,4058) city 5 #cE5B36C TerraCorp
+(6395,4099) city 5 #cE5B36C TerraCorp
+(6573,3013) city 7 #cE5B36C TerraCorp
+(6812,3230) city 5 #cE5B36C TerraCorp
+(6846,3077) city 3 #cE5B36C TerraCorp
+(6664,0614) city 2 #cE5B36C TerraCorp
+(6814,1344) city 2 #cE5B36C TerraCorp
+(7024,0974) city 2 #cE5B36C TerraCorp
+(7274,1364) city 2 #cE5B36C TerraCorp
+(7327,4374) city 5 #cE5B36C TerraCorp
+(7140,4340) city 5 #cE5B36C TerraCorp
+(7514,1214) city 2 #cE5B36C TerraCorp
+(7914,1584) city 2 #cE5B36C TerraCorp
+(7764,2034) city 2 #cE5B36C TerraCorp
+(7934,3114) city 2 #cE5B36C TerraCorp
+(8054,2804) city 2 #cE5B36C TerraCorp
+(7884,3895) city 2 #cE5B36C TerraCorp
+(7944,4674) city 2 #cE5B36C TerraCorp
+(8154,4204) city 2 #cE5B36C TerraCorp
+(8124,3534) city 2 #cE5B36C TerraCorp
+(8284,3874) city 2 #cE5B36C TerraCorp
+(8284,4194) city 2 #cE5B36C TerraCorp
+(8334,5064) city 2 #cE5B36C TerraCorp
+(8439,4818) city 3 #cE5B36C TerraCorp
+(8774,4144) city 2 #cE5B36C TerraCorp
+(8644,3774) city 2 #cE5B36C TerraCorp
+(8644,3434) city 2 #cE5B36C TerraCorp
+(8954,5094) city 2 #cE5B36C TerraCorp
+
+$planet
+(5192,4334) large
+(5152,4396)(5192,4334) small
+(5358,4275)(5192,4334) small
+(5018,7665)(4872,7714) small
+(4832,7816)(4872,7714) small
+(4872,7714) large
+(3272,4810)(3435,4689) small
+(3435,4689) large
+(3481,4693)(3435,4689) small
+(3543,4661)(3435,4689) small
+(4158,6195)(3992,6254) small
+(3992,6254) large
+(3952,6316)(3992,6254) small
+(4499,4497) medium
+(5918,5145)(5772,5194) small
+(5772,5194) large
+(5732,5296)(5772,5194) small
+(1672,5054) large
+(1838,4995)(1672,5054) small
+(1632,5116)(1672,5054) small
+(6818,3095)(6652,3154) small
+(6612,3216)(6652,3154) small
+(6652,3154) large

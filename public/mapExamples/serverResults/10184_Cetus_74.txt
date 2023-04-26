@@ -1,0 +1,170 @@
+$name 10184 Cetus 74
+$serverName Cetus 74
+$size 9000
+
+// Rank 1: ALL IN (56.2)
+// Rank 2: Origin (11.6)
+// Rank 3: 승리호 (11.6)
+// Rank 4: 神隱流派 (10.9)
+
+$station
+(1494,7254) city 2 #c4A99FB Origin
+(1474,6924) city 2 #c4A99FB Origin
+(1593,4913) city 7 #c4A99FB Origin
+(1832,5130) city 5 #c4A99FB Origin
+(1651,5107) city 5 #c4A99FB Origin
+(1866,4977) city 3 #c4A99FB Origin
+(1479,5150) city 5 #c4A99FB Origin
+(1684,7514) city 2 #c4A99FB Origin
+(1939,7698) city 3 #c4A99FB Origin
+(2730,3720) city 5 #c4A99FB Origin
+(2594,3853) city 5 #c4A99FB Origin
+(0370,4728) city 3 #c4A99FB Origin
+(3018,6859) city 5 #c4A99FB Origin
+(0494,6114) city 2 #c4A99FB Origin
+(0784,6954) city 2 #c4A99FB Origin
+(1074,7164) city 2 #c4A99FB Origin
+(1114,6444) city 2 #c4A99FB Origin
+(1044,6915) city 2 #c4A99FB Origin
+(0334,4414) city 2 #cE5B36C ALL IN
+(0224,5195) city 2 #cE5B36C ALL IN
+(3129,6691) city 5 #cE5B36C ALL IN
+(2890,6680) city 5 #cE5B36C ALL IN
+(3092,6929) city 5 #cE5B36C ALL IN
+(3339,4559) city 9 #cE5B36C ALL IN
+(3233,4786) city 3 #cE5B36C ALL IN
+(3494,7804) city 2 #cE5B36C ALL IN
+(3724,8754) city 2 #cE5B36C ALL IN
+(3934,8324) city 2 #cE5B36C ALL IN
+(3913,6113) city 7 #cE5B36C ALL IN
+(4152,6330) city 5 #cE5B36C ALL IN
+(4186,6177) city 3 #cE5B36C ALL IN
+(4314,8554) city 2 #cE5B36C ALL IN
+(4584,8314) city 2 #cE5B36C ALL IN
+(5059,7540) city 2 #cE5B36C ALL IN
+(5090,2860) city 5 #cE5B36C ALL IN
+(5065,2738) city 5 #cE5B36C ALL IN
+(4954,2993) city 5 #cE5B36C ALL IN
+(5352,4410) city 5 #cE5B36C ALL IN
+(5386,4257) city 3 #cE5B36C ALL IN
+(5821,5089) city 7 #cE5B36C ALL IN
+(5932,5270) city 5 #cE5B36C ALL IN
+(5947,5128) city 3 #cE5B36C ALL IN
+(5959,5020) city 2 #cE5B36C ALL IN
+(0814,4924) city 2 #cE5B36C ALL IN
+(6509,6531) city 5 #cE5B36C ALL IN
+(6270,6520) city 5 #cE5B36C ALL IN
+(6398,6699) city 5 #cE5B36C ALL IN
+(6472,6769) city 5 #cE5B36C ALL IN
+(6252,4258) city 5 #cE5B36C ALL IN
+(6530,4058) city 5 #cE5B36C ALL IN
+(6395,4099) city 5 #cE5B36C ALL IN
+(6529,4271) city 5 #cE5B36C ALL IN
+(6573,3013) city 7 #cE5B36C ALL IN
+(6812,3230) city 5 #cE5B36C ALL IN
+(6846,3077) city 3 #cE5B36C ALL IN
+(6834,7564) city 2 #cE5B36C ALL IN
+(7024,0974) city 2 #cE5B36C ALL IN
+(7274,1364) city 2 #cE5B36C ALL IN
+(7144,7675) city 2 #cE5B36C ALL IN
+(0954,5294) city 2 #cE5B36C ALL IN
+(7514,1214) city 2 #cE5B36C ALL IN
+(7554,6644) city 2 #cE5B36C ALL IN
+(7734,5974) city 2 #cE5B36C ALL IN
+(7714,7244) city 2 #cE5B36C ALL IN
+(7790,5560) city 5 #cE5B36C ALL IN
+(7765,5438) city 5 #cE5B36C ALL IN
+(7654,5693) city 5 #cE5B36C ALL IN
+(7934,3114) city 2 #cE5B36C ALL IN
+(8054,2804) city 2 #cE5B36C ALL IN
+(7884,3895) city 2 #cE5B36C ALL IN
+(7944,4674) city 2 #cE5B36C ALL IN
+(8154,4204) city 2 #cE5B36C ALL IN
+(7924,7135) city 2 #cE5B36C ALL IN
+(8124,3534) city 2 #cE5B36C ALL IN
+(8284,3874) city 2 #cE5B36C ALL IN
+(8284,4194) city 2 #cE5B36C ALL IN
+(8334,5064) city 2 #cE5B36C ALL IN
+(8534,2724) city 2 #cE5B36C ALL IN
+(8439,4818) city 3 #cE5B36C ALL IN
+(8774,4144) city 2 #cE5B36C ALL IN
+(8644,3774) city 2 #cE5B36C ALL IN
+(8644,3434) city 2 #cE5B36C ALL IN
+(8794,5434) city 2 #cE5B36C ALL IN
+(8954,5094) city 2 #cE5B36C ALL IN
+(1464,1374) city 2 #cFD7844 승리호
+(1504,2435) city 2 #cFD7844 승리호
+(1830,1468) city 3 #cFD7844 승리호
+(2150,2700) city 5 #cFD7844 승리호
+(2125,2578) city 5 #cFD7844 승리호
+(2174,7094) city 2 #cFD7844 승리호
+(2705,3598) city 5 #cFD7844 승리호
+(0544,3314) city 2 #cFD7844 승리호
+(4150,5000) city 5 #cFD7844 승리호
+(4921,7609) city 7 #cFD7844 승리호
+(5032,7790) city 5 #cFD7844 승리호
+(4851,7807) city 5 #cFD7844 승리호
+(5047,7648) city 3 #cFD7844 승리호
+(0634,4244) city 2 #cFD7844 승리호
+(0994,2684) city 2 #cFD7844 승리호
+(1394,2284) city 2 #cFD7844 승리호
+(1974,1124) city 2 #c49E7C0 神隱流派
+(2014,2833) city 5 #c49E7C0 神隱流派
+(2084,1195) city 2 #c49E7C0 神隱流派
+(2514,1064) city 2 #c49E7C0 神隱流派
+(2484,0634) city 2 #c49E7C0 神隱流派
+(2824,1154) city 2 #c49E7C0 神隱流派
+(3147,1954) city 5 #c49E7C0 神隱流派
+(3154,1693) city 5 #c49E7C0 神隱流派
+(2960,1920) city 5 #c49E7C0 神隱流派
+(3094,0684) city 2 #c49E7C0 神隱流派
+(3354,1044) city 2 #c49E7C0 神隱流派
+(3616,4631) city 5 #c49E7C0 神隱流派
+(3534,0694) city 2 #c49E7C0 神隱流派
+(3784,0234) city 2 #c49E7C0 神隱流派
+(4072,3668) city 5 #c49E7C0 神隱流派
+(4060,3498) city 5 #c49E7C0 神隱流派
+(3975,3459) city 5 #c49E7C0 神隱流派
+(3959,3571) city 5 #c49E7C0 神隱流派
+(4352,5249) city 5 #c49E7C0 神隱流派
+(4278,5179) city 5 #c49E7C0 神隱流派
+(4389,5011) city 5 #c49E7C0 神隱流派
+(4354,0084) city 2 #c49E7C0 神隱流派
+(4532,1648) city 5 #c49E7C0 神隱流派
+(4520,1478) city 5 #c49E7C0 神隱流派
+(4435,1439) city 5 #c49E7C0 神隱流派
+(4419,1551) city 5 #c49E7C0 神隱流派
+(4484,0714) city 2 #c49E7C0 神隱流派
+(4774,0234) city 2 #c49E7C0 神隱流派
+(5214,0574) city 2 #c49E7C0 神隱流派
+(5404,1054) city 2 #c49E7C0 神隱流派
+(5444,0414) city 2 #c49E7C0 神隱流派
+(5399,0698) city 3 #c49E7C0 神隱流派
+(5744,0894) city 2 #c49E7C0 神隱流派
+(6204,1094) city 2 #c49E7C0 神隱流派
+(6664,0614) city 2 #c49E7C0 神隱流派
+
+$planet
+(4872,7714) large
+(4832,7816)(4872,7714) small
+(5018,7665)(4872,7714) small
+(6652,3154) large
+(6612,3216)(6652,3154) small
+(6818,3095)(6652,3154) small
+(3952,6316)(3992,6254) small
+(3992,6254) large
+(4158,6195)(3992,6254) small
+(3543,4661)(3435,4689) small
+(3481,4693)(3435,4689) small
+(3435,4689) large
+(3272,4810)(3435,4689) small
+(5358,4275)(5192,4334) small
+(5152,4396)(5192,4334) small
+(5192,4334) large
+(1632,5116)(1672,5054) small
+(1838,4995)(1672,5054) small
+(1672,5054) large
+(5732,5296)(5772,5194) small
+(5772,5194) large
+(5918,5145)(5772,5194) small
+(4499,4497) medium

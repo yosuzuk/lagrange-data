@@ -1,0 +1,188 @@
+$name 10115 V1396 Dorado
+$serverName V1396 Dorado
+$size 9000
+
+// Rank 1: 노바1492 (54.0)
+// Rank 2: Galactic Union (21.1)
+// Rank 3: Phantom beast (11.6)
+// Rank 4: aegis (10.9)
+// Rank 5: NIGHTSHADE (2.1)
+
+$station
+(4438,3937) city 7 #c4A99FB Galactic Union
+(4672,3930) city 5 #c4A99FB Galactic Union
+(6000,3540) city 5 #c4A99FB Galactic Union
+(6681,3149) city 7 #c4A99FB Galactic Union
+(6792,3330) city 5 #c4A99FB Galactic Union
+(6611,3347) city 5 #c4A99FB Galactic Union
+(6807,3188) city 3 #c4A99FB Galactic Union
+(6819,3080) city 2 #c4A99FB Galactic Union
+(7234,6654) city 2 #c4A99FB Galactic Union
+(7554,6644) city 2 #c4A99FB Galactic Union
+(7594,2764) city 2 #c4A99FB Galactic Union
+(7654,6014) city 2 #c4A99FB Galactic Union
+(7834,7234) city 2 #c4A99FB Galactic Union
+(7994,6694) city 2 #c4A99FB Galactic Union
+(7974,6054) city 2 #c4A99FB Galactic Union
+(7884,3895) city 2 #c4A99FB Galactic Union
+(7924,7135) city 2 #c4A99FB Galactic Union
+(8044,5515) city 2 #c4A99FB Galactic Union
+(8234,2764) city 2 #c4A99FB Galactic Union
+(8294,5744) city 2 #c4A99FB Galactic Union
+(8334,5084) city 2 #c4A99FB Galactic Union
+(8324,4614) city 2 #c4A99FB Galactic Union
+(8364,4294) city 2 #c4A99FB Galactic Union
+(8399,4838) city 3 #c4A99FB Galactic Union
+(8674,3024) city 2 #c4A99FB Galactic Union
+(8634,3804) city 2 #c4A99FB Galactic Union
+(8854,4104) city 2 #c4A99FB Galactic Union
+(8834,5104) city 2 #c4A99FB Galactic Union
+(1044,6595) city 2 #cE63A3A NIGHTSHADE
+(1324,7674) city 2 #cE63A3A NIGHTSHADE
+(1454,6204) city 2 #cE63A3A NIGHTSHADE
+(1734,7424) city 2 #cE63A3A NIGHTSHADE
+(1914,7094) city 2 #cE63A3A NIGHTSHADE
+(1926,5522) city 5 #cE63A3A NIGHTSHADE
+(1736,5514) city 5 #cE63A3A NIGHTSHADE
+(1950,5380) city 5 #cE63A3A NIGHTSHADE
+(1984,8154) city 2 #cE63A3A NIGHTSHADE
+(0414,5074) city 2 #cE63A3A NIGHTSHADE
+(2254,7604) city 2 #cE63A3A NIGHTSHADE
+(2224,8055) city 2 #cE63A3A NIGHTSHADE
+(2434,7284) city 2 #cE63A3A NIGHTSHADE
+(2484,8394) city 2 #cE63A3A NIGHTSHADE
+(0454,5784) city 2 #cE63A3A NIGHTSHADE
+(2564,8115) city 2 #cE63A3A NIGHTSHADE
+(3114,7804) city 2 #cE63A3A NIGHTSHADE
+(3050,4280) city 5 #cE63A3A NIGHTSHADE
+(3178,4459) city 5 #cE63A3A NIGHTSHADE
+(3252,4529) city 5 #cE63A3A NIGHTSHADE
+(3374,7824) city 2 #cE63A3A NIGHTSHADE
+(3374,8444) city 2 #cE63A3A NIGHTSHADE
+(3747,4908) city 3 #cE63A3A NIGHTSHADE
+(3759,4800) city 2 #cE63A3A NIGHTSHADE
+(4559,6250) city 5 #cE63A3A NIGHTSHADE
+(5534,0334) city 2 #cE63A3A NIGHTSHADE
+(5824,1234) city 2 #cE63A3A NIGHTSHADE
+(6164,1114) city 2 #cE63A3A NIGHTSHADE
+(6204,1454) city 2 #cE63A3A NIGHTSHADE
+(0694,5664) city 2 #cE63A3A NIGHTSHADE
+(6674,0804) city 2 #cE63A3A NIGHTSHADE
+(6714,0524) city 2 #cE63A3A NIGHTSHADE
+(6994,0844) city 2 #cE63A3A NIGHTSHADE
+(0814,6844) city 2 #cE63A3A NIGHTSHADE
+(0834,5324) city 2 #cE63A3A NIGHTSHADE
+(8234,1864) city 2 #cE63A3A NIGHTSHADE
+(1114,4984) city 2 #cE63A3A NIGHTSHADE
+(1234,7134) city 2 #cE63A3A NIGHTSHADE
+(1104,5594) city 2 #cE63A3A NIGHTSHADE
+(1930,7808) city 3 #cE5B36C 노바1492
+(3129,6931) city 5 #cE5B36C 노바1492
+(3289,4291) city 5 #cE5B36C 노바1492
+(3381,1509) city 7 #cE5B36C 노바1492
+(3492,1690) city 5 #cE5B36C 노바1492
+(3311,1707) city 5 #cE5B36C 노바1492
+(3507,1548) city 3 #cE5B36C 노바1492
+(0339,4658) city 3 #cE5B36C 노바1492
+(3661,7149) city 7 #cE5B36C 노바1492
+(3772,7330) city 5 #cE5B36C 노바1492
+(3591,7347) city 5 #cE5B36C 노바1492
+(3787,7188) city 3 #cE5B36C 노바1492
+(3799,7080) city 2 #cE5B36C 노바1492
+(3694,7804) city 2 #cE5B36C 노바1492
+(4306,2762) city 5 #cE5B36C 노바1492
+(4116,2754) city 5 #cE5B36C 노바1492
+(4330,2620) city 5 #cE5B36C 노바1492
+(4419,1651) city 5 #cE5B36C 노바1492
+(4435,1539) city 5 #cE5B36C 노바1492
+(4520,1578) city 5 #cE5B36C 노바1492
+(4532,1748) city 5 #cE5B36C 노바1492
+(4673,6013) city 7 #cE5B36C 노바1492
+(4912,6230) city 5 #cE5B36C 노바1492
+(4731,6207) city 5 #cE5B36C 노바1492
+(4946,6077) city 3 #cE5B36C 노바1492
+(5452,2969) city 5 #cE5B36C 노바1492
+(5956,4951) city 5 #cE5B36C 노바1492
+(5573,5106) city 3 #cE5B36C 노바1492
+(5701,4896) city 9 #cE5B36C 노바1492
+(3814,8254) city 2 #c49E7C0 aegis
+(4254,8184) city 2 #c49E7C0 aegis
+(4384,7994) city 2 #c49E7C0 aegis
+(5314,8694) city 2 #c49E7C0 aegis
+(5489,2731) city 5 #c49E7C0 aegis
+(5334,7744) city 2 #c49E7C0 aegis
+(5634,8574) city 2 #c49E7C0 aegis
+(5694,7924) city 2 #c49E7C0 aegis
+(5907,6254) city 5 #c49E7C0 aegis
+(5914,5993) city 5 #c49E7C0 aegis
+(5720,6220) city 5 #c49E7C0 aegis
+(5784,8574) city 2 #c49E7C0 aegis
+(6187,3574) city 5 #c49E7C0 aegis
+(6194,3313) city 5 #c49E7C0 aegis
+(6024,8535) city 2 #c49E7C0 aegis
+(6406,7442) city 5 #c49E7C0 aegis
+(6216,7434) city 5 #c49E7C0 aegis
+(6430,7300) city 5 #c49E7C0 aegis
+(6252,4238) city 5 #c49E7C0 aegis
+(6529,4251) city 5 #c49E7C0 aegis
+(6430,8049) city 3 #c49E7C0 aegis
+(6814,7914) city 2 #c49E7C0 aegis
+(6754,7594) city 2 #c49E7C0 aegis
+(6732,5698) city 5 #c49E7C0 aegis
+(7010,5498) city 5 #c49E7C0 aegis
+(6875,5539) city 5 #c49E7C0 aegis
+(7009,5711) city 5 #c49E7C0 aegis
+(7134,8054) city 2 #c49E7C0 aegis
+(7254,7554) city 2 #c49E7C0 aegis
+(7394,6964) city 2 #c49E7C0 aegis
+(7504,7674) city 2 #c49E7C0 aegis
+(1254,5824) city 2 #cFD7844 Phantom beast
+(3214,1064) city 2 #cFD7844 Phantom beast
+(3519,1440) city 2 #cFD7844 Phantom beast
+(3621,4869) city 7 #cFD7844 Phantom beast
+(3732,5050) city 5 #cFD7844 Phantom beast
+(3804,0254) city 2 #cFD7844 Phantom beast
+(4164,0534) city 2 #cFD7844 Phantom beast
+(4304,0174) city 2 #cFD7844 Phantom beast
+(4712,3667) city 3 #cFD7844 Phantom beast
+(4654,0614) city 2 #cFD7844 Phantom beast
+(4734,0224) city 2 #cFD7844 Phantom beast
+(5134,0534) city 2 #cFD7844 Phantom beast
+(5250,2720) city 5 #cFD7844 Phantom beast
+(6530,4038) city 5 #cFD7844 Phantom beast
+(6395,4079) city 5 #cFD7844 Phantom beast
+(6547,2074) city 5 #cFD7844 Phantom beast
+(6554,1813) city 5 #cFD7844 Phantom beast
+(6360,2040) city 5 #cFD7844 Phantom beast
+(6834,1694) city 2 #cFD7844 Phantom beast
+(7204,2154) city 2 #cFD7844 Phantom beast
+(7594,1624) city 2 #cFD7844 Phantom beast
+(7490,1968) city 3 #cFD7844 Phantom beast
+(7794,1604) city 2 #cFD7844 Phantom beast
+(8164,2515) city 2 #cFD7844 Phantom beast
+
+$planet
+(4752,6154) large
+(4712,6216)(4752,6154) small
+(4918,6095)(4752,6154) small
+(6632,3254) large
+(6592,3356)(6632,3254) small
+(6778,3205)(6632,3254) small
+(3332,1614) large
+(3292,1716)(3332,1614) small
+(3478,1565)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3612,7254) large
+(3572,7356)(3612,7254) small
+(4691,3682)(4512,3854) small
+(4512,3854) large
+(4575,3910)(4512,3854) small
+(4309,3796)(4512,3854) small
+(5883,4981)(5775,5009) small
+(5821,5013)(5775,5009) small
+(5775,5009) large
+(5612,5130)(5775,5009) small
+(4499,4497) medium

@@ -1,0 +1,157 @@
+$name 10259 V1254 Orion
+$serverName V1254 Orion
+$size 9000
+
+// Rank 1: AVALON (30.6)
+// Rank 2: Titans (16.0)
+// Rank 4: IronPlanet (13.8)
+// Rank 5: We The Fallen (10.9)
+
+$station
+(3289,4291) city 5 #cE5B36C AVALON
+(3178,4459) city 5 #cE5B36C AVALON
+(3381,1389) city 7 #cE5B36C AVALON
+(3414,0664) city 2 #cE5B36C AVALON
+(3621,4869) city 7 #cE5B36C AVALON
+(3732,5050) city 5 #cE5B36C AVALON
+(3747,4908) city 3 #cE5B36C AVALON
+(3759,4800) city 2 #cE5B36C AVALON
+(4250,2720) city 5 #cE5B36C AVALON
+(4292,4076) city 2 #cE5B36C AVALON
+(4534,0934) city 2 #cE5B36C AVALON
+(4854,0204) city 2 #cE5B36C AVALON
+(5280,2960) city 5 #cE5B36C AVALON
+(5384,1034) city 2 #cE5B36C AVALON
+(0674,4254) city 2 #cE5B36C AVALON
+(5894,0784) city 2 #cE5B36C AVALON
+(0544,4695) city 2 #cE5B36C AVALON
+(6274,1354) city 2 #cE5B36C AVALON
+(6547,2074) city 5 #cE5B36C AVALON
+(6618,3277) city 7 #cE5B36C AVALON
+(6892,3007) city 3 #cE5B36C AVALON
+(6516,3118) city 3 #cE5B36C AVALON
+(6472,3406) city 2 #cE5B36C AVALON
+(6854,1354) city 2 #cE5B36C AVALON
+(6894,2044) city 2 #cE5B36C AVALON
+(7254,1394) city 2 #cE5B36C AVALON
+(7479,1958) city 3 #cE5B36C AVALON
+(7744,1694) city 2 #cE5B36C AVALON
+(7794,1924) city 2 #cE5B36C AVALON
+(7974,2244) city 2 #cE5B36C AVALON
+(8114,1924) city 2 #cE5B36C AVALON
+(8244,2594) city 2 #cE5B36C AVALON
+(0944,4714) city 2 #cE5B36C AVALON
+(0124,3475) city 2 #c4A99FB Titans
+(1424,2074) city 2 #c4A99FB Titans
+(1621,3669) city 7 #c4A99FB Titans
+(1732,3850) city 5 #c4A99FB Titans
+(1551,3867) city 5 #c4A99FB Titans
+(1747,3708) city 3 #c4A99FB Titans
+(1759,3600) city 2 #c4A99FB Titans
+(1634,1294) city 2 #c4A99FB Titans
+(1524,1734) city 2 #c4A99FB Titans
+(1504,2455) city 2 #c4A99FB Titans
+(1974,5353) city 5 #c4A99FB Titans
+(1780,5580) city 5 #c4A99FB Titans
+(1974,1084) city 2 #c4A99FB Titans
+(1874,2024) city 2 #c4A99FB Titans
+(2314,1074) city 2 #c4A99FB Titans
+(0224,5195) city 2 #c4A99FB Titans
+(2534,0544) city 2 #c4A99FB Titans
+(2804,1454) city 2 #c4A99FB Titans
+(3134,0644) city 2 #c4A99FB Titans
+(0134,4744) city 2 #c4A99FB Titans
+(0304,2935) city 2 #c4A99FB Titans
+(3492,1570) city 5 #c4A99FB Titans
+(3507,1428) city 3 #c4A99FB Titans
+(3519,1320) city 2 #c4A99FB Titans
+(0390,4689) city 3 #c4A99FB Titans
+(3814,0624) city 2 #c4A99FB Titans
+(0554,6094) city 2 #c4A99FB Titans
+(3974,0144) city 2 #c4A99FB Titans
+(4450,1640) city 5 #c4A99FB Titans
+(0524,2595) city 2 #c4A99FB Titans
+(0714,5594) city 2 #c4A99FB Titans
+(0679,2798) city 3 #c4A99FB Titans
+(0814,5244) city 2 #c4A99FB Titans
+(1154,1974) city 2 #c4A99FB Titans
+(3010,6860) city 5 #cE63A3A We The Fallen
+(2985,6738) city 5 #cE63A3A We The Fallen
+(2874,6993) city 5 #cE63A3A We The Fallen
+(5926,4816) city 5 #cE63A3A We The Fallen
+(5646,4771) city 5 #cE63A3A We The Fallen
+(6466,4222) city 5 #cE63A3A We The Fallen
+(6276,4214) city 5 #cE63A3A We The Fallen
+(6490,4080) city 5 #cE63A3A We The Fallen
+(6852,3270) city 5 #cE63A3A We The Fallen
+(6946,5682) city 5 #cE63A3A We The Fallen
+(6756,5674) city 5 #cE63A3A We The Fallen
+(6970,5540) city 5 #cE63A3A We The Fallen
+(7514,6314) city 2 #cE63A3A We The Fallen
+(7444,6755) city 2 #cE63A3A We The Fallen
+(7874,6704) city 2 #cE63A3A We The Fallen
+(8054,6024) city 2 #cE63A3A We The Fallen
+(8054,6344) city 2 #cE63A3A We The Fallen
+(8034,4594) city 2 #cE63A3A We The Fallen
+(8074,4254) city 2 #cE63A3A We The Fallen
+(8074,7034) city 2 #cE63A3A We The Fallen
+(8154,5404) city 2 #cE63A3A We The Fallen
+(8334,5704) city 2 #cE63A3A We The Fallen
+(8454,5064) city 2 #cE63A3A We The Fallen
+(8304,4314) city 2 #cE63A3A We The Fallen
+(8344,4654) city 2 #cE63A3A We The Fallen
+(8424,6374) city 2 #cE63A3A We The Fallen
+(8399,4838) city 3 #cE63A3A We The Fallen
+(8594,5734) city 2 #cE63A3A We The Fallen
+(8714,2674) city 2 #cE63A3A We The Fallen
+(8754,3284) city 2 #cE63A3A We The Fallen
+(8734,4154) city 2 #cE63A3A We The Fallen
+(3494,8144) city 2 #c49E7C0 IronPlanet
+(4004,7995) city 2 #c49E7C0 IronPlanet
+(5041,7229) city 7 #c49E7C0 IronPlanet
+(5152,7410) city 5 #c49E7C0 IronPlanet
+(5167,7268) city 3 #c49E7C0 IronPlanet
+(5084,8815) city 2 #c49E7C0 IronPlanet
+(5374,7754) city 2 #c49E7C0 IronPlanet
+(5907,6254) city 5 #c49E7C0 IronPlanet
+(5914,5993) city 5 #c49E7C0 IronPlanet
+(5720,6220) city 5 #c49E7C0 IronPlanet
+(6074,7734) city 2 #c49E7C0 IronPlanet
+(6254,8414) city 2 #c49E7C0 IronPlanet
+(6447,7534) city 5 #c49E7C0 IronPlanet
+(6454,7273) city 5 #c49E7C0 IronPlanet
+(6260,7500) city 5 #c49E7C0 IronPlanet
+(6344,7794) city 2 #c49E7C0 IronPlanet
+(6430,8049) city 3 #c49E7C0 IronPlanet
+(6584,7335) city 2 #c49E7C0 IronPlanet
+(6814,7904) city 2 #c49E7C0 IronPlanet
+(6804,7014) city 2 #c49E7C0 IronPlanet
+(7294,7554) city 2 #c49E7C0 IronPlanet
+(7614,7544) city 2 #c49E7C0 IronPlanet
+
+$planet
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(1532,3876)(1572,3774) small
+(1572,3774) large
+(1718,3725)(1572,3774) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(6871,3022)(6692,3194) small
+(6755,3250)(6692,3194) small
+(6692,3194) large
+(6489,3136)(6692,3194) small
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4952,7436)(4992,7334) small
+(5138,7285)(4992,7334) small
+(4992,7334) large
+(4499,4497) medium
+(3332,1494) large
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small

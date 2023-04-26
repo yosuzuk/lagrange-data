@@ -1,0 +1,193 @@
+$name 10185 V1272 Scuti
+$serverName V1272 Scuti
+$size 9000
+
+// Rank 1: Space Marine (34.3)
+// Rank 2: Legion SI (32.8)
+// Rank 3: 해병성채 (30.6)
+// Rank 4: Space Marine 2 (2.1)
+
+$station
+(3273,5174) city 9 #cFD7844 해병성채
+(0370,4808) city 3 #cFD7844 해병성채
+(3872,6110) city 5 #cFD7844 해병성채
+(3906,5957) city 3 #cFD7844 해병성채
+(3519,6130) city 5 #cFD7844 해병성채
+(3874,0944) city 2 #cFD7844 해병성채
+(3934,0604) city 2 #cFD7844 해병성채
+(3974,0154) city 2 #cFD7844 해병성채
+(4424,0735) city 2 #cFD7844 해병성채
+(4844,0994) city 2 #cFD7844 해병성채
+(4824,7974) city 2 #cFD7844 해병성채
+(5124,0654) city 2 #cFD7844 해병성채
+(5314,8694) city 2 #cFD7844 해병성채
+(5398,7297) city 7 #cFD7844 해병성채
+(5632,7290) city 5 #cFD7844 해병성채
+(5252,7436) city 2 #cFD7844 해병성채
+(5907,6254) city 5 #cFD7844 해병성채
+(5914,5993) city 5 #cFD7844 해병성채
+(5720,6220) city 5 #cFD7844 해병성채
+(5984,8194) city 2 #cFD7844 해병성채
+(6350,7400) city 5 #cFD7844 해병성채
+(6325,7278) city 5 #cFD7844 해병성채
+(6214,7533) city 5 #cFD7844 해병성채
+(6390,7988) city 3 #cFD7844 해병성채
+(6664,8034) city 2 #cFD7844 해병성채
+(7134,7894) city 2 #cFD7844 해병성채
+(7314,7564) city 2 #cFD7844 해병성채
+(2934,1054) city 2 #cE5B36C Space Marine
+(3464,0734) city 2 #cE5B36C Space Marine
+(3756,4198) city 3 #cE5B36C Space Marine
+(4292,1698) city 5 #cE5B36C Space Marine
+(4570,1498) city 5 #cE5B36C Space Marine
+(4435,1539) city 5 #cE5B36C Space Marine
+(4569,1711) city 5 #cE5B36C Space Marine
+(4804,8794) city 2 #cE5B36C Space Marine
+(4904,8494) city 2 #cE5B36C Space Marine
+(5421,3869) city 7 #cE5B36C Space Marine
+(5532,4050) city 5 #cE5B36C Space Marine
+(5351,4067) city 5 #cE5B36C Space Marine
+(5547,3908) city 3 #cE5B36C Space Marine
+(5559,3800) city 2 #cE5B36C Space Marine
+(5212,2918) city 5 #cE5B36C Space Marine
+(5490,2718) city 5 #cE5B36C Space Marine
+(5355,2759) city 5 #cE5B36C Space Marine
+(5489,2931) city 5 #cE5B36C Space Marine
+(5672,7027) city 3 #cE5B36C Space Marine
+(5296,7138) city 3 #cE5B36C Space Marine
+(5752,5468) city 5 #cE5B36C Space Marine
+(5740,5298) city 5 #cE5B36C Space Marine
+(5655,5259) city 5 #cE5B36C Space Marine
+(5639,5371) city 5 #cE5B36C Space Marine
+(6146,3482) city 5 #cE5B36C Space Marine
+(5956,3474) city 5 #cE5B36C Space Marine
+(6170,3340) city 5 #cE5B36C Space Marine
+(6492,4288) city 5 #cE5B36C Space Marine
+(6480,4118) city 5 #cE5B36C Space Marine
+(6395,4079) city 5 #cE5B36C Space Marine
+(6379,4191) city 5 #cE5B36C Space Marine
+(6633,3193) city 7 #cE5B36C Space Marine
+(6872,3410) city 5 #cE5B36C Space Marine
+(6691,3387) city 5 #cE5B36C Space Marine
+(6906,3257) city 3 #cE5B36C Space Marine
+(6519,3430) city 5 #cE5B36C Space Marine
+(7014,2014) city 2 #cE5B36C Space Marine
+(7089,5531) city 5 #cE5B36C Space Marine
+(6850,5520) city 5 #cE5B36C Space Marine
+(6978,5699) city 5 #cE5B36C Space Marine
+(7052,5769) city 5 #cE5B36C Space Marine
+(7194,1394) city 2 #cE5B36C Space Marine
+(7174,6584) city 2 #cE5B36C Space Marine
+(7184,2134) city 2 #cE5B36C Space Marine
+(7290,4840) city 5 #cE5B36C Space Marine
+(7265,4718) city 5 #cE5B36C Space Marine
+(7154,4973) city 5 #cE5B36C Space Marine
+(7404,1414) city 2 #cE5B36C Space Marine
+(7490,1968) city 3 #cE5B36C Space Marine
+(7714,2754) city 2 #cE5B36C Space Marine
+(7734,2424) city 2 #cE5B36C Space Marine
+(7734,5984) city 2 #cE5B36C Space Marine
+(7744,1694) city 2 #cE5B36C Space Marine
+(7744,2014) city 2 #cE5B36C Space Marine
+(7744,3214) city 2 #cE5B36C Space Marine
+(7934,2244) city 2 #cE5B36C Space Marine
+(7884,2914) city 2 #cE5B36C Space Marine
+(8054,6024) city 2 #cE5B36C Space Marine
+(7924,5094) city 2 #cE5B36C Space Marine
+(8114,3774) city 2 #cE5B36C Space Marine
+(7884,4695) city 2 #cE5B36C Space Marine
+(8114,6364) city 2 #cE5B36C Space Marine
+(8104,3534) city 2 #cE5B36C Space Marine
+(8104,5494) city 2 #cE5B36C Space Marine
+(8274,2774) city 2 #cE5B36C Space Marine
+(8254,3084) city 2 #cE5B36C Space Marine
+(8334,6634) city 2 #cE5B36C Space Marine
+(8434,3744) city 2 #cE5B36C Space Marine
+(8284,5174) city 2 #cE5B36C Space Marine
+(8494,4184) city 2 #cE5B36C Space Marine
+(8344,4634) city 2 #cE5B36C Space Marine
+(8454,6104) city 2 #cE5B36C Space Marine
+(8399,4838) city 3 #cE5B36C Space Marine
+(8524,3114) city 2 #cE5B36C Space Marine
+(8634,5784) city 2 #cE5B36C Space Marine
+(8774,3634) city 2 #cE5B36C Space Marine
+(8784,5194) city 2 #cE5B36C Space Marine
+(1554,7224) city 2 #c4A99FB Legion SI
+(1364,7035) city 2 #c4A99FB Legion SI
+(1538,3337) city 7 #c4A99FB Legion SI
+(1772,3330) city 5 #c4A99FB Legion SI
+(1812,3067) city 3 #c4A99FB Legion SI
+(1436,3178) city 3 #c4A99FB Legion SI
+(1392,3476) city 2 #c4A99FB Legion SI
+(1614,2324) city 2 #c4A99FB Legion SI
+(1724,7434) city 2 #c4A99FB Legion SI
+(1967,5294) city 5 #c4A99FB Legion SI
+(1974,5033) city 5 #c4A99FB Legion SI
+(1780,5260) city 5 #c4A99FB Legion SI
+(1919,7798) city 3 #c4A99FB Legion SI
+(2254,7604) city 2 #c4A99FB Legion SI
+(2454,7934) city 2 #c4A99FB Legion SI
+(0304,2915) city 2 #c4A99FB Legion SI
+(3092,6968) city 5 #c4A99FB Legion SI
+(3080,6798) city 5 #c4A99FB Legion SI
+(2995,6759) city 5 #c4A99FB Legion SI
+(2979,6871) city 5 #c4A99FB Legion SI
+(0134,4744) city 2 #c4A99FB Legion SI
+(3114,8124) city 2 #c4A99FB Legion SI
+(3526,4936) city 5 #c4A99FB Legion SI
+(3246,4891) city 5 #c4A99FB Legion SI
+(3414,8474) city 2 #c4A99FB Legion SI
+(3614,8114) city 2 #c4A99FB Legion SI
+(3633,5893) city 7 #c4A99FB Legion SI
+(3691,6087) city 5 #c4A99FB Legion SI
+(0504,6614) city 2 #c4A99FB Legion SI
+(3764,8454) city 2 #c4A99FB Legion SI
+(3858,4357) city 7 #c4A99FB Legion SI
+(4092,4350) city 5 #c4A99FB Legion SI
+(0754,2464) city 2 #c4A99FB Legion SI
+(0754,4224) city 2 #c4A99FB Legion SI
+(0679,2798) city 3 #c4A99FB Legion SI
+(0814,6844) city 2 #c4A99FB Legion SI
+(0834,5284) city 2 #c4A99FB Legion SI
+(0944,2774) city 2 #c4A99FB Legion SI
+(0984,6595) city 2 #c4A99FB Legion SI
+(1194,5534) city 2 #c4A99FB Legion SI
+(1194,6814) city 2 #c4A99FB Legion SI
+(1224,2394) city 2 #c4A99FB Legion SI
+(5494,0324) city 2 #c49E7C0 Space Marine 2
+(6074,0434) city 2 #c49E7C0 Space Marine 2
+(6124,1455) city 2 #c49E7C0 Space Marine 2
+(6454,0454) city 2 #c49E7C0 Space Marine 2
+(6450,1940) city 5 #c49E7C0 Space Marine 2
+(6425,1818) city 5 #c49E7C0 Space Marine 2
+(6314,2073) city 5 #c49E7C0 Space Marine 2
+(6914,1664) city 2 #c49E7C0 Space Marine 2
+(7124,1814) city 2 #c49E7C0 Space Marine 2
+
+$planet
+(5332,4076)(5372,3974) small
+(5372,3974) large
+(5518,3925)(5372,3974) small
+(5535,7270)(5472,7214) small
+(5472,7214) large
+(5269,7156)(5472,7214) small
+(5651,7042)(5472,7214) small
+(3562,4960)(3399,5072) small
+(3201,4960)(3399,5072) small
+(3414,5163)(3399,5072) small
+(3399,5072) large
+(1612,3254) large
+(1409,3196)(1612,3254) small
+(1675,3310)(1612,3254) small
+(1791,3082)(1612,3254) small
+(4111,4102)(3932,4274) small
+(3729,4216)(3932,4274) small
+(3932,4274) large
+(3995,4330)(3932,4274) small
+(6878,3275)(6712,3334) small
+(6672,3396)(6712,3334) small
+(6712,3334) large
+(4499,4497) medium
+(3878,5975)(3712,6034) small
+(3672,6096)(3712,6034) small
+(3712,6034) large

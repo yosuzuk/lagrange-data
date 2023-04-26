@@ -1,0 +1,172 @@
+$name 10163 V944 Gemini
+$serverName V944 Gemini
+$size 9000
+
+// Rank 1: 幽靈樂園 (42.3)
+// Rank 2: 東北航空站 (38.6)
+// Rank 3: CryptoCorp (11.6)
+// Rank 4: Superiocracy (7.2)
+
+$station
+(3289,4291) city 5 #cE5B36C 幽靈樂園
+(4250,2720) city 5 #cE5B36C 幽靈樂園
+(4114,2853) city 5 #cE5B36C 幽靈樂園
+(4438,3937) city 7 #cE5B36C 幽靈樂園
+(4712,3667) city 3 #cE5B36C 幽靈樂園
+(4336,3778) city 3 #cE5B36C 幽靈樂園
+(4292,4076) city 2 #cE5B36C 幽靈樂園
+(4534,0934) city 2 #cE5B36C 幽靈樂園
+(4854,0204) city 2 #cE5B36C 幽靈樂園
+(5467,2994) city 5 #cE5B36C 幽靈樂園
+(5474,2733) city 5 #cE5B36C 幽靈樂園
+(5280,2960) city 5 #cE5B36C 幽靈樂園
+(5384,1034) city 2 #cE5B36C 幽靈樂園
+(5926,4816) city 5 #cE5B36C 幽靈樂園
+(5673,5054) city 9 #cE5B36C 幽靈樂園
+(5894,0784) city 2 #cE5B36C 幽靈樂園
+(6187,3574) city 5 #cE5B36C 幽靈樂園
+(6194,3313) city 5 #cE5B36C 幽靈樂園
+(6000,3540) city 5 #cE5B36C 幽靈樂園
+(6466,4222) city 5 #cE5B36C 幽靈樂園
+(6276,4214) city 5 #cE5B36C 幽靈樂園
+(6490,4080) city 5 #cE5B36C 幽靈樂園
+(6618,3277) city 7 #cE5B36C 幽靈樂園
+(6852,3270) city 5 #cE5B36C 幽靈樂園
+(6892,3007) city 3 #cE5B36C 幽靈樂園
+(6516,3118) city 3 #cE5B36C 幽靈樂園
+(6472,3406) city 2 #cE5B36C 幽靈樂園
+(6854,1354) city 2 #cE5B36C 幽靈樂園
+(6946,5682) city 5 #cE5B36C 幽靈樂園
+(6756,5674) city 5 #cE5B36C 幽靈樂園
+(6894,2044) city 2 #cE5B36C 幽靈樂園
+(7254,1394) city 2 #cE5B36C 幽靈樂園
+(7514,6314) city 2 #cE5B36C 幽靈樂園
+(7744,1694) city 2 #cE5B36C 幽靈樂園
+(7794,1924) city 2 #cE5B36C 幽靈樂園
+(7874,6704) city 2 #cE5B36C 幽靈樂園
+(8054,6024) city 2 #cE5B36C 幽靈樂園
+(8054,6344) city 2 #cE5B36C 幽靈樂園
+(8034,4594) city 2 #cE5B36C 幽靈樂園
+(8074,4254) city 2 #cE5B36C 幽靈樂園
+(8074,7034) city 2 #cE5B36C 幽靈樂園
+(8114,1924) city 2 #cE5B36C 幽靈樂園
+(8154,5404) city 2 #cE5B36C 幽靈樂園
+(8334,5704) city 2 #cE5B36C 幽靈樂園
+(8454,5064) city 2 #cE5B36C 幽靈樂園
+(8304,4314) city 2 #cE5B36C 幽靈樂園
+(8344,4654) city 2 #cE5B36C 幽靈樂園
+(8424,6374) city 2 #cE5B36C 幽靈樂園
+(8399,4838) city 3 #cE5B36C 幽靈樂園
+(8594,5734) city 2 #cE5B36C 幽靈樂園
+(1204,5914) city 2 #cFD7844 CryptoCorp
+(1621,3669) city 7 #cFD7844 CryptoCorp
+(1732,3850) city 5 #cFD7844 CryptoCorp
+(1551,3867) city 5 #cFD7844 CryptoCorp
+(1747,3708) city 3 #cFD7844 CryptoCorp
+(1759,3600) city 2 #cFD7844 CryptoCorp
+(1524,1734) city 2 #cFD7844 CryptoCorp
+(1504,2455) city 2 #cFD7844 CryptoCorp
+(1967,5614) city 5 #cFD7844 CryptoCorp
+(1974,5353) city 5 #cFD7844 CryptoCorp
+(1780,5580) city 5 #cFD7844 CryptoCorp
+(1899,7798) city 3 #cFD7844 CryptoCorp
+(2014,8044) city 2 #cFD7844 CryptoCorp
+(0224,5195) city 2 #cFD7844 CryptoCorp
+(2874,6993) city 5 #cFD7844 CryptoCorp
+(0134,4744) city 2 #cFD7844 CryptoCorp
+(0304,2935) city 2 #cFD7844 CryptoCorp
+(0390,4689) city 3 #cFD7844 CryptoCorp
+(0554,6094) city 2 #cFD7844 CryptoCorp
+(0524,2595) city 2 #cFD7844 CryptoCorp
+(0674,4254) city 2 #cFD7844 CryptoCorp
+(0544,4695) city 2 #cFD7844 CryptoCorp
+(0714,5594) city 2 #cFD7844 CryptoCorp
+(0679,2798) city 3 #cFD7844 CryptoCorp
+(0814,6214) city 2 #cFD7844 CryptoCorp
+(0814,5244) city 2 #cFD7844 CryptoCorp
+(0704,6955) city 2 #cFD7844 CryptoCorp
+(0944,4714) city 2 #cFD7844 CryptoCorp
+(1094,6484) city 2 #cFD7844 CryptoCorp
+(3178,4459) city 5 #c49E7C0 Superiocracy
+(3381,1389) city 7 #c49E7C0 Superiocracy
+(3311,1587) city 5 #c49E7C0 Superiocracy
+(7479,1958) city 3 #c49E7C0 Superiocracy
+(1514,6934) city 2 #c4A99FB 東北航空站
+(1694,7744) city 2 #c4A99FB 東北航空站
+(2434,7284) city 2 #c4A99FB 東北航空站
+(2804,1454) city 2 #c4A99FB 東北航空站
+(3010,6860) city 5 #c4A99FB 東北航空站
+(2985,6738) city 5 #c4A99FB 東北航空站
+(3134,0644) city 2 #c4A99FB 東北航空站
+(3050,4280) city 5 #c4A99FB 東北航空站
+(3252,4529) city 5 #c4A99FB 東北航空站
+(3492,1570) city 5 #c4A99FB 東北航空站
+(3507,1428) city 3 #c4A99FB 東北航空站
+(3519,1320) city 2 #c4A99FB 東北航空站
+(3414,0664) city 2 #c4A99FB 東北航空站
+(3621,4869) city 7 #c4A99FB 東北航空站
+(3732,5050) city 5 #c4A99FB 東北航空站
+(3551,5067) city 5 #c4A99FB 東北航空站
+(3747,4908) city 3 #c4A99FB 東北航空站
+(3759,4800) city 2 #c4A99FB 東北航空站
+(3494,8144) city 2 #c4A99FB 東北航空站
+(3814,0624) city 2 #c4A99FB 東北航空站
+(3934,8324) city 2 #c4A99FB 東北航空站
+(4004,7995) city 2 #c4A99FB 東北航空站
+(4124,8634) city 2 #c4A99FB 東北航空站
+(4450,1640) city 5 #c4A99FB 東北航空站
+(4672,3930) city 5 #c4A99FB 東北航空站
+(4634,8714) city 2 #c4A99FB 東北航空站
+(5041,7229) city 7 #c4A99FB 東北航空站
+(5152,7410) city 5 #c4A99FB 東北航空站
+(4971,7427) city 5 #c4A99FB 東北航空站
+(5167,7268) city 3 #c4A99FB 東北航空站
+(5179,7160) city 2 #c4A99FB 東北航空站
+(5084,8815) city 2 #c4A99FB 東北航空站
+(5374,7754) city 2 #c4A99FB 東北航空站
+(5646,4771) city 5 #c4A99FB 東北航空站
+(5907,6254) city 5 #c4A99FB 東北航空站
+(5914,5993) city 5 #c4A99FB 東北航空站
+(5720,6220) city 5 #c4A99FB 東北航空站
+(6074,7734) city 2 #c4A99FB 東北航空站
+(6254,8414) city 2 #c4A99FB 東北航空站
+(6447,7534) city 5 #c4A99FB 東北航空站
+(6454,7273) city 5 #c4A99FB 東北航空站
+(6260,7500) city 5 #c4A99FB 東北航空站
+(6344,7794) city 2 #c4A99FB 東北航空站
+(6554,1813) city 5 #c4A99FB 東北航空站
+(6360,2040) city 5 #c4A99FB 東北航空站
+(6430,8049) city 3 #c4A99FB 東北航空站
+(6584,7335) city 2 #c4A99FB 東北航空站
+(6814,7904) city 2 #c4A99FB 東北航空站
+(6970,5540) city 5 #c4A99FB 東北航空站
+(6804,7014) city 2 #c4A99FB 東北航空站
+(7294,7554) city 2 #c4A99FB 東北航空站
+(7614,7544) city 2 #c4A99FB 東北航空站
+
+$planet
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(1532,3876)(1572,3774) small
+(1572,3774) large
+(1718,3725)(1572,3774) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(6871,3022)(6692,3194) small
+(6755,3250)(6692,3194) small
+(6692,3194) large
+(6489,3136)(6692,3194) small
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4952,7436)(4992,7334) small
+(5138,7285)(4992,7334) small
+(4992,7334) large
+(4499,4497) medium
+(3332,1494) large
+(3292,1596)(3332,1494) small
+(3478,1445)(3332,1494) small

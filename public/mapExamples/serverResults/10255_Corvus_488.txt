@@ -1,0 +1,136 @@
+$name 10255 Corvus 488
+$serverName Corvus 488
+$size 9000
+
+// Rank 1: Chloris (51.8)
+// Rank 2: Zephyros (27.7)
+// Rank 3: Choccy Melons (16.0)
+
+$station
+(3381,1509) city 7 #c4A99FB Zephyros
+(3492,1690) city 5 #c4A99FB Zephyros
+(3311,1707) city 5 #c4A99FB Zephyros
+(3507,1548) city 3 #c4A99FB Zephyros
+(3519,1440) city 2 #c4A99FB Zephyros
+(3534,0924) city 2 #c4A99FB Zephyros
+(3814,0624) city 2 #c4A99FB Zephyros
+(4250,2720) city 5 #c4A99FB Zephyros
+(4225,2598) city 5 #c4A99FB Zephyros
+(4292,1698) city 5 #c4A99FB Zephyros
+(4569,1711) city 5 #c4A99FB Zephyros
+(4438,3937) city 7 #c4A99FB Zephyros
+(4336,3778) city 3 #c4A99FB Zephyros
+(4534,0934) city 2 #c4A99FB Zephyros
+(4854,0204) city 2 #c4A99FB Zephyros
+(5489,2731) city 5 #c4A99FB Zephyros
+(5378,2899) city 5 #c4A99FB Zephyros
+(5452,2969) city 5 #c4A99FB Zephyros
+(5384,1034) city 2 #c4A99FB Zephyros
+(5914,5993) city 5 #c4A99FB Zephyros
+(5914,0784) city 2 #c4A99FB Zephyros
+(6274,1354) city 2 #c4A99FB Zephyros
+(6252,4238) city 5 #c4A99FB Zephyros
+(6529,4251) city 5 #c4A99FB Zephyros
+(6360,2040) city 5 #c4A99FB Zephyros
+(6854,1354) city 2 #c4A99FB Zephyros
+(6894,2044) city 2 #c4A99FB Zephyros
+(7254,1394) city 2 #c4A99FB Zephyros
+(7479,1958) city 3 #c4A99FB Zephyros
+(7744,1694) city 2 #c4A99FB Zephyros
+(7794,1924) city 2 #c4A99FB Zephyros
+(8074,2234) city 2 #c4A99FB Zephyros
+(1204,5914) city 2 #cE5B36C Chloris
+(1514,6934) city 2 #cE5B36C Chloris
+(1694,7744) city 2 #cE5B36C Chloris
+(1780,5580) city 5 #cE5B36C Chloris
+(1919,7798) city 3 #cE5B36C Chloris
+(2014,8044) city 2 #cE5B36C Chloris
+(0184,5195) city 2 #cE5B36C Chloris
+(2434,7284) city 2 #cE5B36C Chloris
+(3129,6931) city 5 #cE5B36C Chloris
+(3289,4291) city 5 #cE5B36C Chloris
+(3621,4869) city 7 #cE5B36C Chloris
+(3732,5050) city 5 #cE5B36C Chloris
+(3661,7149) city 7 #cE5B36C Chloris
+(3772,7330) city 5 #cE5B36C Chloris
+(3591,7347) city 5 #cE5B36C Chloris
+(3787,7188) city 3 #cE5B36C Chloris
+(3799,7080) city 2 #cE5B36C Chloris
+(3814,8244) city 2 #cE5B36C Chloris
+(0574,6094) city 2 #cE5B36C Chloris
+(4004,7995) city 2 #cE5B36C Chloris
+(4164,8654) city 2 #cE5B36C Chloris
+(4292,4076) city 2 #cE5B36C Chloris
+(4634,8734) city 2 #cE5B36C Chloris
+(4801,6049) city 7 #cE5B36C Chloris
+(4912,6230) city 5 #cE5B36C Chloris
+(4927,6088) city 3 #cE5B36C Chloris
+(4939,5980) city 2 #cE5B36C Chloris
+(5374,7754) city 2 #cE5B36C Chloris
+(5673,5054) city 9 #cE5B36C Chloris
+(5720,6220) city 5 #cE5B36C Chloris
+(0734,5674) city 2 #cE5B36C Chloris
+(0814,6214) city 2 #cE5B36C Chloris
+(0704,6955) city 2 #cE5B36C Chloris
+(1154,6484) city 2 #cE5B36C Chloris
+(4672,3930) city 5 #cFD7844 Choccy Melons
+(5646,4771) city 5 #cFD7844 Choccy Melons
+(6187,3574) city 5 #cFD7844 Choccy Melons
+(6194,3313) city 5 #cFD7844 Choccy Melons
+(6000,3540) city 5 #cFD7844 Choccy Melons
+(6558,3337) city 7 #cFD7844 Choccy Melons
+(6792,3330) city 5 #cFD7844 Choccy Melons
+(6832,3067) city 3 #cFD7844 Choccy Melons
+(6456,3178) city 3 #cFD7844 Choccy Melons
+(6412,3466) city 2 #cFD7844 Choccy Melons
+(6732,5698) city 5 #cFD7844 Choccy Melons
+(7394,6964) city 2 #cFD7844 Choccy Melons
+(7514,6314) city 2 #cFD7844 Choccy Melons
+(7654,7544) city 2 #cFD7844 Choccy Melons
+(7444,6755) city 2 #cFD7844 Choccy Melons
+(7874,6704) city 2 #cFD7844 Choccy Melons
+(8054,6024) city 2 #cFD7844 Choccy Melons
+(8034,4594) city 2 #cFD7844 Choccy Melons
+(8114,6364) city 2 #cFD7844 Choccy Melons
+(8074,7034) city 2 #cFD7844 Choccy Melons
+(8114,1884) city 2 #cFD7844 Choccy Melons
+(8154,4114) city 2 #cFD7844 Choccy Melons
+(8154,5404) city 2 #cFD7844 Choccy Melons
+(8244,2514) city 2 #cFD7844 Choccy Melons
+(8414,5724) city 2 #cFD7844 Choccy Melons
+(8454,5064) city 2 #cFD7844 Choccy Melons
+(8344,4634) city 2 #cFD7844 Choccy Melons
+(8364,4294) city 2 #cFD7844 Choccy Melons
+(8404,6294) city 2 #cFD7844 Choccy Melons
+(8399,4838) city 3 #cFD7844 Choccy Melons
+(8674,2714) city 2 #cFD7844 Choccy Melons
+(8674,5794) city 2 #cFD7844 Choccy Melons
+(8794,3324) city 2 #cFD7844 Choccy Melons
+(8774,4134) city 2 #cFD7844 Choccy Melons
+
+$planet
+(6811,3082)(6632,3254) small
+(6695,3310)(6632,3254) small
+(6632,3254) large
+(6429,3196)(6632,3254) small
+(5814,5043)(5799,4952) small
+(5601,4840)(5799,4952) small
+(5799,4952) large
+(5962,4840)(5799,4952) small
+(3332,1614) large
+(3478,1565)(3332,1614) small
+(3292,1716)(3332,1614) small
+(3572,4974) large
+(3718,4925)(3572,4974) small
+(3532,5076)(3572,4974) small
+(3758,7205)(3612,7254) small
+(3572,7356)(3612,7254) small
+(3612,7254) large
+(4712,6256)(4752,6154) small
+(4898,6105)(4752,6154) small
+(4752,6154) large
+(4512,3854) large
+(4309,3796)(4512,3854) small
+(4691,3682)(4512,3854) small
+(4575,3910)(4512,3854) small
+(4499,4497) medium

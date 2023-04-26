@@ -1,0 +1,166 @@
+$name 10212 Ophiuchus AZ
+$serverName Ophiuchus AZ
+$size 9000
+
+// Rank 1: Capital Forge (44.5)
+// Rank 2: The University (13.8)
+// Rank 3: Warsaw (13.8)
+// Rank 4: SakuraDrops (8.7)
+// Rank 7: 菊水の宴 (2.1)
+
+$station
+(0354,3344) city 2 #cE5B36C Capital Forge
+(1244,1734) city 2 #cE5B36C Capital Forge
+(1554,1314) city 2 #cE5B36C Capital Forge
+(1847,5074) city 5 #cE5B36C Capital Forge
+(1854,4813) city 5 #cE5B36C Capital Forge
+(1660,5040) city 5 #cE5B36C Capital Forge
+(1770,1408) city 3 #cE5B36C Capital Forge
+(1898,3057) city 7 #cE5B36C Capital Forge
+(2132,3050) city 5 #cE5B36C Capital Forge
+(2172,2787) city 3 #cE5B36C Capital Forge
+(1796,2898) city 3 #cE5B36C Capital Forge
+(1752,3196) city 2 #cE5B36C Capital Forge
+(2566,1562) city 5 #cE5B36C Capital Forge
+(2376,1554) city 5 #cE5B36C Capital Forge
+(2590,1420) city 5 #cE5B36C Capital Forge
+(2634,0504) city 2 #cE5B36C Capital Forge
+(2827,3854) city 5 #cE5B36C Capital Forge
+(2834,3593) city 5 #cE5B36C Capital Forge
+(2640,3820) city 5 #cE5B36C Capital Forge
+(2804,1454) city 2 #cE5B36C Capital Forge
+(3004,0794) city 2 #cE5B36C Capital Forge
+(3354,0764) city 2 #cE5B36C Capital Forge
+(0324,2955) city 2 #cE5B36C Capital Forge
+(3814,3702) city 9 #cE5B36C Capital Forge
+(3786,3411) city 5 #cE5B36C Capital Forge
+(4066,3456) city 5 #cE5B36C Capital Forge
+(3894,0174) city 2 #cE5B36C Capital Forge
+(5359,4640) city 2 #cE5B36C Capital Forge
+(0634,2484) city 2 #cE5B36C Capital Forge
+(5269,3751) city 5 #cE5B36C Capital Forge
+(0634,3584) city 2 #cE5B36C Capital Forge
+(5374,7774) city 2 #cE5B36C Capital Forge
+(0524,4355) city 2 #cE5B36C Capital Forge
+(5914,0794) city 2 #cE5B36C Capital Forge
+(6126,3362) city 5 #cE5B36C Capital Forge
+(6134,8074) city 2 #cE5B36C Capital Forge
+(6354,1324) city 2 #cE5B36C Capital Forge
+(6374,0454) city 2 #cE5B36C Capital Forge
+(6529,4271) city 5 #cE5B36C Capital Forge
+(0154,3784) city 2 #cE5B36C Capital Forge
+(6430,8049) city 3 #cE5B36C Capital Forge
+(6901,3129) city 7 #cE5B36C Capital Forge
+(7039,3060) city 2 #cE5B36C Capital Forge
+(6784,1454) city 2 #cE5B36C Capital Forge
+(7014,2024) city 2 #cE5B36C Capital Forge
+(7194,1394) city 2 #cE5B36C Capital Forge
+(0894,1804) city 2 #cE5B36C Capital Forge
+(8254,3084) city 2 #cE5B36C Capital Forge
+(8434,3724) city 2 #cE5B36C Capital Forge
+(0954,4164) city 2 #cE5B36C Capital Forge
+(1154,6804) city 2 #c4A99FB The University
+(1374,6494) city 2 #c4A99FB The University
+(1444,7034) city 2 #c4A99FB The University
+(1794,7824) city 2 #c4A99FB The University
+(1889,5751) city 5 #c4A99FB The University
+(1650,5740) city 5 #c4A99FB The University
+(1778,5919) city 5 #c4A99FB The University
+(1852,5989) city 5 #c4A99FB The University
+(1950,7708) city 3 #c4A99FB The University
+(0204,5575) city 2 #c4A99FB The University
+(2224,7714) city 2 #c4A99FB The University
+(2454,7934) city 2 #c4A99FB The University
+(2434,7284) city 2 #c4A99FB The University
+(0224,5915) city 2 #c4A99FB The University
+(3521,5389) city 7 #c4A99FB The University
+(3632,5570) city 5 #c4A99FB The University
+(3451,5587) city 5 #c4A99FB The University
+(3659,5320) city 2 #c4A99FB The University
+(0359,4718) city 3 #c4A99FB The University
+(3774,8664) city 2 #c4A99FB The University
+(4824,8814) city 2 #c4A99FB The University
+(0544,4695) city 2 #c4A99FB The University
+(0674,6524) city 2 #c4A99FB The University
+(7012,3310) city 5 #c4A99FB The University
+(0814,4934) city 2 #c4A99FB The University
+(0854,2134) city 2 #c4A99FB The University
+(0664,6315) city 2 #c4A99FB The University
+(8294,3424) city 2 #c4A99FB The University
+(1114,4984) city 2 #c4A99FB The University
+(5314,8684) city 2 #cFD7844 Warsaw
+(5664,8054) city 2 #cFD7844 Warsaw
+(6281,7249) city 7 #cFD7844 Warsaw
+(6392,7430) city 5 #cFD7844 Warsaw
+(6211,7447) city 5 #cFD7844 Warsaw
+(6407,7288) city 3 #cFD7844 Warsaw
+(6419,7180) city 2 #cFD7844 Warsaw
+(6604,7695) city 2 #cFD7844 Warsaw
+(6899,5671) city 5 #cFD7844 Warsaw
+(7054,7914) city 2 #cFD7844 Warsaw
+(7094,7244) city 2 #cFD7844 Warsaw
+(7414,6984) city 2 #cFD7844 Warsaw
+(7514,6314) city 2 #cFD7844 Warsaw
+(7384,7675) city 2 #cFD7844 Warsaw
+(7604,7355) city 2 #cFD7844 Warsaw
+(7790,5560) city 5 #cFD7844 Warsaw
+(7765,5438) city 5 #cFD7844 Warsaw
+(7654,5693) city 5 #cFD7844 Warsaw
+(7764,6815) city 2 #cFD7844 Warsaw
+(8034,6394) city 2 #cFD7844 Warsaw
+(8034,7024) city 2 #cFD7844 Warsaw
+(8184,5855) city 2 #cFD7844 Warsaw
+(8494,6114) city 2 #cFD7844 Warsaw
+(8530,4929) city 3 #cFD7844 Warsaw
+(3647,5428) city 3 #cF284FF 菊水の宴
+(5852,6150) city 5 #cF284FF 菊水の宴
+(5671,6167) city 5 #cF284FF 菊水の宴
+(5867,6008) city 3 #cF284FF 菊水の宴
+(5879,5900) city 2 #cF284FF 菊水の宴
+(6344,7794) city 2 #cF284FF 菊水の宴
+(6584,7335) city 2 #cF284FF 菊水の宴
+(6804,7014) city 2 #cF284FF 菊水の宴
+(3414,0294) city 2 #c49E7C0 SakuraDrops
+(4194,0424) city 2 #c49E7C0 SakuraDrops
+(4419,1551) city 5 #c49E7C0 SakuraDrops
+(4435,1439) city 5 #c49E7C0 SakuraDrops
+(4520,1478) city 5 #c49E7C0 SakuraDrops
+(4532,1648) city 5 #c49E7C0 SakuraDrops
+(4534,0934) city 2 #c49E7C0 SakuraDrops
+(4814,0534) city 2 #c49E7C0 SakuraDrops
+(5332,4890) city 5 #c49E7C0 SakuraDrops
+(5151,4907) city 5 #c49E7C0 SakuraDrops
+(5347,4748) city 3 #c49E7C0 SakuraDrops
+(5154,0144) city 2 #c49E7C0 SakuraDrops
+(5384,1034) city 2 #c49E7C0 SakuraDrops
+(5399,0678) city 3 #c49E7C0 SakuraDrops
+(6150,3220) city 5 #c49E7C0 SakuraDrops
+(6374,0984) city 2 #c49E7C0 SakuraDrops
+(6890,6360) city 5 #c49E7C0 SakuraDrops
+(8674,3024) city 2 #c49E7C0 SakuraDrops
+
+$planet
+(4102,3480)(3939,3592) small
+(3741,3480)(3939,3592) small
+(3939,3592) large
+(3954,3683)(3939,3592) small
+(3432,5596)(3472,5494) small
+(3618,5445)(3472,5494) small
+(3472,5494) large
+(5318,4765)(5172,4814) small
+(5132,4916)(5172,4814) small
+(5172,4814) large
+(2151,2802)(1972,2974) small
+(1972,2974) large
+(1769,2916)(1972,2974) small
+(2035,3030)(1972,2974) small
+(5838,6025)(5692,6074) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(6232,7354) large
+(6378,7305)(6232,7354) small
+(6192,7456)(6232,7354) small
+(6998,3185)(6852,3234) small
+(6812,3336)(6852,3234) small
+(6852,3234) large
+(4499,4497) medium

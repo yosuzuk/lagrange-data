@@ -1,0 +1,169 @@
+$name 10030 Antlia 160
+$serverName Antlia 160
+$size 9000
+
+// Rank 1: EclipseProject (58.3)
+// Rank 2: HyperionNexus (29.9)
+// Rank 3: Star Empire (11.6)
+
+$station
+(1533,3113) city 7 #cFD7844 Star Empire
+(1772,3330) city 5 #cFD7844 Star Empire
+(1806,3177) city 3 #cFD7844 Star Empire
+(2654,0524) city 2 #cFD7844 Star Empire
+(2924,0795) city 2 #cFD7844 Star Empire
+(3204,1134) city 2 #cFD7844 Star Empire
+(3574,0314) city 2 #cFD7844 Star Empire
+(3764,0714) city 2 #cFD7844 Star Empire
+(3974,0154) city 2 #cFD7844 Star Empire
+(4569,1511) city 5 #cFD7844 Star Empire
+(4330,1500) city 5 #cFD7844 Star Empire
+(4458,1679) city 5 #cFD7844 Star Empire
+(4532,1749) city 5 #cFD7844 Star Empire
+(4464,1034) city 2 #cFD7844 Star Empire
+(4654,0614) city 2 #cFD7844 Star Empire
+(4824,0974) city 2 #cFD7844 Star Empire
+(5094,0514) city 2 #cFD7844 Star Empire
+(5444,0414) city 2 #cFD7844 Star Empire
+(5994,1124) city 2 #cFD7844 Star Empire
+(6274,1354) city 2 #cFD7844 Star Empire
+(7530,2029) city 3 #cFD7844 Star Empire
+(1494,1974) city 2 #c4A99FB HyperionNexus
+(4126,4197) city 3 #c4A99FB HyperionNexus
+(0524,2595) city 2 #c4A99FB HyperionNexus
+(5152,4196) city 2 #c4A99FB HyperionNexus
+(5196,3898) city 3 #c4A99FB HyperionNexus
+(5572,3787) city 3 #c4A99FB HyperionNexus
+(5532,4050) city 5 #c4A99FB HyperionNexus
+(5298,4057) city 7 #c4A99FB HyperionNexus
+(5212,2918) city 5 #c4A99FB HyperionNexus
+(5490,2718) city 5 #c4A99FB HyperionNexus
+(5355,2759) city 5 #c4A99FB HyperionNexus
+(5489,2931) city 5 #c4A99FB HyperionNexus
+(5752,5468) city 5 #c4A99FB HyperionNexus
+(5740,5298) city 5 #c4A99FB HyperionNexus
+(5655,5259) city 5 #c4A99FB HyperionNexus
+(6090,3440) city 5 #c4A99FB HyperionNexus
+(6065,3318) city 5 #c4A99FB HyperionNexus
+(5954,3573) city 5 #c4A99FB HyperionNexus
+(6252,4238) city 5 #c4A99FB HyperionNexus
+(6530,4038) city 5 #c4A99FB HyperionNexus
+(6395,4079) city 5 #c4A99FB HyperionNexus
+(6529,4251) city 5 #c4A99FB HyperionNexus
+(6547,2074) city 5 #c4A99FB HyperionNexus
+(6554,1813) city 5 #c4A99FB HyperionNexus
+(6360,2040) city 5 #c4A99FB HyperionNexus
+(6633,3193) city 7 #c4A99FB HyperionNexus
+(6872,3410) city 5 #c4A99FB HyperionNexus
+(6691,3387) city 5 #c4A99FB HyperionNexus
+(6906,3257) city 3 #c4A99FB HyperionNexus
+(6519,3430) city 5 #c4A99FB HyperionNexus
+(7089,5731) city 5 #c4A99FB HyperionNexus
+(7594,6284) city 2 #c4A99FB HyperionNexus
+(7714,2754) city 2 #c4A99FB HyperionNexus
+(7914,6714) city 2 #c4A99FB HyperionNexus
+(7904,2334) city 2 #c4A99FB HyperionNexus
+(7904,5074) city 2 #c4A99FB HyperionNexus
+(7964,3894) city 2 #c4A99FB HyperionNexus
+(8114,4564) city 2 #c4A99FB HyperionNexus
+(8034,6394) city 2 #c4A99FB HyperionNexus
+(8294,3434) city 2 #c4A99FB HyperionNexus
+(8374,3074) city 2 #c4A99FB HyperionNexus
+(8184,6735) city 2 #c4A99FB HyperionNexus
+(8284,3874) city 2 #c4A99FB HyperionNexus
+(8410,4848) city 3 #c4A99FB HyperionNexus
+(8524,3154) city 2 #c4A99FB HyperionNexus
+(8524,3915) city 2 #c4A99FB HyperionNexus
+(8704,4234) city 2 #c4A99FB HyperionNexus
+(8734,4484) city 2 #c4A99FB HyperionNexus
+(8834,5104) city 2 #c4A99FB HyperionNexus
+(1114,1964) city 2 #c4A99FB HyperionNexus
+(1404,6294) city 2 #cE5B36C EclipseProject
+(1967,5294) city 5 #cE5B36C EclipseProject
+(1974,5033) city 5 #cE5B36C EclipseProject
+(1780,5260) city 5 #cE5B36C EclipseProject
+(2564,8035) city 2 #cE5B36C EclipseProject
+(2852,6918) city 5 #cE5B36C EclipseProject
+(3129,6931) city 5 #cE5B36C EclipseProject
+(2994,8144) city 2 #cE5B36C EclipseProject
+(2944,8554) city 2 #cE5B36C EclipseProject
+(3556,5071) city 5 #cE5B36C EclipseProject
+(3301,5016) city 9 #cE5B36C EclipseProject
+(3264,8575) city 2 #cE5B36C EclipseProject
+(3633,5893) city 7 #cE5B36C EclipseProject
+(3872,6110) city 5 #cE5B36C EclipseProject
+(3691,6087) city 5 #cE5B36C EclipseProject
+(3906,5957) city 3 #cE5B36C EclipseProject
+(3694,7804) city 2 #cE5B36C EclipseProject
+(3853,4133) city 7 #cE5B36C EclipseProject
+(4092,4350) city 5 #cE5B36C EclipseProject
+(3911,4327) city 5 #cE5B36C EclipseProject
+(3739,4370) city 5 #cE5B36C EclipseProject
+(4004,7995) city 2 #cE5B36C EclipseProject
+(4084,8675) city 2 #cE5B36C EclipseProject
+(4384,7994) city 2 #cE5B36C EclipseProject
+(4514,8724) city 2 #cE5B36C EclipseProject
+(4974,8694) city 2 #cE5B36C EclipseProject
+(4934,8384) city 2 #cE5B36C EclipseProject
+(5164,8154) city 2 #cE5B36C EclipseProject
+(5374,7774) city 2 #cE5B36C EclipseProject
+(5393,7073) city 7 #cE5B36C EclipseProject
+(5632,7290) city 5 #cE5B36C EclipseProject
+(5451,7267) city 5 #cE5B36C EclipseProject
+(5666,7137) city 3 #cE5B36C EclipseProject
+(5279,7310) city 5 #cE5B36C EclipseProject
+(5639,5371) city 5 #cE5B36C EclipseProject
+(5754,7974) city 2 #cE5B36C EclipseProject
+(5854,7614) city 2 #cE5B36C EclipseProject
+(5866,6162) city 5 #cE5B36C EclipseProject
+(5676,6154) city 5 #cE5B36C EclipseProject
+(5890,6020) city 5 #cE5B36C EclipseProject
+(5854,8474) city 2 #cE5B36C EclipseProject
+(5984,8194) city 2 #cE5B36C EclipseProject
+(6174,8434) city 2 #cE5B36C EclipseProject
+(6406,7442) city 5 #cE5B36C EclipseProject
+(6216,7434) city 5 #cE5B36C EclipseProject
+(6430,7300) city 5 #cE5B36C EclipseProject
+(6424,8354) city 2 #cE5B36C EclipseProject
+(6430,8049) city 3 #cE5B36C EclipseProject
+(6734,7234) city 2 #cE5B36C EclipseProject
+(6814,7914) city 2 #cE5B36C EclipseProject
+(6604,7695) city 2 #cE5B36C EclipseProject
+(6854,6924) city 2 #cE5B36C EclipseProject
+(6812,5718) city 5 #cE5B36C EclipseProject
+(7090,5518) city 5 #cE5B36C EclipseProject
+(6955,5559) city 5 #cE5B36C EclipseProject
+(6904,8015) city 2 #cE5B36C EclipseProject
+(7314,6624) city 2 #cE5B36C EclipseProject
+(7314,7564) city 2 #cE5B36C EclipseProject
+(7387,4974) city 5 #cE5B36C EclipseProject
+(7394,4713) city 5 #cE5B36C EclipseProject
+(7200,4940) city 5 #cE5B36C EclipseProject
+(7384,7074) city 2 #cE5B36C EclipseProject
+(7444,6755) city 2 #cE5B36C EclipseProject
+
+$planet
+(3375,5129) large
+(3212,5250)(3375,5129) small
+(3421,5133)(3375,5129) small
+(3483,5101)(3375,5129) small
+(5638,7155)(5472,7214) small
+(5472,7214) large
+(5432,7276)(5472,7214) small
+(6878,3275)(6712,3334) small
+(6672,3396)(6712,3334) small
+(6712,3334) large
+(4499,4497) medium
+(5551,3802)(5372,3974) small
+(5372,3974) large
+(5169,3916)(5372,3974) small
+(5435,4030)(5372,3974) small
+(4098,4215)(3932,4274) small
+(3892,4336)(3932,4274) small
+(3932,4274) large
+(1572,3316)(1612,3254) small
+(1612,3254) large
+(1778,3195)(1612,3254) small
+(3878,5975)(3712,6034) small
+(3672,6096)(3712,6034) small
+(3712,6034) large

@@ -1,0 +1,152 @@
+$name 10127 V646 Sagitta
+$serverName V646 Sagitta
+$size 9000
+
+// Rank 1: EarthFederation (51.8)
+// Rank 2: Legion (41.6)
+// Rank 3: 月の雫 (2.1)
+// Rank 4: Black Star (2.1)
+
+$station
+(4132,4087) city 3 #c4A99FB Legion
+(4569,1511) city 5 #c4A99FB Legion
+(4330,1500) city 5 #c4A99FB Legion
+(4458,1679) city 5 #c4A99FB Legion
+(4532,1749) city 5 #c4A99FB Legion
+(4654,0614) city 2 #c4A99FB Legion
+(4824,0974) city 2 #c4A99FB Legion
+(5274,0534) city 2 #c4A99FB Legion
+(5421,3869) city 7 #c4A99FB Legion
+(5532,4050) city 5 #c4A99FB Legion
+(5351,4067) city 5 #c4A99FB Legion
+(5547,3908) city 3 #c4A99FB Legion
+(5559,3800) city 2 #c4A99FB Legion
+(5212,2918) city 5 #c4A99FB Legion
+(5490,2718) city 5 #c4A99FB Legion
+(5355,2759) city 5 #c4A99FB Legion
+(5489,2931) city 5 #c4A99FB Legion
+(5393,7073) city 7 #c4A99FB Legion
+(5444,0414) city 2 #c4A99FB Legion
+(5752,5468) city 5 #c4A99FB Legion
+(5639,5371) city 5 #c4A99FB Legion
+(6090,3440) city 5 #c4A99FB Legion
+(6065,3318) city 5 #c4A99FB Legion
+(5954,3573) city 5 #c4A99FB Legion
+(6252,4238) city 5 #c4A99FB Legion
+(6530,4038) city 5 #c4A99FB Legion
+(6395,4079) city 5 #c4A99FB Legion
+(6529,4251) city 5 #c4A99FB Legion
+(6547,2074) city 5 #c4A99FB Legion
+(6360,2040) city 5 #c4A99FB Legion
+(6761,3229) city 7 #c4A99FB Legion
+(6872,3410) city 5 #c4A99FB Legion
+(6691,3427) city 5 #c4A99FB Legion
+(6887,3268) city 3 #c4A99FB Legion
+(6899,3160) city 2 #c4A99FB Legion
+(7014,2014) city 2 #c4A99FB Legion
+(6812,5718) city 5 #c4A99FB Legion
+(7387,4974) city 5 #c4A99FB Legion
+(7394,4713) city 5 #c4A99FB Legion
+(7200,4940) city 5 #c4A99FB Legion
+(7530,2029) city 3 #c4A99FB Legion
+(7714,2754) city 2 #c4A99FB Legion
+(7794,1924) city 2 #c4A99FB Legion
+(7834,3134) city 2 #c4A99FB Legion
+(7874,6714) city 2 #c4A99FB Legion
+(7934,2244) city 2 #c4A99FB Legion
+(7904,5074) city 2 #c4A99FB Legion
+(7964,3894) city 2 #c4A99FB Legion
+(8114,4564) city 2 #c4A99FB Legion
+(8034,6394) city 2 #c4A99FB Legion
+(8084,2034) city 2 #c4A99FB Legion
+(8274,3434) city 2 #c4A99FB Legion
+(8374,3074) city 2 #c4A99FB Legion
+(8184,6735) city 2 #c4A99FB Legion
+(8264,3854) city 2 #c4A99FB Legion
+(8410,4848) city 3 #c4A99FB Legion
+(8544,3134) city 2 #c4A99FB Legion
+(8544,3755) city 2 #c4A99FB Legion
+(8664,4294) city 2 #c4A99FB Legion
+(8694,4504) city 2 #c4A99FB Legion
+(8834,5104) city 2 #c4A99FB Legion
+(1104,6894) city 2 #cE5B36C EarthFederation
+(1404,6294) city 2 #cE5B36C EarthFederation
+(1533,3113) city 7 #cE5B36C EarthFederation
+(1772,3330) city 5 #cE5B36C EarthFederation
+(1584,6735) city 2 #cE5B36C EarthFederation
+(1780,5260) city 5 #cE5B36C EarthFederation
+(1919,7798) city 3 #cE5B36C EarthFederation
+(2254,7604) city 2 #cE5B36C EarthFederation
+(2564,8035) city 2 #cE5B36C EarthFederation
+(2852,6918) city 5 #cE5B36C EarthFederation
+(3130,6718) city 5 #cE5B36C EarthFederation
+(3129,6931) city 5 #cE5B36C EarthFederation
+(2994,8144) city 2 #cE5B36C EarthFederation
+(0410,4869) city 3 #cE5B36C EarthFederation
+(3556,5071) city 5 #cE5B36C EarthFederation
+(3173,5226) city 3 #cE5B36C EarthFederation
+(3301,5016) city 9 #cE5B36C EarthFederation
+(3638,6117) city 7 #cE5B36C EarthFederation
+(3872,6110) city 5 #cE5B36C EarthFederation
+(3912,5847) city 3 #cE5B36C EarthFederation
+(3536,5958) city 3 #cE5B36C EarthFederation
+(0524,6634) city 2 #cE5B36C EarthFederation
+(3858,4357) city 7 #cE5B36C EarthFederation
+(4092,4350) city 5 #cE5B36C EarthFederation
+(3756,4198) city 3 #cE5B36C EarthFederation
+(3712,4496) city 2 #cE5B36C EarthFederation
+(7089,5731) city 5 #cE5B36C EarthFederation
+(0704,6955) city 2 #cE5B36C EarthFederation
+(0834,5284) city 2 #cE5B36C EarthFederation
+(1234,6124) city 2 #cE5B36C EarthFederation
+(2174,7094) city 2 #c49E7C0 Black Star
+(0414,6164) city 2 #c49E7C0 Black Star
+(3492,6256) city 2 #c49E7C0 Black Star
+(5632,7290) city 5 #c49E7C0 Black Star
+(5451,7267) city 5 #c49E7C0 Black Star
+(6406,7442) city 5 #c49E7C0 Black Star
+(0724,6294) city 2 #c49E7C0 Black Star
+(1214,1624) city 2 #cFD7844 月の雫
+(1494,1974) city 2 #cFD7844 月の雫
+(2654,0524) city 2 #cFD7844 月の雫
+(2864,0795) city 2 #cFD7844 月の雫
+(3574,0314) city 2 #cFD7844 月の雫
+(3764,0714) city 2 #cFD7844 月の雫
+(3974,0154) city 2 #cFD7844 月の雫
+(5890,6020) city 5 #cFD7844 月の雫
+(6554,1813) city 5 #cFD7844 月の雫
+(0854,2124) city 2 #cFD7844 月の雫
+(0730,2869) city 3 #cFD7844 月の雫
+(6734,7234) city 2 #cFD7844 月の雫
+(6704,1455) city 2 #cFD7844 月の雫
+(6854,6924) city 2 #cFD7844 月の雫
+(7314,7564) city 2 #cFD7844 月の雫
+(7384,7074) city 2 #cFD7844 月の雫
+(1114,1964) city 2 #cFD7844 月の雫
+
+$planet
+(3932,4274) large
+(3729,4216)(3932,4274) small
+(4111,4102)(3932,4274) small
+(3995,4330)(3932,4274) small
+(3712,6034) large
+(3509,5976)(3712,6034) small
+(3891,5862)(3712,6034) small
+(3775,6090)(3712,6034) small
+(6858,3285)(6712,3334) small
+(6712,3334) large
+(6672,3436)(6712,3334) small
+(5372,3974) large
+(5332,4076)(5372,3974) small
+(5518,3925)(5372,3974) small
+(4499,4497) medium
+(3421,5133)(3375,5129) small
+(3212,5250)(3375,5129) small
+(3483,5101)(3375,5129) small
+(3375,5129) large
+(5432,7276)(5472,7214) small
+(5472,7214) large
+(5638,7155)(5472,7214) small
+(1778,3195)(1612,3254) small
+(1612,3254) large
+(1572,3316)(1612,3254) small

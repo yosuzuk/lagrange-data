@@ -291,6 +291,7 @@
         "openExternalMap": "バックエンドの設定",
         "openExampleMap": "サンプルマップを開く",
         "openEmptyMap": "空のマップを開く",
+        "openServerResultMap": "過去の星系マップを開く",
         "sizeCanBeAdjustedBrackets": "（サイズは後からも調整可能）",
         "noContent": "該当なし",
         "editKeyInstruction": "編集用のパスコードを入力してください",

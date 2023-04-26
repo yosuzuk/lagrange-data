@@ -1,0 +1,143 @@
+$name 10301 V1597 Corona Borealis
+$serverName V1597 Corona Borealis
+$size 9000
+
+// Rank 1: Dark Angels (20.4)
+// Rank 2: HYDRA (20.4)
+// Rank 8: YKUDZA (4.3)
+
+$station
+(2640,3820) city 5 #cE5B36C Dark Angels
+(3694,0634) city 2 #cE5B36C Dark Angels
+(3704,1054) city 2 #cE5B36C Dark Angels
+(3713,3746) city 3 #cE5B36C Dark Angels
+(3744,0275) city 2 #cE5B36C Dark Angels
+(4074,0944) city 2 #cE5B36C Dark Angels
+(4569,1411) city 5 #cE5B36C Dark Angels
+(4330,1400) city 5 #cE5B36C Dark Angels
+(4458,1579) city 5 #cE5B36C Dark Angels
+(4532,1649) city 5 #cE5B36C Dark Angels
+(4734,0554) city 2 #cE5B36C Dark Angels
+(5332,4890) city 5 #cE5B36C Dark Angels
+(4951,5025) city 2 #cE5B36C Dark Angels
+(5269,3551) city 5 #cE5B36C Dark Angels
+(5410,0688) city 3 #cE5B36C Dark Angels
+(6074,0424) city 2 #cE5B36C Dark Angels
+(6126,3362) city 5 #cE5B36C Dark Angels
+(5936,3354) city 5 #cE5B36C Dark Angels
+(6150,3220) city 5 #cE5B36C Dark Angels
+(6304,0554) city 2 #cE5B36C Dark Angels
+(6773,3093) city 7 #cE5B36C Dark Angels
+(7012,3310) city 5 #cE5B36C Dark Angels
+(6831,3287) city 5 #cE5B36C Dark Angels
+(7046,3157) city 3 #cE5B36C Dark Angels
+(6659,3330) city 5 #cE5B36C Dark Angels
+(6764,1434) city 2 #cE5B36C Dark Angels
+(7174,0834) city 2 #cE5B36C Dark Angels
+(7574,2104) city 2 #cE5B36C Dark Angels
+(7474,1284) city 2 #cE5B36C Dark Angels
+(7424,1694) city 2 #cE5B36C Dark Angels
+(7594,6284) city 2 #cE5B36C Dark Angels
+(7594,6654) city 2 #cE5B36C Dark Angels
+(7744,1694) city 2 #cE5B36C Dark Angels
+(7914,1914) city 2 #cE5B36C Dark Angels
+(7704,3235) city 2 #cE5B36C Dark Angels
+(7994,2254) city 2 #cE5B36C Dark Angels
+(8114,6374) city 2 #cE5B36C Dark Angels
+(8154,5404) city 2 #cE5B36C Dark Angels
+(8484,2814) city 2 #cE5B36C Dark Angels
+(8594,3054) city 2 #cE5B36C Dark Angels
+(8564,3434) city 2 #cE5B36C Dark Angels
+(8734,3634) city 2 #cE5B36C Dark Angels
+(8674,4144) city 2 #cE5B36C Dark Angels
+(8724,5534) city 2 #cE5B36C Dark Angels
+(1284,6574) city 2 #c4A99FB HYDRA
+(1324,7674) city 2 #c4A99FB HYDRA
+(1514,6934) city 2 #c4A99FB HYDRA
+(1624,7934) city 2 #c4A99FB HYDRA
+(1852,5988) city 5 #c4A99FB HYDRA
+(1840,5818) city 5 #c4A99FB HYDRA
+(1755,5779) city 5 #c4A99FB HYDRA
+(1739,5891) city 5 #c4A99FB HYDRA
+(1834,7354) city 2 #c4A99FB HYDRA
+(1784,7154) city 2 #c4A99FB HYDRA
+(2014,8044) city 2 #c4A99FB HYDRA
+(1939,7698) city 3 #c4A99FB HYDRA
+(2064,7054) city 2 #c4A99FB HYDRA
+(2204,7694) city 2 #c4A99FB HYDRA
+(2324,7395) city 2 #c4A99FB HYDRA
+(3034,7854) city 2 #c4A99FB HYDRA
+(3632,5570) city 5 #c4A99FB HYDRA
+(3672,5307) city 3 #c4A99FB HYDRA
+(3252,5706) city 2 #c4A99FB HYDRA
+(3454,8444) city 2 #c4A99FB HYDRA
+(5289,5711) city 5 #c4A99FB HYDRA
+(5741,5969) city 7 #c4A99FB HYDRA
+(5852,6150) city 5 #c4A99FB HYDRA
+(6529,4071) city 5 #c4A99FB HYDRA
+(6720,6560) city 5 #c4A99FB HYDRA
+(6974,6904) city 2 #c4A99FB HYDRA
+(7414,6984) city 2 #c4A99FB HYDRA
+(1274,6794) city 2 #c4A99FB HYDRA
+(1394,2654) city 2 #c9FE23E YKUDZA
+(1444,6254) city 2 #c9FE23E YKUDZA
+(1484,1414) city 2 #c9FE23E YKUDZA
+(1564,2414) city 2 #c9FE23E YKUDZA
+(1725,4818) city 5 #c9FE23E YKUDZA
+(1770,1408) city 3 #c9FE23E YKUDZA
+(2132,3050) city 5 #c9FE23E YKUDZA
+(1951,3027) city 5 #c9FE23E YKUDZA
+(2166,2897) city 3 #c9FE23E YKUDZA
+(1779,3070) city 5 #c9FE23E YKUDZA
+(1844,2134) city 2 #c9FE23E YKUDZA
+(2044,1534) city 2 #c9FE23E YKUDZA
+(2314,1764) city 2 #c9FE23E YKUDZA
+(0324,2955) city 2 #c9FE23E YKUDZA
+(2607,1654) city 5 #c9FE23E YKUDZA
+(2614,1393) city 5 #c9FE23E YKUDZA
+(2420,1620) city 5 #c9FE23E YKUDZA
+(2514,0524) city 2 #c9FE23E YKUDZA
+(2834,3593) city 5 #c9FE23E YKUDZA
+(0370,4728) city 3 #c9FE23E YKUDZA
+(3354,0764) city 2 #c9FE23E YKUDZA
+(3414,0294) city 2 #c9FE23E YKUDZA
+(0754,2464) city 2 #c9FE23E YKUDZA
+(0604,3694) city 2 #c9FE23E YKUDZA
+(0634,4244) city 2 #c9FE23E YKUDZA
+(0624,4694) city 2 #c9FE23E YKUDZA
+(0774,2154) city 2 #c9FE23E YKUDZA
+(0744,1934) city 2 #c9FE23E YKUDZA
+(0774,6204) city 2 #c9FE23E YKUDZA
+(0954,3044) city 2 #c9FE23E YKUDZA
+(0944,2774) city 2 #c9FE23E YKUDZA
+(1114,4604) city 2 #c9FE23E YKUDZA
+(1114,2314) city 2 #c9FE23E YKUDZA
+(1084,5094) city 2 #c9FE23E YKUDZA
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium
