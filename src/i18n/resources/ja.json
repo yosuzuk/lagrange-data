@@ -518,7 +518,8 @@
         "weakPointStrike": "弱点攻撃",
         "closeCombatAssault": "近距離突撃",
         "spreadOutWarhead2": "弾頭散乱II",
-        "oscillatoryExcitation": "Oscillatory Excitation"
+        "oscillatoryExcitation": "Oscillatory Excitation",
+        "speedUpRepair": "Speed-Up Repair"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -568,7 +569,8 @@
         "weakPointStrike": "目標のHPが{{hp}}%を下回る場合、システムの武器命中時のクリティカルダメージが{{critDamage}}%アップする。",
         "closeCombatAssault": "中列の目標を飛行して攻撃する場合、{{chance}}%の確率で敵対空武器の早期ロックオン効果を無視する。",
         "spreadOutWarhead2": "システム内の対空武器が艦載機目標に命中すると、一定の確率で自身を攻撃中の艦載機すべてに対し同時に100%のクリティカルダメージを与えることがある。",
-        "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s."
+        "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s.",
+        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

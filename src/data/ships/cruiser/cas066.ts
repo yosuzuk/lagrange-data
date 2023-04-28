@@ -254,10 +254,13 @@ export const cas066: IShipDefinition[] = [
                 id: 'sp1',
                 name: '無人機メンテナンスシステム',
                 translatedName: {
-                    en: 'Corvette Maintenance System',
+                    en: 'UAV Maintenance System',
                 },
                 mainSystem: true,
-                // TODO skills
+                skills: [
+                    strategy.speedUpRepair(40, 30).withCost(15),
+                    // TODO remaining skills
+                ],
                 skillSlots: 7,
             }),
             modules.static({
@@ -266,7 +269,10 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Standard Integrated Battery System',
                 },
-                // TODO skills
+                skills: [
+                    strategy.antiAircraftSupport(40, 30, 25).withCost(12),
+                    // TODO remaining skills
+                ],
                 skillSlots: 6,
             }),
             modules.commandSystem({
@@ -279,7 +285,13 @@ export const cas066: IShipDefinition[] = [
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                // TODO skills
+                skills: [
+                    // TODO cost
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                ],
                 skillSlots: 3,
             }),
             modules.energySystem(),
