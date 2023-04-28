@@ -23,7 +23,13 @@ const MapSelectionPage = lazy(() => import('./components/pages/mapEdit/MapSelect
 const MapSelectedPage = lazy(() => import('./components/pages/mapEdit/MapSelectedPage'));
 const TableExample = lazy(() => import('./components/examples/TableExample'));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+        },
+    },
+});
 
 function App() {
     return (

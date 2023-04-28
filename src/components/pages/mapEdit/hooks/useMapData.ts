@@ -72,8 +72,11 @@ export const useMapData = (): IHookResult => {
             }
             setLastValidInput(mapDataQueryResult.data);
             setLastValidMapData(mapData);
+            if (mapUrl && !isExampleMapUrl(mapUrl)) {
+                window.localStorage.setItem('lastMapUrl', mapUrl);
+            }
         }
-    }, [mapDataQueryResult.isSuccess, mapDataQueryResult.data]);
+    }, [mapDataQueryResult.isSuccess, mapDataQueryResult.data, mapUrl]);
 
     // apply manual input
     const applyInput = useCallback(() => {

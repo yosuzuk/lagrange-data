@@ -6,7 +6,7 @@ The map builder can be used to visualize and share a star system. Its content, t
 
 ## Syntax
 
-The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. Colors are indicated using escape codes like `#R` or `#cFF0000`. This allows us to copy and paste some of the content into both directions. 
+The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. Colors are indicated using escape codes like `#R` or `#cFF0000`. Line breaks inside various labels can be inserted using `#r`. This allows us to copy and paste some of the content into both directions. 
 
 Special keywords are defined for placing map content, e.g. `$marker` for placing marker points. Any line after such a keyword belongs to the same content type. You do not have to repeat these keywords for every line of content.
 

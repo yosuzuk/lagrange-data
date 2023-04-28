@@ -14,7 +14,8 @@ import ListItem from '@mui/material/ListItem';
 
 export const LoadMapFromUrl = () => {
     const [mapUrl, setMapUrl] = useState<string>(() => {
-        return getExampleMaps().fullMapExample.url;
+        const lastMapUrl = window.localStorage.getItem('lastMapUrl');
+        return lastMapUrl || getExampleMaps().fullMapExample.url;
     });
     const [validUrl, setValidUrl] = useState<boolean | null>(null);
     const [showValidation, setShowValidation] = useState<boolean>(false);
