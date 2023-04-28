@@ -31,6 +31,7 @@ export const MapOverlay = (props: IProps) => {
                     <Typography
                         key={`overlay_${index}`}
                         variant={overlayTextTypeToTypographyVariant(line.type)}
+                        sx={{ color: 'white' }}
                     >{line.text}</Typography>
                 ))}
             </Stack>
