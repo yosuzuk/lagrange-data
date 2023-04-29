@@ -18,7 +18,7 @@ $station
 (4135,3615) dock uEcoin +600
 (4135,3625) dock Reinforcement +4
 (4115,3625) dock Reinforcement +4
-(4115,3645)(4110,3640)(4120,3650) dock 2 #c0077FF uEcoin +600
+(4115,3645) dock 2 #c0077FF uEcoin +600
 (4070,3680)(4060,3670)(4080,3690) dock 2 #c0077FF uEcoin +900
 
 $marker

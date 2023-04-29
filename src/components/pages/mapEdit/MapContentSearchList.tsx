@@ -47,7 +47,6 @@ export const MapContentSearchList = (props: IProps) => {
         }
         const searchableStations = mapData.stations.filter(station => station.type === 'dock');
         if (searchTerm.length === 0) {
-            console.log(searchableStations);
             return searchableStations;
         }
         return searchableStations.filter(station => matchStation(station, searchTerm));

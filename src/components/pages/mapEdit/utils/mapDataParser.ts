@@ -1,6 +1,6 @@
 import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType } from '../types/IMapContent';
+import { AreaType, IArea, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType, StationType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
@@ -328,7 +328,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
         error: stationTypeError,
         matches: stationTypes,
         line: lineWithoutStationTypes,
-    } = parseWithRegExp<AreaType>(lineWithoutCoordinates, STATION_TYPE_REG_EXP, 0, 1);
+    } = parseWithRegExp<StationType>(lineWithoutCoordinates, STATION_TYPE_REG_EXP, 0, 1);
 
     if (stationTypeError) {
         return [null, createParseMapContentError('Invalid number of station types', lineNumber)];
@@ -354,16 +354,24 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
+    const type = stationTypes[0] ?? 'default';
+    const level = Number(stationlevels[0]) || null;
     const color = parseColor(colors[0], NEUTRAL_FACTION_COLOR);
+
+    if (type === 'dock' && coordinates.length === 1 && level !== null) {
+        const [_center, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
+        coordinates.push(`(${x - 5},${y - 5})`);
+        coordinates.push(`(${x + 5},${y + 5})`);
+    }
 
     return [
         {
             id: `station${lineNumber}`,
             contentType: 'station',
             lineNumber,
-            type: stationTypes[0] ?? 'default',
+            type,
             position: coordinates[0],
-            level: Number(stationlevels[0]) || null,
+            level,
             color,
             name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
             area: coordinates.length === 3 ? {

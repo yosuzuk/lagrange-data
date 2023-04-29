@@ -122,7 +122,7 @@ $station
 
 You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `subCity`, `stronghold`, `dock` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
 
-Two additional points can be specified to mark the area around the station.
+Two additional points can be specified to mark the area around the station. A station of type `dock` with an explicit "level" will automatically mark a 1x1 area. 
 
 Player bases, outposts and mining platforms have their own dedicated keyword (`$base`, `$outpost` and `$platform`). `$station` is mostly used for creating cities and miscellaneous NPC stations.
 
