@@ -1,4 +1,7 @@
 import { Manufacturer } from '../../../types/Manufacturer';
+import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -15,7 +18,7 @@ const typeA: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.MEDIUM_FIGHTER,
     cost: 0,
-    weight: 10, // TODO find out
+    weight: 5,
     row: ShipRow.NONE,
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
@@ -88,7 +91,7 @@ const typeB: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.MEDIUM_FIGHTER,
     cost: 0,
-    weight: 10, // TODO find out
+    weight: 10,
     row: ShipRow.NONE,
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
@@ -159,7 +162,7 @@ const typeC: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.MEDIUM_FIGHTER,
     cost: 0,
-    weight: 10, // TODO find out
+    weight: 5,
     row: ShipRow.NONE,
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
@@ -241,7 +244,12 @@ const typeC: IShipDefinition = {
 };
 
 export const at021: IShipDefinition[] = [
-    typeA,
+    {
+        ...typeA,
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+    },
     {
         ...typeA,
         id: ShipId.AT021_A_TE,
@@ -251,7 +259,12 @@ export const at021: IShipDefinition[] = [
         },
         operationLimit: 10,
     },
-    typeB,
+    {
+        ...typeB,
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT, ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+    },
     {
         ...typeB,
         id: ShipId.AT021_B_TE,
@@ -261,7 +274,12 @@ export const at021: IShipDefinition[] = [
         },
         operationLimit: 10,
     },
-    typeC,
+    {
+        ...typeC,
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
+    },
     {
         ...typeC,
         id: ShipId.AT021_C_TE,
