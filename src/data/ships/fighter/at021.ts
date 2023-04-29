@@ -18,7 +18,7 @@ const typeA: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.MEDIUM_FIGHTER,
     cost: 0,
-    weight: 5,
+    weight: 10,
     row: ShipRow.NONE,
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
