@@ -15,12 +15,13 @@ import { StarSystem } from './3d/StarSystem';
 interface IProps {
     mapData: IMapData;
     targetToMark: IMapContent | null;
+    markTarget: (target: IMapContent | null) => void;
 }
 
 const DEFAULT_MAP_SIZE = 9000;
 
 export const MapRenderer = (props: IProps) => {
-    const { mapData, targetToMark } = props;
+    const { mapData, targetToMark, markTarget } = props;
     const [debug, setDebug] = useState<boolean>(false);
     const gridSize = translateSizeToGrid(mapData.size ?? DEFAULT_MAP_SIZE);
 
@@ -55,7 +56,7 @@ export const MapRenderer = (props: IProps) => {
                                 <CameraControls targetToMark={targetToMark} />
                                 <color attach="background" args={['#292828']} />
                                 <ambientLight intensity={0.1} />
-                                <StarSystem mapData={mapData} />
+                                <StarSystem mapData={mapData} markTarget={markTarget} />
                                 {debug && (
                                     <axesHelper args={[10]} position={[0, 0, 0]} renderOrder={getRendeOrder('axesHelper')} />
                                 )}

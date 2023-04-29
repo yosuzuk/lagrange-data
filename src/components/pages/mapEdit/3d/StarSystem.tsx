@@ -5,7 +5,7 @@ import { WorldLabel } from './WorldLabel';
 import { StarsBackground } from './StarsBackground';
 import { MapBorders } from './MapBorders';
 import { MapGrid } from './MapGrid';
-import { IMapData } from '../types/IMapContent';
+import { IMapContent, IMapData } from '../types/IMapContent';
 import { Marker } from './Marker';
 import { Planet } from './Planet';
 import { PlayerBase } from './PlayerBase';
@@ -17,10 +17,11 @@ import { Area } from './Area';
 
 interface IProps {
     mapData: IMapData;
+    markTarget: (target: IMapContent | null) => void;
 }
 
 export const StarSystem = (props: IProps) => {
-    const { mapData } = props;
+    const { mapData, markTarget } = props;
     const { invalidate } = useThree();
 
     useEffect(() => {
@@ -39,7 +40,7 @@ export const StarSystem = (props: IProps) => {
                 <WorldLabel worldName={mapData.serverName} />
             )}
             {mapData.marker.map(marker => (
-                <Marker key={marker.id} marker={marker} />
+                <Marker key={marker.id} marker={marker} onClick={markTarget} />
             ))}
             {mapData.regions.map(region => (
                 <Region key={region.id} region={region} />
@@ -48,19 +49,19 @@ export const StarSystem = (props: IProps) => {
                 <Planet key={planet.id} planet={planet} />
             ))}
             {mapData.stations.map(station => (
-                <Station key={station.id} station={station} />
+                <Station key={station.id} station={station} onClick={markTarget} />
             ))}
             {mapData.areas.map(area => (
-                <Area key={area.id} area={area} />
+                <Area key={area.id} area={area} onClick={markTarget} />
             ))}
             {mapData.bases.map(base => (
-                <PlayerBase key={base.id} base={base} />
+                <PlayerBase key={base.id} base={base} onClick={markTarget} />
             ))}
             {mapData.outposts.map(outpost => (
-                <PlayerOutpost key={outpost.id} outpost={outpost} />
+                <PlayerOutpost key={outpost.id} outpost={outpost} onClick={markTarget} />
             ))}
             {mapData.platforms.map(platform => (
-                <PlayerPlatform key={platform.id} platform={platform} />
+                <PlayerPlatform key={platform.id} platform={platform} onClick={markTarget} />
             ))}
         </>
     );

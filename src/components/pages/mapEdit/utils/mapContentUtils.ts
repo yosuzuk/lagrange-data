@@ -105,8 +105,8 @@ export function getPrimaryCoordinatesForMapContent(mapContent: IMapContent): [nu
             const [x1, y1] = parseGamePosition(area.position1);
             const [x2, y2] = parseGamePosition(area.position2);
             return [
-                Math.round((x2 > x1 ? (x2 - x1) : (x1 - x2)) / 2),
-                Math.round((y2 > y1 ? (y2 - y1) : (y1 - y2)) / 2),
+                Math.min(x1, x2) + Math.round((x2 > x1 ? (x2 - x1) : (x1 - x2)) / 2),
+                Math.min(y1, y2) + Math.round((y2 > y1 ? (y2 - y1) : (y1 - y2)) / 2),
             ];
         }
         case 'platform': {

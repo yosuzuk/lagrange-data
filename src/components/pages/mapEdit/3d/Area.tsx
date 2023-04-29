@@ -1,7 +1,8 @@
-import { useMemo, useRef, Fragment } from 'react';
+import { ThreeEvent } from '@react-three/fiber';
+import { useMemo, useRef, Fragment, useCallback } from 'react';
 import { useGridSize } from '../context/GridSizeContext';
 import { useZoomBasedOpacity, useZoomBasedVisibility } from '../context/ZoomLevelContext';
-import { IArea } from '../types/IMapContent';
+import { IArea, IMapContent } from '../types/IMapContent';
 import { snapToGrid, toGridPosition } from '../utils/coordinateUtils';
 import { getRendeOrder } from '../utils/renderOrder';
 import { Lines } from './Lines';
@@ -9,6 +10,7 @@ import { Plane } from './Plane';
 
 interface IProps {
     area: IArea;
+    onClick?: (content: IMapContent) => void;
 }
 
 const LINE_Z = 0.01;
@@ -16,7 +18,7 @@ const CORNER_POINT_SIZE = 0.04;
 const DIAGONAL_LINE_COLOR = '#545454';
 
 export const Area = (props: IProps) => {
-    const { area } = props;
+    const { area, onClick } = props;
     const gridSize = useGridSize();
     const areaVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityArea' : 'defaultArea');
     const edgeVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityAreaEdge' : 'defaultAreaEdge');
@@ -125,6 +127,11 @@ export const Area = (props: IProps) => {
 
     const lineRenderOrder = getRendeOrder('areaLines');
 
+    const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
+        e.stopPropagation();
+        onClick?.(area);
+    }, [onClick, area]);
+
     return (
         <group key={`${area.id}_${updateIterationRef.current}`} visible={areaVisible}>
             <Plane
@@ -135,6 +142,7 @@ export const Area = (props: IProps) => {
                 opacity={backgroundOpacity}
                 border={edgeVisible}
                 renderOrder={getRendeOrder('area')}
+                onClick={handleClick}
             />
             <Lines visible={edgeVisible} points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
             <group visible={!edgeVisible}>

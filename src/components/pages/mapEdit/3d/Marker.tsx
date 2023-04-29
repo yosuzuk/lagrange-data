@@ -10,12 +10,13 @@ import { TextLabel } from './TextLabel';
 
 interface IProps {
     marker: IMarker;
+    onClick: (marker: IMarker) => void;
 }
 
 const DEFAULT_COLOR = 'white';
 
 export const Marker = (props: IProps) => {
-    const { marker } = props;
+    const { marker, onClick } = props;
     const { setCursorToPointer, setCursorToDefault } = useCursorControl();
     const labelVisible = useZoomBasedVisibility('markerLabel');
     const updateIterationRef = useRef<number>(0);
@@ -31,8 +32,8 @@ export const Marker = (props: IProps) => {
 
     const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
         e.stopPropagation();
-        console.log(position);
-    }, [position]);
+        onClick(marker);
+    }, [onClick, marker]);
 
     return (
         <Fragment key={`${marker.id}_${updateIterationRef.current}`}>

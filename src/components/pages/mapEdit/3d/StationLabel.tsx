@@ -1,3 +1,4 @@
+import { ThreeEvent } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -15,10 +16,11 @@ interface IImages {
 
 interface IProps {
     station: IStation;
+    onClick?: (e: ThreeEvent<MouseEvent>) => void;
 }
 
 export const StationLabel = (props: IProps) => {
-    const { station } = props;
+    const { station, onClick } = props;
     const coneVisible = useZoomBasedVisibility('stationCone');
     const stationLabelVisible = useZoomBasedVisibility('stationLabel');
     const cityIconVisible = useZoomBasedVisibility('cityIcon');
@@ -60,18 +62,21 @@ export const StationLabel = (props: IProps) => {
                         canvas={images.icon}
                         gridPosition={position}
                         visible={!labelVisible}
+                        onClick={onClick}
                     />
                     <CanvasSprite
                         key={`${station.id}_iconCenteredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
                         canvas={(cityLevelVisible ? images.iconCenteredLabelWithLevel : null) ?? images.iconCenteredLabel ?? images.icon}
                         gridPosition={position}
                         visible={labelVisible && !coneVisible}
+                        onClick={onClick}
                     />
                     <CanvasSprite
                         key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
                         canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
                         gridPosition={position}
                         visible={labelVisible && coneVisible}
+                        onClick={onClick}
                     />
                 </group>
             );
@@ -88,6 +93,7 @@ export const StationLabel = (props: IProps) => {
                     canvas={labelImage}
                     gridPosition={position}
                     visible={stationLabelVisible}
+                    onClick={onClick}
                 />
             );
         }

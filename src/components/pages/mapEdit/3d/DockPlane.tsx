@@ -1,4 +1,4 @@
-import { useThree } from '@react-three/fiber';
+import { ThreeEvent, useThree } from '@react-three/fiber';
 import { useMemo } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -10,10 +10,11 @@ const SIZE = 0.5;
 
 interface IProps {
     station: IStation;
+    onClick?: (e: ThreeEvent<MouseEvent>) => void;
 }
 
 export const DockPlane = (props: IProps) => {
-    const { station } = props;
+    const { station, onClick } = props;
     const gridPosition = useNormalizedPosition({
         gamePosition: station.position,
     });
@@ -23,7 +24,7 @@ export const DockPlane = (props: IProps) => {
     const dockIcon = useMemo<HTMLCanvasElement>(() => createDockSprite(), []);
 
     return (
-        <mesh visible={visible} position={[...gridPosition, 0]} renderOrder={getRendeOrder('dockIcon')}>
+        <mesh visible={visible} onClick={onClick} position={[...gridPosition, 0]} renderOrder={getRendeOrder('dockIcon')}>
             <planeGeometry args={[SIZE, SIZE]} />
             <meshBasicMaterial transparent={true} depthWrite={false}>
                 <canvasTexture

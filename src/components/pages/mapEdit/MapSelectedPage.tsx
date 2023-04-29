@@ -71,7 +71,7 @@ const MapSelectedPage = () => {
                 </Box>
             )}
             {!isError && mapData && (
-                <MapRenderer mapData={mapData} targetToMark={targetToMark} />
+                <MapRenderer mapData={mapData} targetToMark={targetToMark} markTarget={markTarget} />
             )}
             <MapTopRightBar mode={mode} onExit={handleClickExit} setMode={setMode} />
             {mode === 'edit' && (

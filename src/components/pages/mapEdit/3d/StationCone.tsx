@@ -1,3 +1,4 @@
+import { ThreeEvent } from '@react-three/fiber';
 import { useMemo } from 'react';
 import { DoubleSide } from 'three';
 import { degreesToRadians } from '../../../../utils/math';
@@ -18,10 +19,11 @@ interface IProps {
     color: string;
     base: boolean;
     visible?: boolean;
+    onClick?: (e: ThreeEvent<MouseEvent>) => void;
 }
 
 export const StationCone = (props: IProps) => {
-    const { name, position, color, base, visible = true } = props;
+    const { name, position, color, base, visible = true, onClick } = props;
 
     const lines = useMemo<[Float32Array, Float32Array] | null>(() => {
         if (!base) {
@@ -55,7 +57,7 @@ export const StationCone = (props: IProps) => {
 
     return (
         <group visible={visible}>
-            <mesh name={name} position={[...position, CONE_HEIGHT * 1.5]} rotation={[degreesToRadians(90), 0, 0]}>
+            <mesh name={name} onClick={onClick} position={[...position, CONE_HEIGHT * 1.5]} rotation={[degreesToRadians(90), 0, 0]}>
                 <coneGeometry args={[CONE_RADIUS, CONE_HEIGHT, CONE_RADIAL_SEGMENTS, CONE_HEIGHT_SEGMENTS, CONE_OPEN_ENDED]} />
                 <meshStandardMaterial
                     emissive={color}
@@ -64,7 +66,7 @@ export const StationCone = (props: IProps) => {
                     opacity={CONE_OPACITY}
                 />
             </mesh>
-            <mesh position={[...position, CONE_HEIGHT * 0.5]} rotation={[degreesToRadians(-90), 0, 0]}>
+            <mesh onClick={onClick} position={[...position, CONE_HEIGHT * 0.5]} rotation={[degreesToRadians(-90), 0, 0]}>
                 <coneGeometry args={[CONE_RADIUS, CONE_HEIGHT, CONE_RADIAL_SEGMENTS, CONE_HEIGHT_SEGMENTS, CONE_OPEN_ENDED]} />
                 <meshStandardMaterial
                     emissive={color}
