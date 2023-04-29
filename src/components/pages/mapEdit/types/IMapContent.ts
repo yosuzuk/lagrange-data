@@ -89,6 +89,12 @@ export interface IPlayerPlatform extends IMapContent {
     station: IStation;
 }
 
+export interface ITemporaryLocation extends IMapContent {
+    contentType: 'temporaryLocation';
+    x: number;
+    y: number;
+}
+
 export interface IOverlayText {
     text: string;
     type: 'normal' | 'h1' | 'h2' | 'h3';

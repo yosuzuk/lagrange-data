@@ -1,6 +1,18 @@
 import { t } from '../../../../i18n';
-import { IArea, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, PlatformType } from '../types/IMapContent';
-import { formatGamePosition, parseGamePosition } from './coordinateUtils';
+import { IArea, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType } from '../types/IMapContent';
+import { formatGamePosition, parseGamePosition, toGridPosition } from './coordinateUtils';
+
+let idCounter = 0;
+
+export function createTemporaryLocation(x: number, y: number): ITemporaryLocation {
+    return {
+        id: `temporaryLocation${idCounter++}`,
+        lineNumber: -1,
+        contentType: 'temporaryLocation',
+        x,
+        y,
+    };
+}
 
 export function formatStationLabelForList(station: IStation): string {
     switch (station.type) {
@@ -101,8 +113,20 @@ export function getPrimaryCoordinatesForMapContent(mapContent: IMapContent): [nu
             const platform = mapContent as IPlayerPlatform;
             return parseGamePosition(platform.station.position);
         }
+        case 'temporaryLocation': {
+            const temporaryLocation = mapContent as ITemporaryLocation;
+            return [temporaryLocation.x, temporaryLocation.y];
+        }
         default: {
             throw new Error(`Cannot get primary coordinates for type "${mapContent.contentType}"`);
         }
     }
+}
+
+export function getPrimaryGridPositionForMapContent(mapContent: IMapContent, gridSize: number): [number | null, number | null] {
+    const [gameX, gameY] = getPrimaryCoordinatesForMapContent(mapContent);
+    if (gameX === null || gameY === null) {
+        return [null, null];
+    }
+    return toGridPosition([gameX, gameY], gridSize);
 }

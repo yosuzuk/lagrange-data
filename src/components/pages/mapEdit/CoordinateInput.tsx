@@ -1,7 +1,7 @@
-import { useState, useCallback, ChangeEventHandler, useEffect } from 'react';
+import { useCallback, ChangeEventHandler, Dispatch, SetStateAction } from 'react';
+import { styled } from '@mui/material/styles';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import { styled } from '@mui/material/styles';
 
 const StyledTextField = styled(TextField)({
     '& .MuiInputBase-root': {
@@ -16,6 +16,7 @@ const StyledTextField = styled(TextField)({
         width: '40px',
         padding: '1px',
         fontSize: '0.9rem',
+        color: 'white',
     },
     '& .MuiInputBase-input::-webkit-outer-spin-button': {
         WebkitAppearance: 'none',
@@ -47,28 +48,27 @@ interface IProps {
     id: string;
     label: string;
     value: number | null;
+    setValue: Dispatch<SetStateAction<number | null>>;
 }
 
 export const CoordinateInput = (props: IProps) => {
-    const { id, label, value: initialValue } = props;
-
-    const [value, setValue] = useState<string>(`${initialValue}`);
+    const { id, label, value, setValue } = props;
 
     const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(e => {
         const value = e.target.value;
+        if (value === '') {
+            setValue(null);
+            return;
+        }
         if (`${value}`.length <= 4 && Number(value) >= 0) {
-            setValue(value);
+            setValue(Number(value));
         }
     }, []);
-
-    useEffect(() => {
-        setValue(initialValue === null ? '' : `${initialValue}`);
-    }, [initialValue]);
 
     return (
         <StyledTextField
             label={null}
-            value={value}
+            value={value ?? ''}
             variant="outlined"
             type="number"
             id={id}

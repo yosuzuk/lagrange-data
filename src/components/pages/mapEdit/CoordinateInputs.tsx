@@ -1,32 +1,126 @@
-import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction, useRef } from 'react';
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CoordinateInput } from './CoordinateInput';
 import { IMapContent } from './types/IMapContent';
-import { getPrimaryCoordinatesForMapContent } from './utils/mapContentUtils';
+import { createTemporaryLocation, getPrimaryCoordinatesForMapContent } from './utils/mapContentUtils';
+import { copyToClipboard } from '../../../utils/clipboardUtils';
+import Stack from '@mui/material/Stack';
+
+const StyledButton = styled(Button)({
+    minWidth: '55px',
+    padding: 0,
+    backgroundColor: '#b97400',
+    borderRadius: '0 0 8px 0',
+    color: 'white',
+    fontSize: '0.7rem',
+    '&.Mui-disabled': {
+        backgroundColor: '#424242',
+        color: 'grey',
+    },
+    '&:hover': {
+        backgroundColor: '#b97400',
+    },
+    '&::before': {
+        content: '"."',
+        color: 'yellow',
+        position: 'absolute',
+        bottom: '9px',
+        left: '2px',
+    },
+    '&.Mui-disabled::before': {
+        color: 'grey',
+    },
+});
 
 interface IProps {
     targetToMark: IMapContent | null;
+    onMarkTarget: Dispatch<SetStateAction<IMapContent | null>>;
 }
 
 export const CoordinateInputs = (props: IProps) => {
-    const { targetToMark } = props;
-    const [x, y] = targetToMark ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
+    const { targetToMark, onMarkTarget } = props;
+    const [x, y] = (targetToMark && targetToMark.contentType !== 'temporaryLocation') ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
+    const [localX, setLocalX] = useState<number | null>(x);
+    const [localY, setLocalY] = useState<number | null>(y);
+    const jumpedRef = useRef<boolean>(false);
+
+    useEffect(() => {
+        const [x, y] = (targetToMark && targetToMark.contentType !== 'temporaryLocation') ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
+        if (x !== null && y !== null) {
+            setLocalX(x);
+            setLocalY(y);
+        }
+    }, [targetToMark]);
+
+    const handleClickJump = () => {
+        if (localX !== null && localY !== null) {
+            onMarkTarget(createTemporaryLocation(localX, localY));
+            setLocalX(null);
+            setLocalY(null);
+            jumpedRef.current = true;
+        }
+    };
+
+    const handleClickCopy = () => {
+        copyToClipboard(`(${localX},${localY})`);
+    };
+
+    const handleClickAway = () => {
+        if (jumpedRef.current) {
+            onMarkTarget(null);
+            setLocalX(null);
+            setLocalY(null);
+            jumpedRef.current = false;
+        }
+    };
 
     return (
-        <>
-            <div>
-                <CoordinateInput
-                    id="x-coordinate"
-                    label="X"
-                    value={x}
-                />
-            </div>
-            <div>
-                <CoordinateInput
-                    id="y-coordinate"
-                    label="Y"
-                    value={y}
-                />
-            </div>
-        </>
+        <ClickAwayListener onClickAway={handleClickAway}>
+            <Stack
+                direction="row"
+                spacing={1}
+                alignItems="center"
+                sx={{
+                    backgroundColor: '#262626',
+                    padding: '0 4px',
+                    border: '1px solid grey',
+                    marginLeft: '8px',
+                    marginBottom: '4px',
+                }}
+            >
+                <div>
+                    <CoordinateInput
+                        id="x-coordinate"
+                        label="X"
+                        value={localX}
+                        setValue={setLocalX}
+                    />
+                </div>
+                <div>
+                    <CoordinateInput
+                        id="y-coordinate"
+                        label="Y"
+                        value={localY}
+                        setValue={setLocalY}
+                    />
+                </div>
+                <StyledButton
+                    id="btn-jump-to"
+                    onClick={handleClickJump}
+                    disabled={localX === null || localY === null}
+                >
+                    JUMP
+                </StyledButton>
+                <StyledButton
+                    id="btn-copy-coordinates"
+                    onClick={handleClickCopy}
+                    disabled={localX === null || localY === null}
+                >
+                    COPY
+                </StyledButton>
+            </Stack>
+        </ClickAwayListener >
     );
 };

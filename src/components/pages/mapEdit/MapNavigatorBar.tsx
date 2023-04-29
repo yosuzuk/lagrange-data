@@ -111,20 +111,7 @@ export const MapNavigatorBar = (props: IProps) => {
                         <img alt="markers" src={pinIconWhite} />
                     </Button>
                 </Stack>
-                <Stack
-                    direction="row"
-                    spacing={1}
-                    alignItems="center"
-                    sx={{
-                        backgroundColor: '#262626',
-                        padding: '0 4px',
-                        border: '1px solid grey',
-                        marginLeft: '8px',
-                        marginBottom: '4px',
-                    }}
-                >
-                    <CoordinateInputs targetToMark={targetToMark} />
-                </Stack>
+                <CoordinateInputs targetToMark={targetToMark} onMarkTarget={onMarkTarget} />
             </Stack>
             {menuRootRef.current && currentMenu && (
                 <Popper key={currentMenu} open={true} placement="top-start" anchorEl={menuRootRef.current}>
