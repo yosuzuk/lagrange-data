@@ -49,7 +49,7 @@ export interface IPlanet extends IMapContent {
     name: string | null;
 }
 
-export type StationType = 'city' | 'subCity' | 'stronghold' | 'base' | 'outpost' | 'platform' | 'default';
+export type StationType = 'city' | 'subCity' | 'stronghold' | 'base' | 'outpost' | 'platform' | 'dock' | 'default';
 
 export interface IStation extends IMapContent {
     contentType: 'station';

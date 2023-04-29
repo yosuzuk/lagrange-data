@@ -143,7 +143,7 @@ function getTextCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCan
             textCanvas,
             spacing: 4,
             padding: 1,
-            marginBottom: 90,
+            marginBottom: 60,
             backgroundColor: 'rgba(0,0,0,0.3)',
         });
     }
@@ -155,7 +155,7 @@ function getTextCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCan
 
     return applyMarginToImage({
         image,
-        marginBottom: 90,
+        marginBottom: 60,
         backgroundColor: 'rgba(0,0,0,0.3)',
     });
 }

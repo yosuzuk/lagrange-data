@@ -1,5 +1,7 @@
 import { normalizeLineEndings } from '../../../../utils/stringUtils';
 
+const staticCanvasMap = new Map<string, HTMLCanvasElement>();
+
 type ITextOptions = {
     text: string;
     color?: string;
@@ -225,7 +227,7 @@ export const createCityIcon = memoizeSimpleCanvasFactory((cityLevel: number | nu
     return canvas;
 });
 
-export const createTargetSprite = memoizeSimpleCanvasFactory(() => {
+export const createTargetSprite = memoizeStaticCanvasFactory('targetSprite', () => {
     const { canvas, ctx } = createCanvas();
     const w = 8;
     canvas.width = 60;
@@ -243,6 +245,66 @@ export const createTargetSprite = memoizeSimpleCanvasFactory(() => {
     ctx.lineTo(canvas.width - 1.5, 1.5);
     ctx.lineTo(canvas.width - 1.5, canvas.height - 1.5);
     ctx.lineTo(canvas.width - 1.5 - w, canvas.height - 1.5);
+    ctx.stroke();
+    return canvas;
+});
+
+export const createDockSprite = memoizeStaticCanvasFactory('dockSprite', () => {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 60;
+    canvas.height = 60;
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 1.5, 0, 2 * Math.PI, false);
+    ctx.fillStyle = 'rgba(0,0,0, 0.2)';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 1.5, 0, 2 * Math.PI, false);
+    ctx.strokeStyle = 'rgb(80,80,80)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    const p = 16.5;
+    const w = 6;
+    ctx.beginPath();
+    ctx.moveTo(p, canvas.height - p - w - 0.5);
+    ctx.lineTo(p, p);
+    ctx.lineTo(canvas.width - p - w - 0.5, p);
+    ctx.strokeStyle = '#34eb34';
+    ctx.lineWidth = w;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(canvas.width - p, p + w + 0.5);
+    ctx.lineTo(canvas.width - p, canvas.height - p);
+    ctx.lineTo(p + w + 0.5, canvas.height - p);
+    ctx.strokeStyle = '#34eb34';
+    ctx.lineWidth = w;
+    ctx.stroke();
+    return canvas;
+});
+
+export const createDockIcon = memoizeStaticCanvasFactory('dockIcon', () => {
+    const { canvas, ctx } = createCanvas();
+    canvas.width = 15;
+    canvas.height = 15;
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 1.5, 0, 2 * Math.PI, false);
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 0.75;
+    ctx.stroke();
+    const p = 4.5;
+    const w = 1;
+    ctx.beginPath();
+    ctx.moveTo(p, canvas.height - p - w - 0.5);
+    ctx.lineTo(p, p);
+    ctx.lineTo(canvas.width - p - w - 0.5, p);
+    ctx.strokeStyle = 'lightgreen';
+    ctx.lineWidth = w;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(canvas.width - p, p + w + 0.5);
+    ctx.lineTo(canvas.width - p, canvas.height - p);
+    ctx.lineTo(p + w + 0.5, canvas.height - p);
+    ctx.strokeStyle = 'lightgreen';
+    ctx.lineWidth = w;
     ctx.stroke();
     return canvas;
 });
@@ -357,4 +419,13 @@ function memoizeComplexCanvasFactory<TOptions extends Record<string, unknown>>(f
         canvasCache[cacheKey] = canvas;
         return canvas;
     };
+}
+
+function memoizeStaticCanvasFactory(key: string, fn: () => HTMLCanvasElement): () => HTMLCanvasElement {
+    if (staticCanvasMap.has(key)) {
+        return () => staticCanvasMap.get(key) as HTMLCanvasElement;
+    }
+    const canvas = fn();
+    staticCanvasMap.set(key, canvas);
+    return () => canvas;
 }

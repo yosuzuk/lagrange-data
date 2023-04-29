@@ -1,17 +1,12 @@
 import { useMemo, useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListItemText from '@mui/material/ListItemText';
-import ClearIcon from '@mui/icons-material/Clear';
-import Divider from '@mui/material/Divider';
 import { IMapContent, IMapData, IMarker, IPlanet, IStation } from './types/IMapContent';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
-import { formatStationLabelForList, matchMarker, matchPlanet, matchStation } from './utils/mapContentUtils';
-import { useColorMode } from '../../../theme/context/ThemeProvider';
+import { matchMarker, matchPlanet, matchStation } from './utils/mapContentUtils';
+import { MapContentSearchListContent } from './MapContentSearchListContent';
 
 interface IProps {
     mapData: IMapData;
@@ -24,7 +19,6 @@ interface IProps {
 export const MapContentSearchList = (props: IProps) => {
     const { mapData, currentMenu, menuItemIdPrefix, onClickItem, onClickRemoveItem } = props;
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const colorMode = useColorMode();
 
     const planets: IPlanet[] = useMemo(() => {
         if (currentMenu !== 'planets') {
@@ -40,8 +34,20 @@ export const MapContentSearchList = (props: IProps) => {
         if (currentMenu !== 'stations') {
             return [];
         }
-        const searchableStations = mapData.stations.filter(station => station.type !== 'stronghold');
+        const searchableStations = mapData.stations.filter(station => station.type === 'city' || station.type === 'subCity');
         if (searchTerm.length === 0) {
+            return searchableStations;
+        }
+        return searchableStations.filter(station => matchStation(station, searchTerm));
+    }, [mapData, currentMenu, searchTerm]);
+
+    const docks: IStation[] = useMemo(() => {
+        if (currentMenu !== 'docks') {
+            return [];
+        }
+        const searchableStations = mapData.stations.filter(station => station.type === 'dock');
+        if (searchTerm.length === 0) {
+            console.log(searchableStations);
             return searchableStations;
         }
         return searchableStations.filter(station => matchStation(station, searchTerm));
@@ -69,101 +75,16 @@ export const MapContentSearchList = (props: IProps) => {
                     onChange={setSearchTerm}
                 />
             </Box>
-            {(planets.length + stations.length + markers.length) > 0 ? (
-                <MenuList
-                    id="map-content-menu"
-                    aria-labelledby="composition-button"
-                    dense={true}
-                    sx={{
-                        height: smallMenu ? '25vh' : '60vh',
-                        overflowY: 'auto',
-                        paddingTop: 0,
-                    }}
-                >
-                    {[
-                        <Divider key="first-divider" />,
-                        ...(planets.flatMap(planet => [
-                            <MenuItem
-                                key={planet.id}
-                                id={menuItemIdPrefix + planet.id}
-                                onClick={onClickItem}
-                                disableGutters={true}
-                            >
-                                <ListItemText sx={{ padding: '0 6px' }}>
-                                    {planet.name ?? planet.position}
-                                </ListItemText>
-                            </MenuItem>,
-                            <Divider key={`divider_${planet.id}`} style={{ margin: 0 }} />
-                        ])),
-                        ...(stations.flatMap(station => [
-                            <MenuItem
-                                key={station.id}
-                                id={menuItemIdPrefix + station.id}
-                                onClick={onClickItem}
-                                disableGutters={true}
-                                sx={{ padding: 0 }}
-                            >
-                                <Box
-                                    component="div"
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignSelf: 'stretch',
-                                        alignItems: 'center',
-                                        width: '30px',
-                                        backgroundColor: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
-                                    }}
-                                >
-                                    <Box
-                                        component="span"
-                                        sx={{ fontSize: 'xx-small', color: 'text.secondary', }}
-                                    >
-                                        {station.level ? `Lv${station.level}` : null}
-                                    </Box>
-                                </Box>
-                                <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
-                                    {formatStationLabelForList(station)}
-                                </ListItemText>
-                            </MenuItem>,
-                            <Divider key={`divider_${station.id}`} style={{ margin: 0 }} />
-                        ])),
-                        ...(markers.map(marker => [
-                            <MenuItem
-                                key={marker.id}
-                                id={menuItemIdPrefix + marker.id}
-                                onClick={onClickItem}
-                                disableGutters={true}
-                            >
-                                <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
-                                    {marker.label ?? marker.position}
-                                </ListItemText>
-                                <Divider orientation="vertical" flexItem />
-                                <Box
-                                    component="div"
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        width: '36px',
-                                    }}
-                                >
-                                    <ClearIcon
-                                        sx={{
-                                            color: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)',
-                                            '&:hover': {
-                                                color: colorMode.mode === 'dark' ? 'white' : 'rgba(0,0,0,0.75)',
-                                            }
-                                        }}
-                                        onClick={e => {
-                                            e.stopPropagation();
-                                            onClickRemoveItem(marker)
-                                        }}
-                                    />
-                                </Box>
-                            </MenuItem>,
-                            <Divider key={`divider_${marker.id}`} style={{ margin: 0 }} />
-                        ]))
-                    ]}
-                </MenuList>
+            {(planets.length + stations.length + docks.length + markers.length) > 0 ? (
+                <MapContentSearchListContent
+                    menuItemIdPrefix={menuItemIdPrefix}
+                    planets={planets}
+                    stations={stations}
+                    docks={docks}
+                    markers={markers}
+                    onClickItem={onClickItem}
+                    onClickRemoveItem={onClickRemoveItem}
+                />
             ) : (
                 <Box
                     component="div"

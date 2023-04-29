@@ -11,6 +11,7 @@ import { MapContentSearchList } from './MapContentSearchList';
 import planetIconWhite from './assets/planetWhite.png';
 import cityIconWhite from './assets/cityWhite.png';
 import pinIconWhite from './assets/pinWhite.png';
+import docksIconWhite from './assets/docksWhite.png';
 
 const MENU_ITEM_ID_PREFIX = 'menuItem.';
 
@@ -54,6 +55,11 @@ export const MapNavigatorBar = (props: IProps) => {
                 onMarkTarget(station?.id ?? null);
                 break;
             }
+            case 'docks': {
+                const station = mapData.stations.find(s => s.id === contentId);
+                onMarkTarget(station?.id ?? null);
+                break;
+            }
             case 'markers': {
                 const marker = mapData.marker.find(m => m.id === contentId);
                 onMarkTarget(marker?.id ?? null);
@@ -83,6 +89,10 @@ export const MapNavigatorBar = (props: IProps) => {
                 <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
                 <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
                     <img alt="stations" src={cityIconWhite} />
+                </Button>
+                <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
+                <Button id="docks" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <img alt="docks" src={docksIconWhite} />
                 </Button>
                 <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
                 <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>

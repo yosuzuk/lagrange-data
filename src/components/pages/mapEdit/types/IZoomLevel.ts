@@ -14,6 +14,8 @@ export interface IZoomBasedVisibility {
     markerLabel: boolean;
     stationLabel: boolean;
     stationCone: boolean;
+    dockIcon: boolean;
+    dockCone: boolean;
 
     // city
     cityIcon: boolean;
