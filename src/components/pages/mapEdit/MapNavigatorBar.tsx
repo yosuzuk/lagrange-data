@@ -12,17 +12,19 @@ import planetIconWhite from './assets/planetWhite.png';
 import cityIconWhite from './assets/cityWhite.png';
 import pinIconWhite from './assets/pinWhite.png';
 import docksIconWhite from './assets/docksWhite.png';
+import { CoordinateInputs } from './CoordinateInputs';
 
 const MENU_ITEM_ID_PREFIX = 'menuItem.';
 
 interface IProps {
     mapData: IMapData;
-    onMarkTarget: Dispatch<SetStateAction<string | null>>;
+    targetToMark: IMapContent | null;
+    onMarkTarget: Dispatch<SetStateAction<IMapContent | null>>;
     onRemoveContent: (content: IMapContent) => void;
 }
 
 export const MapNavigatorBar = (props: IProps) => {
-    const { mapData, onMarkTarget, onRemoveContent } = props;
+    const { mapData, targetToMark, onMarkTarget, onRemoveContent } = props;
     const [currentMenu, setCurrentMenu] = useState<string | null>(null);
     const menuRootRef = useRef<HTMLDivElement>(null);
 
@@ -47,22 +49,22 @@ export const MapNavigatorBar = (props: IProps) => {
         switch (currentMenu) {
             case 'planets': {
                 const planet = mapData.planets.find(p => p.id === contentId);
-                onMarkTarget(planet?.id ?? null);
+                onMarkTarget(planet ?? null);
                 break;
             }
             case 'stations': {
                 const station = mapData.stations.find(s => s.id === contentId);
-                onMarkTarget(station?.id ?? null);
+                onMarkTarget(station ?? null);
                 break;
             }
             case 'docks': {
                 const station = mapData.stations.find(s => s.id === contentId);
-                onMarkTarget(station?.id ?? null);
+                onMarkTarget(station ?? null);
                 break;
             }
             case 'markers': {
                 const marker = mapData.marker.find(m => m.id === contentId);
-                onMarkTarget(marker?.id ?? null);
+                onMarkTarget(marker ?? null);
                 break;
             }
         }
@@ -73,31 +75,56 @@ export const MapNavigatorBar = (props: IProps) => {
             component="div"
             sx={{
                 position: 'absolute',
-                left: '8px',
-                bottom: '16px',
-                border: '1px solid grey',
+                left: '0',
+                bottom: '12px',
             }}
         >
             <Stack
                 direction="row"
-                ref={menuRootRef}
-                sx={{ backgroundColor: '#121212', height: '29px', padding: '4px 0' }}
+                sx={{ maxWidth: '80vw', flexWrap: 'wrap' }}
             >
-                <Button id="planets" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
-                    <img alt="planets" src={planetIconWhite} />
-                </Button>
-                <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
-                    <img alt="stations" src={cityIconWhite} />
-                </Button>
-                <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                <Button id="docks" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
-                    <img alt="docks" src={docksIconWhite} />
-                </Button>
-                <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
-                    <img alt="markers" src={pinIconWhite} />
-                </Button>
+                <Stack
+                    direction="row"
+                    ref={menuRootRef}
+                    sx={{
+                        backgroundColor: '#121212',
+                        height: '29px',
+                        padding: '4px 0',
+                        border: '1px solid grey',
+                        marginLeft: '8px',
+                        marginBottom: '4px',
+                    }}
+                >
+                    <Button id="planets" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                        <img alt="planets" src={planetIconWhite} />
+                    </Button>
+                    <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
+                    <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                        <img alt="stations" src={cityIconWhite} />
+                    </Button>
+                    <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
+                    <Button id="docks" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                        <img alt="docks" src={docksIconWhite} />
+                    </Button>
+                    <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
+                    <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                        <img alt="markers" src={pinIconWhite} />
+                    </Button>
+                </Stack>
+                <Stack
+                    direction="row"
+                    spacing={1}
+                    alignItems="center"
+                    sx={{
+                        backgroundColor: '#262626',
+                        padding: '0 4px',
+                        border: '1px solid grey',
+                        marginLeft: '8px',
+                        marginBottom: '4px',
+                    }}
+                >
+                    <CoordinateInputs targetToMark={targetToMark} />
+                </Stack>
             </Stack>
             {menuRootRef.current && currentMenu && (
                 <Popper key={currentMenu} open={true} placement="top-start" anchorEl={menuRootRef.current}>

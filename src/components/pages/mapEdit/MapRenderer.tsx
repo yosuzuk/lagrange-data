@@ -5,7 +5,7 @@ import { GridSizeProvider } from './context/GridSizeContext';
 import { ThreeCanvasContainer } from './ThreeCanvasContainer';
 import { CursorProvider } from './context/CursorContext';
 import { ZoomLevelProvider } from './context/ZoomLevelContext';
-import { IMapData } from './types/IMapContent';
+import { IMapContent, IMapData } from './types/IMapContent';
 import { translateSizeToGrid } from './utils/coordinateUtils';
 import { CameraControls } from './3d/CameraControls';
 import { degreesToRadians } from '../../../utils/math';
@@ -14,7 +14,7 @@ import { StarSystem } from './3d/StarSystem';
 
 interface IProps {
     mapData: IMapData;
-    targetToMark: string | null;
+    targetToMark: IMapContent | null;
 }
 
 const DEFAULT_MAP_SIZE = 9000;

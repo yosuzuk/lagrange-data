@@ -86,7 +86,7 @@ const MapSelectedPage = () => {
             )}
             {mode === 'interactive' && mapData && (
                 <>
-                    <MapNavigatorBar mapData={mapData} onRemoveContent={removeContent} onMarkTarget={markTarget} />
+                    <MapNavigatorBar mapData={mapData} targetToMark={targetToMark} onRemoveContent={removeContent} onMarkTarget={markTarget} />
                     <SaveMapButton saving={saving} save={saveInput} changeState={changeState} allowSave={allowSave} />
                     <EditMapButton setMode={setMode} />
                     {mapData.overlayText.length > 0 && (

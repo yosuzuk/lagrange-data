@@ -6,9 +6,10 @@ import { MapControls as MapControlsImpl } from 'three-stdlib';
 import { useCameraDistance, useZoomDistanceMinMax } from '../context/ZoomLevelContext';
 import { degreesToRadians } from '../../../../utils/math';
 import { TargetSprite } from './TargetSprite';
+import { IMapContent } from '../types/IMapContent';
 
 interface IProps {
-    targetToMark: string | null;
+    targetToMark: IMapContent | null;
 }
 
 export const CameraControls = (props: IProps) => {
@@ -49,9 +50,9 @@ export const CameraControls = (props: IProps) => {
             return;
         }
 
-        const target = scene.getObjectByName(targetToMark);
+        const target = scene.getObjectByName(targetToMark.id);
         if (!target) {
-            throw new Error(`Cannot find target id "${targetToMark}"`);
+            throw new Error(`Cannot find target id "${targetToMark.id}"`);
         }
 
         const cameraDistance = camera.position.distanceTo(controlRef.current.target);

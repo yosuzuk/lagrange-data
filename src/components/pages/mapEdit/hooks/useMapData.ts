@@ -15,7 +15,7 @@ interface IHookResult {
     input: string;
     mapData: IMapData | null;
     parseError: IParseMapContentError | null;
-    targetToMark: string | null;
+    targetToMark: IMapContent | null;
     loading: boolean;
     saving: boolean;
     isError: boolean;
@@ -29,7 +29,7 @@ interface IHookResult {
     validateInput: () => void;
     saveInput: (editKey: string) => void;
     removeContent: (content: IMapContent) => void;
-    markTarget: Dispatch<SetStateAction<string | null>>;
+    markTarget: Dispatch<SetStateAction<IMapContent | null>>;
 }
 
 export const useMapData = (): IHookResult => {
@@ -46,7 +46,7 @@ export const useMapData = (): IHookResult => {
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
-    const [targetToMark, setTargetToMark] = useState<string | null>(null);
+    const [targetToMark, setTargetToMark] = useState<IMapContent | null>(null);
 
     // update query parameter
     useEffect(() => {
@@ -144,7 +144,7 @@ export const useMapData = (): IHookResult => {
             throw new Error(`${parseError.message}, line: ${parseError.line}`);
         }
 
-        setTargetToMark(target => target === content.id ? null : target);
+        setTargetToMark(target => (target && target.id === content.id) ? null : target);
         setInput(result);
         setLastValidInput(result);
         setLastValidMapData(mapData);
