@@ -1,16 +1,20 @@
-# Map Builder
+# 星系マップ　編集ガイド
 
-![map example](assets/mapExample.jpg)
+![map example](assets/mapExample_ja.jpg)
 
-The map builder can be used to visualize and share information about a star system. It uses its own markup language for defining content and map properties. 
+星系マップの編集には専用のマークアップ言語を使います。
 
-## Syntax
+## 基本構文
 
-The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. Colors are indicated using escape codes like `#R` or `#cFF0000`. Line breaks inside various labels can be inserted using `#r`. This allows us to copy and paste some of the content into both directions. 
+基本的にはゲーム内のチャットやメールで使うテキスト構文をベースにしています。マップ編集で使う座標のフォーマットはゲーム内の「座標コピー」で得られるフォーマットと同じです（例：`(1234,1234)`）。色を指定する時もゲーム内のチャットと同じカラーコードを使います（例：`#R`、`#cFF0000`）。
 
-Special keywords are defined for placing map content, e.g. `$marker` for placing marker points. Any line after such a keyword belongs to the same content type. You do not have to repeat these keywords for every line of content.
+各種マップコンテンツはそれぞれ一つ設置するのに１行だけ使います。ラベルなどのテキストで改行が必要な場合はゲーム内のチャットでも使う「`#r`」を使います（例：`1行目#r2行目`）。
 
-Example:
+ゲーム内で使われている構文に合わせることでコンテンツの一部を双方向にコピー＆ペーストできます。
+
+マップコンテンツの配置には特定のキーワードを使います。キーワードの後に続く行は別のキーワードが指定されるまで同じコンテンツとして扱われます。例えば複数のマーカーを設置する際には「`$marker`」キーワードを一度だけ指定して、後に続く行は座標だけで足ります。
+
+例：
 
 ```
 $marker
@@ -21,32 +25,32 @@ $planet
 (8765,4321)
 ```
 
-(this will place two markers and two planets)
+（マーカー用の座標が二つ、惑星用の座標が二つ）
 
-Comments can be added after a double slash.
+使用したキーワードによってその後に続く行の構文が変化します（例えばマーカーの場合は座標が求められます）。構文を無視したコメントはダブルスラッシュの後に書けます。
 
-Example:
+例：
 
 ```
-$marker // this is a comment
-// this entire line is a comment
-(1020,2020) // another comment
+$marker // これはコメント
+// この行はコメント
+(1020,2020) // これもコメント
 ```
 
-## Keywords
+## キーワード一覧
 
-- `$marker` for placing marker points
-- `$region` for defining region areas
-- `$planet` for placing planets and their orbit
-- `$station` for building space stations and cities
-- `$base` for placing player bases
-- `$outpost` for placing player outposts
-- `$platform` for playing mining platforms
-- `$name` to name the map
-- `$serverName` for server name / name of the star system
-- `$size` for the size of the coordinate system
+- `$marker` （マーカー）
+- `$region` （区域）
+- `$planet` （惑星）
+- `$station` （スペースステーション/都市/防衛拠点など）
+- `$base` （プレイヤー基地）
+- `$outpost` （前哨基地）
+- `$platform` （採掘プラットフォーム）
+- `$name` （マップ名）
+- `$serverName` （サーバー名/星系名）
+- `$size` （マップサイズ）
 
-(each keywords is explained in more detail below)
+各キーワードに続く行の構文に関しては以下で個別に説明します。
 
 ## Marker
 
@@ -261,18 +265,12 @@ Default colors:
 ![4D85BE](assets/colors/4D85BE.png) player (#c4D85BE)
 ![D0AE55](assets/colors/D0AE55.png) areas & stations (#cD0AE55)
 
-## Editor
+## コードエディタ
 
-![editor](assets/editor.jpg)
+![editor](assets/editor_ja.jpg)
 
-The Map Builder has a build-in code editor with syntax highlighting. It can validate and apply local changes to the map. But in order to save these changes, a backend has to be configured first. 
+TODO
 
 ## Backend
 
-The lagrange-data site doesn't provide a free database. It is "client-side only". There is also no authentication. This is all about a game and people want to stay anonymous. But on the other hand, you probably want some level of restriction, to keep the map private to your organization. The current solution to that is "bring your own backend". You host your maps yourself, you share the URL within your organization and you decide yourself when to invalidate the URL.
-
-Requirements for the backend part are listed on the lagrange-data site inside the "Configure backend" section.
-
-The build-in editor will also ask for a passcode when saving changes. This passcode can be checked on the backend side to limit write-access.
-
-If you don't want to build a backend from scratch, you could also consider to clone and host [this](https://github.com/yosuzuk/lagrange-data-proxy) (it's a Netlify function serving as proxy to [Rentry.co](https://rentry.co/), a markdown pastebin).
+TODO
