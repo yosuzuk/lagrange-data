@@ -46,7 +46,7 @@ export const ResponsiveDialog = (props: IProps) => {
             {actions && (
                 <>
                     <Divider />
-                    <DialogActions>
+                    <DialogActions sx={{ flexWrap: 'wrap' }}>
                         {actions}
                     </DialogActions>
                 </>

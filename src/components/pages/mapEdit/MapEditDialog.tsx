@@ -3,12 +3,14 @@ import Editor from 'react-simple-code-editor';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { IParseMapContentError } from './types/IMapContent';
 import { t } from '../../../i18n';
 import { hightlightCode } from './utils/hightlightCode';
 import { useColorMode } from '../../../theme/context/ThemeProvider';
-import Box from '@mui/material/Box';
 
 interface IProps {
     input: string;
@@ -57,6 +59,7 @@ export const MapEditDialog = (props: IProps) => {
                                     // for line numbers:
                                     overflow: 'visible',
                                     marginLeft: '40px',
+                                    minHeight: '50vh',
                                 }}
                                 preClassName={css({
                                     // for line numbers:
@@ -69,15 +72,22 @@ export const MapEditDialog = (props: IProps) => {
             )}
             actions={(
                 <>
-                    <Button variant="outlined" onClick={onCancel}>
-                        {t('button.cancel')}
-                    </Button>
-                    <Button variant="outlined" onClick={onValidate}>
-                        {t('button.validate')}
-                    </Button>
-                    <Button variant="contained" onClick={onApply}>
-                        {t('button.confirm')}
-                    </Button>
+                    <Stack direction="row" spacing={1} flexGrow={1}>
+                        <Button variant="outlined" href={t('mapEdit.guideLink')} target="_blank" startIcon={<OpenInNewIcon />}>
+                            {t('button.guide')}
+                        </Button>
+                        <Button variant="outlined" onClick={onValidate}>
+                            {t('button.validate')}
+                        </Button>
+                    </Stack>
+                    <Stack direction="row" spacing={1}>
+                        <Button variant="outlined" onClick={onCancel}>
+                            {t('button.cancel')}
+                        </Button>
+                        <Button variant="contained" onClick={onApply}>
+                            {t('button.confirm')}
+                        </Button>
+                    </Stack>
                 </>
             )}
         />

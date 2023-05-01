@@ -71,7 +71,12 @@ const MapSelectedPage = () => {
                 </Box>
             )}
             {!isError && mapData && (
-                <MapRenderer mapData={mapData} targetToMark={targetToMark} markTarget={markTarget} />
+                <Box component="div" sx={{ position: 'relative' }}>
+                    <Box component="div" p={2} sx={{ position: 'absolute', width: '100%', textAlign: 'center', top: '40vh' }}>
+                        Loading...
+                    </Box>
+                    <MapRenderer mapData={mapData} targetToMark={targetToMark} markTarget={markTarget} />
+                </Box>
             )}
             <MapTopRightBar mode={mode} onExit={handleClickExit} setMode={setMode} />
             {mode === 'edit' && (

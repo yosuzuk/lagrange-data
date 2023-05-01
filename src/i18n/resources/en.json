@@ -24,7 +24,8 @@
         "next": "Next",
         "exit": "Exit",
         "validate": "Validate",
-        "find": "Find"
+        "find": "Find",
+        "guide": "Guide"
     },
     "label": {
         "error": "Error",
@@ -310,7 +311,8 @@
             "bmp": "Basic Mining Platform",
             "imp": "Intermediate Mining Platform",
             "amp": "Advanced Mining Platform"
-        }
+        },
+        "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

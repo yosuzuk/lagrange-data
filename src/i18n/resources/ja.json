@@ -24,7 +24,8 @@
         "next": "続ける",
         "exit": "終了",
         "validate": "入力チェック",
-        "find": "検索"
+        "find": "検索",
+        "guide": "ガイド"
     },
     "label": {
         "error": "エラー",
@@ -310,7 +311,8 @@
             "bmp": "初級プラットフォーム",
             "imp": "中級プラットフォーム",
             "amp": "上級プラットフォーム"
-        }
+        },
+        "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/%E6%98%9F%E7%B3%BB%E3%83%9E%E3%83%83%E3%83%97"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
