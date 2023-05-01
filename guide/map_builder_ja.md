@@ -2,11 +2,27 @@
 
 ![map example](assets/mapExample_ja.jpg)
 
-星系マップの編集には専用のマークアップ言語を使います。
+目次:
+- [基本構文](#基本構文)
+- [キーワード一覧](#キーワード一覧)
+- [マーカー](#マーカー)
+- [区域](#区域)
+- [惑星](#惑星)
+- [スペースステーション](#スペースステーション)
+- [プレイヤー基地](#プレイヤー基地)
+- [前哨基地](#前哨基地)
+- [採掘プラットフォーム](#採掘プラットフォーム)
+- [基本プロパティ](#基本プロパティ)
+- [カラーコード](#カラーコード)
+- [コードエディタ](#コードエディタ)
+- [バックエンド](#バックエンド)
+- [マップのシェア](#マップのシェア)
 
 ## 基本構文
 
-基本的にはゲーム内のチャットやメールで使うテキスト構文をベースにしています。マップ編集で使う座標のフォーマットはゲーム内の「座標コピー」で得られるフォーマットと同じです（例：`(1234,1234)`）。色を指定する時もゲーム内のチャットと同じカラーコードを使います（例：`#R`、`#cFF0000`）。
+星系マップの編集には専用のマークアップ言語を使います。
+
+基本的にはゲーム内のチャットやメールで使うテキスト構文をベースにしています。マップ編集で使う座標のフォーマットはゲーム内の「座標コピー」で得られるフォーマットと同じです（例：`(1234,1234)`）。色を指定する時もゲーム内のチャットと同じカラーコードを使います（例：`#R`/`#cFF0000`など）。
 
 各種マップコンテンツはそれぞれ一つ設置するのに１行だけ使います。ラベルなどのテキストで改行が必要な場合はゲーム内のチャットでも使う「`#r`」を使います（例：`1行目#r2行目`）。
 
@@ -52,18 +68,18 @@ $marker // これはコメント
 
 各キーワードに続く行の構文に関しては以下で個別に説明します。
 
-## Marker
+## マーカー
 
 ![marker example](assets/markerExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $marker
-<point> [<color>] [<label>]
+<座標> [<色>] [<ラベル>]
 ```
 
-You can place markers after the `$marker` keyword. Each marker needs to be a new line. Colors and labels are optional. 
+「`$marker`」キーワードの後に​​マーカーを指定できます。1行1マーカーです。色とラベルはオプションです。
 
 Example:
 
@@ -80,28 +96,28 @@ $marker
 
 (available colors are listed in the "Colors" section below)
 
-## Regions
+## 区域
 
 ![region example](assets/regionExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $region
-<point><point><point><point> <number> [<color>] [<organization>]
+<座標><座標><座標><座標> <番号> [<色>] [<ラベル>]
 ```
 
-You can place regions after the `$region` keyword. Each region needs to be a new line and requires four coordinates, a background color and a region number. The "organization" label is optional.
+「`$region`」キーワードの後に​​区域を指定できます。区域の指定には四か所の座標と区域番号が必要です。色とラベルはオプションです。
 
-Coordinates need to be in the following order:
-- a point to mark the inner radius
-- a point to mark the outer radius
-- a point to mark the start angle
-- a point to mark the end angle
+座標の順番：
+- 内側の半径をマークする座標
+- 外側の半径をマークする座標
+- 開始角度をマークする座標
+- 終了角度をマークする座標
 
-These coordinates do not necessarily have to touch the region area. For example, you can use the same coordinates for all regions that share the same radius.
+これらの座標は半径と角度をマークするもので、区域エリアに接する必要はありません。同じ半径や角度を持つ区域であれば座標の使いまわしも可能です。
 
-Example:
+サンプル：
 
 ```
 $region
@@ -109,20 +125,20 @@ $region
 (4927,4483)(4653,6087)(4324,5779)(5398,3401) 8 #c694226 Icarus's Energy Dept.
 ```
 
-## Planets
+## 惑星
 
 ![planet example](assets/planetExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $planet
-<point>[<point>] [<size>] [<color>] [<name>]
+<座標>[<座標>] [<サイズ>] [<色>] [<ラベル>]
 ```
 
-You can place planets after the `$planet` keyword. The optional second point marks the center of the orbit. "size", "color" and "name" are optional. "size" can be one of `large`, `medium`, `small` and defaults to `medium`.
+「`$planet`」キーワードの後に惑星を指定できます。二つ目の座標はオプションで軌道の中心を示します。指定されない場合は中央の太陽を中心とします。オプションでサイズと色とラベルが指定できます。サイズは`large`/`medium`/`small`から選べて、デフォルトは「`medium`」です。
 
-Example:
+サンプル：
 
 ```
 $planet
@@ -132,24 +148,38 @@ $planet
 (4053,3222)(3978,3380) small #W Roc
 ```
 
-## Space Stations
+## スペースステーション
 
 ![station example](assets/stationExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $station
-<point>[<point><point>] [<type>] [<level>] [<color>] [<name>]
+<座標>[<座標><座標>] [<タイプ>] [<レベル>] [<色>] [<ラベル>]
 ```
 
-You can place various types of space stations after the `$station` keyword. "type" can be one of `city`, `subCity`, `stronghold`, `dock` or `default` if specified. "level" is optional but should be specified for type `city` in order to have the right icon and visibility based on zoom level.
+「`$station`」キーワードの後に各種スペースステーションを指定できます。
 
-Two additional points can be specified to mark the area around the station. A station of type `dock` with an explicit "level" will automatically mark a 1x1 area. 
+タイプ：
+- `city` 都市
+- `subCity` サブ都市
+- `stronghold` 防衛拠点
+- `dock` 結合ステーション
+- `default` その他
 
-Player bases, outposts and mining platforms have their own dedicated keyword (`$base`, `$outpost` and `$platform`). `$station` is mostly used for creating cities and miscellaneous NPC stations.
+レベル指定はオプションですが、都市の場合はアイコンと詳細度が変化するので指定推奨です。
 
-Example:
+座標の順番：
+- スペースステーションの座標（大型都市の場合はメイン都市の座標）
+- ステーションエリアをマークするための座標（オプション）
+- ステーションエリアをマークするための座標（オプション）
+
+タイプが`dock`でレベルも指定されている場合は自動的に１ｘ１マスのステーションエリアが配置されます。
+
+プレイヤー基地/前哨基地/採掘プラットフォームの指定には別の専用のキーワードを使います（`$base`/`$outpost`/`$platform`）。
+
+サンプル：
 
 ```
 $station
@@ -159,72 +189,112 @@ $station
 (4082,3610) stronghold #c0077FF
 ```
 
-## Player Bases
+## プレイヤー基地
 
 ![base example](assets/baseExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $base
-<point> [<color>] [<name>]
+<座標> [<色>] [<ラベル>]
 ```
 
-You can place player bases after the `$base` keyword. The given point is automatically rounded to fit the base onto the grid. Bases are only visible at a certain zoom level.
+「`$base`」キーワードの後にプレイヤー基地を指定できます。基地をマスに納めるための細かい座標調整は自動で行われます。１ｘ１マスのステーションエリアも自動的に設置されます。プレイヤー基地はある程度ズームインしないと表示されません。
 
-## Player Outposts
+サンプル：
 
-Syntax:
+```
+$base
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF Player
+(5635,3545) #c0077FF プレイヤー
+```
+
+## 前哨基地
+
+構文：
 
 ```
 $outpost
-<point> [<color>] [<name>]
+<座標> [<色>] [<ラベル>]
 ```
 
-You can place player outposts after the `$outpost` keyword. Each line will place a 1x1 area and a space station with an outpost icon.
+「`$outpost`」キーワードの後に前哨基地を指定できます。基地をマスに納めるための細かい座標調整は自動で行われます。１ｘ１マスのステーションエリアも自動的に設置されます。前哨基地はある程度ズームインしないと表示されません。
 
-## Mining Platforms
+サンプル：
+
+```
+$outpost
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF My warp point
+(5635,3545) #c0077FF ワープ用
+```
+
+## 採掘プラットフォーム
 
 ![base example](assets/platformExample.jpg)
 
-Syntax:
+構文：
 
 ```
 $platform
-<point> <type> [<color>] [<name>]
+<座標> <タイプ> [<色>] [<ラベル>]
 ```
 
-You can place mining platforms after the `$platform` keyword. Each platform needs at least a center point and a type. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. The station will have a default name based on the given type. An optional "name" can be provided to override the type specific default name. Each line will place a 2x2 area and a space station with a platform type specifc icon.  
+「`$platform`」キーワードの後に採掘プラットフォームを指定できます。プラットフォームの細かい座標調整は自動で行われます。２ｘ２マスのステーションエリアも自動的に設置されます。色とラベルはオプションです。ラベルは指定されない場合、タイプを基に自動的に追加されます。
 
-## Basic map properties
+タイプ：
+- `basic` 初級プラットフォーム
+- `intermediate` 中級プラットフォーム
+- `advanced` 上級プラットフォーム
+- `bmp` 初級プラットフォーム
+- `imp` 中級プラットフォーム
+- `amp` 上級プラットフォーム
 
-Syntax:
-
-```
-$name <name>
-$serverName <name>
-$size <size>
-```
-
-Basic map properties are optional.
-
-Use the `$name` keyword to give your map a name for the map selection screen.
-
-Use the `$serverName` keyword to name the server / star system. The server name gets displayed at the center of your map, below the sun.
-
-Use the `$size` keyword to specify the overall map size. Most maps have a "size" of 9000, which is also the default value if no size is specified. You can find the size by checking the top right corner coordinate of your map. The given size will also determine the center point of your star system, e.g. "(4500,4500)" for a size of 9000. The sun will be placed at the center point, with the given server name as label if specified.
-
-Example:
+サンプル：
 
 ```
-$name My Awesome Map
-$serverName V1357 Leo
+$platform
+(5610,3550) basic #cF7C360
+(5640,3550) intermediate #c40C0C3
+(5670,3550) advanced #c40C0C3
+(5620,3580) bmp #c0077FF
+(5650,3580) imp #c0077FF Intermediate Mining Platform
+(5680,3580) amp #c0077FF 上級プラットフォーム
+```
+
+## 基本プロパティ
+
+構文：
+
+```
+$name <名前>
+$serverName <名前>
+$size <サイズ>
+```
+
+基本プロパティはオプションです。
+
+`$name`でマップ名を指定できます。
+
+`$serverName`でサーバー名/星系名を指定できます。指定された名前は星系の中央にある太陽のラベルとしても表示されます。
+
+`$size`でマップのサイズが指定できます。デフォルトは9000です。マップサイズは一番右上の座標から取得できます。マップサイズを基に中央に太陽が設置されます。軌道の中心が指定されていない惑星にも影響します。
+
+サンプル：
+
+```
+$name ぎょしゃマップ
+$serverName ぎょしゃ座V508
 $size 9000
 ```
 
-## Colors
+## カラーコード
 
-Chat colors:
+チャットカラー：
 
 ![red](assets/colors/FF0000.png) #R
 ![blue](assets/colors/0000FF.png) #B
@@ -238,7 +308,7 @@ Chat colors:
 ![yellow](assets/colors/FFFF00.png) #Y
 ![hex](assets/colors/00BBFF.png) #c00BBFF (hex color)
 
-Example player colors:
+プレイヤー用カラーサンプル：
 
 ![4D85BE](assets/colors/4D85BE.png) #c4D85BE
 ![BA6E34](assets/colors/BA6E34.png) #cBA6E34
@@ -248,7 +318,7 @@ Example player colors:
 ![B4C402](assets/colors/B4C402.png) #cB4C402
 ![5854A1](assets/colors/5854A1.png) #c5854A1
 
-Example region colors:
+区域用カラーサンプル：
 
 ![87372C](assets/colors/87372C.png) #c87372C
 ![873E2C](assets/colors/873E2C.png) #c873E2C
@@ -256,9 +326,9 @@ Example region colors:
 ![694226](assets/colors/694226.png) #c694226
 ![625828](assets/colors/625828.png) #c625828
 
-(actual region colors have an alpha value added based on zoom level)
+（実際の区域カラーはズームレベルによってアルファ値が追加されて半透明になっています）
 
-Default colors:
+各種デフォルトカラー：
 
 ![985036](assets/colors/985036.png) regions (#c)
 ![E3A06D](assets/colors/E3A06D.png) planets (#cE3A06D)
@@ -269,8 +339,26 @@ Default colors:
 
 ![editor](assets/editor_ja.jpg)
 
-TODO
+「星系マップ」ページにはコードエディタが内臓されています。専用のマークアップ言語に合わせてキーワードなどのカラーハイライトと構文のチェックが行われます。構文に関するエラーがある場合はエラーメッセージと行の番号が表示されます。
 
-## Backend
+内臓コードエディタを使ってマップデータの編集が行えます。編集結果はマップですぐに表示されますが、データを保存するにはまずバックエンドの設定を行う必要があります（直接リンクでマップを開いた場合は設定する必要はありません）。
 
-TODO
+## バックエンド
+
+当サイト「インラグデータ」はデータベースを持ちません。「クライアント側オンリー」です。ユーザー登録と認証もありません。匿名での使用を前提としています。ですが、星系マップに記された戦略的な情報などを組織内でのみ共有したい場合は最低限のアクセス制限も求められます。匿名での使用とアクセス制限の両立が難しいので、今は組織毎に「バックエンドを自分で用意する」と言う形を取っています。
+
+マップの書き込み制限、保存先の用意、アドレスのシェア管理、マップの無効化などは独自に行ってもらいます。当サイトは、情報漏えいに関して一切の責任を負いません。
+
+バックエンドアドレスの設定は「星系マップ」ページ内の「バックエンドの設定」フォームで行います。
+
+![editor](assets/backendConfig_ja.jpg)
+
+バックエンド側に求められる仕様はフォームの下にも表示されています。
+
+サイト内のコードエディタを使ってマップを保存する場合はパスコードの入力が求められます。パスコードはマップと共にバックエンド側に送信され、書き込みを制限するために使えます。
+
+## マップのシェア
+
+マップを開いた後にブラウザのアドレスバーから直接リンクを取得できます（ブックマーク可能）。
+
+シェアする範囲には気を付けてください。直接リンクにはバックエンドへのアドレスも内臓されています。

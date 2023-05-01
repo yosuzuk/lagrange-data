@@ -2,9 +2,25 @@
 
 ![map example](assets/mapExample.jpg)
 
-The map builder can be used to visualize and share information about a star system. It uses its own markup language for defining content and map properties. 
+Table of contents:
+- [Markup Syntax](#markup-syntax)
+- [Keywords](#keywords)
+- [Marker](#marker)
+- [Regions](#regions)
+- [Planets](#planets)
+- [Space Stations](#space-stations)
+- [Player Bases](#player-bases)
+- [Player Outposts](#player-outposts)
+- [Mining Platforms](#mining-platforms)
+- [Basic map properties](#basic-map-properties)
+- [Colors](#colors)
+- [Editor](#editor)
+- [Backend](#backend)
+- [Sharing a map](#sharing-a-map)
 
-## Syntax
+## Markup Syntax
+
+The map builder can be used to visualize and share information about a star system. It uses its own markup language for defining content and map properties. 
 
 The map builder uses a similar syntax to the in-game chat and mail. Each "point" on the map is represented using in-game coordinate format, e.g. `(1234,1234)`. Colors are indicated using escape codes like `#R` or `#cFF0000`. Line breaks inside various labels can be inserted using `#r`. This allows us to copy and paste some of the content into both directions. 
 
@@ -168,6 +184,16 @@ $base
 
 You can place player bases after the `$base` keyword. The given point is automatically rounded to fit the base onto the grid. Bases are only visible at a certain zoom level.
 
+Example:
+
+```
+$base
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF Player
+(5635,3545) #c0077FF プレイヤー
+```
+
 ## Player Outposts
 
 Syntax:
@@ -178,6 +204,16 @@ $outpost
 ```
 
 You can place player outposts after the `$outpost` keyword. Each line will place a 1x1 area and a space station with an outpost icon.
+
+Example:
+
+```
+$outpost
+(5615,3555) #cF7C360
+(5625,3565) #c40C0C3
+(5635,3555) #c0077FF My warp point
+(5635,3545) #c0077FF ワープ用
+```
 
 ## Mining Platforms
 
@@ -190,7 +226,19 @@ $platform
 <point> <type> [<color>] [<name>]
 ```
 
-You can place mining platforms after the `$platform` keyword. Each platform needs at least a center point and a type. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. The station will have a default name based on the given type. An optional "name" can be provided to override the type specific default name. Each line will place a 2x2 area and a space station with a platform type specifc icon.  
+You can place mining platforms after the `$platform` keyword. Each platform needs at least a center point and a type. The given point will be rounded to fit the platform onto the grid. "type" can be one of `basic`, `intermediate`, `advanced` or in short form `bmp`, `imp` or `amp`. The station will have a default name based on the given type. An optional "name" can be provided to override the type specific default name. Each line will place a 2x2 area and a space station. 
+
+Example:
+
+```
+$platform
+(5610,3550) basic #cF7C360
+(5640,3550) intermediate #c40C0C3
+(5670,3550) advanced #c40C0C3
+(5620,3580) bmp #c0077FF
+(5650,3580) imp #c0077FF Intermediate Mining Platform
+(5680,3580) amp #c0077FF 上級プラットフォーム
+```
 
 ## Basic map properties
 
@@ -265,14 +313,22 @@ Default colors:
 
 ![editor](assets/editor.jpg)
 
-The Map Builder has a build-in code editor with syntax highlighting. It can validate and apply local changes to the map. But in order to save these changes, a backend has to be configured first. 
+The Map Builder has a build-in code editor with syntax highlighting. It can validate and apply local changes to the map. But in order to save these changes, a backend has to be configured first (you can skip this if you have opened an externally hosted map using a deeplink). 
 
 ## Backend
 
 The lagrange-data site doesn't provide a free database. It is "client-side only". There is also no authentication. This is all about a game and people want to stay anonymous. But on the other hand, you probably want some level of restriction, to keep the map private to your organization. The current solution to that is "bring your own backend". You host your maps yourself, you share the URL within your organization and you decide yourself when to invalidate the URL.
 
-Requirements for the backend part are listed on the lagrange-data site inside the "Configure backend" section.
+![editor](assets/backendConfig.jpg)
+
+Requirements for the backend part are also listed on the lagrange-data site inside the "Configure backend" section.
 
 The build-in editor will also ask for a passcode when saving changes. This passcode can be checked on the backend side to limit write-access.
 
 If you don't want to build a backend from scratch, you could also consider to clone and host [this](https://github.com/yosuzuk/lagrange-data-proxy) (it's a Netlify function serving as proxy to [Rentry.co](https://rentry.co/), a markdown pastebin).
+
+## Sharing a map
+
+Once you have opened a map, take the URL from your browser's adress bar. It can serve as a deep link.
+
+Be careful about who you share the URL with. The deep link also contains the adress to your backend.
