@@ -27,7 +27,7 @@ export const PageFooter = ({ disableContainer }: IProps) => {
             <Container disabled={disableContainer}>
                 <Box component="div" p={1}>
                     <Stack spacing={2} direction="row" alignItems="center" justifyContent="space-between">
-                        <Typography variant="body2" color="text.secondary">{'© 2022 yosuzuk'}</Typography>
+                        <Typography variant="body2" color="text.secondary">{'© 2023 yosuzuk'}</Typography>
                         <Stack spacing={2} direction="row" alignItems="center" justifyContent="end">
                             <Typography variant="body2" color="text.secondary">
                                 {t('appTitle')}
