@@ -1,38 +1,13 @@
 import { useState, useEffect, Dispatch, SetStateAction, useRef } from 'react';
-import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CoordinateInput } from './CoordinateInput';
 import { IMapContent } from './types/IMapContent';
 import { createTemporaryLocation, getPrimaryCoordinatesForMapContent } from './utils/mapContentUtils';
 import { copyToClipboard } from '../../../utils/clipboardUtils';
 import Stack from '@mui/material/Stack';
-
-const StyledButton = styled(Button)({
-    minWidth: '55px',
-    padding: 0,
-    backgroundColor: '#b97400',
-    borderRadius: '0 0 8px 0',
-    color: 'white',
-    fontSize: '0.7rem',
-    '&.Mui-disabled': {
-        backgroundColor: '#424242',
-        color: 'grey',
-    },
-    '&:hover': {
-        backgroundColor: '#b97400',
-    },
-    '&::before': {
-        content: '"."',
-        color: 'yellow',
-        position: 'absolute',
-        bottom: '9px',
-        left: '2px',
-    },
-    '&.Mui-disabled::before': {
-        color: 'grey',
-    },
-});
+import Popper from '@mui/material/Popper';
+import { MapContentSelection } from './MapContentSelection';
+import { PrimaryButton } from './Button';
 
 interface IProps {
     targetToMark: IMapContent | null;
@@ -45,6 +20,7 @@ export const CoordinateInputs = (props: IProps) => {
     const [localX, setLocalX] = useState<number | null>(x);
     const [localY, setLocalY] = useState<number | null>(y);
     const jumpedRef = useRef<boolean>(false);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const [x, y] = (targetToMark && targetToMark.contentType !== 'temporaryLocation') ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
@@ -77,50 +53,58 @@ export const CoordinateInputs = (props: IProps) => {
     };
 
     return (
-        <ClickAwayListener onClickAway={handleClickAway}>
-            <Stack
-                direction="row"
-                spacing={1}
-                alignItems="center"
-                sx={{
-                    backgroundColor: '#262626',
-                    padding: '0 4px',
-                    border: '1px solid grey',
-                    marginLeft: '8px',
-                    marginBottom: '4px',
-                }}
-            >
-                <div>
-                    <CoordinateInput
-                        id="x-coordinate"
-                        label="X"
-                        value={localX}
-                        setValue={setLocalX}
-                    />
-                </div>
-                <div>
-                    <CoordinateInput
-                        id="y-coordinate"
-                        label="Y"
-                        value={localY}
-                        setValue={setLocalY}
-                    />
-                </div>
-                <StyledButton
-                    id="btn-jump-to"
-                    onClick={handleClickJump}
-                    disabled={localX === null || localY === null}
+        <>
+            <ClickAwayListener onClickAway={handleClickAway}>
+                <Stack
+                    ref={containerRef}
+                    direction="row"
+                    spacing={1}
+                    alignItems="center"
+                    sx={{
+                        backgroundColor: '#262626',
+                        padding: '0 4px',
+                        border: '1px solid grey',
+                        marginLeft: '8px',
+                        marginBottom: '4px',
+                    }}
                 >
-                    JUMP
-                </StyledButton>
-                <StyledButton
-                    id="btn-copy-coordinates"
-                    onClick={handleClickCopy}
-                    disabled={localX === null || localY === null}
-                >
-                    COPY
-                </StyledButton>
-            </Stack>
-        </ClickAwayListener >
+                    <div>
+                        <CoordinateInput
+                            id="x-coordinate"
+                            label="X"
+                            value={localX}
+                            setValue={setLocalX}
+                        />
+                    </div>
+                    <div>
+                        <CoordinateInput
+                            id="y-coordinate"
+                            label="Y"
+                            value={localY}
+                            setValue={setLocalY}
+                        />
+                    </div>
+                    <PrimaryButton
+                        id="btn-jump-to"
+                        onClick={handleClickJump}
+                        disabled={localX === null || localY === null}
+                    >
+                        JUMP
+                    </PrimaryButton>
+                    <PrimaryButton
+                        id="btn-copy-coordinates"
+                        onClick={handleClickCopy}
+                        disabled={localX === null || localY === null}
+                    >
+                        COPY
+                    </PrimaryButton>
+                </Stack>
+            </ClickAwayListener >
+            {containerRef.current && targetToMark && (
+                <Popper open={true} placement="top-start" anchorEl={containerRef.current}>
+                    <MapContentSelection mapContent={targetToMark} onMarkTarget={onMarkTarget} />
+                </Popper>
+            )}
+        </>
     );
 };

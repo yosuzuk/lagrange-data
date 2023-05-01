@@ -302,15 +302,20 @@
         "loadMapSpec": "読み込み時",
         "saveMapSpec": "書き込み時",
         "corsHeader": "CORS ヘッダー",
+        "marker": "マーカー",
+        "planet": "惑星",
+        "area": "エリア",
         "station": {
             "city": "都市",
             "subCity": "都市（サブ）",
             "stronghold": "防衛拠点",
             "base": "プレイヤー基地",
             "outpost": "前哨基地",
+            "platform": "採掘プラットフォーム",
             "bmp": "初級プラットフォーム",
             "imp": "中級プラットフォーム",
-            "amp": "上級プラットフォーム"
+            "amp": "上級プラットフォーム",
+            "dock": "結合ステーション"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/%E6%98%9F%E7%B3%BB%E3%83%9E%E3%83%83%E3%83%97"
     },

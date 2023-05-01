@@ -1,5 +1,5 @@
 import { t } from '../../../../i18n';
-import { IArea, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType } from '../types/IMapContent';
+import { IArea, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType, StationType } from '../types/IMapContent';
 import { formatGamePosition, parseGamePosition, toGridPosition } from './coordinateUtils';
 
 let idCounter = 0;
@@ -15,21 +15,34 @@ export function createTemporaryLocation(x: number, y: number): ITemporaryLocatio
 }
 
 export function formatStationLabelForList(station: IStation): string {
-    switch (station.type) {
+    return station.name || getStationTypeText(station.type);
+}
+
+export function getStationTypeText(stationType: StationType): string {
+    switch (stationType) {
         case 'city': {
-            return station.name ?? t('mapEdit.station.city');
+            return t('mapEdit.station.city');
         }
         case 'subCity': {
-            return station.name ?? t('mapEdit.station.subCity');
+            return t('mapEdit.station.subCity');
         }
         case 'stronghold': {
-            return station.name ?? t('mapEdit.station.stronghold');
+            return t('mapEdit.station.stronghold');
         }
         case 'base': {
-            return station.name ?? t('mapEdit.station.base');
+            return t('mapEdit.station.base');
+        }
+        case 'dock': {
+            return t('mapEdit.station.dock');
+        }
+        case 'outpost': {
+            return t('mapEdit.station.outpost');
+        }
+        case 'platform': {
+            return t('mapEdit.station.platform');
         }
         default: {
-            return station.name ?? `${formatGamePosition(station.position)}`;
+            return t('mapEdit.station.default');;
         }
     }
 }
@@ -129,4 +142,41 @@ export function getPrimaryGridPositionForMapContent(mapContent: IMapContent, gri
         return [null, null];
     }
     return toGridPosition([gameX, gameY], gridSize);
+}
+
+export function mapContentToText(mapContent: IMapContent): string | null {
+    switch (mapContent.contentType) {
+        case 'station': {
+            const { type, name, level } = mapContent as IStation;
+            return `${name ? convertLineBreaks(name) : getStationTypeText(type)} ${level !== null ? `Lv${level}` : ''}`.trim();
+        }
+        case 'marker': {
+            const { label } = mapContent as IMarker;
+            return label ? convertLineBreaks(label) : t('mapEdit.marker');
+        }
+        case 'base': {
+            return mapContentToText((mapContent as IPlayerBase).station);
+        }
+        case 'outpost': {
+            return mapContentToText((mapContent as IPlayerOutpost).station);
+        }
+        case 'planet': {
+            const { name, position } = mapContent as IPlanet;
+            return name ? convertLineBreaks(name) : t('mapEdit.planet');
+        }
+        case 'area': {
+            const { position1, position2 } = mapContent as IArea;
+            return `${t('mapEdit.area')} ${formatGamePosition(position1)}/${formatGamePosition(position2)}`
+        }
+        case 'platform': {
+            return mapContentToText((mapContent as IPlayerPlatform).station);
+        }
+        default: {
+            return null;
+        }
+    }
+}
+
+function convertLineBreaks(text: string): string {
+    return text.replaceAll('#r', '\n');
 }

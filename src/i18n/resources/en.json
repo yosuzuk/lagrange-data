@@ -302,15 +302,20 @@
         "loadMapSpec": "For loading",
         "saveMapSpec": "For saving",
         "corsHeader": "CORS header",
+        "marker": "Marker",
+        "planet": "Planet",
+        "area": "Area",
         "station": {
             "city": "City",
             "subCity": "Sub-City",
             "stronghold": "Stronghold",
             "base": "Player base",
             "outpost": "Outpost",
+            "platform": "Mining Platform",
             "bmp": "Basic Mining Platform",
             "imp": "Intermediate Mining Platform",
-            "amp": "Advanced Mining Platform"
+            "amp": "Advanced Mining Platform",
+            "dock": "Docking station"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"
     },
