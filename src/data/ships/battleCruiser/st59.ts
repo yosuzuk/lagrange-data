@@ -108,11 +108,13 @@ const m3: ISystemModule = {
             text: [
                 'ST-2600型　重魚雷ランチャー',
                 '対大型艦：',
-                '・投射、実弾', // TODO dpm
+                '・投射、実弾、対艦：11200、攻城2266',
             ],
         },
     ],
-    // TODO total dpm
+    dpmShip: 11200,
+    dpmAntiAir: 0,
+    dpmSiege: 2266,
 };
 
 const a1: ISystemModule = {

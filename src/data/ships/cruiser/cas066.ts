@@ -131,6 +131,9 @@ export const cas066: IShipDefinition[] = [
                 },
                 mainSystem: true,
                 // TODO skills
+                // 小型弾薬
+                // 攻撃目標がフリゲートのとき、命中率が30%アップし、攻撃冷却時間が50%、ダメージが40%ダウンする。
+                // コスト15
                 skillSlots: 7,
             }),
             modules.static({
