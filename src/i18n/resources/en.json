@@ -280,8 +280,8 @@
     },
     "mapEdit": {
         "pageTitle": "Map",
-        "pageDescription1": "This page can load and visualize star system maps. Maps provided by external URL can also be edited and saved.",
-        "pageDescription2": "This website does not have its own database. To safely store and share maps within your organization, you have to provide an external URL pointing to a backend that you provide yourself. Please be aware and responsible for the risk of information leakage when you make the URL public.",
+        "pageDescription1": "This page can load, visualize and edit star system maps.",
+        "pageDescription2": "To safely store and share maps within your organization, you have to provide an external URL pointing to a backend that you provide yourself. Please be aware and responsible for the risk of information leakage when you share the URL.",
         "loadAndOpenMap": "Load map",
         "saveMap": "Save map",
         "invalidMap": "Invalid map",

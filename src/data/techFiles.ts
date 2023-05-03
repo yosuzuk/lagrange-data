@@ -277,6 +277,7 @@ export const techFiles: ITechFile[] = [
             ShipId.SOLAR_WHALE,
             ShipId.MARSHALL_CRUX,
             ShipId.CV3000,
+            ShipId.AT021_A,
             ShipId.MISTRAL,
             ShipId.JANBIYA_AER410,
             ShipId.STINGRAY,

@@ -12,6 +12,7 @@ import { useMemo } from 'react';
 import { getExampleMaps, getPhaseOneServerResultMaps, getNonPhaseOneServerResultMaps, getTemplateMaps } from './examples/examplesMaps';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { t } from '../../../i18n';
+import { flags } from '../../../utils/flags';
 
 const MapSelectionPage = () => {
     const navigate = useNavigate();
@@ -24,8 +25,12 @@ const MapSelectionPage = () => {
 
     const examples = useMemo(() => Object.values(getExampleMaps()), []);
     const templates = useMemo(() => getTemplateMaps(), []);
-    const serverResultsPhaseOne = useMemo(() => Object.values(getPhaseOneServerResultMaps()).reverse(), []);
-    const serverResultsPhaseN = useMemo(() => Object.values(getNonPhaseOneServerResultMaps()).reverse(), []);
+    const serverResultsPhaseOne = useMemo(() => {
+        return flags.serverResult ? Object.values(getPhaseOneServerResultMaps()).reverse() : [];
+    }, []);
+    const serverResultsPhaseN = useMemo(() => {
+        return flags.serverResult ? Object.values(getNonPhaseOneServerResultMaps()).reverse() : [];
+    }, []);
 
     return (
         <>
@@ -79,34 +84,36 @@ const MapSelectionPage = () => {
                                 ),
                                 initiallyOpened: false,
                             },
-                            {
-                                id: 'serverResultsPhaseOne',
-                                summary: t('mapEdit.openServerResultMapOne'),
-                                details: (
-                                    <Stack spacing={1}>
-                                        {serverResultsPhaseOne.map(serverResult => (
-                                            <ScriptedLink key={serverResult.url} onClick={() => navigateToMap(serverResult.url)}>
-                                                {serverResult.name}
-                                            </ScriptedLink>
-                                        ))}
-                                    </Stack>
-                                ),
-                                initiallyOpened: false,
-                            },
-                            {
-                                id: 'serverResultsPhaseN',
-                                summary: t('mapEdit.openServerResultMapN'),
-                                details: (
-                                    <Stack spacing={1}>
-                                        {serverResultsPhaseN.map(serverResult => (
-                                            <ScriptedLink key={serverResult.url} onClick={() => navigateToMap(serverResult.url)}>
-                                                {serverResult.name}
-                                            </ScriptedLink>
-                                        ))}
-                                    </Stack>
-                                ),
-                                initiallyOpened: false,
-                            },
+                            ...(flags.serverResult ? [
+                                {
+                                    id: 'serverResultsPhaseOne',
+                                    summary: t('mapEdit.openServerResultMapOne'),
+                                    details: (
+                                        <Stack spacing={1}>
+                                            {serverResultsPhaseOne.map(serverResult => (
+                                                <ScriptedLink key={serverResult.url} onClick={() => navigateToMap(serverResult.url)}>
+                                                    {serverResult.name}
+                                                </ScriptedLink>
+                                            ))}
+                                        </Stack>
+                                    ),
+                                    initiallyOpened: false,
+                                },
+                                {
+                                    id: 'serverResultsPhaseN',
+                                    summary: t('mapEdit.openServerResultMapN'),
+                                    details: (
+                                        <Stack spacing={1}>
+                                            {serverResultsPhaseN.map(serverResult => (
+                                                <ScriptedLink key={serverResult.url} onClick={() => navigateToMap(serverResult.url)}>
+                                                    {serverResult.name}
+                                                </ScriptedLink>
+                                            ))}
+                                        </Stack>
+                                    ),
+                                    initiallyOpened: false,
+                                },
+                            ] : []),
                         ]}
                     />
                 </Box>

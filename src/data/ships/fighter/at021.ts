@@ -23,6 +23,7 @@ const typeA: IShipDefinition = {
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
     manufacturer: Manufacturer.DAWN_ACCORD,
+    subModelIds: [ShipId.AT021_B, ShipId.AT021_C],
     defaultStats: {
         hp: 4920,
         armor: 2,
@@ -96,6 +97,7 @@ const typeB: IShipDefinition = {
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
     manufacturer: Manufacturer.DAWN_ACCORD,
+    baseModelId: ShipId.AT021_A,
     defaultStats: {
         hp: 4920,
         armor: 0,
@@ -167,6 +169,7 @@ const typeC: IShipDefinition = {
     operationLimit: 15,
     source: ShipSource.TECH_FILE,
     manufacturer: Manufacturer.DAWN_ACCORD,
+    baseModelId: ShipId.AT021_A,
     defaultStats: {
         hp: 4920,
         armor: 0,
@@ -258,6 +261,8 @@ export const at021: IShipDefinition[] = [
             en: 'AT021-TE - Pulse Cannon Type',
         },
         operationLimit: 10,
+        subModelIds: undefined,
+        baseModelId: undefined,
     },
     {
         ...typeB,
@@ -273,6 +278,8 @@ export const at021: IShipDefinition[] = [
             en: 'AT021-TE - Interference Type',
         },
         operationLimit: 10,
+        subModelIds: undefined,
+        baseModelId: undefined,
     },
     {
         ...typeC,
@@ -288,5 +295,7 @@ export const at021: IShipDefinition[] = [
             en: 'AT021-TE - Multi-Role Type',
         },
         operationLimit: 10,
+        subModelIds: undefined,
+        baseModelId: undefined,
     },
 ];
