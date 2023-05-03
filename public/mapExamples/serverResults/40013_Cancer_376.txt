@@ -1,0 +1,97 @@
+$name 40013 Cancer 376
+$serverName Cancer 376
+$size 9000
+
+$overlay
+焼き飯王国 (30.4%)
+SpaceFAM (15.8%)
+Solace (12.1%)
+ゆるキャン (7.3%)
+SpaceHippies (3.6%)
+Final Frontier (3.6%)
+PRL inc (3.6%)
+
+$station
+(2178,6024) city 5 #cE5B36C 焼き飯王国
+(2149,7352) city 2 #cE5B36C 焼き飯王国
+(2506,7871) city 2 #cE5B36C 焼き飯王国
+(2886,7763) city 2 #cE5B36C 焼き飯王国
+(3136,6804) city 5 #cE5B36C 焼き飯王国
+(2956,6920) city 5 #cE5B36C 焼き飯王国
+(3140,7026) city 5 #cE5B36C 焼き飯王国
+(3230,6604) city 5 #cE5B36C 焼き飯王国
+(3126,6538) city 5 #cE5B36C 焼き飯王国
+(4242,8730) city 5 #cE5B36C 焼き飯王国
+(5509,6496) city 5 #cE5B36C 焼き飯王国
+(5987,5787) city 5 #cE5B36C 焼き飯王国
+(5946,8171) city 2 #cE5B36C 焼き飯王国
+(0869,6392) city 2 #cE5B36C 焼き飯王国
+(6430,6717) city 7 #cE5B36C 焼き飯王国
+(6312,6595) city 5 #cE5B36C 焼き飯王国
+(1671,6325) city 3 #cE5B36C 焼き飯王国
+(1751,6581) city 5 #cE5B36C 焼き飯王国
+(0679,3208) city 5 #c4A99FB SpaceFAM
+(0324,2842) city 3 #c4A99FB SpaceFAM
+(0766,3016) city 7 #c4A99FB SpaceFAM
+(0386,3015) city 5 #c4A99FB SpaceFAM
+(0437,2870) city 5 #c4A99FB SpaceFAM
+(1907,5929) city 3 #c4A99FB SpaceFAM
+(2626,0951) city 2 #cFD7844 Solace
+(5325,2551) city 7 #cFD7844 Solace
+(5708,2214) city 3 #cFD7844 Solace
+(5476,2264) city 3 #cFD7844 Solace
+(5970,5983) city 3 #cFD7844 Solace
+(5816,5797) city 5 #cFD7844 Solace
+(7939,2519) city 2 #cFD7844 Solace
+(8026,4572) city 5 #cFD7844 Solace
+(8403,2291) city 5 #cFD7844 Solace
+(8544,4590) city 5 #cFD7844 Solace
+(5450,2637) city 5 #c49E7C0 ゆるキャン
+(6422,6811) city 5 #c49E7C0 ゆるキャン
+(6944,4302) city 7 #c49E7C0 ゆるキャン
+(7835,2603) city 5 #c49E7C0 ゆるキャン
+(8527,3189) city 3 #c49E7C0 ゆるキャン
+(8707,4577) city 5 #c49E7C0 ゆるキャン
+(8725,4766) city 5 #c49E7C0 ゆるキャン
+(2225,5904) city 5 #c7E67F2 Final Frontier
+(2463,7051) city 5 #c7E67F2 Final Frontier
+(3279,1857) city 5 #c7E67F2 Final Frontier
+(1056,4929) city 3 #c7E67F2 Final Frontier
+(1798,6429) city 5 #c7E67F2 Final Frontier
+(3467,1623) city 5 #cE63A3A SpaceHippies
+(3400,1776) city 5 #cE63A3A SpaceHippies
+(3723,2592) city 3 #cE63A3A SpaceHippies
+(4016,4902) city 7 #cE63A3A SpaceHippies
+(4136,1266) city 5 #cE63A3A SpaceHippies
+(1723,2551) city 5 #cE63A3A SpaceHippies
+(4596,2546) city 5 #cF284FF PRL inc
+(5535,6705) city 5 #cF284FF PRL inc
+(5612,2116) city 5 #cF284FF PRL inc
+(5653,2339) city 5 #cF284FF PRL inc
+(5943,1712) city 3 #cF284FF PRL inc
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

@@ -1,5 +1,8 @@
 import { getCurrentLanguage } from '../../../../i18n';
 import { serverResults } from './serverResultMaps';
+import { serverResults2 } from './serverResultMaps2';
+import { serverResults3 } from './serverResultMaps3';
+import { serverResults4 } from './serverResultMaps4';
 
 interface ISelectableMap {
     name: string;
@@ -120,12 +123,26 @@ export function getTemplateMaps(): ISelectableMap[] {
     ]
 }
 
-export function getServerResultMaps(): ISelectableMap[] {
-    return serverResults.map((result: [number, string, string, string]) => {
+export function getPhaseOneServerResultMaps(): ISelectableMap[] {
+    return getServerResultMaps(serverResults);
+}
+
+export function getNonPhaseOneServerResultMaps(): ISelectableMap[] {
+    return getServerResultMaps([
+        ...serverResults2,
+        ...serverResults3,
+        ...serverResults4,
+    ]);
+}
+
+function getServerResultMaps(serverList: [number, string, string, string][]): ISelectableMap[] {
+    const sorted = [...serverList].sort((a, b) => a[2].localeCompare(b[2]));
+
+    return sorted.map(result => {
         const [serverId, serverName, timestamp, filename] = result;
         return {
             name: `${serverId} ${serverName} (${timestamp})`,
-            url: window.location.origin + window.location.pathname + 'mapExamples/serverResults/' + filename,
+            url: window.location.origin + window.location.pathname + 'mapExamples/serverResults/' + encodeURI(filename),
         };
     });
 }

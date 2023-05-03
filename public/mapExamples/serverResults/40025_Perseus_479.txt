@@ -1,0 +1,87 @@
+$name 40025 Perseus 479
+$serverName Perseus 479
+$size 9000
+
+$overlay
+SpaceFAM (23.1%)
+H A V O C (12.1%)
+bress (12.1%)
+ウニ道楽 (7.3%)
+Enders (3.6%)
+ゆるキャン (3.6%)
+AlphaCollective (3.6%)
+Solace (3.6%)
+XCOM (3.6%)
+Niflheim (3.6%)
+
+$station
+(6430,6717) city 7 #cFD7844 bress
+(5987,5787) city 5 #c49E7C0 ウニ道楽
+(5816,5797) city 5 #c49E7C0 ウニ道楽
+(6312,6595) city 5 #c49E7C0 ウニ道楽
+(2886,0803) city 2 #c4A99FB H A V O C
+(5325,2551) city 7 #c4A99FB H A V O C
+(1056,4929) city 3 #c4A99FB H A V O C
+(5653,2339) city 5 #cF1F1F1 XCOM
+(7939,2519) city 2 #cF1F1F1 XCOM
+(7835,2603) city 5 #cF1F1F1 XCOM
+(8026,4572) city 5 #cF1F1F1 XCOM
+(2175,6019) city 5 #cE5B36C SpaceFAM
+(2626,0951) city 2 #cE5B36C SpaceFAM
+(3140,7026) city 5 #cE5B36C SpaceFAM
+(0766,3016) city 7 #cE5B36C SpaceFAM
+(0386,3015) city 5 #cE5B36C SpaceFAM
+(0437,2870) city 5 #cE5B36C SpaceFAM
+(1907,5929) city 3 #cE5B36C SpaceFAM
+(3279,1857) city 5 #c9FE23E Solace
+(3529,0532) city 2 #c9FE23E Solace
+(3723,2592) city 3 #c9FE23E Solace
+(0324,2842) city 3 #c9FE23E Solace
+(1798,6429) city 5 #c9FE23E Solace
+(2225,5904) city 5 #cF284FF AlphaCollective
+(2816,2749) city 3 #cF284FF AlphaCollective
+(3467,1623) city 5 #cF284FF AlphaCollective
+(3400,1776) city 5 #cF284FF AlphaCollective
+(0679,3208) city 5 #cF284FF AlphaCollective
+(4136,1266) city 5 #cF284FF AlphaCollective
+(1723,2551) city 5 #cF284FF AlphaCollective
+(5171,5306) city 5 #c7E67F2 ゆるキャン
+(6389,0772) city 2 #c7E67F2 ゆるキャン
+(8527,3189) city 3 #c7E67F2 ゆるキャン
+(8707,4577) city 5 #c7E67F2 ゆるキャン
+(8544,4590) city 5 #c7E67F2 ゆるキャン
+(8725,4766) city 5 #c7E67F2 ゆるキャン
+(5509,6496) city 5 #cE63A3A Enders
+(5617,7489) city 3 #cE63A3A Enders
+(6422,6811) city 5 #cE63A3A Enders
+(6646,8123) city 2 #cE63A3A Enders
+(6869,7312) city 2 #cE63A3A Enders
+(7209,7412) city 2 #cE63A3A Enders
+(2463,7051) city 5 #c929292 Niflheim
+(2956,6920) city 5 #c929292 Niflheim
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

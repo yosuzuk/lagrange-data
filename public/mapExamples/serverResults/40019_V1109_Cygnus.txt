@@ -1,0 +1,86 @@
+$name 40019 V1109 Cygnus
+$serverName V1109 Cygnus
+$size 9000
+
+$overlay
+SOVIET UNION (15.8%)
+Black Panthers (7.3%)
+Muff Divers (3.6%)
+RogeSquadron (3.6%)
+Orbitek (3.6%)
+Gunboat Diplo (3.6%)
+Witches (3.6%)
+Gunboat Alpha (3.6%)
+
+$station
+(3467,1623) city 5 #cF284FF Orbitek
+(3400,1776) city 5 #cF284FF Orbitek
+(3723,2592) city 3 #cF284FF Orbitek
+(4136,1266) city 5 #cF284FF Orbitek
+(7209,7412) city 2 #cF284FF Orbitek
+(0606,6323) city 2 #cF1F1F1 Witches
+(0386,3015) city 5 #cF1F1F1 Witches
+(0869,6392) city 2 #cF1F1F1 Witches
+(1798,6429) city 5 #cF1F1F1 Witches
+(2225,5904) city 5 #c49E7C0 Black Panthers
+(2175,6019) city 5 #c49E7C0 Black Panthers
+(5535,6705) city 5 #c49E7C0 Black Panthers
+(5970,5983) city 3 #c49E7C0 Black Panthers
+(7939,2519) city 2 #c49E7C0 Black Panthers
+(7835,2603) city 5 #c49E7C0 Black Panthers
+(8403,2291) city 5 #c49E7C0 Black Panthers
+(8707,4577) city 5 #c49E7C0 Black Panthers
+(8544,4590) city 5 #c49E7C0 Black Panthers
+(8725,4766) city 5 #c49E7C0 Black Panthers
+(0679,3208) city 5 #cE5B36C SOVIET UNION
+(0324,2842) city 3 #cE5B36C SOVIET UNION
+(0766,3016) city 7 #cE5B36C SOVIET UNION
+(0437,2870) city 5 #cE5B36C SOVIET UNION
+(1671,6325) city 3 #cE5B36C SOVIET UNION
+(2956,6920) city 5 #c929292 Gunboat Alpha
+(5450,2637) city 5 #c7E67F2 RogeSquadron
+(5708,2214) city 3 #c7E67F2 RogeSquadron
+(5476,2264) city 3 #c7E67F2 RogeSquadron
+(5612,2116) city 5 #c7E67F2 RogeSquadron
+(5653,2339) city 5 #c7E67F2 RogeSquadron
+(5943,1712) city 3 #c7E67F2 RogeSquadron
+(6389,0772) city 2 #c7E67F2 RogeSquadron
+(2149,7352) city 2 #c9FE23E Gunboat Diplo
+(2463,7051) city 5 #c9FE23E Gunboat Diplo
+(2886,7763) city 2 #c9FE23E Gunboat Diplo
+(3140,7026) city 5 #c9FE23E Gunboat Diplo
+(4242,8730) city 5 #cE63A3A Muff Divers
+(5171,5306) city 5 #cE63A3A Muff Divers
+(5509,6496) city 5 #cE63A3A Muff Divers
+(5617,7489) city 3 #cE63A3A Muff Divers
+(5816,5797) city 5 #cE63A3A Muff Divers
+(5946,8171) city 2 #cE63A3A Muff Divers
+(6422,6811) city 5 #cE63A3A Muff Divers
+(6646,8123) city 2 #cE63A3A Muff Divers
+(6869,7312) city 2 #cE63A3A Muff Divers
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

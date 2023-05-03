@@ -1,0 +1,164 @@
+$name 40002 V2377 Hercules
+$serverName V2377 Hercules
+$size 9000
+
+$overlay
+FAKE_A (35.9%)
+橘連合 (19.5%)
+Brotherhооd (19.5%)
+猫の夜会 (14.6%)
+FAKE_D (14.0%)
+銀河皇国 (12.1%)
+肉食べたい (10.9%)
+FAKE_E (5.2%)
+FAKE_B (2.6%)
+
+$station
+(2553,6473) city 2 #c4A99FB FAKE_A
+(2874,6764) city 2 #c4A99FB FAKE_A
+(3463,6213) city 2 #c4A99FB FAKE_A
+(3769,5596) city 2 #c4A99FB FAKE_A
+(4385,5912) city 9 #c4A99FB FAKE_A
+(4252,6125) city 3 #c4A99FB FAKE_A
+(4679,7467) city 3 #c4A99FB FAKE_A
+(6046,8331) city 5 #c4A99FB FAKE_A
+(6914,3144) city 2 #c4A99FB FAKE_A
+(7250,7212) city 5 #c4A99FB FAKE_A
+(7244,7407) city 5 #c4A99FB FAKE_A
+(8013,3693) city 2 #c4A99FB FAKE_A
+(8526,5511) city 5 #c4A99FB FAKE_A
+(2140,8135) city 3 #cE63A3A FAKE_B
+(2294,6247) city 2 #cE63A3A FAKE_B
+(2368,5947) city 3 #cE63A3A FAKE_B
+(2463,5513) city 2 #cE63A3A FAKE_B
+(2485,3832) city 3 #cE63A3A FAKE_B
+(2803,6553) city 2 #cE63A3A FAKE_B
+(3002,7642) city 3 #cE63A3A FAKE_B
+(3184,7636) city 5 #cE63A3A FAKE_B
+(2749,7375) city 3 #cE63A3A FAKE_B
+(3031,7337) city 7 #cE63A3A FAKE_B
+(3069,7229) city 2 #cE63A3A FAKE_B
+(3293,6113) city 2 #cE63A3A FAKE_B
+(3584,6394) city 2 #cE63A3A FAKE_B
+(3629,7334) city 5 #cE63A3A FAKE_B
+(3423,7352) city 5 #cE63A3A FAKE_B
+(3546,7501) city 5 #cE63A3A FAKE_B
+(3533,8273) city 2 #cE63A3A FAKE_B
+(3612,4885) city 5 #cE63A3A FAKE_B
+(4625,5237) city 5 #cE63A3A FAKE_B
+(4569,8327) city 3 #cE63A3A FAKE_B
+(6283,6353) city 2 #cE63A3A FAKE_B
+(1253,6842) city 3 #cE63A3A FAKE_B
+(1358,6951) city 5 #cE63A3A FAKE_B
+(1315,7111) city 5 #cE63A3A FAKE_B
+(8415,4139) city 2 #cE63A3A FAKE_B
+(1766,6391) city 5 #cE63A3A FAKE_B
+(1795,5559) city 2 #cE63A3A FAKE_B
+(0169,3696) city 2 #cFD7844 FAKE_D
+(1954,3467) city 5 #cFD7844 FAKE_D
+(0734,3527) city 2 #cFD7844 FAKE_D
+(3736,5059) city 5 #cFD7844 FAKE_D
+(3819,4027) city 5 #cFD7844 FAKE_D
+(3991,4010) city 5 #cFD7844 FAKE_D
+(0914,3067) city 2 #cFD7844 FAKE_D
+(0438,5084) city 5 #cFD7844 FAKE_D
+(0434,4867) city 5 #cFD7844 FAKE_D
+(0257,4976) city 5 #cFD7844 FAKE_D
+(1415,4643) city 5 #cFD7844 FAKE_D
+(1555,4428) city 5 #cFD7844 FAKE_D
+(1529,2128) city 3 #cFD7844 FAKE_D
+(1794,2107) city 2 #cFD7844 FAKE_D
+(3812,4951) city 5 #c49E7C0 FAKE_E
+(4493,2515) city 3 #c49E7C0 FAKE_E
+(4644,5368) city 5 #c49E7C0 FAKE_E
+(4923,8053) city 2 #c49E7C0 FAKE_E
+(5373,8053) city 2 #c49E7C0 FAKE_E
+(5313,1214) city 3 #c49E7C0 FAKE_E
+(5689,3690) city 3 #c49E7C0 FAKE_E
+(5389,3677) city 7 #c49E7C0 FAKE_E
+(5721,5089) city 5 #c49E7C0 FAKE_E
+(6159,0326) city 3 #c49E7C0 FAKE_E
+(7833,3033) city 2 #c49E7C0 FAKE_E
+(8348,4467) city 3 #c49E7C0 FAKE_E
+(2626,0951) city 2 #c49E7C0 銀河皇国
+(3279,1857) city 5 #c49E7C0 銀河皇国
+(0679,3208) city 5 #c49E7C0 銀河皇国
+(3529,0532) city 2 #c49E7C0 銀河皇国
+(3723,2592) city 3 #c49E7C0 銀河皇国
+(0766,3016) city 7 #c49E7C0 銀河皇国
+(0845,4071) city 5 #c49E7C0 銀河皇国
+(1056,4929) city 3 #c49E7C0 銀河皇国
+(1671,6325) city 3 #c49E7C0 銀河皇国
+(1723,2551) city 5 #c49E7C0 銀河皇国
+(5450,2637) city 5 #c4A99FB Brotherhооd
+(5325,2551) city 7 #c4A99FB Brotherhооd
+(5708,2214) city 3 #c4A99FB Brotherhооd
+(5476,2264) city 3 #c4A99FB Brotherhооd
+(5653,2339) city 5 #c4A99FB Brotherhооd
+(5943,1712) city 3 #c4A99FB Brotherhооd
+(6425,2871) city 5 #c4A99FB Brotherhооd
+(6944,4302) city 7 #c4A99FB Brotherhооd
+(7835,2603) city 5 #c4A99FB Brotherhооd
+(1798,6429) city 5 #c4A99FB Brotherhооd
+(2149,7352) city 2 #cE63A3A 肉食べたい
+(2463,7051) city 5 #cE63A3A 肉食べたい
+(2894,5187) city 5 #cE63A3A 肉食べたい
+(2886,0803) city 2 #cE63A3A 肉食べたい
+(3136,6804) city 5 #cE63A3A 肉食べたい
+(2956,6920) city 5 #cE63A3A 肉食べたい
+(3400,1776) city 5 #cE63A3A 肉食べたい
+(0324,2842) city 3 #cE63A3A 肉食べたい
+(4136,1266) city 5 #cE63A3A 肉食べたい
+(0386,3015) city 5 #cE63A3A 肉食べたい
+(0869,6392) city 2 #cE63A3A 肉食べたい
+(0437,2870) city 5 #cE63A3A 肉食べたい
+(2225,5904) city 5 #cFD7844 猫の夜会
+(2178,6024) city 5 #cFD7844 猫の夜会
+(3140,7026) city 5 #cFD7844 猫の夜会
+(3126,6538) city 5 #cFD7844 猫の夜会
+(3467,1623) city 5 #cFD7844 猫の夜会
+(4242,8730) city 5 #cFD7844 猫の夜会
+(4336,7709) city 3 #cFD7844 猫の夜会
+(5509,6496) city 5 #cFD7844 猫の夜会
+(5617,7489) city 3 #cFD7844 猫の夜会
+(5987,5787) city 5 #cFD7844 猫の夜会
+(5816,5797) city 5 #cFD7844 猫の夜会
+(6312,6595) city 5 #cFD7844 猫の夜会
+(1907,5929) city 3 #cFD7844 猫の夜会
+(4016,4902) city 7 #cE5B36C 橘連合
+(5171,5306) city 5 #cE5B36C 橘連合
+(6430,6717) city 7 #cE5B36C 橘連合
+(6422,6811) city 5 #cE5B36C 橘連合
+(6646,8123) city 2 #cE5B36C 橘連合
+(6869,7312) city 2 #cE5B36C 橘連合
+(8026,4572) city 5 #cE5B36C 橘連合
+(8027,5526) city 5 #cE5B36C 橘連合
+(8707,4577) city 5 #cE5B36C 橘連合
+(8544,4590) city 5 #cE5B36C 橘連合
+(8725,4766) city 5 #cE5B36C 橘連合
+
+$planet
+(5332,2754) large
+(5455,2689)(5332,2754) small
+(5292,2816)(5332,2754) small
+(5012,5174) large
+(4928,5209)(5012,5174) small
+(7669,2780) large
+(7749,2703)(7669,2780) small
+(2263,5850) large
+(2418,5795)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2172,6046)(2263,5850) small
+(4290,8642) large
+(4197,8734)(4290,8642) small
+(3264,6496)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3253,6634)(3323,6430) small
+(3323,6430) large
+(3892,3212) large
+(3952,3011)(3892,3212) small
+(4500,4500) medium
+(7832,4696) large
+(7872,4634)(7832,4696) small
+(1038,3055) large
+(872,3111)(1038,3055) small

@@ -1,0 +1,79 @@
+$name 40022 Piscis Austrinus V
+$serverName Piscis Austrinus V
+$size 9000
+
+$overlay
+UNSSC (15.8%)
+Shadow Conclave (3.6%)
+MCR (3.6%)
+ReinoSanto (3.6%)
+Frostbite (3.6%)
+DaiLunGrp (3.6%)
+
+$station
+(5171,5306) city 5 #cE5B36C UNSSC
+(5137,4449) city 3 #cE5B36C UNSSC
+(5617,7489) city 3 #cE5B36C UNSSC
+(6430,6717) city 7 #cE5B36C UNSSC
+(6422,6811) city 5 #cE5B36C UNSSC
+(6944,4302) city 7 #cE5B36C UNSSC
+(7209,7412) city 2 #cE5B36C UNSSC
+(7835,2603) city 5 #cE5B36C UNSSC
+(8026,4572) city 5 #cE5B36C UNSSC
+(4242,8730) city 5 #cE63A3A MCR
+(5535,6705) city 5 #cE63A3A MCR
+(5970,5983) city 3 #cE63A3A MCR
+(5987,5787) city 5 #cE63A3A MCR
+(0869,6392) city 2 #cE63A3A MCR
+(8544,4590) city 5 #cE63A3A MCR
+(5708,2214) city 3 #c7E67F2 ReinoSanto
+(5476,2264) city 3 #c7E67F2 ReinoSanto
+(5612,2116) city 5 #c7E67F2 ReinoSanto
+(5653,2339) city 5 #c7E67F2 ReinoSanto
+(7939,2519) city 2 #c7E67F2 ReinoSanto
+(2149,7352) city 2 #c49E7C0 Shadow Conclave
+(2506,7871) city 2 #c49E7C0 Shadow Conclave
+(2463,7051) city 5 #c49E7C0 Shadow Conclave
+(2886,7763) city 2 #c49E7C0 Shadow Conclave
+(3136,6804) city 5 #c49E7C0 Shadow Conclave
+(3140,7026) city 5 #c49E7C0 Shadow Conclave
+(3230,6604) city 5 #c49E7C0 Shadow Conclave
+(4336,7709) city 3 #c49E7C0 Shadow Conclave
+(8403,2291) city 5 #c49E7C0 Shadow Conclave
+(1907,5929) city 3 #c49E7C0 Shadow Conclave
+(5509,6496) city 5 #cF284FF Frostbite
+(5946,8171) city 2 #cF284FF Frostbite
+(6646,8123) city 2 #cF284FF Frostbite
+(8707,4577) city 5 #cF284FF Frostbite
+(8725,4766) city 5 #cF284FF Frostbite
+(0606,6323) city 2 #c9FE23E DaiLunGrp
+(2956,6920) city 5 #c9FE23E DaiLunGrp
+(3126,6538) city 5 #c9FE23E DaiLunGrp
+(4183,6172) city 3 #c9FE23E DaiLunGrp
+(1671,6325) city 3 #c9FE23E DaiLunGrp
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

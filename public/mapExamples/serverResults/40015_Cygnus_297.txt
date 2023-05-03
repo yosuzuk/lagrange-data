@@ -1,0 +1,84 @@
+$name 40015 Cygnus 297
+$serverName Cygnus 297
+$size 9000
+
+$overlay
+EVO (23.1%)
+Space Guards (15.8%)
+宇宙吸貓萌 (15.8%)
+Visionaries (7.3%)
+SOVIET UNION (3.6%)
+KRAKENS (3.6%)
+
+$station
+(2225,5904) city 5 #c7E67F2 KRAKENS
+(2175,6019) city 5 #c7E67F2 KRAKENS
+(1326,6591) city 2 #c7E67F2 KRAKENS
+(1907,5929) city 3 #c7E67F2 KRAKENS
+(4596,2546) city 5 #cFD7844 宇宙吸貓萌
+(5325,2551) city 7 #cFD7844 宇宙吸貓萌
+(5476,2264) city 3 #cFD7844 宇宙吸貓萌
+(5612,2116) city 5 #cFD7844 宇宙吸貓萌
+(5653,2339) city 5 #cFD7844 宇宙吸貓萌
+(6944,4302) city 7 #cFD7844 宇宙吸貓萌
+(7156,2006) city 5 #cFD7844 宇宙吸貓萌
+(5171,5306) city 5 #cE5B36C EVO
+(5535,6705) city 5 #cE5B36C EVO
+(5509,6496) city 5 #cE5B36C EVO
+(5987,5787) city 5 #cE5B36C EVO
+(5816,5797) city 5 #cE5B36C EVO
+(6430,6717) city 7 #cE5B36C EVO
+(6312,6595) city 5 #cE5B36C EVO
+(6422,6811) city 5 #cE5B36C EVO
+(2463,7051) city 5 #c49E7C0 Visionaries
+(3136,6804) city 5 #c49E7C0 Visionaries
+(3140,7026) city 5 #c49E7C0 Visionaries
+(3230,6604) city 5 #c49E7C0 Visionaries
+(3279,1857) city 5 #c49E7C0 Visionaries
+(3400,1776) city 5 #c49E7C0 Visionaries
+(0324,2842) city 3 #c49E7C0 Visionaries
+(5708,2214) city 3 #c49E7C0 Visionaries
+(1056,4929) city 3 #c49E7C0 Visionaries
+(1723,2551) city 5 #c49E7C0 Visionaries
+(2886,7763) city 2 #c4A99FB Space Guards
+(2956,6920) city 5 #c4A99FB Space Guards
+(3126,6538) city 5 #c4A99FB Space Guards
+(0679,3208) city 5 #c4A99FB Space Guards
+(3723,2592) city 3 #c4A99FB Space Guards
+(4242,8730) city 5 #c4A99FB Space Guards
+(4183,6172) city 3 #c4A99FB Space Guards
+(4336,7709) city 3 #c4A99FB Space Guards
+(0766,3016) city 7 #c4A99FB Space Guards
+(0386,3015) city 5 #c4A99FB Space Guards
+(5946,8171) city 2 #c4A99FB Space Guards
+(8026,4572) city 5 #cE63A3A SOVIET UNION
+(8527,3189) city 3 #cE63A3A SOVIET UNION
+(8707,4577) city 5 #cE63A3A SOVIET UNION
+(8544,4590) city 5 #cE63A3A SOVIET UNION
+(8725,4766) city 5 #cE63A3A SOVIET UNION
+
+$planet
+(5332,2754) large
+(5455,2689)(5332,2754) small
+(5292,2816)(5332,2754) small
+(5012,5174) large
+(4928,5209)(5012,5174) small
+(7669,2780) large
+(7749,2703)(7669,2780) small
+(2263,5850) large
+(2418,5795)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2172,6046)(2263,5850) small
+(4290,8642) large
+(4197,8734)(4290,8642) small
+(3264,6496)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3253,6634)(3323,6430) small
+(3323,6430) large
+(3892,3212) large
+(3952,3011)(3892,3212) small
+(4500,4500) medium
+(7832,4696) large
+(7872,4634)(7832,4696) small
+(1038,3055) large
+(872,3111)(1038,3055) small
