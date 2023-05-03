@@ -1,0 +1,82 @@
+$name 40018 Hydrus 183
+$serverName Hydrus 183
+$size 9000
+
+$overlay
+평화주의 (23.1%)
+Voyager (19.5%)
+北辰星 (15.8%)
+Phantom Order (3.6%)
+DIMENSIONS (3.6%)
+
+$station
+(2506,7871) city 2 #c4A99FB Voyager
+(2463,7051) city 5 #c4A99FB Voyager
+(2956,6920) city 5 #c4A99FB Voyager
+(3207,6342) city 7 #c4A99FB Voyager
+(4336,7709) city 3 #c4A99FB Voyager
+(5171,5306) city 5 #c4A99FB Voyager
+(5535,6705) city 5 #c4A99FB Voyager
+(5509,6496) city 5 #c4A99FB Voyager
+(5970,5983) city 3 #c4A99FB Voyager
+(5816,5797) city 5 #c4A99FB Voyager
+(6422,6811) city 5 #c4A99FB Voyager
+(2225,5904) city 5 #cE5B36C 평화주의
+(2175,6019) city 5 #cE5B36C 평화주의
+(2149,7352) city 2 #cE5B36C 평화주의
+(2894,5187) city 5 #cE5B36C 평화주의
+(0606,6323) city 2 #cE5B36C 평화주의
+(3136,6804) city 5 #cE5B36C 평화주의
+(0679,3208) city 5 #cE5B36C 평화주의
+(0766,3016) city 7 #cE5B36C 평화주의
+(0386,3015) city 5 #cE5B36C 평화주의
+(0869,6392) city 2 #cE5B36C 평화주의
+(6312,6595) city 5 #cE5B36C 평화주의
+(1056,4929) city 3 #cE5B36C 평화주의
+(1671,6325) city 3 #cE5B36C 평화주의
+(1798,6429) city 5 #cE5B36C 평화주의
+(1723,2551) city 5 #cE5B36C 평화주의
+(5325,2551) city 7 #cFD7844 北辰星
+(5708,2214) city 3 #cFD7844 北辰星
+(5653,2339) city 5 #cFD7844 北辰星
+(5943,1712) city 3 #cFD7844 北辰星
+(7156,2006) city 5 #cFD7844 北辰星
+(2626,0951) city 2 #cE63A3A Phantom Order
+(2816,2749) city 3 #cE63A3A Phantom Order
+(3279,1857) city 5 #cE63A3A Phantom Order
+(7835,2603) city 5 #cE63A3A Phantom Order
+(8026,4572) city 5 #cE63A3A Phantom Order
+(8707,4577) city 5 #cE63A3A Phantom Order
+(2886,0803) city 2 #c7E67F2 DIMENSIONS
+(3400,1776) city 5 #c7E67F2 DIMENSIONS
+(3723,2592) city 3 #c7E67F2 DIMENSIONS
+(4136,1266) city 5 #c7E67F2 DIMENSIONS
+(6389,0772) city 2 #c7E67F2 DIMENSIONS
+(6944,4302) city 7 #c7E67F2 DIMENSIONS
+(7202,4367) city 5 #c7E67F2 DIMENSIONS
+
+$planet
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(3323,6430) large
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

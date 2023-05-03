@@ -1,0 +1,77 @@
+$name 40017 Delphinus 220
+$serverName Delphinus 220
+$size 9000
+
+$overlay
+宇宙 (23.1%)
+Adebow (15.8%)
+Memoria Atelier (3.6%)
+INSANITY (3.6%)
+XCOM (3.6%)
+
+$station
+(5450,2637) city 5 #c4A99FB Adebow
+(5325,2551) city 7 #c4A99FB Adebow
+(5653,2339) city 5 #c4A99FB Adebow
+(5943,1712) city 3 #c4A99FB Adebow
+(6389,0772) city 2 #c4A99FB Adebow
+(5509,6496) city 5 #c7E67F2 INSANITY
+(5617,7489) city 3 #c7E67F2 INSANITY
+(5946,8171) city 2 #c7E67F2 INSANITY
+(6312,6595) city 5 #c7E67F2 INSANITY
+(6869,7312) city 2 #c7E67F2 INSANITY
+(2626,0951) city 2 #cE63A3A Memoria Atelier
+(2816,2749) city 3 #cE63A3A Memoria Atelier
+(3467,1623) city 5 #cE63A3A Memoria Atelier
+(3400,1776) city 5 #cE63A3A Memoria Atelier
+(0679,3208) city 5 #cE63A3A Memoria Atelier
+(3529,0532) city 2 #cE63A3A Memoria Atelier
+(3723,2592) city 3 #cE63A3A Memoria Atelier
+(4136,1266) city 5 #cE63A3A Memoria Atelier
+(7939,2519) city 2 #cE63A3A Memoria Atelier
+(2149,7352) city 2 #cE5B36C 宇宙
+(2463,7051) city 5 #cE5B36C 宇宙
+(0606,6323) city 2 #cE5B36C 宇宙
+(3136,6804) city 5 #cE5B36C 宇宙
+(2956,6920) city 5 #cE5B36C 宇宙
+(3140,7026) city 5 #cE5B36C 宇宙
+(3230,6604) city 5 #cE5B36C 宇宙
+(3126,6538) city 5 #cE5B36C 宇宙
+(3207,6342) city 7 #cE5B36C 宇宙
+(4242,8730) city 5 #cE5B36C 宇宙
+(0869,6392) city 2 #cE5B36C 宇宙
+(1326,6591) city 2 #cE5B36C 宇宙
+(1671,6325) city 3 #cE5B36C 宇宙
+(1798,6429) city 5 #cE5B36C 宇宙
+(1907,5929) city 3 #cE5B36C 宇宙
+(2506,7871) city 2 #cF284FF XCOM
+(7835,2603) city 5 #cF284FF XCOM
+(8527,3189) city 3 #cF284FF XCOM
+(8707,4577) city 5 #cF284FF XCOM
+(8725,4766) city 5 #cF284FF XCOM
+
+$planet
+(3323,6430) large
+(3264,6496)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3253,6634)(3323,6430) small
+(5012,5174) large
+(4928,5209)(5012,5174) small
+(7669,2780) large
+(7749,2703)(7669,2780) small
+(2263,5850) large
+(2418,5795)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2172,6046)(2263,5850) small
+(4290,8642) large
+(4197,8734)(4290,8642) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(5292,2816)(5332,2754) small
+(3892,3212) large
+(3952,3011)(3892,3212) small
+(4500,4500) medium
+(7832,4696) large
+(7872,4634)(7832,4696) small
+(1038,3055) large
+(872,3111)(1038,3055) small

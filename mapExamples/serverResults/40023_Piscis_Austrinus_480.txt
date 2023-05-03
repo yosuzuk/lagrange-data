@@ -1,0 +1,92 @@
+$name 40023 Piscis Austrinus 480
+$serverName Piscis Austrinus 480
+$size 9000
+
+$overlay
+Visionaries (15.8%)
+The Kwakken (12.1%)
+EVO (12.1%)
+Angels of Wrath (10.9%)
+Space Guards (3.6%)
+Orbitek (3.6%)
+Gunboat Diplo (3.6%)
+VALKYRIES (3.6%)
+Альфа (3.6%)
+Solar Eclipse (3.6%)
+Exodus Dominion (3.6%)
+
+$station
+(5816,5797) city 5 #c4A99FB The Kwakken
+(6430,6717) city 7 #c4A99FB The Kwakken
+(6869,7312) city 2 #c4A99FB The Kwakken
+(8026,4572) city 5 #c4A99FB The Kwakken
+(0766,3016) city 7 #cFD7844 EVO
+(0845,4071) city 5 #cFD7844 EVO
+(0386,3015) city 5 #cFD7844 EVO
+(0869,6392) city 2 #cFD7844 EVO
+(3126,6538) city 5 #cE63A3A Space Guards
+(5653,2339) city 5 #cE63A3A Space Guards
+(6944,4302) city 7 #cE63A3A Space Guards
+(7939,2519) city 2 #cE63A3A Space Guards
+(7835,2603) city 5 #cE63A3A Space Guards
+(8527,3189) city 3 #cE63A3A Space Guards
+(2506,7871) city 2 #cE5B36C Visionaries
+(3140,7026) city 5 #cE5B36C Visionaries
+(3230,6604) city 5 #cE5B36C Visionaries
+(5325,2551) city 7 #cE5B36C Visionaries
+(5612,2116) city 5 #cE5B36C Visionaries
+(5943,1712) city 3 #cE5B36C Visionaries
+(1751,6581) city 5 #cE5B36C Visionaries
+(2225,5904) city 5 #c49E7C0 Angels of Wrath
+(2175,6019) city 5 #c49E7C0 Angels of Wrath
+(2626,0951) city 2 #c49E7C0 Angels of Wrath
+(2816,2749) city 3 #c49E7C0 Angels of Wrath
+(3279,1857) city 5 #c49E7C0 Angels of Wrath
+(3400,1776) city 5 #c49E7C0 Angels of Wrath
+(3529,0532) city 2 #c49E7C0 Angels of Wrath
+(3723,2592) city 3 #c49E7C0 Angels of Wrath
+(4136,1266) city 5 #c49E7C0 Angels of Wrath
+(4596,2546) city 5 #c49E7C0 Angels of Wrath
+(1671,6325) city 3 #c49E7C0 Angels of Wrath
+(1798,6429) city 5 #c49E7C0 Angels of Wrath
+(1907,5929) city 3 #c49E7C0 Angels of Wrath
+(0679,3208) city 5 #c7E67F2 Orbitek
+(0324,2842) city 3 #c7E67F2 Orbitek
+(0437,2870) city 5 #c7E67F2 Orbitek
+(1723,2551) city 5 #c7E67F2 Orbitek
+(2463,7051) city 5 #cF284FF Gunboat Diplo
+(3136,6804) city 5 #cF284FF Gunboat Diplo
+(2956,6920) city 5 #cF284FF Gunboat Diplo
+(6312,6595) city 5 #c929292 Exodus Dominion
+(5171,5306) city 5 #cF1F1F1 Альфа
+(5987,5787) city 5 #cF1F1F1 Альфа
+(5946,8171) city 2 #c9FE23E VALKYRIES
+(6422,6811) city 5 #c9FE23E VALKYRIES
+(8725,4766) city 5 #c9FE23E VALKYRIES
+(8707,4577) city 5 #c929292 Solar Eclipse
+
+$planet
+(5332,2754) large
+(5455,2689)(5332,2754) small
+(5292,2816)(5332,2754) small
+(5012,5174) large
+(4928,5209)(5012,5174) small
+(7669,2780) large
+(7749,2703)(7669,2780) small
+(2263,5850) large
+(2418,5795)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2172,6046)(2263,5850) small
+(4290,8642) large
+(4197,8734)(4290,8642) small
+(3264,6496)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3253,6634)(3323,6430) small
+(3323,6430) large
+(3892,3212) large
+(3952,3011)(3892,3212) small
+(4500,4500) medium
+(7832,4696) large
+(7872,4634)(7832,4696) small
+(1038,3055) large
+(872,3111)(1038,3055) small

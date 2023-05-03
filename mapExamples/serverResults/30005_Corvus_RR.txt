@@ -1,0 +1,145 @@
+$name 30005 Corvus RR
+$serverName Corvus RR
+$size 9000
+
+$overlay
+Kangaeru (42.2%)
+UnitedRUS (26.6%)
+Joey (14.6%)
+CitadelSecurity (5.5%)
+The Flood (2.7%)
+The Remnants (2.7%)
+
+$station
+(2379,2426) city 3 #c4A99FB UnitedRUS
+(0367,5050) city 5 #c4A99FB UnitedRUS
+(2827,2462) city 5 #c4A99FB UnitedRUS
+(2971,2427) city 3 #c4A99FB UnitedRUS
+(2903,2249) city 7 #c4A99FB UnitedRUS
+(3116,2308) city 5 #c4A99FB UnitedRUS
+(2888,5927) city 3 #c4A99FB UnitedRUS
+(2963,5693) city 2 #c4A99FB UnitedRUS
+(0098,6090) city 5 #c4A99FB UnitedRUS
+(0488,5911) city 3 #c4A99FB UnitedRUS
+(0238,6046) city 5 #c4A99FB UnitedRUS
+(0233,6170) city 5 #c4A99FB UnitedRUS
+(0191,5895) city 7 #c4A99FB UnitedRUS
+(4815,3602) city 5 #c4A99FB UnitedRUS
+(1133,4553) city 2 #c4A99FB UnitedRUS
+(5148,3998) city 5 #c4A99FB UnitedRUS
+(5350,4248) city 5 #c4A99FB UnitedRUS
+(5277,4179) city 5 #c4A99FB UnitedRUS
+(5384,4022) city 5 #c4A99FB UnitedRUS
+(1195,3279) city 2 #c4A99FB UnitedRUS
+(1209,3548) city 3 #c4A99FB UnitedRUS
+(1425,6517) city 5 #c4A99FB UnitedRUS
+(1385,6672) city 3 #c4A99FB UnitedRUS
+(1684,3214) city 2 #c4A99FB UnitedRUS
+(1663,2973) city 2 #c4A99FB UnitedRUS
+(1786,5571) city 5 #c4A99FB UnitedRUS
+(1933,2553) city 2 #c4A99FB UnitedRUS
+(2523,5893) city 2 #cE5B36C Kangaeru
+(2813,5273) city 2 #cE5B36C Kangaeru
+(3208,6869) city 2 #cE5B36C Kangaeru
+(3020,4855) city 3 #cE5B36C Kangaeru
+(4026,4914) city 3 #cE5B36C Kangaeru
+(3801,5162) city 2 #cE5B36C Kangaeru
+(3651,5047) city 7 #cE5B36C Kangaeru
+(4006,5871) city 5 #cE5B36C Kangaeru
+(4203,8373) city 2 #cE5B36C Kangaeru
+(4503,8473) city 2 #cE5B36C Kangaeru
+(4888,5871) city 5 #cE5B36C Kangaeru
+(5125,5738) city 3 #cE5B36C Kangaeru
+(4739,5910) city 5 #cE5B36C Kangaeru
+(4834,5684) city 7 #cE5B36C Kangaeru
+(5106,5905) city 5 #cE5B36C Kangaeru
+(4883,4971) city 3 #cE5B36C Kangaeru
+(5088,4954) city 3 #cE5B36C Kangaeru
+(5096,2845) city 9 #cE5B36C Kangaeru
+(4992,3065) city 3 #cE5B36C Kangaeru
+(5381,2911) city 5 #cE5B36C Kangaeru
+(5726,4050) city 5 #cE5B36C Kangaeru
+(6373,4633) city 2 #cE5B36C Kangaeru
+(6578,4536) city 3 #cE5B36C Kangaeru
+(6654,5267) city 2 #cE5B36C Kangaeru
+(6703,3953) city 2 #cE5B36C Kangaeru
+(6933,4793) city 2 #cE5B36C Kangaeru
+(6779,5887) city 2 #cE5B36C Kangaeru
+(7185,6572) city 3 #cE5B36C Kangaeru
+(7553,6675) city 5 #cE5B36C Kangaeru
+(2345,3752) city 3 #cE5B36C Kangaeru
+(2553,5413) city 2 #cE5B36C Kangaeru
+(4194,7707) city 2 #cE63A3A The Flood
+(4252,2275) city 3 #cE63A3A The Flood
+(5823,0874) city 2 #cE63A3A The Flood
+(7113,2433) city 2 #cE63A3A The Flood
+(7674,2404) city 2 #cE63A3A The Flood
+(8489,3479) city 7 #cE63A3A The Flood
+(8708,3675) city 5 #cE63A3A The Flood
+(8479,2246) city 2 #cE63A3A The Flood
+(3298,7283) city 5 #c49E7C0 CitadelSecurity
+(4769,7967) city 3 #c49E7C0 CitadelSecurity
+(5223,8073) city 2 #c49E7C0 CitadelSecurity
+(5374,7604) city 2 #c49E7C0 CitadelSecurity
+(5503,8254) city 2 #c49E7C0 CitadelSecurity
+(5834,6835) city 5 #c49E7C0 CitadelSecurity
+(5632,6765) city 5 #c49E7C0 CitadelSecurity
+(5757,6938) city 5 #c49E7C0 CitadelSecurity
+(5841,7008) city 5 #c49E7C0 CitadelSecurity
+(6055,7599) city 2 #c49E7C0 CitadelSecurity
+(6528,8551) city 3 #c49E7C0 CitadelSecurity
+(6827,7908) city 5 #c49E7C0 CitadelSecurity
+(7001,7849) city 5 #c49E7C0 CitadelSecurity
+(2633,3915) city 3 #cFD7844 Joey
+(2653,4115) city 5 #cFD7844 Joey
+(2906,8551) city 5 #cFD7844 Joey
+(3146,6994) city 7 #cFD7844 Joey
+(2888,7015) city 5 #cFD7844 Joey
+(3213,1371) city 5 #cFD7844 Joey
+(3195,1168) city 5 #cFD7844 Joey
+(3018,1281) city 5 #cFD7844 Joey
+(3244,6374) city 2 #cFD7844 Joey
+(3254,5884) city 2 #cFD7844 Joey
+(3343,6374) city 2 #cFD7844 Joey
+(3466,2970) city 5 #cFD7844 Joey
+(3814,8284) city 2 #cFD7844 Joey
+(3823,7653) city 2 #cFD7844 Joey
+(4053,2335) city 3 #cFD7844 Joey
+(4473,2275) city 5 #cFD7844 Joey
+(4886,1070) city 5 #cFD7844 Joey
+(1447,7610) city 5 #cFD7844 Joey
+(1473,1714) city 3 #cFD7844 Joey
+(2313,3975) city 3 #cFD7844 Joey
+(3142,7282) city 3 #c7E67F2 The Remnants
+(3684,7854) city 2 #c7E67F2 The Remnants
+(4064,5218) city 5 #c7E67F2 The Remnants
+(4786,7011) city 5 #c7E67F2 The Remnants
+(5954,7824) city 2 #c7E67F2 The Remnants
+
+$planet
+(5233,2714)(5303,2941) small
+(5241,2973)(5303,2941) small
+(5303,2941) large
+(5195,2969)(5303,2941) small
+(2952,2436)(2992,2374) small
+(2992,2374) large
+(3135,2359)(2992,2374) small
+(3016,7032) large
+(2922,7033)(3016,7032) small
+(3140,7047)(3016,7032) small
+(3042,7080)(3016,7032) small
+(458,5935)(292,5991) small
+(232,6196)(292,5991) small
+(292,5991) large
+(8469,3680)(8552,3596) small
+(8619,3457)(8552,3596) small
+(8552,3596) large
+(5099,5757) large
+(4937,5819)(5099,5757) small
+(3935,5110)(3870,5050) small
+(4051,4882)(3870,5050) small
+(3668,4996)(3870,5050) small
+(3870,5050) large
+(5032,3090) medium
+(4499,4497) medium
+(4080,5238) medium

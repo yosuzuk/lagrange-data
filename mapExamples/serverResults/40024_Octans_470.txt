@@ -1,0 +1,80 @@
+$name 40024 Octans 470
+$serverName Octans 470
+$size 9000
+
+$overlay
+Wa No Kuni (28.0%)
+Alkaid (15.8%)
+月輪の雫 (3.6%)
+RAVENS NEST (3.6%)
+Asgardia (3.6%)
+Southern Slang (3.6%)
+Shield (3.6%)
+Rose (3.6%)
+The Royal Guard (3.6%)
+
+$station
+(4016,4902) city 7 #cFD7844 月輪の雫
+(4136,1266) city 5 #cFD7844 月輪の雫
+(5708,2214) city 3 #cFD7844 月輪の雫
+(1326,6591) city 2 #cFD7844 月輪の雫
+(0437,2870) city 5 #cFD7844 月輪の雫
+(1907,5929) city 3 #cFD7844 月輪の雫
+(2225,5904) city 5 #cE5B36C Wa No Kuni
+(2175,6019) city 5 #cE5B36C Wa No Kuni
+(0606,6323) city 2 #cE5B36C Wa No Kuni
+(0324,2842) city 3 #cE5B36C Wa No Kuni
+(4183,6172) city 3 #cE5B36C Wa No Kuni
+(0766,3016) city 7 #cE5B36C Wa No Kuni
+(5325,2551) city 7 #cE5B36C Wa No Kuni
+(0386,3015) city 5 #cE5B36C Wa No Kuni
+(1671,6325) city 3 #cF1F1F1 The Royal Guard
+(1798,6429) city 5 #cF1F1F1 The Royal Guard
+(3467,1623) city 5 #cE63A3A Asgardia
+(3400,1776) city 5 #cE63A3A Asgardia
+(3529,0532) city 2 #cE63A3A Asgardia
+(5653,2339) city 5 #cF284FF Shield
+(6389,0772) city 2 #cF284FF Shield
+(5970,5983) city 3 #c7E67F2 Southern Slang
+(8707,4577) city 5 #c7E67F2 Southern Slang
+(8725,4766) city 5 #c7E67F2 Southern Slang
+(5171,5306) city 5 #c4A99FB Alkaid
+(5535,6705) city 5 #c4A99FB Alkaid
+(5617,7489) city 3 #c4A99FB Alkaid
+(5946,8171) city 2 #c4A99FB Alkaid
+(6430,6717) city 7 #c4A99FB Alkaid
+(6422,6811) city 5 #c4A99FB Alkaid
+(6944,4302) city 7 #c4A99FB Alkaid
+(7835,2603) city 5 #c4A99FB Alkaid
+(2149,7352) city 2 #c49E7C0 RAVENS NEST
+(2506,7871) city 2 #c49E7C0 RAVENS NEST
+(4336,7709) city 3 #c49E7C0 RAVENS NEST
+(6312,6595) city 5 #c49E7C0 RAVENS NEST
+(2463,7051) city 5 #c9FE23E Rose
+(3140,7026) city 5 #c9FE23E Rose
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

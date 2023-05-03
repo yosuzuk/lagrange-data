@@ -1,0 +1,158 @@
+$name 40003 V1149 Grus
+$serverName V1149 Grus
+$size 9000
+
+$overlay
+FAKE_A (41.2%)
+FAKE_E (25.4%)
+Blue Alliance (15.8%)
+Umbrella Corp (15.8%)
+StarWars Rebels (15.8%)
+Shadow Hunters (14.6%)
+FAKE_D (14.0%)
+Alpha (12.1%)
+Luftwaffe (3.6%)
+Alpha II (3.6%)
+Multi Nation (3.6%)
+Snow Devils (3.6%)
+FAKE_B (2.6%)
+
+$station
+(4640,5965) city 5 #cE5B36C FAKE_A
+(5080,4995) city 3 #cE5B36C FAKE_A
+(5547,5148) city 5 #cE5B36C FAKE_A
+(5994,5904) city 2 #cE5B36C FAKE_A
+(6043,5693) city 2 #cE5B36C FAKE_A
+(5998,6196) city 3 #cE5B36C FAKE_A
+(6283,6013) city 2 #cE5B36C FAKE_A
+(2553,5413) city 2 #cE63A3A FAKE_B
+(2523,5893) city 2 #cE63A3A FAKE_B
+(2813,5273) city 2 #cE63A3A FAKE_B
+(2827,2462) city 5 #cE63A3A FAKE_B
+(2971,2427) city 3 #cE63A3A FAKE_B
+(2903,2249) city 7 #cE63A3A FAKE_B
+(2888,5927) city 3 #cE63A3A FAKE_B
+(2963,5693) city 2 #cE63A3A FAKE_B
+(3208,6869) city 2 #cE63A3A FAKE_B
+(3042,4792) city 2 #cE63A3A FAKE_B
+(3254,5884) city 2 #cE63A3A FAKE_B
+(3419,2986) city 3 #cE63A3A FAKE_B
+(3801,5162) city 2 #cE63A3A FAKE_B
+(0954,3484) city 2 #cE63A3A FAKE_B
+(5096,2845) city 9 #cE63A3A FAKE_B
+(5277,4179) city 5 #cE63A3A FAKE_B
+(1209,3548) city 3 #cE63A3A FAKE_B
+(1749,5596) city 2 #cE63A3A FAKE_B
+(1933,2553) city 2 #cE63A3A FAKE_B
+(4026,4914) city 3 #c49E7C0 FAKE_D
+(4888,5871) city 5 #c49E7C0 FAKE_D
+(5125,5738) city 3 #c49E7C0 FAKE_D
+(4834,5684) city 7 #c49E7C0 FAKE_D
+(5003,5138) city 5 #c4A99FB FAKE_E
+(6827,7908) city 5 #c4A99FB FAKE_E
+(7553,6675) city 5 #c4A99FB FAKE_E
+(8146,7191) city 5 #c4A99FB FAKE_E
+(4242,8730) city 5 #c7E67F2 Luftwaffe
+(5171,5306) city 5 #c7E67F2 Luftwaffe
+(4954,5196) city 3 #c7E67F2 Luftwaffe
+(5509,6496) city 5 #c7E67F2 Luftwaffe
+(5617,7489) city 3 #c7E67F2 Luftwaffe
+(0869,6392) city 2 #c7E67F2 Luftwaffe
+(6422,6811) city 5 #c7E67F2 Luftwaffe
+(6646,8123) city 2 #c7E67F2 Luftwaffe
+(6869,7312) city 2 #c7E67F2 Luftwaffe
+(7209,7412) city 2 #c7E67F2 Luftwaffe
+(8027,5526) city 5 #c7E67F2 Luftwaffe
+(0606,6323) city 2 #c9FE23E Multi Nation
+(5970,5983) city 3 #c9FE23E Multi Nation
+(5987,5787) city 5 #c9FE23E Multi Nation
+(5816,5797) city 5 #c9FE23E Multi Nation
+(0324,2842) city 3 #cF1F1F1 Snow Devils
+(0386,3015) city 5 #cF1F1F1 Snow Devils
+(0437,2870) city 5 #cF1F1F1 Snow Devils
+(2225,5904) city 5 #cE5B36C Blue Alliance
+(2178,6024) city 5 #cE5B36C Blue Alliance
+(2149,7352) city 2 #cE5B36C Blue Alliance
+(3126,6538) city 5 #cE5B36C Blue Alliance
+(4603,2106) city 3 #cE5B36C Blue Alliance
+(4596,2546) city 5 #cE5B36C Blue Alliance
+(4788,0997) city 5 #cE5B36C Blue Alliance
+(5325,2551) city 7 #cE5B36C Blue Alliance
+(5476,2264) city 3 #cE5B36C Blue Alliance
+(5793,3486) city 3 #cE5B36C Blue Alliance
+(5943,1712) city 3 #cE5B36C Blue Alliance
+(6389,0772) city 2 #cE5B36C Blue Alliance
+(6944,4302) city 7 #cE5B36C Blue Alliance
+(7156,2006) city 5 #cE5B36C Blue Alliance
+(8026,4572) city 5 #cE5B36C Blue Alliance
+(1751,6581) city 5 #cE5B36C Blue Alliance
+(1907,5929) city 3 #cE5B36C Blue Alliance
+(3136,6804) city 5 #c49E7C0 Shadow Hunters
+(2956,6920) city 5 #c49E7C0 Shadow Hunters
+(3140,7026) city 5 #c49E7C0 Shadow Hunters
+(3230,6604) city 5 #c49E7C0 Shadow Hunters
+(4053,3766) city 3 #c49E7C0 Shadow Hunters
+(5653,2339) city 5 #c49E7C0 Shadow Hunters
+(6425,2871) city 5 #c49E7C0 Shadow Hunters
+(7939,2519) city 2 #c49E7C0 Shadow Hunters
+(7835,2603) city 5 #c49E7C0 Shadow Hunters
+(8154,3507) city 5 #c49E7C0 Shadow Hunters
+(8403,2291) city 5 #c49E7C0 Shadow Hunters
+(8707,4577) city 5 #c49E7C0 Shadow Hunters
+(3207,6342) city 7 #cFD7844 StarWars Rebels
+(1326,6591) city 2 #cFD7844 StarWars Rebels
+(1671,6325) city 3 #cFD7844 StarWars Rebels
+(1798,6429) city 5 #cFD7844 StarWars Rebels
+(2886,7763) city 2 #c4A99FB Umbrella Corp
+(4336,7709) city 3 #c4A99FB Umbrella Corp
+(5535,6705) city 5 #c4A99FB Umbrella Corp
+(5946,8171) city 2 #c4A99FB Umbrella Corp
+(6430,6717) city 7 #c4A99FB Umbrella Corp
+(6312,6595) city 5 #c4A99FB Umbrella Corp
+(2506,7871) city 2 #cE63A3A Alpha
+(2463,7051) city 5 #cE63A3A Alpha
+(2816,2749) city 3 #cE63A3A Alpha
+(3467,1623) city 5 #cE63A3A Alpha
+(0679,3208) city 5 #cE63A3A Alpha
+(3723,2592) city 3 #cE63A3A Alpha
+(4016,4902) city 7 #cE63A3A Alpha
+(4136,1266) city 5 #cE63A3A Alpha
+(0766,3016) city 7 #cE63A3A Alpha
+(5450,2637) city 5 #cE63A3A Alpha
+(2448,3457) city 5 #cF284FF Alpha II
+(2626,0951) city 2 #cF284FF Alpha II
+(3279,1857) city 5 #cF284FF Alpha II
+(3400,1776) city 5 #cF284FF Alpha II
+(3529,0532) city 2 #cF284FF Alpha II
+(0845,4071) city 5 #cF284FF Alpha II
+(5612,2116) city 5 #cF284FF Alpha II
+(1354,2207) city 5 #cF284FF Alpha II
+(8544,4590) city 5 #cF284FF Alpha II
+(8725,4766) city 5 #cF284FF Alpha II
+(1723,2551) city 5 #cF284FF Alpha II
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

@@ -1,0 +1,148 @@
+$name 30002 Ophiuchus 51
+$serverName Ophiuchus 51
+$size 9000
+
+$overlay
+Орден (32.7%)
+StarWars (29.4%)
+SOVIET UNION (15.9%)
+StarWars Rebels (10.9%)
+СНГ (10.9%)
+
+$station
+(2724,6474) city 2 #cE63A3A СНГ
+(3780,2764) city 7 #cE63A3A СНГ
+(3872,2813) city 3 #cE63A3A СНГ
+(3919,2700) city 2 #cE63A3A СНГ
+(3833,3742) city 3 #cE63A3A СНГ
+(3975,6719) city 2 #cE63A3A СНГ
+(1162,4007) city 7 #cE63A3A СНГ
+(5707,6395) city 5 #cE63A3A СНГ
+(0399,6026) city 3 #cE63A3A СНГ
+(6341,6869) city 5 #cE63A3A СНГ
+(1259,7106) city 3 #cE63A3A СНГ
+(2005,3637) city 5 #cFD7844 SOVIET UNION
+(3374,7967) city 2 #cFD7844 SOVIET UNION
+(3700,7555) city 3 #cFD7844 SOVIET UNION
+(0894,3507) city 2 #cFD7844 SOVIET UNION
+(4133,7153) city 2 #cFD7844 SOVIET UNION
+(4155,7863) city 5 #cFD7844 SOVIET UNION
+(4295,7648) city 5 #cFD7844 SOVIET UNION
+(4689,5298) city 5 #cFD7844 SOVIET UNION
+(1059,4209) city 5 #cFD7844 SOVIET UNION
+(1229,4163) city 5 #cFD7844 SOVIET UNION
+(5199,4926) city 3 #cFD7844 SOVIET UNION
+(5409,6369) city 3 #cFD7844 SOVIET UNION
+(5602,6552) city 7 #cFD7844 SOVIET UNION
+(5603,6335) city 5 #cFD7844 SOVIET UNION
+(5502,6545) city 5 #cFD7844 SOVIET UNION
+(5914,4815) city 5 #cFD7844 SOVIET UNION
+(5838,4919) city 5 #cFD7844 SOVIET UNION
+(5922,4989) city 5 #cFD7844 SOVIET UNION
+(6167,6928) city 5 #cFD7844 SOVIET UNION
+(6464,5774) city 2 #cFD7844 SOVIET UNION
+(6355,6499) city 2 #cFD7844 SOVIET UNION
+(6724,5074) city 2 #cFD7844 SOVIET UNION
+(1115,2879) city 2 #cFD7844 SOVIET UNION
+(6924,4394) city 2 #cFD7844 SOVIET UNION
+(6759,6646) city 2 #cFD7844 SOVIET UNION
+(7244,5454) city 2 #cFD7844 SOVIET UNION
+(7314,4427) city 2 #cFD7844 SOVIET UNION
+(0603,3973) city 2 #cFD7844 SOVIET UNION
+(2393,3395) city 5 #cE5B36C Орден
+(2479,0946) city 3 #cE5B36C Орден
+(2827,3490) city 5 #cE5B36C Орден
+(3253,1213) city 2 #cE5B36C Орден
+(3454,0864) city 2 #cE5B36C Орден
+(3499,5230) city 5 #cE5B36C Орден
+(3607,4996) city 7 #cE5B36C Орден
+(3930,3880) city 5 #cE5B36C Орден
+(4312,0580) city 7 #cE5B36C Орден
+(4369,0470) city 2 #cE5B36C Орден
+(5123,1213) city 2 #cE5B36C Орден
+(5313,0793) city 2 #cE5B36C Орден
+(5206,0271) city 5 #cE5B36C Орден
+(5415,1259) city 2 #cE5B36C Орден
+(5755,1339) city 2 #cE5B36C Орден
+(5973,0793) city 2 #cE5B36C Орден
+(6434,1427) city 2 #cE5B36C Орден
+(7506,1321) city 5 #cE5B36C Орден
+(7383,1172) city 5 #cE5B36C Орден
+(7589,1154) city 5 #cE5B36C Орден
+(7483,2354) city 2 #cE5B36C Орден
+(7809,3067) city 3 #cE5B36C Орден
+(7855,4159) city 2 #cE5B36C Орден
+(1373,2133) city 2 #cE5B36C Орден
+(1323,6754) city 2 #cE5B36C Орден
+(1672,5947) city 7 #cE5B36C Орден
+(2057,6034) city 5 #cE5B36C Орден
+(2046,5816) city 3 #cE5B36C Орден
+(1822,6062) city 2 #cE5B36C Орден
+(2305,3572) city 3 #c49E7C0 StarWars Rebels
+(3886,5059) city 3 #c49E7C0 StarWars Rebels
+(3709,6076) city 2 #c49E7C0 StarWars Rebels
+(3904,4026) city 5 #c49E7C0 StarWars Rebels
+(4822,8572) city 2 #c49E7C0 StarWars Rebels
+(5133,7895) city 3 #c49E7C0 StarWars Rebels
+(5165,8117) city 5 #c49E7C0 StarWars Rebels
+(1449,4031) city 3 #c49E7C0 StarWars Rebels
+(1190,4287) city 5 #c49E7C0 StarWars Rebels
+(6066,7911) city 5 #c49E7C0 StarWars Rebels
+(7228,7483) city 5 #c49E7C0 StarWars Rebels
+(7297,7271) city 7 #c49E7C0 StarWars Rebels
+(7370,7447) city 3 #c49E7C0 StarWars Rebels
+(7559,7331) city 5 #c49E7C0 StarWars Rebels
+(7739,4586) city 2 #c49E7C0 StarWars Rebels
+(8079,6646) city 2 #c49E7C0 StarWars Rebels
+(2673,2614) city 3 #c4A99FB StarWars
+(3649,5192) city 5 #c4A99FB StarWars
+(3857,5215) city 5 #c4A99FB StarWars
+(3699,2968) city 5 #c4A99FB StarWars
+(4004,1154) city 2 #c4A99FB StarWars
+(4482,0885) city 5 #c4A99FB StarWars
+(4049,0616) city 5 #c4A99FB StarWars
+(4303,0883) city 3 #c4A99FB StarWars
+(4353,0993) city 2 #c4A99FB StarWars
+(4240,2546) city 2 #c4A99FB StarWars
+(4818,5478) city 5 #c4A99FB StarWars
+(4891,5549) city 5 #c4A99FB StarWars
+(4924,5319) city 5 #c4A99FB StarWars
+(1113,1934) city 3 #c4A99FB StarWars
+(4825,2192) city 3 #c4A99FB StarWars
+(5190,5440) city 5 #c4A99FB StarWars
+(5165,5318) city 5 #c4A99FB StarWars
+(5498,3520) city 9 #c4A99FB StarWars
+(5763,3646) city 5 #c4A99FB StarWars
+(5393,3743) city 5 #c4A99FB StarWars
+(5679,2547) city 3 #c4A99FB StarWars
+(5713,4744) city 5 #c4A99FB StarWars
+(6864,3734) city 2 #c4A99FB StarWars
+(6783,4173) city 2 #c4A99FB StarWars
+(7034,3807) city 2 #c4A99FB StarWars
+(7563,3493) city 2 #c4A99FB StarWars
+(1254,3524) city 2 #c4A99FB StarWars
+(1813,2493) city 2 #c4A99FB StarWars
+(1800,4055) city 3 #c4A99FB StarWars
+
+$planet
+(3729,2883) large
+(3649,2960)(3729,2883) small
+(1204,4176)(1263,4110) small
+(1418,4055)(1263,4110) small
+(1192,4316)(1263,4110) small
+(1263,4110) large
+(5457,6554) large
+(5550,6462)(5457,6554) small
+(7352,7456) large
+(7392,7394)(7352,7456) small
+(2071,5782)(1890,5950) small
+(1955,6010)(1890,5950) small
+(1890,5950) large
+(1688,5896)(1890,5950) small
+(4181,622) large
+(4082,634)(4181,622) small
+(5703,3621) large
+(5601,3641)(5703,3621) small
+(3859,5077) large
+(3692,5134)(3859,5077) small
+(4499,4497) medium

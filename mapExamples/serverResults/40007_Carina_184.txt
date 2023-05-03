@@ -1,0 +1,107 @@
+$name 40007 Carina 184
+$serverName Carina 184
+$size 9000
+
+$overlay
+Kings (31.7%)
+×Paragon× (26.8%)
+Black Hole Sun (23.1%)
+Covenant (3.6%)
+Deep Purple (3.6%)
+
+$station
+(2448,3457) city 5 #cE63A3A Deep Purple
+(2467,6298) city 5 #cE63A3A Deep Purple
+(2894,5187) city 5 #cE63A3A Deep Purple
+(2886,7763) city 2 #cE63A3A Deep Purple
+(2956,6920) city 5 #cE63A3A Deep Purple
+(3230,6604) city 5 #cE63A3A Deep Purple
+(4016,4902) city 7 #cE63A3A Deep Purple
+(4336,7709) city 3 #cE63A3A Deep Purple
+(4954,5196) city 3 #cE63A3A Deep Purple
+(2149,7352) city 2 #cE5B36C Kings
+(2506,7871) city 2 #cE5B36C Kings
+(2463,7051) city 5 #cE5B36C Kings
+(3136,6804) city 5 #cE5B36C Kings
+(3140,7026) city 5 #cE5B36C Kings
+(3126,6538) city 5 #cE5B36C Kings
+(3207,6342) city 7 #cE5B36C Kings
+(4242,8730) city 5 #cE5B36C Kings
+(0766,3016) city 7 #cE5B36C Kings
+(0845,4071) city 5 #cE5B36C Kings
+(7835,2603) city 5 #cE5B36C Kings
+(0437,2870) city 5 #cE5B36C Kings
+(5171,5306) city 5 #c4A99FB ×Paragon×
+(5535,6705) city 5 #c4A99FB ×Paragon×
+(5509,6496) city 5 #c4A99FB ×Paragon×
+(5617,7489) city 3 #c4A99FB ×Paragon×
+(5970,5983) city 3 #c4A99FB ×Paragon×
+(5987,5787) city 5 #c4A99FB ×Paragon×
+(5816,5797) city 5 #c4A99FB ×Paragon×
+(5946,8171) city 2 #c4A99FB ×Paragon×
+(6430,6717) city 7 #c4A99FB ×Paragon×
+(6312,6595) city 5 #c4A99FB ×Paragon×
+(6422,6811) city 5 #c4A99FB ×Paragon×
+(6646,8123) city 2 #c4A99FB ×Paragon×
+(6869,7312) city 2 #c4A99FB ×Paragon×
+(7209,7412) city 2 #c4A99FB ×Paragon×
+(7939,2519) city 2 #c4A99FB ×Paragon×
+(8026,4572) city 5 #c4A99FB ×Paragon×
+(8707,4577) city 5 #c4A99FB ×Paragon×
+(2886,0803) city 2 #c49E7C0 Covenant
+(2816,2749) city 3 #c49E7C0 Covenant
+(3279,1857) city 5 #c49E7C0 Covenant
+(3467,1623) city 5 #c49E7C0 Covenant
+(3400,1776) city 5 #c49E7C0 Covenant
+(3529,0532) city 2 #c49E7C0 Covenant
+(3723,2592) city 3 #c49E7C0 Covenant
+(4053,3766) city 3 #c49E7C0 Covenant
+(4136,1266) city 5 #c49E7C0 Covenant
+(4603,2106) city 3 #c49E7C0 Covenant
+(4596,2546) city 5 #c49E7C0 Covenant
+(4788,0997) city 5 #c49E7C0 Covenant
+(6425,2871) city 5 #c49E7C0 Covenant
+(7156,2006) city 5 #c49E7C0 Covenant
+(2225,5904) city 5 #cFD7844 Black Hole Sun
+(2178,6024) city 5 #cFD7844 Black Hole Sun
+(0606,6323) city 2 #cFD7844 Black Hole Sun
+(5450,2637) city 5 #cFD7844 Black Hole Sun
+(5325,2551) city 7 #cFD7844 Black Hole Sun
+(5708,2214) city 3 #cFD7844 Black Hole Sun
+(5476,2264) city 3 #cFD7844 Black Hole Sun
+(5612,2116) city 5 #cFD7844 Black Hole Sun
+(5653,2339) city 5 #cFD7844 Black Hole Sun
+(0869,6392) city 2 #cFD7844 Black Hole Sun
+(8544,4590) city 5 #cFD7844 Black Hole Sun
+(8725,4766) city 5 #cFD7844 Black Hole Sun
+(1671,6325) city 3 #cFD7844 Black Hole Sun
+(1798,6429) city 5 #cFD7844 Black Hole Sun
+(1751,6581) city 5 #cFD7844 Black Hole Sun
+(1723,2551) city 5 #cFD7844 Black Hole Sun
+(1907,5929) city 3 #cFD7844 Black Hole Sun
+
+$planet
+(3323,6430) large
+(3264,6496)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3253,6634)(3323,6430) small
+(5012,5174) large
+(4928,5209)(5012,5174) small
+(7669,2780) large
+(7749,2703)(7669,2780) small
+(2263,5850) large
+(2418,5795)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2172,6046)(2263,5850) small
+(4290,8642) large
+(4197,8734)(4290,8642) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(5292,2816)(5332,2754) small
+(3892,3212) large
+(3952,3011)(3892,3212) small
+(4500,4500) medium
+(7832,4696) large
+(7872,4634)(7832,4696) small
+(1038,3055) large
+(872,3111)(1038,3055) small

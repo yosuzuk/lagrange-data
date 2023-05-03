@@ -1,0 +1,122 @@
+$name 30004 V1203 Norma
+$serverName V1203 Norma
+$size 9000
+
+$overlay
+EclipseProject (36.8%)
+Galaxy Patrol (25.4%)
+War (24.5%)
+SpaceFAM (5.2%)
+
+$station
+(2463,5513) city 2 #c4A99FB Galaxy Patrol
+(2583,1033) city 2 #c4A99FB Galaxy Patrol
+(2948,0349) city 7 #c4A99FB Galaxy Patrol
+(3822,5136) city 5 #c4A99FB Galaxy Patrol
+(3736,5059) city 5 #c4A99FB Galaxy Patrol
+(3812,4951) city 5 #c4A99FB Galaxy Patrol
+(3838,3787) city 7 #c4A99FB Galaxy Patrol
+(3759,3987) city 5 #c4A99FB Galaxy Patrol
+(3931,3970) city 5 #c4A99FB Galaxy Patrol
+(7773,1883) city 5 #c4A99FB Galaxy Patrol
+(1286,5191) city 5 #c4A99FB Galaxy Patrol
+(1415,4643) city 5 #c4A99FB Galaxy Patrol
+(1555,4428) city 5 #c4A99FB Galaxy Patrol
+(1795,5559) city 2 #c4A99FB Galaxy Patrol
+(2213,5793) city 2 #cFD7844 War
+(2162,8072) city 2 #cFD7844 War
+(2294,6247) city 2 #cFD7844 War
+(2325,3877) city 5 #cFD7844 War
+(2553,6473) city 2 #cFD7844 War
+(2485,3832) city 3 #cFD7844 War
+(2803,6553) city 2 #cFD7844 War
+(3184,7636) city 5 #cFD7844 War
+(2749,7375) city 3 #cFD7844 War
+(3031,7337) city 7 #cFD7844 War
+(3069,7229) city 2 #cFD7844 War
+(2874,6764) city 2 #cFD7844 War
+(3293,6113) city 2 #cFD7844 War
+(3584,6394) city 2 #cFD7844 War
+(3629,7334) city 5 #cFD7844 War
+(3423,7352) city 5 #cFD7844 War
+(3546,7501) city 5 #cFD7844 War
+(3463,6213) city 2 #cFD7844 War
+(3533,8273) city 2 #cFD7844 War
+(3806,5571) city 5 #cFD7844 War
+(4004,7914) city 2 #cFD7844 War
+(4494,8504) city 2 #cFD7844 War
+(4644,5368) city 5 #cFD7844 War
+(4569,8327) city 3 #cFD7844 War
+(5394,4549) city 5 #cFD7844 War
+(0973,7202) city 3 #cFD7844 War
+(1078,7311) city 5 #cFD7844 War
+(1035,7471) city 5 #cFD7844 War
+(0438,5084) city 5 #cFD7844 War
+(7055,7259) city 5 #cFD7844 War
+(7244,7407) city 5 #cFD7844 War
+(1729,6416) city 2 #cFD7844 War
+(2368,5947) city 3 #cE5B36C EclipseProject
+(2753,5773) city 2 #cE5B36C EclipseProject
+(3008,0530) city 3 #cE5B36C EclipseProject
+(3978,3719) city 3 #cE5B36C EclipseProject
+(3931,3832) city 3 #cE5B36C EclipseProject
+(4385,6172) city 9 #cE5B36C EclipseProject
+(4252,6385) city 3 #cE5B36C EclipseProject
+(4625,5237) city 5 #cE5B36C EclipseProject
+(5102,4932) city 2 #cE5B36C EclipseProject
+(5319,1196) city 2 #cE5B36C EclipseProject
+(5329,4338) city 5 #cE5B36C EclipseProject
+(5729,3550) city 3 #cE5B36C EclipseProject
+(5509,3683) city 5 #cE5B36C EclipseProject
+(5470,3809) city 5 #cE5B36C EclipseProject
+(5429,3537) city 7 #cE5B36C EclipseProject
+(5721,5089) city 5 #cE5B36C EclipseProject
+(5547,5148) city 5 #cE5B36C EclipseProject
+(6063,3413) city 2 #cE5B36C EclipseProject
+(6148,3106) city 3 #cE5B36C EclipseProject
+(6364,3594) city 2 #cE5B36C EclipseProject
+(6283,3174) city 2 #cE5B36C EclipseProject
+(6585,1437) city 5 #cE5B36C EclipseProject
+(0434,4867) city 5 #cE5B36C EclipseProject
+(6873,2813) city 2 #cE5B36C EclipseProject
+(6743,3574) city 2 #cE5B36C EclipseProject
+(6886,2211) city 5 #cE5B36C EclipseProject
+(6914,3144) city 2 #cE5B36C EclipseProject
+(7250,7212) city 5 #cE5B36C EclipseProject
+(7428,4350) city 7 #cE5B36C EclipseProject
+(7608,4335) city 5 #cE5B36C EclipseProject
+(7608,4193) city 3 #cE5B36C EclipseProject
+(7438,4138) city 5 #cE5B36C EclipseProject
+(7319,2886) city 2 #cE5B36C EclipseProject
+(7658,1756) city 5 #cE5B36C EclipseProject
+(8013,3693) city 2 #cE5B36C EclipseProject
+(7923,3474) city 2 #cE5B36C EclipseProject
+(8003,4134) city 2 #cE5B36C EclipseProject
+(8393,3073) city 2 #cE5B36C EclipseProject
+(1954,3467) city 5 #c49E7C0 SpaceFAM
+(4640,6225) city 5 #c49E7C0 SpaceFAM
+
+$planet
+(3175,459)(3030,460) small
+(2979,538)(3030,460) small
+(3056,408)(3030,460) small
+(3030,460) large
+(7493,4317)(7450,4261) small
+(7378,4129)(7450,4261) small
+(7450,4261) large
+(2881,7389) large
+(2869,7332)(2881,7389) small
+(2782,7394)(2881,7389) small
+(3049,7455)(2881,7389) small
+(5543,3630) large
+(5698,3575)(5543,3630) small
+(5484,3696)(5543,3630) small
+(5472,3836)(5543,3630) small
+(3832,3747)(3789,3903) small
+(3987,4031)(3789,3903) small
+(3789,3903) large
+(3709,3980)(3789,3903) small
+(4462,6289) large
+(4292,6410)(4462,6289) small
+(4563,6261)(4462,6289) small
+(4499,4497) medium

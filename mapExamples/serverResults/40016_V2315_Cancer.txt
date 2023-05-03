@@ -1,0 +1,79 @@
+$name 40016 V2315 Cancer
+$serverName V2315 Cancer
+$size 9000
+
+$overlay
+WaterMirror (18.2%)
+來點正常人 (12.1%)
+鐵道999 (7.3%)
+影月蒼狼 (7.3%)
+ISERLOHN (3.6%)
+Vanaheim (3.6%)
+
+$station
+(3467,1623) city 5 #cF1F1F1 Vanaheim
+(3400,1776) city 5 #cF1F1F1 Vanaheim
+(4136,1266) city 5 #cF1F1F1 Vanaheim
+(4788,0997) city 5 #cF1F1F1 Vanaheim
+(5612,2116) city 5 #cF1F1F1 Vanaheim
+(6312,6595) city 5 #cF284FF 影月蒼狼
+(6422,6811) city 5 #cF284FF 影月蒼狼
+(7209,7412) city 2 #cF284FF 影月蒼狼
+(8026,4572) city 5 #cF284FF 影月蒼狼
+(8027,5526) city 5 #cF284FF 影月蒼狼
+(2463,7051) city 5 #c4A99FB 來點正常人
+(4183,6172) city 3 #c4A99FB 來點正常人
+(5325,2551) city 7 #c4A99FB 來點正常人
+(7835,2603) city 5 #c4A99FB 來點正常人
+(2175,6019) city 5 #cE5B36C WaterMirror
+(3140,7026) city 5 #cE5B36C WaterMirror
+(0679,3208) city 5 #cE5B36C WaterMirror
+(0324,2842) city 3 #cE5B36C WaterMirror
+(0386,3015) city 5 #cE5B36C WaterMirror
+(5476,2264) city 3 #cE5B36C WaterMirror
+(5653,2339) city 5 #cE5B36C WaterMirror
+(0437,2870) city 5 #cE5B36C WaterMirror
+(1798,6429) city 5 #cE5B36C WaterMirror
+(1751,6581) city 5 #cE5B36C WaterMirror
+(2956,6920) city 5 #c7E67F2 鐵道999
+(4242,8730) city 5 #c7E67F2 鐵道999
+(4336,7709) city 3 #c7E67F2 鐵道999
+(5171,5306) city 5 #c7E67F2 鐵道999
+(5450,2637) city 5 #c7E67F2 鐵道999
+(5509,6496) city 5 #c7E67F2 鐵道999
+(5617,7489) city 3 #c7E67F2 鐵道999
+(5970,5983) city 3 #c7E67F2 鐵道999
+(6869,7312) city 2 #c7E67F2 鐵道999
+(8707,4577) city 5 #c7E67F2 鐵道999
+(8725,4766) city 5 #c7E67F2 鐵道999
+(3126,6538) city 5 #c9FE23E ISERLOHN
+(5987,5787) city 5 #c9FE23E ISERLOHN
+(5816,5797) city 5 #c9FE23E ISERLOHN
+(6646,8123) city 2 #c9FE23E ISERLOHN
+(7939,2519) city 2 #c9FE23E ISERLOHN
+
+$planet
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(3323,6430) large
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

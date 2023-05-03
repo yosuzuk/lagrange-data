@@ -1,0 +1,78 @@
+$name 40014 Tucana 157
+$serverName Tucana 157
+$size 9000
+
+$overlay
+DIMENSIONS (26.8%)
+South Korea (15.8%)
+北辰星 (3.6%)
+絕代風華 (3.6%)
+Yilzetaid (3.6%)
+
+$station
+(2463,7051) city 5 #cFD7844 South Korea
+(0324,2842) city 3 #cFD7844 South Korea
+(5325,2551) city 7 #cFD7844 South Korea
+(5653,2339) city 5 #cFD7844 South Korea
+(5943,1712) city 3 #cFD7844 South Korea
+(7156,2006) city 5 #cFD7844 South Korea
+(7939,2519) city 2 #cFD7844 South Korea
+(8026,4572) city 5 #cFD7844 South Korea
+(8544,4590) city 5 #cFD7844 South Korea
+(1326,6591) city 2 #cFD7844 South Korea
+(2626,0951) city 2 #cE5B36C DIMENSIONS
+(2886,0803) city 2 #cE5B36C DIMENSIONS
+(3140,7026) city 5 #cE5B36C DIMENSIONS
+(3230,6604) city 5 #cE5B36C DIMENSIONS
+(3126,6538) city 5 #cE5B36C DIMENSIONS
+(3279,1857) city 5 #cE5B36C DIMENSIONS
+(3467,1623) city 5 #cE5B36C DIMENSIONS
+(3400,1776) city 5 #cE5B36C DIMENSIONS
+(0679,3208) city 5 #cE5B36C DIMENSIONS
+(3529,0532) city 2 #cE5B36C DIMENSIONS
+(3723,2592) city 3 #cE5B36C DIMENSIONS
+(4016,4902) city 7 #cE5B36C DIMENSIONS
+(4136,1266) city 5 #cE5B36C DIMENSIONS
+(0766,3016) city 7 #cE5B36C DIMENSIONS
+(5171,5306) city 5 #cE5B36C DIMENSIONS
+(0845,4071) city 5 #cE5B36C DIMENSIONS
+(0386,3015) city 5 #cE5B36C DIMENSIONS
+(5987,5787) city 5 #cE5B36C DIMENSIONS
+(0437,2870) city 5 #cE5B36C DIMENSIONS
+(1723,2551) city 5 #cE5B36C DIMENSIONS
+(2178,6024) city 5 #c7E67F2 Yilzetaid
+(1751,6581) city 5 #c7E67F2 Yilzetaid
+(7835,2603) city 5 #cE63A3A 絕代風華
+(8527,3189) city 3 #cE63A3A 絕代風華
+(8707,4577) city 5 #cE63A3A 絕代風華
+(2506,7871) city 2 #c49E7C0 北辰星
+(2956,6920) city 5 #c49E7C0 北辰星
+(4242,8730) city 5 #c49E7C0 北辰星
+(5535,6705) city 5 #c49E7C0 北辰星
+(5509,6496) city 5 #c49E7C0 北辰星
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small
