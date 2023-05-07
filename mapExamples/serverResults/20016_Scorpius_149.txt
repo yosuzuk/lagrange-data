@@ -1,0 +1,154 @@
+$name 20016 Scorpius 149
+$serverName Scorpius 149
+$size 9000
+
+$overlay
+Royal Oak (30.6%)
+Black Legion (30.6%)
+Brotherhood (13.8%)
+×Paragon× (13.8%)
+Kings (10.9%)
+
+$station
+(2914,3154) city 2 #c4A99FB Black Legion
+(2854,1944) city 2 #c4A99FB Black Legion
+(4104,1734) city 2 #c4A99FB Black Legion
+(4409,0359) city 9 #c4A99FB Black Legion
+(4666,0136) city 5 #c4A99FB Black Legion
+(1661,2789) city 7 #c4A99FB Black Legion
+(4386,0091) city 5 #c4A99FB Black Legion
+(1787,2828) city 3 #c4A99FB Black Legion
+(4404,2494) city 2 #c4A99FB Black Legion
+(5012,4050) city 5 #c4A99FB Black Legion
+(4676,3898) city 3 #c4A99FB Black Legion
+(4704,2514) city 2 #c4A99FB Black Legion
+(4814,2124) city 2 #c4A99FB Black Legion
+(5394,1994) city 2 #c4A99FB Black Legion
+(5952,1058) city 5 #c4A99FB Black Legion
+(6230,0858) city 5 #c4A99FB Black Legion
+(6095,0899) city 5 #c4A99FB Black Legion
+(6229,1071) city 5 #c4A99FB Black Legion
+(8515,4899) city 5 #c4A99FB Black Legion
+(2134,1493) city 5 #c4A99FB Black Legion
+(1940,1720) city 5 #c4A99FB Black Legion
+(1030,6480) city 5 #cFD7844 Brotherhood
+(1005,6358) city 5 #cFD7844 Brotherhood
+(2873,3833) city 7 #cFD7844 Brotherhood
+(0894,6613) city 5 #cFD7844 Brotherhood
+(2954,6604) city 2 #cFD7844 Brotherhood
+(3599,7740) city 2 #cFD7844 Brotherhood
+(3474,6264) city 2 #cFD7844 Brotherhood
+(3594,6564) city 2 #cFD7844 Brotherhood
+(3894,6734) city 2 #cFD7844 Brotherhood
+(3704,6415) city 2 #cFD7844 Brotherhood
+(4006,6082) city 5 #cFD7844 Brotherhood
+(3816,6074) city 5 #cFD7844 Brotherhood
+(4129,4911) city 5 #cFD7844 Brotherhood
+(3852,4898) city 5 #cFD7844 Brotherhood
+(1591,2987) city 5 #cFD7844 Brotherhood
+(4304,6475) city 2 #cFD7844 Brotherhood
+(0918,3359) city 5 #cFD7844 Brotherhood
+(4714,6664) city 2 #cFD7844 Brotherhood
+(4844,6414) city 2 #cFD7844 Brotherhood
+(5252,5350) city 5 #cFD7844 Brotherhood
+(5267,5208) city 3 #cFD7844 Brotherhood
+(5534,6754) city 2 #cFD7844 Brotherhood
+(5810,5600) city 5 #cFD7844 Brotherhood
+(1578,7239) city 5 #cFD7844 Brotherhood
+(6654,6024) city 2 #cFD7844 Brotherhood
+(2114,5494) city 2 #cFD7844 Brotherhood
+(2384,4574) city 2 #cFD7844 Brotherhood
+(2931,4027) city 5 #c49E7C0 ×Paragon×
+(2759,4070) city 5 #c49E7C0 ×Paragon×
+(3461,7809) city 7 #c49E7C0 ×Paragon×
+(3572,7990) city 5 #c49E7C0 ×Paragon×
+(3391,8007) city 5 #c49E7C0 ×Paragon×
+(3995,4739) city 5 #c49E7C0 ×Paragon×
+(4130,4698) city 5 #c49E7C0 ×Paragon×
+(4850,6608) city 3 #c49E7C0 ×Paragon×
+(5814,6404) city 2 #c49E7C0 ×Paragon×
+(5834,6074) city 2 #c49E7C0 ×Paragon×
+(6049,5611) city 5 #c49E7C0 ×Paragon×
+(5938,5779) city 5 #c49E7C0 ×Paragon×
+(6012,5849) city 5 #c49E7C0 ×Paragon×
+(1689,7071) city 5 #c49E7C0 ×Paragon×
+(1450,7060) city 5 #c49E7C0 ×Paragon×
+(1652,7309) city 5 #c49E7C0 ×Paragon×
+(6334,6144) city 2 #c49E7C0 ×Paragon×
+(6624,6434) city 2 #c49E7C0 ×Paragon×
+(2404,3754) city 2 #c49E7C0 ×Paragon×
+(4030,5940) city 5 #cE5B36C Royal Oak
+(4350,5208) city 3 #cE5B36C Royal Oak
+(4778,4057) city 7 #cE5B36C Royal Oak
+(5141,5169) city 7 #cE5B36C Royal Oak
+(5071,5367) city 5 #cE5B36C Royal Oak
+(5279,5100) city 2 #cE5B36C Royal Oak
+(6166,8242) city 5 #cE5B36C Royal Oak
+(5976,8234) city 5 #cE5B36C Royal Oak
+(6190,8100) city 5 #cE5B36C Royal Oak
+(6434,5334) city 2 #cE5B36C Royal Oak
+(6544,5335) city 2 #cE5B36C Royal Oak
+(7104,4054) city 2 #cE5B36C Royal Oak
+(7254,4514) city 2 #cE5B36C Royal Oak
+(7530,7140) city 5 #cE5B36C Royal Oak
+(7505,7018) city 5 #cE5B36C Royal Oak
+(7394,7273) city 5 #cE5B36C Royal Oak
+(7898,6377) city 7 #cE5B36C Royal Oak
+(8132,6370) city 5 #cE5B36C Royal Oak
+(7796,6218) city 3 #cE5B36C Royal Oak
+(7742,6516) city 2 #cE5B36C Royal Oak
+(8612,5108) city 5 #cE5B36C Royal Oak
+(2774,2284) city 2 #cE63A3A Kings
+(3112,4050) city 5 #cE63A3A Kings
+(3146,3897) city 3 #cE63A3A Kings
+(3624,2634) city 2 #cE63A3A Kings
+(3874,1854) city 2 #cE63A3A Kings
+(4024,2574) city 2 #cE63A3A Kings
+(1029,3191) city 5 #cE63A3A Kings
+(1772,2970) city 5 #cE63A3A Kings
+(0790,3180) city 5 #cE63A3A Kings
+(4454,1934) city 2 #cE63A3A Kings
+(0992,3429) city 5 #cE63A3A Kings
+(5052,3787) city 3 #cE63A3A Kings
+(4632,4186) city 2 #cE63A3A Kings
+(5034,1784) city 2 #cE63A3A Kings
+(5854,2454) city 2 #cE63A3A Kings
+(6234,3604) city 2 #cE63A3A Kings
+(6614,3934) city 2 #cE63A3A Kings
+(6444,4395) city 2 #cE63A3A Kings
+(6884,3774) city 2 #cE63A3A Kings
+(6850,4608) city 3 #cE63A3A Kings
+(8007,2494) city 5 #cE63A3A Kings
+(7820,2460) city 5 #cE63A3A Kings
+(8172,6107) city 3 #cE63A3A Kings
+(8499,5011) city 5 #cE63A3A Kings
+(8600,4938) city 5 #cE63A3A Kings
+(2127,1754) city 5 #cE63A3A Kings
+(2254,3284) city 2 #cE63A3A Kings
+
+$planet
+(5031,3802)(4852,3974) small
+(4649,3916)(4852,3974) small
+(4852,3974) large
+(4915,4030)(4852,3974) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(8035,6350)(7972,6294) small
+(7769,6236)(7972,6294) small
+(7972,6294) large
+(8151,6122)(7972,6294) small
+(2952,3974) large
+(3118,3915)(2952,3974) small
+(2912,4036)(2952,3974) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(4702,160)(4539,272) small
+(5052,5376)(5092,5274) small
+(5092,5274) large
+(5238,5225)(5092,5274) small
+(3372,8016)(3412,7914) small
+(3412,7914) large
+(3558,7865)(3412,7914) small
+(4499,4497) medium

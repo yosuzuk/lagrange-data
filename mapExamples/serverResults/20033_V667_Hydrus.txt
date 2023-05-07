@@ -1,0 +1,101 @@
+$name 20033 V667 Hydrus
+$serverName V667 Hydrus
+$size 9000
+
+$overlay
+Angels of Wrath (18.8%)
+Kumo CreW (13.1%)
+Deutsche Union (13.1%)
+Wa No Kuni (13.1%)
+Orbitek (10.6%)
+Arcturus (10.6%)
+STARBUCKS (10.6%)
+NIPPON (2.4%)
+War Maiden (2.4%)
+サイド3 (2.4%)
+Void Autocracy (2.4%)
+
+$station
+(4092,4949) city 5 #cE5B36C Angels of Wrath
+(3890,4700) city 5 #cE5B36C Angels of Wrath
+(4129,4711) city 5 #cE5B36C Angels of Wrath
+(4409,0359) city 9 #cE5B36C Angels of Wrath
+(4454,2404) city 2 #cE5B36C Angels of Wrath
+(1940,1720) city 5 #c929292 Void Autocracy
+(2894,1954) city 2 #c9FE23E NIPPON
+(2974,2304) city 2 #c9FE23E NIPPON
+(4004,2554) city 2 #c9FE23E NIPPON
+(4154,2154) city 2 #c9FE23E NIPPON
+(4386,0091) city 5 #c9FE23E NIPPON
+(6214,2274) city 2 #c9FE23E NIPPON
+(2134,1493) city 5 #c9FE23E NIPPON
+(2464,2714) city 2 #c9FE23E NIPPON
+(2704,5735) city 2 #cF1F1F1 War Maiden
+(2770,5968) city 3 #cF1F1F1 War Maiden
+(1030,6480) city 5 #cF1F1F1 War Maiden
+(2574,5184) city 2 #cF1F1F1 War Maiden
+(5234,6534) city 2 #c929292 サイド3
+(7510,7140) city 5 #c929292 サイド3
+(4006,6082) city 5 #c4A99FB Kumo CreW
+(3816,6074) city 5 #c4A99FB Kumo CreW
+(4030,5940) city 5 #c4A99FB Kumo CreW
+(4059,5318) city 3 #c4A99FB Kumo CreW
+(5260,5352) city 5 #c4A99FB Kumo CreW
+(5003,5362) city 7 #c4A99FB Kumo CreW
+(5292,5087) city 3 #c4A99FB Kumo CreW
+(4916,5198) city 3 #c4A99FB Kumo CreW
+(4871,5485) city 2 #c4A99FB Kumo CreW
+(3572,7992) city 5 #c7E67F2 Arcturus
+(3457,7806) city 7 #c7E67F2 Arcturus
+(3587,7848) city 3 #c7E67F2 Arcturus
+(3599,7740) city 2 #c7E67F2 Arcturus
+(1661,2789) city 7 #cE63A3A Orbitek
+(1772,2970) city 5 #cE63A3A Orbitek
+(1787,2828) city 3 #cE63A3A Orbitek
+(1799,2720) city 2 #cE63A3A Orbitek
+(4666,0136) city 5 #cE63A3A Orbitek
+(1974,3614) city 2 #cE63A3A Orbitek
+(6050,8200) city 5 #cFD7844 Deutsche Union
+(6025,8078) city 5 #cFD7844 Deutsche Union
+(5914,8333) city 5 #cFD7844 Deutsche Union
+(7485,7018) city 5 #cFD7844 Deutsche Union
+(7374,7273) city 5 #cFD7844 Deutsche Union
+(7893,6153) city 7 #cFD7844 Deutsche Union
+(8132,6370) city 5 #cFD7844 Deutsche Union
+(7951,6347) city 5 #cFD7844 Deutsche Union
+(8166,6217) city 3 #cFD7844 Deutsche Union
+(3120,4052) city 5 #cF284FF STARBUCKS
+(2863,4062) city 7 #cF284FF STARBUCKS
+(4831,4027) city 5 #cF284FF STARBUCKS
+(5046,3897) city 3 #cF284FF STARBUCKS
+(4773,3833) city 7 #c49E7C0 Wa No Kuni
+(5012,4050) city 5 #c49E7C0 Wa No Kuni
+(8014,2233) city 5 #c49E7C0 Wa No Kuni
+(7820,2460) city 5 #c49E7C0 Wa No Kuni
+
+$planet
+(7972,6294) large
+(8138,6235)(7972,6294) small
+(7932,6356)(7972,6294) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(2952,3974) large
+(3015,4030)(2952,3974) small
+(3131,3802)(2952,3974) small
+(2749,3916)(2952,3974) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(4702,160)(4539,272) small
+(4889,5216)(5092,5274) small
+(5092,5274) large
+(5155,5330)(5092,5274) small
+(5271,5102)(5092,5274) small
+(3372,8016)(3412,7914) small
+(3412,7914) large
+(3558,7865)(3412,7914) small
+(4499,4497) medium
+(4852,3974) large
+(5018,3915)(4852,3974) small
+(4812,4036)(4852,3974) small

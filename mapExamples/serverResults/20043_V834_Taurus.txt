@@ -1,0 +1,117 @@
+$name 20043 V834 Taurus
+$serverName V834 Taurus
+$size 9000
+
+$overlay
+Black out (31.9%)
+Aēgís (13.1%)
+ANTANTA (13.1%)
+독도가는길 (10.6%)
+STARBUCKS (10.6%)
+Luftwaffe (10.6%)
+Covenant (2.4%)
+Kings (2.4%)
+Bloody Pandas (2.4%)
+Umbrella Corp (2.4%)
+
+$station
+(1492,6427) city 3 #c4A99FB Aēgís
+(3593,8393) city 7 #c4A99FB Aēgís
+(3832,8610) city 5 #c4A99FB Aēgís
+(3866,8457) city 3 #c4A99FB Aēgís
+(4064,6454) city 2 #c4A99FB Aēgís
+(1191,3147) city 5 #c4A99FB Aēgís
+(1910,7520) city 5 #c4A99FB Aēgís
+(2434,1113) city 5 #c4A99FB Aēgís
+(2384,4214) city 2 #c4A99FB Aēgís
+(6584,5334) city 2 #cF1F1F1 Bloody Pandas
+(7452,6147) city 3 #cF1F1F1 Bloody Pandas
+(2240,1340) city 5 #cF1F1F1 Bloody Pandas
+(2490,5229) city 3 #cE63A3A STARBUCKS
+(2921,5149) city 7 #cE63A3A STARBUCKS
+(3047,5188) city 3 #cE63A3A STARBUCKS
+(3059,5080) city 2 #cE63A3A STARBUCKS
+(1460,6692) city 5 #cE63A3A STARBUCKS
+(3044,6034) city 2 #cE63A3A STARBUCKS
+(3651,8587) city 5 #cE63A3A STARBUCKS
+(1399,2880) city 2 #cE63A3A STARBUCKS
+(1885,7398) city 5 #cE63A3A STARBUCKS
+(2654,6094) city 2 #c49E7C0 독도가는길
+(2614,6404) city 2 #c49E7C0 독도가는길
+(3032,5330) city 5 #c49E7C0 독도가는길
+(1203,6702) city 7 #c49E7C0 독도가는길
+(1116,6538) city 3 #c49E7C0 독도가는길
+(3479,8630) city 5 #c49E7C0 독도가는길
+(4474,8613) city 5 #c49E7C0 독도가는길
+(1387,2988) city 3 #c49E7C0 독도가는길
+(1774,7653) city 5 #c49E7C0 독도가는길
+(2384,4594) city 2 #c49E7C0 독도가는길
+(4610,8480) city 5 #c929292 Umbrella Corp
+(4585,8358) city 5 #c929292 Umbrella Corp
+(2704,3634) city 2 #cE5B36C Black out
+(4379,5358) city 3 #cE5B36C Black out
+(5994,2134) city 2 #cE5B36C Black out
+(6614,2624) city 2 #cE5B36C Black out
+(6614,3564) city 2 #cE5B36C Black out
+(7178,6417) city 7 #cE5B36C Black out
+(7412,6410) city 5 #cE5B36C Black out
+(7032,6556) city 2 #cE5B36C Black out
+(8296,1951) city 5 #cE5B36C Black out
+(7913,2106) city 3 #cE5B36C Black out
+(8041,1896) city 9 #cE5B36C Black out
+(8360,3580) city 5 #cE5B36C Black out
+(2324,3694) city 2 #cE5B36C Black out
+(2530,3908) city 3 #c7E67F2 Luftwaffe
+(1372,3132) city 5 #c7E67F2 Luftwaffe
+(1257,2946) city 7 #c7E67F2 Luftwaffe
+(1724,4214) city 2 #c7E67F2 Luftwaffe
+(2294,3294) city 2 #c7E67F2 Luftwaffe
+(3084,6334) city 2 #cFD7844 ANTANTA
+(3446,3982) city 5 #cFD7844 ANTANTA
+(3879,4831) city 5 #cFD7844 ANTANTA
+(4073,3893) city 7 #cFD7844 ANTANTA
+(4312,4110) city 5 #cFD7844 ANTANTA
+(4346,3957) city 3 #cFD7844 ANTANTA
+(5059,6278) city 3 #cFD7844 ANTANTA
+(3470,3840) city 5 #c9FE23E Kings
+(3980,4758) city 5 #c9FE23E Kings
+(4131,4087) city 5 #c9FE23E Kings
+(3959,4130) city 5 #c9FE23E Kings
+(3256,3974) city 5 #cF284FF Covenant
+(4364,7094) city 2 #cF284FF Covenant
+(6244,5434) city 2 #cF284FF Covenant
+(6394,6154) city 2 #cF284FF Covenant
+(6494,4934) city 2 #cF284FF Covenant
+(6794,6004) city 2 #cF284FF Covenant
+(6644,6454) city 2 #cF284FF Covenant
+(6730,4989) city 3 #cF284FF Covenant
+(7946,6682) city 5 #cF284FF Covenant
+(7756,6674) city 5 #cF284FF Covenant
+(7970,6540) city 5 #cF284FF Covenant
+
+$planet
+(4152,4034) large
+(4318,3975)(4152,4034) small
+(4112,4096)(4152,4034) small
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(1172,3156)(1212,3054) small
+(1358,3005)(1212,3054) small
+(1212,3054) large
+(1355,6670)(1292,6614) small
+(1089,6556)(1292,6614) small
+(1292,6614) large
+(1471,6442)(1292,6614) small
+(3018,5205)(2872,5254) small
+(2872,5254) large
+(2832,5356)(2872,5254) small
+(3632,8596)(3672,8534) small
+(3672,8534) large
+(3838,8475)(3672,8534) small
+(4499,4497) medium

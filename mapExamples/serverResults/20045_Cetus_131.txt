@@ -1,0 +1,106 @@
+$name 20045 Cetus 131
+$serverName Cetus 131
+$size 9000
+
+$overlay
+神聖不列顛 (26.2%)
+FlamingChickens (16.3%)
+女神禁衛軍 (15.5%)
+赤紅之瞳 (10.6%)
+YGGDRASILL (10.6%)
+Galaxy Order (10.6%)
+战争帝国 (4.9%)
+AngrySpceChimps (2.4%)
+NSA (2.4%)
+
+$station
+(5214,2384) city 2 #c9FE23E AngrySpceChimps
+(6214,2274) city 2 #c9FE23E AngrySpceChimps
+(7272,1792) city 5 #c9FE23E AngrySpceChimps
+(7287,1648) city 3 #c9FE23E AngrySpceChimps
+(3490,3860) city 5 #cF1F1F1 NSA
+(3927,0634) city 5 #cF284FF 战争帝国
+(3934,0373) city 5 #cF284FF 战争帝国
+(3740,0600) city 5 #cF284FF 战争帝国
+(7091,1807) city 5 #cF284FF 战争帝国
+(2707,1054) city 5 #cF284FF 战争帝国
+(2520,1020) city 5 #cF284FF 战争帝国
+(0239,4739) city 9 #c4A99FB FlamingChickens
+(2744,3594) city 2 #c4A99FB FlamingChickens
+(0133,4966) city 3 #c4A99FB FlamingChickens
+(2099,4518) city 3 #c4A99FB FlamingChickens
+(2324,4595) city 2 #c4A99FB FlamingChickens
+(3466,4002) city 5 #cE63A3A YGGDRASILL
+(3276,3994) city 5 #cE63A3A YGGDRASILL
+(4400,3632) city 5 #cE63A3A YGGDRASILL
+(4143,3642) city 7 #cE63A3A YGGDRASILL
+(4056,3478) city 3 #cE63A3A YGGDRASILL
+(4172,4949) city 5 #c49E7C0 赤紅之瞳
+(4098,4879) city 5 #c49E7C0 赤紅之瞳
+(3970,4700) city 5 #c49E7C0 赤紅之瞳
+(4214,4704) city 5 #c49E7C0 赤紅之瞳
+(4370,5328) city 3 #c49E7C0 赤紅之瞳
+(5053,4433) city 7 #c49E7C0 赤紅之瞳
+(5111,4627) city 5 #c49E7C0 赤紅之瞳
+(5326,4497) city 3 #c49E7C0 赤紅之瞳
+(4939,4670) city 5 #c49E7C0 赤紅之瞳
+(1390,6900) city 5 #c7E67F2 Galaxy Order
+(7157,1606) city 7 #c7E67F2 Galaxy Order
+(2954,6644) city 2 #cFD7844 女神禁衛軍
+(0516,4811) city 5 #cFD7844 女神禁衛軍
+(3961,6109) city 7 #cFD7844 女神禁衛軍
+(4072,6290) city 5 #cFD7844 女神禁衛軍
+(4087,6148) city 3 #cFD7844 女神禁衛軍
+(4099,6040) city 2 #cFD7844 女神禁衛軍
+(4652,7747) city 3 #cFD7844 女神禁衛軍
+(4534,6354) city 2 #cFD7844 女神禁衛軍
+(5292,4650) city 5 #cFD7844 女神禁衛軍
+(6150,2908) city 3 #cFD7844 女神禁衛軍
+(6254,3604) city 2 #cFD7844 女神禁衛軍
+(6614,3604) city 2 #cFD7844 女神禁衛軍
+(2294,2924) city 2 #cFD7844 女神禁衛軍
+(2324,3694) city 2 #cFD7844 女神禁衛軍
+(3891,6307) city 5 #cE5B36C 神聖不列顛
+(4432,3367) city 3 #cE5B36C 神聖不列顛
+(4620,8012) city 5 #cE5B36C 神聖不列顛
+(4363,8022) city 7 #cE5B36C 神聖不列顛
+(5810,8280) city 5 #cE5B36C 神聖不列顛
+(5785,8158) city 5 #cE5B36C 神聖不列顛
+(5674,8413) city 5 #cE5B36C 神聖不列顛
+(5884,6555) city 2 #cE5B36C 神聖不列顛
+(6464,4054) city 2 #cE5B36C 神聖不列顛
+(7033,6093) city 7 #cE5B36C 神聖不列顛
+(7272,6310) city 5 #cE5B36C 神聖不列顛
+(7091,6287) city 5 #cE5B36C 神聖不列顛
+(7306,6157) city 3 #cE5B36C 神聖不列顛
+(6919,6330) city 5 #cE5B36C 神聖不列顛
+(7910,6860) city 5 #cE5B36C 神聖不列顛
+(7885,6738) city 5 #cE5B36C 神聖不列顛
+(7774,6993) city 5 #cE5B36C 神聖不列顛
+
+$planet
+(4515,7990)(4452,7934) small
+(4631,7762)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4452,7934) large
+(7072,6296)(7112,6234) small
+(7278,6175)(7112,6234) small
+(7112,6234) large
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(4411,3382)(4232,3554) small
+(4029,3496)(4232,3554) small
+(4232,3554) large
+(4295,3610)(4232,3554) small
+(172,4990)(335,4869) small
+(381,4873)(335,4869) small
+(443,4841)(335,4869) small
+(335,4869) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5092,4636)(5132,4574) small
+(5298,4515)(5132,4574) small
+(5132,4574) large

@@ -1,0 +1,121 @@
+$name 20059 V947 Pisces
+$serverName V947 Pisces
+$size 9000
+
+$overlay
+Voices of War (39.3%)
+Shadow Hunters (23.7%)
+Conquest (13.1%)
+Mjölnir (13.1%)
+OG Reavers (8.1%)
+Wilde 13 (2.4%)
+
+$station
+(1099,6710) city 5 #c7E67F2 Wilde 13
+(4030,4678) city 5 #c7E67F2 Wilde 13
+(4029,4891) city 5 #c7E67F2 Wilde 13
+(4390,5368) city 3 #c7E67F2 Wilde 13
+(2324,4934) city 2 #c7E67F2 Wilde 13
+(2654,6094) city 2 #cE5B36C Voices of War
+(2614,6404) city 2 #cE5B36C Voices of War
+(2852,5302) city 5 #cE5B36C Voices of War
+(3066,5177) city 3 #cE5B36C Voices of War
+(2679,5350) city 5 #cE5B36C Voices of War
+(2793,5113) city 7 #cE5B36C Voices of War
+(3032,5330) city 5 #cE5B36C Voices of War
+(2704,5695) city 2 #cE5B36C Voices of War
+(1271,6667) city 5 #cE5B36C Voices of War
+(3044,6034) city 2 #cE5B36C Voices of War
+(3752,4878) city 5 #cE5B36C Voices of War
+(4201,3929) city 7 #cE5B36C Voices of War
+(4312,4110) city 5 #cE5B36C Voices of War
+(1199,6483) city 7 #cE5B36C Voices of War
+(1455,6693) city 5 #cE5B36C Voices of War
+(4004,2534) city 2 #cE5B36C Voices of War
+(1910,7520) city 5 #cE5B36C Voices of War
+(1885,7398) city 5 #cE5B36C Voices of War
+(1774,7653) city 5 #cE5B36C Voices of War
+(8450,3480) city 5 #cE5B36C Voices of War
+(8425,3358) city 5 #cE5B36C Voices of War
+(2434,1113) city 5 #cE5B36C Voices of War
+(2240,1340) city 5 #cE5B36C Voices of War
+(2439,5158) city 3 #cE5B36C Voices of War
+(4614,6664) city 2 #cFD7844 Conquest
+(4914,6844) city 2 #cFD7844 Conquest
+(5070,6288) city 3 #cFD7844 Conquest
+(5310,4729) city 3 #cFD7844 Conquest
+(5714,6094) city 2 #cFD7844 Conquest
+(5884,6555) city 2 #cFD7844 Conquest
+(6054,5644) city 2 #cFD7844 Conquest
+(6679,4918) city 3 #cFD7844 Conquest
+(6974,3954) city 2 #cFD7844 Conquest
+(6924,4954) city 2 #cFD7844 Conquest
+(7301,6229) city 7 #cFD7844 Conquest
+(7412,6410) city 5 #cFD7844 Conquest
+(7231,6427) city 5 #cFD7844 Conquest
+(7427,6268) city 3 #cFD7844 Conquest
+(7439,6160) city 2 #cFD7844 Conquest
+(7970,6540) city 5 #cFD7844 Conquest
+(8314,3613) city 5 #cFD7844 Conquest
+(2694,2314) city 2 #cE63A3A OG Reavers
+(1123,3142) city 7 #cE63A3A OG Reavers
+(3234,2184) city 2 #cE63A3A OG Reavers
+(3256,3974) city 5 #cE63A3A OG Reavers
+(3584,1995) city 2 #cE63A3A OG Reavers
+(3895,4719) city 5 #cE63A3A OG Reavers
+(1036,2978) city 3 #cE63A3A OG Reavers
+(0991,3265) city 2 #cE63A3A OG Reavers
+(1724,4214) city 2 #cE63A3A OG Reavers
+(2194,4444) city 2 #cE63A3A OG Reavers
+(3872,8347) city 3 #c49E7C0 Mjölnir
+(3496,8458) city 3 #c49E7C0 Mjölnir
+(3451,8745) city 2 #c49E7C0 Mjölnir
+(3598,8617) city 7 #c49E7C0 Mjölnir
+(3832,8610) city 5 #c49E7C0 Mjölnir
+(3874,6254) city 2 #c49E7C0 Mjölnir
+(4024,6754) city 2 #c49E7C0 Mjölnir
+(4364,7094) city 2 #c49E7C0 Mjölnir
+(4610,8480) city 5 #c49E7C0 Mjölnir
+(4585,8358) city 5 #c49E7C0 Mjölnir
+(4474,8613) city 5 #c49E7C0 Mjölnir
+(6524,4394) city 2 #c49E7C0 Mjölnir
+(2570,3969) city 3 #c4A99FB Shadow Hunters
+(1380,3132) city 5 #c4A99FB Shadow Hunters
+(2814,2844) city 2 #c4A99FB Shadow Hunters
+(3446,3982) city 5 #c4A99FB Shadow Hunters
+(3470,3840) city 5 #c4A99FB Shadow Hunters
+(4131,4127) city 5 #c4A99FB Shadow Hunters
+(4327,3968) city 3 #c4A99FB Shadow Hunters
+(4339,3860) city 2 #c4A99FB Shadow Hunters
+(1412,2867) city 3 #c4A99FB Shadow Hunters
+(8296,1951) city 5 #c4A99FB Shadow Hunters
+(8041,1896) city 9 #c4A99FB Shadow Hunters
+(2324,3694) city 2 #c4A99FB Shadow Hunters
+(2384,4594) city 2 #c4A99FB Shadow Hunters
+
+$planet
+(1391,2882)(1212,3054) small
+(1275,3110)(1212,3054) small
+(1009,2996)(1212,3054) small
+(1212,3054) large
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4298,3985)(4152,4034) small
+(4152,4034) large
+(4112,4136)(4152,4034) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(8161,2013)(8115,2009) small
+(3672,8534) large
+(3469,8476)(3672,8534) small
+(3851,8362)(3672,8534) small
+(3735,8590)(3672,8534) small
+(1458,6555)(1292,6614) small
+(1292,6614) large
+(1252,6676)(1292,6614) small
+(3038,5195)(2872,5254) small
+(2872,5254) large
+(2832,5316)(2872,5254) small
+(4499,4497) medium

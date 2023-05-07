@@ -1,0 +1,124 @@
+$name 30026 V428 Virgo
+$serverName V428 Virgo
+$size 9000
+
+$overlay
+Blue Alliance (62.3%)
+Shadow Hunters (29.3%)
+Voices of War (8.2%)
+
+$station
+(2553,5413) city 2 #c4A99FB Shadow Hunters
+(2426,2410) city 5 #c4A99FB Shadow Hunters
+(2813,5273) city 2 #c4A99FB Shadow Hunters
+(2903,2249) city 7 #c4A99FB Shadow Hunters
+(3116,2308) city 5 #c4A99FB Shadow Hunters
+(2869,8576) city 2 #c4A99FB Shadow Hunters
+(3042,4792) city 2 #c4A99FB Shadow Hunters
+(0098,6090) city 5 #c4A99FB Shadow Hunters
+(0238,6046) city 5 #c4A99FB Shadow Hunters
+(0233,6170) city 5 #c4A99FB Shadow Hunters
+(0191,5895) city 7 #c4A99FB Shadow Hunters
+(4064,5218) city 5 #c4A99FB Shadow Hunters
+(4962,3388) city 5 #c4A99FB Shadow Hunters
+(6459,8467) city 2 #c4A99FB Shadow Hunters
+(6848,5971) city 3 #c4A99FB Shadow Hunters
+(7185,6572) city 3 #c4A99FB Shadow Hunters
+(1425,6517) city 5 #c4A99FB Shadow Hunters
+(7553,6675) city 5 #c4A99FB Shadow Hunters
+(8146,7191) city 5 #c4A99FB Shadow Hunters
+(1385,6672) city 3 #c4A99FB Shadow Hunters
+(1399,7626) city 3 #c4A99FB Shadow Hunters
+(2633,3915) city 3 #cE5B36C Blue Alliance
+(2888,5927) city 3 #cE5B36C Blue Alliance
+(2963,5693) city 2 #cE5B36C Blue Alliance
+(3142,7282) city 3 #cE5B36C Blue Alliance
+(3298,7283) city 5 #cE5B36C Blue Alliance
+(3146,6994) city 7 #cE5B36C Blue Alliance
+(2888,7015) city 5 #cE5B36C Blue Alliance
+(3244,6374) city 2 #cE5B36C Blue Alliance
+(3254,5884) city 2 #cE5B36C Blue Alliance
+(3343,6374) city 2 #cE5B36C Blue Alliance
+(3419,2986) city 3 #cE5B36C Blue Alliance
+(4026,4914) city 3 #cE5B36C Blue Alliance
+(3801,5162) city 2 #cE5B36C Blue Alliance
+(3651,5047) city 7 #cE5B36C Blue Alliance
+(3814,8284) city 2 #cE5B36C Blue Alliance
+(3823,7653) city 2 #cE5B36C Blue Alliance
+(3969,5896) city 2 #cE5B36C Blue Alliance
+(4203,8373) city 2 #cE5B36C Blue Alliance
+(4815,3602) city 5 #cE5B36C Blue Alliance
+(4888,5871) city 5 #cE5B36C Blue Alliance
+(5125,5738) city 3 #cE5B36C Blue Alliance
+(4739,5910) city 5 #cE5B36C Blue Alliance
+(4834,5684) city 7 #cE5B36C Blue Alliance
+(5106,5905) city 5 #cE5B36C Blue Alliance
+(4739,7026) city 2 #cE5B36C Blue Alliance
+(4769,7967) city 3 #cE5B36C Blue Alliance
+(5003,5138) city 5 #cE5B36C Blue Alliance
+(5088,4954) city 3 #cE5B36C Blue Alliance
+(5096,2845) city 9 #cE5B36C Blue Alliance
+(5381,2911) city 5 #cE5B36C Blue Alliance
+(5148,3998) city 5 #cE5B36C Blue Alliance
+(5350,4248) city 5 #cE5B36C Blue Alliance
+(5277,4179) city 5 #cE5B36C Blue Alliance
+(5384,4022) city 5 #cE5B36C Blue Alliance
+(5834,6835) city 5 #cE5B36C Blue Alliance
+(5632,6765) city 5 #cE5B36C Blue Alliance
+(5757,6938) city 5 #cE5B36C Blue Alliance
+(5841,7008) city 5 #cE5B36C Blue Alliance
+(5726,4050) city 5 #cE5B36C Blue Alliance
+(5954,7824) city 2 #cE5B36C Blue Alliance
+(6033,5554) city 3 #cE5B36C Blue Alliance
+(6703,3953) city 2 #cE5B36C Blue Alliance
+(2313,3975) city 3 #cE5B36C Blue Alliance
+(2345,3752) city 3 #cE5B36C Blue Alliance
+(2827,2462) city 5 #cFD7844 Voices of War
+(2971,2427) city 3 #cFD7844 Voices of War
+(3213,1371) city 5 #cFD7844 Voices of War
+(3195,1168) city 5 #cFD7844 Voices of War
+(3018,1281) city 5 #cFD7844 Voices of War
+(4053,2335) city 3 #cFD7844 Voices of War
+(4992,3065) city 3 #cFD7844 Voices of War
+(5453,2334) city 3 #cFD7844 Voices of War
+(6083,1773) city 2 #cFD7844 Voices of War
+(6135,1359) city 2 #cFD7844 Voices of War
+(6295,1039) city 2 #cFD7844 Voices of War
+(6448,1407) city 3 #cFD7844 Voices of War
+(6663,1874) city 2 #cFD7844 Voices of War
+(7294,1807) city 2 #cFD7844 Voices of War
+(7674,2404) city 2 #cFD7844 Voices of War
+(8489,3479) city 5 #cFD7844 Voices of War
+(8708,3675) city 5 #cFD7844 Voices of War
+(8708,3533) city 3 #cFD7844 Voices of War
+(8518,3688) city 5 #cFD7844 Voices of War
+(8739,3420) city 2 #cFD7844 Voices of War
+(8526,2231) city 5 #cFD7844 Voices of War
+
+$planet
+(8552,3596) large
+(8619,3457)(8552,3596) small
+(8469,3680)(8552,3596) small
+(292,5991) large
+(232,6196)(292,5991) small
+(458,5935)(292,5991) small
+(5195,2969) large
+(5032,3090)(5195,2969) small
+(5303,2941)(5195,2969) small
+(5241,2973)(5195,2969) small
+(3042,7080)(3016,7032) small
+(3140,7047)(3016,7032) small
+(2922,7033)(3016,7032) small
+(3016,7032) large
+(4080,5238)(3935,5110) small
+(3870,5050)(3935,5110) small
+(4051,4882)(3935,5110) small
+(3935,5110) large
+(3668,4996) medium
+(4499,4497) medium
+(4937,5819) large
+(5099,5757)(4937,5819) small
+(3135,2359)(2992,2374) small
+(2992,2374) large
+(2952,2436)(2992,2374) small
+(5233,2714) medium

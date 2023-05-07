@@ -1,0 +1,104 @@
+$name 20049 Perseus RS
+$serverName Perseus RS
+$size 9000
+
+$overlay
+Global Cosmos (16.3%)
+KOREA TEAM (15.5%)
+VENI VIDI VICI (12.2%)
+Covenant (10.6%)
+Black out (10.6%)
+L E V E L (10.6%)
+siro狂和国 (10.6%)
+Underdogs (8.1%)
+South Korea (2.4%)
+Gentle Dog (2.4%)
+
+$station
+(2863,4062) city 7 #c7E67F2 L E V E L
+(4644,2535) city 2 #c7E67F2 L E V E L
+(6890,4669) city 3 #c7E67F2 L E V E L
+(7820,2460) city 5 #c7E67F2 L E V E L
+(4409,0359) city 9 #cE5B36C Global Cosmos
+(5046,3897) city 3 #cE5B36C Global Cosmos
+(5394,1994) city 2 #cE5B36C Global Cosmos
+(5494,2644) city 2 #cE5B36C Global Cosmos
+(6150,2868) city 3 #cE5B36C Global Cosmos
+(8014,2233) city 5 #cE5B36C Global Cosmos
+(3120,4052) city 5 #cFD7844 VENI VIDI VICI
+(4030,5940) city 5 #cFD7844 VENI VIDI VICI
+(1772,2970) city 5 #cFD7844 VENI VIDI VICI
+(4386,0091) city 5 #cFD7844 VENI VIDI VICI
+(6050,8200) city 5 #cFD7844 VENI VIDI VICI
+(8007,2494) city 5 #cFD7844 VENI VIDI VICI
+(4773,3833) city 7 #cF284FF siro狂和国
+(5012,4050) city 5 #cF284FF siro狂和国
+(4831,4027) city 5 #cF284FF siro狂和国
+(6654,6024) city 2 #cF284FF siro狂和国
+(3152,3787) city 3 #c49E7C0 Covenant
+(2974,2304) city 2 #c49E7C0 Covenant
+(3314,2524) city 2 #c49E7C0 Covenant
+(1661,2789) city 7 #c49E7C0 Covenant
+(1787,2828) city 3 #c49E7C0 Covenant
+(1799,2720) city 2 #c49E7C0 Covenant
+(4454,2404) city 2 #c49E7C0 Covenant
+(4814,2124) city 2 #c49E7C0 Covenant
+(6454,5644) city 2 #c49E7C0 Covenant
+(2127,1754) city 5 #c49E7C0 Covenant
+(2134,1493) city 5 #c49E7C0 Covenant
+(1940,1720) city 5 #c49E7C0 Covenant
+(2254,2964) city 2 #c49E7C0 Covenant
+(2704,5735) city 2 #cE63A3A Black out
+(4092,4949) city 5 #cE63A3A Black out
+(4129,4711) city 5 #cE63A3A Black out
+(4059,5318) city 3 #cE63A3A Black out
+(7893,6153) city 7 #cE63A3A Black out
+(7779,6390) city 5 #cE63A3A Black out
+(2214,5144) city 2 #cE63A3A Black out
+(2574,5184) city 2 #cE63A3A Black out
+(5260,5352) city 5 #c4A99FB KOREA TEAM
+(5003,5362) city 7 #c4A99FB KOREA TEAM
+(4916,5198) city 3 #c4A99FB KOREA TEAM
+(5754,6094) city 2 #c4A99FB KOREA TEAM
+(7510,7140) city 5 #c4A99FB KOREA TEAM
+(7374,7273) city 5 #c4A99FB KOREA TEAM
+(8132,6370) city 5 #c4A99FB KOREA TEAM
+(1005,6358) city 5 #c4A99FB KOREA TEAM
+(3572,7972) city 5 #c929292 Gentle Dog
+(3391,7987) city 5 #c929292 Gentle Dog
+(4994,6294) city 2 #c929292 Gentle Dog
+(3457,7786) city 7 #c9FE23E Underdogs
+(3587,7828) city 3 #c9FE23E Underdogs
+(3599,7720) city 2 #c9FE23E Underdogs
+(2844,6715) city 2 #cF1F1F1 South Korea
+(3324,6994) city 2 #cF1F1F1 South Korea
+(5494,6744) city 2 #cF1F1F1 South Korea
+(1030,6480) city 5 #cF1F1F1 South Korea
+(2334,5674) city 2 #cF1F1F1 South Korea
+
+$planet
+(4702,160)(4539,272) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(2952,3974) large
+(3015,4030)(2952,3974) small
+(3131,3802)(2952,3974) small
+(2749,3916)(2952,3974) small
+(8138,6235)(7972,6294) small
+(7932,6356)(7972,6294) small
+(7972,6294) large
+(4889,5216)(5092,5274) small
+(5092,5274) large
+(5155,5330)(5092,5274) small
+(5271,5102)(5092,5274) small
+(3412,7894) large
+(3558,7845)(3412,7894) small
+(3372,7996)(3412,7894) small
+(4499,4497) medium
+(4852,3974) large
+(5018,3915)(4852,3974) small
+(4812,4036)(4852,3974) small

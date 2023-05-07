@@ -1,0 +1,116 @@
+$name 20058 V1272 Ursa Major
+$serverName V1272 Ursa Major
+$size 9000
+
+$overlay
+Sadists (34.4%)
+KNOS (13.1%)
+KOREA TEAM (10.6%)
+5CC (10.6%)
+siro狂和国 (10.6%)
+ANTANTA (8.1%)
+Black out (2.4%)
+Covenant (2.4%)
+ENTENTE (2.4%)
+Global Cosmos (2.4%)
+Hayreddin Clan (2.4%)
+
+$station
+(3446,3982) city 5 #c929292 Global Cosmos
+(3470,3840) city 5 #c929292 Global Cosmos
+(1036,2978) city 3 #c929292 Global Cosmos
+(4364,7094) city 2 #c9FE23E Covenant
+(4610,8480) city 5 #c9FE23E Covenant
+(6584,5334) city 2 #c9FE23E Covenant
+(7946,6682) city 5 #c9FE23E Covenant
+(3874,6254) city 2 #cF1F1F1 ENTENTE
+(6054,5644) city 2 #cF1F1F1 ENTENTE
+(6794,6004) city 2 #cF1F1F1 ENTENTE
+(7970,6540) city 5 #cF1F1F1 ENTENTE
+(4339,3860) city 2 #cFD7844 KOREA TEAM
+(4390,5368) city 3 #cFD7844 KOREA TEAM
+(5310,4729) city 3 #cFD7844 KOREA TEAM
+(5714,6094) city 2 #cFD7844 KOREA TEAM
+(6904,5794) city 2 #cFD7844 KOREA TEAM
+(7301,6229) city 7 #cFD7844 KOREA TEAM
+(7412,6410) city 5 #cFD7844 KOREA TEAM
+(7231,6427) city 5 #cFD7844 KOREA TEAM
+(7439,6160) city 2 #cFD7844 KOREA TEAM
+(3872,8347) city 3 #cF284FF Black out
+(5530,2088) city 3 #cF284FF Black out
+(5914,2494) city 2 #cF284FF Black out
+(6674,2924) city 2 #cF284FF Black out
+(7074,3234) city 2 #cF284FF Black out
+(8450,3480) city 5 #cF284FF Black out
+(3496,8458) city 3 #c49E7C0 5CC
+(3451,8745) city 2 #c49E7C0 5CC
+(3598,8617) city 7 #c49E7C0 5CC
+(3832,8610) city 5 #c49E7C0 5CC
+(4024,6754) city 2 #c49E7C0 5CC
+(2254,3984) city 2 #c49E7C0 5CC
+(2793,5113) city 7 #c7E67F2 ANTANTA
+(2879,2238) city 3 #c7E67F2 ANTANTA
+(3234,2184) city 2 #c7E67F2 ANTANTA
+(3584,1995) city 2 #c7E67F2 ANTANTA
+(4131,4127) city 5 #c7E67F2 ANTANTA
+(4524,2014) city 2 #c7E67F2 ANTANTA
+(1380,3132) city 5 #cE63A3A siro狂和国
+(1123,3142) city 7 #cE63A3A siro狂和国
+(0991,3265) city 2 #cE63A3A siro狂和国
+(7756,6674) city 5 #cE63A3A siro狂和国
+(3032,5330) city 5 #cE5B36C Sadists
+(3752,4878) city 5 #cE5B36C Sadists
+(4029,4891) city 5 #cE5B36C Sadists
+(4201,3929) city 7 #cE5B36C Sadists
+(4312,4110) city 5 #cE5B36C Sadists
+(4327,3968) city 3 #cE5B36C Sadists
+(4914,6844) city 2 #cE5B36C Sadists
+(6614,2624) city 2 #cE5B36C Sadists
+(8296,1951) city 5 #cE5B36C Sadists
+(7913,2106) city 3 #cE5B36C Sadists
+(8041,1896) city 9 #cE5B36C Sadists
+(8425,3358) city 5 #cE5B36C Sadists
+(8314,3613) city 5 #cE5B36C Sadists
+(2654,6094) city 2 #c4A99FB KNOS
+(2852,5302) city 5 #c4A99FB KNOS
+(3066,5177) city 3 #c4A99FB KNOS
+(2679,5350) city 5 #c4A99FB KNOS
+(1271,6667) city 5 #c4A99FB KNOS
+(1486,6537) city 3 #c4A99FB KNOS
+(1099,6710) city 5 #c4A99FB KNOS
+(3044,6034) city 2 #c4A99FB KNOS
+(1199,6483) city 7 #c4A99FB KNOS
+(1455,6693) city 5 #c4A99FB KNOS
+(1910,7520) city 5 #c4A99FB KNOS
+(1774,7653) city 5 #c4A99FB KNOS
+(2324,4934) city 2 #c4A99FB KNOS
+(2439,5158) city 3 #c4A99FB KNOS
+(2434,1113) city 5 #c929292 Hayreddin Clan
+(2240,1340) city 5 #c929292 Hayreddin Clan
+
+$planet
+(1391,2882)(1212,3054) small
+(1275,3110)(1212,3054) small
+(1009,2996)(1212,3054) small
+(1212,3054) large
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4298,3985)(4152,4034) small
+(4152,4034) large
+(4112,4136)(4152,4034) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(8161,2013)(8115,2009) small
+(3672,8534) large
+(3469,8476)(3672,8534) small
+(3851,8362)(3672,8534) small
+(3735,8590)(3672,8534) small
+(1458,6555)(1292,6614) small
+(1292,6614) large
+(1252,6676)(1292,6614) small
+(3038,5195)(2872,5254) small
+(2872,5254) large
+(2832,5316)(2872,5254) small
+(4499,4497) medium

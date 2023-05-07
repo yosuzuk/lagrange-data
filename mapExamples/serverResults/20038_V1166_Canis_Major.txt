@@ -1,0 +1,86 @@
+$name 20038 V1166 Canis Major
+$serverName V1166 Canis Major
+$size 9000
+
+$overlay
+EclipseProject (33.6%)
+Dawn Operation (32.7%)
+War (31.1%)
+Joey (2.4%)
+
+$station
+(3490,3860) city 5 #cFD7844 War
+(1390,6900) city 5 #cFD7844 War
+(3934,0373) city 5 #cFD7844 War
+(3740,0600) city 5 #cFD7844 War
+(0516,4811) city 5 #cFD7844 War
+(4114,2134) city 2 #cFD7844 War
+(4400,3632) city 5 #cFD7844 War
+(4143,3642) city 7 #cFD7844 War
+(4432,3367) city 3 #cFD7844 War
+(4011,3765) city 2 #cFD7844 War
+(4064,1775) city 2 #cFD7844 War
+(5053,4433) city 7 #cFD7844 War
+(5292,4650) city 5 #cFD7844 War
+(4072,6290) city 5 #cE5B36C EclipseProject
+(4209,4711) city 5 #cE5B36C EclipseProject
+(4620,8012) city 5 #cE5B36C EclipseProject
+(5754,2114) city 2 #cE5B36C EclipseProject
+(6214,2274) city 2 #cE5B36C EclipseProject
+(6184,2694) city 2 #cE5B36C EclipseProject
+(6254,3604) city 2 #cE5B36C EclipseProject
+(7272,1792) city 5 #cE5B36C EclipseProject
+(7157,1606) city 7 #cE5B36C EclipseProject
+(7287,1648) city 3 #cE5B36C EclipseProject
+(7033,6093) city 7 #cE5B36C EclipseProject
+(7272,6310) city 5 #cE5B36C EclipseProject
+(7910,6860) city 5 #cE5B36C EclipseProject
+(2520,1020) city 5 #cE5B36C EclipseProject
+(0239,4739) city 9 #c4A99FB Dawn Operation
+(3774,6724) city 2 #c4A99FB Dawn Operation
+(3961,6109) city 7 #c4A99FB Dawn Operation
+(3891,6307) city 5 #c4A99FB Dawn Operation
+(4087,6148) city 3 #c4A99FB Dawn Operation
+(4099,6040) city 2 #c4A99FB Dawn Operation
+(4363,8022) city 7 #c4A99FB Dawn Operation
+(4652,7747) city 3 #c4A99FB Dawn Operation
+(4534,6354) city 2 #c4A99FB Dawn Operation
+(4890,6689) city 3 #c4A99FB Dawn Operation
+(1904,5614) city 2 #c4A99FB Dawn Operation
+(5214,6454) city 2 #c49E7C0 Joey
+(5494,6744) city 2 #c49E7C0 Joey
+(5754,6094) city 2 #c49E7C0 Joey
+(5810,8280) city 5 #c49E7C0 Joey
+(5785,8158) city 5 #c49E7C0 Joey
+(5674,8413) city 5 #c49E7C0 Joey
+(5884,6555) city 2 #c49E7C0 Joey
+(6084,3234) city 2 #c49E7C0 Joey
+(6614,3604) city 2 #c49E7C0 Joey
+(7074,3544) city 2 #c49E7C0 Joey
+
+$planet
+(3912,6214) large
+(4058,6165)(3912,6214) small
+(3872,6316)(3912,6214) small
+(4295,3610)(4232,3554) small
+(4232,3554) large
+(4029,3496)(4232,3554) small
+(4411,3382)(4232,3554) small
+(5132,4574) large
+(5298,4515)(5132,4574) small
+(5092,4636)(5132,4574) small
+(335,4869) large
+(443,4841)(335,4869) small
+(381,4873)(335,4869) small
+(172,4990)(335,4869) small
+(4452,7934) large
+(4515,7990)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4631,7762)(4452,7934) small
+(4499,4497) medium
+(7258,1665)(7112,1714) small
+(7072,1816)(7112,1714) small
+(7112,1714) large
+(7112,6234) large
+(7278,6175)(7112,6234) small
+(7072,6296)(7112,6234) small

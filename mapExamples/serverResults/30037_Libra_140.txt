@@ -1,0 +1,128 @@
+$name 30037 Libra 140
+$serverName Libra 140
+$size 9000
+
+$overlay
+Pos幻影風暴 (19.3%)
+Merak (16.8%)
+赤紅之瞳 (10.9%)
+Dubhe (10.9%)
+Active JPN (10.9%)
+星際嚕貓團 (10.9%)
+Phecd (5.0%)
+東北航空站 (5.0%)
+YGGDRASILL (2.5%)
+北辰星 (2.5%)
+嵐焚 (2.5%)
+中央空間站 (2.5%)
+
+$station
+(2043,6953) city 2 #cF1F1F1 YGGDRASILL
+(2228,7426) city 3 #cF1F1F1 YGGDRASILL
+(2533,7013) city 2 #cF1F1F1 YGGDRASILL
+(2733,6473) city 2 #cF1F1F1 YGGDRASILL
+(2643,5793) city 2 #cF1F1F1 YGGDRASILL
+(3886,5059) city 3 #cF1F1F1 YGGDRASILL
+(3499,5230) city 5 #cF1F1F1 YGGDRASILL
+(3857,5215) city 5 #cF1F1F1 YGGDRASILL
+(3623,6633) city 2 #cF1F1F1 YGGDRASILL
+(3782,6072) city 2 #cF1F1F1 YGGDRASILL
+(1893,6493) city 2 #cFD7844 赤紅之瞳
+(2123,5553) city 2 #cFD7844 赤紅之瞳
+(2493,6193) city 2 #cFD7844 赤紅之瞳
+(3700,7555) city 3 #cFD7844 赤紅之瞳
+(7164,3674) city 2 #cFD7844 赤紅之瞳
+(7253,5453) city 2 #cFD7844 赤紅之瞳
+(0460,6095) city 3 #cFD7844 赤紅之瞳
+(1342,7112) city 2 #cFD7844 赤紅之瞳
+(1354,6644) city 2 #cFD7844 赤紅之瞳
+(1672,5947) city 7 #cFD7844 赤紅之瞳
+(2057,6034) city 5 #cFD7844 赤紅之瞳
+(1822,6062) city 2 #cFD7844 赤紅之瞳
+(1965,3592) city 3 #cE5B36C Pos幻影風暴
+(0614,3987) city 2 #cE5B36C Pos幻影風暴
+(3607,4996) city 7 #cE5B36C Pos幻影風暴
+(1094,4444) city 2 #cE5B36C Pos幻影風暴
+(1449,4031) city 3 #cE5B36C Pos幻影風暴
+(1229,4163) city 5 #cE5B36C Pos幻影風暴
+(5712,4745) city 5 #cE5B36C Pos幻影風暴
+(1162,4007) city 7 #cE5B36C Pos幻影風暴
+(7506,1321) city 5 #cE5B36C Pos幻影風暴
+(7383,1172) city 5 #cE5B36C Pos幻影風暴
+(7589,1154) city 5 #cE5B36C Pos幻影風暴
+(7514,3187) city 2 #cE5B36C Pos幻影風暴
+(0594,4467) city 2 #cE5B36C Pos幻影風暴
+(0724,4674) city 2 #cE5B36C Pos幻影風暴
+(2405,3417) city 5 #c929292 北辰星
+(2862,3512) city 2 #c929292 北辰星
+(3833,3742) city 3 #c929292 北辰星
+(1059,4209) city 5 #c929292 北辰星
+(1196,4292) city 5 #c929292 北辰星
+(1215,3619) city 2 #c929292 北辰星
+(5621,6337) city 5 #cE63A3A Active JPN
+(6243,5894) city 2 #cE63A3A Active JPN
+(7228,7483) city 5 #cE63A3A Active JPN
+(7297,7271) city 7 #cE63A3A Active JPN
+(8126,6631) city 5 #cE63A3A Active JPN
+(5332,7835) city 3 #c929292 嵐焚
+(5409,6369) city 3 #c929292 嵐焚
+(5914,4815) city 5 #c929292 嵐焚
+(5837,4918) city 5 #c929292 嵐焚
+(5921,4988) city 5 #c929292 嵐焚
+(1623,7074) city 2 #c929292 嵐焚
+(4302,7648) city 5 #c7E67F2 星際嚕貓團
+(5602,6552) city 7 #c7E67F2 星際嚕貓團
+(6167,6928) city 5 #c7E67F2 星際嚕貓團
+(4615,6819) city 2 #c929292 中央空間站
+(4689,5298) city 5 #c929292 中央空間站
+(4924,5319) city 5 #c929292 中央空間站
+(5393,3743) city 5 #c929292 中央空間站
+(4818,5478) city 5 #c4A99FB Merak
+(5165,5318) city 5 #c4A99FB Merak
+(5498,3520) city 9 #c4A99FB Merak
+(3872,2951) city 5 #cF284FF Phecd
+(3699,2968) city 5 #cF284FF Phecd
+(3872,2813) city 3 #cF284FF Phecd
+(3938,3851) city 5 #cF284FF Phecd
+(3895,4011) city 5 #cF284FF Phecd
+(4482,0885) city 5 #cF284FF Phecd
+(4865,2237) city 5 #cF284FF Phecd
+(5033,2235) city 3 #cF284FF Phecd
+(5493,1173) city 2 #cF284FF Phecd
+(5190,5440) city 5 #c9FE23E 東北航空站
+(5199,4926) city 3 #c9FE23E 東北航空站
+(5763,3646) city 5 #c9FE23E 東北航空站
+(3193,0893) city 2 #c49E7C0 Dubhe
+(3780,2764) city 5 #c49E7C0 Dubhe
+(3919,2700) city 2 #c49E7C0 Dubhe
+(3815,0739) city 2 #c49E7C0 Dubhe
+(4312,0580) city 7 #c49E7C0 Dubhe
+(4303,0883) city 3 #c49E7C0 Dubhe
+(4369,0470) city 2 #c49E7C0 Dubhe
+(4240,2546) city 2 #c49E7C0 Dubhe
+(5273,1093) city 2 #c49E7C0 Dubhe
+(5206,0270) city 5 #c49E7C0 Dubhe
+(5726,2531) city 5 #c49E7C0 Dubhe
+
+$planet
+(7392,7394) large
+(7352,7456)(7392,7394) small
+(1688,5896)(1890,5950) small
+(2071,5782)(1890,5950) small
+(1955,6010)(1890,5950) small
+(1890,5950) large
+(4082,634) large
+(4181,622)(4082,634) small
+(3729,2883) large
+(3649,2960)(3729,2883) small
+(1204,4176)(1263,4110) small
+(1418,4055)(1263,4110) small
+(1192,4316)(1263,4110) small
+(1263,4110) large
+(5457,6554) large
+(5550,6462)(5457,6554) small
+(5703,3621) large
+(5601,3641)(5703,3621) small
+(3859,5077) large
+(3692,5134)(3859,5077) small
+(4499,4497) medium

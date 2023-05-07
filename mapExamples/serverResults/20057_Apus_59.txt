@@ -1,0 +1,108 @@
+$name 20057 Apus 59
+$serverName Apus 59
+$size 9000
+
+$overlay
+來點正常人 (16.3%)
+战争帝国 (13.1%)
+鐵道999 (10.6%)
+女神禁衛軍 (10.6%)
+FlamingChickens (10.6%)
+Ethereal Legion (8.1%)
+落櫻閣 (8.1%)
+WaterMirror (4.9%)
+RETRIBUTION (2.4%)
+凱旋酒吧 (2.4%)
+Chilllanker (2.4%)
+十二夜家族 (2.4%)
+Ásgarð (2.4%)
+凱旋帝國 (2.4%)
+Evil GhOsT (2.4%)
+
+$station
+(3740,0600) city 5 #cF1F1F1 RETRIBUTION
+(1365,6778) city 5 #cF1F1F1 RETRIBUTION
+(1724,4214) city 2 #cF1F1F1 RETRIBUTION
+(2574,5974) city 2 #cF1F1F1 RETRIBUTION
+(0239,4739) city 9 #cE5B36C 來點正常人
+(0133,4966) city 3 #cE5B36C 來點正常人
+(7091,6287) city 5 #cE5B36C 來點正常人
+(7306,6157) city 3 #cE5B36C 來點正常人
+(7774,6993) city 5 #cE5B36C 來點正常人
+(4172,4949) city 5 #c9FE23E WaterMirror
+(4098,4879) city 5 #c9FE23E WaterMirror
+(4214,4704) city 5 #c9FE23E WaterMirror
+(5111,4627) city 5 #c9FE23E WaterMirror
+(6150,2908) city 3 #c9FE23E WaterMirror
+(7299,1540) city 2 #c9FE23E WaterMirror
+(7272,6310) city 5 #c9FE23E WaterMirror
+(3890,1949) city 3 #cF284FF 落櫻閣
+(4143,3642) city 7 #cF284FF 落櫻閣
+(4064,1775) city 2 #cF284FF 落櫻閣
+(2714,0793) city 5 #cF284FF 落櫻閣
+(4400,3632) city 5 #c929292 Chilllanker
+(4432,3367) city 3 #c929292 Chilllanker
+(4056,3478) city 3 #c929292 Chilllanker
+(4894,6354) city 2 #cFD7844 鐵道999
+(4890,6689) city 3 #cFD7844 鐵道999
+(5053,4433) city 7 #cFD7844 鐵道999
+(5292,4650) city 5 #cFD7844 鐵道999
+(5326,4497) city 3 #cFD7844 鐵道999
+(4939,4670) city 5 #cFD7844 鐵道999
+(3466,4002) city 5 #c929292 凱旋酒吧
+(2464,2714) city 2 #c929292 凱旋酒吧
+(2520,1020) city 5 #c929292 凱旋酒吧
+(3490,3860) city 5 #c929292 凱旋帝國
+(2707,1054) city 5 #c929292 凱旋帝國
+(3774,6724) city 2 #c49E7C0 女神禁衛軍
+(3961,6109) city 7 #c49E7C0 女神禁衛軍
+(4072,6290) city 5 #c49E7C0 女神禁衛軍
+(4087,6148) city 3 #c49E7C0 女神禁衛軍
+(7272,1792) city 5 #c929292 Ásgarð
+(7287,1648) city 3 #c929292 Ásgarð
+(3927,0634) city 5 #c7E67F2 Ethereal Legion
+(4024,6734) city 2 #c7E67F2 Ethereal Legion
+(7157,1606) city 7 #c7E67F2 Ethereal Legion
+(7091,1807) city 5 #c7E67F2 Ethereal Legion
+(1390,6900) city 5 #c929292 十二夜家族
+(4011,3765) city 2 #c929292 十二夜家族
+(4620,8012) city 5 #cE63A3A FlamingChickens
+(4363,8022) city 7 #cE63A3A FlamingChickens
+(4652,7747) city 3 #cE63A3A FlamingChickens
+(4276,7858) city 3 #cE63A3A FlamingChickens
+(0516,4811) city 5 #c929292 Evil GhOsT
+(3934,0373) city 5 #c4A99FB 战争帝国
+(5494,6744) city 2 #c4A99FB 战争帝国
+(5754,6094) city 2 #c4A99FB 战争帝国
+(5810,8280) city 5 #c4A99FB 战争帝国
+(7074,3544) city 2 #c4A99FB 战争帝国
+(7033,6093) city 7 #c4A99FB 战争帝国
+(7910,6860) city 5 #c4A99FB 战争帝国
+(7885,6738) city 5 #c4A99FB 战争帝国
+
+$planet
+(4515,7990)(4452,7934) small
+(4631,7762)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4452,7934) large
+(7072,6296)(7112,6234) small
+(7278,6175)(7112,6234) small
+(7112,6234) large
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(4411,3382)(4232,3554) small
+(4029,3496)(4232,3554) small
+(4232,3554) large
+(4295,3610)(4232,3554) small
+(172,4990)(335,4869) small
+(381,4873)(335,4869) small
+(443,4841)(335,4869) small
+(335,4869) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5092,4636)(5132,4574) small
+(5298,4515)(5132,4574) small
+(5132,4574) large

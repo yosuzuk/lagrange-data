@@ -1,0 +1,112 @@
+$name 30028 Canes Venatici 102
+$serverName Canes Venatici 102
+$size 9000
+
+$overlay
+幽靈樂園 (27.7%)
+RAVENS NEST (19.3%)
+Hells Requiem (18.4%)
+Titians (10.9%)
+Phecd (8.4%)
+宇日連邦 (5.0%)
+polis (2.5%)
+Dubhe (2.5%)
+凱旋帝國 (2.5%)
+Alkaid (2.5%)
+
+$station
+(3175,1299) city 2 #cE5B36C 幽靈樂園
+(4059,1706) city 2 #cE5B36C 幽靈樂園
+(4303,0883) city 3 #cE5B36C 幽靈樂園
+(5409,6369) city 3 #cE5B36C 幽靈樂園
+(5602,6552) city 7 #cE5B36C 幽靈樂園
+(5502,6545) city 5 #cE5B36C 幽靈樂園
+(5498,3520) city 9 #cE5B36C 幽靈樂園
+(5914,4815) city 5 #cE5B36C 幽靈樂園
+(6023,6093) city 2 #cE5B36C 幽靈樂園
+(6167,6928) city 5 #cE5B36C 幽靈樂園
+(6341,6869) city 5 #cE5B36C 幽靈樂園
+(1786,3971) city 5 #c929292 Alkaid
+(1965,3592) city 3 #c929292 Alkaid
+(2405,3417) city 5 #c929292 Alkaid
+(1094,4444) city 2 #c929292 Alkaid
+(2057,6034) city 5 #c929292 Alkaid
+(2493,6193) city 2 #c9FE23E Dubhe
+(2526,0930) city 5 #c9FE23E Dubhe
+(2733,6473) city 2 #c9FE23E Dubhe
+(3649,5192) city 5 #c9FE23E Dubhe
+(3857,5215) city 5 #c9FE23E Dubhe
+(3782,6072) city 2 #c9FE23E Dubhe
+(4615,6819) city 2 #c9FE23E Dubhe
+(1822,6062) city 2 #c9FE23E Dubhe
+(1893,6493) city 2 #cF284FF polis
+(0614,3987) city 2 #cF284FF polis
+(3193,0893) city 2 #cF284FF polis
+(3700,7555) city 3 #cF284FF polis
+(4049,0616) city 5 #cF284FF polis
+(4155,7862) city 5 #cF284FF polis
+(4302,7648) city 5 #cF284FF polis
+(4891,5549) city 5 #cF284FF polis
+(2228,7426) city 3 #cE63A3A Phecd
+(2843,6133) city 2 #cE63A3A Phecd
+(3784,7014) city 2 #cE63A3A Phecd
+(5125,7872) city 3 #cE63A3A Phecd
+(5132,8075) city 3 #cE63A3A Phecd
+(5332,7835) city 3 #cE63A3A Phecd
+(1162,4007) city 7 #cE63A3A Phecd
+(1333,3113) city 2 #cE63A3A Phecd
+(1215,3619) city 2 #cE63A3A Phecd
+(3699,2968) city 5 #cF1F1F1 凱旋帝國
+(4865,2237) city 5 #cF1F1F1 凱旋帝國
+(5033,2235) city 3 #cF1F1F1 凱旋帝國
+(5763,3646) city 5 #cF1F1F1 凱旋帝國
+(5393,3743) city 5 #cF1F1F1 凱旋帝國
+(5726,2531) city 5 #cF1F1F1 凱旋帝國
+(3607,4996) city 7 #c4A99FB RAVENS NEST
+(3895,4011) city 5 #c4A99FB RAVENS NEST
+(5165,5318) city 5 #c4A99FB RAVENS NEST
+(1229,4163) city 5 #c4A99FB RAVENS NEST
+(1196,4292) city 5 #c4A99FB RAVENS NEST
+(1672,5947) city 7 #c4A99FB RAVENS NEST
+(3780,2764) city 5 #c49E7C0 Titians
+(3872,2813) city 3 #c49E7C0 Titians
+(3919,2700) city 2 #c49E7C0 Titians
+(4312,0580) city 7 #c49E7C0 Titians
+(3833,3742) city 3 #cFD7844 Hells Requiem
+(3938,3851) city 5 #cFD7844 Hells Requiem
+(4924,5319) city 5 #cFD7844 Hells Requiem
+(4800,8635) city 3 #cFD7844 Hells Requiem
+(5190,5440) city 5 #cFD7844 Hells Requiem
+(5621,6337) city 5 #cFD7844 Hells Requiem
+(6243,5894) city 2 #cFD7844 Hells Requiem
+(6714,6204) city 2 #cFD7844 Hells Requiem
+(7297,7271) city 7 #cFD7844 Hells Requiem
+(8126,6631) city 5 #cFD7844 Hells Requiem
+(4482,0885) city 5 #c7E67F2 宇日連邦
+(4663,1053) city 2 #c7E67F2 宇日連邦
+(5763,1353) city 2 #c7E67F2 宇日連邦
+(7506,1321) city 5 #c7E67F2 宇日連邦
+(7589,1154) city 5 #c7E67F2 宇日連邦
+
+$planet
+(7392,7394) large
+(7352,7456)(7392,7394) small
+(1688,5896)(1890,5950) small
+(2071,5782)(1890,5950) small
+(1955,6010)(1890,5950) small
+(1890,5950) large
+(4082,634) large
+(4181,622)(4082,634) small
+(3729,2883) large
+(3649,2960)(3729,2883) small
+(1204,4176)(1263,4110) small
+(1418,4055)(1263,4110) small
+(1192,4316)(1263,4110) small
+(1263,4110) large
+(5457,6554) large
+(5550,6462)(5457,6554) small
+(5703,3621) large
+(5601,3641)(5703,3621) small
+(3859,5077) large
+(3692,5134)(3859,5077) small
+(4499,4497) medium

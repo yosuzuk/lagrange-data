@@ -1,0 +1,93 @@
+$name 20046 Perseus SS
+$serverName Perseus SS
+$size 9000
+
+$overlay
+Shadow Remnants (31.1%)
+Reset (13.1%)
+Celestial Cabal (13.1%)
+JP01 (13.1%)
+Grand Line (10.6%)
+RX 784 (10.6%)
+月輪の雫 (8.1%)
+
+$station
+(2750,2929) city 3 #cE63A3A Grand Line
+(2863,4062) city 7 #cE63A3A Grand Line
+(3314,2524) city 2 #cE63A3A Grand Line
+(4644,2535) city 2 #cE63A3A Grand Line
+(4814,2124) city 2 #cE63A3A Grand Line
+(5394,1994) city 2 #cE63A3A Grand Line
+(5754,6094) city 2 #cE63A3A Grand Line
+(6150,2868) city 3 #cE63A3A Grand Line
+(6304,2674) city 2 #cE63A3A Grand Line
+(6454,6124) city 2 #cE63A3A Grand Line
+(6654,6024) city 2 #cE63A3A Grand Line
+(1940,1720) city 5 #cE63A3A Grand Line
+(5260,5352) city 5 #cFD7844 Celestial Cabal
+(5003,5362) city 7 #cFD7844 Celestial Cabal
+(5292,5087) city 3 #cFD7844 Celestial Cabal
+(6050,8200) city 5 #cFD7844 Celestial Cabal
+(2731,4185) city 2 #c4A99FB Reset
+(3044,6034) city 2 #c4A99FB Reset
+(3572,7972) city 5 #c4A99FB Reset
+(3457,7786) city 7 #c4A99FB Reset
+(3587,7828) city 3 #c4A99FB Reset
+(3324,6994) city 2 #c4A99FB Reset
+(4006,6082) city 5 #c4A99FB Reset
+(4030,5940) city 5 #c4A99FB Reset
+(4044,6714) city 2 #c4A99FB Reset
+(4059,5318) city 3 #c4A99FB Reset
+(4871,5485) city 2 #c4A99FB Reset
+(5494,6744) city 2 #c4A99FB Reset
+(1724,4214) city 2 #c4A99FB Reset
+(1974,4424) city 2 #c4A99FB Reset
+(6324,3375) city 2 #c4A99FB Reset
+(2150,4589) city 3 #c4A99FB Reset
+(3624,2315) city 2 #cE5B36C Shadow Remnants
+(4129,4711) city 5 #cE5B36C Shadow Remnants
+(1772,2970) city 5 #cE5B36C Shadow Remnants
+(4409,0359) city 9 #cE5B36C Shadow Remnants
+(4666,0136) city 5 #cE5B36C Shadow Remnants
+(4386,0091) city 5 #cE5B36C Shadow Remnants
+(5012,4050) city 5 #cE5B36C Shadow Remnants
+(7820,2460) city 5 #cE5B36C Shadow Remnants
+(1030,6480) city 5 #cE5B36C Shadow Remnants
+(2744,3594) city 2 #c7E67F2 RX 784
+(3120,4052) city 5 #c7E67F2 RX 784
+(1661,2789) city 7 #c7E67F2 RX 784
+(5046,3897) city 3 #c7E67F2 RX 784
+(7510,7140) city 5 #c49E7C0 JP01
+(7893,6153) city 7 #c49E7C0 JP01
+(8132,6370) city 5 #c49E7C0 JP01
+(7779,6390) city 5 #c49E7C0 JP01
+(4773,3833) city 7 #cF284FF 月輪の雫
+(4831,4027) city 5 #cF284FF 月輪の雫
+(6890,4669) city 3 #cF284FF 月輪の雫
+
+$planet
+(4702,160)(4539,272) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(2952,3974) large
+(3015,4030)(2952,3974) small
+(3131,3802)(2952,3974) small
+(2749,3916)(2952,3974) small
+(8138,6235)(7972,6294) small
+(7932,6356)(7972,6294) small
+(7972,6294) large
+(4889,5216)(5092,5274) small
+(5092,5274) large
+(5155,5330)(5092,5274) small
+(5271,5102)(5092,5274) small
+(3412,7894) large
+(3558,7845)(3412,7894) small
+(3372,7996)(3412,7894) small
+(4499,4497) medium
+(4852,3974) large
+(5018,3915)(4852,3974) small
+(4812,4036)(4852,3974) small

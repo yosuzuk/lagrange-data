@@ -1,0 +1,150 @@
+$name 20014 V474 Canis Major
+$serverName V474 Canis Major
+$size 9000
+
+$overlay
+Proxima Prime (32.1%)
+The Time Lords (16.7%)
+Radiance (16.0%)
+TKs Realm (13.8%)
+SpaceHippies (13.8%)
+Hells Symphony (7.2%)
+
+$station
+(3761,8269) city 7 #c7E67F2 Hells Symphony
+(3887,8308) city 3 #c7E67F2 Hells Symphony
+(3899,8200) city 2 #c7E67F2 Hells Symphony
+(4844,1854) city 2 #c4A99FB The Time Lords
+(5412,1068) city 5 #c4A99FB The Time Lords
+(5400,0898) city 5 #c4A99FB The Time Lords
+(5315,0859) city 5 #c4A99FB The Time Lords
+(5554,2614) city 2 #c4A99FB The Time Lords
+(5550,2148) city 3 #c4A99FB The Time Lords
+(5874,2484) city 2 #c4A99FB The Time Lords
+(6234,2294) city 2 #c4A99FB The Time Lords
+(6334,2784) city 2 #c4A99FB The Time Lords
+(6614,3924) city 2 #c4A99FB The Time Lords
+(6614,3564) city 2 #c4A99FB The Time Lords
+(6654,5234) city 2 #c4A99FB The Time Lords
+(6934,5684) city 2 #c4A99FB The Time Lords
+(6999,1199) city 9 #c4A99FB The Time Lords
+(6893,1426) city 3 #c4A99FB The Time Lords
+(8166,2362) city 5 #c4A99FB The Time Lords
+(7976,2354) city 5 #c4A99FB The Time Lords
+(8190,2220) city 5 #c4A99FB The Time Lords
+(2614,6084) city 2 #c49E7C0 TKs Realm
+(2614,6404) city 2 #c49E7C0 TKs Realm
+(2652,5476) city 2 #c49E7C0 TKs Realm
+(2934,5574) city 2 #c49E7C0 TKs Realm
+(2984,6734) city 2 #c49E7C0 TKs Realm
+(3084,6334) city 2 #c49E7C0 TKs Realm
+(3394,6894) city 2 #c49E7C0 TKs Realm
+(3344,6375) city 2 #c49E7C0 TKs Realm
+(3474,6564) city 2 #c49E7C0 TKs Realm
+(3872,8450) city 5 #c49E7C0 TKs Realm
+(3704,6354) city 2 #c49E7C0 TKs Realm
+(4029,4691) city 5 #c49E7C0 TKs Realm
+(3790,4680) city 5 #c49E7C0 TKs Realm
+(3918,4859) city 5 #c49E7C0 TKs Realm
+(1353,6453) city 7 #c49E7C0 TKs Realm
+(1626,6517) city 3 #c49E7C0 TKs Realm
+(4379,5358) city 3 #c49E7C0 TKs Realm
+(5110,6349) city 3 #c49E7C0 TKs Realm
+(5614,6724) city 2 #c49E7C0 TKs Realm
+(2014,7433) city 5 #c49E7C0 TKs Realm
+(1820,7660) city 5 #c49E7C0 TKs Realm
+(1924,5614) city 2 #c49E7C0 TKs Realm
+(2234,6004) city 2 #c49E7C0 TKs Realm
+(2244,5754) city 2 #c49E7C0 TKs Realm
+(3691,8467) city 5 #cE63A3A SpaceHippies
+(4610,8480) city 5 #cE63A3A SpaceHippies
+(4585,8358) city 5 #cE63A3A SpaceHippies
+(4474,8613) city 5 #cE63A3A SpaceHippies
+(5872,8088) city 5 #cE63A3A SpaceHippies
+(5860,7918) city 5 #cE63A3A SpaceHippies
+(5775,7879) city 5 #cE63A3A SpaceHippies
+(5759,7991) city 5 #cE63A3A SpaceHippies
+(7094,4854) city 2 #cE63A3A SpaceHippies
+(7178,6417) city 7 #cE63A3A SpaceHippies
+(7412,6410) city 5 #cE63A3A SpaceHippies
+(7452,6147) city 3 #cE63A3A SpaceHippies
+(7032,6546) city 2 #cE63A3A SpaceHippies
+(8555,4819) city 5 #cE63A3A SpaceHippies
+(2364,4574) city 2 #cE5B36C Proxima Prime
+(2450,5188) city 3 #cE5B36C Proxima Prime
+(1341,2969) city 7 #cE5B36C Proxima Prime
+(1452,3150) city 5 #cE5B36C Proxima Prime
+(1271,3167) city 5 #cE5B36C Proxima Prime
+(2798,5337) city 7 #cE5B36C Proxima Prime
+(3032,5330) city 5 #cE5B36C Proxima Prime
+(1467,3008) city 3 #cE5B36C Proxima Prime
+(3072,5067) city 3 #cE5B36C Proxima Prime
+(2696,5178) city 3 #cE5B36C Proxima Prime
+(1479,2900) city 2 #cE5B36C Proxima Prime
+(3319,3151) city 5 #cE5B36C Proxima Prime
+(3335,3039) city 5 #cE5B36C Proxima Prime
+(3420,3077) city 5 #cE5B36C Proxima Prime
+(1592,6670) city 5 #cE5B36C Proxima Prime
+(0619,4771) city 5 #cE5B36C Proxima Prime
+(5299,0971) city 5 #cE5B36C Proxima Prime
+(7276,1271) city 5 #cE5B36C Proxima Prime
+(0635,4659) city 5 #cE5B36C Proxima Prime
+(0720,4698) city 5 #cE5B36C Proxima Prime
+(2124,5255) city 2 #cE5B36C Proxima Prime
+(0732,4868) city 5 #cE5B36C Proxima Prime
+(2330,1240) city 5 #cE5B36C Proxima Prime
+(2305,1118) city 5 #cE5B36C Proxima Prime
+(2194,1373) city 5 #cE5B36C Proxima Prime
+(3014,2554) city 2 #cFD7844 Radiance
+(3432,3248) city 5 #cFD7844 Radiance
+(3446,3982) city 5 #cFD7844 Radiance
+(3256,3974) city 5 #cFD7844 Radiance
+(3470,3840) city 5 #cFD7844 Radiance
+(3992,4929) city 5 #cFD7844 Radiance
+(4058,4117) city 7 #cFD7844 Radiance
+(4292,4110) city 5 #cFD7844 Radiance
+(4332,3847) city 3 #cFD7844 Radiance
+(3956,3958) city 3 #cFD7844 Radiance
+(3912,4256) city 2 #cFD7844 Radiance
+(5259,4658) city 3 #cFD7844 Radiance
+(6134,5924) city 2 #cFD7844 Radiance
+(6574,4904) city 2 #cFD7844 Radiance
+(6564,4734) city 2 #cFD7844 Radiance
+(6730,4989) city 3 #cFD7844 Radiance
+(7074,5374) city 2 #cFD7844 Radiance
+(7076,6258) city 3 #cFD7844 Radiance
+(7184,4674) city 2 #cFD7844 Radiance
+(7966,6682) city 5 #cFD7844 Radiance
+(7776,6674) city 5 #cFD7844 Radiance
+(7990,6540) city 5 #cFD7844 Radiance
+(8539,4931) city 5 #cFD7844 Radiance
+(8640,4858) city 5 #cFD7844 Radiance
+(8652,5028) city 5 #cFD7844 Radiance
+
+$planet
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(6932,1450)(7095,1329) small
+(7141,1333)(7095,1329) small
+(7095,1329) large
+(7203,1301)(7095,1329) small
+(3672,8476)(3712,8374) small
+(3858,8325)(3712,8374) small
+(3712,8374) large
+(1292,3074) large
+(1438,3025)(1292,3074) small
+(1252,3176)(1292,3074) small
+(4132,4034) large
+(4195,4090)(4132,4034) small
+(3929,3976)(4132,4034) small
+(4311,3862)(4132,4034) small
+(2872,5254) large
+(2935,5310)(2872,5254) small
+(2669,5196)(2872,5254) small
+(3051,5082)(2872,5254) small
+(4499,4497) medium
+(1432,6594) large
+(1598,6535)(1432,6594) small
+(1392,6656)(1432,6594) small
