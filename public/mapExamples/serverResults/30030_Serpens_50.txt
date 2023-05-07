@@ -1,0 +1,142 @@
+$name 30030 Serpens 50
+$serverName Serpens 50
+$size 9000
+
+$overlay
+Oak Lorem (22.8%)
+METEOR (17.5%)
+艦隊同盟 (11.4%)
+宇宙動物園 (10.5%)
+Brotherhооd (8.7%)
+銀河皇国 (7.8%)
+黄泉国双隊 (5.2%)
+Phantom beast (5.2%)
+お肉食べたい (2.6%)
+橘連合 (2.6%)
+WinterFall (2.6%)
+Hayreddin Clan (2.6%)
+
+$station
+(2053,1353) city 2 #cF284FF 黄泉国双隊
+(2144,1654) city 2 #cF284FF 黄泉国双隊
+(2325,3877) city 5 #cF284FF 黄泉国双隊
+(2332,3635) city 3 #cF284FF 黄泉国双隊
+(2485,3832) city 3 #cF284FF 黄泉国双隊
+(2533,3655) city 3 #cF284FF 黄泉国双隊
+(3154,0406) city 5 #cF284FF 黄泉国双隊
+(1555,4428) city 5 #cF284FF 黄泉国双隊
+(2140,8135) city 3 #cE63A3A Brotherhооd
+(3031,7337) city 7 #cE63A3A Brotherhооd
+(3629,7334) city 5 #cE63A3A Brotherhооd
+(4004,7914) city 2 #cE63A3A Brotherhооd
+(4494,8504) city 2 #cE63A3A Brotherhооd
+(4569,8327) city 3 #cE63A3A Brotherhооd
+(2583,1033) city 2 #c4A99FB METEOR
+(2866,0561) city 5 #c4A99FB METEOR
+(3008,0530) city 3 #c4A99FB METEOR
+(3039,2116) city 2 #c4A99FB METEOR
+(4385,5912) city 9 #c4A99FB METEOR
+(0995,2499) city 2 #c4A99FB METEOR
+(1234,2207) city 2 #c4A99FB METEOR
+(1474,1764) city 2 #c4A99FB METEOR
+(1529,2128) city 3 #c4A99FB METEOR
+(1794,2107) city 2 #c4A99FB METEOR
+(3184,7636) city 5 #cE5B36C Oak Lorem
+(2749,7375) city 3 #cE5B36C Oak Lorem
+(3069,7229) city 2 #cE5B36C Oak Lorem
+(2948,0349) city 7 #cE5B36C Oak Lorem
+(3423,7352) city 5 #cE5B36C Oak Lorem
+(3546,7501) city 5 #cE5B36C Oak Lorem
+(4679,7467) city 3 #cE5B36C Oak Lorem
+(4923,8053) city 2 #cE5B36C Oak Lorem
+(5373,8053) city 2 #cE5B36C Oak Lorem
+(5389,3677) city 7 #cE5B36C Oak Lorem
+(1249,5216) city 2 #cE5B36C Oak Lorem
+(4038,3759) city 3 #c929292 橘連合
+(4493,2515) city 3 #c929292 橘連合
+(5126,3010) city 5 #c929292 橘連合
+(5298,3869) city 5 #c929292 橘連合
+(5689,3690) city 3 #c929292 橘連合
+(5430,3949) city 5 #c929292 橘連合
+(6148,3106) city 3 #c929292 橘連合
+(6364,3594) city 2 #c929292 橘連合
+(6283,3174) city 2 #c929292 橘連合
+(1954,3467) city 5 #c49E7C0 宇宙動物園
+(4644,5368) city 5 #c49E7C0 宇宙動物園
+(5329,4338) city 5 #c49E7C0 宇宙動物園
+(5488,4398) city 5 #c49E7C0 宇宙動物園
+(5394,4549) city 5 #c49E7C0 宇宙動物園
+(5721,5089) city 5 #c49E7C0 宇宙動物園
+(5547,5148) city 5 #c49E7C0 宇宙動物園
+(6043,5693) city 2 #c49E7C0 宇宙動物園
+(7250,7212) city 5 #c49E7C0 宇宙動物園
+(3898,3827) city 5 #cFD7844 艦隊同盟
+(6585,1437) city 5 #cFD7844 艦隊同盟
+(7773,1883) city 7 #cFD7844 艦隊同盟
+(7923,3474) city 2 #cFD7844 艦隊同盟
+(8003,4134) city 2 #cFD7844 艦隊同盟
+(5469,3823) city 5 #c929292 WinterFall
+(6063,3413) city 2 #c929292 WinterFall
+(6352,1475) city 3 #c929292 WinterFall
+(6434,4944) city 2 #c929292 WinterFall
+(6743,3574) city 2 #c929292 WinterFall
+(6914,3144) city 2 #c929292 WinterFall
+(7756,1976) city 5 #c929292 WinterFall
+(2294,6247) city 2 #c9FE23E Phantom beast
+(1253,6842) city 3 #c9FE23E Phantom beast
+(0438,5084) city 5 #c9FE23E Phantom beast
+(0434,4867) city 5 #c9FE23E Phantom beast
+(0257,4976) city 5 #c9FE23E Phantom beast
+(1795,5559) city 2 #c9FE23E Phantom beast
+(4640,5965) city 5 #cF1F1F1 お肉食べたい
+(4625,5237) city 5 #cF1F1F1 お肉食べたい
+(5080,4995) city 3 #cF1F1F1 お肉食べたい
+(5994,5904) city 2 #cF1F1F1 お肉食べたい
+(6283,6013) city 2 #cF1F1F1 お肉食べたい
+(6459,4416) city 2 #cF1F1F1 お肉食べたい
+(6555,5359) city 2 #cF1F1F1 お肉食べたい
+(6594,6027) city 2 #cF1F1F1 お肉食べたい
+(6884,4934) city 2 #cF1F1F1 お肉食べたい
+(7043,4913) city 2 #cF1F1F1 お肉食べたい
+(7055,7259) city 5 #cF1F1F1 お肉食べたい
+(7244,7407) city 5 #cF1F1F1 お肉食べたい
+(7249,4060) city 2 #cF1F1F1 お肉食べたい
+(7866,7191) city 5 #cF1F1F1 お肉食べたい
+(2753,5773) city 2 #c7E67F2 銀河皇国
+(2874,6764) city 2 #c7E67F2 銀河皇国
+(3026,4351) city 5 #c7E67F2 銀河皇国
+(3293,6113) city 2 #c7E67F2 銀河皇国
+(3584,6394) city 2 #c7E67F2 銀河皇国
+(3822,5136) city 5 #c7E67F2 銀河皇国
+(3812,4951) city 5 #c7E67F2 銀河皇国
+(3819,4027) city 5 #c7E67F2 銀河皇国
+(3991,3872) city 3 #c7E67F2 銀河皇国
+(7428,4350) city 5 #c7E67F2 銀河皇国
+(1358,6951) city 5 #c7E67F2 銀河皇国
+(6159,0326) city 3 #c929292 Hayreddin Clan
+(7658,1756) city 5 #c929292 Hayreddin Clan
+
+$planet
+(2869,7332)(2881,7389) small
+(2782,7394)(2881,7389) small
+(3049,7455)(2881,7389) small
+(2881,7389) large
+(7378,4129)(7450,4261) small
+(7450,4261) large
+(7493,4317)(7450,4261) small
+(5432,3976)(5503,3770) small
+(5503,3770) large
+(5658,3715)(5503,3770) small
+(5444,3836)(5503,3770) small
+(3849,3943) large
+(3769,4020)(3849,3943) small
+(3892,3787)(3849,3943) small
+(4047,4071)(3849,3943) small
+(2979,538)(3030,460) small
+(3056,408)(3030,460) small
+(3030,460) large
+(3175,459)(3030,460) small
+(4462,6029) large
+(4563,6001)(4462,6029) small
+(4292,6150)(4462,6029) small
+(4499,4497) medium

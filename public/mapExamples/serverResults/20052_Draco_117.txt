@@ -1,0 +1,113 @@
+$name 20052 Draco 117
+$serverName Draco 117
+$size 9000
+
+$overlay
+SpaceFAM (27.0%)
+ゆるキャン (27.0%)
+Solace (13.1%)
+AlphaCollective (10.6%)
+焼き飯王国 (4.9%)
+Wild Geese (4.9%)
+Memoria Atelier (2.4%)
+SonOfaBiscuit (2.4%)
+XCOM (2.4%)
+大威天龙 (2.4%)
+Ásgarð (2.4%)
+
+$station
+(5012,4050) city 5 #cF1F1F1 XCOM
+(4831,4027) city 5 #cF1F1F1 XCOM
+(5494,2644) city 2 #cF1F1F1 XCOM
+(6214,2274) city 2 #cF1F1F1 XCOM
+(6150,2868) city 3 #cF1F1F1 XCOM
+(6304,2674) city 2 #cF1F1F1 XCOM
+(2863,4062) city 7 #cFD7844 Solace
+(2776,3898) city 3 #cFD7844 Solace
+(4092,4949) city 5 #cFD7844 Solace
+(4129,4711) city 5 #cFD7844 Solace
+(5260,5352) city 5 #cFD7844 Solace
+(5292,5087) city 3 #cFD7844 Solace
+(5494,6744) city 2 #cFD7844 Solace
+(2214,5144) city 2 #cFD7844 Solace
+(2254,2964) city 2 #cFD7844 Solace
+(2384,4214) city 2 #cFD7844 Solace
+(2750,2929) city 3 #c4A99FB ゆるキャン
+(4004,2554) city 2 #c4A99FB ゆるキャン
+(4409,0359) city 9 #c4A99FB ゆるキャン
+(4666,0136) city 5 #c4A99FB ゆるキャン
+(4773,3833) city 7 #c4A99FB ゆるキャン
+(4814,2124) city 2 #c4A99FB ゆるキャン
+(8007,2494) city 5 #c4A99FB ゆるキャン
+(1940,1720) city 5 #c4A99FB ゆるキャン
+(2844,6715) city 2 #cF284FF Memoria Atelier
+(3572,7972) city 5 #cF284FF Memoria Atelier
+(3391,7987) city 5 #cF284FF Memoria Atelier
+(3324,6994) city 2 #cF284FF Memoria Atelier
+(3594,6574) city 2 #cF284FF Memoria Atelier
+(4018,4879) city 5 #cF284FF Memoria Atelier
+(6654,6024) city 2 #cF284FF Memoria Atelier
+(2974,2304) city 2 #cE63A3A 焼き飯王国
+(4386,0091) city 5 #cE63A3A 焼き飯王国
+(8014,2233) city 5 #cE63A3A 焼き飯王国
+(7820,2460) city 5 #cE63A3A 焼き飯王国
+(8166,6217) city 3 #cE63A3A 焼き飯王国
+(3314,2524) city 2 #c9FE23E SonOfaBiscuit
+(1772,2970) city 5 #c9FE23E SonOfaBiscuit
+(1787,2828) city 3 #c9FE23E SonOfaBiscuit
+(6454,6124) city 2 #c9FE23E SonOfaBiscuit
+(2127,1754) city 5 #c9FE23E SonOfaBiscuit
+(2464,2714) city 2 #c9FE23E SonOfaBiscuit
+(1030,6480) city 5 #c929292 大威天龙
+(3457,7786) city 7 #cE5B36C SpaceFAM
+(3816,6074) city 5 #cE5B36C SpaceFAM
+(4839,6598) city 3 #cE5B36C SpaceFAM
+(5003,5362) city 7 #cE5B36C SpaceFAM
+(4916,5198) city 3 #cE5B36C SpaceFAM
+(5234,6534) city 2 #cE5B36C SpaceFAM
+(1724,4214) city 2 #cE5B36C SpaceFAM
+(7510,7140) city 5 #cE5B36C SpaceFAM
+(7374,7273) city 5 #cE5B36C SpaceFAM
+(7893,6153) city 7 #cE5B36C SpaceFAM
+(8132,6370) city 5 #c929292 Ásgarð
+(2744,3254) city 2 #c49E7C0 AlphaCollective
+(3624,2315) city 2 #c49E7C0 AlphaCollective
+(4030,5940) city 5 #c49E7C0 AlphaCollective
+(1661,2789) city 7 #c49E7C0 AlphaCollective
+(1591,2987) city 5 #c49E7C0 AlphaCollective
+(1799,2720) city 2 #c49E7C0 AlphaCollective
+(5046,3897) city 3 #c49E7C0 AlphaCollective
+(4871,5485) city 2 #c49E7C0 AlphaCollective
+(6454,5644) city 2 #c49E7C0 AlphaCollective
+(2134,1493) city 5 #c49E7C0 AlphaCollective
+(7779,6390) city 5 #c49E7C0 AlphaCollective
+(2150,4589) city 3 #c49E7C0 AlphaCollective
+(3120,4052) city 5 #c7E67F2 Wild Geese
+(6050,8200) city 5 #c7E67F2 Wild Geese
+
+$planet
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(2952,3974) large
+(3015,4030)(2952,3974) small
+(3131,3802)(2952,3974) small
+(2749,3916)(2952,3974) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(4702,160)(4539,272) small
+(8138,6235)(7972,6294) small
+(7932,6356)(7972,6294) small
+(7972,6294) large
+(4889,5216)(5092,5274) small
+(5092,5274) large
+(5155,5330)(5092,5274) small
+(5271,5102)(5092,5274) small
+(3412,7894) large
+(3558,7845)(3412,7894) small
+(3372,7996)(3412,7894) small
+(4499,4497) medium
+(4852,3974) large
+(5018,3915)(4852,3974) small
+(4812,4036)(4852,3974) small

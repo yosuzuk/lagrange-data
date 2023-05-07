@@ -1,0 +1,116 @@
+$name 30040 V1409 Grus
+$serverName V1409 Grus
+$size 9000
+
+$overlay
+METEOR (16.8%)
+Brotherhооd (15.9%)
+Underdogs (13.4%)
+KSA (10.9%)
+猫の夜会 (10.9%)
+黄泉国双隊 (8.4%)
+FreedomRabbit (8.4%)
+お肉食べたい (2.5%)
+Soapland Beast (2.5%)
+PG皇国 (2.5%)
+WinterFall (2.5%)
+Reactive Sword (2.5%)
+宇宙動物園 (2.5%)
+
+$station
+(3857,5215) city 5 #c929292 宇宙動物園
+(3054,7887) city 2 #c9FE23E お肉食べたい
+(3649,5192) city 5 #c9FE23E お肉食べたい
+(3499,5230) city 5 #c9FE23E お肉食べたい
+(4689,5298) city 5 #c9FE23E お肉食べたい
+(7506,1321) city 5 #c9FE23E お肉食べたい
+(7589,1154) city 5 #c9FE23E お肉食べたい
+(7514,3187) city 2 #c9FE23E お肉食べたい
+(7574,2367) city 2 #c9FE23E お肉食べたい
+(3833,3742) city 3 #c49E7C0 KSA
+(5190,5440) city 5 #c49E7C0 KSA
+(5165,5318) city 5 #c49E7C0 KSA
+(5199,4926) city 3 #c49E7C0 KSA
+(5712,4745) city 5 #c49E7C0 KSA
+(5837,4918) city 5 #c49E7C0 KSA
+(6023,6093) city 2 #c49E7C0 KSA
+(6243,5894) city 2 #c49E7C0 KSA
+(7297,7271) city 7 #c49E7C0 KSA
+(3938,3851) city 5 #c929292 Reactive Sword
+(3895,4011) city 5 #c929292 Reactive Sword
+(1229,4163) city 5 #c929292 Reactive Sword
+(1672,5947) city 7 #cF284FF FreedomRabbit
+(2862,3512) city 2 #c7E67F2 黄泉国双隊
+(3607,4996) city 7 #c7E67F2 黄泉国双隊
+(3815,0739) city 2 #c7E67F2 黄泉国双隊
+(4865,2237) city 5 #c7E67F2 黄泉国双隊
+(4818,5478) city 5 #cFD7844 Underdogs
+(5602,6552) city 7 #cFD7844 Underdogs
+(5621,6337) city 5 #cFD7844 Underdogs
+(5502,6545) city 5 #cFD7844 Underdogs
+(5914,4815) city 5 #cFD7844 Underdogs
+(6102,7932) city 2 #cFD7844 Underdogs
+(6167,6928) city 5 #cFD7844 Underdogs
+(6714,6204) city 2 #cFD7844 Underdogs
+(6814,4404) city 2 #cFD7844 Underdogs
+(7034,5804) city 2 #cFD7844 Underdogs
+(7228,7483) city 5 #cFD7844 Underdogs
+(7370,7447) city 3 #cFD7844 Underdogs
+(2228,7426) city 3 #cE63A3A 猫の夜会
+(4155,7862) city 5 #cE63A3A 猫の夜会
+(1059,4209) city 5 #cE63A3A 猫の夜会
+(1162,4007) city 7 #cE63A3A 猫の夜会
+(1196,4292) city 5 #cE63A3A 猫の夜会
+(1342,7112) city 2 #cE63A3A 猫の夜会
+(1354,6644) city 2 #cE63A3A 猫の夜会
+(1623,7074) city 2 #cE63A3A 猫の夜会
+(5498,3520) city 9 #cE5B36C METEOR
+(3193,0893) city 2 #c4A99FB Brotherhооd
+(3343,0974) city 2 #c4A99FB Brotherhооd
+(3780,2764) city 5 #c4A99FB Brotherhооd
+(3872,2813) city 3 #c4A99FB Brotherhооd
+(3919,2700) city 2 #c4A99FB Brotherhооd
+(4312,0580) city 7 #c4A99FB Brotherhооd
+(4482,0885) city 5 #c4A99FB Brotherhооd
+(4049,0616) city 5 #c4A99FB Brotherhооd
+(4240,2546) city 2 #c4A99FB Brotherhооd
+(4924,5319) city 5 #c4A99FB Brotherhооd
+(1134,4867) city 2 #c4A99FB Brotherhооd
+(2046,5816) city 3 #c4A99FB Brotherhооd
+(5273,1093) city 2 #c929292 WinterFall
+(5763,3646) city 5 #c929292 WinterFall
+(5763,1353) city 2 #c929292 WinterFall
+(7854,2624) city 2 #c929292 WinterFall
+(1893,6493) city 2 #cF1F1F1 Soapland Beast
+(2333,3595) city 5 #cF1F1F1 Soapland Beast
+(4302,7648) city 5 #cF1F1F1 Soapland Beast
+(1449,4031) city 3 #cF1F1F1 Soapland Beast
+(0460,6095) city 3 #cF1F1F1 Soapland Beast
+(1786,3971) city 5 #c929292 PG皇国
+(3784,7014) city 2 #c929292 PG皇国
+(3700,7555) city 3 #c929292 PG皇国
+(1333,3113) city 2 #c929292 PG皇国
+(2057,6034) city 5 #c929292 PG皇国
+
+$planet
+(4181,622) large
+(4082,634)(4181,622) small
+(7392,7394) large
+(7352,7456)(7392,7394) small
+(1688,5896)(1890,5950) small
+(2071,5782)(1890,5950) small
+(1955,6010)(1890,5950) small
+(1890,5950) large
+(3729,2883) large
+(3649,2960)(3729,2883) small
+(1204,4176)(1263,4110) small
+(1418,4055)(1263,4110) small
+(1192,4316)(1263,4110) small
+(1263,4110) large
+(5457,6554) large
+(5550,6462)(5457,6554) small
+(5703,3621) large
+(5601,3641)(5703,3621) small
+(3859,5077) large
+(3692,5134)(3859,5077) small
+(4499,4497) medium

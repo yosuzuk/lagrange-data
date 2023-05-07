@@ -1,0 +1,132 @@
+$name 20047 Eridanus CK
+$serverName Eridanus CK
+$size 9000
+
+$overlay
+FAF (21.3%)
+냥냥펀치 (13.1%)
+Fog Forest (10.6%)
+DCINSIDE (10.6%)
+創世界 (10.6%)
+ArtemiS (10.6%)
+snow forest (8.1%)
+VORTEX (7.3%)
+옴뇸뇸 (4.9%)
+로엔그람 (2.4%)
+
+$station
+(2490,5229) city 3 #cE5B36C FAF
+(3032,5330) city 5 #cE5B36C FAF
+(3047,5188) city 3 #cE5B36C FAF
+(3059,5080) city 2 #cE5B36C FAF
+(3044,6034) city 2 #cE5B36C FAF
+(3446,3982) city 5 #cE5B36C FAF
+(1071,6825) city 2 #cE5B36C FAF
+(4379,5358) city 3 #cE5B36C FAF
+(1910,7520) city 5 #cE5B36C FAF
+(1774,7653) city 5 #cE5B36C FAF
+(8041,1896) city 9 #cE5B36C FAF
+(2414,5654) city 2 #cE5B36C FAF
+(2324,4934) city 2 #cE5B36C FAF
+(3593,8393) city 7 #c49E7C0 DCINSIDE
+(3832,8610) city 5 #c49E7C0 DCINSIDE
+(3652,8582) city 5 #c49E7C0 DCINSIDE
+(3866,8457) city 3 #c49E7C0 DCINSIDE
+(3479,8630) city 5 #c49E7C0 DCINSIDE
+(3959,4130) city 5 #c49E7C0 DCINSIDE
+(6494,4934) city 2 #c49E7C0 DCINSIDE
+(7076,6258) city 3 #c49E7C0 DCINSIDE
+(2921,5149) city 7 #c4A99FB 냥냥펀치
+(3879,4831) city 5 #c4A99FB 냥냥펀치
+(4864,1874) city 2 #c4A99FB 냥냥펀치
+(5994,2134) city 2 #c4A99FB 냥냥펀치
+(6084,3234) city 2 #c4A99FB 냥냥펀치
+(6464,4054) city 2 #c4A99FB 냥냥펀치
+(6614,3564) city 2 #c4A99FB 냥냥펀치
+(6864,4374) city 2 #c4A99FB 냥냥펀치
+(7054,3584) city 2 #c4A99FB 냥냥펀치
+(8554,3353) city 5 #c4A99FB 냥냥펀치
+(8360,3580) city 5 #c4A99FB 냥냥펀치
+(2434,1113) city 5 #c4A99FB 냥냥펀치
+(2694,2314) city 2 #cE63A3A 創世界
+(2974,1954) city 2 #cE63A3A 創世界
+(3624,2315) city 2 #cE63A3A 創世界
+(4073,3893) city 7 #cE63A3A 創世界
+(4312,4110) city 5 #cE63A3A 創世界
+(4894,2134) city 2 #cE63A3A 創世界
+(1399,2880) city 2 #cE63A3A 創世界
+(7452,6147) city 3 #cF1F1F1 옴뇸뇸
+(7946,6682) city 5 #cF1F1F1 옴뇸뇸
+(7970,6540) city 5 #cF1F1F1 옴뇸뇸
+(2240,1340) city 5 #cF1F1F1 옴뇸뇸
+(5194,2364) city 2 #c929292 로엔그람
+(5874,2834) city 2 #c929292 로엔그람
+(6254,3604) city 2 #c929292 로엔그람
+(6614,2624) city 2 #c929292 로엔그람
+(7756,6674) city 5 #c929292 로엔그람
+(8296,1951) city 5 #c929292 로엔그람
+(7913,2106) city 3 #c929292 로엔그람
+(2530,3908) city 3 #cFD7844 Fog Forest
+(1724,4214) city 2 #cFD7844 Fog Forest
+(6794,6004) city 2 #cFD7844 Fog Forest
+(1372,3132) city 5 #cFD7844 Fog Forest
+(1257,2946) city 7 #cFD7844 Fog Forest
+(2294,3294) city 2 #cFD7844 Fog Forest
+(2427,1374) city 5 #cFD7844 Fog Forest
+(1191,3147) city 5 #cFD7844 Fog Forest
+(1387,2988) city 3 #cFD7844 Fog Forest
+(2324,3694) city 2 #cFD7844 Fog Forest
+(6394,6154) city 2 #c7E67F2 ArtemiS
+(6594,4624) city 2 #c7E67F2 ArtemiS
+(6584,5334) city 2 #c7E67F2 ArtemiS
+(6730,4989) city 3 #c7E67F2 ArtemiS
+(6904,5794) city 2 #c7E67F2 ArtemiS
+(7178,6417) city 7 #c7E67F2 ArtemiS
+(7412,6410) city 5 #c7E67F2 ArtemiS
+(2654,6094) city 2 #c9FE23E VORTEX
+(2614,6404) city 2 #c9FE23E VORTEX
+(2704,3634) city 2 #c9FE23E VORTEX
+(2814,2844) city 2 #c9FE23E VORTEX
+(2930,2309) city 3 #c9FE23E VORTEX
+(2974,2544) city 2 #c9FE23E VORTEX
+(1460,6692) city 5 #c9FE23E VORTEX
+(3470,3840) city 5 #c9FE23E VORTEX
+(4064,6454) city 2 #c9FE23E VORTEX
+(4534,6354) city 2 #c9FE23E VORTEX
+(4610,8480) city 5 #c9FE23E VORTEX
+(4474,8613) city 5 #c9FE23E VORTEX
+(4614,6664) city 2 #c9FE23E VORTEX
+(5059,6278) city 3 #c9FE23E VORTEX
+(5324,6314) city 2 #c9FE23E VORTEX
+(1203,6702) city 7 #cF284FF snow forest
+(1116,6538) city 3 #cF284FF snow forest
+(5214,6534) city 2 #cF284FF snow forest
+(5884,6555) city 2 #cF284FF snow forest
+(7031,6545) city 2 #cF284FF snow forest
+
+$planet
+(4152,4034) large
+(4318,3975)(4152,4034) small
+(4112,4096)(4152,4034) small
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(1172,3156)(1212,3054) small
+(1358,3005)(1212,3054) small
+(1212,3054) large
+(1355,6670)(1292,6614) small
+(1089,6556)(1292,6614) small
+(1292,6614) large
+(1471,6442)(1292,6614) small
+(3018,5205)(2872,5254) small
+(2872,5254) large
+(2832,5356)(2872,5254) small
+(3632,8596)(3672,8534) small
+(3672,8534) large
+(3838,8475)(3672,8534) small
+(4499,4497) medium

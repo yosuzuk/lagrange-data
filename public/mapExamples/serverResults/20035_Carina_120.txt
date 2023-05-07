@@ -1,0 +1,119 @@
+$name 20035 Carina 120
+$serverName Carina 120
+$size 9000
+
+$overlay
+VORTEX (31.9%)
+Eureka fivE (15.5%)
+FAF (13.1%)
+DCINSIDE (13.1%)
+SpaceFAM (13.1%)
+Hells Requiem (10.6%)
+단또단또 (2.4%)
+
+$station
+(4209,4711) city 5 #c49E7C0 DCINSIDE
+(4432,3367) city 3 #c49E7C0 DCINSIDE
+(4363,8022) city 7 #c49E7C0 DCINSIDE
+(4652,7747) city 3 #c49E7C0 DCINSIDE
+(4276,7858) city 3 #c49E7C0 DCINSIDE
+(4231,8145) city 2 #c49E7C0 DCINSIDE
+(4534,6354) city 2 #c49E7C0 DCINSIDE
+(4594,6684) city 2 #c49E7C0 DCINSIDE
+(5111,4627) city 5 #c49E7C0 DCINSIDE
+(5494,6744) city 2 #c49E7C0 DCINSIDE
+(5754,6094) city 2 #c49E7C0 DCINSIDE
+(5810,8280) city 5 #c49E7C0 DCINSIDE
+(5785,8158) city 5 #c49E7C0 DCINSIDE
+(5674,8413) city 5 #c49E7C0 DCINSIDE
+(3927,0634) city 5 #cE63A3A SpaceFAM
+(3740,0600) city 5 #cE63A3A SpaceFAM
+(5754,2114) city 2 #cE63A3A SpaceFAM
+(6084,3234) city 2 #cE63A3A SpaceFAM
+(6214,2274) city 2 #cE63A3A SpaceFAM
+(6254,3604) city 2 #cE63A3A SpaceFAM
+(7272,1792) city 5 #cE63A3A SpaceFAM
+(7157,1606) city 7 #cE63A3A SpaceFAM
+(7091,1807) city 5 #cE63A3A SpaceFAM
+(7287,1648) city 3 #cE63A3A SpaceFAM
+(7299,1540) city 2 #cE63A3A SpaceFAM
+(2779,5978) city 3 #cFD7844 FAF
+(3104,5914) city 2 #cFD7844 FAF
+(1254,7033) city 5 #cFD7844 FAF
+(3774,6724) city 2 #cFD7844 FAF
+(3961,6109) city 7 #cFD7844 FAF
+(4072,6290) city 5 #cFD7844 FAF
+(3891,6307) city 5 #cFD7844 FAF
+(4087,6148) city 3 #cFD7844 FAF
+(4099,6040) city 2 #cFD7844 FAF
+(4172,4949) city 5 #cFD7844 FAF
+(4098,4879) city 5 #cFD7844 FAF
+(3970,4700) city 5 #cFD7844 FAF
+(4114,2134) city 2 #cFD7844 FAF
+(4024,6734) city 2 #cFD7844 FAF
+(4620,8012) city 5 #cFD7844 FAF
+(4370,5328) city 3 #cFD7844 FAF
+(4939,4670) city 5 #cFD7844 FAF
+(2234,6004) city 2 #cFD7844 FAF
+(2974,1954) city 2 #c4A99FB Eureka fivE
+(3624,2315) city 2 #c4A99FB Eureka fivE
+(5326,4497) city 3 #c4A99FB Eureka fivE
+(6464,4054) city 2 #c4A99FB Eureka fivE
+(7033,6093) city 7 #c4A99FB Eureka fivE
+(7272,6310) city 5 #c4A99FB Eureka fivE
+(7091,6287) city 5 #c4A99FB Eureka fivE
+(7910,6860) city 5 #c4A99FB Eureka fivE
+(7774,6993) city 5 #c4A99FB Eureka fivE
+(2464,2714) city 2 #c4A99FB Eureka fivE
+(2707,1054) city 5 #c4A99FB Eureka fivE
+(2714,0793) city 5 #c4A99FB Eureka fivE
+(2520,1020) city 5 #c4A99FB Eureka fivE
+(0239,4739) city 9 #cE5B36C VORTEX
+(2954,6644) city 2 #cE5B36C VORTEX
+(2944,6414) city 2 #cE5B36C VORTEX
+(3466,4002) city 5 #cE5B36C VORTEX
+(3490,3860) city 5 #cE5B36C VORTEX
+(1390,6900) city 5 #cE5B36C VORTEX
+(1365,6778) city 5 #cE5B36C VORTEX
+(4400,3632) city 5 #cE5B36C VORTEX
+(4143,3642) city 7 #cE5B36C VORTEX
+(1724,4214) city 2 #cE5B36C VORTEX
+(2099,4518) city 3 #cE5B36C VORTEX
+(2244,4934) city 2 #cE5B36C VORTEX
+(3890,1949) city 3 #c7E67F2 Hells Requiem
+(4011,3765) city 2 #c7E67F2 Hells Requiem
+(4644,2535) city 2 #c7E67F2 Hells Requiem
+(5053,4433) city 7 #c7E67F2 Hells Requiem
+(5292,4650) city 5 #c7E67F2 Hells Requiem
+(3276,3994) city 5 #cF284FF 단또단또
+(0516,4811) city 5 #cF284FF 단또단또
+(0133,4966) city 3 #cF284FF 단또단또
+(1904,5614) city 2 #cF284FF 단또단또
+(2324,3694) city 2 #cF284FF 단또단또
+
+$planet
+(4515,7990)(4452,7934) small
+(4631,7762)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4452,7934) large
+(7072,6296)(7112,6234) small
+(7278,6175)(7112,6234) small
+(7112,6234) large
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(4411,3382)(4232,3554) small
+(4029,3496)(4232,3554) small
+(4232,3554) large
+(4295,3610)(4232,3554) small
+(172,4990)(335,4869) small
+(381,4873)(335,4869) small
+(443,4841)(335,4869) small
+(335,4869) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5092,4636)(5132,4574) small
+(5298,4515)(5132,4574) small
+(5132,4574) large

@@ -1,0 +1,164 @@
+$name 20012 V822 Monoceros
+$serverName V822 Monoceros
+$size 9000
+
+$overlay
+The Black Hand (32.1%)
+Iceni (31.3%)
+Phoenix Ashes (22.6%)
+TerraGroup (13.8%)
+
+$station
+(2564,3895) city 2 #cE5B36C The Black Hand
+(2764,3234) city 2 #cE5B36C The Black Hand
+(3029,7991) city 5 #cE5B36C The Black Hand
+(3276,3994) city 5 #cE5B36C The Black Hand
+(3490,3860) city 5 #cE5B36C The Black Hand
+(0206,4631) city 5 #cE5B36C The Black Hand
+(4099,6040) city 2 #cE5B36C The Black Hand
+(4172,4948) city 5 #cE5B36C The Black Hand
+(4211,3607) city 5 #cE5B36C The Black Hand
+(4426,3477) city 3 #cE5B36C The Black Hand
+(4039,3650) city 5 #cE5B36C The Black Hand
+(1300,7000) city 5 #cE5B36C The Black Hand
+(4304,6475) city 2 #cE5B36C The Black Hand
+(4839,6618) city 3 #cE5B36C The Black Hand
+(5058,4657) city 7 #cE5B36C The Black Hand
+(5292,4650) city 5 #cE5B36C The Black Hand
+(5332,4387) city 3 #cE5B36C The Black Hand
+(4956,4498) city 3 #cE5B36C The Black Hand
+(4912,4786) city 2 #cE5B36C The Black Hand
+(5534,6754) city 2 #cE5B36C The Black Hand
+(6109,5671) city 5 #cE5B36C The Black Hand
+(5998,5839) city 5 #cE5B36C The Black Hand
+(6072,5909) city 5 #cE5B36C The Black Hand
+(6414,5334) city 2 #cE5B36C The Black Hand
+(1854,4444) city 2 #cE5B36C The Black Hand
+(6624,6434) city 2 #cE5B36C The Black Hand
+(7138,6417) city 7 #cE5B36C The Black Hand
+(7372,6410) city 5 #cE5B36C The Black Hand
+(7412,6147) city 3 #cE5B36C The Black Hand
+(2034,5124) city 2 #cE5B36C The Black Hand
+(7910,6860) city 5 #cE5B36C The Black Hand
+(7885,6738) city 5 #cE5B36C The Black Hand
+(7774,6993) city 5 #cE5B36C The Black Hand
+(2099,4518) city 3 #cE5B36C The Black Hand
+(2324,3694) city 2 #cE5B36C The Black Hand
+(2384,4574) city 2 #cE5B36C The Black Hand
+(3264,2294) city 2 #c49E7C0 TerraGroup
+(3434,2504) city 2 #c49E7C0 TerraGroup
+(3734,1874) city 2 #c49E7C0 TerraGroup
+(3624,2634) city 2 #c49E7C0 TerraGroup
+(3684,2294) city 2 #c49E7C0 TerraGroup
+(3886,0542) city 5 #c49E7C0 TerraGroup
+(3910,0400) city 5 #c49E7C0 TerraGroup
+(3839,1878) city 3 #c49E7C0 TerraGroup
+(4024,2554) city 2 #c49E7C0 TerraGroup
+(4194,2114) city 2 #c49E7C0 TerraGroup
+(4153,3413) city 7 #c49E7C0 TerraGroup
+(4144,1774) city 2 #c49E7C0 TerraGroup
+(4404,2494) city 2 #c49E7C0 TerraGroup
+(4554,1894) city 2 #c49E7C0 TerraGroup
+(4704,2514) city 2 #c49E7C0 TerraGroup
+(4874,2134) city 2 #c49E7C0 TerraGroup
+(4974,1804) city 2 #c49E7C0 TerraGroup
+(5334,1894) city 2 #c49E7C0 TerraGroup
+(6254,2594) city 2 #c49E7C0 TerraGroup
+(6190,2969) city 3 #c49E7C0 TerraGroup
+(6574,4604) city 2 #c49E7C0 TerraGroup
+(6614,3604) city 2 #c49E7C0 TerraGroup
+(6584,2694) city 2 #c49E7C0 TerraGroup
+(6839,4618) city 3 #c49E7C0 TerraGroup
+(7272,1790) city 5 #c49E7C0 TerraGroup
+(7091,1807) city 5 #c49E7C0 TerraGroup
+(7287,1648) city 3 #c49E7C0 TerraGroup
+(7299,1540) city 2 #c49E7C0 TerraGroup
+(8330,2318) city 5 #c49E7C0 TerraGroup
+(8329,2531) city 5 #c49E7C0 TerraGroup
+(8515,4879) city 5 #c49E7C0 TerraGroup
+(8600,4918) city 5 #c49E7C0 TerraGroup
+(2707,1054) city 5 #c49E7C0 TerraGroup
+(0223,4917) city 9 #c4A99FB Iceni
+(2524,5374) city 2 #c4A99FB Iceni
+(2584,6474) city 2 #c4A99FB Iceni
+(2790,5988) city 3 #c4A99FB Iceni
+(3034,6334) city 2 #c4A99FB Iceni
+(3466,4002) city 5 #c4A99FB Iceni
+(3244,6995) city 2 #c4A99FB Iceni
+(3594,6564) city 2 #c4A99FB Iceni
+(3774,6724) city 2 #c4A99FB Iceni
+(3961,6109) city 7 #c4A99FB Iceni
+(4087,6148) city 3 #c4A99FB Iceni
+(0485,4675) city 5 #c4A99FB Iceni
+(1487,7034) city 5 #c4A99FB Iceni
+(4333,7893) city 7 #c4A99FB Iceni
+(1494,6773) city 5 #c4A99FB Iceni
+(4391,8087) city 5 #c4A99FB Iceni
+(4606,7957) city 3 #c4A99FB Iceni
+(4219,8130) city 5 #c4A99FB Iceni
+(4364,7094) city 2 #c4A99FB Iceni
+(4359,5318) city 3 #c4A99FB Iceni
+(4714,6664) city 2 #c4A99FB Iceni
+(5730,8280) city 5 #c4A99FB Iceni
+(5705,8158) city 5 #c4A99FB Iceni
+(5594,8413) city 5 #c4A99FB Iceni
+(5834,6074) city 2 #c4A99FB Iceni
+(5870,5660) city 5 #c4A99FB Iceni
+(7036,6258) city 3 #c4A99FB Iceni
+(6982,6556) city 2 #c4A99FB Iceni
+(2054,5494) city 2 #c4A99FB Iceni
+(2354,5994) city 2 #c4A99FB Iceni
+(2504,6074) city 2 #c4A99FB Iceni
+(2934,1944) city 2 #cFD7844 Phoenix Ashes
+(1029,3071) city 5 #cFD7844 Phoenix Ashes
+(0790,3060) city 5 #cFD7844 Phoenix Ashes
+(0918,3239) city 5 #cFD7844 Phoenix Ashes
+(0992,3309) city 5 #cFD7844 Phoenix Ashes
+(3696,0534) city 5 #cFD7844 Phoenix Ashes
+(4072,6290) city 5 #cFD7844 Phoenix Ashes
+(4059,4851) city 5 #cFD7844 Phoenix Ashes
+(4392,3630) city 5 #cFD7844 Phoenix Ashes
+(4572,8110) city 5 #cFD7844 Phoenix Ashes
+(6174,2264) city 2 #cFD7844 Phoenix Ashes
+(1774,4124) city 2 #cFD7844 Phoenix Ashes
+(6254,3604) city 2 #cFD7844 Phoenix Ashes
+(6614,3934) city 2 #cFD7844 Phoenix Ashes
+(6444,4395) city 2 #cFD7844 Phoenix Ashes
+(7014,4284) city 2 #cFD7844 Phoenix Ashes
+(6884,4034) city 2 #cFD7844 Phoenix Ashes
+(7161,1609) city 7 #cFD7844 Phoenix Ashes
+(8052,2518) city 5 #cFD7844 Phoenix Ashes
+(8195,2359) city 5 #cFD7844 Phoenix Ashes
+(8499,4991) city 5 #cFD7844 Phoenix Ashes
+(8612,5088) city 5 #cFD7844 Phoenix Ashes
+(2254,3284) city 2 #cFD7844 Phoenix Ashes
+(2294,2924) city 2 #cFD7844 Phoenix Ashes
+(2714,0793) city 5 #cFD7844 Phoenix Ashes
+(2520,1020) city 5 #cFD7844 Phoenix Ashes
+
+$planet
+(7212,6334) large
+(7009,6276)(7212,6334) small
+(7275,6390)(7212,6334) small
+(7391,6162)(7212,6334) small
+(522,4700)(359,4812) small
+(374,4903)(359,4812) small
+(161,4700)(359,4812) small
+(359,4812) large
+(4578,7975)(4412,8034) small
+(4412,8034) large
+(4372,8096)(4412,8034) small
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5132,4574) large
+(4929,4516)(5132,4574) small
+(5195,4630)(5132,4574) small
+(5311,4402)(5132,4574) small
+(4232,3554) large
+(4192,3616)(4232,3554) small
+(4398,3495)(4232,3554) small

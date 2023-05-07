@@ -1,0 +1,130 @@
+$name 30027 V436 Hydra
+$serverName V436 Hydra
+$size 9000
+
+$overlay
+落櫻閣 (33.6%)
+星間帝国 (21.8%)
+Guardian Titans (18.4%)
+The First Dawn (13.4%)
+NEO KYOTO (5.0%)
+Hammerstein (2.5%)
+Evil GhOsT (2.5%)
+Ignis Wraith (2.5%)
+
+$station
+(1786,3971) city 5 #cE5B36C 落櫻閣
+(4312,0580) city 7 #cE5B36C 落櫻閣
+(1449,4031) city 3 #cE5B36C 落櫻閣
+(5498,3520) city 9 #cE5B36C 落櫻閣
+(5393,3743) city 5 #cE5B36C 落櫻閣
+(1162,4007) city 7 #cE5B36C 落櫻閣
+(7383,1172) city 5 #cE5B36C 落櫻閣
+(7589,1154) city 5 #cE5B36C 落櫻閣
+(7514,3187) city 2 #cE5B36C 落櫻閣
+(7633,3393) city 2 #cE5B36C 落櫻閣
+(7809,3067) city 3 #cE5B36C 落櫻閣
+(7963,3214) city 2 #cE5B36C 落櫻閣
+(8148,2211) city 3 #cE5B36C 落櫻閣
+(1333,3113) city 2 #cE5B36C 落櫻閣
+(1493,2833) city 2 #cE5B36C 落櫻閣
+(1663,2613) city 2 #cE5B36C 落櫻閣
+(2533,7013) city 2 #c49E7C0 The First Dawn
+(3054,7887) city 2 #c49E7C0 The First Dawn
+(3649,5192) city 5 #c49E7C0 The First Dawn
+(3886,5059) city 3 #c49E7C0 The First Dawn
+(3857,5215) city 5 #c49E7C0 The First Dawn
+(3607,4996) city 7 #c49E7C0 The First Dawn
+(4302,7648) city 5 #c49E7C0 The First Dawn
+(5332,7835) city 3 #c49E7C0 The First Dawn
+(1623,7074) city 2 #c49E7C0 The First Dawn
+(2046,5816) city 3 #c49E7C0 The First Dawn
+(2526,0930) city 5 #cF284FF Evil GhOsT
+(4482,0885) city 5 #cF284FF Evil GhOsT
+(1094,4444) city 2 #cF284FF Evil GhOsT
+(1059,1866) city 3 #cF284FF Evil GhOsT
+(1229,4163) city 5 #cF284FF Evil GhOsT
+(5726,2531) city 5 #cF284FF Evil GhOsT
+(1134,4867) city 2 #cF284FF Evil GhOsT
+(1196,4292) city 5 #c9FE23E Ignis Wraith
+(1264,2774) city 2 #c9FE23E Ignis Wraith
+(3780,2764) city 5 #cE63A3A NEO KYOTO
+(3938,3851) city 5 #cE63A3A NEO KYOTO
+(4615,6819) city 2 #cE63A3A NEO KYOTO
+(4800,8635) city 3 #cE63A3A NEO KYOTO
+(5125,7872) city 3 #cE63A3A NEO KYOTO
+(5132,8075) city 3 #cE63A3A NEO KYOTO
+(6167,6928) city 5 #cE63A3A NEO KYOTO
+(1965,3592) city 3 #c4A99FB 星間帝国
+(2333,3595) city 5 #c4A99FB 星間帝国
+(2405,3417) city 5 #c4A99FB 星間帝国
+(2620,2546) city 2 #c4A99FB 星間帝国
+(2862,3512) city 2 #c4A99FB 星間帝国
+(3872,2813) city 3 #c4A99FB 星間帝国
+(3919,2700) city 2 #c4A99FB 星間帝国
+(3782,6072) city 2 #c4A99FB 星間帝国
+(3833,3742) city 3 #c4A99FB 星間帝国
+(4240,2546) city 2 #c4A99FB 星間帝国
+(4689,5298) city 5 #c4A99FB 星間帝国
+(5199,4926) city 3 #c4A99FB 星間帝国
+(5409,6369) city 3 #c4A99FB 星間帝国
+(5602,6552) city 7 #c4A99FB 星間帝国
+(5621,6337) city 5 #c4A99FB 星間帝国
+(5502,6545) city 5 #c4A99FB 星間帝国
+(5914,4815) city 5 #c4A99FB 星間帝国
+(5712,4745) city 5 #c4A99FB 星間帝国
+(5837,4918) city 5 #c4A99FB 星間帝国
+(5921,4988) city 5 #c4A99FB 星間帝国
+(5763,1353) city 2 #c4A99FB 星間帝国
+(6023,6093) city 2 #c4A99FB 星間帝国
+(6243,5894) city 2 #c4A99FB 星間帝国
+(6775,4159) city 2 #c4A99FB 星間帝国
+(6814,4404) city 2 #c4A99FB 星間帝国
+(7034,5804) city 2 #c4A99FB 星間帝国
+(7253,5453) city 2 #c4A99FB 星間帝国
+(7228,7483) city 5 #c4A99FB 星間帝国
+(7297,7271) city 7 #c4A99FB 星間帝国
+(7559,7331) city 5 #c4A99FB 星間帝国
+(7574,2367) city 2 #c4A99FB 星間帝国
+(7854,2624) city 2 #c4A99FB 星間帝国
+(2733,6473) city 2 #cFD7844 Guardian Titans
+(3700,7555) city 3 #cFD7844 Guardian Titans
+(4924,5319) city 5 #cFD7844 Guardian Titans
+(5190,5440) city 5 #cFD7844 Guardian Titans
+(5707,6395) city 5 #cFD7844 Guardian Titans
+(5763,3646) city 5 #cFD7844 Guardian Titans
+(0724,4674) city 2 #cFD7844 Guardian Titans
+(1672,5947) city 7 #cFD7844 Guardian Titans
+(2057,6034) city 5 #cFD7844 Guardian Titans
+(3193,0893) city 2 #c7E67F2 Hammerstein
+(3343,0974) city 2 #c7E67F2 Hammerstein
+(3815,0739) city 2 #c7E67F2 Hammerstein
+(4059,1706) city 2 #c7E67F2 Hammerstein
+(4049,0616) city 5 #c7E67F2 Hammerstein
+(4303,0883) city 3 #c7E67F2 Hammerstein
+(4369,0470) city 2 #c7E67F2 Hammerstein
+(4663,1053) city 2 #c7E67F2 Hammerstein
+(7506,1321) city 5 #c7E67F2 Hammerstein
+
+$planet
+(1204,4176)(1263,4110) small
+(1418,4055)(1263,4110) small
+(1192,4316)(1263,4110) small
+(1263,4110) large
+(5457,6554) large
+(5550,6462)(5457,6554) small
+(7352,7456) large
+(7392,7394)(7352,7456) small
+(2071,5782)(1890,5950) small
+(1955,6010)(1890,5950) small
+(1890,5950) large
+(1688,5896)(1890,5950) small
+(4181,622) large
+(4082,634)(4181,622) small
+(5703,3621) large
+(5601,3641)(5703,3621) small
+(3859,5077) large
+(3692,5134)(3859,5077) small
+(4499,4497) medium
+(3649,2960) large
+(3729,2883)(3649,2960) small

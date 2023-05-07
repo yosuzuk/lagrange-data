@@ -1,0 +1,125 @@
+$name 30017 Vulpecula T
+$serverName Vulpecula T
+$size 9000
+
+$overlay
+Empire OF Man (26.6%)
+战争帝国 (23.8%)
+Redwood (23.8%)
+宇宙吸貓萌 (11.9%)
+FlamingChickens (5.5%)
+神聖不列顛 (2.7%)
+Pos幻影風暴 (2.7%)
+影月蒼狼 (2.7%)
+
+$station
+(2426,2410) city 5 #c4A99FB 战争帝国
+(3208,6869) city 2 #c4A99FB 战争帝国
+(2888,7015) city 5 #c4A99FB 战争帝国
+(3419,2986) city 3 #c4A99FB 战争帝国
+(4815,3602) city 5 #c4A99FB 战争帝国
+(4962,3388) city 5 #c4A99FB 战争帝国
+(5125,5738) city 3 #c4A99FB 战争帝国
+(4839,1086) city 3 #c4A99FB 战争帝国
+(5088,4954) city 3 #c4A99FB 战争帝国
+(5096,2845) city 9 #c4A99FB 战争帝国
+(4992,3065) city 3 #c4A99FB 战争帝国
+(5148,3998) city 5 #c4A99FB 战争帝国
+(5384,4022) city 5 #c4A99FB 战争帝国
+(5453,2334) city 3 #c4A99FB 战争帝国
+(5726,4050) city 5 #c4A99FB 战争帝国
+(2313,3975) city 3 #c4A99FB 战争帝国
+(2345,3752) city 3 #c4A99FB 战争帝国
+(0319,5066) city 3 #cE5B36C Empire OF Man
+(3213,1371) city 5 #cE5B36C Empire OF Man
+(3195,1168) city 5 #cE5B36C Empire OF Man
+(3018,1281) city 5 #cE5B36C Empire OF Man
+(3244,6374) city 2 #cE5B36C Empire OF Man
+(3254,5884) city 2 #cE5B36C Empire OF Man
+(0233,6170) city 5 #cE5B36C Empire OF Man
+(0191,5895) city 7 #cE5B36C Empire OF Man
+(3651,5047) city 7 #cE5B36C Empire OF Man
+(0954,3484) city 2 #cE5B36C Empire OF Man
+(1195,3279) city 2 #cE5B36C Empire OF Man
+(1209,3548) city 3 #cE5B36C Empire OF Man
+(1749,5596) city 2 #cE5B36C Empire OF Man
+(2523,5893) city 2 #cE63A3A FlamingChickens
+(0488,5911) city 3 #cE63A3A FlamingChickens
+(0238,6046) city 5 #cE63A3A FlamingChickens
+(4026,4914) city 3 #cE63A3A FlamingChickens
+(4064,5218) city 5 #cE63A3A FlamingChickens
+(3969,5896) city 2 #cE63A3A FlamingChickens
+(4739,5910) city 5 #cE63A3A FlamingChickens
+(5003,5138) city 5 #cE63A3A FlamingChickens
+(6578,4536) city 3 #c9FE23E 影月蒼狼
+(7113,2433) city 2 #c9FE23E 影月蒼狼
+(7139,3347) city 2 #c9FE23E 影月蒼狼
+(8489,3479) city 5 #c9FE23E 影月蒼狼
+(8518,3688) city 5 #c9FE23E 影月蒼狼
+(3298,7283) city 5 #c49E7C0 宇宙吸貓萌
+(4473,2275) city 5 #c49E7C0 宇宙吸貓萌
+(4834,5684) city 7 #c49E7C0 宇宙吸貓萌
+(6373,4633) city 2 #c49E7C0 宇宙吸貓萌
+(6448,1407) city 3 #c49E7C0 宇宙吸貓萌
+(6663,1874) city 2 #c49E7C0 宇宙吸貓萌
+(7133,2113) city 2 #c49E7C0 宇宙吸貓萌
+(7294,1807) city 2 #c49E7C0 宇宙吸貓萌
+(8526,2231) city 5 #c49E7C0 宇宙吸貓萌
+(2553,5413) city 2 #c7E67F2 神聖不列顛
+(2633,3915) city 3 #c7E67F2 神聖不列顛
+(2813,5273) city 2 #c7E67F2 神聖不列顛
+(3142,7282) city 3 #c7E67F2 神聖不列顛
+(4739,7026) city 2 #c7E67F2 神聖不列顛
+(5834,6835) city 5 #c7E67F2 神聖不列顛
+(5757,6938) city 5 #c7E67F2 神聖不列顛
+(5841,7008) city 5 #c7E67F2 神聖不列顛
+(6083,1773) city 2 #c7E67F2 神聖不列顛
+(6135,1359) city 2 #c7E67F2 神聖不列顛
+(6848,5971) city 3 #c7E67F2 神聖不列顛
+(7559,4707) city 3 #c7E67F2 神聖不列顛
+(7674,2404) city 2 #c7E67F2 神聖不列顛
+(8739,3420) city 2 #c7E67F2 神聖不列顛
+(2653,4115) city 5 #cF284FF Pos幻影風暴
+(3801,5162) city 2 #cF284FF Pos幻影風暴
+(5106,5905) city 5 #cF284FF Pos幻影風暴
+(5632,6765) city 5 #cF284FF Pos幻影風暴
+(6654,5267) city 2 #cF284FF Pos幻影風暴
+(6933,4793) city 2 #cF284FF Pos幻影風暴
+(2903,2249) city 7 #cFD7844 Redwood
+(3116,2308) city 5 #cFD7844 Redwood
+(3146,6994) city 7 #cFD7844 Redwood
+(4053,2335) city 3 #cFD7844 Redwood
+(4888,5871) city 5 #cFD7844 Redwood
+(4883,4971) city 3 #cFD7844 Redwood
+(5381,2911) city 5 #cFD7844 Redwood
+(5350,4248) city 5 #cFD7844 Redwood
+(5277,4179) city 5 #cFD7844 Redwood
+(6033,5554) city 3 #cFD7844 Redwood
+
+$planet
+(2922,7033)(3016,7032) small
+(3016,7032) large
+(3140,7047)(3016,7032) small
+(3042,7080)(3016,7032) small
+(5233,2714)(5303,2941) small
+(5241,2973)(5303,2941) small
+(5303,2941) large
+(5195,2969)(5303,2941) small
+(2952,2436)(2992,2374) small
+(2992,2374) large
+(3135,2359)(2992,2374) small
+(458,5935)(292,5991) small
+(232,6196)(292,5991) small
+(292,5991) large
+(8469,3680)(8552,3596) small
+(8619,3457)(8552,3596) small
+(8552,3596) large
+(5099,5757) large
+(4937,5819)(5099,5757) small
+(3935,5110)(3870,5050) small
+(4051,4882)(3870,5050) small
+(3668,4996)(3870,5050) small
+(3870,5050) large
+(5032,3090) medium
+(4499,4497) medium
+(4080,5238) medium

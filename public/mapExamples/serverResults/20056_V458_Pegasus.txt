@@ -1,0 +1,112 @@
+$name 20056 V458 Pegasus
+$serverName V458 Pegasus
+$size 9000
+
+$overlay
+Aēgís (16.3%)
+CitadelSecurity (12.2%)
+STARBUCKS (10.6%)
+공격주의 (10.6%)
+Voyager (10.6%)
+The First Dawn (10.6%)
+Hammerstein (10.6%)
+Celestial Order (8.1%)
+Arcturus (4.9%)
+독도가는길 (2.4%)
+Guardian Titans (2.4%)
+
+$station
+(3992,4928) city 5 #cFD7844 STARBUCKS
+(4534,6354) city 2 #cFD7844 STARBUCKS
+(4474,8613) city 5 #cFD7844 STARBUCKS
+(4614,6664) city 2 #cFD7844 STARBUCKS
+(5214,6534) city 2 #cFD7844 STARBUCKS
+(5884,6555) city 2 #cFD7844 STARBUCKS
+(6584,5334) city 2 #cFD7844 STARBUCKS
+(6794,6004) city 2 #cFD7844 STARBUCKS
+(6730,4989) city 3 #cFD7844 STARBUCKS
+(7178,6417) city 7 #cFD7844 STARBUCKS
+(7412,6410) city 5 #cFD7844 STARBUCKS
+(7452,6147) city 3 #cFD7844 STARBUCKS
+(7756,6674) city 5 #cFD7844 STARBUCKS
+(2427,1374) city 5 #cFD7844 STARBUCKS
+(2614,6404) city 2 #cE5B36C Aēgís
+(3574,6254) city 2 #cE5B36C Aēgís
+(4379,5358) city 3 #cE5B36C Aēgís
+(4864,1874) city 2 #cE5B36C Aēgís
+(5519,2078) city 3 #cE5B36C Aēgís
+(8041,1896) city 9 #cE5B36C Aēgís
+(8554,3353) city 5 #cE5B36C Aēgís
+(2434,1113) city 5 #cE5B36C Aēgís
+(3879,4831) city 5 #c929292 독도가는길
+(5059,6278) city 3 #c929292 독도가는길
+(5270,4668) city 3 #c929292 독도가는길
+(6644,6454) city 2 #c929292 독도가는길
+(7076,6258) city 3 #c929292 독도가는길
+(7031,6545) city 2 #c929292 독도가는길
+(5354,2034) city 2 #cF1F1F1 Arcturus
+(5994,2134) city 2 #cF1F1F1 Arcturus
+(6614,2624) city 2 #cF1F1F1 Arcturus
+(7334,4544) city 2 #cF1F1F1 Arcturus
+(8296,1951) city 5 #cF1F1F1 Arcturus
+(7913,2106) city 3 #cF1F1F1 Arcturus
+(8360,3580) city 5 #cF1F1F1 Arcturus
+(1460,6692) city 5 #cE63A3A Voyager
+(1203,6702) city 7 #cE63A3A Voyager
+(1492,6427) city 3 #cE63A3A Voyager
+(1071,6825) city 2 #cE63A3A Voyager
+(3980,4758) city 5 #cE63A3A Voyager
+(1774,7653) city 5 #cE63A3A Voyager
+(2654,6094) city 2 #c49E7C0 공격주의
+(2851,5347) city 5 #c49E7C0 공격주의
+(2930,2309) city 3 #c49E7C0 공격주의
+(3593,8393) city 7 #c49E7C0 공격주의
+(3832,8610) city 5 #c49E7C0 공격주의
+(3652,8582) city 5 #c49E7C0 공격주의
+(3866,8457) city 3 #c49E7C0 공격주의
+(3479,8630) city 5 #c49E7C0 공격주의
+(1191,3147) city 5 #c49E7C0 공격주의
+(1372,3132) city 5 #cF284FF Hammerstein
+(1257,2946) city 7 #cF284FF Hammerstein
+(1387,2988) city 3 #cF284FF Hammerstein
+(2490,5229) city 3 #c4A99FB CitadelSecurity
+(4312,4110) city 5 #c4A99FB CitadelSecurity
+(4610,8480) city 5 #c4A99FB CitadelSecurity
+(1910,7520) city 5 #c4A99FB CitadelSecurity
+(7970,6540) city 5 #c4A99FB CitadelSecurity
+(2240,1340) city 5 #c4A99FB CitadelSecurity
+(2324,4934) city 2 #c4A99FB CitadelSecurity
+(2704,3634) city 2 #c7E67F2 The First Dawn
+(3470,3840) city 5 #c7E67F2 The First Dawn
+(4073,3893) city 7 #c7E67F2 The First Dawn
+(3959,4130) city 5 #c7E67F2 The First Dawn
+(3032,5330) city 5 #c929292 Guardian Titans
+(1399,2880) city 2 #c929292 Guardian Titans
+(2921,5149) city 7 #c9FE23E Celestial Order
+
+$planet
+(1292,6614) large
+(1355,6670)(1292,6614) small
+(1089,6556)(1292,6614) small
+(1471,6442)(1292,6614) small
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(1172,3156)(1212,3054) small
+(1358,3005)(1212,3054) small
+(1212,3054) large
+(3018,5205)(2872,5254) small
+(2872,5254) large
+(2832,5356)(2872,5254) small
+(3632,8596)(3672,8534) small
+(3672,8534) large
+(3838,8475)(3672,8534) small
+(4318,3975)(4152,4034) small
+(4152,4034) large
+(4112,4096)(4152,4034) small
+(4499,4497) medium

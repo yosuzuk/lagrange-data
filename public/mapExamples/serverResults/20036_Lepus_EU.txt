@@ -1,0 +1,123 @@
+$name 20036 Lepus EU
+$serverName Lepus EU
+$size 9000
+
+$overlay
+猫の夜会 (16.3%)
+Oak Lorem (12.2%)
+黄泉国送隊 (10.6%)
+日本自衛隊 (10.6%)
+Brotherhооd (10.6%)
+WinterFall (10.6%)
+銀河皇国 (10.6%)
+艦隊同盟 (10.6%)
+橘連合 (7.3%)
+
+$station
+(4773,3833) city 7 #cFD7844 黄泉国送隊
+(5012,4050) city 5 #cFD7844 黄泉国送隊
+(4831,4027) city 5 #cFD7844 黄泉国送隊
+(5046,3897) city 3 #cFD7844 黄泉国送隊
+(4659,4070) city 5 #cFD7844 黄泉国送隊
+(5494,2644) city 2 #cFD7844 黄泉国送隊
+(5794,1994) city 2 #cFD7844 黄泉国送隊
+(6304,2674) city 2 #cFD7844 黄泉国送隊
+(6454,5644) city 2 #cFD7844 黄泉国送隊
+(5754,6094) city 2 #c49E7C0 日本自衛隊
+(6654,6024) city 2 #c49E7C0 日本自衛隊
+(6890,4669) city 3 #c49E7C0 日本自衛隊
+(7893,6153) city 7 #c49E7C0 日本自衛隊
+(8132,6370) city 5 #c49E7C0 日本自衛隊
+(7951,6347) city 5 #c49E7C0 日本自衛隊
+(8166,6217) city 3 #c49E7C0 日本自衛隊
+(7779,6390) city 5 #c49E7C0 日本自衛隊
+(4839,6598) city 3 #c9FE23E 艦隊同盟
+(5260,5352) city 5 #c9FE23E 艦隊同盟
+(5003,5362) city 7 #c9FE23E 艦隊同盟
+(1661,2789) city 7 #c7E67F2 WinterFall
+(1772,2970) city 5 #c7E67F2 WinterFall
+(1787,2828) city 3 #c7E67F2 WinterFall
+(1799,2720) city 2 #c7E67F2 WinterFall
+(2863,4062) city 7 #cF284FF 銀河皇国
+(4024,1735) city 2 #cF284FF 銀河皇国
+(4666,0136) city 5 #cF284FF 銀河皇国
+(1940,1720) city 5 #cF284FF 銀河皇国
+(2704,5735) city 2 #cF1F1F1 橘連合
+(2844,6715) city 2 #cF1F1F1 橘連合
+(3134,6224) city 2 #cF1F1F1 橘連合
+(3044,6034) city 2 #cF1F1F1 橘連合
+(3391,8007) city 5 #cF1F1F1 橘連合
+(3324,6994) city 2 #cF1F1F1 橘連合
+(3594,6574) city 2 #cF1F1F1 橘連合
+(4006,6082) city 5 #cF1F1F1 橘連合
+(4030,5940) city 5 #cF1F1F1 橘連合
+(4092,4949) city 5 #cF1F1F1 橘連合
+(4018,4879) city 5 #cF1F1F1 橘連合
+(3890,4700) city 5 #cF1F1F1 橘連合
+(4129,4711) city 5 #cF1F1F1 橘連合
+(4044,6714) city 2 #cF1F1F1 橘連合
+(4154,2154) city 2 #cF1F1F1 橘連合
+(4059,5318) city 3 #cF1F1F1 橘連合
+(4454,2404) city 2 #cF1F1F1 橘連合
+(1030,6480) city 5 #cF1F1F1 橘連合
+(4814,2124) city 2 #cF1F1F1 橘連合
+(1005,6358) city 5 #cF1F1F1 橘連合
+(1964,5614) city 2 #cF1F1F1 橘連合
+(2274,5984) city 2 #cF1F1F1 橘連合
+(2214,5144) city 2 #cF1F1F1 橘連合
+(3572,7992) city 5 #cE63A3A Brotherhооd
+(3457,7806) city 7 #cE63A3A Brotherhооd
+(5292,5087) city 3 #cE63A3A Brotherhооd
+(4916,5198) city 3 #cE63A3A Brotherhооd
+(4871,5485) city 2 #cE63A3A Brotherhооd
+(5914,8333) city 5 #cE63A3A Brotherhооd
+(3152,3787) city 3 #cE5B36C 猫の夜会
+(2776,3898) city 3 #cE5B36C 猫の夜会
+(2731,4185) city 2 #cE5B36C 猫の夜会
+(3314,2524) city 2 #cE5B36C 猫の夜会
+(1591,2987) city 5 #cE5B36C 猫の夜会
+(4409,0359) city 9 #cE5B36C 猫の夜会
+(1724,4214) city 2 #cE5B36C 猫の夜会
+(1974,4424) city 2 #cE5B36C 猫の夜会
+(2150,4589) city 3 #cE5B36C 猫の夜会
+(2384,4214) city 2 #cE5B36C 猫の夜会
+(2574,5184) city 2 #cE5B36C 猫の夜会
+(3120,4052) city 5 #c4A99FB Oak Lorem
+(2974,2304) city 2 #c4A99FB Oak Lorem
+(4386,0091) city 5 #c4A99FB Oak Lorem
+(5234,6534) city 2 #c4A99FB Oak Lorem
+(5874,2834) city 2 #c4A99FB Oak Lorem
+(6050,8200) city 5 #c4A99FB Oak Lorem
+(6025,8078) city 5 #c4A99FB Oak Lorem
+(6214,2274) city 2 #c4A99FB Oak Lorem
+(6150,2868) city 3 #c4A99FB Oak Lorem
+(7510,7140) city 5 #c4A99FB Oak Lorem
+(7485,7018) city 5 #c4A99FB Oak Lorem
+(7820,2460) city 5 #c4A99FB Oak Lorem
+
+$planet
+(5092,5274) large
+(4889,5216)(5092,5274) small
+(5155,5330)(5092,5274) small
+(5271,5102)(5092,5274) small
+(1758,2845)(1612,2894) small
+(1612,2894) large
+(1572,2996)(1612,2894) small
+(2952,3974) large
+(3015,4030)(2952,3974) small
+(3131,3802)(2952,3974) small
+(2749,3916)(2952,3974) small
+(4341,160)(4539,272) small
+(4539,272) large
+(4554,363)(4539,272) small
+(4702,160)(4539,272) small
+(8138,6235)(7972,6294) small
+(7932,6356)(7972,6294) small
+(7972,6294) large
+(3372,8016)(3412,7914) small
+(3412,7914) large
+(3558,7865)(3412,7914) small
+(4499,4497) medium
+(4852,3974) large
+(5018,3915)(4852,3974) small
+(4812,4036)(4852,3974) small

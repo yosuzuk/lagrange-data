@@ -1,0 +1,131 @@
+$name 20041 Lacerta RT
+$serverName Lacerta RT
+$size 9000
+
+$overlay
+Phoenix (16.3%)
+AlphaCollective (13.1%)
+SonOfaBiscuit (13.1%)
+SolarChildren (13.1%)
+鬼島倖存者 (12.2%)
+ARMS (10.6%)
+Rebellian (10.6%)
+Hells Requiem (10.6%)
+
+$station
+(5326,4497) city 3 #c9FE23E Hells Requiem
+(7033,6093) city 7 #c9FE23E Hells Requiem
+(7272,6310) city 5 #c9FE23E Hells Requiem
+(7091,6287) city 5 #c9FE23E Hells Requiem
+(7306,6157) city 3 #c9FE23E Hells Requiem
+(6919,6330) city 5 #c9FE23E Hells Requiem
+(7774,6993) city 5 #c9FE23E Hells Requiem
+(4400,3632) city 5 #cF284FF Rebellian
+(4143,3642) city 7 #cF284FF Rebellian
+(4432,3367) city 3 #cF284FF Rebellian
+(5214,2384) city 2 #cF284FF Rebellian
+(6150,2908) city 3 #cF284FF Rebellian
+(6614,3604) city 2 #cF284FF Rebellian
+(6890,4669) city 3 #cF284FF Rebellian
+(7334,4524) city 2 #cF284FF Rebellian
+(2994,2464) city 2 #c7E67F2 ARMS
+(3624,2315) city 2 #c7E67F2 ARMS
+(3961,6109) city 7 #c7E67F2 ARMS
+(4072,6290) city 5 #c7E67F2 ARMS
+(4087,6148) city 3 #c7E67F2 ARMS
+(4099,6040) city 2 #c7E67F2 ARMS
+(4098,4879) city 5 #c7E67F2 ARMS
+(3970,4700) city 5 #c7E67F2 ARMS
+(4004,2534) city 2 #c7E67F2 ARMS
+(4534,6354) city 2 #c7E67F2 ARMS
+(4370,5328) city 3 #c7E67F2 ARMS
+(4890,6689) city 3 #c7E67F2 ARMS
+(5785,8158) city 5 #c7E67F2 ARMS
+(5884,6555) city 2 #c7E67F2 ARMS
+(3324,6994) city 2 #cFD7844 SonOfaBiscuit
+(3774,6724) city 2 #cFD7844 SonOfaBiscuit
+(3891,6307) city 5 #cFD7844 SonOfaBiscuit
+(4172,4949) city 5 #cFD7844 SonOfaBiscuit
+(4024,6734) city 2 #cFD7844 SonOfaBiscuit
+(4620,8012) city 5 #cFD7844 SonOfaBiscuit
+(4363,8022) city 7 #cFD7844 SonOfaBiscuit
+(4276,7858) city 3 #cFD7844 SonOfaBiscuit
+(4231,8145) city 2 #cFD7844 SonOfaBiscuit
+(5494,6744) city 2 #cFD7844 SonOfaBiscuit
+(5810,8280) city 5 #cFD7844 SonOfaBiscuit
+(3934,0373) city 5 #c4A99FB AlphaCollective
+(3740,0600) city 5 #c4A99FB AlphaCollective
+(4056,3478) city 3 #c4A99FB AlphaCollective
+(4874,2134) city 2 #c4A99FB AlphaCollective
+(5754,2114) city 2 #c4A99FB AlphaCollective
+(6214,2274) city 2 #c4A99FB AlphaCollective
+(6184,2694) city 2 #c4A99FB AlphaCollective
+(6254,3604) city 2 #c4A99FB AlphaCollective
+(7074,3544) city 2 #c4A99FB AlphaCollective
+(7272,1792) city 5 #c4A99FB AlphaCollective
+(7157,1606) city 7 #c4A99FB AlphaCollective
+(7091,1807) city 5 #c4A99FB AlphaCollective
+(7287,1648) city 3 #c4A99FB AlphaCollective
+(7299,1540) city 2 #c4A99FB AlphaCollective
+(2464,2714) city 2 #c4A99FB AlphaCollective
+(2714,0793) city 5 #c4A99FB AlphaCollective
+(4209,4711) city 5 #c49E7C0 SolarChildren
+(4011,3765) city 2 #c49E7C0 SolarChildren
+(5053,4433) city 7 #c49E7C0 SolarChildren
+(5292,4650) city 5 #c49E7C0 SolarChildren
+(5111,4627) city 5 #c49E7C0 SolarChildren
+(4939,4670) city 5 #c49E7C0 SolarChildren
+(6084,3234) city 2 #c49E7C0 SolarChildren
+(6464,4054) city 2 #c49E7C0 SolarChildren
+(2954,6644) city 2 #cE63A3A 鬼島倖存者
+(2944,6414) city 2 #cE63A3A 鬼島倖存者
+(3466,4002) city 5 #cE63A3A 鬼島倖存者
+(3276,3994) city 5 #cE63A3A 鬼島倖存者
+(3490,3860) city 5 #cE63A3A 鬼島倖存者
+(1390,6900) city 5 #cE63A3A 鬼島倖存者
+(1365,6778) city 5 #cE63A3A 鬼島倖存者
+(0516,4811) city 5 #cE63A3A 鬼島倖存者
+(4652,7747) city 3 #cE63A3A 鬼島倖存者
+(4594,6684) city 2 #cE63A3A 鬼島倖存者
+(1724,4214) city 2 #cE63A3A 鬼島倖存者
+(5674,8413) city 5 #cE63A3A 鬼島倖存者
+(1904,5614) city 2 #cE63A3A 鬼島倖存者
+(7910,6860) city 5 #cE63A3A 鬼島倖存者
+(7885,6738) city 5 #cE63A3A 鬼島倖存者
+(2234,6004) city 2 #cE63A3A 鬼島倖存者
+(2244,4934) city 2 #cE63A3A 鬼島倖存者
+(2384,4214) city 2 #cE63A3A 鬼島倖存者
+(2520,1020) city 5 #cE63A3A 鬼島倖存者
+(0239,4739) city 9 #cE5B36C Phoenix
+(2744,3594) city 2 #cE5B36C Phoenix
+(1254,7033) city 5 #cE5B36C Phoenix
+(0133,4966) city 3 #cE5B36C Phoenix
+(2099,4518) city 3 #cE5B36C Phoenix
+(2324,3694) city 2 #cE5B36C Phoenix
+
+$planet
+(4631,7762)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4452,7934) large
+(4515,7990)(4452,7934) small
+(7072,6296)(7112,6234) small
+(7278,6175)(7112,6234) small
+(7112,6234) large
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(4411,3382)(4232,3554) small
+(4029,3496)(4232,3554) small
+(4232,3554) large
+(4295,3610)(4232,3554) small
+(172,4990)(335,4869) small
+(381,4873)(335,4869) small
+(443,4841)(335,4869) small
+(335,4869) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5092,4636)(5132,4574) small
+(5298,4515)(5132,4574) small
+(5132,4574) large

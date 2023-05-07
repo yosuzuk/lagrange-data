@@ -1,0 +1,116 @@
+$name 30015 V929 Cetus
+$serverName V929 Cetus
+$size 9000
+
+$overlay
+RADiance (34.8%)
+AlphaCollective (23.8%)
+Iceni (14.6%)
+TerraGroup (11.9%)
+JP01 (11.9%)
+Phoenix Ashes (2.7%)
+
+$station
+(4064,5218) city 5 #c7E67F2 Phoenix Ashes
+(5125,5738) city 3 #c7E67F2 Phoenix Ashes
+(5632,6765) city 5 #c7E67F2 Phoenix Ashes
+(5757,6938) city 5 #c7E67F2 Phoenix Ashes
+(6654,5267) city 2 #c7E67F2 Phoenix Ashes
+(6848,5971) city 3 #c7E67F2 Phoenix Ashes
+(7185,6572) city 3 #c7E67F2 Phoenix Ashes
+(7553,6675) city 5 #c7E67F2 Phoenix Ashes
+(0488,5911) city 3 #c49E7C0 TerraGroup
+(0191,5895) city 7 #c49E7C0 TerraGroup
+(0954,3484) city 2 #c49E7C0 TerraGroup
+(1133,4553) city 2 #c49E7C0 TerraGroup
+(5148,3998) city 5 #c49E7C0 TerraGroup
+(5384,4022) city 5 #c49E7C0 TerraGroup
+(5503,8254) city 2 #c49E7C0 TerraGroup
+(5954,7824) city 2 #c49E7C0 TerraGroup
+(6827,7908) city 5 #c49E7C0 TerraGroup
+(7001,7849) city 5 #c49E7C0 TerraGroup
+(4834,5684) city 7 #cE63A3A JP01
+(4739,7026) city 2 #cE63A3A JP01
+(5223,8073) city 2 #cE63A3A JP01
+(5374,7604) city 2 #cE63A3A JP01
+(5834,6835) city 5 #cE63A3A JP01
+(5841,7008) city 5 #cE63A3A JP01
+(6055,7599) city 2 #cE63A3A JP01
+(3801,5162) city 2 #cFD7844 Iceni
+(3651,5047) city 7 #cFD7844 Iceni
+(4888,5871) city 5 #cFD7844 Iceni
+(4739,5910) city 5 #cFD7844 Iceni
+(5106,5905) city 5 #cFD7844 Iceni
+(5003,5138) city 5 #cFD7844 Iceni
+(4883,4971) city 3 #cFD7844 Iceni
+(5088,4954) city 3 #cFD7844 Iceni
+(5350,4248) city 5 #cFD7844 Iceni
+(3116,2308) city 5 #cE5B36C RADiance
+(3213,1371) city 5 #cE5B36C RADiance
+(3018,1281) city 5 #cE5B36C RADiance
+(3419,2986) city 3 #cE5B36C RADiance
+(4053,2335) city 3 #cE5B36C RADiance
+(4252,2275) city 3 #cE5B36C RADiance
+(4473,2275) city 5 #cE5B36C RADiance
+(4815,3602) city 5 #cE5B36C RADiance
+(4962,3388) city 5 #cE5B36C RADiance
+(5096,2845) city 9 #cE5B36C RADiance
+(5381,2911) city 5 #cE5B36C RADiance
+(5453,2334) city 3 #cE5B36C RADiance
+(6135,1359) city 2 #cE5B36C RADiance
+(6295,1039) city 2 #cE5B36C RADiance
+(6663,1874) city 2 #cE5B36C RADiance
+(7113,2433) city 2 #cE5B36C RADiance
+(7133,2113) city 2 #cE5B36C RADiance
+(8489,3479) city 5 #cE5B36C RADiance
+(8518,3688) city 5 #cE5B36C RADiance
+(2553,5413) city 2 #c4A99FB AlphaCollective
+(2523,5893) city 2 #c4A99FB AlphaCollective
+(2813,5273) city 2 #c4A99FB AlphaCollective
+(2903,2249) city 7 #c4A99FB AlphaCollective
+(2888,5927) city 3 #c4A99FB AlphaCollective
+(2869,8576) city 2 #c4A99FB AlphaCollective
+(2963,5693) city 2 #c4A99FB AlphaCollective
+(3142,7282) city 3 #c4A99FB AlphaCollective
+(3298,7283) city 5 #c4A99FB AlphaCollective
+(3208,6869) city 2 #c4A99FB AlphaCollective
+(3146,6994) city 7 #c4A99FB AlphaCollective
+(2888,7015) city 5 #c4A99FB AlphaCollective
+(3042,4792) city 2 #c4A99FB AlphaCollective
+(3244,6374) city 2 #c4A99FB AlphaCollective
+(3254,5884) city 2 #c4A99FB AlphaCollective
+(3343,6374) city 2 #c4A99FB AlphaCollective
+(0233,6170) city 5 #c4A99FB AlphaCollective
+(3684,7854) city 2 #c4A99FB AlphaCollective
+(3823,7653) city 2 #c4A99FB AlphaCollective
+(3969,5896) city 2 #c4A99FB AlphaCollective
+(4769,7967) city 3 #c4A99FB AlphaCollective
+(1399,7626) city 3 #c4A99FB AlphaCollective
+
+$planet
+(8552,3596) large
+(8469,3680)(8552,3596) small
+(8619,3457)(8552,3596) small
+(5233,2714)(5303,2941) small
+(5241,2973)(5303,2941) small
+(5303,2941) large
+(5195,2969)(5303,2941) small
+(2952,2436)(2992,2374) small
+(2992,2374) large
+(3135,2359)(2992,2374) small
+(3016,7032) large
+(2922,7033)(3016,7032) small
+(3140,7047)(3016,7032) small
+(3042,7080)(3016,7032) small
+(458,5935)(292,5991) small
+(232,6196)(292,5991) small
+(292,5991) large
+(5099,5757) large
+(4937,5819)(5099,5757) small
+(3935,5110)(3870,5050) small
+(4051,4882)(3870,5050) small
+(3668,4996)(3870,5050) small
+(3870,5050) large
+(5032,3090) medium
+(4499,4497) medium
+(4080,5238) medium

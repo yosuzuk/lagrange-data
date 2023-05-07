@@ -1,0 +1,134 @@
+$name 30038 Phoenix 165
+$serverName Phoenix 165
+$size 9000
+
+$overlay
+RX 784 (29.3%)
+Shadow Remnants (21.1%)
+Grand Line (11.9%)
+Hidel (9.1%)
+貓貓救援基地 (9.1%)
+Reset (5.5%)
+Shadow Reapers (5.5%)
+Terran (2.7%)
+Frozen Empire (2.7%)
+焼き飯王国 (2.7%)
+
+$station
+(3298,7283) city 5 #cFD7844 Grand Line
+(3146,6994) city 7 #cFD7844 Grand Line
+(3684,7854) city 2 #cFD7844 Grand Line
+(3823,7653) city 2 #cFD7844 Grand Line
+(4503,8473) city 2 #cFD7844 Grand Line
+(4815,3602) city 5 #cFD7844 Grand Line
+(4739,7026) city 2 #cFD7844 Grand Line
+(4769,7967) city 3 #cFD7844 Grand Line
+(5223,8073) city 2 #cFD7844 Grand Line
+(5503,8254) city 2 #cFD7844 Grand Line
+(5841,7008) city 5 #cFD7844 Grand Line
+(6459,8467) city 2 #cFD7844 Grand Line
+(7001,7849) city 5 #cFD7844 Grand Line
+(7113,2433) city 2 #cFD7844 Grand Line
+(7133,2113) city 2 #cFD7844 Grand Line
+(7185,6572) city 3 #cFD7844 Grand Line
+(7294,1807) city 2 #cFD7844 Grand Line
+(8526,2231) city 5 #cFD7844 Grand Line
+(4064,5218) city 5 #c929292 焼き飯王国
+(5148,3998) city 5 #c929292 焼き飯王国
+(5350,4248) city 5 #c929292 焼き飯王国
+(5277,4179) city 5 #c929292 焼き飯王国
+(2653,4115) city 5 #c7E67F2 Reset
+(2813,5273) city 2 #c7E67F2 Reset
+(0319,5066) city 3 #c7E67F2 Reset
+(3116,2308) city 5 #c7E67F2 Reset
+(5453,2334) city 3 #c7E67F2 Reset
+(5757,6938) city 5 #c7E67F2 Reset
+(5954,7824) city 2 #c7E67F2 Reset
+(6083,1773) city 2 #c7E67F2 Reset
+(1195,3279) city 2 #c7E67F2 Reset
+(6448,1407) city 3 #c7E67F2 Reset
+(6663,1874) city 2 #c7E67F2 Reset
+(0233,6170) city 5 #c7E67F2 Reset
+(4962,3388) city 5 #cF1F1F1 Frozen Empire
+(4992,3065) city 3 #cF1F1F1 Frozen Empire
+(5726,4050) city 5 #cF1F1F1 Frozen Empire
+(7139,3347) city 2 #cF1F1F1 Frozen Empire
+(0191,5895) city 7 #c49E7C0 Hidel
+(2633,3915) city 3 #c49E7C0 Hidel
+(2971,2427) city 3 #c49E7C0 Hidel
+(3419,2986) city 3 #c49E7C0 Hidel
+(4026,4914) city 3 #c49E7C0 Hidel
+(4194,7707) city 2 #c49E7C0 Hidel
+(1133,4553) city 2 #c49E7C0 Hidel
+(5823,0874) city 2 #c49E7C0 Hidel
+(0488,5911) city 3 #c49E7C0 Hidel
+(0238,6046) city 5 #c49E7C0 Hidel
+(1425,6517) city 5 #c49E7C0 Hidel
+(1684,3214) city 2 #c49E7C0 Hidel
+(1663,2973) city 2 #c49E7C0 Hidel
+(2313,3975) city 3 #c49E7C0 Hidel
+(3213,1371) city 5 #cE5B36C RX 784
+(3018,1281) city 5 #cE5B36C RX 784
+(5096,2845) city 9 #cE5B36C RX 784
+(5381,2911) city 5 #cE5B36C RX 784
+(5384,4022) city 5 #cE5B36C RX 784
+(2523,5893) city 2 #c4A99FB Shadow Remnants
+(2888,5927) city 3 #c4A99FB Shadow Remnants
+(2963,5693) city 2 #c4A99FB Shadow Remnants
+(3042,4792) city 2 #c4A99FB Shadow Remnants
+(3244,6374) city 2 #c4A99FB Shadow Remnants
+(3254,5884) city 2 #c4A99FB Shadow Remnants
+(3801,5162) city 2 #c4A99FB Shadow Remnants
+(3651,5047) city 7 #c4A99FB Shadow Remnants
+(4888,5871) city 5 #c4A99FB Shadow Remnants
+(4834,5684) city 7 #c4A99FB Shadow Remnants
+(5834,6835) city 5 #c4A99FB Shadow Remnants
+(5632,6765) city 5 #c4A99FB Shadow Remnants
+(1749,5596) city 2 #c4A99FB Shadow Remnants
+(2426,2410) city 5 #cE63A3A 貓貓救援基地
+(2903,2249) city 7 #cE63A3A 貓貓救援基地
+(4839,1086) city 3 #cE63A3A 貓貓救援基地
+(2869,8576) city 2 #cF284FF Shadow Reapers
+(3208,6869) city 2 #cF284FF Shadow Reapers
+(3969,5896) city 2 #cF284FF Shadow Reapers
+(4203,8373) city 2 #cF284FF Shadow Reapers
+(5106,5905) city 5 #cF284FF Shadow Reapers
+(5003,5138) city 5 #cF284FF Shadow Reapers
+(6055,7599) city 2 #cF284FF Shadow Reapers
+(1385,6672) city 3 #cF284FF Shadow Reapers
+(1399,7626) city 3 #cF284FF Shadow Reapers
+(4883,4971) city 3 #c9FE23E Terran
+(6933,4793) city 2 #c9FE23E Terran
+(7559,4707) city 3 #c9FE23E Terran
+(8489,3479) city 5 #c9FE23E Terran
+(8708,3675) city 5 #c9FE23E Terran
+(8518,3688) city 5 #c9FE23E Terran
+(8739,3420) city 2 #c9FE23E Terran
+
+$planet
+(5233,2714)(5303,2941) small
+(5241,2973)(5303,2941) small
+(5303,2941) large
+(5195,2969)(5303,2941) small
+(2952,2436)(2992,2374) small
+(2992,2374) large
+(3135,2359)(2992,2374) small
+(3016,7032) large
+(2922,7033)(3016,7032) small
+(3140,7047)(3016,7032) small
+(3042,7080)(3016,7032) small
+(458,5935)(292,5991) small
+(232,6196)(292,5991) small
+(292,5991) large
+(8469,3680)(8552,3596) small
+(8619,3457)(8552,3596) small
+(8552,3596) large
+(5099,5757) large
+(4937,5819)(5099,5757) small
+(3935,5110)(3870,5050) small
+(4051,4882)(3870,5050) small
+(3668,4996)(3870,5050) small
+(3870,5050) large
+(5032,3090) medium
+(4499,4497) medium
+(4080,5238) medium

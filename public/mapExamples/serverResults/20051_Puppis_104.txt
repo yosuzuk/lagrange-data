@@ -1,0 +1,100 @@
+$name 20051 Puppis 104
+$serverName Puppis 104
+$size 9000
+
+$overlay
+Reset (34.4%)
+RX 784 (16.3%)
+Shadow Remnants (13.1%)
+Grand Line (10.6%)
+Terran (10.6%)
+Hidel (7.3%)
+RAVENS NEST (2.4%)
+鯊鯊養殖基地 (2.4%)
+Alkaid (2.4%)
+
+$station
+(7074,3544) city 2 #cF1F1F1 Alkaid
+(7272,6310) city 5 #cF1F1F1 Alkaid
+(7272,1792) city 5 #c9FE23E 鯊鯊養殖基地
+(7299,1540) city 2 #c9FE23E 鯊鯊養殖基地
+(5053,4433) city 7 #cE63A3A Terran
+(5292,4650) city 5 #cE63A3A Terran
+(5111,4627) city 5 #cE63A3A Terran
+(5326,4497) city 3 #cE63A3A Terran
+(4939,4670) city 5 #cE63A3A Terran
+(4011,3765) city 2 #cF284FF RAVENS NEST
+(7306,6157) city 3 #cF284FF RAVENS NEST
+(7910,6860) city 5 #cF284FF RAVENS NEST
+(3774,6724) city 2 #c4A99FB RX 784
+(4087,6148) city 3 #c4A99FB RX 784
+(4099,6040) city 2 #c4A99FB RX 784
+(4024,6734) city 2 #c4A99FB RX 784
+(7157,1606) city 7 #c4A99FB RX 784
+(7033,6093) city 7 #c4A99FB RX 784
+(2744,3594) city 2 #c49E7C0 Grand Line
+(4400,3632) city 5 #c49E7C0 Grand Line
+(4143,3642) city 7 #c49E7C0 Grand Line
+(2034,5124) city 2 #c49E7C0 Grand Line
+(2099,4518) city 3 #c49E7C0 Grand Line
+(2294,2924) city 2 #c49E7C0 Grand Line
+(2324,3694) city 2 #c49E7C0 Grand Line
+(2384,4214) city 2 #c49E7C0 Grand Line
+(0239,4739) city 9 #cE5B36C Reset
+(2914,3114) city 2 #cE5B36C Reset
+(2779,5978) city 3 #cE5B36C Reset
+(3466,4002) city 5 #cE5B36C Reset
+(3490,3860) city 5 #cE5B36C Reset
+(1390,6900) city 5 #cE5B36C Reset
+(3961,6109) city 7 #cE5B36C Reset
+(1254,7033) city 5 #cE5B36C Reset
+(3890,1949) city 3 #cE5B36C Reset
+(4098,4879) city 5 #cE5B36C Reset
+(3970,4700) city 5 #cE5B36C Reset
+(4214,4704) city 5 #cE5B36C Reset
+(4056,3478) city 3 #cE5B36C Reset
+(4370,5328) city 3 #cE5B36C Reset
+(5754,6094) city 2 #cE5B36C Reset
+(2234,6004) city 2 #cE5B36C Reset
+(2714,0793) city 5 #cE5B36C Reset
+(2520,1020) city 5 #cE5B36C Reset
+(0516,4811) city 5 #c7E67F2 Hidel
+(3927,0634) city 5 #c7E67F2 Hidel
+(3934,0373) city 5 #c7E67F2 Hidel
+(3740,0600) city 5 #c7E67F2 Hidel
+(4072,6290) city 5 #c7E67F2 Hidel
+(4432,3367) city 3 #c7E67F2 Hidel
+(2707,1054) city 5 #c7E67F2 Hidel
+(2954,6644) city 2 #cFD7844 Shadow Remnants
+(4620,8012) city 5 #cFD7844 Shadow Remnants
+(4363,8022) city 7 #cFD7844 Shadow Remnants
+(4276,7858) city 3 #cFD7844 Shadow Remnants
+(4231,8145) city 2 #cFD7844 Shadow Remnants
+(5810,8280) city 5 #cFD7844 Shadow Remnants
+
+$planet
+(4029,3496)(4232,3554) small
+(4411,3382)(4232,3554) small
+(4232,3554) large
+(4295,3610)(4232,3554) small
+(4631,7762)(4452,7934) small
+(4249,7876)(4452,7934) small
+(4452,7934) large
+(4515,7990)(4452,7934) small
+(7072,6296)(7112,6234) small
+(7278,6175)(7112,6234) small
+(7112,6234) large
+(7072,1816)(7112,1714) small
+(7258,1665)(7112,1714) small
+(7112,1714) large
+(172,4990)(335,4869) small
+(381,4873)(335,4869) small
+(443,4841)(335,4869) small
+(335,4869) large
+(3872,6316)(3912,6214) small
+(4058,6165)(3912,6214) small
+(3912,6214) large
+(4499,4497) medium
+(5092,4636)(5132,4574) small
+(5298,4515)(5132,4574) small
+(5132,4574) large

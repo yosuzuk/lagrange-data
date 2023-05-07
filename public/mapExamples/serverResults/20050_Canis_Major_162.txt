@@ -1,0 +1,116 @@
+$name 20050 Canis Major 162
+$serverName Canis Major 162
+$size 9000
+
+$overlay
+Visionaries (18.0%)
+STARBUCKS (16.3%)
+Angels of Wrath (13.1%)
+Space Guards (10.6%)
+독도가는길 (10.6%)
+宇宙吸貓萌 (10.6%)
+Aēgís (8.1%)
+EVO (4.9%)
+Arcturus (2.4%)
+宇宙和音CH (2.4%)
+NRW (2.4%)
+
+$station
+(3832,8610) city 5 #c929292 NRW
+(4064,6454) city 2 #c929292 NRW
+(5214,6534) city 2 #c929292 NRW
+(3593,8393) city 7 #cFD7844 Angels of Wrath
+(3652,8582) city 5 #cFD7844 Angels of Wrath
+(3866,8457) city 3 #cFD7844 Angels of Wrath
+(3479,8630) city 5 #cFD7844 Angels of Wrath
+(4024,6754) city 2 #cFD7844 Angels of Wrath
+(4474,8613) city 5 #cFD7844 Angels of Wrath
+(4614,6664) city 2 #cFD7844 Angels of Wrath
+(5324,6314) city 2 #cFD7844 Angels of Wrath
+(6904,5794) city 2 #cFD7844 Angels of Wrath
+(7412,6410) city 5 #cFD7844 Angels of Wrath
+(7946,6682) city 5 #cFD7844 Angels of Wrath
+(7970,6540) city 5 #cFD7844 Angels of Wrath
+(2694,2314) city 2 #cF284FF Aēgís
+(2974,1954) city 2 #cF284FF Aēgís
+(2930,2309) city 3 #cF284FF Aēgís
+(3992,4928) city 5 #cF284FF Aēgís
+(3980,4758) city 5 #cF284FF Aēgís
+(3895,4719) city 5 #cF284FF Aēgís
+(4073,3893) city 7 #cF284FF Aēgís
+(4131,4087) city 5 #cF284FF Aēgís
+(2427,1374) city 5 #cF284FF Aēgís
+(5194,2364) city 2 #cE63A3A 독도가는길
+(6084,3234) city 2 #cE63A3A 독도가는길
+(6614,2624) city 2 #cE63A3A 독도가는길
+(7178,6417) city 7 #cE63A3A 독도가는길
+(8296,1951) city 5 #cE63A3A 독도가는길
+(7913,2106) city 3 #cE63A3A 독도가는길
+(5874,2834) city 2 #c4A99FB STARBUCKS
+(7054,3584) city 2 #c4A99FB STARBUCKS
+(7076,6258) city 3 #c4A99FB STARBUCKS
+(8041,1896) city 9 #c4A99FB STARBUCKS
+(2464,2714) city 2 #c49E7C0 Space Guards
+(4379,5358) city 3 #c49E7C0 Space Guards
+(5059,6278) city 3 #c49E7C0 Space Guards
+(6494,4934) city 2 #c49E7C0 Space Guards
+(7756,6674) city 5 #c49E7C0 Space Guards
+(1257,2946) city 7 #c49E7C0 Space Guards
+(2254,2964) city 2 #c49E7C0 Space Guards
+(2240,1340) city 5 #c49E7C0 Space Guards
+(1191,3147) city 5 #c49E7C0 Space Guards
+(1460,6692) city 5 #c7E67F2 宇宙吸貓萌
+(1203,6702) city 7 #c7E67F2 宇宙吸貓萌
+(1071,6825) city 2 #c7E67F2 宇宙吸貓萌
+(2414,5654) city 2 #c7E67F2 宇宙吸貓萌
+(2324,4934) city 2 #c7E67F2 宇宙吸貓萌
+(4610,8480) city 5 #c9FE23E EVO
+(6394,6154) city 2 #c9FE23E EVO
+(6644,6454) city 2 #c9FE23E EVO
+(1372,3132) city 5 #c9FE23E EVO
+(2921,5149) city 7 #cE5B36C Visionaries
+(3032,5330) city 5 #cE5B36C Visionaries
+(3446,3982) city 5 #cE5B36C Visionaries
+(3470,3840) city 5 #cE5B36C Visionaries
+(1492,6427) city 3 #cE5B36C Visionaries
+(3879,4831) city 5 #cE5B36C Visionaries
+(1910,7520) city 5 #cE5B36C Visionaries
+(3654,2524) city 2 #cF1F1F1 Arcturus
+(3624,2315) city 2 #cF1F1F1 Arcturus
+(4312,4110) city 5 #cF1F1F1 Arcturus
+(4346,3957) city 3 #cF1F1F1 Arcturus
+(3959,4130) city 5 #cF1F1F1 Arcturus
+(4894,2134) city 2 #cF1F1F1 Arcturus
+(2434,1113) city 5 #cF1F1F1 Arcturus
+(6730,4989) city 3 #c929292 宇宙和音CH
+(6864,4374) city 2 #c929292 宇宙和音CH
+(7334,4544) city 2 #c929292 宇宙和音CH
+(8547,3614) city 5 #c929292 宇宙和音CH
+(8360,3580) city 5 #c929292 宇宙和音CH
+
+$planet
+(1212,3054) large
+(1172,3156)(1212,3054) small
+(1358,3005)(1212,3054) small
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(7049,6276)(7252,6334) small
+(7252,6334) large
+(7315,6390)(7252,6334) small
+(7431,6162)(7252,6334) small
+(1355,6670)(1292,6614) small
+(1089,6556)(1292,6614) small
+(1292,6614) large
+(1471,6442)(1292,6614) small
+(3018,5205)(2872,5254) small
+(2872,5254) large
+(2832,5356)(2872,5254) small
+(3632,8596)(3672,8534) small
+(3672,8534) large
+(3838,8475)(3672,8534) small
+(4318,3975)(4152,4034) small
+(4152,4034) large
+(4112,4096)(4152,4034) small
+(4499,4497) medium

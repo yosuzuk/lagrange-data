@@ -1,0 +1,123 @@
+$name 20031 Centaurus 149
+$serverName Centaurus 149
+$size 9000
+
+$overlay
+siro狂和国 (28.6%)
+SCU alliance (10.6%)
+Levian (10.6%)
+MCR (10.6%)
+Archspace (10.6%)
+Paladins Order (10.6%)
+Phantom beast (10.6%)
+L E V E L (2.4%)
+ExcaliburBOOST (2.4%)
+SpartanWarriors (2.4%)
+
+$station
+(3593,8393) city 7 #c7E67F2 Paladins Order
+(4024,6754) city 2 #c7E67F2 Paladins Order
+(4364,7094) city 2 #c7E67F2 Paladins Order
+(4610,8480) city 5 #c7E67F2 Paladins Order
+(5214,6534) city 2 #c7E67F2 Paladins Order
+(5324,6314) city 2 #c7E67F2 Paladins Order
+(5884,6555) city 2 #c7E67F2 Paladins Order
+(1910,7520) city 5 #c929292 SpartanWarriors
+(1460,6692) city 5 #c49E7C0 MCR
+(1116,6538) city 3 #c49E7C0 MCR
+(1071,6825) city 2 #c49E7C0 MCR
+(3574,6254) city 2 #c49E7C0 MCR
+(3866,8457) city 3 #c49E7C0 MCR
+(4585,8358) city 5 #c49E7C0 MCR
+(4474,8613) city 5 #c49E7C0 MCR
+(1774,7653) city 5 #c49E7C0 MCR
+(7178,6417) city 7 #c49E7C0 MCR
+(4131,4087) city 5 #c9FE23E L E V E L
+(4894,2134) city 2 #c9FE23E L E V E L
+(5354,2034) city 2 #c9FE23E L E V E L
+(8360,3580) city 5 #c9FE23E L E V E L
+(2654,6094) city 2 #c4A99FB SCU alliance
+(2614,6404) city 2 #c4A99FB SCU alliance
+(3059,5080) city 2 #c4A99FB SCU alliance
+(1203,6702) city 7 #c4A99FB SCU alliance
+(1492,6427) city 3 #c4A99FB SCU alliance
+(3044,6034) city 2 #c4A99FB SCU alliance
+(3879,4831) city 5 #c4A99FB SCU alliance
+(7452,6147) city 3 #c4A99FB SCU alliance
+(7032,6556) city 2 #c4A99FB SCU alliance
+(2324,4934) city 2 #c4A99FB SCU alliance
+(2490,5229) city 3 #cFD7844 Levian
+(2921,5149) city 7 #cFD7844 Levian
+(3047,5188) city 3 #cFD7844 Levian
+(3084,6334) city 2 #cFD7844 Levian
+(3992,4928) city 5 #cFD7844 Levian
+(3980,4758) city 5 #cFD7844 Levian
+(3895,4719) city 5 #cFD7844 Levian
+(7412,6410) city 5 #cFD7844 Levian
+(7076,6258) city 3 #cFD7844 Levian
+(7756,6674) city 5 #cFD7844 Levian
+(3832,8610) city 5 #cF1F1F1 ExcaliburBOOST
+(6394,6154) city 2 #cF1F1F1 ExcaliburBOOST
+(6794,6004) city 2 #cF1F1F1 ExcaliburBOOST
+(6644,6454) city 2 #cF1F1F1 ExcaliburBOOST
+(2530,3908) city 3 #cE5B36C siro狂和国
+(2694,2314) city 2 #cE5B36C siro狂和国
+(2704,3634) city 2 #cE5B36C siro狂和国
+(3032,5330) city 5 #cE5B36C siro狂和国
+(2814,2844) city 2 #cE5B36C siro狂和国
+(2974,2544) city 2 #cE5B36C siro狂和国
+(1372,3132) city 5 #cE5B36C siro狂和国
+(1191,3147) city 5 #cE5B36C siro狂和国
+(1387,2988) city 3 #cE5B36C siro狂和国
+(6084,3234) city 2 #cE5B36C siro狂和国
+(6254,3604) city 2 #cE5B36C siro狂和国
+(7970,6540) city 5 #cE5B36C siro狂和国
+(8296,1951) city 5 #cE5B36C siro狂和国
+(8041,1896) city 9 #cE5B36C siro狂和国
+(2254,2964) city 2 #cE5B36C siro狂和国
+(2294,3294) city 2 #cE5B36C siro狂和国
+(2434,1113) city 5 #cE5B36C siro狂和国
+(2240,1340) city 5 #cE5B36C siro狂和国
+(2324,3694) city 2 #cE5B36C siro狂和国
+(2384,4594) city 2 #cE5B36C siro狂和国
+(2384,4214) city 2 #cE5B36C siro狂和国
+(2464,2714) city 2 #cE5B36C siro狂和国
+(3446,3982) city 5 #cE63A3A Archspace
+(3470,3840) city 5 #cE63A3A Archspace
+(1257,2946) city 7 #cE63A3A Archspace
+(4346,3957) city 3 #cE63A3A Archspace
+(4379,5358) city 3 #cE63A3A Archspace
+(5194,2364) city 2 #cE63A3A Archspace
+(8547,3614) city 5 #cE63A3A Archspace
+(2930,2309) city 3 #cF284FF Phantom beast
+(4073,3893) city 7 #cF284FF Phantom beast
+(4312,4110) city 5 #cF284FF Phantom beast
+(3959,4130) city 5 #cF284FF Phantom beast
+(8554,3353) city 5 #cF284FF Phantom beast
+
+$planet
+(8115,2009) large
+(7952,2130)(8115,2009) small
+(8223,1981)(8115,2009) small
+(8161,2013)(8115,2009) small
+(2832,5356)(2872,5254) small
+(2872,5254) large
+(3018,5205)(2872,5254) small
+(1471,6442)(1292,6614) small
+(1292,6614) large
+(1089,6556)(1292,6614) small
+(1355,6670)(1292,6614) small
+(1358,3005)(1212,3054) small
+(1212,3054) large
+(1172,3156)(1212,3054) small
+(7431,6162)(7252,6334) small
+(7315,6390)(7252,6334) small
+(7252,6334) large
+(7049,6276)(7252,6334) small
+(4499,4497) medium
+(4112,4096)(4152,4034) small
+(4152,4034) large
+(4318,3975)(4152,4034) small
+(3672,8534) large
+(3632,8596)(3672,8534) small
+(3838,8475)(3672,8534) small

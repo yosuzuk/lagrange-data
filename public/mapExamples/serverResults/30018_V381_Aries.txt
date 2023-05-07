@@ -1,0 +1,113 @@
+$name 30018 V381 Aries
+$serverName V381 Aries
+$size 9000
+
+$overlay
+來點正常人 (28.0%)
+アルテミス (16.6%)
+Space Plate (14.0%)
+鐵道999 (14.0%)
+Deimos Industry (11.4%)
+Titians (7.8%)
+Regal Knights (2.6%)
+어쩌다보니 (2.6%)
+Raven Squadron (2.6%)
+
+$station
+(1904,3237) city 5 #c49E7C0 鐵道999
+(3819,4027) city 5 #c49E7C0 鐵道999
+(5531,4589) city 5 #c49E7C0 鐵道999
+(7756,1976) city 5 #c49E7C0 鐵道999
+(7773,1883) city 7 #c49E7C0 鐵道999
+(7658,1756) city 5 #c49E7C0 鐵道999
+(3026,4351) city 5 #cE5B36C 來點正常人
+(3293,6113) city 2 #cE5B36C 來點正常人
+(3612,4885) city 5 #cE5B36C 來點正常人
+(3822,5136) city 5 #cE5B36C 來點正常人
+(3736,5059) city 5 #cE5B36C 來點正常人
+(3812,4951) city 5 #cE5B36C 來點正常人
+(3898,3827) city 5 #cE5B36C 來點正常人
+(3769,5596) city 2 #cE5B36C 來點正常人
+(4385,5912) city 9 #cE5B36C 來點正常人
+(4644,5368) city 5 #cE5B36C 來點正常人
+(4625,5237) city 5 #cE5B36C 來點正常人
+(6839,2226) city 2 #cE5B36C 來點正常人
+(1249,5216) city 2 #cE5B36C 來點正常人
+(1415,4643) city 5 #cE5B36C 來點正常人
+(1555,4428) city 5 #cE5B36C 來點正常人
+(2463,5513) city 2 #c9FE23E 어쩌다보니
+(4569,8327) city 3 #c9FE23E 어쩌다보니
+(5998,6196) city 3 #c9FE23E 어쩌다보니
+(7250,7212) city 5 #c9FE23E 어쩌다보니
+(7866,7191) city 5 #c9FE23E 어쩌다보니
+(3154,0406) city 5 #cE63A3A Deimos Industry
+(2866,0561) city 5 #cE63A3A Deimos Industry
+(3008,0530) city 3 #cE63A3A Deimos Industry
+(2948,0349) city 7 #cE63A3A Deimos Industry
+(2332,3635) city 3 #cFD7844 Space Plate
+(2368,5947) city 3 #cFD7844 Space Plate
+(3423,7352) city 5 #cFD7844 Space Plate
+(4292,2575) city 3 #cFD7844 Space Plate
+(4252,6125) city 3 #cFD7844 Space Plate
+(4640,5965) city 5 #cFD7844 Space Plate
+(4493,2515) city 3 #cFD7844 Space Plate
+(5126,3010) city 5 #cFD7844 Space Plate
+(5298,3869) city 5 #cFD7844 Space Plate
+(5689,3690) city 3 #cFD7844 Space Plate
+(5469,3823) city 5 #cFD7844 Space Plate
+(5430,3949) city 5 #cFD7844 Space Plate
+(5389,3677) city 7 #cFD7844 Space Plate
+(6283,3174) city 2 #cFD7844 Space Plate
+(6743,3574) city 2 #cFD7844 Space Plate
+(1954,3467) city 5 #c7E67F2 Titians
+(2325,3877) city 5 #c7E67F2 Titians
+(0438,5084) city 5 #c7E67F2 Titians
+(5394,4549) city 5 #c7E67F2 Titians
+(0434,4867) city 5 #c7E67F2 Titians
+(6352,1475) city 3 #c7E67F2 Titians
+(6585,1437) city 5 #c7E67F2 Titians
+(2140,8135) city 3 #c4A99FB アルテミス
+(3184,7636) city 5 #c4A99FB アルテミス
+(3031,7337) city 7 #c4A99FB アルテミス
+(3069,7229) city 2 #c4A99FB アルテミス
+(3546,7501) city 5 #c4A99FB アルテミス
+(1358,6951) city 5 #c4A99FB アルテミス
+(0257,4976) city 5 #cF1F1F1 Raven Squadron
+(0734,3527) city 2 #cF284FF Regal Knights
+(5313,1214) city 3 #cF284FF Regal Knights
+(5329,4338) city 5 #cF284FF Regal Knights
+(5488,4398) city 5 #cF284FF Regal Knights
+(6148,3106) city 3 #cF284FF Regal Knights
+(6873,2813) city 2 #cF284FF Regal Knights
+(6914,3144) city 2 #cF284FF Regal Knights
+(7428,4350) city 5 #cF284FF Regal Knights
+(7608,4335) city 5 #cF284FF Regal Knights
+(7438,4138) city 5 #cF284FF Regal Knights
+(7249,4060) city 2 #cF284FF Regal Knights
+(7923,3474) city 2 #cF284FF Regal Knights
+(1574,2427) city 2 #cF284FF Regal Knights
+
+$planet
+(7378,4129)(7450,4261) small
+(7450,4261) large
+(7493,4317)(7450,4261) small
+(5432,3976)(5503,3770) small
+(5503,3770) large
+(5658,3715)(5503,3770) small
+(5444,3836)(5503,3770) small
+(3849,3943) large
+(3769,4020)(3849,3943) small
+(3892,3787)(3849,3943) small
+(4047,4071)(3849,3943) small
+(2979,538)(3030,460) small
+(3056,408)(3030,460) small
+(3030,460) large
+(3175,459)(3030,460) small
+(4462,6029) large
+(4563,6001)(4462,6029) small
+(4292,6150)(4462,6029) small
+(3049,7455)(2881,7389) small
+(2881,7389) large
+(2869,7332)(2881,7389) small
+(2782,7394)(2881,7389) small
+(4499,4497) medium

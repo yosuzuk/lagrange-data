@@ -1,0 +1,123 @@
+$name 20060 V779 Aquarius
+$serverName V779 Aquarius
+$size 9000
+
+$overlay
+Guardian Titans (16.3%)
+Hammerstein (15.5%)
+CitadelSecurity (10.6%)
+星間帝国 (10.6%)
+The 1st Order (10.6%)
+Deep Purple (10.6%)
+ChaosInsurgents (10.6%)
+Gungnir (7.3%)
+Salvare (2.4%)
+The First Dawn (2.4%)
+NEO KYOTO (2.4%)
+
+$station
+(2570,3969) city 3 #cE5B36C Guardian Titans
+(2879,2238) city 3 #cE5B36C Guardian Titans
+(3234,2184) city 2 #cE5B36C Guardian Titans
+(3446,3982) city 5 #cE5B36C Guardian Titans
+(8041,1896) city 9 #cE5B36C Guardian Titans
+(2254,3984) city 2 #cE5B36C Guardian Titans
+(2434,1113) city 5 #cE5B36C Guardian Titans
+(2324,3694) city 2 #cE5B36C Guardian Titans
+(2654,6094) city 2 #c9FE23E Gungnir
+(2614,6404) city 2 #c9FE23E Gungnir
+(2852,5302) city 5 #c9FE23E Gungnir
+(3044,6034) city 2 #c9FE23E Gungnir
+(3496,8458) city 3 #c9FE23E Gungnir
+(3832,8610) city 5 #c9FE23E Gungnir
+(1910,7520) city 5 #c9FE23E Gungnir
+(7970,6540) city 5 #c9FE23E Gungnir
+(2679,5350) city 5 #c929292 The First Dawn
+(1271,6667) city 5 #c929292 The First Dawn
+(3872,8347) city 3 #c929292 The First Dawn
+(1455,6693) city 5 #c929292 The First Dawn
+(5884,6555) city 2 #c929292 The First Dawn
+(3066,5177) city 3 #c49E7C0 星間帝国
+(2793,5113) city 7 #c49E7C0 星間帝国
+(3032,5330) city 5 #c49E7C0 星間帝国
+(3474,6564) city 2 #c49E7C0 星間帝国
+(4024,6754) city 2 #c49E7C0 星間帝国
+(1885,7398) city 5 #c49E7C0 星間帝国
+(1774,7653) city 5 #c49E7C0 星間帝国
+(2234,5144) city 2 #c49E7C0 星間帝国
+(2324,4934) city 2 #c49E7C0 星間帝国
+(1380,3132) city 5 #cE63A3A The 1st Order
+(1123,3142) city 7 #cE63A3A The 1st Order
+(1036,2978) city 3 #cE63A3A The 1st Order
+(2294,3294) city 2 #cE63A3A The 1st Order
+(2427,1374) city 5 #cE63A3A The 1st Order
+(6344,3375) city 2 #cFD7844 CitadelSecurity
+(6614,3564) city 2 #cFD7844 CitadelSecurity
+(6904,5794) city 2 #cFD7844 CitadelSecurity
+(6924,4954) city 2 #cFD7844 CitadelSecurity
+(7301,6229) city 7 #cFD7844 CitadelSecurity
+(7427,6268) city 3 #cFD7844 CitadelSecurity
+(7439,6160) city 2 #cFD7844 CitadelSecurity
+(7756,6674) city 5 #cFD7844 CitadelSecurity
+(8450,3480) city 5 #cFD7844 CitadelSecurity
+(8425,3358) city 5 #cFD7844 CitadelSecurity
+(8314,3613) city 5 #cFD7844 CitadelSecurity
+(3584,1995) city 2 #c4A99FB Hammerstein
+(3752,4878) city 5 #c4A99FB Hammerstein
+(4029,4891) city 5 #c4A99FB Hammerstein
+(4201,3929) city 7 #c4A99FB Hammerstein
+(4312,4110) city 5 #c4A99FB Hammerstein
+(4327,3968) city 3 #c4A99FB Hammerstein
+(4339,3860) city 2 #c4A99FB Hammerstein
+(4454,2404) city 2 #c4A99FB Hammerstein
+(4390,5368) city 3 #c4A99FB Hammerstein
+(4524,2014) city 2 #c4A99FB Hammerstein
+(8296,1951) city 5 #c4A99FB Hammerstein
+(4364,7094) city 2 #c929292 NEO KYOTO
+(4614,6664) city 2 #c929292 NEO KYOTO
+(2240,1340) city 5 #c929292 NEO KYOTO
+(1199,6483) city 7 #cF284FF ChaosInsurgents
+(6679,4918) city 3 #cF284FF ChaosInsurgents
+(7412,6410) city 5 #cF284FF ChaosInsurgents
+(3451,8745) city 2 #c7E67F2 Deep Purple
+(3598,8617) city 7 #c7E67F2 Deep Purple
+(4610,8480) city 5 #c7E67F2 Deep Purple
+(4474,8613) city 5 #c7E67F2 Deep Purple
+(6054,5644) city 2 #c7E67F2 Deep Purple
+(3470,3840) city 5 #cF1F1F1 Salvare
+(4914,6844) city 2 #cF1F1F1 Salvare
+(5070,6288) city 3 #cF1F1F1 Salvare
+(5914,2494) city 2 #cF1F1F1 Salvare
+(6184,2914) city 2 #cF1F1F1 Salvare
+(6674,2924) city 2 #cF1F1F1 Salvare
+(6524,4394) city 2 #cF1F1F1 Salvare
+(6614,2624) city 2 #cF1F1F1 Salvare
+(6584,5334) city 2 #cF1F1F1 Salvare
+(7074,3234) city 2 #cF1F1F1 Salvare
+
+$planet
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(1391,2882)(1212,3054) small
+(1275,3110)(1212,3054) small
+(1009,2996)(1212,3054) small
+(1212,3054) large
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4298,3985)(4152,4034) small
+(4152,4034) large
+(4112,4136)(4152,4034) small
+(3672,8534) large
+(3469,8476)(3672,8534) small
+(3851,8362)(3672,8534) small
+(3735,8590)(3672,8534) small
+(1458,6555)(1292,6614) small
+(1292,6614) large
+(1252,6676)(1292,6614) small
+(3038,5195)(2872,5254) small
+(2872,5254) large
+(2832,5316)(2872,5254) small
+(4499,4497) medium
