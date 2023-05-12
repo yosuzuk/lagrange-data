@@ -22,7 +22,8 @@ export const Area = (props: IProps) => {
     const gridSize = useGridSize();
     const areaVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityArea' : 'defaultArea');
     const edgeVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityAreaEdge' : 'defaultAreaEdge');
-    const backgroundOpacity = useZoomBasedOpacity('areaBackground');
+    const detailedEdgeVisible = useZoomBasedVisibility(area.type === 'city' ? 'cityAreaDetailedEdge' : 'defaultAreaDetailedEdge');
+    const backgroundOpacity = useZoomBasedOpacity(area.type === 'city' ? 'cityAreaBackground' : 'areaBackground');
 
     const updateIterationRef = useRef<number>(0);
 
@@ -133,19 +134,20 @@ export const Area = (props: IProps) => {
     }, [onClick, area]);
 
     return (
-        <group key={`${area.id}_${updateIterationRef.current}`} visible={areaVisible}>
+        <group key={`${area.id}_${updateIterationRef.current}`}>
             <Plane
                 position={[state.x, state.y, 0]}
                 width={state.width}
                 height={state.height}
                 color={area.color}
                 opacity={backgroundOpacity}
+                visible={areaVisible}
                 border={edgeVisible}
                 renderOrder={getRendeOrder('area')}
                 onClick={handleClick}
             />
             <Lines visible={edgeVisible} points={state.borderLines} color={area.color} renderOrder={lineRenderOrder} />
-            <group visible={!edgeVisible}>
+            <group visible={detailedEdgeVisible}>
                 <Lines points={state.topLeftLines} color={area.color} renderOrder={lineRenderOrder} />
                 <Lines points={state.topRightLines} color={area.color} renderOrder={lineRenderOrder} />
                 <Lines points={state.bottomLeftLines} color={area.color} renderOrder={lineRenderOrder} />

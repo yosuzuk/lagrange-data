@@ -6,6 +6,7 @@ interface IProps {
     width: number;
     height: number;
     color: string;
+    visible?: boolean;
     opacity?: number | null;
     border?: boolean;
     renderOrder?: number;
@@ -13,15 +14,13 @@ interface IProps {
 }
 
 export const Plane = (props: IProps) => {
-    const { position, width, height, color, opacity = 1, border = false, renderOrder = 0, onClick } = props;
+    const { position, width, height, color, visible = true, opacity = 1, border = false, renderOrder = 0, onClick } = props;
 
     return (
-        <mesh position={position} renderOrder={renderOrder} onClick={onClick}>
+        <mesh position={position} renderOrder={renderOrder} onClick={onClick} visible={!!opacity && visible}>
             <planeGeometry args={[width, height]} />
             <meshBasicMaterial color={color} opacity={opacity ?? undefined} transparent={opacity !== 1} depthWrite={false} />
-            {border && (
-                <Edges color={color} />
-            )}
+            <Edges color={color} visible={border} />
         </mesh>
     );
 };

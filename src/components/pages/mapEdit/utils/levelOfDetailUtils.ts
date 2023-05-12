@@ -30,7 +30,7 @@ const lodVisibilities: ILodVisibility[] = [
     {
         name: 'gameGrid',
         fromDistance: 0,
-        untilDistance: 25,
+        untilDistance: 35,
     },
     {
         name: 'planetLabel',
@@ -100,17 +100,27 @@ const lodVisibilities: ILodVisibility[] = [
     {
         name: 'defaultArea',
         fromDistance: 0,
-        untilDistance: 50,
+        untilDistance: 500,
+    },
+    {
+        name: 'defaultAreaDetailedEdge',
+        fromDistance: 0,
+        untilDistance: 15,
     },
     {
         name: 'defaultAreaEdge',
         fromDistance: 15,
-        untilDistance: 50,
+        untilDistance: 100,
     },
     {
         name: 'cityArea',
         fromDistance: 0,
         untilDistance: 200,
+    },
+    {
+        name: 'cityAreaDetailedEdge',
+        fromDistance: 0,
+        untilDistance: 15,
     },
     {
         name: 'cityAreaEdge',
@@ -147,11 +157,35 @@ const lodOpacities: ILodOpacity[] = [
     {
         name: 'areaBackground',
         fromDistance: 15,
-        untilDistance: 200,
+        untilDistance: 100,
         opacity: 0.2,
     },
     {
         name: 'areaBackground',
+        fromDistance: 100,
+        untilDistance: 500,
+        opacity: 0.8,
+    },
+    {
+        name: 'areaBackground',
+        fromDistance: 500,
+        untilDistance: MAX_CAMERA_DISTANCE,
+        opacity: 0,
+    },
+    {
+        name: 'cityAreaBackground',
+        fromDistance: 0,
+        untilDistance: 15,
+        opacity: 0.03,
+    },
+    {
+        name: 'cityAreaBackground',
+        fromDistance: 15,
+        untilDistance: 200,
+        opacity: 0.2,
+    },
+    {
+        name: 'cityAreaBackground',
         fromDistance: 200,
         untilDistance: MAX_CAMERA_DISTANCE,
         opacity: 0,
