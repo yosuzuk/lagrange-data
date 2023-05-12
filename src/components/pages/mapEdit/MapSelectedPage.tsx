@@ -1,4 +1,4 @@
-import { useCallback, memo } from 'react';
+import { useCallback, memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -14,6 +14,7 @@ import { EditMapButton } from './EditMapButton';
 import { SaveMapButton } from './SaveMapButton';
 import Box from '@mui/material/Box';
 import { MapOverlay } from './MapOverlay';
+import { MapPerspective } from './types/MapPerspective';
 
 const MapRenderer = memo(_MapRenderer);
 
@@ -46,6 +47,8 @@ const MapSelectedPage = () => {
         navigate(routes.map.path);
     }, [navigate]);
 
+    const [perspective, setPerspective] = useState<MapPerspective>(MapPerspective.DEFAULT);
+
     if (!mapUrl) {
         return (
             <Alert severity="error">
@@ -75,10 +78,15 @@ const MapSelectedPage = () => {
                     <Box component="div" p={2} sx={{ position: 'absolute', width: '100%', textAlign: 'center', top: '40vh' }}>
                         Loading...
                     </Box>
-                    <MapRenderer mapData={mapData} targetToMark={targetToMark} markTarget={markTarget} />
+                    <MapRenderer mapData={mapData} targetToMark={targetToMark} perspective={perspective} markTarget={markTarget} />
                 </Box>
             )}
-            <MapTopRightBar mode={mode} onExit={handleClickExit} setMode={setMode} />
+            <MapTopRightBar
+                mode={mode}
+                onExit={handleClickExit}
+                setMode={setMode}
+                setPerspective={setPerspective}
+            />
             {mode === 'edit' && (
                 <MapEditDialog
                     input={input}

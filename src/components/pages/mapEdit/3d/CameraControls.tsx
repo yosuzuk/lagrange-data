@@ -9,13 +9,15 @@ import { TargetSprite } from './TargetSprite';
 import { IMapContent } from '../types/IMapContent';
 import { getPrimaryGridPositionForMapContent } from '../utils/mapContentUtils';
 import { useGridSize } from '../context/GridSizeContext';
+import { MapPerspective } from '../types/MapPerspective';
 
 interface IProps {
     targetToMark: IMapContent | null;
+    perspective: MapPerspective;
 }
 
 export const CameraControls = (props: IProps) => {
-    const { targetToMark } = props;
+    const { targetToMark, perspective } = props;
     const { setCameraDistance, getCameraDistance } = useCameraDistance();
     const { min, max } = useZoomDistanceMinMax();
     const { invalidate, camera } = useThree();
@@ -67,11 +69,19 @@ export const CameraControls = (props: IProps) => {
         }
         const distanceOnMap = Math.sqrt(Math.pow(cameraDistance, 2) / 2);
 
-        camera.position.set(
-            gridX + (Math.tan(degreesToRadians(-5)) * distanceOnMap),
-            gridY + (-1 * distanceOnMap),
-            distanceOnMap,
-        );
+        if (perspective === MapPerspective.ORTHOGONAL) {
+            camera.position.set(
+                gridX,
+                gridY,
+                distanceOnMap,
+            );
+        } else {
+            camera.position.set(
+                gridX + (Math.tan(degreesToRadians(-5)) * distanceOnMap),
+                gridY + (-1 * distanceOnMap),
+                distanceOnMap,
+            );
+        }
 
         controlRef.current.target.set(
             gridX,
@@ -81,7 +91,29 @@ export const CameraControls = (props: IProps) => {
 
         setTargetUpdateIteration(i => i + 1);
         invalidate();
-    }, [controlRef, invalidate, camera, targetToMark, gridSize]);
+    }, [controlRef, invalidate, camera, targetToMark, perspective, gridSize]);
+
+    useEffect(() => {
+        if (!controlRef.current) {
+            return;
+        }
+        const cameraDistance = camera.position.distanceTo(controlRef.current.target);
+        const gridX = controlRef.current.target.x;
+        const gridY = controlRef.current.target.y;
+        if (perspective === MapPerspective.ORTHOGONAL) {
+            camera.position.set(
+                gridX,
+                gridY,
+                cameraDistance,
+            );
+        } else {
+            camera.position.set(
+                gridX + (Math.tan(degreesToRadians(-5)) * cameraDistance),
+                gridY + (-1 * cameraDistance),
+                cameraDistance,
+            );
+        }
+    }, [controlRef, camera, perspective]);
 
     const [targetX, targetY] = useMemo(() => {
         return targetToMark ? getPrimaryGridPositionForMapContent(targetToMark, gridSize) : [null, null];
