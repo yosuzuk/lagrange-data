@@ -1,196 +1,13 @@
 import { createContext, ReactNode, useState, useContext, useMemo, useCallback, useRef } from 'react';
-import { IZoomLevel, IZoomBasedOpacity, IZoomBasedVisibility } from '../types/IZoomLevel';
+import { IZoomLevel } from '../types/IZoomLevel';
+import { createZoomLevels, MAX_CAMERA_DISTANCE, MIN_CAMERA_DISTANCE } from '../utils/levelOfDetailUtils';
 
 interface ICameraDistanceContextValue {
     getCameraDistance: () => number | null;
     setCameraDistance: (distance: number) => void;
 }
 
-const MIN_DISTANCE = 5;
-const MAX_DISTANCE = 1500;
-
-const zoomLevels: IZoomLevel[] = [
-    {
-        fromDistance: 0,
-        untilDistance: 15,
-        visibility: {
-            zoneBackground: false,
-            zoneLabel: false,
-            gameGrid: true,
-            planetLabel: true,
-            subPlanetOrbit: true,
-            markerLabel: true,
-            stationLabel: true,
-            stationCone: true,
-            dockIcon: false,
-            dockCone: true,
-            cityIcon: true,
-            subCityIcon: true,
-            subCityLabel: true,
-            cityLabel: true,
-            cityLabel7up: true,
-            cityLevel: true,
-            defaultArea: true,
-            defaultAreaEdge: false,
-            cityArea: true,
-            cityAreaEdge: false,
-        },
-        opacity: {
-            zoneBackground: 0,
-            areaBackground: 0.03,
-        },
-    },
-    {
-        fromDistance: 15,
-        untilDistance: 25,
-        visibility: {
-            zoneBackground: false,
-            zoneLabel: false,
-            gameGrid: true,
-            planetLabel: true,
-            subPlanetOrbit: true,
-            markerLabel: true,
-            stationLabel: false,
-            stationCone: true,
-            dockIcon: true,
-            dockCone: false,
-            cityIcon: true,
-            subCityIcon: true,
-            subCityLabel: true,
-            cityLabel: true,
-            cityLabel7up: true,
-            cityLevel: true,
-            defaultArea: true,
-            defaultAreaEdge: true,
-            cityArea: true,
-            cityAreaEdge: true,
-        },
-        opacity: {
-            zoneBackground: 0,
-            areaBackground: 0.2,
-        },
-    },
-    {
-        fromDistance: 25,
-        untilDistance: 50,
-        visibility: {
-            zoneBackground: false,
-            zoneLabel: false,
-            gameGrid: false,
-            planetLabel: true,
-            subPlanetOrbit: true,
-            markerLabel: true,
-            stationLabel: false,
-            stationCone: false,
-            dockIcon: true,
-            dockCone: false,
-            cityIcon: true,
-            subCityIcon: true,
-            subCityLabel: true,
-            cityLabel: true,
-            cityLabel7up: true,
-            cityLevel: true,
-            defaultArea: true,
-            defaultAreaEdge: true,
-            cityArea: true,
-            cityAreaEdge: true,
-        },
-        opacity: {
-            zoneBackground: 0,
-            areaBackground: 0.2,
-        },
-    },
-    {
-        fromDistance: 50,
-        untilDistance: 200,
-        visibility: {
-            zoneBackground: true,
-            zoneLabel: true,
-            gameGrid: false,
-            planetLabel: true,
-            subPlanetOrbit: true,
-            markerLabel: true,
-            stationLabel: false,
-            stationCone: false,
-            dockIcon: false,
-            dockCone: false,
-            cityIcon: true,
-            subCityIcon: true,
-            subCityLabel: false,
-            cityLabel: true,
-            cityLabel7up: true,
-            cityLevel: true,
-            defaultArea: false,
-            defaultAreaEdge: false,
-            cityArea: true,
-            cityAreaEdge: true,
-        },
-        opacity: {
-            zoneBackground: 0.1,
-            areaBackground: 0.2,
-        },
-    },
-    {
-        fromDistance: 200,
-        untilDistance: 1000,
-        visibility: {
-            zoneBackground: true,
-            zoneLabel: true,
-            gameGrid: false,
-            planetLabel: false,
-            subPlanetOrbit: false,
-            markerLabel: false,
-            stationLabel: false,
-            stationCone: false,
-            dockIcon: false,
-            dockCone: false,
-            cityIcon: true,
-            subCityIcon: false,
-            subCityLabel: false,
-            cityLabel: false,
-            cityLabel7up: true,
-            cityLevel: false,
-            defaultArea: false,
-            defaultAreaEdge: false,
-            cityArea: false,
-            cityAreaEdge: false,
-        },
-        opacity: {
-            zoneBackground: 0.4,
-            areaBackground: 0,
-        },
-    },
-    {
-        fromDistance: 1000,
-        untilDistance: MAX_DISTANCE,
-        visibility: {
-            zoneBackground: true,
-            zoneLabel: true,
-            gameGrid: false,
-            planetLabel: false,
-            subPlanetOrbit: false,
-            markerLabel: false,
-            stationLabel: false,
-            stationCone: false,
-            dockIcon: false,
-            dockCone: false,
-            cityIcon: false,
-            subCityIcon: false,
-            subCityLabel: false,
-            cityLabel: false,
-            cityLabel7up: false,
-            cityLevel: false,
-            defaultArea: false,
-            defaultAreaEdge: false,
-            cityArea: false,
-            cityAreaEdge: false,
-        },
-        opacity: {
-            zoneBackground: 0.4,
-            areaBackground: 0,
-        },
-    },
-];
+const zoomLevels: IZoomLevel[] = createZoomLevels();
 
 const defaultZoomLevel = zoomLevels.at(-1);
 if (!defaultZoomLevel) {
@@ -251,12 +68,12 @@ export const useCameraDistance = (): ICameraDistanceContextValue => {
 
 export const useZoomDistanceMinMax = () => {
     return {
-        min: MIN_DISTANCE,
-        max: MAX_DISTANCE,
+        min: MIN_CAMERA_DISTANCE,
+        max: MAX_CAMERA_DISTANCE,
     } as const;
 };
 
-export const useZoomBasedVisibility = (key: keyof IZoomBasedVisibility): boolean => {
+export const useZoomBasedVisibility = (key: string): boolean => {
     const zoomLevel = useContext(ZoomLevelContext);
     if (!zoomLevel) {
         return false;
@@ -264,7 +81,7 @@ export const useZoomBasedVisibility = (key: keyof IZoomBasedVisibility): boolean
     return zoomLevel.visibility[key] === true;
 }
 
-export const useZoomBasedOpacity = (key: keyof IZoomBasedOpacity): number | null => {
+export const useZoomBasedOpacity = (key: string): number | null => {
     const zoomLevel = useContext(ZoomLevelContext);
     if (!zoomLevel) {
         return null;

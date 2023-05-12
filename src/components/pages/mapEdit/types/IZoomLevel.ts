@@ -1,38 +1,6 @@
 export interface IZoomLevel {
     fromDistance: number;
     untilDistance: number;
-    visibility: IZoomBasedVisibility;
-    opacity: IZoomBasedOpacity;
-}
-
-export interface IZoomBasedVisibility {
-    zoneBackground: boolean;
-    zoneLabel: boolean;
-    gameGrid: boolean;
-    planetLabel: boolean;
-    subPlanetOrbit: boolean;
-    markerLabel: boolean;
-    stationLabel: boolean;
-    stationCone: boolean;
-    dockIcon: boolean;
-    dockCone: boolean;
-
-    // city
-    cityIcon: boolean;
-    subCityIcon: boolean;
-    subCityLabel: boolean;
-    cityLabel: boolean;
-    cityLabel7up: boolean;
-    cityLevel: boolean;
-
-    // area
-    defaultArea: boolean;
-    defaultAreaEdge: boolean;
-    cityArea: boolean;
-    cityAreaEdge: boolean;
-}
-
-export interface IZoomBasedOpacity {
-    zoneBackground: number;
-    areaBackground: number;
+    visibility: Record<string, boolean>;
+    opacity: Record<string, number>;
 }
