@@ -247,8 +247,8 @@ const d2: ISystemModule = {
     category: 'D',
     categoryNumber: 2,
     effects: [
-        enhancements.increaseMissileHitRateMidRow().withFixedPercentageValue(12),
-        enhancements.increaseTorpedoHitRateMidRow().withFixedPercentageValue(12),
+        enhancements.increaseMissileHitRateBackRow().withFixedPercentageValue(12),
+        enhancements.increaseTorpedoHitRateBackRow().withFixedPercentageValue(12),
     ],
     skills: [
         enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),

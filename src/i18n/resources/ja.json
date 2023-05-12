@@ -435,6 +435,8 @@
         "increaseProjectileHitRateMidRow": "中列のミサイル/魚雷命中率アップ",
         "increaseTorpedoHitRateMidRow": "中列の魚雷命中率アップ",
         "increaseMissileHitRateMidRow": "中列のミサイル命中率アップ",
+        "increaseTorpedoHitRateBackRow": "後列の魚雷命中率アップ",
+        "increaseMissileHitRateBackRow": "後列のミサイル命中率アップ",
         "increaseInterceptionChance": "ミサイル/魚雷要撃率アップ",
         "increaseEvasion": "回避率アップ",
         "increaseMissileEvasionOfAircraft": "艦載機/UAVのミサイル回避率アップ",

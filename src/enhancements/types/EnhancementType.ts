@@ -44,6 +44,8 @@ export enum EnhancementSubType {
     INCREASE_PROJECTILE_HITRATE_MID_ROW = 'increaseProjectileHitRateMidRow',
     INCREASE_TORPEDO_HITRATE_MID_ROW = 'increaseTorpedoHitRateMidRow',
     INCREASE_MISSILE_HITRATE_MID_ROW = 'increaseMissileHitRateMidRow',
+    INCREASE_TORPEDO_HITRATE_BACK_ROW = 'increaseTorpedoHitRateBackRow',
+    INCREASE_MISSILE_HITRATE_BACK_ROW = 'increaseMissileHitRateBackRow',
     INCREASE_INTERCEPTION_CHANCE = 'increaseInterceptionChance',
     INCREASE_EVASION = 'increaseEvasion',
     INCREASE_MISSILE_EVASION_OF_AIRCRAFT = 'increaseMissileEvasionOfAircraft',

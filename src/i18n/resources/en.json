@@ -435,6 +435,8 @@
         "increaseProjectileHitRateMidRow": "Increase projectile hitrate for mid-row ships",
         "increaseTorpedoHitRateMidRow": "Increase torpedo hitrate for mid-row ships",
         "increaseMissileHitRateMidRow": "Increase missile hitrate for mid-row ships",
+        "increaseTorpedoHitRateBackRow": "Increase torpedo hitrate for back-row ships",
+        "increaseMissileHitRateBackRow": "Increase missile hitrate for back-row ships",
         "increaseInterceptionChance": "Increase chance to intercept missles and torpedoes",
         "increaseEvasion": "Increase evasion",
         "increaseMissileEvasionOfAircraft": "Increase missle evasion of aircraft/UAV in hangar",
