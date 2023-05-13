@@ -8,6 +8,7 @@ $name Area Example
 // - $base
 // - $outpost
 // - $platform
+// - $hive
 //
 // These keywords can automatically place an area.
 
