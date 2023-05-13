@@ -7,6 +7,7 @@ import { snapToGrid, toGridPosition } from '../utils/coordinateUtils';
 import { getRendeOrder } from '../utils/renderOrder';
 import { Lines } from './Lines';
 import { Plane } from './Plane';
+import { TextLabel } from './TextLabel';
 
 interface IProps {
     hive: IHive;
@@ -14,6 +15,7 @@ interface IProps {
 }
 
 const LINE_Z = 0.01;
+const LABEL_Z = 0.02;
 
 export const Hive = (props: IProps) => {
     const { hive, onClick } = props;
@@ -72,6 +74,14 @@ export const Hive = (props: IProps) => {
                     <Lines key={`line${index}`} points={line} color={hive.color} renderOrder={lineRenderOrder} />
                 ))}
             </group>
+            <TextLabel
+                key={`${hive.id}_label_${updateIterationRef.current}`}
+                gridPosition={[state.x, state.y]}
+                text={`${hive.label}`}
+                fontSize={72}
+                scale={0.05}
+                visible={!!hive.label}
+            />
         </group>
     );
 };
