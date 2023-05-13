@@ -10,6 +10,7 @@ export interface IMapData {
     planets: IPlanet[];
     stations: IStation[];
     areas: IArea[];
+    hives: IHive[];
     bases: IPlayerBase[];
     outposts: IPlayerOutpost[];
     platforms: IPlayerPlatform[];
@@ -69,6 +70,14 @@ export interface IArea extends IMapContent {
     position1: GamePosition;
     position2: GamePosition;
     color: string;
+}
+
+export interface IHive extends IMapContent {
+    contentType: 'hive';
+    position1: GamePosition;
+    position2: GamePosition;
+    color: string;
+    label: string | null;
 }
 
 export interface IPlayerBase extends IMapContent {

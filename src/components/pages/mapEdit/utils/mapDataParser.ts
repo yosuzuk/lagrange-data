@@ -1,6 +1,6 @@
 import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType, StationType } from '../types/IMapContent';
+import { AreaType, IArea, IHive, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType, StationType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
@@ -21,6 +21,7 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         planets: [],
         stations: [],
         areas: [],
+        hives: [],
         bases: [],
         outposts: [],
         platforms: [],
@@ -113,6 +114,16 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
                 const [area, error] = parseAreaLine(trimmedLine, lineNumber);
                 if (area) {
                     mapContent.areas.push(area);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
+            case '$hive': {
+                const [hive, error] = parseHiveLine(trimmedLine, lineNumber);
+                if (hive) {
+                    mapContent.hives.push(hive);
                 }
                 if (error) {
                     parseError = error;
@@ -427,6 +438,41 @@ function parseAreaLine(line: string, lineNumber: number): [IArea | null, IParseM
             position1: coordinates[0],
             position2: coordinates[1],
             color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
+        },
+        null,
+    ];
+}
+
+function parseHiveLine(line: string, lineNumber: number): [IHive | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 2, 2);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+        line: lineWithoutColors,
+    } = parseWithRegExp(lineWithoutCoordinates, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `hive${lineNumber}`,
+            contentType: 'hive',
+            lineNumber,
+            position1: coordinates[0],
+            position2: coordinates[1],
+            color: parseColor(colors[0], NEUTRAL_FACTION_COLOR),
+            label: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
         },
         null,
     ];

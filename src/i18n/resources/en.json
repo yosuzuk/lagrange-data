@@ -316,7 +316,8 @@
             "bmp": "Basic Mining Platform",
             "imp": "Intermediate Mining Platform",
             "amp": "Advanced Mining Platform",
-            "dock": "Docking station"
+            "dock": "Docking station",
+            "hive": "Hive"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"
     },

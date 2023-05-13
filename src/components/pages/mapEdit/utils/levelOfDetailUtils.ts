@@ -127,6 +127,16 @@ const lodVisibilities: ILodVisibility[] = [
         fromDistance: 15,
         untilDistance: 200,
     },
+    {
+        name: 'hiveArea',
+        fromDistance: 0,
+        untilDistance: 500,
+    },
+    {
+        name: 'hiveEdge',
+        fromDistance: 0,
+        untilDistance: 100,
+    },
 ];
 
 const lodOpacities: ILodOpacity[] = [
@@ -187,6 +197,24 @@ const lodOpacities: ILodOpacity[] = [
     {
         name: 'cityAreaBackground',
         fromDistance: 200,
+        untilDistance: MAX_CAMERA_DISTANCE,
+        opacity: 0,
+    },
+    {
+        name: 'hiveBackground',
+        fromDistance: 0,
+        untilDistance: 100,
+        opacity: 0.2,
+    },
+    {
+        name: 'hiveBackground',
+        fromDistance: 100,
+        untilDistance: 500,
+        opacity: 0.8,
+    },
+    {
+        name: 'hiveBackground',
+        fromDistance: 500,
         untilDistance: MAX_CAMERA_DISTANCE,
         opacity: 0,
     },

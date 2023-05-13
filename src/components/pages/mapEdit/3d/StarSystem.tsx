@@ -14,6 +14,7 @@ import { Station } from './Station';
 import { PlayerOutpost } from './PlayerOutpost';
 import { PlayerPlatform } from './PlayerPlatform';
 import { Area } from './Area';
+import { Hive } from './Hive';
 
 interface IProps {
     mapData: IMapData;
@@ -53,6 +54,9 @@ export const StarSystem = (props: IProps) => {
             ))}
             {mapData.areas.map(area => (
                 <Area key={area.id} area={area} onClick={markTarget} />
+            ))}
+            {mapData.hives.map(hive => (
+                <Hive key={hive.id} hive={hive} onClick={markTarget} />
             ))}
             {mapData.bases.map(base => (
                 <PlayerBase key={base.id} base={base} onClick={markTarget} />

@@ -1,5 +1,5 @@
 import { t } from '../../../../i18n';
-import { IArea, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType, StationType } from '../types/IMapContent';
+import { IArea, IHive, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType, StationType } from '../types/IMapContent';
 import { formatGamePosition, parseGamePosition, toGridPosition } from './coordinateUtils';
 
 let idCounter = 0;
@@ -113,6 +113,7 @@ export function getPrimaryCoordinatesForMapContent(mapContent: IMapContent): [nu
         case 'region': {
             return [null, null];
         }
+        case 'hive':
         case 'area': {
             const area = mapContent as IArea;
             const [x1, y1] = parseGamePosition(area.position1);
@@ -170,6 +171,10 @@ export function mapContentToText(mapContent: IMapContent): string | null {
         }
         case 'platform': {
             return mapContentToText((mapContent as IPlayerPlatform).station);
+        }
+        case 'hive': {
+            const { label } = mapContent as IHive;
+            return label ? convertLineBreaks(label) : t('mapEdit.hive');
         }
         default: {
             return null;

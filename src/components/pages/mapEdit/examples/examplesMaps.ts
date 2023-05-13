@@ -95,6 +95,15 @@ export function getExampleMaps() {
                 },
             },
         }),
+        hivesExample: createExample({
+            name: 'Hives',
+            filename: 'hives.txt',
+            translated: {
+                ja: {
+                    name: 'コロニー',
+                },
+            },
+        }),
         areasExample: createExample({
             name: 'Areas',
             filename: 'areas.txt',
