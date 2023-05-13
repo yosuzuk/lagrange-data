@@ -306,6 +306,7 @@
         "marker": "Marker",
         "planet": "Planet",
         "area": "Area",
+        "hive": "Hive",
         "station": {
             "city": "City",
             "subCity": "Sub-City",
@@ -316,8 +317,7 @@
             "bmp": "Basic Mining Platform",
             "imp": "Intermediate Mining Platform",
             "amp": "Advanced Mining Platform",
-            "dock": "Docking station",
-            "hive": "Hive"
+            "dock": "Docking station"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"
     },

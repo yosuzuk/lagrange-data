@@ -306,6 +306,7 @@
         "marker": "マーカー",
         "planet": "惑星",
         "area": "エリア",
+        "hive": "コロニー",
         "station": {
             "city": "都市",
             "subCity": "都市（サブ）",
@@ -316,8 +317,7 @@
             "bmp": "初級プラットフォーム",
             "imp": "中級プラットフォーム",
             "amp": "上級プラットフォーム",
-            "dock": "結合ステーション",
-            "hive": "コロニー"
+            "dock": "結合ステーション"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/%E6%98%9F%E7%B3%BB%E3%83%9E%E3%83%83%E3%83%97"
     },
