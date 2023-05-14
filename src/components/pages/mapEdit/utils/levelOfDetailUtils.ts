@@ -100,7 +100,7 @@ const lodVisibilities: ILodVisibility[] = [
     {
         name: 'defaultArea',
         fromDistance: 0,
-        untilDistance: 500,
+        untilDistance: 200,
     },
     {
         name: 'defaultAreaDetailedEdge',
@@ -134,6 +134,16 @@ const lodVisibilities: ILodVisibility[] = [
     },
     {
         name: 'hiveEdge',
+        fromDistance: 0,
+        untilDistance: 100,
+    },
+    {
+        name: 'baseIcon',
+        fromDistance: 0,
+        untilDistance: 400,
+    },
+    {
+        name: 'baseLabel',
         fromDistance: 0,
         untilDistance: 100,
     },

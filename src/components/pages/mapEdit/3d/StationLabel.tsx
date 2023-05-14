@@ -23,6 +23,8 @@ export const StationLabel = (props: IProps) => {
     const { station, onClick } = props;
     const coneVisible = useZoomBasedVisibility('stationCone');
     const stationLabelVisible = useZoomBasedVisibility('stationLabel');
+    const baseIconVisible = useZoomBasedVisibility('baseIcon');
+    const baseLabelVisible = useZoomBasedVisibility('baseLabel');
     const cityIconVisible = useZoomBasedVisibility('cityIcon');
     const subCityIconVisible = useZoomBasedVisibility('subCityIcon');
     const subCityLabelVisible = useZoomBasedVisibility('subCityLabel');
@@ -76,6 +78,26 @@ export const StationLabel = (props: IProps) => {
                         canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
                         gridPosition={position}
                         visible={labelVisible && coneVisible}
+                        onClick={onClick}
+                    />
+                </group>
+            );
+        }
+        case 'base': {
+            return (
+                <group visible={baseIconVisible}>
+                    <CanvasSprite
+                        key={`${station.id}_icon_${updateIterationRef.current}`}
+                        canvas={images.icon}
+                        gridPosition={position}
+                        visible={!baseLabelVisible}
+                        onClick={onClick}
+                    />
+                    <CanvasSprite
+                        key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
+                        canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
+                        gridPosition={position}
+                        visible={baseLabelVisible}
                         onClick={onClick}
                     />
                 </group>
