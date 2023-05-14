@@ -312,11 +312,16 @@
             "subCity": "Sub-City",
             "stronghold": "Stronghold",
             "base": "Player base",
+            "baseShort": "Base",
             "outpost": "Outpost",
+            "outpostShort": "OP",
             "platform": "Mining Platform",
             "bmp": "Basic Mining Platform",
+            "bmpShort": "BMP",
             "imp": "Intermediate Mining Platform",
+            "impShort": "IMP",
             "amp": "Advanced Mining Platform",
+            "ampShort": "AMP",
             "dock": "Docking station"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"

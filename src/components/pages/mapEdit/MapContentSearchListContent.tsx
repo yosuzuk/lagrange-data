@@ -5,16 +5,19 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import ClearIcon from '@mui/icons-material/Clear';
-import { IMapContent, IMarker, IPlanet, IStation } from './types/IMapContent';
-import { formatStationLabelForList } from './utils/mapContentUtils';
+import { IMapContent, IMapContentWithStation, IMarker, IPlanet, IStation } from './types/IMapContent';
+import { formatShortPlayerStructureType, formatStationLabelForList } from './utils/mapContentUtils';
 import { useColorMode } from '../../../theme/context/ThemeProvider';
 import Typography from '@mui/material/Typography';
+import { CanvasClone } from './CanvasClone';
+import Stack from '@mui/material/Stack';
 
 interface IProps {
     menuItemIdPrefix: string;
     planets: IPlanet[];
     stations: IStation[];
     docks: IStation[];
+    playerStructures: IMapContentWithStation[];
     markers: IMarker[];
     onClickItem: (event: React.MouseEvent<HTMLLIElement>) => void;
     onClickRemoveItem: (content: IMapContent) => void;
@@ -23,7 +26,7 @@ interface IProps {
 const THRESHOLD = 20;
 
 export const MapContentSearchListContent = (props: IProps) => {
-    const { menuItemIdPrefix, planets, stations, docks, markers, onClickItem, onClickRemoveItem } = props;
+    const { menuItemIdPrefix, planets, stations, docks, playerStructures, markers, onClickItem, onClickRemoveItem } = props;
     const totalCount = planets.length + stations.length + docks.length + markers.length;
     const [ready, setReady] = useState<boolean>(totalCount > THRESHOLD ? false : true);
     const colorMode = useColorMode();
@@ -87,29 +90,63 @@ export const MapContentSearchListContent = (props: IProps) => {
                             disableGutters={true}
                             sx={{ padding: 0 }}
                         >
-                            <Box
-                                component="div"
+                            <Stack
+                                spacing={0.5}
                                 sx={{
-                                    display: 'flex',
                                     justifyContent: 'center',
                                     alignSelf: 'stretch',
                                     alignItems: 'center',
+                                    padding: '4px',
                                     width: '30px',
                                     backgroundColor: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
                                 }}
                             >
+                                <CanvasClone canvas={station.icon} />
                                 <Box
                                     component="span"
                                     sx={{ fontSize: 'xx-small', color: 'text.secondary', }}
                                 >
                                     {station.level ? `Lv${station.level}` : null}
                                 </Box>
-                            </Box>
+                            </Stack>
                             <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                 {formatStationLabelForList(station)}
                             </ListItemText>
                         </MenuItem>,
                         <Divider key={`divider_${station.id}`} style={{ margin: 0 }} />
+                    ])),
+                    ...(playerStructures.flatMap(structure => [
+                        <MenuItem
+                            key={structure.id}
+                            id={menuItemIdPrefix + structure.id}
+                            onClick={onClickItem}
+                            disableGutters={true}
+                            sx={{ padding: 0 }}
+                        >
+                            <Stack
+                                spacing={0.5}
+                                sx={{
+                                    justifyContent: 'center',
+                                    alignSelf: 'stretch',
+                                    alignItems: 'center',
+                                    padding: '4px',
+                                    minWidth: '50px',
+                                    backgroundColor: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+                                }}
+                            >
+                                <CanvasClone canvas={structure.station.icon} />
+                                <Box
+                                    component="span"
+                                    sx={{ fontSize: 'small', color: 'text.secondary', }}
+                                >
+                                    {formatShortPlayerStructureType(structure)}
+                                </Box>
+                            </Stack>
+                            <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
+                                {formatStationLabelForList(structure.station)}
+                            </ListItemText>
+                        </MenuItem>,
+                        <Divider key={`divider_${structure.id}`} style={{ margin: 0 }} />
                     ])),
                     ...(markers.map(marker => [
                         <MenuItem

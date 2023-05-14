@@ -1,5 +1,5 @@
 import { t } from '../../../../i18n';
-import { IArea, IHive, IMapContent, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType, StationType } from '../types/IMapContent';
+import { IArea, IHive, IMapContent, IMapContentWithStation, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation, ITemporaryLocation, PlatformType, StationType } from '../types/IMapContent';
 import { formatGamePosition, parseGamePosition, toGridPosition } from './coordinateUtils';
 
 let idCounter = 0;
@@ -47,19 +47,19 @@ export function getStationTypeText(stationType: StationType): string {
     }
 }
 
-export function formatPlatformLabel(platformType: PlatformType): string {
+export function formatPlatformLabel(platformType: PlatformType, short: boolean = false): string {
     switch (platformType) {
         case 'basic':
         case 'bmp': {
-            return t('mapEdit.station.bmp');
+            return short ? t('mapEdit.station.bmpShort') : t('mapEdit.station.bmp');
         }
         case 'intermediate':
         case 'imp': {
-            return t('mapEdit.station.imp');
+            return short ? t('mapEdit.station.impShort') : t('mapEdit.station.imp');
         }
         case 'advanced':
         case 'amp': {
-            return t('mapEdit.station.amp');
+            return short ? t('mapEdit.station.ampShort') : t('mapEdit.station.amp');
         }
     }
 }
@@ -184,4 +184,17 @@ export function mapContentToText(mapContent: IMapContent): string | null {
 
 function convertLineBreaks(text: string): string {
     return text.replaceAll('#r', '\n');
+}
+
+export function formatShortPlayerStructureType(mapContent: IMapContentWithStation): string | null {
+    switch (mapContent.contentType) {
+        case 'base':
+            return t('mapEdit.station.baseShort');
+        case 'outpost':
+            return t('mapEdit.station.outpostShort');
+        case 'platform':
+            return formatPlatformLabel((mapContent as IPlayerPlatform).type, true);
+        default:
+            return getStationTypeText(mapContent.station.type);
+    }
 }

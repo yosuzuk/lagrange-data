@@ -312,11 +312,16 @@
             "subCity": "都市（サブ）",
             "stronghold": "防衛拠点",
             "base": "プレイヤー基地",
+            "baseShort": "基地",
             "outpost": "前哨基地",
+            "outpostShort": "前哨",
             "platform": "採掘プラットフォーム",
             "bmp": "初級プラットフォーム",
+            "bmpShort": "初級PF",
             "imp": "中級プラットフォーム",
+            "impShort": "中級PF",
             "amp": "上級プラットフォーム",
+            "ampShort": "上級PF",
             "dock": "結合ステーション"
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/%E6%98%9F%E7%B3%BB%E3%83%9E%E3%83%83%E3%83%97"

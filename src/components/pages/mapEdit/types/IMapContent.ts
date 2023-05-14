@@ -68,6 +68,10 @@ export interface IStation extends IMapContent {
     area?: IArea;
 }
 
+export interface IMapContentWithStation extends IMapContent {
+    station: IStation;
+}
+
 export type AreaType = 'city' | 'default';
 
 export interface IArea extends IMapContent {
@@ -86,22 +90,19 @@ export interface IHive extends IMapContent {
     label: string | null;
 }
 
-export interface IPlayerBase extends IMapContent {
+export interface IPlayerBase extends IMapContentWithStation {
     contentType: 'base';
-    station: IStation;
 }
 
-export interface IPlayerOutpost extends IMapContent {
+export interface IPlayerOutpost extends IMapContentWithStation {
     contentType: 'outpost';
-    station: IStation;
 }
 
 export type PlatformType = 'basic' | 'intermediate' | 'advanced' | 'bmp' | 'imp' | 'amp';
 
-export interface IPlayerPlatform extends IMapContent {
+export interface IPlayerPlatform extends IMapContentWithStation {
     contentType: 'platform';
     type: PlatformType;
-    station: IStation;
 }
 
 export interface ITemporaryLocation extends IMapContent {

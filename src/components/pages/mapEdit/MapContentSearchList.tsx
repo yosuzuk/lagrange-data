@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { IMapContent, IMapData, IMarker, IPlanet, IStation } from './types/IMapContent';
+import { IMapContent, IMapContentWithStation, IMapData, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation } from './types/IMapContent';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
 import { matchMarker, matchPlanet, matchStation } from './utils/mapContentUtils';
@@ -52,6 +52,21 @@ export const MapContentSearchList = (props: IProps) => {
         return searchableStations.filter(station => matchStation(station, searchTerm));
     }, [mapData, currentMenu, searchTerm]);
 
+    const playerStructures: IMapContentWithStation[] = useMemo(() => {
+        if (currentMenu !== 'players') {
+            return [];
+        }
+        const structures: IMapContentWithStation[] = [
+            ...mapData.bases,
+            ...mapData.platforms,
+            ...mapData.outposts,
+        ].sort((a, b) => (a.station.name ?? '').localeCompare(b.station.name ?? ''));
+        if (searchTerm.length === 0) {
+            return structures;
+        }
+        return structures.filter(base => matchStation(base.station, searchTerm));
+    }, [mapData, currentMenu, searchTerm]);
+
     const markers: IMarker[] = useMemo(() => {
         if (currentMenu !== 'markers') {
             return [];
@@ -74,12 +89,13 @@ export const MapContentSearchList = (props: IProps) => {
                     onChange={setSearchTerm}
                 />
             </Box>
-            {(planets.length + stations.length + docks.length + markers.length) > 0 ? (
+            {(planets.length + stations.length + docks.length + playerStructures.length + markers.length) > 0 ? (
                 <MapContentSearchListContent
                     menuItemIdPrefix={menuItemIdPrefix}
                     planets={planets}
                     stations={stations}
                     docks={docks}
+                    playerStructures={playerStructures}
                     markers={markers}
                     onClickItem={onClickItem}
                     onClickRemoveItem={onClickRemoveItem}

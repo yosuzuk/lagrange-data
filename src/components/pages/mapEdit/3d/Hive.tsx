@@ -15,7 +15,6 @@ interface IProps {
 }
 
 const LINE_Z = 0.01;
-const LABEL_Z = 0.02;
 
 export const Hive = (props: IProps) => {
     const { hive, onClick } = props;

@@ -10,6 +10,7 @@ import { IMapContent, IMapData } from './types/IMapContent';
 import { MapContentSearchList } from './MapContentSearchList';
 import planetIconWhite from './assets/planetWhite.png';
 import cityIconWhite from './assets/cityWhite.png';
+import playerIconWhite from './assets/playerWhite.png';
 import pinIconWhite from './assets/pinWhite.png';
 import docksIconWhite from './assets/docksWhite.png';
 import { CoordinateInputs } from './CoordinateInputs';
@@ -57,6 +58,15 @@ export const MapNavigatorBar = (props: IProps) => {
                 onMarkTarget(station ?? null);
                 break;
             }
+            case 'players': {
+                const playerStructure = [
+                    ...mapData.bases,
+                    ...mapData.outposts,
+                    ...mapData.platforms,
+                ].find(s => s.id === contentId);
+                onMarkTarget(playerStructure ?? null);
+                break;
+            }
             case 'docks': {
                 const station = mapData.stations.find(s => s.id === contentId);
                 onMarkTarget(station ?? null);
@@ -95,19 +105,23 @@ export const MapNavigatorBar = (props: IProps) => {
                         marginBottom: '4px',
                     }}
                 >
-                    <Button id="planets" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <Button id="planets" onClick={handleClickMenu} sx={{ minWidth: '42px' }}>
                         <img alt="planets" src={planetIconWhite} />
                     </Button>
                     <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                    <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <Button id="stations" onClick={handleClickMenu} sx={{ minWidth: '42px' }}>
                         <img alt="stations" src={cityIconWhite} />
                     </Button>
                     <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                    <Button id="docks" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <Button id="players" onClick={handleClickMenu} sx={{ minWidth: '42px' }}>
+                        <img alt="players" src={playerIconWhite} />
+                    </Button>
+                    <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
+                    <Button id="docks" onClick={handleClickMenu} sx={{ minWidth: '42px' }}>
                         <img alt="docks" src={docksIconWhite} />
                     </Button>
                     <Divider orientation="vertical" flexItem={true} sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-                    <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '48px' }}>
+                    <Button id="markers" onClick={handleClickMenu} sx={{ minWidth: '42px' }}>
                         <img alt="markers" src={pinIconWhite} />
                     </Button>
                 </Stack>
