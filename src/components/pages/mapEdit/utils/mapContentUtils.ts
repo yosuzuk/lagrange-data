@@ -42,7 +42,7 @@ export function getStationTypeText(stationType: StationType): string {
             return t('mapEdit.station.platform');
         }
         default: {
-            return t('mapEdit.station.default');;
+            return t('mapEdit.station.default');
         }
     }
 }
@@ -64,14 +64,12 @@ export function formatPlatformLabel(platformType: PlatformType, short: boolean =
     }
 }
 
+export function matchPlatform(platform: IPlayerPlatform, searchTerm: string): boolean {
+    return platform.type === searchTerm || matchStation(platform.station, searchTerm) || formatPlatformLabel(platform.type, false).toLowerCase().includes(searchTerm) || formatPlatformLabel(platform.type, true).toLowerCase().includes(searchTerm);
+}
+
 export function matchStation(station: IStation, searchTerm: string): boolean {
-    if (station.level !== null) {
-        return `${station.name?.toLowerCase()} lv${station.level}`.includes(searchTerm) ?? false;
-    }
-    if (station.name) {
-        return station.name.toLowerCase().includes(searchTerm);
-    }
-    return formatGamePosition(station.position).includes(searchTerm);
+    return `${station.name?.toLowerCase() ?? formatGamePosition(station.position)} ${station.level !== null ? `lv${station.level}` : ''}`.includes(searchTerm);
 }
 
 export function matchMarker(marker: IMarker, searchTerm: string): boolean {
@@ -162,7 +160,7 @@ export function mapContentToText(mapContent: IMapContent): string | null {
             return mapContentToText((mapContent as IPlayerOutpost).station);
         }
         case 'planet': {
-            const { name, position } = mapContent as IPlanet;
+            const { name } = mapContent as IPlanet;
             return name ? convertLineBreaks(name) : t('mapEdit.planet');
         }
         case 'area': {

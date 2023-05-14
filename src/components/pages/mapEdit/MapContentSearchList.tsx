@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { IMapContent, IMapContentWithStation, IMapData, IMarker, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IStation } from './types/IMapContent';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
-import { matchMarker, matchPlanet, matchStation } from './utils/mapContentUtils';
+import { matchMarker, matchPlanet, matchPlatform, matchStation } from './utils/mapContentUtils';
 import { MapContentSearchListContent } from './MapContentSearchListContent';
 
 interface IProps {
@@ -64,7 +64,12 @@ export const MapContentSearchList = (props: IProps) => {
         if (searchTerm.length === 0) {
             return structures;
         }
-        return structures.filter(base => matchStation(base.station, searchTerm));
+        return structures.filter(structure => {
+            if (structure.contentType === 'platform') {
+                return matchPlatform(structure as IPlayerPlatform, searchTerm);
+            }
+            return matchStation(structure.station, searchTerm);
+        });
     }, [mapData, currentMenu, searchTerm]);
 
     const markers: IMarker[] = useMemo(() => {
