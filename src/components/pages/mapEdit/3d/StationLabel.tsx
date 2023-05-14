@@ -1,18 +1,9 @@
 import { ThreeEvent } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useRef } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
-import { createPlayerBaseIcon, createCityIcon, createDefaultStationIcon, createTextImage, mergeIconAndText, applyMarginToImage, createStrongholdIcon } from '../utils/spriteUtils';
 import { CanvasSprite } from './CanvasSprite';
-
-interface IImages {
-    icon: HTMLCanvasElement;
-    iconCenteredLabel: HTMLCanvasElement | null;
-    textCenteredLabel: HTMLCanvasElement | null;
-    iconCenteredLabelWithLevel: HTMLCanvasElement | null;
-    textCenteredLabelWithLevel: HTMLCanvasElement | null;
-}
 
 interface IProps {
     station: IStation;
@@ -37,74 +28,68 @@ export const StationLabel = (props: IProps) => {
 
     const updateIterationRef = useRef<number>(0);
 
-    const images = useMemo<IImages>(() => {
-        updateIterationRef.current++;
-        const icon = getIcon(station);
-        const text = getTextImage(station, false);
-        const textWithLevel = showLevel(station) ? getTextImage(station, true) : null;
-
-        return {
-            icon,
-            iconCenteredLabel: getIconCenteredLabelImage(icon, text),
-            textCenteredLabel: getTextCenteredLabelImage(icon, text),
-            iconCenteredLabelWithLevel: textWithLevel ? getIconCenteredLabelImage(icon, textWithLevel) : null,
-            textCenteredLabelWithLevel: textWithLevel ? getTextCenteredLabelImage(icon, textWithLevel) : null,
-        };
-    }, [station, updateIterationRef]);
-
     switch (station.type) {
         case 'subCity':
         case 'city': {
             const iconVisible = station.type === 'subCity' ? subCityIconVisible : cityIconVisible;
             const labelVisible = station.type === 'subCity' ? subCityLabelVisible : cityLabelVisible;
+            const iconCenteredLabel = (cityLevelVisible ? station.iconCenteredLabelWithLevel : null) ?? station.iconCenteredLabel ?? station.icon;
+            const centeredLabel = (cityLevelVisible ? station.textCenteredLabelWithLevel : null) ?? station.textCenteredLabel ?? station.icon;
             return (
                 <group visible={iconVisible}>
                     <CanvasSprite
                         key={`${station.id}_icon_${updateIterationRef.current}`}
-                        canvas={images.icon}
+                        canvas={station.icon}
                         gridPosition={position}
                         visible={!labelVisible}
                         onClick={onClick}
                     />
-                    <CanvasSprite
-                        key={`${station.id}_iconCenteredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
-                        canvas={(cityLevelVisible ? images.iconCenteredLabelWithLevel : null) ?? images.iconCenteredLabel ?? images.icon}
-                        gridPosition={position}
-                        visible={labelVisible && !coneVisible}
-                        onClick={onClick}
-                    />
-                    <CanvasSprite
-                        key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
-                        canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
-                        gridPosition={position}
-                        visible={labelVisible && coneVisible}
-                        onClick={onClick}
-                    />
+                    {iconCenteredLabel && (
+                        <CanvasSprite
+                            key={`${station.id}_iconCenteredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
+                            canvas={iconCenteredLabel}
+                            gridPosition={position}
+                            visible={labelVisible && !coneVisible}
+                            onClick={onClick}
+                        />
+                    )}
+                    {centeredLabel && (
+                        <CanvasSprite
+                            key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
+                            canvas={centeredLabel}
+                            gridPosition={position}
+                            visible={labelVisible && coneVisible}
+                            onClick={onClick}
+                        />
+                    )}
                 </group>
             );
         }
         case 'base': {
+            const centeredLabel = station.textCenteredLabel ?? station.icon;
             return (
                 <group visible={baseIconVisible}>
                     <CanvasSprite
                         key={`${station.id}_icon_${updateIterationRef.current}`}
-                        canvas={images.icon}
+                        canvas={station.icon}
                         gridPosition={position}
                         visible={!baseLabelVisible}
                         onClick={onClick}
                     />
-                    <CanvasSprite
-                        key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
-                        canvas={(cityLevelVisible ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? images.icon}
-                        gridPosition={position}
-                        visible={baseLabelVisible}
-                        onClick={onClick}
-                    />
+                    {centeredLabel && (
+                        <CanvasSprite
+                            key={`${station.id}_centeredLabel_${cityLevelVisible}_${updateIterationRef.current}`}
+                            canvas={centeredLabel}
+                            gridPosition={position}
+                            visible={baseLabelVisible}
+                            onClick={onClick}
+                        />
+                    )}
                 </group>
             );
         }
         default: {
-            const labelImage = (showLevel(station) ? images.textCenteredLabelWithLevel : null) ?? images.textCenteredLabel ?? null;
+            const labelImage = station.textCenteredLabelWithLevel ?? station.textCenteredLabel ?? null;
             if (!labelImage) {
                 return null;
             }
@@ -121,92 +106,3 @@ export const StationLabel = (props: IProps) => {
         }
     }
 };
-
-function getIcon(station: IStation): HTMLCanvasElement {
-    switch (station.type) {
-        case 'base': {
-            return createPlayerBaseIcon(station.color);
-        }
-        case 'city': {
-            return createCityIcon(station.level, station.color);
-        }
-        case 'stronghold': {
-            return createStrongholdIcon(station.color);
-        }
-        case 'outpost':
-        case 'platform': {
-            // TODO new icon
-            return createDefaultStationIcon(station.color);
-        }
-        default: {
-            return createDefaultStationIcon(station.color);
-        }
-    }
-}
-
-function getTextImage(station: IStation, withLevel: boolean): HTMLCanvasElement | null {
-    const labelText = getLabelText(station, withLevel);
-    if (!labelText) {
-        return null;
-    }
-    return createTextImage({
-        text: labelText,
-        fontSize: 12,
-        color: station.color,
-    });
-}
-
-function getLabelText(station: IStation, withLevel: boolean): string {
-    const parts: string[] = [
-        ...(station.name ? [station.name] : []),
-        ...((withLevel && Number.isFinite(station.level)) ? [`Lv${station.level}`] : []),
-    ];
-    return parts.join(' ');
-}
-
-function getTextCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCanvas: HTMLCanvasElement | null): HTMLCanvasElement | null {
-    if (iconCanvas && textCanvas) {
-        return mergeIconAndText({
-            iconCanvas,
-            textCanvas,
-            spacing: 4,
-            padding: 1,
-            marginBottom: 60,
-            backgroundColor: 'rgba(0,0,0,0.3)',
-        });
-    }
-
-    const image = textCanvas ?? iconCanvas ?? null;
-    if (!image) {
-        return null;
-    }
-
-    return applyMarginToImage({
-        image,
-        marginBottom: 60,
-        backgroundColor: 'rgba(0,0,0,0.3)',
-    });
-}
-
-function getIconCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCanvas: HTMLCanvasElement | null): HTMLCanvasElement | null {
-    if (iconCanvas && textCanvas) {
-        return mergeIconAndText({
-            iconCanvas,
-            textCanvas,
-            spacing: 4,
-            padding: 1,
-            centerIcon: true,
-        });
-    }
-    return textCanvas ?? iconCanvas ?? null;
-}
-
-function showLevel(station: IStation): boolean {
-    switch (station.type) {
-        case 'base':
-        case 'stronghold':
-            return false;
-        default:
-            return Number.isFinite(station.level);
-    }
-}

@@ -5,6 +5,7 @@ import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
 import { formatPlatformLabel } from './mapContentUtils';
+import { createPlayerBaseIcon, createCityIcon, createStrongholdIcon, createDefaultStationIcon, createTextImage, mergeIconAndText, applyMarginToImage } from './spriteUtils';
 
 const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
@@ -375,6 +376,8 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
         coordinates.push(`(${x + 5},${y + 5})`);
     }
 
+    const name = lineWithoutColors ? parsePlainText(lineWithoutColors) : null;
+
     return [
         {
             id: `station${lineNumber}`,
@@ -384,7 +387,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
             position: coordinates[0],
             level,
             color,
-            name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
+            name,
             area: coordinates.length === 3 ? {
                 id: `stationArea${lineNumber}`,
                 contentType: 'area',
@@ -394,6 +397,7 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
                 color,
                 lineNumber,
             } : undefined,
+            ...createStationIcons(type, level, color, name),
         },
         null,
     ];
@@ -501,6 +505,9 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
 
     const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
 
+    const color = parseColor(colors[0], DEFAULT_PLAYER_COLOR);
+    const name = lineWithoutColors ? parsePlainText(lineWithoutColors) : null;
+
     const station: IStation = {
         id: `station${lineNumber}`,
         contentType: 'station',
@@ -508,8 +515,8 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
         type: 'base',
         position: position,
         level: null,
-        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
+        color,
+        name,
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -519,6 +526,7 @@ function parsePlayerBaseLine(line: string, lineNumber: number): [IPlayerBase | n
             position2: `(${x + 5},${y + 5})`,
             color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
         },
+        ...createStationIcons('base', null, color, name),
     };
 
     return [
@@ -555,6 +563,9 @@ function parsePlayerOutpostLine(line: string, lineNumber: number): [IPlayerOutpo
 
     const [position, x, y] = snapGamePositionToGridCellCenter(coordinates[0] as GamePosition);
 
+    const color = parseColor(colors[0], DEFAULT_PLAYER_COLOR);
+    const name = lineWithoutColors ? parsePlainText(lineWithoutColors) : t('mapEdit.station.outpost');
+
     const station: IStation = {
         id: `station${lineNumber}`,
         contentType: 'station',
@@ -562,8 +573,8 @@ function parsePlayerOutpostLine(line: string, lineNumber: number): [IPlayerOutpo
         type: 'outpost',
         position: position,
         level: null,
-        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : t('mapEdit.station.outpost'),
+        color,
+        name,
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -573,6 +584,7 @@ function parsePlayerOutpostLine(line: string, lineNumber: number): [IPlayerOutpo
             position2: `(${x + 5},${y + 5})`,
             color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
         },
+        ...createStationIcons('outpost', null, color, name),
     };
 
     return [
@@ -620,6 +632,8 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
     const [position, x, y] = snapGamePositionToGridCellCorner(coordinates[0] as GamePosition);
 
     const platformType = platformTypes[0] as PlatformType;
+    const color = parseColor(colors[0], DEFAULT_PLAYER_COLOR);
+    const name = lineWithoutColors ? parsePlainText(lineWithoutColors) : formatPlatformLabel(platformType);
 
     const station: IStation = {
         id: `station${lineNumber}`,
@@ -628,8 +642,8 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
         type: 'platform',
         position: position,
         level: null,
-        color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
-        name: lineWithoutColors ? parsePlainText(lineWithoutColors) : formatPlatformLabel(platformType),
+        color,
+        name,
         area: {
             id: `area${lineNumber}`,
             contentType: 'area',
@@ -639,6 +653,7 @@ function parsePlayerPlatformLine(line: string, lineNumber: number): [IPlayerPlat
             position2: `(${x + 10},${y + 10})`,
             color: parseColor(colors[0], DEFAULT_PLAYER_COLOR),
         },
+        ...createStationIcons('platform', null, color, name),
     };
 
     return [
@@ -745,4 +760,97 @@ function createParseMapContentError(message: string, line: number) {
         message,
         line,
     };
+}
+
+function createStationIcons(type: StationType, level: number | null, color: string, name: string | null) {
+    const icon = getStationIcon(type, level, color);
+    const text = getTextImage(level, color, name, false);
+    const textWithLevel = Number.isFinite(level) ? getTextImage(level, color, name, true) : null;
+
+    return {
+        icon,
+        iconCenteredLabel: getIconCenteredLabelImage(icon, text),
+        textCenteredLabel: getTextCenteredLabelImage(icon, text),
+        iconCenteredLabelWithLevel: textWithLevel ? getIconCenteredLabelImage(icon, textWithLevel) : null,
+        textCenteredLabelWithLevel: textWithLevel ? getTextCenteredLabelImage(icon, textWithLevel) : null,
+    };
+}
+
+function getStationIcon(type: StationType, level: number | null, color: string): HTMLCanvasElement {
+    switch (type) {
+        case 'base': {
+            return createPlayerBaseIcon(color);
+        }
+        case 'city': {
+            return createCityIcon(level, color);
+        }
+        case 'stronghold': {
+            return createStrongholdIcon(color);
+        }
+        case 'outpost':
+        case 'platform': {
+            // TODO new icon
+            return createDefaultStationIcon(color);
+        }
+        default: {
+            return createDefaultStationIcon(color);
+        }
+    }
+}
+
+function getTextImage(level: number | null, color: string, name: string | null, withLevel: boolean): HTMLCanvasElement | null {
+    const labelText = getLabelText(level, name, withLevel);
+    if (!labelText) {
+        return null;
+    }
+    return createTextImage({
+        text: labelText,
+        fontSize: 12,
+        color,
+    });
+}
+
+function getLabelText(level: number | null, name: string | null, withLevel: boolean): string {
+    const parts: string[] = [
+        ...(!!name ? [name] : []),
+        ...((withLevel && Number.isFinite(level)) ? [`Lv${level}`] : []),
+    ];
+    return parts.join(' ');
+}
+
+function getTextCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCanvas: HTMLCanvasElement | null): HTMLCanvasElement | null {
+    if (iconCanvas && textCanvas) {
+        return mergeIconAndText({
+            iconCanvas,
+            textCanvas,
+            spacing: 4,
+            padding: 1,
+            marginBottom: 60,
+            backgroundColor: 'rgba(0,0,0,0.3)',
+        });
+    }
+
+    const image = textCanvas ?? iconCanvas ?? null;
+    if (!image) {
+        return null;
+    }
+
+    return applyMarginToImage({
+        image,
+        marginBottom: 60,
+        backgroundColor: 'rgba(0,0,0,0.3)',
+    });
+}
+
+function getIconCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCanvas: HTMLCanvasElement | null): HTMLCanvasElement | null {
+    if (iconCanvas && textCanvas) {
+        return mergeIconAndText({
+            iconCanvas,
+            textCanvas,
+            spacing: 4,
+            padding: 1,
+            centerIcon: true,
+        });
+    }
+    return textCanvas ?? iconCanvas ?? null;
 }

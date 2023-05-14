@@ -59,6 +59,11 @@ export interface IStation extends IMapContent {
     level: number | null;
     color: string;
     name: string | null;
+    icon: HTMLCanvasElement;
+    iconCenteredLabel: HTMLCanvasElement | null;
+    textCenteredLabel: HTMLCanvasElement | null;
+    iconCenteredLabelWithLevel: HTMLCanvasElement | null;
+    textCenteredLabelWithLevel: HTMLCanvasElement | null;
     area?: IArea;
 }
 
