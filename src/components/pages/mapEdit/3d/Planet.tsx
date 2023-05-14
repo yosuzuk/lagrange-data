@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useDebug } from '../context/DebugContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
@@ -31,6 +32,12 @@ export const Planet = (props: IProps) => {
     const radius = radiusBySize[planet.size];
     const widthSegments = planet.size === 'small' ? 8 : 16;
 
+    const updateIterationRef = useRef<number>(0);
+
+    useEffect(() => {
+        updateIterationRef.current++;
+    }, [updateIterationRef, planet]);
+
     return (
         <>
             <mesh name={planet.id} position={[...position, 0]} renderOrder={getRendeOrder('planet')}>
@@ -39,7 +46,10 @@ export const Planet = (props: IProps) => {
             </mesh>
             <Orbit outerPos={planet.position} centerPos={planet.orbitCenter} visible={!planet.orbitCenter || subPlanetOrbitVisible} />
             {planet.labelImage && (
-                <CanvasSprite gridPosition={position} canvas={planet.labelImage} visible={labelVisible} />
+                <CanvasSprite
+                    key={`${planet.id}_label_${updateIterationRef.current}`}
+                    gridPosition={position} canvas={planet.labelImage} visible={labelVisible}
+                />
             )}
         </>
     );

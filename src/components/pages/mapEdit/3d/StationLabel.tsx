@@ -1,5 +1,5 @@
 import { ThreeEvent } from '@react-three/fiber';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
 import { IStation } from '../types/IMapContent';
@@ -27,6 +27,10 @@ export const StationLabel = (props: IProps) => {
     });
 
     const updateIterationRef = useRef<number>(0);
+
+    useEffect(() => {
+        updateIterationRef.current++;
+    }, [updateIterationRef, station]);
 
     switch (station.type) {
         case 'subCity':
