@@ -48,6 +48,7 @@ export interface IPlanet extends IMapContent {
     size: PlanetSize;
     color: string;
     name: string | null;
+    labelImage: HTMLCanvasElement | null;
 }
 
 export type StationType = 'city' | 'subCity' | 'stronghold' | 'base' | 'outpost' | 'platform' | 'dock' | 'default';

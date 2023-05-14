@@ -1,12 +1,11 @@
 import { useDebug } from '../context/DebugContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { useNormalizedPosition } from '../hooks/useNormalizedPosition';
-import { GamePosition, GridPosition } from '../types/Coordinates';
 import { IPlanet } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { getRendeOrder } from '../utils/renderOrder';
+import { CanvasSprite } from './CanvasSprite';
 import { Orbit } from './Orbit';
-import { PlanetLabel } from './PlanetLabel';
 
 const radiusBySize: Record<PlanetSize, number> = {
     large: 2.5,
@@ -23,6 +22,7 @@ export const Planet = (props: IProps) => {
     const debug = useDebug();
 
     const subPlanetOrbitVisible = useZoomBasedVisibility('subPlanetOrbit');
+    const labelVisible = useZoomBasedVisibility('planetLabel');
 
     const position = useNormalizedPosition({
         gamePosition: planet.position,
@@ -38,13 +38,8 @@ export const Planet = (props: IProps) => {
                 <meshStandardMaterial color={planet.color} wireframe={debug} />
             </mesh>
             <Orbit outerPos={planet.position} centerPos={planet.orbitCenter} visible={!planet.orbitCenter || subPlanetOrbitVisible} />
-            {planet.name && (
-                <PlanetLabel
-                    key={`${planet.id}_${planet.name}`}
-                    gridPosition={position}
-                    planetName={planet.name}
-                    planetSize={planet.size}
-                />
+            {planet.labelImage && (
+                <CanvasSprite gridPosition={position} canvas={planet.labelImage} visible={labelVisible} />
             )}
         </>
     );

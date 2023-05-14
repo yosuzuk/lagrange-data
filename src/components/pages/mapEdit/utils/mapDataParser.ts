@@ -5,7 +5,7 @@ import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
 import { formatPlatformLabel } from './mapContentUtils';
-import { createPlayerBaseIcon, createCityIcon, createStrongholdIcon, createDefaultStationIcon, createTextImage, mergeIconAndText, applyMarginToImage } from './spriteUtils';
+import { createPlayerBaseIcon, createCityIcon, createStrongholdIcon, createDefaultStationIcon, createTextImage, mergeIconAndText, applyMarginToImage, createLargePlanetIcon, createSmallPlanetIcon } from './spriteUtils';
 
 const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
@@ -310,6 +310,9 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
         return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
     }
 
+    const size = planetSizes[0] ?? 'medium';
+    const name = lineWithoutColors ? parsePlainText(lineWithoutColors) : null;
+
     return [
         {
             id: `planet${lineNumber}`,
@@ -317,9 +320,10 @@ function parsePlanetLine(line: string, lineNumber: number): [IPlanet | null, IPa
             lineNumber,
             position: coordinates[0],
             orbitCenter: coordinates[1],
-            size: planetSizes[0] ?? 'medium',
+            size,
             color: parseColor(colors[0], DEFAULT_PLANET_COLOR),
-            name: lineWithoutColors ? parsePlainText(lineWithoutColors) : null,
+            name,
+            labelImage: name ? createPlanetLabelImage(size, name) : null,
         },
         null,
     ];
@@ -853,4 +857,19 @@ function getIconCenteredLabelImage(iconCanvas: HTMLCanvasElement | null, textCan
         });
     }
     return textCanvas ?? iconCanvas ?? null;
+}
+
+function createPlanetLabelImage(planetSize: PlanetSize, name: string): HTMLCanvasElement {
+    const iconCanvas = planetSize === 'small' ? createSmallPlanetIcon() : createLargePlanetIcon();
+    const textCanvas = createTextImage({
+        text: name,
+        color: 'white',
+        fontSize: 12,
+    });
+    return mergeIconAndText({
+        iconCanvas,
+        textCanvas,
+        spacing: 4,
+        marginTop: (planetSize === 'large' ? 55 : 35) + Math.max(iconCanvas.height, textCanvas.height),
+    });
 }
