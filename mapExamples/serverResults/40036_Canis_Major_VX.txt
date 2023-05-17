@@ -1,0 +1,45 @@
+$name 40036 Canis Major VX
+$serverName Canis Major VX
+$size 9000
+
+$overlay
+We are Legion (2.4%)
+
+$station
+(1380,3132) city 5 #c7E67F2 We are Legion
+(2814,2844) city 2 #c7E67F2 We are Legion
+(1412,2867) city 3 #c7E67F2 We are Legion
+(1036,2978) city 3 #c7E67F2 We are Legion
+(0991,3265) city 2 #c7E67F2 We are Legion
+(1724,4214) city 2 #c7E67F2 We are Legion
+(2194,4444) city 2 #c7E67F2 We are Legion
+(2294,3294) city 2 #c7E67F2 We are Legion
+(2324,3694) city 2 #c7E67F2 We are Legion
+(2384,4594) city 2 #c7E67F2 We are Legion
+
+$planet
+(1212,3054) large
+(1391,2882)(1212,3054) small
+(1275,3110)(1212,3054) small
+(1009,2996)(1212,3054) small
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4298,3985)(4152,4034) small
+(4152,4034) large
+(4112,4136)(4152,4034) small
+(3672,8534) large
+(3469,8476)(3672,8534) small
+(3851,8362)(3672,8534) small
+(3735,8590)(3672,8534) small
+(1458,6555)(1292,6614) small
+(1292,6614) large
+(1252,6676)(1292,6614) small
+(3038,5195)(2872,5254) small
+(2872,5254) large
+(2832,5316)(2872,5254) small
+(4499,4497) medium

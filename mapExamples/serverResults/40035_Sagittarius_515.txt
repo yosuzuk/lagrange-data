@@ -1,0 +1,120 @@
+$name 40035 Sagittarius 515
+$serverName Sagittarius 515
+$size 9000
+
+$overlay
+鬼島倖存者 (23.3%)
+LEGION OF FATE (11.6%)
+Global Cosmos (11.6%)
+CH宇宙和音 (11.6%)
+Enders (9.4%)
+Vanaheim (9.4%)
+INFINITY WAR (7.2%)
+爬獸保育基地 (4.3%)
+AbyssalOGN (2.1%)
+貓貓救援基地 (2.1%)
+ウニ道楽 (2.1%)
+鯊鯊養殖基地 (2.1%)
+宇日連邦 (2.1%)
+
+$station
+(1750,4940) city 5 #c49E7C0 CH宇宙和音
+(1725,4818) city 5 #c49E7C0 CH宇宙和音
+(1614,5073) city 5 #c49E7C0 CH宇宙和音
+(1893,2833) city 7 #c49E7C0 CH宇宙和音
+(2132,3050) city 5 #c49E7C0 CH宇宙和音
+(4734,0554) city 2 #cFD7844 Global Cosmos
+(5410,0688) city 3 #cFD7844 Global Cosmos
+(6150,3220) city 5 #cFD7844 Global Cosmos
+(7046,3157) city 3 #cFD7844 Global Cosmos
+(6773,3093) city 7 #cFD7844 Global Cosmos
+(7012,3310) city 5 #cFD7844 Global Cosmos
+(5280,5678) city 5 #cE63A3A Enders
+(5292,5848) city 5 #cE63A3A Enders
+(5084,8815) city 2 #cE63A3A Enders
+(5741,5969) city 7 #cE63A3A Enders
+(5879,5900) city 2 #cE63A3A Enders
+(5774,7634) city 2 #cE63A3A Enders
+(6056,7278) city 3 #cE63A3A Enders
+(6529,4071) city 5 #cE63A3A Enders
+(6492,4309) city 5 #cE63A3A Enders
+(6914,6333) city 5 #cE63A3A Enders
+(7414,6984) city 2 #cE63A3A Enders
+(3819,3519) city 9 #cE5B36C 鬼島倖存者
+(3713,3746) city 3 #cE5B36C 鬼島倖存者
+(4569,1611) city 5 #cE5B36C 鬼島倖存者
+(5852,6150) city 5 #cE5B36C 鬼島倖存者
+(5936,3354) city 5 #cE5B36C 鬼島倖存者
+(6392,7430) city 5 #cE5B36C 鬼島倖存者
+(6379,7978) city 3 #cE5B36C 鬼島倖存者
+(6720,6560) city 5 #cE5B36C 鬼島倖存者
+(1755,5779) city 5 #cF1F1F1 AbyssalOGN
+(2014,8044) city 2 #cF1F1F1 AbyssalOGN
+(3632,5570) city 5 #cF1F1F1 AbyssalOGN
+(4292,1598) city 5 #cF1F1F1 AbyssalOGN
+(1840,5818) city 5 #c7E67F2 Vanaheim
+(1739,5891) city 5 #c7E67F2 Vanaheim
+(2834,3593) city 5 #c7E67F2 Vanaheim
+(3252,5706) city 2 #c7E67F2 Vanaheim
+(3398,5577) city 7 #c7E67F2 Vanaheim
+(0774,6204) city 2 #c7E67F2 Vanaheim
+(1114,6144) city 2 #c7E67F2 Vanaheim
+(4514,8724) city 2 #c929292 ウニ道楽
+(5179,5751) city 5 #c929292 ウニ道楽
+(3814,7794) city 2 #cF284FF INFINITY WAR
+(4614,8304) city 2 #cF284FF INFINITY WAR
+(6158,7437) city 7 #cF284FF INFINITY WAR
+(5269,3551) city 5 #c9FE23E 爬獸保育基地
+(7049,5771) city 5 #c9FE23E 爬獸保育基地
+(7656,5594) city 5 #c9FE23E 爬獸保育基地
+(4096,3591) city 5 #c929292 貓貓救援基地
+(6915,5599) city 5 #c929292 貓貓救援基地
+(7846,5602) city 5 #c929292 貓貓救援基地
+(8154,5404) city 2 #c929292 貓貓救援基地
+(2420,1620) city 5 #c929292 宇日連邦
+(7870,5460) city 5 #c929292 鯊鯊養殖基地
+(2640,3820) city 5 #c4A99FB LEGION OF FATE
+(2944,8234) city 2 #c4A99FB LEGION OF FATE
+(4570,1398) city 5 #c4A99FB LEGION OF FATE
+(4951,5025) city 2 #c4A99FB LEGION OF FATE
+(5098,4897) city 7 #c4A99FB LEGION OF FATE
+(5332,4890) city 5 #c4A99FB LEGION OF FATE
+(6074,0424) city 2 #c4A99FB LEGION OF FATE
+(6304,0554) city 2 #c4A99FB LEGION OF FATE
+(6764,1434) city 2 #c4A99FB LEGION OF FATE
+(7574,2104) city 2 #c4A99FB LEGION OF FATE
+(7474,1284) city 2 #c4A99FB LEGION OF FATE
+(7424,1694) city 2 #c4A99FB LEGION OF FATE
+(7744,1694) city 2 #c4A99FB LEGION OF FATE
+(7914,1914) city 2 #c4A99FB LEGION OF FATE
+(7994,2254) city 2 #c4A99FB LEGION OF FATE
+(8484,2814) city 2 #c4A99FB LEGION OF FATE
+(8734,3634) city 2 #c4A99FB LEGION OF FATE
+
+$planet
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(1932,3036)(1972,2974) small
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium
