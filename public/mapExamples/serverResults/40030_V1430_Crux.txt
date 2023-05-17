@@ -1,0 +1,103 @@
+$name 40030 V1430 Crux
+$serverName V1430 Crux
+$size 9000
+
+$overlay
+Active JPN (23.8%)
+宇宙吸貓萌 (21.1%)
+Klingon Empire (21.1%)
+Iceni (11.9%)
+Orion Syndicate (5.5%)
+大威天龙 (5.5%)
+嵐焚 (2.7%)
+БолтМ24 (2.7%)
+Shadow Remnants (2.7%)
+MoD (2.7%)
+
+$station
+(2426,2410) city 5 #cFD7844 Klingon Empire
+(2971,2427) city 3 #cFD7844 Klingon Empire
+(4473,2275) city 5 #cFD7844 Klingon Empire
+(5096,2845) city 9 #cFD7844 Klingon Empire
+(5381,2911) city 5 #cFD7844 Klingon Empire
+(6295,1039) city 2 #cFD7844 Klingon Empire
+(1479,1696) city 2 #cFD7844 Klingon Empire
+(4064,5218) city 5 #c929292 MoD
+(1425,6517) city 5 #c929292 MoD
+(0319,5066) city 3 #cE5B36C Active JPN
+(3801,5162) city 2 #cE5B36C Active JPN
+(3651,5047) city 7 #cE5B36C Active JPN
+(5125,5738) city 3 #cE5B36C Active JPN
+(4739,5910) city 5 #cE5B36C Active JPN
+(4834,5684) city 7 #cE5B36C Active JPN
+(5106,5905) city 5 #cE5B36C Active JPN
+(5834,6835) city 5 #cE5B36C Active JPN
+(4026,4914) city 3 #c9FE23E БолтМ24
+(5003,5138) city 5 #c9FE23E БолтМ24
+(1399,7626) city 3 #c9FE23E БолтМ24
+(1663,2973) city 2 #c9FE23E БолтМ24
+(3116,2308) city 5 #cE63A3A Orion Syndicate
+(3018,1281) city 5 #cE63A3A Orion Syndicate
+(4053,2335) city 3 #cE63A3A Orion Syndicate
+(0954,3484) city 2 #cE63A3A Orion Syndicate
+(7139,3347) city 2 #cE63A3A Orion Syndicate
+(3195,1168) city 5 #c7E67F2 大威天龙
+(4962,3388) city 5 #c7E67F2 大威天龙
+(7294,1807) city 2 #c7E67F2 大威天龙
+(8489,3479) city 5 #c7E67F2 大威天龙
+(0191,5895) city 7 #c4A99FB 宇宙吸貓萌
+(3298,7283) city 5 #c4A99FB 宇宙吸貓萌
+(3146,6994) city 7 #c4A99FB 宇宙吸貓萌
+(3244,6374) city 2 #c4A99FB 宇宙吸貓萌
+(3684,7854) city 2 #c4A99FB 宇宙吸貓萌
+(4194,7707) city 2 #c4A99FB 宇宙吸貓萌
+(4883,4971) city 3 #c4A99FB 宇宙吸貓萌
+(6055,7599) city 2 #c4A99FB 宇宙吸貓萌
+(3208,6869) city 2 #cF284FF 嵐焚
+(2888,7015) city 5 #cF284FF 嵐焚
+(4739,7026) city 2 #cF284FF 嵐焚
+(4769,7967) city 3 #cF284FF 嵐焚
+(5088,4954) city 3 #cF284FF 嵐焚
+(5350,4248) city 5 #cF284FF 嵐焚
+(5277,4179) city 5 #cF284FF 嵐焚
+(5384,4022) city 5 #cF284FF 嵐焚
+(5757,6938) city 5 #cF284FF 嵐焚
+(6459,8467) city 2 #cF284FF 嵐焚
+(1385,6672) city 3 #cF284FF 嵐焚
+(2903,2249) city 7 #c49E7C0 Iceni
+(3213,1371) city 5 #c49E7C0 Iceni
+(4252,2275) city 3 #c49E7C0 Iceni
+(4815,3602) city 5 #c49E7C0 Iceni
+(4992,3065) city 3 #c49E7C0 Iceni
+(5453,2334) city 3 #c49E7C0 Iceni
+(3823,7653) city 2 #cF1F1F1 Shadow Remnants
+(0488,5911) city 3 #cF1F1F1 Shadow Remnants
+(0233,6170) city 5 #cF1F1F1 Shadow Remnants
+
+$planet
+(8552,3596) large
+(8469,3680)(8552,3596) small
+(8619,3457)(8552,3596) small
+(5233,2714)(5303,2941) small
+(5241,2973)(5303,2941) small
+(5303,2941) large
+(5195,2969)(5303,2941) small
+(2952,2436)(2992,2374) small
+(2992,2374) large
+(3135,2359)(2992,2374) small
+(3016,7032) large
+(2922,7033)(3016,7032) small
+(3140,7047)(3016,7032) small
+(3042,7080)(3016,7032) small
+(458,5935)(292,5991) small
+(232,6196)(292,5991) small
+(292,5991) large
+(5099,5757) large
+(4937,5819)(5099,5757) small
+(3935,5110)(3870,5050) small
+(4051,4882)(3870,5050) small
+(3668,4996)(3870,5050) small
+(3870,5050) large
+(5032,3090) medium
+(4499,4497) medium
+(4080,5238) medium

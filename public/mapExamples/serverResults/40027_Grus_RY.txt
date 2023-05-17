@@ -1,0 +1,126 @@
+$name 40027 Grus RY
+$serverName Grus RY
+$size 9000
+
+$overlay
+EclipseProject (30.6%)
+Kangaeru (16.7%)
+Blue Alliance (16.0%)
+UnitedRUS (13.8%)
+Dawn Operation (7.2%)
+FDM (7.2%)
+Muff Divers (6.5%)
+Eternal (4.3%)
+鴨菊花帝国 (4.3%)
+
+$station
+(6126,3362) city 5 #c49E7C0 UnitedRUS
+(6529,4071) city 5 #c49E7C0 UnitedRUS
+(7046,3157) city 3 #c49E7C0 UnitedRUS
+(6773,3093) city 7 #c49E7C0 UnitedRUS
+(7012,3310) city 5 #c49E7C0 UnitedRUS
+(6914,6333) city 5 #c49E7C0 UnitedRUS
+(6772,5758) city 5 #c49E7C0 UnitedRUS
+(7050,5558) city 5 #c49E7C0 UnitedRUS
+(6915,5599) city 5 #c49E7C0 UnitedRUS
+(7049,5771) city 5 #c49E7C0 UnitedRUS
+(1840,5818) city 5 #cE63A3A Dawn Operation
+(5280,5678) city 5 #cE63A3A Dawn Operation
+(6158,7437) city 7 #cE63A3A Dawn Operation
+(6659,3330) city 5 #cE63A3A Dawn Operation
+(1614,5073) city 5 #c4A99FB Kangaeru
+(5372,4627) city 3 #c4A99FB Kangaeru
+(5269,3551) city 5 #c4A99FB Kangaeru
+(6290,4060) city 5 #c4A99FB Kangaeru
+(7474,1284) city 2 #c4A99FB Kangaeru
+(1750,4940) city 5 #cE5B36C EclipseProject
+(2834,3593) city 5 #cE5B36C EclipseProject
+(2640,3820) city 5 #cE5B36C EclipseProject
+(3672,5307) city 3 #cE5B36C EclipseProject
+(3296,5418) city 3 #cE5B36C EclipseProject
+(3252,5706) city 2 #cE5B36C EclipseProject
+(3398,5577) city 7 #cE5B36C EclipseProject
+(3632,5570) city 5 #cE5B36C EclipseProject
+(3819,3519) city 9 #cE5B36C EclipseProject
+(3713,3746) city 3 #cE5B36C EclipseProject
+(5332,4890) city 5 #cE5B36C EclipseProject
+(5195,5639) city 5 #cE5B36C EclipseProject
+(1739,5891) city 5 #cFD7844 Blue Alliance
+(4996,4738) city 3 #cFD7844 Blue Alliance
+(5179,5751) city 5 #cFD7844 Blue Alliance
+(5292,5848) city 5 #cFD7844 Blue Alliance
+(5741,5969) city 7 #cFD7844 Blue Alliance
+(5852,6150) city 5 #cFD7844 Blue Alliance
+(5671,6167) city 5 #cFD7844 Blue Alliance
+(6432,7167) city 3 #cFD7844 Blue Alliance
+(6392,7430) city 5 #cFD7844 Blue Alliance
+(6418,4239) city 5 #cFD7844 Blue Alliance
+(6492,4309) city 5 #cFD7844 Blue Alliance
+(6831,3287) city 5 #cFD7844 Blue Alliance
+(1951,3027) city 5 #c9FE23E Eternal
+(0324,2955) city 2 #c9FE23E Eternal
+(2420,1620) city 5 #c9FE23E Eternal
+(0370,4728) city 3 #c9FE23E Eternal
+(3354,0764) city 2 #c9FE23E Eternal
+(3414,0294) city 2 #c9FE23E Eternal
+(4096,3591) city 5 #c9FE23E Eternal
+(0604,3694) city 2 #c9FE23E Eternal
+(0634,4244) city 2 #c9FE23E Eternal
+(5158,3719) city 5 #c9FE23E Eternal
+(0954,3044) city 2 #c9FE23E Eternal
+(1084,5094) city 2 #c9FE23E Eternal
+(0184,3454) city 2 #c9FE23E Eternal
+(2166,2897) city 3 #c7E67F2 FDM
+(1779,3070) city 5 #c7E67F2 FDM
+(1893,2833) city 7 #c7E67F2 FDM
+(2132,3050) city 5 #cF1F1F1 鴨菊花帝国
+(5232,3789) city 5 #cF1F1F1 鴨菊花帝国
+(6720,6560) city 5 #cF1F1F1 鴨菊花帝国
+(2044,1534) city 2 #cF284FF Muff Divers
+(2607,1654) city 5 #cF284FF Muff Divers
+(2614,1393) city 5 #cF284FF Muff Divers
+(2514,0524) city 2 #cF284FF Muff Divers
+(3704,1054) city 2 #cF284FF Muff Divers
+(4074,0944) city 2 #cF284FF Muff Divers
+(4292,1598) city 5 #cF284FF Muff Divers
+(4569,1611) city 5 #cF284FF Muff Divers
+(4734,0554) city 2 #cF284FF Muff Divers
+(5030,3540) city 5 #cF284FF Muff Divers
+(5434,0944) city 2 #cF284FF Muff Divers
+(5410,0688) city 3 #cF284FF Muff Divers
+(6074,0424) city 2 #cF284FF Muff Divers
+(5936,3354) city 5 #cF284FF Muff Divers
+(6150,3220) city 5 #cF284FF Muff Divers
+(6304,0554) city 2 #cF284FF Muff Divers
+(6764,1434) city 2 #cF284FF Muff Divers
+(7424,1694) city 2 #cF284FF Muff Divers
+(7870,5460) city 5 #cF284FF Muff Divers
+(7744,1694) city 2 #cF284FF Muff Divers
+
+$planet
+(1932,3036)(1972,2974) small
+(2138,2915)(1972,2974) small
+(1972,2974) large
+(3915,3649) large
+(4023,3621)(3915,3649) small
+(3752,3770)(3915,3649) small
+(3961,3653)(3915,3649) small
+(6411,7182)(6232,7354) small
+(6029,7296)(6232,7354) small
+(6232,7354) large
+(6295,7410)(6232,7354) small
+(5652,6176)(5692,6074) small
+(5692,6074) large
+(5838,6025)(5692,6074) small
+(5351,4642)(5172,4814) small
+(5235,4870)(5172,4814) small
+(4969,4756)(5172,4814) small
+(5172,4814) large
+(3472,5494) large
+(3269,5436)(3472,5494) small
+(3651,5322)(3472,5494) small
+(3535,5550)(3472,5494) small
+(6852,3234) large
+(6812,3296)(6852,3234) small
+(7018,3175)(6852,3234) small
+(4499,4497) medium
