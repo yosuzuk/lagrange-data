@@ -28,7 +28,7 @@ export const MapRenderer = (props: IProps) => {
     const gridSize = translateSizeToGrid(mapData.size ?? DEFAULT_MAP_SIZE);
 
     const camera = useMemo(() => {
-        const initialCameraDistance = gridSize * 0.7;
+        const initialCameraDistance = gridSize * 0.5;
         const cameraOptions: ComponentProps<typeof Canvas>['camera'] = {
             position: getInitialCameraPosition(initialCameraDistance, perspective),
             zoom: 2,
