@@ -263,6 +263,7 @@ export const at021: IShipDefinition[] = [
         operationLimit: 10,
         subModelIds: undefined,
         baseModelId: undefined,
+        source: ShipSource.CITY_TRADE,
     },
     {
         ...typeB,
@@ -280,6 +281,7 @@ export const at021: IShipDefinition[] = [
         operationLimit: 10,
         subModelIds: undefined,
         baseModelId: undefined,
+        source: ShipSource.CITY_TRADE,
     },
     {
         ...typeC,
@@ -297,5 +299,6 @@ export const at021: IShipDefinition[] = [
         operationLimit: 10,
         subModelIds: undefined,
         baseModelId: undefined,
+        source: ShipSource.CITY_TRADE,
     },
 ];
