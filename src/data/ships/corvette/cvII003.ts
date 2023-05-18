@@ -35,6 +35,7 @@ export const cvII003: IShipDefinition[] = [
                     en: 'Rapid-Fire Battery System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.prioritizeFirepower(80, 90, 15).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -51,8 +52,12 @@ export const cvII003: IShipDefinition[] = [
                 dpmAntiAir: 144,
                 dpmSiege: 418,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
@@ -62,6 +67,7 @@ export const cvII003: IShipDefinition[] = [
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),

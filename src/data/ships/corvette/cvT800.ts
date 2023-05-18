@@ -43,6 +43,7 @@ export const cvT800: IShipDefinition[] = [
                     en: 'Airborne Weapon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(18),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(12),
@@ -58,8 +59,12 @@ export const cvT800: IShipDefinition[] = [
                 dpmAntiAir: 1920,
                 dpmSiege: 48,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
@@ -69,6 +74,7 @@ export const cvT800: IShipDefinition[] = [
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.reduceLockOn().withPercentageValue(30).withCost(8),

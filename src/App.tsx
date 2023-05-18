@@ -15,6 +15,7 @@ const BoxChancePage = lazy(() => import('./components/pages/techFiles/TechFilesP
 const ResearchAgreementPage = lazy(() => import('./components/pages/researchAgreement/ResearchAgreementPage'));
 const ShipDataPage = lazy(() => import('./components/pages/shipData/ShipDataPage'));
 const ShipDetailPage = lazy(() => import('./components/pages/shipDetail/ShipDetailPage'));
+const TechPointConfigPage = lazy(() => import('./components/pages/techPointConfig/TechPointConfigPage'));
 const FleetSetupPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupPage'));
 const FleetSetupEditPage = lazy(() => import('./components/pages/fleetSetup/FleetSetupEditPage'));
 const DpmCalcPage = lazy(() => import('./components/pages/dpm/DpmCalcPage'));
@@ -78,6 +79,14 @@ function App() {
                                         )}
                                     />
                                 </Route>
+                                <Route
+                                    path={routes.techPointConfig.routePath}
+                                    element={(
+                                        <Suspense fallback={<LoadingIndicator />}>
+                                            <TechPointConfigPage />
+                                        </Suspense>
+                                    )}
+                                />
                                 <Route
                                     path={routes.myList.routePath}
                                     element={(

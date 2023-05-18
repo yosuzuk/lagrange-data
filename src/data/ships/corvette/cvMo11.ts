@@ -17,6 +17,7 @@ const assaultMissileSystem = modules.static({
         en: 'Assault Missile System',
     },
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -41,6 +42,7 @@ const cannonAttackSystem = modules.static({
         en: 'Cannon Attack System',
     },
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
@@ -62,6 +64,7 @@ const precisionGuidanceSystem = modules.static({
         en: 'Precision Guidance System',
     },
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     skillSlots: 7,
     dpmShip: 624,
@@ -70,8 +73,12 @@ const precisionGuidanceSystem = modules.static({
 });
 
 const defaultModules: ISystemModule[] = [
-    modules.commandSystem(),
+    modules.commandSystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
@@ -81,6 +88,7 @@ const defaultModules: ISystemModule[] = [
         skillSlots: 3,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
@@ -96,6 +104,7 @@ const antiAircraftBatterySystem = modules.static({
     translatedName: {
         en: 'Anti-Aircraft Battery System',
     },
+    skillComplete: true,
     skills: [
         strategy.antiAircraftMeasures(80, 15, 30).withCost(6),
         enhancements.increaseDamage().withPercentageValue(10).withCost(3),
@@ -117,6 +126,7 @@ const counterCannonSystem = modules.static({
     translatedName: {
         en: 'Counter Cannon System',
     },
+    skillComplete: false,
     // TODO skills,
     skillSlots: 5,
     dpmShip: 106,

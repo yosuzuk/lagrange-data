@@ -28,6 +28,10 @@ export interface IShipDataParams {
     sortDirection: SortDirection;
 }
 
+export interface ITechPointConfigParams {
+    filter: FilterKey[];
+}
+
 export interface IMapSelectedParams {
     d: string;
     mode?: MapInteractionMode;
@@ -42,6 +46,7 @@ export const routes = {
     fleetSetupByKey: ({ path: (fleetKey: string) => `/fleetSetup/${fleetKey}`, routePath: ':fleetKey' }),
     fleetSetupEdit: createRouteDefinition('fleetSetup/edit'),
     fleetSetupEditByKey: ({ path: (fleetKey: string) => `/fleetSetup/edit/${fleetKey}`, routePath: ':fleetKey' }),
+    techPointConfig: createParameterizedRouteDefinition<ITechPointConfigParams>('techPointConfig'),
     myList: createRouteDefinition('myList'),
     myListEdit: createRouteDefinition('myList/edit'),
     dpmCalc: createRouteDefinition('dpmCalc'),

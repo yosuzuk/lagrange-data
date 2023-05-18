@@ -18,6 +18,7 @@ const defaultModules: ISystemModule[] = [
             en: 'Airborne Bombardment System',
         },
         mainSystem: true,
+        skillComplete: true,
         skills: [
             strategy.customStrategy('diveToss').withDescriptionKey('diveToss').withCost(18),
             enhancements.increaseDamage().withPercentageValue(10).withCost(12),
@@ -35,8 +36,12 @@ const defaultModules: ISystemModule[] = [
         dpmAntiAir: 0,
         dpmSiege: 1820,
     }),
-    modules.commandSystem(),
+    modules.commandSystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(12).withCost(8),
             enhancements.increaseHp().withPercentageValue(12).withCost(8),
@@ -46,6 +51,7 @@ const defaultModules: ISystemModule[] = [
         skillSlots: 3,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             strategy.closeCombatAssault(45).withCost(15),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),

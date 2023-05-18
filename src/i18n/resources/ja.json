@@ -326,6 +326,10 @@
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/%E6%98%9F%E7%B3%BB%E3%83%9E%E3%83%83%E3%83%97"
     },
+    "techPointConfig": {
+        "pageTitle": "技術Pt",
+        "incomplete": "不完全なデータ"
+    },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
         "nomaShippingGroup": "ノマシッピング",

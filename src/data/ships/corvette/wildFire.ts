@@ -28,6 +28,7 @@ export const wildFire: IShipDefinition[] = [
                     en: 'Assault Torpedo System',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 5,
                 dpmShip: 1780,
@@ -35,12 +36,17 @@ export const wildFire: IShipDefinition[] = [
                 dpmSiege: 483,
             }),
             // TODO skills and skillslots
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 2,
             }),

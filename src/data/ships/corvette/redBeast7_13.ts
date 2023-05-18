@@ -39,6 +39,7 @@ export const redBeast7_13: IShipDefinition[] = [
                     en: 'Assault Missile System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.heavyAmmo(60, 30).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(11),
@@ -55,8 +56,12 @@ export const redBeast7_13: IShipDefinition[] = [
                 dpmAntiAir: 360,
                 dpmSiege: 184,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
@@ -66,6 +71,7 @@ export const redBeast7_13: IShipDefinition[] = [
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
