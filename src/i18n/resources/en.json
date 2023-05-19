@@ -542,7 +542,8 @@
         "closeCombatAssault": "Close Combat Assault",
         "spreadOutWarhead2": "Spread Out Warhead II",
         "oscillatoryExcitation": "Oscillatory Excitation",
-        "speedUpRepair": "Speed-Up Repair"
+        "speedUpRepair": "Speed-Up Repair",
+        "keyTargets": "Key Targets"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -593,7 +594,8 @@
         "closeCombatAssault": "When flying to attack mid-row target, there is a {{chance}}% chance of ignoring the enemy anti-aircraft weapon's pre-targeting effect.",
         "spreadOutWarhead2": "When the system's anti-aircraft weapons hit an aircraft target, there is a chance to deal 100% crit damage on all aircraft that is attacking you.",
         "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s.",
-        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s."
+        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s.",
+        "keyTargets": "When the enemy fleet includes battlecruisers, it prioritizes attacks on these targets and increases Damage by {{damage}}%."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

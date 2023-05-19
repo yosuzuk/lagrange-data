@@ -125,5 +125,6 @@ export enum EnhancementSubType {
     WEAK_POINT_STRIKE = 'weakPointStrike',
     CLOSE_COMBAT_ASSAULT = 'closeCombatAssault',
     SPEED_UP_REPAIR = 'speedUpRepair',
+    KEY_TARGETS = 'keyTargets',
     CUSTOM = 'custom',
 }

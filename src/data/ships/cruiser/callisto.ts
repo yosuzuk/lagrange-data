@@ -137,8 +137,19 @@ export const callisto: IShipDefinition[] = [
                     en: '"Eternal Polaris" Large Projectile Launching System',
                 },
                 mainSystem: true,
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    strategy.keyTargets(25).withCost(20),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(10),
+                    enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                    enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
+                    enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
+                    enhancements.reduceTorpedoInterception().withPercentageValue(30).withCost(10),
+                ],
                 skillSlots: 7,
             }),
             modules.static({
@@ -147,24 +158,45 @@ export const callisto: IShipDefinition[] = [
                 translatedName: {
                     en: 'Generic Battery System',
                 },
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
+                    // TODO verify
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
-                skillComplete: false,
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 3,
             }),
             modules.energySystem({

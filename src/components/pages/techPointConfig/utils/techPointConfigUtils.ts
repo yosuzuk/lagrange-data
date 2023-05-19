@@ -39,13 +39,16 @@ function createTechPointShipConfig(shipDefinition: IShipDefinition): ITechPointS
 
 function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointModuleConfig {
 
-    const enhancements: Record<string, ITechPointEnhancementConfig> = systemModule.skills?.filter(enh => !enh.isDefault).reduce((acc, skill, index) => {
+    const enhancements: Record<string, ITechPointEnhancementConfig> = [
+        ...(systemModule.flagshipEffects ?? []),
+        ...(systemModule.skills ?? []),
+    ].filter(enh => !enh.isDefault).reduce((acc, skill, index) => {
         const id = `${skill.type}_${index}`;
         return {
             ...acc,
             [id]: createTechPointEnhancementConfig(skill, id),
         };
-    }, {}) ?? {};
+    }, {});
 
     const maxTechPoints = findMaxTechPointsForModule(systemModule);
 
