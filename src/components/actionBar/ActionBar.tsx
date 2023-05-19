@@ -25,7 +25,7 @@ export const ActionBar = (props: IProps) => {
     };
 
     return (
-        <Paper square={true} sx={{ position: 'sticky', top: '48px', zIndex: 1 }}>
+        <Paper square={true} sx={{ position: 'sticky', top: '64px', zIndex: 1 }}>
             <Container maxWidth="md" disableGutters={true}>
                 <Box
                     component="div"

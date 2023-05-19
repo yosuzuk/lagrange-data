@@ -66,9 +66,9 @@ export const NavigationBar = (props: IProps) => {
 
     return (
         <>
-            <AppBar position="sticky">
+            <AppBar position="sticky" sx={{ minHeight: '64px' }}>
                 {burgerMenu ? (
-                    <Toolbar>
+                    <Toolbar sx={{ minHeight: '64px' }}>
                         <IconButton
                             size="large"
                             edge="start"

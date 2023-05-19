@@ -328,9 +328,9 @@
     },
     "techPointConfig": {
         "pageTitle": "技術Pt",
-        "incomplete": "不完全なデータ",
-        "techPointShortColonValue": "技術Pt：{{value}}",
-        "enhancementSlotsColonValue": "スキル枠: {{value}}"
+        "incomplete": "データ不足",
+        "techPointShortColon": "技術Pt：",
+        "enhancementSlotsColonValue": "スキル枠：{{value}}"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
