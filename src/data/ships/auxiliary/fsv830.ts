@@ -27,6 +27,7 @@ const m1: ISystemModule = {
     flagshipEffects: [
         flagshipEffect.fleetDock1().withCost(10),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
         enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
@@ -58,6 +59,7 @@ const a1: ISystemModule = {
     description: 'スキルで補修速度アップ＆プレハブ消費ダウン',
     category: 'A',
     categoryNumber: 1,
+    skillComplete: false,
     skills: [
         // TODO cost
         enhancements.increaseRepairSpeed().withPercentageValue(10),
@@ -88,6 +90,7 @@ const a2: ISystemModule = {
     effects: [
         enhancements.increaseStorage().withFixedAbsoluteValue(60000),
     ],
+    skillComplete: false,
     skills: [
         // TODO cost
         enhancements.increaseStorage().withPercentageValue(80),
@@ -118,6 +121,7 @@ const b1: ISystemModule = {
     effects: [
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(60),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
         enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
@@ -142,6 +146,7 @@ const b2: ISystemModule = {
     description: '自己保有能力で護送艦が生産可能',
     category: 'B',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     skillSlots: 3,
     parts: [{
@@ -160,6 +165,7 @@ const b3: ISystemModule = {
     description: '自己保有能力で戦闘機が生産可能',
     category: 'B',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     skillSlots: 3,
     parts: [{
@@ -180,6 +186,7 @@ const c1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    skillComplete: false,
     // TODO skills
     skillSlots: 4,
     parts: [{
@@ -199,6 +206,7 @@ const c2: ISystemModule = {
     description: '補修ＵＡＶ×２',
     category: 'C',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     skillSlots: 4,
     parts: [{
@@ -227,6 +235,7 @@ const d1: ISystemModule = {
         flagshipEffect.focusFire().withDefaultFlag(),
         flagshipEffect.customFlashipEffect('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
     ],
+    skillComplete: true,
     skills: [
         enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
         enhancements.reduceHitByProjectileInMidRow().withPercentageValue(8).withCost(8),
@@ -250,6 +259,7 @@ const d2: ISystemModule = {
         enhancements.increaseMissileHitRateBackRow().withFixedPercentageValue(12),
         enhancements.increaseTorpedoHitRateBackRow().withFixedPercentageValue(12),
     ],
+    skillComplete: false,
     skills: [
         enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
         // TODO remaining skills
@@ -266,6 +276,7 @@ const d3: ISystemModule = {
     description: '艦種を空母か駆逐艦に偽装',
     category: 'D',
     categoryNumber: 3,
+    skillComplete: false,
     skills: [
         enhancements.disguiseAsDestroyer(),
         // TODO remaining skills
@@ -288,6 +299,7 @@ const e1: ISystemModule = {
     description: '対空武装（同列）',
     category: 'E',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     skillSlots: 4,
     parts: [{
@@ -311,6 +323,7 @@ const e2: ISystemModule = {
     category: 'E',
     categoryNumber: 2,
     carryCorvette: 3,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
@@ -330,6 +343,7 @@ const e2: ISystemModule = {
 
 const staticModules: ISystemModule[] = [
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -341,6 +355,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             strategy.evasiveManeuvers(20, 40, 40).withCost(20),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
@@ -351,7 +366,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

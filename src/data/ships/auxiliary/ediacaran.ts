@@ -21,6 +21,8 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: false,
+    // TODO skills
     skillSlots: 6,
     parts: [
         {
@@ -49,6 +51,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     skillSlots: 6,
     parts: [
@@ -80,6 +83,8 @@ const b1: ISystemModule = {
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
+    skillComplete: false,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -103,6 +108,8 @@ const b2: ISystemModule = {
     effects: [
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
+    skillComplete: false,
+    // TODO skills
     skillSlots: 3,
     parts: [{
         text: [
@@ -127,6 +134,8 @@ const b3: ISystemModule = {
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
+    skillComplete: false,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -147,6 +156,8 @@ const c1: ISystemModule = {
     description: '大型戦闘機を2隊搭載可能',
     category: 'C',
     categoryNumber: 1,
+    skillComplete: false,
+    // TODO skills
     skillSlots: 6,
     parts: [
         {
@@ -168,6 +179,8 @@ const c2: ISystemModule = {
     carryCorvette: 3,
     category: 'C',
     categoryNumber: 2,
+    skillComplete: false,
+    // TODO skills
     skillSlots: 4,
     parts: [
         {
@@ -186,6 +199,7 @@ const d1: ISystemModule = {
         en: '"Tsundra" Interceptor UAV System',
     },
     description: '対空UAVを4機搭載',
+    skillComplete: false,
     // TODO skills
     skillSlots: 5,
     category: 'D',
@@ -211,6 +225,7 @@ const d2: ISystemModule = {
     description: '偵察UAVを4機搭載',
     category: 'D',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     parts: [
         {
@@ -231,6 +246,8 @@ const d3: ISystemModule = {
     description: '防御UAV４機搭載',
     category: 'D',
     categoryNumber: 3,
+    skillComplete: false,
+    // TODO skills
     skillSlots: 4,
     parts: [{
         text: [
@@ -254,10 +271,12 @@ const e1: ISystemModule = {
         enhancements.increaseArmor().withFixedAbsoluteValue(80),
         enhancements.increaseHp().withFixedPercentageValue(15),
     ],
+    skillComplete: false,
     skillSlots: 2,
     skills: [
         enhancements.increaseArmor().withAbsoluteValue(75),
         enhancements.increaseHp().withPercentageValue(10),
+        // TODO skills
     ],
     parts: [{
         text: [
@@ -276,6 +295,8 @@ const e2: ISystemModule = {
     description: '自身の補修を行う',
     category: 'E',
     categoryNumber: 2,
+    skillComplete: false,
+    // TODO skills
     skillSlots: 3,
     parts: [{
         text: [
@@ -292,19 +313,31 @@ const staticModules: ISystemModule[] = [
         translatedName: {
             en: 'Integrated Support Dock',
         },
+        skillComplete: false,
+        // TODO skills
+        skillSlots: 6,
     }),
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
         ],
+        skillComplete: true,
+        skillSlots: 0,
     }),
     modules.armorSystem({
+        skillComplete: false,
+        // TODO skills
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: false,
+        // TODO skills
         skillSlots: 2,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {
