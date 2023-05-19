@@ -328,7 +328,9 @@
     },
     "techPointConfig": {
         "pageTitle": "Tech Points",
-        "incomplete": "Incomplete data"
+        "incomplete": "Incomplete data",
+        "techPointShortColonValue": "TP: {{value}}",
+        "enhancementSlotsColonValue": "Enhancement slots: {{value}}"
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

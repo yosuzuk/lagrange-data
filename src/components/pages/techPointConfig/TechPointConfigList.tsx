@@ -8,7 +8,7 @@ import { IShipDefinition } from '../../../types/ShipDefinition';
 import { useTechPointConfig } from './hooks/useTechPointConfig';
 import { ITechPointEnhancementConfig, ITechPointModuleConfig, ITechPointShipConfig } from './types/ITechPointConfig';
 import { ScriptedLink } from '../../link/ScriptedLink';
-import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { getModuleName, getShipName } from '../../../utils/shipDefinitionUtils';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { IExpandable } from '../../expandStack.tsx/types/IExpandable';
@@ -55,7 +55,9 @@ export const TechPointConfigList = (props: IProps) => {
                         </Box>
                         <Box component="div" sx={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant="body1">
-                                {`TP: ${shipConfig.techPoints !== null ? `${shipConfig.techPoints} / ` : ''}${shipConfig.maxTechPoints !== null ? `${shipConfig.maxTechPoints}${shipConfig.incomplete ? '+' : ''}` : '?'}`}
+                                {t('techPointConfig.techPointShortColonValue', {
+                                    value: `${shipConfig.techPoints !== null ? `${shipConfig.techPoints} / ` : ''}${shipConfig.maxTechPoints !== null ? `${shipConfig.maxTechPoints}${shipConfig.incomplete ? '+' : ''}` : '?'}`,
+                                })}
                             </Typography>
                         </Box>
                     </Stack>
@@ -75,9 +77,9 @@ export const TechPointConfigList = (props: IProps) => {
                                                 }}
                                             />
                                         </div>
-                                        <Box component="div" sx={{ flexGrow: 1 }}>
+                                        <Box component="div" sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
                                             <Typography variant="body2">
-                                                {`${moduleConfig.module.category !== 'STATIC' ? `${moduleConfig.module.category}${moduleConfig.module.categoryNumber}` : ''} ${moduleConfig.module.name}`}
+                                                {`${moduleConfig.module.category !== 'STATIC' ? `${moduleConfig.module.category}${moduleConfig.module.categoryNumber}` : ''} ${getModuleName(shipConfig.shipDefinition.id, moduleConfig.module)}`}
                                             </Typography>
                                             {moduleConfig.incomplete && (
                                                 <Typography variant="body2" sx={{ color: 'red' }}>
@@ -87,14 +89,18 @@ export const TechPointConfigList = (props: IProps) => {
                                         </Box>
                                         <div>
                                             <Typography variant="body1">
-                                                {`TP: ${!moduleChecked ? '0' : (moduleConfig.techPoints ?? '?')} / ${moduleConfig.maxTechPoints ?? '?'}`}
+                                                {t('techPointConfig.techPointShortColonValue', {
+                                                    value: `${!moduleChecked ? '0' : (moduleConfig.techPoints ?? '?')} / ${moduleConfig.maxTechPoints ?? '?'}`
+                                                })}
                                             </Typography>
                                         </div>
                                     </Stack>
                                     {moduleChecked && (
                                         <Stack spacing={1} pl={5} pt={1} pb={2}>
                                             <Typography variant="body1">
-                                                {`Skill slots: ${moduleConfig.selectedEnhancementIds.length} / ${moduleConfig.module.skillSlots ?? '?'}`}
+                                                {t('techPointConfig.enhancementSlotsColonValue', {
+                                                    value: `${moduleConfig.selectedEnhancementIds.length} / ${moduleConfig.module.skillSlots ?? '?'}`
+                                                })}
                                             </Typography>
                                             {Object.values(moduleConfig.enhancements).map((enhancementConfig: ITechPointEnhancementConfig) => {
                                                 const checked = moduleConfig.selectedEnhancementIds.includes(enhancementConfig.id);
@@ -109,14 +115,16 @@ export const TechPointConfigList = (props: IProps) => {
                                                                 disabled={!checked && !!moduleConfig.module.skillSlots && moduleConfig.selectedEnhancementIds.length >= moduleConfig.module.skillSlots}
                                                             />
                                                         </div>
-                                                        <Box component="div" sx={{ flexGrow: 1 }}>
+                                                        <Box component="div" sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
                                                             <Typography variant="body2">
                                                                 {`${enhancementConfig.enhancement.name}`}
                                                             </Typography>
                                                         </Box>
                                                         <div>
                                                             <Typography variant="body1">
-                                                                {`TP: ${enhancementConfig.enhancement.cost ?? '?'}`}
+                                                                {t('techPointConfig.techPointShortColonValue', {
+                                                                    value: `${enhancementConfig.enhancement.cost ?? '?'}`
+                                                                })}
                                                             </Typography>
                                                         </div>
                                                     </Stack>
@@ -129,7 +137,9 @@ export const TechPointConfigList = (props: IProps) => {
                         })}
                         <Divider />
                         <Typography variant="body1" textAlign="end">
-                            {`TP: ${shipConfig.techPoints !== null ? `${shipConfig.techPoints} / ` : ''}${shipConfig.maxTechPoints !== null ? `${shipConfig.maxTechPoints}${shipConfig.incomplete ? '+' : ''}` : '?'}`}
+                            {t('techPointConfig.techPointShortColonValue', {
+                                value: `${shipConfig.techPoints !== null ? `${shipConfig.techPoints} / ` : ''}${shipConfig.maxTechPoints !== null ? `${shipConfig.maxTechPoints}${shipConfig.incomplete ? '+' : ''}` : '?'}`,
+                            })}
                         </Typography>
                     </Stack>
                 ),

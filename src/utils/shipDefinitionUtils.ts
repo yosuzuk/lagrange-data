@@ -53,7 +53,6 @@ export function getModuleName(shipId: string, module: ISystemModule): string {
         return module.name;
     }
 
-    // lookup our own data
     if (module.translatedName?.[language]) {
         return module.translatedName[language];
     }
