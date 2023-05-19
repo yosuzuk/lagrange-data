@@ -25,6 +25,8 @@ import { ResearchManufacturer } from '../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../types/ResearchStrategyType';
 import { ResearchTacticType } from '../../types/ResearchTacticType';
 import { t } from '../../i18n';
+import { Manufacturer } from '../../types/Manufacturer';
+import { ShipSource } from '../../types/ShipSource';
 
 interface IProps {
     filter: ShipFilterState;
@@ -32,22 +34,26 @@ interface IProps {
     popperProps?: Partial<PopperProps>;
     shipTypes?: ShipType[];
     shipRows?: ShipRow[];
+    manufacturer?: Manufacturer[];
     researchManufacturer?: ResearchManufacturer[] | false;
     researchStrategyTypes?: ResearchStrategyType[] | false;
     researchTacticTypes?: ResearchTacticType[] | false;
+    shipSources?: ShipSource[];
     buttonProps?: ButtonProps;
 }
 
 export const ShipTypeFilterButton = (props: IProps) => {
-    const { onChange, popperProps, shipRows, shipTypes, researchManufacturer, researchStrategyTypes, researchTacticTypes, buttonProps } = props;
+    const { onChange, popperProps, shipRows, shipTypes, manufacturer, researchManufacturer, researchStrategyTypes, researchTacticTypes, shipSources, buttonProps } = props;
     const [filter, setFilter] = useState<ShipFilterState>(props.filter);
     const [opened, setOpened] = useState<boolean>(false);
     const [shipFilterOptions] = useState<IFilterOption[]>(() => createShipFilterOptions({
         shipRows,
         shipTypes,
+        manufacturer,
         researchManufacturer,
         researchStrategyTypes,
         researchTacticTypes,
+        shipSources,
     }));
     const anchorRef = useRef<HTMLDivElement>(null);
     const [isPending, startTransition] = useTransition();
