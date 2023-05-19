@@ -100,7 +100,10 @@ function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>,
 }
 
 function isIncompleteSystemModule(systemModule: ISystemModule): boolean {
-    return systemModule.skillComplete !== true || (systemModule.skills?.some(enhancements => enhancements.cost === null) ?? false)
+    return systemModule.skillComplete !== true || ([
+        ...(systemModule.flagshipEffects ?? []),
+        ...(systemModule.skills ?? []),
+    ].some(enhancements => !enhancements.isDefault && enhancements.cost === null))
 }
 
 export function toggleSelectedModuleIds(shipConfig: ITechPointShipConfig, moduleId: string): string[] {

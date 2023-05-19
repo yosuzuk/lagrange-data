@@ -45,7 +45,7 @@ export const TechPointCounter = (props: IProps) => {
                     <Typography
                         variant="body1"
                         color="text.secondary"
-                        sx={{ fontSize: BIG_FONT_SIZE }}
+                        sx={{ fontSize: showTechPoints ? SMALL_FONT_SIZE : BIG_FONT_SIZE }}
                     >
                         {'+'}
                     </Typography>
