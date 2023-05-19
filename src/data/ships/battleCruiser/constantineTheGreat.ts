@@ -21,6 +21,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
         enhancements.increaseIonDamage().withPercentageValue(10).withCost(5),
@@ -55,6 +56,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     skillSlots: 6,
     parts: [{
@@ -79,6 +81,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         strategy.weakPointStrike(100, 50).withCost(25),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
@@ -117,6 +120,7 @@ const a2: ISystemModule = {
     }],
     category: 'A',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslot
     // TODO total dpm
@@ -142,6 +146,7 @@ const b1: ISystemModule = {
     }],
     category: 'B',
     categoryNumber: 1,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -172,6 +177,7 @@ const b2: ISystemModule = {
     }],
     category: 'B',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslot
     // TODO total dpm
@@ -196,6 +202,7 @@ const b3: ISystemModule = {
     }],
     category: 'B',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslot
     // TODO total dpm
@@ -210,6 +217,7 @@ const c1: ISystemModule = {
     description: 'イオン砲ダメージアップ15％',
     category: 'C',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skill
     skillSlots: 2,
     parts: [
@@ -241,6 +249,7 @@ const c2: ISystemModule = {
     categoryNumber: 2,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    skillComplete: false,
     // TODO skill
     // TODO skillslots
 };
@@ -262,6 +271,7 @@ const c3: ISystemModule = {
     ],
     category: 'C',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skill
     // TODO skillslots
 };
@@ -285,6 +295,7 @@ const d1: ISystemModule = {
     }],
     category: 'D',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     // TODO skillslot
     // TODO total dpm
@@ -307,6 +318,7 @@ const d2: ISystemModule = {
     ],
     category: 'D',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
 };
@@ -328,6 +340,7 @@ const d3: ISystemModule = {
     ],
     category: 'D',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
 };
@@ -338,6 +351,7 @@ const staticModules: ISystemModule[] = [
             flagshipEffect.focusFire().withDefaultFlag(),
             flagshipEffect.siegeTactic2('30+30').withCost(70),
         ],
+        skillComplete: true,
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
             enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
@@ -345,6 +359,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 2,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -357,6 +372,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 5,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -365,7 +381,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

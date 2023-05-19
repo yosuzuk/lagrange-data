@@ -20,6 +20,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -46,6 +47,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -71,6 +73,7 @@ const m3: ISystemModule = {
     category: 'M',
     categoryNumber: 3,
     mainSystem: true,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -94,6 +97,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -120,6 +124,7 @@ const a2: ISystemModule = {
     description: '対小型武装',
     category: 'A',
     categoryNumber: 2,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -145,6 +150,7 @@ const b1: ISystemModule = {
     category: 'B',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -171,6 +177,7 @@ const b2: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 2,
+    skillComplete: false,
     // skills: [
     // ],
     // skillSlots: 4,
@@ -198,6 +205,7 @@ const c1: ISystemModule = {
         enhancements.specialAmmo().withDescriptionKey('specialAmmo'),
         enhancements.collateralDamage().withDescriptionKey('collateralDamage'),
     ],
+    skillComplete: false,
     // skills: [
     // ],
     skillSlots: 3,
@@ -220,6 +228,7 @@ const d1: ISystemModule = {
     effects: [
         strategy.customStrategy('oscillatoryExcitation').withDescriptionKey('oscillatoryExcitation'),
     ],
+    skillComplete: false,
     // skills: [
     // ],
     // skillSlots: 4,
@@ -238,6 +247,7 @@ const d2: ISystemModule = {
     },
     category: 'D',
     categoryNumber: 2,
+    skillComplete: false,
     // skillSlots: 4,
     // skills: [
     // ],
@@ -257,6 +267,7 @@ const e1: ISystemModule = {
     description: '対小型武装',
     category: 'E',
     categoryNumber: 1,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -281,6 +292,7 @@ const e2: ISystemModule = {
     description: '対大型武装',
     category: 'E',
     categoryNumber: 2,
+    skillComplete: false,
     skills: [
         // TODO find out
     ],
@@ -305,6 +317,7 @@ const f1: ISystemModule = {
     description: '対小型武装',
     category: 'F',
     categoryNumber: 1,
+    skillComplete: false,
     // skills: [],
     // skillSlots: 4,
     parts: [{
@@ -327,6 +340,7 @@ const f2: ISystemModule = {
     description: '対空武装',
     category: 'F',
     categoryNumber: 2,
+    skillComplete: false,
     // skills: [],
     // skillSlots: 4,
     parts: [{
@@ -345,18 +359,24 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
         ],
+        skillComplete: false,
         // TODO skills
         skillSlots: 2,
     }),
     modules.armorSystem({
+        skillComplete: false,
         // TODO skills
         skillSlots: 5,
     }),
     modules.propulsionSystem({
+        skillComplete: false,
         // TODO skills
         skillSlots: 4,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

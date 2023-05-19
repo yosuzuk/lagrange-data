@@ -21,6 +21,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         strategy.rapidFire(80, 60, 15, 10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -58,6 +59,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     skillSlots: 6,
     parts: [{
@@ -80,6 +82,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -122,6 +125,7 @@ const a2: ISystemModule = {
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -148,6 +152,7 @@ const a3: ISystemModule = {
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -175,6 +180,7 @@ const b1: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -199,6 +205,7 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     carryCorvette: 3,
+    skillComplete: true,
     skills: [
         enhancements.reduceLockOn().withPercentageValue(70).withCost(6),
         enhancements.reduceCooldown().withPercentageValue(20).withCost(6),
@@ -226,6 +233,7 @@ const b3: ISystemModule = {
     description: '補修ＵＡＶ×2',
     category: 'B',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -247,6 +255,7 @@ const c1: ISystemModule = {
     description: '対空武装',
     category: 'C',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -274,6 +283,8 @@ const c2: ISystemModule = {
     effects: [
         enhancements.increaseArmor().withFixedAbsoluteValue(150),
     ],
+    skillComplete: false,
+    // TODO skills
     parts: [
         {
             text: [
@@ -292,6 +303,7 @@ const c3: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'C',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -313,6 +325,7 @@ const staticModules: ISystemModule[] = [
             // TODO max duration
             flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '60' }).withCost(30),
         ],
+        skillComplete: true,
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
             enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
@@ -320,6 +333,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 2,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -332,6 +346,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 5,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -340,7 +355,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {
