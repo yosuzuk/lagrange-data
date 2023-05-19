@@ -491,6 +491,7 @@
         "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
         "reduceBatOfAircraft": "Reduce BAT for the primary weapon of aircraft",
         "reduceFlightTime": "Reduce flight time",
+        "reduceFlightTimeAndWeaponCooldownOfAircraft": "Reduce flight time and weapon cooldown of aircraft/UAV in the hangar",
         "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "Reduce flight time and primary weapon cooldown of aircraft/UAV in the hangar",
         "reducePreTargetTime": "Reduce anti-air pre-target time",
         "disguiseAsDestroyer": "Disguise as destroyer",

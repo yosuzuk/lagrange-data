@@ -491,6 +491,7 @@
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
         "reduceBatOfAircraft": "艦載機メイン武器の攻撃間隔ダウン",
         "reduceFlightTime": "飛行時間ダウン",
+        "reduceFlightTimeAndWeaponCooldownOfAircraft": "艦載機/UAVの飛行時間と武器の冷却時間ダウン",
         "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "艦載機/UAVの飛行時間とメイン武器の冷却時間ダウン",
         "reducePreTargetTime": "飛行目標の早期ロックオン時間ダウン",
         "disguiseAsDestroyer": "自身が攻撃目標になった時に、駆逐艦と見なされるようにする",
