@@ -22,6 +22,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -58,6 +59,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     // skills: [],
     skillSlots: 5,
@@ -88,6 +90,7 @@ const a1: ISystemModule = {
     carryFighter: 6,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         strategy.superCapitalStrike(30).withCost(20),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(15),
@@ -116,6 +119,8 @@ const a2: ISystemModule = {
     category: 'A',
     categoryNumber: 2,
     carryCorvette: 6,
+    skillComplete: false,
+    // TODO skills
 };
 
 const b1: ISystemModule = {
@@ -128,6 +133,7 @@ const b1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    skillComplete: false,
     skills: [
         // TODO cost
         enhancements.reduceLockOn().withPercentageValue(70),
@@ -153,6 +159,7 @@ const b2: ISystemModule = {
     },
     category: 'B',
     categoryNumber: 2,
+    skillComplete: false,
     skills: [
         // TODO cost
         enhancements.increaseDamage().withPercentageValue(10),
@@ -182,6 +189,7 @@ const b3: ISystemModule = {
     },
     category: 'B',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     skillSlots: 2,
     parts: [
@@ -207,6 +215,7 @@ const c1: ISystemModule = {
     effects: [
         enhancements.increaseDamageOfAircraftMainWeapon().withFixedPercentageValue(15),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseIonDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceIonCooldownOfShip().withPercentageValue(15).withCost(10),
@@ -233,6 +242,7 @@ const c2: ISystemModule = {
     effects: [
         enhancements.increaseHitRateOfAircraftMainWeapon().withFixedPercentageValue(15),
     ],
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -253,6 +263,7 @@ const d1: ISystemModule = {
     },
     category: 'D',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
 };
@@ -265,6 +276,7 @@ const d2: ISystemModule = {
     },
     category: 'D',
     categoryNumber: 1,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
 };
@@ -276,6 +288,7 @@ const staticModules: ISystemModule[] = [
             flagshipEffect.strategicStrike2(120).withDefaultFlag(),
             flagshipEffect.strategicStrike3(360, '25.0').withCost(40),
         ],
+        skillComplete: true,
         skills: [
             enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }).withCost(20),
             enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }).withCost(20),
@@ -286,6 +299,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 5,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -297,6 +311,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -305,7 +320,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

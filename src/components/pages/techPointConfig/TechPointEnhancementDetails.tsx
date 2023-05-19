@@ -40,7 +40,7 @@ export const TechPointEnhancementDetails = (props: IProps) => {
                     ))}
                     {enhancementConfig.enhancement.cost === null && (
                         <Typography variant="body2" sx={{ color: 'red' }}>
-                            {t('techPointConfig.incomplete')}
+                            {t('techPointConfig.maxCostUnknown')}
                         </Typography>
                     )}
                 </Stack>

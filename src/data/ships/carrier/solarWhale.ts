@@ -21,6 +21,7 @@ const m1: ISystemModule = {
     carryCorvette: 6,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamageOfCorvette().withPercentageValue(10).withCost(10),
         enhancements.reduceRtbOfCorvette().withPercentageValue(20).withCost(10),
@@ -53,6 +54,7 @@ const m2: ISystemModule = {
     carryFighter: 8,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     mainSystem: true,
+    skillComplete: false,
     // TODO skills
     skillSlots: 5,
     parts: [
@@ -75,6 +77,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -114,6 +117,7 @@ const a2: ISystemModule = {
     description: '対小型艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -140,6 +144,7 @@ const a3: ISystemModule = {
     description: '対空＆対小型武装',
     category: 'A',
     categoryNumber: 3,
+    skillComplete: true,
     skills: [
         strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -181,6 +186,7 @@ const b1: ISystemModule = {
     category: 'B',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         enhancements.reduceRtbOfCorvette().withPercentageValue(5).withCost(8),
         enhancements.reduceRtbOfCorvette().withPercentageValue(5).withCost(8),
@@ -210,6 +216,7 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     carryCorvette: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -232,6 +239,7 @@ const c1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 5,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -252,6 +260,7 @@ const c2: ISystemModule = {
     description: '攻城UAV×4',
     category: 'C',
     categoryNumber: 2,
+    skillComplete: false,
     // TODO skills
     // TODO skillslots
     parts: [
@@ -277,6 +286,7 @@ const c3: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'C',
     categoryNumber: 3,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(5),
         enhancements.increaseDamage().withPercentageValue(10).withCost(5),
@@ -305,6 +315,7 @@ const staticModules: ISystemModule[] = [
             flagshipEffect.strategicStrike2(120).withDefaultFlag(),
             flagshipEffect.strategicStrike3(360, '25.0').withCost(60),
         ],
+        skillComplete: true,
         skills: [
             enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }).withCost(30),
             enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }).withCost(20),
@@ -314,6 +325,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -325,6 +337,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -333,7 +346,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

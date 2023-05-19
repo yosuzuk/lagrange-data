@@ -329,6 +329,7 @@
     "techPointConfig": {
         "pageTitle": "Tech Points",
         "incomplete": "Incomplete data",
+        "maxCostUnknown": "TP: unknown",
         "techPointShortColon": "TP:",
         "enhancementSlotsColonValue": "Enhancement slots: {{value}}"
     },

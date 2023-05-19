@@ -329,6 +329,7 @@
     "techPointConfig": {
         "pageTitle": "技術Pt",
         "incomplete": "データ不足",
+        "maxCostUnknown": "技術Pt：不明",
         "techPointShortColon": "技術Pt：",
         "enhancementSlotsColonValue": "スキル枠：{{value}}"
     },
@@ -438,7 +439,7 @@
         "increaseIonHitRate": "イオン砲命中率アップ",
         "increaseMissileAndTorpedoHitRate": "ミサイル/魚雷の命中率アップ",
         "increaseCruisingSpeed": "通常移動速度アップ",
-        "increaseCruisingSpeedOfAircraft": "",
+        "increaseCruisingSpeedOfAircraft": "艦載機の巡航速度アップ",
         "increaseWarpSpeed": "ワープ移動速度アップ",
         "increaseRepairSpeed": "補修速度アップ",
         "increaseSupplySpeed": "補給速度アップ",
