@@ -66,11 +66,11 @@ export const NavigationBar = (props: IProps) => {
 
     return (
         <>
-            <AppBar position="sticky" sx={{ minHeight: '64px' }}>
+            <AppBar position="sticky">
                 {burgerMenu ? (
-                    <Toolbar sx={{ minHeight: '64px' }}>
+                    <Toolbar variant="dense">
                         <IconButton
-                            size="large"
+                            size="small"
                             edge="start"
                             color="inherit"
                             aria-label="menu"
@@ -84,26 +84,24 @@ export const NavigationBar = (props: IProps) => {
                         </Typography>
                     </Toolbar>
                 ) : (
-                    <Container>
-                        <Tabs
-                            value={currentRoute}
-                            indicatorColor="secondary"
-                            textColor="inherit"
-                            variant="scrollable"
-                            scrollButtons="auto"
-                        >
-                            {Object.keys(menuItems).map(route => (
-                                <Tab
-                                    key={route}
-                                    label={menuItems[route]}
-                                    value={route}
-                                    to={route}
-                                    component={Link}
-                                    sx={{ minWidth: '50px' }}
-                                />
-                            ))}
-                        </Tabs>
-                    </Container>
+                    <Tabs
+                        value={currentRoute}
+                        indicatorColor="secondary"
+                        textColor="inherit"
+                        variant="standard"
+                        centered={true}
+                    >
+                        {Object.keys(menuItems).map(route => (
+                            <Tab
+                                key={route}
+                                label={menuItems[route]}
+                                value={route}
+                                to={route}
+                                component={Link}
+                                sx={{ minWidth: '50px' }}
+                            />
+                        ))}
+                    </Tabs>
                 )}
                 {burgerMenu && (
                     <Drawer

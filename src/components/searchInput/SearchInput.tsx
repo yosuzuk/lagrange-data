@@ -2,6 +2,7 @@ import { useState, useCallback, useTransition, useEffect, ChangeEvent } from 're
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import { useColorMode } from '../../theme/context/ThemeProvider';
 
 interface IProps {
     id: string;
@@ -14,6 +15,7 @@ interface IProps {
 export const SearchInput = (props: IProps) => {
     const { id, value: initialValue, placeholder, lowerCase, onChange } = props;
     const [value, setValue] = useState<string>(initialValue);
+    const { mode } = useColorMode();
 
     const handleChangeValue = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
@@ -41,6 +43,9 @@ export const SearchInput = (props: IProps) => {
                         <SearchIcon />
                     </InputAdornment>
                 ),
+                sx: {
+                    backgroundColor: mode === 'dark' ? undefined : 'white',
+                },
             }}
             variant="outlined"
         />

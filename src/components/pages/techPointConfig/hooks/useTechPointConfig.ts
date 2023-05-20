@@ -62,9 +62,6 @@ export const useTechPointConfig = (args: IHookArgs): IHookResult => {
     }, [config]);
 
     const visibleConfig = useMemo<ITechPointConfig>(() => {
-        if (visibleShips.length === 0) {
-            return config;
-        }
         return {
             ships: visibleShips.reduce((acc, shipDefinition) => {
                 const shipConfig = config.ships[shipDefinition.id];
