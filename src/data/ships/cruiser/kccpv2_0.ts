@@ -12,6 +12,7 @@ import { ShipId } from '../../shipIds';
 
 const staticModules: ISystemModule[] = [
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -20,7 +21,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const typeA: IShipDefinition = {
@@ -49,6 +53,7 @@ const typeA: IShipDefinition = {
                 en: 'Integrated Projectile Weapon System',
             },
             mainSystem: true,
+            skillComplete: true,
             skills: [
                 strategy.concentrateFirePeriodically(80, 90, 15).withCost(15),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -69,6 +74,7 @@ const typeA: IShipDefinition = {
             translatedName: {
                 en: 'Generic Battery System',
             },
+            skillComplete: true,
             skills: [
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
@@ -85,12 +91,14 @@ const typeA: IShipDefinition = {
                 flagshipEffect.focusFire().withDefaultFlag(),
                 flagshipEffect.customFlashipEffect('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
             ],
+            skillComplete: true,
             skillSlots: 1,
         }),
         modules.armorSystem({
+            skillComplete: true,
             skills: [
-                enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
                 enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                 enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                 enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -134,8 +142,9 @@ const typeB: IShipDefinition = {
             id: 'w1',
             name: '速射パルス砲システム',
             translatedName: {
-                en: '', // TODO translate
+                en: 'Rapid-Fire Pulse Cannon System',
             },
+            skillComplete: true,
             skills: [
                 strategy.rapidFire(80, 60, 15, 10).withCost(12),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -155,6 +164,7 @@ const typeB: IShipDefinition = {
             translatedName: {
                 en: 'Generic Projectile Weapon System',
             },
+            skillComplete: true,
             skills: [
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
@@ -170,6 +180,7 @@ const typeB: IShipDefinition = {
             translatedName: {
                 en: 'Generic Battery System',
             },
+            skillComplete: true,
             skills: [
                 enhancements.increaseDamage().withPercentageValue(10).withCost(3),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(3),
@@ -186,12 +197,14 @@ const typeB: IShipDefinition = {
                 flagshipEffect.focusFire().withDefaultFlag(),
                 flagshipEffect.customFlashipEffect('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
             ],
+            skillComplete: true,
             skillSlots: 1,
         }),
         modules.armorSystem({
+            skillComplete: true,
             skills: [
-                enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
                 enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                 enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                 enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -238,7 +251,19 @@ const typeC: IShipDefinition = {
                 en: 'Bow-mounted Battery System',
             },
             mainSystem: true,
-            // TODO skills
+            skillComplete: true,
+            skills: [
+                strategy.concentrateFirePeriodically(80, 90, 15).withCost(12),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                enhancements.increaseHitRate().withPercentageValue(10).withCost(8),
+                enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(8),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(8),
+                enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+            ],
             skillSlots: 7,
         }),
         modules.static({
@@ -247,7 +272,15 @@ const typeC: IShipDefinition = {
             translatedName: {
                 en: 'Generic Projectile Weapon System',
             },
-            // TODO skills
+            skillComplete: true,
+            skills: [
+                enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(6),
+                enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
+            ],
             skillSlots: 4,
         }),
         modules.static({
@@ -256,17 +289,33 @@ const typeC: IShipDefinition = {
             translatedName: {
                 en: 'Generic Battery System',
             },
-            // TODO skills
-            skillSlots: 4,
+            skillComplete: true,
+            skills: [
+                enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+                enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(3),
+                enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(3),
+            ],
+            skillSlots: 5,
         }),
         modules.commandSystem({
             flagshipEffects: [
                 flagshipEffect.focusFire().withDefaultFlag(),
             ],
+            skillComplete: true,
+            skillSlots: 0,
         }),
         modules.armorSystem({
-            // TODO skills
-            skillSlots: 4,
+            skillComplete: true,
+            skills: [
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                enhancements.increaseShield().withPercentageValue(10).withCost(6),
+            ],
+            skillSlots: 3,
         }),
         ...staticModules,
     ],
@@ -310,6 +359,7 @@ const typeD: IShipDefinition = {
                 en: 'Aircraft Loading System',
             },
             mainSystem: true,
+            skillComplete: true,
             skills: [
                 strategy.prioritizeTargets().withDescriptionKey('prioritizeCorvettesWithDuration', { duration: 45 }).withCost(12),
                 enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
@@ -328,6 +378,7 @@ const typeD: IShipDefinition = {
             translatedName: {
                 en: 'Generic Projectile Weapon System',
             },
+            skillComplete: true,
             skills: [
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(6),
@@ -344,6 +395,7 @@ const typeD: IShipDefinition = {
             translatedName: {
                 en: 'Generic Battery System',
             },
+            skillComplete: true,
             skills: [
                 enhancements.increaseDamage().withPercentageValue(10).withCost(3),
                 enhancements.increaseDamage().withPercentageValue(10).withCost(3),
@@ -359,11 +411,14 @@ const typeD: IShipDefinition = {
             flagshipEffects: [
                 flagshipEffect.focusFire().withDefaultFlag(),
             ],
+            skillComplete: true,
+            skillSlots: 0,
         }),
         modules.armorSystem({
+            skillComplete: true,
             skills: [
-                enhancements.increaseHp().withPercentageValue(10).withCost(6),
-                enhancements.increaseHp().withPercentageValue(10).withCost(6),
+                enhancements.increaseHp().withPercentageValue(10).withCost(8),
+                enhancements.increaseHp().withPercentageValue(10).withCost(8),
                 enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                 enhancements.increaseShield().withPercentageValue(10).withCost(6),
             ],

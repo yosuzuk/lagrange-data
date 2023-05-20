@@ -15,6 +15,7 @@ const defensiveBatterySystem = modules.static({
     translatedName: {
         en: 'Defensive Battery System',
     },
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(3),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
@@ -34,6 +35,7 @@ const aircraftLoadingSystem = modules.static({
     translatedName: {
         en: 'Aircraft Loading System',
     },
+    skillComplete: true,
     skills: [
         strategy.prioritizeTargets().withDescriptionKey('superCapitalStrike', { duration: 25 }).withCost(15),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
@@ -47,9 +49,10 @@ const aircraftLoadingSystem = modules.static({
 });
 
 const armorSystem = modules.armorSystem({
+    skillComplete: true,
     skills: [
-        enhancements.increaseHp().withPercentageValue(12).withCost(6),
-        enhancements.increaseHp().withPercentageValue(12).withCost(6),
+        enhancements.increaseHp().withPercentageValue(12).withCost(8),
+        enhancements.increaseHp().withPercentageValue(12).withCost(8),
         enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
         enhancements.increaseShield().withPercentageValue(10).withCost(6),
         enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
@@ -58,6 +61,7 @@ const armorSystem = modules.armorSystem({
 });
 
 const propulsionSystem = modules.propulsionSystem({
+    skillComplete: true,
     skills: [
         enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
         enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -94,6 +98,7 @@ export const predator: IShipDefinition[] = [
                     en: 'Projectile Weapon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.antiAircraftSupport(40, 30, 25).withCost(8),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
@@ -113,6 +118,7 @@ export const predator: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                     flagshipEffect.strategicStrike2(120).withCost(40),
                 ],
+                skillComplete: true,
                 skills: [
                     enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(40),
                 ],
@@ -120,7 +126,10 @@ export const predator: IShipDefinition[] = [
             }),
             armorSystem,
             propulsionSystem,
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 76190,
@@ -159,10 +168,11 @@ export const predator: IShipDefinition[] = [
                     en: 'Information Command System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.prioritizeSupport(30).withCost(8),
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(5),
-                    enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(5), // TODO reduceFlightTimeAndCooldownOfPrimaryWeapon after update
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(5),
                     enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(5),
                     enhancements.reduceHitByProjectile().withPercentageValue(20).withCost(5),
                 ],
@@ -175,6 +185,7 @@ export const predator: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                     flagshipEffect.strategicStrike2(120).withCost(40),
                 ],
+                skillComplete: true,
                 skills: [
                     // TODO cost
                     enhancements.increaseStrategicStrikeAngle().withAbsoluteValue(60).withUnit('degree'),
@@ -183,7 +194,10 @@ export const predator: IShipDefinition[] = [
             }),
             armorSystem,
             propulsionSystem,
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 76190,
@@ -222,6 +236,7 @@ export const predator: IShipDefinition[] = [
                     en: 'Anti-Aircraft Missile System',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 6, // TODO 7 after update
             }),
@@ -233,12 +248,20 @@ export const predator: IShipDefinition[] = [
                     // TODO cost
                     flagshipEffect.antiAircraftNetwork1(5),
                 ],
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 2,
             }),
-            modules.armorSystem(),
-            modules.propulsionSystem(),
-            modules.energySystem(),
+            modules.armorSystem({
+                skillComplete: false,
+            }),
+            modules.propulsionSystem({
+                skillComplete: false,
+            }),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 76190,
