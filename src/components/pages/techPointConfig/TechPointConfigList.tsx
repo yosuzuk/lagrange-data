@@ -1,8 +1,5 @@
 import SettingsIcon from '@mui/icons-material/Settings';
-import { shipDefinitions as allShipDefinitions } from '../../../data/shipDefinitions';
-import { IShipDefinition } from '../../../types/ShipDefinition';
-import { useTechPointConfig } from './hooks/useTechPointConfig';
-import { ITechPointShipConfig } from './types/ITechPointConfig';
+import { ITechPointConfig, ITechPointShipConfig } from './types/ITechPointConfig';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { IExpandable } from '../../expandStack.tsx/types/IExpandable';
@@ -10,20 +7,14 @@ import { TechPointShipSummary } from './TechPointShipSummary';
 import { TechPointShipDetails } from './TechPointShipDetails';
 
 interface IProps {
-    shipDefinitions?: IShipDefinition[];
+    config: ITechPointConfig;
+    onToggleModule: (shipId: string, moduleId: string) => void;
+    onToggleEnhancement: (shipId: string, moduleId: string, enhancementId: string) => void;
 }
 
 export const TechPointConfigList = (props: IProps) => {
-    const { shipDefinitions = allShipDefinitions } = props;
+    const { config, onToggleEnhancement, onToggleModule } = props;
     const { openShipDetailDialog } = useShipDetail();
-
-    const {
-        config,
-        handleToggleModule,
-        handleToggleEnhancement,
-    } = useTechPointConfig({
-        shipDefinitions,
-    });
 
     return (
         <ExpandStack
@@ -40,8 +31,8 @@ export const TechPointConfigList = (props: IProps) => {
                 details: (
                     <TechPointShipDetails
                         shipConfig={shipConfig}
-                        onToggleModule={handleToggleModule}
-                        onToggleEnhancement={handleToggleEnhancement}
+                        onToggleModule={onToggleModule}
+                        onToggleEnhancement={onToggleEnhancement}
                     />
                 ),
             }))}

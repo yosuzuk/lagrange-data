@@ -13,6 +13,7 @@ import { boolMapToArray, combineBoolMap } from '../../../utils/boolMapUtils';
 import { TechPointConfigActionBar } from './TechPointConfigActionBar';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { useTechPointConfig } from './hooks/useTechPointConfig';
 
 const supportedShipTypes: ShipType[] = [ShipType.AUXILIARY, ShipType.CARRIER, ShipType.BATTLE_CRUISER, ShipType.CRUISER, ShipType.CORVETTE];
 
@@ -34,16 +35,39 @@ export const TechPointConfigPage = () => {
 
     const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipDefinitions, shipFilter]);
 
+    const {
+        config,
+        modified,
+        stored,
+        handleToggleModule,
+        handleToggleEnhancement,
+        handleReset,
+        handleCancel,
+        handleSave,
+    } = useTechPointConfig({
+        supportedShips: shipDefinitions,
+        visibleShips: filteredShipDefinitions,
+    });
+
     return (
         <>
             <NavigationBar currentRoute={routes.techPointConfig.path} />
             <TechPointConfigActionBar
                 shipFilter={shipFilter}
+                modified={modified}
+                stored={stored}
                 onFilterChange={setShipFilter}
+                onReset={handleReset}
+                onCancel={handleCancel}
+                onSave={handleSave}
             />
             <PageContent>
                 <Box component="div" p={1}>
-                    <TechPointConfigList shipDefinitions={filteredShipDefinitions} />
+                    <TechPointConfigList
+                        config={config}
+                        onToggleModule={handleToggleModule}
+                        onToggleEnhancement={handleToggleEnhancement}
+                    />
                 </Box>
             </PageContent>
             <PageFooter />
