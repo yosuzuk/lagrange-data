@@ -1,0 +1,1 @@
+function u(r,e){if(r.length>0){const o=s(r);return Object.keys(e).reduce((c,n)=>{var t;return{...c,[n]:(t=o[n])!=null?t:!1}},{...e})}return e}function i(r){const e=Object.keys(r).filter(o=>r[o]);return e.length>0?e:[]}function s(r){return r.reduce((e,o)=>({...e,[o]:!0}),{})}export{i as b,u as c};
