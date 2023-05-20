@@ -57,6 +57,7 @@ export enum EnhancementSubType {
     INCREASE_LOCK_ON_EFFICIENCY = 'increaseLockOnEfficiency',
     INCREASE_STRATEGIC_STRIKE_ANGLE = 'increaseStrategicStrikeAngle',
     INCREASE_REPAIR_EFFECTIVENESS = 'increaseRepairEffectiveness',
+    INCREASE_REPAIR_EFFECTIVENESS_BY_ARMOR = 'increaseRepairEffectivenessByArmor',
     REDUCE_LOCK_ON = 'reduceLockOn',
     REDUCE_LOCK_ON_OF_AIRCRAFT = 'reduceLockOnOfAircraft',
     REDUCE_LOCK_ON_OF_UAV = 'reduceLockOnOfUav',

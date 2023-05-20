@@ -415,7 +415,7 @@ const staticModules: ISystemModule[] = [
             enhancements.increaseArmor().withAbsoluteValue(30),
             enhancements.increaseShield().withPercentageValue(10),
             enhancements.increaseShield().withPercentageValue(10),
-            enhancements.increaseRepairEffectiveness().withPercentageValue(0.05),
+            enhancements.increaseRepairEffectivenessByArmor().withPercentageValue(0.05),
         ],
         skillSlots: 5,
     }),

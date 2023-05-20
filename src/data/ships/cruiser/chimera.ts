@@ -137,8 +137,20 @@ export const chimera: IShipDefinition[] = [
                     en: '"Fortress" Cannon System SP',
                 },
                 mainSystem: true,
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    strategy.allShipsFocusFire(60, 90, 10).withCost(20),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+                    enhancements.reduceDuration().withPercentageValue(10).withCost(10),
+                    enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(10),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
+                ],
                 skillSlots: 7,
             }),
             modules.commandSystem({
@@ -149,13 +161,23 @@ export const chimera: IShipDefinition[] = [
                 skillSlots: 0,
             }),
             modules.armorSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 2,
             }),
             modules.energySystem({

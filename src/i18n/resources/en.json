@@ -461,6 +461,7 @@
         "increaseLockOnEfficiency": "Increase anti-air lock-on efficiency",
         "increaseStrategicStrikeAngle": "Increase strategic strike attack angle",
         "increaseRepairEffectiveness": "Increase repair effectiveness",
+        "increaseRepairEffectivenessByArmor": "Increase repair effectiveness by armor",
         "reduceLockOn": "Reduce lock-on time",
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",

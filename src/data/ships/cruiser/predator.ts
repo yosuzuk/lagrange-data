@@ -189,8 +189,8 @@ export const predator: IShipDefinition[] = [
                 ],
                 skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseStrategicStrikeAngle().withAbsoluteValue(60).withUnit('degree'),
+                    // TODO verify cost
+                    enhancements.increaseStrategicStrikeAngle().withAbsoluteValue(60).withUnit('degree').withCost(45),
                 ],
                 skillSlots: 2,
             }),
@@ -254,13 +254,13 @@ export const predator: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
-                    // TODO cost
-                    flagshipEffect.antiAircraftNetwork1(5),
+                    // TODO verify cost
+                    flagshipEffect.antiAircraftNetwork1(5).withCost(60),
                 ],
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseSystemHp().withPercentageValue(10),
+                    // TODO verify cost
+                    enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
                 ],
                 skillSlots: 2,
             }),

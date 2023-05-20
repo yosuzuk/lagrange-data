@@ -282,8 +282,8 @@ export const cas066: IShipDefinition[] = [
                 ],
                 skillComplete: true,
                 skills: [
-                    // TODO cost & max value
-                    enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
+                    // TODO verify cost & max value
+                    enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
                 ],
                 skillSlots: 2,
             }),
@@ -344,15 +344,21 @@ export const cas066: IShipDefinition[] = [
         modules: [
             modules.static({
                 id: 'sp1',
-                name: '無人機メンテナンスシステム',
+                name: 'UAV補修システム',
                 translatedName: {
                     en: 'UAV Maintenance System',
                 },
                 mainSystem: true,
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
                     strategy.speedUpRepair(40, 30).withCost(15),
-                    // TODO remaining skills
+                    enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(10),
+                    enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(10),
+                    enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(10),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+                    enhancements.reduceLockOnOfAircraft().withPercentageValue(50).withCost(10),
+                    enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
                 ],
                 skillSlots: 7,
             }),
@@ -362,10 +368,16 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Standard Integrated Battery System',
                 },
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
                     strategy.antiAircraftSupport(40, 30, 25).withCost(12),
-                    // TODO remaining skills
+                    enhancements.increaseDamage().withPercentageValue(12).withCost(6),
+                    enhancements.increaseDamage().withPercentageValue(12).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(18).withCost(6),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(18).withCost(6),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6)
                 ],
                 skillSlots: 6,
             }),
@@ -377,18 +389,25 @@ export const cas066: IShipDefinition[] = [
                 skillSlots: 0,
             }),
             modules.armorSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    // TODO verify 16 or 12
+                    enhancements.increaseHp().withPercentageValue(16).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(16).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    // TODO verify 12 or 10
+                    enhancements.increaseShield().withPercentageValue(12).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
                 ],
                 skillSlots: 3,
             }),

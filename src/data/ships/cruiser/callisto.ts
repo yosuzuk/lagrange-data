@@ -292,8 +292,8 @@ export const callisto: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
-                    // TODO cost and max node count
-                    flagshipEffect.customFlashipEffect('patrollingDefense').withDescriptionKey('patrollingDefense', { nodeCount: '1+?' }),
+                    // TODO verify max node count and cost
+                    flagshipEffect.customFlashipEffect('patrollingDefense').withDescriptionKey('patrollingDefense', { nodeCount: '3' }).withCost(60),
                 ],
                 skillComplete: true,
                 skills: [
