@@ -139,11 +139,19 @@ export const cas066: IShipDefinition[] = [
                     en: '"Long Arm" Railgun System',
                 },
                 mainSystem: true,
-                skillComplete: false,
-                // TODO skills
-                // 小型弾薬
-                // 攻撃目標がフリゲートのとき、命中率が30%アップし、攻撃冷却時間が50%、ダメージが40%ダウンする。
-                // コスト15
+                skillComplete: true,
+                skills: [
+                    strategy.lightAmmo(30, 50, 40).withCost(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+                    enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(30, 50).withCost(8),
+                    enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+                ],
                 skillSlots: 7,
             }),
             modules.static({
@@ -152,8 +160,15 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Defensive Battery System',
                 },
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(4),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(4),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(4),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(4),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(4),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(4),
+                ],
                 skillSlots: 5,
             }),
             modules.commandSystem({
@@ -164,16 +179,31 @@ export const cas066: IShipDefinition[] = [
                 skillSlots: 0,
             }),
             modules.armorSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 63340,

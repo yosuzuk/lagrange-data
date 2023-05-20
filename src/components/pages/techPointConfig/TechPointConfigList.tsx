@@ -1,3 +1,4 @@
+import SettingsIcon from '@mui/icons-material/Settings';
 import { shipDefinitions as allShipDefinitions } from '../../../data/shipDefinitions';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { useTechPointConfig } from './hooks/useTechPointConfig';
@@ -29,6 +30,7 @@ export const TechPointConfigList = (props: IProps) => {
             expandables={Object.values(config.ships).map((shipConfig: ITechPointShipConfig): IExpandable => ({
                 id: shipConfig.shipDefinition.id,
                 initiallyOpened: false,
+                expandIcon: <SettingsIcon />,
                 summary: (
                     <TechPointShipSummary
                         shipConfig={shipConfig}

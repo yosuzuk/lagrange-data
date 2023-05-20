@@ -109,6 +109,8 @@ export enum EnhancementSubType {
     ANTI_AIRCRAFT_NETWORK_2 = 'antiAircraftNetwork2',
     OVERDRIVE = 'overdrive',
     PRIORITIZE_FIREPOWER = 'prioritizeFirepower',
+    HEAVY_AMMO = 'heavyAmmo',
+    LIGHT_AMMO = 'lightAmmo',
     ANTI_AIRCRAFT_SUPPORT = 'antiAircraftSupport',
     ANTI_AIRCRAFT_MEASURES = 'antiAircraftMeasures',
     RAPID_FIRE = 'rapidFire',
