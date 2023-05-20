@@ -11,8 +11,12 @@ import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 const staticModules: ISystemModule[] = [
-    modules.commandSystem(),
+    modules.commandSystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
@@ -22,6 +26,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 3,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
@@ -57,6 +62,7 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Airborne Weapon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.prioritizeTargets().withCost(12),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -87,6 +93,7 @@ export const nebulaChaser: IShipDefinition[] = [
                 translatedName: {
                     en: 'Assault Missile System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
@@ -117,6 +124,7 @@ export const nebulaChaser: IShipDefinition[] = [
                 effects: [
                     enhancements.increaseHitRate().withPercentageValue(30),
                 ],
+                skillComplete: true,
                 skills: [
                     enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20).withCost(8),
                     enhancements.reduceHitByDirectFire().withPercentageValue(14.8).withCost(8),
@@ -161,6 +169,7 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Airborne Weapon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(13),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(9),
@@ -192,6 +201,7 @@ export const nebulaChaser: IShipDefinition[] = [
                 effects: [
                     enhancements.increaseHitRate().withPercentageValue(30),
                 ],
+                skillComplete: true,
                 skills: [
                     enhancements.reduceHitByDirectFire().withPercentageValue(15).withCost(10),
                     enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(20).withCost(10),
@@ -208,6 +218,8 @@ export const nebulaChaser: IShipDefinition[] = [
                 effects: [
                     enhancements.increaseDamage().withPercentageValue(15),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             ...staticModules,
         ],

@@ -36,6 +36,7 @@ export const jaeger: IShipDefinition[] = [
                     en: 'Integrated Battery System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
@@ -53,6 +54,7 @@ export const jaeger: IShipDefinition[] = [
                     en: 'Corvette Loading System',
                 },
                 carryCorvette: 4,
+                skillComplete: true,
                 skills: [
                     strategy.prioritizeTargets().withDescriptionKey('superCapitalStrike', { duration: 25 }).withCost(15),
                     enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
@@ -69,6 +71,7 @@ export const jaeger: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                     flagshipEffect.strategicStrike2(120).withCost(40),
                 ],
+                skillComplete: true,
                 skills: [
                     enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }).withCost(40),
                     enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }).withCost(40),
@@ -76,9 +79,10 @@ export const jaeger: IShipDefinition[] = [
                 skillSlots: 2,
             }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
@@ -86,6 +90,7 @@ export const jaeger: IShipDefinition[] = [
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -94,7 +99,10 @@ export const jaeger: IShipDefinition[] = [
                 ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 76190,
@@ -132,6 +140,7 @@ export const jaeger: IShipDefinition[] = [
                     en: 'Bow-mounted Weapon System',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 6,
             }),
@@ -141,6 +150,7 @@ export const jaeger: IShipDefinition[] = [
                 translatedName: {
                     en: 'Integrated Battery System',
                 },
+                skillComplete: false,
                 // TODO skills
                 // skills: [
                 // enhancements.increaseDamage().withPercentageValue(10).withCost(5),
@@ -156,18 +166,24 @@ export const jaeger: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 1,
             }),
             modules.armorSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: false,
                 // TODO skill
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 76190,

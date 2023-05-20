@@ -21,6 +21,7 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         strategy.rapidFire(80, 60, 15, 10).withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -58,6 +59,7 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -92,6 +94,7 @@ const m3: ISystemModule = {
     category: 'M',
     categoryNumber: 3,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -127,6 +130,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -166,6 +170,7 @@ const a2: ISystemModule = {
     description: '対大型艦武装',
     category: 'A',
     categoryNumber: 2,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -197,6 +202,7 @@ const a3: ISystemModule = {
     description: '対小型艦武装',
     category: 'A',
     categoryNumber: 3,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -227,6 +233,7 @@ const b1: ISystemModule = {
     description: '対大型艦武装',
     category: 'B',
     categoryNumber: 1,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -260,6 +267,7 @@ const b2: ISystemModule = {
     categoryNumber: 2,
     carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+    skillComplete: true,
     skills: [
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
@@ -286,6 +294,7 @@ const b3: ISystemModule = {
     description: 'スポッターUAV×3',
     category: 'B',
     categoryNumber: 3,
+    skillComplete: true,
     skills: [
         enhancements.reduceLockOnOfUav().withPercentageValue(70).withCost(10),
         enhancements.reduceRtbUav().withPercentageValue(20).withCost(10),
@@ -316,6 +325,7 @@ const c1: ISystemModule = {
         enhancements.increaseHp().withFixedAbsoluteValue(27302),
         enhancements.increaseHp().withFixedPercentageValue(20),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseHp().withPercentageValue(10).withCost(8),
         enhancements.increaseHp().withPercentageValue(10).withCost(8),
@@ -343,6 +353,7 @@ const c2: ISystemModule = {
     effects: [
         enhancements.increaseShield().withFixedPercentageValue(20),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseShield().withPercentageValue(10).withCost(8),
         enhancements.increaseShield().withPercentageValue(10).withCost(8),
@@ -372,6 +383,7 @@ const c3: ISystemModule = {
         enhancements.reduceEvasion().withFixedPercentageValue(10),
         enhancements.reduceHitRateOfMainWeapon().withFixedPercentageValue(5),
     ],
+    skillComplete: true,
     skills: [
         enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
         enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
@@ -393,12 +405,14 @@ const staticModules: ISystemModule[] = [
             flagshipEffect.focusFire().withDefaultFlag(),
             flagshipEffect.desperateMeasures2('20', '2').withCost(60),
         ],
+        skillComplete: true,
         skills: [
             enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
         ],
         skillSlots: 2,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -412,6 +426,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 6,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -420,7 +435,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 3,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

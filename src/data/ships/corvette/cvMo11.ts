@@ -17,6 +17,7 @@ const assaultMissileSystem = modules.static({
         en: 'Assault Missile System',
     },
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -41,6 +42,7 @@ const cannonAttackSystem = modules.static({
         en: 'Cannon Attack System',
     },
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
         enhancements.increaseDamage().withPercentageValue(10).withCost(12),
@@ -62,7 +64,18 @@ const precisionGuidanceSystem = modules.static({
         en: 'Precision Guidance System',
     },
     mainSystem: true,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        strategy.customStrategy('streadyFiring').withDescriptionKey('streadyFiring').withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(10, 10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30).withCost(10),
+        enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
+    ],
     skillSlots: 7,
     dpmShip: 624,
     dpmAntiAir: 1100,
@@ -70,8 +83,12 @@ const precisionGuidanceSystem = modules.static({
 });
 
 const defaultModules: ISystemModule[] = [
-    modules.commandSystem(),
+    modules.commandSystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
             enhancements.increaseHp().withPercentageValue(12).withCost(5),
@@ -81,6 +98,7 @@ const defaultModules: ISystemModule[] = [
         skillSlots: 3,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
@@ -96,6 +114,7 @@ const antiAircraftBatterySystem = modules.static({
     translatedName: {
         en: 'Anti-Aircraft Battery System',
     },
+    skillComplete: true,
     skills: [
         strategy.antiAircraftMeasures(80, 15, 30).withCost(6),
         enhancements.increaseDamage().withPercentageValue(10).withCost(3),
@@ -117,7 +136,16 @@ const counterCannonSystem = modules.static({
     translatedName: {
         en: 'Counter Cannon System',
     },
-    // TODO skills,
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+        enhancements.reduceAttackInterval().withPercentageValue(15).withCost(6),
+    ],
     skillSlots: 5,
     dpmShip: 106,
     dpmAntiAir: 384,

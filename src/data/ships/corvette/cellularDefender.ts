@@ -46,6 +46,7 @@ export const cellularDefender: IShipDefinition[] = [
                     en: 'Torpedo Attack System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(7),
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(7),
@@ -77,6 +78,7 @@ export const cellularDefender: IShipDefinition[] = [
                 translatedName: {
                     en: 'Rapid-Fire Battery System',
                 },
+                skillComplete: true,
                 skills: [
                     strategy.antiAircraftMeasures(80, 15, 30).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(7),
@@ -119,9 +121,15 @@ export const cellularDefender: IShipDefinition[] = [
                 effects: [
                     enhancements.reduceHitByMissile().withPercentageValue(30),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(5),
                     enhancements.increaseHp().withPercentageValue(12).withCost(5),
@@ -131,6 +139,7 @@ export const cellularDefender: IShipDefinition[] = [
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.reduceLockOn().withPercentageValue(30).withCost(8),

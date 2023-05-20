@@ -40,6 +40,7 @@ export const conamaraChaos: IShipDefinition[] = [
                     en: 'Bow Railgun System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.concentrateFirePeriodically(80, 90, 8).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -59,6 +60,7 @@ export const conamaraChaos: IShipDefinition[] = [
                 translatedName: {
                     en: 'Anti-Aircraft System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
@@ -74,17 +76,21 @@ export const conamaraChaos: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -99,13 +105,17 @@ export const conamaraChaos: IShipDefinition[] = [
                 translatedName: {
                     en: 'Additional Propulsion System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                 ],
                 skillSlots: 2,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 71600,
@@ -146,6 +156,7 @@ export const conamaraChaos: IShipDefinition[] = [
                     en: 'Bow Mounted Plasma Caster',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.customStrategy('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -165,6 +176,7 @@ export const conamaraChaos: IShipDefinition[] = [
                 translatedName: {
                     en: 'Anti-Aircraft System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(5),
@@ -180,17 +192,21 @@ export const conamaraChaos: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -205,13 +221,17 @@ export const conamaraChaos: IShipDefinition[] = [
                 translatedName: {
                     en: 'Additional Propulsion System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                 ],
                 skillSlots: 2,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 71600,

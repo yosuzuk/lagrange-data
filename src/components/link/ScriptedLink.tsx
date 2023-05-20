@@ -13,6 +13,7 @@ export const ScriptedLink = (props: IProps) => {
             href="#"
             onClick={e => {
                 e.preventDefault();
+                e.stopPropagation();
                 onClick();
             }}
         >

@@ -14,10 +14,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Stack from '@mui/material/Stack';
-import Chip from '@mui/material/Chip';
 import { Container } from '../container/Container';
-import { getCurrentLanguage, t } from '../../i18n';
+import { t } from '../../i18n';
 import { flags } from '../../utils/flags';
 import { routes } from '../../utils/routes';
 
@@ -25,6 +23,9 @@ const menuItems: Record<string, ReactNode> = {
     [routes.techFiles.path]: t('techFiles.pageTitle'),
     [routes.researchAgreement.path]: t('researchAgreement.pageTitle'),
     [routes.shipData.path]: t('shipData.pageTitle'),
+    ...(flags.techPointConfig ? {
+        [routes.techPointConfig.path]: t('techPointConfig.pageTitle'),
+    } : {}),
     [routes.fleetSetup.path]: t('fleetSetup.pageTitle'),
     [routes.myList.path]: t('myList.pageTitle'),
     // ...(flags.dpmCalc && getCurrentLanguage() === 'ja' ? {
@@ -65,9 +66,9 @@ export const NavigationBar = (props: IProps) => {
 
     return (
         <>
-            <AppBar position="sticky">
+            <AppBar position="sticky" sx={{ minHeight: '64px' }}>
                 {burgerMenu ? (
-                    <Toolbar>
+                    <Toolbar sx={{ minHeight: '64px' }}>
                         <IconButton
                             size="large"
                             edge="start"
@@ -98,6 +99,7 @@ export const NavigationBar = (props: IProps) => {
                                     value={route}
                                     to={route}
                                     component={Link}
+                                    sx={{ minWidth: '50px' }}
                                 />
                             ))}
                         </Tabs>

@@ -39,6 +39,7 @@ export const voidElfin: IShipDefinition[] = [
                     en: '"Storm" MK0.1 Missile System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(9),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(9),
@@ -60,6 +61,7 @@ export const voidElfin: IShipDefinition[] = [
                 translatedName: {
                     en: 'Rapid-Fire Battery System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
@@ -82,6 +84,7 @@ export const voidElfin: IShipDefinition[] = [
                 effects: [
                     enhancements.increaseEvasion().withFixedPercentageValue(35),
                 ],
+                skillComplete: true,
                 skills: [
                     strategy.activeInterference(90, 75, 20).withCost(14),
                     enhancements.reduceHitByMissile().withPercentageValue(20).withCost(10),
@@ -89,8 +92,12 @@ export const voidElfin: IShipDefinition[] = [
                 ],
                 skillSlots: 2,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(5),
                     enhancements.increaseHp().withPercentageValue(12).withCost(5),
@@ -100,6 +107,7 @@ export const voidElfin: IShipDefinition[] = [
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.reduceLockOn().withPercentageValue(30).withCost(8),

@@ -23,6 +23,7 @@ const m1: ISystemModule = {
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     defaultModule: true,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(13),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
@@ -57,6 +58,7 @@ const m2: ISystemModule = {
     carryFighter: 5,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
@@ -92,6 +94,7 @@ const m3: ISystemModule = {
     carryFighter: 8,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     mainSystem: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(13),
         enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(13),
@@ -122,6 +125,7 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -159,6 +163,7 @@ const a2: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'A',
     categoryNumber: 2,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -193,6 +198,7 @@ const b1: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 1,
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -228,6 +234,7 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     carryCorvette: 3,
+    skillComplete: true,
     skills: [
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
         enhancements.reduceRtbOfAircraft().withPercentageValue(10).withCost(12),
@@ -254,6 +261,7 @@ const b3: ISystemModule = {
     description: '情報UAVを3機搭載',
     category: 'B',
     categoryNumber: 3,
+    skillComplete: false,
     // TODO skills
     // TODO skillslot
     parts: [
@@ -275,6 +283,7 @@ const staticModules: ISystemModule[] = [
             flagshipEffect.strategicStrike1(90).withDefaultFlag(),
             flagshipEffect.strategicStrike3(360, '15.0').withCost(30),
         ],
+        skillComplete: true,
         skills: [
             enhancements.customEnhancement('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
             enhancements.increaseCruisingSpeedOfAircraft().withPercentageValue(75),
@@ -283,6 +292,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 3,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
             enhancements.increaseHp().withPercentageValue(14).withCost(8),
@@ -294,6 +304,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             strategy.evasiveManeuvers(20, 40, 40).withCost(20),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
@@ -303,7 +314,10 @@ const staticModules: ISystemModule[] = [
         ],
         skillSlots: 4,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 const defaultStats: IDefaultShipStats = {

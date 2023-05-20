@@ -326,6 +326,13 @@
         },
         "guideLink": "https://github.com/yosuzuk/lagrange-data/wiki/Map-Builder"
     },
+    "techPointConfig": {
+        "pageTitle": "Tech Points",
+        "incomplete": "Incomplete data",
+        "maxCostUnknown": "TP: unknown",
+        "techPointShortColon": "TP:",
+        "enhancementSlotsColonValue": "Enhancement slots: {{value}}"
+    },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",
         "nomaShippingGroup": "Noma Shipping Group",
@@ -453,6 +460,7 @@
         "increaseEnemyLockOn": "Increase enemy weapon lock-on time",
         "increaseLockOnEfficiency": "Increase anti-air lock-on efficiency",
         "increaseStrategicStrikeAngle": "Increase strategic strike attack angle",
+        "increaseRepairEffectiveness": "Increase repair effectiveness",
         "reduceLockOn": "Reduce lock-on time",
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",
@@ -484,6 +492,7 @@
         "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
         "reduceBatOfAircraft": "Reduce BAT for the primary weapon of aircraft",
         "reduceFlightTime": "Reduce flight time",
+        "reduceFlightTimeAndWeaponCooldownOfAircraft": "Reduce flight time and weapon cooldown of aircraft/UAV in the hangar",
         "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "Reduce flight time and primary weapon cooldown of aircraft/UAV in the hangar",
         "reducePreTargetTime": "Reduce anti-air pre-target time",
         "disguiseAsDestroyer": "Disguise as destroyer",
@@ -519,6 +528,7 @@
         "prioritizeTargets": "Prioritize targets",
         "prioritizeFirepower": "Prioritize firepower",
         "heavyAmmo": "Heavy Ammo",
+        "lightAmmo": "Light Ammo",
         "diveToss": "Dive Toss",
         "activeInterference": "Active Interference",
         "focusedAttacks": "Focused Attacks",
@@ -534,7 +544,10 @@
         "closeCombatAssault": "Close Combat Assault",
         "spreadOutWarhead2": "Spread Out Warhead II",
         "oscillatoryExcitation": "Oscillatory Excitation",
-        "speedUpRepair": "Speed-Up Repair"
+        "speedUpRepair": "Speed-Up Repair",
+        "keyTargets": "Key Targets",
+        "multiTargetCounterAttack": "Multi-Target Counterattack",
+        "streadyFiring": "Stready Firing"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -569,6 +582,7 @@
         "prioritizeFirepower": "Reduces the primary weapon's cooldown by {{value}}% and turns off other weapons in the system every {{interval}}s for {{duration}}s.",
         "heavyAmmo": "When the target is a cruiser, it increases damage by {{damage}}% and attack duration by {{duration}}",
         "heavyAmmoWithInterval": "When the target is a cruiser, it increases damage by {{damage}}% and attack duration by {{durationUp}} for {{duration}}s. Cooldown: {{cooldown}}s.",
+        "lightAmmo": "When the target is a frigate, it increases hit rate by {{hitrate}}%, decreases attack cooldown by {{cooldown}}%, and decreases damage by {{damage}}%.",
         "diveToss": "First 2 rounds of attacks by your primary weapon towards enemy's ships will gain physical armor penetration effects after battle begins.",
         "activeInterference": "Activates jamming system and increases evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
         "focusedAttacks": "Syncs all weapons in the system to prioitize attacks against frigates and destroyers, activates a meaneuvering mode, and increases the Hit Rate by {{hitRate}}% and Evasion by {{evasion}}% every {{interval}}s for {{duration}}s.",
@@ -585,7 +599,10 @@
         "closeCombatAssault": "When flying to attack mid-row target, there is a {{chance}}% chance of ignoring the enemy anti-aircraft weapon's pre-targeting effect.",
         "spreadOutWarhead2": "When the system's anti-aircraft weapons hit an aircraft target, there is a chance to deal 100% crit damage on all aircraft that is attacking you.",
         "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s.",
-        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s."
+        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s.",
+        "keyTargets": "When the enemy fleet includes battlecruisers, it prioritizes attacks on these targets and increases Damage by {{damage}}%.",
+        "multiTargetCounterAttack": "When multiple fleets attack the fleet simultaneously, it launches a counterattack against 2 sub-target fleets with a counterattack efficiency of 20%.",
+        "streadyFiring": "After every 4 round(s) of attacks the main weapon in the system, increases the rounds per cycle by 1 for the next round of attack."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

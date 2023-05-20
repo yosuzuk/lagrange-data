@@ -37,6 +37,7 @@ export const chimera: IShipDefinition[] = [
                     en: '"Fortress" Battery System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.allShipsFocusFire(80, 90, 10).withCost(20),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -55,6 +56,7 @@ export const chimera: IShipDefinition[] = [
                 translatedName: {
                     en: 'Assault Missile System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(6),
@@ -69,8 +71,11 @@ export const chimera: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
@@ -82,6 +87,7 @@ export const chimera: IShipDefinition[] = [
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -89,7 +95,10 @@ export const chimera: IShipDefinition[] = [
                 ],
                 skillSlots: 2,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 89390,
@@ -128,6 +137,7 @@ export const chimera: IShipDefinition[] = [
                     en: '"Fortress" Cannon System SP',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 7,
             }),
@@ -135,16 +145,23 @@ export const chimera: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 2,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 89390,
@@ -183,6 +200,7 @@ export const chimera: IShipDefinition[] = [
                     en: 'Integrated Armory',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 7,
             }),
@@ -191,18 +209,24 @@ export const chimera: IShipDefinition[] = [
                     flagshipEffect.focusFire().withDefaultFlag(),
                     // TODO flagshipEffect
                 ],
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 2,
             }),
             modules.armorSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 2,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 97270,

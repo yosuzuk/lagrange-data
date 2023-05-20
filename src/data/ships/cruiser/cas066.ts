@@ -36,6 +36,7 @@ export const cas066: IShipDefinition[] = [
                     en: 'Heavy Torpedo Launching System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(7),
@@ -56,6 +57,7 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Standard Integrated Battery System',
                 },
+                skillComplete: true,
                 skills: [
                     strategy.antiAircraftSupport(40, 30, 25).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -71,11 +73,14 @@ export const cas066: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
-                    enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
                     enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -84,6 +89,7 @@ export const cas066: IShipDefinition[] = [
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
                     enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -92,7 +98,10 @@ export const cas066: IShipDefinition[] = [
                 ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 71600,
@@ -130,10 +139,19 @@ export const cas066: IShipDefinition[] = [
                     en: '"Long Arm" Railgun System',
                 },
                 mainSystem: true,
-                // TODO skills
-                // 小型弾薬
-                // 攻撃目標がフリゲートのとき、命中率が30%アップし、攻撃冷却時間が50%、ダメージが40%ダウンする。
-                // コスト15
+                skillComplete: true,
+                skills: [
+                    strategy.lightAmmo(30, 50, 40).withCost(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(14.8).withCost(8),
+                    enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+                    enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+                    enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+                    enhancements.increaseCriticalDamageAndChance().withPercentageValue(30, 50).withCost(8),
+                    enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+                ],
                 skillSlots: 7,
             }),
             modules.static({
@@ -142,23 +160,50 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Defensive Battery System',
                 },
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(4),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(4),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(4),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(4),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(4),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(4),
+                ],
                 skillSlots: 5,
             }),
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 63340,
@@ -197,7 +242,18 @@ export const cas066: IShipDefinition[] = [
                     en: 'Corvette Maintenance System',
                 },
                 mainSystem: true,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+                    enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+                    enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+                    enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
+                    enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+                    enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+                    enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+                ],
                 skillSlots: 6,
             }),
             modules.static({
@@ -206,23 +262,56 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Standard Integrated Battery System',
                 },
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    strategy.antiAircraftSupport(40, 30, 25).withCost(12),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(6),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
+                ],
                 skillSlots: 6,
             }),
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
+                    flagshipEffect.strategicStrike2(120).withCost(40),
                 ],
+                skillComplete: true,
+                skills: [
+                    // TODO cost & max value
+                    enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
+                ],
+                skillSlots: 2,
             }),
             modules.armorSystem({
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                ],
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 66400,
@@ -260,6 +349,7 @@ export const cas066: IShipDefinition[] = [
                     en: 'UAV Maintenance System',
                 },
                 mainSystem: true,
+                skillComplete: false,
                 skills: [
                     strategy.speedUpRepair(40, 30).withCost(15),
                     // TODO remaining skills
@@ -272,6 +362,7 @@ export const cas066: IShipDefinition[] = [
                 translatedName: {
                     en: 'Standard Integrated Battery System',
                 },
+                skillComplete: false,
                 skills: [
                     strategy.antiAircraftSupport(40, 30, 25).withCost(12),
                     // TODO remaining skills
@@ -282,12 +373,16 @@ export const cas066: IShipDefinition[] = [
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
+                skillComplete: true,
+                skillSlots: 0,
             }),
             modules.armorSystem({
+                skillComplete: false,
                 // TODO skills
                 skillSlots: 4,
             }),
             modules.propulsionSystem({
+                skillComplete: false,
                 skills: [
                     // TODO cost
                     enhancements.increaseCruisingSpeed().withPercentageValue(15),
@@ -297,7 +392,10 @@ export const cas066: IShipDefinition[] = [
                 ],
                 skillSlots: 3,
             }),
-            modules.energySystem(),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
         ],
         defaultStats: {
             hp: 66400,

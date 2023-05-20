@@ -35,6 +35,7 @@ export const silentAssassin: IShipDefinition[] = [
                     en: 'Rapid-Fire Battery System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.rapidFire(80, 60, 15, 10).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -51,8 +52,12 @@ export const silentAssassin: IShipDefinition[] = [
                 dpmAntiAir: 0,
                 dpmSiege: 630,
             }),
-            modules.commandSystem(),
+            modules.commandSystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
             modules.armorSystem({
+                skillComplete: true,
                 skills: [
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
                     enhancements.increaseHp().withPercentageValue(12).withCost(6),
@@ -70,6 +75,7 @@ export const silentAssassin: IShipDefinition[] = [
                     enhancements.reduceLockOn().withFixedPercentageValue(35),
                     enhancements.increaseHitRateVsSmall().withFixedPercentageValue(15),
                 ],
+                skillComplete: true,
                 skills: [
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),

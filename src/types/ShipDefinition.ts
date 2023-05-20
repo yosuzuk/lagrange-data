@@ -62,6 +62,7 @@ export interface ISystemModule {
     defaultModule?: boolean;
     mainSystem?: boolean;
     effects?: IEnhancement[];
+    skillComplete?: boolean;
     skillSlots?: number;
     skills?: IEnhancement[];
     flagshipEffects?: IEnhancement[];

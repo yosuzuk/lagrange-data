@@ -16,6 +16,7 @@ const genericMissileLaunchingSystem = modules.static({
     translatedName: {
         en: 'Generic Missile Launching System',
     },
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(2),
         enhancements.increaseDamage().withPercentageValue(10).withCost(2),
@@ -32,6 +33,7 @@ const integratedBatterySystem = modules.static({
     translatedName: {
         en: 'Integrated Battery System',
     },
+    skillComplete: true,
     skills: [
         enhancements.increaseDamage().withPercentageValue(10).withCost(2),
         enhancements.increaseDamage().withPercentageValue(10).withCost(2),
@@ -48,11 +50,14 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
         ],
+        skillComplete: true,
+        skillSlots: 0,
     }),
     modules.armorSystem({
+        skillComplete: true,
         skills: [
-            enhancements.increaseHp().withPercentageValue(12).withCost(6),
-            enhancements.increaseHp().withPercentageValue(12).withCost(6),
+            enhancements.increaseHp().withPercentageValue(12).withCost(8),
+            enhancements.increaseHp().withPercentageValue(12).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
             enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
             enhancements.increaseShield().withPercentageValue(10).withCost(6),
@@ -61,6 +66,7 @@ const staticModules: ISystemModule[] = [
         skillSlots: 4,
     }),
     modules.propulsionSystem({
+        skillComplete: true,
         skills: [
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
             enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
@@ -78,13 +84,17 @@ const staticModules: ISystemModule[] = [
             enhancements.increaseHitRateOfMainWeapon().withFixedPercentageValue(5),
             enhancements.increaseEvasion().withFixedPercentageValue(15),
         ],
+        skillComplete: true,
         skills: [
             enhancements.increaseEvasion().withPercentageValue(8).withCost(5),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(5),
         ],
         skillSlots: 2,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 export const io: IShipDefinition[] = [
@@ -113,6 +123,7 @@ export const io: IShipDefinition[] = [
                     en: '"Viggen" Ion Cannon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.customStrategy('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -166,6 +177,7 @@ export const io: IShipDefinition[] = [
                     en: '"Viggen" Ion Cannon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.focusedAttacks(40, 20, 30, 15).withCost(20),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -185,6 +197,7 @@ export const io: IShipDefinition[] = [
                 translatedName: {
                     en: 'Anti-Ship Missile Launching System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
@@ -234,6 +247,7 @@ export const io: IShipDefinition[] = [
                     en: '"Viggen" Ion Cannon System',
                 },
                 mainSystem: true,
+                skillComplete: true,
                 skills: [
                     strategy.sustainedDamageOutput(3, 60).withCost(20),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
@@ -254,6 +268,7 @@ export const io: IShipDefinition[] = [
                 translatedName: {
                     en: 'Defensive Battery System',
                 },
+                skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(2),
