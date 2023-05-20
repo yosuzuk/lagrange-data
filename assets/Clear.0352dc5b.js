@@ -1,0 +1,1 @@
+import{P as a,Q as r,R as t}from"./index.a1368fc8.js";var e={},u=r.exports;Object.defineProperty(e,"__esModule",{value:!0});var l=e.default=void 0,o=u(a),d=t,v=(0,o.default)((0,d.jsx)("path",{d:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"}),"Clear");l=e.default=v;export{l as d};
