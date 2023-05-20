@@ -20,9 +20,17 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO find out
+        // TODO cost
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15),
+        enhancements.increaseHitRate().withPercentageValue(10),
+        enhancements.reduceCooldown().withPercentageValue(15),
+        enhancements.reduceDuration().withPercentageValue(10),
     ],
     skillSlots: 6,
     parts: [{
@@ -97,9 +105,18 @@ const a1: ISystemModule = {
     category: 'A',
     categoryNumber: 1,
     defaultModule: true,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO find out
+        // TODO cost
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15),
+        enhancements.reduceCooldown().withPercentageValue(15),
+        enhancements.reduceCooldown().withPercentageValue(15),
+        enhancements.reduceAttackInterval().withPercentageValue(15),
+        enhancements.reduceAttackInterval().withPercentageValue(15),
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15),
     ],
     skillSlots: 6,
     parts: [{
@@ -150,9 +167,15 @@ const b1: ISystemModule = {
     category: 'B',
     categoryNumber: 1,
     defaultModule: true,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO find out
+        // TODO cost
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseDamage().withPercentageValue(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15),
+        enhancements.reduceCooldown().withPercentageValue(15),
+        enhancements.reduceCooldown().withPercentageValue(15),
     ],
     skillSlots: 4,
     parts: [{
@@ -178,8 +201,7 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     skillComplete: false,
-    // skills: [
-    // ],
+    // TODO skills
     // skillSlots: 4,
     parts: [{
         text: [
@@ -207,6 +229,21 @@ const c1: ISystemModule = {
     ],
     skillComplete: false,
     // skills: [
+    // Dense Shell
+    // There is a 40% chance of damaging the ship's main system when cannons of the entire ship hit the targeted ship.
+    // cost 15
+    // Large Shell
+    // There is a 40% change to deal Crit Damage equal to 50% additional damage when railguns of the entire ship hit the target.
+    // cost 15
+    // Fusion Energy
+    // Increases the damage of the next attack by 5%, up to a maximum of 20%, when the ion and pulse cannons of the entire ship hit the same target consecutively.
+    // cost 15
+    // Energy Torpedo
+    // Deals an additional 20% energy damage when torpedoes of the entire ship hit the target
+    // cost 15
+    // Cluster Missile
+    // Increases the number of targets attacked by missiles of the entire ship by +1 and reduces damage dealt to the additional target by 70%.
+    // cost 15
     // ],
     skillSlots: 3,
     parts: [{
@@ -229,8 +266,7 @@ const d1: ISystemModule = {
         strategy.customStrategy('oscillatoryExcitation').withDescriptionKey('oscillatoryExcitation'),
     ],
     skillComplete: false,
-    // skills: [
-    // ],
+    // TODO skills
     // skillSlots: 4,
     parts: [{
         text: [
@@ -248,9 +284,8 @@ const d2: ISystemModule = {
     category: 'D',
     categoryNumber: 2,
     skillComplete: false,
+    // TODO skills
     // skillSlots: 4,
-    // skills: [
-    // ],
     parts: [{
         text: [
             'HNA-240 Real-Time Target Calibration Module', // TODO JA
@@ -318,7 +353,7 @@ const f1: ISystemModule = {
     category: 'F',
     categoryNumber: 1,
     skillComplete: false,
-    // skills: [],
+    // TODO skills
     // skillSlots: 4,
     parts: [{
         text: [
@@ -341,7 +376,7 @@ const f2: ISystemModule = {
     category: 'F',
     categoryNumber: 2,
     skillComplete: false,
-    // skills: [],
+    // TODO skills
     // skillSlots: 4,
     parts: [{
         text: [
@@ -358,19 +393,41 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
+            // TODO cost
+            flagshipEffect.customFlashipEffect('multiTargetCounterAttack').withDescriptionKey('multiTargetCounterAttack'),
         ],
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        skills: [
+            // TODO cost
+            enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5),
+            enhancements.increaseSystemHp().withPercentageValue(10),
+        ],
         skillSlots: 2,
     }),
     modules.armorSystem({
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        skills: [
+            // TODO cost
+            enhancements.increaseHp().withPercentageValue(14),
+            enhancements.increaseHp().withPercentageValue(14),
+            enhancements.increaseHp().withPercentageValue(14),
+            enhancements.increaseArmor().withAbsoluteValue(30),
+            enhancements.increaseArmor().withAbsoluteValue(30),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.increaseShield().withPercentageValue(10),
+            enhancements.increaseRepairEffectiveness().withPercentageValue(0.05),
+        ],
         skillSlots: 5,
     }),
     modules.propulsionSystem({
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        skills: [
+            // TODO cost
+            enhancements.increaseCruisingSpeed().withPercentageValue(15),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15),
+            enhancements.increaseWarpSpeed().withPercentageValue(15),
+            enhancements.increaseWarpSpeed().withPercentageValue(15),
+        ],
         skillSlots: 4,
     }),
     modules.energySystem({
