@@ -460,6 +460,7 @@
         "increaseEnemyLockOn": "Increase enemy weapon lock-on time",
         "increaseLockOnEfficiency": "Increase anti-air lock-on efficiency",
         "increaseStrategicStrikeAngle": "Increase strategic strike attack angle",
+        "increaseRepairEffectiveness": "Increase repair effectiveness",
         "reduceLockOn": "Reduce lock-on time",
         "reduceLockOnOfAircraft": "Reduce lock-on time of aircraft in hangar",
         "reduceLockOnOfUav": "Reduce lock-on time of UAV in hangar",
