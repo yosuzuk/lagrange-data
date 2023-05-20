@@ -6,12 +6,13 @@ import SearchIcon from '@mui/icons-material/Search';
 interface IProps {
     id: string;
     value: string;
+    placeholder?: string;
     lowerCase?: boolean;
     onChange: (input: string) => void;
 }
 
 export const SearchInput = (props: IProps) => {
-    const { id, value: initialValue, lowerCase, onChange } = props;
+    const { id, value: initialValue, placeholder, lowerCase, onChange } = props;
     const [value, setValue] = useState<string>(initialValue);
 
     const handleChangeValue = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +33,7 @@ export const SearchInput = (props: IProps) => {
             type="search"
             size="small"
             value={value}
+            placeholder={placeholder}
             onChange={handleChangeValue}
             InputProps={{
                 startAdornment: (

@@ -328,10 +328,13 @@
     },
     "techPointConfig": {
         "pageTitle": "Tech Points",
+        "pageDescription1": "This page lists the amount of tech points required for each ship.",
+        "pageDescription2": "By default, tech points are counted for all initially available modules. Modules and enhancements can be adjusted to your preference.",
         "incomplete": "Incomplete data",
         "maxCostUnknown": "TP: unknown",
         "techPointShortColon": "TP:",
-        "enhancementSlotsColonValue": "Enhancement slots: {{value}}"
+        "enhancementSlotsColonValue": "Enhancement slots: {{value}}",
+        "confirmReset": "All modules and their enhancements will be reset."
     },
     "manufacturer": {
         "jupiterIndustries": "Jupiter Industries",

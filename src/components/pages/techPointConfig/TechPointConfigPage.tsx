@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState, applyShipFilter } from '../../filter/filterUtils';
 import { shipDefinitions as allShipDefinitions } from '../../../data/shipDefinitions';
@@ -14,6 +14,11 @@ import { TechPointConfigActionBar } from './TechPointConfigActionBar';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
 import { useTechPointConfig } from './hooks/useTechPointConfig';
+import { SearchInput } from '../../searchInput/SearchInput';
+import { t } from '../../../i18n';
+import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { IShipDefinition } from '../../../types/ShipDefinition';
+import Typography from '@mui/material/Typography';
 
 const supportedShipTypes: ShipType[] = [ShipType.AUXILIARY, ShipType.CARRIER, ShipType.BATTLE_CRUISER, ShipType.CRUISER, ShipType.CORVETTE];
 
@@ -33,7 +38,16 @@ export const TechPointConfigPage = () => {
             .filter(s => supportedShipTypes.includes(s.type));
     }, []);
 
-    const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipDefinitions, shipFilter]);
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
+    const filteredShipDefinitions = useMemo<IShipDefinition[]>(() => applyShipFilter(shipDefinitions, shipFilter), [shipDefinitions, shipFilter]);
+
+    const visibleShipDefinitions = useMemo<IShipDefinition[]>(() => {
+        if (!searchTerm) {
+            return filteredShipDefinitions;
+        }
+        return filteredShipDefinitions.filter(shipDefinition => getShipName(shipDefinition).toLowerCase().includes(searchTerm));
+    }, [filteredShipDefinitions, searchTerm]);
 
     const {
         config,
@@ -46,7 +60,7 @@ export const TechPointConfigPage = () => {
         handleSave,
     } = useTechPointConfig({
         supportedShips: shipDefinitions,
-        visibleShips: filteredShipDefinitions,
+        visibleShips: visibleShipDefinitions,
     });
 
     return (
@@ -62,13 +76,28 @@ export const TechPointConfigPage = () => {
                 onSave={handleSave}
             />
             <PageContent>
-                <Box component="div" p={1}>
+                <Stack spacing={2} p={1}>
+                    <Stack pt={1} pb={1} spacing={2}>
+                        <Typography variant="body2">
+                            {t('techPointConfig.pageDescription1')}
+                        </Typography>
+                        <Typography variant="body2">
+                            {t('techPointConfig.pageDescription2')}
+                        </Typography>
+                    </Stack>
+                    <SearchInput
+                        id="searchShip"
+                        lowerCase={true}
+                        value={searchTerm}
+                        placeholder={t('label.shipName')}
+                        onChange={setSearchTerm}
+                    />
                     <TechPointConfigList
                         config={config}
                         onToggleModule={handleToggleModule}
                         onToggleEnhancement={handleToggleEnhancement}
                     />
-                </Box>
+                </Stack>
             </PageContent>
             <PageFooter />
         </>

@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -7,6 +8,7 @@ import { ShipTypeFilterButton } from '../../filter/ShipTypeFilterButton';
 import { ActionBar } from '../../actionBar/ActionBar';
 import { ShipType } from '../../../types/ShipType';
 import { t } from '../../../i18n';
+import { ConfirmationDialog } from '../../dialog/ConfirmationDialog';
 
 interface IProps {
     shipFilter: ShipFilterState;
@@ -29,7 +31,15 @@ export const TechPointConfigActionBar = (props: IProps) => {
         onSave,
     } = props;
 
+    const [confirmingReset, setConfirmReset] = useState<boolean>(false);
+
+    const handleConfirmReset = useCallback(() => {
+        setConfirmReset(false);
+        onReset();
+    }, [onReset]);
+
     return (
+        <>
         <ActionBar
             left={buttonProps => (
                 <>
@@ -60,7 +70,9 @@ export const TechPointConfigActionBar = (props: IProps) => {
                         key="reset"
                         variant="outlined"
                         startIcon={<DeleteForeverIcon />}
-                        onClick={onReset}
+                        onClick={() => {
+                            setConfirmReset(true);
+                        }}
                         disabled={!stored}
                         {...buttonProps}
                     >
@@ -89,5 +101,18 @@ export const TechPointConfigActionBar = (props: IProps) => {
                 </>
             )}
         />
+            {confirmingReset && (
+                <ConfirmationDialog
+                    title={t('button.reset')}
+                    question={t('techPointConfig.confirmReset')}
+                    cancelText={t('button.cancel')}
+                    confirmText={t('button.reset')}
+                    onCancel={() => {
+                        setConfirmReset(false);
+                    }}
+                    onConfirm={handleConfirmReset}
+                />
+            )}
+        </>
     );
 }

@@ -328,10 +328,13 @@
     },
     "techPointConfig": {
         "pageTitle": "技術Pt",
+        "pageDescription1": "ここでは各艦船の強化に必要な技術Ptを表示しています。",
+        "pageDescription2": "デフォルトでは初期モジュール設定での最大値が表示されます。お好みに合わせてモジュールやスキルを調整してください。",
         "incomplete": "データ不足",
         "maxCostUnknown": "技術Pt：不明",
         "techPointShortColon": "技術Pt：",
-        "enhancementSlotsColonValue": "スキル枠：{{value}}"
+        "enhancementSlotsColonValue": "スキル枠：{{value}}",
+        "confirmReset": "全てのモジュールとスキルを初期状態にリセットします。"
     },
     "manufacturer": {
         "jupiterIndustries": "ジュピターインダストリー",
