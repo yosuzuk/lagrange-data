@@ -545,9 +545,10 @@
         "closeCombatAssault": "近距離突撃",
         "spreadOutWarhead2": "弾頭散乱II",
         "oscillatoryExcitation": "Oscillatory Excitation",
-        "speedUpRepair": "Speed-Up Repair",
-        "keyTargets": "Key Targets",
-        "multiTargetCounterAttack": "Multi-Target Counterattack"
+        "speedUpRepair": "補修加速",
+        "keyTargets": "重点目標",
+        "multiTargetCounterAttack": "多目標反撃",
+        "streadyFiring": "安定射撃"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -599,9 +600,10 @@
         "closeCombatAssault": "中列の目標を飛行して攻撃する場合、{{chance}}%の確率で敵対空武器の早期ロックオン効果を無視する。",
         "spreadOutWarhead2": "システム内の対空武器が艦載機目標に命中すると、一定の確率で自身を攻撃中の艦載機すべてに対し同時に100%のクリティカルダメージを与えることがある。",
         "oscillatoryExcitation": "Triggers one of the onboard weapons to initiate an extra shot every 6s.",
-        "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s.",
-        "keyTargets": "When the enemy fleet includes battlecruisers, it prioritizes attacks on these targets and increases Damage by {{damage}}%.",
-        "multiTargetCounterAttack": "When multiple fleets attack the fleet simultaneously, it launches a counterattack against 2 sub-target fleets with a counterattack efficiency of 20%."
+        "speedUpRepair": "{{interval}}秒ごとに補修効率がアップし、システム内補修UAVの次ラウンド補修にかかる時間が{{up}}%ダウン。",
+        "keyTargets": "敵艦隊に巡洋戦艦が存在するとき、その巡洋戦艦を優先的に攻撃し、ダメージが{{damage}}%アップする。",
+        "multiTargetCounterAttack": "艦隊が複数艦隊に同時攻撃された時、2隊のサブ目標艦隊に対し反撃を発動する。反撃効率は20%。",
+        "streadyFiring": "システム内のメイン武器が4ラウンド作動するごとに、次ラウンドの攻撃回数が1増加する。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",
