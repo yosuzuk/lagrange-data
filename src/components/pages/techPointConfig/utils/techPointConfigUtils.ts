@@ -100,7 +100,7 @@ function findMaxTechPointsForModule(systemModule: ISystemModule): number | null 
         .reduce((sum, next) => (sum ?? 0) + (next ?? 0), 0);
 }
 
-function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): boolean {
+export function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): boolean {
     const keys = Object.keys(moduleConfigs);
     if (keys.length === 0) {
         return true;
@@ -111,6 +111,10 @@ function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>,
 }
 
 function isIncompleteSystemModule(systemModule: ISystemModule): boolean {
+    if (!systemModule.skillSlots) {
+        return true;
+    }
+
     return !systemModule.skillSlots || systemModule.skillComplete !== true || ([
         ...(systemModule.flagshipEffects ?? []),
         ...(systemModule.skills ?? []),

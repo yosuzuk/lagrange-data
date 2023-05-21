@@ -28,6 +28,7 @@ export const TechPointModuleDetails = (props: IProps) => {
                 <div>
                     <Switch
                         checked={moduleChecked}
+                        disabled={moduleConfig.module.category === 'STATIC'}
                         onChange={() => {
                             onToggleModule(shipConfig.shipDefinition.id, moduleConfig.module.id);
                         }}
