@@ -48,6 +48,8 @@ export const TechPointModuleDetails = (props: IProps) => {
                 <TechPointCounter
                     techPoints={moduleChecked ? moduleConfig.techPoints : 0}
                     maxTechPoints={moduleConfig.maxTechPoints}
+                    unlockCost={(moduleConfig.module.category !== 'STATIC' && !moduleConfig.module.defaultModule) ? 10 : null}
+                    selected={moduleChecked}
                     incomplete={moduleConfig.incomplete}
                     showZero={true}
                 />

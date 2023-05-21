@@ -37,6 +37,7 @@ export const TechPointShipSummary = (props: IProps) => {
             <TechPointCounter
                 techPoints={shipConfig.techPoints}
                 maxTechPoints={shipConfig.maxTechPoints}
+                unlockCost={0}
                 incomplete={shipConfig.incomplete}
             />
         </Stack>

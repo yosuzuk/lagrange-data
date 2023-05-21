@@ -15,6 +15,7 @@ export interface ITechPointShipConfig {
     selectedModuleIds: string[];
     techPoints: number | null;
     maxTechPoints: number | null;
+    unlockCost: number;
     incomplete: boolean;
 }
 
@@ -24,6 +25,7 @@ export interface ITechPointModuleConfig {
     selectedEnhancementIds: string[];
     techPoints: number | null;
     maxTechPoints: number | null;
+    unlockCost: number;
     incomplete: boolean;
 }
 

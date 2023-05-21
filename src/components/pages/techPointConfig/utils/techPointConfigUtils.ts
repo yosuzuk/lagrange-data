@@ -25,6 +25,7 @@ function createTechPointShipConfig(shipDefinition: IShipDefinition): ITechPointS
         .map(m => m.id) ?? [];
 
     const maxTechPoints = findMaxTechPointsForShip(modules, selectedModuleIds);
+    const unlockCost = findUnlockCostForShip(modules, selectedModuleIds);
     const incomplete = isIncompleteShip(modules, selectedModuleIds);
 
     return {
@@ -33,6 +34,7 @@ function createTechPointShipConfig(shipDefinition: IShipDefinition): ITechPointS
         selectedModuleIds,
         techPoints: null,
         maxTechPoints,
+        unlockCost,
         incomplete,
     };
 }
@@ -51,6 +53,7 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
     }, {});
 
     const maxTechPoints = findMaxTechPointsForModule(systemModule);
+    const unlockCost = (systemModule.category !== 'STATIC' && !systemModule.defaultModule) ? 10 : 0;
 
     return {
         module: systemModule,
@@ -58,6 +61,7 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
         selectedEnhancementIds: [],
         techPoints: null,
         maxTechPoints,
+        unlockCost,
         incomplete: isIncompleteSystemModule(systemModule),
     };
 }
@@ -70,11 +74,18 @@ function createTechPointEnhancementConfig(enhancement: IEnhancement, id: string)
     };
 }
 
-function findMaxTechPointsForShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): number | null {
-    return Object.values(moduleConfigs)
+export function findMaxTechPointsForShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): number | null {
+    return Object.keys(moduleConfigs)
+        .map(moduleId => moduleConfigs[moduleId])
         .filter(moduleConfig => moduleConfig.module.category === 'STATIC' || selectedModuleIds.includes(moduleConfig.module.id))
         .map(moduleConfig => moduleConfig.maxTechPoints)
         .reduce((sum, i) => (sum ?? 0) + (i ?? 0), null);
+}
+
+export function findUnlockCostForShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): number {
+    return Object.keys(moduleConfigs)
+        .map(moduleId => selectedModuleIds.includes(moduleId) ? moduleConfigs[moduleId].unlockCost : 0)
+        .reduce((sum, next) => sum + next, 0);
 }
 
 function findMaxTechPointsForModule(systemModule: ISystemModule): number | null {
@@ -144,6 +155,7 @@ export function toggleModule(config: ITechPointConfig, shipId: string, moduleId:
                 ...newShipConfig,
                 techPoints: countShipTechPoints(newShipConfig),
                 maxTechPoints: findMaxTechPointsForShip(newShipConfig.modules, newShipConfig.selectedModuleIds),
+                unlockCost: findUnlockCostForShip(newShipConfig.modules, newShipConfig.selectedModuleIds),
                 incomplete: isIncompleteShip(newShipConfig.modules, newShipConfig.selectedModuleIds),
             },
         },

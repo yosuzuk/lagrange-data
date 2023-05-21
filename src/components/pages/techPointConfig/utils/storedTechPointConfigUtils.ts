@@ -1,6 +1,6 @@
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { IStoredTechPointConfig, IStoredTechPointModuleConfig, IStoredTechPointShipConfig, ITechPointConfig } from '../types/ITechPointConfig';
-import { createDefaultTechPointConfig } from './techPointConfigUtils';
+import { createDefaultTechPointConfig, findMaxTechPointsForShip, findUnlockCostForShip } from './techPointConfigUtils';
 
 const TECH_POINTS_STORAGE_KEY = 'tp';
 
@@ -105,6 +105,9 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
                 ];
             }
         });
+
+        shipConfig.maxTechPoints = findMaxTechPointsForShip(shipConfig.modules, shipConfig.selectedModuleIds);
+        shipConfig.unlockCost = findUnlockCostForShip(shipConfig.modules, shipConfig.selectedModuleIds);
     });
 
     console.log(config);
