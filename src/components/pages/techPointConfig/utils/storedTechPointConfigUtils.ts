@@ -111,7 +111,5 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
         shipConfig.incomplete = isIncompleteShip(shipConfig.modules, shipConfig.selectedModuleIds);
     });
 
-    console.log(config);
-
     return config;
 }

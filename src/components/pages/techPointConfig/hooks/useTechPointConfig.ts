@@ -53,13 +53,15 @@ export const useTechPointConfig = (args: IHookArgs): IHookResult => {
         const config = createOrLoadTechPointConfigFromStorage(supportedShips);
         setConfig(config);
         setModified(false);
-    }, [config]);
+    }, [config, supportedShips]);
 
     const handleSave = useCallback(() => {
         saveTechPointConfigToStorage(config);
+        const savedConfig = createOrLoadTechPointConfigFromStorage(supportedShips);
+        setConfig(savedConfig);
         setModified(false);
         setStored(true);
-    }, [config]);
+    }, [config, supportedShips]);
 
     const visibleConfig = useMemo<ITechPointConfig>(() => {
         return {
