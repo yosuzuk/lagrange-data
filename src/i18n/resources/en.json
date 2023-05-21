@@ -551,7 +551,8 @@
         "speedUpRepair": "Speed-Up Repair",
         "keyTargets": "Key Targets",
         "multiTargetCounterAttack": "Multi-Target Counterattack",
-        "streadyFiring": "Stready Firing"
+        "streadyFiring": "Stready Firing",
+        "highDensityAttack": "高密度攻撃"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -606,7 +607,8 @@
         "speedUpRepair": "Increases the repair efficiency and reduces the repair duration of the Repair UAVs in the hangar by {{up}}% every {{interval}}s.",
         "keyTargets": "When the enemy fleet includes battlecruisers, it prioritizes attacks on these targets and increases Damage by {{damage}}%.",
         "multiTargetCounterAttack": "When multiple fleets attack the fleet simultaneously, it launches a counterattack against 2 sub-target fleets with a counterattack efficiency of 20%.",
-        "streadyFiring": "After every 4 round(s) of attacks the main weapon in the system, increases the rounds per cycle by 1 for the next round of attack."
+        "streadyFiring": "After every 4 round(s) of attacks the main weapon in the system, increases the rounds per cycle by 1 for the next round of attack.",
+        "highDensityAttack": "システム内の武器の攻撃回数×2、ただし冷却時間が80%アップする"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

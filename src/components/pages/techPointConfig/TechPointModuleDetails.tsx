@@ -54,11 +54,18 @@ export const TechPointModuleDetails = (props: IProps) => {
             </Stack>
             {moduleChecked && (
                 <Stack spacing={3} pl={5} pt={1} pb={2}>
-                    <Typography variant="body1" color="text.secondary">
-                        {t('techPointConfig.enhancementSlotsColonValue', {
-                            value: `${moduleConfig.selectedEnhancementIds.length} / ${moduleConfig.module.skillSlots ?? '?'}`
-                        })}
-                    </Typography>
+                    <div>
+                        <Typography variant="body1" color="text.secondary">
+                            {t('techPointConfig.enhancementSlotsColonValue', {
+                                value: `${moduleConfig.selectedEnhancementIds.length} / ${moduleConfig.module.skillSlots ?? '?'}`
+                            })}
+                        </Typography>
+                        {!moduleConfig.module.skillSlots && (
+                            <Typography variant="body2" sx={{ color: 'red' }}>
+                                {t('techPointConfig.incomplete')}
+                            </Typography>
+                        )}
+                    </div>
                     {Object.values(moduleConfig.enhancements).map((enhancementConfig: ITechPointEnhancementConfig) => (
                         <TechPointEnhancementDetails
                             key={enhancementConfig.id}

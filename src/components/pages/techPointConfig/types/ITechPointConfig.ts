@@ -33,11 +33,9 @@ export interface ITechPointEnhancementConfig {
     techPoints: number | null;
 }
 
-type shipId = string;
-type moduleId = string;
-type enhancementId = string;
-export type IStoredTechPointModuleConfig = [moduleId, enhancementId[]];
-export type IStoredTechPointShipConfig = [shipId, IStoredTechPointModuleConfig[]];
+type ModuleInUse = 0 | 1 | undefined;
+export type IStoredTechPointModuleConfig = [ModuleId, EnhancementId[], ModuleInUse];
+export type IStoredTechPointShipConfig = [ShipId, IStoredTechPointModuleConfig[]];
 export interface IStoredTechPointConfig {
     version: number;
     ships: IStoredTechPointShipConfig[];

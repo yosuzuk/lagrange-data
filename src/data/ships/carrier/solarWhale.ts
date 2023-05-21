@@ -117,9 +117,19 @@ const a2: ISystemModule = {
     description: '対小型艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        // TODO translate and rename highDensityAttack based on english name & update japanese description
+        strategy.customStrategy('highDensityAttack').withDescriptionKey('highDensityAttack').withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(8),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
+        enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
+    ],
+    // TODO skillSlots
     parts: [
         {
             text: [
@@ -216,9 +226,16 @@ const b2: ISystemModule = {
     category: 'B',
     categoryNumber: 2,
     carryCorvette: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceRtbOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
+    ],
+    // TODO skillSlots
     parts: [
         {
             text: [

@@ -100,7 +100,7 @@ function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>,
 }
 
 function isIncompleteSystemModule(systemModule: ISystemModule): boolean {
-    return systemModule.skillComplete !== true || ([
+    return !systemModule.skillSlots || systemModule.skillComplete !== true || ([
         ...(systemModule.flagshipEffects ?? []),
         ...(systemModule.skills ?? []),
     ].some(enhancements => !enhancements.isDefault && enhancements.cost === null))
@@ -157,7 +157,7 @@ export function toggleEnhancement(config: ITechPointConfig, shipId: string, modu
     }
 
     const selectedEnhancementIds = toggleArrayItem(moduleConfig.selectedEnhancementIds, enhancementId);
-    if (selectedEnhancementIds.length > (moduleConfig.module.skillSlots ?? 0)) {
+    if (!!moduleConfig.module.skillSlots && selectedEnhancementIds.length > moduleConfig.module.skillSlots) {
         return config;
     }
 

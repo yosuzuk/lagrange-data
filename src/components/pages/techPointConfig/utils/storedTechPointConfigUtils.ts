@@ -48,7 +48,9 @@ export function compressTechPointConfig(config: ITechPointConfig): IStoredTechPo
 
         Object.keys(shipConfig.modules).forEach(moduleId => {
             const moduleConfig = shipConfig.modules[moduleId];
-            const storedModuleConfig: IStoredTechPointModuleConfig = [moduleId, moduleConfig.selectedEnhancementIds];
+
+            const moduleInUse = shipConfig.selectedModuleIds.includes(moduleId) ? 1 : 0;
+            const storedModuleConfig: IStoredTechPointModuleConfig = [moduleId, moduleConfig.selectedEnhancementIds, moduleInUse];
             storedShipConfig[1].push(storedModuleConfig);
         });
 
@@ -66,7 +68,7 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
             return;
         }
 
-        storedModuleConfigs.forEach(([moduleId, selectedEnhancementIds]) => {
+        storedModuleConfigs.forEach(([moduleId, selectedEnhancementIds, moduleInUse]) => {
             const moduleConfig = shipConfig.modules[moduleId];
             if (!moduleConfig) {
                 console.warn(`Invalid moduleId "${moduleId}"`);
@@ -89,8 +91,23 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
                 moduleConfig.techPoints = (moduleConfig.techPoints ?? 0) + (enhancementConfig.enhancement.cost ?? 0);
                 shipConfig.techPoints = (shipConfig.techPoints ?? 0) + (enhancementConfig.enhancement.cost ?? 0);
             });
+
+            // adjust module selection when using additional system modules
+            if (moduleInUse === 1 && !shipConfig.selectedModuleIds.includes(moduleId)) {
+                const moduleIdsToRemove = Object.keys(shipConfig.modules).filter(id => {
+                    const { category } = shipConfig.modules[id].module;
+                    return category !== 'STATIC' && category === moduleConfig.module.category;
+                });
+
+                shipConfig.selectedModuleIds = [
+                    ...shipConfig.selectedModuleIds.filter(id => !moduleIdsToRemove.includes(id)),
+                    moduleId
+                ];
+            }
         });
     });
+
+    console.log(config);
 
     return config;
 }
