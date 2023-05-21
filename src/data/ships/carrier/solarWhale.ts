@@ -54,8 +54,16 @@ const m2: ISystemModule = {
     carryFighter: 8,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
+    ],
     skillSlots: 5,
     parts: [
         {
@@ -278,8 +286,15 @@ const c2: ISystemModule = {
     category: 'C',
     categoryNumber: 2,
     skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skills: [
+        // TODO strategy
+        strategy.customStrategy('unknown'),
+        enhancements.increaseSiegeDamageOfAircraft().withPercentageValue(15).withCost(4),
+        enhancements.increaseSiegeDamageOfAircraft().withPercentageValue(15).withCost(4),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(4),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(4),
+    ],
+    // TODO skillSlots
     parts: [
         {
             text: [
