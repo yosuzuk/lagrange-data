@@ -217,8 +217,11 @@ const c1: ISystemModule = {
     description: 'イオン砲ダメージアップ15％',
     category: 'C',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skill
+    skillComplete: true,
+    skills: [
+        enhancements.increaseEnergyDamageOfMainSystem().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldownOfMainSystem().withPercentageValue(15).withCost(8),
+    ],
     skillSlots: 2,
     parts: [
         {
@@ -271,8 +274,13 @@ const c3: ISystemModule = {
     ],
     category: 'C',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skill
+    skillComplete: true,
+    // TODO effect
+    skills: [
+        strategy.prioritizeSupport2(30).withCost(12),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(12),
+    ],
     // TODO skillslots
 };
 

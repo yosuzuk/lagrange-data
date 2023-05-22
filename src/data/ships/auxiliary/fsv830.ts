@@ -59,13 +59,15 @@ const a1: ISystemModule = {
     description: 'スキルで補修速度アップ＆プレハブ消費ダウン',
     category: 'A',
     categoryNumber: 1,
-    skillComplete: false,
+    skillComplete: true,
+    effects: [
+        enhancements.increaseRepairSpeed().withPercentageValue(20),
+    ],
     skills: [
-        // TODO cost
-        enhancements.increaseRepairSpeed().withPercentageValue(10),
-        enhancements.increaseRepairSpeed().withPercentageValue(10),
-        enhancements.reducePrefabCost().withPercentageValue(10),
-        enhancements.reducePrefabCost().withPercentageValue(10),
+        enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+        enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+        enhancements.reducePrefabCost().withPercentageValue(10).withCost(8),
+        enhancements.reducePrefabCost().withPercentageValue(10).withCost(8),
     ],
     skillSlots: 3,
     parts: [

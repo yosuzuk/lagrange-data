@@ -7,7 +7,7 @@ import { getAcquiredModules } from '../../../../userSettings/utils/userSettingsU
 import { getModuleName, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
-import { normalizeSortFn } from '../../../table';
+import { normalizeSortFn } from '../../../../utils/sortingUtils';
 
 export function formatShipListForSharing(shipDefinitions: IShipDefinition[], userSettings: IUserSettings): string {
     const frontRowShips: IShipDefinition[] = [];

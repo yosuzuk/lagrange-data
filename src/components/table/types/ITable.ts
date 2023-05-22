@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { SortDirection, SortFn } from '../../../utils/sortingUtils';
 
 export interface IUseTableResult<TData> {
     table: ITable;
@@ -43,7 +44,3 @@ export interface ITableData<TData> {
     data: TData[];
     rowIdFn: (data: TData) => string;
 }
-
-export type SortFn<TData> = (a: TData, b: TData) => number;
-
-export type SortDirection = 'asc' | 'desc' | null;

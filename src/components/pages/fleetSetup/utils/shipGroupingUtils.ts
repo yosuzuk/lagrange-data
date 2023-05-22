@@ -4,7 +4,7 @@ import { ShipType } from '../../../../types/ShipType';
 import { getModuleName, getShipName } from '../../../../utils/shipDefinitionUtils';
 import { translateShipRow } from '../../../../utils/shipRowUtils';
 import { shipTypeToSortValue, translateShipType } from '../../../../utils/shipTypeUtils';
-import { normalizeSortFn } from '../../../table';
+import { normalizeSortFn } from '../../../../utils/sortingUtils';
 import { IFleetSetup, IShipSelection, ICarriedShipSelection } from '../types/IFleetSetup';
 import { IGroupedShips, IShipGroup } from '../types/IGroupedShips';
 

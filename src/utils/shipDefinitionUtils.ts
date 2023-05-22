@@ -5,6 +5,8 @@ import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
 import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
+import { shipTypeToSortValue } from './shipTypeUtils';
+import { normalizeSortFn } from './sortingUtils';
 
 const shipDefinitionsById: Record<string, IShipDefinition> = shipDefinitions.reduce((result, next) => ({
     ...result,
@@ -58,4 +60,13 @@ export function getModuleName(shipId: string, module: ISystemModule): string {
     }
 
     return module.name;
+}
+
+export function sortShipDefinitionsByTypeAndName(shipDefinitions: IShipDefinition[]): IShipDefinition[] {
+    const sortByTypeAndName = normalizeSortFn<IShipDefinition>([
+        (a, b) => shipTypeToSortValue(a.type, a.subType) - shipTypeToSortValue(b.type, b.subType),
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+    ]);
+
+    return [...shipDefinitions].sort(sortByTypeAndName);
 }

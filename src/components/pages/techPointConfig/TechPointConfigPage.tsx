@@ -16,7 +16,7 @@ import { ShipType } from '../../../types/ShipType';
 import { useTechPointConfig } from './hooks/useTechPointConfig';
 import { SearchInput } from '../../searchInput/SearchInput';
 import { t } from '../../../i18n';
-import { getShipName } from '../../../utils/shipDefinitionUtils';
+import { getShipName, sortShipDefinitionsByTypeAndName } from '../../../utils/shipDefinitionUtils';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import Typography from '@mui/material/Typography';
 
@@ -40,7 +40,10 @@ export const TechPointConfigPage = () => {
 
     const [searchTerm, setSearchTerm] = useState<string>('');
 
-    const filteredShipDefinitions = useMemo<IShipDefinition[]>(() => applyShipFilter(shipDefinitions, shipFilter), [shipDefinitions, shipFilter]);
+    const filteredShipDefinitions = useMemo<IShipDefinition[]>(() => {
+        const filtered = applyShipFilter(shipDefinitions, shipFilter);
+        return sortShipDefinitionsByTypeAndName(filtered);
+    }, [shipDefinitions, shipFilter]);
 
     const visibleShipDefinitions = useMemo<IShipDefinition[]>(() => {
         if (!searchTerm) {
