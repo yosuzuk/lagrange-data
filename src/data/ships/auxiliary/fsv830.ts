@@ -22,7 +22,7 @@ const m1: ISystemModule = {
     mainSystem: true,
     effects: [
         enhancements.customModuleStorage().withFixedAbsoluteValue(40),
-        enhancements.repairQueue().withAbsoluteValue(1),
+        enhancements.repairQueue().withFixedAbsoluteValue(1),
     ],
     flagshipEffects: [
         flagshipEffect.fleetDock1().withCost(10),
@@ -61,7 +61,7 @@ const a1: ISystemModule = {
     categoryNumber: 1,
     skillComplete: true,
     effects: [
-        enhancements.increaseRepairSpeed().withPercentageValue(20),
+        enhancements.increaseRepairSpeed().withFixedPercentageValue(20),
     ],
     skills: [
         enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
@@ -167,8 +167,13 @@ const b3: ISystemModule = {
     description: '自己保有能力で戦闘機が生産可能',
     category: 'B',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+    ],
     skillSlots: 3,
     parts: [{
         text: [
@@ -258,8 +263,7 @@ const d2: ISystemModule = {
     category: 'D',
     categoryNumber: 2,
     effects: [
-        enhancements.increaseMissileHitRateBackRow().withFixedPercentageValue(12),
-        enhancements.increaseTorpedoHitRateBackRow().withFixedPercentageValue(12),
+        enhancements.increaseMissileAndTorpedoHitRateBackRow().withFixedPercentageValue(12),
     ],
     skillComplete: false,
     skills: [
@@ -278,12 +282,18 @@ const d3: ISystemModule = {
     description: '艦種を空母か駆逐艦に偽装',
     category: 'D',
     categoryNumber: 3,
-    skillComplete: false,
-    skills: [
-        enhancements.disguiseAsDestroyer(),
-        // TODO remaining skills
+    effects: [
+        enhancements.disguiseAsCarrier(),
     ],
-    skillSlots: 2,
+    skillComplete: true,
+    skills: [
+        enhancements.disguiseAsDestroyer().withCost(15),
+        enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
+        enhancements.increaseMissileAndTorpedoHitRateBackRow().withPercentageValue(8).withCost(8),
+        enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+    ],
+    skillSlots: 3,
     parts: [{
         text: [
             '視覚信号カモフラージュ',

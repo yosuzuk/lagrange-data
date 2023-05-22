@@ -285,10 +285,8 @@ const c2: ISystemModule = {
     description: '攻城UAV×4',
     category: 'C',
     categoryNumber: 2,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO strategy
-        strategy.customStrategy('unknown'),
         enhancements.increaseSiegeDamageOfAircraft().withPercentageValue(15).withCost(4),
         enhancements.increaseSiegeDamageOfAircraft().withPercentageValue(15).withCost(4),
         enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(4),

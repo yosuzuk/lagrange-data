@@ -119,7 +119,7 @@ export const cellularDefender: IShipDefinition[] = [
                     en: 'Situational Awareness System',
                 },
                 effects: [
-                    enhancements.reduceHitByMissile().withPercentageValue(30),
+                    enhancements.reduceHitByMissile().withFixedPercentageValue(30),
                 ],
                 skillComplete: true,
                 skillSlots: 0,

@@ -122,7 +122,7 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Information Enhancement System',
                 },
                 effects: [
-                    enhancements.increaseHitRate().withPercentageValue(30),
+                    enhancements.increaseHitRate().withFixedPercentageValue(30),
                 ],
                 skillComplete: true,
                 skills: [
@@ -199,7 +199,7 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Information Enhancement System',
                 },
                 effects: [
-                    enhancements.increaseHitRate().withPercentageValue(30),
+                    enhancements.increaseHitRate().withFixedPercentageValue(30),
                 ],
                 skillComplete: true,
                 skills: [
@@ -216,7 +216,7 @@ export const nebulaChaser: IShipDefinition[] = [
                     en: 'Pulse Energy Storage System',
                 },
                 effects: [
-                    enhancements.increaseDamage().withPercentageValue(15),
+                    enhancements.increaseDamage().withFixedPercentageValue(15),
                 ],
                 skillComplete: true,
                 skillSlots: 0,
