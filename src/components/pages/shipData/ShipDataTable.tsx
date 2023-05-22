@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useMemo } from 'react';
-import { Table, ITableData, useTable, ITableColumn, SortDirection } from '../../table';
+import { Table, ITableData, useTable, ITableColumn } from '../../table';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { IColumnConfig } from '../../columns/types/IColumnConfig';
 import {
@@ -29,6 +29,7 @@ import {
     flightTimeColumn,
 } from '../../columns/colums';
 import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
+import { SortDirection } from '../../../utils/sortingUtils';
 
 interface IProps {
     shipDefinitions: IShipDefinition[];

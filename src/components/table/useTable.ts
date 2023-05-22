@@ -1,7 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
-import { ITableColumn, ITable, ITableData, ITableHeaderCell, IUseTableResult, SortDirection } from './types/ITable';
+import { ITableColumn, ITable, ITableData, ITableHeaderCell, IUseTableResult } from './types/ITable';
 import { createHeaderCell, createTableRows } from './utils/factory';
 import { createInitialSortState, sortTableData } from './utils/sorting';
+import { SortDirection } from '../../utils/sortingUtils';
 
 interface IHookArgs {
     initialSorting?: [string | null, SortDirection];

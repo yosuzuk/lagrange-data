@@ -12,7 +12,7 @@ import { NavigationBar } from '../../navigation/NavigationBar';
 import { PageContent } from '../../pageStructure/PageContent';
 import { PageFooter } from '../../pageStructure/PageFooter';
 import { routes } from '../../../utils/routes';
-import { SortDirection } from '../../table';
+import { SortDirection } from '../../../utils/sortingUtils';
 import { boolMapToArray, combineBoolMap } from '../../../utils/boolMapUtils';
 
 export const ShipDataPage = () => {

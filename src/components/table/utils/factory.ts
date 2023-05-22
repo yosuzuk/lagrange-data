@@ -1,4 +1,5 @@
-import { ITableColumn, ITableHeaderCell, ITableData, ITableRow, SortDirection } from '../types/ITable';
+import { SortDirection } from '../../../utils/sortingUtils';
+import { ITableColumn, ITableHeaderCell, ITableData, ITableRow } from '../types/ITable';
 import { toggleSortState, DEFAULT_SORT_DIRECTION } from './sorting';
 
 export function createHeaderCell<TData>(

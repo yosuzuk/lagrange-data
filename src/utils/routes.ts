@@ -3,10 +3,10 @@ import { IColumnConfig } from '../components/columns/types/IColumnConfig';
 import { FilterKey } from '../components/filter/types/ShipFilterState';
 import { MapInteractionMode } from '../components/pages/mapEdit/types/Mode';
 import { Season } from '../components/pages/researchAgreement/types/Season';
-import { SortDirection } from '../components/table';
 import { ResearchManufacturer } from '../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../types/ResearchStrategyType';
 import { ResearchTacticType } from '../types/ResearchTacticType';
+import { SortDirection } from './sortingUtils';
 
 export interface ITechFilesParams {
     id: string;
