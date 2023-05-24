@@ -562,7 +562,9 @@
         "activeManeuvers": "積極回避",
         "precisionStrike": "精密攻撃",
         "targetReset": "Target Reset",
-        "stealthAttacks": "Stealth Attacks"
+        "stealthAttacks": "Stealth Attacks",
+        "pursueTargets": "Pursue Targets",
+        "focusOnAerialTargets": "Focus on Aerial Targets"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -626,7 +628,9 @@
         "streadyFiring": "システム内のメイン武器が4ラウンド作動するごとに、次ラウンドの攻撃回数が1増加する。",
         "highDensityAttack": "システム内の武器の攻撃回数×2、ただし冷却時間が80%アップする",
         "activeManeuvers": "When attacked by enemy aircraft, increase evasion by 30%. Cooldown: 30s.",
-        "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s."
+        "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s.",
+        "pursueTargets": "When the target's HP falls below {{hp}}%, it increases attack chances in a single round by {{round}} and reduces attack interval by {{interval}}%.",
+        "focusOnAerialTargets": "Prioritize fighters and interceptors."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

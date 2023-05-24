@@ -139,5 +139,6 @@ export enum EnhancementSubType {
     CLOSE_COMBAT_ASSAULT_2 = 'closeCombatAssault2',
     SPEED_UP_REPAIR = 'speedUpRepair',
     KEY_TARGETS = 'keyTargets',
+    PURSUE_TARGETS = 'pursueTargets',
     CUSTOM = 'custom',
 }

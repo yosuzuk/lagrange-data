@@ -24,7 +24,7 @@ import { ShipId } from '../../../data/shipIds';
 const supportedShipTypes: ShipType[] = [ShipType.AUXILIARY, ShipType.CARRIER, ShipType.BATTLE_CRUISER, ShipType.CRUISER, ShipType.CORVETTE];
 
 // TODO remove when all fighters are supported
-const additionallySupportedShipIds: string[] = [ShipId.STINGRAY, ShipId.STRIX_A100, ShipId.VITAS_A021, ShipId.VITAS_B010];
+const additionallySupportedShipIds: string[] = [ShipId.MISTRAL, ShipId.SANDRAKE, ShipId.STINGRAY, ShipId.STRIX_A100, ShipId.VITAS_A021, ShipId.VITAS_B010];
 
 export const TechPointConfigPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();

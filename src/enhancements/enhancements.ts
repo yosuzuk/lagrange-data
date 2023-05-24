@@ -145,6 +145,7 @@ export const strategy = {
     closeCombatAssault2: (chance: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CLOSE_COMBAT_ASSAULT_2).withTextKey('closeCombatAssault').withDescriptionKey('closeCombatAssault2', { chance }),
     speedUpRepair: (up: number, interval: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.SPEED_UP_REPAIR).withDescriptionKey('speedUpRepair', { up, interval }),
     keyTargets: (damage: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.KEY_TARGETS).withDescriptionKey('keyTargets', { damage }),
+    pursueTargets: (hp: number, round: number, interval: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PURSUE_TARGETS).withDescriptionKey('pursueTargets', { hp, round, interval }),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {

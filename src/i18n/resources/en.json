@@ -561,7 +561,9 @@
         "activeManeuvers": "Active Maneuvers",
         "precisionStrike": "Precision Strike",
         "targetReset": "Target Reset",
-        "stealthAttacks": "Stealth Attacks"
+        "stealthAttacks": "Stealth Attacks",
+        "pursueTargets": "Pursue Targets",
+        "focusOnAerialTargets": "Focus on Aerial Targets"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -625,7 +627,9 @@
         "streadyFiring": "After every 4 round(s) of attacks the main weapon in the system, increases the rounds per cycle by 1 for the next round of attack.",
         "highDensityAttack": "システム内の武器の攻撃回数×2、ただし冷却時間が80%アップする",
         "activeManeuvers": "When attacked by enemy aircraft, increase evasion by 30%. Cooldown: 30s.",
-        "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s."
+        "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s.",
+        "pursueTargets": "When the target's HP falls below {{hp}}%, it increases attack chances in a single round by {{round}} and reduces attack interval by {{interval}}%.",
+        "focusOnAerialTargets": "Prioritize fighters and interceptors."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

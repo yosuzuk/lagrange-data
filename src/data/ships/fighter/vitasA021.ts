@@ -56,7 +56,6 @@ export const vitasA021: IShipDefinition[] = [
                 translatedName: {
                     en: 'Counter Cannon System',
                 },
-                mainSystem: true,
                 skillComplete: true,
                 skills: [
                     enhancements.increaseDamage().withPercentageValue(10).withCost(3),
