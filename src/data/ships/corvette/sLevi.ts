@@ -53,7 +53,7 @@ const defaultModules: ISystemModule[] = [
     modules.propulsionSystem({
         skillComplete: true,
         skills: [
-            strategy.closeCombatAssault(45).withCost(15),
+            strategy.closeCombatAssault1(45).withCost(15),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
             enhancements.reduceBatOfAircraft().withPercentageValue(20).withCost(12),

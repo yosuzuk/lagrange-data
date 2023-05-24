@@ -137,7 +137,7 @@ const a2: ISystemModule = {
         enhancements.increaseHitRateVsLarge().withPercentageValue(14.8).withCost(8),
         enhancements.increaseSystemHp().withPercentageValue(34.8).withCost(8),
     ],
-    // TODO skillSlots
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -243,7 +243,7 @@ const b2: ISystemModule = {
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
     ],
-    // TODO skillSlots
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -292,7 +292,7 @@ const c2: ISystemModule = {
         enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(4),
         enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(4),
     ],
-    // TODO skillSlots
+    skillSlots: 3,
     parts: [
         {
             text: [

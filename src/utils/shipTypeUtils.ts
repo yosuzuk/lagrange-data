@@ -39,9 +39,9 @@ export const shipTypes: Record<ShipType, IShipTypeData> = {
         },
         sortValue: 8,
         subTypeSortValue: {
-            [ShipSubType.SMALL_FIGHTER]: 9,
-            [ShipSubType.MEDIUM_FIGHTER]: 8,
-            [ShipSubType.LARGE_FIGHTER]: 7,
+            [ShipSubType.SMALL_FIGHTER]: 10,
+            [ShipSubType.MEDIUM_FIGHTER]: 9,
+            [ShipSubType.LARGE_FIGHTER]: 8,
         },
     },
 };
@@ -51,7 +51,7 @@ export const translateShipType = (type: ShipType, subType?: ShipSubType) => {
     return typeof subType !== 'undefined' ? subTypeName?.[subType] ?? name : name;
 }
 
-export const shipTypeToSortValue = (type: ShipType, subType?: ShipSubType) => {
+export const shipTypeToSortValue = (type: ShipType, subType: ShipSubType | undefined) => {
     const { sortValue, subTypeSortValue } = shipTypes[type];
-    return typeof subType !== 'undefined' ? subTypeSortValue?.[subType] ?? sortValue : sortValue;
+    return subType ? (subTypeSortValue?.[subType] ?? sortValue) : sortValue;
 }

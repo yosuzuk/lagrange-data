@@ -60,6 +60,7 @@ export const TechPointConfigActionBar = (props: IProps) => {
                             ShipType.BATTLE_CRUISER,
                             ShipType.CRUISER,
                             ShipType.CORVETTE,
+                            ShipType.FIGHTER,
                         ]}
                     />
                 </>

@@ -19,8 +19,12 @@ import { t } from '../../../i18n';
 import { getShipName, sortShipDefinitionsByTypeAndName } from '../../../utils/shipDefinitionUtils';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import Typography from '@mui/material/Typography';
+import { ShipId } from '../../../data/shipIds';
 
 const supportedShipTypes: ShipType[] = [ShipType.AUXILIARY, ShipType.CARRIER, ShipType.BATTLE_CRUISER, ShipType.CRUISER, ShipType.CORVETTE];
+
+// TODO remove when all fighters are supported
+const additionallySupportedShipIds: string[] = [ShipId.STINGRAY, ShipId.STRIX_A100, ShipId.VITAS_A021, ShipId.VITAS_B010];
 
 export const TechPointConfigPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -35,7 +39,7 @@ export const TechPointConfigPage = () => {
     const shipDefinitions = useMemo(() => {
         return allShipDefinitions
             .filter(s => s.source === ShipSource.TECH_FILE || s.source === ShipSource.STARTER_SHIP)
-            .filter(s => supportedShipTypes.includes(s.type));
+            .filter(s => supportedShipTypes.includes(s.type) || additionallySupportedShipIds.includes(s.id));
     }, []);
 
     const [searchTerm, setSearchTerm] = useState<string>('');
