@@ -5,20 +5,31 @@ import { ExpandStack } from '../../expandStack.tsx/ExpandStack';
 import { IExpandable } from '../../expandStack.tsx/types/IExpandable';
 import { TechPointShipSummary } from './TechPointShipSummary';
 import { TechPointShipDetails } from './TechPointShipDetails';
+import { useMemo } from 'react';
 
 interface IProps {
     config: ITechPointConfig;
     onToggleModule: (shipId: string, moduleId: string) => void;
     onToggleEnhancement: (shipId: string, moduleId: string, enhancementId: string) => void;
+    onToggleFavorite: (shipId: string) => void;
 }
 
 export const TechPointConfigList = (props: IProps) => {
-    const { config, onToggleEnhancement, onToggleModule } = props;
+    const { config, onToggleEnhancement, onToggleModule, onToggleFavorite } = props;
     const { openShipDetailDialog } = useShipDetail();
+
+    const shipConfigs = useMemo(() => {
+        const favorites: ITechPointShipConfig[] = [];
+        const nonFavorites: ITechPointShipConfig[] = [];
+        Object.values(config.ships).forEach(s => {
+            (s.favorite ? favorites : nonFavorites).push(s);
+        });
+        return [...favorites, ...nonFavorites];
+    }, [config]);
 
     return (
         <ExpandStack
-            expandables={Object.values(config.ships).map((shipConfig: ITechPointShipConfig): IExpandable => ({
+            expandables={shipConfigs.map((shipConfig: ITechPointShipConfig): IExpandable => ({
                 id: shipConfig.shipDefinition.id,
                 initiallyOpened: false,
                 expandIcon: <SettingsIcon />,
@@ -26,6 +37,7 @@ export const TechPointConfigList = (props: IProps) => {
                     <TechPointShipSummary
                         shipConfig={shipConfig}
                         onClickName={openShipDetailDialog}
+                        onToggleFavorite={onToggleFavorite}
                     />
                 ),
                 details: (

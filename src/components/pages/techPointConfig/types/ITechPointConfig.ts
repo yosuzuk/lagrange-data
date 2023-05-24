@@ -17,6 +17,7 @@ export interface ITechPointShipConfig {
     maxTechPoints: number | null;
     unlockCost: number;
     incomplete: boolean;
+    favorite: boolean;
 }
 
 export interface ITechPointModuleConfig {
@@ -36,7 +37,8 @@ export interface ITechPointEnhancementConfig {
 }
 
 type ModuleInUse = 0 | 1 | undefined;
-export type IStoredTechPointModuleConfig = [ModuleId, EnhancementId[], ModuleInUse];
+type MARKED_AS_FAVORITE = 0 | 1 | undefined;
+export type IStoredTechPointModuleConfig = [ModuleId, EnhancementId[], ModuleInUse, MARKED_AS_FAVORITE];
 export type IStoredTechPointShipConfig = [ShipId, IStoredTechPointModuleConfig[]];
 export interface IStoredTechPointConfig {
     version: number;

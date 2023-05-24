@@ -62,6 +62,7 @@ export const TechPointConfigPage = () => {
         stored,
         handleToggleModule,
         handleToggleEnhancement,
+        handleToggleFavorite,
         handleReset,
         handleCancel,
         handleSave,
@@ -91,6 +92,9 @@ export const TechPointConfigPage = () => {
                         <Typography variant="body2">
                             {t('techPointConfig.pageDescription2')}
                         </Typography>
+                        <Typography variant="body2">
+                            {t('techPointConfig.pageDescription3')}
+                        </Typography>
                     </Stack>
                     <SearchInput
                         id="searchShip"
@@ -103,6 +107,7 @@ export const TechPointConfigPage = () => {
                         config={config}
                         onToggleModule={handleToggleModule}
                         onToggleEnhancement={handleToggleEnhancement}
+                        onToggleFavorite={handleToggleFavorite}
                     />
                 </Stack>
             </PageContent>

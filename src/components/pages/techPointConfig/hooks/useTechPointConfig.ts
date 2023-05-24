@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ITechPointConfig, ITechPointShipConfig } from '../types/ITechPointConfig';
-import { createDefaultTechPointConfig, toggleEnhancement, toggleModule } from '../utils/techPointConfigUtils';
+import { createDefaultTechPointConfig, toggleEnhancement, toggleFavorite, toggleModule } from '../utils/techPointConfigUtils';
 import { IShipDefinition } from '../../../../types/ShipDefinition';
 import { deleteTechPointConfigInStore, createOrLoadTechPointConfigFromStorage, saveTechPointConfigToStorage, hasTechPointConfigInStorage } from '../utils/storedTechPointConfigUtils';
 
@@ -15,6 +15,7 @@ interface IHookResult {
     stored: boolean;
     handleToggleModule: (shipId: string, moduleId: string) => void;
     handleToggleEnhancement: (shipId: string, moduleId: string, enhancementId: string) => void;
+    handleToggleFavorite: (shipId: string) => void;
     handleReset: () => void;
     handleCancel: () => void;
     handleSave: () => void;
@@ -39,6 +40,11 @@ export const useTechPointConfig = (args: IHookArgs): IHookResult => {
     const handleToggleEnhancement = useCallback((shipId: string, moduleId: string, enhancementId: string) => {
         setModified(true);
         setConfig(config => toggleEnhancement(config, shipId, moduleId, enhancementId));
+    }, []);
+
+    const handleToggleFavorite = useCallback((shipId: string) => {
+        setModified(true);
+        setConfig(config => toggleFavorite(config, shipId));
     }, []);
 
     const handleReset = useCallback(() => {
@@ -85,6 +91,7 @@ export const useTechPointConfig = (args: IHookArgs): IHookResult => {
         stored,
         handleToggleModule,
         handleToggleEnhancement,
+        handleToggleFavorite,
         handleReset,
         handleCancel,
         handleSave,

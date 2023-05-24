@@ -50,7 +50,14 @@ export function compressTechPointConfig(config: ITechPointConfig): IStoredTechPo
             const moduleConfig = shipConfig.modules[moduleId];
 
             const moduleInUse = shipConfig.selectedModuleIds.includes(moduleId) ? 1 : 0;
-            const storedModuleConfig: IStoredTechPointModuleConfig = [moduleId, moduleConfig.selectedEnhancementIds, moduleInUse];
+            const markedAsFavorite = shipConfig.favorite ? 1 : 0;
+
+            const storedModuleConfig: IStoredTechPointModuleConfig = [
+                moduleId,
+                moduleConfig.selectedEnhancementIds,
+                moduleInUse,
+                markedAsFavorite,
+            ];
             storedShipConfig[1].push(storedModuleConfig);
         });
 
@@ -68,7 +75,7 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
             return;
         }
 
-        storedModuleConfigs.forEach(([moduleId, selectedEnhancementIds, moduleInUse]) => {
+        storedModuleConfigs.forEach(([moduleId, selectedEnhancementIds, moduleInUse, markedAsFavorite]) => {
             const moduleConfig = shipConfig.modules[moduleId];
             if (!moduleConfig) {
                 console.warn(`Invalid moduleId "${moduleId}"`);
@@ -104,6 +111,8 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
                     moduleId
                 ];
             }
+
+            shipConfig.favorite = markedAsFavorite === 1;
         });
 
         shipConfig.maxTechPoints = findMaxTechPointsForShip(shipConfig.modules, shipConfig.selectedModuleIds);

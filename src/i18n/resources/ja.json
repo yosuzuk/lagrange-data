@@ -330,6 +330,7 @@
         "pageTitle": "技術Pt",
         "pageDescription1": "ここでは各艦船の強化に必要な技術Ptを表示しています。",
         "pageDescription2": "デフォルトでは初期モジュール設定での最大値が表示されます。お好みに合わせてモジュールやスキルを調整してください。",
+        "pageDescription3": "「☆」のチェックが入った船はリストの一番上に表示されます。",
         "incomplete": "データ不足",
         "maxCostUnknown": "技術Pt：不明",
         "techPointShortColon": "技術Pt：",

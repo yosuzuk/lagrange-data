@@ -36,6 +36,7 @@ function createTechPointShipConfig(shipDefinition: IShipDefinition): ITechPointS
         maxTechPoints,
         unlockCost,
         incomplete,
+        favorite: false,
     };
 }
 
@@ -198,6 +199,19 @@ export function toggleEnhancement(config: ITechPointConfig, shipId: string, modu
             [shipId]: {
                 ...newShipConfig,
                 techPoints: countShipTechPoints(newShipConfig),
+            },
+        },
+    };
+}
+
+export function toggleFavorite(config: ITechPointConfig, shipId: string): ITechPointConfig {
+    return {
+        ...config,
+        ships: {
+            ...config.ships,
+            [shipId]: {
+                ...config.ships[shipId],
+                favorite: !config.ships[shipId].favorite,
             },
         },
     };
