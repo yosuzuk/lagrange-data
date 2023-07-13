@@ -1,0 +1,140 @@
+$name 40052 Andromeda 154
+$serverName Andromeda 154
+$size 9000
+
+$overlay
+FAF (16.7%)
+創世界 (11.6%)
+Space Plate (11.6%)
+VORTEX (11.6%)
+MTN Empire (11.6%)
+옴뇸뇸 (11.6%)
+DCINSIDE (9.4%)
+ApolloN (2.1%)
+NSA (2.1%)
+MOETEX (2.1%)
+감신도 (2.1%)
+ArtemiS (2.1%)
+SCU alliance (2.1%)
+Levian (2.1%)
+
+$station
+(1394,2654) city 2 #cE63A3A MTN Empire
+(1770,1408) city 3 #cE63A3A MTN Empire
+(1893,2833) city 7 #cE63A3A MTN Empire
+(2132,3050) city 5 #cE63A3A MTN Empire
+(1844,2134) city 2 #cE63A3A MTN Empire
+(2044,1534) city 2 #cE63A3A MTN Empire
+(2420,1620) city 5 #cE63A3A MTN Empire
+(2834,3593) city 5 #cE63A3A MTN Empire
+(0644,5754) city 2 #cE63A3A MTN Empire
+(1484,1414) city 2 #c929292 ArtemiS
+(1564,2414) city 2 #c929292 ArtemiS
+(1951,3027) city 5 #c929292 ArtemiS
+(2640,3820) city 5 #c929292 ArtemiS
+(5372,4627) city 3 #c4A99FB 創世界
+(5741,5969) city 7 #c4A99FB 創世界
+(6659,3330) city 5 #c4A99FB 創世界
+(6772,5758) city 5 #c4A99FB 創世界
+(7049,5771) city 5 #c4A99FB 創世界
+(7594,6284) city 2 #c4A99FB 創世界
+(7594,6654) city 2 #c4A99FB 創世界
+(7846,5602) city 5 #c4A99FB 創世界
+(7656,5594) city 5 #c4A99FB 創世界
+(7870,5460) city 5 #c4A99FB 創世界
+(8154,5404) city 2 #c4A99FB 創世界
+(8674,4144) city 2 #c4A99FB 創世界
+(1852,5988) city 5 #cE5B36C FAF
+(1739,5891) city 5 #cE5B36C FAF
+(1834,7354) city 2 #cE5B36C FAF
+(1784,7154) city 2 #cE5B36C FAF
+(2166,2897) city 3 #cE5B36C FAF
+(2064,7054) city 2 #cE5B36C FAF
+(2324,7395) city 2 #cE5B36C FAF
+(3672,5307) city 3 #cE5B36C FAF
+(3296,5418) city 3 #cE5B36C FAF
+(3252,5706) city 2 #cE5B36C FAF
+(3454,8444) city 2 #cE5B36C FAF
+(3814,7794) city 2 #cE5B36C FAF
+(3819,3519) city 9 #cE5B36C FAF
+(3713,3746) city 3 #cE5B36C FAF
+(0624,4694) city 2 #cE5B36C FAF
+(1114,4604) city 2 #cE5B36C FAF
+(1114,2314) city 2 #cE5B36C FAF
+(4614,8304) city 2 #cF1F1F1 NSA
+(4744,8815) city 2 #cF1F1F1 NSA
+(6150,3220) city 5 #cF1F1F1 NSA
+(6432,7167) city 3 #cF1F1F1 NSA
+(6914,6333) city 5 #cF1F1F1 NSA
+(1750,4940) city 5 #c9FE23E ApolloN
+(1725,4818) city 5 #c9FE23E ApolloN
+(1614,5073) city 5 #c9FE23E ApolloN
+(1779,3070) city 5 #c9FE23E ApolloN
+(0370,4728) city 3 #c9FE23E ApolloN
+(0604,3694) city 2 #c9FE23E ApolloN
+(0634,4244) city 2 #c9FE23E ApolloN
+(0954,3044) city 2 #c9FE23E ApolloN
+(0944,2774) city 2 #c9FE23E ApolloN
+(1084,5094) city 2 #c9FE23E ApolloN
+(4951,5025) city 2 #c929292 감신도
+(5852,6150) city 5 #c929292 감신도
+(6126,3362) city 5 #c929292 감신도
+(8114,6374) city 2 #c929292 감신도
+(2014,8044) city 2 #cFD7844 Space Plate
+(2514,0524) city 2 #cFD7844 Space Plate
+(2827,3854) city 5 #cFD7844 Space Plate
+(5179,5751) city 5 #cFD7844 Space Plate
+(5280,5678) city 5 #cFD7844 Space Plate
+(5292,5848) city 5 #cFD7844 Space Plate
+(5867,6008) city 3 #cFD7844 Space Plate
+(5879,5900) city 2 #cFD7844 Space Plate
+(6011,7566) city 2 #cFD7844 Space Plate
+(6158,7437) city 7 #cFD7844 Space Plate
+(6392,7430) city 5 #cFD7844 Space Plate
+(2314,1764) city 2 #cF284FF DCINSIDE
+(2607,1654) city 5 #cF284FF DCINSIDE
+(3398,5577) city 7 #cF284FF DCINSIDE
+(4096,3591) city 5 #cF284FF DCINSIDE
+(4292,1598) city 5 #cF284FF DCINSIDE
+(4996,4738) city 3 #cF284FF DCINSIDE
+(6831,3287) city 5 #cF284FF DCINSIDE
+(6974,6904) city 2 #cF284FF DCINSIDE
+(8594,3054) city 2 #cF284FF DCINSIDE
+(8724,5534) city 2 #cF284FF DCINSIDE
+(5098,4897) city 7 #c7E67F2 옴뇸뇸
+(5332,4890) city 5 #c7E67F2 옴뇸뇸
+(5936,3354) city 5 #c7E67F2 옴뇸뇸
+(6529,4071) city 5 #c7E67F2 옴뇸뇸
+(6290,4060) city 5 #c7E67F2 옴뇸뇸
+(8530,4929) city 3 #c7E67F2 옴뇸뇸
+(8564,3434) city 2 #c7E67F2 옴뇸뇸
+(4084,8294) city 2 #c49E7C0 VORTEX
+(4570,1398) city 5 #c49E7C0 VORTEX
+(5671,6167) city 5 #c49E7C0 VORTEX
+(7046,3157) city 3 #c49E7C0 VORTEX
+(6773,3093) city 7 #c49E7C0 VORTEX
+(7012,3310) city 5 #c49E7C0 VORTEX
+(6720,6560) city 5 #c49E7C0 VORTEX
+(7574,2104) city 2 #c49E7C0 VORTEX
+(7914,1914) city 2 #c49E7C0 VORTEX
+(7704,3235) city 2 #c49E7C0 VORTEX
+(3632,5570) city 5 #c929292 MOETEX
+(4074,0944) city 2 #c929292 MOETEX
+(4435,1439) city 5 #c929292 MOETEX
+(6492,4309) city 5 #c929292 MOETEX
+(4569,1611) city 5 #c929292 Levian
+(5269,3551) city 5 #c929292 SCU alliance
+(5434,0944) city 2 #c929292 SCU alliance
+(8734,3634) city 2 #c929292 SCU alliance
+
+$planet
+(5692,6074) large
+(5652,6176)(5692,6074) small
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(3269,5436) medium

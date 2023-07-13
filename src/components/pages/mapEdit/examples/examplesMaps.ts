@@ -3,6 +3,7 @@ import { serverResults } from './serverResultMaps';
 import { serverResults2 } from './serverResultMaps2';
 import { serverResults3 } from './serverResultMaps3';
 import { serverResults4 } from './serverResultMaps4';
+import { serverResultsN } from './serverResultMapsN';
 
 interface ISelectableMap {
     name: string;
@@ -141,6 +142,7 @@ export function getNonPhaseOneServerResultMaps(): ISelectableMap[] {
         ...serverResults2,
         ...serverResults3,
         ...serverResults4,
+        ...serverResultsN,
     ]);
 }
 

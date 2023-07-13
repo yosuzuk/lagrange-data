@@ -1,0 +1,15 @@
+export const serverResultsN: [number, string, string, string][] = [
+    [40041, 'Lepus 442', '2023-05-22', '40041_Lepus_442.txt'],
+    [40042, 'V559 Delphinus', '2023-05-29', '40042_V559_Delphinus.txt'],
+    [40043, 'Libra 102', '2023-06-05', '40043_Libra_102.txt'],
+    [40044, 'V920 Cassiopeia', '2023-06-05', '40044_V920_Cassiopeia.txt'],
+    [40045, 'Norma 1061', '2023-06-12', '40045_Norma_1061.txt'],
+    [40046, 'Pisces 713', '2023-06-19', '40046_Pisces_713.txt'],
+    [40047, 'Ophiuchus 468', '2023-06-19', '40047_Ophiuchus_468.txt'],
+    [40048, 'Delphinus 781', '2023-06-19', '40048_Delphinus_781.txt'],
+    [40049, 'Puppis VY', '2023-06-26', '40049_Puppis_VY.txt'],
+    [40050, 'V697 Horologium', '2023-07-03', '40050_V697_Horologium.txt'],
+    [40051, 'Ursa Minor 128', '2023-07-03', '40051_Ursa_Minor_128.txt'],
+    [40052, 'Andromeda 154', '2023-07-10', '40052_Andromeda_154.txt'],
+    [40053, 'Puppis 160', '2023-07-10', '40053_Puppis_160.txt'],
+];

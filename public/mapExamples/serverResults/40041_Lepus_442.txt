@@ -1,0 +1,77 @@
+$name 40041 Lepus 442
+$serverName Lepus 442
+$size 9000
+
+$overlay
+REDEMPTION (12.1%)
+Polaris Empire (7.3%)
+Levian (7.3%)
+Eternal (7.3%)
+THE ENDLESS (3.6%)
+Solar Eclipse (3.6%)
+SCU alliance (3.6%)
+Judgement (3.6%)
+PhionixRising (3.6%)
+
+$station
+(2886,7763) city 2 #c9FE23E THE ENDLESS
+(3140,7026) city 5 #c9FE23E THE ENDLESS
+(3230,6604) city 5 #c9FE23E THE ENDLESS
+(3510,6350) city 3 #c9FE23E THE ENDLESS
+(2956,6920) city 5 #c929292 PhionixRising
+(2175,6019) city 5 #cE63A3A Polaris Empire
+(2149,7352) city 2 #cE63A3A Polaris Empire
+(2506,7871) city 2 #cE63A3A Polaris Empire
+(2463,7051) city 5 #cE63A3A Polaris Empire
+(3136,6804) city 5 #cE63A3A Polaris Empire
+(1671,6325) city 3 #cE63A3A Polaris Empire
+(1798,6429) city 5 #cE63A3A Polaris Empire
+(2816,2749) city 3 #cE5B36C REDEMPTION
+(5325,2551) city 7 #cE5B36C REDEMPTION
+(8403,2291) city 5 #cE5B36C REDEMPTION
+(4336,7709) city 3 #cF284FF Eternal
+(6312,6595) city 5 #cF284FF Eternal
+(6422,6811) city 5 #cF284FF Eternal
+(7209,7412) city 2 #cF284FF Eternal
+(2886,0803) city 2 #cF1F1F1 Solar Eclipse
+(0679,3208) city 5 #cF1F1F1 Solar Eclipse
+(0437,2870) city 5 #cF1F1F1 Solar Eclipse
+(1723,2551) city 5 #cF1F1F1 Solar Eclipse
+(3400,1776) city 5 #c7E67F2 Levian
+(5171,5306) city 5 #c7E67F2 Levian
+(5970,5983) city 3 #c7E67F2 Levian
+(5987,5787) city 5 #c7E67F2 Levian
+(5946,8171) city 2 #c7E67F2 Levian
+(6944,4302) city 7 #c7E67F2 Levian
+(1907,5929) city 3 #c7E67F2 Levian
+(4136,1266) city 5 #c929292 SCU alliance
+(8707,4577) city 5 #c929292 SCU alliance
+(8544,4590) city 5 #c929292 SCU alliance
+(4603,2106) city 3 #c929292 Judgement
+(5653,2339) city 5 #c929292 Judgement
+
+$planet
+(3323,6430) large
+(3253,6634)(3323,6430) small
+(3478,6375)(3323,6430) small
+(3264,6496)(3323,6430) small
+(2172,6046)(2263,5850) small
+(2204,5916)(2263,5850) small
+(2418,5795)(2263,5850) small
+(2263,5850) large
+(7872,4634) large
+(7832,4696)(7872,4634) small
+(5292,2816)(5332,2754) small
+(5455,2689)(5332,2754) small
+(5332,2754) large
+(872,3111) large
+(1038,3055)(872,3111) small
+(4928,5209) large
+(5012,5174)(4928,5209) small
+(4197,8734) large
+(4290,8642)(4197,8734) small
+(3952,3011) large
+(3892,3212)(3952,3011) small
+(4500,4500) medium
+(7749,2703) large
+(7669,2780)(7749,2703) small

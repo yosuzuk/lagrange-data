@@ -1,0 +1,103 @@
+$name 40042 V559 Delphinus
+$serverName V559 Delphinus
+$size 9000
+
+$overlay
+RuSquad (13.1%)
+Shadow Remnants (10.6%)
+赤紅之瞳 (10.6%)
+Galaxy Order (10.6%)
+Alkaid (10.6%)
+Reset (8.1%)
+Frozen Empire (4.9%)
+NOYO (4.9%)
+Hidel (2.4%)
+Phecd (2.4%)
+YGGDRASILL (2.4%)
+op4s (2.4%)
+
+$station
+(4029,4891) city 5 #c929292 Hidel
+(6674,2924) city 2 #c929292 Hidel
+(6614,3564) city 2 #c929292 Hidel
+(2194,4444) city 2 #c929292 Hidel
+(2434,1113) city 5 #c929292 Hidel
+(2324,3694) city 2 #c929292 Hidel
+(3496,8458) city 3 #cF284FF Reset
+(4201,3929) city 7 #cF284FF Reset
+(4131,4127) city 5 #cF284FF Reset
+(4327,3968) city 3 #cF284FF Reset
+(4339,3860) city 2 #cF284FF Reset
+(4474,8613) city 5 #cF284FF Reset
+(0991,3265) city 2 #cF284FF Reset
+(5514,2604) city 2 #cF284FF Reset
+(6184,2914) city 2 #cF284FF Reset
+(6524,4394) city 2 #cF284FF Reset
+(7074,3234) city 2 #cF284FF Reset
+(1380,3132) city 5 #c9FE23E Frozen Empire
+(3234,2184) city 2 #c9FE23E Frozen Empire
+(3584,1995) city 2 #c9FE23E Frozen Empire
+(4004,2534) city 2 #c9FE23E Frozen Empire
+(4454,2404) city 2 #c9FE23E Frozen Empire
+(5530,2088) city 3 #c9FE23E Frozen Empire
+(8450,3480) city 5 #c9FE23E Frozen Empire
+(8425,3358) city 5 #c9FE23E Frozen Empire
+(3872,8347) city 3 #c49E7C0 赤紅之瞳
+(3451,8745) city 2 #c49E7C0 赤紅之瞳
+(3598,8617) city 7 #c49E7C0 赤紅之瞳
+(3832,8610) city 5 #c49E7C0 赤紅之瞳
+(4364,7094) city 2 #c49E7C0 赤紅之瞳
+(4585,8358) city 5 #c49E7C0 赤紅之瞳
+(1199,6483) city 7 #c7E67F2 Alkaid
+(1455,6693) city 5 #c7E67F2 Alkaid
+(2793,5113) city 7 #cE63A3A Galaxy Order
+(3032,5330) city 5 #cE63A3A Galaxy Order
+(5310,4729) city 3 #c4A99FB RuSquad
+(6679,4918) city 3 #c4A99FB RuSquad
+(7301,6229) city 7 #c4A99FB RuSquad
+(7412,6410) city 5 #c4A99FB RuSquad
+(7439,6160) city 2 #c4A99FB RuSquad
+(7970,6540) city 5 #c4A99FB RuSquad
+(1910,7520) city 5 #c929292 Phecd
+(1885,7398) city 5 #c929292 Phecd
+(1774,7653) city 5 #c929292 Phecd
+(2234,5144) city 2 #c929292 Phecd
+(4610,8480) city 5 #c929292 YGGDRASILL
+(4614,6664) city 2 #c929292 YGGDRASILL
+(2570,3969) city 3 #cFD7844 Shadow Remnants
+(1123,3142) city 7 #cFD7844 Shadow Remnants
+(2814,2844) city 2 #cFD7844 Shadow Remnants
+(3470,3840) city 5 #cFD7844 Shadow Remnants
+(3895,4719) city 5 #cFD7844 Shadow Remnants
+(4914,6844) city 2 #cFD7844 Shadow Remnants
+(1036,2978) city 3 #cFD7844 Shadow Remnants
+(8296,1951) city 5 #c929292 op4s
+(4312,4110) city 5 #cF1F1F1 NOYO
+(2240,1340) city 5 #cF1F1F1 NOYO
+
+$planet
+(8161,2013)(8115,2009) small
+(8223,1981)(8115,2009) small
+(7952,2130)(8115,2009) small
+(8115,2009) large
+(1391,2882)(1212,3054) small
+(1275,3110)(1212,3054) small
+(1009,2996)(1212,3054) small
+(1212,3054) large
+(7252,6334) large
+(7398,6285)(7252,6334) small
+(7212,6436)(7252,6334) small
+(4298,3985)(4152,4034) small
+(4152,4034) large
+(4112,4136)(4152,4034) small
+(3672,8534) large
+(3469,8476)(3672,8534) small
+(3851,8362)(3672,8534) small
+(3735,8590)(3672,8534) small
+(1458,6555)(1292,6614) small
+(1292,6614) large
+(1252,6676)(1292,6614) small
+(3038,5195)(2872,5254) small
+(2872,5254) large
+(2832,5316)(2872,5254) small
+(4499,4497) medium
