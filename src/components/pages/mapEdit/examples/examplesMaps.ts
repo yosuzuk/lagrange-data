@@ -12,7 +12,6 @@ interface ISelectableMap {
 
 export function getExampleMaps() {
     return {
-        // 'Full map', language === 'ja' ? 'fullMap_ja.txt' : 'fullMap.txt'
         fullMapExample: createExample({
             name: 'Example Map: Sagittarius 515',
             filename: 'fullMap.txt',
@@ -20,6 +19,16 @@ export function getExampleMaps() {
                 ja: {
                     name: 'サンプルマップ・いて座515',
                     filename: 'fullMap_ja.txt',
+                },
+            },
+        }),
+        fullMapExample2: createExample({
+            name: 'Example Map: Pisces 713',
+            filename: 'fullMap2.txt',
+            translated: {
+                ja: {
+                    name: 'サンプルマップ・うお座713',
+                    filename: 'fullMap2_ja.txt',
                 },
             },
         }),
