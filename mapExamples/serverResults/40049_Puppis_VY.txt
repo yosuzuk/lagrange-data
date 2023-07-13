@@ -1,0 +1,108 @@
+$name 40049 Puppis VY
+$serverName Puppis VY
+$size 9000
+
+$overlay
+鐵道999 (18.8%)
+來點正常人 (12.2%)
+냥냥펀치 (10.6%)
+FlamingChickens (10.6%)
+Ethereal Legion (10.6%)
+Thor (8.1%)
+WaterMirror (8.1%)
+Gunboat Omega (8.1%)
+Terran (2.4%)
+단또단또 (2.4%)
+Phoenix (2.4%)
+乘風破浪 (2.4%)
+Gunboat Diplo (2.4%)
+
+$station
+(1271,6667) city 5 #cF1F1F1 Terran
+(1486,6537) city 3 #cF1F1F1 Terran
+(2879,2238) city 3 #cF1F1F1 Terran
+(1099,6710) city 5 #cF1F1F1 Terran
+(3044,6034) city 2 #cF1F1F1 Terran
+(1455,6693) city 5 #cF1F1F1 Terran
+(2234,5144) city 2 #cF1F1F1 Terran
+(4364,7094) city 2 #cE63A3A Ethereal Legion
+(7301,6229) city 7 #cE63A3A Ethereal Legion
+(7412,6410) city 5 #cE63A3A Ethereal Legion
+(7427,6268) city 3 #cE63A3A Ethereal Legion
+(2654,6094) city 2 #cFD7844 냥냥펀치
+(2614,6404) city 2 #cFD7844 냥냥펀치
+(3066,5177) city 3 #cFD7844 냥냥펀치
+(1380,3132) city 5 #cFD7844 냥냥펀치
+(1123,3142) city 7 #cFD7844 냥냥펀치
+(1036,2978) city 3 #cFD7844 냥냥펀치
+(0991,3265) city 2 #cFD7844 냥냥펀치
+(1724,4214) city 2 #cFD7844 냥냥펀치
+(2194,4444) city 2 #cFD7844 냥냥펀치
+(2384,4594) city 2 #cFD7844 냥냥펀치
+(1412,2867) city 3 #c929292 Phoenix
+(1885,7398) city 5 #c929292 Phoenix
+(1774,7653) city 5 #c929292 Phoenix
+(2434,1113) city 5 #c929292 Phoenix
+(2240,1340) city 5 #c929292 Phoenix
+(2679,5350) city 5 #c929292 乘風破浪
+(4610,8480) city 5 #c929292 乘風破浪
+(2254,3984) city 2 #c929292 乘風破浪
+(3584,1995) city 2 #c929292 단또단또
+(4454,2404) city 2 #c929292 단또단또
+(4864,1874) city 2 #c929292 단또단또
+(6674,2924) city 2 #c929292 단또단또
+(7074,3234) city 2 #c929292 단또단또
+(7970,6540) city 5 #c929292 단또단또
+(2427,1374) city 5 #c929292 단또단또
+(3832,8610) city 5 #c929292 Gunboat Diplo
+(4474,8613) city 5 #c929292 Gunboat Diplo
+(3872,8347) city 3 #c9FE23E Gunboat Omega
+(3598,8617) city 7 #c9FE23E Gunboat Omega
+(2570,3969) city 3 #c49E7C0 FlamingChickens
+(2793,5113) city 7 #c49E7C0 FlamingChickens
+(2704,5695) city 2 #c49E7C0 FlamingChickens
+(5714,6094) city 2 #c49E7C0 FlamingChickens
+(1910,7520) city 5 #c49E7C0 FlamingChickens
+(2852,5302) city 5 #cE5B36C 鐵道999
+(3752,4878) city 5 #cE5B36C 鐵道999
+(4029,4891) city 5 #cE5B36C 鐵道999
+(7439,6160) city 2 #cE5B36C 鐵道999
+(8041,1896) city 9 #cE5B36C 鐵道999
+(8314,3613) city 5 #cE5B36C 鐵道999
+(2324,3694) city 2 #cE5B36C 鐵道999
+(3084,6334) city 2 #c7E67F2 Thor
+(1199,6483) city 7 #c7E67F2 Thor
+(4004,2534) city 2 #c7E67F2 Thor
+(4524,2014) city 2 #c7E67F2 Thor
+(5310,4729) city 3 #c7E67F2 Thor
+(2439,5158) city 3 #c7E67F2 Thor
+(2694,2314) city 2 #cF284FF WaterMirror
+(4201,3929) city 7 #cF284FF WaterMirror
+(4131,4127) city 5 #cF284FF WaterMirror
+(6904,5794) city 2 #cF284FF WaterMirror
+(7913,2106) city 3 #cF284FF WaterMirror
+(8425,3358) city 5 #cF284FF WaterMirror
+(3032,5330) city 5 #c4A99FB 來點正常人
+(2814,2844) city 2 #c4A99FB 來點正常人
+(3446,3982) city 5 #c4A99FB 來點正常人
+(3470,3840) city 5 #c4A99FB 來點正常人
+(4312,4110) city 5 #c4A99FB 來點正常人
+(5530,2088) city 3 #c4A99FB 來點正常人
+(5914,2494) city 2 #c4A99FB 來點正常人
+(6184,2914) city 2 #c4A99FB 來點正常人
+(6344,3375) city 2 #c4A99FB 來點正常人
+(6614,2624) city 2 #c4A99FB 來點正常人
+(6614,3564) city 2 #c4A99FB 來點正常人
+(8296,1951) city 5 #c4A99FB 來點正常人
+(8450,3480) city 5 #c4A99FB 來點正常人
+
+$planet
+(1458,6555) large
+(1292,6614)(1458,6555) small
+(4152,4034) medium
+(3851,8362) medium
+(2872,5254) medium
+(7252,6334) medium
+(8115,2009) medium
+(4499,4497) medium
+(1212,3054) medium

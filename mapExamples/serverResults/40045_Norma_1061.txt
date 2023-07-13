@@ -1,0 +1,93 @@
+$name 40045 Norma 1061
+$serverName Norma 1061
+$size 9000
+
+$overlay
+RX 784 (16.7%)
+Grand Line (11.6%)
+UniOasis (11.6%)
+宇宙吸貓萌 (11.6%)
+Active JPN (11.6%)
+女神禁衛軍 (11.6%)
+Iceni (9.4%)
+Overture (6.5%)
+Klingon Empire (4.3%)
+Slackers (2.1%)
+Borg Empire (2.1%)
+
+$station
+(3819,3519) city 9 #cE5B36C RX 784
+(4074,0944) city 2 #cE5B36C RX 784
+(4569,1611) city 5 #cE5B36C RX 784
+(0744,1934) city 2 #cE5B36C RX 784
+(1893,2833) city 7 #c4A99FB Grand Line
+(1844,2134) city 2 #c4A99FB Grand Line
+(2044,1534) city 2 #c4A99FB Grand Line
+(0370,4728) city 3 #c4A99FB Grand Line
+(4096,3591) city 5 #c4A99FB Grand Line
+(5269,3551) city 5 #c4A99FB Grand Line
+(0954,3044) city 2 #c4A99FB Grand Line
+(0944,2774) city 2 #c4A99FB Grand Line
+(2166,2897) city 3 #c9FE23E Overture
+(2132,3050) city 5 #c9FE23E Overture
+(0364,6314) city 2 #c9FE23E Overture
+(2607,1654) city 5 #c9FE23E Overture
+(2420,1620) city 5 #c9FE23E Overture
+(2640,3820) city 5 #c9FE23E Overture
+(3354,0764) city 2 #c9FE23E Overture
+(3414,0294) city 2 #c9FE23E Overture
+(3694,0634) city 2 #c9FE23E Overture
+(3744,0275) city 2 #c9FE23E Overture
+(0604,3694) city 2 #c9FE23E Overture
+(1114,2314) city 2 #c9FE23E Overture
+(1084,5094) city 2 #c9FE23E Overture
+(1114,6144) city 2 #c9FE23E Overture
+(5741,5969) city 7 #cE63A3A Active JPN
+(5852,6150) city 5 #cE63A3A Active JPN
+(5867,6008) city 3 #cE63A3A Active JPN
+(7049,5771) city 5 #cE63A3A Active JPN
+(5434,0944) city 2 #c49E7C0 宇宙吸貓萌
+(6150,3220) city 5 #c49E7C0 宇宙吸貓萌
+(6773,3093) city 7 #c49E7C0 宇宙吸貓萌
+(7012,3310) city 5 #c49E7C0 宇宙吸貓萌
+(3672,5307) city 3 #c929292 Borg Empire
+(3632,5570) city 5 #c929292 Borg Empire
+(1444,6254) city 2 #cF284FF Iceni
+(1739,5891) city 5 #cF284FF Iceni
+(3398,5577) city 7 #cF284FF Iceni
+(4292,1598) city 5 #cF284FF Iceni
+(1750,4940) city 5 #c929292 Slackers
+(3454,8444) city 2 #c929292 Slackers
+(3704,1054) city 2 #c929292 Slackers
+(3713,3746) city 3 #c929292 Slackers
+(1939,7698) city 3 #cF1F1F1 Klingon Empire
+(2064,7054) city 2 #cF1F1F1 Klingon Empire
+(2204,7694) city 2 #cF1F1F1 Klingon Empire
+(2834,3593) city 5 #cF1F1F1 Klingon Empire
+(3034,7854) city 2 #cF1F1F1 Klingon Empire
+(4570,1398) city 5 #cF1F1F1 Klingon Empire
+(5179,5751) city 5 #cF1F1F1 Klingon Empire
+(6907,6594) city 5 #cF1F1F1 Klingon Empire
+(6772,5758) city 5 #cF1F1F1 Klingon Empire
+(7870,5460) city 5 #cF1F1F1 Klingon Empire
+(6056,7278) city 3 #cFD7844 UniOasis
+(6011,7566) city 2 #cFD7844 UniOasis
+(6158,7437) city 7 #cFD7844 UniOasis
+(6392,7430) city 5 #cFD7844 UniOasis
+(6720,6560) city 5 #cFD7844 UniOasis
+(5098,4897) city 7 #c7E67F2 女神禁衛軍
+(5332,4890) city 5 #c7E67F2 女神禁衛軍
+(6529,4071) city 5 #c7E67F2 女神禁衛軍
+(6290,4060) city 5 #c7E67F2 女神禁衛軍
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(5652,6176) large
+(5692,6074)(5652,6176) small
+(3269,5436) medium

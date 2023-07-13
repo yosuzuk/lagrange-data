@@ -1,0 +1,86 @@
+$name 40050 V697 Horologium
+$serverName V697 Horologium
+$size 9000
+
+$overlay
+UNSC SPARTANS (13.1%)
+100121 (13.1%)
+Arkiteck (10.6%)
+OCTAGRAM (10.6%)
+中立工會 (2.4%)
+Kardashev Scale (2.4%)
+Light Forged (2.4%)
+DarkProphecy (2.4%)
+
+$station
+(4390,5368) city 3 #cFD7844 100121
+(7301,6229) city 7 #cFD7844 100121
+(7412,6410) city 5 #cFD7844 100121
+(7427,6268) city 3 #cFD7844 100121
+(7439,6160) city 2 #cFD7844 100121
+(7970,6540) city 5 #cFD7844 100121
+(3446,3982) city 5 #cE63A3A OCTAGRAM
+(3256,3974) city 5 #cE63A3A OCTAGRAM
+(3470,3840) city 5 #cE63A3A OCTAGRAM
+(1199,6483) city 7 #cE63A3A OCTAGRAM
+(4004,2534) city 2 #cE63A3A OCTAGRAM
+(4454,2404) city 2 #cE63A3A OCTAGRAM
+(6344,3375) city 2 #cE63A3A OCTAGRAM
+(6614,3564) city 2 #cE63A3A OCTAGRAM
+(1910,7520) city 5 #cF284FF 中立工會
+(1885,7398) city 5 #cF284FF 中立工會
+(2194,4444) city 2 #cF284FF 中立工會
+(2294,3294) city 2 #cF284FF 中立工會
+(2384,4594) city 2 #cF284FF 中立工會
+(2614,6404) city 2 #c49E7C0 Arkiteck
+(2852,5302) city 5 #c49E7C0 Arkiteck
+(3066,5177) city 3 #c49E7C0 Arkiteck
+(2679,5350) city 5 #c49E7C0 Arkiteck
+(2793,5113) city 7 #c49E7C0 Arkiteck
+(3032,5330) city 5 #c49E7C0 Arkiteck
+(3044,6034) city 2 #c49E7C0 Arkiteck
+(3474,6564) city 2 #c49E7C0 Arkiteck
+(2234,5144) city 2 #c49E7C0 Arkiteck
+(2324,4934) city 2 #c49E7C0 Arkiteck
+(2439,5158) city 3 #c49E7C0 Arkiteck
+(4864,1874) city 2 #c929292 DarkProphecy
+(1412,2867) city 3 #c929292 DarkProphecy
+(5514,2604) city 2 #c929292 DarkProphecy
+(2434,1113) city 5 #c929292 DarkProphecy
+(2240,1340) city 5 #c929292 DarkProphecy
+(1271,6667) city 5 #c9FE23E Kardashev Scale
+(1486,6537) city 3 #c9FE23E Kardashev Scale
+(1099,6710) city 5 #c9FE23E Kardashev Scale
+(3084,6334) city 2 #c9FE23E Kardashev Scale
+(1455,6693) city 5 #c9FE23E Kardashev Scale
+(2694,2314) city 2 #cF1F1F1 Light Forged
+(1380,3132) city 5 #cF1F1F1 Light Forged
+(2814,2844) city 2 #cF1F1F1 Light Forged
+(2427,1374) city 5 #cF1F1F1 Light Forged
+(2324,3694) city 2 #cF1F1F1 Light Forged
+(3872,8347) city 3 #c4A99FB UNSC SPARTANS
+(3496,8458) city 3 #c4A99FB UNSC SPARTANS
+(3451,8745) city 2 #c4A99FB UNSC SPARTANS
+(3598,8617) city 7 #c4A99FB UNSC SPARTANS
+(3832,8610) city 5 #c4A99FB UNSC SPARTANS
+(3752,4878) city 5 #c4A99FB UNSC SPARTANS
+(4610,8480) city 5 #c4A99FB UNSC SPARTANS
+(4585,8358) city 5 #c4A99FB UNSC SPARTANS
+(4474,8613) city 5 #c4A99FB UNSC SPARTANS
+(4614,6664) city 2 #c4A99FB UNSC SPARTANS
+(5884,6555) city 2 #c4A99FB UNSC SPARTANS
+(1724,4214) city 2 #c4A99FB UNSC SPARTANS
+(6584,5334) city 2 #c4A99FB UNSC SPARTANS
+(6794,6004) city 2 #c4A99FB UNSC SPARTANS
+(6904,5794) city 2 #c4A99FB UNSC SPARTANS
+
+$planet
+(1212,3054) medium
+(1458,6555) large
+(1292,6614)(1458,6555) small
+(4152,4034) medium
+(3851,8362) medium
+(2872,5254) medium
+(7252,6334) medium
+(8115,2009) medium
+(4499,4497) medium

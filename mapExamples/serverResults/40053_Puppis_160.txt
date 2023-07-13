@@ -1,0 +1,91 @@
+$name 40053 Puppis 160
+$serverName Puppis 160
+$size 9000
+
+$overlay
+黄泉国双隊 (21.3%)
+橘連合 (13.1%)
+Muff Divers (10.6%)
+WinterFall (10.6%)
+Orca (10.6%)
+Brotherhооd (10.6%)
+お肉食べたい (10.6%)
+Endeavor (4.9%)
+Phantom beast (2.4%)
+非洲酋長聯盟 (2.4%)
+邊緣人 (2.4%)
+
+$station
+(2570,3969) city 3 #cE5B36C 黄泉国双隊
+(3752,4878) city 5 #cE5B36C 黄泉国双隊
+(8296,1951) city 5 #cE5B36C 黄泉国双隊
+(8041,1896) city 9 #cE5B36C 黄泉国双隊
+(8450,3480) city 5 #cE5B36C 黄泉国双隊
+(2194,4444) city 2 #cE5B36C 黄泉国双隊
+(2814,2844) city 2 #cF1F1F1 Phantom beast
+(2879,2238) city 3 #cF1F1F1 Phantom beast
+(3256,3974) city 5 #cF1F1F1 Phantom beast
+(3470,3840) city 5 #cF1F1F1 Phantom beast
+(2324,3694) city 2 #cF1F1F1 Phantom beast
+(5914,2494) city 2 #c49E7C0 WinterFall
+(6184,2914) city 2 #c49E7C0 WinterFall
+(6584,5334) city 2 #c49E7C0 WinterFall
+(6679,4918) city 3 #c49E7C0 WinterFall
+(7301,6229) city 7 #c49E7C0 WinterFall
+(7412,6410) city 5 #c49E7C0 WinterFall
+(7427,6268) city 3 #c49E7C0 WinterFall
+(7439,6160) city 2 #c49E7C0 WinterFall
+(8314,3613) city 5 #c49E7C0 WinterFall
+(3598,8617) city 7 #c4A99FB 橘連合
+(4610,8480) city 5 #c4A99FB 橘連合
+(4614,6664) city 2 #c4A99FB 橘連合
+(5070,6288) city 3 #c4A99FB 橘連合
+(5884,6555) city 2 #c4A99FB 橘連合
+(7946,6682) city 5 #c4A99FB 橘連合
+(7756,6674) city 5 #c4A99FB 橘連合
+(7970,6540) city 5 #c4A99FB 橘連合
+(3584,1995) city 2 #cFD7844 Muff Divers
+(4030,4678) city 5 #cFD7844 Muff Divers
+(4201,3929) city 7 #cFD7844 Muff Divers
+(4312,4110) city 5 #cFD7844 Muff Divers
+(4131,4127) city 5 #cFD7844 Muff Divers
+(4327,3968) city 3 #cFD7844 Muff Divers
+(4339,3860) city 2 #cFD7844 Muff Divers
+(4454,2404) city 2 #cFD7844 Muff Divers
+(4524,2014) city 2 #cFD7844 Muff Divers
+(6674,2924) city 2 #cFD7844 Muff Divers
+(2852,5302) city 5 #c7E67F2 Brotherhооd
+(2793,5113) city 7 #c7E67F2 Brotherhооd
+(3032,5330) city 5 #c7E67F2 Brotherhооd
+(2704,5695) city 2 #c7E67F2 Brotherhооd
+(2324,4934) city 2 #c7E67F2 Brotherhооd
+(3832,8610) city 5 #c9FE23E Endeavor
+(4029,4891) city 5 #c9FE23E Endeavor
+(4364,7094) city 2 #c9FE23E Endeavor
+(4390,5368) city 3 #c9FE23E Endeavor
+(4914,6844) city 2 #c9FE23E Endeavor
+(3451,8745) city 2 #c929292 邊緣人
+(2240,1340) city 5 #c929292 邊緣人
+(1271,6667) city 5 #cE63A3A Orca
+(3044,6034) city 2 #cE63A3A Orca
+(1199,6483) city 7 #cE63A3A Orca
+(1455,6693) city 5 #cE63A3A Orca
+(2439,5158) city 3 #cE63A3A Orca
+(1380,3132) city 5 #cF284FF お肉食べたい
+(1123,3142) city 7 #cF284FF お肉食べたい
+(1036,2978) city 3 #cF284FF お肉食べたい
+(2294,3294) city 2 #cF284FF お肉食べたい
+(1099,6710) city 5 #c929292 非洲酋長聯盟
+(3474,6564) city 2 #c929292 非洲酋長聯盟
+(1910,7520) city 5 #c929292 非洲酋長聯盟
+
+$planet
+(4152,4034) medium
+(1292,6614) large
+(1458,6555)(1292,6614) small
+(3851,8362) medium
+(2872,5254) medium
+(7252,6334) medium
+(8115,2009) medium
+(4499,4497) medium
+(1212,3054) medium

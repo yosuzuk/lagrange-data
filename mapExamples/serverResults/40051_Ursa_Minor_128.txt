@@ -1,0 +1,100 @@
+$name 40051 Ursa Minor 128
+$serverName Ursa Minor 128
+$size 9000
+
+$overlay
+Stargate SG1 (21.8%)
+Blue Alliance (13.4%)
+Dawn Operation (13.4%)
+Angels of Wrath (13.4%)
+大鸟转转 (10.9%)
+Dusk Operation (8.4%)
+Visionaries (8.4%)
+Mist (5.0%)
+CH宇宙和音 (2.5%)
+海纳岚川 (2.5%)
+
+$station
+(2526,0930) city 5 #cF284FF Visionaries
+(3193,0893) city 2 #cF284FF Visionaries
+(4312,0580) city 7 #cF284FF Visionaries
+(4369,0470) city 2 #cF284FF Visionaries
+(1449,4031) city 3 #cF284FF Visionaries
+(5498,3520) city 9 #cE5B36C Stargate SG1
+(5763,3646) city 5 #cE5B36C Stargate SG1
+(5393,3743) city 5 #cE5B36C Stargate SG1
+(5914,4815) city 5 #cE5B36C Stargate SG1
+(5712,4745) city 5 #cE5B36C Stargate SG1
+(5921,4988) city 5 #cE5B36C Stargate SG1
+(6341,6869) city 5 #cE5B36C Stargate SG1
+(6814,4404) city 2 #cE5B36C Stargate SG1
+(7253,5453) city 2 #cE5B36C Stargate SG1
+(2123,5553) city 2 #c7E67F2 Dusk Operation
+(2643,5793) city 2 #c7E67F2 Dusk Operation
+(2843,6133) city 2 #c7E67F2 Dusk Operation
+(3623,6633) city 2 #c7E67F2 Dusk Operation
+(3782,6072) city 2 #c7E67F2 Dusk Operation
+(4689,5298) city 5 #c7E67F2 Dusk Operation
+(5132,8075) city 3 #c7E67F2 Dusk Operation
+(5602,6552) city 7 #c7E67F2 Dusk Operation
+(2046,5816) city 3 #c7E67F2 Dusk Operation
+(5190,5440) city 5 #c49E7C0 Angels of Wrath
+(5621,6337) city 5 #c49E7C0 Angels of Wrath
+(5837,4918) city 5 #c49E7C0 Angels of Wrath
+(6714,6204) city 2 #c49E7C0 Angels of Wrath
+(6806,6631) city 5 #c49E7C0 Angels of Wrath
+(7297,7271) city 7 #c49E7C0 Angels of Wrath
+(7739,4587) city 2 #c49E7C0 Angels of Wrath
+(4482,0885) city 5 #c9FE23E Mist
+(6243,5894) city 2 #c9FE23E Mist
+(7506,1321) city 5 #c9FE23E Mist
+(7514,3187) city 2 #c9FE23E Mist
+(7633,3393) city 2 #c9FE23E Mist
+(7809,3067) city 3 #c9FE23E Mist
+(7963,3214) city 2 #c9FE23E Mist
+(2294,5824) city 2 #c4A99FB Blue Alliance
+(2533,7013) city 2 #c4A99FB Blue Alliance
+(3649,5192) city 5 #c4A99FB Blue Alliance
+(3607,4996) city 7 #c4A99FB Blue Alliance
+(3784,7014) city 2 #c4A99FB Blue Alliance
+(3938,3851) city 5 #c4A99FB Blue Alliance
+(3994,6747) city 2 #c4A99FB Blue Alliance
+(4155,7862) city 5 #c4A99FB Blue Alliance
+(2057,6034) city 5 #c4A99FB Blue Alliance
+(1822,6062) city 2 #c4A99FB Blue Alliance
+(2493,6193) city 2 #cFD7844 Dawn Operation
+(3886,5059) city 3 #cFD7844 Dawn Operation
+(3857,5215) city 5 #cFD7844 Dawn Operation
+(3700,7555) city 3 #cFD7844 Dawn Operation
+(4302,7648) city 5 #cFD7844 Dawn Operation
+(4800,8635) city 3 #cFD7844 Dawn Operation
+(5125,7872) city 3 #cFD7844 Dawn Operation
+(1134,4867) city 2 #cFD7844 Dawn Operation
+(1672,5947) city 7 #cFD7844 Dawn Operation
+(2333,3595) city 5 #c929292 海纳岚川
+(3175,1299) city 2 #c929292 海纳岚川
+(1196,4292) city 5 #c929292 海纳岚川
+(1264,2774) city 2 #c929292 海纳岚川
+(0460,6095) city 3 #c929292 海纳岚川
+(8148,2211) city 3 #c929292 海纳岚川
+(3780,2764) city 5 #cE63A3A 大鸟转转
+(3872,2813) city 3 #cE63A3A 大鸟转转
+(0883,3493) city 2 #cE63A3A 大鸟转转
+(1162,4007) city 7 #cE63A3A 大鸟转转
+(1965,3592) city 3 #cF1F1F1 CH宇宙和音
+(2405,3417) city 5 #cF1F1F1 CH宇宙和音
+(2862,3512) city 2 #cF1F1F1 CH宇宙和音
+(4924,5319) city 5 #cF1F1F1 CH宇宙和音
+(5199,4926) city 3 #cF1F1F1 CH宇宙和音
+(1059,4209) city 5 #cF1F1F1 CH宇宙和音
+(1663,2613) city 2 #cF1F1F1 CH宇宙和音
+
+$planet
+(4082,634) medium
+(1955,6010) large
+(1890,5950)(1955,6010) small
+(1263,4110) medium
+(3692,5134) medium
+(5601,3641) medium
+(4499,4497) medium
+(7392,7394) medium
