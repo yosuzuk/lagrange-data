@@ -1,0 +1,117 @@
+$name 10324 Cassiopeia 390
+$serverName Cassiopeia 390
+$size 9000
+
+$overlay
+UltraРусь (41.6%)
+Cerberus (11.6%)
+DP king (10.9%)
+DOMINATOR (2.1%)
+
+$station
+(1284,6574) city 2 #cF284FF DOMINATOR
+(1624,7934) city 2 #cF284FF DOMINATOR
+(2132,3050) city 5 #cF284FF DOMINATOR
+(0364,6314) city 2 #cF284FF DOMINATOR
+(2014,8044) city 2 #cF284FF DOMINATOR
+(1834,7354) city 2 #cE5B36C UltraРусь
+(2064,7054) city 2 #cE5B36C UltraРусь
+(2314,1764) city 2 #cE5B36C UltraРусь
+(2204,7694) city 2 #cE5B36C UltraРусь
+(2324,7395) city 2 #cE5B36C UltraРусь
+(3034,7854) city 2 #cE5B36C UltraРусь
+(2944,8234) city 2 #cE5B36C UltraРусь
+(3454,8444) city 2 #cE5B36C UltraРусь
+(3814,7794) city 2 #cE5B36C UltraРусь
+(4084,8294) city 2 #cE5B36C UltraРусь
+(4514,8724) city 2 #cE5B36C UltraРусь
+(4614,8304) city 2 #cE5B36C UltraРусь
+(4744,8815) city 2 #cE5B36C UltraРусь
+(5332,4890) city 5 #cE5B36C UltraРусь
+(4951,5025) city 2 #cE5B36C UltraРусь
+(5269,3551) city 5 #cE5B36C UltraРусь
+(5289,5711) city 5 #cE5B36C UltraРусь
+(5084,8815) city 2 #cE5B36C UltraРусь
+(5254,8074) city 2 #cE5B36C UltraРусь
+(5741,5969) city 7 #cE5B36C UltraРусь
+(5852,6150) city 5 #cE5B36C UltraРусь
+(5879,5900) city 2 #cE5B36C UltraРусь
+(5774,7634) city 2 #cE5B36C UltraРусь
+(5814,8464) city 2 #cE5B36C UltraРусь
+(5904,8195) city 2 #cE5B36C UltraРусь
+(6158,7437) city 7 #cE5B36C UltraРусь
+(6392,7430) city 5 #cE5B36C UltraРусь
+(6432,7167) city 3 #cE5B36C UltraРусь
+(6056,7278) city 3 #cE5B36C UltraРусь
+(6011,7566) city 2 #cE5B36C UltraРусь
+(6529,4071) city 5 #cE5B36C UltraРусь
+(6492,4309) city 5 #cE5B36C UltraРусь
+(6379,7978) city 3 #cE5B36C UltraРусь
+(6834,7574) city 2 #cE5B36C UltraРусь
+(6773,3093) city 7 #cE5B36C UltraРусь
+(7012,3310) city 5 #cE5B36C UltraРусь
+(6720,6560) city 5 #cE5B36C UltraРусь
+(6974,6904) city 2 #cE5B36C UltraРусь
+(6899,5671) city 5 #cE5B36C UltraРусь
+(7012,5768) city 5 #cE5B36C UltraРусь
+(6984,8014) city 2 #cE5B36C UltraРусь
+(7084,7695) city 2 #cE5B36C UltraРусь
+(7414,6984) city 2 #cE5B36C UltraРусь
+(7594,6284) city 2 #cE5B36C UltraРусь
+(7594,6654) city 2 #cE5B36C UltraРусь
+(7664,7334) city 2 #cE5B36C UltraРусь
+(8114,6374) city 2 #cE5B36C UltraРусь
+(8154,5404) city 2 #cE5B36C UltraРусь
+(8530,4929) city 3 #cE5B36C UltraРусь
+(8674,4144) city 2 #cE5B36C UltraРусь
+(1394,2654) city 2 #c49E7C0 DP king
+(1324,7674) city 2 #c49E7C0 DP king
+(1444,6254) city 2 #c49E7C0 DP king
+(1514,6934) city 2 #c49E7C0 DP king
+(1484,1414) city 2 #c49E7C0 DP king
+(1564,2414) city 2 #c49E7C0 DP king
+(1750,4940) city 5 #c49E7C0 DP king
+(1784,7154) city 2 #c49E7C0 DP king
+(1770,1408) city 3 #c49E7C0 DP king
+(2166,2897) city 3 #c49E7C0 DP king
+(1844,2134) city 2 #c49E7C0 DP king
+(1939,7698) city 3 #c49E7C0 DP king
+(0324,2955) city 2 #c49E7C0 DP king
+(2420,1620) city 5 #c49E7C0 DP king
+(2640,3820) city 5 #c49E7C0 DP king
+(0754,2464) city 2 #c49E7C0 DP king
+(4569,1411) city 5 #c49E7C0 DP king
+(0634,4244) city 2 #c49E7C0 DP king
+(6150,3220) city 5 #c49E7C0 DP king
+(0774,2154) city 2 #c49E7C0 DP king
+(0744,1934) city 2 #c49E7C0 DP king
+(0184,3454) city 2 #c49E7C0 DP king
+(0944,2774) city 2 #c49E7C0 DP king
+(1114,2314) city 2 #c49E7C0 DP king
+(1274,6794) city 2 #c49E7C0 DP king
+(1174,5484) city 2 #cFD7844 Cerberus
+(1852,5988) city 5 #cFD7844 Cerberus
+(1755,5779) city 5 #cFD7844 Cerberus
+(1739,5891) city 5 #cFD7844 Cerberus
+(0370,4728) city 3 #cFD7844 Cerberus
+(3398,5577) city 7 #cFD7844 Cerberus
+(3632,5570) city 5 #cFD7844 Cerberus
+(3672,5307) city 3 #cFD7844 Cerberus
+(3296,5418) city 3 #cFD7844 Cerberus
+(3252,5706) city 2 #cFD7844 Cerberus
+(0624,4694) city 2 #cFD7844 Cerberus
+(0644,5754) city 2 #cFD7844 Cerberus
+(0774,6204) city 2 #cFD7844 Cerberus
+(1114,4604) city 2 #cFD7844 Cerberus
+(1084,5094) city 2 #cFD7844 Cerberus
+(1114,6144) city 2 #cFD7844 Cerberus
+
+$planet
+(3472,5494) large
+(3651,5322)(3472,5494) small
+(5692,6074) medium
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(5172,4814) medium
+(4499,4497) medium

@@ -1,0 +1,123 @@
+$name 10327 Volans 353
+$serverName Volans 353
+$size 9000
+
+$overlay
+Shadow League (32.1%)
+Archons (11.6%)
+alfas (9.4%)
+Confederocracy (2.1%)
+Клан Гэн (2.1%)
+
+$station
+(7594,6284) city 2 #c9FE23E Клан Гэн
+(7594,6654) city 2 #c9FE23E Клан Гэн
+(7846,5602) city 5 #c9FE23E Клан Гэн
+(7656,5594) city 5 #c9FE23E Клан Гэн
+(7870,5460) city 5 #c9FE23E Клан Гэн
+(8114,6374) city 2 #c9FE23E Клан Гэн
+(8154,5404) city 2 #c9FE23E Клан Гэн
+(8530,4929) city 3 #c9FE23E Клан Гэн
+(8564,3434) city 2 #c9FE23E Клан Гэн
+(8734,3634) city 2 #c9FE23E Клан Гэн
+(8674,4144) city 2 #c9FE23E Клан Гэн
+(8724,5534) city 2 #c9FE23E Клан Гэн
+(4514,8724) city 2 #cE5B36C Shadow League
+(4614,8304) city 2 #cE5B36C Shadow League
+(5332,4890) city 5 #cE5B36C Shadow League
+(4951,5025) city 2 #cE5B36C Shadow League
+(5269,3551) city 5 #cE5B36C Shadow League
+(5012,5698) city 5 #cE5B36C Shadow League
+(5290,5498) city 5 #cE5B36C Shadow League
+(5155,5539) city 5 #cE5B36C Shadow League
+(5289,5711) city 5 #cE5B36C Shadow League
+(5741,5969) city 7 #cE5B36C Shadow League
+(5852,6150) city 5 #cE5B36C Shadow League
+(5671,6167) city 5 #cE5B36C Shadow League
+(5879,5900) city 2 #cE5B36C Shadow League
+(5774,7634) city 2 #cE5B36C Shadow League
+(5814,8464) city 2 #cE5B36C Shadow League
+(5904,8195) city 2 #cE5B36C Shadow League
+(6158,7437) city 7 #cE5B36C Shadow League
+(6392,7430) city 5 #cE5B36C Shadow League
+(6011,7566) city 2 #cE5B36C Shadow League
+(6529,4071) city 5 #cE5B36C Shadow League
+(6379,7978) city 3 #cE5B36C Shadow League
+(6834,7574) city 2 #cE5B36C Shadow League
+(7012,3310) city 5 #cE5B36C Shadow League
+(6907,6594) city 5 #cE5B36C Shadow League
+(6914,6333) city 5 #cE5B36C Shadow League
+(6720,6560) city 5 #cE5B36C Shadow League
+(6974,6904) city 2 #cE5B36C Shadow League
+(6984,8014) city 2 #cE5B36C Shadow League
+(7084,7695) city 2 #cE5B36C Shadow League
+(7414,6984) city 2 #cE5B36C Shadow League
+(7664,7334) city 2 #cE5B36C Shadow League
+(1394,2654) city 2 #cFD7844 Archons
+(1484,1414) city 2 #cFD7844 Archons
+(1564,2414) city 2 #cFD7844 Archons
+(1770,1408) city 3 #cFD7844 Archons
+(1893,2833) city 7 #cFD7844 Archons
+(2132,3050) city 5 #cFD7844 Archons
+(1951,3027) city 5 #cFD7844 Archons
+(2166,2897) city 3 #cFD7844 Archons
+(1844,2134) city 2 #cFD7844 Archons
+(2044,1534) city 2 #cFD7844 Archons
+(2314,1764) city 2 #cFD7844 Archons
+(2420,1620) city 5 #cFD7844 Archons
+(2514,0524) city 2 #cFD7844 Archons
+(3713,3746) city 3 #cFD7844 Archons
+(0754,2464) city 2 #cFD7844 Archons
+(0744,1934) city 2 #cFD7844 Archons
+(0954,3044) city 2 #cFD7844 Archons
+(0944,2774) city 2 #cFD7844 Archons
+(1114,2314) city 2 #cFD7844 Archons
+(1284,6574) city 2 #c49E7C0 alfas
+(1324,7674) city 2 #c49E7C0 alfas
+(1444,6254) city 2 #c49E7C0 alfas
+(1514,6934) city 2 #c49E7C0 alfas
+(1624,7934) city 2 #c49E7C0 alfas
+(1834,7354) city 2 #c49E7C0 alfas
+(1784,7154) city 2 #c49E7C0 alfas
+(2014,8044) city 2 #c49E7C0 alfas
+(1939,7698) city 3 #c49E7C0 alfas
+(2064,7054) city 2 #c49E7C0 alfas
+(2204,7694) city 2 #c49E7C0 alfas
+(2324,7395) city 2 #c49E7C0 alfas
+(3034,7854) city 2 #c49E7C0 alfas
+(2944,8234) city 2 #c49E7C0 alfas
+(3398,5577) city 7 #c49E7C0 alfas
+(3632,5570) city 5 #c49E7C0 alfas
+(3672,5307) city 3 #c49E7C0 alfas
+(3296,5418) city 3 #c49E7C0 alfas
+(3252,5706) city 2 #c49E7C0 alfas
+(3454,8444) city 2 #c49E7C0 alfas
+(3814,7794) city 2 #c49E7C0 alfas
+(4084,8294) city 2 #c49E7C0 alfas
+(0644,5754) city 2 #c49E7C0 alfas
+(1114,6144) city 2 #c49E7C0 alfas
+(1274,6794) city 2 #c49E7C0 alfas
+(1750,4940) city 5 #cF284FF Confederocracy
+(1725,4818) city 5 #cF284FF Confederocracy
+(1614,5073) city 5 #cF284FF Confederocracy
+(0364,6314) city 2 #cF284FF Confederocracy
+(0324,2955) city 2 #cF284FF Confederocracy
+(0370,4728) city 3 #cF284FF Confederocracy
+(4744,8815) city 2 #cF284FF Confederocracy
+(0624,4694) city 2 #cF284FF Confederocracy
+(5084,8815) city 2 #cF284FF Confederocracy
+(5254,8074) city 2 #cF284FF Confederocracy
+(0774,6204) city 2 #cF284FF Confederocracy
+(0184,3454) city 2 #cF284FF Confederocracy
+(1114,4604) city 2 #cF284FF Confederocracy
+(1084,5094) city 2 #cF284FF Confederocracy
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium
