@@ -1,0 +1,67 @@
+$name 40066 Ursa Minor WZ
+$serverName Ursa Minor WZ
+$size 9000
+
+$overlay
+어쩌다보니 (19.5%)
+Kumo CreW (15.8%)
+Pulsar (15.8%)
+Enders (15.8%)
+Umbrella Corp (3.6%)
+點心帝國 (3.6%)
+UnitedRUS (3.6%)
+D7C (3.6%)
+Vanaheim (3.6%)
+鬼島倖存者 (3.6%)
+
+$station
+(2463,7051) city 5 #cE5B36C 어쩌다보니
+(2886,7763) city 2 #cE5B36C 어쩌다보니
+(2956,6920) city 5 #cE5B36C 어쩌다보니
+(3140,7026) city 5 #cE5B36C 어쩌다보니
+(3126,6538) city 5 #cE5B36C 어쩌다보니
+(3207,6342) city 7 #cE5B36C 어쩌다보니
+(5987,5787) city 5 #c929292 鬼島倖存者
+(3400,1776) city 5 #cF284FF UnitedRUS
+(3723,2592) city 3 #cF284FF UnitedRUS
+(5943,1712) city 3 #cF284FF UnitedRUS
+(6312,6595) city 5 #c7E67F2 點心帝國
+(7939,2519) city 2 #c7E67F2 點心帝國
+(8026,4572) city 5 #c7E67F2 點心帝國
+(2225,5904) city 5 #cFD7844 Pulsar
+(6430,6717) city 7 #cFD7844 Pulsar
+(6944,4302) city 7 #cFD7844 Pulsar
+(7835,2603) city 5 #cFD7844 Pulsar
+(8707,4577) city 5 #cFD7844 Pulsar
+(2175,6019) city 5 #c49E7C0 Enders
+(0679,3208) city 5 #c49E7C0 Enders
+(0324,2842) city 3 #c49E7C0 Enders
+(0766,3016) city 7 #c49E7C0 Enders
+(5617,7489) city 3 #cF1F1F1 Vanaheim
+(6422,6811) city 5 #cF1F1F1 Vanaheim
+(2448,3457) city 5 #cE63A3A Umbrella Corp
+(2626,0951) city 2 #cE63A3A Umbrella Corp
+(4016,4902) city 7 #cE63A3A Umbrella Corp
+(4136,1266) city 5 #cE63A3A Umbrella Corp
+(1671,6325) city 3 #cE63A3A Umbrella Corp
+(1798,6429) city 5 #cE63A3A Umbrella Corp
+(1751,6581) city 5 #cE63A3A Umbrella Corp
+(5970,5983) city 3 #c9FE23E D7C
+(1326,6591) city 2 #c9FE23E D7C
+(0437,2870) city 5 #c9FE23E D7C
+(5325,2551) city 7 #c4A99FB Kumo CreW
+(5708,2214) city 3 #c4A99FB Kumo CreW
+(5476,2264) city 3 #c4A99FB Kumo CreW
+(5612,2116) city 5 #c4A99FB Kumo CreW
+(5653,2339) city 5 #c4A99FB Kumo CreW
+(7156,2006) city 5 #c4A99FB Kumo CreW
+
+$planet
+(3952,3011) medium
+(4500,4500) medium
+(872,3111) medium
+(3264,6496) medium
+(5455,2689) medium
+(4290,8642) medium
+(2263,5850) medium
+(5012,5174) medium

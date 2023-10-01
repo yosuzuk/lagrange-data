@@ -1,0 +1,124 @@
+$name 10340 Hercules 109
+$serverName Hercules 109
+$size 9000
+
+$overlay
+Dept Collector (35.7%)
+Kwakkers (18.9%)
+CL Silver (8.7%)
+UNION LATAM (8.7%)
+Hellish Divine (4.3%)
+
+$station
+(1750,4940) city 5 #cFD7844 CL Silver
+(1840,5818) city 5 #cFD7844 CL Silver
+(1834,7354) city 2 #cFD7844 CL Silver
+(1784,7154) city 2 #cFD7844 CL Silver
+(1939,7698) city 3 #cFD7844 CL Silver
+(2064,7054) city 2 #cFD7844 CL Silver
+(2204,7694) city 2 #cFD7844 CL Silver
+(2834,3593) city 5 #cFD7844 CL Silver
+(2640,3820) city 5 #cFD7844 CL Silver
+(3034,7854) city 2 #cFD7844 CL Silver
+(2944,8234) city 2 #cFD7844 CL Silver
+(3632,5570) city 5 #cFD7844 CL Silver
+(3454,8444) city 2 #cFD7844 CL Silver
+(4951,5025) city 2 #cFD7844 CL Silver
+(5269,3551) city 5 #cFD7844 CL Silver
+(5814,8464) city 2 #cFD7844 CL Silver
+(5904,8195) city 2 #cFD7844 CL Silver
+(7474,1284) city 2 #cFD7844 CL Silver
+(8154,5404) city 2 #cFD7844 CL Silver
+(8484,2814) city 2 #cFD7844 CL Silver
+(8594,3054) city 2 #cFD7844 CL Silver
+(8564,3434) city 2 #cFD7844 CL Silver
+(8734,3634) city 2 #cFD7844 CL Silver
+(8674,4144) city 2 #cFD7844 CL Silver
+(8724,5534) city 2 #cFD7844 CL Silver
+(1114,6144) city 2 #cFD7844 CL Silver
+(1284,6574) city 2 #c49E7C0 UNION LATAM
+(1324,7674) city 2 #c49E7C0 UNION LATAM
+(1444,6254) city 2 #c49E7C0 UNION LATAM
+(1514,6934) city 2 #c49E7C0 UNION LATAM
+(1624,7934) city 2 #c49E7C0 UNION LATAM
+(2014,8044) city 2 #c49E7C0 UNION LATAM
+(5774,7634) city 2 #c49E7C0 UNION LATAM
+(6392,7430) city 5 #c49E7C0 UNION LATAM
+(6432,7167) city 3 #c49E7C0 UNION LATAM
+(6056,7278) city 3 #c49E7C0 UNION LATAM
+(6011,7566) city 2 #c49E7C0 UNION LATAM
+(6834,7574) city 2 #c49E7C0 UNION LATAM
+(6720,6560) city 5 #c49E7C0 UNION LATAM
+(6899,5671) city 5 #c49E7C0 UNION LATAM
+(7664,7334) city 2 #c49E7C0 UNION LATAM
+(7870,5460) city 5 #c49E7C0 UNION LATAM
+(1274,6794) city 2 #c49E7C0 UNION LATAM
+(1174,5484) city 2 #cE5B36C Dept Collector
+(1614,5073) city 5 #cE5B36C Dept Collector
+(1739,5891) city 5 #cE5B36C Dept Collector
+(1893,2833) city 7 #cE5B36C Dept Collector
+(2166,2897) city 3 #cE5B36C Dept Collector
+(3398,5577) city 7 #cE5B36C Dept Collector
+(3672,5307) city 3 #cE5B36C Dept Collector
+(3296,5418) city 3 #cE5B36C Dept Collector
+(3252,5706) city 2 #cE5B36C Dept Collector
+(3819,3519) city 9 #cE5B36C Dept Collector
+(3713,3746) city 3 #cE5B36C Dept Collector
+(4569,1411) city 5 #cE5B36C Dept Collector
+(4458,1579) city 5 #cE5B36C Dept Collector
+(5332,4890) city 5 #cE5B36C Dept Collector
+(0624,4694) city 2 #cE5B36C Dept Collector
+(1114,4604) city 2 #cE5B36C Dept Collector
+(1084,5094) city 2 #cE5B36C Dept Collector
+(3814,7794) city 2 #c4A99FB Kwakkers
+(4532,1649) city 5 #c4A99FB Kwakkers
+(4614,8304) city 2 #c4A99FB Kwakkers
+(4744,8815) city 2 #c4A99FB Kwakkers
+(5012,5698) city 5 #c4A99FB Kwakkers
+(5289,5711) city 5 #c4A99FB Kwakkers
+(5084,8815) city 2 #c4A99FB Kwakkers
+(5254,8074) city 2 #c4A99FB Kwakkers
+(5410,0688) city 3 #c4A99FB Kwakkers
+(5741,5969) city 7 #c4A99FB Kwakkers
+(5867,6008) city 3 #c4A99FB Kwakkers
+(5879,5900) city 2 #c4A99FB Kwakkers
+(6126,3362) city 5 #c4A99FB Kwakkers
+(6529,4071) city 5 #c4A99FB Kwakkers
+(6492,4309) city 5 #c4A99FB Kwakkers
+(6773,3093) city 7 #c4A99FB Kwakkers
+(7046,3157) city 3 #c4A99FB Kwakkers
+(6974,6904) city 2 #c4A99FB Kwakkers
+(7414,6984) city 2 #c4A99FB Kwakkers
+(7594,6284) city 2 #c4A99FB Kwakkers
+(7594,6654) city 2 #c4A99FB Kwakkers
+(7704,3235) city 2 #c4A99FB Kwakkers
+(1394,2654) city 2 #cF284FF Hellish Divine
+(1484,1414) city 2 #cF284FF Hellish Divine
+(1564,2414) city 2 #cF284FF Hellish Divine
+(1770,1408) city 3 #cF284FF Hellish Divine
+(2132,3050) city 5 #cF284FF Hellish Divine
+(1844,2134) city 2 #cF284FF Hellish Divine
+(2044,1534) city 2 #cF284FF Hellish Divine
+(2314,1764) city 2 #cF284FF Hellish Divine
+(2607,1654) city 5 #cF284FF Hellish Divine
+(2614,1393) city 5 #cF284FF Hellish Divine
+(2420,1620) city 5 #cF284FF Hellish Divine
+(2514,0524) city 2 #cF284FF Hellish Divine
+(3354,0764) city 2 #cF284FF Hellish Divine
+(3414,0294) city 2 #cF284FF Hellish Divine
+(0754,2464) city 2 #cF284FF Hellish Divine
+(0774,2154) city 2 #cF284FF Hellish Divine
+(0744,1934) city 2 #cF284FF Hellish Divine
+(0954,3044) city 2 #cF284FF Hellish Divine
+(0944,2774) city 2 #cF284FF Hellish Divine
+(1114,2314) city 2 #cF284FF Hellish Divine
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

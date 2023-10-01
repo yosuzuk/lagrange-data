@@ -1,0 +1,139 @@
+$name 10334 Eridanus 428
+$serverName Eridanus 428
+$size 9000
+
+$overlay
+The Syndicate (32.1%)
+Sark (17.5%)
+Sleeping Empire (7.2%)
+EXALTED (2.1%)
+
+$station
+(1394,2654) city 2 #cE5B36C The Syndicate
+(1484,1414) city 2 #cE5B36C The Syndicate
+(1564,2414) city 2 #cE5B36C The Syndicate
+(1750,4940) city 5 #cE5B36C The Syndicate
+(1725,4818) city 5 #cE5B36C The Syndicate
+(1614,5073) city 5 #cE5B36C The Syndicate
+(1840,5818) city 5 #cE5B36C The Syndicate
+(1739,5891) city 5 #cE5B36C The Syndicate
+(1770,1408) city 3 #cE5B36C The Syndicate
+(1893,2833) city 7 #cE5B36C The Syndicate
+(2132,3050) city 5 #cE5B36C The Syndicate
+(1951,3027) city 5 #cE5B36C The Syndicate
+(2166,2897) city 3 #cE5B36C The Syndicate
+(1779,3070) city 5 #cE5B36C The Syndicate
+(1844,2134) city 2 #cE5B36C The Syndicate
+(2044,1534) city 2 #cE5B36C The Syndicate
+(2314,1764) city 2 #cE5B36C The Syndicate
+(0324,2955) city 2 #cE5B36C The Syndicate
+(2514,0524) city 2 #cE5B36C The Syndicate
+(2827,3854) city 5 #cE5B36C The Syndicate
+(2834,3593) city 5 #cE5B36C The Syndicate
+(3354,0764) city 2 #cE5B36C The Syndicate
+(3252,5706) city 2 #cE5B36C The Syndicate
+(3414,0294) city 2 #cE5B36C The Syndicate
+(3694,0634) city 2 #cE5B36C The Syndicate
+(3704,1054) city 2 #cE5B36C The Syndicate
+(4096,3591) city 5 #cE5B36C The Syndicate
+(3713,3746) city 3 #cE5B36C The Syndicate
+(3744,0275) city 2 #cE5B36C The Syndicate
+(0754,2464) city 2 #cE5B36C The Syndicate
+(4569,1411) city 5 #cE5B36C The Syndicate
+(0604,3694) city 2 #cE5B36C The Syndicate
+(5030,3540) city 5 #cE5B36C The Syndicate
+(5269,3551) city 5 #cE5B36C The Syndicate
+(0624,4694) city 2 #cE5B36C The Syndicate
+(6126,3362) city 5 #cE5B36C The Syndicate
+(6150,3220) city 5 #cE5B36C The Syndicate
+(6492,4309) city 5 #cE5B36C The Syndicate
+(6773,3093) city 7 #cE5B36C The Syndicate
+(7012,3310) city 5 #cE5B36C The Syndicate
+(6831,3287) city 5 #cE5B36C The Syndicate
+(7046,3157) city 3 #cE5B36C The Syndicate
+(6659,3330) city 5 #cE5B36C The Syndicate
+(0774,2154) city 2 #cE5B36C The Syndicate
+(0744,1934) city 2 #cE5B36C The Syndicate
+(0954,3044) city 2 #cE5B36C The Syndicate
+(0184,3454) city 2 #cE5B36C The Syndicate
+(0944,2774) city 2 #cE5B36C The Syndicate
+(1114,4604) city 2 #cE5B36C The Syndicate
+(1114,2314) city 2 #cE5B36C The Syndicate
+(1174,5484) city 2 #c4A99FB Sark
+(1444,6254) city 2 #c4A99FB Sark
+(1624,7934) city 2 #c4A99FB Sark
+(1852,5988) city 5 #c4A99FB Sark
+(1755,5779) city 5 #c4A99FB Sark
+(0364,6314) city 2 #c4A99FB Sark
+(2014,8044) city 2 #c4A99FB Sark
+(2064,7054) city 2 #c4A99FB Sark
+(2324,7395) city 2 #c4A99FB Sark
+(3034,7854) city 2 #c4A99FB Sark
+(3814,7794) city 2 #c4A99FB Sark
+(4514,8724) city 2 #c4A99FB Sark
+(4614,8304) city 2 #c4A99FB Sark
+(4744,8815) city 2 #c4A99FB Sark
+(5332,4890) city 5 #c4A99FB Sark
+(4951,5025) city 2 #c4A99FB Sark
+(5012,5698) city 5 #c4A99FB Sark
+(5289,5711) city 5 #c4A99FB Sark
+(5084,8815) city 2 #c4A99FB Sark
+(5254,8074) city 2 #c4A99FB Sark
+(5852,6150) city 5 #c4A99FB Sark
+(5867,6008) city 3 #c4A99FB Sark
+(5879,5900) city 2 #c4A99FB Sark
+(5774,7634) city 2 #c4A99FB Sark
+(5814,8464) city 2 #c4A99FB Sark
+(5904,8195) city 2 #c4A99FB Sark
+(6392,7430) city 5 #c4A99FB Sark
+(6432,7167) city 3 #c4A99FB Sark
+(6056,7278) city 3 #c4A99FB Sark
+(6011,7566) city 2 #c4A99FB Sark
+(6529,4071) city 5 #c4A99FB Sark
+(6418,4239) city 5 #c4A99FB Sark
+(0644,5754) city 2 #c4A99FB Sark
+(6379,7978) city 3 #c4A99FB Sark
+(6834,7574) city 2 #c4A99FB Sark
+(6907,6594) city 5 #c4A99FB Sark
+(6914,6333) city 5 #c4A99FB Sark
+(6720,6560) city 5 #c4A99FB Sark
+(6974,6904) city 2 #c4A99FB Sark
+(6899,5671) city 5 #c4A99FB Sark
+(6915,5559) city 5 #c4A99FB Sark
+(7000,5598) city 5 #c4A99FB Sark
+(7012,5768) city 5 #c4A99FB Sark
+(6984,8014) city 2 #c4A99FB Sark
+(7084,7695) city 2 #c4A99FB Sark
+(7414,6984) city 2 #c4A99FB Sark
+(0774,6204) city 2 #c4A99FB Sark
+(7594,6284) city 2 #c4A99FB Sark
+(7594,6654) city 2 #c4A99FB Sark
+(7664,7334) city 2 #c4A99FB Sark
+(7870,5460) city 5 #c4A99FB Sark
+(7704,3235) city 2 #c4A99FB Sark
+(8114,6374) city 2 #c4A99FB Sark
+(8154,5404) city 2 #c4A99FB Sark
+(8734,3634) city 2 #c4A99FB Sark
+(8674,4144) city 2 #c4A99FB Sark
+(8724,5534) city 2 #c4A99FB Sark
+(1084,5094) city 2 #c4A99FB Sark
+(1114,6144) city 2 #c4A99FB Sark
+(1939,7698) city 3 #c49E7C0 Sleeping Empire
+(0370,4728) city 3 #c49E7C0 Sleeping Empire
+(3398,5577) city 7 #c49E7C0 Sleeping Empire
+(3672,5307) city 3 #c49E7C0 Sleeping Empire
+(3296,5418) city 3 #c49E7C0 Sleeping Empire
+(1284,6574) city 2 #c9FE23E EXALTED
+(3632,5570) city 5 #c9FE23E EXALTED
+(3454,8444) city 2 #c9FE23E EXALTED
+(4084,8294) city 2 #c9FE23E EXALTED
+
+$planet
+(5692,6074) medium
+(3472,5494) large
+(3651,5322)(3472,5494) small
+(4499,4497) medium
+(5172,4814) medium
+(6852,3234) medium
+(3915,3649) medium
+(1972,2974) medium

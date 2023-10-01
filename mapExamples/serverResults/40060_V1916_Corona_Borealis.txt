@@ -1,0 +1,160 @@
+$name 40060 V1916 Corona Borealis
+$serverName V1916 Corona Borealis
+$size 9000
+
+$overlay
+Reset (22.6%)
+Grand Line (16.7%)
+Overture (13.8%)
+Hidel (9.4%)
+I SPARTANS I (9.4%)
+貓貓救援基地 (9.4%)
+RX 784 (7.2%)
+Frozen Empire (2.1%)
+NOYO (2.1%)
+Empire OF Man (2.1%)
+Frozen Kingdom (2.1%)
+爬獸保育基地 (2.1%)
+
+$station
+(3694,0634) city 2 #cFD7844 Overture
+(3744,0275) city 2 #cFD7844 Overture
+(6126,3362) city 5 #cFD7844 Overture
+(5936,3354) city 5 #cFD7844 Overture
+(6150,3220) city 5 #cFD7844 Overture
+(6529,4071) city 5 #cFD7844 Overture
+(6290,4060) city 5 #cFD7844 Overture
+(6831,3287) city 5 #cFD7844 Overture
+(7046,3157) city 3 #cFD7844 Overture
+(6773,3093) city 7 #cFD7844 Overture
+(7012,3310) city 5 #cFD7844 Overture
+(7174,0834) city 2 #cFD7844 Overture
+(0774,6204) city 2 #cFD7844 Overture
+(7744,1694) city 2 #cFD7844 Overture
+(7914,1914) city 2 #cFD7844 Overture
+(7994,2254) city 2 #cFD7844 Overture
+(8594,3054) city 2 #cFD7844 Overture
+(1484,1414) city 2 #c4A99FB Grand Line
+(0324,2955) city 2 #c4A99FB Grand Line
+(2420,1620) city 5 #c4A99FB Grand Line
+(0370,4728) city 3 #c4A99FB Grand Line
+(3414,0294) city 2 #c4A99FB Grand Line
+(3819,3519) city 9 #c4A99FB Grand Line
+(4074,0944) city 2 #c4A99FB Grand Line
+(0754,2464) city 2 #c4A99FB Grand Line
+(4292,1598) city 5 #c4A99FB Grand Line
+(4570,1398) city 5 #c4A99FB Grand Line
+(4435,1439) city 5 #c4A99FB Grand Line
+(4734,0554) city 2 #c4A99FB Grand Line
+(0604,3694) city 2 #c4A99FB Grand Line
+(5434,0944) city 2 #c4A99FB Grand Line
+(5410,0688) city 3 #c4A99FB Grand Line
+(0624,4694) city 2 #c4A99FB Grand Line
+(6304,0554) city 2 #c4A99FB Grand Line
+(6764,1434) city 2 #c4A99FB Grand Line
+(0774,2154) city 2 #c4A99FB Grand Line
+(0744,1934) city 2 #c4A99FB Grand Line
+(1114,4604) city 2 #c4A99FB Grand Line
+(1114,2314) city 2 #c4A99FB Grand Line
+(1840,5818) city 5 #c9FE23E Frozen Empire
+(1755,5779) city 5 #c9FE23E Frozen Empire
+(2014,8044) city 2 #c9FE23E Frozen Empire
+(2324,7395) city 2 #c9FE23E Frozen Empire
+(3454,8444) city 2 #c9FE23E Frozen Empire
+(3814,7794) city 2 #c9FE23E Frozen Empire
+(4084,8294) city 2 #c9FE23E Frozen Empire
+(5179,5751) city 5 #c9FE23E Frozen Empire
+(5195,5639) city 5 #c9FE23E Frozen Empire
+(5774,7634) city 2 #c9FE23E Frozen Empire
+(6011,7566) city 2 #c9FE23E Frozen Empire
+(6834,7574) city 2 #c9FE23E Frozen Empire
+(1274,6794) city 2 #c9FE23E Frozen Empire
+(1284,6574) city 2 #cF1F1F1 NOYO
+(1394,2654) city 2 #cF1F1F1 NOYO
+(1564,2414) city 2 #cF1F1F1 NOYO
+(1725,4818) city 5 #cF1F1F1 NOYO
+(1614,5073) city 5 #cF1F1F1 NOYO
+(1951,3027) city 5 #cF1F1F1 NOYO
+(2827,3854) city 5 #cF1F1F1 NOYO
+(4569,1611) city 5 #cF1F1F1 NOYO
+(8154,5404) city 2 #cF1F1F1 NOYO
+(1084,5094) city 2 #cF1F1F1 NOYO
+(3296,5418) city 3 #cE63A3A I SPARTANS I
+(3252,5706) city 2 #cE63A3A I SPARTANS I
+(3398,5577) city 7 #cE63A3A I SPARTANS I
+(3632,5570) city 5 #cE63A3A I SPARTANS I
+(4951,5025) city 2 #cE63A3A I SPARTANS I
+(5292,5848) city 5 #cE63A3A I SPARTANS I
+(7574,2104) city 2 #cE63A3A I SPARTANS I
+(1174,5484) city 2 #cE5B36C Reset
+(1852,5988) city 5 #cE5B36C Reset
+(1739,5891) city 5 #cE5B36C Reset
+(2640,3820) city 5 #cE5B36C Reset
+(4096,3591) city 5 #cE5B36C Reset
+(3713,3746) city 3 #cE5B36C Reset
+(5372,4627) city 3 #cE5B36C Reset
+(4996,4738) city 3 #cE5B36C Reset
+(5098,4897) city 7 #cE5B36C Reset
+(5332,4890) city 5 #cE5B36C Reset
+(5232,3789) city 5 #cE5B36C Reset
+(5158,3719) city 5 #cE5B36C Reset
+(5030,3540) city 5 #cE5B36C Reset
+(5269,3551) city 5 #cE5B36C Reset
+(6418,4239) city 5 #cE5B36C Reset
+(7049,5771) city 5 #cE5B36C Reset
+(7414,6984) city 2 #cE5B36C Reset
+(7594,6654) city 2 #cE5B36C Reset
+(7846,5602) city 5 #cE5B36C Reset
+(7870,5460) city 5 #cE5B36C Reset
+(8114,6374) city 2 #cE5B36C Reset
+(8564,3434) city 2 #cE5B36C Reset
+(8724,5534) city 2 #cE5B36C Reset
+(3672,5307) city 3 #c49E7C0 Hidel
+(5671,6167) city 5 #c49E7C0 Hidel
+(6158,7437) city 7 #c49E7C0 Hidel
+(6914,6333) city 5 #c49E7C0 Hidel
+(6720,6560) city 5 #c49E7C0 Hidel
+(6772,5758) city 5 #c49E7C0 Hidel
+(7050,5558) city 5 #c49E7C0 Hidel
+(6915,5599) city 5 #c49E7C0 Hidel
+(7594,6284) city 2 #c49E7C0 Hidel
+(7656,5594) city 5 #c49E7C0 Hidel
+(8530,4929) city 3 #c49E7C0 Hidel
+(8734,3634) city 2 #c49E7C0 Hidel
+(2204,7694) city 2 #c929292 Frozen Kingdom
+(2944,8234) city 2 #c929292 Frozen Kingdom
+(5280,5678) city 5 #c929292 Frozen Kingdom
+(5852,6150) city 5 #c929292 Frozen Kingdom
+(5904,8195) city 2 #c929292 Frozen Kingdom
+(6379,7978) city 3 #c929292 Frozen Kingdom
+(4514,8724) city 2 #c929292 Empire OF Man
+(4614,8304) city 2 #c929292 Empire OF Man
+(4744,8815) city 2 #c929292 Empire OF Man
+(5084,8815) city 2 #c929292 Empire OF Man
+(6392,7430) city 5 #c929292 Empire OF Man
+(7664,7334) city 2 #c929292 Empire OF Man
+(5741,5969) city 7 #cF284FF RX 784
+(5867,6008) city 3 #cF284FF RX 784
+(5879,5900) city 2 #cF284FF RX 784
+(5814,8464) city 2 #cF284FF RX 784
+(6056,7278) city 3 #cF284FF RX 784
+(6907,6594) city 5 #cF284FF RX 784
+(6984,8014) city 2 #cF284FF RX 784
+(1750,4940) city 5 #c929292 爬獸保育基地
+(2607,1654) city 5 #c929292 爬獸保育基地
+(1779,3070) city 5 #c7E67F2 貓貓救援基地
+(1893,2833) city 7 #c7E67F2 貓貓救援基地
+(2132,3050) city 5 #c7E67F2 貓貓救援基地
+(3354,0764) city 2 #c7E67F2 貓貓救援基地
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(5652,6176) large
+(5692,6074)(5652,6176) small
+(3269,5436) medium

@@ -1,0 +1,101 @@
+$name 40063 V511 Lacerta
+$serverName V511 Lacerta
+$size 9000
+
+$overlay
+Gunboat Omega (21.8%)
+SpaceFAM (10.9%)
+Ethereal Legion (10.9%)
+嵐焚 (10.9%)
+鐵道999 (10.9%)
+來點正常人 (10.9%)
+AlphaCollective (8.4%)
+Gunboat Diplo (7.5%)
+WaterMirror (7.5%)
+
+$station
+(1965,3592) city 3 #cF284FF AlphaCollective
+(0614,3987) city 2 #cF284FF AlphaCollective
+(2405,3417) city 5 #cF284FF AlphaCollective
+(2862,3512) city 2 #cF284FF AlphaCollective
+(3815,0739) city 2 #cF284FF AlphaCollective
+(3833,3742) city 3 #cF284FF AlphaCollective
+(0883,3493) city 2 #cF284FF AlphaCollective
+(4049,0616) city 5 #cF284FF AlphaCollective
+(4369,0470) city 2 #cF284FF AlphaCollective
+(5273,1093) city 2 #cF284FF AlphaCollective
+(1059,4209) city 5 #cF284FF AlphaCollective
+(1162,4007) city 7 #cF284FF AlphaCollective
+(0594,4467) city 2 #cF284FF AlphaCollective
+(3780,2764) city 5 #cE5B36C Gunboat Omega
+(3919,2700) city 2 #cE5B36C Gunboat Omega
+(1449,4031) city 3 #cE5B36C Gunboat Omega
+(5498,3520) city 9 #cE5B36C Gunboat Omega
+(2057,6034) city 5 #cE5B36C Gunboat Omega
+(4302,7648) city 5 #cE63A3A 鐵道999
+(5132,8075) city 3 #cE63A3A 鐵道999
+(6102,7932) city 2 #cE63A3A 鐵道999
+(7228,7483) city 5 #cE63A3A 鐵道999
+(7297,7271) city 7 #cE63A3A 鐵道999
+(7370,7447) city 3 #cE63A3A 鐵道999
+(7559,7331) city 5 #cE63A3A 鐵道999
+(7739,4587) city 2 #cE63A3A 鐵道999
+(4312,0580) city 7 #c7E67F2 來點正常人
+(5763,3646) city 5 #c7E67F2 來點正常人
+(5393,3743) city 5 #c7E67F2 來點正常人
+(5726,2531) city 5 #c7E67F2 來點正常人
+(7164,3674) city 2 #c7E67F2 來點正常人
+(7383,1172) city 5 #c7E67F2 來點正常人
+(7633,3393) city 2 #c7E67F2 來點正常人
+(7809,3067) city 3 #c7E67F2 來點正常人
+(4818,5478) city 5 #cF1F1F1 WaterMirror
+(4924,5319) city 5 #cF1F1F1 WaterMirror
+(5621,6337) city 5 #cF1F1F1 WaterMirror
+(5914,4815) city 5 #cF1F1F1 WaterMirror
+(6243,5894) city 2 #cF1F1F1 WaterMirror
+(3343,0974) city 2 #c9FE23E Gunboat Diplo
+(3872,2951) city 5 #c9FE23E Gunboat Diplo
+(3699,2968) city 5 #c9FE23E Gunboat Diplo
+(4482,0885) city 5 #c9FE23E Gunboat Diplo
+(4240,2546) city 2 #c9FE23E Gunboat Diplo
+(1196,4292) city 5 #c9FE23E Gunboat Diplo
+(7506,1321) city 5 #c9FE23E Gunboat Diplo
+(2333,3595) city 5 #c4A99FB SpaceFAM
+(2620,2546) city 2 #c4A99FB SpaceFAM
+(3607,4996) city 7 #c4A99FB SpaceFAM
+(3938,3851) city 5 #c4A99FB SpaceFAM
+(3895,4011) city 5 #c4A99FB SpaceFAM
+(4155,7862) city 5 #c4A99FB SpaceFAM
+(4615,6819) city 2 #c4A99FB SpaceFAM
+(4663,1053) city 2 #c4A99FB SpaceFAM
+(1059,1866) city 3 #c4A99FB SpaceFAM
+(1229,4163) city 5 #c4A99FB SpaceFAM
+(5190,5440) city 5 #c49E7C0 嵐焚
+(5165,5318) city 5 #c49E7C0 嵐焚
+(5199,4926) city 3 #c49E7C0 嵐焚
+(5707,6395) city 5 #c49E7C0 嵐焚
+(5602,6552) city 7 #c49E7C0 嵐焚
+(5712,4745) city 5 #c49E7C0 嵐焚
+(5837,4918) city 5 #c49E7C0 嵐焚
+(5921,4988) city 5 #c49E7C0 嵐焚
+(6814,4404) city 2 #c49E7C0 嵐焚
+(2493,6193) city 2 #cFD7844 Ethereal Legion
+(3886,5059) city 3 #cFD7844 Ethereal Legion
+(3857,5215) city 5 #cFD7844 Ethereal Legion
+(3782,6072) city 2 #cFD7844 Ethereal Legion
+(3994,6747) city 2 #cFD7844 Ethereal Legion
+(4865,2237) city 5 #cFD7844 Ethereal Legion
+(5125,7872) city 3 #cFD7844 Ethereal Legion
+(5332,7835) city 3 #cFD7844 Ethereal Legion
+(5763,1353) city 2 #cFD7844 Ethereal Legion
+(1672,5947) city 7 #cFD7844 Ethereal Legion
+
+$planet
+(7392,7394) medium
+(4082,634) medium
+(1955,6010) large
+(1890,5950)(1955,6010) small
+(1263,4110) medium
+(3692,5134) medium
+(5601,3641) medium
+(4499,4497) medium

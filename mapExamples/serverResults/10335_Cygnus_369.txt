@@ -1,0 +1,118 @@
+$name 10335 Cygnus 369
+$serverName Cygnus 369
+$size 9000
+
+$overlay
+ARCTIC£MPIRE (48.9%)
+Sky Fire (11.6%)
+Blunt Trauma (8.7%)
+Haunted Forest (6.5%)
+
+$station
+(1750,4940) city 5 #cF284FF Haunted Forest
+(1614,5073) city 5 #cF284FF Haunted Forest
+(1840,5818) city 5 #cF284FF Haunted Forest
+(1739,5891) city 5 #cF284FF Haunted Forest
+(0364,6314) city 2 #cF284FF Haunted Forest
+(0324,2955) city 2 #cF284FF Haunted Forest
+(0370,4728) city 3 #cF284FF Haunted Forest
+(3632,5570) city 5 #cF284FF Haunted Forest
+(0604,3694) city 2 #cF284FF Haunted Forest
+(0634,4244) city 2 #cF284FF Haunted Forest
+(0644,5754) city 2 #cF284FF Haunted Forest
+(0954,3044) city 2 #cF284FF Haunted Forest
+(0184,3454) city 2 #cF284FF Haunted Forest
+(1114,4604) city 2 #cF284FF Haunted Forest
+(3414,0294) city 2 #cFD7844 Blunt Trauma
+(4734,0554) city 2 #cFD7844 Blunt Trauma
+(5269,3551) city 5 #cFD7844 Blunt Trauma
+(5434,0944) city 2 #cFD7844 Blunt Trauma
+(5410,0688) city 3 #cFD7844 Blunt Trauma
+(6074,0424) city 2 #cFD7844 Blunt Trauma
+(6126,3362) city 5 #cFD7844 Blunt Trauma
+(6150,3220) city 5 #cFD7844 Blunt Trauma
+(6304,0554) city 2 #cFD7844 Blunt Trauma
+(6529,4071) city 5 #cFD7844 Blunt Trauma
+(7012,3310) city 5 #cFD7844 Blunt Trauma
+(6831,3287) city 5 #cFD7844 Blunt Trauma
+(7046,3157) city 3 #cFD7844 Blunt Trauma
+(6659,3330) city 5 #cFD7844 Blunt Trauma
+(6764,1434) city 2 #cFD7844 Blunt Trauma
+(7174,0834) city 2 #cFD7844 Blunt Trauma
+(7574,2104) city 2 #cFD7844 Blunt Trauma
+(7474,1284) city 2 #cFD7844 Blunt Trauma
+(7424,1694) city 2 #cFD7844 Blunt Trauma
+(7744,1694) city 2 #cFD7844 Blunt Trauma
+(7914,1914) city 2 #cFD7844 Blunt Trauma
+(7704,3235) city 2 #cFD7844 Blunt Trauma
+(7994,2254) city 2 #cFD7844 Blunt Trauma
+(8594,3054) city 2 #cFD7844 Blunt Trauma
+(1394,2654) city 2 #c4A99FB Sky Fire
+(1444,6254) city 2 #c4A99FB Sky Fire
+(1484,1414) city 2 #c4A99FB Sky Fire
+(1770,1408) city 3 #c4A99FB Sky Fire
+(1893,2833) city 7 #c4A99FB Sky Fire
+(2132,3050) city 5 #c4A99FB Sky Fire
+(1844,2134) city 2 #c4A99FB Sky Fire
+(2044,1534) city 2 #c4A99FB Sky Fire
+(2314,1764) city 2 #c4A99FB Sky Fire
+(2420,1620) city 5 #c4A99FB Sky Fire
+(2514,0524) city 2 #c4A99FB Sky Fire
+(3354,0764) city 2 #c4A99FB Sky Fire
+(3454,8444) city 2 #c4A99FB Sky Fire
+(3694,0634) city 2 #c4A99FB Sky Fire
+(3814,7794) city 2 #c4A99FB Sky Fire
+(3704,1054) city 2 #c4A99FB Sky Fire
+(3744,0275) city 2 #c4A99FB Sky Fire
+(4074,0944) city 2 #c4A99FB Sky Fire
+(4084,8294) city 2 #c4A99FB Sky Fire
+(0774,2154) city 2 #c4A99FB Sky Fire
+(0744,1934) city 2 #c4A99FB Sky Fire
+(1564,2414) city 2 #cE5B36C ARCTIC£MPIRE
+(2166,2897) city 3 #cE5B36C ARCTIC£MPIRE
+(2834,3593) city 5 #cE5B36C ARCTIC£MPIRE
+(2640,3820) city 5 #cE5B36C ARCTIC£MPIRE
+(3819,3519) city 9 #cE5B36C ARCTIC£MPIRE
+(4096,3591) city 5 #cE5B36C ARCTIC£MPIRE
+(3713,3746) city 3 #cE5B36C ARCTIC£MPIRE
+(4614,8304) city 2 #cE5B36C ARCTIC£MPIRE
+(4744,8815) city 2 #cE5B36C ARCTIC£MPIRE
+(5332,4890) city 5 #cE5B36C ARCTIC£MPIRE
+(5289,5711) city 5 #cE5B36C ARCTIC£MPIRE
+(5254,8074) city 2 #cE5B36C ARCTIC£MPIRE
+(5741,5969) city 7 #cE5B36C ARCTIC£MPIRE
+(5852,6150) city 5 #cE5B36C ARCTIC£MPIRE
+(5867,6008) city 3 #cE5B36C ARCTIC£MPIRE
+(5774,7634) city 2 #cE5B36C ARCTIC£MPIRE
+(5904,8195) city 2 #cE5B36C ARCTIC£MPIRE
+(6158,7437) city 7 #cE5B36C ARCTIC£MPIRE
+(6392,7430) city 5 #cE5B36C ARCTIC£MPIRE
+(6056,7278) city 3 #cE5B36C ARCTIC£MPIRE
+(6011,7566) city 2 #cE5B36C ARCTIC£MPIRE
+(6834,7574) city 2 #cE5B36C ARCTIC£MPIRE
+(6720,6560) city 5 #cE5B36C ARCTIC£MPIRE
+(6974,6904) city 2 #cE5B36C ARCTIC£MPIRE
+(6899,5671) city 5 #cE5B36C ARCTIC£MPIRE
+(7012,5768) city 5 #cE5B36C ARCTIC£MPIRE
+(7414,6984) city 2 #cE5B36C ARCTIC£MPIRE
+(7594,6284) city 2 #cE5B36C ARCTIC£MPIRE
+(7594,6654) city 2 #cE5B36C ARCTIC£MPIRE
+(7846,5602) city 5 #cE5B36C ARCTIC£MPIRE
+(7870,5460) city 5 #cE5B36C ARCTIC£MPIRE
+(8114,6374) city 2 #cE5B36C ARCTIC£MPIRE
+(8154,5404) city 2 #cE5B36C ARCTIC£MPIRE
+(8484,2814) city 2 #cE5B36C ARCTIC£MPIRE
+(8530,4929) city 3 #cE5B36C ARCTIC£MPIRE
+(8564,3434) city 2 #cE5B36C ARCTIC£MPIRE
+(8734,3634) city 2 #cE5B36C ARCTIC£MPIRE
+(8674,4144) city 2 #cE5B36C ARCTIC£MPIRE
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium
