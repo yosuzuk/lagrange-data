@@ -1,0 +1,118 @@
+$name 10339 Aquarius 205
+$serverName Aquarius 205
+$size 9000
+
+$overlay
+crowned (18.2%)
+RoMania (18.2%)
+Crusaders (13.8%)
+Grey Jesters (6.5%)
+
+$station
+(1174,5484) city 2 #c4A99FB RoMania
+(1750,4940) city 5 #c4A99FB RoMania
+(1755,5779) city 5 #c4A99FB RoMania
+(1739,5891) city 5 #c4A99FB RoMania
+(1893,2833) city 7 #c4A99FB RoMania
+(2132,3050) city 5 #c4A99FB RoMania
+(0364,6314) city 2 #c4A99FB RoMania
+(2044,1534) city 2 #c4A99FB RoMania
+(0324,2955) city 2 #c4A99FB RoMania
+(2640,3820) city 5 #c4A99FB RoMania
+(0370,4728) city 3 #c4A99FB RoMania
+(3632,5570) city 5 #c4A99FB RoMania
+(0604,3694) city 2 #c4A99FB RoMania
+(0634,4244) city 2 #c4A99FB RoMania
+(0624,4694) city 2 #c4A99FB RoMania
+(0644,5754) city 2 #c4A99FB RoMania
+(0774,2154) city 2 #c4A99FB RoMania
+(0774,6204) city 2 #c4A99FB RoMania
+(0954,3044) city 2 #c4A99FB RoMania
+(0184,3454) city 2 #c4A99FB RoMania
+(1114,4604) city 2 #c4A99FB RoMania
+(1084,5094) city 2 #c4A99FB RoMania
+(1114,6144) city 2 #c4A99FB RoMania
+(5289,5711) city 5 #c9FE23E Grey Jesters
+(5867,6008) city 3 #c9FE23E Grey Jesters
+(6126,3362) city 5 #c9FE23E Grey Jesters
+(6974,6904) city 2 #c9FE23E Grey Jesters
+(6899,5671) city 5 #c9FE23E Grey Jesters
+(6915,5559) city 5 #c9FE23E Grey Jesters
+(7000,5598) city 5 #c9FE23E Grey Jesters
+(7012,5768) city 5 #c9FE23E Grey Jesters
+(7594,6284) city 2 #c9FE23E Grey Jesters
+(7594,6654) city 2 #c9FE23E Grey Jesters
+(7846,5602) city 5 #c9FE23E Grey Jesters
+(7656,5594) city 5 #c9FE23E Grey Jesters
+(7870,5460) city 5 #c9FE23E Grey Jesters
+(8114,6374) city 2 #c9FE23E Grey Jesters
+(8154,5404) city 2 #c9FE23E Grey Jesters
+(8530,4929) city 3 #c9FE23E Grey Jesters
+(8564,3434) city 2 #c9FE23E Grey Jesters
+(8734,3634) city 2 #c9FE23E Grey Jesters
+(8674,4144) city 2 #c9FE23E Grey Jesters
+(8724,5534) city 2 #c9FE23E Grey Jesters
+(3713,3746) city 3 #c49E7C0 Crusaders
+(4084,8294) city 2 #c49E7C0 Crusaders
+(4514,8724) city 2 #c49E7C0 Crusaders
+(4614,8304) city 2 #c49E7C0 Crusaders
+(4744,8815) city 2 #c49E7C0 Crusaders
+(5084,8815) city 2 #c49E7C0 Crusaders
+(5254,8074) city 2 #c49E7C0 Crusaders
+(5852,6150) city 5 #c49E7C0 Crusaders
+(5671,6167) city 5 #c49E7C0 Crusaders
+(5879,5900) city 2 #c49E7C0 Crusaders
+(5774,7634) city 2 #c49E7C0 Crusaders
+(5814,8464) city 2 #c49E7C0 Crusaders
+(5904,8195) city 2 #c49E7C0 Crusaders
+(6158,7437) city 7 #c49E7C0 Crusaders
+(6392,7430) city 5 #c49E7C0 Crusaders
+(6432,7167) city 3 #c49E7C0 Crusaders
+(6056,7278) city 3 #c49E7C0 Crusaders
+(6011,7566) city 2 #c49E7C0 Crusaders
+(6379,7978) city 3 #c49E7C0 Crusaders
+(6834,7574) city 2 #c49E7C0 Crusaders
+(6907,6594) city 5 #c49E7C0 Crusaders
+(6914,6333) city 5 #c49E7C0 Crusaders
+(6720,6560) city 5 #c49E7C0 Crusaders
+(6984,8014) city 2 #c49E7C0 Crusaders
+(7084,7695) city 2 #c49E7C0 Crusaders
+(7414,6984) city 2 #c49E7C0 Crusaders
+(7664,7334) city 2 #c49E7C0 Crusaders
+(3354,0764) city 2 #cE5B36C crowned
+(3414,0294) city 2 #cE5B36C crowned
+(4734,0554) city 2 #cE5B36C crowned
+(5098,4897) city 7 #cE5B36C crowned
+(5332,4890) city 5 #cE5B36C crowned
+(4996,4738) city 3 #cE5B36C crowned
+(4951,5025) city 2 #cE5B36C crowned
+(5269,3551) city 5 #cE5B36C crowned
+(5434,0944) city 2 #cE5B36C crowned
+(5410,0688) city 3 #cE5B36C crowned
+(6074,0424) city 2 #cE5B36C crowned
+(6150,3220) city 5 #cE5B36C crowned
+(6304,0554) city 2 #cE5B36C crowned
+(6529,4071) city 5 #cE5B36C crowned
+(7012,3310) city 5 #cE5B36C crowned
+(6831,3287) city 5 #cE5B36C crowned
+(7046,3157) city 3 #cE5B36C crowned
+(6764,1434) city 2 #cE5B36C crowned
+(7174,0834) city 2 #cE5B36C crowned
+(7574,2104) city 2 #cE5B36C crowned
+(7474,1284) city 2 #cE5B36C crowned
+(7424,1694) city 2 #cE5B36C crowned
+(7744,1694) city 2 #cE5B36C crowned
+(7914,1914) city 2 #cE5B36C crowned
+(7704,3235) city 2 #cE5B36C crowned
+(7994,2254) city 2 #cE5B36C crowned
+(8484,2814) city 2 #cE5B36C crowned
+
+$planet
+(5692,6074) medium
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium

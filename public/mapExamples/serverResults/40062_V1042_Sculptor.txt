@@ -1,0 +1,90 @@
+$name 40062 V1042 Sculptor
+$serverName V1042 Sculptor
+$size 9000
+
+$overlay
+Thousand Sons (29.5%)
+战争帝国 (18.0%)
+Star Reaper (13.1%)
+赤曦sunlight (10.6%)
+东风速递 (8.1%)
+永恆紀元 (8.1%)
+歸零者 (2.4%)
+kiss of death (2.4%)
+ONE (2.4%)
+WorId Eaters (2.4%)
+女神騎士團 (2.4%)
+
+$station
+(5514,2604) city 2 #c929292 女神騎士團
+(8296,1951) city 5 #c929292 女神騎士團
+(2570,3969) city 3 #c9FE23E kiss of death
+(4524,2014) city 2 #c9FE23E kiss of death
+(4864,1874) city 2 #c9FE23E kiss of death
+(2240,1340) city 5 #c9FE23E kiss of death
+(5914,2494) city 2 #cF1F1F1 ONE
+(8450,3480) city 5 #cF1F1F1 ONE
+(8314,3613) city 5 #cF1F1F1 ONE
+(1380,3132) city 5 #cE5B36C Thousand Sons
+(1123,3142) city 7 #cE5B36C Thousand Sons
+(1036,2978) city 3 #cE5B36C Thousand Sons
+(1910,7520) city 5 #cE5B36C Thousand Sons
+(1774,7653) city 5 #cE5B36C Thousand Sons
+(7913,2106) city 3 #cE5B36C Thousand Sons
+(8041,1896) city 9 #cE5B36C Thousand Sons
+(3470,3840) city 5 #c929292 WorId Eaters
+(2324,3694) city 2 #c929292 WorId Eaters
+(3066,5177) city 3 #c7E67F2 永恆紀元
+(1486,6537) city 3 #c7E67F2 永恆紀元
+(1199,6483) city 7 #c7E67F2 永恆紀元
+(4390,5368) city 3 #c7E67F2 永恆紀元
+(6924,4954) city 2 #c7E67F2 永恆紀元
+(7946,6682) city 5 #c7E67F2 永恆紀元
+(3032,5330) city 5 #c4A99FB 战争帝国
+(4030,4678) city 5 #c4A99FB 战争帝国
+(4029,4891) city 5 #c4A99FB 战争帝国
+(1455,6693) city 5 #c4A99FB 战争帝国
+(5310,4729) city 3 #c4A99FB 战争帝国
+(6524,4394) city 2 #c4A99FB 战争帝国
+(6584,5334) city 2 #c4A99FB 战争帝国
+(6904,5794) city 2 #c4A99FB 战争帝国
+(7301,6229) city 7 #c4A99FB 战争帝国
+(7412,6410) city 5 #c4A99FB 战争帝国
+(7756,6674) city 5 #c4A99FB 战争帝国
+(2439,5158) city 3 #c4A99FB 战争帝国
+(2654,6094) city 2 #cE63A3A 东风速递
+(2793,5113) city 7 #cE63A3A 东风速递
+(1271,6667) city 5 #cE63A3A 东风速递
+(3044,6034) city 2 #cE63A3A 东风速递
+(3752,4878) city 5 #cE63A3A 东风速递
+(3895,4719) city 5 #cE63A3A 东风速递
+(6054,5644) city 2 #cE63A3A 东风速递
+(6644,6454) city 2 #cE63A3A 东风速递
+(7231,6427) city 5 #cE63A3A 东风速递
+(2614,6404) city 2 #cF284FF 歸零者
+(2852,5302) city 5 #cF284FF 歸零者
+(1099,6710) city 5 #cF284FF 歸零者
+(5714,6094) city 2 #cF284FF 歸零者
+(6679,4918) city 3 #cF284FF 歸零者
+(1885,7398) city 5 #cF284FF 歸零者
+(7970,6540) city 5 #cF284FF 歸零者
+(3598,8617) city 7 #cFD7844 Star Reaper
+(3832,8610) city 5 #cFD7844 Star Reaper
+(4610,8480) city 5 #cFD7844 Star Reaper
+(4614,6664) city 2 #cFD7844 Star Reaper
+(4201,3929) city 7 #c49E7C0 赤曦sunlight
+(4312,4110) city 5 #c49E7C0 赤曦sunlight
+(4339,3860) city 2 #c49E7C0 赤曦sunlight
+(4454,2404) city 2 #c49E7C0 赤曦sunlight
+(5530,2088) city 3 #c49E7C0 赤曦sunlight
+
+$planet
+(1458,6555) large
+(1292,6614)(1458,6555) small
+(4499,4497) medium
+(8115,2009) medium
+(7252,6334) medium
+(2872,5254) medium
+(1212,3054) medium
+(3851,8362) medium
+(4152,4034) medium

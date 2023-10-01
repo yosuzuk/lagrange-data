@@ -1,0 +1,76 @@
+$name 10341 Andromeda 385
+$serverName Andromeda 385
+$size 9000
+
+$overlay
+Eternal Order (41.6%)
+New Republic (32.8%)
+
+$station
+(1394,2654) city 2 #cE5B36C Eternal Order
+(1564,2414) city 2 #cE5B36C Eternal Order
+(1770,1408) city 3 #cE5B36C Eternal Order
+(2132,3050) city 5 #cE5B36C Eternal Order
+(2166,2897) city 3 #cE5B36C Eternal Order
+(1844,2134) city 2 #cE5B36C Eternal Order
+(2044,1534) city 2 #cE5B36C Eternal Order
+(2314,1764) city 2 #cE5B36C Eternal Order
+(0324,2955) city 2 #cE5B36C Eternal Order
+(2614,1393) city 5 #cE5B36C Eternal Order
+(2420,1620) city 5 #cE5B36C Eternal Order
+(2640,3820) city 5 #cE5B36C Eternal Order
+(3354,0764) city 2 #cE5B36C Eternal Order
+(3632,5570) city 5 #cE5B36C Eternal Order
+(3414,0294) city 2 #cE5B36C Eternal Order
+(3694,0634) city 2 #cE5B36C Eternal Order
+(3819,3519) city 9 #cE5B36C Eternal Order
+(4569,1411) city 5 #cE5B36C Eternal Order
+(5269,3551) city 5 #cE5B36C Eternal Order
+(5289,5711) city 5 #cE5B36C Eternal Order
+(5434,0944) city 2 #cE5B36C Eternal Order
+(5410,0688) city 3 #cE5B36C Eternal Order
+(6150,3220) city 5 #cE5B36C Eternal Order
+(6529,4071) city 5 #cE5B36C Eternal Order
+(6773,3093) city 7 #cE5B36C Eternal Order
+(8594,3054) city 2 #cE5B36C Eternal Order
+(8734,3634) city 2 #cE5B36C Eternal Order
+(0944,2774) city 2 #cE5B36C Eternal Order
+(1114,2314) city 2 #cE5B36C Eternal Order
+(3398,5577) city 7 #c4A99FB New Republic
+(4614,8304) city 2 #c4A99FB New Republic
+(5332,4890) city 5 #c4A99FB New Republic
+(4996,4738) city 3 #c4A99FB New Republic
+(4951,5025) city 2 #c4A99FB New Republic
+(5084,8815) city 2 #c4A99FB New Republic
+(5254,8074) city 2 #c4A99FB New Republic
+(5741,5969) city 7 #c4A99FB New Republic
+(5852,6150) city 5 #c4A99FB New Republic
+(5774,7634) city 2 #c4A99FB New Republic
+(5814,8464) city 2 #c4A99FB New Republic
+(5904,8195) city 2 #c4A99FB New Republic
+(6158,7437) city 7 #c4A99FB New Republic
+(6392,7430) city 5 #c4A99FB New Republic
+(6432,7167) city 3 #c4A99FB New Republic
+(6056,7278) city 3 #c4A99FB New Republic
+(6011,7566) city 2 #c4A99FB New Republic
+(6379,7978) city 3 #c4A99FB New Republic
+(6834,7574) city 2 #c4A99FB New Republic
+(6720,6560) city 5 #c4A99FB New Republic
+(6974,6904) city 2 #c4A99FB New Republic
+(6984,8014) city 2 #c4A99FB New Republic
+(7084,7695) city 2 #c4A99FB New Republic
+(7594,6284) city 2 #c4A99FB New Republic
+(7870,5460) city 5 #c4A99FB New Republic
+(7704,3235) city 2 #c4A99FB New Republic
+(8114,6374) city 2 #c4A99FB New Republic
+(8724,5534) city 2 #c4A99FB New Republic
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

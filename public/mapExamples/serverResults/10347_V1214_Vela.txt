@@ -1,0 +1,125 @@
+$name 10347 V1214 Vela
+$serverName V1214 Vela
+$size 9000
+
+$overlay
+Joan of Arc (25.5%)
+Swordsoul (11.6%)
+Space 太空 (8.7%)
+NEUTRUM AURUM (2.1%)
+BLITZKRIEG (2.1%)
+
+$station
+(1739,5891) city 5 #cE5B36C Joan of Arc
+(1893,2833) city 7 #cE5B36C Joan of Arc
+(3713,3746) city 3 #cE5B36C Joan of Arc
+(4569,1411) city 5 #cE5B36C Joan of Arc
+(4330,1400) city 5 #cE5B36C Joan of Arc
+(4458,1579) city 5 #cE5B36C Joan of Arc
+(4532,1649) city 5 #cE5B36C Joan of Arc
+(4734,0554) city 2 #cE5B36C Joan of Arc
+(5332,4890) city 5 #cE5B36C Joan of Arc
+(5434,0944) city 2 #cE5B36C Joan of Arc
+(5410,0688) city 3 #cE5B36C Joan of Arc
+(6074,0424) city 2 #cE5B36C Joan of Arc
+(6150,3220) city 5 #cE5B36C Joan of Arc
+(6304,0554) city 2 #cE5B36C Joan of Arc
+(6773,3093) city 7 #cE5B36C Joan of Arc
+(7012,3310) city 5 #cE5B36C Joan of Arc
+(6831,3287) city 5 #cE5B36C Joan of Arc
+(7046,3157) city 3 #cE5B36C Joan of Arc
+(6659,3330) city 5 #cE5B36C Joan of Arc
+(6764,1434) city 2 #cE5B36C Joan of Arc
+(7174,0834) city 2 #cE5B36C Joan of Arc
+(7574,2104) city 2 #cE5B36C Joan of Arc
+(7474,1284) city 2 #cE5B36C Joan of Arc
+(7424,1694) city 2 #cE5B36C Joan of Arc
+(7744,1694) city 2 #cE5B36C Joan of Arc
+(7914,1914) city 2 #cE5B36C Joan of Arc
+(7704,3235) city 2 #cE5B36C Joan of Arc
+(7994,2254) city 2 #cE5B36C Joan of Arc
+(8484,2814) city 2 #cE5B36C Joan of Arc
+(5852,6150) city 5 #c929292 BLITZKRIEG
+(5671,6167) city 5 #c929292 BLITZKRIEG
+(6914,6333) city 5 #c929292 BLITZKRIEG
+(7012,5768) city 5 #c929292 BLITZKRIEG
+(7594,6284) city 2 #c929292 BLITZKRIEG
+(7594,6654) city 2 #c929292 BLITZKRIEG
+(8114,6374) city 2 #c929292 BLITZKRIEG
+(8154,5404) city 2 #c929292 BLITZKRIEG
+(8594,3054) city 2 #c929292 BLITZKRIEG
+(8530,4929) city 3 #c929292 BLITZKRIEG
+(8564,3434) city 2 #c929292 BLITZKRIEG
+(8734,3634) city 2 #c929292 BLITZKRIEG
+(8674,4144) city 2 #c929292 BLITZKRIEG
+(8724,5534) city 2 #c929292 BLITZKRIEG
+(1394,2654) city 2 #cE63A3A Space 太空
+(1564,2414) city 2 #cE63A3A Space 太空
+(2132,3050) city 5 #cE63A3A Space 太空
+(1951,3027) city 5 #cE63A3A Space 太空
+(2166,2897) city 3 #cE63A3A Space 太空
+(1844,2134) city 2 #cE63A3A Space 太空
+(0324,2955) city 2 #cE63A3A Space 太空
+(2420,1620) city 5 #cE63A3A Space 太空
+(2640,3820) city 5 #cE63A3A Space 太空
+(3414,0294) city 2 #cE63A3A Space 太空
+(3744,0275) city 2 #cE63A3A Space 太空
+(0754,2464) city 2 #cE63A3A Space 太空
+(5269,3551) city 5 #cE63A3A Space 太空
+(0774,2154) city 2 #cE63A3A Space 太空
+(0744,1934) city 2 #cE63A3A Space 太空
+(0954,3044) city 2 #cE63A3A Space 太空
+(0184,3454) city 2 #cE63A3A Space 太空
+(0944,2774) city 2 #cE63A3A Space 太空
+(1114,2314) city 2 #cE63A3A Space 太空
+(4744,8815) city 2 #cFD7844 Swordsoul
+(5012,5698) city 5 #cFD7844 Swordsoul
+(5084,8815) city 2 #cFD7844 Swordsoul
+(5254,8074) city 2 #cFD7844 Swordsoul
+(5867,6008) city 3 #cFD7844 Swordsoul
+(5879,5900) city 2 #cFD7844 Swordsoul
+(5774,7634) city 2 #cFD7844 Swordsoul
+(5904,8195) city 2 #cFD7844 Swordsoul
+(6158,7437) city 7 #cFD7844 Swordsoul
+(6392,7430) city 5 #cFD7844 Swordsoul
+(6432,7167) city 3 #cFD7844 Swordsoul
+(6056,7278) city 3 #cFD7844 Swordsoul
+(6011,7566) city 2 #cFD7844 Swordsoul
+(6379,7978) city 3 #cFD7844 Swordsoul
+(6834,7574) city 2 #cFD7844 Swordsoul
+(6907,6594) city 5 #cFD7844 Swordsoul
+(6720,6560) city 5 #cFD7844 Swordsoul
+(6974,6904) city 2 #cFD7844 Swordsoul
+(6984,8014) city 2 #cFD7844 Swordsoul
+(7084,7695) city 2 #cFD7844 Swordsoul
+(7414,6984) city 2 #cFD7844 Swordsoul
+(7664,7334) city 2 #cFD7844 Swordsoul
+(1284,6574) city 2 #cF1F1F1 NEUTRUM AURUM
+(1324,7674) city 2 #cF1F1F1 NEUTRUM AURUM
+(1514,6934) city 2 #cF1F1F1 NEUTRUM AURUM
+(1624,7934) city 2 #cF1F1F1 NEUTRUM AURUM
+(1834,7354) city 2 #cF1F1F1 NEUTRUM AURUM
+(1784,7154) city 2 #cF1F1F1 NEUTRUM AURUM
+(2014,8044) city 2 #cF1F1F1 NEUTRUM AURUM
+(1939,7698) city 3 #cF1F1F1 NEUTRUM AURUM
+(2064,7054) city 2 #cF1F1F1 NEUTRUM AURUM
+(2204,7694) city 2 #cF1F1F1 NEUTRUM AURUM
+(2324,7395) city 2 #cF1F1F1 NEUTRUM AURUM
+(3034,7854) city 2 #cF1F1F1 NEUTRUM AURUM
+(2944,8234) city 2 #cF1F1F1 NEUTRUM AURUM
+(3632,5570) city 5 #cF1F1F1 NEUTRUM AURUM
+(3296,5418) city 3 #cF1F1F1 NEUTRUM AURUM
+(3454,8444) city 2 #cF1F1F1 NEUTRUM AURUM
+(3814,7794) city 2 #cF1F1F1 NEUTRUM AURUM
+(4614,8304) city 2 #cF1F1F1 NEUTRUM AURUM
+(1274,6794) city 2 #cF1F1F1 NEUTRUM AURUM
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

@@ -1,0 +1,133 @@
+$name 10348 Cancer 425
+$serverName Cancer 425
+$size 9000
+
+$overlay
+StarBuds (42.3%)
+клан 100 (16.0%)
+Eclipse Platoon (4.3%)
+かんさい同盟 (4.3%)
+Outkasts (2.1%)
+
+$station
+(1484,1414) city 2 #cE5B36C StarBuds
+(1770,1408) city 3 #cE5B36C StarBuds
+(1893,2833) city 7 #cE5B36C StarBuds
+(1844,2134) city 2 #cE5B36C StarBuds
+(2014,8044) city 2 #cE5B36C StarBuds
+(2044,1534) city 2 #cE5B36C StarBuds
+(2314,1764) city 2 #cE5B36C StarBuds
+(2324,7395) city 2 #cE5B36C StarBuds
+(2607,1654) city 5 #cE5B36C StarBuds
+(2614,1393) city 5 #cE5B36C StarBuds
+(2420,1620) city 5 #cE5B36C StarBuds
+(2514,0524) city 2 #cE5B36C StarBuds
+(3354,0764) city 2 #cE5B36C StarBuds
+(3414,0294) city 2 #cE5B36C StarBuds
+(3694,0634) city 2 #cE5B36C StarBuds
+(3704,1054) city 2 #cE5B36C StarBuds
+(3819,3519) city 9 #cE5B36C StarBuds
+(4096,3591) city 5 #cE5B36C StarBuds
+(3713,3746) city 3 #cE5B36C StarBuds
+(3744,0275) city 2 #cE5B36C StarBuds
+(4074,0944) city 2 #cE5B36C StarBuds
+(4084,8294) city 2 #cE5B36C StarBuds
+(4569,1411) city 5 #cE5B36C StarBuds
+(4330,1400) city 5 #cE5B36C StarBuds
+(4458,1579) city 5 #cE5B36C StarBuds
+(4532,1649) city 5 #cE5B36C StarBuds
+(4614,8304) city 2 #cE5B36C StarBuds
+(5254,8074) city 2 #cE5B36C StarBuds
+(5774,7634) city 2 #cE5B36C StarBuds
+(5814,8464) city 2 #cE5B36C StarBuds
+(6074,0424) city 2 #cE5B36C StarBuds
+(6150,3220) city 5 #cE5B36C StarBuds
+(5904,8195) city 2 #cE5B36C StarBuds
+(6773,3093) city 7 #cE5B36C StarBuds
+(7012,3310) city 5 #cE5B36C StarBuds
+(6831,3287) city 5 #cE5B36C StarBuds
+(6974,6904) city 2 #cE5B36C StarBuds
+(6899,5671) city 5 #cE5B36C StarBuds
+(0744,1934) city 2 #cE5B36C StarBuds
+(8154,5404) city 2 #cE5B36C StarBuds
+(8484,2814) city 2 #cE5B36C StarBuds
+(8594,3054) city 2 #cE5B36C StarBuds
+(8564,3434) city 2 #cE5B36C StarBuds
+(8734,3634) city 2 #cE5B36C StarBuds
+(8674,4144) city 2 #cE5B36C StarBuds
+(8724,5534) city 2 #cE5B36C StarBuds
+(4734,0554) city 2 #c7E67F2 Eclipse Platoon
+(5332,4890) city 5 #c7E67F2 Eclipse Platoon
+(4951,5025) city 2 #c7E67F2 Eclipse Platoon
+(5269,3551) city 5 #c7E67F2 Eclipse Platoon
+(5434,0944) city 2 #c7E67F2 Eclipse Platoon
+(6126,3362) city 5 #c7E67F2 Eclipse Platoon
+(6304,0554) city 2 #c7E67F2 Eclipse Platoon
+(6492,4309) city 5 #c7E67F2 Eclipse Platoon
+(7046,3157) city 3 #c7E67F2 Eclipse Platoon
+(6764,1434) city 2 #c7E67F2 Eclipse Platoon
+(7574,2104) city 2 #c7E67F2 Eclipse Platoon
+(7424,1694) city 2 #c7E67F2 Eclipse Platoon
+(7744,1694) city 2 #c7E67F2 Eclipse Platoon
+(7914,1914) city 2 #c7E67F2 Eclipse Platoon
+(7704,3235) city 2 #c7E67F2 Eclipse Platoon
+(7994,2254) city 2 #c7E67F2 Eclipse Platoon
+(1174,5484) city 2 #c4A99FB клан 100
+(1394,2654) city 2 #c4A99FB клан 100
+(1564,2414) city 2 #c4A99FB клан 100
+(1614,5073) city 5 #c4A99FB клан 100
+(1739,5891) city 5 #c4A99FB клан 100
+(1834,7354) city 2 #c4A99FB клан 100
+(2132,3050) city 5 #c4A99FB клан 100
+(2166,2897) city 3 #c4A99FB клан 100
+(2064,7054) city 2 #c4A99FB клан 100
+(0324,2955) city 2 #c4A99FB клан 100
+(2834,3593) city 5 #c4A99FB клан 100
+(3034,7854) city 2 #c4A99FB клан 100
+(3398,5577) city 7 #c4A99FB клан 100
+(3252,5706) city 2 #c4A99FB клан 100
+(3814,7794) city 2 #c4A99FB клан 100
+(0754,2464) city 2 #c4A99FB клан 100
+(0604,3694) city 2 #c4A99FB клан 100
+(0634,4244) city 2 #c4A99FB клан 100
+(5289,5711) city 5 #c4A99FB клан 100
+(6392,7430) city 5 #c4A99FB клан 100
+(6011,7566) city 2 #c4A99FB клан 100
+(0774,2154) city 2 #c4A99FB клан 100
+(7012,5768) city 5 #c4A99FB клан 100
+(0954,3044) city 2 #c4A99FB клан 100
+(0184,3454) city 2 #c4A99FB клан 100
+(0944,2774) city 2 #c4A99FB клан 100
+(1114,4604) city 2 #c4A99FB клан 100
+(1114,2314) city 2 #c4A99FB клан 100
+(1084,5094) city 2 #c4A99FB клан 100
+(1114,6144) city 2 #c4A99FB клан 100
+(4514,8724) city 2 #c9FE23E Outkasts
+(4744,8815) city 2 #c9FE23E Outkasts
+(5084,8815) city 2 #c9FE23E Outkasts
+(6432,7167) city 3 #c9FE23E Outkasts
+(6379,7978) city 3 #c9FE23E Outkasts
+(6834,7574) city 2 #c9FE23E Outkasts
+(6720,6560) city 5 #c9FE23E Outkasts
+(7084,7695) city 2 #c9FE23E Outkasts
+(7414,6984) city 2 #c9FE23E Outkasts
+(7664,7334) city 2 #c9FE23E Outkasts
+(5012,5698) city 5 #cF284FF かんさい同盟
+(5410,0688) city 3 #cF284FF かんさい同盟
+(5852,6150) city 5 #cF284FF かんさい同盟
+(5867,6008) city 3 #cF284FF かんさい同盟
+(5879,5900) city 2 #cF284FF かんさい同盟
+(6056,7278) city 3 #cF284FF かんさい同盟
+(6529,4071) city 5 #cF284FF かんさい同盟
+(7174,0834) city 2 #cF284FF かんさい同盟
+(7474,1284) city 2 #cF284FF かんさい同盟
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

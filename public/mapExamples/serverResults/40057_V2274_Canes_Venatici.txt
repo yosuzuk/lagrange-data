@@ -1,0 +1,64 @@
+$name 40057 V2274 Canes Venatici
+$serverName V2274 Canes Venatici
+$size 9000
+
+$overlay
+Alkaid (15.8%)
+null (12.1%)
+赤紅之瞳 (3.6%)
+東北航空站 (3.6%)
+バリバリ幕府 (3.6%)
+絕代風華 (3.6%)
+Pos蛋蛋風暴 (3.6%)
+Apocalypse (3.6%)
+RuSquad (3.6%)
+OZY Corporation (3.6%)
+Pos幻影風暴 (3.6%)
+Luftwaffe (3.6%)
+
+$station
+(4954,5196) city 3 #cF1F1F1 Apocalypse
+(5987,5787) city 5 #cF1F1F1 Apocalypse
+(5816,5797) city 5 #cF1F1F1 Apocalypse
+(0679,3208) city 5 #c929292 OZY Corporation
+(0437,2870) city 5 #c929292 OZY Corporation
+(3279,1857) city 5 #c7E67F2 バリバリ幕府
+(3400,1776) city 5 #c7E67F2 バリバリ幕府
+(4136,1266) city 5 #c7E67F2 バリバリ幕府
+(5970,5983) city 3 #cE5B36C Alkaid
+(6430,6717) city 7 #cE5B36C Alkaid
+(6422,6811) city 5 #cE5B36C Alkaid
+(5171,5306) city 5 #cF284FF 絕代風華
+(6312,6595) city 5 #cF284FF 絕代風華
+(3230,6604) city 5 #cE63A3A 東北航空站
+(5653,2339) city 5 #cE63A3A 東北航空站
+(6389,0772) city 2 #cE63A3A 東北航空站
+(7835,2603) city 5 #cE63A3A 東北航空站
+(2149,7352) city 2 #c929292 RuSquad
+(1798,6429) city 5 #c929292 RuSquad
+(2175,6019) city 5 #c49E7C0 赤紅之瞳
+(2626,0951) city 2 #c49E7C0 赤紅之瞳
+(2886,0803) city 2 #c49E7C0 赤紅之瞳
+(3126,6538) city 5 #c49E7C0 赤紅之瞳
+(3467,1623) city 5 #c49E7C0 赤紅之瞳
+(3529,0532) city 2 #c49E7C0 赤紅之瞳
+(3723,2592) city 3 #c49E7C0 赤紅之瞳
+(1671,6325) city 3 #c49E7C0 赤紅之瞳
+(1723,2551) city 5 #c49E7C0 赤紅之瞳
+(1907,5929) city 3 #c49E7C0 赤紅之瞳
+(2956,6920) city 5 #c929292 Pos幻影風暴
+(2506,7871) city 2 #c9FE23E Pos蛋蛋風暴
+(2894,5187) city 5 #c9FE23E Pos蛋蛋風暴
+(3140,7026) city 5 #c9FE23E Pos蛋蛋風暴
+(8707,4577) city 5 #c929292 Luftwaffe
+(0766,3016) city 7 #c4A99FB null
+
+$planet
+(872,3111) medium
+(3264,6496) medium
+(5455,2689) medium
+(4290,8642) medium
+(2263,5850) medium
+(5012,5174) medium
+(3952,3011) medium
+(4500,4500) medium

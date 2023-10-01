@@ -1,0 +1,109 @@
+$name 40056 Draco 580
+$serverName Draco 580
+$size 9000
+
+$overlay
+Phantom Order (28.4%)
+Voices of War (23.3%)
+Micro Nation (18.9%)
+Wilde 13 (11.6%)
+Paladins Order (10.9%)
+Evil Vandals (2.1%)
+GermanElite (2.1%)
+Ascendancy (2.1%)
+
+$station
+(1444,6254) city 2 #cF284FF GermanElite
+(1852,5988) city 5 #cF284FF GermanElite
+(1755,5779) city 5 #cF284FF GermanElite
+(1739,5891) city 5 #cF284FF GermanElite
+(1114,6144) city 2 #cF284FF GermanElite
+(3672,5307) city 3 #cE63A3A Paladins Order
+(5372,4627) city 3 #cE63A3A Paladins Order
+(5232,3789) city 5 #cE63A3A Paladins Order
+(5030,3540) city 5 #cE63A3A Paladins Order
+(5852,6150) city 5 #cE63A3A Paladins Order
+(6529,4071) city 5 #cE63A3A Paladins Order
+(6290,4060) city 5 #cE63A3A Paladins Order
+(6418,4239) city 5 #cE63A3A Paladins Order
+(6492,4309) city 5 #cE63A3A Paladins Order
+(7046,3157) city 3 #cE63A3A Paladins Order
+(7012,3310) city 5 #cE63A3A Paladins Order
+(7049,5771) city 5 #cE63A3A Paladins Order
+(7846,5602) city 5 #cE63A3A Paladins Order
+(7870,5460) city 5 #cE63A3A Paladins Order
+(5098,4897) city 7 #cE5B36C Phantom Order
+(5332,4890) city 5 #cE5B36C Phantom Order
+(5179,5751) city 5 #cE5B36C Phantom Order
+(5292,5848) city 5 #cE5B36C Phantom Order
+(5741,5969) city 7 #cE5B36C Phantom Order
+(5867,6008) city 3 #cE5B36C Phantom Order
+(5774,7634) city 2 #cE5B36C Phantom Order
+(6056,7278) city 3 #cE5B36C Phantom Order
+(6011,7566) city 2 #cE5B36C Phantom Order
+(6158,7437) city 7 #cE5B36C Phantom Order
+(6392,7430) city 5 #cE5B36C Phantom Order
+(1484,1414) city 2 #c7E67F2 Evil Vandals
+(1770,1408) city 3 #c7E67F2 Evil Vandals
+(1844,2134) city 2 #c7E67F2 Evil Vandals
+(2044,1534) city 2 #c7E67F2 Evil Vandals
+(2607,1654) city 5 #c7E67F2 Evil Vandals
+(2614,1393) city 5 #c7E67F2 Evil Vandals
+(2420,1620) city 5 #c7E67F2 Evil Vandals
+(2514,0524) city 2 #c7E67F2 Evil Vandals
+(3354,0764) city 2 #c7E67F2 Evil Vandals
+(3694,0634) city 2 #c7E67F2 Evil Vandals
+(4074,0944) city 2 #c7E67F2 Evil Vandals
+(4734,0554) city 2 #c7E67F2 Evil Vandals
+(6432,7167) city 3 #c7E67F2 Evil Vandals
+(3704,1054) city 2 #cFD7844 Micro Nation
+(3819,3519) city 9 #cFD7844 Micro Nation
+(4096,3591) city 5 #cFD7844 Micro Nation
+(3713,3746) city 3 #cFD7844 Micro Nation
+(4292,1598) city 5 #cFD7844 Micro Nation
+(4569,1611) city 5 #cFD7844 Micro Nation
+(4951,5025) city 2 #cFD7844 Micro Nation
+(0634,4244) city 2 #cFD7844 Micro Nation
+(5280,5678) city 5 #c9FE23E Ascendancy
+(5879,5900) city 2 #c9FE23E Ascendancy
+(6720,6560) city 5 #c9FE23E Ascendancy
+(1951,3027) city 5 #c49E7C0 Wilde 13
+(1779,3070) city 5 #c49E7C0 Wilde 13
+(1893,2833) city 7 #c49E7C0 Wilde 13
+(2132,3050) city 5 #c49E7C0 Wilde 13
+(2834,3593) city 5 #c49E7C0 Wilde 13
+(2640,3820) city 5 #c49E7C0 Wilde 13
+(1750,4940) city 5 #c4A99FB Voices of War
+(3296,5418) city 3 #c4A99FB Voices of War
+(3252,5706) city 2 #c4A99FB Voices of War
+(3398,5577) city 7 #c4A99FB Voices of War
+(3632,5570) city 5 #c4A99FB Voices of War
+(5269,3551) city 5 #c4A99FB Voices of War
+(6126,3362) city 5 #c4A99FB Voices of War
+(5936,3354) city 5 #c4A99FB Voices of War
+(6150,3220) city 5 #c4A99FB Voices of War
+(6831,3287) city 5 #c4A99FB Voices of War
+(6659,3330) city 5 #c4A99FB Voices of War
+(6773,3093) city 7 #c4A99FB Voices of War
+(6772,5758) city 5 #c4A99FB Voices of War
+(7050,5558) city 5 #c4A99FB Voices of War
+(6915,5599) city 5 #c4A99FB Voices of War
+(7704,3235) city 2 #c4A99FB Voices of War
+(8154,5404) city 2 #c4A99FB Voices of War
+(8594,3054) city 2 #c4A99FB Voices of War
+(8530,4929) city 3 #c4A99FB Voices of War
+(8564,3434) city 2 #c4A99FB Voices of War
+(8734,3634) city 2 #c4A99FB Voices of War
+(8674,4144) city 2 #c4A99FB Voices of War
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(5652,6176) large
+(5692,6074)(5652,6176) small
+(3269,5436) medium

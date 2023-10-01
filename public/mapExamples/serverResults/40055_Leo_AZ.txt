@@ -1,0 +1,120 @@
+$name 40055 Leo AZ
+$serverName Leo AZ
+$size 9000
+
+$overlay
+Aēgís (23.8%)
+공격주의 (21.1%)
+STARBUCKS (11.9%)
+Underdogs (11.0%)
+Voyager (9.1%)
+REDEMPTION (9.1%)
+독도가는길 (2.7%)
+Blood Alliance (2.7%)
+수비주의 (2.7%)
+The HiveMind (2.7%)
+Arcturus (2.7%)
+
+$station
+(3213,1371) city 5 #c49E7C0 Underdogs
+(3195,1168) city 5 #c49E7C0 Underdogs
+(3018,1281) city 5 #c49E7C0 Underdogs
+(4252,2275) city 3 #c49E7C0 Underdogs
+(4473,2275) city 5 #c49E7C0 Underdogs
+(4815,3602) city 5 #c49E7C0 Underdogs
+(4962,3388) city 5 #c49E7C0 Underdogs
+(4739,7026) city 2 #c49E7C0 Underdogs
+(4769,7967) city 3 #c49E7C0 Underdogs
+(4839,1086) city 3 #c49E7C0 Underdogs
+(5003,5138) city 5 #c49E7C0 Underdogs
+(4992,3065) city 3 #c49E7C0 Underdogs
+(5148,3998) city 5 #c49E7C0 Underdogs
+(5350,4248) city 5 #c49E7C0 Underdogs
+(5277,4179) city 5 #c49E7C0 Underdogs
+(5453,2334) city 3 #c49E7C0 Underdogs
+(5823,0874) city 2 #c49E7C0 Underdogs
+(6135,1359) city 2 #c49E7C0 Underdogs
+(6663,1874) city 2 #c49E7C0 Underdogs
+(5834,6835) city 5 #c929292 The HiveMind
+(6373,4633) city 2 #c929292 The HiveMind
+(7185,6572) city 3 #c929292 The HiveMind
+(5106,5905) city 5 #c9FE23E Blood Alliance
+(5757,6938) city 5 #c9FE23E Blood Alliance
+(6848,5971) city 3 #c9FE23E Blood Alliance
+(6827,7908) city 5 #c9FE23E Blood Alliance
+(7001,7849) city 5 #c9FE23E Blood Alliance
+(4834,5684) city 7 #c7E67F2 REDEMPTION
+(5374,7604) city 2 #c7E67F2 REDEMPTION
+(5954,7824) city 2 #c7E67F2 REDEMPTION
+(6654,5267) city 2 #c7E67F2 REDEMPTION
+(7559,4707) city 3 #c7E67F2 REDEMPTION
+(8146,7191) city 5 #c7E67F2 REDEMPTION
+(2426,2410) city 5 #cFD7844 STARBUCKS
+(2633,3915) city 3 #cFD7844 STARBUCKS
+(2653,4115) city 5 #cFD7844 STARBUCKS
+(2827,2462) city 5 #cFD7844 STARBUCKS
+(2903,2249) city 7 #cFD7844 STARBUCKS
+(0954,3484) city 2 #cFD7844 STARBUCKS
+(6733,1173) city 2 #cFD7844 STARBUCKS
+(0238,6046) city 5 #cFD7844 STARBUCKS
+(0233,6170) city 5 #cFD7844 STARBUCKS
+(2888,5927) city 3 #c4A99FB 공격주의
+(3146,6994) city 7 #c4A99FB 공격주의
+(2888,7015) city 5 #c4A99FB 공격주의
+(3244,6374) city 2 #c4A99FB 공격주의
+(3343,6374) city 2 #c4A99FB 공격주의
+(4026,4914) city 3 #c4A99FB 공격주의
+(3801,5162) city 2 #c4A99FB 공격주의
+(3651,5047) city 7 #c4A99FB 공격주의
+(3969,5896) city 2 #c4A99FB 공격주의
+(4194,7707) city 2 #c4A99FB 공격주의
+(5384,4022) city 5 #c4A99FB 공격주의
+(1749,5596) city 2 #c4A99FB 공격주의
+(2963,5693) city 2 #cF1F1F1 수비주의
+(3142,7282) city 3 #cF1F1F1 수비주의
+(3298,7283) city 5 #cF1F1F1 수비주의
+(4064,5218) city 5 #cE5B36C Aēgís
+(3814,8284) city 2 #cE5B36C Aēgís
+(4739,5910) city 5 #cE5B36C Aēgís
+(5096,2845) city 9 #cE5B36C Aēgís
+(5381,2911) city 5 #cE5B36C Aēgís
+(5223,8073) city 2 #cE5B36C Aēgís
+(5632,6765) city 5 #cE5B36C Aēgís
+(5841,7008) city 5 #cE5B36C Aēgís
+(5726,4050) city 5 #cE5B36C Aēgís
+(6055,7599) city 2 #cE5B36C Aēgís
+(6083,1773) city 2 #cE5B36C Aēgís
+(6448,1407) city 3 #cE5B36C Aēgís
+(7139,3347) city 2 #cE5B36C Aēgís
+(7294,1807) city 2 #cE5B36C Aēgís
+(0191,5895) city 7 #cE63A3A Voyager
+(2523,5893) city 2 #cE63A3A Voyager
+(2869,8576) city 2 #cE63A3A Voyager
+(3684,7854) city 2 #cE63A3A Voyager
+(3823,7653) city 2 #cE63A3A Voyager
+(0488,5911) city 3 #cE63A3A Voyager
+(1425,6517) city 5 #cE63A3A Voyager
+(1399,7626) city 3 #cE63A3A Voyager
+(7113,2433) city 2 #c929292 Arcturus
+(8489,3479) city 5 #c929292 Arcturus
+(8518,3688) city 5 #c929292 Arcturus
+(2971,2427) city 3 #cF284FF 독도가는길
+(3116,2308) city 5 #cF284FF 독도가는길
+(1133,4553) city 2 #cF284FF 독도가는길
+(1173,2513) city 2 #cF284FF 독도가는길
+(1209,3548) city 3 #cF284FF 독도가는길
+(0098,6090) city 5 #cF284FF 독도가는길
+(1479,1696) city 2 #cF284FF 독도가는길
+(2313,3975) city 3 #cF284FF 독도가는길
+
+$planet
+(3016,7032) large
+(3140,7047)(3016,7032) small
+(3870,5050) large
+(3935,5110)(3870,5050) small
+(292,5991) medium
+(4499,4497) medium
+(5195,2969) medium
+(2992,2374) medium
+(8469,3680) large
+(8619,3457)(8469,3680) small

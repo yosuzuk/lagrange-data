@@ -1,0 +1,68 @@
+$name 40061 Pegasus 563
+$serverName Pegasus 563
+$size 9000
+
+$overlay
+Active JPN (19.5%)
+Kings (19.5%)
+月輪の雫 (15.8%)
+Zero Empire (3.6%)
+北辰星 (3.6%)
+星際嚕貓團 (3.6%)
+Bloody Pandas (3.6%)
+Wa No Kuni (3.6%)
+GEYERSBURG (3.6%)
+
+$station
+(0386,3015) city 5 #c49E7C0 Zero Empire
+(1056,4929) city 3 #c49E7C0 Zero Empire
+(1326,6591) city 2 #c49E7C0 Zero Empire
+(0437,2870) city 5 #c49E7C0 Zero Empire
+(1671,6325) city 3 #c49E7C0 Zero Empire
+(1751,6581) city 5 #c49E7C0 Zero Empire
+(5987,5787) city 5 #cF284FF Bloody Pandas
+(5816,5797) city 5 #cF284FF Bloody Pandas
+(7209,7412) city 2 #cF284FF Bloody Pandas
+(4596,2546) city 5 #c4A99FB Kings
+(5535,6705) city 5 #c4A99FB Kings
+(6430,6717) city 7 #c4A99FB Kings
+(6312,6595) city 5 #c4A99FB Kings
+(6422,6811) city 5 #c4A99FB Kings
+(3400,1776) city 5 #c9FE23E Wa No Kuni
+(3723,2592) city 3 #c9FE23E Wa No Kuni
+(8403,2291) city 5 #c9FE23E Wa No Kuni
+(2225,5904) city 5 #cE5B36C Active JPN
+(2175,6019) city 5 #cE5B36C Active JPN
+(3279,1857) city 5 #cE5B36C Active JPN
+(0766,3016) city 7 #cE5B36C Active JPN
+(5450,2637) city 5 #cE5B36C Active JPN
+(1798,6429) city 5 #cE5B36C Active JPN
+(1907,5929) city 3 #cE5B36C Active JPN
+(0324,2842) city 3 #cF1F1F1 GEYERSBURG
+(5708,2214) city 3 #cF1F1F1 GEYERSBURG
+(6425,2871) city 5 #cF1F1F1 GEYERSBURG
+(8027,5526) city 5 #cF1F1F1 GEYERSBURG
+(8707,4577) city 5 #cF1F1F1 GEYERSBURG
+(2506,7871) city 2 #c7E67F2 星際嚕貓團
+(3140,7026) city 5 #c7E67F2 星際嚕貓團
+(8026,4572) city 5 #c7E67F2 星際嚕貓團
+(2956,6920) city 5 #cE63A3A 北辰星
+(4016,4902) city 7 #cE63A3A 北辰星
+(4242,8730) city 5 #cE63A3A 北辰星
+(4336,7709) city 3 #cE63A3A 北辰星
+(5509,6496) city 5 #cE63A3A 北辰星
+(5617,7489) city 3 #cE63A3A 北辰星
+(3529,0532) city 2 #cFD7844 月輪の雫
+(5325,2551) city 7 #cFD7844 月輪の雫
+(5653,2339) city 5 #cFD7844 月輪の雫
+(7835,2603) city 5 #cFD7844 月輪の雫
+
+$planet
+(4290,8642) medium
+(872,3111) medium
+(3264,6496) medium
+(5455,2689) medium
+(2263,5850) medium
+(5012,5174) medium
+(3952,3011) medium
+(4500,4500) medium

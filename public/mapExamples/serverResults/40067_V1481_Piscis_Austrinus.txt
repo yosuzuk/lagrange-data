@@ -1,0 +1,119 @@
+$name 40067 V1481 Piscis Austrinus
+$serverName V1481 Piscis Austrinus
+$size 9000
+
+$overlay
+宇宙動物園 (21.1%)
+猫の夜会 (11.9%)
+Muff Divers (11.9%)
+WinterFall (9.1%)
+CОS (9.1%)
+抜刀隊 (9.1%)
+Pablo Minecobar (8.2%)
+黄泉国双隊 (5.5%)
+Orca (2.7%)
+Phantom beast (2.7%)
+PH Tambayan (2.7%)
+星界の紋章 (2.7%)
+銀河連邦 (2.7%)
+
+$station
+(3195,1168) city 5 #cF1F1F1 Orca
+(6703,3953) city 2 #cF1F1F1 Orca
+(7185,6572) city 3 #cF1F1F1 Orca
+(7294,1807) city 2 #cF1F1F1 Orca
+(7559,4707) city 3 #cF1F1F1 Orca
+(7674,2404) city 2 #cF1F1F1 Orca
+(8489,3479) city 5 #cF1F1F1 Orca
+(8708,3675) city 5 #cF1F1F1 Orca
+(8708,3533) city 3 #cF1F1F1 Orca
+(8518,3688) city 5 #cF1F1F1 Orca
+(2888,5927) city 3 #c49E7C0 WinterFall
+(3419,2986) city 3 #c49E7C0 WinterFall
+(3651,5047) city 7 #c49E7C0 WinterFall
+(0954,3484) city 2 #c49E7C0 WinterFall
+(0098,6090) city 5 #c49E7C0 WinterFall
+(1663,2973) city 2 #c49E7C0 WinterFall
+(2345,3752) city 3 #c49E7C0 WinterFall
+(5096,2845) city 9 #cE5B36C 宇宙動物園
+(4992,3065) city 3 #cE5B36C 宇宙動物園
+(5381,2911) city 5 #cE5B36C 宇宙動物園
+(0191,5895) city 7 #c7E67F2 抜刀隊
+(4252,2275) city 3 #c929292 PH Tambayan
+(4473,2275) city 5 #c929292 PH Tambayan
+(5384,4022) city 5 #c929292 PH Tambayan
+(6083,1773) city 2 #c929292 PH Tambayan
+(1749,5596) city 2 #c929292 PH Tambayan
+(0233,6170) city 5 #c929292 銀河連邦
+(3042,4792) city 2 #c9FE23E 黄泉国双隊
+(4064,5218) city 5 #c9FE23E 黄泉国双隊
+(5125,5738) city 3 #c9FE23E 黄泉国双隊
+(4739,5910) city 5 #c9FE23E 黄泉国双隊
+(5106,5905) city 5 #c9FE23E 黄泉国双隊
+(5088,4954) city 3 #c9FE23E 黄泉国双隊
+(6055,7599) city 2 #c9FE23E 黄泉国双隊
+(6654,5267) city 2 #c9FE23E 黄泉国双隊
+(6933,4793) city 2 #c9FE23E 黄泉国双隊
+(6848,5971) city 3 #c9FE23E 黄泉国双隊
+(3213,1371) city 5 #cF284FF Pablo Minecobar
+(3018,1281) city 5 #cF284FF Pablo Minecobar
+(4026,4914) city 3 #cF284FF Pablo Minecobar
+(4203,8373) city 2 #cF284FF Pablo Minecobar
+(4815,3602) city 5 #cF284FF Pablo Minecobar
+(4962,3388) city 5 #cF284FF Pablo Minecobar
+(4839,1086) city 3 #cF284FF Pablo Minecobar
+(4883,4971) city 3 #cF284FF Pablo Minecobar
+(5148,3998) city 5 #cF284FF Pablo Minecobar
+(5350,4248) city 5 #cF284FF Pablo Minecobar
+(5277,4179) city 5 #cF284FF Pablo Minecobar
+(5453,2334) city 3 #cF284FF Pablo Minecobar
+(5726,4050) city 5 #cF284FF Pablo Minecobar
+(7139,3347) city 2 #cF284FF Pablo Minecobar
+(2827,2462) city 5 #cFD7844 Muff Divers
+(2971,2427) city 3 #cFD7844 Muff Divers
+(2903,2249) city 7 #cFD7844 Muff Divers
+(3116,2308) city 5 #cFD7844 Muff Divers
+(4053,2335) city 3 #cFD7844 Muff Divers
+(5823,0874) city 2 #cFD7844 Muff Divers
+(6448,1407) city 3 #cFD7844 Muff Divers
+(7113,2433) city 2 #cFD7844 Muff Divers
+(7133,2113) city 2 #cFD7844 Muff Divers
+(8526,2231) city 5 #cFD7844 Muff Divers
+(3801,5162) city 2 #c929292 星界の紋章
+(4888,5871) city 5 #c929292 星界の紋章
+(5003,5138) city 5 #c929292 星界の紋章
+(6578,4536) city 3 #c929292 星界の紋章
+(3146,6994) city 7 #c4A99FB 猫の夜会
+(3244,6374) city 2 #c4A99FB 猫の夜会
+(3343,6374) city 2 #c4A99FB 猫の夜会
+(3823,7653) city 2 #c4A99FB 猫の夜会
+(4739,7026) city 2 #c4A99FB 猫の夜会
+(4769,7967) city 3 #c4A99FB 猫の夜会
+(5834,6835) city 5 #c4A99FB 猫の夜会
+(5632,6765) city 5 #c4A99FB 猫の夜会
+(5757,6938) city 5 #c4A99FB 猫の夜会
+(5841,7008) city 5 #c4A99FB 猫の夜会
+(1385,6672) city 3 #c4A99FB 猫の夜会
+(3298,7283) city 5 #c929292 Phantom beast
+(3208,6869) city 2 #c929292 Phantom beast
+(3684,7854) city 2 #c929292 Phantom beast
+(3814,8284) city 2 #c929292 Phantom beast
+(5223,8073) city 2 #c929292 Phantom beast
+(5503,8254) city 2 #c929292 Phantom beast
+(6459,8467) city 2 #c929292 Phantom beast
+(6827,7908) city 5 #c929292 Phantom beast
+(7001,7849) city 5 #c929292 Phantom beast
+(3254,5884) city 2 #cE63A3A CОS
+(4834,5684) city 7 #cE63A3A CОS
+
+$planet
+(3870,5050) large
+(3935,5110)(3870,5050) small
+(3016,7032) large
+(3140,7047)(3016,7032) small
+(8619,3457) large
+(8469,3680)(8619,3457) small
+(2992,2374) medium
+(5195,2969) medium
+(4499,4497) medium
+(292,5991) medium

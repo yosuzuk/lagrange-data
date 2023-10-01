@@ -1,0 +1,132 @@
+$name 40059 V1095 Pavo
+$serverName V1095 Pavo
+$size 9000
+
+$overlay
+Shadow Remnants (31.5%)
+Klingon Empire (19.2%)
+Unity Knights (11.4%)
+Borg Empire (8.7%)
+Iceni (7.8%)
+Four Horsemen (7.8%)
+Shadow Reapers (5.2%)
+Celestial Order (2.6%)
+Beskad Kal (2.6%)
+The Wolf Fleet (2.6%)
+
+$station
+(1904,3237) city 5 #cFD7844 Unity Knights
+(3154,0406) city 5 #cFD7844 Unity Knights
+(2948,0349) city 7 #cFD7844 Unity Knights
+(3423,7352) city 5 #cFD7844 Unity Knights
+(1253,6842) city 3 #cFD7844 Unity Knights
+(0434,4867) city 5 #cFD7844 Unity Knights
+(0734,3527) city 2 #c9FE23E Celestial Order
+(0169,3696) city 2 #c9FE23E Celestial Order
+(1323,2733) city 2 #c9FE23E Celestial Order
+(1555,4428) city 5 #c9FE23E Celestial Order
+(1529,2128) city 3 #c9FE23E Celestial Order
+(1574,2427) city 2 #c9FE23E Celestial Order
+(2553,6473) city 2 #cE5B36C Shadow Remnants
+(2803,6553) city 2 #cE5B36C Shadow Remnants
+(3002,7642) city 3 #cE5B36C Shadow Remnants
+(2749,7375) city 3 #cE5B36C Shadow Remnants
+(3031,7337) city 7 #cE5B36C Shadow Remnants
+(3069,7229) city 2 #cE5B36C Shadow Remnants
+(3584,6394) city 2 #cE5B36C Shadow Remnants
+(3546,7501) city 5 #cE5B36C Shadow Remnants
+(3612,4885) city 5 #cE5B36C Shadow Remnants
+(4385,5912) city 9 #cE5B36C Shadow Remnants
+(4644,5368) city 5 #cE5B36C Shadow Remnants
+(4679,7467) city 3 #cE5B36C Shadow Remnants
+(1954,3467) city 5 #c7E67F2 Four Horsemen
+(0438,5084) city 5 #c7E67F2 Four Horsemen
+(1358,6951) city 5 #c7E67F2 Four Horsemen
+(1315,7111) city 5 #c7E67F2 Four Horsemen
+(3026,4351) city 5 #cE63A3A Iceni
+(3736,5059) city 5 #cE63A3A Iceni
+(4640,5965) city 5 #cE63A3A Iceni
+(5298,3869) city 5 #cE63A3A Iceni
+(5469,3823) city 5 #cE63A3A Iceni
+(5430,3949) city 5 #cE63A3A Iceni
+(5721,5089) city 5 #cE63A3A Iceni
+(5994,5904) city 2 #cE63A3A Iceni
+(6043,5693) city 2 #cE63A3A Iceni
+(5998,6196) city 3 #cE63A3A Iceni
+(6148,3106) city 3 #cE63A3A Iceni
+(6283,6013) city 2 #cE63A3A Iceni
+(6283,6353) city 2 #cE63A3A Iceni
+(6283,3174) city 2 #cE63A3A Iceni
+(6555,5359) city 2 #cE63A3A Iceni
+(6594,6027) city 2 #cE63A3A Iceni
+(6884,4934) city 2 #cE63A3A Iceni
+(7043,4913) city 2 #cE63A3A Iceni
+(7428,4350) city 5 #cE63A3A Iceni
+(7608,4193) city 3 #cE63A3A Iceni
+(7366,2871) city 5 #cE63A3A Iceni
+(7866,7191) city 5 #cE63A3A Iceni
+(8013,3693) city 2 #cE63A3A Iceni
+(7923,3474) city 2 #cE63A3A Iceni
+(8015,4559) city 2 #cE63A3A Iceni
+(8003,4134) city 2 #cE63A3A Iceni
+(8393,3073) city 2 #cE63A3A Iceni
+(8348,4467) city 3 #cE63A3A Iceni
+(8415,4139) city 2 #cE63A3A Iceni
+(8526,5511) city 5 #cE63A3A Iceni
+(8699,2407) city 2 #cE63A3A Iceni
+(1766,6391) city 5 #cE63A3A Iceni
+(3629,7334) city 5 #c929292 The Wolf Fleet
+(3822,5136) city 5 #c929292 The Wolf Fleet
+(3812,4951) city 5 #c929292 The Wolf Fleet
+(4625,5237) city 5 #c929292 The Wolf Fleet
+(2463,5513) city 2 #cF284FF Shadow Reapers
+(3184,7636) city 5 #cF284FF Shadow Reapers
+(3769,5596) city 2 #cF284FF Shadow Reapers
+(4004,7914) city 2 #cF284FF Shadow Reapers
+(4252,6125) city 3 #cF284FF Shadow Reapers
+(6046,8331) city 5 #cF284FF Shadow Reapers
+(7250,7212) city 5 #cF284FF Shadow Reapers
+(7055,7259) city 5 #cF284FF Shadow Reapers
+(2053,1353) city 2 #c4A99FB Klingon Empire
+(2144,1654) city 2 #c4A99FB Klingon Empire
+(3463,6213) city 2 #c4A99FB Klingon Empire
+(3898,3827) city 5 #c4A99FB Klingon Empire
+(3819,4027) city 5 #c4A99FB Klingon Empire
+(3991,3872) city 3 #c4A99FB Klingon Empire
+(4292,2575) city 3 #c4A99FB Klingon Empire
+(5080,4995) city 3 #c4A99FB Klingon Empire
+(5313,1214) city 3 #c4A99FB Klingon Empire
+(5329,4338) city 5 #c4A99FB Klingon Empire
+(5488,4398) city 5 #c4A99FB Klingon Empire
+(5394,4549) city 5 #c4A99FB Klingon Empire
+(5547,5148) city 5 #c4A99FB Klingon Empire
+(6159,0326) city 3 #c4A99FB Klingon Empire
+(6352,1475) city 3 #c4A99FB Klingon Empire
+(6434,4944) city 2 #c4A99FB Klingon Empire
+(6459,4416) city 2 #c4A99FB Klingon Empire
+(6585,1437) city 5 #c4A99FB Klingon Empire
+(6873,2813) city 2 #c4A99FB Klingon Empire
+(6743,3574) city 2 #c4A99FB Klingon Empire
+(6839,2226) city 2 #c4A99FB Klingon Empire
+(7608,4335) city 5 #c4A99FB Klingon Empire
+(7756,1976) city 5 #c4A99FB Klingon Empire
+(7773,1883) city 7 #c4A99FB Klingon Empire
+(7658,1756) city 5 #c4A99FB Klingon Empire
+(7833,3033) city 2 #c4A99FB Klingon Empire
+(2866,0561) city 5 #cF1F1F1 Beskad Kal
+(3008,0530) city 3 #cF1F1F1 Beskad Kal
+(0914,3067) city 2 #cF1F1F1 Beskad Kal
+(1249,5216) city 2 #cF1F1F1 Beskad Kal
+(1415,4643) city 5 #cF1F1F1 Beskad Kal
+(0257,4976) city 5 #cF1F1F1 Beskad Kal
+(5389,3677) city 7 #c49E7C0 Borg Empire
+
+$planet
+(4462,6029) medium
+(2881,7389) large
+(2782,7394)(2881,7389) small
+(5444,3836)(5503,3770) small
+(5503,3770) large
+(5658,3715)(5503,3770) small
+(4499,4497) medium
+(7450,4261) medium
