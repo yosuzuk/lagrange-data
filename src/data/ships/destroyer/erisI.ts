@@ -15,7 +15,7 @@ export const erisI: IShipDefinition[] = [
         type: ShipType.DESTROYER,
         cost: 7,
         weight: 10,
-        row: ShipRow.MIDDLE,
+        row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
