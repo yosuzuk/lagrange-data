@@ -42,7 +42,7 @@ export const SystemTuneDialog = (props: IProps) => {
                     <Paper>
                         <Stack spacing={1} pl={1} pr={1}>
                             <Typography variant="body1">
-                                {t('fleetSetup.overrideRow')}
+                                {t('label.rowPlacement')}
                             </Typography>
                             <FormControl>
                                 <RadioGroup

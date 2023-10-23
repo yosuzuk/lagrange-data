@@ -234,7 +234,6 @@
         "importConfirmTitle": "Reading fleet from file",
         "importConfirmWarning": "Fleet \"{{name}}\" will be overwritten",
         "systemTune": "Enhance/Adjust system",
-        "overrideRow": "Switch row",
         "frontRowDefault": "Front row (default)",
         "middleRowDefault": "Middle row (default)",
         "backRowDefault": "Back row (default)",

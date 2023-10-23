@@ -72,12 +72,12 @@ export const ShipCountEditListItem = (props: IProps) => {
                 <Typography variant="body2" color="text.secondary">
                     {t('label.commandPointsColon')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
-                    {shipDefinition.cost}
+                    {(costOverride ?? shipDefinition.cost)}
                     {t('label.comma')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
                     {t('label.totalColon')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
-                    {`${shipDefinition.cost * count}`}
+                    {`${(costOverride ?? shipDefinition.cost) * count}`}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'self' && (
