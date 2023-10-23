@@ -45,6 +45,7 @@ export const FleetSetupEditPage = () => {
         setShipCount,
         setCarriedShipCount,
         setModule,
+        setOverrides,
         save,
         reset,
     } = useFleetEditor({
@@ -167,10 +168,12 @@ export const FleetSetupEditPage = () => {
                                                     onChangeCarriedShipCount={setCarriedShipCount}
                                                     onOpenAddCarriedShips={openAddDialogForCarriedShips}
                                                     onChangeModule={setModule}
+                                                    onChangeOverrides={setOverrides}
                                                     showCost={true}
                                                     showReinforcement={true}
                                                     showHangar={true}
                                                     shipWarnings={shipWarnings}
+                                                    showTune={true}
                                                     carrierShipId={null}
                                                     myListOnly={fleetSetup.myListOnly}
                                                 />

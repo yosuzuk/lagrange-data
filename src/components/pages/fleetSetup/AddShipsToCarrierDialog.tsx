@@ -91,6 +91,7 @@ export const AddShipsToCarrierDialog = (props: IProps) => {
                             showReinforcement={false}
                             showHangar={false}
                             shipWarnings={shipWarnings}
+                            showTune={false}
                             carrierShipId={null}
                             myListOnly={myListOnly}
                             onChangeShipCount={onChangeShipCount}

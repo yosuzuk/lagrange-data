@@ -1,5 +1,6 @@
 import { t } from '../../../../i18n';
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
+import { ShipRow } from '../../../../types/ShipRow';
 import { ShipSubType, ShipType } from '../../../../types/ShipType';
 import { migrateShipId } from '../../../../userSettings/utils/migration';
 import { getShipDefinitionById } from '../../../../utils/shipDefinitionUtils';
@@ -47,6 +48,8 @@ export function unminifyFleetSetup(rawMinifiedFleetSetup: IMinifiedFleetSetup, s
             count: carriedShip.count,
             reinforcement: minifiedShipSelection.reinforcement,
         })),
+        rowOverride: minifiedShipSelection.row,
+        costOverride: minifiedShipSelection.cost,
     }));
 
     return {
@@ -73,6 +76,8 @@ export function minifyFleetSetup(fleetSetup: IFleetSetup): IMinifiedFleetSetup {
             })),
             count: shipSelection.count,
             reinforcement: shipSelection.reinforcement,
+            cost: shipSelection.costOverride,
+            row: shipSelection.rowOverride,
         })),
         maxReinforcement: fleetSetup.maxReinforcement,
         maxCost: fleetSetup.maxCost,
@@ -189,6 +194,8 @@ export function createShipSelection(args: ICreateShipSelectionArgs): IShipSelect
         maxCount,
         moduleSelection,
         temporary,
+        rowOverride: undefined,
+        costOverride: undefined,
     };
 }
 
@@ -467,9 +474,32 @@ export function applyUsageForModule(groupId: string, moduleId: string, moduleSel
     };
 }
 
+interface IApplyOverrideArgs {
+    shipId: string;
+    row: ShipRow;
+    cost: number;
+    fleetSetup: IFleetSetup;
+}
+
+export function applyOverrides(args: IApplyOverrideArgs): IFleetSetup {
+    return {
+        ...args.fleetSetup,
+        ships: args.fleetSetup.ships.map(ship => {
+            if (ship.shipDefinition.id !== args.shipId) {
+                return ship;
+            }
+            return {
+                ...ship,
+                rowOverride: args.row !== ship.shipDefinition.row ? args.row : undefined,
+                costOverride: args.cost !== ship.shipDefinition.cost ? args.cost : undefined,
+            };
+        }),
+    };
+}
+
 function getTotalCost(ships: IShipSelection[]): number {
     return ships.filter(ship => ship.reinforcement === null)
-        .map(ship => ship.count * ship.shipDefinition.cost)
+        .map(ship => ship.count * (ship.costOverride ?? ship.shipDefinition.cost))
         .reduce((sum, cost) => sum + cost, 0);
 }
 

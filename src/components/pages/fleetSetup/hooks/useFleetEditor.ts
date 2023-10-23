@@ -1,8 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IFleetSetup, IModuleSelection, ReinforcementType } from '../types/IFleetSetup';
-import { applyCarriedShipCount, applyModules, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
+import { applyCarriedShipCount, applyOverrides, applyModules, applyShipCount, createFleetSetup, getCurrentFleetSetups, saveFleetSetup } from '../utils/fleetSetupUtils';
 import { validateFleetSetupForPropertyErrors, validateFleetSetupForShipWarnings } from '../utils/fleetSetupValidation';
+import { ShipRow } from '../../../../types/ShipRow';
 
 interface IHookArguments {
     initialFleetKey?: string;
@@ -16,6 +17,7 @@ interface IHookResult {
     setShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setCarriedShipCount: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     setModule: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
+    setOverrides: (shipId: string, row: ShipRow, cost: number) => void;
     save: () => void;
     reset: () => void;
 }
@@ -36,6 +38,10 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
 
     const setModule = useCallback((shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => {
         setFleetSetup(fleetSetup => applyModules({ shipId, reinforcement, moduleSelection, fleetSetup }));
+    }, []);
+
+    const setOverrides = useCallback((shipId: string, row: ShipRow, cost: number) => {
+        setFleetSetup(fleetSetup => applyOverrides({ shipId, row, cost, fleetSetup }));
     }, []);
 
     const save = useCallback(() => {
@@ -60,6 +66,7 @@ export const useFleetEditor = (args: IHookArguments): IHookResult => {
         setShipCount,
         setCarriedShipCount,
         setModule,
+        setOverrides,
         save,
         reset,
     };
