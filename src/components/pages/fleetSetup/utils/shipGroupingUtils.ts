@@ -95,7 +95,7 @@ export function groupShipsBy(groupCriteria: string, fleetSetup: IFleetSetup): IG
 function createShipGroupsByRow(shipSelections: IShipSelection[]): IShipGroup[] {
     return [ShipRow.FRONT, ShipRow.MIDDLE, ShipRow.BACK].map(shipRow => {
         const ships = shipSelections
-            .filter(ship => ship.shipDefinition.row === shipRow)
+            .filter(ship => (ship.rowOverride ?? ship.shipDefinition.row) === shipRow)
             .map(ship => ({
                 ...ship,
                 carriedShips: [...ship.carriedShips].sort(sortByTypeAndName),
@@ -147,7 +147,7 @@ export function formatGroupedShipsForSharing(fleetSetup: IFleetSetup, groupedShi
             return [
                 ...(groupedShips.groups.length > 1 ? [t('fleetSetup.groupNameForSharing', { name: shipGroup.name })] : []),
                 ...shipGroup.ships.flatMap(ship => {
-                    const cost = ship.count * ship.shipDefinition.cost;
+                    const cost = ship.count * (ship.costOverride ?? ship.shipDefinition.cost);
                     const changedModulesLine = formatChangedSystemModules(ship);
                     switch (ship.reinforcement) {
                         case 'self': {

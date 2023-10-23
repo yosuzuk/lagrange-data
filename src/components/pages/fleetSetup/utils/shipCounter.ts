@@ -23,7 +23,7 @@ export function getFleetShipCount(ships: IShipSelection[]): IFleetShipCount {
 
     ships.forEach(ship => {
         if (ship.reinforcement === null) {
-            totalCost += (ship.count * ship.shipDefinition.cost);
+            totalCost += (ship.count * (ship.costOverride ?? ship.shipDefinition.cost));
         }
 
         shipCountByType[ship.shipDefinition.type] += ship.count;

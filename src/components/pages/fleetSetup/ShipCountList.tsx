@@ -60,7 +60,7 @@ export const ShipCountList = (props: IProps) => {
                         <Box component="div" sx={{ width: '50px' }}>
                             {shipSelection.reinforcement === null && (
                                 <Typography variant="body2" textAlign="end">
-                                    {`${shipSelection.shipDefinition.cost * shipSelection.count} Pt`}
+                                    {`${(shipSelection.costOverride ?? shipSelection.shipDefinition.cost) * shipSelection.count} Pt`}
                                 </Typography>
                             )}
                         </Box>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -6,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import SettingsIcon from '@mui/icons-material/Settings';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { ReinforcementType } from './types/IFleetSetup';
@@ -14,18 +16,24 @@ import { useShipDetail } from '../../shipDetail/ShipDetailProvider';
 import { ScriptedLink } from '../../link/ScriptedLink';
 import { getShipName } from '../../../utils/shipDefinitionUtils';
 import { t, isLanguageWithWhitespace } from '../../../i18n';
+import { ShipRow } from '../../../types/ShipRow';
+import { SystemTuneDialog } from './SystemTuneDialog';
 
 interface IProps {
     shipDefinition: IShipDefinition;
     count: number;
     maxCount: number;
     reinforcement: ReinforcementType | null;
+    rowOverride?: ShipRow;
+    costOverride?: number;
     showCost: boolean;
     showReinforcement: boolean;
+    showTune: boolean;
     carrierShipId: string | null;
     shipWarning?: string;
     onChangeShipCount?: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
+    onChangeOverrides?: (shipId: string, row: ShipRow, cost: number) => void;
 }
 
 export const ShipCountEditListItem = (props: IProps) => {
@@ -34,13 +42,19 @@ export const ShipCountEditListItem = (props: IProps) => {
         count,
         maxCount,
         reinforcement,
+        rowOverride,
+        costOverride,
         showCost,
         showReinforcement,
+        showTune,
         carrierShipId,
         shipWarning,
         onChangeShipCount,
         onChangeCarriedShipCount,
+        onChangeOverrides,
     } = props;
+
+    const [systemTuneDialogOpened, setSystemTuneDialogOpened] = useState<boolean>(false);
 
     const theme = useTheme();
     const verticalAlignment = useMediaQuery(theme.breakpoints.down('sm'));
@@ -58,12 +72,12 @@ export const ShipCountEditListItem = (props: IProps) => {
                 <Typography variant="body2" color="text.secondary">
                     {t('label.commandPointsColon')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
-                    {shipDefinition.cost}
+                    {(costOverride ?? shipDefinition.cost)}
                     {t('label.comma')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
                     {t('label.totalColon')}
                     {isLanguageWithWhitespace() ? ' ' : ''}
-                    {`${shipDefinition.cost * count}`}
+                    {`${(costOverride ?? shipDefinition.cost) * count}`}
                 </Typography>
             )}
             {showReinforcement && reinforcement === 'self' && (
@@ -146,6 +160,12 @@ export const ShipCountEditListItem = (props: IProps) => {
         </IconButton>
     );
 
+    const tuneButton = (
+        <IconButton onClick={() => setSystemTuneDialogOpened(true)}>
+            <SettingsIcon color="primary" />
+        </IconButton>
+    );
+
     const maxOuntButton = (
         <Button
             onClick={() => {
@@ -166,17 +186,24 @@ export const ShipCountEditListItem = (props: IProps) => {
             {verticalAlignment && (
                 <Stack spacing={1}>
                     {shipContext}
-                    <Paper variant="outlined" sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                            {decreaseButton}
-                            {countIndicator}
-                            {increaseButton}
-                        </Stack>
-                        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                            {clearButton}
-                            {maxOuntButton}
-                        </Stack>
-                    </Paper>
+                    <Stack direction="row" spacing={1}>
+                        <Paper variant="outlined" sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', flexGrow: 1 }}>
+                            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                {decreaseButton}
+                                {countIndicator}
+                                {increaseButton}
+                            </Stack>
+                            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                {clearButton}
+                                {maxOuntButton}
+                            </Stack>
+                        </Paper>
+                        {showTune && (
+                            <Paper variant="outlined">
+                                {tuneButton}
+                            </Paper>
+                        )}
+                    </Stack>
                     {warningText}
                 </Stack>
             )}
@@ -189,19 +216,35 @@ export const ShipCountEditListItem = (props: IProps) => {
                             </Stack>
                         </Box>
                         <Box component="div" sx={{ display: 'flex', justifyContent: 'end', flexGrow: 1 }}>
-                            <Paper variant="outlined" sx={{ display: 'inline-block' }}>
-                                <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                                    {clearButton}
-                                    {decreaseButton}
-                                    {countIndicator}
-                                    {increaseButton}
-                                    {maxOuntButton}
-                                </Stack>
-                            </Paper>
+                            <Stack direction="row" spacing={1}>
+                                <Paper variant="outlined" sx={{ display: 'inline-block', flexGrow: 1 }}>
+                                    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+                                        {clearButton}
+                                        {decreaseButton}
+                                        {countIndicator}
+                                        {increaseButton}
+                                        {maxOuntButton}
+                                    </Stack>
+                                </Paper>
+                                {showTune && (
+                                    <Paper variant="outlined">
+                                        {tuneButton}
+                                    </Paper>
+                                )}
+                            </Stack>
                         </Box>
                     </Stack>
                     {warningText}
                 </Stack>
+            )}
+            {systemTuneDialogOpened && onChangeOverrides && (
+                <SystemTuneDialog
+                    shipDefinition={shipDefinition}
+                    rowOverride={rowOverride}
+                    costOverride={costOverride}
+                    onChange={onChangeOverrides}
+                    onClose={() => setSystemTuneDialogOpened(false)}
+                />
             )}
         </>
     );

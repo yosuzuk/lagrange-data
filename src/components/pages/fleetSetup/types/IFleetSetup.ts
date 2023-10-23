@@ -1,4 +1,5 @@
 import { IShipDefinition, ISystemModule } from '../../../../types/ShipDefinition';
+import { ShipRow } from '../../../../types/ShipRow';
 
 export type ReinforcementType = 'self' | 'ally' | 'ally2' | 'ally3';
 
@@ -22,6 +23,8 @@ export interface IShipSelection {
     maxCount: number;
     reinforcement: ReinforcementType | null;
     temporary?: boolean;
+    rowOverride?: ShipRow;
+    costOverride?: number;
 }
 
 export interface ICarrierCapabilities {
@@ -53,6 +56,8 @@ export interface IMinifiedShipSelection {
     carriedShips: IMinifiedCarriedShipSelection[];
     count: number;
     reinforcement: ReinforcementType | null;
+    row?: ShipRow;
+    cost?: number;
 }
 
 export interface IMinifiedCarriedShipSelection {

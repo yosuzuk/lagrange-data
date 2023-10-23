@@ -7,6 +7,7 @@ import { IModuleSelection, IShipSelection, ReinforcementType } from './types/IFl
 import { HangarData } from './HangarData';
 import { ModuleData } from './ModuleData';
 import { createShipWarningKey } from './utils/fleetSetupValidation';
+import { ShipRow } from '../../../types/ShipRow';
 
 interface IProps {
     shipSelections?: IShipSelection[];
@@ -14,12 +15,14 @@ interface IProps {
     showReinforcement: boolean;
     showHangar: boolean;
     shipWarnings: Record<string, string>;
+    showTune: boolean;
     carrierShipId: string | null;
     myListOnly: boolean;
     onChangeShipCount: (shipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onChangeCarriedShipCount?: (shipId: string, carrierShipId: string, count: number, reinforcement: ReinforcementType | null) => void;
     onOpenAddCarriedShips?: (carrierShipId: string, reinforcement: ReinforcementType | null) => void;
     onChangeModule?: (shipId: string, reinforcement: ReinforcementType | null, moduleSelection: IModuleSelection) => void;
+    onChangeOverrides?: (shipId: string, row: ShipRow, cost: number) => void;
 }
 
 const MemoizedShipCountEditListItem = memo(ShipCountEditListItem);
@@ -31,12 +34,14 @@ export const ShipCountEditList = (props: IProps) => {
         showReinforcement,
         showHangar,
         shipWarnings,
+        showTune,
         carrierShipId,
         myListOnly,
         onChangeShipCount,
         onChangeCarriedShipCount,
         onOpenAddCarriedShips,
         onChangeModule,
+        onChangeOverrides,
     } = props;
 
     return (
@@ -50,11 +55,15 @@ export const ShipCountEditList = (props: IProps) => {
                                 count={shipSelection.count}
                                 maxCount={shipSelection.maxCount}
                                 reinforcement={shipSelection.reinforcement}
+                                rowOverride={shipSelection.rowOverride}
+                                costOverride={shipSelection.costOverride}
                                 showCost={showCost}
                                 showReinforcement={showReinforcement}
+                                showTune={showTune}
                                 carrierShipId={carrierShipId}
                                 onChangeShipCount={onChangeShipCount}
                                 onChangeCarriedShipCount={onChangeCarriedShipCount}
+                                onChangeOverrides={onChangeOverrides}
                                 shipWarning={shipWarnings[createShipWarningKey(shipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                             />
                             {shipSelection.moduleSelection && onChangeModule && (
@@ -76,9 +85,12 @@ export const ShipCountEditList = (props: IProps) => {
                                             count={carriedShipSelection.count}
                                             maxCount={carriedShipSelection.shipDefinition.operationLimit}
                                             reinforcement={carriedShipSelection.reinforcement}
+                                            rowOverride={undefined}
+                                            costOverride={undefined}
                                             carrierShipId={shipSelection.shipDefinition.id}
                                             showCost={false}
                                             showReinforcement={false}
+                                            showTune={showTune}
                                             onChangeCarriedShipCount={onChangeCarriedShipCount}
                                             shipWarning={shipWarnings[createShipWarningKey(carriedShipSelection.shipDefinition.id, shipSelection.reinforcement)]}
                                         />

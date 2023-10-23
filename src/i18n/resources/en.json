@@ -232,7 +232,12 @@
         "clearAddedShips": "Clear",
         "fillUpAddedShips": "Max",
         "importConfirmTitle": "Reading fleet from file",
-        "importConfirmWarning": "Fleet \"{{name}}\" will be overwritten"
+        "importConfirmWarning": "Fleet \"{{name}}\" will be overwritten",
+        "systemTune": "Enhance/Adjust system",
+        "frontRowDefault": "Front row (default)",
+        "middleRowDefault": "Middle row (default)",
+        "backRowDefault": "Back row (default)",
+        "costDefault": "{{cost}} (default)"
     },
     "myList": {
         "pageTitle": "My list",
