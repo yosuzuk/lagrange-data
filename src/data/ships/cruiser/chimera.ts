@@ -46,7 +46,7 @@ export const chimera: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(8),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
-                    enhancements.reduceDuration().withPercentageValue(10).withCost(8),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(8),
                 ],
                 skillSlots: 6,
             }),
@@ -147,7 +147,7 @@ export const chimera: IShipDefinition[] = [
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
-                    enhancements.reduceDuration().withPercentageValue(10).withCost(10),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(8),
                     enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(10),
                     enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
                 ],
@@ -222,8 +222,17 @@ export const chimera: IShipDefinition[] = [
                     en: 'Integrated Armory',
                 },
                 mainSystem: true,
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    strategy.allShipsFocusFire(80, 90, 10).withCost(20),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRate().withPercentageValue(10).withCost(8),
+                ],
                 skillSlots: 7,
             }),
             modules.commandSystem({
@@ -238,7 +247,7 @@ export const chimera: IShipDefinition[] = [
             modules.armorSystem({
                 skillComplete: false,
                 // TODO skills
-                skillSlots: 4,
+                skillSlots: 6,
             }),
             modules.propulsionSystem({
                 skillComplete: false,

@@ -123,13 +123,13 @@ const a2: ISystemModule = {
     // TODO skills
 };
 
-const b1: ISystemModule = {
-    id: 'B1',
+const c1: ISystemModule = {
+    id: 'C1',
     name: '追加艦載機システム',
     translatedName: {
         en: 'Additional Aircraft System',
     },
-    category: 'B',
+    category: 'C',
     categoryNumber: 1,
     carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
@@ -151,13 +151,13 @@ const b1: ISystemModule = {
     ],
 };
 
-const b2: ISystemModule = {
-    id: 'B2',
+const c2: ISystemModule = {
+    id: 'C2',
     name: 'ミサイル防衛システム',
     translatedName: {
         en: 'Missile Defense System',
     },
-    category: 'B',
+    category: 'C',
     categoryNumber: 2,
     skillComplete: false,
     skills: [
@@ -181,13 +181,13 @@ const b2: ISystemModule = {
     // TODO total dpm
 };
 
-const b3: ISystemModule = {
-    id: 'B3',
+const c3: ISystemModule = {
+    id: 'C3',
     name: '偵察UAVシステム',
     translatedName: {
         en: 'Recon UAV System',
     },
-    category: 'B',
+    category: 'C',
     categoryNumber: 3,
     skillComplete: false,
     // TODO skills
@@ -202,14 +202,14 @@ const b3: ISystemModule = {
     ],
 };
 
-const c1: ISystemModule = {
-    id: 'C1',
+const b1: ISystemModule = {
+    id: 'B1',
     name: '付加エネルギーシステム',
     translatedName: {
         en: 'Additional Energy System',
     },
     description: '艦載機のダメージアップ',
-    category: 'C',
+    category: 'B',
     categoryNumber: 1,
     defaultModule: true,
     effects: [
@@ -230,21 +230,24 @@ const c1: ISystemModule = {
     ],
 };
 
-const c2: ISystemModule = {
-    id: 'C2',
+const b2: ISystemModule = {
+    id: 'B2',
     name: '射撃統制補助照準システム',
     translatedName: {
         en: 'Fire-Control Auxiliary Calibration System',
     },
-    description: '艦載機の命中率アップ',
-    category: 'C',
+    description: '艦船内武器と艦載機の命中率アップ',
+    category: 'B',
     categoryNumber: 2,
     effects: [
         enhancements.increaseHitRateOfAircraftMainWeapon().withFixedPercentageValue(15),
     ],
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseHitRateOfAllWeapons().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(10).withCost(10),
+    ],
+    skillSlots: 2,
     parts: [
         {
             text: [
@@ -255,7 +258,7 @@ const c2: ISystemModule = {
     ],
 };
 
-const d1: ISystemModule = {
+/*const d1: ISystemModule = {
     id: 'D1',
     name: '???',
     translatedName: {
@@ -279,7 +282,7 @@ const d2: ISystemModule = {
     skillComplete: false,
     // TODO skills
     // TODO skillslots
-};
+};*/
 
 const staticModules: ISystemModule[] = [
     modules.commandSystem({
@@ -359,7 +362,7 @@ export const marshallCrux: IShipDefinition[] = [
             ShipId.MARSHALL_CRUX_TE_A1_B1,
             ShipId.MARSHALL_CRUX_TE_A2
         ],
-        modules: [m1, m2, a1, a2, b1, b2, b3, c1, c2, d1, d2, ...staticModules],
+        modules: [m1, m2, a1, a2, b1, b2, c1, c2, c3, ...staticModules],
         defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
