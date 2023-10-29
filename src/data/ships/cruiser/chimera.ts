@@ -238,20 +238,35 @@ export const chimera: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     flagshipEffect.focusFire().withDefaultFlag(),
-                    // TODO flagshipEffect
+                    flagshipEffect.desperateMeasures1('20', '4').withCost(60),
                 ],
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(11),
+                ],
                 skillSlots: 2,
             }),
             modules.armorSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                    enhancements.increaseShield().withPercentageValue(10).withCost(6),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseArmor().withAbsoluteValue(30).withCost(6),
+                    enhancements.increaseSystemHp().withPercentageValue(30).withCost(6),
+                ],
                 skillSlots: 6,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
-                // TODO skills
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(3),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(3),
+                ],
                 skillSlots: 2,
             }),
             modules.energySystem({

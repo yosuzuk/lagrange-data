@@ -78,7 +78,7 @@ export function applyStoredTechPointConfig(config: ITechPointConfig, storedConfi
         storedModuleConfigs.forEach(([moduleId, selectedEnhancementIds, moduleInUse, markedAsFavorite]) => {
             const moduleConfig = shipConfig.modules[moduleId];
             if (!moduleConfig) {
-                console.warn(`Invalid moduleId "${moduleId}"`);
+                console.warn(`Invalid moduleId "${moduleId}" for ship ${shipConfig.shipDefinition.id}`);
                 return;
             }
 

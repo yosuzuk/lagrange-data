@@ -109,6 +109,7 @@ export enum EnhancementSubType {
     FLEET_DOCK_1 = 'fleetDock1',
     FLEET_DOCK_2 = 'fleetDock2',
     SIEGE_TACTIC_2 = 'siegeTactic2',
+    DESPERATE_MEASURES_1 = 'desperateMeasures1',
     DESPERATE_MEASURES_2 = 'desperateMeasures2',
     STRATEGIC_STRIKE_1 = 'strategicStrike1',
     STRATEGIC_STRIKE_2 = 'strategicStrike2',
