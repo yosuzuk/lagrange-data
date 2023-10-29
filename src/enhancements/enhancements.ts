@@ -149,6 +149,7 @@ export const strategy = {
     speedUpRepair: (up: number, interval: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.SPEED_UP_REPAIR).withDescriptionKey('speedUpRepair', { up, interval }),
     keyTargets: (damage: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.KEY_TARGETS).withDescriptionKey('keyTargets', { damage }),
     pursueTargets: (hp: number, round: number, interval: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.PURSUE_TARGETS).withDescriptionKey('pursueTargets', { hp, round, interval }),
+    conentratedStrike: () => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CONCENTRATED_STRIKE).withDescriptionKey('concentratedStrike'),
 } as const;
 
 export function isEnhancementInstance(value: unknown): boolean {

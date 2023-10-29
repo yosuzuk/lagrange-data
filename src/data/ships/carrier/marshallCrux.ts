@@ -59,9 +59,17 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
-    // skills: [],
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(10),
+    ],
     skillSlots: 5,
     parts: [
         {
@@ -116,11 +124,20 @@ const a2: ISystemModule = {
     translatedName: {
         en: 'Corvette Dock',
     },
+    description: '護送艦を6機搭載可能',
     category: 'A',
     categoryNumber: 2,
     carryCorvette: 6,
     skillComplete: false,
-    // TODO skills
+    skillSlots: 4,
+    skills: [
+        strategy.conentratedStrike().withCost(20),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(15),
+        enhancements.reduceFlightTimeAndWeaponCooldownOfAircraft().withPercentageValue(20).withCost(15),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(15),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(15),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(15),
+    ],
 };
 
 const c1: ISystemModule = {
@@ -129,16 +146,17 @@ const c1: ISystemModule = {
     translatedName: {
         en: 'Additional Aircraft System',
     },
+    description: '小～中型戦闘機を4機搭載可能',
     category: 'C',
     categoryNumber: 1,
     carryFighter: 4,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO cost
-        enhancements.reduceLockOn().withPercentageValue(70),
-        enhancements.reduceCooldown(),
-        enhancements.increaseDamage(),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
+        enhancements.reduceFlightTimeAndWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
     ],
     skillSlots: 3,
     parts: [
@@ -159,13 +177,12 @@ const c2: ISystemModule = {
     },
     category: 'C',
     categoryNumber: 2,
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO cost
-        enhancements.increaseDamage().withPercentageValue(10),
-        enhancements.increaseDamage().withPercentageValue(10),
-        enhancements.increaseHitRate(),
-        enhancements.increaseHitRateVsSmall(),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
     ],
     skillSlots: 4,
     parts: [
@@ -189,8 +206,12 @@ const c3: ISystemModule = {
     },
     category: 'C',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.reduceLockOnOfUav().withPercentageValue(70).withCost(10),
+        enhancements.reduceFlightTimeAndWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+        enhancements.reduceFlightTimeAndWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+    ],
     skillSlots: 2,
     parts: [
         {

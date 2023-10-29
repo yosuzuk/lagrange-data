@@ -143,5 +143,6 @@ export enum EnhancementSubType {
     SPEED_UP_REPAIR = 'speedUpRepair',
     KEY_TARGETS = 'keyTargets',
     PURSUE_TARGETS = 'pursueTargets',
+    CONCENTRATED_STRIKE = 'concentratedStrike',
     CUSTOM = 'custom',
 }

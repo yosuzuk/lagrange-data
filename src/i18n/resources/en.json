@@ -572,7 +572,8 @@
         "targetReset": "Target Reset",
         "stealthAttacks": "Stealth Attacks",
         "pursueTargets": "Pursue Targets",
-        "focusOnAerialTargets": "Focus on Aerial Targets"
+        "focusOnAerialTargets": "Focus on Aerial Targets",
+        "concentratedStrike": "Concentrated Strike"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -638,7 +639,8 @@
         "activeManeuvers": "When attacked by enemy aircraft, increase evasion by 30%. Cooldown: 30s.",
         "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s.",
         "pursueTargets": "When the target's HP falls below {{hp}}%, it increases attack chances in a single round by {{round}} and reduces attack interval by {{interval}}%.",
-        "focusOnAerialTargets": "Prioritize fighters and interceptors."
+        "focusOnAerialTargets": "Prioritize fighters and interceptors.",
+        "concentratedStrike": "After the battle begins, the carried aircraft lock onto the same target in the first 4 rounds of attacks and increases the Evasion of the carried aircraft by 50%."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

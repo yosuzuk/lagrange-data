@@ -573,7 +573,8 @@
         "targetReset": "Target Reset",
         "stealthAttacks": "Stealth Attacks",
         "pursueTargets": "Pursue Targets",
-        "focusOnAerialTargets": "Focus on Aerial Targets"
+        "focusOnAerialTargets": "Focus on Aerial Targets",
+        "concentratedStrike": "集中爆撃"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -639,7 +640,8 @@
         "activeManeuvers": "When attacked by enemy aircraft, increase evasion by 30%. Cooldown: 30s.",
         "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s.",
         "pursueTargets": "When the target's HP falls below {{hp}}%, it increases attack chances in a single round by {{round}} and reduces attack interval by {{interval}}%.",
-        "focusOnAerialTargets": "Prioritize fighters and interceptors."
+        "focusOnAerialTargets": "Prioritize fighters and interceptors.",
+        "concentratedStrike": "戦闘開始後、システム内に搭載された艦載機の最初の4ラウンドの攻撃が同一の目標にロックオンされる。戦略が発動中、システム内に搭載された艦載機の回避率が50アップする。"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",
