@@ -63,6 +63,7 @@ import { vitasB010 } from './ships/fighter/vitasB010';
 import { carilion } from './ships/frigate/carilion';
 import { fg300 } from './ships/frigate/fg300';
 import { grimReaper } from './ships/frigate/grimReaper';
+import { mareImbrium } from './ships/frigate/mareImbrium';
 import { mareNubium } from './ships/frigate/mareNubium';
 import { mareSerenitatis } from './ships/frigate/mareSerenitatis';
 import { mareTranquillitatis } from './ships/frigate/mareTranquillitatis';
@@ -112,6 +113,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...janbiyaAer410,
     ...kccpv2_0,
     ...lightCone,
+    ...mareImbrium,
     ...mareNubium,
     ...mareSerenitatis,
     ...mareTranquillitatis,

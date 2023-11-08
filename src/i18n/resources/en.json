@@ -573,7 +573,12 @@
         "stealthAttacks": "Stealth Attacks",
         "pursueTargets": "Pursue Targets",
         "focusOnAerialTargets": "Focus on Aerial Targets",
-        "concentratedStrike": "Concentrated Strike"
+        "concentratedStrike": "Concentrated Strike",
+        "guerrillaCombatInsertion": "Guerrilla Combat Insertion",
+        "maneuverOperation": "Maneuver Operation",
+        "firepowerAssault": "Firepower Assault",
+        "additionalCharge": "Additional Charge",
+        "energySwitching": "Energy Switching"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -640,7 +645,11 @@
         "stealthAttacks": "Triggers camouflage, increases evasion by {{evasion}}% and increases hit rate by {{hitrate}}% every {{interval}}s for {{duraction}}s.",
         "pursueTargets": "When the target's HP falls below {{hp}}%, it increases attack chances in a single round by {{round}} and reduces attack interval by {{interval}}%.",
         "focusOnAerialTargets": "Prioritize fighters and interceptors.",
-        "concentratedStrike": "After the battle begins, the carried aircraft lock onto the same target in the first 4 rounds of attacks and increases the Evasion of the carried aircraft by 50%."
+        "concentratedStrike": "After the battle begins, the carried aircraft lock onto the same target in the first 4 rounds of attacks and increases the Evasion of the carried aircraft by 50%.",
+        "maneuverOperation": "When the ship's HP falls to 50%, it retreats to the middle row of your formation. This effect only triggers once per battle. Upon retreating to the middle row, if the ship's HP falls to 10%, an Emergency Evasion can still be triggered, allowing further retreat to the back row.",
+        "firepowerAssault": "Within 120 second(s) after the battle begins, increase all weapon damage in the system by 25% and reduce their CD by 35%.",
+        "additionalCharge": "Increases railgun damage by 40% and cooldown by 20% with additional energy charge",
+        "energySwitching": "Within 120 second(s) after the battle begins, increases the primary weapon damage in the system by 40% and reduces CD by 25% while shutting down other weapons in the system."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
