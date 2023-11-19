@@ -17,7 +17,7 @@ interface IProps {
 export const TechPointShipSummary = (props: IProps) => {
     const { shipConfig, onClickName, onToggleFavorite } = props;
     return (
-        <Stack spacing={3} direction="row" pr={2} sx={{ flexGrow: 1 }}>
+        <Stack spacing={3} direction="row" pr={2} sx={{ flexGrow: 1 }} justifyContent="end" flexWrap="wrap">
             <Box component="div" sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
                 <div>
                     <Stack spacing={1} direction="row" alignItems="center">
