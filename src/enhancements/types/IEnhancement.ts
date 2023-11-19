@@ -32,8 +32,8 @@ export interface IMutableEnhancement extends IEnhancement {
 export type EnhancementValueUnit = 'seconds' | 'degree';
 
 export interface IEnhancementText {
-    text: string;
-    translatedText: Record<string, string>;
+    name: string;
+    translatedName: Record<string, string>;
     description: string;
     translatedDescription: Record<string, string>;
 }

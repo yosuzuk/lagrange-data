@@ -59,7 +59,7 @@ export const vitasB010: IShipDefinition[] = [
                 skillComplete: true,
                 skillSlots: 1,
                 skills: [
-                    enhancements.increaseSelfRepairEffectiveness().withPercentageValue(30).withCost(5),
+                    enhancements.increaseMaintenanceEfficiency().withPercentageValue(30).withCost(5),
                 ],
             }),
             modules.armorSystem({

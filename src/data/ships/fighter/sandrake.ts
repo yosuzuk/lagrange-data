@@ -54,7 +54,7 @@ export const sandrake: IShipDefinition[] = [
             modules.commandSystem({
                 skillComplete: true,
                 skills: [
-                    enhancements.increaseSelfRepairEffectiveness().withPercentageValue(25).withCost(5),
+                    enhancements.increaseMaintenanceEfficiency().withPercentageValue(25).withCost(5),
                 ],
                 skillSlots: 1,
             }),

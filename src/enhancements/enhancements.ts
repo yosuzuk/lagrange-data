@@ -59,7 +59,8 @@ export const enhancements = {
     increaseStrategicStrikeAngle: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_STRATEGIC_STRIKE_ANGLE),
     increaseRepairEffectiveness: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_REPAIR_EFFECTIVENESS),
     increaseRepairEffectivenessByArmor: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_REPAIR_EFFECTIVENESS_BY_ARMOR),
-    increaseSelfRepairEffectiveness: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SELF_REPAIR_EFFECTIVENESS),
+    increaseMaintenanceEfficiency: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_MAINTENANCE_EFFICIENCY),
+    increaseJammingDuration: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_JAMMING_DURATION),
     reduceLockOn: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON),
     reduceLockOnOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_AIRCRAFT),
     reduceLockOnOfUav: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_LOCK_ON_OF_UAV),
@@ -233,7 +234,7 @@ class Enhancement implements IMutableEnhancement {
 
     get name(): string {
         if (this._text) {
-            return this._text.translatedText[getCurrentLanguage()] ?? this._text.text;
+            return this._text.translatedName[getCurrentLanguage()] ?? this._text.name;
         }
 
         return t(this._textKey, {

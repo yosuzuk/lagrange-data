@@ -59,7 +59,7 @@ export const mistral: IShipDefinition[] = [
                 skillComplete: true,
                 skills: [
                     enhancements.targetReset1().withCost(5),
-                    enhancements.increaseSelfRepairEffectiveness().withPercentageValue(25).withCost(5),
+                    enhancements.increaseMaintenanceEfficiency().withPercentageValue(25).withCost(5),
                 ],
                 skillSlots: 1,
             }),
