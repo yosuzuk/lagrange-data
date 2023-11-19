@@ -1,0 +1,92 @@
+$name 40076 Ursa Major 497
+$serverName Ursa Major 497
+$size 9000
+
+$overlay
+Gundam (19.3%)
+STAR KINGDOM (18.4%)
+Star Reaper (16.8%)
+Kawabanga (13.4%)
+DIMENSIONS (10.9%)
+Black Hand (8.4%)
+E N E M Y (5.0%)
+BlackSmoke (2.5%)
+鋼農聯合 (2.5%)
+Wargasm (2.5%)
+
+$station
+(4240,2546) city 2 #cE5B36C Gundam
+(5498,3520) city 9 #cE5B36C Gundam
+(5763,3646) city 5 #cE5B36C Gundam
+(5393,3743) city 5 #cE5B36C Gundam
+(6775,4159) city 2 #cE5B36C Gundam
+(7809,3067) city 3 #cE5B36C Gundam
+(2043,6953) city 2 #cF1F1F1 鋼農聯合
+(2228,7426) city 3 #cF1F1F1 鋼農聯合
+(3649,5192) city 5 #cF1F1F1 鋼農聯合
+(4155,7862) city 5 #cF1F1F1 鋼農聯合
+(4302,7648) city 5 #cF1F1F1 鋼農聯合
+(2123,5553) city 2 #cFD7844 Star Reaper
+(4615,6819) city 2 #cFD7844 Star Reaper
+(5165,5318) city 5 #cFD7844 Star Reaper
+(5332,7835) city 3 #cFD7844 Star Reaper
+(5707,6395) city 5 #cFD7844 Star Reaper
+(5602,6552) city 7 #cFD7844 Star Reaper
+(5502,6545) city 5 #cFD7844 Star Reaper
+(6167,6928) city 5 #cFD7844 Star Reaper
+(6341,6869) city 5 #cFD7844 Star Reaper
+(6806,6631) city 5 #cFD7844 Star Reaper
+(7297,7271) city 7 #cFD7844 Star Reaper
+(7559,7331) city 5 #cFD7844 Star Reaper
+(7506,1321) city 5 #c929292 Wargasm
+(7383,1172) city 5 #c929292 Wargasm
+(7589,1154) city 5 #c929292 Wargasm
+(3607,4996) city 7 #c4A99FB STAR KINGDOM
+(4924,5319) city 5 #c4A99FB STAR KINGDOM
+(5190,5440) city 5 #c4A99FB STAR KINGDOM
+(5621,6337) city 5 #c4A99FB STAR KINGDOM
+(5914,4815) city 5 #c4A99FB STAR KINGDOM
+(5837,4918) city 5 #c4A99FB STAR KINGDOM
+(1094,4444) city 2 #c7E67F2 Black Hand
+(5199,4926) city 3 #c7E67F2 Black Hand
+(1229,4163) city 5 #c7E67F2 Black Hand
+(1672,5947) city 7 #c7E67F2 Black Hand
+(1965,3592) city 3 #cE63A3A DIMENSIONS
+(2294,5824) city 2 #cE63A3A DIMENSIONS
+(3780,2764) city 5 #cE63A3A DIMENSIONS
+(4049,0616) city 5 #cE63A3A DIMENSIONS
+(1059,4209) city 5 #cE63A3A DIMENSIONS
+(1162,4007) city 7 #cE63A3A DIMENSIONS
+(3699,2968) city 5 #c49E7C0 Kawabanga
+(3938,3851) city 5 #c49E7C0 Kawabanga
+(4312,0580) city 7 #c49E7C0 Kawabanga
+(4482,0885) city 5 #c49E7C0 Kawabanga
+(3343,0974) city 2 #cF284FF E N E M Y
+(3872,2951) city 5 #cF284FF E N E M Y
+(5206,0270) city 5 #cF284FF E N E M Y
+(1196,4292) city 5 #cF284FF E N E M Y
+(1264,2774) city 2 #cF284FF E N E M Y
+(2057,6034) city 5 #cF284FF E N E M Y
+(1893,6493) city 2 #c9FE23E BlackSmoke
+(2533,7013) city 2 #c9FE23E BlackSmoke
+(2493,6193) city 2 #c9FE23E BlackSmoke
+(2733,6473) city 2 #c9FE23E BlackSmoke
+(2643,5793) city 2 #c9FE23E BlackSmoke
+(2843,6133) city 2 #c9FE23E BlackSmoke
+(3054,7887) city 2 #c9FE23E BlackSmoke
+(3363,7953) city 2 #c9FE23E BlackSmoke
+(3886,5059) city 3 #c9FE23E BlackSmoke
+(3499,5230) city 5 #c9FE23E BlackSmoke
+(3857,5215) city 5 #c9FE23E BlackSmoke
+(3784,7014) city 2 #c9FE23E BlackSmoke
+(3700,7555) city 3 #c9FE23E BlackSmoke
+
+$planet
+(1955,6010) large
+(1890,5950)(1955,6010) small
+(1263,4110) medium
+(3692,5134) medium
+(5601,3641) medium
+(4499,4497) medium
+(7392,7394) medium
+(4082,634) medium

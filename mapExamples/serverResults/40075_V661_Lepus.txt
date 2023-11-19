@@ -1,0 +1,102 @@
+$name 40075 V661 Lepus
+$serverName V661 Lepus
+$size 9000
+
+$overlay
+Black out (14.5%)
+KOREA TEAM (11.6%)
+战争帝国 (9.4%)
+赤曦sunlight (9.4%)
+Thousand Sons (8.7%)
+女神禁衛軍 (7.2%)
+Hells Requiem (7.2%)
+Grand Line (7.2%)
+Keep out DQN (4.3%)
+The Myrmidons (4.3%)
+女神騎士團 (4.3%)
+null (2.1%)
+歸零者 (2.1%)
+WorId Eaters (2.1%)
+Overture (2.1%)
+ONE (2.1%)
+
+$station
+(6056,7278) city 3 #c929292 Overture
+(6392,7430) city 5 #c929292 Overture
+(6379,7978) city 3 #cF1F1F1 Keep out DQN
+(7050,5558) city 5 #cF1F1F1 Keep out DQN
+(6915,5599) city 5 #cF1F1F1 Keep out DQN
+(7049,5771) city 5 #cF1F1F1 Keep out DQN
+(6984,8014) city 2 #cF1F1F1 Keep out DQN
+(7084,7695) city 2 #cF1F1F1 Keep out DQN
+(7846,5602) city 5 #cF1F1F1 Keep out DQN
+(7870,5460) city 5 #cF1F1F1 Keep out DQN
+(8564,3434) city 2 #cF1F1F1 Keep out DQN
+(2166,2897) city 3 #cE63A3A Thousand Sons
+(4569,1611) city 5 #cE63A3A Thousand Sons
+(5852,6150) city 5 #cE63A3A Thousand Sons
+(6150,3220) city 5 #cE63A3A Thousand Sons
+(7012,3310) city 5 #cE63A3A Thousand Sons
+(0364,6314) city 2 #c4A99FB KOREA TEAM
+(2827,3854) city 5 #c4A99FB KOREA TEAM
+(4096,3591) city 5 #c4A99FB KOREA TEAM
+(5098,4897) city 7 #c4A99FB KOREA TEAM
+(5030,3540) city 5 #c4A99FB KOREA TEAM
+(5269,3551) city 5 #c4A99FB KOREA TEAM
+(0774,6204) city 2 #c4A99FB KOREA TEAM
+(2132,3050) city 5 #c929292 ONE
+(6432,7167) city 3 #c929292 ONE
+(2420,1620) city 5 #c929292 WorId Eaters
+(6831,3287) city 5 #c929292 WorId Eaters
+(1284,6574) city 2 #c929292 The Myrmidons
+(3672,5307) city 3 #c929292 The Myrmidons
+(3632,5570) city 5 #c929292 The Myrmidons
+(6914,6333) city 5 #c929292 The Myrmidons
+(6720,6560) city 5 #c929292 The Myrmidons
+(6974,6904) city 2 #c929292 The Myrmidons
+(1614,5073) city 5 #cE5B36C Black out
+(1755,5779) city 5 #cE5B36C Black out
+(3819,3519) city 9 #cE5B36C Black out
+(5232,3789) city 5 #cE5B36C Black out
+(5158,3719) city 5 #cE5B36C Black out
+(3398,5577) city 7 #cF284FF Hells Requiem
+(1750,4940) city 5 #cFD7844 战争帝国
+(1725,4818) city 5 #cFD7844 战争帝国
+(1840,5818) city 5 #cFD7844 战争帝国
+(1951,3027) city 5 #cFD7844 战争帝国
+(1893,2833) city 7 #cFD7844 战争帝国
+(5280,5678) city 5 #cFD7844 战争帝国
+(1852,5988) city 5 #c929292 歸零者
+(3252,5706) city 2 #c929292 歸零者
+(5195,5639) city 5 #c929292 歸零者
+(6529,4071) city 5 #c929292 歸零者
+(1739,5891) city 5 #c929292 女神騎士團
+(2614,1393) city 5 #c929292 女神騎士團
+(5179,5751) city 5 #c929292 女神騎士團
+(6126,3362) city 5 #c929292 女神騎士團
+(6659,3330) city 5 #c929292 女神騎士團
+(5741,5969) city 7 #c7E67F2 女神禁衛軍
+(5879,5900) city 2 #c7E67F2 女神禁衛軍
+(6304,0554) city 2 #c7E67F2 女神禁衛軍
+(2640,3820) city 5 #c49E7C0 赤曦sunlight
+(3713,3746) city 3 #c49E7C0 赤曦sunlight
+(5671,6167) city 5 #c49E7C0 赤曦sunlight
+(6773,3093) city 7 #c49E7C0 赤曦sunlight
+(5372,4627) city 3 #c929292 null
+(4996,4738) city 3 #c929292 null
+(5332,4890) city 5 #c929292 null
+(6290,4060) city 5 #c929292 null
+(7914,1914) city 2 #c929292 null
+(6158,7437) city 7 #c9FE23E Grand Line
+
+$planet
+(5692,6074) large
+(5652,6176)(5692,6074) small
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(3269,5436) medium

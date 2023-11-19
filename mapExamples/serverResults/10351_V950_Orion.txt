@@ -1,0 +1,94 @@
+$name 10351 V950 Orion
+$serverName V950 Orion
+$size 9000
+
+$overlay
+StarGate (29.9%)
+Alpha (11.6%)
+Blood of Steel (10.9%)
+
+$station
+(1770,1408) city 3 #cE5B36C StarGate
+(2514,0524) city 2 #cE5B36C StarGate
+(3354,0764) city 2 #cE5B36C StarGate
+(4096,3591) city 5 #cE5B36C StarGate
+(4569,1411) city 5 #cE5B36C StarGate
+(5269,3551) city 5 #cE5B36C StarGate
+(5289,5711) city 5 #cE5B36C StarGate
+(5434,0944) city 2 #cE5B36C StarGate
+(5410,0688) city 3 #cE5B36C StarGate
+(5741,5969) city 7 #cE5B36C StarGate
+(5852,6150) city 5 #cE5B36C StarGate
+(6074,0424) city 2 #cE5B36C StarGate
+(5936,3354) city 5 #cE5B36C StarGate
+(6304,0554) city 2 #cE5B36C StarGate
+(6529,4071) city 5 #cE5B36C StarGate
+(6773,3093) city 7 #cE5B36C StarGate
+(7012,3310) city 5 #cE5B36C StarGate
+(6764,1434) city 2 #cE5B36C StarGate
+(7174,0834) city 2 #cE5B36C StarGate
+(7474,1284) city 2 #cE5B36C StarGate
+(7914,1914) city 2 #cE5B36C StarGate
+(8564,3434) city 2 #cE5B36C StarGate
+(8734,3634) city 2 #cE5B36C StarGate
+(8674,4144) city 2 #cE5B36C StarGate
+(2132,3050) city 5 #c49E7C0 Blood of Steel
+(1951,3027) city 5 #c49E7C0 Blood of Steel
+(1779,3070) city 5 #c49E7C0 Blood of Steel
+(0324,2955) city 2 #c49E7C0 Blood of Steel
+(2607,1654) city 5 #c49E7C0 Blood of Steel
+(2420,1620) city 5 #c49E7C0 Blood of Steel
+(2827,3854) city 5 #c49E7C0 Blood of Steel
+(2834,3593) city 5 #c49E7C0 Blood of Steel
+(2640,3820) city 5 #c49E7C0 Blood of Steel
+(0370,4728) city 3 #c49E7C0 Blood of Steel
+(3632,5570) city 5 #c49E7C0 Blood of Steel
+(0604,3694) city 2 #c49E7C0 Blood of Steel
+(5332,4890) city 5 #c49E7C0 Blood of Steel
+(0634,4244) city 2 #c49E7C0 Blood of Steel
+(0624,4694) city 2 #c49E7C0 Blood of Steel
+(0954,3044) city 2 #c49E7C0 Blood of Steel
+(0184,3454) city 2 #c49E7C0 Blood of Steel
+(0944,2774) city 2 #c49E7C0 Blood of Steel
+(1174,5484) city 2 #cFD7844 Alpha
+(1284,6574) city 2 #cFD7844 Alpha
+(1324,7674) city 2 #cFD7844 Alpha
+(1444,6254) city 2 #cFD7844 Alpha
+(1514,6934) city 2 #cFD7844 Alpha
+(1624,7934) city 2 #cFD7844 Alpha
+(1750,4940) city 5 #cFD7844 Alpha
+(1725,4818) city 5 #cFD7844 Alpha
+(1614,5073) city 5 #cFD7844 Alpha
+(1852,5988) city 5 #cFD7844 Alpha
+(1840,5818) city 5 #cFD7844 Alpha
+(1755,5779) city 5 #cFD7844 Alpha
+(1739,5891) city 5 #cFD7844 Alpha
+(1834,7354) city 2 #cFD7844 Alpha
+(1784,7154) city 2 #cFD7844 Alpha
+(1893,2833) city 7 #cFD7844 Alpha
+(0364,6314) city 2 #cFD7844 Alpha
+(2014,8044) city 2 #cFD7844 Alpha
+(1939,7698) city 3 #cFD7844 Alpha
+(2064,7054) city 2 #cFD7844 Alpha
+(2204,7694) city 2 #cFD7844 Alpha
+(2324,7395) city 2 #cFD7844 Alpha
+(3034,7854) city 2 #cFD7844 Alpha
+(2944,8234) city 2 #cFD7844 Alpha
+(3672,5307) city 3 #cFD7844 Alpha
+(3454,8444) city 2 #cFD7844 Alpha
+(3814,7794) city 2 #cFD7844 Alpha
+(0774,6204) city 2 #cFD7844 Alpha
+(1114,4604) city 2 #cFD7844 Alpha
+(1084,5094) city 2 #cFD7844 Alpha
+(1114,6144) city 2 #cFD7844 Alpha
+(1274,6794) city 2 #cFD7844 Alpha
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

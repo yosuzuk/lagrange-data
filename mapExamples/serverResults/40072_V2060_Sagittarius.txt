@@ -1,0 +1,107 @@
+$name 40072 V2060 Sagittarius
+$serverName V2060 Sagittarius
+$size 9000
+
+$overlay
+Unity Knights (40.1%)
+ANTANTA (23.3%)
+RosCosmos (18.9%)
+Celestial Order (8.7%)
+CitadelSecurity (4.3%)
+Beskad Kal (4.3%)
+
+$station
+(1750,4940) city 5 #cE63A3A CitadelSecurity
+(1725,4818) city 5 #cE63A3A CitadelSecurity
+(1852,5988) city 5 #cE63A3A CitadelSecurity
+(1840,5818) city 5 #cE63A3A CitadelSecurity
+(0634,4244) city 2 #cE63A3A CitadelSecurity
+(7049,5771) city 5 #cE63A3A CitadelSecurity
+(6984,8014) city 2 #cE63A3A CitadelSecurity
+(7084,7695) city 2 #cE63A3A CitadelSecurity
+(7664,7334) city 2 #cE63A3A CitadelSecurity
+(1614,5073) city 5 #c7E67F2 Beskad Kal
+(1755,5779) city 5 #c7E67F2 Beskad Kal
+(1739,5891) city 5 #c7E67F2 Beskad Kal
+(5179,5751) city 5 #c7E67F2 Beskad Kal
+(5280,5678) city 5 #c7E67F2 Beskad Kal
+(5292,5848) city 5 #c7E67F2 Beskad Kal
+(5774,7634) city 2 #c7E67F2 Beskad Kal
+(1084,5094) city 2 #c7E67F2 Beskad Kal
+(1174,5484) city 2 #c49E7C0 Celestial Order
+(2614,1393) city 5 #c49E7C0 Celestial Order
+(2420,1620) city 5 #c49E7C0 Celestial Order
+(4292,1598) city 5 #c49E7C0 Celestial Order
+(4570,1398) city 5 #c49E7C0 Celestial Order
+(4569,1611) city 5 #c49E7C0 Celestial Order
+(6529,4071) city 5 #c49E7C0 Celestial Order
+(7046,3157) city 3 #c49E7C0 Celestial Order
+(7846,5602) city 5 #c49E7C0 Celestial Order
+(7870,5460) city 5 #c49E7C0 Celestial Order
+(1394,2654) city 2 #cE5B36C Unity Knights
+(1893,2833) city 7 #cE5B36C Unity Knights
+(2132,3050) city 5 #cE5B36C Unity Knights
+(1844,2134) city 2 #cE5B36C Unity Knights
+(2314,1764) city 2 #cE5B36C Unity Knights
+(3398,5577) city 7 #cE5B36C Unity Knights
+(3632,5570) city 5 #cE5B36C Unity Knights
+(5852,6150) city 5 #cE5B36C Unity Knights
+(6432,7167) city 3 #cE5B36C Unity Knights
+(6056,7278) city 3 #cE5B36C Unity Knights
+(6011,7566) city 2 #cE5B36C Unity Knights
+(6158,7437) city 7 #cE5B36C Unity Knights
+(6392,7430) city 5 #cE5B36C Unity Knights
+(6379,7978) city 3 #cE5B36C Unity Knights
+(6834,7574) city 2 #cE5B36C Unity Knights
+(6773,3093) city 7 #cE5B36C Unity Knights
+(6914,6333) city 5 #cE5B36C Unity Knights
+(6720,6560) city 5 #cE5B36C Unity Knights
+(1444,6254) city 2 #c4A99FB ANTANTA
+(1514,6934) city 2 #c4A99FB ANTANTA
+(1834,7354) city 2 #c4A99FB ANTANTA
+(2204,7694) city 2 #c4A99FB ANTANTA
+(3819,3519) city 9 #c4A99FB ANTANTA
+(4096,3591) city 5 #c4A99FB ANTANTA
+(3713,3746) city 3 #c4A99FB ANTANTA
+(5232,3789) city 5 #c4A99FB ANTANTA
+(5158,3719) city 5 #c4A99FB ANTANTA
+(5269,3551) city 5 #c4A99FB ANTANTA
+(5410,0688) city 3 #c4A99FB ANTANTA
+(5671,6167) city 5 #c4A99FB ANTANTA
+(6074,0424) city 2 #c4A99FB ANTANTA
+(6126,3362) city 5 #c4A99FB ANTANTA
+(5936,3354) city 5 #c4A99FB ANTANTA
+(6150,3220) city 5 #c4A99FB ANTANTA
+(6304,0554) city 2 #c4A99FB ANTANTA
+(6290,4060) city 5 #c4A99FB ANTANTA
+(6418,4239) city 5 #c4A99FB ANTANTA
+(6659,3330) city 5 #c4A99FB ANTANTA
+(7012,3310) city 5 #c4A99FB ANTANTA
+(8564,3434) city 2 #c4A99FB ANTANTA
+(8734,3634) city 2 #c4A99FB ANTANTA
+(1274,6794) city 2 #c4A99FB ANTANTA
+(1564,2414) city 2 #cFD7844 RosCosmos
+(1951,3027) city 5 #cFD7844 RosCosmos
+(2166,2897) city 3 #cFD7844 RosCosmos
+(1779,3070) city 5 #cFD7844 RosCosmos
+(2827,3854) city 5 #cFD7844 RosCosmos
+(2834,3593) city 5 #cFD7844 RosCosmos
+(2640,3820) city 5 #cFD7844 RosCosmos
+(3704,1054) city 2 #cFD7844 RosCosmos
+(5098,4897) city 7 #cFD7844 RosCosmos
+(5332,4890) city 5 #cFD7844 RosCosmos
+(5741,5969) city 7 #cFD7844 RosCosmos
+(6492,4309) city 5 #cFD7844 RosCosmos
+(0954,3044) city 2 #cFD7844 RosCosmos
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(6411,7182) large
+(6232,7354)(6411,7182) small
+(5172,4814) medium
+(4499,4497) medium
+(5652,6176) large
+(5692,6074)(5652,6176) small
+(3269,5436) medium

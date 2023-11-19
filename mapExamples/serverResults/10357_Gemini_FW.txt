@@ -1,0 +1,59 @@
+$name 10357 Gemini FW
+$serverName Gemini FW
+$size 9000
+
+$overlay
+DEMONS OF WAR (32.8%)
+jupiter (8.7%)
+
+$station
+(2014,8044) city 2 #cE5B36C DEMONS OF WAR
+(1939,7698) city 3 #cE5B36C DEMONS OF WAR
+(4744,8815) city 2 #cE5B36C DEMONS OF WAR
+(5332,4890) city 5 #cE5B36C DEMONS OF WAR
+(5289,5711) city 5 #cE5B36C DEMONS OF WAR
+(5084,8815) city 2 #cE5B36C DEMONS OF WAR
+(5254,8074) city 2 #cE5B36C DEMONS OF WAR
+(5741,5969) city 7 #cE5B36C DEMONS OF WAR
+(5852,6150) city 5 #cE5B36C DEMONS OF WAR
+(5867,6008) city 3 #cE5B36C DEMONS OF WAR
+(5814,8464) city 2 #cE5B36C DEMONS OF WAR
+(5904,8195) city 2 #cE5B36C DEMONS OF WAR
+(6158,7437) city 7 #cE5B36C DEMONS OF WAR
+(6392,7430) city 5 #cE5B36C DEMONS OF WAR
+(6432,7167) city 3 #cE5B36C DEMONS OF WAR
+(6529,4071) city 5 #cE5B36C DEMONS OF WAR
+(6379,7978) city 3 #cE5B36C DEMONS OF WAR
+(6773,3093) city 7 #cE5B36C DEMONS OF WAR
+(7012,5768) city 5 #cE5B36C DEMONS OF WAR
+(6984,8014) city 2 #cE5B36C DEMONS OF WAR
+(7664,7334) city 2 #cE5B36C DEMONS OF WAR
+(8114,6374) city 2 #cE5B36C DEMONS OF WAR
+(1514,6934) city 2 #cFD7844 jupiter
+(1834,7354) city 2 #cFD7844 jupiter
+(1784,7154) city 2 #cFD7844 jupiter
+(2132,3050) city 5 #cFD7844 jupiter
+(2420,1620) city 5 #cFD7844 jupiter
+(2640,3820) city 5 #cFD7844 jupiter
+(3632,5570) city 5 #cFD7844 jupiter
+(3672,5307) city 3 #cFD7844 jupiter
+(3296,5418) city 3 #cFD7844 jupiter
+(3252,5706) city 2 #cFD7844 jupiter
+(5155,5539) city 5 #cFD7844 jupiter
+(5879,5900) city 2 #cFD7844 jupiter
+(6834,7574) city 2 #cFD7844 jupiter
+(7084,7695) city 2 #cFD7844 jupiter
+(0774,6204) city 2 #cFD7844 jupiter
+(7594,6284) city 2 #cFD7844 jupiter
+(7594,6654) city 2 #cFD7844 jupiter
+(1274,6794) city 2 #cFD7844 jupiter
+
+$planet
+(1972,2974) medium
+(3915,3649) medium
+(6852,3234) medium
+(3651,5322) large
+(3472,5494)(3651,5322) small
+(5172,4814) medium
+(4499,4497) medium
+(5692,6074) medium

@@ -1,0 +1,68 @@
+$name 10355 Lynx 425
+$serverName Lynx 425
+$size 9000
+
+$overlay
+Pestilence (32.8%)
+RetroZoids (20.4%)
+HumaintysShield (6.5%)
+Broken steel (4.3%)
+
+$station
+(3819,3519) city 9 #cE5B36C Pestilence
+(4569,1411) city 5 #cE5B36C Pestilence
+(4514,8724) city 2 #cE5B36C Pestilence
+(5332,4890) city 5 #cE5B36C Pestilence
+(6074,0424) city 2 #cE5B36C Pestilence
+(6126,3362) city 5 #cE5B36C Pestilence
+(5936,3354) city 5 #cE5B36C Pestilence
+(6150,3220) city 5 #cE5B36C Pestilence
+(6304,0554) city 2 #cE5B36C Pestilence
+(6529,4071) city 5 #cE5B36C Pestilence
+(6492,4309) city 5 #cE5B36C Pestilence
+(6773,3093) city 7 #cE5B36C Pestilence
+(7046,3157) city 3 #cE5B36C Pestilence
+(6914,6333) city 5 #cE5B36C Pestilence
+(6720,6560) city 5 #cE5B36C Pestilence
+(6764,1434) city 2 #cE5B36C Pestilence
+(7012,5768) city 5 #cE5B36C Pestilence
+(7174,0834) city 2 #cE5B36C Pestilence
+(7474,1284) city 2 #cE5B36C Pestilence
+(7744,1694) city 2 #cE5B36C Pestilence
+(7914,1914) city 2 #cE5B36C Pestilence
+(1750,4940) city 5 #c9FE23E Broken steel
+(1614,5073) city 5 #c9FE23E Broken steel
+(1852,5988) city 5 #c9FE23E Broken steel
+(1840,5818) city 5 #c9FE23E Broken steel
+(1755,5779) city 5 #c9FE23E Broken steel
+(0370,4728) city 3 #c9FE23E Broken steel
+(3632,5570) city 5 #c9FE23E Broken steel
+(0634,4244) city 2 #c9FE23E Broken steel
+(1739,5891) city 5 #c4A99FB RetroZoids
+(5269,3551) city 5 #c4A99FB RetroZoids
+(5012,5698) city 5 #c4A99FB RetroZoids
+(5289,5711) city 5 #c4A99FB RetroZoids
+(5741,5969) city 7 #c4A99FB RetroZoids
+(5852,6150) city 5 #c4A99FB RetroZoids
+(7012,3310) city 5 #c4A99FB RetroZoids
+(6659,3330) city 5 #c4A99FB RetroZoids
+(6899,5671) city 5 #c4A99FB RetroZoids
+(7594,6284) city 2 #c4A99FB RetroZoids
+(8114,6374) city 2 #c4A99FB RetroZoids
+(8594,3054) city 2 #c4A99FB RetroZoids
+(1394,2654) city 2 #cF284FF HumaintysShield
+(2132,3050) city 5 #cF284FF HumaintysShield
+(2314,1764) city 2 #cF284FF HumaintysShield
+(2607,1654) city 5 #cF284FF HumaintysShield
+(2420,1620) city 5 #cF284FF HumaintysShield
+(2640,3820) city 5 #cF284FF HumaintysShield
+
+$planet
+(5692,6074) medium
+(3472,5494) large
+(3651,5322)(3472,5494) small
+(4499,4497) medium
+(5172,4814) medium
+(6852,3234) medium
+(3915,3649) medium
+(1972,2974) medium
