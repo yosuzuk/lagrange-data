@@ -1,0 +1,104 @@
+$name 40071 Piscis Austrinus RS
+$serverName Piscis Austrinus RS
+$size 9000
+
+$overlay
+Dubhe (20.1%)
+Pos幻影風暴 (14.0%)
+Lyra (11.4%)
+バリバリ幕府 (11.4%)
+Alkaid (10.5%)
+YGGDRASILL (8.7%)
+VENI VIDI VICI (5.2%)
+赤紅之瞳 (2.6%)
+東北航空站 (2.6%)
+Unforgiven (2.6%)
+Pos蛋蛋風暴 (2.6%)
+RuForce (2.6%)
+Guardian Titans (2.6%)
+Hammerstein (2.6%)
+
+$station
+(3546,7501) city 5 #c929292 Guardian Titans
+(4679,7467) city 3 #c929292 Guardian Titans
+(7055,7259) city 5 #c929292 Guardian Titans
+(5126,3010) city 5 #c7E67F2 YGGDRASILL
+(5389,3677) city 7 #c7E67F2 YGGDRASILL
+(6063,3413) city 2 #c7E67F2 YGGDRASILL
+(6364,3594) city 2 #c7E67F2 YGGDRASILL
+(6743,3574) city 2 #c7E67F2 YGGDRASILL
+(8393,3073) city 2 #c7E67F2 YGGDRASILL
+(3812,4951) city 5 #cE63A3A Alkaid
+(4644,5368) city 5 #cE63A3A Alkaid
+(5080,4995) city 3 #cE63A3A Alkaid
+(5394,4549) city 5 #cE63A3A Alkaid
+(1358,6951) city 5 #cE63A3A Alkaid
+(1766,6391) city 5 #cE63A3A Alkaid
+(3154,0406) city 5 #c9FE23E 赤紅之瞳
+(2866,0561) city 5 #c9FE23E 赤紅之瞳
+(3008,0530) city 3 #c9FE23E 赤紅之瞳
+(5313,1214) city 3 #c9FE23E 赤紅之瞳
+(6159,0326) city 3 #c9FE23E 赤紅之瞳
+(6352,1475) city 3 #c9FE23E 赤紅之瞳
+(6585,1437) city 5 #c9FE23E 赤紅之瞳
+(6839,2226) city 2 #c9FE23E 赤紅之瞳
+(8526,5511) city 5 #c9FE23E 赤紅之瞳
+(5531,4589) city 5 #cF1F1F1 東北航空站
+(5721,5089) city 5 #cF1F1F1 東北航空站
+(6459,4416) city 2 #cF1F1F1 東北航空站
+(0438,5084) city 5 #cF1F1F1 東北航空站
+(1249,5216) city 2 #cF1F1F1 東北航空站
+(7773,1883) city 7 #c49E7C0 バリバリ幕府
+(7658,1756) city 5 #c49E7C0 バリバリ幕府
+(7923,3474) city 2 #c49E7C0 バリバリ幕府
+(8699,2407) city 2 #c49E7C0 バリバリ幕府
+(1904,3237) city 5 #c929292 Pos蛋蛋風暴
+(2583,1033) city 2 #c929292 Pos蛋蛋風暴
+(4493,2515) city 3 #c929292 Pos蛋蛋風暴
+(5430,3949) city 5 #c929292 Pos蛋蛋風暴
+(2140,8135) city 3 #cFD7844 Lyra
+(3031,7337) city 7 #cFD7844 Lyra
+(7250,7212) city 5 #cFD7844 Lyra
+(1315,7111) city 5 #cFD7844 Lyra
+(2325,3877) city 5 #cE5B36C Dubhe
+(2553,6473) city 2 #cE5B36C Dubhe
+(2533,3655) city 3 #cE5B36C Dubhe
+(3612,4885) city 5 #cE5B36C Dubhe
+(3736,5059) city 5 #cE5B36C Dubhe
+(4038,3759) city 3 #cE5B36C Dubhe
+(4385,5912) city 9 #cE5B36C Dubhe
+(4640,5965) city 5 #cE5B36C Dubhe
+(7756,1976) city 5 #c929292 RuForce
+(8348,4467) city 3 #c929292 RuForce
+(8415,4139) city 2 #c929292 RuForce
+(1954,3467) city 5 #c929292 Unforgiven
+(3039,2116) city 2 #c929292 Unforgiven
+(1234,2207) city 2 #c929292 Unforgiven
+(1529,2128) city 3 #c929292 Unforgiven
+(1574,2427) city 2 #c929292 Unforgiven
+(2948,0349) city 7 #c4A99FB Pos幻影風暴
+(3898,3827) city 5 #c4A99FB Pos幻影風暴
+(4292,2575) city 3 #c4A99FB Pos幻影風暴
+(6914,3144) city 2 #c4A99FB Pos幻影風暴
+(7428,4350) city 5 #c4A99FB Pos幻影風暴
+(1795,5559) city 2 #c4A99FB Pos幻影風暴
+(2144,1654) city 2 #c929292 Hammerstein
+(3184,7636) city 5 #c929292 Hammerstein
+(3026,4351) city 5 #cF284FF VENI VIDI VICI
+(0734,3527) city 2 #cF284FF VENI VIDI VICI
+(3819,4027) city 5 #cF284FF VENI VIDI VICI
+(3991,4010) city 5 #cF284FF VENI VIDI VICI
+(0914,3067) city 2 #cF284FF VENI VIDI VICI
+(1415,4643) city 5 #cF284FF VENI VIDI VICI
+(1555,4428) city 5 #cF284FF VENI VIDI VICI
+(0257,4976) city 5 #cF284FF VENI VIDI VICI
+
+$planet
+(5444,3836)(5503,3770) small
+(5503,3770) large
+(5658,3715)(5503,3770) small
+(4499,4497) medium
+(7450,4261) medium
+(4462,6029) medium
+(2881,7389) large
+(2782,7394)(2881,7389) small

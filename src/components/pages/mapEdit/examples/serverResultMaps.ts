@@ -303,4 +303,10 @@ export const serverResults: [number, string, string, string][] = [
     [10348, 'Cancer 425', '2023-09-18', '10348_Cancer_425.txt'],
     [10349, 'Pavo 233', '2023-09-18', '10349_Pavo_233.txt'],
     [10350, 'V1381 Fornax', '2023-09-25', '10350_V1381_Fornax.txt'],
+    [10351, 'V950 Orion', '2023-10-03', '10351_V950_Orion.txt'],
+    [10352, 'Hydra V2497', '2023-10-09', '10352_Hydra_V2497.txt'],
+    [10353, 'Andromeda V1071', '2023-10-09', '10353_Andromeda_V1071.txt'],
+    [10355, 'Lynx 425', '2023-10-16', '10355_Lynx_425.txt'],
+    [10356, 'Corvus 306', '2023-10-23', '10356_Corvus_306.txt'],
+    [10357, 'Gemini FW', '2023-10-30', '10357_Gemini_FW.txt'],
 ];

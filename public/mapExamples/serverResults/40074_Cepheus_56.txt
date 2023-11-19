@@ -1,0 +1,95 @@
+$name 40074 Cepheus 56
+$serverName Cepheus 56
+$size 9000
+
+$overlay
+Klingon Empire (34.4%)
+Iceni (18.8%)
+RX 784 (18.0%)
+Shadow Remnants (10.6%)
+Frozen Kingdom (8.1%)
+Frozen Empire (4.9%)
+The Wolf Fleet (4.9%)
+
+$station
+(3872,8347) city 3 #c4A99FB Iceni
+(3496,8458) city 3 #c4A99FB Iceni
+(1199,6483) city 7 #c4A99FB Iceni
+(4390,5368) city 3 #c4A99FB Iceni
+(4474,8613) city 5 #c4A99FB Iceni
+(5884,6555) city 2 #c4A99FB Iceni
+(6524,4394) city 2 #c4A99FB Iceni
+(6794,6004) city 2 #c4A99FB Iceni
+(6644,6454) city 2 #c4A99FB Iceni
+(6679,4918) city 3 #c4A99FB Iceni
+(6904,5794) city 2 #c4A99FB Iceni
+(6924,4954) city 2 #c4A99FB Iceni
+(7301,6229) city 7 #c4A99FB Iceni
+(7412,6410) city 5 #c4A99FB Iceni
+(7427,6268) city 3 #c4A99FB Iceni
+(7439,6160) city 2 #c4A99FB Iceni
+(7946,6682) city 5 #c4A99FB Iceni
+(7913,2106) city 3 #c4A99FB Iceni
+(8314,3613) city 5 #c4A99FB Iceni
+(2704,5695) city 2 #cF284FF The Wolf Fleet
+(4030,4678) city 5 #cF284FF The Wolf Fleet
+(3895,4719) city 5 #cF284FF The Wolf Fleet
+(1455,6693) city 5 #cF284FF The Wolf Fleet
+(1910,7520) city 5 #cF284FF The Wolf Fleet
+(2439,5158) city 3 #cF284FF The Wolf Fleet
+(3451,8745) city 2 #cE5B36C Klingon Empire
+(3598,8617) city 7 #cE5B36C Klingon Empire
+(3832,8610) city 5 #cE5B36C Klingon Empire
+(4364,7094) city 2 #cE5B36C Klingon Empire
+(4610,8480) city 5 #cE5B36C Klingon Empire
+(4585,8358) city 5 #cE5B36C Klingon Empire
+(4614,6664) city 2 #cE5B36C Klingon Empire
+(5070,6288) city 3 #cE5B36C Klingon Empire
+(5310,4729) city 3 #cE5B36C Klingon Empire
+(5714,6094) city 2 #cE5B36C Klingon Empire
+(5914,2494) city 2 #cE5B36C Klingon Empire
+(7074,3234) city 2 #cE5B36C Klingon Empire
+(7231,6427) city 5 #cE5B36C Klingon Empire
+(7970,6540) city 5 #cE5B36C Klingon Empire
+(8296,1951) city 5 #cE5B36C Klingon Empire
+(8041,1896) city 9 #cE5B36C Klingon Empire
+(8425,3358) city 5 #cE5B36C Klingon Empire
+(2852,5302) city 5 #c49E7C0 Shadow Remnants
+(3066,5177) city 3 #c49E7C0 Shadow Remnants
+(2793,5113) city 7 #c49E7C0 Shadow Remnants
+(4029,4891) city 5 #c49E7C0 Shadow Remnants
+(3470,3840) city 5 #c7E67F2 Frozen Empire
+(4312,4110) city 5 #c7E67F2 Frozen Empire
+(4131,4127) city 5 #c7E67F2 Frozen Empire
+(4339,3860) city 2 #c7E67F2 Frozen Empire
+(4524,2014) city 2 #c7E67F2 Frozen Empire
+(5514,2604) city 2 #c7E67F2 Frozen Empire
+(6184,2914) city 2 #c7E67F2 Frozen Empire
+(2294,3294) city 2 #c7E67F2 Frozen Empire
+(1380,3132) city 5 #cFD7844 RX 784
+(1123,3142) city 7 #cFD7844 RX 784
+(3032,5330) city 5 #cFD7844 RX 784
+(3446,3982) city 5 #cFD7844 RX 784
+(4864,1874) city 2 #cFD7844 RX 784
+(1412,2867) city 3 #cFD7844 RX 784
+(8450,3480) city 5 #cFD7844 RX 784
+(2254,3984) city 2 #cFD7844 RX 784
+(2434,1113) city 5 #cFD7844 RX 784
+(2240,1340) city 5 #cFD7844 RX 784
+(2384,4594) city 2 #cFD7844 RX 784
+(3256,3974) city 5 #cE63A3A Frozen Kingdom
+(4201,3929) city 7 #cE63A3A Frozen Kingdom
+(4327,3968) city 3 #cE63A3A Frozen Kingdom
+(6344,3375) city 2 #cE63A3A Frozen Kingdom
+(2324,3694) city 2 #cE63A3A Frozen Kingdom
+
+$planet
+(1458,6555) large
+(1292,6614)(1458,6555) small
+(4499,4497) medium
+(8115,2009) medium
+(7252,6334) medium
+(1212,3054) medium
+(2872,5254) medium
+(3851,8362) medium
+(4152,4034) medium

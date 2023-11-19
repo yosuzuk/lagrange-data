@@ -28,4 +28,12 @@ export const serverResultsN: [number, string, string, string][] = [
     [40067, 'V1481 Piscis Austrinus', '2023-09-11', '40067_V1481_Piscis_Austrinus.txt'],
     [40068, 'Andromeda 416', '2023-09-18', '40068_Andromeda_416.txt'],
     [40069, 'Apus 372', '2023-09-25', '40069_Apus_372.txt'],
+    [40070, 'V366 Monoceros', '2023-10-03', '40070_V366_Monoceros.txt'],
+    [40071, 'Piscis Austrinus RS', '2023-10-03', '40071_Piscis_Austrinus_RS.txt'],
+    [40072, 'V2060 Sagittarius', '2023-10-09', '40072_V2060_Sagittarius.txt'],
+    [40073, 'Taurus 1007', '2023-10-16', '40073_Taurus_1007.txt'],
+    [40074, 'Cepheus 56', '2023-10-16', '40074_Cepheus_56.txt'],
+    [40075, 'V661 Lepus', '2023-10-23', '40075_V661_Lepus.txt'],
+    [40076, 'Ursa Major 497', '2023-10-23', '40076_Ursa_Major_497.txt'],
+    [40077, 'V642 Cetus', '2023-10-30', '40077_V642_Cetus.txt'],
 ];
