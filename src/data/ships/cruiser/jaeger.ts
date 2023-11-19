@@ -101,8 +101,8 @@ export const jaeger: IShipDefinition[] = [
                 ],
                 skillComplete: true,
                 skills: [
-                    enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }).withCost(40),
-                    enhancements.customEnhancement('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }).withCost(40),
+                    enhancements.customEnhancementWithKey('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 2 }).withCost(40),
+                    enhancements.customEnhancementWithKey('auxiliaryAttackRadar').withDescriptionKey('auxiliaryAttackRadar', { hitrate: 8 }).withCost(40),
                 ],
                 skillSlots: 2,
             }),

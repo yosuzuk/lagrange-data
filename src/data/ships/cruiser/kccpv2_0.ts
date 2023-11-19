@@ -89,7 +89,7 @@ const typeA: IShipDefinition = {
         modules.commandSystem({
             flagshipEffects: [
                 flagshipEffect.focusFire().withDefaultFlag(),
-                flagshipEffect.customFlashipEffect('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
+                flagshipEffect.customFlashipEffectWithKey('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
             ],
             skillComplete: true,
             skillSlots: 1,
@@ -195,7 +195,7 @@ const typeB: IShipDefinition = {
         modules.commandSystem({
             flagshipEffects: [
                 flagshipEffect.focusFire().withDefaultFlag(),
-                flagshipEffect.customFlashipEffect('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
+                flagshipEffect.customFlashipEffectWithKey('targetGuidance1').withDescriptionKey('targetGuidance1Kccpv', { hitrate: 15 }).withConditionKey('targetGuidance1Kccpv').withCost(30),
             ],
             skillComplete: true,
             skillSlots: 1,

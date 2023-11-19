@@ -385,7 +385,7 @@ const staticModules: ISystemModule[] = [
     modules.commandSystem({
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
-            flagshipEffect.customFlashipEffect('patrollingDefense').withDescriptionKey('patrollingDefense', { nodeCount: '4' }).withCost(40),
+            flagshipEffect.customFlashipEffectWithKey('patrollingDefense').withDescriptionKey('patrollingDefense', { nodeCount: '4' }).withCost(40),
         ],
         skillComplete: true,
         skills: [

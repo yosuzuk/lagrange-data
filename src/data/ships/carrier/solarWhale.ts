@@ -347,9 +347,9 @@ const staticModules: ISystemModule[] = [
         ],
         skillComplete: true,
         skills: [
-            enhancements.customEnhancement('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }).withCost(30),
-            enhancements.customEnhancement('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }).withCost(20),
-            enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(20),
+            enhancements.customEnhancementWithKey('multiTargetAttack').withDescriptionKey('multiTargetAttack', { targetCount: 3 }).withCost(30),
+            enhancements.customEnhancementWithKey('aircraftEmergencyRepair').withDescriptionKey('aircraftEmergencyRepair', { damage: '2+?' }).withCost(20),
+            enhancements.customEnhancementWithKey('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(20),
             enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
         ],
         skillSlots: 4,

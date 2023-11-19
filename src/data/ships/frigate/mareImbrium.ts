@@ -45,7 +45,7 @@ export const mareImbrium: IShipDefinition[] = [
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15),
                     enhancements.reduceCooldown().withPercentageValue(15),
                     enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.customEnhancement('additionalCharge').withDescriptionKey('additionalCharge'),
+                    enhancements.customEnhancementWithKey('additionalCharge').withDescriptionKey('additionalCharge'),
                 ],
                 skillSlots: 5,
                 dpmShip: 3050,
@@ -76,7 +76,7 @@ export const mareImbrium: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     // TODO max targetCount
-                    flagshipEffect.customFlashipEffect('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
+                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
                 skillComplete: false,
@@ -169,7 +169,7 @@ export const mareImbrium: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     // TODO max targetCount
-                    flagshipEffect.customFlashipEffect('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
+                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
                 skillComplete: true,

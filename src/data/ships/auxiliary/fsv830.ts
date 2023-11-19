@@ -240,7 +240,7 @@ const d1: ISystemModule = {
     ],
     flagshipEffects: [
         flagshipEffect.focusFire().withDefaultFlag(),
-        flagshipEffect.customFlashipEffect('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
+        flagshipEffect.customFlashipEffectWithKey('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
     ],
     skillComplete: true,
     skills: [

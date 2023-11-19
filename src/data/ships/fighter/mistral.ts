@@ -40,7 +40,7 @@ export const mistral: IShipDefinition[] = [
                 skillComplete: true,
                 skills: [
                     strategy.pursueTargets(20, 1, 40).withCost(13),
-                    enhancements.customEnhancement('focusOnAerialTargets').withDescriptionKey('focusOnAerialTargets').withCost(10),
+                    enhancements.customEnhancementWithKey('focusOnAerialTargets').withDescriptionKey('focusOnAerialTargets').withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),

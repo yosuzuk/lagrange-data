@@ -394,7 +394,7 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             // TODO cost
-            flagshipEffect.customFlashipEffect('multiTargetCounterAttack').withDescriptionKey('multiTargetCounterAttack'),
+            flagshipEffect.customFlashipEffectWithKey('multiTargetCounterAttack').withDescriptionKey('multiTargetCounterAttack'),
         ],
         skillComplete: true,
         skills: [

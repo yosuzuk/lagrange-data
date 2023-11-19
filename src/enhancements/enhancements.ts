@@ -3,7 +3,8 @@ import { EnhancementValueUnit, IMutableEnhancement, IEnhancementText } from './t
 import { EnhancementSubType, EnhancementType } from './types/EnhancementType';
 
 export const enhancements = {
-    customEnhancement: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
+    customEnhancement: (text: IEnhancementText) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withText(text),
+    customEnhancementWithKey: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.SKILL, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
     increaseArmor: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_ARMOR),
     increaseShield: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_SHIELD),
     increaseHp: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.INCREASE_HP),
@@ -108,7 +109,8 @@ export const enhancements = {
 } as const;
 
 export const flagshipEffect = {
-    customFlashipEffect: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
+    customFlashipEffect: (text: IEnhancementText) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.CUSTOM).withText(text),
+    customFlashipEffectWithKey: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
     focusFire: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FOCUS_FIRE).withDescriptionKey('focusFire'),
     fleetDock1: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_1).withDescriptionKey('fleetDock1'),
     fleetDock2: () => new Enhancement(EnhancementType.FLAGSHIP_EFFECT, EnhancementSubType.FLEET_DOCK_2).withDescriptionKey('fleetDock2'),
@@ -123,8 +125,8 @@ export const flagshipEffect = {
 } as const;
 
 export const strategy = {
-    customStrategyWithKey: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
     customStrategy: (text: IEnhancementText) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withText(text),
+    customStrategyWithKey: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
     overdrive: (interval: number, frequency: number, hitRate: number, duration: number, shield: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.OVERDRIVE).withDescriptionKey('overdrive', { interval, frequency, hitRate, duration, shield, cooldown }),
     antiAircraftSupport: (hitRate: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_SUPPORT).withDescriptionKey('antiAircraftSupport', { hitRate, interval, duration }),
     antiAircraftMeasures: (cooldownDown: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_MEASURES).withDescriptionKey('antiAircraftMeasures', { cooldownDown, duration, cooldown }),

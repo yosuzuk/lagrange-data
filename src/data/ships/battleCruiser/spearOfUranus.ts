@@ -323,7 +323,7 @@ const staticModules: ISystemModule[] = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
             // TODO max duration
-            flagshipEffect.customFlashipEffect('combatSurge').withDescriptionKey('combatSurge', { duration: '60' }).withCost(30),
+            flagshipEffect.customFlashipEffectWithKey('combatSurge').withDescriptionKey('combatSurge', { duration: '60' }).withCost(30),
         ],
         skillComplete: true,
         skills: [

@@ -289,7 +289,7 @@ const staticModules: ISystemModule[] = [
         ],
         skillComplete: true,
         skills: [
-            enhancements.customEnhancement('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
+            enhancements.customEnhancementWithKey('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
             // TODO verify cost
             enhancements.increaseCruisingSpeedOfAircraft().withPercentageValue(75).withCost(30),
             // TODO verify cost

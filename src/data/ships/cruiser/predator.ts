@@ -125,7 +125,7 @@ export const predator: IShipDefinition[] = [
                 ],
                 skillComplete: true,
                 skills: [
-                    enhancements.customEnhancement('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(40),
+                    enhancements.customEnhancementWithKey('rangeExtension').withDescriptionKey('rangeExtension', { radius: '10.0' }).withCost(40),
                 ],
                 skillSlots: 2,
             }),

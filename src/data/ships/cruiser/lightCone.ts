@@ -190,7 +190,7 @@ export const lightCone: IShipDefinition[] = [
                     enhancements.increaseSystemHp().withPercentageValue(35).withCost(6),
                     enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
                     enhancements.reducePreTargetTime().withAbsoluteValue(1).withUnit('seconds').withCost(6),
-                    enhancements.customEnhancement('spreadOutWarhead2').withDescriptionKey('spreadOutWarhead2').withCost(6),
+                    enhancements.customEnhancementWithKey('spreadOutWarhead2').withDescriptionKey('spreadOutWarhead2').withCost(6),
                 ],
                 skillSlots: 8,
             }),
