@@ -34,12 +34,14 @@ const additionallySupportedShipIds: string[] = [
     ShipId.AT021_A,
     ShipId.AT021_B,
     ShipId.AT021_C,
+    ShipId.HAYREDDINGS_LOYAL,
     ShipId.MISTRAL,
     ShipId.SANDRAKE,
     ShipId.STINGRAY,
     ShipId.STRIX_A100,
     ShipId.VITAS_A021,
     ShipId.VITAS_B010,
+    ShipId.BALANCER_ANDERSON,
 ];
 
 export const TechPointConfigPage = () => {
