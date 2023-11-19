@@ -288,7 +288,7 @@ export const lightCone: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('heavyAmmo').withDescriptionKey('heavyAmmoWithInterval', { damage: 60, durationUp: 30, duration: 30, cooldown: 30 }).withCost(15),
+                    strategy.customStrategyWithKey('heavyAmmo').withDescriptionKey('heavyAmmoWithInterval', { damage: 60, durationUp: 30, duration: 30, cooldown: 30 }).withCost(15),
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(8),
                     enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(8),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(8),

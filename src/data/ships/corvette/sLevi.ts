@@ -20,7 +20,7 @@ const defaultModules: ISystemModule[] = [
         mainSystem: true,
         skillComplete: true,
         skills: [
-            strategy.customStrategy('diveToss').withDescriptionKey('diveToss').withCost(18),
+            strategy.customStrategyWithKey('diveToss').withDescriptionKey('diveToss').withCost(18),
             enhancements.increaseDamage().withPercentageValue(10).withCost(12),
             enhancements.increaseDamage().withPercentageValue(10).withCost(12),
             enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(12),

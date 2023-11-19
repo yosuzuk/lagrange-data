@@ -1,5 +1,5 @@
-import { t } from '../i18n';
-import { EnhancementValueUnit, IMutableEnhancement } from './types/IEnhancement';
+import { getCurrentLanguage, t } from '../i18n';
+import { EnhancementValueUnit, IMutableEnhancement, IEnhancementText } from './types/IEnhancement';
 import { EnhancementSubType, EnhancementType } from './types/EnhancementType';
 
 export const enhancements = {
@@ -123,7 +123,8 @@ export const flagshipEffect = {
 } as const;
 
 export const strategy = {
-    customStrategy: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
+    customStrategyWithKey: (textKey: string, options?: Record<string, unknown>) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withTextKey(textKey, options),
+    customStrategy: (text: IEnhancementText) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.CUSTOM).withText(text),
     overdrive: (interval: number, frequency: number, hitRate: number, duration: number, shield: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.OVERDRIVE).withDescriptionKey('overdrive', { interval, frequency, hitRate, duration, shield, cooldown }),
     antiAircraftSupport: (hitRate: number, interval: number, duration: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_SUPPORT).withDescriptionKey('antiAircraftSupport', { hitRate, interval, duration }),
     antiAircraftMeasures: (cooldownDown: number, duration: number, cooldown: number) => new Enhancement(EnhancementType.STRATEGY, EnhancementSubType.ANTI_AIRCRAFT_MEASURES).withDescriptionKey('antiAircraftMeasures', { cooldownDown, duration, cooldown }),
@@ -165,6 +166,7 @@ class Enhancement implements IMutableEnhancement {
     private _value2: number | null = null;
     private _unit: EnhancementValueUnit | null = null;
     private _cost: number | null = null;
+    private _text: IEnhancementText | null = null;
     private _textKey: string;
     private _textKeyOptions: Record<string, unknown> = {};
     private _descriptionKey: string | null = null;
@@ -188,6 +190,10 @@ class Enhancement implements IMutableEnhancement {
     }
 
     get description(): string | null {
+        if (this._text) {
+            return this._text.translatedDescription[getCurrentLanguage()] ?? this._text.description;
+        }
+
         return this._descriptionKey ? t(this._descriptionKey, { defaultValue: '???', ...this._descriptionKeyOptions }) : null;
     }
 
@@ -224,6 +230,10 @@ class Enhancement implements IMutableEnhancement {
     }
 
     get name(): string {
+        if (this._text) {
+            return this._text.translatedText[getCurrentLanguage()] ?? this._text.text;
+        }
+
         return t(this._textKey, {
             defaultValue: '???',
             ...this._textKeyOptions,
@@ -232,12 +242,17 @@ class Enhancement implements IMutableEnhancement {
 
     get properties(): string[] {
         return [
-            this._descriptionKey ? t('label.effectColonValue', { effect: this.description }) : '',
+            this.description ? t('label.effectColonValue', { effect: this.description }) : '',
             this._conditionKey ? t('label.conditionColonValue', { condition: this.condition }) : '',
             this.type === EnhancementType.STRATEGY ? t('enhancementType.strategy') : '',
             this._isDefault ? t('enhancement.enabledByDefaultBrackets') : '',
             this.formatValuesAndCost() ?? '',
         ].filter(line => !!line);
+    }
+
+    public withText(text: IEnhancementText) {
+        this._text = text;
+        return this;
     }
 
     public withTextKey(key: string, options?: Record<string, unknown>) {

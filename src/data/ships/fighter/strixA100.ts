@@ -35,7 +35,7 @@ export const strixA100: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('rapidFire').withDescriptionKey('rapidFire2', { value: 50, cooldown: 70, interval: 45, duraction: 35 }) .withCost(15),
+                    strategy.customStrategyWithKey('rapidFire').withDescriptionKey('rapidFire2', { value: 50, cooldown: 70, interval: 45, duraction: 35 }) .withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),

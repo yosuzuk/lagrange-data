@@ -39,7 +39,7 @@ export const vitasB010: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('activeManeuvers').withDescriptionKey('activeManeuvers').withCost(15),
+                    strategy.customStrategyWithKey('activeManeuvers').withDescriptionKey('activeManeuvers').withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(9),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(9),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),

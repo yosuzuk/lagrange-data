@@ -66,7 +66,7 @@ const precisionGuidanceSystem = modules.static({
     mainSystem: true,
     skillComplete: true,
     skills: [
-        strategy.customStrategy('streadyFiring').withDescriptionKey('streadyFiring').withCost(15),
+        strategy.customStrategyWithKey('streadyFiring').withDescriptionKey('streadyFiring').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),

@@ -87,7 +87,7 @@ const a1: ISystemModule = {
     defaultModule: true,
     skillComplete: true,
     skills: [
-        strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+        strategy.customStrategyWithKey('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),
@@ -128,7 +128,7 @@ const a2: ISystemModule = {
     skillComplete: true,
     skills: [
         // TODO translate and rename highDensityAttack based on english name & update japanese description
-        strategy.customStrategy('highDensityAttack').withDescriptionKey('highDensityAttack').withCost(15),
+        strategy.customStrategyWithKey('highDensityAttack').withDescriptionKey('highDensityAttack').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -164,7 +164,7 @@ const a3: ISystemModule = {
     categoryNumber: 3,
     skillComplete: true,
     skills: [
-        strategy.customStrategy('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
+        strategy.customStrategyWithKey('moraleBooster').withDescriptionKey('moraleBooster').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.reduceCooldown().withPercentageValue(14.8).withCost(8),

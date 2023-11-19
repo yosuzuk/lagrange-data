@@ -60,7 +60,7 @@ const m2: ISystemModule = {
     mainSystem: true,
     skillComplete: true,
     skills: [
-        strategy.customStrategy('unknown').withCost(15), // TODO find out
+        strategy.customStrategyWithKey('unknown').withCost(15), // TODO find out
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.increaseDamage().withPercentageValue(10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),

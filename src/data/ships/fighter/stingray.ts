@@ -39,7 +39,7 @@ export const stingray: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('stealthAttacks').withDescriptionKey('stealthAttacks', { evasion: 90, hitrate: 30, interval: 90, duraction: 30 }) .withCost(14),
+                    strategy.customStrategyWithKey('stealthAttacks').withDescriptionKey('stealthAttacks', { evasion: 90, hitrate: 30, interval: 90, duraction: 30 }) .withCost(14),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),

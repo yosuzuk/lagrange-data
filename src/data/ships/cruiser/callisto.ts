@@ -242,7 +242,7 @@ export const callisto: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('heavyAmmo').withDescriptionKey('heavyAmmoWithInterval', { damage: 60, durationUp: 30, duration: 30, cooldown: 30 }).withCost(12),
+                    strategy.customStrategyWithKey('heavyAmmo').withDescriptionKey('heavyAmmoWithInterval', { damage: 60, durationUp: 30, duration: 30, cooldown: 30 }).withCost(12),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(6),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(6),

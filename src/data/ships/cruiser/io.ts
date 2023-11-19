@@ -125,7 +125,7 @@ export const io: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.customStrategy('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
+                    strategy.customStrategyWithKey('overdrive').withDescriptionKey('overdriveWithDuration', { interval: 90, frequency: 4, durationUp: 100, hitRate: 35, duration: 30, cooldown: 15 }).withCost(15),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(10),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(10),

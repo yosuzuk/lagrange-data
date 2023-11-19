@@ -38,7 +38,7 @@ export const mareImbrium: IShipDefinition[] = [
                 skillComplete: false,
                 skills: [
                     // TODO cost
-                    strategy.customStrategy('firepowerAssault').withDescriptionKey('firepowerAssault'),
+                    strategy.customStrategyWithKey('firepowerAssault').withDescriptionKey('firepowerAssault'),
                     enhancements.increaseDamage().withPercentageValue(10),
                     enhancements.increaseDamage().withPercentageValue(10),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15),
@@ -82,7 +82,7 @@ export const mareImbrium: IShipDefinition[] = [
                 skillComplete: false,
                 skills: [
                     // TODO cost
-                    strategy.customStrategy('maneuverOperation').withDescriptionKey('maneuverOperation'),
+                    strategy.customStrategyWithKey('maneuverOperation').withDescriptionKey('maneuverOperation'),
                 ],
                 skillSlots: 1,
             }),
@@ -151,7 +151,7 @@ export const mareImbrium: IShipDefinition[] = [
                 skillComplete: false,
                 skills: [
                     // TODO cost
-                    strategy.customStrategy('energySwitching').withDescriptionKey('energySwitching'),
+                    strategy.customStrategyWithKey('energySwitching').withDescriptionKey('energySwitching'),
                     enhancements.increaseDamage().withPercentageValue(10),
                     enhancements.increaseDamage().withPercentageValue(10),
                     enhancements.reduceCooldown().withPercentageValue(15),

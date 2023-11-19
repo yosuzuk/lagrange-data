@@ -263,7 +263,7 @@ const d1: ISystemModule = {
     category: 'D',
     categoryNumber: 1,
     effects: [
-        strategy.customStrategy('oscillatoryExcitation').withDescriptionKey('oscillatoryExcitation'),
+        strategy.customStrategyWithKey('oscillatoryExcitation').withDescriptionKey('oscillatoryExcitation'),
     ],
     skillComplete: false,
     // TODO skills

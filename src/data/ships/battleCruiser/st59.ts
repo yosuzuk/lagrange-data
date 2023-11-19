@@ -421,7 +421,7 @@ const staticModules: ISystemModule[] = [
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
             enhancements.reduceHitByMissleAndTorpedo().withPercentageValue(15, 25).withCost(8),
-            strategy.customStrategy('shipChargingStance').withDescriptionKey('shipChargingStance').withCost(8),
+            strategy.customStrategyWithKey('shipChargingStance').withDescriptionKey('shipChargingStance').withCost(8),
         ],
         skillSlots: 6,
     }),
