@@ -123,6 +123,15 @@ export function getExampleMaps() {
                 },
             },
         }),
+        shapesExample: createExample({
+            name: 'Custom Shapes',
+            filename: 'customShapes.txt',
+            translated: {
+                ja: {
+                    name: 'カスタムシェイプ',
+                },
+            },
+        }),
         overlayExample: createExample({
             name: 'Overlay',
             filename: 'overlay.txt',

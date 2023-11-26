@@ -1,4 +1,5 @@
 import { useMemo, useRef } from 'react';
+import { Shape as TreeShape, Vector2 } from 'three';
 import { useGridSize } from '../context/GridSizeContext';
 import { useZoomBasedVisibility } from '../context/ZoomLevelContext';
 import { IShape } from '../types/IMapContent';
@@ -25,11 +26,13 @@ export const Shape = (props: IProps) => {
 
     const state = useMemo(() => {
         updateIterationRef.current++;
-   
-        const geometryPoints = new Float32Array(shape.positions.reverse().reduce((acc, position) => {
+
+        const threeShape = new TreeShape();
+        threeShape.setFromPoints(shape.positions.map(position => {
             const [x, y] = toGridPosition(position, gridSize);
-            return [...acc, x, y, 0];
-        }, [] as number[]));
+            return new Vector2(x, y);
+        }));
+        threeShape.autoClose = true;
 
         const [firstX, firstY] = toGridPosition(shape.positions[0], gridSize);
         const borderPoints = new Float32Array(shape.positions.reduce((acc, position, index) => {
@@ -46,7 +49,7 @@ export const Shape = (props: IProps) => {
         }, [] as number[]));
 
         return {
-            geometryPoints,
+            threeShape,
             borderPoints,
         } as const;
     }, [shape, gridSize, updateIterationRef]);
@@ -55,14 +58,7 @@ export const Shape = (props: IProps) => {
         <group key={`${shape.id}_${updateIterationRef.current}`}>
             {shape.type === 'filled' && (
                 <mesh position={[0, 0, 0]} renderOrder={backgroundRenderOrder} visible={visible}>
-                    <bufferGeometry attach="geometry" onUpdate={self => self.computeVertexNormals()}>
-                        <bufferAttribute
-                            attach="attributes-position"
-                            array={state.geometryPoints}
-                            count={state.geometryPoints.length / 3}
-                            itemSize={3}
-                        />
-                    </bufferGeometry>
+                    <shapeGeometry args={[state.threeShape]} />
                     <meshBasicMaterial color={shape.color} opacity={OPACITY} transparent={true} depthWrite={false} />
                 </mesh>
             )}
