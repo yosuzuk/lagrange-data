@@ -13,11 +13,10 @@ interface IProps {
     currentMenu: string;
     menuItemIdPrefix: string;
     onClickItem: (event: React.MouseEvent<HTMLLIElement>) => void;
-    onClickRemoveItem: (content: IMapContent) => void;
 }
 
 export const MapContentSearchList = (props: IProps) => {
-    const { mapData, currentMenu, menuItemIdPrefix, onClickItem, onClickRemoveItem } = props;
+    const { mapData, currentMenu, menuItemIdPrefix, onClickItem } = props;
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     const planets: IPlanet[] = useMemo(() => {
@@ -103,7 +102,6 @@ export const MapContentSearchList = (props: IProps) => {
                     playerStructures={playerStructures}
                     markers={markers}
                     onClickItem={onClickItem}
-                    onClickRemoveItem={onClickRemoveItem}
                 />
             ) : (
                 <Box

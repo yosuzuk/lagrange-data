@@ -4,21 +4,41 @@ import { styled } from '@mui/material/styles';
 import { colorMap, getTextColorBasedOnBackgroundColor } from '../../../../utils/colorUtils';
 import { parseLines, deprecatedSectionKeywords, sectionKeywords } from './codeUtils';
 
+export const FOCUSED_LINE_ID = 'focusedLine';
+
+const beforeShared = `
+    position: absolute;
+    right: 100%;
+    margin-right: 10px;
+    text-align: right;
+    opacity: .5;
+    user-select: none;
+    counter-increment: line;
+    content: counter(line);
+    color: white;
+`;
+
 const CodeLine = styled('span')`
     &:before {
-        position: absolute;
-        right: 100%;
-        margin-right: 10px;
-        text-align: right;
-        opacity: .5;
-        user-select: none;
-        counter-increment: line;
-        content: counter(line);
-        color: 'white'
+        ${beforeShared}
     }
 `;
 
-export function hightlightCode(code: string): ReactNode {
+const FocusedCodeLine = styled('span')`
+    &:before {
+        ${beforeShared}
+        background-color: blue;
+    }
+`;
+
+const ErrorCodeLine = styled('span')`
+    &:before {
+        ${beforeShared}
+        background-color: red;
+    }
+`;
+
+export function hightlightCode(code: string, focusedLineNumber: number | null, errorLineNumber: number | null): ReactNode {
     let lines: Array<ReactNode[]> = parseLines(code).map(l => [l]);
 
     // comments
@@ -81,9 +101,22 @@ export function hightlightCode(code: string): ReactNode {
             }) as ReactNode[];
         });
     });
-
-    return lines.flatMap((line, index) => [
-        <CodeLine key={`line_${index} `}>{line}</CodeLine>,
-        '\n'
-    ]);
+    return lines.flatMap((line, index) => {
+        if (errorLineNumber === index + 1) {
+            return [
+                <ErrorCodeLine id={FOCUSED_LINE_ID} key={`line_${index} `}>{line}</ErrorCodeLine>,
+                '\n'
+            ];
+        }
+        if (focusedLineNumber === index + 1) {
+            return [
+                <FocusedCodeLine id={FOCUSED_LINE_ID} key={`line_${index} `}>{line}</FocusedCodeLine>,
+                '\n'
+            ];
+        }
+        return [
+            <CodeLine key={`line_${index} `}>{line}</CodeLine>,
+            '\n'
+        ];
+    });
 }

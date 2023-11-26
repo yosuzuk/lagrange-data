@@ -14,20 +14,20 @@ import playerIconWhite from './assets/playerWhite.png';
 import pinIconWhite from './assets/pinWhite.png';
 import docksIconWhite from './assets/docksWhite.png';
 import { CoordinateInputs } from './CoordinateInputs';
+import { useMapInteraction } from './context/MapInteractionContext';
 
 const MENU_ITEM_ID_PREFIX = 'menuItem.';
 
 interface IProps {
     mapData: IMapData;
     targetToMark: IMapContent | null;
-    onMarkTarget: Dispatch<SetStateAction<IMapContent | null>>;
-    onRemoveContent: (content: IMapContent) => void;
 }
 
 export const MapNavigatorBar = (props: IProps) => {
-    const { mapData, targetToMark, onMarkTarget, onRemoveContent } = props;
+    const { mapData, targetToMark } = props;
     const [currentMenu, setCurrentMenu] = useState<string | null>(null);
     const menuRootRef = useRef<HTMLDivElement>(null);
+    const { markTarget } = useMapInteraction();
 
     const handleClickMenu = useCallback((event: React.MouseEvent<HTMLElement>) => {
         const menuId = event.currentTarget?.id ?? 'unknown';
@@ -35,9 +35,9 @@ export const MapNavigatorBar = (props: IProps) => {
     }, []);
 
     const handleClose = useCallback(() => {
-        onMarkTarget(null);
+        markTarget(null);
         setCurrentMenu(null);
-    }, [onMarkTarget]);
+    }, [markTarget]);
 
     const handleClickListItem = useCallback((event: React.MouseEvent<HTMLLIElement>) => {
         const menuItemId = event.currentTarget?.id ?? null;
@@ -50,12 +50,12 @@ export const MapNavigatorBar = (props: IProps) => {
         switch (currentMenu) {
             case 'planets': {
                 const planet = mapData.planets.find(p => p.id === contentId);
-                onMarkTarget(planet ?? null);
+                markTarget(planet ?? null);
                 break;
             }
             case 'stations': {
                 const station = mapData.stations.find(s => s.id === contentId);
-                onMarkTarget(station ?? null);
+                markTarget(station ?? null);
                 break;
             }
             case 'players': {
@@ -64,21 +64,21 @@ export const MapNavigatorBar = (props: IProps) => {
                     ...mapData.outposts,
                     ...mapData.platforms,
                 ].find(s => s.id === contentId);
-                onMarkTarget(playerStructure ?? null);
+                markTarget(playerStructure ?? null);
                 break;
             }
             case 'docks': {
                 const station = mapData.stations.find(s => s.id === contentId);
-                onMarkTarget(station ?? null);
+                markTarget(station ?? null);
                 break;
             }
             case 'markers': {
                 const marker = mapData.marker.find(m => m.id === contentId);
-                onMarkTarget(marker ?? null);
+                markTarget(marker ?? null);
                 break;
             }
         }
-    }, [currentMenu, mapData]);
+    }, [currentMenu, mapData, markTarget]);
 
     return (
         <Box
@@ -125,7 +125,7 @@ export const MapNavigatorBar = (props: IProps) => {
                         <img alt="markers" src={pinIconWhite} />
                     </Button>
                 </Stack>
-                <CoordinateInputs targetToMark={targetToMark} onMarkTarget={onMarkTarget} />
+                <CoordinateInputs targetToMark={targetToMark} />
             </Stack>
             {menuRootRef.current && currentMenu && (
                 <Popper key={currentMenu} open={true} placement="top-start" anchorEl={menuRootRef.current}>
@@ -137,7 +137,6 @@ export const MapNavigatorBar = (props: IProps) => {
                                     currentMenu={currentMenu}
                                     menuItemIdPrefix={MENU_ITEM_ID_PREFIX}
                                     onClickItem={handleClickListItem}
-                                    onClickRemoveItem={onRemoveContent}
                                 />
                             </div>
                         </ClickAwayListener>

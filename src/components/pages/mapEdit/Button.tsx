@@ -26,3 +26,29 @@ export const PrimaryButton = styled(Button)({
         color: 'grey',
     },
 });
+
+export const SecondaryButton = styled(Button)({
+    minWidth: '55px',
+    padding: 0,
+    backgroundColor: '#aa8339',
+    borderRadius: '0 0 8px 0',
+    color: 'white',
+    fontSize: '0.7rem',
+    '&.Mui-disabled': {
+        backgroundColor: '#424242',
+        color: 'grey',
+    },
+    '&:hover': {
+        backgroundColor: '#aa8339',
+    },
+    '&::before': {
+        content: '"."',
+        color: 'yellow',
+        position: 'absolute',
+        bottom: '9px',
+        left: '2px',
+    },
+    '&.Mui-disabled::before': {
+        color: 'grey',
+    },
+});

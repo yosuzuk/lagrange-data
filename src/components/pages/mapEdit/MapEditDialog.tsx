@@ -1,3 +1,4 @@
+import { ReactNode, useCallback, useEffect } from 'react';
 import { ClassNames } from '@emotion/react'
 import Editor from 'react-simple-code-editor';
 import Alert from '@mui/material/Alert';
@@ -9,11 +10,12 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ResponsiveDialog } from '../../dialog/ResponsiveDialog';
 import { IParseMapContentError } from './types/IMapContent';
 import { t } from '../../../i18n';
-import { hightlightCode } from './utils/hightlightCode';
+import { FOCUSED_LINE_ID, hightlightCode } from './utils/hightlightCode';
 import { useColorMode } from '../../../theme/context/ThemeProvider';
 
 interface IProps {
     input: string;
+    focusedLineNumber: number | null;
     setInput: (input: string) => void;
     parseError: IParseMapContentError | null;
     onCancel: () => void;
@@ -22,8 +24,22 @@ interface IProps {
 }
 
 export const MapEditDialog = (props: IProps) => {
-    const { input, parseError, setInput, onCancel, onApply, onValidate } = props;
+    const { input, focusedLineNumber, parseError, setInput, onCancel, onApply, onValidate } = props;
     const colorMode = useColorMode();
+
+    const handleChange = useCallback((code: string): ReactNode => {
+        return hightlightCode(code, focusedLineNumber, parseError?.line ?? null);
+    }, [hightlightCode, focusedLineNumber, parseError]);
+
+    useEffect(() => {
+        if (focusedLineNumber !== null || typeof parseError?.line === 'number') {
+            setTimeout(() => {
+                document.getElementById(FOCUSED_LINE_ID)?.scrollIntoView({
+                    block: 'center',
+                });
+            }, 100);
+        }
+    }, [focusedLineNumber, parseError]);
 
     return (
         <ResponsiveDialog
@@ -49,7 +65,7 @@ export const MapEditDialog = (props: IProps) => {
                             <Editor
                                 value={input}
                                 onValueChange={code => setInput(code)}
-                                highlight={hightlightCode}
+                                highlight={handleChange}
                                 padding={10}
                                 style={{
                                     fontFamily: '"Fira code", "Fira Mono", monospace',

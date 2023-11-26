@@ -4,13 +4,15 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
-import ClearIcon from '@mui/icons-material/Clear';
-import { IMapContent, IMapContentWithStation, IMarker, IPlanet, IStation } from './types/IMapContent';
+import { IMapContentWithStation, IMarker, IPlanet, IStation } from './types/IMapContent';
 import { formatShortPlayerStructureType, formatStationLabelForList } from './utils/mapContentUtils';
 import { useColorMode } from '../../../theme/context/ThemeProvider';
 import Typography from '@mui/material/Typography';
 import { CanvasClone } from './CanvasClone';
 import Stack from '@mui/material/Stack';
+import { SecondaryButton } from './Button';
+import { t } from '../../../i18n';
+import { useMapInteraction } from './context/MapInteractionContext';
 
 interface IProps {
     menuItemIdPrefix: string;
@@ -20,16 +22,16 @@ interface IProps {
     playerStructures: IMapContentWithStation[];
     markers: IMarker[];
     onClickItem: (event: React.MouseEvent<HTMLLIElement>) => void;
-    onClickRemoveItem: (content: IMapContent) => void;
 }
 
 const THRESHOLD = 20;
 
 export const MapContentSearchListContent = (props: IProps) => {
-    const { menuItemIdPrefix, planets, stations, docks, playerStructures, markers, onClickItem, onClickRemoveItem } = props;
+    const { menuItemIdPrefix, planets, stations, docks, playerStructures, markers, onClickItem } = props;
     const totalCount = planets.length + stations.length + docks.length + markers.length;
     const [ready, setReady] = useState<boolean>(totalCount > THRESHOLD ? false : true);
     const colorMode = useColorMode();
+    const { editContent, removeContent } = useMapInteraction();
 
     const smallMenu = document.body.getBoundingClientRect().width < 640;
 
@@ -88,7 +90,7 @@ export const MapContentSearchListContent = (props: IProps) => {
                             id={menuItemIdPrefix + station.id}
                             onClick={onClickItem}
                             disableGutters={true}
-                            sx={{ padding: 0 }}
+                            sx={{ paddingRight: '4px', columnGap: '8px' }}
                         >
                             <Stack
                                 spacing={0.5}
@@ -112,6 +114,18 @@ export const MapContentSearchListContent = (props: IProps) => {
                             <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                 {formatStationLabelForList(station)}
                             </ListItemText>
+                            {station.type === 'dock' && (
+                                <>
+                                    <SecondaryButton onClick={e => {
+                                        e.stopPropagation();
+                                        editContent(station);
+                                    }}>{t('button.edit')}</SecondaryButton>
+                                    <SecondaryButton onClick={e => {
+                                        e.stopPropagation();
+                                        removeContent(station);
+                                    }}>{t('button.delete')}</SecondaryButton>
+                                </>
+                            )}
                         </MenuItem>,
                         <Divider key={`divider_${station.id}`} style={{ margin: 0 }} />
                     ])),
@@ -121,7 +135,7 @@ export const MapContentSearchListContent = (props: IProps) => {
                             id={menuItemIdPrefix + structure.id}
                             onClick={onClickItem}
                             disableGutters={true}
-                            sx={{ padding: 0 }}
+                            sx={{ padding: 0, paddingRight: '4px', columnGap: '8px' }}
                         >
                             <Stack
                                 spacing={0.5}
@@ -145,6 +159,14 @@ export const MapContentSearchListContent = (props: IProps) => {
                             <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                 {formatStationLabelForList(structure.station)}
                             </ListItemText>
+                            <SecondaryButton onClick={e => {
+                                e.stopPropagation();
+                                editContent(structure);
+                            }}>{t('button.edit')}</SecondaryButton>
+                            <SecondaryButton onClick={e => {
+                                e.stopPropagation();
+                                removeContent(structure);
+                            }}>{t('button.delete')}</SecondaryButton>
                         </MenuItem>,
                         <Divider key={`divider_${structure.id}`} style={{ margin: 0 }} />
                     ])),
@@ -154,32 +176,19 @@ export const MapContentSearchListContent = (props: IProps) => {
                             id={menuItemIdPrefix + marker.id}
                             onClick={onClickItem}
                             disableGutters={true}
+                            sx={{ paddingRight: '4px', columnGap: '8px' }}
                         >
                             <ListItemText sx={{ padding: '0 6px' }} primaryTypographyProps={{ component: 'pre' }}>
                                 {marker.label ?? marker.position}
                             </ListItemText>
-                            <Divider orientation="vertical" flexItem />
-                            <Box
-                                component="div"
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    width: '36px',
-                                }}
-                            >
-                                <ClearIcon
-                                    sx={{
-                                        color: colorMode.mode === 'dark' ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)',
-                                        '&:hover': {
-                                            color: colorMode.mode === 'dark' ? 'white' : 'rgba(0,0,0,0.75)',
-                                        }
-                                    }}
-                                    onClick={e => {
-                                        e.stopPropagation();
-                                        onClickRemoveItem(marker)
-                                    }}
-                                />
-                            </Box>
+                            <SecondaryButton onClick={e => {
+                                e.stopPropagation();
+                                editContent(marker);
+                            }}>{t('button.edit')}</SecondaryButton>
+                            <SecondaryButton onClick={e => {
+                                e.stopPropagation();
+                                removeContent(marker);
+                            }}>{t('button.delete')}</SecondaryButton>
                         </MenuItem>,
                         <Divider key={`divider_${marker.id}`} style={{ margin: 0 }} />
                     ]))

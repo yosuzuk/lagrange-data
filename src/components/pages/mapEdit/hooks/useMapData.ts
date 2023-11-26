@@ -22,12 +22,14 @@ interface IHookResult {
     error: unknown | null;
     changeState: MutationState;
     allowSave: boolean;
+    focusedLineNumber: number | null;
     setMode: Dispatch<SetStateAction<MapInteractionMode>>;
     cancelEditMode: () => void;
     setInput: (input: string) => void;
     applyInput: () => void;
     validateInput: () => void;
     saveInput: (editKey: string) => void;
+    editContent: (content: IMapContent) => void;
     removeContent: (content: IMapContent) => void;
     markTarget: Dispatch<SetStateAction<IMapContent | null>>;
 }
@@ -41,6 +43,7 @@ export const useMapData = (): IHookResult => {
     const allowSave = useMemo<boolean>(() => !!mapUrl && !isExampleMapUrl(mapUrl), [mapUrl]);
 
     const [mode, setMode] = useState<MapInteractionMode>('interactive');
+    const [focusedLineNumber, setFocusedLineNumber] = useState<number | null>(null);
     const [changeState, setChangeState] = useState<MutationState>('noData');
     const [input, setInput] = useState<string>('');
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
@@ -129,6 +132,11 @@ export const useMapData = (): IHookResult => {
         setMode('interactive');
     }, [lastValidInput]);
 
+    const editContent = useCallback((content: IMapContent) => {
+        setMode('edit');
+        setFocusedLineNumber(content.lineNumber);
+    }, []);
+
     const removeContent = useCallback((content: IMapContent) => {
         const lines = parseLines(input);
         const lineIndex = content.lineNumber - 1;
@@ -155,6 +163,10 @@ export const useMapData = (): IHookResult => {
         setTargetToMark(null);
     }, [mode]);
 
+    useEffect(() => {
+        setFocusedLineNumber(null);
+    }, [input]);
+
     return {
         mode,
         mapUrl,
@@ -168,12 +180,14 @@ export const useMapData = (): IHookResult => {
         error: mapDataQueryResult.error ?? mapDataMutation.error ?? null,
         changeState,
         allowSave,
+        focusedLineNumber,
         setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
         saveInput,
+        editContent,
         removeContent,
         markTarget: setTargetToMark,
     };

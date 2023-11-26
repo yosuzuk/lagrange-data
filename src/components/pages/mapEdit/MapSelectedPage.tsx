@@ -1,4 +1,4 @@
-import { useCallback, memo, useState } from 'react';
+import { useCallback, memo, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -15,6 +15,7 @@ import { SaveMapButton } from './SaveMapButton';
 import Box from '@mui/material/Box';
 import { MapOverlay } from './MapOverlay';
 import { MapPerspective } from './types/MapPerspective';
+import { IMapInteractionContextValue, MapInteractionContextProvider } from './context/MapInteractionContext';
 
 const MapRenderer = memo(_MapRenderer);
 
@@ -32,15 +33,25 @@ const MapSelectedPage = () => {
         error,
         changeState,
         allowSave,
+        focusedLineNumber,
         setMode,
         cancelEditMode,
         setInput,
         applyInput,
         validateInput,
         saveInput,
+        editContent,
         removeContent,
         markTarget,
     } = useMapData();
+
+    const MapInteractionContextValue = useMemo<IMapInteractionContextValue>(() => {
+        return {
+            markTarget,
+            editContent,
+            removeContent,
+        };
+    }, [markTarget, editContent, removeContent]);
 
     const navigate = useNavigate();
     const handleClickExit = useCallback(() => {
@@ -81,32 +92,35 @@ const MapSelectedPage = () => {
                     <MapRenderer mapData={mapData} targetToMark={targetToMark} perspective={perspective} markTarget={markTarget} />
                 </Box>
             )}
-            <MapTopRightBar
-                mode={mode}
-                onExit={handleClickExit}
-                setMode={setMode}
-                setPerspective={setPerspective}
-            />
-            {mode === 'edit' && (
-                <MapEditDialog
-                    input={input}
-                    setInput={setInput}
-                    parseError={parseError}
-                    onCancel={!!mapData ? cancelEditMode : handleClickExit}
-                    onApply={applyInput}
-                    onValidate={validateInput}
+            <MapInteractionContextProvider value={MapInteractionContextValue}>
+                <MapTopRightBar
+                    mode={mode}
+                    onExit={handleClickExit}
+                    setMode={setMode}
+                    setPerspective={setPerspective}
                 />
-            )}
-            {mode === 'interactive' && mapData && (
-                <>
-                    <MapNavigatorBar mapData={mapData} targetToMark={targetToMark} onRemoveContent={removeContent} onMarkTarget={markTarget} />
-                    <SaveMapButton saving={saving} save={saveInput} changeState={changeState} allowSave={allowSave} />
-                    <EditMapButton setMode={setMode} />
-                    {mapData.overlayText.length > 0 && (
-                        <MapOverlay overlayText={mapData.overlayText} />
-                    )}
-                </>
-            )}
+                {mode === 'edit' && (
+                    <MapEditDialog
+                        input={input}
+                        focusedLineNumber={focusedLineNumber}
+                        setInput={setInput}
+                        parseError={parseError}
+                        onCancel={!!mapData ? cancelEditMode : handleClickExit}
+                        onApply={applyInput}
+                        onValidate={validateInput}
+                    />
+                )}
+                {mode === 'interactive' && mapData && (
+                    <>
+                        <MapNavigatorBar mapData={mapData} targetToMark={targetToMark} />
+                        <SaveMapButton saving={saving} save={saveInput} changeState={changeState} allowSave={allowSave} />
+                        <EditMapButton setMode={setMode} />
+                        {mapData.overlayText.length > 0 && (
+                            <MapOverlay overlayText={mapData.overlayText} />
+                        )}
+                    </>
+                )}
+            </MapInteractionContextProvider>  
         </>
     );
 };

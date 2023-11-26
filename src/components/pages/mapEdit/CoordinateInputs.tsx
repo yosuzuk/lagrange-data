@@ -8,19 +8,20 @@ import Stack from '@mui/material/Stack';
 import Popper from '@mui/material/Popper';
 import { MapContentSelection } from './MapContentSelection';
 import { PrimaryButton } from './Button';
+import { useMapInteraction } from './context/MapInteractionContext';
 
 interface IProps {
     targetToMark: IMapContent | null;
-    onMarkTarget: Dispatch<SetStateAction<IMapContent | null>>;
 }
 
 export const CoordinateInputs = (props: IProps) => {
-    const { targetToMark, onMarkTarget } = props;
+    const { targetToMark } = props;
     const [x, y] = (targetToMark && targetToMark.contentType !== 'temporaryLocation') ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
     const [localX, setLocalX] = useState<number | null>(x);
     const [localY, setLocalY] = useState<number | null>(y);
     const jumpedRef = useRef<boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);
+    const { markTarget } = useMapInteraction();
 
     useEffect(() => {
         const [x, y] = (targetToMark && targetToMark.contentType !== 'temporaryLocation') ? getPrimaryCoordinatesForMapContent(targetToMark) : [null, null];
@@ -32,7 +33,7 @@ export const CoordinateInputs = (props: IProps) => {
 
     const handleClickJump = () => {
         if (localX !== null && localY !== null) {
-            onMarkTarget(createTemporaryLocation(localX, localY));
+            markTarget(createTemporaryLocation(localX, localY));
             setLocalX(null);
             setLocalY(null);
             jumpedRef.current = true;
@@ -45,7 +46,7 @@ export const CoordinateInputs = (props: IProps) => {
 
     const handleClickAway = () => {
         if (jumpedRef.current) {
-            onMarkTarget(null);
+            markTarget(null);
             setLocalX(null);
             setLocalY(null);
             jumpedRef.current = false;
@@ -102,7 +103,7 @@ export const CoordinateInputs = (props: IProps) => {
             </ClickAwayListener >
             {containerRef.current && targetToMark && (
                 <Popper open={true} placement="top-start" anchorEl={containerRef.current}>
-                    <MapContentSelection mapContent={targetToMark} onMarkTarget={onMarkTarget} />
+                    <MapContentSelection mapContent={targetToMark} />
                 </Popper>
             )}
         </>

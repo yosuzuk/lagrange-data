@@ -2,6 +2,7 @@
     "appTitle": "lagrange-data",
     "button": {
         "edit": "Edit",
+        "delete": "Delete",
         "save": "Save",
         "confirm": "Confirm",
         "cancel": "Cancel",
