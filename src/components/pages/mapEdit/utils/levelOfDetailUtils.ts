@@ -147,6 +147,11 @@ const lodVisibilities: ILodVisibility[] = [
         fromDistance: 0,
         untilDistance: 100,
     },
+    {
+        name: 'shape',
+        fromDistance: 0,
+        untilDistance: 200,
+    },
 ];
 
 const lodOpacities: ILodOpacity[] = [

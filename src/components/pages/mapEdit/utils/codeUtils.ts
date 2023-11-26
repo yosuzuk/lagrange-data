@@ -13,6 +13,7 @@ export const sectionKeywords = [
     '$platform',
     '$hive',
     '$overlay',
+    '$shape',
 ];
 
 export const deprecatedSectionKeywords = [

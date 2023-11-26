@@ -9,6 +9,7 @@ export interface IMapData {
     regions: IRegion[];
     planets: IPlanet[];
     stations: IStation[];
+    shapes: IShape[];
     areas: IArea[];
     hives: IHive[];
     bases: IPlayerBase[];
@@ -70,6 +71,15 @@ export interface IStation extends IMapContent {
 
 export interface IMapContentWithStation extends IMapContent {
     station: IStation;
+}
+
+export type ShapeType = 'filled' | 'outlined';
+
+export interface IShape extends IMapContent {
+    contentType: 'shape';
+    type: ShapeType;
+    positions: GamePosition[];
+    color: string;
 }
 
 export type AreaType = 'city' | 'default';

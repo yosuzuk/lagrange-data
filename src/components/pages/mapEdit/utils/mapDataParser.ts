@@ -1,6 +1,6 @@
 import { t } from '../../../../i18n';
 import { GamePosition } from '../types/Coordinates';
-import { AreaType, IArea, IHive, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IStation, PlatformType, StationType } from '../types/IMapContent';
+import { AreaType, IArea, IHive, IMapData, IMarker, IOverlayText, IParseMapContentError, IPlanet, IPlayerBase, IPlayerOutpost, IPlayerPlatform, IRegion, IShape, IStation, PlatformType, ShapeType, StationType } from '../types/IMapContent';
 import { PlanetSize } from '../types/PlanetSize';
 import { parseLines, removeComment, allSectionKeywords } from './codeUtils';
 import { snapGamePositionToGridCellCenter, snapGamePositionToGridCellCorner } from './coordinateUtils';
@@ -11,6 +11,7 @@ const DEFAULT_REGION_COLOR = '#985036';
 const DEFAULT_PLANET_COLOR = '#E3A06D';
 const NEUTRAL_FACTION_COLOR = '#D0AE55';
 const DEFAULT_PLAYER_COLOR = '#0077ff';
+const DEFAULT_SHAPE_COLOR = '#666666';
 
 export function parseMapData(input: string): [IMapData, IParseMapContentError | null] {
     const mapContent: IMapData = {
@@ -21,6 +22,7 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
         regions: [],
         planets: [],
         stations: [],
+        shapes: [],
         areas: [],
         hives: [],
         bases: [],
@@ -111,6 +113,16 @@ export function parseMapData(input: string): [IMapData, IParseMapContentError | 
                 }
                 return;
             }
+            case '$shape': {
+                const [shape, error] = parseShapeLine(trimmedLine, lineNumber);
+                if (shape) {
+                    mapContent.shapes.push(shape);
+                }
+                if (error) {
+                    parseError = error;
+                }
+                return;
+            }
             case '$area': {
                 const [area, error] = parseAreaLine(trimmedLine, lineNumber);
                 if (area) {
@@ -178,6 +190,7 @@ const COLOR_REG_EXP = /#([BDGKOPRUWY]|([c][abcdefABCDEF0-9]{6}))\s/g;
 const POSITIVE_NUMBER_REG_EXP = /^(\d+)\s/g;
 const SIZE_REG_EXP = /^(large|medium|small)\s/g;
 const STATION_TYPE_REG_EXP = /^(city|subCity|stronghold|base|outpost|platform|dock|default)\s/g;
+const SHAPE_TYPE_REG_EXP = /^(filled|outlined)\s/g;
 const AREA_TYPE_REG_EXP = /^(city|default)\s/g;
 const PLATFORM_TYPE_REG_EXP = /^(basic|intermediate|advanced|bmp|imp|amp)\s/g;
 
@@ -402,6 +415,49 @@ function parseStationLine(line: string, lineNumber: number): [IStation | null, I
                 lineNumber,
             } : undefined,
             ...createStationIcons(type, level, color, name),
+        },
+        null,
+    ];
+}
+
+function parseShapeLine(line: string, lineNumber: number): [IShape | null, IParseMapContentError | null] {
+    const {
+        error: coordinatesError,
+        matches: coordinates,
+        line: lineWithoutCoordinates,
+    } = parseWithRegExp<GamePosition>(line, COORDINATE_REG_EXP, 3, 100);
+
+    if (coordinatesError) {
+        return [null, createParseMapContentError('Invalid number of coordinates (min: 3, max: 100)', lineNumber)];
+    }
+
+    const {
+        error: shapeTypeError,
+        matches: shapeTypes,
+        line: lineWithoutShapeTypes,
+    } = parseWithRegExp<ShapeType>(lineWithoutCoordinates, SHAPE_TYPE_REG_EXP, 0, 1);
+
+    if (shapeTypeError) {
+        return [null, createParseMapContentError('Invalid number of shape types', lineNumber)];
+    }
+
+    const {
+        error: colorError,
+        matches: colors,
+    } = parseWithRegExp(lineWithoutShapeTypes, COLOR_REG_EXP, 0, 1);
+
+    if (colorError) {
+        return [null, createParseMapContentError('Invalid number of colors', lineNumber)];
+    }
+
+    return [
+        {
+            id: `shape${lineNumber}`,
+            contentType: 'shape',
+            lineNumber,
+            type: shapeTypes[0] ?? 'filled',
+            positions: coordinates,
+            color: parseColor(colors[0], DEFAULT_SHAPE_COLOR),
         },
         null,
     ];

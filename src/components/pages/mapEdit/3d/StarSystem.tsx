@@ -15,6 +15,7 @@ import { PlayerOutpost } from './PlayerOutpost';
 import { PlayerPlatform } from './PlayerPlatform';
 import { Area } from './Area';
 import { Hive } from './Hive';
+import { Shape } from './Shape';
 
 interface IProps {
     mapData: IMapData;
@@ -66,6 +67,9 @@ export const StarSystem = (props: IProps) => {
             ))}
             {mapData.platforms.map(platform => (
                 <PlayerPlatform key={platform.id} platform={platform} onClick={markTarget} />
+            ))}
+            {mapData.shapes.map(shape => (
+                <Shape key={shape.id} shape={shape} />
             ))}
         </>
     );
