@@ -266,7 +266,6 @@ const b3: ISystemModule = {
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
         enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(12),
     ],
-    // TODO verify slots
     skillSlots: 2,
     parts: [
         {
@@ -290,9 +289,7 @@ const staticModules: ISystemModule[] = [
         skillComplete: true,
         skills: [
             enhancements.customEnhancementWithKey('waveAdjustment').withDescriptionKey('waveAdjustment').withCost(10),
-            // TODO verify cost
             enhancements.increaseCruisingSpeedOfAircraft().withPercentageValue(75).withCost(30),
-            // TODO verify cost
             enhancements.increaseSystemHp().withPercentageValue(10).withCost(10).withCost(10),
         ],
         skillSlots: 3,

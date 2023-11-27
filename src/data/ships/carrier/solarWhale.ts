@@ -127,8 +127,7 @@ const a2: ISystemModule = {
     categoryNumber: 2,
     skillComplete: true,
     skills: [
-        // TODO translate and rename highDensityAttack based on english name & update japanese description
-        strategy.customStrategyWithKey('highDensityAttack').withDescriptionKey('highDensityAttack').withCost(15),
+        strategy.customStrategyWithKey('concentratedFiring').withDescriptionKey('concentratedFiring').withCost(15),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
         enhancements.increaseDamage().withPercentageValue(10).withCost(8),
@@ -264,9 +263,14 @@ const c1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 5,
     carryFighterType: ShipSubType.LARGE_FIGHTER,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+    ],
+    skillSlots: 3,
     parts: [
         {
             text: [

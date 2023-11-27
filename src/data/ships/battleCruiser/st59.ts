@@ -414,8 +414,8 @@ const staticModules: ISystemModule[] = [
     modules.armorSystem({
         skillComplete: true,
         skills: [
-            enhancements.increaseHp().withPercentageValue(14).withCost(8),
-            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),

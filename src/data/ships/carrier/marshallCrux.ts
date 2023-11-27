@@ -128,7 +128,7 @@ const a2: ISystemModule = {
     category: 'A',
     categoryNumber: 2,
     carryCorvette: 6,
-    skillComplete: false,
+    skillComplete: true,
     skillSlots: 4,
     skills: [
         strategy.conentratedStrike().withCost(20),
@@ -137,6 +137,62 @@ const a2: ISystemModule = {
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(15),
         enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(15),
         enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(15),
+    ],
+};
+
+const b1: ISystemModule = {
+    id: 'B1',
+    name: '付加エネルギーシステム',
+    translatedName: {
+        en: 'Additional Energy System',
+    },
+    description: '艦載機のダメージアップ',
+    category: 'B',
+    categoryNumber: 1,
+    defaultModule: true,
+    effects: [
+        enhancements.increaseDamageOfAircraftMainWeapon().withFixedPercentageValue(15),
+    ],
+    skillComplete: true,
+    skills: [
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceIonCooldownOfShip().withPercentageValue(15).withCost(10),
+    ],
+    skillSlots: 2,
+    parts: [
+        {
+            text: [
+                'RET-200型　エネルギー増加装置',
+            ],
+        },
+    ],
+};
+
+const b2: ISystemModule = {
+    id: 'B2',
+    name: '射撃統制補助照準システム',
+    translatedName: {
+        en: 'Fire-Control Auxiliary Calibration System',
+    },
+    description: '艦船内武器と艦載機の命中率アップ',
+    category: 'B',
+    categoryNumber: 2,
+    effects: [
+        enhancements.increaseHitRateOfAircraftMainWeapon().withFixedPercentageValue(15),
+    ],
+    skillComplete: true,
+    skills: [
+        enhancements.increaseHitRateOfAllWeapons().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(10).withCost(10),
+    ],
+    skillSlots: 2,
+    parts: [
+        {
+            text: [
+                'XGC-200型　精密誘導システム',
+                '小型機載攻撃補助情報システム。アントニオスプレシジョン製造の艦載機の情報システムと連動できるため、攻撃目標の情報をより多く武器システムに提供し、命中率をアップさせる。',
+            ],
+        },
     ],
 };
 
@@ -218,62 +274,6 @@ const c3: ISystemModule = {
             text: [
                 'CIT-3型　スポッターUAV格納庫',
                 '3機の情報指令UAVを搭載し、周囲の味方艦船に総合的な武器情報支援を提供し、武器の命中率をアップさせる。',
-            ],
-        },
-    ],
-};
-
-const b1: ISystemModule = {
-    id: 'B1',
-    name: '付加エネルギーシステム',
-    translatedName: {
-        en: 'Additional Energy System',
-    },
-    description: '艦載機のダメージアップ',
-    category: 'B',
-    categoryNumber: 1,
-    defaultModule: true,
-    effects: [
-        enhancements.increaseDamageOfAircraftMainWeapon().withFixedPercentageValue(15),
-    ],
-    skillComplete: true,
-    skills: [
-        enhancements.increaseIonDamage().withPercentageValue(10).withCost(10),
-        enhancements.reduceIonCooldownOfShip().withPercentageValue(15).withCost(10),
-    ],
-    skillSlots: 2,
-    parts: [
-        {
-            text: [
-                'RET-200型　エネルギー増加装置',
-            ],
-        },
-    ],
-};
-
-const b2: ISystemModule = {
-    id: 'B2',
-    name: '射撃統制補助照準システム',
-    translatedName: {
-        en: 'Fire-Control Auxiliary Calibration System',
-    },
-    description: '艦船内武器と艦載機の命中率アップ',
-    category: 'B',
-    categoryNumber: 2,
-    effects: [
-        enhancements.increaseHitRateOfAircraftMainWeapon().withFixedPercentageValue(15),
-    ],
-    skillComplete: true,
-    skills: [
-        enhancements.increaseHitRateOfAllWeapons().withPercentageValue(10).withCost(10),
-        enhancements.increaseHitRateOfAircraft().withPercentageValue(10).withCost(10),
-    ],
-    skillSlots: 2,
-    parts: [
-        {
-            text: [
-                'XGC-200型　精密誘導システム',
-                '小型機載攻撃補助情報システム。アントニオスプレシジョン製造の艦載機の情報システムと連動できるため、攻撃目標の情報をより多く武器システムに提供し、命中率をアップさせる。',
             ],
         },
     ],

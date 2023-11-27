@@ -56,8 +56,18 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(8, 10).withCost(5),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(5),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(5),
+        enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(5),
+    ],
     skillSlots: 6,
     parts: [{
         text: [
@@ -120,9 +130,27 @@ const a2: ISystemModule = {
     }],
     category: 'A',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslot
+    skillComplete: true,
+    skills: [
+        strategy.customStrategy({
+            name: '正確な誘導',
+            translatedName: {
+                en: 'Precision Guidance',
+            },
+            description: '目標のHPが50%を上回る場合、システム内の武器命中率が40%アップする。',
+            translatedDescription: {
+                en: 'Increases the Hit Rate of the system\'s weapons by 40% when the target has more than 50% HP.',
+            },
+        }).withCost(25),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(12),
+        enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30).withCost(12),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(12),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(12),
+    ],
+    skillSlots: 6,
     // TODO total dpm
 };
 
@@ -177,9 +205,16 @@ const b2: ISystemModule = {
     }],
     category: 'B',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslot
+    skillComplete: true,
+    skills: [
+        strategy.concentrateFirePeriodically(80, 90, 15).withCost(8),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+    ],
+    skillSlots: 4,
     // TODO total dpm
 };
 
@@ -202,9 +237,15 @@ const b3: ISystemModule = {
     }],
     category: 'B',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslot
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(5),
+    ],
+    skillSlots: 4,
     // TODO total dpm
 };
 
@@ -252,9 +293,12 @@ const c2: ISystemModule = {
     categoryNumber: 2,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
-    skillComplete: false,
-    // TODO skill
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+    ],
+    skillSlots: 2,
 };
 
 const c3: ISystemModule = {
@@ -275,13 +319,12 @@ const c3: ISystemModule = {
     category: 'C',
     categoryNumber: 3,
     skillComplete: true,
-    // TODO effect
     skills: [
         strategy.prioritizeSupport2(30).withCost(12),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(12),
         enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(12),
     ],
-    // TODO skillslots
+    skillSlots: 2,
 };
 
 const d1: ISystemModule = {
@@ -303,9 +346,14 @@ const d1: ISystemModule = {
     }],
     category: 'D',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslot
+    skillComplete: true,
+    skills: [
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(5),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+    ],
+    skillSlots: 3,
     // TODO total dpm
 };
 
@@ -326,9 +374,12 @@ const d2: ISystemModule = {
     ],
     category: 'D',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseSystemHpMainSystem().withPercentageValue(30).withCost(5),
+        enhancements.reduceCritialDamageReceivedMainSystem().withPercentageValue(30).withCost(5),
+    ],
+    skillSlots: 2,
 };
 
 const d3: ISystemModule = {
@@ -348,9 +399,13 @@ const d3: ISystemModule = {
     ],
     category: 'D',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(5),
+        enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(5),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+    ],
+    skillSlots: 2,
 };
 
 const staticModules: ISystemModule[] = [

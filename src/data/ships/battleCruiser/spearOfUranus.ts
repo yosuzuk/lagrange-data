@@ -59,8 +59,17 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(8),
+        enhancements.increaseIonDamage().withPercentageValue(10).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+        enhancements.increaseIonHitRate().withPercentageValue(10).withCost(8),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(8),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(8),
+        enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+    ],
     skillSlots: 6,
     parts: [{
         text: [
@@ -125,9 +134,38 @@ const a2: ISystemModule = {
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        // TODO verify strategy vs skill
+        strategy.customStrategy({
+            name: '集中攻撃',
+            translatedName: {
+                en: 'Concentrate Fire',
+            },
+            description: '武器で目標1件を集中攻撃する。',
+            translatedDescription: {
+                en: 'Focuses weapons fire on 1 target(s)',
+            },
+        }).withCost(15),
+        // TODO verify strategy vs skill
+        strategy.customStrategy({
+            name: '乱射',
+            translatedName: {
+                en: 'Full Firepower',
+            },
+            description: '自身のHPが50%以下に減少すると、システム内の武器の冷却時間が40%ダウンし、効果は180秒続く。この効果は戦闘中に1回しか発生しない。',
+            translatedDescription: {
+                en: 'Decreases the CD of the system\'s weapons by 40% for 180 second(s) whenever your HP falls below 50%. Can only be triggered once per battle.',
+            },
+        }).withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(15).withCost(10),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
@@ -152,9 +190,18 @@ const a3: ISystemModule = {
     description: '対艦＆対空武装',
     category: 'A',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+        enhancements.increaseInterceptionChance().withPercentageValue(6).withCost(10),
+    ],
+    skillSlots: 5,
     parts: [
         {
             text: [
@@ -180,9 +227,18 @@ const b1: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'B',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
+        enhancements.increaseMissileAndTorpedoDamage().withPercentageValue(10).withCost(6),
+        enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(6),
+        enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(6),
+        enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(6),
+    ],
+    skillSlots: 6,
     parts: [
         {
             text: [
@@ -233,9 +289,15 @@ const b3: ISystemModule = {
     description: '補修ＵＡＶ×2',
     category: 'B',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseRepairEffectivenessOfUav().withPercentageValue(10).withCost(6),
+        enhancements.increaseRepairEffectivenessOfUav().withPercentageValue(10).withCost(6),
+        enhancements.increaseRepairEffectivenessOfUav().withPercentageValue(10).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -248,16 +310,18 @@ const b3: ISystemModule = {
 
 const c1: ISystemModule = {
     id: 'C1',
-    name: '分散型軽量武器統制システム', // TODO adjust after update
+    name: '分散型軽量武器統制システム', // TODO verify, maybe changed by update
     translatedName: {
-        en: 'Distributed Light Weapon Control System', // TODO adjust after update
+        en: 'Distributed Light Weapon Control System', // TODO verify, maybe changed by update
     },
     description: '対空武装',
     category: 'C',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseHitRateOfAllWeapons().withPercentageValue(3).withCost(12),
+    ],
+    skillSlots: 1,
     parts: [
         {
             text: [
@@ -283,8 +347,15 @@ const c2: ISystemModule = {
     effects: [
         enhancements.increaseArmor().withFixedAbsoluteValue(150),
     ],
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseHp().withPercentageValue(14).withCost(12),
+        enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+        enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+        enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(8),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -303,9 +374,15 @@ const c3: ISystemModule = {
     description: '対空武装、ミサイル迎撃',
     category: 'C',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
-    // TODO skillslots
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(3),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(3),
+        enhancements.increaseInterceptionChance().withPercentageValue(25).withCost(3),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -335,8 +412,8 @@ const staticModules: ISystemModule[] = [
     modules.armorSystem({
         skillComplete: true,
         skills: [
-            enhancements.increaseHp().withPercentageValue(14).withCost(8),
-            enhancements.increaseHp().withPercentageValue(14).withCost(8),
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
             enhancements.increaseShield().withPercentageValue(10).withCost(8),
