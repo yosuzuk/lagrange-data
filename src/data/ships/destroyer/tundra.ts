@@ -23,9 +23,16 @@ export const tundra: IShipDefinition[] = [
         researchTacticTypes: [],
         subModelIds: [ShipId.TUNDRA_B],
         relatedShipIds: [ShipId.TUNDRA_TE_S],
-        // defaultStats: {
-        //     hp: 41190,
-        // },
+        defaultStats: {
+            hp: 41190,
+            armor: 20,
+            shield: 2,
+            speed: 700,
+            warpSpeed: 3500,
+            dpmShip: 1350,
+            dpmAntiAir: 5127,
+            dpmSiege: 157,
+        },
     },
     {
         id: ShipId.TUNDRA_B,
@@ -44,9 +51,16 @@ export const tundra: IShipDefinition[] = [
         relatedShipIds: [ShipId.TUNDRA_TE_S],
         carryFighter: 2,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
-        // defaultStats: {
-        //     hp: 40030,
-        // },
+        defaultStats: {
+            hp: 40030,
+            armor: 20,
+            shield: 2,
+            speed: 700,
+            warpSpeed: 3500,
+            dpmShip: 2022,
+            dpmAntiAir: 519,
+            dpmSiege: 322,
+        },
     },
     {
         id: ShipId.TUNDRA_TE_S,

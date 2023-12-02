@@ -23,9 +23,16 @@ export const erisI: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.ERIS_I_B, ShipId.ERIS_I_C],
-        // defaultStats: {
-        //     hp: 30540,
-        // },
+        defaultStats: {
+            hp: 30540,
+            armor: 20,
+            shield: 2,
+            speed: 900,
+            warpSpeed: 4500,
+            dpmShip: 4500,
+            dpmAntiAir: 270,
+            dpmSiege: 350,
+        },
     },
     {
         id: ShipId.ERIS_I_B,
@@ -41,9 +48,16 @@ export const erisI: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.ERIS_I_A,
-        // defaultStats: {
-        //     hp: 30540,
-        // },
+        defaultStats: {
+            hp: 30540,
+            armor: 20,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 4963,
+            dpmAntiAir: 252,
+            dpmSiege: 1239,
+        },
     },
     {
         id: ShipId.ERIS_I_C,
@@ -59,8 +73,15 @@ export const erisI: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.ERIS_I_A,
-        // defaultStats: {
-        //     hp: 35140,
-        // },
+        defaultStats: {
+            hp: 35140,
+            armor: 30,
+            shield: 5,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 4500,
+            dpmAntiAir: 270,
+            dpmSiege: 350,
+        },
     },
 ];

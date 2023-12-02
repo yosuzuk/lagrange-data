@@ -36,17 +36,16 @@ export const mareImbrium: IShipDefinition[] = [
                     en: 'Bow Railgun System',
                 },
                 mainSystem: true,
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    strategy.customStrategyWithKey('firepowerAssault').withDescriptionKey('firepowerAssault'),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.customEnhancementWithKey('additionalCharge').withDescriptionKey('additionalCharge'),
+                    strategy.customStrategyWithKey('firepowerAssault').withDescriptionKey('firepowerAssault').withCost(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.customEnhancementWithKey('additionalCharge').withDescriptionKey('additionalCharge').withCost(10),
                 ],
                 skillSlots: 5,
                 dpmShip: 3050,
@@ -59,15 +58,14 @@ export const mareImbrium: IShipDefinition[] = [
                 translatedName: {
                     en: 'Generic Battery System',
                 },
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseInterceptionChance().withPercentageValue(2, 2),
-                    enhancements.increaseLockOnEfficiency().withPercentageValue(15)
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+                    enhancements.increaseInterceptionChance().withPercentageValue(2, 2).withCost(5),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
                 ],
                 skillSlots: 4,
                 dpmShip: 80,
@@ -77,34 +75,31 @@ export const mareImbrium: IShipDefinition[] = [
             modules.commandSystem({
                 flagshipEffects: [
                     // TODO max targetCount
-                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
+                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withConditionKey('guerrillaCombatInsertion').withDefaultFlag().withCost(40),
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    strategy.customStrategyWithKey('maneuverOperation').withDescriptionKey('maneuverOperation'),
+                    strategy.customStrategyWithKey('maneuverOperation').withDescriptionKey('maneuverOperation').withCost(12),
                 ],
                 skillSlots: 1,
             }),
             modules.armorSystem({
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseHp().withPercentageValue(12),
-                    enhancements.increaseHp().withPercentageValue(12),
-                    enhancements.increaseArmor().withAbsoluteValue(3),
-                    enhancements.increaseArmor().withAbsoluteValue(3),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseArmor().withAbsoluteValue(3).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(3).withCost(8),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15),
-                    enhancements.increaseEvasion().withPercentageValue(8),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                 ],
                 skillSlots: 1,
             }),

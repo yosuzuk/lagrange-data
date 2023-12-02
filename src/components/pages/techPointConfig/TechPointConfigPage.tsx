@@ -42,6 +42,10 @@ const additionallySupportedShipIds: string[] = [
     ShipId.VITAS_A021,
     ShipId.VITAS_B010,
     ShipId.BALANCER_ANDERSON,
+    ShipId.WINGED_HUSSAR_C,
+    ShipId.MARE_IMBRIUM_A,
+    ShipId.XENO_STINGER_A,
+    ShipId.XENO_STINGER_B,
 ];
 
 export const TechPointConfigPage = () => {

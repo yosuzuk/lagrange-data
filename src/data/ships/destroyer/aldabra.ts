@@ -27,9 +27,16 @@ export const aldabra: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
-        // defaultStats: {
-        //     hp: 37090,
-        // },
+        defaultStats: {
+            hp: 37090,
+            armor: 30,
+            shield: 4,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 5820,
+            dpmAntiAir: 921,
+            dpmSiege: 775,
+        },
     },
     {
         id: ShipId.ALDABRA_B,
@@ -48,8 +55,15 @@ export const aldabra: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
-        // defaultStats: {
-        //     hp: 37090,
-        // },
+        defaultStats: {
+            hp: 40799,
+            armor: 45,
+            shield: 4,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 5280,
+            dpmAntiAir: 540,
+            dpmSiege: 1048,
+        },
     },
 ];

@@ -94,7 +94,7 @@ function findMaxTechPointsForModule(systemModule: ISystemModule): number | null 
         return null;
     }
 
-    return systemModule.skills
+    return [...systemModule.skills, ...(systemModule.flagshipEffects ?? [])]
         .map(enhancement => enhancement.cost)
         .sort((a, b) => (b ?? 0) - (a ?? 0))
         .slice(0, systemModule.skillSlots)

@@ -24,9 +24,16 @@ export const ac721: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.AC721_B, ShipId.AC721_D],
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
-        // defaultStats: {
-        //     hp: 34140,
-        // },
+        defaultStats: {
+            hp: 34140,
+            armor: 5,
+            shield: 0,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 1800,
+            dpmAntiAir: 390,
+            dpmSiege: 408,
+        },
     },
     {
         id: ShipId.AC721_B,
@@ -43,9 +50,16 @@ export const ac721: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
-        // defaultStats: {
-        //     hp: 34140,
-        // },
+        defaultStats: {
+            hp: 34140,
+            armor: 5,
+            shield: 0,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 3300,
+            dpmAntiAir: 780,
+            dpmSiege: 345,
+        },
     },
     {
         id: ShipId.AC721_D,
@@ -63,9 +77,16 @@ export const ac721: IShipDefinition[] = [
         carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
-        // defaultStats: {
-        //     hp: 30730,
-        // },
+        defaultStats: {
+            hp: 30730,
+            armor: 20,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 1200,
+            dpmAntiAir: 228,
+            dpmSiege: 181,
+        },
     },
     {
         id: ShipId.AC721_TE_A,
@@ -94,5 +115,15 @@ export const ac721: IShipDefinition[] = [
         manufacturer: Manufacturer.DAWN_ACCORD,
         carryCorvette: 2,
         relatedShipIds: [ShipId.AC721_A, ShipId.AC721_B, ShipId.AC721_D, ShipId.AC721_TE_A],
+        defaultStats: {
+            hp: 34140,
+            armor: 20,
+            shield: 2,
+            speed: 750,
+            warpSpeed: 3750,
+            dpmShip: 6037,
+            dpmAntiAir: 138,
+            dpmSiege: 1328,
+        },
     },
 ];

@@ -658,6 +658,7 @@
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
         "targetGuidance1Kccpv": "The fleet contains at least 3 KCCPV2.0 cruisers.",
-        "antiAircraftNetwork2": "The fleet contains at least 3 Light Cone ships."
+        "antiAircraftNetwork2": "The fleet contains at least 3 Light Cone ships.",
+        "guerrillaCombatInsertion": "The entire fleet is made up of frigates and destroyers."
     }
 }

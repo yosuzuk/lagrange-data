@@ -24,9 +24,16 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.TAURUS_B, ShipId.TAURUS_C],
         relatedShipIds: [ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
-        // defaultStats: {
-        //     hp: 36040,
-        // },
+        defaultStats: {
+            hp: 36040,
+            armor: 20,
+            shield: 2,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 6210,
+            dpmAntiAir: 1615,
+            dpmSiege: 338,
+        },
     },
     {
         id: ShipId.TAURUS_B,
@@ -43,9 +50,16 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
         relatedShipIds: [ShipId.TAURUS_C, ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
-        // defaultStats: {
-        //     hp: 40030,
-        // },
+        defaultStats: {
+            hp: 48036,
+            armor: 30,
+            shield: 4,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 6555,
+            dpmAntiAir: 501,
+            dpmSiege: 1552,
+        },
     },
     {
         id: ShipId.TAURUS_C,
@@ -62,9 +76,16 @@ export const taurus: IShipDefinition[] = [
         researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.TAURUS_A,
         relatedShipIds: [ShipId.TAURUS_B, ShipId.TAURUS_TE_A_S, ShipId.TAURUS_TE_B_S],
-        // defaultStats: {
-        //     hp: 40030,
-        // },
+        defaultStats: {
+            hp: 48036,
+            armor: 30,
+            shield: 4,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 4830,
+            dpmAntiAir: 2059,
+            dpmSiege: 338,
+        },
     },
     {
         id: ShipId.TAURUS_TE_A_S,

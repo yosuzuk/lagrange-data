@@ -660,6 +660,7 @@
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",
         "targetGuidance1Kccpv": "艦隊に3隻以上のKCCPV2.0巡洋艦が必要です",
-        "antiAircraftNetwork2": "艦隊に3隻以上のライトコーンが必要です"
+        "antiAircraftNetwork2": "艦隊に3隻以上のライトコーンが必要です",
+        "guerrillaCombatInsertion": "艦隊のすべてがフリゲートまたは駆逐艦で構成"
     }
 }

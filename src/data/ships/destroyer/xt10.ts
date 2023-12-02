@@ -16,5 +16,15 @@ export const xt10: IShipDefinition[] = [
         operationLimit: 10,
         source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
+        defaultStats: {
+            hp: 25650,
+            armor: 12,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 5659,
+            dpmAntiAir: 806,
+            dpmSiege: 80,
+        },
     },
 ];

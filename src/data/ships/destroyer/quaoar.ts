@@ -27,9 +27,16 @@ export const quaoar: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
-        // defaultStats: {
-        //     hp: 30540,
-        // },
+        defaultStats: {
+            hp: 30540,
+            armor: 20,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 4800,
+            dpmAntiAir: 216,
+            dpmSiege: 506,
+        },
     },
     {
         id: ShipId.QUAOAR_B,
@@ -48,8 +55,15 @@ export const quaoar: IShipDefinition[] = [
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
         ],
-        // defaultStats: {
-        //     hp: 30540,
-        // },
+        defaultStats: {
+            hp: 30540,
+            armor: 20,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 5309,
+            dpmAntiAir: 1362,
+            dpmSiege: 381,
+        },
     },
 ];

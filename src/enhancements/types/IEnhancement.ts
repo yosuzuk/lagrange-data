@@ -36,4 +36,6 @@ export interface IEnhancementText {
     translatedName: Record<string, string>;
     description: string;
     translatedDescription: Record<string, string>;
+    condition?: string;
+    translatedCondition?: Record<string, string>;
 }

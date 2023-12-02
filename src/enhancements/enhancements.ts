@@ -203,6 +203,12 @@ class Enhancement implements IMutableEnhancement {
     }
 
     get condition(): string | null {
+        if (this._text) {
+            const text = this._text.translatedCondition?.[getCurrentLanguage()] ?? this._text.condition;
+            if (text) {
+                return text;
+            }
+        }
         return this._conditionKey ? t(this._conditionKey, { defaultValue: '???', ...this._conditionKeyOptions }) : null;
     }
 

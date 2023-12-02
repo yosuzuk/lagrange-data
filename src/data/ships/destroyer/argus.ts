@@ -18,5 +18,15 @@ export const argus: IShipDefinition[] = [
         manufacturer: Manufacturer.DAWN_ACCORD,
         carryFighter: 1,
         carryFighterType: ShipSubType.MEDIUM_FIGHTER,
+        defaultStats: {
+            hp: 34140,
+            armor: 20,
+            shield: 2,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 1000,
+            dpmAntiAir: 168,
+            dpmSiege: 42,
+        },
     },
 ];
