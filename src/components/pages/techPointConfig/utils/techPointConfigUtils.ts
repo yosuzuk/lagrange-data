@@ -56,8 +56,6 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
     const maxTechPoints = findMaxTechPointsForModule(systemModule);
     const unlockCost = (systemModule.category !== 'STATIC' && !systemModule.defaultModule) ? 10 : 0;
 
-    const defaultCount = Object.values(enhancements).filter(x => x.enhancement.isDefault && x.enhancement.cost !== null && x.enhancement.cost > 0).length;
-
     return {
         module: systemModule,
         enhancements,
@@ -66,7 +64,6 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
         maxTechPoints,
         unlockCost,
         incomplete: isIncompleteSystemModule(systemModule),
-        defaultCount,
     };
 }
 
