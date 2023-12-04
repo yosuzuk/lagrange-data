@@ -45,6 +45,8 @@ const additionallySupportedShipIds: string[] = [
     ShipId.BALANCER_ANDERSON,
     ShipId.WINGED_HUSSAR_C,
     ShipId.MARE_IMBRIUM_A,
+    ShipId.MARE_TRANQUILLITATIS_B,
+    ShipId.MARE_TRANQUILLITATIS_C,
     ShipId.XENO_STINGER_A,
     ShipId.XENO_STINGER_B,
 ];
