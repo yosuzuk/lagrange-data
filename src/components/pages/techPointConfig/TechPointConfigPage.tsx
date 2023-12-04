@@ -34,6 +34,7 @@ const additionallySupportedShipIds: string[] = [
     ShipId.AT021_A,
     ShipId.AT021_B,
     ShipId.AT021_C,
+    ShipId.B192_NEWLAND,
     ShipId.HAYREDDINGS_LOYAL,
     ShipId.MISTRAL,
     ShipId.SANDRAKE,

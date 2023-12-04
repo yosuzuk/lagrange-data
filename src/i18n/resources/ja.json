@@ -410,7 +410,8 @@
         "valueAndCostColonValue": "{{value}}{{unit}}、技術Pt：{{cost}}",
         "maxValueAndCostColonValue": "最大{{value}}{{unit}}、技術Pt：{{cost}}",
         "maxValueAndCostColonValueValue2": "最大{{value}}{{unit}}、{{value2}}{{unit}}、技術Pt：{{cost}}",
-        "enabledByDefaultBrackets": "（デフォルトで有効）"
+        "enabledByDefaultBrackets": "（デフォルトで有効）",
+        "enabledByDefaultButUpgradableBrackets": "（デフォルトで有効、強化可能）"
     },
     "enhancementType": {
         "skill": "スキル",

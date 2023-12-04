@@ -410,7 +410,8 @@
         "valueAndCostColonValue": "{{value}}{{unit}}, TP: {{cost}}",
         "maxValueAndCostColonValue": "Max: {{value}}{{unit}}, TP: {{cost}}",
         "maxValueAndCostColonValueValue2": "Max: {{value}}{{unit}}, {{value2}}{{unit}}, TP: {{cost}}",
-        "enabledByDefaultBrackets": "(enabled by default)"
+        "enabledByDefaultBrackets": "(enabled by default)",
+        "enabledByDefaultButUpgradableBrackets": "(enabled by default but upgradable)"
     },
     "enhancementType": {
         "skill": "Skill",

@@ -45,7 +45,7 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
     const enhancements: Record<string, ITechPointEnhancementConfig> = [
         ...(systemModule.flagshipEffects ?? []),
         ...(systemModule.skills ?? []),
-    ].filter(enh => !enh.isDefault).reduce((acc, skill, index) => {
+    ].filter(enh => Number.isFinite(enh.cost) && Number(enh.cost) > 0).reduce((acc, skill, index) => {
         const id = `${skill.type}_${index}`;
         return {
             ...acc,
@@ -56,6 +56,8 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
     const maxTechPoints = findMaxTechPointsForModule(systemModule);
     const unlockCost = (systemModule.category !== 'STATIC' && !systemModule.defaultModule) ? 10 : 0;
 
+    const defaultCount = Object.values(enhancements).filter(x => x.enhancement.isDefault && x.enhancement.cost !== null && x.enhancement.cost > 0).length;
+
     return {
         module: systemModule,
         enhancements,
@@ -64,6 +66,7 @@ function createTechPointModuleConfig(systemModule: ISystemModule): ITechPointMod
         maxTechPoints,
         unlockCost,
         incomplete: isIncompleteSystemModule(systemModule),
+        defaultCount,
     };
 }
 
@@ -71,7 +74,7 @@ function createTechPointEnhancementConfig(enhancement: IEnhancement, id: string)
     return {
         id,
         enhancement,
-        techPoints: enhancement.isDefault ? null : enhancement.cost,
+        techPoints: enhancement.cost,
     };
 }
 
@@ -94,11 +97,19 @@ function findMaxTechPointsForModule(systemModule: ISystemModule): number | null 
         return null;
     }
 
-    return [...systemModule.skills, ...(systemModule.flagshipEffects ?? [])]
-        .map(enhancement => enhancement.cost)
+    const enhancementCostForDefaultSkills = [...systemModule.skills, ...(systemModule.flagshipEffects ?? [])]
+        .filter(x => x.isDefault && x.cost !== null)
+        .map<number>(x => Number(x.cost))
+        .reduce((sum, next) => (sum ?? 0) + (next ?? 0), 0);
+
+    const enhancementCostForOpenSlots = [...systemModule.skills, ...(systemModule.flagshipEffects ?? [])]
+        .filter(x => !x.isDefault && Number.isFinite(x.cost))
+        .map(enhancement => Number(enhancement.cost))
         .sort((a, b) => (b ?? 0) - (a ?? 0))
         .slice(0, systemModule.skillSlots)
         .reduce((sum, next) => (sum ?? 0) + (next ?? 0), 0);
+
+    return enhancementCostForDefaultSkills + enhancementCostForOpenSlots;
 }
 
 export function isIncompleteShip(moduleConfigs: Record<string, ITechPointModuleConfig>, selectedModuleIds: string[]): boolean {
@@ -167,6 +178,14 @@ export function toggleModule(config: ITechPointConfig, shipId: string, moduleId:
     };
 }
 
+export function isExceedingSlotCount(selectedEnhancementIds: string[], moduleConfig: ITechPointModuleConfig): boolean {
+    const selectedEnhancementForOpenSlotCount = selectedEnhancementIds.filter(x => {
+        const { isDefault, cost } = moduleConfig.enhancements[x].enhancement;
+        return !isDefault && cost !== null && cost > 0;
+    }).length;
+    return !!moduleConfig.module.skillSlots && selectedEnhancementForOpenSlotCount > moduleConfig.module.skillSlots;
+}
+
 export function toggleEnhancement(config: ITechPointConfig, shipId: string, moduleId: string, enhancementId: string): ITechPointConfig {
     const moduleConfig = config.ships[shipId]?.modules[moduleId] ?? null;
     if (!moduleConfig) {
@@ -174,7 +193,9 @@ export function toggleEnhancement(config: ITechPointConfig, shipId: string, modu
     }
 
     const selectedEnhancementIds = toggleArrayItem(moduleConfig.selectedEnhancementIds, enhancementId);
-    if (!!moduleConfig.module.skillSlots && selectedEnhancementIds.length > moduleConfig.module.skillSlots) {
+
+    if (isExceedingSlotCount(selectedEnhancementIds, moduleConfig)) {
+        console.log('No more slots available');
         return config;
     }
 

@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Switch from '@mui/material/Switch';
 import { ITechPointEnhancementConfig, ITechPointModuleConfig, ITechPointShipConfig } from './types/ITechPointConfig';
 import { t } from '../../../i18n';
+import { isExceedingSlotCount } from './utils/techPointConfigUtils';
 
 interface IProps {
     shipConfig: ITechPointShipConfig;
@@ -17,15 +18,18 @@ export const TechPointEnhancementDetails = (props: IProps) => {
 
     const checked = moduleConfig.selectedEnhancementIds.includes(enhancementConfig.id);
 
+    const wouldExceedSlotCountWhenEnabled = isExceedingSlotCount([...moduleConfig.selectedEnhancementIds, enhancementConfig.id], moduleConfig)
+
     return (
         <Stack spacing={1} direction="row">
             <div>
                 <Switch
                     checked={checked}
+                    color={enhancementConfig.enhancement.isDefault ? 'secondary' : 'primary'}
                     onChange={() => {
                         onToggleEnhancement(shipConfig.shipDefinition.id, moduleConfig.module.id, enhancementConfig.id);
                     }}
-                    disabled={!checked && !!moduleConfig.module.skillSlots && moduleConfig.selectedEnhancementIds.length >= moduleConfig.module.skillSlots}
+                    disabled={!checked && wouldExceedSlotCountWhenEnabled}
                 />
             </div>
             <Box component="div" sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>

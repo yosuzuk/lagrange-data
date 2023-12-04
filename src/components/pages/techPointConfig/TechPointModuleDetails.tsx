@@ -22,6 +22,8 @@ export const TechPointModuleDetails = (props: IProps) => {
 
     const moduleChecked = shipConfig.selectedModuleIds.includes(moduleConfig.module.id);
 
+    const selectedEnhancementForOpenSlotCount = moduleConfig.selectedEnhancementIds.filter(x => !moduleConfig.enhancements[x].enhancement.isDefault).length;
+
     return (
         <Stack p={2} spacing={1} sx={{ 'backgroundColor': mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(229, 229, 229, 0.5)' }}>
             <Stack spacing={1} direction="row">
@@ -60,7 +62,7 @@ export const TechPointModuleDetails = (props: IProps) => {
                     <div>
                         <Typography variant="body1" color="text.secondary">
                             {t('techPointConfig.enhancementSlotsColonValue', {
-                                value: `${moduleConfig.selectedEnhancementIds.length} / ${moduleConfig.module.skillSlots ?? '?'}`
+                                value: `${selectedEnhancementForOpenSlotCount} / ${moduleConfig.module.skillSlots ?? '?'}`
                             })}
                         </Typography>
                         {!moduleConfig.module.skillSlots && (

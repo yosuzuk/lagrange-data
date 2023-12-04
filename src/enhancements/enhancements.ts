@@ -256,7 +256,7 @@ class Enhancement implements IMutableEnhancement {
             this.description ? t('label.effectColonValue', { effect: this.description }) : '',
             this._conditionKey ? t('label.conditionColonValue', { condition: this.condition }) : '',
             this.type === EnhancementType.STRATEGY ? t('enhancementType.strategy') : '',
-            this._isDefault ? t('enhancement.enabledByDefaultBrackets') : '',
+            this._isDefault ? (Number(this._cost) > 0 ? t('enhancement.enabledByDefaultButUpgradableBrackets') : t('enhancement.enabledByDefaultBrackets')) : '',
             this.formatValuesAndCost() ?? '',
         ].filter(line => !!line);
     }

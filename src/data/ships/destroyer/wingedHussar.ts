@@ -128,7 +128,7 @@ export const wingedHussar: IShipDefinition[] = [
                         translatedCondition: {
                             en: 'The fleet contains at least 3 ships that are the same type as the flagship.',
                         },
-                    }).withCost(30),
+                    }).withCost(30).withDefaultFlag(),
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
                 skillComplete: true,

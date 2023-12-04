@@ -31,6 +31,7 @@ const sharedModules = [
         flagshipEffects: [
             flagshipEffect.focusFire().withDefaultFlag(),
         ],
+        skillSlots: 0,
     }),
     modules.armorSystem({
         skillComplete: true,
@@ -52,7 +53,10 @@ const sharedModules = [
         ],
         skillSlots: 2,
     }),
-    modules.energySystem(),
+    modules.energySystem({
+        skillComplete: true,
+        skillSlots: 0,
+    }),
 ];
 
 export const xenoStinger: IShipDefinition[] = [
