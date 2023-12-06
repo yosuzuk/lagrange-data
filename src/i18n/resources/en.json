@@ -592,7 +592,7 @@
         "focusFire": "When selecting targets, boost attack efficiency by prioritizing attacks on a certain percentage of selected targets based on the number of all valid targets in the engagement.",
         "fleetDock1": "Enable fleet docking authority to allow the fleet to expand and dock to other fleets.",
         "fleetDock2": "Increase the speed at which the ship repairs ships from our company by 30%. $t(enhancementDescription.fleetDock1)",
-        "sailingSpeedCoordination1": "Qualified fleets will maintain a sailing speed and warp speed at 80+20% of all ship's avarage speed.",
+        "sailingSpeedCoordination1": "Qualified fleets will start with a sailing speed that is 80+20% of the average speed of all ships, and their warp speed will be 110%+20% of the avarage speed of all ships.",
         "overdrive": "Every {{interval}}s, increases the primary weapon's damage frequency by {{frequency}}, and the hit rate by {{hitRate}}% for {{duration}}s but reduces the energy resistance by {{shield}}% during the period. Cooldown: {{cooldown}}s.",
         "overdriveWithDuration": "Turns off all other weapon systems, increases damage frequency by {{frequency}}, increases the continuous firing duration of the main ion cannon by {{durationUp}}s, and increases hit rate by {{hitRate}}% every {{interval}}s for {{duration}}s. Cooldown: {{cooldown}}s.",
         "antiAircraftSupport": "The primary weapon locks onto enemy aircraft in the nearby row and launches attacks, increasing the hit rate by 40% every 30s for 25s.",

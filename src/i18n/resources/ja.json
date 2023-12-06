@@ -593,7 +593,7 @@
         "focusFire": "目標選択時、戦場内の選択可能目標数に応じて、一定の割合の目標に優先攻撃を行い、攻撃効率をアップする。",
         "fleetDock1": "艦隊の結合権限を有効にし、この艦隊が展開して他の艦隊と結合できるようにする。",
         "fleetDock2": "この艦船の同社艦船に対する補修速度を30%アップする。また、$t(enhancementDescription.fleetDock1)",
-        "sailingSpeedCoordination1": "条件を満たす艦隊の航行速度とワープ速度が全艦船の平均の80+20%に一致する。",
+        "sailingSpeedCoordination1": "条件を満たす艦隊の航行速度とワープ速度が全艦船の平均の80+20%に一致する。ワープ速度は全艦船の平均ワープ速度の110+20%。",
         "overdrive": "{{interval}}秒ごとに、主砲は各ラウンドで攻撃するごとに{{frequency}}回ダメージを追加し、命中率が{{hitRate}}%アップする。期間内のエネルギー抵抗値が{{shield}}%ダウンし、{{duration}}秒持続、冷却{{cooldown}}秒。",
         "overdriveWithDuration": "{{interval}}秒ごとに、他の全ての武器を停止し、1ラウンドあたり攻撃回数が{{frequency}}回、メインイオン砲の連続射撃時間が{{durationUp}}%、命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。冷却{{cooldown}}秒。",
         "antiAircraftSupport": "{{interval}}秒毎に、システム内のメイン武器が同列の範囲内に接近する敵機をロックオンして攻撃する。対戦闘機命中率が{{hitRate}}%アップする。効果は{{duration}}秒続く。",
