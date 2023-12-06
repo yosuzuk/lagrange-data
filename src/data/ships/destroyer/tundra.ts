@@ -11,6 +11,9 @@ export const tundra: IShipDefinition[] = [
     {
         id: ShipId.TUNDRA_A,
         name: 'ツンドラ級　Ａ支援型',
+        translatedName: {
+            en: 'Tundra - Support Type',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 10,
@@ -37,6 +40,9 @@ export const tundra: IShipDefinition[] = [
     {
         id: ShipId.TUNDRA_B,
         name: 'ツンドラ級　Ｂ艦載型',
+        translatedName: {
+            en: 'Tundra - Aircraft Type',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 10,
@@ -65,6 +71,9 @@ export const tundra: IShipDefinition[] = [
     {
         id: ShipId.TUNDRA_TE_S,
         name: 'ツンドラ級-TE　Ａ対空型（回収）',
+        translatedName: {
+            en: 'Tundra (TE) - Anti-Aircraft Type (salvaged)',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 10,

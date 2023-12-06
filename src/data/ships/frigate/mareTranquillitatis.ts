@@ -14,6 +14,9 @@ export const mareTranquillitatis: IShipDefinition[] = [
     {
         id: ShipId.MARE_TRANQUILLITATIS_A,
         name: 'マーレトランキリタティス級　Ａ総合型',
+        translatedName: {
+            en: 'Mare Tranquillitatis - Integrated Type',
+        },
         type: ShipType.FRIGATE,
         cost: 4,
         weight: 10,
@@ -39,6 +42,9 @@ export const mareTranquillitatis: IShipDefinition[] = [
     {
         id: ShipId.MARE_TRANQUILLITATIS_B,
         name: 'マーレトランキリタティス級　Ｂパルス型',
+        translatedName: {
+            en: 'Mare Tranquillitatis - Pulse Cannon Type',
+        },
         type: ShipType.FRIGATE,
         cost: 4,
         weight: 10,
@@ -163,6 +169,9 @@ export const mareTranquillitatis: IShipDefinition[] = [
     {
         id: ShipId.MARE_TRANQUILLITATIS_C,
         name: 'マーレトランキリタティス級　Ｃ対空型',
+        translatedName: {
+            en: 'Mare Tranquillitatis - Anti-Aircraft Type',
+        },
         type: ShipType.FRIGATE,
         cost: 4,
         weight: 10,

@@ -14,6 +14,9 @@ export const balancerAnderson: IShipDefinition[] = [
     {
         id: ShipId.BALANCER_ANDERSON,
         name: 'バランサーアンダーソン',
+        translatedName: {
+            en: 'Balancer Anderson SC020 - Interference Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.SMALL_FIGHTER,
         cost: 0,

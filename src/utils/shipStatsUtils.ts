@@ -2,22 +2,19 @@ import { IModuleSelection } from '../components/pages/fleetSetup/types/IFleetSet
 import { t } from '../i18n';
 import { IStats } from '../types/IStats';
 import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
-import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
 import { formatNumberWithSuffix } from './numberUtils';
 
 export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: IModuleSelection | null): IStats | null {
-    const data = getShipStatsAndLocalizationByShipId(shipDefinition.id);
-
     // stats including default modules
-    const speed = shipDefinition.defaultStats?.speed ?? (data !== null ? Number(data.speed) : undefined);
+    const speed = shipDefinition.defaultStats?.speed;
     const defaultStats: IStats = {
         hp: shipDefinition.defaultStats?.hp,
         speed,
         accelerationTime: speed ? getAccelerationTime(speed) : undefined,
-        warpSpeed: shipDefinition.defaultStats?.warpSpeed ?? (data !== null ? Number(data.warp) : undefined),
-        dpmShip: shipDefinition.defaultStats?.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),
-        dpmAntiAir: shipDefinition.defaultStats?.dpmAntiAir ?? (data !== null ? Number(data.dpmAntiAir) : undefined),
-        dpmSiege: shipDefinition.defaultStats?.dpmSiege ?? (data !== null ? Number(data.dpmSiege) : undefined),
+        warpSpeed: shipDefinition.defaultStats?.warpSpeed,
+        dpmShip: shipDefinition.defaultStats?.dpmShip,
+        dpmAntiAir: shipDefinition.defaultStats?.dpmAntiAir,
+        dpmSiege: shipDefinition.defaultStats?.dpmSiege,
     };
 
     if (!moduleSelection) {
@@ -135,11 +132,13 @@ function getNonStaticDefaultModules(shipDefinition: IShipDefinition): ISystemMod
 const accelerationTable: Record<string, number> = {
     '1040': 123,
     '1000': 153,
+    '950': 192,
     '900': 230,
     '850': 269,
     '800': 307,
     '700': 384,
     '650': 423,
+    '560': 492,
     '500': 538,
     '450': 576,
     '420': 600,

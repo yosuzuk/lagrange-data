@@ -12,6 +12,9 @@ export const taurus: IShipDefinition[] = [
     {
         id: ShipId.TAURUS_A,
         name: 'トーラス級　Ａ攻撃型',
+        translatedName: {
+            en: 'Taurus - Offensive Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,
@@ -38,6 +41,9 @@ export const taurus: IShipDefinition[] = [
     {
         id: ShipId.TAURUS_B,
         name: 'トーラス級　Ｂ突撃型',
+        translatedName: {
+            en: 'Taurus - Assault Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,
@@ -64,6 +70,9 @@ export const taurus: IShipDefinition[] = [
     {
         id: ShipId.TAURUS_C,
         name: 'トーラス級　Ｃ防護型',
+        translatedName: {
+            en: 'Taurus - Defensive Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,
@@ -90,6 +99,9 @@ export const taurus: IShipDefinition[] = [
     {
         id: ShipId.TAURUS_TE_A_S,
         name: 'トーラス級-TE　Ａ対艦型（回収）',
+        translatedName: {
+            en: 'Taurus (TE) - Anti-Ship Type (salvaged)',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,
@@ -102,6 +114,9 @@ export const taurus: IShipDefinition[] = [
     {
         id: ShipId.TAURUS_TE_B_S,
         name: 'トーラス級-TE　Ｂ突撃型（回収）',
+        translatedName: {
+            en: 'Taurus (TE) - Assault Type (salvaged)',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,

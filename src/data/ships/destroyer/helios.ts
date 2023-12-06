@@ -9,6 +9,9 @@ export const helios: IShipDefinition[] = [
     {
         id: ShipId.HELIOS_A,
         name: 'ヘリオス級　Ａ一般型',
+        translatedName: {
+            en: 'Helios - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 15,
         weight: 0,
@@ -31,6 +34,9 @@ export const helios: IShipDefinition[] = [
     {
         id: ShipId.HELIOS_TE_A,
         name: 'ヘリオス級-TE　Ａ一般型',
+        translatedName: {
+            en: 'Helios (TE) - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 15,
         weight: 0,
@@ -53,6 +59,9 @@ export const helios: IShipDefinition[] = [
     {
         id: ShipId.HELIOS_TE_A_S,
         name: 'ヘリオス級-TE　Ａ一般型（回収）',
+        translatedName: {
+            en: 'ヘリオス級-TE - 一般型（回収）',
+        },
         type: ShipType.DESTROYER,
         cost: 15,
         weight: 0,
@@ -61,10 +70,23 @@ export const helios: IShipDefinition[] = [
         source: ShipSource.SALVAGE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.HELIOS_A, ShipId.HELIOS_TE_A, ShipId.HELIOS_TE_B_S],
+        defaultStats: {
+            hp: 40560,
+            armor: 20,
+            shield: 2,
+            speed: 650,
+            warpSpeed: 3250,
+            dpmShip: 11643,
+            dpmAntiAir: 167,
+            dpmSiege: 1023,
+        },
     },
     {
         id: ShipId.HELIOS_TE_B_S,
         name: 'ヘリオス級-TE　Ｂ魚雷型（回収）',
+        translatedName: {
+            en: 'ヘリオス級-TE - 魚雷型（回収）',
+        },
         type: ShipType.DESTROYER,
         cost: 15,
         weight: 0,

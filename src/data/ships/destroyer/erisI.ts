@@ -12,6 +12,9 @@ export const erisI: IShipDefinition[] = [
     {
         id: ShipId.ERIS_I_A,
         name: 'エリスI級　Ａ大砲型',
+        translatedName: {
+            en: 'Eris I - Cannon Type',
+        },
         type: ShipType.DESTROYER,
         cost: 7,
         weight: 10,
@@ -37,6 +40,9 @@ export const erisI: IShipDefinition[] = [
     {
         id: ShipId.ERIS_I_B,
         name: 'エリスI級　Ｂ重砲型',
+        translatedName: {
+            en: 'Eris I - Heavy Cannon Type',
+        },
         type: ShipType.DESTROYER,
         cost: 7,
         weight: 10,
@@ -62,6 +68,9 @@ export const erisI: IShipDefinition[] = [
     {
         id: ShipId.ERIS_I_C,
         name: 'エリスI級　Ｃ装甲型',
+        translatedName: {
+            en: 'Eris I - Armored Type',
+        },
         type: ShipType.DESTROYER,
         cost: 7,
         weight: 10,

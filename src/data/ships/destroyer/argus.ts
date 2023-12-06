@@ -9,6 +9,9 @@ export const argus: IShipDefinition[] = [
     {
         id: ShipId.ARGUS_A,
         name: 'アーガス級　Ａ一般型',
+        translatedName: {
+            en: 'Argus - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 0,

@@ -9,6 +9,9 @@ export const a101TheRationalTe: IShipDefinition[] = [
     {
         id: ShipId.A101_THE_RATIONAL_TE,
         name: 'A101ザラショナル-TE',
+        translatedName: {
+            en: 'A101 the Rational - Generic Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

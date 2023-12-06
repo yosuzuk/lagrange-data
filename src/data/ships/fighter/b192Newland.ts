@@ -14,6 +14,9 @@ export const b192Newland: IShipDefinition[] = [
     {
         id: ShipId.B192_NEWLAND,
         name: 'B192ニューランド',
+        translatedName: {
+            en: 'B192 Newland - Multi-Role Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

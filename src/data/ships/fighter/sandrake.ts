@@ -14,6 +14,9 @@ export const sandrake: IShipDefinition[] = [
     {
         id: ShipId.SANDRAKE,
         name: 'サンドレイク',
+        translatedName: {
+            en: 'Sandrake - Dual-Purpose Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.SMALL_FIGHTER,
         cost: 0,

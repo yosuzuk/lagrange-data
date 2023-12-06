@@ -11,6 +11,9 @@ export const ceres: IShipDefinition[] = [
     {
         id: ShipId.CERES_A,
         name: 'セレス級　Ａ艦載型',
+        translatedName: {
+            en: 'Ceres - Aircraft Type',  
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,
@@ -38,6 +41,9 @@ export const ceres: IShipDefinition[] = [
     {
         id: ShipId.CERES_B,
         name: 'セレス級　Ｂ支援型',
+        translatedName: {
+            en: 'Ceres - Support Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,
@@ -63,6 +69,9 @@ export const ceres: IShipDefinition[] = [
     {
         id: ShipId.CERES_C,
         name: 'セレス級　Ｃ戦術型',
+        translatedName: {
+            en: 'Ceres - Tactical Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,

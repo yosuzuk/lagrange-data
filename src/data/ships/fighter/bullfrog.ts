@@ -12,6 +12,9 @@ export const bullfrog: IShipDefinition[] = [
     {
         id: ShipId.BULLFROG,
         name: 'ブルフロッグ型',
+        translatedName: {
+            en: 'Balancer Anderson SC020 - Interference Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.LARGE_FIGHTER,
         cost: 0,

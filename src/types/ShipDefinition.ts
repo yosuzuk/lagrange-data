@@ -11,7 +11,7 @@ import { ShipSubType, ShipType } from './ShipType';
 export interface IShipDefinition {
     id: string;
     name: string;
-    translatedName?: Record<string, string>;
+    translatedName: Record<string, string>;
     type: ShipType;
     subType?: ShipSubType;
     cost: number;

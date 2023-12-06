@@ -12,6 +12,9 @@ export const ac721: IShipDefinition[] = [
     {
         id: ShipId.AC721_A,
         name: 'AC721　Ａ一般型',
+        translatedName: {
+            en: 'AC721 - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,
@@ -38,6 +41,9 @@ export const ac721: IShipDefinition[] = [
     {
         id: ShipId.AC721_B,
         name: 'AC721　Ｂミサイル型',
+        translatedName: {
+            en: 'AC721 - Missile Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,
@@ -64,6 +70,9 @@ export const ac721: IShipDefinition[] = [
     {
         id: ShipId.AC721_D,
         name: 'AC721　Ｄ艦載型',
+        translatedName: {
+            en: 'AC721 - Aircraft Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 10,
@@ -91,6 +100,9 @@ export const ac721: IShipDefinition[] = [
     {
         id: ShipId.AC721_TE_A,
         name: 'AC721-TE　Ａイオン砲型',
+        translatedName: {
+            en: 'AC721 (TE) - Ion Cannon Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 0,
@@ -99,13 +111,23 @@ export const ac721: IShipDefinition[] = [
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.AC721_A, ShipId.AC721_B, ShipId.AC721_D, ShipId.AC721_TE_D_S_LEVI9],
-        // defaultStats: {
-        //     hp: 34140,
-        // },
+        defaultStats: {
+            hp: 34140,
+            armor: 20,
+            shield: 2,
+            speed: 750,
+            warpSpeed: 3750,
+            dpmShip: 6037,
+            dpmAntiAir: 138,
+            dpmSiege: 1328,
+        },
     },
     {
         id: ShipId.AC721_TE_D_S_LEVI9,
         name: 'AC721-TE（Ｓ-レヴィ9搭載）',
+        translatedName: {
+            en: 'AC721 (TE) - Aircraft Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 0,

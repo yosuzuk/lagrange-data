@@ -12,6 +12,9 @@ export const janbiyaAer410: IShipDefinition[] = [
     {
         id: ShipId.JANBIYA_AER410,
         name: 'ジャンビーヤAer410',
+        translatedName: {
+            en: 'Janbiya Aer410 - Anti-Ship Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

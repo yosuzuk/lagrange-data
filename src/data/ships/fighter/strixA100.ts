@@ -14,6 +14,9 @@ export const strixA100: IShipDefinition[] = [
     {
         id: ShipId.STRIX_A100,
         name: 'ストリクスA100型',
+        translatedName: {
+            en: 'Strix A100 - Anti-Ship Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

@@ -13,6 +13,9 @@ export const aldabra: IShipDefinition[] = [
     {
         id: ShipId.ALDABRA_A,
         name: 'アルダブラ級　Ａ一般型',
+        translatedName: {
+            en: 'Aldabra - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,
@@ -41,6 +44,9 @@ export const aldabra: IShipDefinition[] = [
     {
         id: ShipId.ALDABRA_B,
         name: 'アルダブラ級　Ｂ装甲型',
+        translatedName: {
+            en: 'Aldabra - Armored Type',
+        },
         type: ShipType.DESTROYER,
         cost: 8,
         weight: 5,

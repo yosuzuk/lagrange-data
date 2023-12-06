@@ -12,6 +12,9 @@ export const guardian: IShipDefinition[] = [
     {
         id: ShipId.GUARDIAN_A,
         name: 'ガーディアン級　Ａ支援型',
+        translatedName: {
+            en: 'Guardian - Support Type',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 5,
@@ -37,6 +40,9 @@ export const guardian: IShipDefinition[] = [
     {
         id: ShipId.GUARDIAN_B,
         name: 'ガーディアン級　Ｂ両用型',
+        translatedName: {
+            en: 'Guardian - Dual-Purpose Type',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 5,
@@ -63,6 +69,9 @@ export const guardian: IShipDefinition[] = [
     {
         id: ShipId.GUARDIAN_C,
         name: 'ガーディアン級　Ｃパルス型',
+        translatedName: {
+            en: 'Guardian - Pulse Cannon Type',
+        },
         type: ShipType.DESTROYER,
         cost: 9,
         weight: 5,

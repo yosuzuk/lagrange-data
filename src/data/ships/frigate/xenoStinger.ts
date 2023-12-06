@@ -63,6 +63,9 @@ export const xenoStinger: IShipDefinition[] = [
     {
         id: ShipId.XENO_STINGER_A,
         name: 'ゼノスティンガー級　Ａ特殊型',
+        translatedName: {
+            en: 'XenoStinger - Special Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 5,
@@ -110,6 +113,9 @@ export const xenoStinger: IShipDefinition[] = [
     {
         id: ShipId.XENO_STINGER_B,
         name: 'ゼノスティンガー級　Ｂ対空型',
+        translatedName: {
+            en: 'XenoStinger - Anti-Aircraft Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 5,

@@ -8,7 +8,10 @@ import { ShipId } from '../../shipIds';
 export const xt10: IShipDefinition[] = [
     {
         id: ShipId.XT_10_A,
-        name: 'XT-10級　Ａ魚雷型', // TODO check
+        name: 'XT-10級　Ａ魚雷型',
+        translatedName: {
+            en: 'XT-10 - Torpedo Type',
+        },
         type: ShipType.DESTROYER,
         cost: 10,
         weight: 0,

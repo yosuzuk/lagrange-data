@@ -12,6 +12,9 @@ export const sporeA404: IShipDefinition[] = [
     {
         id: ShipId.SPORE_A404,
         name: 'スポアA404',
+        translatedName: {
+            en: 'Spore A404 - Anti-Aircraft Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

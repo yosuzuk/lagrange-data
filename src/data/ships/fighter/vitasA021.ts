@@ -14,6 +14,9 @@ export const vitasA021: IShipDefinition[] = [
     {
         id: ShipId.VITAS_A021,
         name: 'ヴィタスA021',
+        translatedName: {
+            en: 'Vitas A021 - Anti-Ship Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

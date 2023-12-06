@@ -13,6 +13,9 @@ export const quaoar: IShipDefinition[] = [
     {
         id: ShipId.QUAOAR_A,
         name: 'クワオアー級　Ａ電磁加速砲型',
+        translatedName: {
+            en: 'Quaoar - Railgun Type',
+        },
         type: ShipType.DESTROYER,
         cost: 6,
         weight: 10,
@@ -41,6 +44,9 @@ export const quaoar: IShipDefinition[] = [
     {
         id: ShipId.QUAOAR_B,
         name: 'クワオアー級　Ｂ魚雷型',
+        translatedName: {
+            en: 'Quaoar - Torpedo Type',
+        },
         type: ShipType.DESTROYER,
         cost: 6,
         weight: 10,

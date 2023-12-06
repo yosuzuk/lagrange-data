@@ -14,6 +14,9 @@ export const stingray: IShipDefinition[] = [
     {
         id: ShipId.STINGRAY,
         name: 'スティングレイ',
+        translatedName: {
+            en: 'Stingray - Stealth Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.LARGE_FIGHTER,
         cost: 0,

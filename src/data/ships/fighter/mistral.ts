@@ -15,6 +15,9 @@ export const mistral: IShipDefinition[] = [
     {
         id: ShipId.MISTRAL,
         name: 'ミストラル',
+        translatedName: {
+            en: 'Mistral - Anti-Aircraft Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.MEDIUM_FIGHTER,
         cost: 0,

@@ -11,6 +11,9 @@ export const nomaM470: IShipDefinition[] = [
     {
         id: ShipId.NOMA_M470_A,
         name: 'ノマM470級　Ａ攻城型',
+        translatedName: {
+            en: 'NOMA M470 - Siege Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 10,
@@ -26,13 +29,23 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
-        // defaultStats: {
-        //     hp: 14000,
-        // },
+        defaultStats: {
+            hp: 14000,
+            armor: 5,
+            shield: 0,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 296,
+            dpmAntiAir: 72,
+            dpmSiege: 1650,
+        },
     },
     {
         id: ShipId.NOMA_M470_B,
         name: 'ノマM470級　Ｂ支援型',
+        translatedName: {
+            en: 'NOMA M470 - Support Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 10,
@@ -49,13 +62,23 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
-        // defaultStats: {
-        //     hp: 14000,
-        // },
+        defaultStats: {
+            hp: 14000,
+            armor: 5,
+            shield: 0,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 200,
+            dpmAntiAir: 72,
+            dpmSiege: 138,
+        },
     },
     {
         id: ShipId.NOMA_M470_C,
         name: 'ノマM470級　Ｃ対空型',
+        translatedName: {
+            en: 'NOMA M470 - Anti-Aircraft Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 10,
@@ -72,13 +95,23 @@ export const nomaM470: IShipDefinition[] = [
             ShipId.NOMA_M470_TE_A,
             ShipId.NOMA_M470_TE_S,
         ],
-        // defaultStats: {
-        //     hp: 14000,
-        // },
+        defaultStats: {
+            hp: 14000,
+            armor: 5,
+            shield: 0,
+            speed: 800,
+            warpSpeed: 4000,
+            dpmShip: 200,
+            dpmAntiAir: 2376,
+            dpmSiege: 138,
+        },
     },
     {
         id: ShipId.NOMA_M470_TE_A,
         name: 'ノマM470級-TE　Ａ対艦型',
+        translatedName: {
+            en: 'NOMA M470 (TE) - Anti-Ship Type',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 0,
@@ -96,6 +129,9 @@ export const nomaM470: IShipDefinition[] = [
     {
         id: ShipId.NOMA_M470_TE_S,
         name: 'ノマM470級-TE　Ａ対艦型（回収）',
+        translatedName: {
+            en: 'NOMA M470 (TE) - Anti-Ship Type (salvaged)',
+        },
         type: ShipType.FRIGATE,
         cost: 6,
         weight: 0,

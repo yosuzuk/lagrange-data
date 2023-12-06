@@ -9,6 +9,9 @@ export const boreas: IShipDefinition[] = [
     {
         id: ShipId.BOREAS_A,
         name: 'ボレアス級　Ａ一般型',
+        translatedName: {
+            en: 'Boreas - Generic Type',
+        },
         type: ShipType.DESTROYER,
         cost: 10,
         weight: 0,
@@ -31,6 +34,9 @@ export const boreas: IShipDefinition[] = [
     {
         id: ShipId.BOREAS_B,
         name: 'ボレアス級　Ｂミサイル型',
+        translatedName: {
+            en: 'Boreas - Missile Type',
+        },
         type: ShipType.DESTROYER,
         cost: 10,
         weight: 0,
@@ -53,6 +59,9 @@ export const boreas: IShipDefinition[] = [
     {
         id: ShipId.BOREAS_TE_B_S,
         name: 'ボレアス級-TE　Ａミサイル型（回収）',
+        translatedName: {
+            en: 'Boreas - Missile Type (salvaged)',
+        },
         type: ShipType.DESTROYER,
         cost: 10,
         weight: 0,

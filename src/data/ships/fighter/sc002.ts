@@ -12,6 +12,9 @@ export const sc002: IShipDefinition[] = [
     {
         id: ShipId.SC002,
         name: 'SC002型',
+        translatedName: {
+            en: 'SC002 - Generic Type',
+        },
         type: ShipType.FIGHTER,
         subType: ShipSubType.SMALL_FIGHTER,
         cost: 0,

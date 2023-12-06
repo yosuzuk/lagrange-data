@@ -1,10 +1,8 @@
 import { shipDefinitions } from '../data/shipDefinitions';
 import { getCurrentLanguage } from '../i18n';
-import { IShipStatsAndLocalization } from '../types/externalData';
 import { IShipDefinition, ISystemModule } from '../types/ShipDefinition';
 import { ShipSource } from '../types/ShipSource';
 import { ShipTag } from '../types/ShipTag';
-import { getShipStatsAndLocalizationByShipId } from './externalDataUtils';
 import { shipTypeToSortValue } from './shipTypeUtils';
 import { normalizeSortFn } from './sortingUtils';
 
@@ -43,9 +41,7 @@ export function getShipName(shipDefinition: IShipDefinition): string {
         return shipDefinition.translatedName[language];
     }
 
-    // lookup externally provided data
-    const property = language.toUpperCase() as keyof IShipStatsAndLocalization;
-    return getShipStatsAndLocalizationByShipId(shipDefinition.id)?.[property] ?? shipDefinition.name;
+    throw new Error(`Missing name for ${shipDefinition.id}`);
 }
 
 export function getModuleName(shipId: string, module: ISystemModule): string {

@@ -14,6 +14,9 @@ export const wingedHussar: IShipDefinition[] = [
     {
         id: ShipId.WINGED_HUSSAR_A,
         name: 'ウイングドユサール　Ａ対艦型',
+        translatedName: {
+            en: 'Winged Hussar - Anti-Ship Type',
+        },
         type: ShipType.DESTROYER,
         cost: 6,
         weight: 10,
@@ -32,6 +35,9 @@ export const wingedHussar: IShipDefinition[] = [
     {
         id: ShipId.WINGED_HUSSAR_B,
         name: 'ウイングドユサール　Ｂ総合型',
+        translatedName: {
+            en: 'Winged Hussar - Integrated Type',
+        },
         type: ShipType.DESTROYER,
         cost: 6,
         weight: 10,
@@ -50,6 +56,9 @@ export const wingedHussar: IShipDefinition[] = [
     {
         id: ShipId.WINGED_HUSSAR_C,
         name: 'ウイングドユサール　Ｃ対空型',
+        translatedName: {
+            en: 'Winged Hussar - Anti-Aircraft Type',
+        },
         type: ShipType.DESTROYER,
         cost: 6,
         weight: 10,
