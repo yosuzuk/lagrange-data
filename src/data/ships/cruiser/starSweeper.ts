@@ -45,6 +45,16 @@ export const startSweeper: IShipDefinition[] = [
         source: ShipSource.DOCK_EFFECT,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.STAR_SWEEPER_A, ShipId.STAR_SWEEPER_TE_A_S],
+        defaultStats: {
+            hp: 56320,
+            armor: 50,
+            shield: 10,
+            speed: 450,
+            warpSpeed: 2250,
+            dpmShip: 10192,
+            dpmAntiAir: 575,
+            dpmSiege: 1721,
+        },
     },
     {
         id: ShipId.STAR_SWEEPER_TE_A_S,

@@ -28,9 +28,16 @@ export const wingedHussar: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.WINGED_HUSSAR_B, ShipId.WINGED_HUSSAR_C],
-        // defaultStats: {
-        //     hp: 22710,
-        // },
+        defaultStats: {
+            hp: 22710,
+            armor: 20,
+            shield: 2,
+            speed: 700,
+            warpSpeed: 3500,
+            dpmShip: 4472,
+            dpmAntiAir: 336,
+            dpmSiege: 1367,
+        },
     },
     {
         id: ShipId.WINGED_HUSSAR_B,
@@ -49,9 +56,16 @@ export const wingedHussar: IShipDefinition[] = [
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
         researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.WINGED_HUSSAR_A,
-        // defaultStats: {
-        //     hp: 22710,
-        // },
+        defaultStats: {
+            hp: 22710,
+            armor: 20,
+            shield: 2,
+            speed: 850,
+            warpSpeed: 4250,
+            dpmShip: 4100,
+            dpmAntiAir: 540,
+            dpmSiege: 366,
+        },
     },
     {
         id: ShipId.WINGED_HUSSAR_C,

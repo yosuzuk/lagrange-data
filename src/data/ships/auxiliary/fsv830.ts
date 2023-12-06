@@ -92,16 +92,14 @@ const a2: ISystemModule = {
     effects: [
         enhancements.increaseStorage().withFixedAbsoluteValue(60000),
     ],
-    skillComplete: false,
+    skillComplete: true,
     skills: [
-        // TODO cost
-        enhancements.increaseStorage().withPercentageValue(80),
-        enhancements.increaseSupplySpeed().withPercentageValue(34),
-        enhancements.increaseCustomModuleStorage().withPercentageValue(15),
-        // TODO 4th skill
+        enhancements.increaseStorage().withPercentageValue(80).withCost(8),
+        enhancements.increaseSupplySpeed().withPercentageValue(34).withCost(8),
+        enhancements.increaseCustomModuleStorage().withPercentageValue(15).withCost(8),
+        enhancements.increaseCustomModuleStorage().withPercentageValue(15).withCost(8),
     ],
-    // TODO skillslots
-    // skillSlots: 99,
+    skillSlots: 3,
     parts: [{
         text: [
             '積載プラットフォーム',
@@ -148,8 +146,13 @@ const b2: ISystemModule = {
     description: '自己保有能力で護送艦が生産可能',
     category: 'B',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+    ],
     skillSlots: 3,
     parts: [{
         text: [
@@ -193,8 +196,23 @@ const c1: ISystemModule = {
     categoryNumber: 1,
     carryFighter: 2,
     carryFighterType: ShipSubType.MEDIUM_FIGHTER,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.customEnhancement({
+            name: '艦載機緊急補修',
+            translatedName: {
+                en: 'Aircraft Emergency Repair',
+            },
+            description: '帰還した艦載機を10%緊急補修し、戦闘機のメイン武器の冷却時間を50%延長する',
+            translatedDescription: {
+                en: 'Performs emergency repairs on aircraft upon returning for 10%, and extends the CD of the primary weapon on the Fighter by 50%',
+            },
+        }).withCost(8),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
@@ -213,8 +231,14 @@ const c2: ISystemModule = {
     description: '補修ＵＡＶ×２',
     category: 'C',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+        enhancements.increaseRepairSpeed().withPercentageValue(10).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseSystemHp().withPercentageValue(35).withCost(8),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
@@ -240,7 +264,7 @@ const d1: ISystemModule = {
     ],
     flagshipEffects: [
         flagshipEffect.focusFire().withDefaultFlag(),
-        flagshipEffect.customFlashipEffectWithKey('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withDefaultFlag(),
+        flagshipEffect.customFlashipEffectWithKey('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withCost(40).withDefaultFlag(),
     ],
     skillComplete: true,
     skills: [
@@ -265,12 +289,19 @@ const d2: ISystemModule = {
     effects: [
         enhancements.increaseMissileAndTorpedoHitRateBackRow().withFixedPercentageValue(12),
     ],
-    skillComplete: false,
-    skills: [
-        enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
-        // TODO remaining skills
+    skillComplete: true,
+    flagshipEffects: [
+        flagshipEffect.focusFire().withDefaultFlag(),
+        flagshipEffect.customFlashipEffectWithKey('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withCost(40).withDefaultFlag(),
     ],
-    skillSlots: 2,
+    skills: [
+        enhancements.increaseMissileAndTorpedoHitRateBackRow().withPercentageValue(8).withCost(8),
+        enhancements.increaseProjectileHitRateMidRow().withPercentageValue(8).withCost(8),
+        enhancements.increaseSlowHitRateBackRow().withPercentageValue(8).withCost(8),
+        enhancements.reduceDamageReceivedBySystem().withAbsoluteValue(5).withCost(10),
+        enhancements.increaseSystemHp().withPercentageValue(10).withCost(10),
+    ],
+    skillSlots: 3,
 };
 
 const d3: ISystemModule = {
@@ -286,6 +317,10 @@ const d3: ISystemModule = {
         enhancements.disguiseAsCarrier(),
     ],
     skillComplete: true,
+    flagshipEffects: [
+        flagshipEffect.focusFire().withDefaultFlag(),
+        flagshipEffect.customFlashipEffectWithKey('sailingSpeedCoordination1').withDescriptionKey('sailingSpeedCoordination1').withConditionKey('sailingSpeedCoordination1').withCost(40).withDefaultFlag(),
+    ],
     skills: [
         enhancements.disguiseAsDestroyer().withCost(15),
         enhancements.reduceHitByProjectileInBackRow().withPercentageValue(8).withCost(8),
@@ -311,8 +346,14 @@ const e1: ISystemModule = {
     description: '対空武装（同列）',
     category: 'E',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageVsAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseDamageVsAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(8),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(8),
+        enhancements.reduceLockOn().withPercentageValue(30).withCost(8),
+    ],
     skillSlots: 4,
     parts: [{
         text: [

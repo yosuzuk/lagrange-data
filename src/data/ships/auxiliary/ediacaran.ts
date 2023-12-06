@@ -1,4 +1,4 @@
-import { enhancements, flagshipEffect } from '../../../enhancements/enhancements';
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -21,8 +21,26 @@ const m1: ISystemModule = {
     categoryNumber: 1,
     defaultModule: true,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        strategy.customStrategy({
+            name: '乱射',
+            translatedName: {
+                en: 'Full Firepower',
+            },
+            description: 'システム内のメイン武器が2ラウンド作動するごとに、次ラウンドの攻撃回数が1増加する。',
+            translatedDescription: {
+                en: 'After every 2 round(s) of attacks of the main weapon in the system, increases the Rounds Per Cycle by 1 for the next round of attack.',
+            },
+        }).withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(10).withCost(10),
+        enhancements.reduceLockOn().withPercentageValue(30).withCost(10),
+    ],
     skillSlots: 6,
     parts: [
         {
@@ -51,8 +69,26 @@ const m2: ISystemModule = {
     category: 'M',
     categoryNumber: 2,
     mainSystem: true,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        strategy.customStrategy({
+            name: '過負荷加速',
+            translatedName: {
+                en: 'Overloading Speed-up',
+            },
+            description: 'システム内のメイン武器が2ラウンド作動するごとに、次ラウンドの攻撃に25%ダメージが追加され、同時に物理シールド貫通効果を得る。',
+            translatedDescription: {
+                en: 'After every 2 round(s) of attacks of the main weapon in the system, the next round of attack deals an additional 25% damage and has physical armor penetration.',
+            },
+        }).withCost(15),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRateVsLarge().withPercentageValue(10).withCost(10),
+        enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+        enhancements.increaseCriticalChance().withPercentageValue(50).withCost(10),
+    ],
     skillSlots: 6,
     parts: [
         {
@@ -69,6 +105,28 @@ const m2: ISystemModule = {
     // TODO total dpm
 };
 
+const coreEnhancementTech = enhancements.customEnhancement({
+    name: 'コア強化技術',
+    translatedName: {
+        en: 'Core Enhancement Tech',
+    },
+    description: '支援艦で製造する自己保有艦船のHP上限が10%アップし、製造時の金属消費が10%アップする。',
+    translatedDescription: {
+        en: 'Increases the max HP of Self-hold Ships produced by Auxiliary Ships by 10% and the Metal cost of production by 10%.',
+    },
+});
+
+const alloyArmorTechnics = enhancements.customEnhancement({
+    name: '合金装甲技術',
+    translatedName: {
+        en: 'Alloy Armor Technics',
+    },
+    description: '支援艦で製造する自己保有艦船の物理ダメージ抵抗が10アップし、製造時の金属消費が3%アップする。',
+    translatedDescription: {
+        en: 'Increases the Physical Resistance of Self-hold Ships produced by Auxiliary Ships by 10 and the Metal cost of production by 3%.',
+    },
+});
+
 const b1: ISystemModule = {
     id: 'B1',
     name: 'フリゲート生産システム',
@@ -83,8 +141,15 @@ const b1: ISystemModule = {
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.increaseSelfHostCapacity().withAbsoluteValue(40).withCost(20),
+        coreEnhancementTech.withCost(10),
+        alloyArmorTechnics.withCost(10),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
@@ -108,8 +173,32 @@ const b2: ISystemModule = {
     effects: [
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.customEnhancement({
+            name: 'コア強化技術',
+            translatedName: {
+                en: 'Core Enhancement Tech',
+            },
+            description: '支援艦で製造する艦載機のHP上限が10%アップし、製造時の金属消費が10%アップする。',
+            translatedDescription: {
+                en: 'Increases the max HP of Aircraft produced by Auxiliary Ships by 10% and the Metal cost of production by 10%.',
+            },
+        }).withCost(10),
+        enhancements.customEnhancement({
+            name: '合金航空装甲技術',
+            translatedName: {
+                en: 'Alloy Aircraft Armor Technics',
+            },
+            description: '支援艦で製造する艦載機の物理ダメージ抵抗が1アップし、製造時の金属消費が10%アップする。',
+            translatedDescription: {
+                en: 'Increases the Physical Resistance of Aircraft produced by Auxiliary Ships by 1 and the Metal cost of production by 10%.',
+            },
+        }).withCost(10),
+    ],
     skillSlots: 3,
     parts: [{
         text: [
@@ -134,8 +223,15 @@ const b3: ISystemModule = {
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
     ],
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
+        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.increaseSelfHostCapacity().withAbsoluteValue(40).withCost(20),
+        coreEnhancementTech.withCost(10),
+        alloyArmorTechnics.withCost(10),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
@@ -151,14 +247,30 @@ const c1: ISystemModule = {
     id: 'C1',
     name: '戦闘機搭載システム',
     translatedName: {
-        en: 'Aircraft System', // TODO en
+        en: 'Aircraft Loading System',
     },
     description: '大型戦闘機を2隊搭載可能',
     category: 'C',
     categoryNumber: 1,
-    skillComplete: false,
-    // TODO skills
-    skillSlots: 6,
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(6),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
+        enhancements.customEnhancement({
+            name: '艦載機緊急補修',
+            translatedName: {
+                en: 'Aircraft Emergency Repair',
+            },
+            description: '帰還した艦載機を10%緊急補修し、戦闘機のメイン武器の冷却時間を50%延長する',
+            translatedDescription: {
+                en: 'Performs emergency repairs on aircraft upon returning for 10%, and extends the CD of the primary weapon on the Fighter by 50%',
+            },
+        }).withCost(6),
+    ],
+    skillSlots: 4,
     parts: [
         {
             text: [
@@ -179,8 +291,15 @@ const c2: ISystemModule = {
     carryCorvette: 3,
     category: 'C',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(6),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(30).withCost(6),
+    ],
     skillSlots: 4,
     parts: [
         {
@@ -199,9 +318,16 @@ const d1: ISystemModule = {
         en: '"Tsundra" Interceptor UAV System',
     },
     description: '対空UAVを4機搭載',
-    skillComplete: false,
-    // TODO skills
-    skillSlots: 5,
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(8),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(8),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
+    ],
+    skillSlots: 4,
     category: 'D',
     categoryNumber: 1,
     parts: [
@@ -218,15 +344,21 @@ const d1: ISystemModule = {
 
 const d2: ISystemModule = {
     id: 'D2',
-    name: '"Hummingbird" Firepower Recon UAV System', // TODO ja
+    name: '「ハミングバード」火力偵察UAVシステム',
     translatedName: {
         en: '"Hummingbird" Firepower Recon UAV System',
     },
     description: '偵察UAVを4機搭載',
     category: 'D',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        strategy.prioritizeSupport2(30).withCost(12),
+    ],
+    skillSlots: 3,
     parts: [
         {
             text: [
@@ -239,15 +371,22 @@ const d2: ISystemModule = {
 
 const d3: ISystemModule = {
     id: 'D3',
+    name: '「巨像」防衛UAVシステム',
     translatedName: {
         en: '"Colossus" Guard UAV System',
     },
-    name: '「巨像」防衛UAVシステム',
     description: '防御UAV４機搭載',
     category: 'D',
     categoryNumber: 3,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(6),
+        enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(6),
+        enhancements.increaseMissileEvasionOfAircraft().withPercentageValue(20).withCost(6),
+    ],
     skillSlots: 4,
     parts: [{
         text: [
@@ -271,12 +410,13 @@ const e1: ISystemModule = {
         enhancements.increaseArmor().withFixedAbsoluteValue(80),
         enhancements.increaseHp().withFixedPercentageValue(15),
     ],
-    skillComplete: false,
+    skillComplete: true,
     skillSlots: 2,
     skills: [
-        enhancements.increaseArmor().withAbsoluteValue(75),
-        enhancements.increaseHp().withPercentageValue(10),
-        // TODO skills
+        enhancements.increaseHp().withPercentageValue(14).withCost(10),
+        enhancements.increaseHp().withPercentageValue(14).withCost(10),
+        enhancements.increaseArmor().withAbsoluteValue(75).withCost(6),
+        enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(6),
     ],
     parts: [{
         text: [
@@ -295,8 +435,23 @@ const e2: ISystemModule = {
     description: '自身の補修を行う',
     category: 'E',
     categoryNumber: 2,
-    skillComplete: false,
-    // TODO skills
+    skillComplete: true,
+    skills: [
+        strategy.customStrategy({
+            name: '緊急修理',
+            translatedName: {
+                en: 'Emergency Repairs',
+            },
+            description: '自身のHPが40%まで下がったとき、自己補修効果が150%アップ。効果は50秒続く。この効果は戦闘中に1回しか発生しない。',
+            translatedDescription: {
+                en: 'When the ship\'s HP falls to 40%, increases repair effectiveness by 150% for 50s. This effect only triggers once per battle.',
+            },
+        }).withCost(12),
+        enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(6),
+        enhancements.increaseRepairEffectiveness().withPercentageValue(10).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+        enhancements.reduceCooldown().withPercentageValue(15).withCost(6),
+    ],
     skillSlots: 3,
     parts: [{
         text: [
@@ -313,8 +468,29 @@ const staticModules: ISystemModule[] = [
         translatedName: {
             en: 'Integrated Support Dock',
         },
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        flagshipEffects: [
+            flagshipEffect.customFlashipEffect({
+                name: '艦隊結合II',
+                translatedName: {
+                    en: 'Fleet Dock II',
+                },
+                description: 'この艦船の同社艦船に対する補修速度を30%アップする。また、艦隊の結合権限を有効にし、この艦隊が展開して他の艦隊と結合できるようにする。',
+                translatedDescription: {
+                    en: 'Increases the speed at which this ship repairs ships from our company by 30%. Enable fleet docking authority to allow the fleet to expand and dock to other fleets.',
+                },
+            }).withCost(15),
+        ],
+        skills: [
+            enhancements.increaseRepairSpeedOfAuxiliary().withPercentageValue(20).withCost(8),
+            enhancements.increaseRepairSpeedOfAuxiliary().withPercentageValue(20).withCost(8),
+            enhancements.reducePrefabCost().withPercentageValue(20).withCost(8),
+            enhancements.reducePrefabCost().withPercentageValue(20).withCost(8),
+            enhancements.increaseSupplySpeed().withPercentageValue(34).withCost(8),
+            enhancements.increaseSupplySpeed().withPercentageValue(34).withCost(8),
+            enhancements.increaseCustomModuleStorage().withAbsoluteValue(30).withCost(8),
+            enhancements.increaseCustomModuleStorage().withAbsoluteValue(30).withCost(8),
+        ],
         skillSlots: 6,
     }),
     modules.commandSystem({
@@ -325,13 +501,26 @@ const staticModules: ISystemModule[] = [
         skillSlots: 0,
     }),
     modules.armorSystem({
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        skills: [
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
+            enhancements.increaseHp().withPercentageValue(14).withCost(12),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.increaseArmor().withAbsoluteValue(75).withCost(8),
+            enhancements.reduceCritialDamageReceived().withPercentageValue(30).withCost(8),
+            enhancements.increaseShield().withPercentageValue(10).withCost(8),
+            enhancements.increaseRepairEffectivenessByArmor().withPercentageValue(5).withCost(8),
+        ],
         skillSlots: 4,
     }),
     modules.propulsionSystem({
-        skillComplete: false,
-        // TODO skills
+        skillComplete: true,
+        skills: [
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
+            enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(8),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(8),
+            enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(8),
+        ],
         skillSlots: 2,
     }),
     modules.energySystem({
