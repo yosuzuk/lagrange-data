@@ -438,6 +438,9 @@ export const ediacaran: IShipDefinition[] = [
             ShipId.EDIACARAN_TE_PREVIEW3,
             ShipId.EDIACARAN_TE_PREVIEW4,
         ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.EDIACARAN_TE_PREVIEW1,
@@ -465,6 +468,9 @@ export const ediacaran: IShipDefinition[] = [
             ShipId.EDIACARAN_TE_PREVIEW2,
             ShipId.EDIACARAN_TE_PREVIEW3,
             ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
     {
@@ -495,6 +501,9 @@ export const ediacaran: IShipDefinition[] = [
             ShipId.EDIACARAN_TE_PREVIEW3,
             ShipId.EDIACARAN_TE_PREVIEW4,
         ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.EDIACARAN_TE_PREVIEW3,
@@ -523,6 +532,9 @@ export const ediacaran: IShipDefinition[] = [
             ShipId.EDIACARAN_TE_PREVIEW1,
             ShipId.EDIACARAN_TE_PREVIEW2,
             ShipId.EDIACARAN_TE_PREVIEW4,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
     {
@@ -553,6 +565,9 @@ export const ediacaran: IShipDefinition[] = [
             ShipId.EDIACARAN_TE_PREVIEW1,
             ShipId.EDIACARAN_TE_PREVIEW2,
             ShipId.EDIACARAN_TE_PREVIEW3,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
 ];

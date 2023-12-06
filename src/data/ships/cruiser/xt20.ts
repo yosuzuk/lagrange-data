@@ -2,6 +2,7 @@ import { Manufacturer } from '../../../types/Manufacturer';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
 import { ShipId } from '../../shipIds';
 
@@ -83,5 +84,8 @@ export const xt20: IShipDefinition[] = [
             dpmAntiAir: 4608,
             dpmSiege: 97,
         },
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
 ];

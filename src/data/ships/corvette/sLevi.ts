@@ -6,6 +6,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
@@ -115,5 +116,8 @@ export const sLevi: IShipDefinition[] = [
             ...defaultModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
 ];

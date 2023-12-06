@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { ShipDataTable } from './ShipDataTable';
-import { FilterKey, ShipFilterState } from '../../filter/types/ShipFilterState';
+import { ShipFilterState } from '../../filter/types/ShipFilterState';
 import { createInitialShipFilterState, applyShipFilter } from '../../filter/filterUtils';
 import { ShipDataActionBar } from './ShipDataActionBar';
 import { shipDefinitions } from '../../../data/shipDefinitions';
@@ -14,6 +14,7 @@ import { PageFooter } from '../../pageStructure/PageFooter';
 import { routes } from '../../../utils/routes';
 import { SortDirection } from '../../../utils/sortingUtils';
 import { boolMapToArray, combineBoolMap } from '../../../utils/boolMapUtils';
+import { ShipTag } from '../../../types/ShipTag';
 
 export const ShipDataPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -40,7 +41,11 @@ export const ShipDataPage = () => {
         }));
     }, [shipFilter, columnConfig, sorting]);
 
-    const filteredShipDefinitions = useMemo(() => applyShipFilter(shipDefinitions, shipFilter), [shipFilter]);
+    const filteredShipDefinitions = useMemo(() => {
+        return applyShipFilter(shipDefinitions, shipFilter).filter(shipDefinition => {
+            return shipDefinition.tags?.includes(ShipTag.CURRENTLY_UNOBTAINABLE) !== true;
+        });
+    }, [shipFilter]);
 
     const disableContainer = Object.values(columnConfig).filter(set => set).length > 3;
 

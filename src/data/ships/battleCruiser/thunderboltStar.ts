@@ -5,6 +5,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IDefaultShipStats, IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
@@ -589,6 +590,9 @@ export const thunderboldStar: IShipDefinition[] = [
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
             ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
         ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW2,
@@ -616,6 +620,9 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(e1),
             ...staticModules,
         ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.THUNDERBOLT_STAR_TE_PREVIEW3,
@@ -642,6 +649,9 @@ export const thunderboldStar: IShipDefinition[] = [
             modules.toStatic(c1),
             modules.toStatic(e2), // 8437 -> 53977
             ...staticModules,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
 ];

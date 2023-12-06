@@ -6,6 +6,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
@@ -435,6 +436,9 @@ export const at021: IShipDefinition[] = [
         subModelIds: undefined,
         baseModelId: undefined,
         source: ShipSource.CITY_TRADE,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         ...typeB,
@@ -453,6 +457,9 @@ export const at021: IShipDefinition[] = [
         subModelIds: undefined,
         baseModelId: undefined,
         source: ShipSource.CITY_TRADE,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         ...typeC,
@@ -471,5 +478,8 @@ export const at021: IShipDefinition[] = [
         subModelIds: undefined,
         baseModelId: undefined,
         source: ShipSource.CITY_TRADE,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
 ];

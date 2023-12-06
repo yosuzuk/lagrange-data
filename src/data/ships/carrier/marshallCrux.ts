@@ -413,6 +413,9 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(c1),
             ...staticModules,
         ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.MARSHALL_CRUX_TE_A2,
@@ -437,6 +440,9 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(a2),
             modules.toStatic(c1),
             ...staticModules,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
     {
@@ -463,6 +469,9 @@ export const marshallCrux: IShipDefinition[] = [
             modules.toStatic(b1),
             modules.toStatic(c1),
             ...staticModules,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
 ];

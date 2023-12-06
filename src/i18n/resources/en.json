@@ -167,8 +167,8 @@
         "pageTitle": "Ship data"
     },
     "shipDetail": {
-        "staticEffect": "Bonus effect",
-        "staticEffectsColon": "Bonus effects:",
+        "staticEffect": "Default effect",
+        "staticEffectsColon": "Default effects:",
         "numberOfSkillSlots": "Skill slots: {{count}}",
         "skillsColon": "Skills:",
         "flagshipEffectsColon": "Flagship effect:",

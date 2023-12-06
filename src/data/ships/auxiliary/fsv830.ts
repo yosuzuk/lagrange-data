@@ -440,6 +440,9 @@ export const fsv830: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW2,
@@ -462,6 +465,9 @@ export const fsv830: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW3,
@@ -485,6 +491,9 @@ export const fsv830: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW4,
@@ -508,6 +517,9 @@ export const fsv830: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
     {
         id: ShipId.FSV830_TE_PREVIEW5,
@@ -531,5 +543,8 @@ export const fsv830: IShipDefinition[] = [
             ...staticModules,
         ],
         defaultStats,
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
 ];

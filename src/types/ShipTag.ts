@@ -1,3 +1,4 @@
 export enum ShipTag {
     PHASE_TWO_BLUEPRINT,
+    CURRENTLY_UNOBTAINABLE,
 }

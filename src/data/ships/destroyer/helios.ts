@@ -60,7 +60,7 @@ export const helios: IShipDefinition[] = [
         id: ShipId.HELIOS_TE_A_S,
         name: 'ヘリオス級-TE　Ａ一般型（回収）',
         translatedName: {
-            en: 'ヘリオス級-TE - 一般型（回収）',
+            en: 'Helios (TE) - Generic Type (salvaged)',
         },
         type: ShipType.DESTROYER,
         cost: 15,
@@ -85,7 +85,7 @@ export const helios: IShipDefinition[] = [
         id: ShipId.HELIOS_TE_B_S,
         name: 'ヘリオス級-TE　Ｂ魚雷型（回収）',
         translatedName: {
-            en: 'ヘリオス級-TE - 魚雷型（回収）',
+            en: 'Helios (TE) - Torpedo Type (salvaged)',
         },
         type: ShipType.DESTROYER,
         cost: 15,
