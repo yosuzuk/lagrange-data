@@ -62,7 +62,7 @@ export function addStats(stats: IStats, count: number = 1, targetStats: IStats):
         ...targetStats,
         hp: (targetStats.hp ?? 0) + ((stats.hp ?? 0) * count),
         speed: Math.min(targetStats.speed ?? Infinity, stats.speed ?? Infinity),
-        warpSpeed: Math.min(targetStats.warpSpeed ?? Infinity, stats.warpSpeed ?? Infinity),
+        warpSpeed: Infinity, // calculated separately
         dpmShip: (targetStats.dpmShip ?? 0) + ((stats.dpmShip ?? 0) * count),
         dpmAntiAir: (targetStats.dpmAntiAir ?? 0) + ((stats.dpmAntiAir ?? 0) * count),
         dpmSiege: (targetStats.dpmSiege ?? 0) + ((stats.dpmSiege ?? 0) * count),
