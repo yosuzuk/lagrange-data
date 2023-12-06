@@ -144,56 +144,54 @@ export const FleetProperties = (props: IProps) => {
                                     </Typography>
                                 ),
                             },
-                            ...(flags.enableStats ? [
-                                {
-                                    key: 'dpm',
-                                    label: t('fleetSetup.totalFleetDpm'),
-                                    value: (
-                                        <>
-                                            <Typography variant="body2">
-                                                {formatDpmAll(fleetStats)}
+                            {
+                                key: 'dpm',
+                                label: t('fleetSetup.totalFleetDpm'),
+                                value: (
+                                    <>
+                                        <Typography variant="body2">
+                                            {formatDpmAll(fleetStats)}
+                                        </Typography>
+                                        {fleetStats.incomplete && (
+                                            <Typography variant="caption" color="text.secondary">
+                                                {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                             </Typography>
-                                            {fleetStats.incomplete && (
-                                                <Typography variant="caption" color="text.secondary">
-                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
-                                                </Typography>
-                                            )}
-                                        </>
-                                    ),
-                                },
-                                {
-                                    key: 'hp',
-                                    label: t('fleetSetup.totalFleetHp'),
-                                    value: (
-                                        <>
-                                            <Typography variant="body2">
-                                                {formatHp(fleetStats)}
+                                        )}
+                                    </>
+                                ),
+                            },
+                            {
+                                key: 'hp',
+                                label: t('fleetSetup.totalFleetHp'),
+                                value: (
+                                    <>
+                                        <Typography variant="body2">
+                                            {formatHp(fleetStats)}
+                                        </Typography>
+                                        {fleetStats.incomplete && (
+                                            <Typography variant="caption" color="text.secondary">
+                                                {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                             </Typography>
-                                            {fleetStats.incomplete && (
-                                                <Typography variant="caption" color="text.secondary">
-                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
-                                                </Typography>
-                                            )}
-                                        </>
-                                    ),
-                                },
-                                {
-                                    key: 'speed',
-                                    label: t('label.speed'),
-                                    value: (
-                                        <>
-                                            <Typography variant="body2">
-                                                {formatSpeed(fleetStats)}
+                                        )}
+                                    </>
+                                ),
+                            },
+                            {
+                                key: 'speed',
+                                label: t('label.speed'),
+                                value: (
+                                    <>
+                                        <Typography variant="body2">
+                                            {formatSpeed(fleetStats)}
+                                        </Typography>
+                                        {fleetStats.incomplete && (
+                                            <Typography variant="caption" color="text.secondary">
+                                                {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
                                             </Typography>
-                                            {fleetStats.incomplete && (
-                                                <Typography variant="caption" color="text.secondary">
-                                                    {t('fleetSetup.inaccurateDueToMissingDataBrackets')}
-                                                </Typography>
-                                            )}
-                                        </>
-                                    ),
-                                },
-                            ] : []),
+                                        )}
+                                    </>
+                                ),
+                            },
                             {
                                 key: 'shipCount',
                                 label: t('label.ships'),

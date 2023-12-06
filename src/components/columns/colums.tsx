@@ -10,7 +10,7 @@ import { manufacturerToSortValue, translateManufacturer } from '../../utils/manu
 import { researchStrategyTypeToSortValue, translateResearchStrategyType } from '../../utils/researchStrategyTypeUtils';
 import { researchTacticTypeToSortValue, translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { translateResearchManufacturer, researchManufacturerToSortValue } from '../../utils/researchManufacturerUtils';
-import { formatDpm, getShipStats } from '../../utils/shipStatsUtils';
+import { formatDpm, getAccelerationTime, getShipStats } from '../../utils/shipStatsUtils';
 import { IStats } from '../../types/IStats';
 import { getShipDefinitionById, getShipName } from '../../utils/shipDefinitionUtils';
 import { t, getCurrentLanguage } from '../../i18n';
@@ -214,11 +214,38 @@ export const flightTimeColumn: ITableColumn<IShipDefinition> = {
     ],
 };
 
+export const accelerationTimeColumn: ITableColumn<IShipDefinition> = {
+    id: 'accelerationTime',
+    renderHeader: () => t('label.accelerationTime'),
+    renderCell: (data: IShipDefinition) => {
+        if (data.defaultStats?.speed) {
+            const accelerationTime = getAccelerationTime(data.defaultStats.speed);
+            if (accelerationTime) {
+                return t('quantity.nSecondsShort', { count: accelerationTime });
+            }
+        }
+        return '-';
+    },
+    sortFn: [
+        (a, b) => {
+            const accelerationTimeA = getAccelerationTime(a.defaultStats?.speed ?? 0) ?? 0;
+            const accelerationTimeB = getAccelerationTime(b.defaultStats?.speed ?? 0) ?? 0;
+            return accelerationTimeA - accelerationTimeB;
+        },
+        (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),
+    ],
+};
+
 export const shipDpmShipColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiShipDpm'), 'dpmShip');
 export const shipDpmAntiAirColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.antiAirDpm'), 'dpmAntiAir');
 export const shipDpmSiegeColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.siegeDpm'), 'dpmSiege');
 export const hpColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.hp'), 'hp');
-export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.cruiseSpeed'), 'speed');
+export const speedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.cruiseSpeed'), 'speed', speed => {
+    if (!Number.isFinite(speed)) {
+        return '-'
+    }
+    return Number(speed) <= 1200 ? `${speed} - 1200` : `${speed}`;
+});
 export const warpSpeedColumn: ITableColumn<IShipDefinition> = createShipStatColumn(t('label.warpSpeed'), 'warpSpeed');
 
 export const shipDpmShipPerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.antiShipDpmPerCommandPoint'), 'dpmShip');
@@ -226,11 +253,13 @@ export const shipDpmAntiAirPerCommandPointColumn: ITableColumn<IShipDefinition> 
 export const shipDpmSiegePerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.siegeDpmPerCommandPoint'), 'dpmSiege');
 export const hpPerCommandPointColumn: ITableColumn<IShipDefinition> = createShipStatPerCommandPointColumn(t('label.hpPerCommandPoint'), 'hp');
 
-function createShipStatColumn(name: string, statsProperty: keyof IStats): ITableColumn<IShipDefinition> {
+type FormatFn = (value: number | null) => string;
+
+function createShipStatColumn(name: string, statsProperty: keyof IStats, formatFn: FormatFn = formatDpm): ITableColumn<IShipDefinition> {
     return {
         id: statsProperty,
         renderHeader: () => name,
-        renderCell: (data: IShipDefinition) => formatDpm(getShipStatsPropertyAsNumber(data.id, statsProperty)),
+        renderCell: (data: IShipDefinition) => formatFn(getShipStatsPropertyAsNumber(data.id, statsProperty)),
         sortFn: [
             (a, b) => (getShipStatsPropertyAsNumber(a.id, statsProperty) ?? 0) - (getShipStatsPropertyAsNumber(b.id, statsProperty) ?? 0),
             (a, b) => getShipName(a).localeCompare(getShipName(b), getCurrentLanguage()),

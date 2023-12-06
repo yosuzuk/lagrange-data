@@ -126,7 +126,8 @@
         "daysAndHours": "{{days}}日{{hours}}時間",
         "effectColonValue": "効果：{{effect}}",
         "conditionColonValue": "有効条件：{{condition}}",
-        "flightTime": "飛行時間"
+        "flightTime": "飛行時間",
+        "accelerationTime": "加速時間"
     },
     "quantity": {
         "secondShort": "秒",

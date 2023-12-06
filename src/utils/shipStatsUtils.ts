@@ -9,9 +9,11 @@ export function getShipStats(shipDefinition: IShipDefinition, moduleSelection: I
     const data = getShipStatsAndLocalizationByShipId(shipDefinition.id);
 
     // stats including default modules
+    const speed = shipDefinition.defaultStats?.speed ?? (data !== null ? Number(data.speed) : undefined);
     const defaultStats: IStats = {
         hp: shipDefinition.defaultStats?.hp,
-        speed: shipDefinition.defaultStats?.speed ?? (data !== null ? Number(data.speed) : undefined),
+        speed,
+        accelerationTime: speed ? getAccelerationTime(speed) : undefined,
         warpSpeed: shipDefinition.defaultStats?.warpSpeed ?? (data !== null ? Number(data.warp) : undefined),
         dpmShip: shipDefinition.defaultStats?.dpmShip ?? (data !== null ? Number(data.dpmShip) : undefined),
         dpmAntiAir: shipDefinition.defaultStats?.dpmAntiAir ?? (data !== null ? Number(data.dpmAntiAir) : undefined),
@@ -92,9 +94,17 @@ export function formatDpmAll(stats: IStats): string {
 export function formatSpeed(stats: IStats): string {
     const { speed, warpSpeed } = stats;
     return [
-        Number.isFinite(speed) ? formatNumberWithSuffix(speed as number) : '-',
+        Number.isFinite(speed) ? `${formatNumberWithSuffix(speed as number)} - 1200` : '-',
         Number.isFinite(warpSpeed) ? formatNumberWithSuffix(warpSpeed as number) : '-',
     ].join(' | ');
+}
+
+export function formatAccelerationTime(stats: IStats): string {
+    const { accelerationTime } = stats;
+    if (!Number.isFinite(accelerationTime)) {
+        return '-';
+    }
+    return t('quantity.nSecondsShort', { count: accelerationTime });
 }
 
 export function formatFlightTime(outboundFlightTime: number, inboundFlightTime: number): string {
@@ -120,4 +130,24 @@ function getUsedNonStaticModules(moduleSelection: IModuleSelection): ISystemModu
 
 function getNonStaticDefaultModules(shipDefinition: IShipDefinition): ISystemModule[] {
     return shipDefinition.modules?.filter(module => module.category !== 'STATIC' && module.defaultModule) ?? [];
+}
+
+const accelerationTable: Record<string, number> = {
+    '1040': 123,
+    '1000': 153,
+    '900': 230,
+    '850': 269,
+    '800': 307,
+    '700': 384,
+    '650': 423,
+    '500': 538,
+    '450': 576,
+    '420': 600,
+    '400': 615,
+    '250': 730,
+    // (it's linear)
+};
+
+export function getAccelerationTime(speed: number): number | undefined {
+    return accelerationTable[`${speed}`];
 }

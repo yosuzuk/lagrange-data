@@ -11,6 +11,7 @@ export interface IColumnConfig {
     armor: boolean;
     shield: boolean;
     speed: boolean;
+    accelerationTime: boolean;
     warpSpeed: boolean;
     flightTime: boolean;
     dpmShipPerCommandPoint: boolean;

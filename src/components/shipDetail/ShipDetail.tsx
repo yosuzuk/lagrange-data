@@ -19,7 +19,7 @@ import { translateResearchStrategyType } from '../../utils/researchStrategyTypeU
 import { translateResearchTacticType } from '../../utils/researchTacticTypeUtils';
 import { ModuleDetail } from './ModuleDetail';
 import { flags } from '../../utils/flags';
-import { formatDpmAll, formatFlightTime, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
+import { formatAccelerationTime, formatDpmAll, formatFlightTime, formatHp, formatSpeed, getShipStats } from '../../utils/shipStatsUtils';
 import { isLanguageWithWhitespace, t } from '../../i18n';
 import { ISystemModule } from '../../types/ShipDefinition';
 
@@ -88,7 +88,7 @@ export const ShipDetail = (props: IProps) => {
                         label: t('label.operationLimit'),
                         value: shipDefinition.operationLimit,
                     },
-                    ...((flags.enableStats && shipStats) ? [
+                    ...((shipStats) ? [
                         {
                             key: 'dpm',
                             label: t('label.dpm'),
@@ -100,7 +100,7 @@ export const ShipDetail = (props: IProps) => {
                             value: formatHp(shipStats),
                         },
                     ] : []),
-                    ...((flags.enableStats && shipDefinition.defaultStats) ? [
+                    ...((shipDefinition.defaultStats) ? [
                         {
                             key: 'armor',
                             label: t('label.armor'),
@@ -112,11 +112,16 @@ export const ShipDetail = (props: IProps) => {
                             value: `${shipDefinition.defaultStats.shield}%`,
                         },
                     ] : []),
-                    ...((flags.enableStats && shipStats) ? [
+                    ...((shipStats) ? [
                         {
                             key: 'speed',
                             label: t('label.speed'),
                             value: formatSpeed(shipStats),
+                        },
+                        {
+                            key: 'accelerationTime',
+                            label: t('label.accelerationTime'),
+                            value: formatAccelerationTime(shipStats),
                         },
                     ] : []),
                     ...((shipDefinition.defaultStats?.inboundTime && shipDefinition.defaultStats?.outboundTime) ? [

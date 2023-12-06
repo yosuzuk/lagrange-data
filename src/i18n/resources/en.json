@@ -126,7 +126,8 @@
         "daysAndHours": "{{days}}d{{hours}}h",
         "effectColonValue": "Effect: {{effect}}",
         "conditionColonValue": "Condition: {{condition}}",
-        "flightTime": "Flight time"
+        "flightTime": "Flight time",
+        "accelerationTime": "Acceleration time"
     },
     "quantity": {
         "secondShort": "s",
