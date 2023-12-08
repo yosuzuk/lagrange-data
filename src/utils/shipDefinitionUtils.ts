@@ -32,6 +32,10 @@ export function isShipObtainableThroughTechFile(shipId: string) {
 export function getShipName(shipDefinition: IShipDefinition): string {
     const language = getCurrentLanguage();
 
+    if (language === 'cimode') {
+        return shipDefinition.id;
+    }
+
     if (language === 'ja') {
         return shipDefinition.name;
     }
@@ -46,6 +50,10 @@ export function getShipName(shipDefinition: IShipDefinition): string {
 
 export function getModuleName(shipId: string, module: ISystemModule): string {
     const language = getCurrentLanguage();
+
+    if (language === 'cimode') {
+        return module.id;
+    }
 
     if (language === 'ja') {
         return module.name;
