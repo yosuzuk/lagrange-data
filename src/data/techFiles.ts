@@ -335,6 +335,7 @@ export const techFiles: ITechFile[] = [
         chanceForTechPoint: 0.9,
         ships: [
             ShipId.NOMA_M470_A,
+            ShipId.MARE_IMBRIUM_A,
             ShipId.MARE_SERENITATIS_A,
             ShipId.RUBY_A,
             ShipId.RELIAT_A,
