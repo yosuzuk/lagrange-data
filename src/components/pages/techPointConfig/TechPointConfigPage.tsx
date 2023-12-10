@@ -38,6 +38,7 @@ const additionallySupportedShipIds: string[] = [
     ShipId.HAYREDDINGS_LOYAL,
     ShipId.MISTRAL,
     ShipId.SANDRAKE,
+    ShipId.SPORE_A404,
     ShipId.STINGRAY,
     ShipId.STRIX_A100,
     ShipId.VITAS_A021,

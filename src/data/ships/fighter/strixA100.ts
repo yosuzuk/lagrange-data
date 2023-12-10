@@ -93,7 +93,7 @@ export const strixA100: IShipDefinition[] = [
             outboundTime: 6,
             inboundTime: 4,
             dpmShip: 1989,
-            dpmAntiAir: 2289,
+            dpmAntiAir: 1377,
             dpmSiege: 396,
         },
     },

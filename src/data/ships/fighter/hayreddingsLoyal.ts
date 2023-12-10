@@ -92,7 +92,7 @@ export const hayreddingsLoyal: IShipDefinition[] = [
             speed: 3000,
             warpSpeed: 15000,
             dpmShip: 4614,
-            dpmAntiAir: 3099,
+            dpmAntiAir: 2214,
             dpmSiege: 1521,
         },
     },

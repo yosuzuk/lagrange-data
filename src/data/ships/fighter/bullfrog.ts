@@ -34,7 +34,7 @@ export const bullfrog: IShipDefinition[] = [
             warpSpeed: 15000,
             outboundTime: 6,
             inboundTime: 4,
-            dpmShip: 2000,
+            dpmShip: 1920,
             dpmAntiAir: 0,
             dpmSiege: 880,
         },

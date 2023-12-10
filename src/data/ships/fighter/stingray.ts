@@ -96,7 +96,7 @@ export const stingray: IShipDefinition[] = [
             warpSpeed: 15000,
             outboundTime: 8,
             inboundTime: 4,
-            dpmShip: 3200,
+            dpmShip: 2120,
             dpmAntiAir: 0,
             dpmSiege: 992,
         },
