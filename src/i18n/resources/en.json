@@ -432,6 +432,7 @@
         "increaseDamageOfCorvette": "Increase damage of corvettes in hangar",
         "increaseDamageOfUav": "Increase damage of UAV in hangar",
         "increaseDamageVsAircraft": "Increase damage against aircraft",
+        "increaseCannonDamage": "Increase cannon damage",
         "increaseIonDamage": "Increase ion cannon damage",
         "increaseIonDamageOfShip": "Increase all ion cannon damage",
         "increaseMissileDamage": "Increase missile damage",

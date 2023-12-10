@@ -16,6 +16,7 @@ export enum EnhancementSubType {
     INCREASE_DAMAGE_OF_CORVETTE = 'increaseDamageOfCorvette',
     INCREASE_DAMAGE_OF_UAV = 'increaseDamageOfUav',
     INCREASE_DAMAGE_VS_AIRCRAFT = 'increaseDamageVsAircraft',
+    INCREASE_CANNON_DAMAGE = 'increaseCannonDamage',
     INCREASE_ION_DAMAGE = 'increaseIonDamage',
     INCREASE_ION_DAMAGE_OF_SHIP = 'increaseIonDamageOfShip',
     INCREASE_MISSILE_DAMAGE = 'increaseMissileDamage',

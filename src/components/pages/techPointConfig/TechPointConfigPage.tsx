@@ -27,23 +27,10 @@ const supportedShipTypes: ShipType[] = [
     ShipType.BATTLE_CRUISER,
     ShipType.CRUISER,
     ShipType.CORVETTE,
+    ShipType.FIGHTER,
 ];
 
-// TODO remove when all fighters are supported
 const additionallySupportedShipIds: string[] = [
-    ShipId.AT021_A,
-    ShipId.AT021_B,
-    ShipId.AT021_C,
-    ShipId.B192_NEWLAND,
-    ShipId.HAYREDDINGS_LOYAL,
-    ShipId.MISTRAL,
-    ShipId.SANDRAKE,
-    ShipId.SPORE_A404,
-    ShipId.STINGRAY,
-    ShipId.STRIX_A100,
-    ShipId.VITAS_A021,
-    ShipId.VITAS_B010,
-    ShipId.BALANCER_ANDERSON,
     ShipId.WINGED_HUSSAR_C,
     ShipId.MARE_IMBRIUM_A,
     ShipId.MARE_TRANQUILLITATIS_B,

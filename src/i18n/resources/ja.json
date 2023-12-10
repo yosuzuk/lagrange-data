@@ -432,6 +432,7 @@
         "increaseDamageOfCorvette": "護送艦のダメージアップ",
         "increaseDamageOfUav": "UAVのダメージアップ",
         "increaseDamageVsAircraft": "戦闘機/護送艦に対するダメージアップ",
+        "increaseCannonDamage": "大砲ダメージアップ",
         "increaseIonDamage": "イオン砲ダメージアップ",
         "increaseIonDamageOfShip": "艦船内のイオン砲ダメージアップ",
         "increaseMissileDamage": "ミサイルのダメージアップ",
