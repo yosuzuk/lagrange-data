@@ -71,7 +71,7 @@ export const xt20: IShipDefinition[] = [
         weight: 0,
         row: ShipRow.BACK,
         operationLimit: 6,
-        source: ShipSource.UNKNOWN,
+        source: ShipSource.CITY_TRADE,
         manufacturer: Manufacturer.DAWN_ACCORD,
         relatedShipIds: [ShipId.XT_20_B, ShipId.XT_20_C],
         defaultStats: {
@@ -84,8 +84,5 @@ export const xt20: IShipDefinition[] = [
             dpmAntiAir: 4608,
             dpmSiege: 97,
         },
-        tags: [
-            ShipTag.CURRENTLY_UNOBTAINABLE,
-        ],
     },
 ];

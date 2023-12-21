@@ -47,7 +47,7 @@ export const mareImbrium: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
                     enhancements.customEnhancementWithKey('additionalCharge').withDescriptionKey('additionalCharge').withCost(10),
                 ],
-                skillSlots: 5,
+                skillSlots: 6,
                 dpmShip: 3050,
                 dpmAntiAir: 0,
                 dpmSiege: 693,
@@ -101,7 +101,7 @@ export const mareImbrium: IShipDefinition[] = [
                     enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
                     enhancements.increaseEvasion().withPercentageValue(8).withCost(8),
                 ],
-                skillSlots: 1,
+                skillSlots: 2,
             }),
             modules.energySystem({
                 skillComplete: true,
