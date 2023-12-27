@@ -501,6 +501,7 @@
         "reduceCritialDamageReceived": "被クリティカルダメージダウン",
         "reduceCritialDamageReceivedMainSystem": "メインシステムの被クリティカルダメージダウン",
         "reduceProjectileDamageReceived": "投射武器によるダメージを軽減",
+        "reduceHitByAircraft": "艦載機攻撃の被命中率ダウン",
         "reduceHitByMissile": "ミサイルの被命中率ダウン",
         "reduceHitByProjectile": "投射武器の被命中率ダウン",
         "reduceHitByProjectileInBackRow": "後列の投射武器の被命中率ダウン",

@@ -85,6 +85,7 @@ export enum EnhancementSubType {
     REDUCE_CRITICAL_DAMAGE_RECEIVED = 'reduceCritialDamageReceived',
     REDUCE_CRITICAL_DAMAGE_RECEIVED_MAIN_SYSTEM = 'reduceCritialDamageReceivedMainSystem',
     REDUCE_PROJECTILE_DAMAGE_RECEIVED = 'reduceProjectileDamageReceived',
+    REDUCE_HIT_BY_AIRCRAFT = 'REDUCE_HIT_BY_AIRCRAFT',
     REDUCE_HIT_BY_MISSILE = 'reduceHitByMissile',
     REDUCE_HIT_BY_PROJECTILE = 'reduceHitByProjectile',
     REDUCE_HIT_BY_PROJECTILE_IN_BACK_ROW = 'reduceHitByProjectileInBackRow',

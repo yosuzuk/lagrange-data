@@ -501,6 +501,7 @@
         "reduceCritialDamageReceived": "Reduce critical damage received by the system",
         "reduceCritialDamageReceivedMainSystem": "Reduce critical damage received by main system",
         "reduceProjectileDamageReceived": "Reduce damage received from projectile weapons",
+        "reduceHitByAircraft": "Reduce chance of being hit by aircraft",
         "reduceHitByMissile": "Reduce chance of being hit by missiles",
         "reduceHitByProjectile": "Reduce chance of being hit by projectile weapons",
         "reduceHitByProjectileInBackRow": "Reduce chance of back-row ships being hit by projectile weapons",

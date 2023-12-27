@@ -49,6 +49,7 @@ import { a101TheRationalTe } from './ships/fighter/a101TheRational';
 import { at021 } from './ships/fighter/at021';
 import { b192Newland } from './ships/fighter/b192Newland';
 import { balancerAnderson } from './ships/fighter/balancerAnderson';
+import { br050 } from './ships/fighter/br050';
 import { bullfrog } from './ships/fighter/bullfrog';
 import { hayreddingsLoyal } from './ships/fighter/hayreddingsLoyal';
 import { janbiyaAer410 } from './ships/fighter/janbiyaAer410';
@@ -84,6 +85,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...b192Newland,
     ...balancerAnderson,
     ...boreas,
+    ...br050,
     ...bullfrog,
     ...callisto,
     ...carilion,
