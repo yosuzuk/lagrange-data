@@ -1,8 +1,8 @@
 import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
-// import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
-// import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-// import { ResearchTacticType } from '../../../types/ResearchTacticType';
+import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -19,7 +19,7 @@ const typeA: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.LARGE_FIGHTER,
     cost: 0,
-    weight: 5, // TODO verify
+    weight: 10,
     row: ShipRow.NONE,
     operationLimit: 10,
     source: ShipSource.TECH_FILE,
@@ -114,7 +114,7 @@ const typeB: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.LARGE_FIGHTER,
     cost: 0,
-    weight: 5, // TODO verify
+    weight: 10,
     row: ShipRow.NONE,
     operationLimit: 10,
     source: ShipSource.TECH_FILE,
@@ -225,7 +225,7 @@ const typeC: IShipDefinition = {
     type: ShipType.FIGHTER,
     subType: ShipSubType.LARGE_FIGHTER,
     cost: 0,
-    weight: 5, // TODO verify
+    weight: 5,
     row: ShipRow.NONE,
     operationLimit: 10,
     source: ShipSource.TECH_FILE,
@@ -314,37 +314,34 @@ const typeC: IShipDefinition = {
 export const br050: IShipDefinition[] = [
     {
         ...typeA,
-        // researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
-        // researchStrategyTypes: [
-        //     ResearchStrategyType.OUTSTANDING_FIREPOWER,
-        //     ResearchStrategyType.SUSTAINED_COMBAT,
-        //     ResearchStrategyType.FIGHTER_AND_CORVETTE,
-        // ],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         subModelIds: [ShipId.BR050_B, ShipId.BR050_C],
         relatedShipIds: [ShipId.BR050_A_TE, ShipId.BR050_B_TE, ShipId.BR050_C_TE],
     },
     {
         ...typeB,
-        // researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
-        // researchStrategyTypes: [
-        //     ResearchStrategyType.OUTSTANDING_FIREPOWER,
-        //     ResearchStrategyType.SUSTAINED_COMBAT,
-        //     ResearchStrategyType.FIGHTER_AND_CORVETTE,
-        // ],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.SUSTAINED_COMBAT,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.BR050_A,
         relatedShipIds: [ShipId.BR050_A_TE, ShipId.BR050_B_TE, ShipId.BR050_C_TE],
     },
     {
         ...typeC,
-        // researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
-        // researchStrategyTypes: [
-        //     ResearchStrategyType.OUTSTANDING_FIREPOWER,
-        //     ResearchStrategyType.SUSTAINED_COMBAT,
-        //     ResearchStrategyType.FIGHTER_AND_CORVETTE,
-        // ],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
+        researchStrategyTypes: [
+            ResearchStrategyType.OUTSTANDING_FIREPOWER,
+            ResearchStrategyType.FIGHTER_AND_CORVETTE,
+        ],
+        researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
         baseModelId: ShipId.BR050_A,
         relatedShipIds: [ShipId.BR050_A_TE, ShipId.BR050_B_TE, ShipId.BR050_C_TE],
     },
