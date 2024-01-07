@@ -13,7 +13,7 @@ export const MapBackground = (props: IProps) => {
     const texture = useLoader(TextureLoader, imagePath);
 
     return (
-        <mesh position={[0, 0, 0]} renderOrder={getRendeOrder('mapBackground')}>
+        <mesh position={[0, 0, -1]} renderOrder={getRendeOrder('mapBackground')}>
             <planeGeometry args={[gridSize, gridSize]} />
             <meshBasicMaterial map={texture} />
         </mesh>

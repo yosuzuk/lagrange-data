@@ -26,7 +26,8 @@ const REFERENCE_FACTOR_Y = 0.77;
 
 export const CanvasSprite = (props: IProps) => {
     const { name, canvas, position: gamePosition, gridPosition, visible = true, onClick, onPointerEnter, onPointerLeave } = props;
-    const [threeCanvasWidth, threeCanvasHeight] = useThreeCanvasSize();
+    const canvasSize = useThreeCanvasSize();
+    const [threeCanvasWidth, threeCanvasHeight] = canvasSize ?? [0, 0];
 
     const [scaleX, scaleY] = useMemo(() => {
         const referenceFactorX = REFERENCE_FACTOR_Y * (threeCanvasWidth / threeCanvasHeight);
@@ -40,6 +41,10 @@ export const CanvasSprite = (props: IProps) => {
         gamePosition,
         gridPosition,
     });
+
+    if (canvasSize === null) {
+        return null;
+    }
 
     return (
         <sprite

@@ -16,6 +16,7 @@ import { PlayerPlatform } from './PlayerPlatform';
 import { Area } from './Area';
 import { Hive } from './Hive';
 import { Shape } from './Shape';
+import { MapBackground } from './MapBackground';
 
 interface IProps {
     mapData: IMapData;
@@ -25,6 +26,7 @@ interface IProps {
 export const StarSystem = (props: IProps) => {
     const { mapData, markTarget } = props;
     const { invalidate } = useThree();
+    const imagePath = null; // window.location.origin + window.location.pathname + 'foo.png';
 
     useEffect(() => {
         invalidate();
@@ -71,6 +73,9 @@ export const StarSystem = (props: IProps) => {
             {mapData.shapes.map(shape => (
                 <Shape key={shape.id} shape={shape} />
             ))}
+            {imagePath && (
+                <MapBackground imagePath={imagePath} />
+            )}
         </>
     );
 };
