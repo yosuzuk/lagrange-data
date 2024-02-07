@@ -518,6 +518,7 @@
         "reduceHitRateOfMainWeapon": "Reduce main weapon's hit rate",
         "reduceBatOfAircraft": "Reduce BAT for the primary weapon of aircraft",
         "reduceFlightTime": "Reduce flight time",
+        "reduceFlightTimeOfAircraft": "Reduce flight time of aircraft/UAV in the hangar",
         "reduceFlightTimeAndWeaponCooldownOfAircraft": "Reduce flight time and weapon cooldown of aircraft/UAV in the hangar",
         "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "Reduce flight time and primary weapon cooldown of aircraft/UAV in the hangar",
         "reducePreTargetTime": "Reduce anti-air pre-target time",
@@ -589,7 +590,10 @@
         "maneuverOperation": "Maneuver Operation",
         "firepowerAssault": "Firepower Assault",
         "additionalCharge": "Additional Charge",
-        "energySwitching": "Energy Switching"
+        "energySwitching": "Energy Switching",
+        "extraAmmoSupply": "Extra Ammo Supply",
+        "jointStrike": "Joint Strike",
+        "tacticsOfGuerillas": "Tactics of Guerillas"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -660,7 +664,10 @@
         "maneuverOperation": "When the ship's HP falls to 50%, it retreats to the middle row of your formation. This effect only triggers once per battle. Upon retreating to the middle row, if the ship's HP falls to 10%, an Emergency Evasion can still be triggered, allowing further retreat to the back row.",
         "firepowerAssault": "Within 120 second(s) after the battle begins, increase all weapon damage in the system by 25% and reduce their CD by 35%.",
         "additionalCharge": "Increases railgun damage by 40% and cooldown by 20% with additional energy charge",
-        "energySwitching": "Within 120 second(s) after the battle begins, increases the primary weapon damage in the system by 40% and reduces CD by 25% while shutting down other weapons in the system."
+        "energySwitching": "Within 120 second(s) after the battle begins, increases the primary weapon damage in the system by 40% and reduces CD by 25% while shutting down other weapons in the system.",
+        "extraAmmoSupply": "Increases the main weapon's rounds per cycle by {{roundsPerCycle}} and duration by {{duration}}% for the aircraft launching strategic strikes.",
+        "jointStrike": "When an aircraft in the system attacks the airship system, it has a {{chance}}% chance to deal {{damage}}% additional system damage.",
+        "tacticsOfGuerillas": "All aircrafts in the hangar will attack different targets first"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",

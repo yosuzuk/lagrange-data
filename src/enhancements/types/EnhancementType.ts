@@ -102,6 +102,7 @@ export enum EnhancementSubType {
     REDUCE_HIT_RATE_OF_MAIN_WEAPON = 'reduceHitRateOfMainWeapon',
     REDUCE_BAT_OF_AIRCRAFT = 'reduceBatOfAircraft',
     REDUCE_FLIGHT_TIME = 'reduceFlightTime',
+    REDUCE_FLIGHT_TIME_OF_AIRCRAFT = 'reduceFlightTimeOfAircraft',
     REDUCE_FLIGHT_TIME_AND_WEAPON_COOLDOWN_OF_AIRCRAFT = 'reduceFlightTimeAndWeaponCooldownOfAircraft',
     REDUCE_FLIGHT_TIME_AND_PRIMARY_WEAPON_COOLDOWN_OF_AIRCRAFT = 'reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft',
     REDUCE_PRE_TARGET_TIME = 'reducePreTargetTime',

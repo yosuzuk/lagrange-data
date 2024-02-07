@@ -73,6 +73,8 @@ const precisionGuidanceSystem = modules.static({
         enhancements.increaseMissileAndTorpedoHitRate().withPercentageValue(10, 10).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
         enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+
+        // TODO crit against aircraft only
         enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30).withCost(10),
         enhancements.increaseCriticalDamage().withPercentageValue(40).withCost(10),
     ],

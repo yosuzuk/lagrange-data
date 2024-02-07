@@ -518,6 +518,7 @@
         "reduceHitRateOfMainWeapon": "メイン武器命中率ダウン",
         "reduceBatOfAircraft": "艦載機メイン武器の攻撃間隔ダウン",
         "reduceFlightTime": "飛行時間ダウン",
+        "reduceFlightTimeOfAircraft": "艦載機/UAVの飛行時間ダウン",
         "reduceFlightTimeAndWeaponCooldownOfAircraft": "艦載機/UAVの飛行時間と武器の冷却時間ダウン",
         "reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft": "艦載機/UAVの飛行時間とメイン武器の冷却時間ダウン",
         "reducePreTargetTime": "飛行目標の早期ロックオン時間ダウン",
@@ -590,7 +591,10 @@
         "maneuverOperation": "構造作戦",
         "firepowerAssault": "火力突撃",
         "additionalCharge": "追加放電",
-        "energySwitching": "エネルギー供給切り替え"
+        "energySwitching": "エネルギー供給切り替え",
+        "extraAmmoSupply": "追加弾薬補給",
+        "jointStrike": "共同打撃",
+        "tacticsOfGuerillas": "分散作戦"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -662,7 +666,10 @@
         "maneuverOperation": "自身のHPが50%になった時、艦船が中列へ撤収する。この効果は戦闘中に1回しか発生しない。中列に撤収後、自身のHPが10%になった場合はさらに緊急回避を発動して後列に撤収できる。",
         "firepowerAssault": "戦闘開始後120秒以内に、システム内すべての武器のダメージが25%アップし、冷却時間が35%ダウンする。",
         "additionalCharge": "追加放電によって電磁加速砲ダメージが40%、冷却時間が20%アップする",
-        "energySwitching": "戦闘開始後120秒以内に、システム内のメイン武器のダメージが40%アップし、冷却時間が25%ダウンし、システム内の他の武器が使用できなくなる。"
+        "energySwitching": "戦闘開始後120秒以内に、システム内のメイン武器のダメージが40%アップし、冷却時間が25%ダウンし、システム内の他の武器が使用できなくなる。",
+        "extraAmmoSupply": "戦略攻撃中の艦載機のメイン武器攻撃回数+{{roundsPerCycle}}、持続時間+{{duration}}%",
+        "jointStrike": "システム内の艦載機が艦船システムを攻撃時、{{chance}}%の確率で{{damage}}%のシステムダメージを追加で与える",
+        "tacticsOfGuerillas": "格納庫内の艦載機すべてが重複していない目標を優先して攻撃"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

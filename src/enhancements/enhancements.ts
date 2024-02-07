@@ -101,6 +101,7 @@ export const enhancements = {
     reduceHitRateOfMainWeapon: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_HIT_RATE_OF_MAIN_WEAPON),
     reduceBatOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_BAT_OF_AIRCRAFT),
     reduceFlightTime: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME),
+    reduceFlightTimeOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME_OF_AIRCRAFT),
     reduceFlightTimeAndWeaponCooldownOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME_AND_WEAPON_COOLDOWN_OF_AIRCRAFT),
     reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_FLIGHT_TIME_AND_PRIMARY_WEAPON_COOLDOWN_OF_AIRCRAFT),
     reducePreTargetTime: () => new Enhancement(EnhancementType.SKILL, EnhancementSubType.REDUCE_PRE_TARGET_TIME),

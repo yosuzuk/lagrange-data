@@ -75,6 +75,7 @@ import { reliat } from './ships/frigate/reliat';
 import { ruby } from './ships/frigate/ruby';
 import { xenoStinger } from './ships/frigate/xenoStinger';
 import { xt8 } from './ships/frigate/xt8';
+import { eternalHeavens } from './ships/carrier/eternalHeavens';
 
 export const shipDefinitions: IShipDefinition[] = [
     ...a101TheRationalTe,
@@ -102,6 +103,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...cv3000,
     ...ediacaran,
     ...erisI,
+    ...eternalHeavens,
     ...eternalStorm,
     ...fsv830,
     ...fg300,
