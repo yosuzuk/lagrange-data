@@ -594,7 +594,8 @@
         "energySwitching": "エネルギー供給切り替え",
         "extraAmmoSupply": "追加弾薬補給",
         "jointStrike": "共同打撃",
-        "tacticsOfGuerillas": "分散作戦"
+        "tacticsOfGuerillas": "分散作戦",
+        "threeDimensionalCoverSupport": "立体援護"
     },
     "enhancementDescription": {
         "specialAmmo": "全艦の武器に15ラウンドの間特殊弾薬を提供し、特殊弾薬に換装した武器のダメージ15%アップ",
@@ -669,7 +670,8 @@
         "energySwitching": "戦闘開始後120秒以内に、システム内のメイン武器のダメージが40%アップし、冷却時間が25%ダウンし、システム内の他の武器が使用できなくなる。",
         "extraAmmoSupply": "戦略攻撃中の艦載機のメイン武器攻撃回数+{{roundsPerCycle}}、持続時間+{{duration}}%",
         "jointStrike": "システム内の艦載機が艦船システムを攻撃時、{{chance}}%の確率で{{damage}}%のシステムダメージを追加で与える",
-        "tacticsOfGuerillas": "格納庫内の艦載機すべてが重複していない目標を優先して攻撃"
+        "tacticsOfGuerillas": "格納庫内の艦載機すべてが重複していない目標を優先して攻撃",
+        "threeDimensionalCoverSupport": "システム内の艦載機メイン武器システムが他の艦載機の攻撃持続時間中、{{chance}}%の確率ですべての攻撃を回避"
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "艦隊がフリゲートと支援艦のみで構成",

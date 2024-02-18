@@ -62,6 +62,7 @@ export const techFiles: ITechFile[] = [
             ShipId.FSV830,
             ShipId.SOLAR_WHALE,
             ShipId.MARSHALL_CRUX,
+            ShipId.ETERNAL_HEAVENS,
             ShipId.CV3000,
             ShipId.BR050_A,
             ShipId.AT021_A,
@@ -142,6 +143,7 @@ export const techFiles: ITechFile[] = [
             ShipId.ETERNAL_STORM,
             ShipId.ST59,
             ShipId.SOLAR_WHALE,
+            ShipId.ETERNAL_HEAVENS,
             ShipId.CV3000,
             ShipId.BR050_A,
             ShipId.AT021_A,
@@ -178,8 +180,8 @@ export const techFiles: ITechFile[] = [
             en: '300 Proxima coins',
         },
         chanceByShipType: {
-            [ShipType.FRIGATE]: 0.028,
-            [ShipType.DESTROYER]: 0.024,
+            [ShipType.FRIGATE]: 0.028, // TODO check 0.03 ?
+            [ShipType.DESTROYER]: 0.024, // TODO check 0.25?
             [ShipType.CRUISER]: 0.012,
             [ShipType.BATTLE_CRUISER]: 0.005,
             [ShipType.AUXILIARY]: 0.003,
@@ -226,6 +228,7 @@ export const techFiles: ITechFile[] = [
             ShipId.FSV830,
             ShipId.SOLAR_WHALE,
             ShipId.MARSHALL_CRUX,
+            ShipId.ETERNAL_HEAVENS,
             ShipId.CV3000,
             ShipId.AT021_A,
             ShipId.MISTRAL,

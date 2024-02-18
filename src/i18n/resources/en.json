@@ -593,7 +593,8 @@
         "energySwitching": "Energy Switching",
         "extraAmmoSupply": "Extra Ammo Supply",
         "jointStrike": "Joint Strike",
-        "tacticsOfGuerillas": "Tactics of Guerillas"
+        "tacticsOfGuerillas": "Tactics of Guerillas",
+        "threeDimensionalCoverSupport": "Three-Dimensional Cover Support"
     },
     "enhancementDescription": {
         "specialAmmo": "Supplies all weapons of the ship with special ammo for 15 rounds, increasing the damage of weapons with special ammo",
@@ -667,7 +668,8 @@
         "energySwitching": "Within 120 second(s) after the battle begins, increases the primary weapon damage in the system by 40% and reduces CD by 25% while shutting down other weapons in the system.",
         "extraAmmoSupply": "Increases the main weapon's rounds per cycle by {{roundsPerCycle}} and duration by {{duration}}% for the aircraft launching strategic strikes.",
         "jointStrike": "When an aircraft in the system attacks the airship system, it has a {{chance}}% chance to deal {{damage}}% additional system damage.",
-        "tacticsOfGuerillas": "All aircrafts in the hangar will attack different targets first"
+        "tacticsOfGuerillas": "All aircrafts in the hangar will attack different targets first",
+        "threeDimensionalCoverSupport": "When an aircraft in the system attacks another aircraft using its primary weapon, it has a {{chance}}% chance to dodge every attack during the attacking period."
     },
     "enhancementCondition": {
         "sailingSpeedCoordination1": "The fleet consists of only frigates and auxiliary ships.",
