@@ -323,7 +323,7 @@ export const techFiles: ITechFile[] = [
         translatedName: {
             en: 'Tech Files Selected by Enterprise',
         },
-        desciption: 'プロキシマコイン４５０（初回２２５、期間限定）',
+        desciption: 'プロキシマコイン４５０（期間限定）',
         translatedDescription: {
             en: '450 Proxima coins (special package)',
         },
@@ -363,8 +363,10 @@ export const techFiles: ITechFile[] = [
             ShipId.EDIACARAN,
             ShipId.FSV830,
             ShipId.SOLAR_WHALE,
+            ShipId.ETERNAL_HEAVENS,
             ShipId.MARSHALL_CRUX,
             ShipId.CV3000,
+            ShipId.BR050_A,
             ShipId.MISTRAL,
             ShipId.B192_NEWLAND,
             ShipId.VITAS_A021,
