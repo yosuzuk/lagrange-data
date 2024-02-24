@@ -8,6 +8,7 @@ import { parseMapData } from '../utils/mapDataParser';
 import { useMutateMapData, useQueryMapData } from './useQueryMapData';
 import { MutationState } from '../types/MutationState';
 import { isExampleMapUrl } from '../examples/examplesMaps';
+import { joinMapData } from '../utils/mapDataUtils';
 
 interface IHookResult {
     mode: MapInteractionMode;
@@ -48,6 +49,7 @@ export const useMapData = (): IHookResult => {
     const [input, setInput] = useState<string>('');
     const [lastValidMapData, setLastValidMapData] = useState<IMapData | null>(null);
     const [lastValidInput, setLastValidInput] = useState<string>('');
+    const [importedMapData, setImportedMapData] = useState<IMapData[] | null>(null);
     const [parseError, setParseError] = useState<IParseMapContentError | null>(null);
     const [targetToMark, setTargetToMark] = useState<IMapContent | null>(null);
 
@@ -64,22 +66,41 @@ export const useMapData = (): IHookResult => {
     // apply loaded initial data
     useEffect(() => {
         if (mapDataQueryResult.isSuccess && mapDataQueryResult.data) {
-            setInput(mapDataQueryResult.data);
+            setInput(mapDataQueryResult.data.primaryContent);
 
-            const [mapData, parseError] = parseMapData(mapDataQueryResult.data);
+            const [mapData, parseError] = parseMapData(mapDataQueryResult.data.primaryContent);
             if (parseError) {
                 console.warn(`Failed to parse map data: ${parseError.message} (line: ${parseError.line})`);
                 setParseError(parseError);
                 setMode('edit');
                 return;
             }
-            setLastValidInput(mapDataQueryResult.data);
+            setLastValidInput(mapDataQueryResult.data.primaryContent);
             setLastValidMapData(mapData);
             if (mapUrl && !isExampleMapUrl(mapUrl)) {
                 window.localStorage.setItem('lastMapUrl', mapUrl);
             }
         }
     }, [mapDataQueryResult.isSuccess, mapDataQueryResult.data, mapUrl]);
+
+    // apply loaded data from imported maps
+    useEffect(() => {
+        if (mapDataQueryResult.isSuccess && mapDataQueryResult.data) {
+            if (mapDataQueryResult.data.importedMapContent.length === 0) {
+                return setImportedMapData([]);
+            }
+            const mapDataList: IMapData[] = [];
+            mapDataQueryResult.data.importedMapContent.forEach((mapContent: string, index: number) => {
+                const [mapData, parseError] = parseMapData(mapContent, `map${index + 1}_`);
+                if (parseError) {
+                    console.warn(`Failed to parse map data of imported map ${index + 1}: ${parseError.message} (line: ${parseError.line})`);
+                    return;
+                }
+                mapDataList.push(mapData);
+            });
+            setImportedMapData(mapDataList);
+        }
+    }, [mapDataQueryResult.isSuccess, mapDataQueryResult.data]);
 
     // apply manual input
     const applyInput = useCallback(() => {
@@ -167,11 +188,19 @@ export const useMapData = (): IHookResult => {
         setFocusedLineNumber(null);
     }, [input]);
 
+    // join map data for rendering
+    const mapData = useMemo<IMapData | null>(() => {
+        if (lastValidMapData === null || importedMapData === null) {
+            return null;
+        }
+        return joinMapData([lastValidMapData, ...importedMapData]);
+    }, [lastValidMapData, importedMapData]);
+
     return {
         mode,
         mapUrl,
         input,
-        mapData: lastValidMapData,
+        mapData,
         parseError,
         targetToMark,
         loading: !mapDataQueryResult.isFetched || mapDataQueryResult.isLoading,

@@ -1,8 +1,14 @@
 import { useMutation, useQuery } from 'react-query';
+import { URLSearchParams } from 'url';
 
 export const useQueryMapData = (mapUrl: string | null) => {
-    return useQuery(`map${mapUrl}`, () => fetchMapData(mapUrl));
+    return useQuery(`map${mapUrl}`, () => fetchAllMapData(mapUrl));
 };
+
+export interface ILoadedMapData {
+    primaryContent: string;
+    importedMapContent: string[];
+}
 
 interface ISaveMapDataParams {
     mapUrl: string;
@@ -16,11 +22,47 @@ export const useMutateMapData = () => {
     });
 }
 
-const fetchMapData = async (url: string | null): Promise<string | null> => {
+async function fetchAllMapData(url: string | null): Promise<ILoadedMapData | null> {
     if (!url) {
         return null;
     }
 
+    const primaryContent = await fetchMapData(url);
+
+    // load additional map content if original URL uses "?map=A&import=B,C,D" syntax
+    if (url.includes('?')) {
+        const [baseUrl, searchParams] = url.split('?');
+        const params = new window.URLSearchParams(searchParams);
+        const primaryMapId = params.get('map');
+        const importedMapIds = params.get('import');
+
+        if (primaryMapId && importedMapIds) {
+            const importedMapIdList = importedMapIds.split(',');
+            const importedMapUrls = importedMapIdList.map(id => baseUrl + '?map=' + id);
+
+            const importedMapPromises = (importedMapUrls ?? []).map(importedMapUrl => fetchMapData(importedMapUrl));
+            const importedMapContent = (importedMapPromises.length > 0 ? await Promise.allSettled(importedMapPromises) : []).map((result, index: number) => {
+                if (result.status === 'fulfilled') {
+                    return result.value ?? '';
+                }
+                console.error(`Failed to load imported map ${index + 1}`);
+                return '';
+            });
+
+            return {
+                primaryContent,
+                importedMapContent,
+            };
+        }
+    }
+
+    return {
+        primaryContent,
+        importedMapContent: [],
+    };
+}
+
+async function fetchMapData(url: string): Promise<string> {
     const response = await fetch(url, {
         headers: {
             'Content-Type': 'text/plain',
@@ -39,7 +81,7 @@ const fetchMapData = async (url: string | null): Promise<string | null> => {
     return response.text();
 }
 
-const putMapData = async (params: ISaveMapDataParams): Promise<void> => {
+async function putMapData(params: ISaveMapDataParams): Promise<void> {
     const { mapUrl, mapData, key } = params;
     const apiUrl = new URL(mapUrl);
     apiUrl.searchParams.append('key', key);
