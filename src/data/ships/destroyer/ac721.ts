@@ -1,3 +1,4 @@
+import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
 import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
 import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
@@ -6,6 +7,7 @@ import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
 import { ShipType } from '../../../types/ShipType';
+import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
 
 export const ac721: IShipDefinition[] = [
@@ -83,9 +85,90 @@ export const ac721: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
         researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
-        carryCorvette: 2,
         baseModelId: ShipId.AC721_A,
         relatedShipIds: [ShipId.AC721_TE_A, ShipId.AC721_TE_D_S_LEVI9],
+        modules: [
+            modules.static({
+                id: '4010401',
+                name: '護送艦保守システム',
+                translatedName: {
+                    en: 'Corvette Maintenance System',
+                },
+                mainSystem: true,
+                carryCorvette: 2,
+                skillComplete: true,
+                skills: [
+                    enhancements.reduceLockOnOfAircraft().withPercentageValue(70).withCost(10),
+                    enhancements.reduceFlightTimeAndPrimaryWeaponCooldownOfAircraft().withPercentageValue(20).withCost(10),
+                    enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(10),
+                    enhancements.reduceHitByProjectile().withPercentageValue(20).withCost(10),
+                    enhancements.increaseDamageOfAircraft().withPercentageValue(10).withCost(10),
+                    enhancements.increaseSystemHp().withPercentageValue(35).withCost(10),
+                ],
+                skillSlots: 4,
+            }),
+            modules.static({
+                id: '4010402',
+                name: '721型総合艦砲システム',
+                translatedName: {
+                    en: '721 Integrated Battery System',
+                },
+                skillComplete: true,
+                skills: [
+                    strategy.antiAircraftSupport(40, 30, 25).withCost(8),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(5),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
+                ],
+                skillSlots: 5,
+            }),
+            modules.static({
+                id: '4010407',
+                name: '貯蔵システム',
+                translatedName: {
+                    en: 'Storage System',
+                },
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseStorage().withPercentageValue(30).withCost(6),
+                ],
+                skillSlots: 1,
+            }),
+            modules.commandSystem({
+                skillComplete: true,
+                flagshipEffects: [
+                    flagshipEffect.focusFire().withDefaultFlag(),
+                ],
+                skillSlots: 0,
+            }),
+            modules.armorSystem({
+                skillComplete: true,
+                skills: [
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseArmor().withAbsoluteValue(8).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(8).withCost(8),
+                ],
+                skillSlots: 3,
+            }),
+            modules.propulsionSystem({
+                skillComplete: true,
+                skills: [
+                    strategy.evasiveManeuvers(20, 40, 40).withCost(8),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                ],
+                skillSlots: 4,
+            }),
+            modules.energySystem({
+                skillComplete: true,
+                skillSlots: 0,
+            }),
+        ],
         defaultStats: {
             hp: 30730,
             armor: 20,

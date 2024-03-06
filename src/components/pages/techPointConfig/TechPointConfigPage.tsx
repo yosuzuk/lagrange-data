@@ -31,6 +31,10 @@ const supportedShipTypes: ShipType[] = [
 ];
 
 const additionallySupportedShipIds: string[] = [
+    ShipId.AC721_D,
+    ShipId.CERES_A,
+    ShipId.GUARDIAN_B,
+    ShipId.TUNDRA_B,
     ShipId.WINGED_HUSSAR_C,
     ShipId.MARE_IMBRIUM_A,
     ShipId.MARE_TRANQUILLITATIS_B,
