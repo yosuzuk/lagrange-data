@@ -32,9 +32,9 @@ export const reliat: IShipDefinition[] = [
             shield: 0,
             speed: 800,
             warpSpeed: 4000,
-            dpmShip: 2072,
-            dpmAntiAir: 411,
-            dpmSiege: 330,
+            dpmShip: 2845,
+            dpmAntiAir: 459,
+            dpmSiege: 370,
         },
     },
     {
