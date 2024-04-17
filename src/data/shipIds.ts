@@ -131,6 +131,8 @@ export const ShipId = {
     PREDATOR_A: 'PREDATOR_A',
     PREDATOR_B: 'PREDATOR_B',
     PREDATOR_C: 'PREDATOR_C',
+    RANGER_A: 'RANGER_A',
+    RANGER_B: 'RANGER_B',
     QUAOAR_A: 'QUAOAR_A',
     QUAOAR_B: 'QUAOAR_B',
     RED_BEAST_7_13: 'RED_BEAST_7_13',

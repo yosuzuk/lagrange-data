@@ -31,10 +31,10 @@ const m1: ISystemModule = {
         enhancements.reduceFlightTimeOfAircraft().withPercentageValue(20),
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20),
         enhancements.reduceLockOnOfAircraft().withPercentageValue(50),
-        enhancements.customEnhancementWithKey('tacticsOfGuerillas').withDescriptionKey('tacticsOfGuerillas'),
+        enhancements.customEnhancementWithKey('tacticsOfGuerillas').withDescriptionKey('tacticsOfGuerillas').withCost(10),
         enhancements.customEnhancementWithKey('jointStrike').withDescriptionKey('jointStrike', { chance: 50, damage: 200 }),
     ],
-    skillSlots: 5,
+    skillSlots: 6,
 };
 
 const m2: ISystemModule = {

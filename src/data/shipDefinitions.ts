@@ -71,6 +71,7 @@ import { mareTranquillitatis } from './ships/frigate/mareTranquillitatis';
 import { noma330 } from './ships/frigate/noma330';
 import { nomaM470 } from './ships/frigate/nomaM470';
 import { rager } from './ships/frigate/rager';
+import { ranger } from './ships/cruiser/ranger';
 import { reliat } from './ships/frigate/reliat';
 import { ruby } from './ships/frigate/ruby';
 import { xenoStinger } from './ships/frigate/xenoStinger';
@@ -130,6 +131,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...quaoar,
     ...redBeast7_13,
     ...rager,
+    ...ranger,
     ...reliat,
     ...ruby,
     ...sLevi,

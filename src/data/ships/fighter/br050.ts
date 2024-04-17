@@ -259,9 +259,9 @@ const typeC: IShipDefinition = {
                     translatedDescription: {
                         en: 'Load the torpedo launcher with armor-melting torpedoes, granting 15% chance to inflict the Armor Melting status on the target upon hitting. Armor Melting: Suffer 80 point(s) of special damage for 60s. This effect can exist up to 10 layer(s). If the target is a building, then the damage is reduced by 75%.',
                     },
-                }),
+                }).withCost(15),
             ],
-            skillSlots: 6,
+            skillSlots: 7,
         }),
         modules.commandSystem({
             skillComplete: false,
@@ -269,7 +269,8 @@ const typeC: IShipDefinition = {
             skills: [
                 // TODO cost
                 enhancements.increaseMaintenanceEfficiency().withPercentageValue(25),
-                enhancements.targetReset2(),
+                enhancements.targetReset2().withCost(5),
+                // TODO cost
                 enhancements.reduceLockOn().withPercentageValue(15),
             ],
         }),
@@ -294,7 +295,7 @@ const typeC: IShipDefinition = {
                 enhancements.reduceLockOn().withPercentageValue(30),
                 enhancements.reduceLockOn().withPercentageValue(30),
             ],
-            skillSlots: 2,
+            skillSlots: 3,
         }),
     ],
     defaultStats: {
