@@ -1,8 +1,8 @@
 import { enhancements, flagshipEffect, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
-// import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
-// import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-// import { ResearchTacticType } from '../../../types/ResearchTacticType';
+import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
+import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -19,14 +19,14 @@ export const ranger: IShipDefinition[] = [
         },
         type: ShipType.CRUISER,
         cost: 18,
-        weight: 5, // TODO verify
+        weight: 10,
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        // researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
-        // researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
-        // researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         subModelIds: [ShipId.RANGER_B],
         modules: [
             modules.static({
@@ -119,7 +119,6 @@ export const ranger: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            // TODO update
             hp: 73260,
             armor: 50,
             shield: 10,
@@ -138,14 +137,14 @@ export const ranger: IShipDefinition[] = [
         },
         type: ShipType.CRUISER,
         cost: 18,
-        weight: 5,
+        weight: 2,
         row: ShipRow.MIDDLE,
         operationLimit: 8,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        // researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
-        // researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
-        // researchTacticTypes: [ResearchTacticType.PROJECTILE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
         baseModelId: ShipId.RANGER_A,
         modules: [
             modules.static({
@@ -221,7 +220,6 @@ export const ranger: IShipDefinition[] = [
             }),
         ],
         defaultStats: {
-            // TODO update
             hp: 73260,
             armor: 50,
             shield: 10,
