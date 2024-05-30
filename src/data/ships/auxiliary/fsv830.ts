@@ -25,7 +25,7 @@ const m1: ISystemModule = {
         enhancements.repairQueue().withFixedAbsoluteValue(1),
     ],
     flagshipEffects: [
-        flagshipEffect.fleetDock1().withCost(10),
+        flagshipEffect.fleetDock1().withCost(10).withDefaultFlag(),
     ],
     skillComplete: true,
     skills: [
@@ -123,13 +123,11 @@ const b1: ISystemModule = {
     ],
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
         enhancements.increaseSelfHostCapacity().withPercentageValue(40).withCost(20),
     ],
-    skillSlots: 4,
+    skillSlots: 3,
     parts: [{
         text: [
             '完全な小型艦船生産設備を備え、基地を離れて支援艦単独でのフリゲートの生産を可能にするが生産効率は低め。',
@@ -148,12 +146,10 @@ const b2: ISystemModule = {
     categoryNumber: 2,
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
     ],
-    skillSlots: 3,
+    skillSlots: 2,
     parts: [{
         text: [
             '完全な小型艦載機生産設備を備え、基地を離れて支援艦単独での護送艦の生産を可能にするが生産効率は低め',
@@ -172,12 +168,10 @@ const b3: ISystemModule = {
     categoryNumber: 3,
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
-        enhancements.reduceUeCoinCost().withPercentageValue(15).withCost(5),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
     ],
-    skillSlots: 3,
+    skillSlots: 2,
     parts: [{
         text: [
             '完全な小型艦載機生産設備を備え、基地を離れて支援艦単独での戦闘機の生産を可能にするが生産効率は低め',

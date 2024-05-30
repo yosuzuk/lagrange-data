@@ -143,9 +143,8 @@ const b1: ISystemModule = {
     ],
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
         enhancements.increaseSelfHostCapacity().withAbsoluteValue(40).withCost(20),
         coreEnhancementTech.withCost(10),
         alloyArmorTechnics.withCost(10),
@@ -175,9 +174,8 @@ const b2: ISystemModule = {
     ],
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
         enhancements.customEnhancement({
             name: 'コア強化技術',
             translatedName: {
@@ -225,9 +223,8 @@ const b3: ISystemModule = {
     ],
     skillComplete: true,
     skills: [
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.increaseProductionSpeed().withPercentageValue(40).withCost(10),
-        enhancements.reduceUeCoinCost().withPercentageValue(30).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
+        enhancements.increaseProductionSpeed().withPercentageValue(60).withCost(10),
         enhancements.increaseSelfHostCapacity().withAbsoluteValue(40).withCost(20),
         coreEnhancementTech.withCost(10),
         alloyArmorTechnics.withCost(10),
@@ -470,16 +467,7 @@ const staticModules: ISystemModule[] = [
         },
         skillComplete: true,
         flagshipEffects: [
-            flagshipEffect.customFlashipEffect({
-                name: '艦隊結合II',
-                translatedName: {
-                    en: 'Fleet Dock II',
-                },
-                description: 'この艦船の同社艦船に対する補修速度を30%アップする。また、艦隊の結合権限を有効にし、この艦隊が展開して他の艦隊と結合できるようにする。',
-                translatedDescription: {
-                    en: 'Increases the speed at which this ship repairs ships from our company by 30%. Enable fleet docking authority to allow the fleet to expand and dock to other fleets.',
-                },
-            }).withCost(15),
+            flagshipEffect.fleetDock2().withCost(15).withDefaultFlag(),
         ],
         skills: [
             enhancements.increaseRepairSpeedOfAuxiliary().withPercentageValue(20).withCost(8),
