@@ -32,9 +32,8 @@ const typeA: IShipDefinition = {
                 en: 'Airborne Bombardment System',
             },
             mainSystem: true,
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
                 strategy.customStrategy({
                     name: '高速魚雷',
                     translatedName: {
@@ -44,51 +43,48 @@ const typeA: IShipDefinition = {
                     translatedDescription: {
                         en: 'Every 3 round(s), the system\'s torpedo launchers are reloaded with high-speed torpedoes, reducing the chance of being intercepted by 40% and increasing the damage against systems by 35% upon hitting.',
                     },
-                }),
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseHitRate().withPercentageValue(10),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30),
-                enhancements.reduceTorpedoInterception().withPercentageValue(30),
+                }).withCost(15),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30).withCost(10),
+                enhancements.reduceTorpedoInterception().withPercentageValue(30).withCost(10),
             ],
-            skillSlots: 6,
+            skillSlots: 7,
         }),
         modules.commandSystem({
-            skillComplete: false,
+            skillComplete: true,
             skillSlots: 1,
             skills: [
-                // TODO cost
-                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25),
-                enhancements.targetReset2(),
-                enhancements.reduceLockOn().withPercentageValue(15),
+                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25).withCost(5),
+                enhancements.targetReset2().withCost(5),
+                enhancements.reduceLockOn().withPercentageValue(15).withCost(5),
             ],
         }),
         modules.armorSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseArmor().withAbsoluteValue(3),
-                enhancements.increaseArmor().withAbsoluteValue(3),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
             ],
             skillSlots: 4,
         }),
         modules.propulsionSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.reduceFlightTime().withPercentageValue(30),
-                enhancements.increaseEvasion().withPercentageValue(8),
-                enhancements.reduceLockOn().withPercentageValue(30),
-                enhancements.reduceLockOn().withPercentageValue(30),
+                enhancements.reduceFlightTime().withPercentageValue(30).withCost(10),
+                enhancements.increaseEvasion().withPercentageValue(8).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
             ],
-            skillSlots: 2,
+            skillSlots: 3,
         }),
     ],
     defaultStats: {
@@ -127,20 +123,19 @@ const typeB: IShipDefinition = {
                 en: 'Airborne Bombardment System',
             },
             mainSystem: true,
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseHitRate().withPercentageValue(10),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30),
-                enhancements.reduceTorpedoInterception().withPercentageValue(30),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.increaseCriticalDamageAndChance().withPercentageValue(50, 30).withCost(10),
+                enhancements.reduceTorpedoInterception().withPercentageValue(30).withCost(10),
             ],
-            skillSlots: 5,
+            skillSlots: 6,
         }),
         modules.static({
             id: 'sp1',
@@ -151,9 +146,8 @@ const typeB: IShipDefinition = {
             effects: [
                 enhancements.reduceHitByAircraft().withFixedPercentageValue(25),
             ],
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
                 strategy.customStrategy({
                     name: '干渉強化',
                     translatedName: {
@@ -163,42 +157,39 @@ const typeB: IShipDefinition = {
                     translatedDescription: {
                         en: 'From the first 60s of battle, further reduces the hit rate of attacks from enemy aircraft against you by 50%.',
                     },
-                }),
+                }).withCost(15),
             ],
             skillSlots: 1,
         }),
         modules.commandSystem({
-            skillComplete: false,
+            skillComplete: true,
             skillSlots: 1,
             skills: [
-                // TODO cost
-                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25),
-                enhancements.targetReset2(),
-                enhancements.reduceLockOn().withPercentageValue(15),
+                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25).withCost(5),
+                enhancements.targetReset2().withCost(5),
+                enhancements.reduceLockOn().withPercentageValue(15).withCost(5),
             ],
         }),
         modules.armorSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseArmor().withAbsoluteValue(3),
-                enhancements.increaseArmor().withAbsoluteValue(3),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
             ],
             skillSlots: 4,
         }),
         modules.propulsionSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.reduceFlightTime().withPercentageValue(30),
-                enhancements.increaseEvasion().withPercentageValue(8),
-                enhancements.reduceLockOn().withPercentageValue(30),
-                enhancements.reduceLockOn().withPercentageValue(30),
+                enhancements.reduceFlightTime().withPercentageValue(30).withCost(10),
+                enhancements.increaseEvasion().withPercentageValue(8).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
             ],
-            skillSlots: 2,
+            skillSlots: 3,
         }),
     ],
     defaultStats: {
@@ -238,18 +229,17 @@ const typeC: IShipDefinition = {
                 en: 'Experimental Special Torpedo Launching System',
             },
             mainSystem: true,
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseDamage().withPercentageValue(10),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseSiegeDamage().withPercentageValue(30),
-                enhancements.increaseHitRate().withPercentageValue(10),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.reduceCooldown().withPercentageValue(15),
-                enhancements.reduceDuration().withPercentageValue(15),
-                enhancements.reduceTorpedoInterception().withPercentageValue(30),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseSiegeDamage().withPercentageValue(30).withCost(10),
+                enhancements.increaseHitRate().withPercentageValue(10).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                enhancements.reduceDuration().withPercentageValue(15).withCost(10),
+                enhancements.reduceTorpedoInterception().withPercentageValue(30).withCost(10),
                 enhancements.customEnhancement({
                     name: '特殊魚雷射出',
                     translatedName: {
@@ -264,36 +254,32 @@ const typeC: IShipDefinition = {
             skillSlots: 7,
         }),
         modules.commandSystem({
-            skillComplete: false,
+            skillComplete: true,
             skillSlots: 1,
             skills: [
-                // TODO cost
-                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25),
+                enhancements.increaseMaintenanceEfficiency().withPercentageValue(25).withCost(5),
                 enhancements.targetReset2().withCost(5),
-                // TODO cost
-                enhancements.reduceLockOn().withPercentageValue(15),
+                enhancements.reduceLockOn().withPercentageValue(15).withCost(5),
             ],
         }),
         modules.armorSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseHp().withPercentageValue(12),
-                enhancements.increaseArmor().withAbsoluteValue(3),
-                enhancements.increaseArmor().withAbsoluteValue(3),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseHp().withPercentageValue(12).withCost(6),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
+                enhancements.increaseArmor().withAbsoluteValue(3).withCost(5),
             ],
             skillSlots: 4,
         }),
         modules.propulsionSystem({
-            skillComplete: false,
+            skillComplete: true,
             skills: [
-                // TODO cost
-                enhancements.reduceFlightTime().withPercentageValue(30),
-                enhancements.increaseEvasion().withPercentageValue(8),
-                enhancements.reduceLockOn().withPercentageValue(30),
-                enhancements.reduceLockOn().withPercentageValue(30),
+                enhancements.reduceFlightTime().withPercentageValue(30).withCost(10),
+                enhancements.increaseEvasion().withPercentageValue(8).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
+                enhancements.reduceLockOn().withPercentageValue(30).withCost(7),
             ],
             skillSlots: 3,
         }),

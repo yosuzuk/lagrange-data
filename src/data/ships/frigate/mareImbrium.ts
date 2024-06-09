@@ -144,18 +144,17 @@ export const mareImbrium: IShipDefinition[] = [
                     en: '"Imbrium" Pulse Cannon System',
                 },
                 mainSystem: true,
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    strategy.customStrategyWithKey('energySwitching').withDescriptionKey('energySwitching'),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.increaseDamage().withPercentageValue(10),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.reduceCooldown().withPercentageValue(15),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-                    enhancements.increaseHitRateVsSmall().withPercentageValue(15),
-                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15),
-                    enhancements.increaseLockOnEfficiency().withPercentageValue(15),
+                    strategy.customStrategyWithKey('energySwitching').withDescriptionKey('energySwitching').withCost(15),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.increaseDamage().withPercentageValue(10).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.reduceCooldown().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(10),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(10),
+                    enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(10),
                 ],
                 skillSlots: 5,
                 dpmShip: 3933,
@@ -164,42 +163,38 @@ export const mareImbrium: IShipDefinition[] = [
             }),
             modules.commandSystem({
                 flagshipEffects: [
-                    // TODO max targetCount
-                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag(),
+                    flagshipEffect.customFlashipEffectWithKey('guerrillaCombatInsertion').withDescriptionKey('guerrillaCombatInsertion', { targetCount: '5-2' }).withDefaultFlag().withCost(40),
                     flagshipEffect.focusFire().withDefaultFlag(),
                 ],
                 skillComplete: true,
                 skillSlots: 0,
             }),
             modules.armorSystem({
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseHp().withPercentageValue(12),
-                    enhancements.increaseHp().withPercentageValue(12),
-                    enhancements.increaseArmor().withAbsoluteValue(3),
-                    enhancements.increaseArmor().withAbsoluteValue(3),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseHp().withPercentageValue(12).withCost(10),
+                    enhancements.increaseArmor().withAbsoluteValue(3).withCost(8),
+                    enhancements.increaseArmor().withAbsoluteValue(3).withCost(8),
                 ],
                 skillSlots: 3,
             }),
             modules.propulsionSystem({
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseCruisingSpeed().withPercentageValue(15),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15),
-                    enhancements.increaseWarpSpeed().withPercentageValue(15),
+                    enhancements.increaseCruisingSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
+                    enhancements.increaseWarpSpeed().withPercentageValue(15).withCost(6),
                 ],
-                skillSlots: 1,
+                skillSlots: 2,
             }),
             modules.energySystem({
                 effects: [
                     enhancements.increaseEnergyDamageOfMainSystem().withFixedPercentageValue(15),
                 ],
-                skillComplete: false,
+                skillComplete: true,
                 skills: [
-                    // TODO cost
-                    enhancements.increaseEnergyDamageOfMainSystem().withPercentageValue(10),
+                    enhancements.increaseEnergyDamageOfMainSystem().withPercentageValue(10).withCost(8),
                 ],
                 skillSlots: 1,
             }),
