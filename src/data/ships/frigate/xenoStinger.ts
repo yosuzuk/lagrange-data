@@ -67,7 +67,7 @@ export const xenoStinger: IShipDefinition[] = [
             en: 'XenoStinger - Special Type',
         },
         type: ShipType.FRIGATE,
-        cost: 6,
+        cost: 8,
         weight: 5,
         row: ShipRow.BACK,
         operationLimit: 10,

@@ -46,7 +46,7 @@ export const jaeger: IShipDefinition[] = [
             en: 'Jaeger - Support Type',
         },
         type: ShipType.CRUISER,
-        cost: 18,
+        cost: 20,
         weight: 5,
         row: ShipRow.BACK,
         operationLimit: 8,

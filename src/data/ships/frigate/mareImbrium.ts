@@ -126,7 +126,7 @@ export const mareImbrium: IShipDefinition[] = [
             en: 'Mare Imbrium - Pulse Cannon Type',
         },
         type: ShipType.FRIGATE,
-        cost: 6,
+        cost: 8,
         weight: 5,
         row: ShipRow.MIDDLE,
         operationLimit: 10,

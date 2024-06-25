@@ -46,7 +46,7 @@ export const guardian: IShipDefinition[] = [
             en: 'Guardian - Dual-Purpose Type',
         },
         type: ShipType.DESTROYER,
-        cost: 9,
+        cost: 14,
         weight: 5,
         row: ShipRow.BACK,
         operationLimit: 10,

@@ -44,7 +44,7 @@ export const ruby: IShipDefinition[] = [
             en: 'Ruby - Ion Cannon Type',
         },
         type: ShipType.FRIGATE,
-        cost: 5,
+        cost: 8,
         weight: 5,
         row: ShipRow.MIDDLE,
         operationLimit: 10,

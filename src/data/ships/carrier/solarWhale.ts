@@ -405,7 +405,7 @@ export const solarWhale: IShipDefinition[] = [
             en: 'Solar Whale',
         },
         type: ShipType.CARRIER,
-        cost: 45,
+        cost: 55,
         weight: 2,
         row: ShipRow.MIDDLE,
         operationLimit: 5,

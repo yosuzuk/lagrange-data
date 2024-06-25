@@ -44,7 +44,7 @@ export const erisI: IShipDefinition[] = [
             en: 'Eris I - Heavy Cannon Type',
         },
         type: ShipType.DESTROYER,
-        cost: 7,
+        cost: 9,
         weight: 10,
         row: ShipRow.FRONT,
         operationLimit: 10,
