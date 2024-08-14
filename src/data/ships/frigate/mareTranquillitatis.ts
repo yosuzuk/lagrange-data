@@ -91,6 +91,7 @@ export const mareTranquillitatis: IShipDefinition[] = [
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.reduceCooldown().withPercentageValue(15).withCost(5),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
+                    enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(5),
                     enhancements.increaseHitRateVsSmall().withPercentageValue(15).withCost(5),
                     enhancements.increaseLockOnEfficiency().withPercentageValue(15).withCost(5),
                 ],

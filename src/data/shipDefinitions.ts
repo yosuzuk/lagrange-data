@@ -77,6 +77,7 @@ import { ruby } from './ships/frigate/ruby';
 import { xenoStinger } from './ships/frigate/xenoStinger';
 import { xt8 } from './ships/frigate/xt8';
 import { eternalHeavens } from './ships/carrier/eternalHeavens';
+import { haleBopp } from './ships/corvette/haleBopp';
 
 export const shipDefinitions: IShipDefinition[] = [
     ...a101TheRationalTe,
@@ -110,6 +111,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...fg300,
     ...grimReaper,
     ...guardian,
+    ...haleBopp,
     ...hayreddingsLoyal,
     ...helios,
     ...indefatigable,
