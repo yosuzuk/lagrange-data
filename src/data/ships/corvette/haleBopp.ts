@@ -1,7 +1,7 @@
 import { enhancements, strategy } from '../../../enhancements/enhancements';
 import { Manufacturer } from '../../../types/Manufacturer';
-// import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
-// import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
+import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 // import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
@@ -37,14 +37,14 @@ export const haleBopp: IShipDefinition[] = [
         },
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 10, // TODO verify
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        // researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
-        // researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [],
         subModelIds: [ShipId.HALE_BOPP_B],
         modules: [
             modules.static({
@@ -110,14 +110,14 @@ export const haleBopp: IShipDefinition[] = [
         },
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 5, // TODO verify
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
-        manufacturer: Manufacturer.ANTONIOS_CONSORTIUM,
-        // researchManufacturer: ResearchManufacturer.ANTONIOS_CONSORTIUM,
-        // researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.FIGHTER_AND_CORVETTE],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        manufacturer: Manufacturer.JUPITER_INDUSTRIES,
+        researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [],
         baseModelId: ShipId.HALE_BOPP_A,
         modules: [
             modules.static({
