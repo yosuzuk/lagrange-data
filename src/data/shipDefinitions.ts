@@ -4,6 +4,7 @@ import { fsv830 } from './ships/auxiliary/fsv830';
 import { constantineTheGreat } from './ships/battleCruiser/constantineTheGreat';
 import { eternalStorm } from './ships/battleCruiser/eternalStorm';
 import { indefatigable } from './ships/battleCruiser/indefatigable';
+import { inostrancevia } from './ships/frigate/inostrancevia';
 import { spearOfUranus } from './ships/battleCruiser/spearOfUranus';
 import { st59 } from './ships/battleCruiser/st59';
 import { thunderboldStar } from './ships/battleCruiser/thunderboltStar';
@@ -115,6 +116,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...hayreddingsLoyal,
     ...helios,
     ...indefatigable,
+    ...inostrancevia,
     ...io,
     ...jaeger,
     ...janbiyaAer410,
