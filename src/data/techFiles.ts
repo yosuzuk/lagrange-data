@@ -345,6 +345,7 @@ export const techFiles: ITechFile[] = [
         },
         chanceForTechPoint: 0.9,
         ships: [
+            ShipId.INOSTRANCEVIA_A,
             ShipId.NOMA_M470_A,
             ShipId.MARE_IMBRIUM_A,
             ShipId.MARE_SERENITATIS_A,
@@ -358,7 +359,7 @@ export const techFiles: ITechFile[] = [
             ShipId.QUAOAR_A,
             ShipId.CONAMARA_CHAOS_A,
             ShipId.CHIMERA_A,
-            ShipId.RANGER_A, // TODO verify
+            ShipId.RANGER_A,
             ShipId.LIGHT_CONE_A,
             ShipId.JAEGER_A,
             ShipId.IO_A,
