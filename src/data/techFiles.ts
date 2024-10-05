@@ -25,6 +25,7 @@ export const techFiles: ITechFile[] = [
         },
         chanceForTechPoint: 0,
         ships: [
+            ShipId.INOSTRANCEVIA_A,
             ShipId.NOMA_M470_A,
             ShipId.XENO_STINGER_A,
             ShipId.MARE_IMBRIUM_A,
@@ -114,6 +115,7 @@ export const techFiles: ITechFile[] = [
         },
         chanceForTechPoint: 0,
         ships: [
+            ShipId.INOSTRANCEVIA_A,
             ShipId.NOMA_M470_A,
             ShipId.XENO_STINGER_A,
             ShipId.MARE_IMBRIUM_A,
@@ -184,8 +186,8 @@ export const techFiles: ITechFile[] = [
             en: '300 Proxima coins',
         },
         chanceByShipType: {
-            [ShipType.FRIGATE]: 0.028, // TODO check 0.03 ?
-            [ShipType.DESTROYER]: 0.024, // TODO check 0.25?
+            [ShipType.FRIGATE]: 0.028,
+            [ShipType.DESTROYER]: 0.024,
             [ShipType.CRUISER]: 0.012,
             [ShipType.BATTLE_CRUISER]: 0.005,
             [ShipType.AUXILIARY]: 0.003,
@@ -195,8 +197,9 @@ export const techFiles: ITechFile[] = [
         },
         chanceForTechPoint: 0.9,
         ships: [
-            ShipId.NOMA_M470_A,
+            ShipId.INOSTRANCEVIA_A,
             ShipId.XENO_STINGER_A,
+            ShipId.NOMA_M470_A,
             ShipId.MARE_IMBRIUM_A,
             ShipId.MARE_SERENITATIS_A,
             ShipId.RUBY_A,

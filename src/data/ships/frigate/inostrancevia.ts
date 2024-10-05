@@ -1,7 +1,6 @@
 import { Manufacturer } from '../../../types/Manufacturer';
-// import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
-// import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
-// import { ResearchTacticType } from '../../../types/ResearchTacticType';
+import { ResearchManufacturer } from '../../../types/ResearchManufacturer';
+import { ResearchStrategyType } from '../../../types/ResearchStrategyType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
@@ -17,14 +16,14 @@ export const inostrancevia: IShipDefinition[] = [
         },
         type: ShipType.FRIGATE,
         cost: 6,
-        weight: 10, // TODO verify
+        weight: 5, // TODO verify
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
-        // researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [],
+        researchTacticTypes: [],
         subModelIds: [ShipId.INOSTRANCEVIA_B, ShipId.INOSTRANCEVIA_C],
         defaultStats: {
             hp: 13400,
@@ -45,14 +44,14 @@ export const inostrancevia: IShipDefinition[] = [
         },
         type: ShipType.FRIGATE,
         cost: 6,
-        weight: 10, // TODO verify
+        weight: 5, // TODO verify
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
-        // researchStrategyTypes: [ResearchStrategyType.SUSTAINED_COMBAT],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [],
         baseModelId: ShipId.INOSTRANCEVIA_A,
         defaultStats: {
             hp: 14480,
@@ -73,14 +72,14 @@ export const inostrancevia: IShipDefinition[] = [
         },
         type: ShipType.FRIGATE,
         cost: 8,
-        weight: 10, // TODO verify
+        weight: 5, // TODO verify
         row: ShipRow.FRONT,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
-        // researchManufacturer: ResearchManufacturer.DAWN_ACCORD,
-        // researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
+        researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER],
+        researchTacticTypes: [],
         baseModelId: ShipId.INOSTRANCEVIA_A,
         defaultStats: {
             hp: 14480,
