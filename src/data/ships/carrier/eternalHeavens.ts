@@ -133,7 +133,7 @@ const a3: ISystemModule = {
     id: 'A3',
     name: '???',
     translatedName: {
-        en: '???',
+        en: 'Pulse Anti-Aircraft System',
     },
     category: 'A',
     categoryNumber: 3,
@@ -146,9 +146,9 @@ const a3: ISystemModule = {
 
 const b1: ISystemModule = {
     id: 'B1',
-    name: '???',
+    name: '対艦投射システム',
     translatedName: {
-        en: '???',
+        en: 'Anti-Ship Projectile Launching System',
     },
     category: 'B',
     categoryNumber: 1,
@@ -156,7 +156,7 @@ const b1: ISystemModule = {
     skills: [
         // TODO skill
     ],
-    skillSlots: 0,
+    skillSlots: 4,
 };
 
 const b2: ISystemModule = {
@@ -188,7 +188,7 @@ const b3: ISystemModule = {
     id: 'B3',
     name: '???',
     translatedName: {
-        en: '???',
+        en: 'Anti-Aircraft Missile Platform',
     },
     category: 'B',
     categoryNumber: 3,
@@ -250,7 +250,7 @@ const c3: ISystemModule = {
     id: 'C3',
     name: '???',
     translatedName: {
-        en: '???',
+        en: 'Support Repair UAV System',
     },
     category: 'C',
     categoryNumber: 3,
