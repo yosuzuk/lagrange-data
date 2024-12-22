@@ -79,6 +79,7 @@ import { xenoStinger } from './ships/frigate/xenoStinger';
 import { xt8 } from './ships/frigate/xt8';
 import { eternalHeavens } from './ships/carrier/eternalHeavens';
 import { haleBopp } from './ships/corvette/haleBopp';
+import { templeI } from './ships/corvette/templeI';
 
 export const shipDefinitions: IShipDefinition[] = [
     ...a101TheRationalTe,
@@ -150,6 +151,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...stingray,
     ...strixA100,
     ...taurus,
+    ...templeI,
     ...thunderboldStar,
     ...tundra,
     ...vitasA021,
