@@ -56,14 +56,14 @@ export const templeI: IShipDefinition[] = [
         },
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 5, // TODO verify
+        weight: 10,
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
-        // researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
-        // researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [],
         subModelIds: [ShipId.TEMPLE_I_B],
         modules: [
             modules.static({
@@ -100,14 +100,14 @@ export const templeI: IShipDefinition[] = [
         },
         type: ShipType.CORVETTE,
         cost: 0,
-        weight: 5, // TODO verify
+        weight: 5,
         row: ShipRow.NONE,
         operationLimit: 10,
         source: ShipSource.TECH_FILE,
         manufacturer: Manufacturer.JUPITER_INDUSTRIES,
-        // researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
-        // researchStrategyTypes: [ResearchStrategyType.FIGHTER_AND_CORVETTE],
-        // researchTacticTypes: [ResearchTacticType.DIRECT_FIRE_WEAPONS],
+        researchManufacturer: ResearchManufacturer.JUPITER_INDUSTRIES,
+        researchStrategyTypes: [ResearchStrategyType.STRATEGY_AND_SUPPORT, ResearchStrategyType.FIGHTER_AND_CORVETTE],
+        researchTacticTypes: [],
         baseModelId: ShipId.TEMPLE_I_A,
         modules: [
             modules.static({
