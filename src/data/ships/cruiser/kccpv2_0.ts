@@ -6,6 +6,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition, ISystemModule } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType, ShipSubType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
@@ -461,6 +462,9 @@ export const kccpv2_0: IShipDefinition[] = [
             ShipId.KCCPV2_0_B,
             ShipId.KCCPV2_0_C,
             ShipId.KCCPV2_0_D,
+        ],
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
         ],
     },
 ];

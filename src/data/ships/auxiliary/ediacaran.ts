@@ -127,14 +127,14 @@ const alloyArmorTechnics = enhancements.customEnhancement({
     },
 });
 
-const b1: ISystemModule = {
-    id: 'B1',
+const a1: ISystemModule = {
+    id: 'A1',
     name: 'フリゲート生産システム',
     translatedName: {
         en: 'Frigate Production System',
     },
     description: '自己保有能力でフリゲートが生産可能',
-    category: 'B',
+    category: 'A',
     categoryNumber: 1,
     defaultModule: true,
     effects: [
@@ -160,14 +160,14 @@ const b1: ISystemModule = {
     }],
 };
 
-const b2: ISystemModule = {
-    id: 'B2',
+const a2: ISystemModule = {
+    id: 'A2',
     name: '護送艦生産システム',
     translatedName: {
         en: 'Escort Corvette Production System',
     },
     description: '自己保有能力で護送艦が生産可能',
-    category: 'B',
+    category: 'A',
     categoryNumber: 2,
     effects: [
         enhancements.increaseProductionSpeed().withFixedPercentageValue(10),
@@ -208,14 +208,14 @@ const b2: ISystemModule = {
     }],
 };
 
-const b3: ISystemModule = {
-    id: 'B3',
+const a3: ISystemModule = {
+    id: 'A3',
     name: '駆逐艦生産システム',
     translatedName: {
         en: 'Destroyer Production System',
     },
     description: '自己保有能力で駆逐艦が生産可能',
-    category: 'B',
+    category: 'A',
     categoryNumber: 3,
     effects: [
         enhancements.increaseSelfHostCapacity().withFixedAbsoluteValue(80),
@@ -308,11 +308,11 @@ const c2: ISystemModule = {
     ],
 };
 
-const d1: ISystemModule = {
-    id: 'D1',
+const b1: ISystemModule = {
+    id: 'B1',
     name: '「ツンドラ」要撃UAVシステム',
     translatedName: {
-        en: '"Tsundra" Interceptor UAV System',
+        en: '"Tundra" Interceptor UAV System',
     },
     description: '対空UAVを4機搭載',
     skillComplete: true,
@@ -325,7 +325,7 @@ const d1: ISystemModule = {
         enhancements.increaseHitRateOfAircraft().withPercentageValue(20).withCost(8),
     ],
     skillSlots: 4,
-    category: 'D',
+    category: 'B',
     categoryNumber: 1,
     parts: [
         {
@@ -339,14 +339,14 @@ const d1: ISystemModule = {
     ],
 };
 
-const d2: ISystemModule = {
-    id: 'D2',
+const b2: ISystemModule = {
+    id: 'B2',
     name: '「ハミングバード」火力偵察UAVシステム',
     translatedName: {
         en: '"Hummingbird" Firepower Recon UAV System',
     },
     description: '偵察UAVを4機搭載',
-    category: 'D',
+    category: 'B',
     categoryNumber: 2,
     skillComplete: true,
     skills: [
@@ -366,14 +366,14 @@ const d2: ISystemModule = {
     ],
 };
 
-const d3: ISystemModule = {
-    id: 'D3',
+const b3: ISystemModule = {
+    id: 'B3',
     name: '「巨像」防衛UAVシステム',
     translatedName: {
         en: '"Colossus" Guard UAV System',
     },
     description: '防御UAV４機搭載',
-    category: 'D',
+    category: 'B',
     categoryNumber: 3,
     skillComplete: true,
     skills: [
@@ -394,14 +394,14 @@ const d3: ISystemModule = {
     }],
 };
 
-const e1: ISystemModule = {
-    id: 'E1',
+const d1: ISystemModule = {
+    id: 'D1',
     name: '重量級付加装甲システム',
     translatedName: {
-        en: 'Heave Additional Armor System',
+        en: 'Heavy Additional Armor System',
     },
     description: '抵抗値＆HPアップ',
-    category: 'E',
+    category: 'D',
     categoryNumber: 1,
     effects: [
         enhancements.increaseArmor().withFixedAbsoluteValue(80),
@@ -423,14 +423,14 @@ const e1: ISystemModule = {
     }],
 };
 
-const e2: ISystemModule = {
-    id: 'E2',
+const d2: ISystemModule = {
+    id: 'D2',
     name: 'ナノレベル自己補修システム',
     translatedName: {
         en: 'Nano Automated Maintenance System',
     },
     description: '自身の補修を行う',
-    category: 'E',
+    category: 'D',
     categoryNumber: 2,
     skillComplete: true,
     skills: [
@@ -545,7 +545,7 @@ export const ediacaran: IShipDefinition[] = [
         researchManufacturer: ResearchManufacturer.NOMA_SHIPPING_GROUP,
         researchStrategyTypes: [ResearchStrategyType.OUTSTANDING_FIREPOWER, ResearchStrategyType.STRATEGY_AND_SUPPORT],
         researchTacticTypes: [],
-        modules: [m1, m2, b1, b2, b3, c1, c2, d1, d2, d3, e1, ...staticModules],
+        modules: [m1, m2, b1, a1, a2, a3, b2, b3, c1, c2, d1, d2, ...staticModules],
         defaultStats,
         tags: [
             ShipTag.PHASE_TWO_BLUEPRINT,
@@ -574,7 +574,7 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m1),
-            modules.toStatic(b1),
+            modules.toStatic(a1),
             ...staticModules,
         ],
         defaultStats,
@@ -602,8 +602,8 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m2),
-            modules.toStatic(b3),
-            modules.toStatic(e2),
+            modules.toStatic(a3),
+            modules.toStatic(d2),
             ...staticModules,
         ],
         defaultStats,
@@ -634,7 +634,7 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m1),
-            modules.toStatic(b1),
+            modules.toStatic(a1),
             ...staticModules,
         ],
         defaultStats,
@@ -665,8 +665,8 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m1),
-            modules.toStatic(b1),
-            modules.toStatic(e1),
+            modules.toStatic(a1),
+            modules.toStatic(d1),
             ...staticModules,
         ],
         defaultStats,
@@ -698,7 +698,7 @@ export const ediacaran: IShipDefinition[] = [
         modules: [
             modules.toStatic(m1),
             modules.toStatic(b3),
-            modules.toStatic(e2),
+            modules.toStatic(d2),
             ...staticModules,
         ],
         defaultStats,
@@ -729,9 +729,9 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m2),
-            modules.toStatic(b2),
+            modules.toStatic(a2),
             modules.toStatic(c2),
-            modules.toStatic(d3),
+            modules.toStatic(b3),
             ...staticModules,
         ],
         defaultStats,

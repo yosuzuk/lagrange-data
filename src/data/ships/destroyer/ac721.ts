@@ -6,6 +6,7 @@ import { ResearchTacticType } from '../../../types/ResearchTacticType';
 import { IShipDefinition } from '../../../types/ShipDefinition';
 import { ShipRow } from '../../../types/ShipRow';
 import { ShipSource } from '../../../types/ShipSource';
+import { ShipTag } from '../../../types/ShipTag';
 import { ShipType } from '../../../types/ShipType';
 import { modules } from '../../modules';
 import { ShipId } from '../../shipIds';
@@ -230,5 +231,8 @@ export const ac721: IShipDefinition[] = [
             dpmAntiAir: 138,
             dpmSiege: 1328,
         },
+        tags: [
+            ShipTag.CURRENTLY_UNOBTAINABLE,
+        ],
     },
 ];
