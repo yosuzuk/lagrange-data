@@ -589,9 +589,9 @@ export const ediacaran: IShipDefinition[] = [
     },
     {
         id: ShipId.EDIACARAN_TE_2,
-        name: 'エディアカラ級-TE エイグラム版 (M2+B3+E2)',
+        name: 'エディアカラ級-TE エイグラム版 (M2+A3+D2)',
         translatedName: {
-            en: 'Ediacaran (TE) Angulum (M2+B3+E2)',
+            en: 'Ediacaran (TE) Angulum (M2+A3+D2)',
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -652,9 +652,9 @@ export const ediacaran: IShipDefinition[] = [
     },
     {
         id: ShipId.EDIACARAN_TE_PREVIEW2,
-        name: 'エディアカラ級-TE トライアル版 (E2)',
+        name: 'エディアカラ級-TE トライアル版 (D1)',
         translatedName: {
-            en: 'Ediacaran (TE) Trial (E1)',
+            en: 'Ediacaran (TE) Trial (D1)',
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -684,9 +684,9 @@ export const ediacaran: IShipDefinition[] = [
     },
     {
         id: ShipId.EDIACARAN_TE_PREVIEW3,
-        name: 'エディアカラ級-TE トライアル版 (B3+E2)',
+        name: 'エディアカラ級-TE トライアル版 (A3+D2)',
         translatedName: {
-            en: 'Ediacaran (TE) Trial (B3+E2)',
+            en: 'Ediacaran (TE) Trial (A3+D2)',
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -697,7 +697,7 @@ export const ediacaran: IShipDefinition[] = [
         manufacturer: Manufacturer.NOMA_SHIPPING_GROUP,
         modules: [
             modules.toStatic(m1),
-            modules.toStatic(b3),
+            modules.toStatic(a3),
             modules.toStatic(d2),
             ...staticModules,
         ],
@@ -716,9 +716,9 @@ export const ediacaran: IShipDefinition[] = [
     },
     {
         id: ShipId.EDIACARAN_TE_PREVIEW4,
-        name: 'エディアカラ級-TE トライアル版 (M2+B2+C2+D3)',
+        name: 'エディアカラ級-TE トライアル版 (M2+A2+B3+C2)',
         translatedName: {
-            en: 'Ediacaran (TE) Trial (M2+B2+C2+D3)',
+            en: 'Ediacaran (TE) Trial (M2+A2+B3+C2)',
         },
         type: ShipType.AUXILIARY,
         cost: 40,
@@ -730,8 +730,8 @@ export const ediacaran: IShipDefinition[] = [
         modules: [
             modules.toStatic(m2),
             modules.toStatic(a2),
-            modules.toStatic(c2),
             modules.toStatic(b3),
+            modules.toStatic(c2),
             ...staticModules,
         ],
         defaultStats,
