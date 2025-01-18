@@ -237,7 +237,7 @@ export const predator: IShipDefinition[] = [
                 mainSystem: true,
                 skillComplete: true,
                 skills: [
-                    strategy.antiAircraftSupport(40, 30, 25).withCost(6),
+                    strategy.antiAircraftSupport(80, 30, 25).withCost(6),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(3),
                     enhancements.increaseDamage().withPercentageValue(10).withCost(3),
                     enhancements.increaseHitRateVsAircraft().withPercentageValue(15).withCost(3),
