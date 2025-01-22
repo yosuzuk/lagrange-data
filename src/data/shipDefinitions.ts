@@ -80,6 +80,7 @@ import { xt8 } from './ships/frigate/xt8';
 import { eternalHeavens } from './ships/carrier/eternalHeavens';
 import { haleBopp } from './ships/corvette/haleBopp';
 import { templeI } from './ships/corvette/templeI';
+import { shieldOfPlutus } from './ships/battleCruiser/shieldOfPlutus';
 
 export const shipDefinitions: IShipDefinition[] = [
     ...a101TheRationalTe,
@@ -143,6 +144,7 @@ export const shipDefinitions: IShipDefinition[] = [
     ...sandrake,
     ...sc002,
     ...silentAssassin,
+    ...shieldOfPlutus,
     ...solarWhale,
     ...spearOfUranus,
     ...sporeA404,
